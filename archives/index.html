@@ -1,0 +1,78 @@
+---
+layout: default
+title: "Archives"
+initChosen: true
+section: archives
+---
+<div class="row t40">
+	<div class="medium-4 columns medium-push-8">
+		<div class="row t10">
+			<div class="medium-12 columns">
+				<h3>Filters</h3>
+				<select class="chzn-select" multiple="true" name="faculty" style="width:200px;">
+		        <option value="AC">A</option>
+		        <option value="AD">B</option>
+		        <option value="AM">C</option>
+		        <option value="AP1">D</option>
+						<option value="AP2">D1</option>
+						<option value="AP3">D2</option>
+						<option value="AP4">D3</option>
+						<option value="AP5">D4</option>
+						<option value="AP6">D5</option>
+						<option value="AP7">D6</option>
+						<option value="AP8">D7</option>
+						<option value="AP9">D8</option>
+						<option value="AP0">D9</option>
+						<option value="APq">D0</option>
+						<option value="APw">D11</option>
+						<option value="APe">D22</option>
+						<option value="APr">D33</option>
+						<option value="APt">D44</option>
+						<option value="APy">D55</option>
+						<option value="APu">D66</option>
+						<option value="APi">D77</option>
+						<option value="APo">D88</option>
+						<option value="APp">D99</option>
+						<option value="APa">D00</option>
+						<option value="APs">D111</option>
+						<option value="APd">D222</option>
+						<option value="APf">D333</option>
+						<option value="APg">D444</option>
+						<option value="APh">D555</option>
+						<option value="APj">D666</option>
+						<option value="APk">D777</option>
+						<option value="APl">D888</option>
+						<option value="APz">D999</option>
+						<option value="APx">D000</option>
+						<option value="APc">D1111</option>
+						<option value="APv">D2222</option>
+						<option value="APb">D3333</option>
+						<option value="APn">D4444</option>
+						<option value="APm">D5555</option>
+						<option value="APqq">D6666</option>
+						<option value="APww">D7777</option>
+						<option value="APee">D8888</option>
+						<option value="APrr">D9999</option>
+						<option value="APtt">D11111</option>
+						<option value="APyy">D22222</option>
+						<option value="APuu">D33333</option>
+						<option value="APii">D44444</option>
+
+				</select>
+			</div>
+		</div>
+	</div><!-- /.medium-4.columns -->
+	<div class="medium-8 columns medium-pull-4">
+		<div class="row">
+			<div class="medium-10 medium-offset-2 columns">
+				{% for post in site.posts limit: 20 %}
+					<h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+					{% if page.show_meta == true %}
+					{% include meta_information.html param=post %}
+					{% endif %}
+				{% endfor %}
+			</div><!-- /.small-12.columns -->
+		</div><!-- /.row -->
+
+	</div><!-- /.medium-8.columns -->
+</div><!-- /.row -->

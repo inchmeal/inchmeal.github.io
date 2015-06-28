@@ -1,0 +1,14 @@
+---
+layout: default
+title: "Recent Posts"
+---
+<div class="row t40">
+	<div class="medium-8 medium-centered medium-offset-2 columns">
+    {% for post in site.posts limit: 20 %}
+			<span>
+          <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+					{% if post.subheadline %}<p class="subheadline">{{ post.subheadline }}</p>{% endif %}
+			</span>
+    {% endfor %}
+  </div><!-- /.medium-8.columns -->
+</div><!-- /.row -->
