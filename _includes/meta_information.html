@@ -1,7 +1,0 @@
-			<p class="tm10">
-				{% assign currentPost = {{include.param}} %}
-				{% if currentPost.date %}
-				<time class="post-date pr10" datetime="{{ currentPost.date | date: "%B %d, %Y" }}" itemprop="datePublished">{{ currentPost.date | date: "%B %d, %Y" }}</time>
-				{% endif %}
-				<span>{% for tag in currentPost.tags %}<span class="radius info label">{{tag}}</span> {% endfor %}</span>
-			</p>

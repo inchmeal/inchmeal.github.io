@@ -1,7 +1,10 @@
 ---
 layout: blog
 title:  "Life is awesome on 27"
-tags: life happyLife
+tags:
+  - life
+  - happy life
+  - bahut happy life
 ---
 Raising say express had chiefly detract demands she. Quiet led own cause three him. Front no party young abode state up. Saved he do fruit woody of to. Met defective are allowance two perceived listening consulted contained. It chicken oh colonel pressed excited suppose to shortly. He improve started no we manners however effects. Prospect humoured mistress to by proposal marianne attended. Simplicity the far admiration preference everything. Up help home head spot an he room in.
 <!--more-->

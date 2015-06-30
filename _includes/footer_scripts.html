@@ -1,10 +1,51 @@
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/javascript.min.js"></script>
-<script src="{{ site.url }}{{ site.baseurl }}/assets/js/chosen.jquery.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/selectize.js"></script>
 
 {% if page.initChosen == true %}
 <script>
+
+var autoCompleteData = [];
+{% for tag in site.tags %}
+  autoCompleteData.push({
+    "group": "Tags",
+    "value": "{{ tag[0] }}"
+    }
+  );
+{% endfor %}
+
+{% for post in site.posts %}
+  {% assign currentYear = post.date | date: "%Y" %}
+  {% assign prevYear = post.previous.date | date: "%Y" %}
+  {% if currentYear != prevYear %}
+  autoCompleteData.push({"group": "Year", "value": "{{ currentYear }}"});
+  {% endif %}
+{% endfor %}
+
+$.each(
+  [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
+  function( index, month ) {
+    autoCompleteData.push({"group": "Month", "value":  month });
+  }
+);
+
 $(function(){
-    $(".chzn-select").chosen();
+    $(".tags-filter-box").selectize({
+      "options": autoCompleteData,
+      "optgroups": [
+        {"id": 'Tags'},
+        {"id": 'Year'},
+        {"id": 'Month'}
+      ],
+      "maxItems" : 15,
+      "labelField": 'value',
+      "valueField": 'value',
+      "optgroupField": 'group',
+      "optgroupLabelField": 'id',
+      "optgroupValueField": 'id',
+      "optgroupOrder": ['Tags', 'Year', 'Month'],
+      "searchField": ['value'],
+      "plugins": ['optgroup_columns', 'remove_button']
+    });
 });
 </script>
 {% endif %}

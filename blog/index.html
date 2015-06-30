@@ -15,6 +15,7 @@ section: blog
 						{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
 						<a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title escape_once }}">{{ site.data.language.read_more }}</a>
 					</p>
+					<hr/>
 			</p>
     {% endfor %}
   </div><!-- /.medium-8.columns -->
