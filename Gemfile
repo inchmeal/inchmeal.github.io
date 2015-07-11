@@ -1,7 +1,6 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-require 'json'
-require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
-
-gem 'github-pages', versions['github-pages']
+gem 'jekyll', '~> 2.5.2'
+gem 'sass', '>= 3.3'
+gem 'scss-lint', '~> 0.31.0'
+gem 'fontcustom', '~> 1.3.7'

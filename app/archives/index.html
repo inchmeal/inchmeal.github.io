@@ -1,0 +1,65 @@
+---
+layout: default
+title: "Archives"
+initChosen: true
+section: archives
+---
+<div class="row t40">
+	<div class="medium-4 columns medium-push-8">
+		<div class="row t5">
+			<div class="medium-12 columns">
+				<h3>Filters</h3>
+				<div class="sandbox">
+						<select class="tags-filter-box" multiple="true" placeholder="Tag1 & Tag2 & ...">
+						</select>
+				</div>
+				<!-- month-year labels -->
+				<h3 class="t30">Year</h3>
+				<hr class="tm5 b10"/>
+				<span>
+					{% assign count = 0 %}
+					{% for post in site.posts %}
+					  {% assign currentYear = post.date | date: "%B %Y" %}
+					  {% assign prevYear = post.previous.date | date: "%B %Y" %}
+					  {% assign count = count | plus: 1 %}
+					  {% if currentYear != prevYear %}
+					    <span class="radius info label">{{ currentYear }}({{ count }})</span>
+					    {% assign count = 0 %}
+					  {% endif %}
+					{% endfor %}
+				</span>
+			  <hr/>
+				<!-- end month-year labels -->
+				<h3 class="t30">Tags</h3>
+				<hr class="tm5 b10"/>
+				<!-- tags lable -->
+				<!-- sort tags -->
+				{% capture tags %}
+				  {% for tag in site.tags %}
+				    {{ tag[0] }}##{{ tag[1].size}}$$
+				  {% endfor %}
+				{% endcapture %}
+				{% assign sortedTags = tags | split:'$$' | strip | sort %}
+				<!-- end sort tags -->
+				<span>
+					{% for tag in sortedTags %}
+					{% assign tagData = tag | split: '##' %}
+					{% if tagData.size >= 2 %}
+					<span class="radius info label">{{ tagData[0] }}({{ tagData[1] }})</span>
+					{% endif %}
+					{% endfor %}
+				</span>
+
+				<!-- end of label -->
+				<hr/>
+			</span>
+			</div>
+		</div>
+	</div><!-- /.medium-4.columns -->
+	<div class="medium-8 columns medium-pull-4">
+		<div class="row">
+			<div id="search-results" class="medium-11 medium-offset-1 columns">
+			</div><!-- /.small-11.columns -->
+		</div><!-- /.row -->
+	</div><!-- /.medium-8.columns -->
+</div><!-- /.row -->
