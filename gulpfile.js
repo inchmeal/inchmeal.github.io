@@ -388,7 +388,7 @@ gulp.task('index:production', function(callback){
    .pipe(gulp.dest('build/production'));
 
    var options = {
-     "remoteUrl": "https://github.com/0vais/0vais.github.io",
+     "remoteUrl": "https://github.com/inchmeal/inchmeal.github.io",
      "branch": "master"
    }
 
