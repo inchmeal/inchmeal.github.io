@@ -49,7 +49,7 @@ A point to note about lunr(version: 0.5.11) is it provides searches only for "an
 
 ### Github pages with nojekyll ###
 
-Index creation at backend requires some support from github pages while it generates with site using jekyll. As github pages executes jekyll in safe mode, I cant add any plugin for indexing at backend. Thus I have to manually index at my local machine and push it to github.
+Index creation at backend requires some support from github pages while it generates the site using jekyll. As github pages executes jekyll in safe mode, I cant add any plugin for indexing at backend. Thus I have to manually index at my local machine and push it to github.
 
 It seems like a big limitation for not having any possibility to add plugins to github pages. It may cause more problems in future when I work on some data sources for doing some stats and putting few D3 plots on the blog.
 
@@ -72,7 +72,7 @@ Grunt and Gulp are two great build tools available. As a matter of choice, I pre
 
 There are a lot of plugins available for gulp for doing almost every task that may be required. Whether it is a simple concat of js/css files, minifying js/css or deploying to gh-pages, a plugin is available for every task.
 
-With help of gulp and these great plugins, I completely automated the build process. Now using just one command can generate the site using jekyll, creates index, do minify html and css and as well as push all the changes to the server(github pages).
+With help of gulp and these great plugins, I completely automated the build process. Now using just one command can generate the site using jekyll, creates index, do minify js and css and as well as push all the changes to the server(github pages).
 
 ### Client side MVC ###
 
@@ -82,7 +82,7 @@ I have also used an MVC framework, [backbone][backbone] for creating archives pa
 
 Blog creation ended up taking more time than it was planned but I completely enjoyed the process. From package management to MVC frameworks, I learned of the many great things going on with UI.
 
-While I liked the node.js excellent eco-system, I hope that same level of tools and packages should be available for modern languages like clojure or scala. Javascript is not a great language to work on. It is relatively difficult to find issues with the code written in js and many times are silently ignored by interpreter.
+While I liked the node.js excellent eco-system, I hope that same level of tools and packages for UI should be available for modern languages like clojure or scala. Javascript is not a great language to work on. It is relatively difficult to find issues with the code written in js and many times are silently ignored by interpreter.
 
 [bawlipoonch]: http://bawlipoonch.github.io
 [codedaddy]: http://learningwithsage.com/wp/a-guide-to-setting-up-a-jekyll-and-foundation-based-site-in-github/

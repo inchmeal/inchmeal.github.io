@@ -6,8 +6,25 @@
 	<title>{% if page.meta_title %}{{ page.meta_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/css/styles_inchmeal.css">
 	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/inchmeal_head.js"></script>
+	{% if site.dev %}
+	<script type="text/javascript"
+			src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	{% else %}
+	<script type="text/javascript"
+			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	{% endif %}
+	<script>
+		MathJax.Hub.Config({
+			CommonHTML: {
+				scale: 100
+			},
+			"HTML-CSS": { scale: 90 }
+		});
+	</script>
 
-  {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}
+	{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}
 	{% if site.bing_webmastertools_id %}<meta name="msvalidate.01" content="{{ site.bing_webmastertools_id }}" />{% endif %}
 	{% if page.meta_description %}<meta name="description" content="{{ page.meta_description | strip_html | escape }}"/>{% elsif page.teaser %}<meta name="description" content="{{ page.teaser | strip_html | escape }}"/>{% elsif site.description %}<meta name="description" content="{{ site.description | strip_html | escape }}"/>{% endif %}
 

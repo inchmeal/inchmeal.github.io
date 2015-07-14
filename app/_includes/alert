@@ -22,6 +22,8 @@
 <div class="alert-box warning radius">{{ include.warning }}</div>
 {% elsif include.info %}
 <div class="alert-box info radius">{{ include.info }}</div>
+{% elsif include.mathsInfo %}
+<div class="alert-box info radius">{{ include.mathsInfo | replace: '\\(','\(' | replace: '\\)','\)'}}</div>
 {% elsif include.success %}
 <div class="alert-box success radius">{{ include.success }}</div>
 {% elsif include.alert %}
