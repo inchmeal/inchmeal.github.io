@@ -6,8 +6,21 @@
 	<title>Tech behind this blog</title>
 	<link rel="stylesheet" href="https://inchmeal.github.io/assets/css/styles_inchmeal.css">
 	<script src="https://inchmeal.github.io/assets/js/inchmeal_head.js"></script>
+	
+	<script type="text/javascript"
+			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+	<script>
+		MathJax.Hub.Config({
+			CommonHTML: {
+				scale: 100
+			},
+			"HTML-CSS": { scale: 90 }
+		});
+	</script>
 
-  
+	
 	
 	<meta name="description" content="This is a sample description"/>
 
@@ -264,7 +277,7 @@ Including year and month also in the search will solve the problem for archive p
 
 <h3 id="github-pages-with-nojekyll">Github pages with nojekyll</h3>
 
-<p>Index creation at backend requires some support from github pages while it generates with site using jekyll. As github pages executes jekyll in safe mode, I cant add any plugin for indexing at backend. Thus I have to manually index at my local machine and push it to github.</p>
+<p>Index creation at backend requires some support from github pages while it generates the site using jekyll. As github pages executes jekyll in safe mode, I cant add any plugin for indexing at backend. Thus I have to manually index at my local machine and push it to github.</p>
 
 <p>It seems like a big limitation for not having any possibility to add plugins to github pages. It may cause more problems in future when I work on some data sources for doing some stats and putting few D3 plots on the blog.</p>
 
@@ -287,7 +300,7 @@ This resulted in installing all backend libraries(like lunr) using npm and front
 
 <p>There are a lot of plugins available for gulp for doing almost every task that may be required. Whether it is a simple concat of js/css files, minifying js/css or deploying to gh-pages, a plugin is available for every task.</p>
 
-<p>With help of gulp and these great plugins, I completely automated the build process. Now using just one command can generate the site using jekyll, creates index, do minify html and css and as well as push all the changes to the server(github pages).</p>
+<p>With help of gulp and these great plugins, I completely automated the build process. Now using just one command can generate the site using jekyll, creates index, do minify js and css and as well as push all the changes to the server(github pages).</p>
 
 <h3 id="client-side-mvc">Client side MVC</h3>
 
@@ -297,7 +310,7 @@ This resulted in installing all backend libraries(like lunr) using npm and front
 
 <p>Blog creation ended up taking more time than it was planned but I completely enjoyed the process. From package management to MVC frameworks, I learned of the many great things going on with UI.</p>
 
-<p>While I liked the node.js excellent eco-system, I hope that same level of tools and packages should be available for modern languages like clojure or scala. Javascript is not a great language to work on. It is relatively difficult to find issues with the code written in js and many times are silently ignored by interpreter.</p>
+<p>While I liked the node.js excellent eco-system, I hope that same level of tools and packages for UI should be available for modern languages like clojure or scala. Javascript is not a great language to work on. It is relatively difficult to find issues with the code written in js and many times are silently ignored by interpreter.</p>
 
 
 
