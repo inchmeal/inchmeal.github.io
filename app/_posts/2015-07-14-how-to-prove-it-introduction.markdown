@@ -9,10 +9,7 @@ This post contains solutions for the introduction section of the book.
 <!--more-->
 
 
-
-**Ex.1(a)** Factor \\( 2^{15} - 1 = 32,767 \\) into a product of two smaller positive integers.
-
-**Soln.** 
+**Soln.1(a)** 
 
 *Using theorem:*
 
@@ -24,15 +21,13 @@ We have \\( n = 3 \times 5 \\), Taking \\( a = 3 \\) and \\( b = 5 \\)
 
 \\( \Rightarrow x = 31, y = 1057 \\)
 
-**Ex.1(b)** Find an integer \\( x \\) such that \\( 1 < x < 2^{32767} −1 \\) and \\( 2^{32767} −1 \\) is divisible by \\( x \\).
-
-**Soln.** 
+**Soln.1(b)** 
 
 We can use the same theorem again. Now we have \\( n = 32767 = 31 \times 1057 \\). Taking \\( b = 31 \\) gives \\( x = 2^b - 1 = 2^{31} - 1 = 2147483647 \\) 
 
-**Ex.2** Make some conjectures about the values of n for which \\( 3^n − 1 \\) is prime or the values of \\( n \\) for which \\( 3^n − 2^n \\) is prime.
+<hr/>
 
-**Soln.**
+**Soln.2**
 
 Table for \\( 3^n - 1\\) :
 
@@ -79,16 +74,11 @@ Table for \\( 3^n - 2^n \\) :
 | 16 | no | 42981185 | no
 | 17 | yes | 129009091 | yes
 
-
 It can be observed that if \\( n \\) is not prime than \\( 3^n - 2^n \\) is also not prime. Also it is observed that \\( 3^n - 2^n \\) is prime only if \\( n \\) is prime.
 
-**Ex.3** The proof of Theorem 3 gives a method for finding a prime number different from any in a given list of prime numbers.
+<hr/>
 
-(a) Use this method to find a prime different from 2, 3, 5, and 7. 
-
-(b) Use this method to find a prime different from 2, 5, and 11.
-
-**Soln**
+**Soln3**
 
 Theorem 3 says:
 
@@ -118,9 +108,9 @@ Using the method from above, taking only \\( 2 \\) results \\( m = 2 + 1 = 3 \\)
 
 Now taking only \\( 2, 3 \\) results \\( m = 2 \times 3 + 1 = 7 \\) which is also a prime number.
 
-**Ex.4.** Find five consecutive integers that are not prime.
+<hr/>
 
-**Soln**
+**Soln4**
 
 We may use following theorem here:
 
@@ -131,10 +121,10 @@ Its proof shows that a set of such consecutive integers can be
  $$ x + i  = (n + 1)! + 2 + i, \text{ where } 0 \le i \le n - 1 $$
  
  Putting \\( n = 5 \Rightarrow x + i = 6! + 2 + i = 722 + i \\) which gives us 722, 723, 724, 725, 726
- 
-**Ex.5.** Use the table in Figure-1 and the discussion on p.5 to find two more perfect numbers.
 
-**Soln**
+<hr/>
+
+**Soln5**
 
 Table: 
 
@@ -161,9 +151,9 @@ For \\( n = 3 \Rightarrow 2^{3-1} \cdot (2^3 - 1) \Rightarrow 4 \times 7 = 28 \\
 
 Similarly, for \\( n = 5 \Rightarrow 2^{5-1} \cdot (2^5 - 1) \Rightarrow 16 \times 31 = 496 \\).
 
-**Ex.6.** The sequence 3, 5, 7 is a list of three prime numbers such that each pair of adjacent numbers in the list differ by two. Are there any more such “triplet primes”?
+<hr/>
 
-**Soln**
+**Soln6**
 
 There are no more such prime triplets. From [wiki][wiki]:
 
