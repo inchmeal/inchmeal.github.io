@@ -5,9 +5,2489 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Jul 2015 03:48:06 +0530</pubDate>
-    <lastBuildDate>Wed, 15 Jul 2015 03:48:06 +0530</lastBuildDate>
+    <pubDate>Fri, 17 Jul 2015 21:49:21 +0530</pubDate>
+    <lastBuildDate>Fri, 17 Jul 2015 21:49:21 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-1 Sec-1.2, Truth Tables</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 1, Section - 1.2, Truth Tables.
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Truth Tables&lt;/li&gt;
+  &lt;li&gt;Argument Validation using Truth Tables. For all the rows in truth tables where “premises” are true, 
+corresponding rows of “conclusion” must also be true.&lt;/li&gt;
+  &lt;li&gt;DeMorgan’s Laws:
+    &lt;ul&gt;
+      &lt;li&gt;\( \lnot (P \land Q) \text{ is equivalent to } \lnot P \lor \lnot Q \).&lt;/li&gt;
+      &lt;li&gt;\( \lnot (P \lor Q) \text{ is equivalent to } \lnot P \land \lnot Q \).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Commutative Laws:
+    &lt;ul&gt;
+      &lt;li&gt;\( P \land Q \text{ is equivalent to } Q \land P \).&lt;/li&gt;
+      &lt;li&gt;\( P \lor Q \text{ is equivalent to } Q \lor P \).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Associative Laws:
+    &lt;ul&gt;
+      &lt;li&gt;\( P \land (Q \land R) \text{ is equivalent to } (P \land Q) \land R \).&lt;/li&gt;
+      &lt;li&gt;\( P \lor (Q \lor R) \text{ is equivalent to } (P \lor Q) \lor R \).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Idemponent Laws:
+    &lt;ul&gt;
+      &lt;li&gt;\( P \land P \text{ is equivalent to } P \).&lt;/li&gt;
+      &lt;li&gt;\( P \lor P \text{ is equivalent to } P \).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Distributive Laws:
+    &lt;ul&gt;
+      &lt;li&gt;\( P \land (Q \lor R) \text{ is equivalent to } (P \land Q) \lor (P \land R) \).&lt;/li&gt;
+      &lt;li&gt;\( P \lor (Q \land R) \text{ is equivalent to } (P \lor Q) \land (P \lor R) \).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Absorption Laws:
+    &lt;ul&gt;
+      &lt;li&gt;\( P \lor (P \land Q) \text{ is equivalent to } P \).&lt;/li&gt;
+      &lt;li&gt;\( P \land (P \lor Q) \text{ is equivalent to } P \).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Double Negation Law:
+    &lt;ul&gt;
+      &lt;li&gt;\( \lnot \lnot P \text{ is equivalent to } P \).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tautologies: Formulas that are always true.&lt;/li&gt;
+  &lt;li&gt;Contradictions: Formulas that are always false.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;solutions&quot;&gt;Solutions&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \lor Q \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( S \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( G \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot S \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot G \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot S \lor \lnot G \)&lt;/th&gt;
+      &lt;th&gt;\( S \lor G \)&lt;/th&gt;
+      &lt;th&gt;\( (S \lor G) \land (\lnot S \lor \lnot G) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \lor \lnot P \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \land (Q \lor \lnot P) \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot (P \land (Q \lor \lnot P))  \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( R \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P\lor Q \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \lor R \)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( (P\lor Q) \land (\lnot P \lor R) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;P&lt;/th&gt;
+      &lt;th&gt;Q&lt;/th&gt;
+      &lt;th&gt;P + Q&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We may proceed as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;P + Q is true only for two cases, P = true, Q = false and P = false, Q = true.&lt;/li&gt;
+  &lt;li&gt;Similarly, P + Q is false only for two cases, P = Q = true anf P = Q = false.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A point to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We know that \( \land \) gives true only when all of its input are true. Or returns false only if any of the input is false.&lt;/li&gt;
+  &lt;li&gt;Also \( \lor \) returns true if any of the inputs are true. Or returns false only if all the inputs are false.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We may see that to output a value true/false for a given input, we need to combine the values of input using operators, such that 
+they will result the required the required output only for that input or else there is any change in input it will not return the desired output.&lt;/p&gt;
+
+&lt;p&gt;For eg, if we want false for input say P = true, Q = true:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To fix the values of input such that only for the given combination of input, we get the required result,
+we may use the point when all of the inputs are restricted by the operator.&lt;/li&gt;
+  &lt;li&gt;Here we want false as output. We can see from the note above that false output is produced by both operators \( \lor, \land \)
+but only operator \( \lor \) restricts all of the inputs. As \( \land \) returns false if any of the input is false, hence putting
+no restriction on the input.&lt;/li&gt;
+  &lt;li&gt;But current values of P and Q will not return false if we combine them with operator \( lor \).&lt;/li&gt;
+  &lt;li&gt;Thus to get the required values we may revert the values of input using operator \( \lnot \).&lt;/li&gt;
+  &lt;li&gt;So we have \( \lnot P \lor \lnot Q \).&lt;/li&gt;
+  &lt;li&gt;Now check that only for the above input P = true, Q = true,  \( \lnot P \lor \lnot Q \) will return the required output false, else 
+it will return true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Similarly if we want true for input say P = true, Q = false, expression can be \( P \land \lnot Q \).&lt;/p&gt;
+
+&lt;p&gt;Thus from above we created a way to form an expression that will result in required output only for the given input and for all other inputs
+it will not return the required output.&lt;/p&gt;
+
+&lt;p&gt;Now to get the given set of outputs, for eg. in our case \( P + Q \), we can proceed as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;From the above method, we can create expression for each row. But we need to combine them such that
+ resulting expression gives the required output.&lt;/li&gt;
+  &lt;li&gt;To get true/false only in one of row(single row), we can use the our expression of that row as it will return the required output only
+ for that row else it will return the opposite of the required output.&lt;/li&gt;
+  &lt;li&gt;To get true or false only in the given set of rows(multiple row), we may combine the formula of the corresponding rows such that 
+ it returns required output for only these rows else it will not return required output.&lt;/li&gt;
+  &lt;li&gt;For eg, in our case, to get false as output, we need to combine formulas of 1st and 4th row such that it returns false for 1st and 4th
+ row or else it returns true.&lt;/li&gt;
+  &lt;li&gt;Or similarly the opposite eg can be, To get true, we need to combine formulas of 2nd and 3rd row such that it returns true for 2nd and 3rd
+ row or else it returns false.&lt;/li&gt;
+  &lt;li&gt;Noting again, that, Each row formulae returns the required output only for that row else it return opposite output. We can use this fact to combine the 
+ these formulas.&lt;/li&gt;
+  &lt;li&gt;To get false only in the required rows, we can combine formulas giving false output by operator \( \land \), than if any of the formulae returns false we will get false.
+ Also this combined formula will return true for any other row. This is because all other rows are those rows where each of the formula
+ returns true.&lt;/li&gt;
+  &lt;li&gt;Similarly to get true only in the required rows, we can combine the formulas giving true output by operator \( \lor \), than if any of the formulae returns true we will get true.
+ Also this combined formula will return false for any other row because all other rows are those rows where each of the formulae returns false.&lt;/li&gt;
+  &lt;li&gt;Thus we can get the required results either by combining formulas returning true by operator \( \lor \) or combining formulas returning false by operator \( \land \).&lt;/li&gt;
+  &lt;li&gt;Thus we can get two formulas will be correct and both will be correct.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From the method outlined, we can see that we have following two formulas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\( (\lnot P \lor \lnot Q) \land (P \lor Q) \). This is the resulting formula to get false in 1st row formula \( (\lnot P \lor \lnot Q) \) and 4th row formula \( (P \lor Q) \) and combining them by \( \land \).&lt;/li&gt;
+  &lt;li&gt;\( (P \land \lnot Q) \lor (\lnot P \land Q) \). This is the resulting formula to get true in 2nd row formula \( ( P \land \lnot Q) \) and 3rd row formula \( (\lnot P \land Q) \) and combining them by \( \lor \).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lets create truth table for both formulas:&lt;/p&gt;
+
+&lt;p&gt;\( (\lnot P \lor \lnot Q) \land (P \lor Q) \) :&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( (\lnot P \lor \lnot Q) \)&lt;/th&gt;
+      &lt;th&gt;\( (P \lor Q) \)&lt;/th&gt;
+      &lt;th&gt;\( (\lnot P \lor \lnot Q) \land (P \lor Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;\( (P \land \lnot Q) \lor (\lnot P \land Q) \) :&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( ( P \land \lnot Q) \)&lt;/th&gt;
+      &lt;th&gt;\( (\lnot P \land Q) \)&lt;/th&gt;
+      &lt;th&gt;\( (P \land \lnot Q) \lor (\lnot P \land Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As can be seen above both formulas returns the same result.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We know that:&lt;/p&gt;
+
+&lt;p&gt;\( P \lor Q  = \lnot \lnot (P \lor Q) \)&lt;/p&gt;
+
+&lt;p&gt;Using Demorgans Law: \( P \lor Q  = \lnot (\lnot P \land \lnot Q) \)&lt;/p&gt;
+
+&lt;p&gt;Truth table for \( \lnot (\lnot P \land \lnot Q) \) :&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( (\lnot P \land \lnot Q) \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot (\lnot P \land \lnot Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As can be seen \( \lnot (\lnot P \land \lnot Q) \) is same as \( P \lor Q \).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \downarrow Q \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To find formula for \( P \downarrow Q \) we can use the method outlined in Soln3-b above.&lt;/p&gt;
+
+&lt;p&gt;We can get two formulas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\( (\lnot P \lor \lnot Q) \land (\lnot P \lor Q) \land (\lnot P \lor Q) \)&lt;/li&gt;
+  &lt;li&gt;\( \lnot P \land \lnot Q \)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It can be easily verified that \( \lnot P = P \downarrow P \) ….(i)&lt;/p&gt;
+
+&lt;p&gt;From &lt;em&gt;Soln5(b)&lt;/em&gt;, we have \( P \downarrow Q = \lnot P \land \lnot Q \).&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow P \land Q = \lnot P \downarrow \lnot Q \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow P \land Q = (P \downarrow P) \downarrow (Q \downarrow Q) \) …(ii)&lt;/p&gt;
+
+&lt;p&gt;Also, using Demorgans law on &lt;em&gt;Soln5(b)&lt;/em&gt;, \( \lnot P \land \lnot Q \) can be written as \( \lnot ( P \lor Q ) \).&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow P \downarrow Q = \lnot ( P \lor Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Or we can say,  \( P \lor Q = \lnot (P \downarrow Q) = (P \downarrow Q) \downarrow (P \downarrow Q) \) …..(ii)&lt;/p&gt;
+
+&lt;p&gt;Thus (i), (ii) and (iii) are the desired answers.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \vert Q \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To find formula for \( P \downarrow Q \) we can use the method outlined in Soln3-b above.&lt;/p&gt;
+
+&lt;p&gt;Also, we can directly see that ““P and Q are not both true.” is equivalent to \( \lnot (P \land Q) \).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It can be easily verified that \( \lnot P = P \vert P \) ….(i)&lt;/p&gt;
+
+&lt;p&gt;Now from part(b), \( P \vert Q = \lnot (P \land Q) \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow P \land Q = \lnot (P \vert Q) = (P \vert Q) \vert (P \vert Q) \) …(ii)&lt;/p&gt;
+
+&lt;p&gt;Again from part(b), \( P \vert Q = \lnot (P \land Q) = \lnot P \lor \lnot Q \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow P \lor Q = \lnot P \vert \lnot Q = (P \vert P) \vert (Q \vert Q) \) …(iii)&lt;/p&gt;
+
+&lt;p&gt;Thus (i), (ii) and (iii) are the desired answers.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( JM \)&lt;/th&gt;
+      &lt;th&gt;\( PM \)&lt;/th&gt;
+      &lt;th&gt;\( PC \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot (JM \land PM) \)&lt;/th&gt;
+      &lt;th&gt;\( PM \lor PC \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;When values corresponding to all premises are true, than conclusion is also true.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( B \)&lt;/th&gt;
+      &lt;th&gt;\( F \)&lt;/th&gt;
+      &lt;th&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( C \)&lt;/th&gt;
+      &lt;th&gt;\( B \lor F \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor C \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot (F \land C) \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot (B \land P) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It can be easily seen that when all premises are true, than also conclusion \( \lnot (B \land P) \) is not true.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( J \)&lt;/th&gt;
+      &lt;th&gt;\( B \)&lt;/th&gt;
+      &lt;th&gt;\( S \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot B \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot S \)&lt;/th&gt;
+      &lt;th&gt;\( J \lor \lnot B \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot S \lor \lnot B \)&lt;/th&gt;
+      &lt;th&gt;\( J \lor \lnot S \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus it can be easily verified when premises are true, than conclusions are also true.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( S \)&lt;/th&gt;
+      &lt;th&gt;\( E \)&lt;/th&gt;
+      &lt;th&gt;\( B \)&lt;/th&gt;
+      &lt;th&gt;\( S \land B \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot B \)&lt;/th&gt;
+      &lt;th&gt;\( E \land \lnot B \)&lt;/th&gt;
+      &lt;th&gt;\( (S \land B) \lor (E \land \lnot B) \)&lt;/th&gt;
+      &lt;th&gt;\( S \land E \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot(S \land E) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus argument is not valid because when premise is true, conclusion is not true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \land Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \land \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( (P \land Q) \lor (\lnot P \land \lnot Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \lor Q \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \lor Q \)&lt;/th&gt;
+      &lt;th&gt;\( (P \lor \lnot Q) \land (\lnot P \lor Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot (P \lor Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;(e)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( P \land Q \)&lt;/th&gt;
+      &lt;th&gt;\( (P \land Q) \lor \lnot P \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Clearly (a) and (c) are equivalent. Also (b) and (e) are equivalent. (d) is not equivalent to any.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Sol9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \lor \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( (P \lor Q) \land (\lnot P \lor \lnot Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus it is niether a tautology nor a contradiction.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \land \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( (P \lor Q) \land (\lnot P \land \lnot Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus it is a contradiction.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \lor \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( (P \lor Q) \lor (\lnot P \lor \lnot Q) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus it is a tautology.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( R \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot R \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \lor R \)&lt;/th&gt;
+      &lt;th&gt;\( Q \lor \lnot R \)&lt;/th&gt;
+      &lt;th&gt;\( P \land (Q \lor \lnot R) \)&lt;/th&gt;
+      &lt;th&gt;\( [P \land (Q \lor \lnot R)] \lor (\lnot P \lor R) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus it is also a tautology.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot (P \lor Q) \)&lt;/th&gt;
+      &lt;th&gt;\( \lnot P \land \lnot Q \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus \( \lnot (P \lor Q) \) is equivalent to \( \lnot P \land \lnot Q \).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( R \)&lt;/th&gt;
+      &lt;th&gt;\( Q \lor R \)&lt;/th&gt;
+      &lt;th&gt;\( P \land (Q \lor R) \)&lt;/th&gt;
+      &lt;th&gt;\( P \land Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \land R \)&lt;/th&gt;
+      &lt;th&gt;\( (P \land Q) \lor ( P \land R) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As can be seen in the table  \( P \land (Q \lor R) \) is equivalent to \( (P \land Q) \lor ( P \land R) \)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
+      &lt;th&gt;\( Q \)&lt;/th&gt;
+      &lt;th&gt;\( R \)&lt;/th&gt;
+      &lt;th&gt;\( Q \land R \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor (Q \land R) \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
+      &lt;th&gt;\( P \lor R \)&lt;/th&gt;
+      &lt;th&gt;\( (P \lor Q) \land ( P \lor R) \)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As can be seen in the table  \( P \lor (Q \land R) \) is equivalent to \( (P \lor Q) \land ( P \lor R) \).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\( \lnot (\lnot P \land \lnot Q) = \lnot \lnot P \lor \lnot \lnot Q = P \lor Q\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Using Distributive Law:&lt;/p&gt;
+
+&lt;p&gt;\( (P \land Q ) \lor (P \land \lnot Q) = ((P \land Q ) \lor P) \land ((P \land Q ) \lor \lnot Q) \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow (P \land Q \lor P) \land (P \land Q \lor \lnot Q) \)&lt;/p&gt;
+
+&lt;p&gt;Using Tautology \( A \lor \lnot A \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow (P \land Q \lor P) \land P \)&lt;/p&gt;
+
+&lt;p&gt;Using Absorption law:&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow  P \land P \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow  P \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\( \lnot(P \land \lnot Q) \lor (\lnot P \land Q) \)&lt;/p&gt;
+
+&lt;p&gt;Using Demorgans Law: \( (\lnot P \lor \lnot \lnot Q) \lor (\lnot P \land Q) \)&lt;/p&gt;
+
+&lt;p&gt;Double Negation Law: \( (\lnot P \lor Q) \lor (\lnot P \land Q) \)&lt;/p&gt;
+
+&lt;p&gt;Distribution Law: \( ((\lnot P \lor Q) \lor \lnot P) \land ((\lnot P \lor Q) \lor Q) \)&lt;/p&gt;
+
+&lt;p&gt;Associative Law: \( (\lnot P \lor Q \lor \lnot P) \land (\lnot P \lor Q \lor Q) \)&lt;/p&gt;
+
+&lt;p&gt;Using Idempotent Law: \( (\lnot P \lor Q \lor \lnot P) \land (\lnot P \lor Q) \)&lt;/p&gt;
+
+&lt;p&gt;Using associative, commutative and idempotent law: \( (\lnot P \lor Q) \land (\lnot P \lor Q) \)&lt;/p&gt;
+
+&lt;p&gt;Using Idempotent Law: \( \lnot P \lor Q \)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\( \lnot(\lnot P \lor Q) \lor (P \land \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Demorgans and double Negation Law: \( ( P \land \lnot Q) \lor (P \land \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Distributed Law: \( ( P \land \lnot Q \lor P) \land ( (P \land \lnot Q) \lor \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Absorption law: \(  P \land ( (P \land \lnot Q) \lor \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Distributive law: \( (P \land (P \land \lnot Q)) \lor (P \land \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Idempotent Law: \( (P \land \lnot Q) \lor (P \land \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\( \lnot (\lnot P \land Q) \lor (P \land \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Demorgans Law and Double Negation Law : \( ( P \lor \lnot Q) \lor (P \land \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Distributed Law : \( ( P \lor \lnot Q \lor P) \land ((P \lor \lnot Q) \lor \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Associative and Idempotent Law: \( ( P \lor \lnot Q ) \land ((P \lor \lnot Q) \lor \lnot R) \)&lt;/p&gt;
+
+&lt;p&gt;Using Absorption Law: \( P \lor \lnot Q \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\( ( P \land R ) \lor [ \lnot R \land ( P \lor Q ) ] \)&lt;/p&gt;
+
+&lt;p&gt;Using Distributed Law: \( ( P \land R ) \lor [ (\lnot R \land P) \lor ( \lnot R \land Q ) ] \)&lt;/p&gt;
+
+&lt;p&gt;Using Associative Law: \( [( P \land R ) \lor (\lnot R \land P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Using Distributive Law: \( [(( P \land R ) \lor \lnot R) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Using Distributive Law: \( [(( P \lor \lnot R) \land ( R \lor \lnot R )) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Using Tautology: \( [( P \lor \lnot R) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Using Absorption Law: \( [( P \lor \lnot R) \land P] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Using Distributive Law: \( [( P \land P) \lor ( P \land \lnot R)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Using Idempotent Law: \( [ P \lor ( P \land \lnot R)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;Using Absorption Law: \( [ P ] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow  P \lor ( \lnot R \land Q ) \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\( \lnot (P \land Q) = \lnot P \lor \lnot Q \).&lt;/p&gt;
+
+&lt;p&gt;Taking negation on both sides, \( \lnot \lnot (P \land Q) = \lnot (\lnot P \lor \lnot Q) \).&lt;/p&gt;
+
+&lt;p&gt;Using Double negation law, \( P \land Q = \lnot (\lnot P \lor \lnot Q) \).&lt;/p&gt;
+
+&lt;p&gt;Using \( P1 = !P, Q1 = !Q \), \( !P1 \land !Q1 = \lnot ( P1 \lor Q1) \).&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \lnot ( P1 \lor Q1) = !P1 \land !Q1 \). .. which is the required derivation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We have \( [P \land (Q \land R)] \land S \)&lt;/p&gt;
+
+&lt;p&gt;Using Associative law, \( [(P \land Q) \land R] \land S \)&lt;/p&gt;
+
+&lt;p&gt;Using Associative law, \( (P \land Q) \land [R \land S] \) which is same as was required.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Each letter doubles the number of lines. So total lines should be \( 2^n \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use same steps as in soln 3b:&lt;/p&gt;
+
+&lt;p&gt;We can have two formulas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\( P \lor \lnot Q \)&lt;/li&gt;
+  &lt;li&gt;\( (\lnot P \land \lnot Q) \lor (P \land \lnot Q) \lor (P \land Q) \).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use same steps as in soln 3b:&lt;/p&gt;
+
+&lt;p&gt;We can have two formulas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\( (P \lor Q) \land (\lnot P \lor \lnot Q) \).&lt;/li&gt;
+  &lt;li&gt;\( (\lnot P \land Q) \lor (P \land \lnot Q) \).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Son18&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the conclusion of an argument is a tautology. Than argument is always true. Because it all premises are true than conclusion is also true.
+Also if the case is that all premises are not true than also it will be a valid argument because argument is considered valid when conclusion is true if all premises are true.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If the conclusion is contradiction. Than we have two cases:
+    &lt;ul&gt;
+      &lt;li&gt;If premises are true, than argument is not valid.&lt;/li&gt;
+      &lt;li&gt;If premises are false, than argument is valid.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If one of the premise is a Tautology:
+    &lt;ul&gt;
+      &lt;li&gt;We are not sure of the other premises and also we dont know about the conclusion. Thus answer will depend on further datapoints.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If one of the premise is Contradiction:
+  -Than argument is always valid. Because argument is valid when conclusion is also true when all premises are true. In this case all
+   premises will never be true thus argument is always valid.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 16 Jul 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-2.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-2.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How To Prove It, Ch-1 Sec-1.1, Deductive Reasoning and Logical Connectives</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 1, Section - 1.1, Deductive Reasoning and Logical Connectives, from book &lt;strong&gt;How To Prove It&lt;/strong&gt;.
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Logical Operators \( \lor \land \lnot \)&lt;/li&gt;
+  &lt;li&gt;Argument - And argument is true if its conclusion is true given that all of the premises given are true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;solutions&quot;&gt;Solutions&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; We’ll have either a reading assignment or homework problems, but we
+won’t have both homework problems and a test.&lt;/p&gt;
+
+&lt;p&gt;\( R \) = Reading Assignment&lt;/p&gt;
+
+&lt;p&gt;\( H \) = Homework Problems&lt;/p&gt;
+
+&lt;p&gt;and \( T \) = Test&lt;/p&gt;
+
+&lt;p&gt;\( (R \lor H) \land \lnot (H \land T) \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; You won’t go skiing, or you will and there won’t be any snow.&lt;/p&gt;
+
+&lt;p&gt;\( SK \) = You go skiing&lt;/p&gt;
+
+&lt;p&gt;\( SW \) = Snow&lt;/p&gt;
+
+&lt;p&gt;\( \lnot SK \lor (SK \land \lnot SW) \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( \sqrt 7 \not\le 2 \)&lt;/p&gt;
+
+&lt;p&gt;\( \lnot ((\sqrt 7 \lt 2) \lor (\sqrt 7 = 2)) \)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Either John and Bill are both telling the truth, or neither of them is.&lt;/p&gt;
+
+&lt;p&gt;\( J \) = John telling truth&lt;/p&gt;
+
+&lt;p&gt;\( B \) = Bill telling truth&lt;/p&gt;
+
+&lt;p&gt;\( (J \land B) \lor \lnot (J \lor B) ) \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; I’ll have either fish or chicken, but I won’t have both fish and mashed
+potatoes.&lt;/p&gt;
+
+&lt;p&gt;\( F \) = I’ll have fish.&lt;/p&gt;
+
+&lt;p&gt;\( C \) = I’ll have fish.&lt;/p&gt;
+
+&lt;p&gt;\( M \) = I’ll have mashed potatoes.&lt;/p&gt;
+
+&lt;p&gt;\( (F \lor C) \land \lnot (F \land M) \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; 3 is a common divisor of 6, 9, and 15.&lt;/p&gt;
+
+&lt;p&gt;\( A \) = 3 is a divisor of 6.&lt;/p&gt;
+
+&lt;p&gt;\( B \) = 3 is a divisor of 9.&lt;/p&gt;
+
+&lt;p&gt;\( C \) = 3 is a divisor of 15.&lt;/p&gt;
+
+&lt;p&gt;\( A \land B \land C \)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;\( A \) = Alice is in the room.&lt;/p&gt;
+
+&lt;p&gt;\( B \) = Alice is in the room.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; \( \lnot (A \land B) \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; \( \lnot A \land \lnot B \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( \lnot A \lor \lnot B \)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; \( \lnot A \land \lnot B \)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;  This is well formed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; This is not well formed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; Well formed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Not Well formed.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;  \( \lnot (P \land \lnot S) \).&lt;/p&gt;
+
+&lt;p&gt;Lets first form sentence for \( (P \land \lnot S) \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) I will buy pants but I wont buy the shirts.&lt;/p&gt;
+
+&lt;p&gt;Thus, \( \lnot (P \land \lnot S) \) will be:&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) I will buy pants only when I buy the shirts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; \( \lnot P \land \lnot S \).&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) I will not buy the pants and I will not buy the shirts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( \lnot P \lor \lnot S \).&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Either I will not buy the pants or I will not buy the shirts.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; \( (S \lor G) \land (\lnot S \lor \lnot G) \).&lt;/p&gt;
+
+&lt;p&gt;Lets form sentence part by part.&lt;/p&gt;
+
+&lt;p&gt;\( (S \lor G) \Rightarrow \) Either Steve is happy or George is happy.&lt;/p&gt;
+
+&lt;p&gt;Thus above part will only be false when Steve and George both are not happy.&lt;/p&gt;
+
+&lt;p&gt;\( (\lnot S \lor \lnot G) \Rightarrow \) Either Steve is not happy or George is not happy.&lt;/p&gt;
+
+&lt;p&gt;This part will only be false when Steve and George both are happy.&lt;/p&gt;
+
+&lt;p&gt;Now combining both parts \( (S \lor G) \Rightarrow \) and \( (\lnot S \lor \lnot G) \Rightarrow \) with operator \( \land \)&lt;/p&gt;
+
+&lt;p&gt;Combined part will be true only when both parts are true. Or in other words it will be false when either of the parts from above is false.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Combined part will be &lt;strong&gt;false&lt;/strong&gt; only when - Steve and George both are not happy or Steve and George both are happy.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Combined part will be &lt;strong&gt;true&lt;/strong&gt; only when - One of Steve and George is happy and other is not happy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; \( [S \lor (G \land \lnot S)] \lor \lnot G \).&lt;/p&gt;
+
+&lt;p&gt;Lets form sentence part by part.&lt;/p&gt;
+
+&lt;p&gt;\( (G \land \lnot S) \Rightarrow \) George is happy but Steve is not happy.&lt;/p&gt;
+
+&lt;p&gt;\( [S \lor (G \land \lnot S)] \Rightarrow \) Either Steve is happy, or George is happy but Steve is not happy. Thus this
+part will be false only when Steve and George both are not happy. Or we can say if any of them is happy this part will be true.&lt;/p&gt;
+
+&lt;p&gt;Now moving to next part \( \lnot G \Rightarrow \) George is not happy.&lt;/p&gt;
+
+&lt;p&gt;Thus combining \( [S \lor (G \land \lnot S)] \) with \( \lnot G \) using operator \( \lor \):&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Either any of them is happy or George is not happy.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) In above sentence, first part will be false only when both are not happy but in that case seconds part will be true because 
+when both are not happy means George is not happy \( \Rightarrow \) sentence is true.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) This means if any of them is happy or not happy this part will be true.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Sentence becomes: Either one of Steve and George is happy or either one of them is not happy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( S \lor [G \land (\lnot S \lor \lnot G)] \).&lt;/p&gt;
+
+&lt;p&gt;Lets form sentence part by part.&lt;/p&gt;
+
+&lt;p&gt;\( (\lnot S \lor \lnot G) \Rightarrow \) Either Steve is not happy or George is not happy.&lt;/p&gt;
+
+&lt;p&gt;Now for \( [G \land (\lnot S \lor \lnot G)] \Rightarrow \) George is happy, and either Steve is not happy or george is not happy.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) For above sentence to be true George must be happy and Steve must be not happy. 
+\( \Rightarrow \) George is happy and Steve is not happy.&lt;/p&gt;
+
+&lt;p&gt;And \( S \Rightarrow \) Steve is happy.&lt;/p&gt;
+
+&lt;p&gt;Thus \( S \Rightarrow \) with \( [G \land (\lnot S \lor \lnot G)] \) using operator \( \lor \)&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Either Steve is happy, or George is happy and Steve is not happy.
+This will only be false when Steve and George both are not happy.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Thus if either of them is happy sentence will be true.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Either Steve is happy or George is happy.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln.7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Jane and Pete won’t both win the math prize. Pete will win either the math prize or the chemistry prize. 
+Jane will win the math prize. Therefore, Pete will win the chemistry prize.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jane and Pete won’t both win the math prize.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pete will win either the math prize or the chemistry prize.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jane will win the math prize.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pete will win the chemistry prize.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Combining (1) and (3) \( \Rightarrow \) Pete wont win the math prize. Combining this with (2) \( \Rightarrow \) Pete will win the chemistry prize.&lt;/p&gt;
+
+&lt;p&gt;Thus above reasoning is correct.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; The main course will be either beef or fish. The vegetable will be either peas or corn. We will not have both fish as a main course 
+and corn as a vegetable. Therefore, we will not have both beef as a main course and peas as a vegetable.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The main course will be either beef or fish.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The vegetable will be either peas or corn.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We will not have both fish as a main course and corn as a vegetable.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we will not have both beef as a main course and peas as a vegetable.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From (1), (2) and (3) It is possible to have beef as a main course and peas as a vegetable.&lt;/p&gt;
+
+&lt;p&gt;\( \Rightarrow \) Conclusion is not correct.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; Either John or Bill is telling the truth. Either Sam or Bill is lying. Therefore, either John is telling the truth or Sam is lying.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Either John or Bill is telling the truth.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Either Sam or Bill is lying.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Either John is telling the truth or Sam is lying.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It will be difficult to check conclusion by combining premises. Instead we may check when conclusion is true, than whether premise are also true:&lt;/p&gt;
+
+&lt;p&gt;Conclusion is true if either:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;John is telling truth:&lt;/p&gt;
+
+    &lt;p&gt;Combining this with (1) \( \Rightarrow \) (1) is correct and Bill may be telling truth or lying.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Now if Bill is telling the truth, than from (2) Sam must be lying. Thus no contradictions.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Else if Bill is lying than also (2) becomes correct without any contradictions.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sam is lying:&lt;/p&gt;
+
+    &lt;p&gt;Combining this with (2) \( \Rightarrow \) (2) is correct and Bill may be telling truth or lying.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Bill is lying. than from (1) John must be telling truth. Thus no contradictions.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Bill is telling truth. Than (1) becomes correct thus no contradictions.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy. 
+Therefore, sales and expenses will not both go up.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note there is only one premise here. Unlike from other parts of this question. It may appear “Either sales will go up and the boss will be happy”
+and “expenses will go up and the boss won’t be happy” are two premises but its only one premise.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sales and Expenses will not both go up.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lets check if Sales and Expenses both go up contradicts with premises. There can be two cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Boss is happy. \( \Rightarrow \) “Either sales will go up and the boss will be happy” is correct thus whole premise is correct.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Boss is not happy. \( \Rightarrow \) “Expenses will go up and the boss won’t be happy” is correct thus whole premise is correct.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From above, it is clear that Sales and Expenses can both go up. Thus the conclusion is not correct.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 16 Jul 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-1.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-1.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It - Introduction</title>
@@ -15,9 +2495,7 @@
 This post contains solutions for the introduction section of the book.
 &lt;!--more--&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ex.1(a)&lt;/strong&gt; Factor \( 2^{15} - 1 = 32,767 \) into a product of two smaller positive integers.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soln.1(a)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Using theorem:&lt;/em&gt;&lt;/p&gt;
 
@@ -29,15 +2507,13 @@ This post contains solutions for the introduction section of the book.
 
 &lt;p&gt;\( \Rightarrow x = 31, y = 1057 \)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ex.1(b)&lt;/strong&gt; Find an integer \( x \) such that \( 1 &amp;lt; x &amp;lt; 2^{32767} −1 \) and \( 2^{32767} −1 \) is divisible by \( x \).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soln.1(b)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;We can use the same theorem again. Now we have \( n = 32767 = 31 \times 1057 \). Taking \( b = 31 \) gives \( x = 2^b - 1 = 2^{31} - 1 = 2147483647 \)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ex.2&lt;/strong&gt; Make some conjectures about the values of n for which \( 3^n − 1 \) is prime or the values of \( n \) for which \( 3^n − 2^n \) is prime.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Soln.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soln.2&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Table for \( 3^n - 1\) :&lt;/p&gt;
 
@@ -259,13 +2735,9 @@ This post contains solutions for the introduction section of the book.
 
 &lt;p&gt;It can be observed that if \( n \) is not prime than \( 3^n - 2^n \) is also not prime. Also it is observed that \( 3^n - 2^n \) is prime only if \( n \) is prime.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ex.3&lt;/strong&gt; The proof of Theorem 3 gives a method for finding a prime number different from any in a given list of prime numbers.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;(a) Use this method to find a prime different from 2, 3, 5, and 7.&lt;/p&gt;
-
-&lt;p&gt;(b) Use this method to find a prime different from 2, 5, and 11.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Theorem 3 says:&lt;/p&gt;
 
@@ -295,9 +2767,9 @@ take a smaller set say \( 2, 3, 5 \) to find \( m = 2 \times 3 \times 5 + 1 = 31
 
 &lt;p&gt;Now taking only \( 2, 3 \) results \( m = 2 \times 3 + 1 = 7 \) which is also a prime number.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ex.4.&lt;/strong&gt; Find five consecutive integers that are not prime.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Soln&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;We may use following theorem here:&lt;/p&gt;
 
@@ -309,9 +2781,9 @@ take a smaller set say \( 2, 3, 5 \) to find \( m = 2 \times 3 \times 5 + 1 = 31
 
 &lt;p&gt;Putting \( n = 5 \Rightarrow x + i = 6! + 2 + i = 722 + i \) which gives us 722, 723, 724, 725, 726&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ex.5.&lt;/strong&gt; Use the table in Figure-1 and the discussion on p.5 to find two more perfect numbers.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Soln&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Table:&lt;/p&gt;
 
@@ -406,9 +2878,9 @@ take a smaller set say \( 2, 3, 5 \) to find \( m = 2 \times 3 \times 5 + 1 = 31
 
 &lt;p&gt;Similarly, for \( n = 5 \Rightarrow 2^{5-1} \cdot (2^5 - 1) \Rightarrow 16 \times 31 = 496 \).&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ex.6.&lt;/strong&gt; The sequence 3, 5, 7 is a list of three prime numbers such that each pair of adjacent numbers in the list differ by two. Are there any more such “triplet primes”?&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Soln&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;There are no more such prime triplets. From &lt;a href=&quot;https://en.wikipedia.org/wiki/Prime_triplet&quot;&gt;wiki&lt;/a&gt;:&lt;/p&gt;
 
