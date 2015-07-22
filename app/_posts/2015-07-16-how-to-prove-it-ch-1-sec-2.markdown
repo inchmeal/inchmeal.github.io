@@ -651,35 +651,34 @@ Each letter doubles the number of lines. So total lines should be \\( 2^n \\)
 We can use same steps as in soln 3b:
 
 We can have two formulas:
-
-   - \\( P \lor \lnot Q \\)
-   - \\( (\lnot P \land \lnot Q) \lor (P \land \lnot Q) \lor (P \land Q) \\).
+    - \\( P \lor \lnot Q \\)
+    - \\( (\lnot P \land \lnot Q) \lor (P \land \lnot Q) \lor (P \land Q) \\).
     
 **Soln17**
    
 We can use same steps as in soln 3b:
 
 We can have two formulas:
-
-   - \\( (P \lor Q) \land (\lnot P \lor \lnot Q) \\).
-   - \\( (\lnot P \land Q) \lor (P \land \lnot Q) \\).
+    - \\( (P \lor Q) \land (\lnot P \lor \lnot Q) \\).
+    - \\( (\lnot P \land Q) \lor (P \land \lnot Q) \\).
     
 **Son18**
     
-- If the conclusion of an argument is a tautology. Than argument is always true. Because it all premises are true than conclusion is also true.
-  Also if the case is that all premises are not true than also it will be a valid argument because argument is considered valid when conclusion is true if all premises are true.
+- If the conclusion of an argument is a tautology. The argument is always true. We have two cases:
+  - If all premises are true. In this case it is obvious that argument is valid. 
+  - All or some premises are not true then also argument will be valid. An argument is considered valid when all premises are true, 
+  then conclusion should also be true. Thus argument validation check does not apply when premises are not true. 
 
-- If the conclusion is contradiction. Than we have two cases:
-    - If premises are true, than argument is not valid.
-    - If premises are false, than argument is valid.
+- If the conclusion is contradiction. We have two cases:
+    - If premises are true, then argument is not valid.
+    - If premises are false, then argument is valid.
     
 - If one of the premise is a Tautology:
     - We are not sure of the other premises and also we dont know about the conclusion. Thus answer will depend on further datapoints.
 
 - If one of the premise is Contradiction:
-    -Than argument is always valid. Because argument is valid when conclusion is also true when all premises are true. In this case all
-     premises will never be true thus argument is always valid.
-     
+    -Than argument is always valid. An argument is valid when all premises are true and then conclusion is also true. In this case all
+     premises will never be true thus .
     
 
 
