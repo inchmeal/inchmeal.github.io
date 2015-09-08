@@ -3,7 +3,7 @@
 ---
 [
     {% for post in site.posts %}{
-      "id": "{{ forloop.index }}",
+      "id": {{ forloop.index }},
       "url": "{{ post.url }}",
       "title": "{{ post.title }}",
       "date": ["{{ post.date | date: "%Y" }}", "{{ post.date | date: "%B" }}", "{{ post.date | date: "%d" }}"],
