@@ -10,7 +10,7 @@ This post contains exercises of Chapter - 1, Section - 1.1, Deductive Reasoning 
 ### Summary
 
 - Logical Operators \\( \lor \land \lnot \\)
-- Argument - And argument is true if its conclusion is true given that all of the premises given are true.
+- Argument - An argument is true if its conclusion is true given that all of the premises given are true.
 
 <hr/>
 
