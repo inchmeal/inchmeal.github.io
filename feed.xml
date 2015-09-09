@@ -5,8 +5,8 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Sep 2015 04:17:43 +0530</pubDate>
-    <lastBuildDate>Wed, 09 Sep 2015 04:17:43 +0530</lastBuildDate>
+    <pubDate>Thu, 10 Sep 2015 04:51:50 +0530</pubDate>
+    <lastBuildDate>Thu, 10 Sep 2015 04:51:50 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -16,6 +16,299 @@
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Equivalances:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x P(x) = \exists x \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x P(x) = \forall x \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists ! x P(x)&lt;/script&gt; means P(x) is true for exactly one value of x. It is equivalent to   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists x (P(x) \land \lnot \exists y (P(y) \land \lnot (y = x)))&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Bounded Quantifiers:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x) = \exists x (x \in A \land P(x))&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall x \in A P(x) = \forall x (x \in A \to P(x))&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Similar to negation equivalances( in first point), Equivalences for Bounded Quantifiers:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x \in A P(x) = \exists x \in A \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \in A P(x) = \forall x \in A \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt; then:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x)&lt;/script&gt; is always false irrespective of P(x).&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall x \in A P(x)&lt;/script&gt; is true irrespective of P(x).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Universal Quantifiers distributes over conjunction i.e. &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)&lt;/script&gt;.
+But Universal Quantifiers does not distributes over interjection.&lt;/li&gt;
+  &lt;li&gt;Existential Quantifier distributes over interjection but does not distributes over conjunction.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall x (M(x) \to \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
+where &lt;script type=&quot;math/tex&quot;&gt;M(x)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is maths major,  &lt;br /&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;F(x,y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is a friend of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;,  &lt;br /&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;H(y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; needs help in homework.&lt;/p&gt;
+
+&lt;p&gt;Negation of the above statement:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\quad \lnot \forall x (M(x) \to \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot (M(x) \to \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot (\lnot M(x) \lor \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (\lnot \lnot M(x) \land \lnot \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( M(x) \land \forall y \lnot(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( M(x) \land \forall y (\lnot F(x, y) \lor \lnot H(y))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( M(x) \land \forall y ( F(x, y) \to \lnot H(y))&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;There exists a maths major and all of his friends don’t need help in their homework.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
+where &lt;script type=&quot;math/tex&quot;&gt;R(x,y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is the roommate of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;,  &lt;br /&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;L(y,z)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; likes &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Negation of the above statement:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot \exists y(R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y \lnot (R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (\lnot R(x,y) \lor \lnot \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z \lnot \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z L(y,z))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (R(x,y) \to \exists z L(y,z))&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;There exists someone whose all roommates likes atleast one person.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; Required statement is:   &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x ((x \in A \lor x \in B) \to (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot ((x \in A \lor x \in B) \to (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot (\lnot (x \in A \lor x \in B) \lor (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (\lnot \lnot (x \in A \lor x \in B) \land \lnot (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in A \lor x \in B) \land (x \notin C \lor x \in D))&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Required statement is:
+    &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \forall y[ y &gt; x \to \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot \forall y[ y &gt; x \to \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y \lnot [ y &gt; x \to \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y \lnot [ \lnot (y &gt; x) \lor \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y [ \lnot \lnot (y &gt; x) \land \lnot \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y [ (y &gt; x) \land \forall z \lnot(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y [ (y &gt; x) \land \forall z (z^2 + 5z \neq y)]&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\exists x (F(x) \land \lnot \exists y R(x,y))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Negation of above statement:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \exists x (F(x) \land \lnot \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot (F(x) \land \lnot \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (\lnot F(x) \lor \lnot \lnot \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (\lnot F(x) \lor \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ( F(x) \to \exists y R(x,y))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;F(x)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is a freshman.  &lt;br /&gt;
+ and &lt;script type=&quot;math/tex&quot;&gt;R(x,y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; are roommates.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Negation of above statement:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot (\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y))&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = (\lnot (\forall x \exists y L(x,y)) \lor  \lnot (\lnot \exists x \forall y L(x,y)))&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = (\exists x \lnot \exists y L(x,y)) \lor  \exists x \forall y L(x,y)&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = (\exists x \forall y \lnot L(x,y)) \lor  \exists x \forall y L(x,y)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Either there exists someone who does not like anyone or there exists someone who likes everyone.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall a \in A \exists b \in B (a \in C \leftrightarrow b \in C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is equivalent to:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Negation of the above statement:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot (\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall a \in A \exists b \in B (a \in C \to b \in C)  \lor \lnot \forall a \in A \exists b \in B (b \in C \to a \in C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \lnot \exists b \in B (a \in C \to b \in C)  \lor \exists a \in A \lnot \exists b \in B (b \in C \to a \in C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \forall b \in B \lnot (a \in C \to b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \in C \to a \in C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \forall b \in B \lnot (a \notin C \lor b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \notin C \lor a \in C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \forall b \in B (a \in C \land b \notin C)  \lor \exists a \in A \forall b \in B(b \in C \land a \notin C)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;There exists an a in A such that for all values of b in B, either a is in C and b is not in C, or a is not in C and b is in C.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Required statement is:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall y \gt 0 \exists x (ax^2 + bx + c = y)&lt;/script&gt;   &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\exists y \gt 0 \lnot \exists x (ax^2 + bx + c = y)&lt;/script&gt;   &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\exists y \gt 0 \forall x \lnot (ax^2 + bx + c = y)&lt;/script&gt;   &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\exists y \gt 0 \forall x (ax^2 + bx + c \neq y)&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; All possible values of x are 0,1,2,3,4,5,6. It can be easily verified that there exists a,b and c such that &lt;script type=&quot;math/tex&quot;&gt;a^2 + b^2 + c^2 = x&lt;/script&gt; for all possible values of x. Thus statement is True.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; False. x has two possible values 1 and 7.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; True. x has two values -1 and 9. But as x is Natural number. Thus only x has one posssible value 9.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; True. x = 9 and y = 9.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given: &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x P(x) = \forall x \lnot P(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;To Prove: &lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x P(x) = \exists x \lnot P(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Putting &lt;script type=&quot;math/tex&quot;&gt;P(x) = \lnot Q(x)&lt;/script&gt; in the given equivalence:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \lnot Q(x) = \forall x Q(x)&lt;/script&gt;  &lt;br /&gt;
+Taking negation on both sides:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\lnot \lnot \exists x \lnot Q(x) = \lnot \forall x Q(x)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists x \lnot Q(x) = \lnot \forall x Q(x)&lt;/script&gt;  &lt;br /&gt;
+Hence Proved.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To Prove: &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \in A P(x)&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x \in A \lnot P(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;LHS: &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \in A P(x)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \exists x (x \in A \land P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot (x \in A \land P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \notin A \lor \lnot P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in A \to \lnot P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \in A \lnot P(x)&lt;/script&gt; Hence Proved.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To Prove &lt;script type=&quot;math/tex&quot;&gt;\exists x(P(x) \lor Q(x))&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x) \lor \exists x Q(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Taking LHS: &lt;script type=&quot;math/tex&quot;&gt;\exists x(P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \lnot \exists x(P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x \lnot (P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x (\lnot P(x) \land \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot (\forall x \lnot P(x) \land \forall x \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x \lnot P(x) \lor \lnot \forall x \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot \lnot P(x) \lor \exists x \lnot \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x P(x) \lor \exists x Q(x))&lt;/script&gt; Hence Proved.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To Prove &lt;script type=&quot;math/tex&quot;&gt;\exists x (P(x) \to Q(x))&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \to \exists x Q(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Starting from LHS &lt;script type=&quot;math/tex&quot;&gt;\exists x (P(x) \to Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (\lnot P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot P(x) \lor \exists x Q(x)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x P(x) \lor \exists x Q(x)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x P(x) \to \exists x Q(x)&lt;/script&gt; Hence Proved.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To Prove: &lt;script type=&quot;math/tex&quot;&gt;(\forall x \in A P(x)) \land (\forall x \in B P(x))&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x \in (A \lor  B)P(x)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Starting from LHS:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(\forall x \in A P(x)) \land (\forall x \in B P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = (\forall x (x \in A \to P(x))) \land (\forall x (x \in B \to P(x)))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \in A \to P(x)) \land (x \in B \to P(x)))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \notin A \lor P(x)) \land (x \notin B \lor P(x)))&lt;/script&gt;  &lt;br /&gt;
+Applying reverse distributive law:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \notin A \land x \notin B) \lor P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((\lnot(x \in A \lor x \in B)) \lor P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \in A \lor x \in B) \to P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall (x \in A \lor x \in B) P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \in (A \lor B) P(x))&lt;/script&gt; Hence Proved.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Statement &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \lor Q(x))&lt;/script&gt; is &lt;em&gt;not&lt;/em&gt; equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \lor  \forall xQ(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Assigning &lt;script type=&quot;math/tex&quot;&gt;P(x) = true&lt;/script&gt;, if x is even.  &lt;br /&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;Q(x) = true&lt;/script&gt;, if x is odd.&lt;/p&gt;
+
+&lt;p&gt;Lets have Universe as all Natural Numbers.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \lor Q(x))&lt;/script&gt; is true as Every number is either even or odd.   &lt;br /&gt;
+But &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \lor  \forall xQ(x)&lt;/script&gt; is not true. A neither all numbers are even not all numbers are odd.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x) \lor \exists x \in B P(x)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (x \in A \land P(x)) \lor \exists x (x \in B \land P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in A \land P(x)) \lor (x \in B \land P(x)))&lt;/script&gt;  &lt;br /&gt;
+Using Law of distribution in reverse:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in A \lor x \in B) \land P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in (A \lor B)) \land P(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \in (A \lor B) P(x))&lt;/script&gt; Hence Proved.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x) \land \exists x \in B P(x)&lt;/script&gt; is not equivalent to &lt;script type=&quot;math/tex&quot;&gt;\exists x \in (A \land B) P(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;If A and B are disjoint set, then clearly RHS will be false as &lt;script type=&quot;math/tex&quot;&gt;A \land B = \phi&lt;/script&gt;. But even in this case 
+for some values of x LHS can be true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt; is equivalent to  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in A \to x \in B)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, &lt;script type=&quot;math/tex&quot;&gt;A \setminus B = \phi&lt;/script&gt;  &lt;br /&gt;
+No elements exist in the &lt;script type=&quot;math/tex&quot;&gt;A \setminus B&lt;/script&gt; set. Thus it is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x (x \in (A \setminus B))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \exists x (x \in A \land x \notin B)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot (x \in A \land x \notin B)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \notin A \lor x \in B)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in A \to x \in B)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus both are same.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; There is exactly one student who is taught by x.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; There exists atleast one teacher having exactly one student.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; There is exactly one teacher having at-least one student.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; There atleast exist one student having exactly one teacher.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(e)&lt;/strong&gt; There is only one teacher having only one student.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(f)&lt;/strong&gt; There is exactly one teacher having only one student.&lt;/p&gt;
+
+&lt;p&gt;Clearly (e) and (f) are same.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 </description>
         <pubDate>Wed, 09 Sep 2015 00:00:00 +0530</pubDate>
