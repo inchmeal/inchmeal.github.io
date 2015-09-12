@@ -5,9 +5,317 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Sep 2015 04:51:50 +0530</pubDate>
-    <lastBuildDate>Thu, 10 Sep 2015 04:51:50 +0530</lastBuildDate>
+    <pubDate>Sun, 13 Sep 2015 03:43:18 +0530</pubDate>
+    <lastBuildDate>Sun, 13 Sep 2015 03:43:18 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-2 Sec-2.3, More Operations on Sets</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 2, Section - 2.3, More Operations on Sets.
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sets can be defined in following ways:
+    &lt;ul&gt;
+      &lt;li&gt;Listing all elements of the set. Eg: &lt;script type=&quot;math/tex&quot;&gt;\{1, 2, 3, 4, 5\}, or \{1, 3, 5, 7, 9, 11, 13, 15, ... \}&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;Element-hood Test Notation: &lt;script type=&quot;math/tex&quot;&gt;\{ x\,\vert\,P(x) \}&lt;/script&gt;. Or sometimes replacing &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; by an expression eg: &lt;script type=&quot;math/tex&quot;&gt;\{ n^2\,\vert\,n \in \mathbb{N} \}&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;A set can also be defined using &lt;em&gt;indexed family&lt;/em&gt; notation. For eg: &lt;script type=&quot;math/tex&quot;&gt;P = \{p_i\,\vert\,i ∈ I\}&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;I = \{ i ∈ N\,\vert\,1 ≤ i ≤ 100 \}&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;An indexed family &lt;script type=&quot;math/tex&quot;&gt;A = \{x_i\,\vert\,i ∈ I\}&lt;/script&gt; can also be defined as &lt;script type=&quot;math/tex&quot;&gt;A = \{x\,\vert\,∃i ∈ I (x = xi )\}&lt;/script&gt;. 
+Thus &lt;script type=&quot;math/tex&quot;&gt;x ∈ \{x_i\,\vert\,i ∈ I \}&lt;/script&gt; means the same thing as &lt;script type=&quot;math/tex&quot;&gt;∃i ∈ I(x = x_i)&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Sets whose elements are all sets are called families of sets. Eg: &lt;script type=&quot;math/tex&quot;&gt;\mathcal{F} = \{ \{1,2\}, \{2,3,4\}, \{6,7,10\} \}&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Power Set: &lt;script type=&quot;math/tex&quot;&gt;\mathcal{P}(A) = \{x\,\vert\,x ⊆ A\}&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt;\mathcal{F}&lt;/script&gt; is a family of sets, then:
+    &lt;ul&gt;
+      &lt;li&gt;Intersection of all sets in &lt;script type=&quot;math/tex&quot;&gt;\mathcal{F} = \cap \mathcal{F} = \{x\,\vert\,∀A ∈ F(x ∈ A)\} = \{x\,\vert\,∀A(A ∈ F → x ∈ A)\}&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;Union of all sets in &lt;script type=&quot;math/tex&quot;&gt;\mathcal{F} = \cup \mathcal{F} = \{x\,\vert\,∃A ∈ F(x ∈ A)\} = \{x\,\vert\,∃A(A ∈ F \land x ∈ A)\}&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Some useful logical forms:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;x ∈ \{x_i\,\vert\,i ∈ I \}&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;∃i ∈ I(x = x_i)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;x ∈ \mathcal{P}(A)&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;x ⊆ A&lt;/script&gt; which is equivalent to &lt;script type=&quot;math/tex&quot;&gt;∀y(y ∈ x → y ∈ A)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;x ∈ ∩ \mathcal{F}&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;∀A ∈ \mathcal{F}(x ∈ A)&lt;/script&gt;, or equivalently,&lt;script type=&quot;math/tex&quot;&gt;∀A(A ∈ \mathcal{F} → x ∈ A)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;x ∈ ∪ \mathcal{F}&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;∃A ∈ \mathcal{F}(x ∈ A)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;An alternative notation of union or intersection. If &lt;script type=&quot;math/tex&quot;&gt;\mathcal{F} = \{A_i\,\vert\,i ∈ I\}&lt;/script&gt;, where each &lt;script type=&quot;math/tex&quot;&gt;A_i&lt;/script&gt; is a set. Then &lt;script type=&quot;math/tex&quot;&gt;∩ \mathcal{F}&lt;/script&gt; would be the set of all elements common to all the &lt;script type=&quot;math/tex&quot;&gt;A_i&lt;/script&gt;’s, for &lt;script type=&quot;math/tex&quot;&gt;i ∈ I&lt;/script&gt;, and this can also be written as &lt;script type=&quot;math/tex&quot;&gt;∩_{i∈I} A_i&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \subseteq \mathcal P(A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in \mathcal F \to x \in \mathcal P(A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in \mathcal F \to x \subseteq A&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in \mathcal F \to \forall y(y \in x \to y \in A))&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;A ⊆ \{ 2n+1\,\vert\,n ∈ \mathbb N \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ( x \in A \to x \in \{ 2n+1\,\vert\,n ∈ \mathbb N \} )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ( x \in A \to \exists n \in \mathbb N( x = 2n+1) )&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{n^2 + n + 1\,\vert\,n ∈ N \} ⊆ \{ 2n + 1\,\vert\,n ∈ \mathbb N \}&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ( x \in \{n^2 + n + 1\,\vert\,n ∈ \mathbb N \} \to x \in \{ 2n + 1\,\vert\,n ∈ \mathbb N \} )&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ( \exists n \in \mathbb N(x = n^2 + n + 1) \to \exists m \in \mathbb N (x = 2m + 1) )&lt;/script&gt;  &lt;br /&gt;
+This is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists n \in \mathbb N \exists m \in \mathbb N(n^2 + n + 1 = 2m + 1)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\mathcal P (∪_{i ∈ I} A_i) \subsetneq ∪_{i ∈ I} \mathcal P(A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( (x \in \mathcal P (∪_{i ∈ I} A_i)) \land  \lnot (x \in ∪_{i ∈ I} \mathcal P(A_i)))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( (x \subseteq ∪_{i ∈ I} A_i) \land \lnot (\exists i \in I(x \in \mathcal P(A_i))))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( \forall y(y \in x \to y \in ∪_{i ∈ I} A_i) \land \lnot (\exists i \in I(x \subseteq A_i)))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( \forall y(y \in x \to \exists i \in I(y \in A_i)) \land \forall i \in I \lnot(x \subseteq A_i))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( \forall y(y \in x \to \exists i \in I(y \in A_i)) \land \forall i \in I \lnot \forall y( y \in x \to y \in A_i))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( \forall y(y \in x \to \exists i \in I(y \in A_i)) \land \forall i \in I \exists y \lnot ( y \notin x \lor y \in A_i))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( \forall y(y \in x \to \exists i \in I(y \in A_i)) \land \forall i \in I \exists y ( y \in x \land y \notin A_i))&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;x ∈ ∪ \mathcal F \setminus ∪ \mathcal G&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x ∈ ∪ \mathcal F \land \lnot x \in ∪ \mathcal G&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists A \in \mathcal F(x \in A) \land \lnot \exists A \in \mathcal G(x \in A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists A \in \mathcal F(x \in A) \land \forall A \in \mathcal G \lnot(x \in A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists A \in \mathcal F(x \in A) \land \forall A \in \mathcal G(x \notin A)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ x \in B\,\vert\,x \notin C\} ∈ \mathcal P(A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \{ x \in B\,\vert\,x \notin C\} \subseteq A&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall y (y \in \{ x \in B\,\vert\,x \notin C\} \to y \in A )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall y ((y \in B \land y \notin C) \to y \in A )&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;x ∈ ∩_{i∈I}(A_i ∪ B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I(x \in (A_i ∪ B_i))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I(x \in A_i \lor x \in B_i)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;x ∈ (∩_{i ∈ I}A_i) ∪ (∩_{i ∈ I}B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x ∈ (∩_{i ∈ I}A_i) \lor x \in (∩_{i ∈ I}B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i ∈ I(x \in A_i) \lor \forall i ∈ I(x \in B_i)&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\mathcal P({\phi}) = \{ \phi, \{ \phi \} \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F = \{ \text{red, blue} \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = \{ \text{red, green, blue, orange, purple} \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F = \phi&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = \{ 3, 5, 7, 12, 16, 23 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given: &lt;script type=&quot;math/tex&quot;&gt;A_i = \{i, i + 1, i −1, 2i \}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;I = \{ 2, 3, 4, 5\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A_2 = \{2, 3, 1, 4 \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_3 = \{3, 4, 2, 6 \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_4 = \{4, 5, 3, 8 \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_5 = \{5, 6, 4, 10 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\cap_{i \in I} A = \{ 4 \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\cup_{i \in I} A = \{ 1, 2, 3, 4, 5, 6, 8, 10 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given: &lt;script type=&quot;math/tex&quot;&gt;A_i = \{i,2i\}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B_i = \{i, i+1 \}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;I = \{2, 3\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A_2 = \{ 2, 4\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_3 = \{ 3, 6\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;B_2 = \{ 2, 3\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;B_3 = \{ 3, 4\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;∩_{i∈I}(A_i ∪ B_i) = \{3, 4\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(∩_{i ∈ I}A_i) ∪ (∩_{i ∈ I}B_i) = \{3 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; No. The given statements are not equivalent.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;I = \{1, 2 \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_1 = \{2, 3 \}, \quad B_1 = \{2, 5\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_2 = \{3, 5 \}, \quad B_2 = \{7, 11\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A_1 \cup A_2 = \{ 2, 3, 5\}, \quad  B_1 \cup B_2 = \{ 2, 5, 7, 11\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(A_1 \cup A_2) \cap (B_1 \cup B_2) = \{ 2, 5 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A_1 \cap B_1 = \{ 2 \}, \quad A_2 \cap B_2 = \phi&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(A_1 \cap B_1) \cup  (A_2 \cap B_2) = \{ 2 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;(A_1 \cup A_2) \cap (B_1 \cup B_2) \neq (A_1 \cap B_1) \cup  (A_2 \cap B_2)&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x ∈ \mathcal P(A) ∩ \mathcal P (B)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x ∈ \mathcal P(A) \land x ∈ \mathcal P (B)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \subseteq A \land x \subseteq B&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall y (y \in x \to y \in A ) \land \forall y (y \in x \to y \in B )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall y \in x(y \in A) \land \forall y \in x(y \in B )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall y \in x(y \in A \land y \in B )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall y \in x(y \in (A \cap B))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \subseteq (A \cap B))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \to \mathcal P(A \cap B))&lt;/script&gt; Hence Proved.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;Taking A = \{1, 2\}&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;B = \{2, 3\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A \cup B = \{1, 2, 3\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) = \{\{1\}, \{2\}, \{1, 2\}, \phi \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mathcal P(B) = \{\{2\}, \{3\}, \{2, 3\}, \phi \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \cup \mathcal P(B) = \{\{1\}, \{2\}, \{3\}, \{1, 2\}, \{2, 3\}, \phi \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;And &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A \cup B) = \{\{1\}, \{2\}, \{3\}, \{1, 2\}, \{2, 3\}, \{1, 3\}, \{1, 2, 3\}, \phi \}&lt;/script&gt;  &lt;br /&gt;
+Clearly &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A \cup B) \neq \mathcal P(A) \cup \mathcal P(B)&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x \in ∪_{i ∈ I}(A_i ∪ B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists i \in I(x \in (A_i ∪ B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists i \in I(x \in A_i \lor x \in B_i)&lt;/script&gt;  &lt;br /&gt;
+Existential quantifier distributes over interjection:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists i \in I(x \in A_i) \lor \exists i \in I(x \in B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in ∪_{i∈I}A_i \lor x \in ∪_{i ∈ I}B_i&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in ((∪_{i∈I}A_i) \cup (∪_{i ∈ I}B_i))&lt;/script&gt;  &lt;br /&gt;
+This is equivalent to RHS.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x \in ( ∩ \mathcal F) ∩ ( ∩ \mathcal G)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in ( ∩ \mathcal F) \land x \in ( ∩ \mathcal G)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = (\forall A \in \mathcal F(x \in A)) \land (\forall A \in \mathcal G(x \in A))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A(A \in \mathcal F \to x \in A) \land \forall A(A \in \mathcal G \to x \in A)&lt;/script&gt;  &lt;br /&gt;
+Using reverse of, Universal Quantifier distributes over conjunction:
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A((A \in \mathcal F \to x \in A) \land (A \in \mathcal G \to x \in A))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A((A \notin \mathcal F \lor x \in A) \land (A \notin \mathcal G \lor x \in A))&lt;/script&gt;  &lt;br /&gt;
+Using inverse of law of distribution:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A((A \notin \mathcal F \land A \notin \mathcal G) \lor x \in A)&lt;/script&gt;  &lt;br /&gt;
+Using Demorgan’s Law:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A(\lnot(A \in \mathcal F \lor A \in \mathcal G) \lor x \in A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A((A \in \mathcal F \lor A \in \mathcal G) \to x \in A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A \in (\mathcal F \cup \mathcal G)(x \in A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in \cap(\mathcal F \cup \mathcal G)&lt;/script&gt;  &lt;br /&gt;
+= RHS.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x \in \cap_{i∈I}(A_i \setminus B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I(x \in (A_i \setminus B_i))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I((x \in A_i) \land \lnot (x \in  B_i))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I(x \in A_i) \land \forall i \in I (\lnot (x \in  B_i))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I(x \in A_i) \land \lnot \exists i \in I (x \in  B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in \cap_{i \in I}A_i) \land (\lnot  x \in \cup_{i \in I} B_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (\cap_{i \in I}A_i \setminus \cup_{i \in I} B_i)&lt;/script&gt;  &lt;br /&gt;
+= RHS.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given: &lt;script type=&quot;math/tex&quot;&gt;A_{i,j} = \{i, j,i + j\}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;I = \{1, 2\}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;J = \{3, 4\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;B_j = ∪_{i∈I} A_{i,j} = A_{1,j} ∪ A_{2,j}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;B_3 = A_{1,3} \cup A_{2,3} = \{1, 3, 4\} \cup \{2, 3, 5\} = \{1, 2, 3, 4, 5\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;B_4 = A_{1,4} \cup A_{2,4} = \{1, 4, 5\} \cup \{2, 4, 6\} = \{1, 2, 4, 5, 6\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Putting values from (a) : &lt;script type=&quot;math/tex&quot;&gt;B_3 \cap B_4 = \{1, 2, 4, 5\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To find &lt;script type=&quot;math/tex&quot;&gt;\cup{i ∈ I}(\cap_{j∈J} A_{i,j})&lt;/script&gt;, lets first compute &lt;script type=&quot;math/tex&quot;&gt;C_i = \cap_{j∈J} A_{i,j} = A_{i,3} \cap A_{i,4}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;C_1 = A_{1,3} \cap A_{1,4} = \{1, 3, 4\} \cap \{1, 4, 5\} = \{1, 4\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;C_2 = A_{2,3} \cap A_{2,4} = \{2, 3, 5\} \cap \{2, 4, 6\} = \{2\}&lt;/script&gt;  &lt;br /&gt;
+Thus we have:
+&lt;script type=&quot;math/tex&quot;&gt;\cup{i ∈ I}(\cap_{j∈J} A_{i,j}) = C_1 \cup C_2 = \{1, 2, 4\}&lt;/script&gt;  &lt;br /&gt;
+No, expression of (b) and (c) parts are not equal.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;LHS: &lt;script type=&quot;math/tex&quot;&gt;x ∈ \cap_{j \in J} (\cup_{i \in I} A_{i, j} )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall j \in J \exists i \in I(x \in A_{i, j})&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;RHS: &lt;script type=&quot;math/tex&quot;&gt;x ∈ \cup_{i \in I} (\cap_{j \in J} A_{i, j} )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists i \in I \forall j \in J(x \in A_{i, j})&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly LHS and RHS are not equal. We already saw this that if order of quantifiers are changed, expressions are also changed.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x ∈ \cup \mathcal F&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists A \in \mathcal F (x \in A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists A(A \in \mathcal F \land x \in A)&lt;/script&gt;  &lt;br /&gt;
+If &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \phi&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt; will always be false.  &lt;br /&gt;
+Thus whole statement will be false.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x ∈ \cup \phi = false&lt;/script&gt;, irrespective of the value of x.  &lt;br /&gt;
+which means &lt;script type=&quot;math/tex&quot;&gt;\cup \phi = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x ∈ \cap \mathcal F&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall A(A \in \mathcal F \to x \in A)&lt;/script&gt;      &lt;br /&gt;
+If &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \phi&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt; will always be false.  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F \to x \in A&lt;/script&gt; will always be true.  &lt;br /&gt;
+That means &lt;script type=&quot;math/tex&quot;&gt;x ∈ \cap \mathcal \phi = true&lt;/script&gt;, irrespective of the value of x.  &lt;br /&gt;
+That means &lt;script type=&quot;math/tex&quot;&gt;\cap \phi = U&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;According to the definition, R is the set of all sets that does not contains themselves.&lt;/li&gt;
+  &lt;li&gt;R itself should also be a set that does not contain itself, as if it contains itself it will contradict its own definition.&lt;/li&gt;
+  &lt;li&gt;Now if R does not contain itself, then again it contradicts with its definition which says it is a set that contains all the sets that does not contain themselves.&lt;/li&gt;
+  &lt;li&gt;Thus such set R can not exist.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; It follows that there is no universal set of sets.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 10 Sep 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/09/10/how-to-prove-it-ch-2-sec-3.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/09/10/how-to-prove-it-ch-2-sec-3.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-2 Sec-2.2, Equivalences Involving Quantifiers</title>
@@ -4591,31 +4899,6 @@ This resulted in installing all backend libraries(like lunr) using npm and front
         <category>lunr</category>
         
         <category>foundation</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Continuing the tradition, Hello World!!</title>
-        <description>&lt;p&gt;After procrastinating for so long, I am finally here to start blogging. I shall be using this space for learning and sharing ideas on programming, machine-learning and mathematics. Occasionally I will be sharing my views on life, philosophy or anything that interests me.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;p&gt;I believe in self education as the best form of learning.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Self-education is, I firmly believe, the only kind of education there is.
-&lt;cite&gt;Isaac Asmov&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Hoping to keep myself motivated on the path of continuous learning by sharing my experiences here.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Hello World!!&lt;/em&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 12 Jul 2015 00:00:00 +0530</pubDate>
-        <link>https://inchmeal.github.io/2015/07/12/continuing-the-tradition.html</link>
-        <guid isPermaLink="true">https://inchmeal.github.io/2015/07/12/continuing-the-tradition.html</guid>
-        
-        <category>blogging</category>
         
         
       </item>
