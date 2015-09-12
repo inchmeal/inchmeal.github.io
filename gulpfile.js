@@ -308,7 +308,8 @@ gulp.task('build:production', function(callback) {
     'css:production',
     'js:production',
     'images:production',
-    'fonts:production'
+    'fonts:production',
+    'copynojekyll:production'
   ],
   callback);
 });
@@ -376,22 +377,28 @@ gulp.task('index:production', function(callback){
    callback);
  });
 
+/**
+ * Copy .nojekyll file to production folder
+ */
+gulp.task('copynojekyll:production', function(){
+  gulp.src('app/.nojekyll')
+      .pipe(gulp.dest('build/production'));
+});
+
+
 /*******************************************************************************
  *
  * Code for deployment to github-pages
  *
  *******************************************************************************
  */
-
- gulp.task('deploy', ['build:production'], function(){
-   gulp.src('app/.nojekyll')
-   .pipe(gulp.dest('build/production'));
+gulp.task('deploy', ['build:production'], function(){
 
    var options = {
      "remoteUrl": "https://github.com/inchmeal/inchmeal.github.io",
      "branch": "master"
    }
 
-   return gulp.src('build/production/**/*')
+   return gulp.src('build/production/**/*', {'dot': true})
       .pipe(githubPages(options));
  });
