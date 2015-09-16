@@ -5,8 +5,8 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Sep 2015 04:40:58 +0530</pubDate>
-    <lastBuildDate>Sun, 13 Sep 2015 04:40:58 +0530</lastBuildDate>
+    <pubDate>Wed, 16 Sep 2015 21:38:28 +0530</pubDate>
+    <lastBuildDate>Wed, 16 Sep 2015 21:38:28 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -18,6 +18,342 @@
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A &lt;a href=&quot;https://en.wikipedia.org/wiki/Theorem.&quot;&gt;theorem&lt;/a&gt; is a statement that has been proven on the basis of previously established statements, such as other theorems—and generally accepted statements, such as axioms.&lt;/li&gt;
+  &lt;li&gt;A theorem that says that if certain assumptions called the hypotheses of the theorem are true, then some conclusion must also be true.&lt;/li&gt;
+  &lt;li&gt;The hypothesis and conclusion of a theorem often contains free variables. When values are substituted/assigned for these variables, it is called an instance of the theorem.&lt;/li&gt;
+  &lt;li&gt;A proof of a theorem is simply a deductive argument whose premises are the hypotheses of the theorem and whose conclusion is the conclusion of the theorem.&lt;/li&gt;
+  &lt;li&gt;To prove a conclusion of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;, there can be two strategies:
+    &lt;ul&gt;
+      &lt;li&gt;Assuming &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is true, Prove &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;. In this way this strategy transformed the problem  of proving &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt; to proving &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;. After this transformation, &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is now the part of the hypothesis.&lt;/li&gt;
+      &lt;li&gt;Prove contra-positive: assuming &lt;script type=&quot;math/tex&quot;&gt;\lnot Q&lt;/script&gt; is true, prove &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;. Similarly here also problem is transformed from proving  &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt; to proving &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Thus multiple transformations can be applied to convert the problem to simpler one.&lt;/li&gt;
+  &lt;li&gt;At any point of the proof:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;givens&lt;/em&gt; are the set of statements that are known or assumed to be true till that point.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;goal&lt;/em&gt; is the final statement that remains to be proven.&lt;/li&gt;
+      &lt;li&gt;Thus at the start of a proof, givens will be the initial hypothesis and goal will be the final conclusion.&lt;/li&gt;
+      &lt;li&gt;In the course of the proof, the list of hypothesis will increase(during transformation).&lt;/li&gt;
+      &lt;li&gt;Similarly, conclusion will change during the course of the proof.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In writing final proof:
+    &lt;ul&gt;
+      &lt;li&gt;Reasoning used for figuring the the proof are not used/written.&lt;/li&gt;
+      &lt;li&gt;Steps to justify the conclusions are used/written but no explanations on how the steps were thought of.&lt;/li&gt;
+      &lt;li&gt;Similarly &lt;em&gt;Goals&lt;/em&gt; and &lt;em&gt;Givens&lt;/em&gt; are also not part of the final proof.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Explanations are avoided in proofs to maintains the distinction between:
+    &lt;ul&gt;
+      &lt;li&gt;Explanation of thought process.&lt;/li&gt;
+      &lt;li&gt;Justifying the conclusions.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Thus proof of the goal &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt; will look as follows:
+    &lt;ul&gt;
+      &lt;li&gt;Given: ,   &lt;br /&gt;
+Goal &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;Using strategy-1:
+        &lt;ul&gt;
+          &lt;li&gt;Scratch work will look as:  &lt;br /&gt;
+  Given: &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; ,  &lt;br /&gt;
+  Goal &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;.&lt;/li&gt;
+          &lt;li&gt;Final proof will look as:  &lt;br /&gt;
+ Suppose &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is true.  &lt;br /&gt;
+ [Proof of &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; ]  &lt;br /&gt;
+ Therefore &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Using strategy-2:
+        &lt;ul&gt;
+          &lt;li&gt;Scratch work will look as:  &lt;br /&gt;
+  Given: &lt;script type=&quot;math/tex&quot;&gt;\lnot Q&lt;/script&gt; ,  &lt;br /&gt;
+  Goal &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;.&lt;/li&gt;
+          &lt;li&gt;Final proof will look as:
+ Suppose &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is false.  &lt;br /&gt;
+ [Proof of &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt; ]  &lt;br /&gt;
+ Therefore &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hypothesis:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an integer and &lt;script type=&quot;math/tex&quot;&gt;n &gt; 1&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is not prime.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Conclusion:  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;2^n - 1&lt;/script&gt; is not prime.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For &lt;script type=&quot;math/tex&quot;&gt;n = 6&lt;/script&gt;, hypothesis is true.&lt;/li&gt;
+  &lt;li&gt;Conclusion is &lt;script type=&quot;math/tex&quot;&gt;2^6 - 1 = 63&lt;/script&gt; is not prime. This is also true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For &lt;script type=&quot;math/tex&quot;&gt;n = 15&lt;/script&gt;, hypothesis is true.&lt;/li&gt;
+  &lt;li&gt;Conclusion is &lt;script type=&quot;math/tex&quot;&gt;2^{15} - 1 = 32767&lt;/script&gt; is not prime. This is also true: &lt;script type=&quot;math/tex&quot;&gt;32767 = 7 * 4681&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For &lt;script type=&quot;math/tex&quot;&gt;n = 11&lt;/script&gt;, hypothesis is &lt;em&gt;not&lt;/em&gt; true.&lt;/li&gt;
+  &lt;li&gt;Thus theorem does not say anything.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hypothesis: &lt;script type=&quot;math/tex&quot;&gt;b^2 &gt; 4ac&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Conclusion: &lt;script type=&quot;math/tex&quot;&gt;ax^2 + bx + c = 0&lt;/script&gt; has exactly 2 solutions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;a,\,b,\, c&lt;/script&gt; are free variables. &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is not a free variable.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; Substituting the values: &lt;script type=&quot;math/tex&quot;&gt;(-5)^2 &gt; 4 \times 2 \times 3&lt;/script&gt; gives &lt;script type=&quot;math/tex&quot;&gt;25 &gt; 24&lt;/script&gt;. This is true. Thus hypothesis is true.&lt;/p&gt;
+
+&lt;p&gt;Conclusion is &lt;script type=&quot;math/tex&quot;&gt;2x^2 -5x + 3 = 0&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = 2x^2 -3x -2x + 3 = 0&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x(2x - 3) -3(x - 1) = 0&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = (2x - 3)(x - 1) = 0&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus $ x = 1&lt;script type=&quot;math/tex&quot;&gt;and&lt;/script&gt; x = 3/2 $$ are two solutions. That means conclusion is also correct.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Substituting the values: &lt;script type=&quot;math/tex&quot;&gt;(4)^2 &gt; 4 \times 2 \times 3&lt;/script&gt; gives &lt;script type=&quot;math/tex&quot;&gt;16 &gt; 24&lt;/script&gt;. This is false. Thus hypothesis is false.  &lt;br /&gt;
+Theorem does not say anything as hypothesis is not true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hypothesis:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is a natural number and &lt;script type=&quot;math/tex&quot;&gt;n &gt; 2&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is not prime.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Conclusion:  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;2n + 13&lt;/script&gt; is not prime.&lt;/p&gt;
+
+&lt;p&gt;For &lt;script type=&quot;math/tex&quot;&gt;n = 9&lt;/script&gt;, Hypothesis is true. Conclusion: &lt;script type=&quot;math/tex&quot;&gt;2 \times 9 + 13 = 31&lt;/script&gt;, which is a prime number. Thus conclusion is not true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; a &lt; b %]]&gt;&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;b−a &gt; 0&lt;/script&gt;.  &lt;br /&gt;
+Also &lt;script type=&quot;math/tex&quot;&gt;a + b &gt; 0&lt;/script&gt;. Multiplying &lt;script type=&quot;math/tex&quot;&gt;b−a &gt; 0&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;b + a&lt;/script&gt;  &lt;br /&gt;
+We get &lt;script type=&quot;math/tex&quot;&gt;(b-a)(b+a) &gt; 0&lt;/script&gt;. Which gives:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;b^2 - a^2 &gt; 0&lt;/script&gt;.  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;b^2 − a^2 &gt; 0&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a^2 &lt; b^2 %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;if &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a &lt; b &lt; 0 %]]&gt;&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;b - a &gt; 0&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+b + a &lt; 0 %]]&gt;&lt;/script&gt;   &lt;br /&gt;
+Thus, the product &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(b-a)(b+a) &lt; 0 %]]&gt;&lt;/script&gt; because product of a positive and negative number is negative.  &lt;br /&gt;
+Expanding the product, we get &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+b^2 - a^2 &lt; 0 %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+Now since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+b^2 - a^2 &lt; 0 %]]&gt;&lt;/script&gt;, It follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+b^2 &lt; a^2 %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;if &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; a &lt; b %]]&gt;&lt;/script&gt;, Multiplying both sides by positive number &lt;script type=&quot;math/tex&quot;&gt;\frac 1 {ab}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\quad = \frac a {ab} &lt; \frac b {ab} %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\quad = \frac 1 b &lt; \frac 1 a %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a^3 &gt; a&lt;/script&gt;. Subtracting &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; from both sides:  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad a^3 - a &gt; 0&lt;/script&gt;.  &lt;br /&gt;
+ Multiplying by &lt;script type=&quot;math/tex&quot;&gt;a^2 + 1&lt;/script&gt; on both sides:  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = (a^3 - a)(a^2 + 1) &gt; 0&lt;/script&gt; &lt;br /&gt;
+ Simplifying:  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = a^5 - a^3 + a^3 - a &gt; 0&lt;/script&gt;    &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = a^5 - a &gt; 0&lt;/script&gt;  &lt;br /&gt;
+ Thus we have: &lt;script type=&quot;math/tex&quot;&gt;a^5 &gt; a&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We are given that &lt;script type=&quot;math/tex&quot;&gt;A \setminus B \subseteq C \cap D&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;.  &lt;br /&gt;
+Thus we have &lt;script type=&quot;math/tex&quot;&gt;\forall y (y \in A \land y \notin B) \to (y in C \land y \in D)&lt;/script&gt;  &lt;br /&gt;
+For &lt;script type=&quot;math/tex&quot;&gt;y = x&lt;/script&gt;, we have:  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B \to (x \in C \land x \in D)&lt;/script&gt;    &lt;br /&gt;
+As &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and suppose &lt;script type=&quot;math/tex&quot;&gt;x \notin D&lt;/script&gt;, then we get:  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;true \land x \notin B \to (x \in C \land false)&lt;/script&gt;  &lt;br /&gt;
+ Simplifying:  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;x \notin B \to false&lt;/script&gt;  &lt;br /&gt;
+ It follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin B = false&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a &lt; b %]]&gt;&lt;/script&gt;, then adding &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; to both sides:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a + b &lt; b + b %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\quad = a + b &lt; 2b %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+Dividing both sides by 2:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\frac {a+b} 2 &lt; b %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We shall prove it by proving contra-positive.  &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;x = 8&lt;/script&gt;, we get  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\frac {\sqrt[3]{8} + 5} {8^2 + 6} = \frac 1 8&lt;/script&gt;  &lt;br /&gt;
+Simplifying:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad \frac {7} {70} = \frac 1 8&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad \frac {1} {10} = \frac 1 8&lt;/script&gt;  &lt;br /&gt;
+Clearly which is not correct. Thus if &lt;script type=&quot;math/tex&quot;&gt;x = 8&lt;/script&gt;, then  &lt;script type=&quot;math/tex&quot;&gt;\frac {\sqrt[3]{x} + 5} {8^2 + 6} \neq \frac 1 x&lt;/script&gt;  &lt;br /&gt;
+Thus if &lt;script type=&quot;math/tex&quot;&gt;\frac {\sqrt[3]{x} + 5} {8^2 + 6} = \frac 1 x&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \neq 8&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We shall prove this using contra-positive.
+Given that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; a &lt; b %]]&gt;&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;d &gt; 0&lt;/script&gt;  &lt;br /&gt;
+Multiplying &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a &lt; b %]]&gt;&lt;/script&gt;, by &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; on both sides: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ad &lt; bd %]]&gt;&lt;/script&gt; &lt;br /&gt;
+Suppose that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+c &lt;= d %]]&gt;&lt;/script&gt;, Multiplying both sides by &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; gives: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ac &lt;= ad %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+Thus we have &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ad &lt; bd %]]&gt;&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ac &lt;= ad %]]&gt;&lt;/script&gt;, which gives &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ac &lt;= ad &lt; bd %]]&gt;&lt;/script&gt; &lt;br /&gt;
+Or we can say that: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ac &lt; bd %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we proved that if &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+c &lt;= d %]]&gt;&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ac &lt; bd %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+It follows that if &lt;script type=&quot;math/tex&quot;&gt;ac &gt;= bd&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;c &gt; d&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x &gt; 1&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;3x &gt; 3&lt;/script&gt;  &lt;br /&gt;
+Adding 2 on both sides:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;3x + 2 &gt; 5&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;2 &gt; 5 - 3x&lt;/script&gt;, which is same as &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+5 - 3x &lt; 2 %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, given that &lt;script type=&quot;math/tex&quot;&gt;3x + 2y \le 5&lt;/script&gt;  &lt;br /&gt;
+Subtracting 3x from both sides:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;2y \le 5 - 3x&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+2y \le 5 - 3x &lt; 2 %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+Simplifying:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+2y &lt; 2 %]]&gt;&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+y &lt; 1 %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;x^2 + y = −3&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;2x − y = 2&lt;/script&gt;  &lt;br /&gt;
+Adding both:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;x^2 + y + 2x - y = -3 + 2&lt;/script&gt;  &lt;br /&gt;
+Simplifying:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;x^2 + 2x + 1 = 0&lt;/script&gt;  &lt;br /&gt;
+Or &lt;script type=&quot;math/tex&quot;&gt;{(x+1)}^2 = 0&lt;/script&gt;  &lt;br /&gt;
+which means &lt;script type=&quot;math/tex&quot;&gt;x = -1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;x &gt; 3&lt;/script&gt;  &lt;br /&gt;
+As &lt;script type=&quot;math/tex&quot;&gt;x &gt; 0&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;3 &gt; 0&lt;/script&gt;, we can apply the theorem: If &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; a &lt; b %]]&gt;&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a^2 &lt; b^2 %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+Thus we have &lt;script type=&quot;math/tex&quot;&gt;x^2 &gt; 9&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, it is givem that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+y &lt; 2 %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+Multiplying both sides by -2, and reverting the sign of inequality:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;-2y &gt; -4&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Adding both inequalities: 
+&lt;script type=&quot;math/tex&quot;&gt;x^2 - 2y &gt; 9 - 4&lt;/script&gt;  &lt;br /&gt;
+Or &lt;script type=&quot;math/tex&quot;&gt;x^2 - 2y &gt; 5&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The proof is for: if &lt;script type=&quot;math/tex&quot;&gt;x = 7&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\frac {2x-5} {x -4} = 3&lt;/script&gt;  &lt;br /&gt;
+while the required proof was for: if &lt;script type=&quot;math/tex&quot;&gt;\frac {2x-5} {x -4} = 3&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x = 7&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;\frac {2x-5} {x -4} = 3&lt;/script&gt;  &lt;br /&gt;
+Cross multiplying:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;2x - 5 = 3x - 12&lt;/script&gt;  &lt;br /&gt;
+Simplifying:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;x = 7&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The issue is that value of &lt;script type=&quot;math/tex&quot;&gt;x = -3&lt;/script&gt; is not taken into consideration. As for this value &lt;script type=&quot;math/tex&quot;&gt;x^2 = 9&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If x = -3, then the equation gives &lt;script type=&quot;math/tex&quot;&gt;y = 1&lt;/script&gt;, thus theorem is not correct as it says if &lt;script type=&quot;math/tex&quot;&gt;x \ne 3&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;y = 0&lt;/script&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 14 Sep 2015 00:00:00 +0530</pubDate>
