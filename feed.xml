@@ -5,9 +5,340 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Sep 2015 11:24:17 +0530</pubDate>
-    <lastBuildDate>Sun, 20 Sep 2015 11:24:17 +0530</lastBuildDate>
+    <pubDate>Wed, 23 Sep 2015 17:39:50 +0530</pubDate>
+    <lastBuildDate>Wed, 23 Sep 2015 17:39:50 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-3 Sec-3.3, Proofs Involving Quantifiers</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 3, Section - 3.3, Proofs Involving Quantifiers.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To prove a goal of the form &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Let &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; stand for an arbitrary object and prove &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt;. If x is already being used in the proof for something, then choose an unused variable, say &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;, for the arbitrary object, and prove &lt;script type=&quot;math/tex&quot;&gt;P(y)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;Scratch work will look as:  &lt;br /&gt;
+Given:  &lt;br /&gt;
+Goal: &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;  &lt;br /&gt;
+It will be transformed to:   &lt;br /&gt;
+Given:  &lt;br /&gt;
+Goal: &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;Formal proof will look as:  &lt;br /&gt;
+Let x be arbitrary.  &lt;br /&gt;
+[Proof of &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; goes here.]  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; was arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\forall x P (x)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To prove a goal of the form &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Try to find a value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; for which &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; will be true. Then start
+the proof with “Let x = (the value decided)” and proceed to prove &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; for this value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;Scratch work will look as:  &lt;br /&gt;
+Given:  &lt;br /&gt;
+Goal: &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;  &lt;br /&gt;
+It will be transformed to:   &lt;br /&gt;
+Given:  &lt;br /&gt;
+Goal: &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; &lt;br /&gt;
+ x = (the value decided)&lt;/li&gt;
+      &lt;li&gt;Formal proof will look as:  &lt;br /&gt;
+Let x = (the value decided).  &lt;br /&gt;
+[Proof of &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; goes here.]  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;\exists x P (x)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To use a given of the form &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Introduce a new variable, say &lt;script type=&quot;math/tex&quot;&gt;x_0&lt;/script&gt;, into the proof for which &lt;script type=&quot;math/tex&quot;&gt;P(x_0)&lt;/script&gt; is true. Thus it can be assumed that P(x_0) is true. 
+This rule of inference is called &lt;em&gt;existential instantiation&lt;/em&gt;.&lt;/li&gt;
+      &lt;li&gt;Using a given of the form &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt; is very different from proving a goal of the form &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;, because when using a given of the form &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;, there is no choosing for the value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To use a given of the form &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Plug in any value, say a, for x and use this given to conclude that P(a) is true. This rule is called &lt;em&gt;universal instantiation&lt;/em&gt;.&lt;/li&gt;
+      &lt;li&gt;It will be useful for cases when particular value, say &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;, of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is already known or considered and thus it can be assumed that &lt;script type=&quot;math/tex&quot;&gt;P(a)&lt;/script&gt; is true.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\exists x(P(x) \to Q(x))&lt;/script&gt; is true at &lt;script type=&quot;math/tex&quot;&gt;x = x_0&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;P(x_0) \to Q(x_0)&lt;/script&gt;. 
+Suppose &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;P(x_0)&lt;/script&gt; is true. Since  &lt;script type=&quot;math/tex&quot;&gt;P(x_0) \to Q(x_0)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;P(x_0)&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;Q(x_0)&lt;/script&gt; is true. Thus &lt;script type=&quot;math/tex&quot;&gt;\exists x Q(x)&lt;/script&gt; is true.
+If follows that &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \to \exists Q(x)&lt;/script&gt; is true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary and &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; 
+and &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;, 
+it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap (B \setminus C))&lt;/script&gt;. But &lt;script type=&quot;math/tex&quot;&gt;A \cap (B \setminus C) = \phi&lt;/script&gt;. Thus the assumption &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt; is not correct.
+It follows that if &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. As &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we have &lt;script type=&quot;math/tex&quot;&gt;A \cap B \subseteq C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq (B \setminus C)&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;. This contradicts the assumptions that &lt;script type=&quot;math/tex&quot;&gt;x \in A cap C&lt;/script&gt;. 
+As &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is artibrary, &lt;script type=&quot;math/tex&quot;&gt;A \cap C = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A)&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A&lt;/script&gt;. Since it is given that &lt;script type=&quot;math/tex&quot;&gt;A \subseteq \mathcal P(A)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq \mathcal P(A)&lt;/script&gt;. 
+Thus if &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A)&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P ( \mathcal P(A))&lt;/script&gt;. As &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we get &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \subseteq \mathcal P( \mathcal P(A) )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Empty set: &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; No. there is no other such set.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y = \frac {2x + 1} {x - 1}&lt;/script&gt;. Putting the value of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;\frac {y+1}{y-2}&lt;/script&gt;. We get:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\quad = \frac {\frac {2x + 1} {x-1} + 1 } {\frac {2x + 1} {x-1} - 2}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\quad = \frac {2x + 1 + x - 1 } {2x + 1 - 2x + 2}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\quad = \frac {3x} {3}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\quad = x&lt;/script&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;\exists y (\frac {y+1}{y-2} = x)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;\frac {y+1}{y-2} = x&lt;/script&gt;. Solving this for &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;, we get &lt;script type=&quot;math/tex&quot;&gt;y = \frac {2x + 1} {x - 1}&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is a real number, then &lt;script type=&quot;math/tex&quot;&gt;\frac {2x + 1} {x - 1}&lt;/script&gt; is real. Thus &lt;script type=&quot;math/tex&quot;&gt;x \neq 1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x &gt; 2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y = \frac {x + \sqrt {x^2 - 4}} {2}&lt;/script&gt;. Putting this value of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;y + \frac 1 y&lt;/script&gt;, we get:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\quad = \frac {x + \sqrt {x^2 - 4}} {2} + \frac {2} {x + \sqrt {x^2 - 4}}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \frac { {(x + \sqrt{x^2-4})}^2 + 4} {2(x + \sqrt {x^2 - 4})}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;y + \frac 1 y = x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must belongs to &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F&lt;/script&gt;. Thus we have 
+&lt;script type=&quot;math/tex&quot;&gt;x \in A \to x \in \cup \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we have &lt;script type=&quot;math/tex&quot;&gt;A \subseteq \cup \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must belongs to all the set of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. 
+Now since &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F  \to x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we have &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F \subseteq  A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F(B \subseteq A)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F(x \in A)&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Or we can say that &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \to x \in \cap \mathcal F&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;B \subseteq \cap \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose that &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\phi \in \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in \phi&lt;/script&gt;.
+But there is no such element that &lt;script type=&quot;math/tex&quot;&gt;x \in \phi&lt;/script&gt;. Thus such &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; does not exist. Or &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in atleast one of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Suppose that &lt;script type=&quot;math/tex&quot;&gt;A_0 \in \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in A_0&lt;/script&gt;. 
+Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \subseteq G&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;A_0 \in G&lt;/script&gt;. Thus x also exist in atleast one of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal G&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \subseteq \cup \mathcal G&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal G&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \subseteq \mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must belongs to all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal G  \to x \in \cap \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal G \subseteq \cap \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in {\cup}_{i \in I} \mathcal P(A_i)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_t)&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;t \in I&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A_t)&lt;/script&gt;. 
+It follows that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A_t&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A_t&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq {\cup}_{i \in I} A_i&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P({\cup}_{i \in I} A_i)&lt;/script&gt;.
+Or we can say that if &lt;script type=&quot;math/tex&quot;&gt;x \in {\cup}_{i \in I} \mathcal P(A_i)&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P({\cup}_{i \in I} A_i)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;{\cup}_{i \in I} \mathcal P(A_i) \subseteq \mathcal P({\cup}_{i \in I} A_i)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in {\cap}_{i \in I} \mathcal P(A_i)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\forall i \in I(x \in \mathcal P(A_i))&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is a subset of all the sets of &lt;script type=&quot;math/tex&quot;&gt;A_i&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;i \in I&lt;/script&gt;.
+Or we can say that &lt;script type=&quot;math/tex&quot;&gt;x = {\cap}_{i \in I} A_i&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;{\cap}_{i \in I} A_i = {\cap}_{i \in I} \mathcal P(A_i)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \subseteq \mathcal P(B)&lt;/script&gt;. Thus all the sets of A are subset of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to atleast one of the set of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;.
+Since all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; are subsets of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it can be concluded that
+&lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \subseteq B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to atleast one of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Since it is given that all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; are 
+subsets of every set of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;. Or we can say that &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal G&lt;/script&gt;.
+Thus if &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \subseteq \cap \mathcal G&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln18&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It is given that &lt;script type=&quot;math/tex&quot;&gt;b = ma&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c = na&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;m, n&lt;/script&gt; are integers. Adding the equations, we have &lt;script type=&quot;math/tex&quot;&gt;b + c = (m+n)a&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;m + n&lt;/script&gt; is also integer, it can be concluded that &lt;script type=&quot;math/tex&quot;&gt;a \vert (b+c)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;bc = mac&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a \neq 0&lt;/script&gt;, it can be simplified to &lt;script type=&quot;math/tex&quot;&gt;b = ma&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;b \vert a&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln19&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;z = \frac {y-x} 2&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x + z = x + \frac {y-x} 2 = \frac {x + y} 2. Similarly&lt;/script&gt; y - z = y - \frac {y - x} 2 = \frac {x + y} 2 &lt;script type=&quot;math/tex&quot;&gt;.
+Thus for&lt;/script&gt; z = \frac {y-x} 2 &lt;script type=&quot;math/tex&quot;&gt;, then&lt;/script&gt; x + z = y - z = \frac {x+y} 2&lt;script type=&quot;math/tex&quot;&gt;. Since&lt;/script&gt; z = \frac {y-x} 2 $$ is real, the equation is correct.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No, statement will not be correct as &lt;script type=&quot;math/tex&quot;&gt;z = \frac {y-x} 2&lt;/script&gt; is not an integer.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln20&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem is negation of &lt;script type=&quot;math/tex&quot;&gt;\forall x (x^2 ≥ 0)&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\exists x (x^2 &lt; 0) %]]&gt;&lt;/script&gt;. In the given proof, its negation is taken as &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\forall x(x^2 &lt; 0) %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln21&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; The issue with the proof is it started with &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; but in conclusion it is assumed that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;A = \{1,2\}&lt;/script&gt; , &lt;script type=&quot;math/tex&quot;&gt;B = \{0, 1, 2 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln22&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The issue with the proof is that &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is fixed for the value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. But for the goal of the theorem it should be arbitrary.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln23&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It looks like theorem is correct except for only boundary case for empty set. If &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;A \in \cup \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \in \cup \mathcal G&lt;/script&gt;.
+Thus for this case, we have no contradiction.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As seen above we can have only boundary case examples:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ \phi, \{1,2\}, \{3,5\} \}&lt;/script&gt;       &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mathcal G = \{ \phi, \{4\}, \{8,9\} \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \cap \mathcal G = \{ \phi \}&lt;/script&gt;, are not disjoint.&lt;/p&gt;
+
+&lt;p&gt;But &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \cap \cup \mathcal G = \phi&lt;/script&gt;. Thus they are disjoint.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln24&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Problem with the proof is &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; are considered equal, which may not be the case always.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Taking &lt;script type=&quot;math/tex&quot;&gt;x = 1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y = 0&lt;/script&gt;, the theorem is not correct.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln25&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; be an arbitrary real number. Let &lt;script type=&quot;math/tex&quot;&gt;y = 2x&lt;/script&gt;. Now let &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt; be an arbitrary real number.
+Simplifying &lt;script type=&quot;math/tex&quot;&gt;{(x + z)}^2 − (x^2 + z^2)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x^2 + z^2 + 2xz - x^2 - z^2&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = 2xz&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Now taking &lt;script type=&quot;math/tex&quot;&gt;y = 2x&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;yz = 2xz&lt;/script&gt;. Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;yz = {(x + z)}^2 − (x^2 + z^2)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln26&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Goal: &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt; and Given: &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;:  &lt;br /&gt;
+For goal &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;, we introduce an arbitrary variable &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and move forward.  &lt;br /&gt;
+For given &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;, we introduce a new variable, say &lt;script type=&quot;math/tex&quot;&gt;x_0&lt;/script&gt; for which &lt;script type=&quot;math/tex&quot;&gt;P(x_0)&lt;/script&gt; is true and move forward for the proof.   &lt;br /&gt;
+Thus in both cases we move forward in the proof by introducing a variable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Goal: &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt; and Given: &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;:  &lt;br /&gt;
+For goal &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;, we move forward by finding a value for which &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; is true.  &lt;br /&gt;
+For given &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;, we move forward by finding a value that can help further in proof as &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; will be true for that value.  &lt;br /&gt;
+Thus in both cases we work on finding specific value to move forward with the proof.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Not sure about the reason for these similarities.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 22 Sep 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/09/22/how-to-prove-it-ch-3-sec-3.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/09/22/how-to-prove-it-ch-3-sec-3.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-3 Sec-3.2, Proofs Involving Negations and Conditionals</title>
@@ -4564,354 +4895,6 @@ then conclusion should also be true. Thus argument validation check does not app
         <pubDate>Thu, 16 Jul 2015 00:00:00 +0530</pubDate>
         <link>https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-2.html</link>
         <guid isPermaLink="true">https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-2.html</guid>
-        
-        <category>mathematics</category>
-        
-        <category>howToProveIt</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How To Prove It, Ch-1 Sec-1.1, Deductive Reasoning and Logical Connectives</title>
-        <description>&lt;p&gt;This post contains exercises of Chapter - 1, Section - 1.1, Deductive Reasoning and Logical Connectives, from book &lt;strong&gt;How To Prove It&lt;/strong&gt;.
-&lt;!--more--&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Logical Operators \( \lor \land \lnot \)&lt;/li&gt;
-  &lt;li&gt;Argument - An argument is true if its conclusion is true given that all of the premises given are true.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;solutions&quot;&gt;Solutions&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; We’ll have either a reading assignment or homework problems, but we
-won’t have both homework problems and a test.&lt;/p&gt;
-
-&lt;p&gt;\( R \) = Reading Assignment&lt;/p&gt;
-
-&lt;p&gt;\( H \) = Homework Problems&lt;/p&gt;
-
-&lt;p&gt;and \( T \) = Test&lt;/p&gt;
-
-&lt;p&gt;\( (R \lor H) \land \lnot (H \land T) \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; You won’t go skiing, or you will and there won’t be any snow.&lt;/p&gt;
-
-&lt;p&gt;\( SK \) = You go skiing&lt;/p&gt;
-
-&lt;p&gt;\( SW \) = Snow&lt;/p&gt;
-
-&lt;p&gt;\( \lnot SK \lor (SK \land \lnot SW) \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( \sqrt 7 \not\le 2 \)&lt;/p&gt;
-
-&lt;p&gt;\( \lnot ((\sqrt 7 \lt 2) \lor (\sqrt 7 = 2)) \)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Either John and Bill are both telling the truth, or neither of them is.&lt;/p&gt;
-
-&lt;p&gt;\( J \) = John telling truth&lt;/p&gt;
-
-&lt;p&gt;\( B \) = Bill telling truth&lt;/p&gt;
-
-&lt;p&gt;\( (J \land B) \lor \lnot (J \lor B) ) \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; I’ll have either fish or chicken, but I won’t have both fish and mashed
-potatoes.&lt;/p&gt;
-
-&lt;p&gt;\( F \) = I’ll have fish.&lt;/p&gt;
-
-&lt;p&gt;\( C \) = I’ll have fish.&lt;/p&gt;
-
-&lt;p&gt;\( M \) = I’ll have mashed potatoes.&lt;/p&gt;
-
-&lt;p&gt;\( (F \lor C) \land \lnot (F \land M) \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; 3 is a common divisor of 6, 9, and 15.&lt;/p&gt;
-
-&lt;p&gt;\( A \) = 3 is a divisor of 6.&lt;/p&gt;
-
-&lt;p&gt;\( B \) = 3 is a divisor of 9.&lt;/p&gt;
-
-&lt;p&gt;\( C \) = 3 is a divisor of 15.&lt;/p&gt;
-
-&lt;p&gt;\( A \land B \land C \)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;\( A \) = Alice is in the room.&lt;/p&gt;
-
-&lt;p&gt;\( B \) = Alice is in the room.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; \( \lnot (A \land B) \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; \( \lnot A \land \lnot B \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( \lnot A \lor \lnot B \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; \( \lnot A \land \lnot B \)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;  This is well formed.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; This is not well formed.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; Well formed.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Not Well formed.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.5&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;  \( \lnot (P \land \lnot S) \).&lt;/p&gt;
-
-&lt;p&gt;Lets first form sentence for \( (P \land \lnot S) \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) I will buy pants but I wont buy the shirts.&lt;/p&gt;
-
-&lt;p&gt;Thus, \( \lnot (P \land \lnot S) \) will be:&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) I will buy pants only when I buy the shirts.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; \( \lnot P \land \lnot S \).&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) I will not buy the pants and I will not buy the shirts.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( \lnot P \lor \lnot S \).&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Either I will not buy the pants or I will not buy the shirts.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; \( (S \lor G) \land (\lnot S \lor \lnot G) \).&lt;/p&gt;
-
-&lt;p&gt;Lets form sentence part by part.&lt;/p&gt;
-
-&lt;p&gt;\( (S \lor G) \Rightarrow \) Either Steve is happy or George is happy.&lt;/p&gt;
-
-&lt;p&gt;Thus above part will only be false when Steve and George both are not happy.&lt;/p&gt;
-
-&lt;p&gt;\( (\lnot S \lor \lnot G) \Rightarrow \) Either Steve is not happy or George is not happy.&lt;/p&gt;
-
-&lt;p&gt;This part will only be false when Steve and George both are happy.&lt;/p&gt;
-
-&lt;p&gt;Now combining both parts \( (S \lor G) \Rightarrow \) and \( (\lnot S \lor \lnot G) \Rightarrow \) with operator \( \land \)&lt;/p&gt;
-
-&lt;p&gt;Combined part will be true only when both parts are true. Or in other words it will be false when either of the parts from above is false.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Combined part will be &lt;strong&gt;false&lt;/strong&gt; only when - Steve and George both are not happy or Steve and George both are happy.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Combined part will be &lt;strong&gt;true&lt;/strong&gt; only when - One of Steve and George is happy and other is not happy.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; \( [S \lor (G \land \lnot S)] \lor \lnot G \).&lt;/p&gt;
-
-&lt;p&gt;Lets form sentence part by part.&lt;/p&gt;
-
-&lt;p&gt;\( (G \land \lnot S) \Rightarrow \) George is happy but Steve is not happy.&lt;/p&gt;
-
-&lt;p&gt;\( [S \lor (G \land \lnot S)] \Rightarrow \) Either Steve is happy, or George is happy but Steve is not happy. Thus this
-part will be false only when Steve and George both are not happy. Or we can say if any of them is happy this part will be true.&lt;/p&gt;
-
-&lt;p&gt;Now moving to next part \( \lnot G \Rightarrow \) George is not happy.&lt;/p&gt;
-
-&lt;p&gt;Thus combining \( [S \lor (G \land \lnot S)] \) with \( \lnot G \) using operator \( \lor \):&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Either any of them is happy or George is not happy.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) In above sentence, first part will be false only when both are not happy but in that case seconds part will be true because 
-when both are not happy means George is not happy \( \Rightarrow \) sentence is true.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) This means if any of them is happy or not happy this part will be true.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Sentence becomes: Either one of Steve and George is happy or either one of them is not happy.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; \( S \lor [G \land (\lnot S \lor \lnot G)] \).&lt;/p&gt;
-
-&lt;p&gt;Lets form sentence part by part.&lt;/p&gt;
-
-&lt;p&gt;\( (\lnot S \lor \lnot G) \Rightarrow \) Either Steve is not happy or George is not happy.&lt;/p&gt;
-
-&lt;p&gt;Now for \( [G \land (\lnot S \lor \lnot G)] \Rightarrow \) George is happy, and either Steve is not happy or george is not happy.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) For above sentence to be true George must be happy and Steve must be not happy. 
-\( \Rightarrow \) George is happy and Steve is not happy.&lt;/p&gt;
-
-&lt;p&gt;And \( S \Rightarrow \) Steve is happy.&lt;/p&gt;
-
-&lt;p&gt;Thus \( S \Rightarrow \) with \( [G \land (\lnot S \lor \lnot G)] \) using operator \( \lor \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Either Steve is happy, or George is happy and Steve is not happy.
-This will only be false when Steve and George both are not happy.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Thus if either of them is happy sentence will be true.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Either Steve is happy or George is happy.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.7&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Jane and Pete won’t both win the math prize. Pete will win either the math prize or the chemistry prize. 
-Jane will win the math prize. Therefore, Pete will win the chemistry prize.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Jane and Pete won’t both win the math prize.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Pete will win either the math prize or the chemistry prize.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Jane will win the math prize.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Pete will win the chemistry prize.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Combining (1) and (3) \( \Rightarrow \) Pete wont win the math prize. Combining this with (2) \( \Rightarrow \) Pete will win the chemistry prize.&lt;/p&gt;
-
-&lt;p&gt;Thus above reasoning is correct.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; The main course will be either beef or fish. The vegetable will be either peas or corn. We will not have both fish as a main course 
-and corn as a vegetable. Therefore, we will not have both beef as a main course and peas as a vegetable.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;The main course will be either beef or fish.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The vegetable will be either peas or corn.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;We will not have both fish as a main course and corn as a vegetable.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;we will not have both beef as a main course and peas as a vegetable.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;From (1), (2) and (3) It is possible to have beef as a main course and peas as a vegetable.&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \) Conclusion is not correct.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; Either John or Bill is telling the truth. Either Sam or Bill is lying. Therefore, either John is telling the truth or Sam is lying.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Either John or Bill is telling the truth.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Either Sam or Bill is lying.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Either John is telling the truth or Sam is lying.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It will be difficult to check conclusion by combining premises. Instead we may check when conclusion is true, than whether premise are also true:&lt;/p&gt;
-
-&lt;p&gt;Conclusion is true if either:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;John is telling truth:&lt;/p&gt;
-
-    &lt;p&gt;Combining this with (1) \( \Rightarrow \) (1) is correct and Bill may be telling truth or lying.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Now if Bill is telling the truth, than from (2) Sam must be lying. Thus no contradictions.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Else if Bill is lying than also (2) becomes correct without any contradictions.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sam is lying:&lt;/p&gt;
-
-    &lt;p&gt;Combining this with (2) \( \Rightarrow \) (2) is correct and Bill may be telling truth or lying.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Bill is lying. than from (1) John must be telling truth. Thus no contradictions.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Bill is telling truth. Than (1) becomes correct thus no contradictions.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy. 
-Therefore, sales and expenses will not both go up.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Premises:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Note there is only one premise here. Unlike from other parts of this question. It may appear “Either sales will go up and the boss will be happy”
-and “expenses will go up and the boss won’t be happy” are two premises but its only one premise.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Sales and Expenses will not both go up.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lets check if Sales and Expenses both go up contradicts with premises. There can be two cases:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Boss is happy. \( \Rightarrow \) “Either sales will go up and the boss will be happy” is correct thus whole premise is correct.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Boss is not happy. \( \Rightarrow \) “Expenses will go up and the boss won’t be happy” is correct thus whole premise is correct.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;From above, it is clear that Sales and Expenses can both go up. Thus the conclusion is not correct.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 16 Jul 2015 00:00:00 +0530</pubDate>
-        <link>https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-1.html</link>
-        <guid isPermaLink="true">https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-1.html</guid>
         
         <category>mathematics</category>
         
