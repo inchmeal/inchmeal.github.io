@@ -46,7 +46,7 @@ $$ \quad = \forall x ( \exists n \in \mathbb N(x = n^2 + n + 1) \to \exists m \i
 This is equivalent to:    
 $$ \quad = \exists n \in \mathbb N \exists m \in \mathbb N(n^2 + n + 1 = 2m + 1) $$.
 
-**(d)** $$ \mathcal P (∪_{i ∈ I} A_i) \subsetneq ∪_{i ∈ I} \mathcal P(A_i) $$    
+**(d)** $$ \mathcal P (∪_{i ∈ I} A_i) \nsubseteq ∪_{i ∈ I} \mathcal P(A_i) $$    
 $$ \quad = \exists x ( (x \in \mathcal P (∪_{i ∈ I} A_i)) \land  \lnot (x \in ∪_{i ∈ I} \mathcal P(A_i))) $$    
 $$ \quad = \exists x ( (x \subseteq ∪_{i ∈ I} A_i) \land \lnot (\exists i \in I(x \in \mathcal P(A_i)))) $$    
 $$ \quad = \exists x ( \forall y(y \in x \to y \in ∪_{i ∈ I} A_i) \land \lnot (\exists i \in I(x \subseteq A_i))) $$    

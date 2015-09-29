@@ -67,7 +67,7 @@ Suppose $$ x \in C $$. Since $$ (A \setminus B) \cap C = \phi $$, it follows tha
 
 **Soln5**
 
-Suppose $$ a \in A \setminus B $$, which means $$ a \in A $$ and $$ a \notin B $$. Since $$ a \in C $$, it follows that $$ a \in (A \cap C) $$. Since  $$ a \in (A \cap C) $$ and $$ a \notin B $$, it follows that $$ A \cap C \subsetneq B $$. This contradicts the *given*: $$ A \cap C \subseteq B $$. Thus $$ a \notin A \setminus B $$.
+Suppose $$ a \in A \setminus B $$, which means $$ a \in A $$ and $$ a \notin B $$. Since $$ a \in C $$, it follows that $$ a \in (A \cap C) $$. Since  $$ a \in (A \cap C) $$ and $$ a \notin B $$, it follows that $$ A \cap C \nsubseteq B $$. This contradicts the *given*: $$ A \cap C \subseteq B $$. Thus $$ a \notin A \setminus B $$.
  
 <hr/>
 
