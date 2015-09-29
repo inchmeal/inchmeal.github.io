@@ -5,9 +5,430 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Sep 2015 17:39:50 +0530</pubDate>
-    <lastBuildDate>Wed, 23 Sep 2015 17:39:50 +0530</lastBuildDate>
+    <pubDate>Tue, 29 Sep 2015 23:04:14 +0530</pubDate>
+    <lastBuildDate>Tue, 29 Sep 2015 23:04:14 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-3 Sec-3.4, Proofs Involving Conjunctions and Biconditionals</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 3, Section - 3.4, Proofs Involving Conjunctions and Biconditionals.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To prove a goal of the form &lt;script type=&quot;math/tex&quot;&gt;P ∧ Q&lt;/script&gt;:  &lt;br /&gt;
+Prove &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; separately.&lt;/li&gt;
+  &lt;li&gt;To use a given of the form &lt;script type=&quot;math/tex&quot;&gt;P ∧ Q&lt;/script&gt;:  &lt;br /&gt;
+Treat this given as two separate givens: &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;To prove a goal of the form &lt;script type=&quot;math/tex&quot;&gt;P ↔ Q&lt;/script&gt; :   &lt;br /&gt;
+Prove &lt;script type=&quot;math/tex&quot;&gt;P → Q&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Q → P&lt;/script&gt; separately.&lt;/li&gt;
+  &lt;li&gt;To use a given of the form &lt;script type=&quot;math/tex&quot;&gt;P ↔ Q&lt;/script&gt; :  &lt;br /&gt;
+Treat this as two separate givens: &lt;script type=&quot;math/tex&quot;&gt;P → Q&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;Q → P&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Sometimes in a proof of a goal of the form &lt;script type=&quot;math/tex&quot;&gt;P ↔ Q&lt;/script&gt; the steps in the proof of &lt;script type=&quot;math/tex&quot;&gt;Q → P&lt;/script&gt; are the same as the steps 
+used to prove &lt;script type=&quot;math/tex&quot;&gt;P → Q&lt;/script&gt;, but in reverse order. These two directions can be summed up by proving equivalences(biconditional) 
+in the steps involved. For eg: If such proof involves R, then it can be summed up as: P ↔ R ↔ Q.&lt;/li&gt;
+  &lt;li&gt;To prove equivalences of sets, say &lt;script type=&quot;math/tex&quot;&gt;A = B&lt;/script&gt;, most of the proofs involve either of the following approaches:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall x (x \in A ↔ x \in B)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \subseteq B) \land (B \subseteq A)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary. Since &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \land Q(x))&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;P(y) \land Q(y)&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;P(y)&lt;/script&gt;, 
+and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;. Similarly since &lt;script type=&quot;math/tex&quot;&gt;Q(y)&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall x Q(x)&lt;/script&gt;.
+Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \land \forall x Q(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;( \leftarrow&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary. Since &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;, it follows that  &lt;script type=&quot;math/tex&quot;&gt;P(y)&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;\forall x Q(x)&lt;/script&gt;, it follows that  &lt;script type=&quot;math/tex&quot;&gt;Q(y)&lt;/script&gt;.
+Thus we have &lt;script type=&quot;math/tex&quot;&gt;P(y) \land Q(y)&lt;/script&gt;. Now as &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \land Q(x))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;.
+Now since &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \to x \in B \cap C&lt;/script&gt;. As &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A \subseteq (B \cap C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus B&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;.
+Thus we have &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin A&lt;/script&gt;. Thus we can say &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus B \to x \in C \setminus A&lt;/script&gt;. As &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;C \setminus B \subseteq C \setminus A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \nsubseteq C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \nsubseteq C&lt;/script&gt;, suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is an arbitrary variable such that &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin C&lt;/script&gt;. As &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;B \nsubseteq C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B \setminus C&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin C&lt;/script&gt;. Thus there exists an element such that &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin C&lt;/script&gt;, so
+we can conclude that &lt;script type=&quot;math/tex&quot;&gt;B \nsubseteq C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus (B \cap C))&lt;/script&gt;. Thus we have:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land \lnot (x \in (B \cap C))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land \lnot (x \in B \land x \in C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land (x \notin B \lor x \notin C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \land x \notin B) \lor (x \in A \land x \notin C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (A \setminus B) \lor x \in (A \setminus C)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (A \setminus B) \cup (A \setminus C))&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can say that &lt;script type=&quot;math/tex&quot;&gt;A \setminus (B \cap C) = (A \setminus B) \cup (x \in A \setminus C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A \cap B)&lt;/script&gt;. Then we have &lt;script type=&quot;math/tex&quot;&gt;x \subseteq (A \cap B)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y \in x&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;y \in (A \cap B)&lt;/script&gt;. 
+Or we can say that &lt;script type=&quot;math/tex&quot;&gt;y \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A \land x \subseteq B&lt;/script&gt;.  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A)&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;x \subseteq B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(B)&lt;/script&gt;  &lt;br /&gt;
+Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;x \in (\mathcal P (A) \cap \mathcal P(B))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P (A) \cap \mathcal P(B)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P (A)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A&lt;/script&gt;. 
+ Similarly it can be seen that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq B&lt;/script&gt;. Now suppose &lt;script type=&quot;math/tex&quot;&gt;y \in x&lt;/script&gt;. Then we have &lt;script type=&quot;math/tex&quot;&gt;y \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y \in B&lt;/script&gt;. Or we can say 
+ &lt;script type=&quot;math/tex&quot;&gt;y \in A \cap B&lt;/script&gt;. As &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, we can say that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A \cap B&lt;/script&gt;. Thus we can conclude &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A \cap B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq B&lt;/script&gt;. 
+Now since &lt;script type=&quot;math/tex&quot;&gt;x \subseteq B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(B)&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A)&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(B)&lt;/script&gt;. We can conclude 
+that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \subseteq \mathcal P(B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt; )Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is a set in &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \subseteq \mathcal P(B)&lt;/script&gt;,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;y \in \mathcal P(B)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;y \subseteq B&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;x \in y&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Thus we can conclude &lt;script type=&quot;math/tex&quot;&gt;x \in A \to x \in B&lt;/script&gt;. 
+As &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, thus we have &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x = 2i + 1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y = 2j + 1&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;i,\,j&lt;/script&gt; are integers. Then &lt;script type=&quot;math/tex&quot;&gt;xy = (2i+1)(2j+1) = 4ij + 2i + 2j + 1 = 2(2ij + i + j) + 1&lt;/script&gt;. Suppose 
+&lt;script type=&quot;math/tex&quot;&gt;k = (2ij + i + j)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is an integer. Thus &lt;script type=&quot;math/tex&quot;&gt;xy = 2k + 1&lt;/script&gt;, is odd.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is even. Then &lt;script type=&quot;math/tex&quot;&gt;n = 2i&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;i \in \mathbb Z&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;n^3 = {(2i)}^3 = 8i^3&lt;/script&gt;.
+Suppose &lt;script type=&quot;math/tex&quot;&gt;j = 4i^3&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;n^3 = 2j&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;j \in \mathbb Z&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;n^3&lt;/script&gt; is even.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt; )As an integer can either be even or odd but not both, we shall prove this by contrapositive. Thus we shall prove that If &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is not even(odd) then &lt;script type=&quot;math/tex&quot;&gt;n^3&lt;/script&gt; is also not even(odd).
+Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is odd, then &lt;script type=&quot;math/tex&quot;&gt;n = 2i + 1&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;n^3 = {(2i + 1)}^3 = 8i^3 + 12i^2 + 6i + 1 = 2(4i^3 + 6i^2 + 3i) + 1&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;j = 4i^3 + 6i^2 + 3i&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;j \in \mathbb Z&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;n^3 = 2j + 1&lt;/script&gt; is odd. Thus we can conclude that if &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is even then &lt;script type=&quot;math/tex&quot;&gt;n^3&lt;/script&gt; is also even.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem with the proof is with the usage of variable &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;m = 2k&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;n = 2k + 1&lt;/script&gt;. Value of &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; may not be same.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For &lt;script type=&quot;math/tex&quot;&gt;m = 0&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;n = 3&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;n^2 - m^2 = 9&lt;/script&gt; while &lt;script type=&quot;math/tex&quot;&gt;m + n = 3&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;n^2 - m^2 \neq m + n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary. Suppose &lt;script type=&quot;math/tex&quot;&gt;y = \frac x {x-1}&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x + y = x + \frac x {x-1}&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = \frac {x(x-1) + x} {x-1}&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = \frac {x^2} {x-1}&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = x \times \frac x {x-1}&lt;/script&gt;  &lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt;\quad = xy&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus the equation: &lt;script type=&quot;math/tex&quot;&gt;\exists y (x + y = xy)&lt;/script&gt; is correct for &lt;script type=&quot;math/tex&quot;&gt;y = \frac x {x-1}&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;y = \frac x {x-1}&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \neq 1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt; ). We shall prove contra-positive. Suppose &lt;script type=&quot;math/tex&quot;&gt;x = 1&lt;/script&gt;. Now &lt;script type=&quot;math/tex&quot;&gt;x + y = 1 + y&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;xy = y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;1 + y \neq y&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;\exists y (x + y = xy)&lt;/script&gt; is not correct. 
+ Thus if &lt;script type=&quot;math/tex&quot;&gt;x + y = xy&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \neq 1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;z = 1&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in {\mathbb R}^+&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;\exists y (y - x = \frac y x)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;y = \frac {x^2} {x-1}&lt;/script&gt;.
+Now &lt;script type=&quot;math/tex&quot;&gt;y = \frac {x^2} {x-1}&lt;/script&gt; is defined only if &lt;script type=&quot;math/tex&quot;&gt;x \neq 1&lt;/script&gt;. Thus there exists a &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \neq z&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows
+ that &lt;script type=&quot;math/tex&quot;&gt;\exists z \forall x \in {\mathbb R}^+[\exists y (y - x = \frac y x) \to x \neq z ]&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt; ). Suppose &lt;script type=&quot;math/tex&quot;&gt;z = 1&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in {\mathbb R}^+&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \neq 1&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \neq 1&lt;/script&gt;, we can assume &lt;script type=&quot;math/tex&quot;&gt;y = \frac {x^2} {x-1}&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;y - x = \frac y x&lt;/script&gt; is correct(can be verified by putting the value of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;).
+ Thus there exists a &lt;script type=&quot;math/tex&quot;&gt;z = 1&lt;/script&gt; for which &lt;script type=&quot;math/tex&quot;&gt;x \neq z&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\exists y (y - x = \frac y x)&lt;/script&gt; is correct. We can conclude &lt;script type=&quot;math/tex&quot;&gt;\exists z \forall x \in {\mathbb R}^+[x \neq z \to \exists y (y - x = \frac y x)]&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \{A \setminus B \;\vert\;A \in \mathcal F \}&lt;/script&gt;. Thus there exists a set, say &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. 
+Since &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \nsubseteq B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \nsubseteq B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;A \notin \mathcal P(B)&lt;/script&gt;. Thus we have
+&lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F \land A \notin \mathcal P(B)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup(\mathcal F \setminus \mathcal P(B))&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude &lt;script type=&quot;math/tex&quot;&gt;\cup \{A \setminus B \vert\;A \in F \} \subseteq \cup(\mathcal F \setminus \mathcal P(B))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal G&lt;/script&gt; are not disjoint. Then there must be an element, say &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, such that 
+&lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;, then there must exist a set, say &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, 
+in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;.
+Thus there exist a set &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; such that it is not disjoint with any of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;. But this contradicts the given that there is no such set.
+Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal G&lt;/script&gt; are disjoint.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in atleast one of the subsets of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exists in &lt;script type=&quot;math/tex&quot;&gt;\cup\{&lt;/script&gt; all subsets of 
+&lt;script type=&quot;math/tex&quot;&gt;A \}&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal P(A)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A \subseteq \cup \mathcal P(A)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt; ). Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal P(A)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in atleast one of the subsets of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;.
+ Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal P(A) \subseteq A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we can say that &lt;script type=&quot;math/tex&quot;&gt;A = P(A)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup(\mathcal F \cap \mathcal G)&lt;/script&gt;. Thus there exist a set, say &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal G&lt;/script&gt;. 
+Since &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;. Similarly since &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal G&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in \cup F \land x \in \cup G&lt;/script&gt;. 
+It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F \cap \cup \mathcal G)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\cup(\mathcal F \cap \mathcal G) \subseteq (\cup \mathcal F \cap \cup \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The issue is that set &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; may not be same in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ A_1, A_2 \}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;A_1 = \{ 1 \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_2 = \{ 3, 4 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathcal G = \{ B_1, B_2, A_2 \}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;B_1 = \{ 2 \}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;B_2 = \{ 1 , 2 \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_2 = \{ 3, 4 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\cup(\mathcal F \cap \mathcal G) = \{ 3, 4 \}&lt;/script&gt;  .&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \cap \cup \mathcal G  = \{1, 3, 4 \} \cap \{1, 2, 3, 4 \} = \{1, 2, 3, 4 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln18&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F) \cap (\cup \mathcal G)&lt;/script&gt;. 
+Thus there exist some set, say &lt;script type=&quot;math/tex&quot;&gt;P  \in \mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in P&lt;/script&gt;. Similarly there  exist some set, say &lt;script type=&quot;math/tex&quot;&gt;Q \in \mathcal G&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;x \in Q&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in P \cap Q&lt;/script&gt;. 
+As &lt;script type=&quot;math/tex&quot;&gt;P \in F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Q \in G&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;P \cap Q \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;. It follows that if &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F) \cap (\cup \mathcal G)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;. 
+Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;. Thus we can conclude 
+that: &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G) \quad \to \quad (\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;. Suppose that &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal G&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F) \cap (\cup \mathcal G)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;, it follows that 
+ &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;.
+Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G) \quad \to \quad \forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln19&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are not disjoint. Then there must exist an element, say &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x in \cup \mathcal F&lt;/script&gt;. Similarly since &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x in \cup \mathcal G&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F) \cap (\cup \mathcal G )&lt;/script&gt;. But it is a contradiction to the given that &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \cap (\cup \mathcal G ) = \phi&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F\; \forall B \in \mathcal G (A \cap B) = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal G&lt;/script&gt; are not disjoint. Then there must exist an element, say &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal G&lt;/script&gt;. Thus there must exist a set, say &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Similarly there must exist a set, say &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;,  in &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt; such 
+that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B&lt;/script&gt;. This contradicts to the given that &lt;script type=&quot;math/tex&quot;&gt;A \cap B = \phi&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal G = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln20&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F) \setminus (\cup \mathcal G)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is in &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is not in &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal G)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F)&lt;/script&gt;, there must exist a set, say &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; not in &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal G)&lt;/script&gt;, 
+there is no set, say &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, in &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; can exist in only those sets in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; which are not present in &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;.
+Or we can say that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in atleast one of the sets in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \setminus \mathcal G&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \setminus \mathcal G)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \setminus (\cup \mathcal G) \subseteq \cup (\mathcal F \setminus \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Statement &lt;script type=&quot;math/tex&quot;&gt;x ∈ A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \notin G&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \notin \cup G&lt;/script&gt; is wrong. It is possible that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to some other set(&lt;script type=&quot;math/tex&quot;&gt;\neq A&lt;/script&gt;) of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets first prove direction &lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G ((A \cap B) = \phi) \; \to \; \cup (\mathcal F \setminus \mathcal G)\subseteq (\cup \mathcal F) \setminus (\cup \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B) = \phi&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \setminus \mathcal G)&lt;/script&gt;.
+Thus there exist a set, say &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;P \in \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;P \notin \mathcal G&lt;/script&gt; , and &lt;script type=&quot;math/tex&quot;&gt;x \in P&lt;/script&gt;. As &lt;script type=&quot;math/tex&quot;&gt;P \notin \mathcal G&lt;/script&gt;, there may exist some other set, say &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;Q \in \mathcal G&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;x \in Q&lt;/script&gt;.
+Thus if such set &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; exists, then &lt;script type=&quot;math/tex&quot;&gt;P \cap Q \neq \phi&lt;/script&gt;, because &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in both &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;. But since 
+&lt;script type=&quot;math/tex&quot;&gt;\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B) = \phi&lt;/script&gt; it follows that &lt;script type=&quot;math/tex&quot;&gt;P \cap Q = \phi&lt;/script&gt;. Thus there is no such set &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;.
+It follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; does not exist in any of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;. Or we can say that &lt;script type=&quot;math/tex&quot;&gt;x \notin \cup \mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in P&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;.
+Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F \land x \notin \cup \mathcal G&lt;/script&gt;, or we can say that &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup \mathcal F) \setminus (\cup \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now proof for direction &lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\cup (\mathcal F \setminus \mathcal G)\subseteq (\cup \mathcal F) \setminus (\cup \mathcal G) \; \to \; \forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B = \phi)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here we shall prove by contra-positive. Suppose that &lt;script type=&quot;math/tex&quot;&gt;\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G ((A \cap B) \neq \phi)&lt;/script&gt;. 
+Suppose that &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;A \in (\mathcal F \setminus \mathcal G)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal G&lt;/script&gt;. Thus there exist a set(&lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;) in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \setminus \mathcal G&lt;/script&gt; such
+that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to that set. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \setminus \mathcal G)&lt;/script&gt;. Also, since &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal G&lt;/script&gt;, it 
+follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin (\cup \mathcal F) \setminus (\cup \mathcal G)&lt;/script&gt;. 
+Thus &lt;script type=&quot;math/tex&quot;&gt;\cup (\mathcal F \setminus \mathcal G)\nsubseteq (\cup \mathcal F) \setminus (\cup \mathcal G)&lt;/script&gt;.Thus by contrapositive we can conclude that if &lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \setminus (\cup \mathcal G) \subseteq (\cup \mathcal F) \setminus (\cup \mathcal G)&lt;/script&gt;, then 
+&lt;script type=&quot;math/tex&quot;&gt;\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ A_1, A_2 \}&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;A_1 = \{ 1 \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_2 = \{ 10, 20 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathcal G = \{ B_1, B_2 \}&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;B_1 = \{ 1, 3 \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B_2 = \{ 10, 30 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\cup (\mathcal F \setminus \mathcal G) = \{ 1, 10, 20 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(\cup \mathcal F) \setminus (\cup \mathcal G) = \{ 20 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln21&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \nsubseteq \cup \mathcal G&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \notin \cup \mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;,
+it follows that there exist a set, say &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;, in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in P&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;x \notin \cup \mathcal G&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;
+ does not belong to any of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\exists P \in \mathcal F \, \forall Q \in \mathcal G\,(P \nsubseteq Q)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln22&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Strategy to prove a goal of the form &lt;script type=&quot;math/tex&quot;&gt;P \leftrightarrow Q&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Strategy to prove &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Strategy to prove &lt;script type=&quot;math/tex&quot;&gt;P \land Q&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Strategy for &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus (\cup_{i \in I} A_i)&lt;/script&gt;  &lt;br /&gt;
+It is equivalent to:   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in B \land \lnot \exists i \in I (x \in A_i)&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in B \land \forall i \in I (x \notin A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I (x \in B \land x \notin A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall i \in I (x \in B \setminus A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in \cap_{i \in I}(B \setminus A_i)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;B \setminus (\cup_{i \in I} A_i) = \cup_{i \in I}(B \setminus A_i)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus (\cap_{i \in I} A_i )&lt;/script&gt;  &lt;br /&gt;
+It is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in B \land \lnot \forall i \in I ( x \in A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in B \land \exists i \in I (x \notin A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists i \in I (x \in B \land x \notin A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists i \in I (x \in B \setminus A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in \cup_{i \in I}(B \setminus A_i)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;B \setminus (\cap_{i \in I} A_i ) = \cup_{i \in I}(B \setminus A_i)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln23&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I}(A_i \setminus B_i)&lt;/script&gt;. Thus there must exist a set, say &lt;script type=&quot;math/tex&quot;&gt;A_k&lt;/script&gt;,  in &lt;script type=&quot;math/tex&quot;&gt;\{ A_i \, \vert \, i \in I \}&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in A_k&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I} A_i&lt;/script&gt;. Now suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exist in some set &lt;script type=&quot;math/tex&quot;&gt;B_l&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;i = l&lt;/script&gt;. Now if &lt;script type=&quot;math/tex&quot;&gt;A_l&lt;/script&gt; also contain &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, 
+which is clearly not possible as then &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; can not exist in &lt;script type=&quot;math/tex&quot;&gt;A_l \setminus B_l&lt;/script&gt;. Else if &lt;script type=&quot;math/tex&quot;&gt;A_l&lt;/script&gt; does not contain &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, then clearly &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; can not exist 
+in &lt;script type=&quot;math/tex&quot;&gt;A_l \setminus B_l&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; does not exist in any set &lt;script type=&quot;math/tex&quot;&gt;B_i&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin \cap_{i \in I} B_i&lt;/script&gt;. Thus we can conclude that 
+&lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I} A_i \land x \notin \cap_{i \in I} B_i&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I} A_i \setminus \cap_{i \in I} B_i&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we
+can conclude that &lt;script type=&quot;math/tex&quot;&gt;\cup_{i \in I}(A_i \setminus B_i) \; \subseteq \; \cup_{i \in I} A_i \setminus \cap_{i \in I} B_i&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A_1 = \{ 1, 2 \}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A_2 = \{3, 4\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;B_1 = \{ 2, 5 \}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;B_2 = \{3, 8\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\cup_{i \in I}(A_i \setminus B_i) = \{1, 4 \}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\cup_{i \in I} A_i \setminus \cap_{i \in I} B_i = \{ 1, 2, 3, 4 \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln24&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I}(A_i \cap B_i)&lt;/script&gt;. Then there must exist atleast an &lt;script type=&quot;math/tex&quot;&gt;i = k&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;x \in A_k \land x \in B_k&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A_k&lt;/script&gt;, 
+it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I} A_i&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;x \in B_k&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I} B_i&lt;/script&gt;. Thus we have 
+&lt;script type=&quot;math/tex&quot;&gt;x \in \cup_{i \in I} A_i \land x \in \cup_{i \in I} B_i&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x \in (\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, 
+it follows that &lt;script type=&quot;math/tex&quot;&gt;\cup_{i \in I}(A_i \cap B_i) \; \subseteq \; (\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A_1 = \{ 1, 2, 8 \}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A_2 = \{3, 4\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;B_1 = \{ 2, 5 \}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;B_2 = \{3, 8\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\cup_{i \in I}(A_i \cap B_i) = \{ 2, 3\}&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i) = \{ 2, 3, 8\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln25&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;c = ab&lt;/script&gt;, then both &lt;script type=&quot;math/tex&quot;&gt;a\,\vert\,c&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b\,\vert\,c&lt;/script&gt; are true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln26&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;15\,\vert\,n&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;n = 15 \times k&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;k \in \mathbb N&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;n = 3 \times 5k&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;3\,\vert\,n&lt;/script&gt;. Similarly,
+&lt;script type=&quot;math/tex&quot;&gt;n = 5 \times 3k&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;5\,\vert\,n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;3\,\vert\,n&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;5\,\vert\,n&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;n = 3k&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;n = 5l&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;k,l \in \mathbb N&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;3k = 5l&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;k, l&lt;/script&gt; are natural numbers and &lt;script type=&quot;math/tex&quot;&gt;3&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;5&lt;/script&gt; does not divide, it follows that &lt;script type=&quot;math/tex&quot;&gt;5\,\vert\,k&lt;/script&gt; and  &lt;script type=&quot;math/tex&quot;&gt;3\,\vert\,l&lt;/script&gt;. Or we can say
+that &lt;script type=&quot;math/tex&quot;&gt;5p = k&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;3q = l&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;p, q \in \mathbb N&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;n = 3k = 15 p&lt;/script&gt; as well as &lt;script type=&quot;math/tex&quot;&gt;n = 5l = 15 q&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;p = q&lt;/script&gt; and 
+&lt;script type=&quot;math/tex&quot;&gt;n = 15p&lt;/script&gt;. Thus we can conclude &lt;script type=&quot;math/tex&quot;&gt;15\,\vert\,n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;n = 90&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;6\,\vert\,n&lt;/script&gt; as well as &lt;script type=&quot;math/tex&quot;&gt;10\,\vert\,n&lt;/script&gt; are true, but &lt;script type=&quot;math/tex&quot;&gt;60\,\vert\,n&lt;/script&gt; is not true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Thu, 24 Sep 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/09/24/how-to-prove-it-ch-3-sec-4.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/09/24/how-to-prove-it-ch-3-sec-4.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-3 Sec-3.3, Proofs Involving Quantifiers</title>
@@ -426,7 +847,7 @@ Thus in both cases we work on finding specific value to move forward with the pr
 
 &lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a \in A \setminus B&lt;/script&gt;, which means &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a \in C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;a \in (A \cap C)&lt;/script&gt;. Since  &lt;script type=&quot;math/tex&quot;&gt;a \in (A \cap C)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a \notin B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \cap C \subsetneq B&lt;/script&gt;. This contradicts the &lt;em&gt;given&lt;/em&gt;: &lt;script type=&quot;math/tex&quot;&gt;A \cap C \subseteq B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a \notin A \setminus B&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a \in A \setminus B&lt;/script&gt;, which means &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a \in C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;a \in (A \cap C)&lt;/script&gt;. Since  &lt;script type=&quot;math/tex&quot;&gt;a \in (A \cap C)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a \notin B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \cap C \nsubseteq B&lt;/script&gt;. This contradicts the &lt;em&gt;given&lt;/em&gt;: &lt;script type=&quot;math/tex&quot;&gt;A \cap C \subseteq B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a \notin A \setminus B&lt;/script&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -934,7 +1355,7 @@ Thus &lt;script type=&quot;math/tex&quot;&gt;x ∈ \{x_i\,\vert\,i ∈ I \}&lt;/
 This is equivalent to:  &lt;br /&gt;
 &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists n \in \mathbb N \exists m \in \mathbb N(n^2 + n + 1 = 2m + 1)&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\mathcal P (∪_{i ∈ I} A_i) \subsetneq ∪_{i ∈ I} \mathcal P(A_i)&lt;/script&gt;  &lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\mathcal P (∪_{i ∈ I} A_i) \nsubseteq ∪_{i ∈ I} \mathcal P(A_i)&lt;/script&gt;  &lt;br /&gt;
 &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( (x \in \mathcal P (∪_{i ∈ I} A_i)) \land  \lnot (x \in ∪_{i ∈ I} \mathcal P(A_i)))&lt;/script&gt;  &lt;br /&gt;
 &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( (x \subseteq ∪_{i ∈ I} A_i) \land \lnot (\exists i \in I(x \in \mathcal P(A_i))))&lt;/script&gt;  &lt;br /&gt;
 &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( \forall y(y \in x \to y \in ∪_{i ∈ I} A_i) \land \lnot (\exists i \in I(x \subseteq A_i)))&lt;/script&gt;  &lt;br /&gt;
@@ -2766,2135 +3187,6 @@ y ∈ \{x\,\vert\,x^3 &lt; 9\} %]]&gt;&lt;/script&gt; , &lt;script type=&quot;ma
         <pubDate>Sat, 18 Jul 2015 00:00:00 +0530</pubDate>
         <link>https://inchmeal.github.io/2015/07/18/how-to-prove-it-ch-1-sec-3.html</link>
         <guid isPermaLink="true">https://inchmeal.github.io/2015/07/18/how-to-prove-it-ch-1-sec-3.html</guid>
-        
-        <category>mathematics</category>
-        
-        <category>howToProveIt</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How To Prove It, Ch-1 Sec-1.2, Truth Tables</title>
-        <description>&lt;p&gt;This post contains exercises of Chapter - 1, Section - 1.2, Truth Tables.
-&lt;!--more--&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Truth Tables&lt;/li&gt;
-  &lt;li&gt;Argument Validation using Truth Tables. For all the rows in truth tables where “premises” are true, 
-corresponding rows of “conclusion” must also be true.&lt;/li&gt;
-  &lt;li&gt;DeMorgan’s Laws:
-    &lt;ul&gt;
-      &lt;li&gt;\( \lnot (P \land Q) \text{ is equivalent to } \lnot P \lor \lnot Q \).&lt;/li&gt;
-      &lt;li&gt;\( \lnot (P \lor Q) \text{ is equivalent to } \lnot P \land \lnot Q \).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Commutative Laws:
-    &lt;ul&gt;
-      &lt;li&gt;\( P \land Q \text{ is equivalent to } Q \land P \).&lt;/li&gt;
-      &lt;li&gt;\( P \lor Q \text{ is equivalent to } Q \lor P \).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Associative Laws:
-    &lt;ul&gt;
-      &lt;li&gt;\( P \land (Q \land R) \text{ is equivalent to } (P \land Q) \land R \).&lt;/li&gt;
-      &lt;li&gt;\( P \lor (Q \lor R) \text{ is equivalent to } (P \lor Q) \lor R \).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Idemponent Laws:
-    &lt;ul&gt;
-      &lt;li&gt;\( P \land P \text{ is equivalent to } P \).&lt;/li&gt;
-      &lt;li&gt;\( P \lor P \text{ is equivalent to } P \).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Distributive Laws:
-    &lt;ul&gt;
-      &lt;li&gt;\( P \land (Q \lor R) \text{ is equivalent to } (P \land Q) \lor (P \land R) \).&lt;/li&gt;
-      &lt;li&gt;\( P \lor (Q \land R) \text{ is equivalent to } (P \lor Q) \land (P \lor R) \).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Absorption Laws:
-    &lt;ul&gt;
-      &lt;li&gt;\( P \lor (P \land Q) \text{ is equivalent to } P \).&lt;/li&gt;
-      &lt;li&gt;\( P \land (P \lor Q) \text{ is equivalent to } P \).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Double Negation Law:
-    &lt;ul&gt;
-      &lt;li&gt;\( \lnot \lnot P \text{ is equivalent to } P \).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Tautologies: Formulas that are always true.&lt;/li&gt;
-  &lt;li&gt;Contradictions: Formulas that are always false.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;solutions&quot;&gt;Solutions&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \lor Q \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( S \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( G \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot S \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot G \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot S \lor \lnot G \)&lt;/th&gt;
-      &lt;th&gt;\( S \lor G \)&lt;/th&gt;
-      &lt;th&gt;\( (S \lor G) \land (\lnot S \lor \lnot G) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \lor \lnot P \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \land (Q \lor \lnot P) \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot (P \land (Q \lor \lnot P))  \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( R \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( Q \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P\lor Q \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( \lnot P \lor R \)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( (P\lor Q) \land (\lnot P \lor R) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;P&lt;/th&gt;
-      &lt;th&gt;Q&lt;/th&gt;
-      &lt;th&gt;P + Q&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We may proceed as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;P + Q is true only for two cases, P = true, Q = false and P = false, Q = true.&lt;/li&gt;
-  &lt;li&gt;Similarly, P + Q is false only for two cases, P = Q = true anf P = Q = false.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A point to note:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We know that \( \land \) gives true only when all of its input are true. Or returns false only if any of the input is false.&lt;/li&gt;
-  &lt;li&gt;Also \( \lor \) returns true if any of the inputs are true. Or returns false only if all the inputs are false.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We may see that to output a value true/false for a given input, we need to combine the values of input using operators, such that 
-they will result the required the required output only for that input or else there is any change in input it will not return the desired output.&lt;/p&gt;
-
-&lt;p&gt;For eg, if we want false for input say P = true, Q = true:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To fix the values of input such that only for the given combination of input, we get the required result,
-we may use the point when all of the inputs are restricted by the operator.&lt;/li&gt;
-  &lt;li&gt;Here we want false as output. We can see from the note above that false output is produced by both operators \( \lor, \land \)
-but only operator \( \lor \) restricts all of the inputs. As \( \land \) returns false if any of the input is false, hence putting
-no restriction on the input.&lt;/li&gt;
-  &lt;li&gt;But current values of P and Q will not return false if we combine them with operator \( lor \).&lt;/li&gt;
-  &lt;li&gt;Thus to get the required values we may revert the values of input using operator \( \lnot \).&lt;/li&gt;
-  &lt;li&gt;So we have \( \lnot P \lor \lnot Q \).&lt;/li&gt;
-  &lt;li&gt;Now check that only for the above input P = true, Q = true,  \( \lnot P \lor \lnot Q \) will return the required output false, else 
-it will return true.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Similarly if we want true for input say P = true, Q = false, expression can be \( P \land \lnot Q \).&lt;/p&gt;
-
-&lt;p&gt;Thus from above we created a way to form an expression that will result in required output only for the given input and for all other inputs
-it will not return the required output.&lt;/p&gt;
-
-&lt;p&gt;Now to get the given set of outputs, for eg. in our case \( P + Q \), we can proceed as:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;From the above method, we can create expression for each row. But we need to combine them such that
- resulting expression gives the required output.&lt;/li&gt;
-  &lt;li&gt;To get true/false only in one of row(single row), we can use the our expression of that row as it will return the required output only
- for that row else it will return the opposite of the required output.&lt;/li&gt;
-  &lt;li&gt;To get true or false only in the given set of rows(multiple row), we may combine the formula of the corresponding rows such that 
- it returns required output for only these rows else it will not return required output.&lt;/li&gt;
-  &lt;li&gt;For eg, in our case, to get false as output, we need to combine formulas of 1st and 4th row such that it returns false for 1st and 4th
- row or else it returns true.&lt;/li&gt;
-  &lt;li&gt;Or similarly the opposite eg can be, To get true, we need to combine formulas of 2nd and 3rd row such that it returns true for 2nd and 3rd
- row or else it returns false.&lt;/li&gt;
-  &lt;li&gt;Noting again, that, Each row formulae returns the required output only for that row else it return opposite output. We can use this fact to combine the 
- these formulas.&lt;/li&gt;
-  &lt;li&gt;To get false only in the required rows, we can combine formulas giving false output by operator \( \land \), than if any of the formulae returns false we will get false.
- Also this combined formula will return true for any other row. This is because all other rows are those rows where each of the formula
- returns true.&lt;/li&gt;
-  &lt;li&gt;Similarly to get true only in the required rows, we can combine the formulas giving true output by operator \( \lor \), than if any of the formulae returns true we will get true.
- Also this combined formula will return false for any other row because all other rows are those rows where each of the formulae returns false.&lt;/li&gt;
-  &lt;li&gt;Thus we can get the required results either by combining formulas returning true by operator \( \lor \) or combining formulas returning false by operator \( \land \).&lt;/li&gt;
-  &lt;li&gt;Thus we can get two formulas will be correct and both will be correct.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;From the method outlined, we can see that we have following two formulas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;\( (\lnot P \lor \lnot Q) \land (P \lor Q) \). This is the resulting formula to get false in 1st row formula \( (\lnot P \lor \lnot Q) \) and 4th row formula \( (P \lor Q) \) and combining them by \( \land \).&lt;/li&gt;
-  &lt;li&gt;\( (P \land \lnot Q) \lor (\lnot P \land Q) \). This is the resulting formula to get true in 2nd row formula \( ( P \land \lnot Q) \) and 3rd row formula \( (\lnot P \land Q) \) and combining them by \( \lor \).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lets create truth table for both formulas:&lt;/p&gt;
-
-&lt;p&gt;\( (\lnot P \lor \lnot Q) \land (P \lor Q) \) :&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( (\lnot P \lor \lnot Q) \)&lt;/th&gt;
-      &lt;th&gt;\( (P \lor Q) \)&lt;/th&gt;
-      &lt;th&gt;\( (\lnot P \lor \lnot Q) \land (P \lor Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;\( (P \land \lnot Q) \lor (\lnot P \land Q) \) :&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( ( P \land \lnot Q) \)&lt;/th&gt;
-      &lt;th&gt;\( (\lnot P \land Q) \)&lt;/th&gt;
-      &lt;th&gt;\( (P \land \lnot Q) \lor (\lnot P \land Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;As can be seen above both formulas returns the same result.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We know that:&lt;/p&gt;
-
-&lt;p&gt;\( P \lor Q  = \lnot \lnot (P \lor Q) \)&lt;/p&gt;
-
-&lt;p&gt;Using Demorgans Law: \( P \lor Q  = \lnot (\lnot P \land \lnot Q) \)&lt;/p&gt;
-
-&lt;p&gt;Truth table for \( \lnot (\lnot P \land \lnot Q) \) :&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( (\lnot P \land \lnot Q) \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot (\lnot P \land \lnot Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;As can be seen \( \lnot (\lnot P \land \lnot Q) \) is same as \( P \lor Q \).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln.5&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \downarrow Q \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To find formula for \( P \downarrow Q \) we can use the method outlined in Soln3-b above.&lt;/p&gt;
-
-&lt;p&gt;We can get two formulas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;\( (\lnot P \lor \lnot Q) \land (\lnot P \lor Q) \land (\lnot P \lor Q) \)&lt;/li&gt;
-  &lt;li&gt;\( \lnot P \land \lnot Q \)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;It can be easily verified that \( \lnot P = P \downarrow P \) ….(i)&lt;/p&gt;
-
-&lt;p&gt;From &lt;em&gt;Soln5(b)&lt;/em&gt;, we have \( P \downarrow Q = \lnot P \land \lnot Q \).&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow P \land Q = \lnot P \downarrow \lnot Q \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow P \land Q = (P \downarrow P) \downarrow (Q \downarrow Q) \) …(ii)&lt;/p&gt;
-
-&lt;p&gt;Also, using Demorgans law on &lt;em&gt;Soln5(b)&lt;/em&gt;, \( \lnot P \land \lnot Q \) can be written as \( \lnot ( P \lor Q ) \).&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow P \downarrow Q = \lnot ( P \lor Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Or we can say,  \( P \lor Q = \lnot (P \downarrow Q) = (P \downarrow Q) \downarrow (P \downarrow Q) \) …..(ii)&lt;/p&gt;
-
-&lt;p&gt;Thus (i), (ii) and (iii) are the desired answers.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \vert Q \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To find formula for \( P \downarrow Q \) we can use the method outlined in Soln3-b above.&lt;/p&gt;
-
-&lt;p&gt;Also, we can directly see that ““P and Q are not both true.” is equivalent to \( \lnot (P \land Q) \).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;It can be easily verified that \( \lnot P = P \vert P \) ….(i)&lt;/p&gt;
-
-&lt;p&gt;Now from part(b), \( P \vert Q = \lnot (P \land Q) \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow P \land Q = \lnot (P \vert Q) = (P \vert Q) \vert (P \vert Q) \) …(ii)&lt;/p&gt;
-
-&lt;p&gt;Again from part(b), \( P \vert Q = \lnot (P \land Q) = \lnot P \lor \lnot Q \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow P \lor Q = \lnot P \vert \lnot Q = (P \vert P) \vert (Q \vert Q) \) …(iii)&lt;/p&gt;
-
-&lt;p&gt;Thus (i), (ii) and (iii) are the desired answers.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( JM \)&lt;/th&gt;
-      &lt;th&gt;\( PM \)&lt;/th&gt;
-      &lt;th&gt;\( PC \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot (JM \land PM) \)&lt;/th&gt;
-      &lt;th&gt;\( PM \lor PC \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;When values corresponding to all premises are true, than conclusion is also true.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( B \)&lt;/th&gt;
-      &lt;th&gt;\( F \)&lt;/th&gt;
-      &lt;th&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( C \)&lt;/th&gt;
-      &lt;th&gt;\( B \lor F \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor C \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot (F \land C) \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot (B \land P) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;It can be easily seen that when all premises are true, than also conclusion \( \lnot (B \land P) \) is not true.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( J \)&lt;/th&gt;
-      &lt;th&gt;\( B \)&lt;/th&gt;
-      &lt;th&gt;\( S \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot B \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot S \)&lt;/th&gt;
-      &lt;th&gt;\( J \lor \lnot B \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot S \lor \lnot B \)&lt;/th&gt;
-      &lt;th&gt;\( J \lor \lnot S \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Thus it can be easily verified when premises are true, than conclusions are also true.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( S \)&lt;/th&gt;
-      &lt;th&gt;\( E \)&lt;/th&gt;
-      &lt;th&gt;\( B \)&lt;/th&gt;
-      &lt;th&gt;\( S \land B \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot B \)&lt;/th&gt;
-      &lt;th&gt;\( E \land \lnot B \)&lt;/th&gt;
-      &lt;th&gt;\( (S \land B) \lor (E \land \lnot B) \)&lt;/th&gt;
-      &lt;th&gt;\( S \land E \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot(S \land E) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Thus argument is not valid because when premise is true, conclusion is not true.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \land Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \land \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( (P \land Q) \lor (\lnot P \land \lnot Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \lor Q \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \lor Q \)&lt;/th&gt;
-      &lt;th&gt;\( (P \lor \lnot Q) \land (\lnot P \lor Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot (P \lor Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;(e)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( P \land Q \)&lt;/th&gt;
-      &lt;th&gt;\( (P \land Q) \lor \lnot P \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Clearly (a) and (c) are equivalent. Also (b) and (e) are equivalent. (d) is not equivalent to any.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Sol9&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \lor \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( (P \lor Q) \land (\lnot P \lor \lnot Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Thus it is niether a tautology nor a contradiction.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \land \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( (P \lor Q) \land (\lnot P \land \lnot Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Thus it is a contradiction.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \lor \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( (P \lor Q) \lor (\lnot P \lor \lnot Q) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Thus it is a tautology.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( R \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot R \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \lor R \)&lt;/th&gt;
-      &lt;th&gt;\( Q \lor \lnot R \)&lt;/th&gt;
-      &lt;th&gt;\( P \land (Q \lor \lnot R) \)&lt;/th&gt;
-      &lt;th&gt;\( [P \land (Q \lor \lnot R)] \lor (\lnot P \lor R) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Thus it is also a tautology.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot (P \lor Q) \)&lt;/th&gt;
-      &lt;th&gt;\( \lnot P \land \lnot Q \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Thus \( \lnot (P \lor Q) \) is equivalent to \( \lnot P \land \lnot Q \).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( R \)&lt;/th&gt;
-      &lt;th&gt;\( Q \lor R \)&lt;/th&gt;
-      &lt;th&gt;\( P \land (Q \lor R) \)&lt;/th&gt;
-      &lt;th&gt;\( P \land Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \land R \)&lt;/th&gt;
-      &lt;th&gt;\( (P \land Q) \lor ( P \land R) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;As can be seen in the table  \( P \land (Q \lor R) \) is equivalent to \( (P \land Q) \lor ( P \land R) \)&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;\( P \)&lt;/th&gt;
-      &lt;th&gt;\( Q \)&lt;/th&gt;
-      &lt;th&gt;\( R \)&lt;/th&gt;
-      &lt;th&gt;\( Q \land R \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor (Q \land R) \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor Q \)&lt;/th&gt;
-      &lt;th&gt;\( P \lor R \)&lt;/th&gt;
-      &lt;th&gt;\( (P \lor Q) \land ( P \lor R) \)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;As can be seen in the table  \( P \lor (Q \land R) \) is equivalent to \( (P \lor Q) \land ( P \lor R) \).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;\( \lnot (\lnot P \land \lnot Q) = \lnot \lnot P \lor \lnot \lnot Q = P \lor Q\).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Using Distributive Law:&lt;/p&gt;
-
-&lt;p&gt;\( (P \land Q ) \lor (P \land \lnot Q) = ((P \land Q ) \lor P) \land ((P \land Q ) \lor \lnot Q) \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow (P \land Q \lor P) \land (P \land Q \lor \lnot Q) \)&lt;/p&gt;
-
-&lt;p&gt;Using Tautology \( A \lor \lnot A \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow (P \land Q \lor P) \land P \)&lt;/p&gt;
-
-&lt;p&gt;Using Absorption law:&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow  P \land P \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow  P \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;\( \lnot(P \land \lnot Q) \lor (\lnot P \land Q) \)&lt;/p&gt;
-
-&lt;p&gt;Using Demorgans Law: \( (\lnot P \lor \lnot \lnot Q) \lor (\lnot P \land Q) \)&lt;/p&gt;
-
-&lt;p&gt;Double Negation Law: \( (\lnot P \lor Q) \lor (\lnot P \land Q) \)&lt;/p&gt;
-
-&lt;p&gt;Distribution Law: \( ((\lnot P \lor Q) \lor \lnot P) \land ((\lnot P \lor Q) \lor Q) \)&lt;/p&gt;
-
-&lt;p&gt;Associative Law: \( (\lnot P \lor Q \lor \lnot P) \land (\lnot P \lor Q \lor Q) \)&lt;/p&gt;
-
-&lt;p&gt;Using Idempotent Law: \( (\lnot P \lor Q \lor \lnot P) \land (\lnot P \lor Q) \)&lt;/p&gt;
-
-&lt;p&gt;Using associative, commutative and idempotent law: \( (\lnot P \lor Q) \land (\lnot P \lor Q) \)&lt;/p&gt;
-
-&lt;p&gt;Using Idempotent Law: \( \lnot P \lor Q \)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;\( \lnot(\lnot P \lor Q) \lor (P \land \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Demorgans and double Negation Law: \( ( P \land \lnot Q) \lor (P \land \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Distributed Law: \( ( P \land \lnot Q \lor P) \land ( (P \land \lnot Q) \lor \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Absorption law: \(  P \land ( (P \land \lnot Q) \lor \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Distributive law: \( (P \land (P \land \lnot Q)) \lor (P \land \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Idempotent Law: \( (P \land \lnot Q) \lor (P \land \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;\( \lnot (\lnot P \land Q) \lor (P \land \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Demorgans Law and Double Negation Law : \( ( P \lor \lnot Q) \lor (P \land \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Distributed Law : \( ( P \lor \lnot Q \lor P) \land ((P \lor \lnot Q) \lor \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Associative and Idempotent Law: \( ( P \lor \lnot Q ) \land ((P \lor \lnot Q) \lor \lnot R) \)&lt;/p&gt;
-
-&lt;p&gt;Using Absorption Law: \( P \lor \lnot Q \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;\( ( P \land R ) \lor [ \lnot R \land ( P \lor Q ) ] \)&lt;/p&gt;
-
-&lt;p&gt;Using Distributed Law: \( ( P \land R ) \lor [ (\lnot R \land P) \lor ( \lnot R \land Q ) ] \)&lt;/p&gt;
-
-&lt;p&gt;Using Associative Law: \( [( P \land R ) \lor (\lnot R \land P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Using Distributive Law: \( [(( P \land R ) \lor \lnot R) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Using Distributive Law: \( [(( P \lor \lnot R) \land ( R \lor \lnot R )) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Using Tautology: \( [( P \lor \lnot R) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Using Absorption Law: \( [( P \lor \lnot R) \land P] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Using Distributive Law: \( [( P \land P) \lor ( P \land \lnot R)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Using Idempotent Law: \( [ P \lor ( P \land \lnot R)] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;Using Absorption Law: \( [ P ] \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow  P \lor ( \lnot R \land Q ) \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;\( \lnot (P \land Q) = \lnot P \lor \lnot Q \).&lt;/p&gt;
-
-&lt;p&gt;Taking negation on both sides, \( \lnot \lnot (P \land Q) = \lnot (\lnot P \lor \lnot Q) \).&lt;/p&gt;
-
-&lt;p&gt;Using Double negation law, \( P \land Q = \lnot (\lnot P \lor \lnot Q) \).&lt;/p&gt;
-
-&lt;p&gt;Using \( P1 = !P, Q1 = !Q \), \( !P1 \land !Q1 = \lnot ( P1 \lor Q1) \).&lt;/p&gt;
-
-&lt;p&gt;\( \Rightarrow \lnot ( P1 \lor Q1) = !P1 \land !Q1 \). .. which is the required derivation.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We have \( [P \land (Q \land R)] \land S \)&lt;/p&gt;
-
-&lt;p&gt;Using Associative law, \( [(P \land Q) \land R] \land S \)&lt;/p&gt;
-
-&lt;p&gt;Using Associative law, \( (P \land Q) \land [R \land S] \) which is same as was required.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Each letter doubles the number of lines. So total lines should be \( 2^n \)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We can use same steps as in soln 3b:&lt;/p&gt;
-
-&lt;p&gt;We can have two formulas:
-    - \( P \lor \lnot Q \)
-    - \( (\lnot P \land \lnot Q) \lor (P \land \lnot Q) \lor (P \land Q) \).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We can use same steps as in soln 3b:&lt;/p&gt;
-
-&lt;p&gt;We can have two formulas:
-    - \( (P \lor Q) \land (\lnot P \lor \lnot Q) \).
-    - \( (\lnot P \land Q) \lor (P \land \lnot Q) \).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Son18&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If the conclusion of an argument is a tautology. The argument is always true. We have two cases:
-    &lt;ul&gt;
-      &lt;li&gt;If all premises are true. In this case it is obvious that argument is valid.&lt;/li&gt;
-      &lt;li&gt;All or some premises are not true then also argument will be valid. An argument is considered valid when all premises are true, 
-then conclusion should also be true. Thus argument validation check does not apply when premises are not true.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If the conclusion is contradiction. We have two cases:
-    &lt;ul&gt;
-      &lt;li&gt;If premises are true, then argument is not valid.&lt;/li&gt;
-      &lt;li&gt;If premises are false, then argument is valid.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If one of the premise is a Tautology:
-    &lt;ul&gt;
-      &lt;li&gt;We are not sure of the other premises and also we dont know about the conclusion. Thus answer will depend on further datapoints.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If one of the premise is Contradiction:
-  -Than argument is always valid. An argument is valid when all premises are true and then conclusion is also true. In this case all
-   premises will never be true thus .&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 16 Jul 2015 00:00:00 +0530</pubDate>
-        <link>https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-2.html</link>
-        <guid isPermaLink="true">https://inchmeal.github.io/2015/07/16/how-to-prove-it-ch-1-sec-2.html</guid>
         
         <category>mathematics</category>
         
