@@ -5,9 +5,985 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Sep 2015 23:04:14 +0530</pubDate>
-    <lastBuildDate>Tue, 29 Sep 2015 23:04:14 +0530</lastBuildDate>
+    <pubDate>Thu, 08 Oct 2015 21:32:25 +0530</pubDate>
+    <lastBuildDate>Thu, 08 Oct 2015 21:32:25 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-3 Sec-3.5, Disjunctions</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 3, Section - 3.5, Disjunctions.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To use a given of the form &lt;script type=&quot;math/tex&quot;&gt;P \lor Q&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Break proof into cases. For case 1, assume that &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is true and use this assumption to prove the goal.
+For case 2, assume &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is true and give another proof of the goal.&lt;/li&gt;
+      &lt;li&gt;Another strategy can be: If it is also given &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;, or it can also be proved that &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;is false, then
+use this given to conclude that Q is true. Similarly, if it is given &lt;script type=&quot;math/tex&quot;&gt;\lnot Q&lt;/script&gt; or it can be proved that &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; 
+is false, then it can be used to conclude that &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is true.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To prove a goal of the form &lt;script type=&quot;math/tex&quot;&gt;P ∨ Q&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Break the proof into cases. In each case, either prove P or prove Q.&lt;/li&gt;
+      &lt;li&gt;Another strategy can be: If &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is true, then clearly the goal &lt;script type=&quot;math/tex&quot;&gt;P \lor Q&lt;/script&gt; is true, so only need to worry
+about the case in which &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is false. Thus for the case &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is false, complete the proof by proving that &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is true. 
+Point to note here is this strategy is same as proving the goal &lt;script type=&quot;math/tex&quot;&gt;\lnot P \to Q&lt;/script&gt;. Similarly it &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; can be used instead 
+of &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap (B \cup C)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B \lor x \in C&lt;/script&gt;. Thus we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B) \cup C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B) \cup C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus in all the cases, &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B) \cup C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;A \cap (B \cup C) \subseteq (A \cup B) \cap C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cup B) \setminus C&lt;/script&gt;. Thus either &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;. Thus we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in ( A \cup (B \setminus C) )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;. Clearly it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in ( A \cup (B \setminus C) )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus in all the possible cases, &lt;script type=&quot;math/tex&quot;&gt;x \in ( A \cup (B \setminus C) )&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude
+that &lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \; \subseteq \; A \cup (B \setminus C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus (A \setminus B))&lt;/script&gt;. Thus we have:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x \in A \land \lnot (x \in (A \setminus B))&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land \lnot(x \in A \land x \notin B)&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land (x \notin A \lor x \in B)&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land x \in B&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (A \cap B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A \setminus (A \setminus B) = A \cap B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose  A ∩ C ⊆ B ∩ C   and    A ∪ C ⊆ B ∪ C.     Prove that   A ⊆ B.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \cup C \subseteq B \cup C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;.
+Thus either &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; or, &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. So we have following cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;, then it follows &lt;script type=&quot;math/tex&quot;&gt;x \in A \to x \in B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \in C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \cap C \subseteq B \cap C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from all the cases, if &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We shall prove this using contra-positive. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;((A \setminus B) \cup (B \setminus A)) \subseteq A&lt;/script&gt;, it 
+follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin ((A \setminus B) \cup (B \setminus A))&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \notin (A \setminus B)&lt;/script&gt; as well as &lt;script type=&quot;math/tex&quot;&gt;x \notin (B \setminus A)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;, then clearly &lt;script type=&quot;math/tex&quot;&gt;x \notin (A \setminus B)&lt;/script&gt;. Thus we are left with &lt;script type=&quot;math/tex&quot;&gt;x \notin (B \setminus A)&lt;/script&gt;. This can be simplified
+into &lt;script type=&quot;math/tex&quot;&gt;\lnot (x \in B \land x \notin A)&lt;/script&gt;  which is equivalent to &lt;script type=&quot;math/tex&quot;&gt;x \notin B \lor x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;x \notin B \lor x \in A&lt;/script&gt;, 
+it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;. Thus we have if &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;. By contra-positive, we can say if &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; 
+then &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;B \subseteq A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;A \cup C \subseteq B \cup C&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \cup C \subseteq B \cup C&lt;/script&gt;,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;. And since &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;
+is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A \setminus C \subseteq B \setminus C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;A \setminus C \subseteq B \setminus C&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;. Thus we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Then clearly &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;. Then since &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \setminus C \subseteq B \setminus C&lt;/script&gt;,
+ it follows that, &lt;script type=&quot;math/tex&quot;&gt;x \in (B \setminus C)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Thus we can say that &lt;script type=&quot;math/tex&quot;&gt;x \in (B \cup C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from all the possible cases, if &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A \cup C \subseteq B \cup C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A) \cup \mathcal P(B)&lt;/script&gt;. Thus we have two possible cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A)&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x \subseteq A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y \in x&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;y \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;y \in A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;y \in A \cup B&lt;/script&gt;. 
+Since &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq (A \cup B)&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A \cup B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(B)&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x \subseteq B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y \in x&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;y \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;y \in B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;y \in A \cup B&lt;/script&gt;. 
+Since &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \subseteq (A \cup B)&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A \cup B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from all cases, if &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A) \cup \mathcal P(B)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal P(A \cup B)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows 
+that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \cup \mathcal P(B) \subseteq \mathcal P(A \cup B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \cup \mathcal P(B) = \mathcal P(A \cup B)&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;A \cup B \in \mathcal P(A \cup B)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A \cup B)  = \mathcal P(A) \cup \mathcal P(B)&lt;/script&gt;, it
+follows that &lt;script type=&quot;math/tex&quot;&gt;A \cup B \in \mathcal P(A) \cup \mathcal P(B)&lt;/script&gt;. Thus we have following cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;A \cup B \in \mathcal P(A)&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;A \cup B \subseteq A&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;B \subseteq A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;A \cup B \in \mathcal P(B)&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;A \cup B \subseteq B&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;B \subseteq B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we have either &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;B \subseteq A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y + \frac 1 x = 1 + \frac y x&lt;/script&gt;. It is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \frac {xy + 1} x = \frac {x + y} x&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow xy + 1 = x + y&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow xy - x - y + 1 = 0&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x(y - 1) - 1(y - 1) = 0&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (x - 1)(y - 1) = 0&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x = 1 \lor y = 1&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\vert x - 3 \vert &gt; 3&lt;/script&gt;. Then we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;x - 3 &gt; 0&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x - 3 &gt; 3&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x &gt; 6&lt;/script&gt;. Multiplying both sides by &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, we get &lt;script type=&quot;math/tex&quot;&gt;x^2 &gt; 6x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x - 3 &lt; 0 %]]&gt;&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;3 - x &gt; 3&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 0 %]]&gt;&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 0 %]]&gt;&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;x^2 &gt; 0&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+6x &lt; 0 %]]&gt;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x^2 &gt; 6x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;\vert 2x - 6 \vert &gt; x&lt;/script&gt;. Then we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;2x - 6 &gt; 0&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;2x - 6 &gt; x&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x &gt; 6&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x - 4 &gt; 2&lt;/script&gt;.  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;x - 4 &gt; 0&lt;/script&gt;, it follows that \vert x - 4 \vert &amp;gt; 2 $$.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+2x - 6 &lt; 0 %]]&gt;&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;6 - 2x &gt; x&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow 6 &gt; 3x&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\leftrightarrow x &lt; 2 %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\leftrightarrow x - 4 &lt; -2 %]]&gt;&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow 4 - x &gt; 2&lt;/script&gt;  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x - 4 &lt; 0 %]]&gt;&lt;/script&gt;, it follows that \vert x - 4 \vert &amp;gt; 2.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;\vert x - 4 \vert &gt; 2&lt;/script&gt;. Then we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;x - 4 &gt; 0&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x - 4 &gt; 2&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x &gt; 6&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x - 6 &gt; 0&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow 2x - 6 &gt; x&lt;/script&gt;.  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;x &gt; 6&lt;/script&gt;, so &lt;script type=&quot;math/tex&quot;&gt;2x - 6 &gt; 0&lt;/script&gt;.  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;\vert 2x - 6 \vert &gt; x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x - 4 &lt; 0 %]]&gt;&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;4 - x &gt; 2&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow -x &gt; -2&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\leftrightarrow x &lt; 2 %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\leftrightarrow 3x &lt; 6 %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\leftrightarrow 3x - 6 &lt; 0 %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\leftrightarrow 2x - 6 &lt; 0 - x %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\leftrightarrow 2x - 6 &lt; -x %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 2 %]]&gt;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+2x - 6 &lt; 0 %]]&gt;&lt;/script&gt;.  &lt;br /&gt;
+And since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+2x - 6 &lt; 0 %]]&gt;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;6 - 2x &gt; x&lt;/script&gt;, Or &lt;script type=&quot;math/tex&quot;&gt;\vert 2x - 6 \vert &gt; x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;\vert a \vert \le b&lt;/script&gt;. Then we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;a &gt; 0&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;a \le b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a &lt; 0 %]]&gt;&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;-a \le b&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;a \ge -b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;-b \le a \le b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;-b \le a \le b&lt;/script&gt;. Then we have following possible cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;a &gt; 0&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\vert a \vert = a&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a \le b&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;\vert a \vert \le b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a &lt; 0 %]]&gt;&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\vert a \vert = -a&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;-b \le a&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;b \ge -a&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;b \ge \vert a \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus form both cases, we have &lt;script type=&quot;math/tex&quot;&gt;\vert a \vert \le b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;First lets prove &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt;= \vert x \vert %]]&gt;&lt;/script&gt;, because:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if &lt;script type=&quot;math/tex&quot;&gt;x &gt;= 0&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert = x&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt;= \vert x \vert %]]&gt;&lt;/script&gt; is true.&lt;/li&gt;
+  &lt;li&gt;if &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 0 %]]&gt;&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert = x&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt;= -x %]]&gt;&lt;/script&gt; is true, it follows &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt;= \vert x \vert %]]&gt;&lt;/script&gt; is true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt;= \vert x \vert %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;We know that(from (a)), &lt;script type=&quot;math/tex&quot;&gt;\vert a \vert \le b \leftrightarrow -b \le a \le b&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;b = \vert x \vert&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a = \vert x \vert&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt;= \vert x \vert %]]&gt;&lt;/script&gt;, it follows that, &lt;script type=&quot;math/tex&quot;&gt;- \vert x \vert \le x \le \vert x \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We have following all possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \ge 0 \land y \ge 0&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As &lt;script type=&quot;math/tex&quot;&gt;x + y \ge 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert = x + y&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also since &lt;script type=&quot;math/tex&quot;&gt;x \ge 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert = x&lt;/script&gt;.  &lt;br /&gt;
+Similarly since &lt;script type=&quot;math/tex&quot;&gt;y \ge 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert y \vert = y&lt;/script&gt;.  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert + \vert y \vert = x + y&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;From above we can conclude &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert = \vert x \vert + \vert y \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 0 \land y &lt; 0 %]]&gt;&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x + y &lt; 0 %]]&gt;&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert = - (x + y)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 0 %]]&gt;&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert = -x&lt;/script&gt;.  &lt;br /&gt;
+Similarly since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+y &lt; 0 %]]&gt;&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert y \vert = -y&lt;/script&gt;.  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert + \vert y \vert = -(x + y)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;We can conclude &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert = \vert x \vert + \vert y \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;x \ge 0 \land y \le 0&lt;/script&gt;: Here we have following further cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case a: &lt;script type=&quot;math/tex&quot;&gt;x + y &gt;= 0&lt;/script&gt;:   &lt;br /&gt;
+   LHS:  &lt;br /&gt;
+   Since &lt;script type=&quot;math/tex&quot;&gt;x + y \ge 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert = x + y&lt;/script&gt;. &lt;br /&gt;
+   As &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x + y &gt; 0 \land x &gt;= 0 \land y &lt;= 0 %]]&gt;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x + y \le x&lt;/script&gt;.  &lt;br /&gt;
+   Thus we have &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert \le x&lt;/script&gt;.   &lt;br /&gt;
+   RHS:        &lt;br /&gt;
+   Since &lt;script type=&quot;math/tex&quot;&gt;x &gt;= 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert = x&lt;/script&gt;.  &lt;br /&gt;
+   Also, since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+y &lt;=0 %]]&gt;&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert y \vert = -y&lt;/script&gt;.  &lt;br /&gt;
+   Thus &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert + \vert y \vert  = x - y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &gt;= 0 \land y &lt;= 0 %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x - y &gt;= x&lt;/script&gt;.   &lt;br /&gt;
+   Thus we have &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert + \vert y \vert  &gt;= x&lt;/script&gt;  &lt;br /&gt;
+   So,  &lt;br /&gt;
+   we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert \le \vert x \vert + \vert y \vert&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case b: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x + y &lt; 0 %]]&gt;&lt;/script&gt;:
+   LHS:  &lt;br /&gt;
+   Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x + y &lt; 0 %]]&gt;&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert = -(x + y)&lt;/script&gt;.  &lt;br /&gt;
+   As &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x + y &lt; 0 \land x &gt;= 0 \land y &lt;= 0 %]]&gt;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x + y) \ge y&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;-(x+y) \le y&lt;/script&gt;.       &lt;br /&gt;
+   Thus we have &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert \le y&lt;/script&gt;.   &lt;br /&gt;
+   RHS:        &lt;br /&gt;
+   Since &lt;script type=&quot;math/tex&quot;&gt;x &gt;= 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert = x&lt;/script&gt;.  &lt;br /&gt;
+   Also, since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+y &lt;=0 %]]&gt;&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert y \vert = -y&lt;/script&gt;.  &lt;br /&gt;
+   Thus &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert + \vert y \vert  = x - y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &gt;= 0 \land y &lt;= 0 %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x - y &gt;= y&lt;/script&gt;.   &lt;br /&gt;
+   Thus we have &lt;script type=&quot;math/tex&quot;&gt;\vert x \vert + \vert y \vert  &gt;= y&lt;/script&gt;  &lt;br /&gt;
+   So,  &lt;br /&gt;
+   we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert \le \vert x \vert + \vert y \vert&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 4: &lt;script type=&quot;math/tex&quot;&gt;x \le 0 \land y \ge 0&lt;/script&gt;:   &lt;br /&gt;
+  This case is similar to Case 3. By swapping &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;, proof will be same as in Case 3.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from all the cases above: &lt;script type=&quot;math/tex&quot;&gt;\vert x + y \vert \le \vert x \vert + \vert y \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is an integer. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; can either be even or odd. We have following cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is even. Then &lt;script type=&quot;math/tex&quot;&gt;x = 2k&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is any integer. Thus &lt;script type=&quot;math/tex&quot;&gt;x^2 + x = 4k^2 + 2k = 2(2k^2 + k)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is integer,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;2k^2 + k&lt;/script&gt; is also an integer. Thus &lt;script type=&quot;math/tex&quot;&gt;2(2k^2 + k)&lt;/script&gt; is an even integer. Thus we can conclude if &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is even, then
+&lt;script type=&quot;math/tex&quot;&gt;x^2 + x&lt;/script&gt; is also an even integer.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is odd. Then &lt;script type=&quot;math/tex&quot;&gt;x = 2k + 1&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is any integer. Thus &lt;script type=&quot;math/tex&quot;&gt;x^2 + x = 4k^2 + 4k + 1 + 2k + 1 = 2(2k^2 + 3k + 1)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is integer,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;2k^2 + 3k + 1&lt;/script&gt; is also an integer. Thus &lt;script type=&quot;math/tex&quot;&gt;2(2k^2 + 3k + 1)&lt;/script&gt; is an even integer. Thus we can conclude if &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is odd, then
+&lt;script type=&quot;math/tex&quot;&gt;x^2 + x&lt;/script&gt; is also an even integer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;x^2 + x&lt;/script&gt; is even integer.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is an integer. We have following possible cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is even, or &lt;script type=&quot;math/tex&quot;&gt;x = 2k&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is even. &lt;script type=&quot;math/tex&quot;&gt;x^4 = 16k^4 = 8 \times 2k^4&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x^4&lt;/script&gt; is a multiple of &lt;script type=&quot;math/tex&quot;&gt;8&lt;/script&gt; and
+ remainder is zero.&lt;/p&gt;
+
+&lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is odd, or &lt;script type=&quot;math/tex&quot;&gt;x = 2k + 1&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is odd. &lt;script type=&quot;math/tex&quot;&gt;x^4 = 16k^4 + 32k^3 + 24k^2 + 8k + 1= 8 \times (2k^4 + 4k^3 + 3k^2 + k) + 1&lt;/script&gt;. 
+Thus &lt;script type=&quot;math/tex&quot;&gt;x^4&lt;/script&gt; is not a multiple of &lt;script type=&quot;math/tex&quot;&gt;8&lt;/script&gt; and clearly remainder is one.&lt;/p&gt;
+
+&lt;p&gt;From both cases above, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;x^4&lt;/script&gt; when divided by &lt;script type=&quot;math/tex&quot;&gt;8&lt;/script&gt;, remainder will either be zero or one.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary element and &lt;script type=&quot;math/tex&quot;&gt;x \in \cup ( \mathcal F \cup \mathcal G )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \exists P \in  (\mathcal F \cup \mathcal G)( x \in P)&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \exists P  (P \in  (\mathcal F \cup \mathcal G) \land x \in P)&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \exists P  ((P \in  \mathcal F \lor P \in \mathcal G) \land x \in P)&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \exists P  ((P \in  \mathcal F \land x \in P) \lor (P \in \mathcal G \land x \in P))&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \exists P (P \in  \mathcal F \land x \in P) \lor \exists P (P \in \mathcal G \land x \in P))&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in \cup \mathcal F \lor x \in \cup \mathcal G&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in (\cup \mathcal F) \cup (\cup \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\cup ( \mathcal F \cup \mathcal G ) = (\cup \mathcal F) \cup (\cup \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cap(\mathcal F \cup \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P \in \mathcal F \cup \mathcal G (x \in P)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P (P \in \mathcal F \cup \mathcal G \to x \in P)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P ((P \in \mathcal F \lor  P \in \mathcal G) \to x \in P)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P (\lnot (P \in \mathcal F \lor  P \in \mathcal G) \lor x \in P)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P ((P \notin \mathcal F \land  P \notin \mathcal G) \lor x \in P)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P ((P \notin \mathcal F \lor x \in P) \land  (P \notin \mathcal G \lor x \in P))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P ((P \in \mathcal F \to x \in P) \land  (P \in \mathcal G \to x \in P))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow \forall P (P \in \mathcal F \to x \in P) \land  \forall P (P \in \mathcal G \to x \in P)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in \cap \mathcal F \land x \in \cap \mathcal G&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in (\cap \mathcal F) \cap (\cap \mathcal G)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus we can conclude, &lt;script type=&quot;math/tex&quot;&gt;\cap(\mathcal F \cup \mathcal G) = (\cap \mathcal F) \cap (\cap \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup (\cup \mathcal F)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;\mathcal G = \{ B \}&lt;/script&gt;. Now we have two cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;G = \{ B \}&lt;/script&gt;, It follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exist in atleast one of the sets of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;. 
+ Or we can also say that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in atleast one of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \cup \mathcal G&lt;/script&gt;.
+ Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \cup \mathcal G)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \cup \mathcal \{ B \} )&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in atleast one of the sets of &lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt;. 
+Or we can also say that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in atleast one of the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \cup \mathcal G&lt;/script&gt;.
+   Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \cup \mathcal G)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \cup \mathcal \{ B \} )&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From both cases above, since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude: &lt;script type=&quot;math/tex&quot;&gt;B \cup (\cup \mathcal F) \subseteq \cup (\mathcal F \cup \{ B \} )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup (\mathcal F \cup \{ B \} )&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in atleast 
+one of the sets, say &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \cup \mathcal G&lt;/script&gt;. Thus we have two cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\mathcal G&lt;/script&gt; contains only one set &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;A = B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;. Thus there exists atleast one set in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Thus we can say that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from above cases, we have &lt;script type=&quot;math/tex&quot;&gt;x \in B \lor x \in \cup \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary we can say that:
+&lt;script type=&quot;math/tex&quot;&gt;\cup (\mathcal F \cup \{ B \} ) \subseteq B \cup (\cup \mathcal F)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;B \cup (\cup \mathcal F) = \cup (\mathcal F \cup \{ B \} )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;B ∪ (∩F) = ∩A∈F (B ∪ A)&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup (\cap \mathcal F)&lt;/script&gt;. Thus we have following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup B&lt;/script&gt;.
+Also since &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F ( x \in (A \cup B))&lt;/script&gt;. 
+Or &lt;script type=&quot;math/tex&quot;&gt;x \in \cap_{A \in \mathcal F}(A \cup B)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in all the sets of  &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Thus we can also
+ say that &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F (x \in A)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F (x \in A)&lt;/script&gt;, it follows that 
+&lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F (x \in A \cup B)&lt;/script&gt; is also true. Thus we can say that &lt;script type=&quot;math/tex&quot;&gt;x \in \cap_{A \in \mathcal F}(A \cup B)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;B \cup (\cap \mathcal F) \; \subseteq \; \cap_{A \in \mathcal F}(A \cup B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cap_{A \in \mathcal F}(A \cup B)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in all sets:  &lt;script type=&quot;math/tex&quot;&gt;A \cup B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;.
+It follows following two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Then it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup (\cap \mathcal F)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary, it means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; exists in all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F&lt;/script&gt;.
+ It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup (\cap \mathcal F)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;\cap_{A \in \mathcal F}(A \cup B) \; \subseteq \; B \cup (\cap \mathcal F)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from both directions, we can conclude &lt;script type=&quot;math/tex&quot;&gt;B \cup (\cap \mathcal F) \; = \; \cap_{A \in \mathcal F}(A \cup B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \cap (\cap \mathcal F )&lt;/script&gt;. It appears that &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; as well as &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; belongs to 
+&lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. Thus it seems to be equivalent to &lt;script type=&quot;math/tex&quot;&gt;\cap_{A \in \mathcal F}(A \cap B)&lt;/script&gt;. Lets try to prove it:&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \cap (\cap \mathcal F )&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in all the sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Thus we can also say that &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \in B&lt;/script&gt;,
+or &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;\forall A \in \mathcal F(x \in (A \cap B))&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cap_{A \in \mathcal F}(A \cap B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;). Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cap_{A \in \mathcal F}(A \cap B)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B)&lt;/script&gt;,  &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. Also, since &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B)&lt;/script&gt;,&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; must exist in all the sets, &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \in \cap \mathcal F&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;x \in B \cap (\cap \mathcal F)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from both directions we have &lt;script type=&quot;math/tex&quot;&gt;B \cap (\cap \mathcal F ) \; = \; \cap_{A \in \mathcal F}(A \cap B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal H&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt; and suppose &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal G&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;A \cup B \in \mathcal H&lt;/script&gt;.
+Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup B&lt;/script&gt;. So we have two cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal F&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;x \in (\cap \mathcal F) \cup (\cap \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal G&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;x \in (\cap \mathcal F) \cup (\cap \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from both cases if &lt;script type=&quot;math/tex&quot;&gt;x \in \cap \mathcal H&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in (\cap \mathcal F) \cup (\cap \mathcal G)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln18&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;. Thus we have:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (x \in A \cup B) \land \lnot (x \in A \cap B)&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (x \in A \lor x \in B) \land \lnot (x \in A \land x \in B)&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (x \in A \lor x \in B) \land (x \notin A \lor x \notin B)&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (x \notin B \to x \in A) \land (x \in A \to x \notin B)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Now since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\forall x ( x \in A \triangle B \; \leftrightarrow (x \in A \leftrightarrow x \notin B))&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln19&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;((A \triangle B) \cap C = \phi) \; \to \; (A \cap C = B \cap C)&lt;/script&gt;):   &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \cap C = \phi&lt;/script&gt;. Now we shall prove &lt;script type=&quot;math/tex&quot;&gt;(A \cap C = B \cap C)&lt;/script&gt; :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. We will prove by contradiction. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;. Since
+ &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;, it contradicts the given
+that &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \cap C = \phi&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \in B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \cap C&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in B \cap C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. We will prove by contradiction. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;. Since
+ &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;, it contradicts the &lt;em&gt;given&lt;/em&gt;
+that &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \cap C = \phi&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \in A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap C&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A \cap C = B \cap C&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;(A \cap C = B \cap C) \; \to \; ((A \triangle B) \cap C = \phi)&lt;/script&gt;):   &lt;br /&gt;
+  We will prove this by contra-positive. Suppose &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \cap C \ne \phi&lt;/script&gt; and lets say &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cap C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Since
+  &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;, we have following cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 1: If &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \in C&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap C&lt;/script&gt;. Also
+since &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin B \cap C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A \cap C \neq B \cap C&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 2: If &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \in C&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in B \cap C&lt;/script&gt;. Also
+since &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin A \cap C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A \cap C \neq B \cap C&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Thus we can conclude from contra-positive that &lt;script type=&quot;math/tex&quot;&gt;(A \cap C = B \cap C) \; \to \; ((A \triangle B) \cap C = \phi)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both directions, the condition is true. So we can conclude &lt;script type=&quot;math/tex&quot;&gt;(A \cap C = B \cap C) \; \leftrightarrow \; ((A \triangle B) \cap C = \phi)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln20&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;((A \triangle B) \subseteq C) \; \to \; (A \cup C = B \cup C)&lt;/script&gt;):  &lt;br /&gt;
+  Suppose &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \subseteq C&lt;/script&gt;. Now we will prove  &lt;script type=&quot;math/tex&quot;&gt;A \cup C = B \cup C&lt;/script&gt; :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A \cup C \to B \cup C&lt;/script&gt;:  &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;. Thus we have two exhaustive cases:&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;Case 1: If &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;.&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;Case 2: if &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \subseteq C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin (A \triangle B)&lt;/script&gt;.
+  It follows that &lt;script type=&quot;math/tex&quot;&gt;\lnot ((x \in A \land x \notin B) \lor (x \in B \land x \notin A))&lt;/script&gt;   &lt;br /&gt;
+  &lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (\lnot (x \in A \land x \notin B) \land \lnot (x \in B \land x \notin A))&lt;/script&gt;  &lt;br /&gt;
+  &lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (x \notin A \lor x \in B) \land (x \notin B \lor x \in A))&lt;/script&gt;  &lt;br /&gt;
+  Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Thus we can also say that &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;Thus from both cases above, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(A \cup C) \to (B \cup C)&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;B \cup C \to A \cup C&lt;/script&gt;:  &lt;br /&gt;
+This proof is will be exactly similar to the proof above for &lt;script type=&quot;math/tex&quot;&gt;(A \cup C) \to (B \cup C)&lt;/script&gt; by just swapping &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Thus from both directions above, we can conclude that if &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \subseteq C&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;A \cup C = B \cup C&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;(A \cup C = B \cup C) \; \to \; ((A \triangle B) \subseteq C)&lt;/script&gt;):  &lt;br /&gt;
+  Suppose &lt;script type=&quot;math/tex&quot;&gt;A \cup C = B \cup C&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus B) \lor x \in (B \setminus A)&lt;/script&gt;. 
+  Thus we have two possible cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 1: if &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;.
+  And since &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 2: if &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus A&lt;/script&gt;,  then &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;.
+  And since &lt;script type=&quot;math/tex&quot;&gt;x \in B \cup C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Thus from both cases above, it follows that if &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows
+  that &lt;script type=&quot;math/tex&quot;&gt;A \triangle B \subseteq C&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Thus from both directions above, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;((A \triangle B) \subseteq C) \; \leftrightarrow \; (A \cup C = B \cup C)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln21&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(C \subseteq (A \triangle B)) \; \to \; ((C \subseteq A \cup B) \land A \cap B \cap C = \phi)&lt;/script&gt;:  &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;C \subseteq (A \triangle B)&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Proof of &lt;script type=&quot;math/tex&quot;&gt;C \subseteq A \cup B&lt;/script&gt;:&lt;/p&gt;
+
+    &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;C \subseteq (A \triangle B)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B \lor x \in B \setminus A&lt;/script&gt;. Thus we have two cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 1: if &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup B&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 2: if &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in A \cup B&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude from both the cases above that if &lt;script type=&quot;math/tex&quot;&gt;C \subseteq A \cup B&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Proof of &lt;script type=&quot;math/tex&quot;&gt;A \cap B \cap C = \phi&lt;/script&gt;:&lt;/p&gt;
+
+    &lt;p&gt;Now, suppose &lt;script type=&quot;math/tex&quot;&gt;A \cap B \cap C \ne \phi&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B \cap C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \notin A \cap B&lt;/script&gt;. But it contradicts with assumption that &lt;script type=&quot;math/tex&quot;&gt;x \in A \cap B \cap C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A \cap B \cap C = \phi&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(C \subseteq A \cup B) \land A \cap B \cap C = \phi)  \; \to \; (C \subseteq (A \triangle B))&lt;/script&gt;:
+Suppose &lt;script type=&quot;math/tex&quot;&gt;((C \subseteq A \cup B) \land A \cap B \cap C = \phi)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;C \subseteq A \cup B&lt;/script&gt;, we have following cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 1: if &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \cap B \cap C = \phi&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \in C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B&lt;/script&gt;, 
+or &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 2: if &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \cap B \cap C = \phi&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \in C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin A&lt;/script&gt;, 
+or &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus A&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Thus if &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;C \subseteq (A \triangle B)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both directions above, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(C \subseteq (A \triangle B)) \; \leftrightarrow \; ((C \subseteq A \cup B) \land A \cap B \cap C = \phi)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln22&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A\C ⊆ (A\B) ∪ (B\C)&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin C&lt;/script&gt;. Now we have following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;, it follows 
+ &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus B) \cup (B \setminus C)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin C&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;, it follows 
+ &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus B) \cup (B \setminus C)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases above, &lt;script type=&quot;math/tex&quot;&gt;A \setminus C \; \subseteq \; (A \setminus B) \cup (B \setminus C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C \lor x \in C \setminus A&lt;/script&gt;. Thus we have two cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt;. Using (a), since &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus B) \cup (B \setminus C)&lt;/script&gt;.   &lt;br /&gt;
+  Thus we have two cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case a: &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B)&lt;/script&gt;, or we can say &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case b: &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (B \triangle C)&lt;/script&gt;, or we can say &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus A&lt;/script&gt;. Using (a), since &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in (C \setminus B) \cup (B \setminus A)&lt;/script&gt;.  &lt;br /&gt;
+  Thus we have two cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case a: &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (C \triangle B)&lt;/script&gt;, or we can say &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case b: &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (B \triangle A)&lt;/script&gt;, or we can say &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases above, we have if &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle C&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle B) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln 23&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cup B) \triangle C&lt;/script&gt;. Thus we have following cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cup B) \setminus C&lt;/script&gt;.  &lt;br /&gt;
+Thus we have following cases:
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case a: &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle C&lt;/script&gt;. Or we can
+also say that &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle C) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case b: &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \notin C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in B \setminus C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B \triangle C&lt;/script&gt;. Or we can
+also say that &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle C) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus (A \cup B)&lt;/script&gt;.  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin (A \cup B)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin A \land x \notin B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus A&lt;/script&gt; and
+&lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in C \triangle A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in C \triangle B&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle C) \cup (B \triangle C)&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases above, &lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \triangle C \; \subseteq \; (A \triangle C) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets say &lt;script type=&quot;math/tex&quot;&gt;A = \{ 1, 2\} , B = \{2, 3\}, C = \{ 1, 3 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then &lt;script type=&quot;math/tex&quot;&gt;A \cup B = \{1,2,3\},&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \triangle C = \{2\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;And &lt;script type=&quot;math/tex&quot;&gt;A \triangle C = \{2,3\}&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;B \triangle C = \{1,2\}&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;(A \triangle C) \cup (B \triangle C) = \{1,2,3\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;We can see that &lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \triangle C \; \neq \; (A \triangle C) \cup (B \triangle C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln24&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in (A \triangle C) \cap (B \triangle C)&lt;/script&gt;. It is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (x  \in (A \setminus C) \lor x \in (C \setminus A)) \land ((x  \in (B \setminus C) \lor x \in (C \setminus B))&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus we have ffollowing cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus C) \land x \in (B \setminus C)&lt;/script&gt;:  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B) \triangle C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus C) \land x \in (C \setminus B)&lt;/script&gt;:
+Here &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin C&lt;/script&gt;, which is not possible. Thus this case is not possible.&lt;/p&gt;
+
+&lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;x \in (C \setminus A) \land x \in (B \setminus C)&lt;/script&gt;:
+Here also &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin C&lt;/script&gt;, which is not possible. Thus this case is not possible.&lt;/p&gt;
+
+&lt;p&gt;Case 4: &lt;script type=&quot;math/tex&quot;&gt;x \in (C \setminus A) \land x \in (C \setminus B)&lt;/script&gt;:
+Here &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin A \land x \notin B&lt;/script&gt;. Or we can say &lt;script type=&quot;math/tex&quot;&gt;x \notin (A \cup B)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \notin A \cup B&lt;/script&gt;, 
+it follows &lt;script type=&quot;math/tex&quot;&gt;x \notin A \cap B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin (A \cap C)&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in C \triangle (A \cap B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from all the possible cases, &lt;script type=&quot;math/tex&quot;&gt;x \in (A \cap B) \triangle C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets say &lt;script type=&quot;math/tex&quot;&gt;A = \{ 1, 2\} , B = \{2, 3\}, C = \{ 1, 3 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then &lt;script type=&quot;math/tex&quot;&gt;(A \triangle C) \cap (B \triangle C)  = \{2\}&lt;/script&gt;.  &lt;br /&gt;
+And &lt;script type=&quot;math/tex&quot;&gt;(A \cap B) \triangle C = \{1, 2, 3 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln25&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We shall prove the conjecture &lt;script type=&quot;math/tex&quot;&gt;((A \triangle C) \setminus (B \triangle C)) \; \subseteq \; ((A \setminus B) \triangle C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in ((A \triangle C) \setminus (B \triangle C))&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin B \triangle C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x \notin B \triangle C&lt;/script&gt;, it follows:   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(x \notin B \land x \notin C) \lor (x \in B \land x \in C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, since &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle C&lt;/script&gt;, it follows that:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C \lor x \in C \setminus A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we have following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \in C&lt;/script&gt;:  &lt;br /&gt;
+This case is not possible as &lt;script type=&quot;math/tex&quot;&gt;x \notin C \land x \in C&lt;/script&gt; is not possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B \land x \in C&lt;/script&gt;:  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin A \land x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;, it follows: &lt;script type=&quot;math/tex&quot;&gt;x \notin A \setminus B&lt;/script&gt;.
+ Further since &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus (A \setminus B)&lt;/script&gt;. Thus we can also say &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus B) \triangle C&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin B \land x \notin C&lt;/script&gt;:  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin C \land x \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \notin B&lt;/script&gt;, it follows: &lt;script type=&quot;math/tex&quot;&gt;x \in A \setminus B&lt;/script&gt;.
+ Further since &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;, it follows: &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus B) \setminus C&lt;/script&gt;. Thus we can also say &lt;script type=&quot;math/tex&quot;&gt;x \in (A \setminus B) \triangle C&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 4: &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \notin B \land x \notin C&lt;/script&gt;:  &lt;br /&gt;
+This case is also not possible as &lt;script type=&quot;math/tex&quot;&gt;x \in C \land x \notin C&lt;/script&gt; is not possible.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from all the cases above, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;((A \triangle C) \setminus (B \triangle C)) \; \subseteq \; ((A \setminus B) \triangle C)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;However  &lt;script type=&quot;math/tex&quot;&gt;((A \setminus B) \triangle C) \; \subseteq \; ((A \triangle C) \setminus (B \triangle C))&lt;/script&gt; is not correct.&lt;/p&gt;
+
+&lt;p&gt;One counter example is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A = \{1\}, B = \{1\}, C = \{3\}&lt;/script&gt;.    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(A \setminus B) \triangle C = \{3\}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;((A \triangle C) \setminus (B \triangle C)) = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln26&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The proof is not correct as the proof actually shows &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &gt; 0 \lor x &lt; 6 %]]&gt;&lt;/script&gt;. It can be corrected by changing the cases as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1. &lt;script type=&quot;math/tex&quot;&gt;x − 3 \ge 0&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;\vert x − 3 \vert = x − 3&lt;/script&gt;. Plugging this into the assumption that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\vert x − 3 \vert &lt; 3 %]]&gt;&lt;/script&gt;, we get &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x − 3 &lt; 3 %]]&gt;&lt;/script&gt;, so clearly x &amp;lt; 6.
+Also, since &lt;script type=&quot;math/tex&quot;&gt;x - 3 \ge 0&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \ge 3&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \ge 3&lt;/script&gt;, we can also say &lt;script type=&quot;math/tex&quot;&gt;x &gt; 0&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 6 \land x &gt; 0 %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2. &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x − 3 &lt; 0 %]]&gt;&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;\vert x − 3 \vert = 3 − x&lt;/script&gt;, so the assumption &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\vert x − 3 \vert &lt; 3 %]]&gt;&lt;/script&gt; means that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+3−x &lt; 3 %]]&gt;&lt;/script&gt;. Therefore &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+3 &lt; 3+x %]]&gt;&lt;/script&gt;, so &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; x %]]&gt;&lt;/script&gt;.
+Also since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x − 3 &lt; 0 %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 3 %]]&gt;&lt;/script&gt;. Or we can also say &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &lt; 6 %]]&gt;&lt;/script&gt;. Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; x \land x &lt; 6 %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both the cases: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x &gt; 0 \land x &lt; 6 %]]&gt;&lt;/script&gt;. Thus we can conclude theorem is correct.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln27&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Proof and theorem both are correct. The goal is of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Following strategies are used:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;To prove goal of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is assumed to be correct and then &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is proved.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Given is of the form of &lt;script type=&quot;math/tex&quot;&gt;P \land Q&lt;/script&gt;. Thus these two are taken as separate givens.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;One of the given is of the form &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;. Thus existential instantiation is used.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln28&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Proof and theorem both are correct. Following strategies are used:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Strategy to prove a goal of the form of &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Strategy to prove a goal of the form of &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt;. Existential instantiation is used.&lt;/li&gt;
+  &lt;li&gt;The goal is converted into &lt;script type=&quot;math/tex&quot;&gt;P \lor Q&lt;/script&gt; and strategy to prove on case by case basis is used.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln29&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \to \exists x Q(x)&lt;/script&gt;. Thus we have:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\lnot (\forall x P(x)) \lor \exists x Q(x)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists x \lnot P(x) \lor \exists x Q(x)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists x (\lnot P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\exists x ( P(x) \to Q(x))&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln30&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Proof and theorem both are not correct.&lt;/p&gt;
+
+&lt;p&gt;Counter example: &lt;script type=&quot;math/tex&quot;&gt;A = \{ 1, 2 \}, B = \{1\}, C = \{2\}&lt;/script&gt;. Thus niether &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt; and nor &lt;script type=&quot;math/tex&quot;&gt;A \subseteq C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the proof, both cases are wrong. For eg: In Case 1,  &lt;script type=&quot;math/tex&quot;&gt;x \in A \to x \in B&lt;/script&gt; is not true for all the elements of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln31&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For any statement &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt;, we can have following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: P(x) is true for all values of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;. Thus we can also say that &lt;script type=&quot;math/tex&quot;&gt;\exists x (\lnot P(x) \lor \forall y P(y))&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: P(x) is false for atleast one value, say &lt;script type=&quot;math/tex&quot;&gt;x_0&lt;/script&gt;, of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;P(x_0)&lt;/script&gt; is true. Thus we can also say &lt;script type=&quot;math/tex&quot;&gt;\exists x (\lnot P(x) \lor \forall y P(y))&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both the cases, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\exists x (\lnot P(x) \lor \forall y P(y))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Wed, 30 Sep 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/09/30/how-to-prove-it-ch-3-sec-5.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/09/30/how-to-prove-it-ch-3-sec-5.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-3 Sec-3.4, Proofs Involving Conjunctions and Biconditionals</title>
@@ -3070,123 +4046,6 @@ Using definition of &lt;script type=&quot;math/tex&quot;&gt;\cup&lt;/script&gt; 
         <pubDate>Sun, 19 Jul 2015 00:00:00 +0530</pubDate>
         <link>https://inchmeal.github.io/2015/07/19/how-to-prove-it-ch-1-sec-4.html</link>
         <guid isPermaLink="true">https://inchmeal.github.io/2015/07/19/how-to-prove-it-ch-1-sec-4.html</guid>
-        
-        <category>mathematics</category>
-        
-        <category>howToProveIt</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How To Prove It, Ch-1 Sec-1.3, Variable and Sets</title>
-        <description>&lt;p&gt;This post contains exercises of Chapter - 1, Section - 1.3, Variable and Sets.
-&lt;!--more--&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Statements with Variables. For eg: “x is divisible by 9”, “y is a person” are statements. Here x, and y are variables.&lt;/li&gt;
-  &lt;li&gt;These statements are true or false based on the value of variables.&lt;/li&gt;
-  &lt;li&gt;Sets,  a collection of objects.&lt;/li&gt;
-  &lt;li&gt;Bound and Unbound variables. Eg: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-y ∈ \{x\,\vert\,x^3 &lt; 9\} %]]&gt;&lt;/script&gt; , &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is a free variable, whereas &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is a bound variable.&lt;/li&gt;
-  &lt;li&gt;Free variables in a statement are for objects for which statement is talking about.&lt;/li&gt;
-  &lt;li&gt;Bound variables are just dummy variables to help express the idea. Thus bound variables dont represent any object of the statement.&lt;/li&gt;
-  &lt;li&gt;The truth set of a statement P(x) is the set of all values of x that make the statement P(x) true.&lt;/li&gt;
-  &lt;li&gt;The set of all possible values of variables is call &lt;em&gt;universe of discourse&lt;/em&gt;. Or variables &lt;em&gt;range&lt;/em&gt; over this universe.&lt;/li&gt;
-  &lt;li&gt;In general, &lt;script type=&quot;math/tex&quot;&gt;y ∈ \{x ∈ A\,\vert\,P(x)\}&lt;/script&gt; means the same thing as &lt;script type=&quot;math/tex&quot;&gt;y ∈ A ∧ P(y)&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;solutions&quot;&gt;Solutions&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;D(6,3) \land D(9,3) \land D(15, 3)&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;D(x, y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is divisible by &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;D(x,2) \land D(x,3) \land \lnot D(x, 4)&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;D(x, y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is divisible by &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;(\lnot P(x) \lor P(y)) \land (P(x) \lor \lnot P(y)&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;P(x) = \{ x \in \mathbb{N}\,\vert\, x \text{ is prime} \}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;M(x) \land M(y) \land (T(x,y), T(y,x))&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;M(x)&lt;/script&gt; is “x is men”, &lt;script type=&quot;math/tex&quot;&gt;T(x, y)&lt;/script&gt; means “x is taller than y”.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;[(B(x) \lor B(y)) \land (R(x) \lor R(y)]&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;B(x)\text{ and }R(x)&lt;/script&gt; means “x has brown eyes” nad “x has brown hairs” respectively.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;[(B(x) \land R(x)) \lor (B(y) \land R(y)]&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;B(x)\text{ and }R(x)&lt;/script&gt; means “x has brown eyes” nad “x has brown hairs” respectively.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ x\,\vert\,x\text{ is a planet }\}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ x\,\vert\,x\text{ is a university }\}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ x\,\vert\,x\text{ is a state in US }\}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ x\,\vert\,x\text{ is a province in Canada }\}&lt;/script&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ x^2\,\vert\, x &gt; 0 \text{ and } x \in \mathbb{N} \}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ 2^x\,\vert\, x \in \mathbb{N} \}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ x \in \mathbb{N}\,\vert\, 10 \le x \le 19 \}&lt;/script&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;−3 ∈ \{x ∈ \mathbb{R}\vert\,13 − 2x &gt; 1\} \Rightarrow -3 \in \mathbb{R} \land 19 &gt; 1&lt;/script&gt;. No free variables in the statement. Statement is true.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;4 ∈ \{x ∈ \mathbb{R^+}\vert\,13 − 2x &gt; 1\} \Rightarrow 4 \in \mathbb{R^+} \land 5 &gt; 1&lt;/script&gt;. No free variables in the statement. Statement is false.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;5 \notin \{x ∈ \mathbb{R}\vert\,13 − 2x &gt; c\} \Rightarrow 5 \notin \mathbb{R} \land 3 &gt; c&lt;/script&gt;. One free variable(c) in the statement.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;(w ∈ \mathbb{R}) \land (13 - 2w &gt; c)&lt;/script&gt;. There are two free variables &lt;script type=&quot;math/tex&quot;&gt;w&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;(4 \in \mathbb{R}) \land (13 - 2 \times 4 \in P) \Rightarrow (4 \in \mathbb{R}) \land (5 \in P)&lt;/script&gt;. The statement has no free variables. It is a true statement.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;(4 \in P) \land (13 - 2 \times 4 &gt; 1) \Rightarrow (4 \in P) \land (5 &gt; 1)&lt;/script&gt;.  The statement has no free variables. It is a false statement.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; {Conrad Hilton Jr., Michael Wilding, Michael Todd, Eddie Fisher, Richard Burton, John Warner, Larry Fortensky}.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{ \lor, \land, \lnot \}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; { Daniel Velleman }&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; {1, 3}&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\{1, 2, 3, 4, 5, 6, 7 \}&lt;/script&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 18 Jul 2015 00:00:00 +0530</pubDate>
-        <link>https://inchmeal.github.io/2015/07/18/how-to-prove-it-ch-1-sec-3.html</link>
-        <guid isPermaLink="true">https://inchmeal.github.io/2015/07/18/how-to-prove-it-ch-1-sec-3.html</guid>
         
         <category>mathematics</category>
         

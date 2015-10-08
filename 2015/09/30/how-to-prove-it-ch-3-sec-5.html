@@ -1,0 +1,1240 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>How To Prove It, Ch-3 Sec-3.5, Disjunctions</title>
+	<link rel="stylesheet" href="https://inchmeal.github.io/assets/css/styles_inchmeal.css">
+	<script src="https://inchmeal.github.io/assets/js/inchmeal_head.js"></script>
+	
+	<script type="text/javascript"
+			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+	<script>
+		MathJax.Hub.Config({
+			"HTML-CSS": { scale: 82 }
+		});
+	</script>
+
+	
+	
+	<meta name="description" content="This is a sample description"/>
+
+	
+
+	
+
+
+
+	
+	<link rel="icon" sizes="32x32" href="https://inchmeal.github.io/assets/img/favicon-32x32.png">
+
+
+
+
+	
+	<link rel="icon" sizes="192x192" href="https://inchmeal.github.io/assets/img/touch-icon-192x192.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://inchmeal.github.io/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://inchmeal.github.io/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://inchmeal.github.io/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://inchmeal.github.io/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://inchmeal.github.io/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://inchmeal.github.io/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://inchmeal.github.io/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" href="https://inchmeal.github.io/assets/img/apple-touch-icon-precomposed.png">	
+
+
+
+
+	
+	<meta name="msapplication-TileImage" content="https://inchmeal.github.io/assets/img/msapplication_tileimage.png"/>
+
+
+
+
+	
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+
+	<!-- Facebook Optimization -->
+	<meta property="og:locale" content="en_EN" />
+	
+	<meta property="og:title" content="How To Prove It, Ch-3 Sec-3.5, Disjunctions" />
+	<meta property="og:description" content="This is a sample description"/>
+	<meta property="og:url" content="https://inchmeal.github.io//2015/09/30/how-to-prove-it-ch-3-sec-5.html" />
+	<meta property="og:site_name" content="InchMeal" />
+	
+
+	
+
+	<!-- Search Engine Optimization -->
+	
+
+	<link type="text/plain" rel="author" href="https://inchmeal.github.io//humans.txt" />
+
+	
+</head>
+
+<body id="top-of-page" class="">
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="https://inchmeal.github.io/blog/index.html">
+            <img src="https://inchmeal.github.io/assets/img/logo.png"/>
+          </a>
+        </h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu"(text inside span) to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+                
+              
+
+          
+          
+              <li class="divider"></li>
+              <li class="active"><a href="https://inchmeal.github.io\blog/index.html">Blog</a></li>
+          
+        
+
+              
+                
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="https://inchmeal.github.io\archives/index.html">Archives</a></li>
+          
+        
+
+              
+                
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="https://inchmeal.github.io\about/index.html">About</a></li>
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        <li class="divider"></li>
+        
+
+              
+                
+              
+
+          
+          
+        
+
+              
+                
+              
+
+          
+          
+        
+
+              
+                
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+
+	<div class="row t30">
+	<div class="medium-8 columns medium-offset-2 end">
+		<article itemscope itemtype="http://schema.org/Article">
+			<header>
+				
+
+				<span itemprop="name">
+					<h1>How To Prove It, Ch-3 Sec-3.5, Disjunctions</h1>
+				</span>
+			</header>
+
+			
+			<p class="tm10">
+			<time class="post-date pr20" datetime="September 30, 2015" itemprop="datePublished"> September 30, 2015</time>
+			</p>
+			
+
+			<span itemprop="articleSection">
+			<p>This post contains exercises of Chapter - 3, Section - 3.5, Disjunctions.</p>
+
+<!--more-->
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<ul>
+  <li>To use a given of the form <script type="math/tex">P \lor Q</script>:
+    <ul>
+      <li>Break proof into cases. For case 1, assume that <script type="math/tex">P</script> is true and use this assumption to prove the goal.
+For case 2, assume <script type="math/tex">Q</script> is true and give another proof of the goal.</li>
+      <li>Another strategy can be: If it is also given <script type="math/tex">\lnot P</script>, or it can also be proved that <script type="math/tex">P</script>is false, then
+use this given to conclude that Q is true. Similarly, if it is given <script type="math/tex">\lnot Q</script> or it can be proved that <script type="math/tex">Q</script> 
+is false, then it can be used to conclude that <script type="math/tex">P</script> is true.</li>
+    </ul>
+  </li>
+  <li>To prove a goal of the form <script type="math/tex">P ∨ Q</script>:
+    <ul>
+      <li>Break the proof into cases. In each case, either prove P or prove Q.</li>
+      <li>Another strategy can be: If <script type="math/tex">P</script> is true, then clearly the goal <script type="math/tex">P \lor Q</script> is true, so only need to worry
+about the case in which <script type="math/tex">P</script> is false. Thus for the case <script type="math/tex">P</script> is false, complete the proof by proving that <script type="math/tex">Q</script> is true. 
+Point to note here is this strategy is same as proving the goal <script type="math/tex">\lnot P \to Q</script>. Similarly it <script type="math/tex">Q</script> can be used instead 
+of <script type="math/tex">P</script>.</li>
+    </ul>
+  </li>
+</ul>
+<hr />
+
+<p><strong>Soln1</strong></p>
+
+<p>Suppose <script type="math/tex">x \in A \cap (B \cup C)</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">x \in B \lor x \in C</script>. Thus we have two cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">x \in B</script>. Since <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">x \in (A \cap B)</script>. Thus <script type="math/tex">x \in (A \cap B) \cup C</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">x \in C</script>. Thus <script type="math/tex">x \in (A \cap B) \cup C</script>.</p>
+
+<p>Thus in all the cases, <script type="math/tex">x \in (A \cap B) \cup C</script>. Since <script type="math/tex">x</script> is arbitrary, <script type="math/tex">A \cap (B \cup C) \subseteq (A \cup B) \cap C</script>.</p>
+
+<hr />
+
+<p><strong>Soln2</strong></p>
+
+<p>Suppose <script type="math/tex">x \in (A \cup B) \setminus C</script>. Thus either <script type="math/tex">x \in A \setminus C</script> or <script type="math/tex">x \in B \setminus C</script>. Thus we have two cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">x \in A \setminus C</script>. Thus <script type="math/tex">x \in A</script>. Since <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">x \in ( A \cup (B \setminus C) )</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">x \in B \setminus C</script>. Clearly it follows that <script type="math/tex">x \in ( A \cup (B \setminus C) )</script>.</p>
+
+<p>Thus in all the possible cases, <script type="math/tex">x \in ( A \cup (B \setminus C) )</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude
+that <script type="math/tex">(A \cup B) \; \subseteq \; A \cup (B \setminus C)</script>.</p>
+
+<hr />
+
+<p><strong>Soln3</strong></p>
+
+<p>Suppose <script type="math/tex">x \in (A \setminus (A \setminus B))</script>. Thus we have:</p>
+
+<p><script type="math/tex">x \in A \land \lnot (x \in (A \setminus B))</script>.   <br />
+<script type="math/tex">\quad = x \in A \land \lnot(x \in A \land x \notin B)</script>.  <br />
+<script type="math/tex">\quad = x \in A \land (x \notin A \lor x \in B)</script>.  <br />
+<script type="math/tex">\quad = x \in A \land x \in B</script>.  <br />
+<script type="math/tex">\quad = x \in (A \cap B)</script>.</p>
+
+<p>Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">A \setminus (A \setminus B) = A \cap B</script>.</p>
+
+<hr />
+
+<p><strong>Soln4</strong></p>
+
+<p>Suppose  A ∩ C ⊆ B ∩ C   and    A ∪ C ⊆ B ∪ C.     Prove that   A ⊆ B.</p>
+
+<p>Suppose <script type="math/tex">x \in A</script>. Then <script type="math/tex">x \in A \cup C</script>. Since <script type="math/tex">A \cup C \subseteq B \cup C</script>, it follows that <script type="math/tex">x \in B \cup C</script>.
+Thus either <script type="math/tex">x \in B</script> or, <script type="math/tex">x \in C</script>. So we have following cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">x \in B</script>, then it follows <script type="math/tex">x \in A \to x \in B</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">x \in C</script>. Thus <script type="math/tex">x \in A \land x \in C</script>. Since <script type="math/tex">A \cap C \subseteq B \cap C</script>, it follows that <script type="math/tex">x \in B</script>.</p>
+
+<p>Thus from all the cases, if <script type="math/tex">x \in A</script>, then <script type="math/tex">x \in B</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">A \subseteq B</script>.</p>
+
+<hr />
+
+<p><strong>Soln5</strong></p>
+
+<p>We shall prove this using contra-positive. Suppose <script type="math/tex">x \notin A</script>. Since <script type="math/tex">((A \setminus B) \cup (B \setminus A)) \subseteq A</script>, it 
+follows that <script type="math/tex">x \notin ((A \setminus B) \cup (B \setminus A))</script>. Thus <script type="math/tex">x \notin (A \setminus B)</script> as well as <script type="math/tex">x \notin (B \setminus A)</script>.
+Since <script type="math/tex">x \notin A</script>, then clearly <script type="math/tex">x \notin (A \setminus B)</script>. Thus we are left with <script type="math/tex">x \notin (B \setminus A)</script>. This can be simplified
+into <script type="math/tex">\lnot (x \in B \land x \notin A)</script>  which is equivalent to <script type="math/tex">x \notin B \lor x \in A</script>. Since <script type="math/tex">x \notin A</script>, and <script type="math/tex">x \notin B \lor x \in A</script>, 
+it follows that <script type="math/tex">x \notin B</script>. Thus we have if <script type="math/tex">x \notin A</script> then <script type="math/tex">x \notin B</script>. By contra-positive, we can say if <script type="math/tex">x \in B</script> 
+then <script type="math/tex">x \in A</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">B \subseteq A</script>.</p>
+
+<hr />
+
+<p><strong>Soln6</strong></p>
+
+<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">A \cup C \subseteq B \cup C</script>. Suppose <script type="math/tex">x \in A \setminus C</script>. Thus <script type="math/tex">x \in A \cup C</script>. Since <script type="math/tex">A \cup C \subseteq B \cup C</script>,
+it follows that <script type="math/tex">x \in B \cup C</script>. And since <script type="math/tex">x \in B \setminus C</script>, it follows that <script type="math/tex">x \in B</script>. Thus we have <script type="math/tex">x \in B \land x \notin C</script>. Since <script type="math/tex">x</script>
+is arbitrary, we can conclude that <script type="math/tex">A \setminus C \subseteq B \setminus C</script>.</p>
+
+<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">A \setminus C \subseteq B \setminus C</script>. Suppose <script type="math/tex">x \in A \cup C</script>. Thus we have two cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">x \in C</script>. Then clearly <script type="math/tex">x \in B \cup C</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">x \notin C</script>. Then since <script type="math/tex">x \in A \cup C</script>, we have <script type="math/tex">x \in A</script>. Thus <script type="math/tex">x \in A \setminus C</script>. Since <script type="math/tex">A \setminus C \subseteq B \setminus C</script>,
+ it follows that, <script type="math/tex">x \in (B \setminus C)</script>. Since <script type="math/tex">x \notin C</script>, it follows that <script type="math/tex">x \in B</script>. Thus we can say that <script type="math/tex">x \in (B \cup C)</script>.</p>
+
+<p>Thus from all the possible cases, if <script type="math/tex">x \in A \cup C</script> then <script type="math/tex">x \in B \cup C</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">A \cup C \subseteq B \cup C</script>.</p>
+
+<hr />
+
+<p><strong>Soln7</strong></p>
+
+<p>Suppose <script type="math/tex">x \in \mathcal P(A) \cup \mathcal P(B)</script>. Thus we have two possible cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">x \in \mathcal P(A)</script>. Then <script type="math/tex">x \subseteq A</script>. Suppose <script type="math/tex">y \in x</script>, then <script type="math/tex">y \in A</script>. Since <script type="math/tex">y \in A</script>, then <script type="math/tex">y \in A \cup B</script>. 
+Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">x \subseteq (A \cup B)</script>. Thus we have <script type="math/tex">x \in \mathcal P(A \cup B)</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">x \in \mathcal P(B)</script>. Then <script type="math/tex">x \subseteq B</script>. Suppose <script type="math/tex">y \in x</script>, then <script type="math/tex">y \in B</script>. Since <script type="math/tex">y \in B</script>, then <script type="math/tex">y \in A \cup B</script>. 
+Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">x \subseteq (A \cup B)</script>. Thus we have <script type="math/tex">x \in \mathcal P(A \cup B)</script>.</p>
+
+<p>Thus from all cases, if <script type="math/tex">x \in \mathcal P(A) \cup \mathcal P(B)</script>, then <script type="math/tex">x \in \mathcal P(A \cup B)</script>. Since <script type="math/tex">x</script> is arbitrary, it follows 
+that <script type="math/tex">\mathcal P(A) \cup \mathcal P(B) \subseteq \mathcal P(A \cup B)</script>.</p>
+
+<hr />
+
+<p><strong>Soln8</strong></p>
+
+<p>Suppose <script type="math/tex">\mathcal P(A) \cup \mathcal P(B) = \mathcal P(A \cup B)</script>. Then <script type="math/tex">A \cup B \in \mathcal P(A \cup B)</script>. Since <script type="math/tex">\mathcal P(A \cup B)  = \mathcal P(A) \cup \mathcal P(B)</script>, it
+follows that <script type="math/tex">A \cup B \in \mathcal P(A) \cup \mathcal P(B)</script>. Thus we have following cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">A \cup B \in \mathcal P(A)</script>. Then <script type="math/tex">A \cup B \subseteq A</script>. It follows that <script type="math/tex">B \subseteq A</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">A \cup B \in \mathcal P(B)</script>. Then <script type="math/tex">A \cup B \subseteq B</script>. It follows that <script type="math/tex">B \subseteq B</script>.</p>
+
+<p>Thus we have either <script type="math/tex">A \subseteq B</script> or <script type="math/tex">B \subseteq A</script>.</p>
+
+<hr />
+
+<p><strong>Soln9</strong></p>
+
+<p>Suppose <script type="math/tex">y + \frac 1 x = 1 + \frac y x</script>. It is equivalent to:  <br />
+<script type="math/tex">\leftrightarrow \frac {xy + 1} x = \frac {x + y} x</script>  <br />
+<script type="math/tex">\leftrightarrow xy + 1 = x + y</script>  <br />
+<script type="math/tex">\leftrightarrow xy - x - y + 1 = 0</script>  <br />
+<script type="math/tex">\leftrightarrow x(y - 1) - 1(y - 1) = 0</script>  <br />
+<script type="math/tex">\leftrightarrow (x - 1)(y - 1) = 0</script>  <br />
+<script type="math/tex">\leftrightarrow x = 1 \lor y = 1</script></p>
+
+<hr />
+
+<p><strong>Soln10</strong></p>
+
+<p>Suppose <script type="math/tex">\vert x - 3 \vert > 3</script>. Then we have two cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">x - 3 > 0</script>. Then <script type="math/tex">x - 3 > 3</script>. It follows that <script type="math/tex">x > 6</script>. Multiplying both sides by <script type="math/tex">x</script>, we get <script type="math/tex">x^2 > 6x</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">% <![CDATA[
+x - 3 < 0 %]]></script>. Then <script type="math/tex">3 - x > 3</script>. It follows that <script type="math/tex">% <![CDATA[
+x < 0 %]]></script>. Since <script type="math/tex">% <![CDATA[
+x < 0 %]]></script>, <script type="math/tex">x^2 > 0</script> and <script type="math/tex">% <![CDATA[
+6x < 0 %]]></script>. Thus <script type="math/tex">x^2 > 6x</script>.</p>
+
+<hr />
+
+<p><strong>Soln11</strong></p>
+
+<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">\vert 2x - 6 \vert > x</script>. Then we have two cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">2x - 6 > 0</script>, then <script type="math/tex">2x - 6 > x</script>.  <br />
+<script type="math/tex">\leftrightarrow x > 6</script>.  <br />
+<script type="math/tex">\leftrightarrow x - 4 > 2</script>.  <br />
+Since <script type="math/tex">x - 4 > 0</script>, it follows that \vert x - 4 \vert &gt; 2 $$.</p>
+
+<p>Case 2: Suppose <script type="math/tex">% <![CDATA[
+2x - 6 < 0 %]]></script>, then <script type="math/tex">6 - 2x > x</script>  <br />
+<script type="math/tex">\leftrightarrow 6 > 3x</script>  <br />
+<script type="math/tex">% <![CDATA[
+\leftrightarrow x < 2 %]]></script>  <br />
+<script type="math/tex">% <![CDATA[
+\leftrightarrow x - 4 < -2 %]]></script>  <br />
+<script type="math/tex">\leftrightarrow 4 - x > 2</script>  <br />
+Since <script type="math/tex">% <![CDATA[
+x - 4 < 0 %]]></script>, it follows that \vert x - 4 \vert &gt; 2.</p>
+
+<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">\vert x - 4 \vert > 2</script>. Then we have two cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">x - 4 > 0</script>, then <script type="math/tex">x - 4 > 2</script>.  <br />
+<script type="math/tex">\leftrightarrow x > 6</script>.  <br />
+<script type="math/tex">\leftrightarrow x - 6 > 0</script>.  <br />
+<script type="math/tex">\leftrightarrow 2x - 6 > x</script>.  <br />
+Since <script type="math/tex">x > 6</script>, so <script type="math/tex">2x - 6 > 0</script>.  <br />
+Thus <script type="math/tex">\vert 2x - 6 \vert > x</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">% <![CDATA[
+x - 4 < 0 %]]></script>, then <script type="math/tex">4 - x > 2</script>.  <br />
+<script type="math/tex">\leftrightarrow -x > -2</script>.  <br />
+<script type="math/tex">% <![CDATA[
+\leftrightarrow x < 2 %]]></script>.  <br />
+<script type="math/tex">% <![CDATA[
+\leftrightarrow 3x < 6 %]]></script>.  <br />
+<script type="math/tex">% <![CDATA[
+\leftrightarrow 3x - 6 < 0 %]]></script>.  <br />
+<script type="math/tex">% <![CDATA[
+\leftrightarrow 2x - 6 < 0 - x %]]></script>.  <br />
+<script type="math/tex">% <![CDATA[
+\leftrightarrow 2x - 6 < -x %]]></script>.  <br />
+Since <script type="math/tex">% <![CDATA[
+x < 2 %]]></script>, it follows that <script type="math/tex">% <![CDATA[
+2x - 6 < 0 %]]></script>.  <br />
+And since <script type="math/tex">% <![CDATA[
+2x - 6 < 0 %]]></script>, it follows that <script type="math/tex">6 - 2x > x</script>, Or <script type="math/tex">\vert 2x - 6 \vert > x</script>.</p>
+
+<hr />
+
+<p><strong>Soln12</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">\vert a \vert \le b</script>. Then we have two cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">a > 0</script>, then <script type="math/tex">a \le b</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">% <![CDATA[
+a < 0 %]]></script>, then <script type="math/tex">-a \le b</script>. Or <script type="math/tex">a \ge -b</script>.</p>
+
+<p>Thus from both cases, <script type="math/tex">-b \le a \le b</script>.</p>
+
+<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">-b \le a \le b</script>. Then we have following possible cases:</p>
+
+<p>Case 1: Suppose <script type="math/tex">a > 0</script>, then <script type="math/tex">\vert a \vert = a</script>. Since <script type="math/tex">a \le b</script>, it follows that <script type="math/tex">\vert a \vert \le b</script>.</p>
+
+<p>Case 2: Suppose <script type="math/tex">% <![CDATA[
+a < 0 %]]></script>, then <script type="math/tex">\vert a \vert = -a</script>. Since <script type="math/tex">-b \le a</script>, or <script type="math/tex">b \ge -a</script>, it follows that <script type="math/tex">b \ge \vert a \vert</script>.</p>
+
+<p>Thus form both cases, we have <script type="math/tex">\vert a \vert \le b</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>First lets prove <script type="math/tex">% <![CDATA[
+x <= \vert x \vert %]]></script>, because:</p>
+
+<ul>
+  <li>if <script type="math/tex">x >= 0</script> then <script type="math/tex">\vert x \vert = x</script>, thus <script type="math/tex">% <![CDATA[
+x <= \vert x \vert %]]></script> is true.</li>
+  <li>if <script type="math/tex">% <![CDATA[
+x < 0 %]]></script> then <script type="math/tex">\vert x \vert = x</script>, thus <script type="math/tex">% <![CDATA[
+x <= -x %]]></script> is true, it follows <script type="math/tex">% <![CDATA[
+x <= \vert x \vert %]]></script> is true.</li>
+</ul>
+
+<p>Thus we have <script type="math/tex">% <![CDATA[
+x <= \vert x \vert %]]></script>.</p>
+
+<p>We know that(from (a)), <script type="math/tex">\vert a \vert \le b \leftrightarrow -b \le a \le b</script>. Suppose <script type="math/tex">b = \vert x \vert</script> and <script type="math/tex">a = \vert x \vert</script>.
+Since <script type="math/tex">% <![CDATA[
+x <= \vert x \vert %]]></script>, it follows that, <script type="math/tex">- \vert x \vert \le x \le \vert x \vert</script>.</p>
+
+<p><strong>(c)</strong></p>
+
+<p>We have following all possible cases:</p>
+
+<ul>
+  <li>Case 1: <script type="math/tex">x \ge 0 \land y \ge 0</script>.</li>
+</ul>
+
+<p>As <script type="math/tex">x + y \ge 0</script>, <script type="math/tex">\vert x + y \vert = x + y</script>.</p>
+
+<p>Also since <script type="math/tex">x \ge 0</script>, <script type="math/tex">\vert x \vert = x</script>.  <br />
+Similarly since <script type="math/tex">y \ge 0</script>, <script type="math/tex">\vert y \vert = y</script>.  <br />
+Thus <script type="math/tex">\vert x \vert + \vert y \vert = x + y</script>.</p>
+
+<p>From above we can conclude <script type="math/tex">\vert x + y \vert = \vert x \vert + \vert y \vert</script>.</p>
+
+<ul>
+  <li>Case 2: <script type="math/tex">% <![CDATA[
+x < 0 \land y < 0 %]]></script>.</li>
+</ul>
+
+<p>As <script type="math/tex">% <![CDATA[
+x + y < 0 %]]></script>, <script type="math/tex">\vert x + y \vert = - (x + y)</script>.</p>
+
+<p>Also since <script type="math/tex">% <![CDATA[
+x < 0 %]]></script>, <script type="math/tex">\vert x \vert = -x</script>.  <br />
+Similarly since <script type="math/tex">% <![CDATA[
+y < 0 %]]></script>, <script type="math/tex">\vert y \vert = -y</script>.  <br />
+Thus <script type="math/tex">\vert x \vert + \vert y \vert = -(x + y)</script>.</p>
+
+<p>We can conclude <script type="math/tex">\vert x + y \vert = \vert x \vert + \vert y \vert</script>.</p>
+
+<ul>
+  <li>
+    <p>Case 3: <script type="math/tex">x \ge 0 \land y \le 0</script>: Here we have following further cases:</p>
+
+    <ul>
+      <li>
+        <p>Case a: <script type="math/tex">x + y >= 0</script>:   <br />
+   LHS:  <br />
+   Since <script type="math/tex">x + y \ge 0</script>, <script type="math/tex">\vert x + y \vert = x + y</script>. <br />
+   As <script type="math/tex">% <![CDATA[
+x + y > 0 \land x >= 0 \land y <= 0 %]]></script>, it follows that <script type="math/tex">x + y \le x</script>.  <br />
+   Thus we have <script type="math/tex">\vert x + y \vert \le x</script>.   <br />
+   RHS:        <br />
+   Since <script type="math/tex">x >= 0</script>, <script type="math/tex">\vert x \vert = x</script>.  <br />
+   Also, since <script type="math/tex">% <![CDATA[
+y <=0 %]]></script>, <script type="math/tex">\vert y \vert = -y</script>.  <br />
+   Thus <script type="math/tex">\vert x \vert + \vert y \vert  = x - y</script>. Since <script type="math/tex">% <![CDATA[
+x >= 0 \land y <= 0 %]]></script>, it follows <script type="math/tex">x - y >= x</script>.   <br />
+   Thus we have <script type="math/tex">\vert x \vert + \vert y \vert  >= x</script>  <br />
+   So,  <br />
+   we can conclude that <script type="math/tex">\vert x + y \vert \le \vert x \vert + \vert y \vert</script>.</p>
+      </li>
+      <li>
+        <p>Case b: <script type="math/tex">% <![CDATA[
+x + y < 0 %]]></script>:
+   LHS:  <br />
+   Since <script type="math/tex">% <![CDATA[
+x + y < 0 %]]></script>, <script type="math/tex">\vert x + y \vert = -(x + y)</script>.  <br />
+   As <script type="math/tex">% <![CDATA[
+x + y < 0 \land x >= 0 \land y <= 0 %]]></script>, it follows that <script type="math/tex">(x + y) \ge y</script> or <script type="math/tex">-(x+y) \le y</script>.       <br />
+   Thus we have <script type="math/tex">\vert x + y \vert \le y</script>.   <br />
+   RHS:        <br />
+   Since <script type="math/tex">x >= 0</script>, <script type="math/tex">\vert x \vert = x</script>.  <br />
+   Also, since <script type="math/tex">% <![CDATA[
+y <=0 %]]></script>, <script type="math/tex">\vert y \vert = -y</script>.  <br />
+   Thus <script type="math/tex">\vert x \vert + \vert y \vert  = x - y</script>. Since <script type="math/tex">% <![CDATA[
+x >= 0 \land y <= 0 %]]></script>, it follows <script type="math/tex">x - y >= y</script>.   <br />
+   Thus we have <script type="math/tex">\vert x \vert + \vert y \vert  >= y</script>  <br />
+   So,  <br />
+   we can conclude that <script type="math/tex">\vert x + y \vert \le \vert x \vert + \vert y \vert</script>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Case 4: <script type="math/tex">x \le 0 \land y \ge 0</script>:   <br />
+  This case is similar to Case 3. By swapping <script type="math/tex">x</script> and <script type="math/tex">y</script>, proof will be same as in Case 3.</p>
+  </li>
+</ul>
+
+<p>Thus from all the cases above: <script type="math/tex">\vert x + y \vert \le \vert x \vert + \vert y \vert</script>.</p>
+
+<hr />
+
+<p><strong>Soln13</strong></p>
+
+<p>Suppose <script type="math/tex">x</script> is an integer. Thus <script type="math/tex">x</script> can either be even or odd. We have following cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">x</script> is even. Then <script type="math/tex">x = 2k</script>, where <script type="math/tex">k</script> is any integer. Thus <script type="math/tex">x^2 + x = 4k^2 + 2k = 2(2k^2 + k)</script>. Since <script type="math/tex">k</script> is integer,
+it follows that <script type="math/tex">2k^2 + k</script> is also an integer. Thus <script type="math/tex">2(2k^2 + k)</script> is an even integer. Thus we can conclude if <script type="math/tex">x</script> is even, then
+<script type="math/tex">x^2 + x</script> is also an even integer.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">x</script> is odd. Then <script type="math/tex">x = 2k + 1</script>, where <script type="math/tex">k</script> is any integer. Thus <script type="math/tex">x^2 + x = 4k^2 + 4k + 1 + 2k + 1 = 2(2k^2 + 3k + 1)</script>. Since <script type="math/tex">k</script> is integer,
+it follows that <script type="math/tex">2k^2 + 3k + 1</script> is also an integer. Thus <script type="math/tex">2(2k^2 + 3k + 1)</script> is an even integer. Thus we can conclude if <script type="math/tex">x</script> is odd, then
+<script type="math/tex">x^2 + x</script> is also an even integer.</p>
+  </li>
+</ul>
+
+<p>Thus from both cases, <script type="math/tex">x^2 + x</script> is even integer.</p>
+
+<hr />
+
+<p><strong>Soln14</strong></p>
+
+<p>Suppose <script type="math/tex">x</script> is an integer. We have following possible cases:</p>
+
+<p>Case 1: <script type="math/tex">x</script> is even, or <script type="math/tex">x = 2k</script> where <script type="math/tex">k</script> is even. <script type="math/tex">x^4 = 16k^4 = 8 \times 2k^4</script>. Thus <script type="math/tex">x^4</script> is a multiple of <script type="math/tex">8</script> and
+ remainder is zero.</p>
+
+<p>Case 2: <script type="math/tex">x</script> is odd, or <script type="math/tex">x = 2k + 1</script> where <script type="math/tex">k</script> is odd. <script type="math/tex">x^4 = 16k^4 + 32k^3 + 24k^2 + 8k + 1= 8 \times (2k^4 + 4k^3 + 3k^2 + k) + 1</script>. 
+Thus <script type="math/tex">x^4</script> is not a multiple of <script type="math/tex">8</script> and clearly remainder is one.</p>
+
+<p>From both cases above, we can conclude that <script type="math/tex">x^4</script> when divided by <script type="math/tex">8</script>, remainder will either be zero or one.</p>
+
+<hr />
+
+<p><strong>Soln15</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">x</script> is arbitrary element and <script type="math/tex">x \in \cup ( \mathcal F \cup \mathcal G )</script>.</p>
+
+<p><script type="math/tex">\leftrightarrow \exists P \in  (\mathcal F \cup \mathcal G)( x \in P)</script>.   <br />
+<script type="math/tex">\leftrightarrow \exists P  (P \in  (\mathcal F \cup \mathcal G) \land x \in P)</script>.   <br />
+<script type="math/tex">\leftrightarrow \exists P  ((P \in  \mathcal F \lor P \in \mathcal G) \land x \in P)</script>.   <br />
+<script type="math/tex">\leftrightarrow \exists P  ((P \in  \mathcal F \land x \in P) \lor (P \in \mathcal G \land x \in P))</script>.   <br />
+<script type="math/tex">\leftrightarrow \exists P (P \in  \mathcal F \land x \in P) \lor \exists P (P \in \mathcal G \land x \in P))</script>.   <br />
+<script type="math/tex">\leftrightarrow x \in \cup \mathcal F \lor x \in \cup \mathcal G</script>.   <br />
+<script type="math/tex">\leftrightarrow x \in (\cup \mathcal F) \cup (\cup \mathcal G)</script>.</p>
+
+<p>Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\cup ( \mathcal F \cup \mathcal G ) = (\cup \mathcal F) \cup (\cup \mathcal G)</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">x \in \cap(\mathcal F \cup \mathcal G)</script>.</p>
+
+<p><script type="math/tex">\leftrightarrow \forall P \in \mathcal F \cup \mathcal G (x \in P)</script>  <br />
+<script type="math/tex">\leftrightarrow \forall P (P \in \mathcal F \cup \mathcal G \to x \in P)</script>  <br />
+<script type="math/tex">\leftrightarrow \forall P ((P \in \mathcal F \lor  P \in \mathcal G) \to x \in P)</script>  <br />
+<script type="math/tex">\leftrightarrow \forall P (\lnot (P \in \mathcal F \lor  P \in \mathcal G) \lor x \in P)</script>  <br />
+<script type="math/tex">\leftrightarrow \forall P ((P \notin \mathcal F \land  P \notin \mathcal G) \lor x \in P)</script>  <br />
+<script type="math/tex">\leftrightarrow \forall P ((P \notin \mathcal F \lor x \in P) \land  (P \notin \mathcal G \lor x \in P))</script>  <br />
+<script type="math/tex">\leftrightarrow \forall P ((P \in \mathcal F \to x \in P) \land  (P \in \mathcal G \to x \in P))</script>  <br />
+<script type="math/tex">\leftrightarrow \forall P (P \in \mathcal F \to x \in P) \land  \forall P (P \in \mathcal G \to x \in P)</script>  <br />
+<script type="math/tex">\leftrightarrow x \in \cap \mathcal F \land x \in \cap \mathcal G</script>  <br />
+<script type="math/tex">\leftrightarrow x \in (\cap \mathcal F) \cap (\cap \mathcal G)</script></p>
+
+<p>Thus we can conclude, <script type="math/tex">\cap(\mathcal F \cup \mathcal G) = (\cap \mathcal F) \cap (\cap \mathcal G)</script>.</p>
+
+<hr />
+
+<p><strong>Soln16</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in B \cup (\cup \mathcal F)</script>. Suppose <script type="math/tex">\mathcal G = \{ B \}</script>. Now we have two cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">x \in B</script>. Since <script type="math/tex">G = \{ B \}</script>, It follows that <script type="math/tex">x</script> exist in atleast one of the sets of <script type="math/tex">G</script>. 
+ Or we can also say that <script type="math/tex">x</script> exists in atleast one of the sets of <script type="math/tex">\mathcal F \cup \mathcal G</script>.
+ Thus it follows that <script type="math/tex">x \in \cup (\mathcal F \cup \mathcal G)</script>, or <script type="math/tex">x \in \cup (\mathcal F \cup \mathcal \{ B \} )</script>.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">x \in \cup \mathcal F</script>. It follows that <script type="math/tex">x</script> exists in atleast one of the sets of <script type="math/tex">F</script>. 
+Or we can also say that <script type="math/tex">x</script> exists in atleast one of the sets of <script type="math/tex">\mathcal F \cup \mathcal G</script>.
+   Thus it follows that <script type="math/tex">x \in \cup (\mathcal F \cup \mathcal G)</script>, or <script type="math/tex">x \in \cup (\mathcal F \cup \mathcal \{ B \} )</script>.</p>
+  </li>
+</ul>
+
+<p>From both cases above, since <script type="math/tex">x</script> is arbitrary, we can conclude: <script type="math/tex">B \cup (\cup \mathcal F) \subseteq \cup (\mathcal F \cup \{ B \} )</script>.</p>
+
+<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in \cup (\mathcal F \cup \{ B \} )</script>. It follows that <script type="math/tex">x</script> exists in atleast 
+one of the sets, say <script type="math/tex">A</script>, of <script type="math/tex">\mathcal F \cup \mathcal G</script>. Thus we have two cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">A \in \mathcal G</script>. Since <script type="math/tex">x \in A</script> and <script type="math/tex">\mathcal G</script> contains only one set <script type="math/tex">B</script>, it follows <script type="math/tex">A = B</script>. Thus <script type="math/tex">x \in B</script>.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">A \in \mathcal F</script>. Thus there exists atleast one set in <script type="math/tex">\mathcal F</script> such that <script type="math/tex">x \in A</script>. Thus we can say that <script type="math/tex">x \in \cup \mathcal F</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from above cases, we have <script type="math/tex">x \in B \lor x \in \cup \mathcal F</script>. Since <script type="math/tex">x</script> is arbitrary we can say that:
+<script type="math/tex">\cup (\mathcal F \cup \{ B \} ) \subseteq B \cup (\cup \mathcal F)</script>.</p>
+
+<p>Thus we can conclude that <script type="math/tex">B \cup (\cup \mathcal F) = \cup (\mathcal F \cup \{ B \} )</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>B ∪ (∩F) = ∩A∈F (B ∪ A)</p>
+
+<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in B \cup (\cap \mathcal F)</script>. Thus we have following possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">x \in B</script>. Suppose <script type="math/tex">A \in \mathcal F</script>. Since <script type="math/tex">x \in B</script>, it follows that <script type="math/tex">x \in A \cup B</script>.
+Also since <script type="math/tex">A</script> is arbitrary, it follows that <script type="math/tex">\forall A \in \mathcal F ( x \in (A \cup B))</script>. 
+Or <script type="math/tex">x \in \cap_{A \in \mathcal F}(A \cup B)</script>.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">x \in \cap \mathcal F</script>. Thus <script type="math/tex">x</script> must exist in all the sets of  <script type="math/tex">\mathcal F</script>. Thus we can also
+ say that <script type="math/tex">\forall A \in \mathcal F (x \in A)</script>. Since <script type="math/tex">\forall A \in \mathcal F (x \in A)</script>, it follows that 
+<script type="math/tex">\forall A \in \mathcal F (x \in A \cup B)</script> is also true. Thus we can say that <script type="math/tex">x \in \cap_{A \in \mathcal F}(A \cup B)</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both cases, <script type="math/tex">B \cup (\cap \mathcal F) \; \subseteq \; \cap_{A \in \mathcal F}(A \cup B)</script>.</p>
+
+<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in \cap_{A \in \mathcal F}(A \cup B)</script>. Thus <script type="math/tex">x</script> must exist in all sets:  <script type="math/tex">A \cup B</script> such that <script type="math/tex">A \in \mathcal F</script>.
+It follows following two cases:</p>
+
+<p>Case 1: <script type="math/tex">x \in B</script>. Then it follows that <script type="math/tex">x \in B \cup (\cap \mathcal F)</script>.</p>
+
+<p>Case 2: <script type="math/tex">x \in A</script>. Since <script type="math/tex">A</script> is arbitrary, it means <script type="math/tex">x</script> exists in all the sets of <script type="math/tex">\mathcal F</script>. Or <script type="math/tex">x \in \cap \mathcal F</script>.
+ It follows that <script type="math/tex">x \in B \cup (\cap \mathcal F)</script>.</p>
+
+<p>Thus from both cases, <script type="math/tex">\cap_{A \in \mathcal F}(A \cup B) \; \subseteq \; B \cup (\cap \mathcal F)</script>.</p>
+
+<p>Thus from both directions, we can conclude <script type="math/tex">B \cup (\cap \mathcal F) \; = \; \cap_{A \in \mathcal F}(A \cup B)</script>.</p>
+
+<p><strong>(c)</strong></p>
+
+<p>Suppose <script type="math/tex">x \in B \cap (\cap \mathcal F )</script>. It appears that <script type="math/tex">x</script> belongs to all the sets of <script type="math/tex">\mathcal F</script> as well as <script type="math/tex">x</script> belongs to 
+<script type="math/tex">B</script>. Thus it seems to be equivalent to <script type="math/tex">\cap_{A \in \mathcal F}(A \cap B)</script>. Lets try to prove it:</p>
+
+<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">x \in B \cap (\cap \mathcal F )</script>. Thus <script type="math/tex">x</script> must exist in <script type="math/tex">B</script>. Suppose <script type="math/tex">A \in \mathcal F</script>.
+Since <script type="math/tex">x</script> must exist in all the sets of <script type="math/tex">\mathcal F</script>, it follows that <script type="math/tex">x \in A</script>. Thus we can also say that <script type="math/tex">x \in A \land x \in B</script>,
+or <script type="math/tex">x \in A \cap B</script>. Since <script type="math/tex">A</script> is arbitrary, <script type="math/tex">\forall A \in \mathcal F(x \in (A \cap B))</script>. It follows that <script type="math/tex">x \in \cap_{A \in \mathcal F}(A \cap B)</script>.</p>
+
+<p>(<script type="math/tex">\leftarrow</script>). Suppose <script type="math/tex">x \in \cap_{A \in \mathcal F}(A \cap B)</script>. Since <script type="math/tex">x \in (A \cap B)</script>,  <script type="math/tex">x</script> must exist in <script type="math/tex">B</script>. Also, since <script type="math/tex">x \in (A \cap B)</script>,<br />
+<script type="math/tex">x</script> must exist in all the sets, <script type="math/tex">A</script>, of <script type="math/tex">\mathcal F</script>. Thus <script type="math/tex">x \in B \land x \in \cap \mathcal F</script>. Or <script type="math/tex">x \in B \cap (\cap \mathcal F)</script>.</p>
+
+<p>Thus from both directions we have <script type="math/tex">B \cap (\cap \mathcal F ) \; = \; \cap_{A \in \mathcal F}(A \cap B)</script>.</p>
+
+<hr />
+
+<p><strong>Soln17</strong></p>
+
+<p>Suppose <script type="math/tex">x \in \cap \mathcal H</script>. Suppose <script type="math/tex">A \in \mathcal F</script> and suppose <script type="math/tex">B \in \mathcal G</script>, then <script type="math/tex">A \cup B \in \mathcal H</script>.
+Thus it follows that <script type="math/tex">x \in A \cup B</script>. So we have two cases:</p>
+
+<p>Case 1: <script type="math/tex">x \in A</script>. Since <script type="math/tex">A</script> is arbitrary, it follows that <script type="math/tex">x \in \cap \mathcal F</script>. Or <script type="math/tex">x \in (\cap \mathcal F) \cup (\cap \mathcal G)</script>.</p>
+
+<p>Case 2: <script type="math/tex">x \in B</script>. Since <script type="math/tex">B</script> is arbitrary, it follows that <script type="math/tex">x \in \cap \mathcal G</script>. Or <script type="math/tex">x \in (\cap \mathcal F) \cup (\cap \mathcal G)</script>.</p>
+
+<p>Thus from both cases if <script type="math/tex">x \in \cap \mathcal H</script>, then <script type="math/tex">x \in (\cap \mathcal F) \cup (\cap \mathcal G)</script>.</p>
+
+<hr />
+
+<p><strong>Soln18</strong></p>
+
+<p>Suppose <script type="math/tex">x \in A \triangle B</script>. Thus we have:</p>
+
+<p><script type="math/tex">\leftrightarrow (x \in A \cup B) \land \lnot (x \in A \cap B)</script>   <br />
+<script type="math/tex">\leftrightarrow (x \in A \lor x \in B) \land \lnot (x \in A \land x \in B)</script>   <br />
+<script type="math/tex">\leftrightarrow (x \in A \lor x \in B) \land (x \notin A \lor x \notin B)</script>   <br />
+<script type="math/tex">\leftrightarrow (x \notin B \to x \in A) \land (x \in A \to x \notin B)</script></p>
+
+<p>Now since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">\forall x ( x \in A \triangle B \; \leftrightarrow (x \in A \leftrightarrow x \notin B))</script></p>
+
+<hr />
+
+<p><strong>Soln19</strong></p>
+
+<ul>
+  <li>
+    <p>(<script type="math/tex">((A \triangle B) \cap C = \phi) \; \to \; (A \cap C = B \cap C)</script>):   <br />
+Suppose <script type="math/tex">(A \triangle B) \cap C = \phi</script>. Now we shall prove <script type="math/tex">(A \cap C = B \cap C)</script> :</p>
+
+    <ul>
+      <li>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in A \cap C</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">x \in C</script>. We will prove by contradiction. Suppose <script type="math/tex">x \notin B</script>. Since
+ <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">x \in A \setminus B</script>. Thus <script type="math/tex">x \in A \triangle B</script>. Since <script type="math/tex">x \in C</script>, it contradicts the given
+that <script type="math/tex">(A \triangle B) \cap C = \phi</script>. Thus <script type="math/tex">x \in B</script>. Now since <script type="math/tex">x \in C \land x \in B</script>, it follows that <script type="math/tex">x \in B \cap C</script>.</li>
+      <li>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in B \cap C</script>. Thus <script type="math/tex">x \in B</script> and <script type="math/tex">x \in C</script>. We will prove by contradiction. Suppose <script type="math/tex">x \notin A</script>. Since
+ <script type="math/tex">x \in B</script>, it follows that <script type="math/tex">x \in B \setminus A</script>. Thus <script type="math/tex">x \in A \triangle B</script>. Since <script type="math/tex">x \in C</script>, it contradicts the <em>given</em>
+that <script type="math/tex">(A \triangle B) \cap C = \phi</script>. Thus <script type="math/tex">x \in A</script>. Now since <script type="math/tex">x \in C \land x \in A</script>, it follows that <script type="math/tex">x \in A \cap C</script>.</li>
+    </ul>
+
+    <p>Thus we can conclude that <script type="math/tex">A \cap C = B \cap C</script>.</p>
+  </li>
+  <li>
+    <p>(<script type="math/tex">(A \cap C = B \cap C) \; \to \; ((A \triangle B) \cap C = \phi)</script>):   <br />
+  We will prove this by contra-positive. Suppose <script type="math/tex">(A \triangle B) \cap C \ne \phi</script> and lets say <script type="math/tex">x \in (A \triangle B) \cap C</script>. Thus <script type="math/tex">x \in A \triangle B</script> and <script type="math/tex">x \in C</script>. Since
+  <script type="math/tex">x \in A \triangle B</script>, we have following cases:</p>
+
+    <ul>
+      <li>
+        <p>Case 1: If <script type="math/tex">x \in A \setminus B</script>, then <script type="math/tex">x \in A \land x \notin B</script>. Since <script type="math/tex">x \in A \land x \in C</script>, it follows <script type="math/tex">x \in A \cap C</script>. Also
+since <script type="math/tex">x \notin B</script>, it follows that <script type="math/tex">x \notin B \cap C</script>. Thus <script type="math/tex">A \cap C \neq B \cap C</script>.</p>
+      </li>
+      <li>
+        <p>Case 2: If <script type="math/tex">x \in B \setminus A</script>, then <script type="math/tex">x \in B \land x \notin A</script>. Since <script type="math/tex">x \in B \land x \in C</script>, it follows <script type="math/tex">x \in B \cap C</script>. Also
+since <script type="math/tex">x \notin A</script>, it follows that <script type="math/tex">x \notin A \cap C</script>. Thus <script type="math/tex">A \cap C \neq B \cap C</script>.</p>
+      </li>
+    </ul>
+
+    <p>Thus we can conclude from contra-positive that <script type="math/tex">(A \cap C = B \cap C) \; \to \; ((A \triangle B) \cap C = \phi)</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both directions, the condition is true. So we can conclude <script type="math/tex">(A \cap C = B \cap C) \; \leftrightarrow \; ((A \triangle B) \cap C = \phi)</script>.</p>
+
+<hr />
+
+<p><strong>Soln20</strong></p>
+
+<ul>
+  <li>
+    <p>(<script type="math/tex">((A \triangle B) \subseteq C) \; \to \; (A \cup C = B \cup C)</script>):  <br />
+  Suppose <script type="math/tex">(A \triangle B) \subseteq C</script>. Now we will prove  <script type="math/tex">A \cup C = B \cup C</script> :</p>
+
+    <ul>
+      <li>
+        <p><script type="math/tex">A \cup C \to B \cup C</script>:  <br />
+Suppose <script type="math/tex">x \in A \cup C</script>. Thus we have two exhaustive cases:</p>
+
+        <ul>
+          <li>
+            <p>Case 1: If <script type="math/tex">x \in C</script>, then <script type="math/tex">x \in B \cup C</script>.</p>
+          </li>
+          <li>
+            <p>Case 2: if <script type="math/tex">x \in A \land x \notin C</script>. Since <script type="math/tex">(A \triangle B) \subseteq C</script>, it follows that <script type="math/tex">x \notin (A \triangle B)</script>.
+  It follows that <script type="math/tex">\lnot ((x \in A \land x \notin B) \lor (x \in B \land x \notin A))</script>   <br />
+  <script type="math/tex">\leftrightarrow (\lnot (x \in A \land x \notin B) \land \lnot (x \in B \land x \notin A))</script>  <br />
+  <script type="math/tex">\leftrightarrow (x \notin A \lor x \in B) \land (x \notin B \lor x \in A))</script>  <br />
+  Since <script type="math/tex">x \in A</script>, then <script type="math/tex">x \in B</script>. Thus we can also say that <script type="math/tex">x \in B \cup C</script>.</p>
+          </li>
+        </ul>
+
+        <p>Thus from both cases above, we can conclude that <script type="math/tex">(A \cup C) \to (B \cup C)</script>.</p>
+      </li>
+      <li>
+        <p><script type="math/tex">B \cup C \to A \cup C</script>:  <br />
+This proof is will be exactly similar to the proof above for <script type="math/tex">(A \cup C) \to (B \cup C)</script> by just swapping <script type="math/tex">A</script> and <script type="math/tex">B</script>.</p>
+      </li>
+    </ul>
+
+    <p>Thus from both directions above, we can conclude that if <script type="math/tex">(A \triangle B) \subseteq C</script>, then <script type="math/tex">A \cup C = B \cup C</script>.</p>
+  </li>
+  <li>
+    <p>(<script type="math/tex">(A \cup C = B \cup C) \; \to \; ((A \triangle B) \subseteq C)</script>):  <br />
+  Suppose <script type="math/tex">A \cup C = B \cup C</script>. Suppose <script type="math/tex">x \in A \triangle B</script>, or <script type="math/tex">x \in (A \setminus B) \lor x \in (B \setminus A)</script>. 
+  Thus we have two possible cases:</p>
+
+    <ul>
+      <li>
+        <p>Case 1: if <script type="math/tex">x \in A \setminus B</script>, then <script type="math/tex">x \in A \land x \notin B</script>. Since <script type="math/tex">x \in A</script>, it follows <script type="math/tex">x \in A \cup C</script>.
+  And since <script type="math/tex">x \in A \cup C</script>, it follows that <script type="math/tex">x \in B \cup C</script>. Since <script type="math/tex">x \notin B</script>, it follows that <script type="math/tex">x \in C</script>.</p>
+      </li>
+      <li>
+        <p>Case 2: if <script type="math/tex">x \in B \setminus A</script>,  then <script type="math/tex">x \in B \land x \notin A</script>. Since <script type="math/tex">x \in B</script>, it follows <script type="math/tex">x \in B \cup C</script>.
+  And since <script type="math/tex">x \in B \cup C</script>, it follows that <script type="math/tex">x \in A \cup C</script>. Since <script type="math/tex">x \notin A</script>, it follows that <script type="math/tex">x \in C</script>.</p>
+      </li>
+    </ul>
+
+    <p>Thus from both cases above, it follows that if <script type="math/tex">x \in A \triangle B</script>, then <script type="math/tex">x \in C</script>. Since <script type="math/tex">x</script> is arbitrary, it follows
+  that <script type="math/tex">A \triangle B \subseteq C</script>.</p>
+
+    <p>Thus from both directions above, we can conclude that <script type="math/tex">((A \triangle B) \subseteq C) \; \leftrightarrow \; (A \cup C = B \cup C)</script>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<p><strong>Soln21</strong></p>
+
+<ul>
+  <li>
+    <p><script type="math/tex">(C \subseteq (A \triangle B)) \; \to \; ((C \subseteq A \cup B) \land A \cap B \cap C = \phi)</script>:  <br />
+Suppose <script type="math/tex">C \subseteq (A \triangle B)</script>.</p>
+
+    <p>Proof of <script type="math/tex">C \subseteq A \cup B</script>:</p>
+
+    <p>Suppose <script type="math/tex">x \in C</script>. Since <script type="math/tex">C \subseteq (A \triangle B)</script>, it follows that <script type="math/tex">x \in A \triangle B</script>.
+Thus <script type="math/tex">x \in A \setminus B \lor x \in B \setminus A</script>. Thus we have two cases:</p>
+
+    <ul>
+      <li>
+        <p>Case 1: if <script type="math/tex">x \in A \setminus B</script>, then <script type="math/tex">x \in A \land x \notin B</script>. Since <script type="math/tex">x \in A</script>, then <script type="math/tex">x \in A \cup B</script>.</p>
+      </li>
+      <li>
+        <p>Case 2: if <script type="math/tex">x \in B \setminus A</script>, then <script type="math/tex">x \in B \land x \notin A</script>. Since <script type="math/tex">x \in B</script>, then <script type="math/tex">x \in A \cup B</script>.</p>
+      </li>
+    </ul>
+
+    <p>Since <script type="math/tex">x</script> is arbitrary, we can conclude from both the cases above that if <script type="math/tex">C \subseteq A \cup B</script>.</p>
+
+    <p>Proof of <script type="math/tex">A \cap B \cap C = \phi</script>:</p>
+
+    <p>Now, suppose <script type="math/tex">A \cap B \cap C \ne \phi</script>. Suppose <script type="math/tex">x \in A \cap B \cap C</script>. Since <script type="math/tex">x \in C</script>, it follows <script type="math/tex">x \in A \triangle B</script>.
+Thus <script type="math/tex">x \notin A \cap B</script>. But it contradicts with assumption that <script type="math/tex">x \in A \cap B \cap C</script>. Thus <script type="math/tex">A \cap B \cap C = \phi</script>.</p>
+  </li>
+  <li>
+    <p><script type="math/tex">(C \subseteq A \cup B) \land A \cap B \cap C = \phi)  \; \to \; (C \subseteq (A \triangle B))</script>:
+Suppose <script type="math/tex">((C \subseteq A \cup B) \land A \cap B \cap C = \phi)</script>. Suppose <script type="math/tex">x \in C</script>. Since <script type="math/tex">C \subseteq A \cup B</script>, we have following cases:</p>
+
+    <ul>
+      <li>
+        <p>Case 1: if <script type="math/tex">x \in A</script>. Since <script type="math/tex">A \cap B \cap C = \phi</script> and <script type="math/tex">x \in A \land x \in C</script>, it follows that <script type="math/tex">x \notin B</script>. Thus <script type="math/tex">x \in A \land x \notin B</script>, 
+or <script type="math/tex">x \in A \setminus B</script>. Since <script type="math/tex">x \in A \setminus B</script>, it follows <script type="math/tex">x \in A \triangle B</script>.</p>
+      </li>
+      <li>
+        <p>Case 2: if <script type="math/tex">x \in B</script>. Since <script type="math/tex">A \cap B \cap C = \phi</script> and <script type="math/tex">x \in B \land x \in C</script>, it follows that <script type="math/tex">x \notin A</script>. Thus <script type="math/tex">x \in B \land x \notin A</script>, 
+or <script type="math/tex">x \in B \setminus A</script>. Since <script type="math/tex">x \in B \setminus A</script>, it follows <script type="math/tex">x \in A \triangle B</script>.</p>
+      </li>
+    </ul>
+
+    <p>Thus if <script type="math/tex">x \in C</script>, then <script type="math/tex">x \in A \triangle B</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">C \subseteq (A \triangle B)</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both directions above, we can conclude that <script type="math/tex">(C \subseteq (A \triangle B)) \; \leftrightarrow \; ((C \subseteq A \cup B) \land A \cap B \cap C = \phi)</script>.</p>
+
+<hr />
+
+<p><strong>Soln22</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>A\C ⊆ (A\B) ∪ (B\C)</p>
+
+<p>Suppose <script type="math/tex">x \in A \setminus C</script>. Thus <script type="math/tex">x \in A \land x \notin C</script>. Now we have following possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">x \notin B</script>. Since <script type="math/tex">x \in A \land x \notin B</script>, it follows <script type="math/tex">x \in A \setminus B</script>. Since <script type="math/tex">x \in A \setminus B</script>, it follows 
+ <script type="math/tex">x \in (A \setminus B) \cup (B \setminus C)</script>.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">x \in B</script>. Since <script type="math/tex">x \in B \land x \notin C</script>, it follows <script type="math/tex">x \in B \setminus C</script>. Since <script type="math/tex">x \in B \setminus C</script>, it follows 
+ <script type="math/tex">x \in (A \setminus B) \cup (B \setminus C)</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both cases above, <script type="math/tex">A \setminus C \; \subseteq \; (A \setminus B) \cup (B \setminus C)</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">x \in A \triangle C</script>. Thus <script type="math/tex">x \in A \setminus C \lor x \in C \setminus A</script>. Thus we have two cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">x \in A \setminus C</script>. Using (a), since <script type="math/tex">x \in A \setminus C</script>, then <script type="math/tex">x \in (A \setminus B) \cup (B \setminus C)</script>.   <br />
+  Thus we have two cases:</p>
+
+    <ul>
+      <li>
+        <p>Case a: <script type="math/tex">x \in A \setminus B</script>, it follows that <script type="math/tex">x \in (A \triangle B)</script>, or we can say <script type="math/tex">x \in (A \triangle B) \cup (B \triangle C)</script>.</p>
+      </li>
+      <li>
+        <p>Case b: <script type="math/tex">x \in B \setminus C</script>, it follows that <script type="math/tex">x \in (B \triangle C)</script>, or we can say <script type="math/tex">x \in (A \triangle B) \cup (B \triangle C)</script>.</p>
+      </li>
+    </ul>
+
+    <p>Thus from both cases, <script type="math/tex">x \in (A \triangle B) \cup (B \triangle C)</script>.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">x \in C \setminus A</script>. Using (a), since <script type="math/tex">x \in C \setminus A</script>, then <script type="math/tex">x \in (C \setminus B) \cup (B \setminus A)</script>.  <br />
+  Thus we have two cases:</p>
+
+    <ul>
+      <li>
+        <p>Case a: <script type="math/tex">x \in C \setminus B</script>, it follows that <script type="math/tex">x \in (C \triangle B)</script>, or we can say <script type="math/tex">x \in (A \triangle B) \cup (B \triangle C)</script>.</p>
+      </li>
+      <li>
+        <p>Case b: <script type="math/tex">x \in B \setminus A</script>, it follows that <script type="math/tex">x \in (B \triangle A)</script>, or we can say <script type="math/tex">x \in (A \triangle B) \cup (B \triangle C)</script>.</p>
+      </li>
+    </ul>
+
+    <p>Thus from both cases, <script type="math/tex">x \in (A \triangle B) \cup (B \triangle C)</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both cases above, we have if <script type="math/tex">x \in A \triangle C</script>, then <script type="math/tex">x \in (A \triangle B) \cup (B \triangle C)</script>.</p>
+
+<hr />
+
+<p><strong>Soln 23</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">x \in (A \cup B) \triangle C</script>. Thus we have following cases:</p>
+
+<ul>
+  <li>Case 1: <script type="math/tex">x \in (A \cup B) \setminus C</script>.  <br />
+Thus we have following cases:
+    <ul>
+      <li>
+        <p>Case a: <script type="math/tex">x \in A \land x \notin C</script>. Thus <script type="math/tex">x \in A \setminus C</script>, it follows that <script type="math/tex">x \in A \triangle C</script>. Or we can
+also say that <script type="math/tex">x \in (A \triangle C) \cup (B \triangle C)</script>.</p>
+      </li>
+      <li>
+        <p>Case b: <script type="math/tex">x \in B \land x \notin C</script>. Thus <script type="math/tex">x \in B \setminus C</script>, it follows that <script type="math/tex">x \in B \triangle C</script>. Or we can
+also say that <script type="math/tex">x \in (A \triangle C) \cup (B \triangle C)</script>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>Case 2: <script type="math/tex">x \in C \setminus (A \cup B)</script>.  <br />
+Thus <script type="math/tex">x \in C \land x \notin (A \cup B)</script>, or <script type="math/tex">x \in C \land x \notin A \land x \notin B</script>. Thus <script type="math/tex">x \in C \setminus A</script> and
+<script type="math/tex">x \in C \setminus B</script>. Thus <script type="math/tex">x \in C \triangle A</script> and <script type="math/tex">x \in C \triangle B</script>. It follows that <script type="math/tex">x \in (A \triangle C) \cup (B \triangle C)</script>.</li>
+</ul>
+
+<p>Thus from both cases above, <script type="math/tex">(A \cup B) \triangle C \; \subseteq \; (A \triangle C) \cup (B \triangle C)</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Lets say <script type="math/tex">A = \{ 1, 2\} , B = \{2, 3\}, C = \{ 1, 3 \}</script>.</p>
+
+<p>Then <script type="math/tex">A \cup B = \{1,2,3\},</script> and <script type="math/tex">(A \cup B) \triangle C = \{2\}</script>.</p>
+
+<p>And <script type="math/tex">A \triangle C = \{2,3\}</script>, and <script type="math/tex">B \triangle C = \{1,2\}</script>.
+Thus <script type="math/tex">(A \triangle C) \cup (B \triangle C) = \{1,2,3\}</script>.</p>
+
+<p>We can see that <script type="math/tex">(A \cup B) \triangle C \; \neq \; (A \triangle C) \cup (B \triangle C)</script>.</p>
+
+<hr />
+
+<p><strong>Soln24</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">x \in (A \triangle C) \cap (B \triangle C)</script>. It is equivalent to:  <br />
+<script type="math/tex">\leftrightarrow (x  \in (A \setminus C) \lor x \in (C \setminus A)) \land ((x  \in (B \setminus C) \lor x \in (C \setminus B))</script></p>
+
+<p>Thus we have ffollowing cases:</p>
+
+<p>Case 1: <script type="math/tex">x \in (A \setminus C) \land x \in (B \setminus C)</script>:  <br />
+Thus <script type="math/tex">x \in A \land x \in B</script> and <script type="math/tex">x \notin C</script>, it follows that <script type="math/tex">x \in (A \cap B) \triangle C</script>.</p>
+
+<p>Case 2: <script type="math/tex">x \in (A \setminus C) \land x \in (C \setminus B)</script>:
+Here <script type="math/tex">x \in C \land x \notin C</script>, which is not possible. Thus this case is not possible.</p>
+
+<p>Case 3: <script type="math/tex">x \in (C \setminus A) \land x \in (B \setminus C)</script>:
+Here also <script type="math/tex">x \in C \land x \notin C</script>, which is not possible. Thus this case is not possible.</p>
+
+<p>Case 4: <script type="math/tex">x \in (C \setminus A) \land x \in (C \setminus B)</script>:
+Here <script type="math/tex">x \in C</script> and <script type="math/tex">x \notin A \land x \notin B</script>. Or we can say <script type="math/tex">x \notin (A \cup B)</script>. Since <script type="math/tex">x \notin A \cup B</script>, 
+it follows <script type="math/tex">x \notin A \cap B</script>. Thus <script type="math/tex">x \in C</script> and <script type="math/tex">x \notin (A \cap C)</script>. It follows that <script type="math/tex">x \in C \triangle (A \cap B)</script>.</p>
+
+<p>Thus from all the possible cases, <script type="math/tex">x \in (A \cap B) \triangle C</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Lets say <script type="math/tex">A = \{ 1, 2\} , B = \{2, 3\}, C = \{ 1, 3 \}</script>.</p>
+
+<p>Then <script type="math/tex">(A \triangle C) \cap (B \triangle C)  = \{2\}</script>.  <br />
+And <script type="math/tex">(A \cap B) \triangle C = \{1, 2, 3 \}</script>.</p>
+
+<hr />
+
+<p><strong>Soln25</strong></p>
+
+<p>We shall prove the conjecture <script type="math/tex">((A \triangle C) \setminus (B \triangle C)) \; \subseteq \; ((A \setminus B) \triangle C)</script>.</p>
+
+<p>Suppose <script type="math/tex">x \in ((A \triangle C) \setminus (B \triangle C))</script>. It follows that <script type="math/tex">x \in A \triangle C</script> and <script type="math/tex">x \notin B \triangle C</script>.</p>
+
+<p>Since <script type="math/tex">x \notin B \triangle C</script>, it follows:   <br />
+<script type="math/tex">(x \notin B \land x \notin C) \lor (x \in B \land x \in C)</script>.</p>
+
+<p>Also, since <script type="math/tex">x \in A \triangle C</script>, it follows that:  <br />
+<script type="math/tex">x \in A \setminus C \lor x \in C \setminus A</script>.</p>
+
+<p>Thus we have following possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">x \in A \setminus C</script> and <script type="math/tex">x \in B \land x \in C</script>:  <br />
+This case is not possible as <script type="math/tex">x \notin C \land x \in C</script> is not possible.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">x \in C \setminus A</script> and <script type="math/tex">x \in B \land x \in C</script>:  <br />
+Thus <script type="math/tex">x \in C \land x \notin A \land x \in B</script>. Since <script type="math/tex">x \notin A</script>, it follows: <script type="math/tex">x \notin A \setminus B</script>.
+ Further since <script type="math/tex">x \in C</script>, it follows <script type="math/tex">x \in C \setminus (A \setminus B)</script>. Thus we can also say <script type="math/tex">x \in (A \setminus B) \triangle C</script>.</p>
+  </li>
+  <li>
+    <p>Case 3: <script type="math/tex">x \in A \setminus C</script> and <script type="math/tex">x \notin B \land x \notin C</script>:  <br />
+Thus <script type="math/tex">x \in A \land x \notin C \land x \notin B</script>. Since <script type="math/tex">x \in A \land x \notin B</script>, it follows: <script type="math/tex">x \in A \setminus B</script>.
+ Further since <script type="math/tex">x \notin C</script>, it follows: <script type="math/tex">x \in (A \setminus B) \setminus C</script>. Thus we can also say <script type="math/tex">x \in (A \setminus B) \triangle C</script>.</p>
+  </li>
+  <li>
+    <p>Case 4: <script type="math/tex">x \in C \setminus A</script> and <script type="math/tex">x \notin B \land x \notin C</script>:  <br />
+This case is also not possible as <script type="math/tex">x \in C \land x \notin C</script> is not possible.</p>
+  </li>
+</ul>
+
+<p>Thus from all the cases above, we can conclude that <script type="math/tex">((A \triangle C) \setminus (B \triangle C)) \; \subseteq \; ((A \setminus B) \triangle C)</script>.</p>
+
+<p>However  <script type="math/tex">((A \setminus B) \triangle C) \; \subseteq \; ((A \triangle C) \setminus (B \triangle C))</script> is not correct.</p>
+
+<p>One counter example is:  <br />
+<script type="math/tex">A = \{1\}, B = \{1\}, C = \{3\}</script>.    <br />
+<script type="math/tex">(A \setminus B) \triangle C = \{3\}</script> and <script type="math/tex">((A \triangle C) \setminus (B \triangle C)) = \phi</script>.</p>
+
+<hr />
+
+<p><strong>Soln26</strong></p>
+
+<p>The proof is not correct as the proof actually shows <script type="math/tex">% <![CDATA[
+x > 0 \lor x < 6 %]]></script>. It can be corrected by changing the cases as follows:</p>
+
+<ul>
+  <li>
+    <p>Case 1. <script type="math/tex">x − 3 \ge 0</script>. Then <script type="math/tex">\vert x − 3 \vert = x − 3</script>. Plugging this into the assumption that <script type="math/tex">% <![CDATA[
+\vert x − 3 \vert < 3 %]]></script>, we get <script type="math/tex">% <![CDATA[
+x − 3 < 3 %]]></script>, so clearly x &lt; 6.
+Also, since <script type="math/tex">x - 3 \ge 0</script>, it follows <script type="math/tex">x \ge 3</script>. Since <script type="math/tex">x \ge 3</script>, we can also say <script type="math/tex">x > 0</script>. Thus we have <script type="math/tex">% <![CDATA[
+x < 6 \land x > 0 %]]></script>.</p>
+  </li>
+  <li>
+    <p>Case 2. <script type="math/tex">% <![CDATA[
+x − 3 < 0 %]]></script>. Then <script type="math/tex">\vert x − 3 \vert = 3 − x</script>, so the assumption <script type="math/tex">% <![CDATA[
+\vert x − 3 \vert < 3 %]]></script> means that <script type="math/tex">% <![CDATA[
+3−x < 3 %]]></script>. Therefore <script type="math/tex">% <![CDATA[
+3 < 3+x %]]></script>, so <script type="math/tex">% <![CDATA[
+0 < x %]]></script>.
+Also since <script type="math/tex">% <![CDATA[
+x − 3 < 0 %]]></script>, it follows <script type="math/tex">% <![CDATA[
+x < 3 %]]></script>. Or we can also say <script type="math/tex">% <![CDATA[
+x < 6 %]]></script>. Thus it follows that <script type="math/tex">% <![CDATA[
+0 < x \land x < 6 %]]></script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both the cases: <script type="math/tex">% <![CDATA[
+x > 0 \land x < 6 %]]></script>. Thus we can conclude theorem is correct.</p>
+
+<hr />
+
+<p><strong>Soln27</strong></p>
+
+<p>Proof and theorem both are correct. The goal is of the form of <script type="math/tex">P \to Q</script>.</p>
+
+<p>Following strategies are used:</p>
+
+<ul>
+  <li>
+    <p>To prove goal of the form of <script type="math/tex">P \to Q</script>, <script type="math/tex">P</script> is assumed to be correct and then <script type="math/tex">Q</script> is proved.</p>
+  </li>
+  <li>
+    <p>Given is of the form of <script type="math/tex">P \land Q</script>. Thus these two are taken as separate givens.</p>
+  </li>
+  <li>
+    <p>One of the given is of the form <script type="math/tex">\exists x P(x)</script>. Thus existential instantiation is used.</p>
+  </li>
+</ul>
+
+<hr />
+
+<p><strong>Soln28</strong></p>
+
+<p>Proof and theorem both are correct. Following strategies are used:</p>
+
+<ul>
+  <li>Strategy to prove a goal of the form of <script type="math/tex">\forall x P(x)</script>.</li>
+  <li>Strategy to prove a goal of the form of <script type="math/tex">\exists x P(x)</script>. Existential instantiation is used.</li>
+  <li>The goal is converted into <script type="math/tex">P \lor Q</script> and strategy to prove on case by case basis is used.</li>
+</ul>
+
+<hr />
+
+<p><strong>Soln29</strong></p>
+
+<p>Suppose <script type="math/tex">\forall x P(x) \to \exists x Q(x)</script>. Thus we have:  <br />
+<script type="math/tex">\lnot (\forall x P(x)) \lor \exists x Q(x)</script>  <br />
+<script type="math/tex">\exists x \lnot P(x) \lor \exists x Q(x)</script>  <br />
+<script type="math/tex">\exists x (\lnot P(x) \lor Q(x))</script>  <br />
+<script type="math/tex">\exists x ( P(x) \to Q(x))</script></p>
+
+<hr />
+
+<p><strong>Soln30</strong></p>
+
+<p>Proof and theorem both are not correct.</p>
+
+<p>Counter example: <script type="math/tex">A = \{ 1, 2 \}, B = \{1\}, C = \{2\}</script>. Thus niether <script type="math/tex">A \subseteq B</script> and nor <script type="math/tex">A \subseteq C</script>.</p>
+
+<p>In the proof, both cases are wrong. For eg: In Case 1,  <script type="math/tex">x \in A \to x \in B</script> is not true for all the elements of <script type="math/tex">A</script>.</p>
+
+<hr />
+
+<p><strong>Soln31</strong></p>
+
+<p>For any statement <script type="math/tex">P(x)</script>, we can have following possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: P(x) is true for all values of <script type="math/tex">x</script>. Or <script type="math/tex">\forall x P(x)</script>. Thus we can also say that <script type="math/tex">\exists x (\lnot P(x) \lor \forall y P(y))</script>.</p>
+  </li>
+  <li>
+    <p>Case 2: P(x) is false for atleast one value, say <script type="math/tex">x_0</script>, of <script type="math/tex">x</script>. Or <script type="math/tex">P(x_0)</script> is true. Thus we can also say <script type="math/tex">\exists x (\lnot P(x) \lor \forall y P(y))</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both the cases, we can conclude that <script type="math/tex">\exists x (\lnot P(x) \lor \forall y P(y))</script>.</p>
+
+<hr />
+
+
+
+			</span>
+
+			
+		</article>
+	</div><!-- /.medium-8.columns -->
+
+</div><!-- /.row -->
+
+
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" href="#top-of-page">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="b30 small-6 columns">
+            <ul class="inline-list">
+              <li>Created with &hearts; by ovais</li>
+            </ul>
+          </section>
+          <section id="subfooter-right" class="small-6 columns social-icons end">
+            <ul class="inline-list">
+            
+              <li><a href="http://twitter.com/ovais_" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
+            
+              <li><a href="http://github.com/0vais" target="_blank" class="icon-github" title="Follow on github"></a></li>
+            
+            </ul>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+
+	<script>
+var sectionName = "blog";
+
+
+</script>
+
+
+<script src="https://inchmeal.github.io/assets/js/inchmeal_all.js"></script>
+
+
+
+</body>
+</html>
