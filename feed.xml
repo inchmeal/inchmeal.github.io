@@ -5,9 +5,422 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 08 Oct 2015 21:32:25 +0530</pubDate>
-    <lastBuildDate>Thu, 08 Oct 2015 21:32:25 +0530</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2015 22:29:59 +0530</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2015 22:29:59 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-3 Sec-3.6, Existence and Uniqueness Proofs</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 3, Section - 3.6, Existence and Uniqueness Proofs.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists ! x P(x)&lt;/script&gt; means there exists only one value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; for which &lt;script type=&quot;math/tex&quot;&gt;P (x)&lt;/script&gt; is true.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists ! x P(x)&lt;/script&gt; is equivalent to all of the following:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x (P(x) \land \forall y(P(y) \to y = x))&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x \forall y(P(y) \leftrightarrow  y = x)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x P(x) \land \forall y \forall z((P(y) \land P(z)) \to y = z)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To prove a goal of the form of &lt;script type=&quot;math/tex&quot;&gt;\exists ! x P(x)&lt;/script&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Strategy 1: Prove &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\forall y \forall z((P(y) \land P(z)) \to y = z)&lt;/script&gt;. The first of these goals
+shows that there exists an &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; such that P(x) is true, and the second shows that it is unique. The two parts of the proof 
+are therefore sometimes labeled existence and uniqueness.&lt;/li&gt;
+      &lt;li&gt;Strategy 2: Prove &lt;script type=&quot;math/tex&quot;&gt;\exists x(P(x) \land \forall y(P(y) \to y = x))&lt;/script&gt;, using strategies from previous
+sections.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To use a given of the form of &lt;script type=&quot;math/tex&quot;&gt;\exists ! x P(x)&lt;/script&gt;:  &lt;br /&gt;
+  Consider it as two given statements, &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\forall y \forall z((P(y) \land P(z)) \to y = z)&lt;/script&gt;. To use the 
+  first statement you should probably choose a name, say &lt;script type=&quot;math/tex&quot;&gt;x_0&lt;/script&gt;, to stand for some object such that &lt;script type=&quot;math/tex&quot;&gt;P(x_0)&lt;/script&gt; is true. The second
+  tells you that if you ever come across two objects &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;P(y)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;P(z)&lt;/script&gt; are both true, you can 
+  conclude that &lt;script type=&quot;math/tex&quot;&gt;y = z&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary. Lets say &lt;script type=&quot;math/tex&quot;&gt;P(y) = x^2y = x - y&lt;/script&gt;. Thus we have to prove &lt;script type=&quot;math/tex&quot;&gt;\exists ! y P(y)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y = \frac x {1 + x^2}&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;x^2y = \frac {x^3} {1 + x^2}&lt;/script&gt;. Also &lt;script type=&quot;math/tex&quot;&gt;x - y = \frac {x^3} {1 + x^2}&lt;/script&gt;.
+Thus we have &lt;script type=&quot;math/tex&quot;&gt;x^2y = x - y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can say that for all values of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, there exists a &lt;script type=&quot;math/tex&quot;&gt;y =  \frac x {1 + x^2}&lt;/script&gt; such that
+&lt;script type=&quot;math/tex&quot;&gt;x^2y = x - y&lt;/script&gt;. Thus we can conclude &lt;script type=&quot;math/tex&quot;&gt;\exists y P(y)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;P(z_1)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x^2z_1 = x - z_1&lt;/script&gt;, which give &lt;script type=&quot;math/tex&quot;&gt;z_1 = \frac x {1 + x^2}&lt;/script&gt;. Similarly suppose &lt;script type=&quot;math/tex&quot;&gt;P(z_2)&lt;/script&gt;, gives
+ &lt;script type=&quot;math/tex&quot;&gt;z_2 = \frac x {1 + x^2}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;z_1 = z_2&lt;/script&gt;. Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\forall y \forall z((P(y) \land P(z)) \to y = z)&lt;/script&gt; $$.&lt;/p&gt;
+
+&lt;p&gt;Thus we can say &lt;script type=&quot;math/tex&quot;&gt;\exists y P(y) \land \forall y \forall z((P(y) \land P(z)) \to y = z)&lt;/script&gt;. Thus we can conclude &lt;script type=&quot;math/tex&quot;&gt;\exists ! y P(y)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we can conclude that for every value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\exists ! y P(y)&lt;/script&gt; is true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;P(x) = xy + x - 4 = 4y&lt;/script&gt;. Then we have to prove &lt;script type=&quot;math/tex&quot;&gt;\forall y \exists ! x P(x)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: Suppose &lt;script type=&quot;math/tex&quot;&gt;y = -1&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x = 0&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;xy + x - 4 = -4&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;4y = -4&lt;/script&gt;. Thus LHS = RHS, or 
+ &lt;script type=&quot;math/tex&quot;&gt;xy + x - 4 = 4y&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: Suppose &lt;script type=&quot;math/tex&quot;&gt;y \ne -1&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x = 4&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;xy + x - 4 = 4y&lt;/script&gt;. Thus LHS = RHS, or &lt;script type=&quot;math/tex&quot;&gt;xy + x - 4 = 4y&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases we have for any arbitrary &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x)&lt;/script&gt; is true.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose for a value z &lt;script type=&quot;math/tex&quot;&gt;P(z)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;P(z) = zy + z -4 = 4y&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;z = \frac {4(y+1)} {y+1}&lt;/script&gt;. Also suppose for a value &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, 
+&lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt;. We have two possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;y = -1&lt;/script&gt;. Then we have &lt;script type=&quot;math/tex&quot;&gt;-z + z - 4 = -4&lt;/script&gt;, which says that for any value of &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;P(z)&lt;/script&gt; is true. 
+Similarly, it can be shown that for &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; is true for any value of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;y \ne 1&lt;/script&gt;. Then we have &lt;script type=&quot;math/tex&quot;&gt;z = \frac {4(y+1)} {y+1}&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;z = 4&lt;/script&gt;. Similarly it can be proved that, if &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt;, then 
+&lt;script type=&quot;math/tex&quot;&gt;x = 4&lt;/script&gt;. Or we can say that
+ &lt;script type=&quot;math/tex&quot;&gt;\forall x \forall z((P(x) \land P(z)) \to x = z)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases, if &lt;script type=&quot;math/tex&quot;&gt;y \ne 1&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\forall y \exists ! x P(x)&lt;/script&gt; is true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary. Suppose &lt;script type=&quot;math/tex&quot;&gt;P(y) = \frac y x = y - x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y = \frac {x^2} {x - 1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\frac y x = \frac {x^2} {x - 1} \times \frac 1 x&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \ne 0&lt;/script&gt;, we get 
+&lt;script type=&quot;math/tex&quot;&gt;\frac x {x - 1}&lt;/script&gt;. Also &lt;script type=&quot;math/tex&quot;&gt;y - x = \frac {x^2} {x - 1} - x = \frac x {x-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\frac y x = y - x&lt;/script&gt;. It follows that
+&lt;script type=&quot;math/tex&quot;&gt;\exists y P(y)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;P(z) \land P(y)&lt;/script&gt; for values &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; respectively. Since &lt;script type=&quot;math/tex&quot;&gt;P(z)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\frac z x = z - x&lt;/script&gt;. Since 
+&lt;script type=&quot;math/tex&quot;&gt;x \ne 0 \land x \ne 1&lt;/script&gt;, it can be simplified to &lt;script type=&quot;math/tex&quot;&gt;z = \frac {x^2} {x - 1}&lt;/script&gt;.   &lt;br /&gt;
+Similarly, since &lt;script type=&quot;math/tex&quot;&gt;P(y)&lt;/script&gt;, we can get &lt;script type=&quot;math/tex&quot;&gt;y = \frac {x^2} {x - 1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;y = z = \frac {x^2} {x - 1}&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;\forall y \forall z((P(y) \land P(z)) \to y = z)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we can conclude that for all &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\exists ! y P(y)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \ne 0&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\frac 1 x&lt;/script&gt; is defined. Suppose &lt;script type=&quot;math/tex&quot;&gt;y = \frac 1 x&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt; is arbitrary, then &lt;script type=&quot;math/tex&quot;&gt;zy = z \times \frac 1 x = \frac z x&lt;/script&gt;.
+Thus there exists a &lt;script type=&quot;math/tex&quot;&gt;y = \frac 1 x&lt;/script&gt; such that for all &lt;script type=&quot;math/tex&quot;&gt;x \ne 0&lt;/script&gt; and for all &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;zy = \frac z x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y_1&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;zy_1 = \frac z x&lt;/script&gt;. Multiplying each side by &lt;script type=&quot;math/tex&quot;&gt;\frac 1 z&lt;/script&gt;, we get &lt;script type=&quot;math/tex&quot;&gt;y_1 = \frac 1 x&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;y_1 = y = \frac 1 x&lt;/script&gt;.
+Thus we can say that &lt;script type=&quot;math/tex&quot;&gt;y = \frac 1 x&lt;/script&gt; is a unique value of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; for the given statement is to be correct.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup ! \mathcal F&lt;/script&gt;. Then there exists a set &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in \mathcal F&lt;/script&gt;. Thus we can also say 
+that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\cup ! \mathcal F \subseteq \cup \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\cup ! \mathcal F \subseteq \cup \mathcal F&lt;/script&gt;)&lt;/p&gt;
+
+&lt;p&gt;This is already proved in first part.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \subseteq \cup ! \mathcal F&lt;/script&gt;)&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;. Thus there atleast exists one set, say &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;.
+Now suppose there is one more set, say &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A \land x \in B&lt;/script&gt;,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;A \cap B \ne \phi&lt;/script&gt;. But it contradicts with the given that all sets of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; are disjoint. Thus &lt;script type=&quot;math/tex&quot;&gt;A = B&lt;/script&gt;.
+Or we can say that only one set exists such that &lt;script type=&quot;math/tex&quot;&gt;x \in A \land A \in \mathcal F&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup ! \mathcal F&lt;/script&gt;.
+Now since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \subseteq \cup ! \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from both directions, we can say that &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = \cup ! \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;   &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;\phi \in \mathcal P(U)&lt;/script&gt;. Also &lt;script type=&quot;math/tex&quot;&gt;\phi \cup B = B&lt;/script&gt;. Thus there exist a set, &lt;script type=&quot;math/tex&quot;&gt;A = \phi \in \mathcal P(U)&lt;/script&gt;
+such that for every set &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal P(U)&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A \cup B = B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;  &lt;br /&gt;
+Suppose there is another set say, &lt;script type=&quot;math/tex&quot;&gt;A&#39; \in \mathcal P(U) \land A&#39; \cup B = B&lt;/script&gt;. Now for &lt;script type=&quot;math/tex&quot;&gt;B = \phi&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cup \phi = \phi&lt;/script&gt;.
+Thus we can say that &lt;script type=&quot;math/tex&quot;&gt;A&#39; = A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is unique set such that &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal P(U) \land A \cup B = B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;   &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;A = U&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;U \in \mathcal P(U)&lt;/script&gt;. Also &lt;script type=&quot;math/tex&quot;&gt;U \cup B = U&lt;/script&gt;. Thus there exist a set, &lt;script type=&quot;math/tex&quot;&gt;A = U \in \mathcal P(U)&lt;/script&gt;
+such that for every set &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal P(U)&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;A \cup B = A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;  &lt;br /&gt;
+Suppose there is another set say, &lt;script type=&quot;math/tex&quot;&gt;A&#39; \in \mathcal P(U) \land A&#39; \cup B = A&#39;&lt;/script&gt;. Now for &lt;script type=&quot;math/tex&quot;&gt;B = U&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cup U = A&#39;&lt;/script&gt;. Since 
+&lt;script type=&quot;math/tex&quot;&gt;A&#39; \in \mathcal P(U)&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;A&#39; \subseteq U&lt;/script&gt;. Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cup U = U&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cup U = A&#39;&lt;/script&gt;,
+ it follows that &lt;script type=&quot;math/tex&quot;&gt;A&#39; = U&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;A&#39; = A = U&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is unique set such that &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal P(U) \land A \cup B = A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;   &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is arbitrary and &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal P(U)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;B \subseteq U&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;A = U&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;U \in \mathcal P(U)&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;B \subseteq U&lt;/script&gt;, it follows that 
+&lt;script type=&quot;math/tex&quot;&gt;U \cap B = B&lt;/script&gt;. Thus there exist a set, &lt;script type=&quot;math/tex&quot;&gt;A = U \in \mathcal P(U)&lt;/script&gt; such that for every set &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal P(U)&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;A \cap B = B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;  &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;A&#39; \in \mathcal P(U)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cap B = B&lt;/script&gt;.  Now for &lt;script type=&quot;math/tex&quot;&gt;B = U&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cap U = U&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;A&#39; \subseteq U&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cap U = A&#39;&lt;/script&gt;.
+It follows that &lt;script type=&quot;math/tex&quot;&gt;A&#39; = U&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A&#39; = A = U&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal P(U)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;\phi \in \mathcal P(U)&lt;/script&gt;. Also &lt;script type=&quot;math/tex&quot;&gt;\phi \cap B = \phi&lt;/script&gt;. Thus there exist a set, &lt;script type=&quot;math/tex&quot;&gt;A = \phi \in \mathcal P(U)&lt;/script&gt;
+such that for every set &lt;script type=&quot;math/tex&quot;&gt;B \in \mathcal P(U)&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A \cap B = A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;  &lt;br /&gt;
+Suppose there is another set say, &lt;script type=&quot;math/tex&quot;&gt;A&#39; \in \mathcal P(U) \land A&#39; \cap B = A&#39;&lt;/script&gt;. Now for &lt;script type=&quot;math/tex&quot;&gt;B = \phi&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cap \phi = \phi&lt;/script&gt;.
+But &lt;script type=&quot;math/tex&quot;&gt;A&#39; \cap \phi = A&#39;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A&#39; = A = \phi&lt;/script&gt;. Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is unique.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary and &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal P(U)&lt;/script&gt;. Also suppose &lt;script type=&quot;math/tex&quot;&gt;B = U \setminus A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;C \in \mathcal P (U)&lt;/script&gt;.
+Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C \cap B&lt;/script&gt;. Then:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \cap B&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land x \in B&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land (x \in U \setminus A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land (x \in U \land x \notin A)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land x \in U \land x \notin A&lt;/script&gt;  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;C \subseteq U&lt;/script&gt;,   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land x \notin A&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \setminus A&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we have &lt;script type=&quot;math/tex&quot;&gt;C \cap B = C \setminus A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus there exists a set &lt;script type=&quot;math/tex&quot;&gt;B = U \setminus A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;C \setminus A = C \cap B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Now for uniqueness proof. Lets assume &lt;script type=&quot;math/tex&quot;&gt;B&#39; \in P(U)&lt;/script&gt; such that  &lt;script type=&quot;math/tex&quot;&gt;C \setminus A = C \cap B&#39;&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;C = U&lt;/script&gt;, it follows that 
+&lt;script type=&quot;math/tex&quot;&gt;U \setminus A = U \cap B&#39;&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;B&#39; \subseteq U&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;U \cap B&#39; = B&#39;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;U \setminus A = B&#39;&lt;/script&gt;. Thus we 
+have &lt;script type=&quot;math/tex&quot;&gt;B&#39; = B = U \setminus A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary and &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal P(U)&lt;/script&gt;. Also suppose &lt;script type=&quot;math/tex&quot;&gt;B = U \setminus A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;C \in \mathcal P (U)&lt;/script&gt;.
+Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus B&lt;/script&gt;. Then:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land x \notin B&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land \lnot (x \in U \setminus A )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land \lnot (x \in U \land x \notin A )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land (x \notin U \lor x \in A )&lt;/script&gt;  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;x \notin U&lt;/script&gt; is always false as we assumed &lt;script type=&quot;math/tex&quot;&gt;x \in C \setminus B&lt;/script&gt;:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land (false \lor x \in A )&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \land x \in A&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow x \in C \cap A&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, we have &lt;script type=&quot;math/tex&quot;&gt;C \setminus B = C \cap A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Now for uniqueness proof. Lets assume &lt;script type=&quot;math/tex&quot;&gt;B&#39; \in P(U)&lt;/script&gt; such that  &lt;script type=&quot;math/tex&quot;&gt;C \setminus B&#39; = C \cap A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;C = U&lt;/script&gt;, it follows that 
+&lt;script type=&quot;math/tex&quot;&gt;U \setminus B&#39; = U \cap A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq U&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;U \cap A = A&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;U \setminus B&#39; = A&lt;/script&gt;. Thus if 
+if &lt;script type=&quot;math/tex&quot;&gt;x \in B&#39;&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \notin A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;B&#39;&lt;/script&gt; contains all the elements which are not in &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;B&#39; = U \setminus A&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;B&#39; = B = U \setminus A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;X = \phi&lt;/script&gt;. Now suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle \phi&lt;/script&gt;, then it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Similarly if &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, then
+ &lt;script type=&quot;math/tex&quot;&gt;x \in A \triangle \phi&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;A \triangle \phi = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;X&#39;&lt;/script&gt; is a set such that &lt;script type=&quot;math/tex&quot;&gt;A \triangle X&#39; = A&lt;/script&gt;. Now for &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;\phi \triangle X&#39; = \phi&lt;/script&gt;. But &lt;script type=&quot;math/tex&quot;&gt;\phi \triangle X&#39; = X&#39;&lt;/script&gt;.
+It follows that &lt;script type=&quot;math/tex&quot;&gt;X&#39; = X = \phi&lt;/script&gt;. Or we can say that &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; is unique.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary. From last part we know that &lt;script type=&quot;math/tex&quot;&gt;X = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;B = A&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;A \triangle B = A \triangle A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \triangle A&lt;/script&gt; contains all element which exists in &lt;script type=&quot;math/tex&quot;&gt;A \setminus A&lt;/script&gt;.
+But clearly &lt;script type=&quot;math/tex&quot;&gt;A \setminus A = \phi&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A \triangle A = \phi&lt;/script&gt;. Thus there exists a set &lt;script type=&quot;math/tex&quot;&gt;B = A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;A \triangle B = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;B&#39;&lt;/script&gt; is a set such that &lt;script type=&quot;math/tex&quot;&gt;A \triangle B&#39; = \phi&lt;/script&gt;. Now for &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;\phi \triangle B&#39; = \phi&lt;/script&gt;. But since 
+&lt;script type=&quot;math/tex&quot;&gt;\phi \triangle B&#39; = B&#39;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;B&#39; = \phi&lt;/script&gt;. Or we can conclude that &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is unique.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;C = A \triangle B&lt;/script&gt;. Then we have &lt;script type=&quot;math/tex&quot;&gt;A \triangle C&lt;/script&gt;:
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow= A \triangle ( A \triangle B)&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow= (A \triangle  A) \triangle B&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow= \phi \triangle B&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow= B&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;C&#39;&lt;/script&gt; is a set such that &lt;script type=&quot;math/tex&quot;&gt;A \triangle C&#39; = B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;A = C&#39; \triangle B&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;A \triangle B&lt;/script&gt; :
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow (C&#39; \triangle B) \triangle B&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow C&#39; \triangle (B \triangle B)&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow C&#39; \triangle \phi&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow C&#39;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;C&#39; = A \triangle B&lt;/script&gt;. Or we can say that &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; is unique.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is arbitrary.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;B = A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;C \subseteq A&lt;/script&gt;. Then we have &lt;script type=&quot;math/tex&quot;&gt;B \triangle C&lt;/script&gt; : 
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow A \triangle C&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow A \setminus C \cup C \setminus A&lt;/script&gt;.  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;C \subseteq A&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;C \setminus A = \phi&lt;/script&gt;:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow A \setminus C \cup \phi&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow A \setminus C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus there exists a &lt;script type=&quot;math/tex&quot;&gt;B = A&lt;/script&gt;, such that &lt;script type=&quot;math/tex&quot;&gt;B \triangle C = A \setminus C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;B&#39;&lt;/script&gt; is a set such that &lt;script type=&quot;math/tex&quot;&gt;B&#39; \triangle C = A \setminus C&lt;/script&gt;. Since this is true for all sets &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and all sets &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; such that 
+&lt;script type=&quot;math/tex&quot;&gt;C \subseteq A&lt;/script&gt;, this must be true for &lt;script type=&quot;math/tex&quot;&gt;C = \phi&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;B&#39; \triangle \phi = A \setminus \phi&lt;/script&gt;, which is equivalent to &lt;script type=&quot;math/tex&quot;&gt;B&#39; = A&lt;/script&gt;.
+Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;B&#39;&lt;/script&gt; is unique.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can have following cases:&lt;/p&gt;
+
+&lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt;.   &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; does not contain any set. Thus &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = \phi&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; is empty, &lt;script type=&quot;math/tex&quot;&gt;A \in \mathcal F&lt;/script&gt; 
+is false. Thus if &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = A \to A \in \mathcal F&lt;/script&gt; is false. Or by contra-positive, we can conclude that if 
+&lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = A \to A \in \mathcal F&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;A \ne \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; contains more than one element:  &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ A_1, A_2 \}&lt;/script&gt; such that sets &lt;script type=&quot;math/tex&quot;&gt;A_1 = \{ x \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_2 = A \setminus  A_1&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A = A_1 \cup A_2&lt;/script&gt;.
+Or we can say that &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = A&lt;/script&gt;. But clearly &lt;script type=&quot;math/tex&quot;&gt;A \notin \mathcal F&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = A \to A \in \mathcal F&lt;/script&gt; is false.
+Thus by contrapositive we can say that if &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F = A \to A \in \mathcal F&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; does not contains more then one element.&lt;/p&gt;
+
+&lt;p&gt;Thus combining both cases 1 and 2, there is only one possibility that &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; contains only one element.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;   &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;A = \cup \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \subseteq \mathcal F&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;\cup \mathcal F \in \mathcal F&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;P \in \mathcal F&lt;/script&gt;, 
+then if &lt;script type=&quot;math/tex&quot;&gt;x \in P&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in \cup \mathcal F&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;P \subseteq \cup \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is arbitrary, 
+&lt;script type=&quot;math/tex&quot;&gt;\forall P \in \mathcal F (P \subseteq \cup \mathcal F))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;Q_1 \subseteq \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Q_2 \subseteq \mathcal F&lt;/script&gt; are two different sets such that &lt;script type=&quot;math/tex&quot;&gt;\forall P \in \mathcal F (P \subseteq Q_1 ))&lt;/script&gt; and 
+&lt;script type=&quot;math/tex&quot;&gt;\forall P \in \mathcal F (P \subseteq Q_2 ))&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;Q_1 \subseteq \mathcal F&lt;/script&gt;, we can replace &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; with &lt;script type=&quot;math/tex&quot;&gt;Q_1&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;\forall P \in \mathcal F (P \subseteq Q_2 ))&lt;/script&gt; 
+and &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; with &lt;script type=&quot;math/tex&quot;&gt;Q_2&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;\forall P \in \mathcal F (P \subseteq Q_1 ))&lt;/script&gt;. Thus we get &lt;script type=&quot;math/tex&quot;&gt;Q_1 \subseteq Q_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Q_2 \subseteq Q_1&lt;/script&gt;. It follows that
+&lt;script type=&quot;math/tex&quot;&gt;Q_1 = Q_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Required statement: &lt;script type=&quot;math/tex&quot;&gt;\exists x \exists y ( P(x) \land P(y) \land x \ne y \land \forall z (P(z) \to (z = x \lor z = y)) )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We shall prove it in two steps:&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence Proof:&lt;/u&gt; First prove two such value exists so that &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; is true.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness Proof:&lt;/u&gt; Prove if there is any value, say &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt; so that &lt;script type=&quot;math/tex&quot;&gt;P(z)&lt;/script&gt; is true, then this value must be equal to any of the two values find in previous step.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Existence:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x = 0&lt;/script&gt;, then we have &lt;script type=&quot;math/tex&quot;&gt;x^3 = x^2 = 0&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also suppose &lt;script type=&quot;math/tex&quot;&gt;x = 1&lt;/script&gt;, then we have &lt;script type=&quot;math/tex&quot;&gt;x^3 = x^2 = 1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Uniqueness:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose for a value &lt;script type=&quot;math/tex&quot;&gt;x = z&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;z \ne 0 \land z \ne 1&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;z^3 = z^2&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;z \ne 0&lt;/script&gt;, multiplying both
+sides by &lt;script type=&quot;math/tex&quot;&gt;\frac 1 {z^2}&lt;/script&gt;, we get &lt;script type=&quot;math/tex&quot;&gt;z = 1&lt;/script&gt;. Thus it contradicts with the assumption &lt;script type=&quot;math/tex&quot;&gt;z \ne 1&lt;/script&gt;. So we can conclude that &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt; and 
+&lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt; are the only possible values for &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Sat, 10 Oct 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/10/10/how-to-prove-it-ch-3-sec-6.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/10/10/how-to-prove-it-ch-3-sec-6.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-3 Sec-3.5, Disjunctions</title>
@@ -965,7 +1378,7 @@ x &gt; 0 \land x &lt; 6 %]]&gt;&lt;/script&gt;. Thus we can conclude theorem is 
     &lt;p&gt;Case 1: P(x) is true for all values of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x)&lt;/script&gt;. Thus we can also say that &lt;script type=&quot;math/tex&quot;&gt;\exists x (\lnot P(x) \lor \forall y P(y))&lt;/script&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Case 2: P(x) is false for atleast one value, say &lt;script type=&quot;math/tex&quot;&gt;x_0&lt;/script&gt;, of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;P(x_0)&lt;/script&gt; is true. Thus we can also say &lt;script type=&quot;math/tex&quot;&gt;\exists x (\lnot P(x) \lor \forall y P(y))&lt;/script&gt;.&lt;/p&gt;
+    &lt;p&gt;Case 2: P(x) is false for atleast one value, say &lt;script type=&quot;math/tex&quot;&gt;x_0&lt;/script&gt;, of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. Or &lt;script type=&quot;math/tex&quot;&gt;\lnot P(x_0)&lt;/script&gt; is true. Thus we can also say &lt;script type=&quot;math/tex&quot;&gt;\exists x (\lnot P(x) \lor \forall y P(y))&lt;/script&gt;.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -3694,358 +4107,6 @@ Using Soln8,             &lt;br /&gt;
         <pubDate>Tue, 21 Jul 2015 00:00:00 +0530</pubDate>
         <link>https://inchmeal.github.io/2015/07/21/how-to-prove-it-ch-1-sec-5.html</link>
         <guid isPermaLink="true">https://inchmeal.github.io/2015/07/21/how-to-prove-it-ch-1-sec-5.html</guid>
-        
-        <category>mathematics</category>
-        
-        <category>howToProveIt</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How To Prove It, Ch-1 Sec-1.4, Operations on Sets</title>
-        <description>&lt;p&gt;This post contains exercises of Chapter - 1, Section - 1.4, Operations on Sets.
-&lt;!--more--&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We can see a correspondence between set operations and statements. &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is the truth set of &lt;script type=&quot;math/tex&quot;&gt;P(x)&lt;/script&gt; 
-and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is the truth set of &lt;script type=&quot;math/tex&quot;&gt;Q(x)&lt;/script&gt; then
-    &lt;ul&gt;
-      &lt;li&gt;Truth set of &lt;script type=&quot;math/tex&quot;&gt;P(x) \land Q(x)&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;A \cap B&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;Truth set of &lt;script type=&quot;math/tex&quot;&gt;P(x) \lor Q(x)&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;A \cup B&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;Truth set of &lt;script type=&quot;math/tex&quot;&gt;\lnot P(x)&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;U \setminus A&lt;/script&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Using logical forms of the statement, identities corresponding to set can be derived. 
-For eg: &lt;script type=&quot;math/tex&quot;&gt;A \cup (B \cap C)&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;( A \cup B ) \cap (A \cup C)&lt;/script&gt; can be proved as:  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;A \cup (B \cap C) = x \in A \cup (B \cap C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \lor (x \in B \land x \in C)&lt;/script&gt;    &lt;br /&gt;
-Using distributive law,    &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \lor x \in B) \land ( x \in A \lor x \in C)&lt;/script&gt;  &lt;br /&gt;
-Using definition of &lt;script type=&quot;math/tex&quot;&gt;\cup&lt;/script&gt;           &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (A \cup B) \land x \in (A \cup C)&lt;/script&gt;  &lt;br /&gt;
-Using definition of &lt;script type=&quot;math/tex&quot;&gt;\cup&lt;/script&gt;           &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = x \in ((A \cup B) \cap (A \cup C))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \cup B) \cap (A \cup C))&lt;/script&gt;&lt;/p&gt;
-
-    &lt;p&gt;The above identity is similar to distributive law.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \setminus (A \cap B) = (A \setminus B) \cup (A \setminus B)&lt;/script&gt;. This can also be proved similarly as above.&lt;/li&gt;
-  &lt;li&gt;Set identities can also be proved using venn diagrams. One more way to prove them is by using truth tables also.&lt;/li&gt;
-  &lt;li&gt;Sets &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are disjoint &lt;script type=&quot;math/tex&quot;&gt;iff\;A \cap B = \phi&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;solutions&quot;&gt;Solutions&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;A \cap B = \{3, 12\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \setminus C = \{1, 12, 20, 35\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;A \cup (B \setminus C) = \{1, 3, 12, 20, 35\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;No sets from above are disjoint. Set &lt;strong&gt;(a)&lt;/strong&gt; and &lt;strong&gt;(b)&lt;/strong&gt; both are subsets of &lt;strong&gt;(c)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;A \cup B = \{&lt;/script&gt; United States, Germany, China, Australia, France, India, Brazil &lt;script type=&quot;math/tex&quot;&gt;\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;(A \cap B) \setminus C = \phi&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;(B \cap C) \setminus A  = \{\text{France}\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;We can see from above &lt;strong&gt;(c)&lt;/strong&gt; is subset of &lt;strong&gt;(a)&lt;/strong&gt;. Also &lt;strong&gt;(b)&lt;/strong&gt;, &lt;strong&gt;(a)&lt;/strong&gt; and &lt;strong&gt;(b)&lt;/strong&gt;, &lt;strong&gt;(c)&lt;/strong&gt; are disjoint sets.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://inchmeal.github.io/assets/img/htpi/ch_1_s_4_q_3.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It can be easily seen that both &lt;script type=&quot;math/tex&quot;&gt;(A ∪ B)\setminus(A \cap B)\text{ and }(A \setminus B) \cup (B \setminus A)&lt;/script&gt; covers the same region.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://inchmeal.github.io/assets/img/htpi/ch_1_s_4_q_4a.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This can be verified easily from above diagram that &lt;script type=&quot;math/tex&quot;&gt;A \setminus (A \cap B) = A \setminus B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://inchmeal.github.io/assets/img/htpi/ch_1_s_4_q_4b.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This can be verified easily from above diagram that &lt;script type=&quot;math/tex&quot;&gt;A \cup (B \cap C) = (A \cup B) \cap (A \cup C)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Proof for first part(soln4a):&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A \setminus (A \cap B)&lt;/script&gt; is equivalent to:     &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad= x \in A \land \lnot(x \in A \land x \in B)&lt;/script&gt;  &lt;br /&gt;
-  Using Demorgan’s Law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad= x \in A \land (x \notin A \lor x \notin B)&lt;/script&gt;  &lt;br /&gt;
-  Using Distribution Law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad= (x \in A \land x \notin A) \lor (x \in A \land x \notin B)&lt;/script&gt;&lt;br /&gt;
-  As &lt;script type=&quot;math/tex&quot;&gt;(x \in A \land x \notin A)&lt;/script&gt; is a contradiction,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad= (x \in A \land x \notin B)&lt;/script&gt;  &lt;br /&gt;
-  Using definition of set minus,          &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad= (x \in A \setminus B)&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad= (A \setminus B)&lt;/script&gt; Hence proved.&lt;/p&gt;
-
-&lt;p&gt;Proof for second part(soln4b):&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A \cup (B \cap C) = x \in A \cup (B \cap C)&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad  = x \in A \lor (x \in B \land x \in C)&lt;/script&gt;  &lt;br /&gt;
-  Using Distributive Law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad  = (x \in A \lor x \in B) \land ( x \in A \lor x \in C)&lt;/script&gt;  &lt;br /&gt;
-  Using definition of &lt;script type=&quot;math/tex&quot;&gt;\cup&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad  = x \in (A \cup B) \land x \in (A \cup C)&lt;/script&gt;    &lt;br /&gt;
-  Using definition of &lt;script type=&quot;math/tex&quot;&gt;\cap&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad  = x \in ((A \cup B) \cap (A \cup C))&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad  = ((A \cup B) \cap (A \cup C))&lt;/script&gt; Hence Proved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://inchmeal.github.io/assets/img/htpi/ch_1_s_4_q_6a.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This can be verified from above diagram that &lt;script type=&quot;math/tex&quot;&gt;(A ∪ B) \setminus C = (A \setminus C) ∪ (B \setminus C)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://inchmeal.github.io/assets/img/htpi/ch_1_s_4_q_6b.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This can be verified from above diagram that &lt;script type=&quot;math/tex&quot;&gt;A ∪ (B \setminus C) = (A ∪ B) \setminus (C \setminus A)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;br /&gt;
-  LHS:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A ∪ B) \setminus C = (x \in A \lor x \in B) \land x \notin C&lt;/script&gt;  &lt;br /&gt;
-  Using Distributive Law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \notin C \land x \in A) \lor (x \notin C \land x \in B)&lt;/script&gt;  &lt;br /&gt;
-  Using commutative law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \land x \notin C) \lor (x \in B \land x \notin C)&lt;/script&gt;  &lt;br /&gt;
-  Using definition of &lt;script type=&quot;math/tex&quot;&gt;\setminus&lt;/script&gt;   &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in (A \setminus C)) \lor (x \in (B \setminus C))&lt;/script&gt;  &lt;br /&gt;
-  Using definition of &lt;script type=&quot;math/tex&quot;&gt;\lor&lt;/script&gt; &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in ((A \setminus C) \cup (B \setminus C))&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;RHS:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \setminus C) ∪ (B \setminus C) = (x \in A \land x \notin C) \lor (x \in B \land x \notin C)&lt;/script&gt;  &lt;br /&gt;
-  Using distributive law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = ((x \in A \land x \notin C) \lor x \in B) \land ((x \in A \land x \notin C) \lor x \notin c)&lt;/script&gt;  &lt;br /&gt;
-  Using Absorption law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = ((x \in A \land x \notin C) \lor x \in B) \land (x \notin C))&lt;/script&gt;  &lt;br /&gt;
-  Using Commutative law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in B \lor (x \in A \land x \notin C)) \land (x \notin C))&lt;/script&gt;  &lt;br /&gt;
-  Using distributive law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = ((x \in B \land x \notin C) \lor ((x \in A \land x \notin C) \land (x \notin C))&lt;/script&gt;  &lt;br /&gt;
-  Using associative law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = ((x \in B \land x \notin C) \lor (x \in A \land (x \notin C \land x \notin C))&lt;/script&gt;  &lt;br /&gt;
-  Using Idempotent law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = ((x \in B \land x \notin C) \lor (x \in A \land x \notin C))&lt;/script&gt;  &lt;br /&gt;
-  Using definition of &lt;script type=&quot;math/tex&quot;&gt;\setminus&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (B \setminus C) \lor (x \in (A \setminus C)&lt;/script&gt;  &lt;br /&gt;
-  Using definition of &lt;script type=&quot;math/tex&quot;&gt;\cup&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (B \setminus C) \cup (A \setminus C)&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;From above we can see that after simplification LHS and RHS are same.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;LHS:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A ∪ (B \setminus C) = x \in A \lor (x \in B \land x \notin C)&lt;/script&gt;  &lt;br /&gt;
-   Using Distributive Law,  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \lor x \in B) \land (x \in A \lor x \notin C)&lt;/script&gt;  &lt;br /&gt;
-   Using Double Negation law,  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \lor x \in B) \land \lnot \lnot(x \in A \lor x \notin C)&lt;/script&gt;  &lt;br /&gt;
-   Using Demorgans Law,  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \lor x \in B) \land \lnot(x \notin A \land x \in C))&lt;/script&gt;  &lt;br /&gt;
-   Using defn. of &lt;script type=&quot;math/tex&quot;&gt;\setminus&lt;/script&gt;  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \lor x \in B) \land \lnot(x \in (C \setminus A))&lt;/script&gt;  &lt;br /&gt;
-   Using defn. of &lt;script type=&quot;math/tex&quot;&gt;\cap&lt;/script&gt;  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in (A \cup B) \land \lnot(x \in (C \setminus A))&lt;/script&gt; &lt;br /&gt;
-   Using defn. of &lt;script type=&quot;math/tex&quot;&gt;\setminus&lt;/script&gt; &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (A \cup B) \setminus (C \setminus A)&lt;/script&gt;  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = (A \cup B) \setminus (C \setminus A)&lt;/script&gt; = RHS. Hence Proved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \setminus B) \setminus C = (x \in A \land x \notin B) \land x \notin C&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land x \notin B \land x \notin C&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A \setminus (B \setminus C) = x \in A \land \lnot (x in B \land x \notin C)&lt;/script&gt;  &lt;br /&gt;
-  Using Demorgans Law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land (x \notin B \lor x \in C)&lt;/script&gt;  &lt;br /&gt;
-  Using Demorgans Law,  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \land x \notin B) \lor (x \in A \land x \in C)&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in (A \setminus B) \lor (x \in (A \land C))&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in ((A \setminus B) \cup (A \cap C))&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \setminus B) ∪ (A ∩ C) = x \in (A \setminus B) \cup (A \cap C)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \setminus B) \cup (A \setminus C) = (x \in A \land x \notin B) \land (x \in A \land x \notin C)&lt;/script&gt;  &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = ((x \in A \land x \notin B) \land x \in A) \land ((x \in A \land x \notin B) \land x \notin C)&lt;/script&gt;   &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \land x \notin B) \land ((x \in A \land x \notin B) \land x \notin C)&lt;/script&gt;   &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = (x \in A \land x \notin B) \land x \notin C&lt;/script&gt;   &lt;br /&gt;
-  &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land x \notin B \land x \notin C&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(e)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A \setminus (B \cup C) = x \in A \land \lnot(x \in B \lor x \in C)&lt;/script&gt;  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land (x \notin B \land x \notin C)&lt;/script&gt;  &lt;br /&gt;
-   &lt;script type=&quot;math/tex&quot;&gt;\quad = x \in A \land x \notin B \land x \notin C&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;As can be seen above a, d and e are equivalent. Also b, and c are equivalent.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A = \{1, 2, 3, 4\}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;B = \{3, 4, 5, 6\}&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \setminus B = \{1, 2\}&lt;/script&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A = \{john, peter, amit, goldsmith\}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;B = \{goldsmith, joshua\}&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;(A \cup B) \setminus B = \{john, peter, amit\}&lt;/script&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; In the venn diagram given, there is no region corresponding to &lt;script type=&quot;math/tex&quot;&gt;(A \cap D) \setminus (B \cup C)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; First draw venn diagram for A, B and C using circles. Then draw a curve for D such that there is a region for every possible set that have possibility to contain some elements.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://inchmeal.github.io/assets/img/htpi/ch_1_s_4_q_11a.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It can be seen from above diagram that &lt;script type=&quot;math/tex&quot;&gt;(A ∪ B)\setminus C \subseteq A ∪ (B \setminus C)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;A=\{1,2,3\}, B=\{1,4,5\}, C=\{1,4,6\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A ∪ B)\setminus C = \{2, 3, 5\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A ∪ (B \setminus C) = \{1, 2, 3, 5\}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://inchmeal.github.io/assets/img/htpi/ch_1_s_4_q_12.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It can be verified that both &lt;script type=&quot;math/tex&quot;&gt;A \triangle (B \triangle C)&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;(A \triangle B) \triangle C&lt;/script&gt; are equivalent as they corresponds to same region.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;For simplicity, I shall be using &lt;script type=&quot;math/tex&quot;&gt;A,\,B\,and\,C&lt;/script&gt; as logical statements corresponding to &lt;script type=&quot;math/tex&quot;&gt;x \in A, x \in B, x \in C&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;RHS:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \cup C) \triangle (B \setminus C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor C) \lor (B \land \lnot C)) \land \lnot ((A \lor C) \land (B \land \lnot C))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor C) \lor (B \land \lnot C)) \land (\lnot(A \lor C) \lor \lnot(B \land \lnot C))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor C) \lor (B \land \lnot C)) \land ((\lnot A \land \lnot C) \lor (\lnot B \lor C))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (((A \lor C) \lor B) \land ((A \lor C) \lor \lnot C)) \land (((\lnot A \land \lnot C) \lor \lnot B) \lor ((\lnot A \land \lnot C) \lor C)))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor C \lor B) \land (A \lor C \lor \lnot C)) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor ((\lnot A \lor C) \land (\lnot C \lor C)))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor C \lor B) \land true) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor ((\lnot A \lor C) \land true))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor C \lor B) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor (\lnot A \lor C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor ((\lnot A \lor \lnot B) \land \lnot B)) \lor (\lnot A \lor C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor \lnot B) \lor (\lnot A \lor C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor C \lor B) \land (((\lnot A \lor \lnot B) \land \lnot C) \lor \lnot B \lor \lnot A \lor C)&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor (\lnot B \lor \lnot A)) \lor C)&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor C \lor B) \land ((\lnot B \lor \lnot A) \lor C)&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \lor C) \land ((\lnot A \lor \lnot B) \lor C)&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land (\lnot A \lor \lnot B)) \lor C&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land \lnot( A \land B)) \lor C&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \triangle B) \cup C&lt;/script&gt; = LHS.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;RHS:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \cap C) \triangle (B \cap C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \land C) \lor (B \land C)) \land \lnot ((A \land C) \land (B \land C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \land C) \lor (B \land C)) \land (\lnot (A \land C) \lor \lnot(B \land C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \land C) \lor (B \land C)) \land ( (\lnot A \lor \lnot C) \lor (\lnot B \lor \lnot C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land C) \land ( (\lnot A \lor \lnot B \lor \lnot C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land C) \land ( \lnot A \lor \lnot B \lor \lnot C)&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land C \land ( \lnot A \lor \lnot B \lor \lnot C)&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land (C \land (\lnot A \lor \lnot B \lor \lnot C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land ((C \land (\lnot A \lor \lnot B)) \lor (C \land \lnot C))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land (C \land (\lnot A \lor \lnot B))&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land (\lnot A \lor \lnot B) \land C&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land \lnot ( A \land B) \land C&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \triangle B) \cap C&lt;/script&gt; = LHS.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;RHS:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(A \setminus C) \triangle (B \setminus C)&lt;/script&gt;      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \land \lnot C) \lor (B \land \lnot C)) \land \lnot((A \land \lnot C) \land (B \land \lnot C))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land \lnot C) \land \lnot(A \land \lnot C \land B \land \lnot C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land \lnot C) \land \lnot(A \land B \land \lnot C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land \lnot C) \land \lnot((A \land B) \land \lnot C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land \lnot C) \land (\lnot(A \land B) \lor \lnot \lnot C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land \lnot C \land (\lnot(A \land B) \lor C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land (\lnot(A \land B) \lor C) \land \lnot C&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land ((\lnot(A \land B) \land \lnot C)\lor (C \land \lnot C))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \lor B) \land (\lnot(A \land B) \land \lnot C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = ((A \lor B) \land \lnot(A \land B)) \land \lnot C&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (A \triangle B) \setminus C&lt;/script&gt; = LHS.&lt;/p&gt;
-
-&lt;p&gt;Skipping 14 and 15 as they are similar to 13.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 19 Jul 2015 00:00:00 +0530</pubDate>
-        <link>https://inchmeal.github.io/2015/07/19/how-to-prove-it-ch-1-sec-4.html</link>
-        <guid isPermaLink="true">https://inchmeal.github.io/2015/07/19/how-to-prove-it-ch-1-sec-4.html</guid>
         
         <category>mathematics</category>
         
