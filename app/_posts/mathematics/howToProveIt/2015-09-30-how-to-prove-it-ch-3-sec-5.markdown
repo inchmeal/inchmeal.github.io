@@ -770,7 +770,7 @@ For any statement $$ P(x) $$, we can have following possible cases:
  
 - Case 1: P(x) is true for all values of $$ x $$. Or $$ \forall x P(x) $$. Thus we can also say that $$ \exists x (\lnot P(x) \lor \forall y P(y)) $$.
 
-- Case 2: P(x) is false for atleast one value, say $$ x_0 $$, of $$ x $$. Or $$ P(x_0) $$ is true. Thus we can also say $$ \exists x (\lnot P(x) \lor \forall y P(y)) $$.
+- Case 2: P(x) is false for atleast one value, say $$ x_0 $$, of $$ x $$. Or $$ \lnot P(x_0) $$ is true. Thus we can also say $$ \exists x (\lnot P(x) \lor \forall y P(y)) $$.
 
 Thus from both the cases, we can conclude that $$ \exists x (\lnot P(x) \lor \forall y P(y)) $$.
 
