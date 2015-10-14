@@ -378,7 +378,7 @@ Also suppose $$ x = 1 $$, then we have $$ x^3 = x^2 = 1 $$.
 
 <u>Uniqueness:</u>    
 
-Suppose for a value $$ x = z $$ such that $$ z \ne 0 \land z \ne 1 $$. Thus $$ z^3 = z^2 $$. Since $$ z \ne 0 $$, multiplying both
+Suppose for a value $$ x = z $$ such that $$ z \ne 0 \land z \ne 1 $$, and $$ x^3 = x^2 $$. Thus $$ z^3 = z^2 $$. Since $$ z \ne 0 $$, multiplying both
 sides by $$ \frac 1 {z^2} $$, we get $$ z = 1 $$. Thus it contradicts with the assumption $$ z \ne 1 $$. So we can conclude that $$ 0 $$ and 
 $$ 1 $$ are the only possible values for $$ x $$.
 
