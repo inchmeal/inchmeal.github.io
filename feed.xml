@@ -5,9 +5,328 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Oct 2015 00:00:10 +0530</pubDate>
-    <lastBuildDate>Thu, 15 Oct 2015 00:00:10 +0530</lastBuildDate>
+    <pubDate>Fri, 16 Oct 2015 02:52:31 +0530</pubDate>
+    <lastBuildDate>Fri, 16 Oct 2015 02:52:31 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-4 Sec-4.2, Relations</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 4, Section - 4.2, Relations.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Relation: Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are sets. Then a set &lt;script type=&quot;math/tex&quot;&gt;R \subseteq A \times B&lt;/script&gt; is called a relation from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, then:
+    &lt;ul&gt;
+      &lt;li&gt;Domain of relation &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a set:   &lt;br /&gt;
+  &lt;script type=&quot;math/tex&quot;&gt;dom(R) = \{a \in A \, \vert \, \exists b \in B((a, b) \in R)\}&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;Range of relation &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a set:   &lt;br /&gt;
+  &lt;script type=&quot;math/tex&quot;&gt;Ran(R) = \{b \in B \, \vert \, \exists a \in A((a, b) \in R)\}&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;The inverse of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is the relation &lt;script type=&quot;math/tex&quot;&gt;R^{−1}&lt;/script&gt; from &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;:  &lt;br /&gt;
+  &lt;script type=&quot;math/tex&quot;&gt;R^{−1} = \{(b,a) \in B \times A \, \vert \, (a,b) \in R \}&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Composition: Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Then the composition of &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is the relation &lt;script type=&quot;math/tex&quot;&gt;S \circ R&lt;/script&gt; from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; defined as follows:  &lt;br /&gt;
+      &lt;script type=&quot;math/tex&quot;&gt;S \circ R = \{ (a, c) \in A \times C \, \vert \, \exists b \in B((a, b) \in R and (b, c) \in S) \}&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;D&lt;/script&gt;. Then:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(R^{−1})^{−1} = R&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;Dom(R^{−1}) = Ran(R)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;Ran(R^{−1}) = Dom(R)&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;T \circ (S \circ R) = (T \circ S) \circ R&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(S \circ R)^{−1} = R^{−1} \circ S^{−1}&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Domain is the set of living persons who are parents of some living people and Range is the set of all living persons who have a living parent.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Domain is the set of all real numbers, &lt;script type=&quot;math/tex&quot;&gt;\mathbb R&lt;/script&gt;. Range is the set of all positive numbers, &lt;script type=&quot;math/tex&quot;&gt;\mathbb R^+&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Domain is the set of all living persons who are brother of some living person. Range is the set of all living persons who have a living brother.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Domain : &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\{ x \in \mathbb R \, \vert \, x =&lt; -1 \lor x &gt;= 1 \} %]]&gt;&lt;/script&gt;. Note that if domain lies in &lt;script type=&quot;math/tex&quot;&gt;(-1, 1)&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;1- \frac 2 {1 + x^2}&lt;/script&gt;
+    will be negative. Thus there will be no &lt;script type=&quot;math/tex&quot;&gt;y \in \mathbb R&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;y^2&lt;/script&gt; is negative.  &lt;br /&gt;
+    Range: &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\{ x \in \mathbb R \, \vert \, 0 \ge x &lt; 1 \} %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;L^{-1}&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;. Thus:  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;L^{-1} \circ L = \{ (m,n) \in S \times S \, \vert \, \exists o \in R((m,o) \in L \land (o,n) \in L^{-1}) \}&lt;/script&gt;.  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \{ (m,n) \in S \times S \, \vert \, \text{There exists a room o such that m lives in that room and also n lives in that room.} \}&lt;/script&gt;.  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;\quad = \{ (m,n) \in S \times S \, \vert \, \text{There exists a room such that m, and n both lives in that room} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;L^{-1} \circ L&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;E&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Thus:   &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \exists s \in S((m,s) \in L^{−1} \circ L \land (s,n) \in E) \}&lt;/script&gt;.  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \text{There exists a student s such that m and s lives in same room and s is doing course n} \}&lt;/script&gt;.  &lt;br /&gt;
+    &lt;script type=&quot;math/tex&quot;&gt;E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \text{There exists a student s who lives in dorm which has a student doing course n} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;S \circ R = \{ \{1, 5\}, \{1, 6\}, \{1, 4\}, \{2, 4\}, \{3, 6\} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;S^{-1} = \{ \{5, 4\}, \{6, 4\}, \{4, 5\}, \{6, 6\}\}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S \circ S^{-1} = \{ \{5, 5\}, \{5, 6\}, \{6, 5\}, \{6, 6\}, \{4, 4\} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;S^{-1} = \{ \{7, 4\}, \{8, 4\}, \{6, 5\}\}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S^{-1} \circ R = \{ \{1, 4\}, \{3, 5\}, \{3, 4\}\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;R^{-1} = \{ \{7, 1\}, \{6, 3\}, \{7, 3\} \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R^{-1} \circ S = \{ \{4, 1\}, \{4, 3\}, \{5, 3\}\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;Ran(R^{-1})&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Dom(R)&lt;/script&gt; are both subsets of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Let &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is an arbitrary element of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Then,&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a \in Ran(R^{−1})&lt;/script&gt; iff &lt;script type=&quot;math/tex&quot;&gt;\exists b \in B((b,a) \in R^{−1})&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;iff \exists a ∈ A((a,b) ∈ R)&lt;/script&gt; iff &lt;script type=&quot;math/tex&quot;&gt;b ∈ Ran(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;Ran(R^{-1}) = Dom(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;S = R^{-1}&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;S^{-1} = (R^{-1})^{-1} = R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;Dom(R^{−1}) = Ran(R)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;Dom(S) = Ran(S^{-1})&lt;/script&gt;,
+or &lt;script type=&quot;math/tex&quot;&gt;Ran(S^{-1} = Dom(S)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;(T \circ S) \circ R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T \circ (S \circ R)&lt;/script&gt; are both relations from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;D&lt;/script&gt;. Let &lt;script type=&quot;math/tex&quot;&gt;(a, d)&lt;/script&gt; be an arbitrary element of &lt;script type=&quot;math/tex&quot;&gt;A \times D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(a,d) \in (T \circ S) \circ R&lt;/script&gt;. Thus there must exist an element &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a, b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,d) \in T \circ S&lt;/script&gt;. Since 
+&lt;script type=&quot;math/tex&quot;&gt;(b,d) \in T \circ S&lt;/script&gt;, there must exist a n element &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(c,d) \in T&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and
+&lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(c,d) \in T&lt;/script&gt;, thus it follows that
+&lt;script type=&quot;math/tex&quot;&gt;(a,d) \in T \circ (S \circ R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(a,d)&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;(T \circ S) \circ R \subseteq T \circ (S \circ R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;S \circ R&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(S \circ R)^{-1}&lt;/script&gt; is a relation from &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Also, it can be noted 
+that &lt;script type=&quot;math/tex&quot;&gt;R^{−1} \circ S^{−1}&lt;/script&gt; is also a relation from &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(c,a)&lt;/script&gt; is an arbitrary element of &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;(c,a) \in (S \circ R)^{-1}&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in (S \circ R)&lt;/script&gt;. Thus there exist an element &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in R^{-1}&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(c,b) \in S^{-1}&lt;/script&gt;.
+Now, we have &lt;script type=&quot;math/tex&quot;&gt;(c,b) \in S^{-1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in R^{-1}&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(c,a) \in R^{-1} \circ S^{-1}&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;(c,a)&lt;/script&gt; is arbitrary,
+ it follows that &lt;script type=&quot;math/tex&quot;&gt;(S \circ R)^{-1} \subseteq R^{-1} \circ S^{-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Similarly, suppose &lt;script type=&quot;math/tex&quot;&gt;(c,a) \in R^{-1} \circ S^{-1}&lt;/script&gt;. Thus there exists an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(c,b) \in S^{-1}&lt;/script&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in R^{-1}&lt;/script&gt;. Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, it follows
+that &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. And since &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(c,a) \in (S \circ R )^{-1}&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(c,a)&lt;/script&gt; is arbitrary,
+we can conclude that &lt;script type=&quot;math/tex&quot;&gt;R^{-1} \circ S^{-1} \subseteq (S \circ R)^{-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from both directions, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(S \circ R)^{-1} = R^{-1} \circ S^{-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; is the enemy of &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; is the enemy of &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;, then it is given that &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; is the friend of &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;. Thus we have
+if &lt;script type=&quot;math/tex&quot;&gt;(p,q) \in E&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(q,r) \in E&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;(p,r) \in F&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;(p,q) \in E&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(q,r) \in E&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(p,r) \in E \circ E&lt;/script&gt;.
+Thus the given statement says: if &lt;script type=&quot;math/tex&quot;&gt;(p,r) \in E \circ E&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;(p,r) \in F&lt;/script&gt;, or Enemy of an enemy is a friend. Since &lt;script type=&quot;math/tex&quot;&gt;(p,r)&lt;/script&gt; is arbitrary,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;E \circ E \subseteq F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(S \circ R)&lt;/script&gt;. Thus there exist a pair &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;, it follows that 
+&lt;script type=&quot;math/tex&quot;&gt;a \in Dom(R)&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(S \circ R)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;Dom(S \circ R) \subseteq Dom(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \subseteq Dom(S)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(R)&lt;/script&gt;. Thus there must exist an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;. Thus
+&lt;script type=&quot;math/tex&quot;&gt;b \in Ran(R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \subseteq Dom(S)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;b \in Dom(S)&lt;/script&gt;. Thus there must exist an element &lt;script type=&quot;math/tex&quot;&gt;c \in C&lt;/script&gt; such that
+&lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in (S \circ R)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(S \circ R)&lt;/script&gt;.
+Thus we have, if &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(R)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(S \circ R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;Dom(R) \subseteq Dom(S \circ R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from part (a) and this proof we can conclude that &lt;script type=&quot;math/tex&quot;&gt;Dom(S ◦ R) = Dom(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;Ran(S \circ R) \subseteq Ran(S)&lt;/script&gt;.  &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;c \in (S \circ R)&lt;/script&gt;. Thus there must exist a pair &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;, there must exist an element
+&lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is arbitrary,
+we can conclude that &lt;script type=&quot;math/tex&quot;&gt;Ran(S \circ R) \subseteq Ran(S)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;Ran(S \circ R) = Ran(S)&lt;/script&gt;.  &lt;br /&gt;
+Suppose &lt;script type=&quot;math/tex&quot;&gt;Dom(S) \subseteq Ran(R)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S)&lt;/script&gt;. Thus there must exist an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in Ran(S)&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;b \in Dom(S)&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;Dom(S) \subseteq Ran(R)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(R)&lt;/script&gt;. Thus there must exist an element &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such
+that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S \circ R)&lt;/script&gt;.
+Thus we have, if &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S \circ R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;Ran(S) \subseteq Ran(S \circ R)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;Ran(S \circ R) \subseteq Ran(S)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Ran(S) \subseteq Ran(S \circ R)&lt;/script&gt;, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;Ran(S \circ R) = Ran(S)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;. True.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(R)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in Dom(R) \times Ran(R)&lt;/script&gt;. Thus we can say that, if &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;,
+then &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in Dom(R) \times Ran(R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(a,b)&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq Dom(R) \times Ran(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; True.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in R^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in S&lt;/script&gt;. Now since
+&lt;script type=&quot;math/tex&quot;&gt;(a,b) \in S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in S^{-1}&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in R^{-1}&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;((b,a) \in S^{-1}&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(b,a)&lt;/script&gt; is arbitrary, we 
+can conclude that &lt;script type=&quot;math/tex&quot;&gt;R^{-1} \subseteq S^{-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; True.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in (R \cup S)^{−1}&lt;/script&gt;.  &lt;br /&gt;
+ iff &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in (R \cup S)&lt;/script&gt;.  &lt;br /&gt;
+ iff &lt;script type=&quot;math/tex&quot;&gt;((b,a) \in R) \lor ((b,a) \in S)&lt;/script&gt;.  &lt;br /&gt;
+ iff &lt;script type=&quot;math/tex&quot;&gt;((a,b) \in R^{-1}) \lor ((a,b) \in S^{-1})&lt;/script&gt;.  &lt;br /&gt;
+ iff &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in (R^{-1} \cup \in S^{-1})&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;(a,b)&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(R \cup S)^{-1} = R^{-1} \cup S^{-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We will prove it by contra-positive.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \cap Dom(S) \ne \phi&lt;/script&gt;. Thus there must exist some element &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b \in Dom(S)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(R)&lt;/script&gt;,
+there must exist an element &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;b \in Dom(S)&lt;/script&gt;, there must exist an element &lt;script type=&quot;math/tex&quot;&gt;c \in C&lt;/script&gt; such that
+&lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S \circ R \ne \phi&lt;/script&gt;. Hence by 
+contrapositive we can conclude that if &lt;script type=&quot;math/tex&quot;&gt;S \circ R = \phi&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \cap Dom(S) = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;S \circ R \ne \phi&lt;/script&gt;. Thus there exist atleast one pair &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. Thus there exist an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt;
+such that &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b \in Dom(S)&lt;/script&gt;. Thus it follows &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(R) \cap Dom(S)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \cap Dom(S) \ne \phi&lt;/script&gt;. Hence by contrapositive,
+we can conclude that if &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \cap Dom(S) = \phi&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;S \circ R = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;S \circ R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;T \circ R&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;(S \setminus T) \circ R&lt;/script&gt; are relations from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; \to &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(a,c)&lt;/script&gt; is an arbitrary
+element in &lt;script type=&quot;math/tex&quot;&gt;(S \circ R)\setminus(T \circ R)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(a,c) \notin T \circ R&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(R)&lt;/script&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c \notin Ran(T)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S) \setminus Ran(T)&lt;/script&gt;, which is equivalent to saying that &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S \setminus T)&lt;/script&gt;.
+Now since &lt;script type=&quot;math/tex&quot;&gt;a \in Dom(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c \in Ran(S \setminus T)&lt;/script&gt;, there exist an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S \setminus T&lt;/script&gt;.
+Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in (S \setminus T) \circ R&lt;/script&gt;. Sicne &lt;script type=&quot;math/tex&quot;&gt;(a,c)&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(S \circ R)\setminus(T \circ R) \, \subseteq \, (S \setminus T) \circ R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The theorem and proof both not correct. In the proof, incorrect statement is:&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \notin T, (a,c) \notin T \circ R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The problem is, there might exist some other element &lt;script type=&quot;math/tex&quot;&gt;b&#39;&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b&#39;) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b&#39;,c) \in T&lt;/script&gt;. Thus even if &lt;script type=&quot;math/tex&quot;&gt;(b,c) \notin T&lt;/script&gt;,
+it might be a case that &lt;script type=&quot;math/tex&quot;&gt;(a,c)&lt;/script&gt; may still is in &lt;script type=&quot;math/tex&quot;&gt;T \circ R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As noted in the above part b, we can easily find such element:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;R = \{ \{ 1, 2\}, \{1, 1\} \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ \{ 2, 7\} \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;T = \{ \{ 1, 7\} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(S \setminus T) \circ R = \{ 1, 7 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;S \circ R = \{ 1, 7 \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;T \circ R = \{ 1, 7 \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(S \circ R) \setminus (T \circ R) = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; True.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. Thus there exists an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in T&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in T&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in T \circ R&lt;/script&gt;.
+Thus if &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in T \circ R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(a,c)&lt;/script&gt; is arbitrary, we can conclude &lt;script type=&quot;math/tex&quot;&gt;S \circ R \subseteq T \circ R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; True.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in (S \cap T) \circ R&lt;/script&gt;. Thus there exists an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S \cap T&lt;/script&gt;. It follows that
+&lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b,c) \in S&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in S \circ R&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R&lt;/script&gt; and 
+&lt;script type=&quot;math/tex&quot;&gt;(b,c) \in T&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in T \circ R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in (S \circ R) \cap (T \circ R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; False.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;R = \{ \{ 1, 2\}, \{1, 1\} \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ \{ 2, 7\} \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;T = \{ \{ 1, 7\} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;S \circ R = \{ 1, 7 \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;T \circ R = \{ 1, 7 \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(S \circ R) \cap (T \circ R) = \{ 1, 7 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;S \cap T = \phi&lt;/script&gt;  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(S \cap T) \circ R = \phi&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus, &lt;script type=&quot;math/tex&quot;&gt;(S \circ R) \cap (T \circ R) \ne (S \cap T) \circ R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in (S \cup T) \circ R&lt;/script&gt;. Thus,&lt;/p&gt;
+
+&lt;p&gt;iff, &lt;script type=&quot;math/tex&quot;&gt;\exists b \in B,&lt;/script&gt; such that, &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in R \land ((b,c) \in S \lor (b,c) \in T)&lt;/script&gt;.  &lt;br /&gt;
+iff, &lt;script type=&quot;math/tex&quot;&gt;((a,b) \in R \land (b,c) \in S) \lor ((a,b) \in R \land (b,c) \in T)&lt;/script&gt;.  &lt;br /&gt;
+iff, &lt;script type=&quot;math/tex&quot;&gt;((a,c) \in S \circ R) \lor ((a,c)\in T \circ R)&lt;/script&gt;.  &lt;br /&gt;
+iff, &lt;script type=&quot;math/tex&quot;&gt;(a,c) \in (S \circ R) \cup (T \circ R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since, &lt;script type=&quot;math/tex&quot;&gt;(a,c)&lt;/script&gt; is arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;(S \cup T) \circ R \, = \, (S \circ R) \cup (T \circ R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Thu, 15 Oct 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/10/15/how-to-prove-it-ch-4-sec-2.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/10/15/how-to-prove-it-ch-4-sec-2.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-4 Sec-4.1, Ordered Pairs and Cartesian Products</title>
@@ -3624,319 +3943,6 @@ That means &lt;script type=&quot;math/tex&quot;&gt;\cap \phi = U&lt;/script&gt;.
         <pubDate>Thu, 10 Sep 2015 00:00:00 +0530</pubDate>
         <link>https://inchmeal.github.io/2015/09/10/how-to-prove-it-ch-2-sec-3.html</link>
         <guid isPermaLink="true">https://inchmeal.github.io/2015/09/10/how-to-prove-it-ch-2-sec-3.html</guid>
-        
-        <category>mathematics</category>
-        
-        <category>howToProveIt</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How To Prove It, Ch-2 Sec-2.2, Equivalences Involving Quantifiers</title>
-        <description>&lt;p&gt;This post contains exercises of Chapter - 2, Section - 2.2, Equivalences Involving Quantifiers.
-&lt;!--more--&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Equivalances:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x P(x) = \exists x \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x P(x) = \forall x \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists ! x P(x)&lt;/script&gt; means P(x) is true for exactly one value of x. It is equivalent to   &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\exists x (P(x) \land \lnot \exists y (P(y) \land \lnot (y = x)))&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Bounded Quantifiers:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x) = \exists x (x \in A \land P(x))&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall x \in A P(x) = \forall x (x \in A \to P(x))&lt;/script&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Similar to negation equivalances( in first point), Equivalences for Bounded Quantifiers:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x \in A P(x) = \exists x \in A \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \in A P(x) = \forall x \in A \lnot P(x)&lt;/script&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt; then:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x)&lt;/script&gt; is always false irrespective of P(x).&lt;/li&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall x \in A P(x)&lt;/script&gt; is true irrespective of P(x).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Universal Quantifiers distributes over conjunction i.e. &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)&lt;/script&gt;.
-But Universal Quantifiers does not distributes over interjection.&lt;/li&gt;
-  &lt;li&gt;Existential Quantifier distributes over interjection but does not distributes over conjunction.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall x (M(x) \to \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
-where &lt;script type=&quot;math/tex&quot;&gt;M(x)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is maths major,  &lt;br /&gt;
-and &lt;script type=&quot;math/tex&quot;&gt;F(x,y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is a friend of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;,  &lt;br /&gt;
-and &lt;script type=&quot;math/tex&quot;&gt;H(y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; needs help in homework.&lt;/p&gt;
-
-&lt;p&gt;Negation of the above statement:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\quad \lnot \forall x (M(x) \to \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot (M(x) \to \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot (\lnot M(x) \lor \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (\lnot \lnot M(x) \land \lnot \exists y(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( M(x) \land \forall y \lnot(F(x, y) \land H(y))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( M(x) \land \forall y (\lnot F(x, y) \lor \lnot H(y))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ( M(x) \land \forall y ( F(x, y) \to \lnot H(y))&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;There exists a maths major and all of his friends don’t need help in their homework.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
-where &lt;script type=&quot;math/tex&quot;&gt;R(x,y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is the roommate of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;,  &lt;br /&gt;
-and &lt;script type=&quot;math/tex&quot;&gt;L(y,z)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; likes &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Negation of the above statement:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot \exists y(R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y \lnot (R(x,y) \land \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (\lnot R(x,y) \lor \lnot \forall z \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z \lnot \lnot L(y,z))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z L(y,z))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \forall y (R(x,y) \to \exists z L(y,z))&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;There exists someone whose all roommates likes atleast one person.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; Required statement is:   &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x ((x \in A \lor x \in B) \to (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot ((x \in A \lor x \in B) \to (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot (\lnot (x \in A \lor x \in B) \lor (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (\lnot \lnot (x \in A \lor x \in B) \land \lnot (x \in C \land x \notin D))&lt;/script&gt;    &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in A \lor x \in B) \land (x \notin C \lor x \in D))&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Required statement is:
-    &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \forall y[ y &gt; x \to \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot \forall y[ y &gt; x \to \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y \lnot [ y &gt; x \to \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y \lnot [ \lnot (y &gt; x) \lor \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y [ \lnot \lnot (y &gt; x) \land \lnot \exists z(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y [ (y &gt; x) \land \forall z \lnot(z^2 + 5z = y)]&lt;/script&gt;  &lt;br /&gt;
-    &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \exists y [ (y &gt; x) \land \forall z (z^2 + 5z \neq y)]&lt;/script&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\exists x (F(x) \land \lnot \exists y R(x,y))&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Negation of above statement:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \exists x (F(x) \land \lnot \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot (F(x) \land \lnot \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (\lnot F(x) \lor \lnot \lnot \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (\lnot F(x) \lor \exists y R(x,y))&lt;/script&gt;  &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ( F(x) \to \exists y R(x,y))&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;F(x)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is a freshman.  &lt;br /&gt;
- and &lt;script type=&quot;math/tex&quot;&gt;R(x,y)&lt;/script&gt; means &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; are roommates.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y)&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Negation of above statement:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot (\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y))&lt;/script&gt;  &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\quad = (\lnot (\forall x \exists y L(x,y)) \lor  \lnot (\lnot \exists x \forall y L(x,y)))&lt;/script&gt;  &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\quad = (\exists x \lnot \exists y L(x,y)) \lor  \exists x \forall y L(x,y)&lt;/script&gt;  &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\quad = (\exists x \forall y \lnot L(x,y)) \lor  \exists x \forall y L(x,y)&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Either there exists someone who does not like anyone or there exists someone who likes everyone.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\forall a \in A \exists b \in B (a \in C \leftrightarrow b \in C)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is equivalent to:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Negation of the above statement:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot (\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall a \in A \exists b \in B (a \in C \to b \in C)  \lor \lnot \forall a \in A \exists b \in B (b \in C \to a \in C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \lnot \exists b \in B (a \in C \to b \in C)  \lor \exists a \in A \lnot \exists b \in B (b \in C \to a \in C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \forall b \in B \lnot (a \in C \to b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \in C \to a \in C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \forall b \in B \lnot (a \notin C \lor b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \notin C \lor a \in C)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\exists a \in A \forall b \in B (a \in C \land b \notin C)  \lor \exists a \in A \forall b \in B(b \in C \land a \notin C)&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;There exists an a in A such that for all values of b in B, either a is in C and b is not in C, or a is not in C and b is in C.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; Required statement is:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lnot \forall y \gt 0 \exists x (ax^2 + bx + c = y)&lt;/script&gt;   &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\exists y \gt 0 \lnot \exists x (ax^2 + bx + c = y)&lt;/script&gt;   &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\exists y \gt 0 \forall x \lnot (ax^2 + bx + c = y)&lt;/script&gt;   &lt;br /&gt;
- &lt;script type=&quot;math/tex&quot;&gt;\exists y \gt 0 \forall x (ax^2 + bx + c \neq y)&lt;/script&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; All possible values of x are 0,1,2,3,4,5,6. It can be easily verified that there exists a,b and c such that &lt;script type=&quot;math/tex&quot;&gt;a^2 + b^2 + c^2 = x&lt;/script&gt; for all possible values of x. Thus statement is True.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; False. x has two possible values 1 and 7.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; True. x has two values -1 and 9. But as x is Natural number. Thus only x has one posssible value 9.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; True. x = 9 and y = 9.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Given: &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x P(x) = \forall x \lnot P(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;To Prove: &lt;script type=&quot;math/tex&quot;&gt;\lnot \forall x P(x) = \exists x \lnot P(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Putting &lt;script type=&quot;math/tex&quot;&gt;P(x) = \lnot Q(x)&lt;/script&gt; in the given equivalence:  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \lnot Q(x) = \forall x Q(x)&lt;/script&gt;  &lt;br /&gt;
-Taking negation on both sides:  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\lnot \lnot \exists x \lnot Q(x) = \lnot \forall x Q(x)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\exists x \lnot Q(x) = \lnot \forall x Q(x)&lt;/script&gt;  &lt;br /&gt;
-Hence Proved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To Prove: &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \in A P(x)&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x \in A \lnot P(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;LHS: &lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x \in A P(x)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \exists x (x \in A \land P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot (x \in A \land P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \notin A \lor \lnot P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in A \to \lnot P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \in A \lnot P(x)&lt;/script&gt; Hence Proved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To Prove &lt;script type=&quot;math/tex&quot;&gt;\exists x(P(x) \lor Q(x))&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\exists x P(x) \lor \exists x Q(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Taking LHS: &lt;script type=&quot;math/tex&quot;&gt;\exists x(P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \lnot \exists x(P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x \lnot (P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x (\lnot P(x) \land \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot (\forall x \lnot P(x) \land \forall x \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x \lnot P(x) \lor \lnot \forall x \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot \lnot P(x) \lor \exists x \lnot \lnot Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x P(x) \lor \exists x Q(x))&lt;/script&gt; Hence Proved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To Prove &lt;script type=&quot;math/tex&quot;&gt;\exists x (P(x) \to Q(x))&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \to \exists x Q(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Starting from LHS &lt;script type=&quot;math/tex&quot;&gt;\exists x (P(x) \to Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (\lnot P(x) \lor Q(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \lnot P(x) \lor \exists x Q(x)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \forall x P(x) \lor \exists x Q(x)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x P(x) \to \exists x Q(x)&lt;/script&gt; Hence Proved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To Prove: &lt;script type=&quot;math/tex&quot;&gt;(\forall x \in A P(x)) \land (\forall x \in B P(x))&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x \in (A \lor  B)P(x)&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Starting from LHS:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;(\forall x \in A P(x)) \land (\forall x \in B P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = (\forall x (x \in A \to P(x))) \land (\forall x (x \in B \to P(x)))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \in A \to P(x)) \land (x \in B \to P(x)))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \notin A \lor P(x)) \land (x \notin B \lor P(x)))&lt;/script&gt;  &lt;br /&gt;
-Applying reverse distributive law:  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \notin A \land x \notin B) \lor P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((\lnot(x \in A \lor x \in B)) \lor P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x ((x \in A \lor x \in B) \to P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall (x \in A \lor x \in B) P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \in (A \lor B) P(x))&lt;/script&gt; Hence Proved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Statement &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \lor Q(x))&lt;/script&gt; is &lt;em&gt;not&lt;/em&gt; equivalent to &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \lor  \forall xQ(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Assigning &lt;script type=&quot;math/tex&quot;&gt;P(x) = true&lt;/script&gt;, if x is even.  &lt;br /&gt;
-and &lt;script type=&quot;math/tex&quot;&gt;Q(x) = true&lt;/script&gt;, if x is odd.&lt;/p&gt;
-
-&lt;p&gt;Lets have Universe as all Natural Numbers.&lt;/p&gt;
-
-&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;\forall x (P(x) \lor Q(x))&lt;/script&gt; is true as Every number is either even or odd.   &lt;br /&gt;
-But &lt;script type=&quot;math/tex&quot;&gt;\forall x P(x) \lor  \forall xQ(x)&lt;/script&gt; is not true. A neither all numbers are even not all numbers are odd.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x) \lor \exists x \in B P(x)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x (x \in A \land P(x)) \lor \exists x (x \in B \land P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in A \land P(x)) \lor (x \in B \land P(x)))&lt;/script&gt;  &lt;br /&gt;
-Using Law of distribution in reverse:  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in A \lor x \in B) \land P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x ((x \in (A \lor B)) \land P(x))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \exists x \in (A \lor B) P(x))&lt;/script&gt; Hence Proved.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\exists x \in A P(x) \land \exists x \in B P(x)&lt;/script&gt; is not equivalent to &lt;script type=&quot;math/tex&quot;&gt;\exists x \in (A \land B) P(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;If A and B are disjoint set, then clearly RHS will be false as &lt;script type=&quot;math/tex&quot;&gt;A \land B = \phi&lt;/script&gt;. But even in this case 
-for some values of x LHS can be true.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt; is equivalent to  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in A \to x \in B)&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Also, &lt;script type=&quot;math/tex&quot;&gt;A \setminus B = \phi&lt;/script&gt;  &lt;br /&gt;
-No elements exist in the &lt;script type=&quot;math/tex&quot;&gt;A \setminus B&lt;/script&gt; set. Thus it is equivalent to:  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\lnot \exists x (x \in (A \setminus B))&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \lnot \exists x (x \in A \land x \notin B)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x \lnot (x \in A \land x \notin B)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \notin A \lor x \in B)&lt;/script&gt;  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\quad = \forall x (x \in A \to x \in B)&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Thus both are same.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; There is exactly one student who is taught by x.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; There exists atleast one teacher having exactly one student.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; There is exactly one teacher having at-least one student.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt; There atleast exist one student having exactly one teacher.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(e)&lt;/strong&gt; There is only one teacher having only one student.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(f)&lt;/strong&gt; There is exactly one teacher having only one student.&lt;/p&gt;
-
-&lt;p&gt;Clearly (e) and (f) are same.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-</description>
-        <pubDate>Wed, 09 Sep 2015 00:00:00 +0530</pubDate>
-        <link>https://inchmeal.github.io/2015/09/09/how-to-prove-it-ch-2-sec-2.html</link>
-        <guid isPermaLink="true">https://inchmeal.github.io/2015/09/09/how-to-prove-it-ch-2-sec-2.html</guid>
         
         <category>mathematics</category>
         
