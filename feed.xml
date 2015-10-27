@@ -5,9 +5,814 @@
     <description>This is a sample description</description>
     <link>https://inchmeal.github.io/</link>
     <atom:link href="https://inchmeal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Oct 2015 21:55:14 +0530</pubDate>
-    <lastBuildDate>Sun, 25 Oct 2015 21:55:14 +0530</lastBuildDate>
+    <pubDate>Tue, 27 Oct 2015 11:38:58 +0530</pubDate>
+    <lastBuildDate>Tue, 27 Oct 2015 11:38:58 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-4 Sec-4.5, Closures</title>
+        <description>&lt;p&gt;This post contains exercises of Chapter - 4, Section - 4.5, Closures.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Reflexive Closure&lt;/em&gt;:  Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a relation on a set &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Then the reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is the smallest set &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt; 
+such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive, if there is such a smallest set. In other words, a relation &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt; is the reflexive 
+closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; if it has the following three properties:
+    &lt;ol&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive.&lt;/li&gt;
+      &lt;li&gt;For every relation &lt;script type=&quot;math/tex&quot;&gt;T \subseteq A \times A&lt;/script&gt;,if &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is reflexive, then &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Strict Partial Order and Strict Total Order&lt;/em&gt;: Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a relation on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is said to be irreflexive if &lt;script type=&quot;math/tex&quot;&gt;\forall x \in A((x, x) \notin R)&lt;/script&gt;. 
+&lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is called a strict partial order if it is irreflexive and transitive. It is called a strict total order if it is a strict partial order, and in addition it 
+satisfies the following requirement, called trichotomy:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\forall x \in A \forall y \in A(xRy \lor yRx \lor x = y)&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Symmetric Closure&lt;/em&gt;: Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a relation on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. The symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is the smallest set &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt; 
+and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric, if there is such a smallest set. In other words, a relation &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt; is the symmetric closure of R if it has the following properties:
+    &lt;ol&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric.&lt;/li&gt;
+      &lt;li&gt;For every relation &lt;script type=&quot;math/tex&quot;&gt;T \subseteq A \times A&lt;/script&gt;,if &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric, then &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Transitive Closure&lt;/em&gt;: The transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is the smallest set &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive, if there is such a 
+smallest set. In other words, a relation &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt; is the transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; if it has the following properties:
+    &lt;ol&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive.&lt;/li&gt;
+      &lt;li&gt;For every relation &lt;script type=&quot;math/tex&quot;&gt;T \subseteq A \times A&lt;/script&gt;,if &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is transitive, then &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is a relation on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and suppose:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is Reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the smallest element of the family of sets &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is reflexive } \}&lt;/script&gt;.
+   Since we know the smallest element of a family of sets &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;S = \cap \mathcal F&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is Symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the smallest element of the family of sets &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is symmetric } \}&lt;/script&gt;.
+   Since we know the smallest element of a family of sets &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;S = \cap \mathcal F&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is Transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the smallest element of the family of sets &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is transitive } \}&lt;/script&gt;.
+   Since we know the smallest element of a family of sets &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;S = \cap \mathcal F&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Since all the family of sets mentioned above, contains the element &lt;script type=&quot;math/tex&quot;&gt;A \times A&lt;/script&gt;(because &lt;script type=&quot;math/tex&quot;&gt;R \subseteq A \times A \land A \times A&lt;/script&gt; is reflexive, symmetric and transitive), &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \ne \phi&lt;/script&gt;. Thus
+&lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F&lt;/script&gt; is defined. So we can conclude that reflexive, symmetric and transitive closures exist for every relation. Also since a set has a smallest element, it can have only one such element. Thus
+ reflective, symmetric, and transitive closures are unique.&lt;/li&gt;
+  &lt;li&gt;Reflexive closure of a relation &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;S = R \cup i_A&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Symmetric closure of a relation &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;S = R \cup R^{-1}&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Reflexive Closure:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ (a,a), (b,b), (c,c), (a,b), (b,c), (c,b) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Symmetric Closure:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ (a,a), (a,b), (b,a), (b,c), (c,b) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive Closure:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ (a,a), (a,b), (b,c), (a,c), (c,b), (c,c), (b,b) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Reflexive Closure:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+S = \{(x,y) \in R \times R \, \vert \, x &lt; y \text{ or } x = y \} %]]&gt;&lt;/script&gt;.   &lt;br /&gt;
+which is equivalent to,  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{(x,y) \in R \times R \, \vert \, x \le y \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Symmetric Closure:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+S = \{(x,y) \in R \times R \, \vert \, x &lt; y \text{ or } x &gt; y\} %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive Closure:  &lt;br /&gt;
+As we can see, &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is alreast a transitive closure:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+S = \{(x,y) \in R \times R \, \vert \, x &lt; y \} %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Reflexive Closure:  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;D_r&lt;/script&gt; is defined for positive number &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;r \ne 0&lt;/script&gt;, so &lt;script type=&quot;math/tex&quot;&gt;(x,x) \notin D_r&lt;/script&gt;, Thus including it,  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert &lt; r \text{ or } x = y \} %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Symmetric Closure:  &lt;br /&gt;
+As we can see &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is already symmetric,  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert &lt; r \} %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive Closure:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = R \times R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt; Similar to Soln1(a).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is asymmetric relation. Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y&lt;/script&gt; are arbitrary elements of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;xRy&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;yRx&lt;/script&gt; is false. Or we 
+    can also say that &lt;script type=&quot;math/tex&quot;&gt;xRy \land yRx&lt;/script&gt; is false, or &lt;script type=&quot;math/tex&quot;&gt;\lnot (xRy \land yRx)&lt;/script&gt;. Thus we can also say &lt;script type=&quot;math/tex&quot;&gt;(xRy \land yRx) \to x = y&lt;/script&gt;. Since 
+    &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; are arbitrary, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;\forall x \forall y((xRy \land yRx) \to x = y)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is antisymmetric.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is strict partial order. Suppose &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; are arbitrary elements of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;xRy&lt;/script&gt;. We will prove by contradiction that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \notin R&lt;/script&gt;.
+    Suppose &lt;script type=&quot;math/tex&quot;&gt;yRx&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;xRy \land yRx&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive, it follows &lt;script type=&quot;math/tex&quot;&gt;xRx&lt;/script&gt;. This contradicts with the given that &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is strict partial order,
+    and &lt;script type=&quot;math/tex&quot;&gt;(x,x) \notin R&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;xRy&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;(y,x) \notin R&lt;/script&gt;. Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is asymmetric.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is strict partial order.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Reflexive:&lt;/u&gt; Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;i_A \subseteq S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Transitive:&lt;/u&gt; Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y,z \in S&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \land (y,z) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S = R \cup i_A&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \cup i_A&lt;/script&gt; and 
+ &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in R \cup i_A&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \lor (x,y) \in i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in R \lor (y,z) \in i_A&lt;/script&gt;. Thus we have following possible
+ cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in i_A&lt;/script&gt;:  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in i_A&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;y = z&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y = z&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R&lt;/script&gt;. Or we can also say &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in R&lt;/script&gt;:
+Since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y = x&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R&lt;/script&gt;. Or we can also say &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in R&lt;/script&gt;:  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R&lt;/script&gt;. Or we can also say &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 4: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in i_A&lt;/script&gt;:  &lt;br /&gt;
+ Thus &lt;script type=&quot;math/tex&quot;&gt;x = y = z&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x = z&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in i_A&lt;/script&gt;. Or we can also say &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from all the cases, &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x,y,z&lt;/script&gt; are arbitrary, we can conlude that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is arbitrary.&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Antisymmetric:&lt;/u&gt; Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \land (y,x) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \cup i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R \cup i_A&lt;/script&gt;.
+Thus we have following cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in i_A&lt;/script&gt;:  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(x,y) \notin R&lt;/script&gt;. Thus this cases is not possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R&lt;/script&gt;:
+Since &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(x,y) \notin R&lt;/script&gt;. Thus this cases is not possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R&lt;/script&gt;:  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in R&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is irreflexive, &lt;script type=&quot;math/tex&quot;&gt;(x,x) \notin R&lt;/script&gt;. Thus this case is also not possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 4: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in i_A&lt;/script&gt;:  &lt;br /&gt;
+ Thus &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from all the cases, if &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \land (y,x) \in S&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is antisymmetric.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is strict partial order we have following cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;i_A \subseteq S&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \lor (y,x) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;x R y&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Or we can also say &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \lor (y,x) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;y R x&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S&lt;/script&gt;. Or we can also say &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \lor (y,x) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from all the cases, we have &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \lor (y,x) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x,y&lt;/script&gt; are arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is total order.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To prove that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the largest element of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ T \subseteq A \times A \, \vert \, T \subseteq R \text{ and } T \text{ is irreflexive } \}&lt;/script&gt;.
+We need to prove that &lt;script type=&quot;math/tex&quot;&gt;S \in \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\forall T \in \mathcal F (T \subseteq \mathcal S)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \land (x,y) \notin i_A&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;S \subseteq R&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \notin i_A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \ne y&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \ne y&lt;/script&gt;. It follows that
+&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is irreflexive. Also &lt;script type=&quot;math/tex&quot;&gt;S = R \setminus i_A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S \subseteq A \times A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S \subseteq R&lt;/script&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is irreflexive, it follows that &lt;script type=&quot;math/tex&quot;&gt;S \in \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;T \in \mathcal F&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is irreflexive,
+ it follows that &lt;script type=&quot;math/tex&quot;&gt;x \ne y&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \notin i_A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \land (x,y) \notin i_A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \setminus i_A&lt;/script&gt;.
+ Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x,y&lt;/script&gt; are arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;T \subseteq S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall T \in \mathcal F(T \subseteq S)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;S \in \mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\forall T \in \mathcal F(T \subseteq S)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the largest element of &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is partial order on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is partial order, &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in R&lt;/script&gt;. Also &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in i_A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,x) \notin R \setminus i_A&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;(x,x) \notin S&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is irreflexive.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y,z \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \land (y,z) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S = R \setminus i_A&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \land (y,z) \in R \land x \ne y \land y \ne z&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R&lt;/script&gt;. We will prove by contradiction that &lt;script type=&quot;math/tex&quot;&gt;x \ne z&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x = z&lt;/script&gt;, then since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(z,y) \in R&lt;/script&gt;.
+Also we have &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in R&lt;/script&gt; and since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is antisymmetric, it follows that &lt;script type=&quot;math/tex&quot;&gt;y = z&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in S&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;y \ne z&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x = z&lt;/script&gt; leads to 
+contradiction. Thus &lt;script type=&quot;math/tex&quot;&gt;x \ne z&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;(x,z) \notin i_A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R \land (x,z) \notin i_A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x,y,z&lt;/script&gt; are
+arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is irreflexive and transitive, it follows that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is strict partial order.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;S = \{ (p,q) \, \vert \, p \text{ is ancestor of } q \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; We know that &lt;script type=&quot;math/tex&quot;&gt;S^{-1} = \{(p,q) \, \vert \, q is ancestor of p \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;S \circ S^{-1} = \{ (p,r) \, \vert \,&lt;/script&gt; There exists a &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(p,q) \in S^{-1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(q,r) \in S \}&lt;/script&gt;.  &lt;br /&gt;
+It is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S \circ S^{-1} = \{ (p,r) \, \vert \,&lt;/script&gt; There exists a &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; is the ancestor of &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; is the ancestor of &lt;script type=&quot;math/tex&quot;&gt;r \}&lt;/script&gt;.      &lt;br /&gt;
+It is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S \circ S^{-1} = \{ (p,r) \, \vert \,&lt;/script&gt; There exists a &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; have a ancestor &lt;script type=&quot;math/tex&quot;&gt;q \}&lt;/script&gt;.      &lt;br /&gt;
+It is equivalent to:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S \circ S^{-1} = \{ (p,r) \, \vert \,  p&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; have a common ancestor &lt;script type=&quot;math/tex&quot;&gt;\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is reflexive. Thus:  &lt;br /&gt;
+1. &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.  &lt;br /&gt;
+2. &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive.  &lt;br /&gt;
+3. Suppose &lt;script type=&quot;math/tex&quot;&gt;T \in A \times A&lt;/script&gt; is a set such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is reflexive. Since &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, it follows that 
+ &lt;script type=&quot;math/tex&quot;&gt;i_A \subseteq S&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;i_A \subseteq R&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is reflexive.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is symmetric. Thus:  &lt;br /&gt;
+1. &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.  &lt;br /&gt;
+2. &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric.  &lt;br /&gt;
+3. Suppose &lt;script type=&quot;math/tex&quot;&gt;T \in A \times A&lt;/script&gt; is a set such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric. Since &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;S = R&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, it follows that 
+ &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric. Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;p&gt;Similarly it can be proved for transitive that &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive iff &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(S)&lt;/script&gt;. Thus there exist an element &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric, it follows that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in Ran(S)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;Dom(S) = Ran(S)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now to prove &lt;script type=&quot;math/tex&quot;&gt;Dom(S) = Dom(R) \cup Ran(R)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(S)&lt;/script&gt;. Thus there exist an element &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. We will prove by contradiction that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \lor (y,x) \in R&lt;/script&gt;.
+Suppose &lt;script type=&quot;math/tex&quot;&gt;\lnot ((x,y) \in R \lor (y,x) \in R)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \notin R \land (y,x) \notin R&lt;/script&gt;. Now consider a set &lt;script type=&quot;math/tex&quot;&gt;T = S - \{ (x,y), (y,x) \}&lt;/script&gt; thus making &lt;script type=&quot;math/tex&quot;&gt;T \subseteq S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; was symmetric,
+ and we removed &lt;script type=&quot;math/tex&quot;&gt;(x,y),(y,x)&lt;/script&gt; from &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is also symmetric. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; contains all the elements of &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; except &lt;script type=&quot;math/tex&quot;&gt;(x,y)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,x)&lt;/script&gt; and since
+ &lt;script type=&quot;math/tex&quot;&gt;(x,y) \notin R \land (y,x) \notin R&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric, and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T \subseteq S&lt;/script&gt;, it follows
+ that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is not the smallest element such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric. But it contradicts with the given that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric closure.
+ Thus our assumption &lt;script type=&quot;math/tex&quot;&gt;\lnot ((x,y) \in R \lor (y,x) \in R)&lt;/script&gt; is wrong. It follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \lor (y,x) \in R&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R) \cup Ran(R)&lt;/script&gt;.
+ Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;Dom(S) \subseteq Dom(R) \cup Ran(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R) \cup Ran(R)&lt;/script&gt;. Thus there exist an element &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; such that either &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R&lt;/script&gt;. Thus we have following
+possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;xRy&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;xRy&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(S)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;yRx&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;yRx&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(S)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases, if &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R) \cup Ran(R)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(S)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;Dom(R) \cup Ran(R) \subseteq Dom(S)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;Dom(S) \subseteq Dom(R) \cup Ran(R)&lt;/script&gt;  and &lt;script type=&quot;math/tex&quot;&gt;Dom(R) \cup Ran(R) \subseteq Dom(S)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;Dom(S) = Dom(R) \cup Ran(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally putting all together we have &lt;script type=&quot;math/tex&quot;&gt;Dom(S) = Ran(S) = Dom(R) \cup Ran(R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;T = \{ (x, y) \in S \, \vert \, x \in Dom(R) \text{ and } y \in Ran(R) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y \in Ran(R)&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(x,y)&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T \land (y,z) \in T&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \land (y,z) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R)&lt;/script&gt;. Similarly since &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in T&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;z \in Ran(R)&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt; and 
+&lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y \in Ran(R)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in T&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is transitive.&lt;/p&gt;
+
+&lt;p&gt;Also note that by the definition of &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;T \subseteq S&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is transitive,
+it follows that(by the definition of transitive closure), &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;.  &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T \subseteq S&lt;/script&gt;, it follows thar &lt;script type=&quot;math/tex&quot;&gt;T = S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(T)&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;Dom(T) \subseteq Dom(R)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in Dom(R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;x \in Dom(T)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;Dom(R) \subseteq Dom(T)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;Dom(T) \subseteq Dom(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Dom(R) \subseteq Dom(T)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;Dom(R) = Dom(T)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y \in Ran(T)&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;y \in Ran(R)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;Ran(T) \subseteq Ran(R)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y \in Ran(R)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;y \in Ran(T)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \subseteq Ran(T)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;Ran(T) \subseteq Ran(R)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Ran(R) \subseteq Ran(T)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;Ran(R) = Ran(T)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is the relation on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;R \subseteq A \times A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in A \times A&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in A \times A&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;A \times A \in \mathcal F&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \ne \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;S = \cap \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is an arbitrary element in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;R \subset T&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\forall T \in \mathcal F((x,y) \in T)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in \cap \mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(x,y)&lt;/script&gt; is arbitrary,
+it follows &lt;script type=&quot;math/tex&quot;&gt;R \subseteq \cap \mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in \cap \mathcal F&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is an arbitrary element in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(x,y)&lt;/script&gt; belongs to all the elements of &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F&lt;/script&gt;,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric, it follows that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\forall T \in \mathcal F((y,x) \in T)&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in \cap \mathcal F&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;T \subseteq A \times A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric. It follows that &lt;script type=&quot;math/tex&quot;&gt;T \in \mathcal F&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in \cap \mathcal F&lt;/script&gt;,
+thus &lt;script type=&quot;math/tex&quot;&gt;\forall X \in \mathcal F((x,y) \in X)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T \in \mathcal F&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\cap \mathcal F \subseteq T&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus from all the above points, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;S = \cap \mathcal F&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We know that reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R = \cap \mathcal F&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is reflexive } \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;S_1 = \cap \mathcal F_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2 = \cap \mathcal F_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;T_2 \in \mathcal F_2&lt;/script&gt; is an arbitrary element. Thus &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq T_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T_2&lt;/script&gt; is reflexive. Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq R_2&lt;/script&gt;, it follows
+&lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq T_2&lt;/script&gt; and T_2 is reflexive. Since &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt;, it follows by the definition of reflexive closure that &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq T_2&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;T_2&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\forall T_2 \in \mathcal F_2 (S_1 \in T_2)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq \cap \mathcal F_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Symmetric&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We know that symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R = \cap \mathcal F&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is symmetric } \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;  Suppose &lt;script type=&quot;math/tex&quot;&gt;S_1 = \cap \mathcal F_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2 = \cap \mathcal F_2&lt;/script&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;T_2 \in \mathcal F_2&lt;/script&gt; is an arbitrary element. Thus &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq T_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T_2&lt;/script&gt; is symmetric. Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq R_2&lt;/script&gt;, it follows 
+&lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq T_2&lt;/script&gt; and T_2 is symmetric. Since &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt;, it follows by the definition of symmetric closure that &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq T_2&lt;/script&gt;.
+ Since &lt;script type=&quot;math/tex&quot;&gt;T_2&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\forall T_2 \in \mathcal F_2 (S_1 \in T_2)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq \cap \mathcal F_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Transitive:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We know that transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R = \cap \mathcal F&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is transitive } \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;  Suppose &lt;script type=&quot;math/tex&quot;&gt;S_1 = \cap \mathcal F_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2 = \cap \mathcal F_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;  Suppose &lt;script type=&quot;math/tex&quot;&gt;T_2 \in \mathcal F_2&lt;/script&gt; is an arbitrary element. Thus &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq T_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T_2&lt;/script&gt; is transitive. Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq R_2&lt;/script&gt;, it follows  
+&lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq T_2&lt;/script&gt; and T_2 is transitive. Since &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt;, it follows by the definition of transitive closure that 
+&lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq T_2&lt;/script&gt;.  Since &lt;script type=&quot;math/tex&quot;&gt;T_2&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\forall T_2 \in \mathcal F_2 (S_1 \in T_2)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq \cap \mathcal F_2&lt;/script&gt;. 
+Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq S_2&lt;/script&gt;. &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;), Proof of &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \cup R_2 = R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq R&lt;/script&gt;. Thus using Soln11(a), &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2 \subseteq S&lt;/script&gt;.
+It follows that &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;), Proof of &lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cup S_2&lt;/script&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We will first prove:   &lt;br /&gt;
+1. &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S_1 \cup S_2&lt;/script&gt;.  &lt;br /&gt;
+2. &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2&lt;/script&gt; is reflexive.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R_1 \cup R_2&lt;/script&gt;. We have following cases:&lt;/p&gt;
+
+&lt;p&gt;-Case 1: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1&lt;/script&gt;: Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq S_1&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1&lt;/script&gt;, or we may also say &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;-Case 2: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_2&lt;/script&gt;: Since &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq S_2&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_2&lt;/script&gt;, or we may also say &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;(x,y)&lt;/script&gt; is arbitrary, and from all possible cases we can conclude that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; is reflexive, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in S_1&lt;/script&gt;. Thus we can also say that &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in S_1 \cup S_2&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2&lt;/script&gt; is reflexive.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S_1 \cup S_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2&lt;/script&gt; is reflexive, and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, then by using the definition of reflexive closure,
+&lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cup S_2&lt;/script&gt;, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;S = S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;), Proof of &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt;:   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \cup R_2 = R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq R&lt;/script&gt;. Thus using Soln11(b), &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2 \subseteq S&lt;/script&gt;.
+ It follows that &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt;.  &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;), Proof of &lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cup S_2&lt;/script&gt;:  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We will first prove:      
+1. &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S_1 \cup S_2&lt;/script&gt;.         
+2. &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;p&gt;  Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R_1 \cup R_2&lt;/script&gt;. We have following cases: &lt;/p&gt;
+
+&lt;p&gt; -Case 1: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1&lt;/script&gt;: Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq S_1&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1&lt;/script&gt;, or we may also say &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cup S_2&lt;/script&gt;.   &lt;/p&gt;
+
+&lt;p&gt;-Case 2: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_2&lt;/script&gt;: Since &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq S_2&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_2&lt;/script&gt;, or we may also say &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;  Since &lt;script type=&quot;math/tex&quot;&gt;(x,y)&lt;/script&gt; is arbitrary, and from all possible cases we can conclude that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S_1 \cup S_2&lt;/script&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x,y \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cup S_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \lor (x,y) \in S_2&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2&lt;/script&gt; are symmetric,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S_1 \lor (y,x) \in S_2&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cup S_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S_1 \cup S_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2&lt;/script&gt; is symmetric, and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, then by using the definition of symmetric closure, 
+&lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;  Since &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cup S_2&lt;/script&gt;, we can conclude that &lt;script type=&quot;math/tex&quot;&gt;S = S_1 \cup S_2&lt;/script&gt;. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Proof of &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt;:   &lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \cup R_2 = R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq R&lt;/script&gt;. Thus using Soln11(b), &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2 \subseteq S&lt;/script&gt;.
+ It follows that &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 \subseteq S&lt;/script&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Counter example for &lt;script type=&quot;math/tex&quot;&gt;S \ne S_1 \cup S_2&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;Suppose:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A = \{1, 2, 3, 4 \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R_1 = \{ (1,2), (2,2), (2,3) \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R_2 = \{ (4,2), (2,4) \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;R = R_1 \cup R_2 = \{ (1,2), (2,2), (2,3), (4,2), (2,4) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure for &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt; is:   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_1 = \{ (1,2), (2, 2), (2,3), (1,3) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure for &lt;script type=&quot;math/tex&quot;&gt;R_2&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_2 = \{ (2,2), (4,2), (2,4), (4,4) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;And &lt;script type=&quot;math/tex&quot;&gt;S_1 \cup S_2 = \{ (1,2), (2, 2), (2,3), (1,3), (4,2), (2,4), (4,4) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure for &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is :
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ (1,2), (2,2), (2,3), (4,2), (2,4), (1,3), (4,4), (1,4), (4,3) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;S \ne S_1 \cup S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For all the parts there is one common part that I shall prove here.&lt;/p&gt;
+
+&lt;p&gt;We have &lt;script type=&quot;math/tex&quot;&gt;S_i&lt;/script&gt; is reflexive/symmetric/transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R_i&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;i \in \{1,2\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R_1 \cap R_2&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R_1 \land (x,y) \in R_2&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R_2 \subseteq S_2&lt;/script&gt;, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cap S_ 2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;R_1 \cap R_2 \subseteq S_1 \cap S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We know that &lt;script type=&quot;math/tex&quot;&gt;S_1 = R_1 \cup i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2 = R_2 \cup i_A&lt;/script&gt;.   &lt;br /&gt;
+And &lt;script type=&quot;math/tex&quot;&gt;S = (R_1 \cap R_2) \cup i_A&lt;/script&gt;,&lt;/p&gt;
+
+&lt;p&gt;Suppose that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cap S_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in  R_1 \cup i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in  R_2 \cup i_A&lt;/script&gt;. iff  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;((x,y) \in R_1 \lor (x,y) \in i_A) \land ((x,y) \in R_2 \lor (x,y) \in i_A)&lt;/script&gt; iff    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;((x,y) \in R_1 \land (x,y) \in R_2) \lor (x,y) \in i_A&lt;/script&gt; iff    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;((x,y) \in R_1 \cap R_2) \lor (x,y) \in i_A&lt;/script&gt; iff    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(x,y) \in (R_1 \cap R_2) \cup i_A&lt;/script&gt; iff    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;(S_1 \cap S_2) = S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cap S_2&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_2&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2&lt;/script&gt; are symmetric, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S_1 \land (y,x) \in S_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S_1 \cap S_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R_1 \cap R_2&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;R_1 \cap R_2 \subseteq S_1 \cap S_2&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2&lt;/script&gt; is symmetric, then by the definition of 
+symmetric closure, it follows that &lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cap S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Counter example to show: &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2 \nsubseteq S&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A = \{1,2\}, R_1 = \{(1,2)\}, R_2 = \{(2,1)\}&lt;/script&gt;.  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;R_1 \cap R_2 = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_1 = \{(1,2), (2,1) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R_2&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_2 = \{(1,2), (2,1) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R_1 \cap R_2&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ \phi \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;And &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2 = \{(1,2), (2,1) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2 \nsubseteq S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1 \cap S_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in S_1 \cap S_2&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(y,z) \in S_2&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2&lt;/script&gt; are transitive, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S_1 \cap S_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R_1 \cap R_2&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;R_1 \cap R_2 \subseteq S_1 \cap S_2&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2&lt;/script&gt; is transitive, then by the definition of 
+transitive closure, it follows that &lt;script type=&quot;math/tex&quot;&gt;S \subseteq S_1 \cap S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Counter example to show: &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2 \nsubseteq S&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;Suppose:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A = \{1, 2, 3 \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R_1 = \{ (1,2), (2,3) \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R_2 = \{ (1,3) \}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;R = R_1 \cap R_2 = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure for &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt; is:   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_1 = \{ (1,2), (2,3), (1,3) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure for &lt;script type=&quot;math/tex&quot;&gt;R_2&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_2 = \{ (1,3) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure for &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is :
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ \phi \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;And &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2 = \{ (1,3) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;S_1 \cap S_2 \nsubseteq S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A = \{1, 2, 3, a, b, c \}&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R_1 = \{ (1,2), (2,3), (a,b), (b,c) \}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R_2 = \{ (2,3), (a,c), (c,b) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus, &lt;script type=&quot;math/tex&quot;&gt;R_1 \setminus R_2 = \{ (1,2), (a,b), (b,c) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_1 = \{ (1,2), (2,3), (1,3), (a,b), (b,c), (a,c) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R_2&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S_2 = \{ (2,3), (a,c), (c,b), (a,b) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R = R_1 \setminus R_2&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ (1,2), (a,b), (b,c), (a,c) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;And &lt;script type=&quot;math/tex&quot;&gt;S_1 \setminus S_2 = \{ (1,2), (1,3), (b,c) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;S \nsubseteq S_1 \setminus S_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_1 \setminus S_2 \nsubseteq S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We will prove that &lt;script type=&quot;math/tex&quot;&gt;S = R \cup R^{-1} \cup i_A&lt;/script&gt; is the symmetric reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;: Since &lt;script type=&quot;math/tex&quot;&gt;S = R \cup R^{-1} \cup i_A&lt;/script&gt;, it is clear that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive: Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in i_A&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in R \cup R^{-1} \cup i_A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric: Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \lor (x,y) \in R^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R \lor (y,x) \in R^{-1}&lt;/script&gt;. 
+ Thus we can also say that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R \cup R^{-1} \cup i_A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;T \subseteq A \times A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric and reflexive. Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. 
+Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \cup R^{-1} \cup i_A&lt;/script&gt;. Thus we have following cases:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;:   &lt;br /&gt;
+  Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R^{-1}&lt;/script&gt;:
+  Thus &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt;:
+  Thus &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is reflexive, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,x) \in T&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Thus if &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in T&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the smallest set of all such sets like &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we proved that such set &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; exists.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;S = R \cup i_A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \lor (x,y) \in i_A&lt;/script&gt;. Thus we have following cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;:  &lt;br /&gt;
+  Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is symmetric, &lt;script type=&quot;math/tex&quot;&gt;(y,x)&lt;/script&gt; \in R. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A&lt;/script&gt;:
+  Thus &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S \land (y,z) \in S&lt;/script&gt;. Thus we have following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \land (y,z) \in i_A&lt;/script&gt;.  &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;y = z&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R \land (y,z) \in R&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A \land (y,z) \in R&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x = y&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case 4: &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in i_A \land (y,z) \in i_A&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;x = y = z&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is reflexive, it follows that &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases, &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is symmetric. Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is symmetric, it follows &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in R&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;,
+it follows &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S^{-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S^{-1} \land (y,z) \in S^{-1}&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S \land (z,y) \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;(z,x) \in S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(x,z) \in S^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S^{-1}&lt;/script&gt; is transitive.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S^{-1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S^{-1}&lt;/script&gt; is transitive and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, it follows from the definition of transitive closure
+that &lt;script type=&quot;math/tex&quot;&gt;S \subseteq S^{-1}&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S^{-1}&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(x,y) \in S^{-1}&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;(y,x) \in S&lt;/script&gt;. Thus
+&lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln18&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; be the symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, and let &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; be the transitive closure of &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;. Also, let &lt;script type=&quot;math/tex&quot;&gt;Q&#39;&lt;/script&gt; be the transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, and let &lt;script type=&quot;math/tex&quot;&gt;S&#39;&lt;/script&gt; be 
+the symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;Q&#39;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;Q \subseteq S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is symmetric and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq Q&lt;/script&gt;.
+Using Soln17, since &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is symmetric, &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric. Also since &lt;script type=&quot;math/tex&quot;&gt;Q \subseteq S&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq Q&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive and symmetric and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now suppose &lt;script type=&quot;math/tex&quot;&gt;T \subseteq A \times A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is transitive and symmetric, and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is symmetric and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq T&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;
+is the symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, it follows(using definition of symmetric closure) that &lt;script type=&quot;math/tex&quot;&gt;Q \subseteq T&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; is transitive and &lt;script type=&quot;math/tex&quot;&gt;Q \subseteq T&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; 
+is the transitive closure of &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;, it follows(using definition of transitive closure) that &lt;script type=&quot;math/tex&quot;&gt;S \subseteq T&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the smallest of the sets like &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;.
+It follows that &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;R \subseteq Q&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;We know from Soln11, that if &lt;script type=&quot;math/tex&quot;&gt;R_1 \subseteq R_2&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;S_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S_2&lt;/script&gt; are transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R_2&lt;/script&gt; respectively, then &lt;script type=&quot;math/tex&quot;&gt;S_1 \subseteq S_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now since &lt;script type=&quot;math/tex&quot;&gt;Q&#39;&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is transitive closure of &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;R \subseteq Q&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;Q&#39; \subseteq S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is symmetric,
+and &lt;script type=&quot;math/tex&quot;&gt;Q&#39; \subseteq S&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;S&#39;&lt;/script&gt; is symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;Q&#39;&lt;/script&gt;, it follows by the definition of symmetric closure that &lt;script type=&quot;math/tex&quot;&gt;S&#39; \subseteq S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt; False. The problem will be because the symmetric closure of a transitive set is may not be transitive. For eg: &lt;script type=&quot;math/tex&quot;&gt;R = \{(1,2)\}&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;\{(1,2)\}&lt;/script&gt; is
+       transitive but symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;\{(1,2),(2,1)\}&lt;/script&gt;. Clearly this is not transitive.&lt;/p&gt;
+
+&lt;p&gt;Counter Example:&lt;/p&gt;
+
+&lt;p&gt;Suppose:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A = \{1,2\}&lt;/script&gt;.  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;R = \{(1,2)\}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus,  &lt;br /&gt;
+Symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;Q = \{(1,2),(2,1)\}&lt;/script&gt;.     &lt;br /&gt;
+Transitive closure of &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is:   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{(1,2),(2,1),(1,1)\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;But, if we do first transitive then symmetric,  &lt;br /&gt;
+Transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is:   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;Q&#39; = \{(1,2)\}&lt;/script&gt;.    &lt;br /&gt;
+Thus symmetric closure of &lt;script type=&quot;math/tex&quot;&gt;Q&#39;&lt;/script&gt;:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S&#39; = \{(1,2),(2,1)\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly, &lt;script type=&quot;math/tex&quot;&gt;S&#39; \ne S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln19&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Proof and theorem both are not correct. The proof does not take into account that affter adding elements to &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; to make it transitive, it may no longer be
+antisymmetric.&lt;/p&gt;
+
+&lt;p&gt;Counter example: &lt;script type=&quot;math/tex&quot;&gt;A = \{(1,2,3\}&lt;/script&gt;, R = { (1,1), (2,2), (3,3), (1,2), (2,3), (3,1)  } $$&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is antisymmetric and reflexive.&lt;/p&gt;
+
+&lt;p&gt;Transitive closure of &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;:  &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S = \{ (1,1), (2,2), (3,3), (1,2), (2,3), (3,1), (1,3), (3,2), (2,1)  \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is not antisymmetric. Thus &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is not partial order on &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln20&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; We shall give two examples of minimal elements:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;M_1 = \{ (San Francisco, Chicago), (Chicago, Dallas), (Dallas, New York), (New York, Washington DC), (Washington DC, San Francisco) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;M_2 = \{ (San Francisco, Washington DC), (Washington DC, New York), (New York, Dallas), (Dallas, Chicago), (Chicago, San Francisco) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;These both are minimal elements since for both of them following statement holds:&lt;/p&gt;
+
+&lt;p&gt;There does not exist any other set, say &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; such that apart from itself such that our set, say &lt;script type=&quot;math/tex&quot;&gt;M_1 \subseteq X&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Since smallest set in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; should be the subset of all other sets. Since &lt;script type=&quot;math/tex&quot;&gt;M_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;M_2&lt;/script&gt; are sets in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;M_1 \cap M_2 = \phi&lt;/script&gt;, it
+ follows that there is no smallest set in &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Mon, 26 Oct 2015 00:00:00 +0530</pubDate>
+        <link>https://inchmeal.github.io/2015/10/26/how-to-prove-it-ch-4-sec-5.html</link>
+        <guid isPermaLink="true">https://inchmeal.github.io/2015/10/26/how-to-prove-it-ch-4-sec-5.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-4 Sec-4.4, Ordering Relations</title>
@@ -4326,186 +5131,6 @@ Thus in both cases we work on finding specific value to move forward with the pr
         <pubDate>Tue, 22 Sep 2015 00:00:00 +0530</pubDate>
         <link>https://inchmeal.github.io/2015/09/22/how-to-prove-it-ch-3-sec-3.html</link>
         <guid isPermaLink="true">https://inchmeal.github.io/2015/09/22/how-to-prove-it-ch-3-sec-3.html</guid>
-        
-        <category>mathematics</category>
-        
-        <category>howToProveIt</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How To Prove It, Ch-3 Sec-3.2, Proofs Involving Negations and Conditionals</title>
-        <description>&lt;p&gt;This post contains exercises of Chapter - 3, Section - 3.2, Proofs Involving Negations and Conditionals.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;There can be following ways to prove a &lt;em&gt;goal&lt;/em&gt; of the form &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;Convert or re-express the &lt;em&gt;goal&lt;/em&gt; to some other form and then use one of the proof strategies for this other goal form. This is generally possible when the original goal is complex goal(containing many components).&lt;/li&gt;
-      &lt;li&gt;Proof by contradiction: by assuming the &lt;em&gt;goal&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; is true and try to reach a contradiction. On a contradiction, it can be concluded that P must be false.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Proof by contradiction&lt;/em&gt; is vague as it requires to produce a contradiction by proving something that is known to be false. One approach can be:
-    &lt;ul&gt;
-      &lt;li&gt;To use a &lt;em&gt;given&lt;/em&gt; of the form &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;: Try making &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; as &lt;em&gt;goal&lt;/em&gt;. Now, If &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; can be proved, then the proof will be complete, because &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; contradicts the given &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If &lt;em&gt;not&lt;/em&gt; using the strategy to prove by contradiction, One approach can be:
-    &lt;ul&gt;
-      &lt;li&gt;To re-express/convert a &lt;em&gt;given&lt;/em&gt; of the form of &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;, to some other form.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;In previous section, strategy to prove &lt;em&gt;goal&lt;/em&gt; of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt; was described.&lt;/li&gt;
-  &lt;li&gt;Apart from all the above strategies, One more strategy can be:
-    &lt;ul&gt;
-      &lt;li&gt;To use a &lt;em&gt;given&lt;/em&gt; of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;. Many strategies for using givens suggests ways for drawing inferences from the givens. These strategies are called &lt;em&gt;rules of inference&lt;/em&gt;. There can be following two &lt;em&gt;Rules of inference&lt;/em&gt; for using given of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;:
-        &lt;ul&gt;
-          &lt;li&gt;Rule &lt;em&gt;modus ponens&lt;/em&gt; : If both &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt; are true, then &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; must also be true.&lt;/li&gt;
-          &lt;li&gt;Rule &lt;em&gt;modus tollens&lt;/em&gt; : If &lt;script type=&quot;math/tex&quot;&gt;P → Q&lt;/script&gt; is true and &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; is false, then &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; must also be false.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Till now following strategies are covered:
-    &lt;ul&gt;
-      &lt;li&gt;To prove a &lt;em&gt;goal&lt;/em&gt; of the form &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;To use a &lt;em&gt;given&lt;/em&gt; of the form of &lt;script type=&quot;math/tex&quot;&gt;\lnot P&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;To prove a &lt;em&gt;goal&lt;/em&gt; of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;To use a &lt;em&gt;given&lt;/em&gt; of the form of &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;. Similarly, since &lt;script type=&quot;math/tex&quot;&gt;Q \to R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;P \to R&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Suppose &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;. For &lt;script type=&quot;math/tex&quot;&gt;Q \to R&lt;/script&gt;, using contra-positive for proof. Suppose &lt;script type=&quot;math/tex&quot;&gt;\lnot R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;P \to \lnot Q&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;\lnot Q&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\lnot R \to \lnot Q&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;Q \to R&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;P \to (Q \to R)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;P \to Q&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;R \to \lnot Q&lt;/script&gt;, using contrapositive &lt;script type=&quot;math/tex&quot;&gt;Q \to \lnot R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;\lnot R&lt;/script&gt;. Thus, &lt;script type=&quot;math/tex&quot;&gt;P \to \lnot R&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Simplifying &lt;script type=&quot;math/tex&quot;&gt;Q \to \lnot(Q \to ¬P)&lt;/script&gt;, gives &lt;script type=&quot;math/tex&quot;&gt;Q \to (Q \land P)&lt;/script&gt;. Since P, it follows &lt;script type=&quot;math/tex&quot;&gt;Q \to Q&lt;/script&gt;, which is always true.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;B \cap C = \phi&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in A \to x \notin B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(A \setminus B) \cap C = \phi&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \notin A \setminus B&lt;/script&gt;. And &lt;script type=&quot;math/tex&quot;&gt;x \notin A \setminus B&lt;/script&gt; is equivalent to &lt;script type=&quot;math/tex&quot;&gt;x \notin A \lor x \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x \in B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in C \to x \in B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a \in A \setminus B&lt;/script&gt;, which means &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a \notin B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a \in C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;a \in (A \cap C)&lt;/script&gt;. Since  &lt;script type=&quot;math/tex&quot;&gt;a \in (A \cap C)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a \notin B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \cap C \nsubseteq B&lt;/script&gt;. This contradicts the &lt;em&gt;given&lt;/em&gt;: &lt;script type=&quot;math/tex&quot;&gt;A \cap C \subseteq B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a \notin A \setminus B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;a \in B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;a \notin C&lt;/script&gt;, then it follows that &lt;script type=&quot;math/tex&quot;&gt;a \in B \setminus C&lt;/script&gt;. But it contradicts with the given &lt;script type=&quot;math/tex&quot;&gt;a \notin B \setminus C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a \in C&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y = 0&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;y + x = 2y - x&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x = 0&lt;/script&gt;. But this contradicts the &lt;em&gt;given&lt;/em&gt; that &lt;script type=&quot;math/tex&quot;&gt;x \neq 0 \land y \neq 0&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;y \neq 0&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-a &lt; \frac 1 a &lt; b &lt; \frac 1 b %]]&gt;&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-a &lt; \frac 1 a %]]&gt;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;a \in (-\infty, -1) \lor (0, 1)&lt;/script&gt;.
-Similarly, &lt;script type=&quot;math/tex&quot;&gt;b \in (-\infty, -1) \lor (0, 1)&lt;/script&gt;. Thus there are four possible cases:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Case 1: &lt;script type=&quot;math/tex&quot;&gt;a \in (-\infty, -1)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b \in (-\infty, -1)&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Case 2: &lt;script type=&quot;math/tex&quot;&gt;a \in (-\infty, -1)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b \in (0, 1)&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Case 3: &lt;script type=&quot;math/tex&quot;&gt;a \in (0, 1)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b \in (-\infty, -1)&lt;/script&gt;. This is not possible because &lt;script type=&quot;math/tex&quot;&gt;\frac 1 a &gt; 1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\frac 1 a &lt; b %]]&gt;&lt;/script&gt;. But in this case &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-b &lt; -1 %]]&gt;&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Case 4: &lt;script type=&quot;math/tex&quot;&gt;a \in (0, 1)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b \in (0, 1)&lt;/script&gt;. This is also not possible because &lt;script type=&quot;math/tex&quot;&gt;\frac 1 a &gt; 1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\frac 1 a &lt; b %]]&gt;&lt;/script&gt;. But in this case &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-0 &lt; b &lt; 1 %]]&gt;&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Thus only Case 1 and Case 2 are possible. It follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-a &lt; -1 %]]&gt;&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x^2y = 2x + y&lt;/script&gt;. We will prove &lt;script type=&quot;math/tex&quot;&gt;(y \neq 0 \to x \neq 0)&lt;/script&gt;, using contra-positive. Suppose &lt;script type=&quot;math/tex&quot;&gt;x = 0&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;y = 0&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;y \neq 0 \to x \neq 0&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Simplifying &lt;script type=&quot;math/tex&quot;&gt;y = \frac {3x^2 + 2y} {x^2 + 2}&lt;/script&gt;, gives &lt;script type=&quot;math/tex&quot;&gt;(y - 3)x^2 = 0&lt;/script&gt;.
-Suppose &lt;script type=&quot;math/tex&quot;&gt;x \neq 0&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(y - 3)x^2 = 0&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;y - 3 = 0&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;y = 3&lt;/script&gt;.
-Thus we have &lt;script type=&quot;math/tex&quot;&gt;x \neq 0 \to (y = \frac {3x^2 + 2y} {x^2 + 2} \to y = 3)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Reverse of &lt;script type=&quot;math/tex&quot;&gt;x \neq 3 \land y \neq 8&lt;/script&gt;, is &lt;script type=&quot;math/tex&quot;&gt;x = 3 \lor x = 8&lt;/script&gt;. Thus reverse of the conclusion used in proof is wrong.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Using &lt;script type=&quot;math/tex&quot;&gt;x = 2&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;y = 8&lt;/script&gt;, gives &lt;script type=&quot;math/tex&quot;&gt;x + y = 10&lt;/script&gt;. Thus conclusion is not correct for the given &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt; Statement:  &lt;br /&gt;
-    Since &lt;script type=&quot;math/tex&quot;&gt;x \notin B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B ⊆ C&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;x \notin C&lt;/script&gt;.  &lt;br /&gt;
-    is not &lt;em&gt;correct&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt; Lets say &lt;script type=&quot;math/tex&quot;&gt;A = \{1,2\}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;B = \{3, 4\}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;C = \{1, 2, 3, 4\}&lt;/script&gt;. Now if &lt;script type=&quot;math/tex&quot;&gt;x = 1&lt;/script&gt;, the theorem is not correct.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Leaving Problems 13 to 16, as all involve truth tables and such problems were already solved in earlier chapters.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x^2 + y = 13&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y = 4&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;x^2 + 4 = 13&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;x = 3&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;x = -3&lt;/script&gt;. Thus for &lt;script type=&quot;math/tex&quot;&gt;y = 4&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x = -3&lt;/script&gt;, there is no contradiction.
-Thus theorem is not correct.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-</description>
-        <pubDate>Sat, 19 Sep 2015 00:00:00 +0530</pubDate>
-        <link>https://inchmeal.github.io/2015/09/19/how-to-prove-it-ch-3-sec-2.html</link>
-        <guid isPermaLink="true">https://inchmeal.github.io/2015/09/19/how-to-prove-it-ch-3-sec-2.html</guid>
         
         <category>mathematics</category>
         
