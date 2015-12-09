@@ -458,3 +458,5 @@ Suppose $$ [s]_S \in \mathcal F / S $$ is set of all constant functions. Thus $$
 we prove $$ \forall [f]_S \in \mathcal F / S([s]_S T [f]_S) $$. Since it is given that $$ [f]_S T [g]_S $$ iff $$ f R g $$, it follows that we need to prove $$ s R f $$. Since $$ s $$ is contant
  function, thus using part(e) of this solution, it follows that $$ s R f $$. Thus $$ [f]_S T [s]_S $$. Since $$ [f]_S $$ is arbitrary, it follows that $$ [s]_S $$ is the smallest element of
 $$ \mathcal F / S $$ in the partial order $$ T $$.
+
+<hr/>
