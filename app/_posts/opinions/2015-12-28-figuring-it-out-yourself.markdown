@@ -11,9 +11,9 @@ Both fathers helped in their own ways.
 
 <hr/>
  
-<h3>Rams' father:</h3>
+<h3>Ram's father:</h3>
 
-> Ram, I will tell you a real story:
+> Ram, I will tell you a story:
 > 
 > There was a boy who loved programming. He was always improving himself by learning new paradigms, languages or any upcoming technologies. He was a 
 > perfectionist when it came to programming. He was so passionate about it that he could hardly appreciate anything else. He used to wonder how 
@@ -41,9 +41,11 @@ Both fathers helped in their own ways.
 
 After giving some thought Ram understood what his father *meant*. He thanked his father and left.
 
+Ram was happy that he is able to figure out the message by himself.
+
 <hr/>
 
-<h3>Shyams' father</h3>
+<h3>Shyam's father</h3>
 
 > Shyam, Everyone should follow a career path that makes them happy. Either you do what you love. Or you love what you do. Thus in either case
 > you will be working on something you love or you will eventually fall in love.
@@ -66,8 +68,7 @@ Shyam understood what his father *told*. He thanked him and left.
 
 Shyam was happy that he understood the message.
 
-Ram was happy that he is able to figure out the message by himself.
-
+<br/>
 So, which *way* do you prefer? Ram's Father or Shyam's Father...
 
 <hr/>
