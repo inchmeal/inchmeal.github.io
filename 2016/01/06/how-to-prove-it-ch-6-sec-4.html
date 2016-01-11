@@ -2,6 +2,8 @@
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8" />
+	<!-- For email verification -->
+	<meta name="google-site-verification" content="TdH6RkaPRAp-ak7_nHj9dSs8ldx5RBb0bO9h6ukNZhc" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>How To Prove It, Ch-6 Sec-6.3, Strong Induction</title>
 	<link rel="stylesheet" href="http://inchmeal.io/assets/css/styles_inchmeal.css">
@@ -914,6 +916,118 @@ Thus <script type="math/tex">P_n = P_{n-1} + P_{n-2} = F_{n+1} + F_{n} = F_{n+2}
 <p><strong>Soln13</strong></p>
 
 <p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">n</script> is an arbitrary integer. Consider the following cases:</p>
+
+<ul>
+  <li>
+    <p>Case <script type="math/tex">n \ge 0</script>    <br />
+Clearly it follows from the theorem 6.4.1 from the book that <script type="math/tex">n = mq+r</script> and <script type="math/tex">% <![CDATA[
+0 \le r < m %]]></script>.</p>
+  </li>
+  <li>
+    <p>Case <script type="math/tex">% <![CDATA[
+n < 0 %]]></script>     <br />
+Since <script type="math/tex">% <![CDATA[
+n < 0 %]]></script>, it follows <script type="math/tex">-n > 0</script>. Thus from theorem 6.4.1:    <br />
+<script type="math/tex">\Rightarrow -n = mq+r</script>   <br />
+<script type="math/tex">\Rightarrow n = -mq-r</script>    <br />
+<script type="math/tex">\Rightarrow n = -mq-r-m+m</script>    <br />
+<script type="math/tex">\Rightarrow n = -mq-m+m-r</script>    <br />
+<script type="math/tex">\Rightarrow n = (-q-1)m+m-r</script>    <br />
+<script type="math/tex">\Rightarrow n = q'm+r'</script>, where <script type="math/tex">q' = -q-1</script> and <script type="math/tex">r' = m - r</script>.</p>
+
+    <p>Since <script type="math/tex">% <![CDATA[
+0 \le r < m %]]></script>, it follows that <script type="math/tex">% <![CDATA[
+0 < m-r < m %]]></script>, or <script type="math/tex">% <![CDATA[
+0 < r' < m %]]></script>.</p>
+  </li>
+</ul>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">q_1, r_1</script> and <script type="math/tex">q_2, r_2</script> are integers such that:     <br />
+<script type="math/tex">n = mq_1 + r_1</script>, where <script type="math/tex">% <![CDATA[
+0 \le r_1 < m %]]></script>.               <br />
+and <script type="math/tex">n = mq_2 + r_2</script> and <script type="math/tex">% <![CDATA[
+0 \le r_2 < m %]]></script>.      <br />
+It follows that <script type="math/tex">mq_1 + r_1 = mq_2 + r_2</script>.     <br />
+Thus <script type="math/tex">(q_1-q_2)m = r_2 - r_1</script>.</p>
+
+<p>Suppose <script type="math/tex">q_1 = q_2 + c</script>, where <script type="math/tex">c</script> is an integer. Thus we get:    <br />
+<script type="math/tex">\Rightarrow (q_2 + c - q_2)m = r_2 - r_1</script>      <br />
+<script type="math/tex">\Rightarrow cm = r_2 - r_1</script></p>
+
+<p>We have following possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case <script type="math/tex">c \ne 0</script>     <br />
+It follows <script type="math/tex">m = \frac {r_2 - r_1} c</script>. Thus <script type="math/tex">\vert \, m \, \vert = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}</script>.      <br />
+Since <script type="math/tex">m > 0,  \Rightarrow \vert \, m \, \vert = m</script>.  Thus <script type="math/tex">m = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}</script>. Since <script type="math/tex">c \ne 0</script>, it follows 
+<script type="math/tex">m \le \vert \, r_2 - r_1 \, \vert</script>.</p>
+
+    <p>Since <script type="math/tex">% <![CDATA[
+0 \le r_1 < m %]]></script> and <script type="math/tex">% <![CDATA[
+0 \le r_1 < m %]]></script>, it follows that <script type="math/tex">% <![CDATA[
+0 \le \vert \, r_2 - r_1 \, \vert < m %]]></script>. Thus it is a contradiction since <script type="math/tex">m \le \vert \, r_2 - r_1 \, \vert</script>.</p>
+
+    <p>Thus this case <script type="math/tex">c \ne 0</script> is not possible.</p>
+  </li>
+  <li>
+    <p>Case <script type="math/tex">c = 0</script>.    <br />
+Since <script type="math/tex">q_1 = q_2 + c</script>, it follows <script type="math/tex">q_1 = q_2</script>. Also since <script type="math/tex">cm = r_2 - r_1</script>, it follows <script type="math/tex">r_1 = r_2</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from all possible cases <script type="math/tex">q_1 = q_2</script> and <script type="math/tex">r_1 = r_2</script>. Thus we can conclude that <script type="math/tex">q</script> and <script type="math/tex">r</script> are unique integers.</p>
+
+<p><strong>(c)</strong></p>
+
+<p>Suppose <script type="math/tex">n</script> is an arbitrary integer. From part(a), we can easily deduce that if <script type="math/tex">m = 2</script>, then <script type="math/tex">n = 2q + r</script> such that <script type="math/tex">% <![CDATA[
+0 \le r < 2 %]]></script>. It follows that there are only two possible values(<script type="math/tex">0,1</script>)
+of <script type="math/tex">r</script>. Thus if <script type="math/tex">r = 0</script>, it follows <script type="math/tex">n = 2q</script> and if <script type="math/tex">r = 1</script>, it follows <script type="math/tex">n = 2q+1</script>.</p>
+
+<p>Clearly if <script type="math/tex">n = 2q</script>, then <script type="math/tex">n</script> is an even integer. and if <script type="math/tex">n = 2q+1</script> then <script type="math/tex">n</script> is an odd integer.</p>
+
+<p>Also from part(b), since <script type="math/tex">n = 2q+r</script>, then <script type="math/tex">q</script> and <script type="math/tex">r</script> are unique. Thus only one case is possible i.e. either <script type="math/tex">n</script> is even or <script type="math/tex">n</script> is odd but not both.</p>
+
+<p>Since <script type="math/tex">n</script> is arbitrary, it follows that every integer is either even or odd but not both.</p>
+
+<hr />
+
+<p><strong>Soln14</strong></p>
+
+<p>Suppose <script type="math/tex">a</script> is the maximum of <script type="math/tex">5k</script> and <script type="math/tex">k(k+1)</script>. Suppose <script type="math/tex">n > a</script> is an arbitrary integer. Thus by the division algorithm we can choose unique <script type="math/tex">q</script> and
+<script type="math/tex">r</script> such that <script type="math/tex">n = kq + r</script> and <script type="math/tex">% <![CDATA[
+0 \le r < k %]]></script>.</p>
+
+<p>Suppose <script type="math/tex">q \le 4</script>. Thus <script type="math/tex">n = kq + r \le 4k + r</script>. Since <script type="math/tex">% <![CDATA[
+0 \le r < k %]]></script>, it follows <script type="math/tex">% <![CDATA[
+n \le 4q + r < 4k + k = 5k \le a %]]></script>. Thus <script type="math/tex">% <![CDATA[
+n < a %]]></script> which is a contradiction.
+Thus <script type="math/tex">q > 4</script>, or <script type="math/tex">q \ge 5</script>.</p>
+
+<p>Suppose <script type="math/tex">% <![CDATA[
+q < k+1 %]]></script>. Thus <script type="math/tex">% <![CDATA[
+n = kq + r < k(k+1) + r < k(k+1) + r < k(k+1) \le a %]]></script>. Thus <script type="math/tex">% <![CDATA[
+n < a %]]></script> which is a contradiction. Thus <script type="math/tex">q \ge k+1</script>.</p>
+
+<p>Since <script type="math/tex">% <![CDATA[
+0 \le r < k %]]></script>, it follows <script type="math/tex">r \le k+1</script>. Since <script type="math/tex">q \ge k+1</script> and <script type="math/tex">r \le k+1</script>, it follows <script type="math/tex">q \ge r</script>.</p>
+
+<p>Thus <script type="math/tex">q^2 \ge q(k+1) = qk + q \ge qk + r = n</script>. Thus <script type="math/tex">q^2 \ge n</script>.</p>
+
+<p>From example 6.1.3, we know that <script type="math/tex">2^n > n^2</script>, if <script type="math/tex">n \ge 5</script>. Since <script type="math/tex">q \ge 5</script>, it follows <script type="math/tex">2^q > q^2</script>. Since <script type="math/tex">q^2 \ge n</script>, it follows <script type="math/tex">2^q > n</script>.</p>
+
+<p>Since <script type="math/tex">n = kq + r</script> and <script type="math/tex">% <![CDATA[
+0 \le r < k %]]></script>, it follows <script type="math/tex">2^n \ge 2^{kq} = {2^q}^k</script>. Since <script type="math/tex">2^q > n</script>, it follows <script type="math/tex">2^n \ge  {2^q}^k > n^k</script>.</p>
+
+<hr />
+
+<p><strong>Soln15</strong></p>
+
+<p>Suppose <script type="math/tex">n</script> is</p>
 
 
 

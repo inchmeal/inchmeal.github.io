@@ -5,8 +5,8 @@
     <description>This is a sample description</description>
     <link>http://inchmeal.io/</link>
     <atom:link href="http://inchmeal.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jan 2016 16:23:02 +0530</pubDate>
-    <lastBuildDate>Sun, 10 Jan 2016 16:23:02 +0530</lastBuildDate>
+    <pubDate>Mon, 11 Jan 2016 17:58:02 +0530</pubDate>
+    <lastBuildDate>Mon, 11 Jan 2016 17:58:02 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -701,6 +701,118 @@ Thus &lt;script type=&quot;math/tex&quot;&gt;P_n = P_{n-1} + P_{n-2} = F_{n+1} +
 &lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an arbitrary integer. Consider the following cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;n \ge 0&lt;/script&gt;    &lt;br /&gt;
+Clearly it follows from the theorem 6.4.1 from the book that &lt;script type=&quot;math/tex&quot;&gt;n = mq+r&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; m %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+n &lt; 0 %]]&gt;&lt;/script&gt;     &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+n &lt; 0 %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;-n &gt; 0&lt;/script&gt;. Thus from theorem 6.4.1:    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow -n = mq+r&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow n = -mq-r&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow n = -mq-r-m+m&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow n = -mq-m+m-r&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow n = (-q-1)m+m-r&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow n = q&#39;m+r&#39;&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;q&#39; = -q-1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r&#39; = m - r&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; m %]]&gt;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; m-r &lt; m %]]&gt;&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 &lt; r&#39; &lt; m %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;q_1, r_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;q_2, r_2&lt;/script&gt; are integers such that:     &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;n = mq_1 + r_1&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r_1 &lt; m %]]&gt;&lt;/script&gt;.               &lt;br /&gt;
+and &lt;script type=&quot;math/tex&quot;&gt;n = mq_2 + r_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r_2 &lt; m %]]&gt;&lt;/script&gt;.      &lt;br /&gt;
+It follows that &lt;script type=&quot;math/tex&quot;&gt;mq_1 + r_1 = mq_2 + r_2&lt;/script&gt;.     &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;(q_1-q_2)m = r_2 - r_1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;q_1 = q_2 + c&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is an integer. Thus we get:    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow (q_2 + c - q_2)m = r_2 - r_1&lt;/script&gt;      &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow cm = r_2 - r_1&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;We have following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;c \ne 0&lt;/script&gt;     &lt;br /&gt;
+It follows &lt;script type=&quot;math/tex&quot;&gt;m = \frac {r_2 - r_1} c&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\vert \, m \, \vert = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}&lt;/script&gt;.      &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;m &gt; 0,  \Rightarrow \vert \, m \, \vert = m&lt;/script&gt;.  Thus &lt;script type=&quot;math/tex&quot;&gt;m = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;c \ne 0&lt;/script&gt;, it follows 
+&lt;script type=&quot;math/tex&quot;&gt;m \le \vert \, r_2 - r_1 \, \vert&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r_1 &lt; m %]]&gt;&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r_1 &lt; m %]]&gt;&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le \vert \, r_2 - r_1 \, \vert &lt; m %]]&gt;&lt;/script&gt;. Thus it is a contradiction since &lt;script type=&quot;math/tex&quot;&gt;m \le \vert \, r_2 - r_1 \, \vert&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Thus this case &lt;script type=&quot;math/tex&quot;&gt;c \ne 0&lt;/script&gt; is not possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;c = 0&lt;/script&gt;.    &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;q_1 = q_2 + c&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;q_1 = q_2&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;cm = r_2 - r_1&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;r_1 = r_2&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from all possible cases &lt;script type=&quot;math/tex&quot;&gt;q_1 = q_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r_1 = r_2&lt;/script&gt;. Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; are unique integers.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an arbitrary integer. From part(a), we can easily deduce that if &lt;script type=&quot;math/tex&quot;&gt;m = 2&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;n = 2q + r&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; 2 %]]&gt;&lt;/script&gt;. It follows that there are only two possible values(&lt;script type=&quot;math/tex&quot;&gt;0,1&lt;/script&gt;)
+of &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;. Thus if &lt;script type=&quot;math/tex&quot;&gt;r = 0&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;n = 2q&lt;/script&gt; and if &lt;script type=&quot;math/tex&quot;&gt;r = 1&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;n = 2q+1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly if &lt;script type=&quot;math/tex&quot;&gt;n = 2q&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an even integer. and if &lt;script type=&quot;math/tex&quot;&gt;n = 2q+1&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an odd integer.&lt;/p&gt;
+
+&lt;p&gt;Also from part(b), since &lt;script type=&quot;math/tex&quot;&gt;n = 2q+r&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; are unique. Thus only one case is possible i.e. either &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is even or &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is odd but not both.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is arbitrary, it follows that every integer is either even or odd but not both.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is the maximum of &lt;script type=&quot;math/tex&quot;&gt;5k&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;k(k+1)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;n &gt; a&lt;/script&gt; is an arbitrary integer. Thus by the division algorithm we can choose unique &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; and
+&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;n = kq + r&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; k %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;q \le 4&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;n = kq + r \le 4k + r&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; k %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+n \le 4q + r &lt; 4k + k = 5k \le a %]]&gt;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+n &lt; a %]]&gt;&lt;/script&gt; which is a contradiction.
+Thus &lt;script type=&quot;math/tex&quot;&gt;q &gt; 4&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;q \ge 5&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+q &lt; k+1 %]]&gt;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+n = kq + r &lt; k(k+1) + r &lt; k(k+1) + r &lt; k(k+1) \le a %]]&gt;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+n &lt; a %]]&gt;&lt;/script&gt; which is a contradiction. Thus &lt;script type=&quot;math/tex&quot;&gt;q \ge k+1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; k %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;r \le k+1&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;q \ge k+1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r \le k+1&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;q \ge r&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;q^2 \ge q(k+1) = qk + q \ge qk + r = n&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;q^2 \ge n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;From example 6.1.3, we know that &lt;script type=&quot;math/tex&quot;&gt;2^n &gt; n^2&lt;/script&gt;, if &lt;script type=&quot;math/tex&quot;&gt;n \ge 5&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;q \ge 5&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;2^q &gt; q^2&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;q^2 \ge n&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;2^q &gt; n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;n = kq + r&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; k %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;2^n \ge 2^{kq} = {2^q}^k&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;2^q &gt; n&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;2^n \ge  {2^q}^k &gt; n^k&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 06 Jan 2016 00:00:00 +0530</pubDate>
