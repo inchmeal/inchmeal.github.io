@@ -5,13 +5,13 @@
     <description>This is a sample description</description>
     <link>http://inchmeal.io/</link>
     <atom:link href="http://inchmeal.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Jan 2016 17:58:02 +0530</pubDate>
-    <lastBuildDate>Mon, 11 Jan 2016 17:58:02 +0530</lastBuildDate>
+    <pubDate>Tue, 12 Jan 2016 03:15:24 +0530</pubDate>
+    <lastBuildDate>Tue, 12 Jan 2016 03:15:24 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>How To Prove It, Ch-6 Sec-6.3, Strong Induction</title>
-        <description>&lt;p&gt;This post contains solutions of Chapter - 6, Section - 6.3, Strong Induction.&lt;/p&gt;
+        <title>How To Prove It, Ch-6 Sec-6.4, Strong Induction</title>
+        <description>&lt;p&gt;This post contains solutions of Chapter - 6, Section - 6.4, Strong Induction.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -43,7 +43,10 @@ the &lt;em&gt;inductive hypothesis&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;\forall n Q(n)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an arbitrary natural number. Since &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is natural number it follows &lt;script type=&quot;math/tex&quot;&gt;n + 1&lt;/script&gt; is also a natural number. 
-Thus &lt;script type=&quot;math/tex&quot;&gt;Q(n+1)&lt;/script&gt; is true. Since &lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt; Q(n) = \forall k &amp;lt; n P(n) &lt;script type=&quot;math/tex&quot;&gt;, it follows&lt;/script&gt; Q(n+1) = \forall k &amp;lt; n+1 P(k) &lt;script type=&quot;math/tex&quot;&gt;. Thus for&lt;/script&gt; k = n &lt;script type=&quot;math/tex&quot;&gt;,&lt;/script&gt; P(n) &lt;script type=&quot;math/tex&quot;&gt;is true. Since&lt;/script&gt; n &lt;script type=&quot;math/tex&quot;&gt;is arbitrary, it follows&lt;/script&gt; \forall n P(n) $$.&lt;/p&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;Q(n+1)&lt;/script&gt; is true. Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+Q(n) = \forall k &lt; n P(n) %]]&gt;&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+Q(n+1) = \forall k &lt; n+1 P(k) %]]&gt;&lt;/script&gt;. Thus for &lt;script type=&quot;math/tex&quot;&gt;k = n&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;P(n)&lt;/script&gt;
+ is true. Since &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\forall n P(n)&lt;/script&gt;.&lt;/p&gt;
 
 &lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;\forall n P(n)&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
 \forall k &lt; n P(k) %]]&gt;&lt;/script&gt; is true. Thus &lt;script type=&quot;math/tex&quot;&gt;Q(n)&lt;/script&gt; is true.&lt;/p&gt;
@@ -812,7 +815,263 @@ n &lt; a %]]&gt;&lt;/script&gt; which is a contradiction. Thus &lt;script type=&
 
 &lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is a positive integer. Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\forall p &lt; k (a_1 f_1 + a_2 f_2 + \cdot \cdot \cdot + a_p f_p) \in \mathcal O(g) %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+k-1 &lt; k %]]&gt;&lt;/script&gt;, it follows from induction hypothesis that there exist some &lt;script type=&quot;math/tex&quot;&gt;a \in \mathbb Z^+&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c \in R&lt;/script&gt; such that 
+&lt;script type=&quot;math/tex&quot;&gt;\forall n &gt; a  ( \vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) \, \vert \le c \vert \, g(n) \, \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f_k \in \mathcal O(g)&lt;/script&gt;, it follows that for some &lt;script type=&quot;math/tex&quot;&gt;a&#39; \in \mathbb Z^+&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c&#39; \in \mathbb R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\vert \, f_k(n) \, \vert \le c&#39; \vert \, g(n) \, \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now consider &lt;script type=&quot;math/tex&quot;&gt;\vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) + a_k f_k(n) \, \vert&lt;/script&gt;      &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\le \vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) \, \vert + \vert \, a_k f_k(n) \, \vert&lt;/script&gt; (By triangle inequality)             &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\le c \vert \, g(n) \, \vert + \vert \, a_k f_k(n) \, \vert&lt;/script&gt; for all &lt;script type=&quot;math/tex&quot;&gt;n &gt; a&lt;/script&gt; (By induction hypothesis for k-1)          &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\le c \vert \, g(n) \, \vert + c&#39; \vert \, g(n) \, \vert&lt;/script&gt; for all &lt;script type=&quot;math/tex&quot;&gt;n &gt; a&#39;&#39;&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;a&#39;&#39;&lt;/script&gt; is maximum of &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a&#39;&lt;/script&gt;           &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= c&#39;&#39; \vert \, g(n) \, \vert&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;c&#39;&#39; = c+c&#39;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;f \in \mathcal O(g)&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;f(n) = a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_k f_k(n)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;From Ex14 part(a), we know that for every positive integer &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\forall n &gt; a (2^n \ge n^k)&lt;/script&gt; for some positive integer &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;. It follows that 
+functions &lt;script type=&quot;math/tex&quot;&gt;f_1 = 1 = n^0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;f_2 = n^2&lt;/script&gt;, … &lt;script type=&quot;math/tex&quot;&gt;f_k = n^k&lt;/script&gt; belongs to O(g) where &lt;script type=&quot;math/tex&quot;&gt;g = 2^n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now the required proof directly follows from part(a) of this solution.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;By division algorithm we know that for some &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;,  &lt;script type=&quot;math/tex&quot;&gt;a = dq + r&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; d %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also since &lt;script type=&quot;math/tex&quot;&gt;d \in S&lt;/script&gt;, it follows that for some &lt;script type=&quot;math/tex&quot;&gt;s,t \in \mathbb Z&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;d = as + bt&lt;/script&gt;. Putting &lt;script type=&quot;math/tex&quot;&gt;d = as + bt&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;a = dq + r&lt;/script&gt;, we get:     &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow a = (as+bt)q + r&lt;/script&gt;      &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow a-asq = btq + r&lt;/script&gt;      &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow (1-sq)a + (-tq)b = r&lt;/script&gt;      &lt;br /&gt;
+Thus s’ = 1-sq &lt;script type=&quot;math/tex&quot;&gt;and&lt;/script&gt; t’ = -tq &lt;script type=&quot;math/tex&quot;&gt;,&lt;/script&gt; r = s’a + t’b $$.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;0 \le r&lt;/script&gt;, we have two cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;r \ne 0&lt;/script&gt;      &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;r &gt; 0&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;r \in Z^+&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;r \in S&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; is the smallest element in &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;d \le r&lt;/script&gt;. But this 
+contradicts with &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+0 \le r &lt; d %]]&gt;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;r \ne 0&lt;/script&gt; is not possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;r = 0&lt;/script&gt;    &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;r \notin Z^+&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;r \notin S&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;a = dq+r = dq+0 = dq&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;d \, \vert \, a&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Similarly it can be proved that &lt;script type=&quot;math/tex&quot;&gt;d \, \vert \, b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;c \, \vert \, a&lt;/script&gt;, it follows that for some integer &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;a = pc&lt;/script&gt;. Similarly since &lt;script type=&quot;math/tex&quot;&gt;c \, \vert \, b&lt;/script&gt;, it follows that for some integer 
+&lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;b = qc&lt;/script&gt;.   &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;d \in S&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;d = as + bt&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;d = pcs + qct = c(ps+qt)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;c \, \vert \, d&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also since from part(a), &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; divides both &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt;. Thus any number which divides &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; must divides &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;c \le d&lt;/script&gt;.
+It follows that &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; is greatest common divisor of &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a,b,p&lt;/script&gt; are natural numbers such that &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, ab&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; is prime. Suppose &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; is the greatest common divisor of &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;.
+Thus from Ex-16 part(b), &lt;script type=&quot;math/tex&quot;&gt;d = as + pt&lt;/script&gt; for some integers &lt;script type=&quot;math/tex&quot;&gt;s, t&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; divides &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; is a prime number, there are following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;d = p&lt;/script&gt;      &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; is greatest common divisor of &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; divides &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;d = p&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; divides &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;d = 1&lt;/script&gt;    &lt;br /&gt;
+Since &lt;script type=&quot;math/tex&quot;&gt;d = as + pt&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;1 = as + pt&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, ab&lt;/script&gt;, it follows for some integer &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;ab = pq&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a = \frac {pq} b&lt;/script&gt;.
+Putting &lt;script type=&quot;math/tex&quot;&gt;a = \frac {pq} b&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;as + pt = 1&lt;/script&gt;, we get &lt;script type=&quot;math/tex&quot;&gt;\frac {pqs} b + pt = 1&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;pqs + pbt = b&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;p(qs + bt) = b&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, b&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus from both cases, either &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is arbitrary. Suppose &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\forall k &lt; n ( p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_k \to (p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot \lor p \, \vert \, a_k) ) %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1} a_n&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, (a_1 a_2 \cdot \cdot \cdot a_{n-1}) \, a_n&lt;/script&gt;. Thus from part(a), it follows either
+either &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1}&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a_n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+n-1 &lt; n %]]&gt;&lt;/script&gt;, it follows from induction hypothesis that if &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1}&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot \lor p \, \vert \, a_{n-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot p \, \vert \, \lor a_{n-1} \lor p \, \vert \, a_n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln18&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Base Case:&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;j = 1&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;p_1 = q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p_1&lt;/script&gt; is prime it follows that &lt;script type=&quot;math/tex&quot;&gt;k = 1&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;p_1 = q_1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Induction Step:&lt;/p&gt;
+
+&lt;p&gt;Suppose for &lt;script type=&quot;math/tex&quot;&gt;j \ge 1&lt;/script&gt; and for all &lt;script type=&quot;math/tex&quot;&gt;k \ge 1&lt;/script&gt;, if &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_j = q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;j = k&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p_i = q_i&lt;/script&gt; where
+&lt;script type=&quot;math/tex&quot;&gt;1 \le i \le j&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now suppose &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;k \ge 2&lt;/script&gt;, since if &lt;script type=&quot;math/tex&quot;&gt;k = 1&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;q_1&lt;/script&gt; will not be prime.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;j&lt;/script&gt; is same in last two statements. But &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is different. In former statement &lt;script type=&quot;math/tex&quot;&gt;j = k&lt;/script&gt; if &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_j = q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt;,
+but in the later statement above, &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; may or may not be equal to &lt;script type=&quot;math/tex&quot;&gt;j&lt;/script&gt;. Or first statement is hypothesis &lt;script type=&quot;math/tex&quot;&gt;P(j)&lt;/script&gt; and second statement is &lt;script type=&quot;math/tex&quot;&gt;P(j+1)&lt;/script&gt; which we shall prove
+ to be true if hypothesis is true.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;p_{j+1} \; \vert \; p_1 p_2 \cdot \cdot \cdot p_{j+1}&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;p_{j+1} \; \vert \; q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt;. Thus from Ex17 part(b), 
+it follows &lt;script type=&quot;math/tex&quot;&gt;p_{j+1} \; \vert \; q_i&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;1 \le i \le k&lt;/script&gt;. But &lt;script type=&quot;math/tex&quot;&gt;q_i \le q_k&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;p_{j+1} \le q_k&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also since &lt;script type=&quot;math/tex&quot;&gt;q_k \; \vert \; q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;q_k \; \vert \; p_1 p_2 \cdot \cdot \cdot p_{j+1}&lt;/script&gt;. Thus from Ex17 part(b), 
+it follows &lt;script type=&quot;math/tex&quot;&gt;q_k \; \vert \; p_i&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;1 \le i \le j+1&lt;/script&gt;. But &lt;script type=&quot;math/tex&quot;&gt;p_i \le p_{j+1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;q_k \le p_{j+1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;p_{j+1} = q_k&lt;/script&gt;. Now since &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_{j} = q_1 q_2 \cdot \cdot \cdot q_{k-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;But from the induction hypothesis, if &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_{j} = q_1 q_2 \cdot \cdot \cdot q_{k-1}&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;p_i = q_i&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;j = k-1&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;j+1 = k&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus if &lt;script type=&quot;math/tex&quot;&gt;p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;j+1 = k&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;p_i = q_i&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln19&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;a_{n+1} = 1 + \sum_{i=0}^{n} a_i&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;a_n = 1 + \sum_{i=0}^{n-1} a_i&lt;/script&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;script type=&quot;math/tex&quot;&gt;a_n = 1 + \sum_{i=0}^{n-1} a_i&lt;/script&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;1 = 2^0&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;2 = 2^1&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;2&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;4 = 2^2&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;3&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;8 = 2^3&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;4&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;16 = 2^4&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;5&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;32 = 2^5&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Thus it appears that &lt;script type=&quot;math/tex&quot;&gt;a_n = 2^n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now we shall prove the formulae is correct.&lt;/p&gt;
+
+&lt;p&gt;Base Case:&lt;/p&gt;
+
+&lt;p&gt;For &lt;script type=&quot;math/tex&quot;&gt;n = 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;2^n = 2^0 = 1 = a_0 = a_n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Induction step:&lt;/p&gt;
+
+&lt;p&gt;Suppose formulae is correct for &lt;script type=&quot;math/tex&quot;&gt;n \ge 1&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a_n = 2^p&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;a_{n+1} = 1 + \sum_{i=0}^n&lt;/script&gt;    &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= 1 + \sum_{i=0}^{n-1} + a_n&lt;/script&gt;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= a_n + a_n&lt;/script&gt;     &lt;br /&gt;
+Using hypothesis:   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= 2^n + 2^n&lt;/script&gt;,   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= 2^{n+1}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;P(n+1)&lt;/script&gt; is true if &lt;script type=&quot;math/tex&quot;&gt;P(n)&lt;/script&gt; is true.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln20&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;script type=&quot;math/tex&quot;&gt;a_n = 1 + \frac 1 {a_{n-1} }&lt;/script&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac 1 1&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac 2 1&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;2&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac 3 2&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;3&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac 5 3&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;4&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac 8 5&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;5&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac {13} 8&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It appears from above table that formulae is &lt;script type=&quot;math/tex&quot;&gt;a_n = \frac {F_{n+2} } {F_{n+1} }&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Proof:&lt;/p&gt;
+
+&lt;p&gt;Base Case:&lt;/p&gt;
+
+&lt;p&gt;For &lt;script type=&quot;math/tex&quot;&gt;n = 0&lt;/script&gt;, it follows directly from the table.&lt;/p&gt;
+
+&lt;p&gt;Induction Step:&lt;/p&gt;
+
+&lt;p&gt;Suppose it is true for &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a_n = \frac {F_{n+2} } {F_{n+1} }&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now &lt;script type=&quot;math/tex&quot;&gt;a_{n+1} = 1 + \frac 1 {a_n}&lt;/script&gt;     &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= 1 + \frac {F_{n+1} } {F_{n+2} }&lt;/script&gt;     &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= \frac {F_{n+2} + F_{n+1} } {F_{n+2} }&lt;/script&gt;       &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= \frac {F_{n+3} } {F_{n+2} }&lt;/script&gt;      &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;= \frac {F_{n+1+2} } {F_{n+1+1} }&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus if &lt;script type=&quot;math/tex&quot;&gt;P(n)&lt;/script&gt; is true then &lt;script type=&quot;math/tex&quot;&gt;P(n+1)&lt;/script&gt; is also true.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 </description>
         <pubDate>Wed, 06 Jan 2016 00:00:00 +0530</pubDate>
