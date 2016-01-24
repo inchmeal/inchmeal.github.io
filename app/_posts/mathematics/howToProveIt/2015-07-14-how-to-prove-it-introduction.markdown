@@ -8,6 +8,9 @@ I have started reading a book - [How to Prove it][howToProveIt]. I shall be post
 This post contains solutions for the introduction section of the book.
 <!--more-->
 
+*Note:* In this book natural numbers include $$ 0 $$ also. But it seems like in some places in the proofs, I messed up with this convention.
+In some placed I might have considered $$ N $$ includes $$ 0 $$ while in other places vice versa. Please point out to me, I will correct to
+use the book's version of $$ \mathbb N $$ in all the places.
 
 **Soln.1(a)** 
 

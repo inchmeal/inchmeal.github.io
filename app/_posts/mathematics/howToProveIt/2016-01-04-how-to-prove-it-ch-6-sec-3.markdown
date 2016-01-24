@@ -11,6 +11,10 @@ This post contains solutions of Chapter - 6, Section - 6.3, Recursion.
 
 ### Summary
 
+*Note:* In this book natural numbers include $$ 0 $$ also. But it seems like in some places in the proofs, I messed up with this convention.
+In some placed I might have considered $$ N $$ includes $$ 0 $$ while in other places vice versa. Please point out to me, I will correct to
+use the books version of $$ \mathbb N $$ in all the places.
+
 - Recursive functions are defined in the following way:
     - For some values, x, f(x) is given.
     - For values other then given, f(x) is defined by calling itself for lower/upper values.

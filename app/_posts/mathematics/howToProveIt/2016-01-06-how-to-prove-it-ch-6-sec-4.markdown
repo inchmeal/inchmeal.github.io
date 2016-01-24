@@ -788,8 +788,8 @@ Induction step:
 
 Suppose formulae is correct for $$ n \ge 1 $$. Thus $$ a_n = 2^p $$.
 
-Thus $$ a_{n+1} = 1 + \sum_{i=0}^n $$      
-$$ = 1 + \sum_{i=0}^{n-1} + a_n $$     
+Thus $$ a_{n+1} = 1 + \sum_{i=0}^n a_i $$      
+$$ = 1 + \sum_{i=0}^{n-1} a_i + a_n $$     
 $$ = a_n + a_n $$       
 Using hypothesis:     
 $$ = 2^n + 2^n $$,     

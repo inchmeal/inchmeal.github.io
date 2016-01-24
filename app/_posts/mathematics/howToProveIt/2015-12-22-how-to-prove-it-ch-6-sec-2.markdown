@@ -145,7 +145,7 @@ Suppose the conclusion is true for any set $$ B \subseteq A $$ with $$ n $$ elem
 
 Now suppose $$ B \subseteq A $$ such that $$ B $$ has $$ n+1 $$ elements. Suppose $$ b $$ is an arbitrary element of $$ B $$. Consider the set $$ B' = B \setminus \{b\} $$.
 Thus $$ B' $$ has $$ n $$ elements and thus by induction hypothesis, there exist a relation $$ T' $$ such that $$ T' $$ is partial order on $$ A $$ and $$ R \subseteq T' $$ and 
-$$ \forall x \in B' \forall y \in B(xT'y \lor yT'x) $$. Suppose $$ A_1 = \{a \in A \, \vert \, aT'b \} $$ and $$ A_2 = A \setminus A_1 $$. Now consider the relation
+$$ \forall x \in B' \forall y \in A(xT'y \lor yT'x) $$. Suppose $$ A_1 = \{a \in A \, \vert \, aT'b \} $$ and $$ A_2 = A \setminus A_1 $$. Now consider the relation
 $$ T = T' \cup (A_1 \times A_2) $$. Now to prove this step we shall prove the following:
 
 - $$ T $$ is partial order on $$ A $$.     
