@@ -1,0 +1,667 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<!-- For email verification -->
+	<meta name="google-site-verification" content="TdH6RkaPRAp-ak7_nHj9dSs8ldx5RBb0bO9h6ukNZhc" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>How To Prove It, Ch-7 Sec-7.3, The Cantor–Schr&ouml;der–Bernstein Theorem</title>
+	<link rel="stylesheet" href="http://inchmeal.io/assets/css/styles_inchmeal.css">
+	<script src="http://inchmeal.io/assets/js/inchmeal_head.js"></script>
+	
+	<script type="text/javascript"
+			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+	<script>
+		MathJax.Hub.Config({
+			"HTML-CSS": { scale: 82 }
+		});
+	</script>
+
+	
+	
+	<meta name="description" content="This is a sample description"/>
+
+	
+
+	
+
+
+
+	
+	<link rel="icon" sizes="32x32" href="http://inchmeal.io/assets/img/favicon-32x32.png">
+
+
+
+
+	
+	<link rel="icon" sizes="192x192" href="http://inchmeal.io/assets/img/touch-icon-192x192.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://inchmeal.io/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://inchmeal.io/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://inchmeal.io/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://inchmeal.io/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://inchmeal.io/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://inchmeal.io/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://inchmeal.io/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" href="http://inchmeal.io/assets/img/apple-touch-icon-precomposed.png">	
+
+
+
+
+	
+	<meta name="msapplication-TileImage" content="http://inchmeal.io/assets/img/msapplication_tileimage.png"/>
+
+
+
+
+	
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+
+	<!-- Facebook Optimization -->
+	<meta property="og:locale" content="en_EN" />
+	
+	<meta property="og:title" content="How To Prove It, Ch-7 Sec-7.3, The Cantor–Schr&ouml;der–Bernstein Theorem" />
+	<meta property="og:description" content="This is a sample description"/>
+	<meta property="og:url" content="http://inchmeal.io//2016/01/27/how-to-prove-it-ch-7-sec-3.html" />
+	<meta property="og:site_name" content="InchMeal" />
+	
+
+	
+
+	<!-- Search Engine Optimization -->
+	
+
+	<link type="text/plain" rel="author" href="http://inchmeal.io//humans.txt" />
+
+	
+</head>
+
+<body id="top-of-page" class="">
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="http://inchmeal.io/blog/index.html">
+            <img src="http://inchmeal.github.io/assets/img/logo.png"/>
+          </a>
+        </h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu"(text inside span) to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+                
+              
+
+          
+          
+              <li class="divider"></li>
+              <li class="active"><a href="http://inchmeal.io\blog/index.html">Blog</a></li>
+          
+        
+
+              
+                
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://inchmeal.io\archives/index.html">Archives</a></li>
+          
+        
+
+              
+                
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://inchmeal.io\about/index.html">About</a></li>
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        <li class="divider"></li>
+        
+
+              
+                
+              
+
+          
+          
+        
+
+              
+                
+              
+
+          
+          
+        
+
+              
+                
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+
+	<div class="row t30">
+	<div class="medium-8 columns medium-offset-2 end">
+		<article itemscope itemtype="http://schema.org/Article">
+			<header>
+				
+
+				<span itemprop="name">
+					<h1>How To Prove It, Ch-7 Sec-7.3, The Cantor–Schr&ouml;der–Bernstein Theorem</h1>
+				</span>
+			</header>
+
+			
+			<p class="tm10">
+			<time class="post-date pr20" datetime="January 27, 2016" itemprop="datePublished"> January 27, 2016</time>
+			</p>
+			
+
+			<span itemprop="articleSection">
+			<p>This post contains solutions of Chapter - 7, Section - 7.2, The Cantor–Schröder–Bernstein Theorem.</p>
+
+<!--more-->
+
+<hr />
+
+<h3 id="summary">Summary</h3>
+
+<ul>
+  <li>If <script type="math/tex">A</script> and <script type="math/tex">B</script> are sets, then we will say that <script type="math/tex">B</script> <strong>dominates</strong> <script type="math/tex">A</script>, and write <script type="math/tex">A \precsim B</script>, if there is a function 
+<script type="math/tex">f : A \to B</script> that is one-to-one. If <script type="math/tex">A \precsim B</script> and <script type="math/tex">A \nsim B</script>, then we say that <script type="math/tex">B</script> <strong>strictly dominates</strong> <script type="math/tex">A</script>, and 
+write <script type="math/tex">A \prec B</script>.</li>
+  <li><strong>(Cantor–Schroöder–Bernstein theorem)</strong>: Suppose <script type="math/tex">A</script> and <script type="math/tex">B</script> are sets. If <script type="math/tex">A \precsim B</script> and <script type="math/tex">B \precsim A</script>, then <script type="math/tex">A \sim B</script>.</li>
+  <li>Using Cantor–Schroöder–Bernstein theorem, it is easier to prove that <script type="math/tex">\mathbb R \sim \mathcal P(Z^+)</script>. We need to define a one-to-one
+function <script type="math/tex">f: \mathbb R \to \mathcal P(Z^+)</script> and other one-to-one function <script type="math/tex">g:  \mathcal P(Z^+) \to \mathbb R</script>.</li>
+</ul>
+
+<hr />
+
+<p><strong>Soln1</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">f: A \to A</script> such that <script type="math/tex">f(a) = a</script>. Clearly <script type="math/tex">f</script> is one-to-one and onto. It follows that <script type="math/tex">A \precsim A</script>. Thus <script type="math/tex">\precsim</script>
+is reflexive.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">A \precsim B</script> and <script type="math/tex">B \precsim C</script>. Thus we can choose one-to-one function <script type="math/tex">f: A \to B</script> and another one-to-one function <script type="math/tex">g: B \to C</script>.
+Since <script type="math/tex">f,g</script> are one-to-one, the function <script type="math/tex">g \circ f: A \to C</script> is also one-to-one. Thus <script type="math/tex">A \precsim C</script>.</p>
+
+<hr />
+
+<p><strong>Soln2</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">A \prec A</script>. It follows that <script type="math/tex">A \precsim A</script> and <script type="math/tex">A \nsim A</script>. But <script type="math/tex">A \sim A</script>. Thus we have a contradiction. It follows that
+<script type="math/tex">A \nprec A</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">A \prec B</script> and <script type="math/tex">B \prec C</script>. Thus we can choose one-to-one function <script type="math/tex">f: A \to B</script> and another one-to-one function <script type="math/tex">g: B \to C</script>.
+Since <script type="math/tex">f,g</script> are one-to-one, the function <script type="math/tex">g \circ f: A \to C</script> is also one-to-one. Thus <script type="math/tex">A \precsim C</script>.</p>
+
+<p>Now suppose <script type="math/tex">A \sim C</script>, or we can also say <script type="math/tex">C \sim A</script>. Since <script type="math/tex">\sim</script> is transitive and <script type="math/tex">A \sim B</script>, it follows that <script type="math/tex">C \sim B</script>, or <script type="math/tex">B \sim C</script>.
+But it contradicts with <script type="math/tex">B \prec C</script>. Thus our assumption is wrong. Thus <script type="math/tex">A \nsim C</script>.</p>
+
+<p>Since <script type="math/tex">A \precsim C</script> and <script type="math/tex">A \nsim C</script>, it follows that <script type="math/tex">A \prec C</script>.</p>
+
+<hr />
+
+<p><strong>Soln3</strong></p>
+
+<p>Suppose <script type="math/tex">A \subseteq B \subseteq C</script> and <script type="math/tex">A \sim C</script>. Since <script type="math/tex">A \subseteq B</script>, it follows that <script type="math/tex">A \prec B</script>. Since <script type="math/tex">A \sim C</script>,
+it follows that <script type="math/tex">C \sim A</script>. Thus <script type="math/tex">C \prec A</script>. Since <script type="math/tex">\prec</script> is transitive and <script type="math/tex">C \prec A \land A \prec B</script>, it follows that <script type="math/tex">C \prec B</script>.</p>
+
+<p>Now since <script type="math/tex">B \subseteq C</script>, it follows that <script type="math/tex">B \prec C</script>. Thus we have <script type="math/tex">C \prec B</script> and <script type="math/tex">B \prec C</script>. Thus by Cantor–Schroöder–Bernstein theorem,
+it follows that <script type="math/tex">B \sim C</script>.</p>
+
+<hr />
+
+<p><strong>Soln4</strong></p>
+
+<p>Suppose <script type="math/tex">A \precsim B</script> and <script type="math/tex">C \precsim D</script>. Thus we can choose one-to-one function <script type="math/tex">f: A \to B</script> and another one-to-one function <script type="math/tex">g: C \to D</script>.</p>
+
+<p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">h: A \times C \to B \times D</script> such that <script type="math/tex">h(a,c) = (f(a), g(c))</script>.</p>
+
+<p>Suppose <script type="math/tex">(a_1, b_1), (a_2,b_2) \in A \times C</script> such that <script type="math/tex">h(a_1,c_1) = h(a_2,c_2)</script>. Thus <script type="math/tex">(f(a_1), g(c_1)) = (f(a_2),g(c_2))</script>. 
+ Since <script type="math/tex">f,g</script> are one-to-one, it follows that <script type="math/tex">a_1 = a_2</script> and <script type="math/tex">c_1 = c_2</script>. Thus <script type="math/tex">(a_1,c_1) = (a_2,c_2)</script>. Thus <script type="math/tex">h</script> is one-to-one.
+Thus we can conclude that <script type="math/tex">A \times C \precsim B \times D</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">h: A \cup C \to B \cup D</script> such that:   <br />
+- if <script type="math/tex">a \in A</script> then <script type="math/tex">h(a) = f(a)</script>.
+- if <script type="math/tex">a \in C</script> then <script type="math/tex">h(a) = g(a)</script>.</p>
+
+<p>Suppose <script type="math/tex">a_1,a_2 \in A \cup C</script> such that <script type="math/tex">h(a_1) = h(a_2)</script>. Since <script type="math/tex">A \cap C = \phi</script>. We have following possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case <script type="math/tex">a_1 \in A</script>.</p>
+
+    <p>Thus <script type="math/tex">a_1 \notin C</script>. Also by definition of <script type="math/tex">h</script>, <script type="math/tex">h(a_1) = f(a_1)</script>. Suppose <script type="math/tex">a_2 \in C</script>. Thus <script type="math/tex">h(a_2) = g(a_2)</script>.
+Since <script type="math/tex">h(a_1) = h(a_2)</script>, it follows <script type="math/tex">f(a_1) = g(a_2)</script>. Since <script type="math/tex">f(a_1) \in B</script> and <script type="math/tex">g(a_2) \in D</script>, it follows that <script type="math/tex">B \cap D \ne \phi</script>.
+But <script type="math/tex">B \cap D = \phi</script>. Thus we have contradiction. Thus <script type="math/tex">a_2 \notin C</script>. It follows that <script type="math/tex">a_2 \in A</script>. Thus <script type="math/tex">h(a_2) = f(a_2)</script>.
+Since <script type="math/tex">h(a_1) = h(a_2)</script>, it follows <script type="math/tex">f(a_1) = f(a_2)</script>. Since <script type="math/tex">f</script> is one-to-one, it follows that <script type="math/tex">a_1 = a_2</script>.</p>
+  </li>
+  <li>
+    <p>Case <script type="math/tex">a_1 \in C</script>.</p>
+
+    <p>Similar to previous case, we can prove by contradiction that <script type="math/tex">a_2 \in C</script>. Thus <script type="math/tex">g(a_1) = g(a_2)</script>. Thus <script type="math/tex">a_1 = a_2</script>.</p>
+  </li>
+</ul>
+
+<p>Thus by all possible cases, it follows that <script type="math/tex">a_1 = a_2</script>. Thus <script type="math/tex">h</script> is one-to-one. Thus <script type="math/tex">A \cup C \precsim B \cup D</script>.</p>
+
+<p><strong>(c)</strong></p>
+
+<p>Suppose <script type="math/tex">h: \mathcal P(A) \to \mathcal P(B)</script> such that <script type="math/tex">h(X) = \{ f(x) \; \vert \; x \in X \} = Y</script>.</p>
+
+<ul>
+  <li>
+    <p><script type="math/tex">Y \subseteq B</script>.</p>
+
+    <p>Suppose <script type="math/tex">y \in Y</script>. Clearly we can choose some <script type="math/tex">x \in A</script> such that <script type="math/tex">f(x) = y</script>. Since <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">f(x) \in B</script>, or <script type="math/tex">y \in B</script>.
+Since <script type="math/tex">y</script> is arbitrary, <script type="math/tex">Y \subseteq B</script>. Thus <script type="math/tex">Y \in \mathcal P(B)</script>.</p>
+  </li>
+  <li>
+    <p><script type="math/tex">h</script> is one-to-one.</p>
+
+    <p>Suppose <script type="math/tex">X_1</script> and <script type="math/tex">X_2</script> are in <script type="math/tex">\mathcal P(A)</script> such that <script type="math/tex">h(X_1) = h(X_2)</script>. We can prove <script type="math/tex">X_1 = X_2</script> as follows:</p>
+
+    <p>Suppose <script type="math/tex">x_1 \in X_1</script> such that <script type="math/tex">y = f(x_1) \in h(X_1)</script>. Since <script type="math/tex">h(X_1) = h(X_2)</script>, it follows that <script type="math/tex">y \in g(X_2)</script>. Thus for some <script type="math/tex">x_2 \in X_2</script>,
+we have <script type="math/tex">y = f(x_2)</script>. Thus <script type="math/tex">f(x_1) = f(x_2)</script>. Since <script type="math/tex">f</script> is one-to-one, it follows <script type="math/tex">x_1 = x_2</script>. Thus <script type="math/tex">x_1 \in X_2</script>.</p>
+
+    <p>Since <script type="math/tex">x_1</script> is arbitrary, it follows that <script type="math/tex">X_1 \subseteq X_2</script>.</p>
+
+    <p>Similarly we can also prove <script type="math/tex">X_2 \subseteq X_1</script>.</p>
+
+    <p>Thus <script type="math/tex">X_1 = X_2</script>.</p>
+  </li>
+</ul>
+
+<p>Thus <script type="math/tex">h</script> is one-to-one. It follows that <script type="math/tex">\mathcal P(A) \precsim \mathcal P(B)</script>.</p>
+
+<hr />
+
+<p><strong>Soln5</strong></p>
+
+<p>Suppose <script type="math/tex">A \precsim B</script> and <script type="math/tex">C \precsim D</script>. Thus we can choose one-to-one function <script type="math/tex">f: A \to B</script> and another one-to-one function <script type="math/tex">g: C \to D</script>.</p>
+
+<p><strong>(a)</strong></p>
+
+<p>Since <script type="math/tex">A \ne \phi</script>, we can choose some element <script type="math/tex">a_0 \in A</script>. Lets define a function <script type="math/tex">f' : Ran(f) \to A</script> such that:     <br />
+- if <script type="math/tex">b \in Ran(f)</script>, then <script type="math/tex">f'(b) = f^{-1}(a)</script>. Clearly <script type="math/tex">f^{-1}</script> is defined for all <script type="math/tex">b \in Ran(f)</script>.
+- if <script type="math/tex">b \notin Ran(f)</script>, then <script type="math/tex">f'(b) = a_0</script>.</p>
+
+<p>Clearly <script type="math/tex">f'</script> is onto.</p>
+
+<p>Now consider the function <script type="math/tex">h: ^A C \to ^B D</script> such that <script type="math/tex">h(f) = g \circ f \circ f'</script>. Clearly <script type="math/tex">f \in ^A C</script>, thus <script type="math/tex">f: A \to C</script>.
+ Thus <script type="math/tex">g \circ f \circ f'</script> is a function from <script type="math/tex">B</script> to <script type="math/tex">D</script>.</p>
+
+<p>Now we will prove that <script type="math/tex">h</script> is one-to-one. Suppose <script type="math/tex">f_1, f_2 \in ^A C</script> such that <script type="math/tex">h(f_1) = h(f_2)</script>. Thus <script type="math/tex">g \circ f_1 \circ f' = g \circ f_2 \circ f'</script>.
+Suppose <script type="math/tex">a \in A</script> is an arbitrary element. Since <script type="math/tex">f'</script> is onto, it follows that we can choose <script type="math/tex">b \in B</script> such that <script type="math/tex">f'(b) = a</script>.
+Since <script type="math/tex">b \in B</script> and <script type="math/tex">g \circ f_1 \circ f' = g \circ f_2 \circ f'</script>, it follows that  <script type="math/tex">g \circ f_1 \circ f'(b) = g \circ f_2 \circ f'(b)</script>.       <br />
+Thus <script type="math/tex">\leftrightarrow g(f_1(f'(b))) = g( f_2 ( f'(b) ))</script>. Since <script type="math/tex">g</script> is one=to-one, it follows <script type="math/tex">f_1(f'(b)) =  f_2 ( f'(b) )</script>. Since <script type="math/tex">a = f'(b)</script>,    <br />
+we get <script type="math/tex">f_1(a) =  f_2(a)</script>. Since <script type="math/tex">a</script> is arbitrary, it follows that <script type="math/tex">\forall a \in A f_1(a) = f_2(a)</script>. Thus <script type="math/tex">f_1 = f_2</script>.
+Thus <script type="math/tex">h</script> is onto. Thus we can conclude that <script type="math/tex">^A C \precsim ^B D</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Yes.</p>
+
+<p>Suppose <script type="math/tex">A = \phi</script>. Since <script type="math/tex">A \precsim B</script>, it follows that <script type="math/tex">f: \phi \to B</script> such that <script type="math/tex">f</script> is one-to-one. Thus <script type="math/tex">f = \phi</script>.</p>
+
+<p>Suppose <script type="math/tex">B = \{ b \}</script>, and <script type="math/tex">C = \{c\}</script> and <script type="math/tex">D = \{d,e\}</script>.</p>
+
+<p>Thus <script type="math/tex">^A C = \{ \phi \}</script>. And <script type="math/tex">^B D = \{ \{ (b,d) \}, \{ (b,e) \} \}</script>.</p>
+
+<p>Thus the only function possible from <script type="math/tex">^A C</script> to <script type="math/tex">^B D</script> is <script type="math/tex">\phi</script>. But clearly <script type="math/tex">\phi</script> is not one-to-one, because it is a part of every set.
+Thus there is no one-to-one function from <script type="math/tex">^A C</script> to <script type="math/tex">^B D</script>.</p>
+
+<hr />
+
+<p><strong>Soln6</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>Suppose <script type="math/tex">\vert B \vert = n</script>. Since <script type="math/tex">B</script> is finite, by countable set theorems of last section, we can choose one-to-one function <script type="math/tex">f:  B \to Z^+</script>.
+Since <script type="math/tex">A \precsim B</script>, we can choose a one-to-one function <script type="math/tex">g: A \to B</script>. Thus <script type="math/tex">f \circ g: A \to Z^+</script> is a one-to-one function.
+Thus <script type="math/tex">A</script> is countable. Thus <script type="math/tex">A</script> either finite or denumerable.</p>
+
+<p>Now we will prove by contradiction that <script type="math/tex">A</script> is finite. Suppose <script type="math/tex">A</script> is infinite. Since <script type="math/tex">A</script> is countable, it follows that <script type="math/tex">A</script> must
+be denumerable. Thus we can represent elements of <script type="math/tex">A</script> as <script type="math/tex">\{a_1, a_2, ... a_n, ... \}</script>. Let <script type="math/tex">b_i  = f(a_i)</script> where <script type="math/tex">i \in \mathbb N</script>.
+Thus <script type="math/tex">\{ b_i \; \vert \; b_i = f(a_i), i \in \mathbb N \} \subseteq B</script>. Since <script type="math/tex">g: A \to B</script> is one-to-one, it follows that <script type="math/tex">b_i \ne b_j</script>, if <script type="math/tex">i \ne j</script>.
+Thus <script type="math/tex">\vert \{ b_1, b_2, .... b_n, b_{n+1} \} \vert = n+1</script>. Since <script type="math/tex">\{ b_1, b_2, .... b_n, b_{n+1} \} \subseteq B</script>, it follows <script type="math/tex">\vert \{ b_1, b_2, .... b_n, b_{n+1} \} \vert \le \vert B \vert</script>.
+Thus <script type="math/tex">n+1 \le \vert B \vert</script>. But <script type="math/tex">\vert B \vert = n</script>. Thus we have a contradiction. It follows that <script type="math/tex">A</script> is finite.</p>
+
+<p>Suppose <script type="math/tex">\vert A \vert</script> contains <script type="math/tex">m</script> elements. Suppose <script type="math/tex">m > n</script>. Thus <script type="math/tex">A = \{ a_1, a_2, ... a_m \}</script>. Similar to above step, lets define <script type="math/tex">b_i = f(a_i)</script>
+where <script type="math/tex">0 \le i \le m</script>. Thus <script type="math/tex">\{ b_1, b_2, .... b_m \} \subseteq B</script>. Thus <script type="math/tex">\vert \{ b_1, b_2, .... b_m \} \vert \le \vert B \vert</script>. Since <script type="math/tex">g: A \to B</script> is one-to-one, 
+it follows that <script type="math/tex">\{ b_1, b_2, .... b_m \} = m</script>. Thus <script type="math/tex">m \le n</script>. This contradicts with our assumption that <script type="math/tex">m > n</script>. Thus <script type="math/tex">m \le n</script>.
+Thus <script type="math/tex">\vert A \vert \le \vert B \vert</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Since <script type="math/tex">A \prec B</script>, it follows that there exist a one-to-one function <script type="math/tex">f: A \to B</script>. Thus <script type="math/tex">A \precsim B</script>. Since <script type="math/tex">B</script> is finite it follows
+from part(a) that <script type="math/tex">A</script> is finite and <script type="math/tex">\vert A \vert \le \vert B \vert</script>.</p>
+
+<p>Now suppose <script type="math/tex">\vert A \vert = \vert B \vert</script>. Thus <script type="math/tex">A \sim B</script>. Since <script type="math/tex">A \prec B</script>, it follows that <script type="math/tex">A \nsim B</script>. Thus we have a contradiction.
+It follows that <script type="math/tex">\vert A \vert \ne \vert B \vert</script>.</p>
+
+<p>Since <script type="math/tex">\vert A \vert \le \vert B \vert</script> and <script type="math/tex">\vert A \vert \ne \vert B \vert</script>, it follows that <script type="math/tex">% <![CDATA[
+\vert A \vert < \vert B \vert %]]></script>.</p>
+
+<hr />
+
+<p><strong>Soln7</strong></p>
+
+<p>Suppose <script type="math/tex">f: A \to \mathcal P(A)</script> such that <script type="math/tex">f(a) = \{ X \in \mathcal P(A) \; \vert \; a \in X \}</script>.</p>
+
+<p>Now we will show that <script type="math/tex">f</script> is one-to-one. Suppose <script type="math/tex">a_1, a_2 \in A</script> such that <script type="math/tex">f(a_1) = f(a_2)</script>. Clearly by definition of <script type="math/tex">f</script>,
+it follows <script type="math/tex">\{a_1\} \in f(a_1)</script>. Similarly <script type="math/tex">\{a_2\} \in f(a_2)</script>. Note that all the elements of <script type="math/tex">f(a_1)</script> must contain <script type="math/tex">a_1</script>. 
+Thus every set in <script type="math/tex">f(a_1)</script> has more than one element except the set <script type="math/tex">\{a_1\}</script>. Similarly <script type="math/tex">\{a_2\}</script> is the only set in <script type="math/tex">f(a_2)</script> that
+contains one element. Since <script type="math/tex">f(a_1) = f(a_2)</script>, it follows that <script type="math/tex">\{a_1\} = \{a_2\}</script>. Thus <script type="math/tex">a_1 = a_2</script>. Thus <script type="math/tex">f</script> is one-to-one.</p>
+
+<p>Thus <script type="math/tex">A \precsim \mathcal P(A)</script>. From Section-7.2, Ex-4, we know that <script type="math/tex">A \nsim \mathcal P(A)</script>. Thus <script type="math/tex">A \prec \mathcal P(A)</script>.</p>
+
+<hr />
+
+<p><strong>Soln8</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>We will prove this by induction.</p>
+
+<ul>
+  <li>
+    <p>Base Case:</p>
+
+    <p>For <script type="math/tex">m = n+1</script>, Thus <script type="math/tex">A_m = A_{n+1} = \mathcal P(A_n)</script>. Using Ex-7 we have <script type="math/tex">A_n \prec \mathcal P(A_n)</script>. Thus <script type="math/tex">A_n \prec A_m</script>.</p>
+  </li>
+  <li>
+    <p>Induction Step:</p>
+
+    <p>Suppose for <script type="math/tex">m > n</script>, <script type="math/tex">A_n \prec A_m</script>.</p>
+
+    <p>We know from Ex-7 that <script type="math/tex">A_m \prec \mathcal P(A_m)</script>. Since <script type="math/tex">A_{m+1} = \mathcal P(A_m)</script>, it follows that <script type="math/tex">A_m \prec A_{m+1}</script>. Since 
+<script type="math/tex">\prec</script> is transitive and <script type="math/tex">A_n \prec A_m</script> and <script type="math/tex">A_m \prec A_{m+1}</script>, it follows that <script type="math/tex">A_n \prec A_{m+1}</script>.</p>
+  </li>
+</ul>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">S = \cup_{i \in \mathbb N} A_n</script>. Clearly this set is not equinumerous with any set <script type="math/tex">A_n</script>. Another example can be <script type="math/tex">\mathcal P(S)</script>.
+  Thus <script type="math/tex">S_{n+1} = \mathcal P(S_n)</script>, where <script type="math/tex">n \in \mathbb N</script>. Thus there are infinite possible sets which are not equinumerous with <script type="math/tex">A_n</script>.</p>
+
+<hr />
+
+<p><strong>Soln9</strong></p>
+
+<p>Suppose <script type="math/tex">f: (0,1] \to (0,1)</script> such that <script type="math/tex">f(x) = x/2</script>.</p>
+
+<p>Suppose <script type="math/tex">g : (0,1) \to (0,1]</script> such that <script type="math/tex">g(x) = x</script>.</p>
+
+<p>Let <script type="math/tex">A = (0,1]</script> and <script type="math/tex">B = (0,1)</script>. Also we can define <script type="math/tex">g^{-1}: Rang(g) \to A</script> such that <script type="math/tex">g^{-1}(b) = a</script> such that <script type="math/tex">g(a) = b</script>.</p>
+
+<p>Clearly <script type="math/tex">f</script> and <script type="math/tex">g</script> are one-to-one. Thus by Cantor–Schröder–Bernstein Theorem, we can define a one-to-one and onto function 
+<script type="math/tex">h: (0,1] \to (0,1)</script> such that:    <br />
+- if <script type="math/tex">x \in X</script>, then <script type="math/tex">h(x) = f(x) = x/2</script>.    <br />
+- if <script type="math/tex">x \in Y</script>, then <script type="math/tex">h(x) = g^{-1}(x) = x</script>.</p>
+
+<p>where <script type="math/tex">X = \cup_{i \in \mathbb N} A_i</script> and <script type="math/tex">A_1 = A \setminus Rang(g)</script> and <script type="math/tex">A_{n+1} = g(A_n)</script>.   <br />
+<script type="math/tex">Y = A \setminus X</script>.</p>
+
+<p>Lets compute <script type="math/tex">X</script>:</p>
+
+<p><script type="math/tex">A_1 = A \setminus Rang(g) = (0,1] \setminus (0,1) = [1] = \{1\}</script>.      <br />
+<script type="math/tex">A_2 = g(f(A_1)) = g(\{1/2\}) = \{1/2\}</script>.     <br />
+<script type="math/tex">A_3 = g(f(A_2)) = g(\{1/4\}) = \{1/4\}</script>.     <br />
+….      <br />
+<script type="math/tex">A_n = g(f(A_{n-1})) = \{1/2^{n-1}\}</script>.</p>
+
+<p>Thus <script type="math/tex">X = \cup_{i \in \mathbb N} A_i = \{1, 1/2, 1/4, 1/8, .... 1/2^{n-1}, .... \} = \{ 1/2^i \; \vert \; 0 \le i \le 1 \}</script>.</p>
+
+<p>Thus <script type="math/tex">Y = A \setminus X = (0,1] \setminus \{1\} = (0,1)</script>.</p>
+
+<p>Thus we have <script type="math/tex">h: (0,1] \to (0,1)</script> such that:         <br />
+- if <script type="math/tex">x \in X</script>, then <script type="math/tex">h(x) = x/2</script>.    <br />
+- if <script type="math/tex">x \in Y</script>, then <script type="math/tex">h(x) = x</script>.</p>
+
+<hr />
+
+<p><strong>Soln10</strong></p>
+
+<p>Let <script type="math/tex">\mathcal E = \{ R \; \vert \; R \text{ is an equivalence relation on } \mathbb Z^+ \}</script>.</p>
+
+<p><strong>(a)</strong></p>
+
+<p>Clearly <script type="math/tex">\mathcal E \subseteq \mathcal P(Z^+ \times Z^+)</script>. Thus <script type="math/tex">\mathcal E \prec \mathcal P(Z^+ \times Z^+)</script>. Since <script type="math/tex">Z^+ \sim Z^+ \times Z^+</script>,
+it follows from Section-7.1, Ex-5 that <script type="math/tex">\mathcal P(Z^+ \times Z^+) \sim \mathcal P(Z^+)</script>. Thus <script type="math/tex">\mathcal E \prec \mathcal P(Z^+)</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Suppose <script type="math/tex">X_1, X_2 \in \mathcal P(A)</script> such that <script type="math/tex">f(X_1) = f(X_2)</script>. Thus it follows that:        <br />
+<script type="math/tex">\{ X_1 \cup \{1\} , (A \setminus X_1) \cup \{2\} \} = \{ X_2 \cup \{1\} , (A \setminus X_2) \cup \{2\} \}</script>.</p>
+
+<p>Thus either <script type="math/tex">\{ X_1 \cup \{1\} = (A \setminus X_2) \cup \{2\}</script>, or <script type="math/tex">X_1 \cup \{1\} = X_2 \cup \{1\}</script>. Since <script type="math/tex">1 \notin (A \setminus X_2) \cup \{2\}</script>,
+it follows that <script type="math/tex">\{ X_1 \cup \{1\} \ne (A \setminus X_2) \cup \{2\}</script>. Thus the only possible case is <script type="math/tex">X_1 \cup \{1\} = X_2 \cup \{1\}</script>. Thus
+<script type="math/tex">X_1 = X_2</script>. It follows that <script type="math/tex">f</script> is one-to-one.</p>
+
+<p><strong>(c)</strong></p>
+
+<p>We have <script type="math/tex">\mathcal P</script> is the set of all partitions of <script type="math/tex">A</script> and <script type="math/tex">\mathcal E</script> is the set of all equivalence relation of <script type="math/tex">A</script>.
+As we saw in section-5.3, we can define a one-to-one and onto function <script type="math/tex">f: \mathcal P \to \mathcal E</script> such that <script type="math/tex">f(X) = \cup_{X \in \mathcal P} (X \times X)</script>.</p>
+
+<p>Thus <script type="math/tex">\mathcal P \sim \mathcal E</script>.</p>
+
+<p>Now from part(b) we have <script type="math/tex">\mathcal P(A) \precsim \mathcal P</script>. Also since <script type="math/tex">A \subseteq Z^+</script>, it follows that <script type="math/tex">Z^+ \sim A</script>. Thus <script type="math/tex">\mathcal P(Z^+) \sim \mathcal P(A)</script>.
+Since <script type="math/tex">\mathcal P(Z^+) \sim \mathcal P(A)</script> and <script type="math/tex">\mathcal P(A) \precsim \mathcal P</script>, it follows that <script type="math/tex">\mathcal P(Z^+) \precsim \mathcal P</script>. Since <script type="math/tex">P \sim \mathcal E</script>, 
+it follows that <script type="math/tex">\mathcal P(Z^+) \precsim \mathcal E</script>.</p>
+
+<p>Now from part(a) we have <script type="math/tex">\mathcal E \precsim \mathcal P(Z^+)</script>. Thus by applying Cantor–Schröder–Bernstein Theorem, it follows that
+<script type="math/tex">\mathcal E \sim \mathcal P(Z^+)</script>.</p>
+
+<hr />
+
+<p><strong>Soln11</strong></p>
+
+<p>TODO</p>
+
+<p><strong>Soln12</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>TODO[This is not complete.]</p>
+
+<p>Suppose <script type="math/tex">a \in A</script>. Suppose <script type="math/tex">A_1 = \{a\}</script> and <script type="math/tex">A_2 = A \setminus A_1</script>. Thus <script type="math/tex">A = A_1 \cup A_2</script>.</p>
+
+<p>Since <script type="math/tex">A</script> contains atleast two elements, by definition <script type="math/tex">A_1 \ne \phi</script> and also <script type="math/tex">A_2 \ne \phi</script>.</p>
+
+<p>Clearly <script type="math/tex">A_1 \cap A_2 = \phi</script>, thus it follows from Section-7.2, Ex-7, that <script type="math/tex">\mathcal P(A) = \mathcal P(A_1 \cup A_2) = \mathcal P(A_1) \times \mathcal P(A_2)</script>.</p>
+
+<p>Since <script type="math/tex">A_1 \subseteq A</script>, it follows <script type="math/tex">\mathcal P(A_1) \subseteq \mathcal P(A)</script>. Similarly since <script type="math/tex">A_2 \subseteq A</script>, it follows <script type="math/tex">\mathcal P(A_2) \subseteq \mathcal P(A)</script>.
+Since <script type="math/tex">\mathcal P(A_1) \subseteq \mathcal P(A)</script> and <script type="math/tex">\mathcal P(A_2) \subseteq \mathcal P(A)</script>, it follows:     <br />
+<script type="math/tex">\mathcal P(A_1) \times \mathcal P(A_2) \; \subseteq \; \mathcal P(A) \times \mathcal P(A)</script>.</p>
+
+<p>Since <script type="math/tex">\mathcal P(A_1) \times \mathcal P(A_2) \; \subseteq \; \mathcal P(A) \times \mathcal P(A)</script>, it follows <script type="math/tex">\mathcal P(A_1) \times \mathcal P(A_2) \; \prec \; \mathcal P(A) \times \mathcal P(A)</script>.</p>
+
+<p>But we have already seen that <script type="math/tex">\mathcal P(A) \sim \mathcal P(A_1) \times \mathcal P(A_2)</script>. Thus it follows that <script type="math/tex">\mathcal P(A) \; \prec \; \mathcal P(A) \times \mathcal P(A)</script>.</p>
+
+<p>Now if we also prove that <script type="math/tex">\mathcal P(A) \times \mathcal P(A) \; \prec \; \mathcal P(A)</script>, then applying Cantor–Schröder–Bernstein theorem will complete the proof.</p>
+
+<p>I got stuck in proving this part: <script type="math/tex">\mathcal P(A) \times \mathcal P(A) \; \prec \; \mathcal P(A)</script>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>TODO.</p>
+
+<hr />
+
+<p><strong>Soln13</strong></p>
+
+<p>Suppose <script type="math/tex">\mathcal F</script> is a set of nondegenerate intervals and <script type="math/tex">\mathcal F</script> is pairwise disjoint.</p>
+
+<p>Suppose <script type="math/tex">I \in \mathcal F</script> is an arbitrary interval. Since it is nondegenerate interval, it must contains <script type="math/tex">\ge 2</script> real numbers. We know 
+from lemma 7.3.4, that it between every two real numbers, there exist a rational number. Thus we can define a non-empty set:     <br />
+<script type="math/tex">% <![CDATA[
+Q_I = \{ q \; \vert \; if(x,y \in I) \text{ then } q \text{ is a rational number such that } x < q < y \} %]]></script>.</p>
+
+<p>Clearly <script type="math/tex">Q_I \ne \phi</script> and <script type="math/tex">Q_I \subseteq \mathbb Q</script>.</p>
+
+<p>Suppose <script type="math/tex">g: \mathcal F \; \to \; \mathcal P(\mathbb Q) \setminus \{ \phi \}</script> such that:</p>
+
+<p><script type="math/tex">g(I) = Q_I</script>.</p>
+
+<p>Now we will prove that <script type="math/tex">g</script> is one-to-one:</p>
+
+<p>Suppose <script type="math/tex">I_1, I_2 \in \mathcal F</script> such that <script type="math/tex">g(I_1) = g(I_2)</script>. Now we will prove by contradiction that <script type="math/tex">I_1 = I_2</script>. Suppose <script type="math/tex">I_1 \ne I_2</script>.
+Since <script type="math/tex">\mathcal F</script> is pairwise disjoint, it follows that <script type="math/tex">I_1 \cap I_2 = \phi</script>. Suppose <script type="math/tex">q \in g(I_1)</script>. It follows that for some <script type="math/tex">x_1, y_1 \in I_1</script>,
+we have <script type="math/tex">% <![CDATA[
+x_1 < q < y_1 %]]></script>. Thus by definition of interval, <script type="math/tex">q \in I_1</script>. Similarly since <script type="math/tex">q \in g(I_2)</script>, we can prove that <script type="math/tex">q \in I_2</script>. Thus
+<script type="math/tex">q \in I_1 \cap I_2</script>. But <script type="math/tex">I_1 \cap I_2 = \phi</script>. Thus we have a contradiction. It follows that <script type="math/tex">I_1 = I_2</script>.</p>
+
+<p>Thus <script type="math/tex">g</script> is one-to-one.</p>
+
+<p>Since <script type="math/tex">\mathbb Q</script> is denumerable, we can define a one-to-one function <script type="math/tex">f: \mathbb Q \to Z^+</script>.</p>
+
+<p>Thus we can define a funnction <script type="math/tex">h: \mathcal F \to Z^+</script> as:</p>
+
+<p><script type="math/tex">h(I) = \text{ smallest element of } \{ f(q) \; \vert \; q \in g(I) \}</script>.</p>
+
+<p>Since <script type="math/tex">g</script> is one-to-one, it follows that <script type="math/tex">h</script> is also one-to-one.</p>
+
+<p>Thus <script type="math/tex">\mathcal F \sim Z^+</script>.</p>
+
+<hr />
+
+<p><strong>Soln14</strong></p>
+
+<p>TODO.</p>
+
+<hr />
+
+
+
+			</span>
+
+			
+		</article>
+	</div><!-- /.medium-8.columns -->
+
+</div><!-- /.row -->
+
+
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" href="#top-of-page">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="b30 small-6 columns">
+            <ul class="inline-list">
+              <li>Created with &hearts; by ovais</li>
+            </ul>
+          </section>
+          <section id="subfooter-right" class="small-6 columns social-icons end">
+            <ul class="inline-list">
+            
+              <li><a href="http://twitter.com/ovais_" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
+            
+              <li><a href="http://github.com/0vais" target="_blank" class="icon-github" title="Follow on github"></a></li>
+            
+            </ul>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+
+	<script>
+var sectionName = "blog";
+
+
+</script>
+
+
+<script src="http://inchmeal.io/assets/js/inchmeal_all.js"></script>
+
+
+
+</body>
+</html>

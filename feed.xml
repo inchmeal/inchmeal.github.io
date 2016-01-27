@@ -5,9 +5,410 @@
     <description>This is a sample description</description>
     <link>http://inchmeal.io/</link>
     <atom:link href="http://inchmeal.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Jan 2016 18:42:45 +0530</pubDate>
-    <lastBuildDate>Tue, 26 Jan 2016 18:42:45 +0530</lastBuildDate>
+    <pubDate>Thu, 28 Jan 2016 03:09:55 +0530</pubDate>
+    <lastBuildDate>Thu, 28 Jan 2016 03:09:55 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>How To Prove It, Ch-7 Sec-7.3, The Cantor–Schr&amp;ouml;der–Bernstein Theorem</title>
+        <description>&lt;p&gt;This post contains solutions of Chapter - 7, Section - 7.2, The Cantor–Schröder–Bernstein Theorem.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are sets, then we will say that &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; &lt;strong&gt;dominates&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, and write &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt;, if there is a function 
+&lt;script type=&quot;math/tex&quot;&gt;f : A \to B&lt;/script&gt; that is one-to-one. If &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \nsim B&lt;/script&gt;, then we say that &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; &lt;strong&gt;strictly dominates&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;, and 
+write &lt;script type=&quot;math/tex&quot;&gt;A \prec B&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;(Cantor–Schroöder–Bernstein theorem)&lt;/strong&gt;: Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are sets. If &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B \precsim A&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;A \sim B&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Using Cantor–Schroöder–Bernstein theorem, it is easier to prove that &lt;script type=&quot;math/tex&quot;&gt;\mathbb R \sim \mathcal P(Z^+)&lt;/script&gt;. We need to define a one-to-one
+function &lt;script type=&quot;math/tex&quot;&gt;f: \mathbb R \to \mathcal P(Z^+)&lt;/script&gt; and other one-to-one function &lt;script type=&quot;math/tex&quot;&gt;g:  \mathcal P(Z^+) \to \mathbb R&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f: A \to A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(a) = a&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto. It follows that &lt;script type=&quot;math/tex&quot;&gt;A \precsim A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\precsim&lt;/script&gt;
+is reflexive.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B \precsim C&lt;/script&gt;. Thus we can choose one-to-one function &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; and another one-to-one function &lt;script type=&quot;math/tex&quot;&gt;g: B \to C&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;f,g&lt;/script&gt; are one-to-one, the function &lt;script type=&quot;math/tex&quot;&gt;g \circ f: A \to C&lt;/script&gt; is also one-to-one. Thus &lt;script type=&quot;math/tex&quot;&gt;A \precsim C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A \prec A&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;A \precsim A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \nsim A&lt;/script&gt;. But &lt;script type=&quot;math/tex&quot;&gt;A \sim A&lt;/script&gt;. Thus we have a contradiction. It follows that
+&lt;script type=&quot;math/tex&quot;&gt;A \nprec A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A \prec B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B \prec C&lt;/script&gt;. Thus we can choose one-to-one function &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; and another one-to-one function &lt;script type=&quot;math/tex&quot;&gt;g: B \to C&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;f,g&lt;/script&gt; are one-to-one, the function &lt;script type=&quot;math/tex&quot;&gt;g \circ f: A \to C&lt;/script&gt; is also one-to-one. Thus &lt;script type=&quot;math/tex&quot;&gt;A \precsim C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now suppose &lt;script type=&quot;math/tex&quot;&gt;A \sim C&lt;/script&gt;, or we can also say &lt;script type=&quot;math/tex&quot;&gt;C \sim A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\sim&lt;/script&gt; is transitive and &lt;script type=&quot;math/tex&quot;&gt;A \sim B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;C \sim B&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;B \sim C&lt;/script&gt;.
+But it contradicts with &lt;script type=&quot;math/tex&quot;&gt;B \prec C&lt;/script&gt;. Thus our assumption is wrong. Thus &lt;script type=&quot;math/tex&quot;&gt;A \nsim C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;A \precsim C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \nsim C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \prec C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B \subseteq C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A \sim C&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \prec B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \sim C&lt;/script&gt;,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;C \sim A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;C \prec A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\prec&lt;/script&gt; is transitive and &lt;script type=&quot;math/tex&quot;&gt;C \prec A \land A \prec B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;C \prec B&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now since &lt;script type=&quot;math/tex&quot;&gt;B \subseteq C&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;B \prec C&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;C \prec B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B \prec C&lt;/script&gt;. Thus by Cantor–Schroöder–Bernstein theorem,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;B \sim C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;C \precsim D&lt;/script&gt;. Thus we can choose one-to-one function &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; and another one-to-one function &lt;script type=&quot;math/tex&quot;&gt;g: C \to D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;h: A \times C \to B \times D&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;h(a,c) = (f(a), g(c))&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;(a_1, b_1), (a_2,b_2) \in A \times C&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;h(a_1,c_1) = h(a_2,c_2)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(f(a_1), g(c_1)) = (f(a_2),g(c_2))&lt;/script&gt;. 
+ Since &lt;script type=&quot;math/tex&quot;&gt;f,g&lt;/script&gt; are one-to-one, it follows that &lt;script type=&quot;math/tex&quot;&gt;a_1 = a_2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c_1 = c_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a_1,c_1) = (a_2,c_2)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is one-to-one.
+Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;A \times C \precsim B \times D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;h: A \cup C \to B \cup D&lt;/script&gt; such that:   &lt;br /&gt;
+- if &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;h(a) = f(a)&lt;/script&gt;.
+- if &lt;script type=&quot;math/tex&quot;&gt;a \in C&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;h(a) = g(a)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a_1,a_2 \in A \cup C&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;h(a_1) = h(a_2)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \cap C = \phi&lt;/script&gt;. We have following possible cases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;a_1 \in A&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;a_1 \notin C&lt;/script&gt;. Also by definition of &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;h(a_1) = f(a_1)&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;a_2 \in C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;h(a_2) = g(a_2)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;h(a_1) = h(a_2)&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;f(a_1) = g(a_2)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f(a_1) \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g(a_2) \in D&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;B \cap D \ne \phi&lt;/script&gt;.
+But &lt;script type=&quot;math/tex&quot;&gt;B \cap D = \phi&lt;/script&gt;. Thus we have contradiction. Thus &lt;script type=&quot;math/tex&quot;&gt;a_2 \notin C&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;a_2 \in A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;h(a_2) = f(a_2)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;h(a_1) = h(a_2)&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;f(a_1) = f(a_2)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one, it follows that &lt;script type=&quot;math/tex&quot;&gt;a_1 = a_2&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Case &lt;script type=&quot;math/tex&quot;&gt;a_1 \in C&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Similar to previous case, we can prove by contradiction that &lt;script type=&quot;math/tex&quot;&gt;a_2 \in C&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g(a_1) = g(a_2)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a_1 = a_2&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus by all possible cases, it follows that &lt;script type=&quot;math/tex&quot;&gt;a_1 = a_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is one-to-one. Thus &lt;script type=&quot;math/tex&quot;&gt;A \cup C \precsim B \cup D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;h: \mathcal P(A) \to \mathcal P(B)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;h(X) = \{ f(x) \; \vert \; x \in X \} = Y&lt;/script&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;Y \subseteq B&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;y \in Y&lt;/script&gt;. Clearly we can choose some &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(x) = y&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f(x) \in B&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;y \in B&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;Y \subseteq B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;Y \in \mathcal P(B)&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is one-to-one.&lt;/p&gt;
+
+    &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;X_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;X_2&lt;/script&gt; are in &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;h(X_1) = h(X_2)&lt;/script&gt;. We can prove &lt;script type=&quot;math/tex&quot;&gt;X_1 = X_2&lt;/script&gt; as follows:&lt;/p&gt;
+
+    &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x_1 \in X_1&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;y = f(x_1) \in h(X_1)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;h(X_1) = h(X_2)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;y \in g(X_2)&lt;/script&gt;. Thus for some &lt;script type=&quot;math/tex&quot;&gt;x_2 \in X_2&lt;/script&gt;,
+we have &lt;script type=&quot;math/tex&quot;&gt;y = f(x_2)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f(x_1) = f(x_2)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one, it follows &lt;script type=&quot;math/tex&quot;&gt;x_1 = x_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x_1 \in X_2&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;x_1&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;X_1 \subseteq X_2&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Similarly we can also prove &lt;script type=&quot;math/tex&quot;&gt;X_2 \subseteq X_1&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;X_1 = X_2&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is one-to-one. It follows that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \precsim \mathcal P(B)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;C \precsim D&lt;/script&gt;. Thus we can choose one-to-one function &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; and another one-to-one function &lt;script type=&quot;math/tex&quot;&gt;g: C \to D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;A \ne \phi&lt;/script&gt;, we can choose some element &lt;script type=&quot;math/tex&quot;&gt;a_0 \in A&lt;/script&gt;. Lets define a function &lt;script type=&quot;math/tex&quot;&gt;f&#39; : Ran(f) \to A&lt;/script&gt; such that:     &lt;br /&gt;
+- if &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(f)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;f&#39;(b) = f^{-1}(a)&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;f^{-1}&lt;/script&gt; is defined for all &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(f)&lt;/script&gt;.
+- if &lt;script type=&quot;math/tex&quot;&gt;b \notin Ran(f)&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;f&#39;(b) = a_0&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;f&#39;&lt;/script&gt; is onto.&lt;/p&gt;
+
+&lt;p&gt;Now consider the function &lt;script type=&quot;math/tex&quot;&gt;h: ^A C \to ^B D&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;h(f) = g \circ f \circ f&#39;&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;f \in ^A C&lt;/script&gt;, thus &lt;script type=&quot;math/tex&quot;&gt;f: A \to C&lt;/script&gt;.
+ Thus &lt;script type=&quot;math/tex&quot;&gt;g \circ f \circ f&#39;&lt;/script&gt; is a function from &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now we will prove that &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is one-to-one. Suppose &lt;script type=&quot;math/tex&quot;&gt;f_1, f_2 \in ^A C&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;h(f_1) = h(f_2)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g \circ f_1 \circ f&#39; = g \circ f_2 \circ f&#39;&lt;/script&gt;.
+Suppose &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; is an arbitrary element. Since &lt;script type=&quot;math/tex&quot;&gt;f&#39;&lt;/script&gt; is onto, it follows that we can choose &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f&#39;(b) = a&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \circ f_1 \circ f&#39; = g \circ f_2 \circ f&#39;&lt;/script&gt;, it follows that  &lt;script type=&quot;math/tex&quot;&gt;g \circ f_1 \circ f&#39;(b) = g \circ f_2 \circ f&#39;(b)&lt;/script&gt;.       &lt;br /&gt;
+Thus &lt;script type=&quot;math/tex&quot;&gt;\leftrightarrow g(f_1(f&#39;(b))) = g( f_2 ( f&#39;(b) ))&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is one=to-one, it follows &lt;script type=&quot;math/tex&quot;&gt;f_1(f&#39;(b)) =  f_2 ( f&#39;(b) )&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a = f&#39;(b)&lt;/script&gt;,    &lt;br /&gt;
+we get &lt;script type=&quot;math/tex&quot;&gt;f_1(a) =  f_2(a)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall a \in A f_1(a) = f_2(a)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f_1 = f_2&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is onto. Thus we can conclude that &lt;script type=&quot;math/tex&quot;&gt;^A C \precsim ^B D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A = \phi&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f: \phi \to B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one. Thus &lt;script type=&quot;math/tex&quot;&gt;f = \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;B = \{ b \}&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;C = \{c\}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;D = \{d,e\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;^A C = \{ \phi \}&lt;/script&gt;. And &lt;script type=&quot;math/tex&quot;&gt;^B D = \{ \{ (b,d) \}, \{ (b,e) \} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus the only function possible from &lt;script type=&quot;math/tex&quot;&gt;^A C&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;^B D&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;. But clearly &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; is not one-to-one, because it is a part of every set.
+Thus there is no one-to-one function from &lt;script type=&quot;math/tex&quot;&gt;^A C&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;^B D&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\vert B \vert = n&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is finite, by countable set theorems of last section, we can choose one-to-one function &lt;script type=&quot;math/tex&quot;&gt;f:  B \to Z^+&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt;, we can choose a one-to-one function &lt;script type=&quot;math/tex&quot;&gt;g: A \to B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f \circ g: A \to Z^+&lt;/script&gt; is a one-to-one function.
+Thus &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is countable. Thus &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; either finite or denumerable.&lt;/p&gt;
+
+&lt;p&gt;Now we will prove by contradiction that &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is finite. Suppose &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is infinite. Since &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is countable, it follows that &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; must
+be denumerable. Thus we can represent elements of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; as &lt;script type=&quot;math/tex&quot;&gt;\{a_1, a_2, ... a_n, ... \}&lt;/script&gt;. Let &lt;script type=&quot;math/tex&quot;&gt;b_i  = f(a_i)&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;i \in \mathbb N&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;\{ b_i \; \vert \; b_i = f(a_i), i \in \mathbb N \} \subseteq B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;g: A \to B&lt;/script&gt; is one-to-one, it follows that &lt;script type=&quot;math/tex&quot;&gt;b_i \ne b_j&lt;/script&gt;, if &lt;script type=&quot;math/tex&quot;&gt;i \ne j&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;\vert \{ b_1, b_2, .... b_n, b_{n+1} \} \vert = n+1&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\{ b_1, b_2, .... b_n, b_{n+1} \} \subseteq B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;\vert \{ b_1, b_2, .... b_n, b_{n+1} \} \vert \le \vert B \vert&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;n+1 \le \vert B \vert&lt;/script&gt;. But &lt;script type=&quot;math/tex&quot;&gt;\vert B \vert = n&lt;/script&gt;. Thus we have a contradiction. It follows that &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is finite.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\vert A \vert&lt;/script&gt; contains &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt; elements. Suppose &lt;script type=&quot;math/tex&quot;&gt;m &gt; n&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A = \{ a_1, a_2, ... a_m \}&lt;/script&gt;. Similar to above step, lets define &lt;script type=&quot;math/tex&quot;&gt;b_i = f(a_i)&lt;/script&gt;
+where &lt;script type=&quot;math/tex&quot;&gt;0 \le i \le m&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\{ b_1, b_2, .... b_m \} \subseteq B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\vert \{ b_1, b_2, .... b_m \} \vert \le \vert B \vert&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;g: A \to B&lt;/script&gt; is one-to-one, 
+it follows that &lt;script type=&quot;math/tex&quot;&gt;\{ b_1, b_2, .... b_m \} = m&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;m \le n&lt;/script&gt;. This contradicts with our assumption that &lt;script type=&quot;math/tex&quot;&gt;m &gt; n&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;m \le n&lt;/script&gt;.
+Thus &lt;script type=&quot;math/tex&quot;&gt;\vert A \vert \le \vert B \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;A \prec B&lt;/script&gt;, it follows that there exist a one-to-one function &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A \precsim B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is finite it follows
+from part(a) that &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is finite and &lt;script type=&quot;math/tex&quot;&gt;\vert A \vert \le \vert B \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now suppose &lt;script type=&quot;math/tex&quot;&gt;\vert A \vert = \vert B \vert&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A \sim B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A \prec B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A \nsim B&lt;/script&gt;. Thus we have a contradiction.
+It follows that &lt;script type=&quot;math/tex&quot;&gt;\vert A \vert \ne \vert B \vert&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\vert A \vert \le \vert B \vert&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\vert A \vert \ne \vert B \vert&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\vert A \vert &lt; \vert B \vert %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f: A \to \mathcal P(A)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(a) = \{ X \in \mathcal P(A) \; \vert \; a \in X \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now we will show that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one. Suppose &lt;script type=&quot;math/tex&quot;&gt;a_1, a_2 \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(a_1) = f(a_2)&lt;/script&gt;. Clearly by definition of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;,
+it follows &lt;script type=&quot;math/tex&quot;&gt;\{a_1\} \in f(a_1)&lt;/script&gt;. Similarly &lt;script type=&quot;math/tex&quot;&gt;\{a_2\} \in f(a_2)&lt;/script&gt;. Note that all the elements of &lt;script type=&quot;math/tex&quot;&gt;f(a_1)&lt;/script&gt; must contain &lt;script type=&quot;math/tex&quot;&gt;a_1&lt;/script&gt;. 
+Thus every set in &lt;script type=&quot;math/tex&quot;&gt;f(a_1)&lt;/script&gt; has more than one element except the set &lt;script type=&quot;math/tex&quot;&gt;\{a_1\}&lt;/script&gt;. Similarly &lt;script type=&quot;math/tex&quot;&gt;\{a_2\}&lt;/script&gt; is the only set in &lt;script type=&quot;math/tex&quot;&gt;f(a_2)&lt;/script&gt; that
+contains one element. Since &lt;script type=&quot;math/tex&quot;&gt;f(a_1) = f(a_2)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;\{a_1\} = \{a_2\}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a_1 = a_2&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;A \precsim \mathcal P(A)&lt;/script&gt;. From Section-7.2, Ex-4, we know that &lt;script type=&quot;math/tex&quot;&gt;A \nsim \mathcal P(A)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A \prec \mathcal P(A)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We will prove this by induction.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Base Case:&lt;/p&gt;
+
+    &lt;p&gt;For &lt;script type=&quot;math/tex&quot;&gt;m = n+1&lt;/script&gt;, Thus &lt;script type=&quot;math/tex&quot;&gt;A_m = A_{n+1} = \mathcal P(A_n)&lt;/script&gt;. Using Ex-7 we have &lt;script type=&quot;math/tex&quot;&gt;A_n \prec \mathcal P(A_n)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A_n \prec A_m&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Induction Step:&lt;/p&gt;
+
+    &lt;p&gt;Suppose for &lt;script type=&quot;math/tex&quot;&gt;m &gt; n&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;A_n \prec A_m&lt;/script&gt;.&lt;/p&gt;
+
+    &lt;p&gt;We know from Ex-7 that &lt;script type=&quot;math/tex&quot;&gt;A_m \prec \mathcal P(A_m)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A_{m+1} = \mathcal P(A_m)&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A_m \prec A_{m+1}&lt;/script&gt;. Since 
+&lt;script type=&quot;math/tex&quot;&gt;\prec&lt;/script&gt; is transitive and &lt;script type=&quot;math/tex&quot;&gt;A_n \prec A_m&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_m \prec A_{m+1}&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;A_n \prec A_{m+1}&lt;/script&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;S = \cup_{i \in \mathbb N} A_n&lt;/script&gt;. Clearly this set is not equinumerous with any set &lt;script type=&quot;math/tex&quot;&gt;A_n&lt;/script&gt;. Another example can be &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(S)&lt;/script&gt;.
+  Thus &lt;script type=&quot;math/tex&quot;&gt;S_{n+1} = \mathcal P(S_n)&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;n \in \mathbb N&lt;/script&gt;. Thus there are infinite possible sets which are not equinumerous with &lt;script type=&quot;math/tex&quot;&gt;A_n&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f: (0,1] \to (0,1)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(x) = x/2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g : (0,1) \to (0,1]&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g(x) = x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;A = (0,1]&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B = (0,1)&lt;/script&gt;. Also we can define &lt;script type=&quot;math/tex&quot;&gt;g^{-1}: Rang(g) \to A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g^{-1}(b) = a&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g(a) = b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; are one-to-one. Thus by Cantor–Schröder–Bernstein Theorem, we can define a one-to-one and onto function 
+&lt;script type=&quot;math/tex&quot;&gt;h: (0,1] \to (0,1)&lt;/script&gt; such that:    &lt;br /&gt;
+- if &lt;script type=&quot;math/tex&quot;&gt;x \in X&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;h(x) = f(x) = x/2&lt;/script&gt;.    &lt;br /&gt;
+- if &lt;script type=&quot;math/tex&quot;&gt;x \in Y&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;h(x) = g^{-1}(x) = x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;X = \cup_{i \in \mathbb N} A_i&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_1 = A \setminus Rang(g)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_{n+1} = g(A_n)&lt;/script&gt;.   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;Y = A \setminus X&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lets compute &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;A_1 = A \setminus Rang(g) = (0,1] \setminus (0,1) = [1] = \{1\}&lt;/script&gt;.      &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_2 = g(f(A_1)) = g(\{1/2\}) = \{1/2\}&lt;/script&gt;.     &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_3 = g(f(A_2)) = g(\{1/4\}) = \{1/4\}&lt;/script&gt;.     &lt;br /&gt;
+….      &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A_n = g(f(A_{n-1})) = \{1/2^{n-1}\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;X = \cup_{i \in \mathbb N} A_i = \{1, 1/2, 1/4, 1/8, .... 1/2^{n-1}, .... \} = \{ 1/2^i \; \vert \; 0 \le i \le 1 \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;Y = A \setminus X = (0,1] \setminus \{1\} = (0,1)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;h: (0,1] \to (0,1)&lt;/script&gt; such that:         &lt;br /&gt;
+- if &lt;script type=&quot;math/tex&quot;&gt;x \in X&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;h(x) = x/2&lt;/script&gt;.    &lt;br /&gt;
+- if &lt;script type=&quot;math/tex&quot;&gt;x \in Y&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;h(x) = x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;\mathcal E = \{ R \; \vert \; R \text{ is an equivalence relation on } \mathbb Z^+ \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;\mathcal E \subseteq \mathcal P(Z^+ \times Z^+)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\mathcal E \prec \mathcal P(Z^+ \times Z^+)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;Z^+ \sim Z^+ \times Z^+&lt;/script&gt;,
+it follows from Section-7.1, Ex-5 that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(Z^+ \times Z^+) \sim \mathcal P(Z^+)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\mathcal E \prec \mathcal P(Z^+)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;X_1, X_2 \in \mathcal P(A)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(X_1) = f(X_2)&lt;/script&gt;. Thus it follows that:        &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\{ X_1 \cup \{1\} , (A \setminus X_1) \cup \{2\} \} = \{ X_2 \cup \{1\} , (A \setminus X_2) \cup \{2\} \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus either &lt;script type=&quot;math/tex&quot;&gt;\{ X_1 \cup \{1\} = (A \setminus X_2) \cup \{2\}&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;X_1 \cup \{1\} = X_2 \cup \{1\}&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;1 \notin (A \setminus X_2) \cup \{2\}&lt;/script&gt;,
+it follows that &lt;script type=&quot;math/tex&quot;&gt;\{ X_1 \cup \{1\} \ne (A \setminus X_2) \cup \{2\}&lt;/script&gt;. Thus the only possible case is &lt;script type=&quot;math/tex&quot;&gt;X_1 \cup \{1\} = X_2 \cup \{1\}&lt;/script&gt;. Thus
+&lt;script type=&quot;math/tex&quot;&gt;X_1 = X_2&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We have &lt;script type=&quot;math/tex&quot;&gt;\mathcal P&lt;/script&gt; is the set of all partitions of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\mathcal E&lt;/script&gt; is the set of all equivalence relation of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.
+As we saw in section-5.3, we can define a one-to-one and onto function &lt;script type=&quot;math/tex&quot;&gt;f: \mathcal P \to \mathcal E&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(X) = \cup_{X \in \mathcal P} (X \times X)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;\mathcal P \sim \mathcal E&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now from part(b) we have &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \precsim \mathcal P&lt;/script&gt;. Also since &lt;script type=&quot;math/tex&quot;&gt;A \subseteq Z^+&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;Z^+ \sim A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(Z^+) \sim \mathcal P(A)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(Z^+) \sim \mathcal P(A)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \precsim \mathcal P&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(Z^+) \precsim \mathcal P&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;P \sim \mathcal E&lt;/script&gt;, 
+it follows that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(Z^+) \precsim \mathcal E&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now from part(a) we have &lt;script type=&quot;math/tex&quot;&gt;\mathcal E \precsim \mathcal P(Z^+)&lt;/script&gt;. Thus by applying Cantor–Schröder–Bernstein Theorem, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;\mathcal E \sim \mathcal P(Z^+)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;TODO[This is not complete.]&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;A_1 = \{a\}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A_2 = A \setminus A_1&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;A = A_1 \cup A_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; contains atleast two elements, by definition &lt;script type=&quot;math/tex&quot;&gt;A_1 \ne \phi&lt;/script&gt; and also &lt;script type=&quot;math/tex&quot;&gt;A_2 \ne \phi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;A_1 \cap A_2 = \phi&lt;/script&gt;, thus it follows from Section-7.2, Ex-7, that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) = \mathcal P(A_1 \cup A_2) = \mathcal P(A_1) \times \mathcal P(A_2)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;A_1 \subseteq A&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_1) \subseteq \mathcal P(A)&lt;/script&gt;. Similarly since &lt;script type=&quot;math/tex&quot;&gt;A_2 \subseteq A&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_2) \subseteq \mathcal P(A)&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_1) \subseteq \mathcal P(A)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_2) \subseteq \mathcal P(A)&lt;/script&gt;, it follows:     &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_1) \times \mathcal P(A_2) \; \subseteq \; \mathcal P(A) \times \mathcal P(A)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_1) \times \mathcal P(A_2) \; \subseteq \; \mathcal P(A) \times \mathcal P(A)&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A_1) \times \mathcal P(A_2) \; \prec \; \mathcal P(A) \times \mathcal P(A)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;But we have already seen that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \sim \mathcal P(A_1) \times \mathcal P(A_2)&lt;/script&gt;. Thus it follows that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \; \prec \; \mathcal P(A) \times \mathcal P(A)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now if we also prove that &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \times \mathcal P(A) \; \prec \; \mathcal P(A)&lt;/script&gt;, then applying Cantor–Schröder–Bernstein theorem will complete the proof.&lt;/p&gt;
+
+&lt;p&gt;I got stuck in proving this part: &lt;script type=&quot;math/tex&quot;&gt;\mathcal P(A) \times \mathcal P(A) \; \prec \; \mathcal P(A)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;TODO.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; is a set of nondegenerate intervals and &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; is pairwise disjoint.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;I \in \mathcal F&lt;/script&gt; is an arbitrary interval. Since it is nondegenerate interval, it must contains &lt;script type=&quot;math/tex&quot;&gt;\ge 2&lt;/script&gt; real numbers. We know 
+from lemma 7.3.4, that it between every two real numbers, there exist a rational number. Thus we can define a non-empty set:     &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+Q_I = \{ q \; \vert \; if(x,y \in I) \text{ then } q \text{ is a rational number such that } x &lt; q &lt; y \} %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;Q_I \ne \phi&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Q_I \subseteq \mathbb Q&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g: \mathcal F \; \to \; \mathcal P(\mathbb Q) \setminus \{ \phi \}&lt;/script&gt; such that:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;g(I) = Q_I&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now we will prove that &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is one-to-one:&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;I_1, I_2 \in \mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g(I_1) = g(I_2)&lt;/script&gt;. Now we will prove by contradiction that &lt;script type=&quot;math/tex&quot;&gt;I_1 = I_2&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;I_1 \ne I_2&lt;/script&gt;.
+Since &lt;script type=&quot;math/tex&quot;&gt;\mathcal F&lt;/script&gt; is pairwise disjoint, it follows that &lt;script type=&quot;math/tex&quot;&gt;I_1 \cap I_2 = \phi&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;q \in g(I_1)&lt;/script&gt;. It follows that for some &lt;script type=&quot;math/tex&quot;&gt;x_1, y_1 \in I_1&lt;/script&gt;,
+we have &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+x_1 &lt; q &lt; y_1 %]]&gt;&lt;/script&gt;. Thus by definition of interval, &lt;script type=&quot;math/tex&quot;&gt;q \in I_1&lt;/script&gt;. Similarly since &lt;script type=&quot;math/tex&quot;&gt;q \in g(I_2)&lt;/script&gt;, we can prove that &lt;script type=&quot;math/tex&quot;&gt;q \in I_2&lt;/script&gt;. Thus
+&lt;script type=&quot;math/tex&quot;&gt;q \in I_1 \cap I_2&lt;/script&gt;. But &lt;script type=&quot;math/tex&quot;&gt;I_1 \cap I_2 = \phi&lt;/script&gt;. Thus we have a contradiction. It follows that &lt;script type=&quot;math/tex&quot;&gt;I_1 = I_2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is one-to-one.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\mathbb Q&lt;/script&gt; is denumerable, we can define a one-to-one function &lt;script type=&quot;math/tex&quot;&gt;f: \mathbb Q \to Z^+&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus we can define a funnction &lt;script type=&quot;math/tex&quot;&gt;h: \mathcal F \to Z^+&lt;/script&gt; as:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;h(I) = \text{ smallest element of } \{ f(q) \; \vert \; q \in g(I) \}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is one-to-one, it follows that &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is also one-to-one.&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;\mathcal F \sim Z^+&lt;/script&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;TODO.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Wed, 27 Jan 2016 00:00:00 +0530</pubDate>
+        <link>http://inchmeal.io/2016/01/27/how-to-prove-it-ch-7-sec-3.html</link>
+        <guid isPermaLink="true">http://inchmeal.io/2016/01/27/how-to-prove-it-ch-7-sec-3.html</guid>
+        
+        <category>mathematics</category>
+        
+        <category>howToProveIt</category>
+        
+        
+      </item>
     
       <item>
         <title>How To Prove It, Ch-7 Sec-7.2, Countable and Uncountable Sets</title>
@@ -6067,376 +6468,6 @@ that &lt;script type=&quot;math/tex&quot;&gt;f^{-1}(Y \cup Z) \; = \; f^{-1}(Y) 
         <pubDate>Tue, 15 Dec 2015 00:00:00 +0530</pubDate>
         <link>http://inchmeal.io/2015/12/15/how-to-prove-it-ch-5-sec-4.html</link>
         <guid isPermaLink="true">http://inchmeal.io/2015/12/15/how-to-prove-it-ch-5-sec-4.html</guid>
-        
-        <category>mathematics</category>
-        
-        <category>howToProveIt</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How To Prove It, Ch-5 Sec-5.3, Inverses of Functions</title>
-        <description>&lt;p&gt;This post contains solutions of Chapter - 5, Section - 5.3, Inverses of Functions.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f : A \to B&lt;/script&gt;. If &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto, then &lt;script type=&quot;math/tex&quot;&gt;f^{-1}: B \to A&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is a function from &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, and suppose that &lt;script type=&quot;math/tex&quot;&gt;f^{−1}&lt;/script&gt; is a function from &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;. 
-Then &lt;script type=&quot;math/tex&quot;&gt;f^{−1} \circ f = i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;f \circ f^{−1} = i_B&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f : A \to B&lt;/script&gt;. Then,
-    &lt;ul&gt;
-      &lt;li&gt;If there is a function &lt;script type=&quot;math/tex&quot;&gt;g : B \to A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one.&lt;/li&gt;
-      &lt;li&gt;If there is a function &lt;script type=&quot;math/tex&quot;&gt;g : B \to A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is onto.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f : A \to B&lt;/script&gt;. Then the following statements are equivalent.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto.&lt;/li&gt;
-      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;f^{−1}: B \to A&lt;/script&gt;.&lt;/li&gt;
-      &lt;li&gt;There is a function &lt;script type=&quot;math/tex&quot;&gt;g : B \to A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;g = f^{−1}&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Required function &lt;script type=&quot;math/tex&quot;&gt;f^{-1} = \{(p,q) \in P \times P \, \vert \, \text{the person } p \text{ is sitting immediately to the left of the person q} \}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Required function &lt;script type=&quot;math/tex&quot;&gt;F^{-1}(X) = A/X&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln3&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g(x) = \frac {3x-5} 2&lt;/script&gt;. Thus we have:   &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f (x) = g(f(x)) = \frac {3 \times {\frac {2x+5} 3 } - 5} 2&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow  g \circ f (x) = \frac {2x+5 - 5} 2&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow  g \circ f (x) = \frac {2x} 2&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow  g \circ f (x) = x&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathbb R}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Also, we have &lt;script type=&quot;math/tex&quot;&gt;f \circ g(x) = \frac {2 \times {\frac {3x - 5} 2} + 5} 3&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow f \circ g(x) = \frac {3x - 5 + 5} 3&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow f \circ g(x) = \frac {3x} 3&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow f \circ g(x) = x&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathbb R}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathbb R}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathbb R}&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto and &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g(x) = {\frac {x+3} 2}^{\frac 1 3}&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;g(x)&lt;/script&gt; is defined for all values of &lt;script type=&quot;math/tex&quot;&gt;x \in \mathbb R&lt;/script&gt;(cube root of negative number
-is defined). Thus &lt;script type=&quot;math/tex&quot;&gt;g: \mathbb R \to \mathbb R&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now, &lt;script type=&quot;math/tex&quot;&gt;g \circ f(x) = {(\frac {(2x^3 - 3) +3} 2)}^{\frac 1 3}&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f(x) = {(\frac {2x^3} 2)}^{\frac 1 3}&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f(x) = {(x^3)}^{\frac 1 3}&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f(x) = x&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathbb R}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Also, &lt;script type=&quot;math/tex&quot;&gt;f \circ g(x) = 2({(\frac {x + 3} 2)^{\frac 1 3}})^3 - 3&lt;/script&gt;.      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow f \circ g(x) = 2{\frac {x + 3} 2} - 3&lt;/script&gt;.      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow f \circ g(x) = x + 3 - 3&lt;/script&gt;.      &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow f \circ g(x) = x&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathbb R}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathbb R}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathbb R}&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto and &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln5&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g(x) = 2 - \log x&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;g: R^+ \to R&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;We have &lt;script type=&quot;math/tex&quot;&gt;g \circ f(x) = 2 - \log 10^{2-x} = 2 - (2 - x) = x&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathbb R}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Also, we have &lt;script type=&quot;math/tex&quot;&gt;f \circ g(x) = 10^{2 - (2 - \log x)} = 10^{\log x} = x&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathbb R^+}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathbb R^+}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathbb R}&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto and &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g(x) = \frac {2x} {x - 3}&lt;/script&gt; is a function from &lt;script type=&quot;math/tex&quot;&gt;B = \mathbb R \setminus \{ 3 \}&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\mathbb R&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;g(x) \ne 2&lt;/script&gt; for any value of
-&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. Thus we can say that &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;B = \mathbb R \setminus \{ 3 \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A = \mathbb R \setminus \{ 2 \}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now, &lt;script type=&quot;math/tex&quot;&gt;g \circ f(x) = \frac {2{\frac {3x} {x-2} } } { { \frac {3x} {x-2} } - 3 }&lt;/script&gt;.  &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f(x) = \frac {\frac {6x} {x-2} } { { \frac {3x - 3(x-2)} {x-2} } }&lt;/script&gt;.    &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f(x) = \frac {\frac {6x} {x-2} } { { \frac {6} {x-2} } }&lt;/script&gt;.    &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f(x) = \frac {6x} 6&lt;/script&gt;.    &lt;br /&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\Rightarrow g \circ f(x) = x&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus we have &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Similarly it can be shown that, &lt;script type=&quot;math/tex&quot;&gt;f \circ g(x) = i_B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto and &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus &lt;strong&gt;(a)&lt;/strong&gt; and &lt;strong&gt;(b)&lt;/strong&gt; both are solved.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln7&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To prove &lt;script type=&quot;math/tex&quot;&gt;f = f_2 \circ f_1&lt;/script&gt;, we need to prove that &lt;script type=&quot;math/tex&quot;&gt;\forall x \in \mathbb R (f(x) = f_2 \circ f_1 (x))&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in \mathbb R&lt;/script&gt;. Thus
-&lt;script type=&quot;math/tex&quot;&gt;f_2 \circ f_1(x) = f_2 (f_1(x)) = \frac {f_1(x)} 5 = \frac {x+7} 5 = f(x)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, &lt;script type=&quot;math/tex&quot;&gt;f = f_2 \circ f_1&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Clearly &lt;script type=&quot;math/tex&quot;&gt;{f_1}^{-1}(x) = x - 7&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;{f_2}^{-1}(x) = 5x&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;{f_1}^{-1} \circ {f_2}^{-1}(x) = {f_2}^{-1}(x) - 7 = 5x - 7 = f^{-1}(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln8&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is an arbitrary element of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. Let &lt;script type=&quot;math/tex&quot;&gt;a = f^{-1}(b) \in A&lt;/script&gt;. Then &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in f^{-1}&lt;/script&gt;, so &lt;script type=&quot;math/tex&quot;&gt;(a, b) \in f&lt;/script&gt; and therefore &lt;script type=&quot;math/tex&quot;&gt;f(a) = b&lt;/script&gt;.   &lt;br /&gt;
-Thus, &lt;script type=&quot;math/tex&quot;&gt;(f \circ f^{-1})(b) = f( f^{-1} (b)) = f(a) = b = i_B(b)&lt;/script&gt;.       &lt;br /&gt;
-Since &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; was arbitrary, we have shown that &lt;script type=&quot;math/tex&quot;&gt;\forall b \in B(( f^{−1} \circ f)(b) = i_B(b))&lt;/script&gt;, so &lt;script type=&quot;math/tex&quot;&gt;f \circ f^{−1} = i_B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f = (f^{-1})^{-1}&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;f \circ f^{-1} = (f^{-1})^{-1} \circ f^{-1} = g^{-1} \circ g&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt;. 
-Thus &lt;script type=&quot;math/tex&quot;&gt;g^{-1} \circ g = i_B&lt;/script&gt;(using the first half of the proof as required in the solution). It follows &lt;script type=&quot;math/tex&quot;&gt;f \circ f^{-1} = i_B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln9&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(b,b) \in i_B&lt;/script&gt;. It follows that
-&lt;script type=&quot;math/tex&quot;&gt;(b,b) \in f \circ g&lt;/script&gt;. Thus There exist an element &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in g&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in f&lt;/script&gt;. Thus there exist an element &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt;
-such that &lt;script type=&quot;math/tex&quot;&gt;f(a) = b&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;\forall b \in B \exists a \in A ( f(a) = b )&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is onto.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln10&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;)Suppose &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in B \times A&lt;/script&gt; is an arbitrary pair in &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(b,b) \in i_B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;, it follows
-  &lt;script type=&quot;math/tex&quot;&gt;(b,b) \in f \circ g&lt;/script&gt;. Thus for some element &lt;script type=&quot;math/tex&quot;&gt;a&#39; \in A&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(b,a&#39;) \in g&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(a&#39;,b) \in f&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is a function and &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in g&lt;/script&gt;, it follows
-  &lt;script type=&quot;math/tex&quot;&gt;a = a&#39;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in f&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in f^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g \subseteq f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in B \times A&lt;/script&gt; is an arbitrary pair in &lt;script type=&quot;math/tex&quot;&gt;f^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in f&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(a,a) \in i_A&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt;, it follows
-  &lt;script type=&quot;math/tex&quot;&gt;(a,a) \in g \circ f&lt;/script&gt;. Thus for some element &lt;script type=&quot;math/tex&quot;&gt;b&#39; \in B&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;(a,b&#39;) \in f&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(b&#39;,a) \in g&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is a function and &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in f&lt;/script&gt;, it follows
-  &lt;script type=&quot;math/tex&quot;&gt;b = b&#39;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in g&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f^{-1} \subseteq g&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f^{-1} \subseteq g&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \subseteq f^{-1}&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln11&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is onto by the theorem(3.1 in above summary). It is given that
-&lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one. Thus &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto. Thus &lt;script type=&quot;math/tex&quot;&gt;f^{-1} \circ f = i_A&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus, &lt;script type=&quot;math/tex&quot;&gt;g = i_A \circ g = (f^{-1} \circ f) \circ g = f^{-1} \circ (f \circ g) = f^{-1} \circ i_B = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one by the theorem(3.2 in above summary). It is given that
-&lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is onto. Thus &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto. Thus &lt;script type=&quot;math/tex&quot;&gt;f \circ f^{-1} = i_B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus, &lt;script type=&quot;math/tex&quot;&gt;g = g \circ i_B = g \circ (f \circ f^{-1})= (g \circ f) \circ f^{-1} = i_A \circ f^{-1} = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;, it follows from theorem(3rd theorem form above summary) that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is onto and &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is one-to-one.&lt;/p&gt;
-
-&lt;p&gt;Proof for &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is not onto:&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is onto. Thus &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is one-to-one and onto. Thus by theorem, &lt;script type=&quot;math/tex&quot;&gt;g^{-1} = f&lt;/script&gt;. Applying &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; on both sides, &lt;script type=&quot;math/tex&quot;&gt;g \circ g^{-1} = g \circ f&lt;/script&gt;.
-Since &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is one-to-one and onto, &lt;script type=&quot;math/tex&quot;&gt;g \circ g^{-1} = i_A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt;. But it contradicts with the given that &lt;script type=&quot;math/tex&quot;&gt;g \circ f \ne i_A&lt;/script&gt;. Thus we can
- conclude that &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is not onto.&lt;/p&gt;
-
-&lt;p&gt;Proof for &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is not one-to-one:&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one. Thus &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto. Thus by theorem, &lt;script type=&quot;math/tex&quot;&gt;f^{-1} = g&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f^{-1} \circ f = g \circ f&lt;/script&gt;.
-Since &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto, &lt;script type=&quot;math/tex&quot;&gt;f^{-1} \circ f = i_A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_A&lt;/script&gt;. But it contradicts with the given that &lt;script type=&quot;math/tex&quot;&gt;g \circ f \ne i_A&lt;/script&gt;. Thus we can
- conclude that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is not one-to-one.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln12&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f: A \to B&lt;/script&gt; is one-to-one. Suppose &lt;script type=&quot;math/tex&quot;&gt;B&#39; = Ran(f)&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;B&#39; \subseteq B&lt;/script&gt;. Now we shall prove &lt;script type=&quot;math/tex&quot;&gt;f^{-1}: B&#39; \to A&lt;/script&gt;. Thus we shall do it
-by proving existence and uniqueness:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Existence:&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;b \in B&#39;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;b \in Ran(f)&lt;/script&gt;. It follows that there exists &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(a,b) \in f&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in f^{-1}&lt;/script&gt;.
-Thus there exist &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in f^{-1}&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is arbitrary, it follows &lt;script type=&quot;math/tex&quot;&gt;\forall b \in B&#39; \exists a \in A ((b,a) \in f^{-1})&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Uniqueness:&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;b \in B&#39;&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;(b,a_1) \in f^{-1}, (b,a_2) \in f^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(a_1,b) \in f&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(a_2,b) \in f&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one, it follows
-  &lt;script type=&quot;math/tex&quot;&gt;a_1 = a_2&lt;/script&gt;. Thus there exists a unique element &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;f^{-1}: B&#39; \to A&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln13&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We have &lt;script type=&quot;math/tex&quot;&gt;R = \{ (x,y) \in A \times A \, \vert \, f(x) = f(y) \}&lt;/script&gt;. It follows that &lt;script type=&quot;math/tex&quot;&gt;\forall x \in A \forall y \in A (xRy \leftrightarrow f(x) = f(y))&lt;/script&gt;. Clearly we 
-have &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is compatible with &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, since &lt;script type=&quot;math/tex&quot;&gt;\forall x \in A \forall y \in A(xRy \to f(x) = f(y))&lt;/script&gt;. Thus it follows directly from
-Ex18 from sec-5.1, that &lt;script type=&quot;math/tex&quot;&gt;h = \{ (X,y) \in A/R \times B \, \vert \, \exists x \in X (f(x) = y) \}&lt;/script&gt; is a function such that &lt;script type=&quot;math/tex&quot;&gt;h([x]_R) = f(x)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\forall x \in A \forall y \in A (xRy \leftrightarrow f(x) = f(y))&lt;/script&gt;, it follows from ex16 from sec5.2 that &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is one-to-one.&lt;/p&gt;
-
-&lt;p&gt;Proof for &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is onto. Suppose &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is onto, it follows that there exists an &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f(a) = b&lt;/script&gt;. Since 
-&lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is an equivalence relation, it follows &lt;script type=&quot;math/tex&quot;&gt;[a]_R \in A/R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;h([a]_R) = f(a) = b&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is arbitrary, it follows that
-for every &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt;, there exists an element &lt;script type=&quot;math/tex&quot;&gt;[a]_R \in A/R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; is onto.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;h: A/R \to B&lt;/script&gt; is one-to-one and onto, it follows that &lt;script type=&quot;math/tex&quot;&gt;h^{-1}: B \to A/R&lt;/script&gt; exists. Suppose &lt;script type=&quot;math/tex&quot;&gt;(b,X) \in h^{-1}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(X,b) \in h&lt;/script&gt;.
-  It follows there exist &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;[x]_R = X&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;b = f(x)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;([x]_R,b) \in h&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y \in [x]_R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;yRx&lt;/script&gt;, 
-  or &lt;script type=&quot;math/tex&quot;&gt;f(y) = f(x)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f(x) = b&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;f(y) = b&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;\forall y \in [x]_R (f(y) = b)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;X = [x]_R&lt;/script&gt;, it follows
-  &lt;script type=&quot;math/tex&quot;&gt;\forall y \in X (f(y) = b)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;(b,X) \in h^{-1}&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;h^{-1}(b) = \{ y \in A \, \vert \, f(y) = b \}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(d)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;It seems like there is a little typo in the question, instead of &lt;script type=&quot;math/tex&quot;&gt;\forall b \in B(g(b) \in h(b))&lt;/script&gt;, it seems it actually should be
-&lt;script type=&quot;math/tex&quot;&gt;\forall b \in B(g(b) \in h^{-1}(b))&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\to&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt;. Thus there must exist an element &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in g&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;g(b) = a&lt;/script&gt;.
-Thus &lt;script type=&quot;math/tex&quot;&gt;f(g(b)) = f(a)&lt;/script&gt;, which is equivalent to &lt;script type=&quot;math/tex&quot;&gt;f \circ g(b) = f(a)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;b = f(a)&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;f(a) = b&lt;/script&gt;. Thus
- from part(c) of this solution it follows that &lt;script type=&quot;math/tex&quot;&gt;a \in h^{-1}(b)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a = g(b)&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;g(b) \in h^{-1}(b)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is arbitrary, it 
- follows &lt;script type=&quot;math/tex&quot;&gt;\forall b \in B (g(b) \in h^{-1}(b))&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;\leftarrow&lt;/script&gt;) Suppose &lt;script type=&quot;math/tex&quot;&gt;\forall b \in B (g(b) \in h^{-1}(b))&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; is an arbitrary element. Thus there must exist an element &lt;script type=&quot;math/tex&quot;&gt;a \in A&lt;/script&gt; such 
-that &lt;script type=&quot;math/tex&quot;&gt;(b,a) \in g&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;g(b) = a&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;a \in h^{-1}(b)&lt;/script&gt;. By part(c) it follows that &lt;script type=&quot;math/tex&quot;&gt;f(a) = b&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;a = g(b)&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;f(g(b)) = b&lt;/script&gt;.
- Thus &lt;script type=&quot;math/tex&quot;&gt;f \circ g(b) = b&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln14&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;x \in A&#39;&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x \in Ran(g)&lt;/script&gt;. It follows that there exist an element &lt;script type=&quot;math/tex&quot;&gt;b \in B&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g(b) = x&lt;/script&gt;. Thus we have 
-&lt;script type=&quot;math/tex&quot;&gt;g \circ f(x) = g(f(x)) = g(f(g(b))) = g(f \circ g(b)) = g(i_B(b)) = g(b) = x&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is arbitrary, it follows that &lt;script type=&quot;math/tex&quot;&gt;g \circ f(x) = x&lt;/script&gt; for
- all &lt;script type=&quot;math/tex&quot;&gt;x \in A&#39;&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We know from Sec5.1 Ex-7, &lt;script type=&quot;math/tex&quot;&gt;f \upharpoonright A&#39; = f&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright A&#39;) \circ g = i_B&lt;/script&gt;. Also from
- part(a) of this solution we have &lt;script type=&quot;math/tex&quot;&gt;g \circ (f \upharpoonright A&#39;) = i_{A&#39;}&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f \upharpoonright A&#39;&lt;/script&gt; is one-to-one and onto and &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright A&#39;)^{-1} = g&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln15&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;A&#39; = Ran(g)&lt;/script&gt;. Thus clearly &lt;script type=&quot;math/tex&quot;&gt;A&#39; = B&lt;/script&gt;. Now with &lt;script type=&quot;math/tex&quot;&gt;A&#39; = Ran(g)&lt;/script&gt;, it follows from Soln14(b) that &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright A&#39;)^{-1} = g&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;A&#39; = B&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright B)^{-1} = g&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln16&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We have &lt;script type=&quot;math/tex&quot;&gt;f(x) = 4x - x^2&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;y = f(x)&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;4x - x^2 = y&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;x^2 -4x +y = 0&lt;/script&gt;. It is a quadratic equation, thus we have
-&lt;script type=&quot;math/tex&quot;&gt;x = 2 \pm \sqrt {4-y}&lt;/script&gt;. Clearly &lt;script type=&quot;math/tex&quot;&gt;y \le 4&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;B = \{ y \in \mathbb R \, \vert \, y \le 4 \}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;g: B \to A&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;g(x) = 2 + \sqrt {4-x}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;B = \{ x \in \mathbb R \, \vert \, x \le 4 \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;A = \{x \in \mathbb R \, \vert \, x \ge 2 \}&lt;/script&gt;. 
-Thus we have &lt;script type=&quot;math/tex&quot;&gt;g \circ f(x) = g(f(x)) = 2 + \sqrt {4-f(x)} = 2 + \sqrt {4 - (4x - x^2)} = 2 + \sqrt {4 - 4x + x^2)} = 2 + \sqrt {(x-2)^2} = 2 + x - 2 = x&lt;/script&gt;.
-Thus &lt;script type=&quot;math/tex&quot;&gt;g \circ f(x) = i_B&lt;/script&gt;.   &lt;br /&gt;
-Similarly &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright A) \circ g(x) = 4g(x) - (g(x))^2 = g(x)(4 - g(x))&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright A) \circ g(x) = (2 + \sqrt {4-x})(4 - 2 - \sqrt {4-x})) = (2 + \sqrt {4-x})(2 - \sqrt {4-x}) = 2^2 - (\sqrt {4-x})^2 = x&lt;/script&gt;.
-Thus &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright A) \circ g(x) = i_A&lt;/script&gt;. Now from Soln14(b) we have &lt;script type=&quot;math/tex&quot;&gt;(f \upharpoonright A)^{-1} = g&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln17&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We shall prove &lt;script type=&quot;math/tex&quot;&gt;f = g^{-1}&lt;/script&gt; by proving that &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathcal S}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathcal P}&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;\mathcal P&lt;/script&gt; is set of
-all partial orders and &lt;script type=&quot;math/tex&quot;&gt;\mathcal S&lt;/script&gt; is set of all strict partial order.&lt;/p&gt;
-
-&lt;p&gt;Proof of &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathcal S}&lt;/script&gt;:&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R \in \mathcal S&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is strict partial order. Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;i_{\mathcal A}&lt;/script&gt; are disjoint. It follows &lt;script type=&quot;math/tex&quot;&gt;f \circ g(R) = f(g(R)) = (R \cup i_A) \setminus i_A = R \setminus i_A&lt;/script&gt;.
-Since &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;i_A&lt;/script&gt; are disjoint, it follows &lt;script type=&quot;math/tex&quot;&gt;f \circ g (R) = R \setminus i_A = R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f \circ g = i_{\mathcal S}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Proof of &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathcal P}&lt;/script&gt;:&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;R \in \mathcal P&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is partial order. Thus &lt;script type=&quot;math/tex&quot;&gt;i_{\mathcal A} \subseteq R&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;g \circ f(R) = g(f(R)) = (R \setminus i_A) \cup i_A = R \cup i_A&lt;/script&gt;.
-Since &lt;script type=&quot;math/tex&quot;&gt;i_A \subseteq R&lt;/script&gt;, it follows &lt;script type=&quot;math/tex&quot;&gt;g \circ f (R) = R \cup i_A = R&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g \circ f = i_{\mathcal P}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is one-to-one and onto and &lt;script type=&quot;math/tex&quot;&gt;g = f^{-1}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Soln18&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(a)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To prove &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is an equivalence relation, we need to prove that &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is reflexive, symmetric and transitive.&lt;/p&gt;
-
-&lt;p&gt;&lt;u&gt;Reflexive:&lt;/u&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f \in \mathcal F&lt;/script&gt;. Suppose &lt;script type=&quot;math/tex&quot;&gt;h = i_A&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f = i_A \circ f \i_A&lt;/script&gt;, or &lt;script type=&quot;math/tex&quot;&gt;f = (i_A)^{-1} \circ f \circ i_A&lt;/script&gt;. It follows &lt;script type=&quot;math/tex&quot;&gt;fRf&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is reflexive.&lt;/p&gt;
-
-&lt;p&gt;&lt;u&gt;Symmetric:&lt;/u&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f,g \in \mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;fRg&lt;/script&gt;. Thus there exist an &lt;script type=&quot;math/tex&quot;&gt;h \in \mathcal P&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f = h^{-1} \circ g \circ h&lt;/script&gt;. It follows
-&lt;script type=&quot;math/tex&quot;&gt;h \circ f = g \circ h&lt;/script&gt;(by applying h on both sides). Similarly taking value corresponding to &lt;script type=&quot;math/tex&quot;&gt;h^{-1}&lt;/script&gt;  on both sides, &lt;script type=&quot;math/tex&quot;&gt;h \circ f \circ h^{-1} = g \circ h \circ h^{-1} = g&lt;/script&gt;.
- Thus &lt;script type=&quot;math/tex&quot;&gt;gRf&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is symmetric.&lt;/p&gt;
-
-&lt;p&gt;&lt;u&gt;Transitive:&lt;/u&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f,g,h \in \mathcal F&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;fRg&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;gRh&lt;/script&gt;. Thus for some &lt;script type=&quot;math/tex&quot;&gt;h_1, h_2 \in \mathcal P&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;f = h_1^{-1} \circ g \circ h_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;g = h_2^{-1} \circ h \circ h_2&lt;/script&gt;.
-Thus we have &lt;script type=&quot;math/tex&quot;&gt;f = h_1^{-1} \circ (h_2^{-1} \circ h \circ h_2) \circ h_1 = (h_1^{-1} \circ h_2^{-1}) \circ h \circ (h_2 \circ h_1) = (h_2 \circ h_1)^{-1} \circ h \circ (h_2 \circ h_1)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;fRh&lt;/script&gt;.
-It follows &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is transitive.&lt;/p&gt;
-
-&lt;p&gt;Thus &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is an equivalence relation.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(b)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;fRg&lt;/script&gt;. Thus there exist an &lt;script type=&quot;math/tex&quot;&gt;h \in \mathcal P&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f = h^{-1} \circ g \circ h&lt;/script&gt;. Thus we have &lt;script type=&quot;math/tex&quot;&gt;f \circ f = (h^{-1} \circ g \circ h) \circ (h^{-1} \circ g \circ h)&lt;/script&gt;.
-Thus &lt;script type=&quot;math/tex&quot;&gt;f \circ f = h^{-1} \circ g \circ (h \circ h^{-1}) \circ g \circ h =  h^{-1} \circ g \circ i_A \circ g \circ h = h^{-1} \circ g \circ g \circ h&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f \circ fRg \circ g&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(c)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f(a) = a&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;fRg&lt;/script&gt;. Thus there exist an &lt;script type=&quot;math/tex&quot;&gt;h \in \mathcal P&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;f = h^{-1} \circ g \circ h&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;f(a) = a = h^{-1} \circ g \circ h(a)&lt;/script&gt;. Applying &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; on both sides,
-&lt;script type=&quot;math/tex&quot;&gt;h(a) = g \circ h(a)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g(h(a)) = h(a)&lt;/script&gt;. Thus &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; also has a fixed point = &lt;script type=&quot;math/tex&quot;&gt;h(a)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-</description>
-        <pubDate>Fri, 04 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://inchmeal.io/2015/12/04/how-to-prove-it-ch-5-sec-3.html</link>
-        <guid isPermaLink="true">http://inchmeal.io/2015/12/04/how-to-prove-it-ch-5-sec-3.html</guid>
         
         <category>mathematics</category>
         
