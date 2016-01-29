@@ -15,7 +15,8 @@
 	
 	<script>
 		MathJax.Hub.Config({
-			"HTML-CSS": { scale: 82 }
+			"HTML-CSS": { scale: 82 },
+			"displayAlign": "left"
 		});
 	</script>
 
@@ -146,7 +147,7 @@
           
           
               <li class="divider"></li>
-              <li class="active"><a href="http://inchmeal.io\index.html">Blog</a></li>
+              <li class="active"><a href="http://inchmeal.io\index.html">home</a></li>
           
         
 
@@ -157,7 +158,7 @@
           
           
               <li class="divider"></li>
-              <li><a href="http://inchmeal.io\archives/index.html">Archives</a></li>
+              <li><a href="http://inchmeal.io\archives/index.html">archives</a></li>
           
         
 
@@ -168,7 +169,7 @@
           
           
               <li class="divider"></li>
-              <li><a href="http://inchmeal.io\about/index.html">About</a></li>
+              <li><a href="http://inchmeal.io\about/index.html">about</a></li>
           
         
         
@@ -636,7 +637,6 @@ take a smaller set say \( 2, 3, 5 \) to find \( m = 2 \times 3 \times 5 + 1 = 31
 
 			
 			
-	<h3 id="comments" class="t60">Dialogue &amp; Discussion</h3>
 
 	<div id="disqus_thread"></div>
 	<script>
@@ -644,16 +644,25 @@ take a smaller set say \( 2, 3, 5 \) to find \( m = 2 \times 3 \times 5 + 1 = 31
 		 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 		 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
 		 */
+		var disqus_identifier = 'inchmeal';
 		/*
 		 var disqus_config = function () {
 		 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
 		 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		 };
 		 */
+		function typeset() {
+			MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+		}
+		function disqus_config() {
+			this.callbacks.onNewComment = [typeset];
+			this.callbacks.onInit = [typeset];
+		}
+
 		(function() { // DON'T EDIT BELOW THIS LINE
 			var d = document, s = d.createElement('script');
 
-			s.src = '//inchmeal.disqus.com/embed.js';
+			s.src = '//' + disqus_identifier + '.disqus.com/embed.js';
 
 			s.setAttribute('data-timestamp', +new Date());
 			(d.head || d.body).appendChild(s);
