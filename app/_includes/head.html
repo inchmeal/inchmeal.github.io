@@ -8,6 +8,7 @@
 	<title>{% if page.meta_title %}{{ page.meta_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/css/styles_inchmeal.css">
 	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/inchmeal_head.js"></script>
+	{% if page.loadMath %}
 	{% if site.dev %}
 	<script type="text/javascript"
 			src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -26,6 +27,7 @@
 			"displayAlign": "left"
 		});
 	</script>
+	{% endif %}
 
 	{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}
 	{% if site.bing_webmastertools_id %}<meta name="msvalidate.01" content="{{ site.bing_webmastertools_id }}" />{% endif %}
