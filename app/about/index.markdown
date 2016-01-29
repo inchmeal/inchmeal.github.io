@@ -1,5 +1,6 @@
 ---
-layout: about
+layout: page
+section: about
 title: About
 ---
 I enjoy doing the following:
@@ -12,7 +13,7 @@ I enjoy doing the following:
 
 Recently I am interested in learning Mathematics and AI.
 
-I found myself continously updating/changing my views about things.
+I find myself continuously updating/changing my views about things.
 
 I have relatively strong opinions and I believe in them unless proven otherwise.
 

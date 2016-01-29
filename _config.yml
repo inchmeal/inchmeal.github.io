@@ -42,7 +42,7 @@ markdown: kramdown
 permalink: date
 highlight: pygments
 excerpt_separator: "<!--more-->"
-include: ['.htaccess']
+include: ['.htaccess','.nojekyll']
 # Exclude these files from your production _site
 exclude:
     - _assets
@@ -54,7 +54,8 @@ exclude:
 # The language setting is used in /includes/header.html for html-settings
 language: "en"
 
-
+# Number of posts to show
+num_posts_home: 13
 
 #
 #       ____       ____            ____
@@ -81,7 +82,7 @@ defaults:
     values:
       show_meta: true   # Show metadata beneath all posts
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
-      comments: false
+      comments: true
 
 
 
@@ -165,8 +166,7 @@ msapplication_tilecolor:                "#fabb00"
 #
 # used in _includes/comments.html
 
-#disqus_shortname: inchmeal
-
+disqus_identifier: inchmeal
 
 #       ___                __      __  _
 #      /   |  ____  ____ _/ /_  __/ /_(_)_________

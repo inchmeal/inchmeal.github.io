@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '~> 2.5.2'
-gem 'sass', '>= 3.3'
-gem 'scss-lint', '~> 0.31.0'
-gem 'fontcustom', '~> 1.3.7'
+gem 'jekyll', '~> 3.1.0'
+gem 'sass', '>= 3.4.21'
+gem 'scss-lint', '~> 0.38.0'
+gem 'fontcustom', '~> 1.3.8'

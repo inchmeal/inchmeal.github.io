@@ -13,45 +13,56 @@ section: archives
 						<select class="tags-filter-box" multiple="true" placeholder="Tag1 & Tag2 & ...">
 						</select>
 				</div>
-				<!-- month-year labels -->
-				<h3 class="t30">Year</h3>
-				<hr class="tm5 b10"/>
-				<span>
-					{% assign count = 0 %}
-					{% for post in site.posts %}
-					  {% assign currentYear = post.date | date: "%B %Y" %}
-					  {% assign prevYear = post.previous.date | date: "%B %Y" %}
-					  {% assign count = count | plus: 1 %}
-					  {% if currentYear != prevYear %}
-					    <span class="radius info label">{{ currentYear }}({{ count }})</span>
-					    {% assign count = 0 %}
-					  {% endif %}
-					{% endfor %}
-				</span>
-			  <hr/>
-				<!-- end month-year labels -->
-				<h3 class="t30">Tags</h3>
-				<hr class="tm5 b10"/>
+				<hr class="show-for-small-only t20 b10"/>
 				<!-- tags lable -->
-				<!-- sort tags -->
-				{% capture tags %}
-				  {% for tag in site.tags %}
-				    {{ tag[0] }}##{{ tag[1].size}}$$
-				  {% endfor %}
-				{% endcapture %}
-				{% assign sortedTags = tags | split:'$$' | strip | sort %}
-				<!-- end sort tags -->
-				<span>
-					{% for tag in sortedTags %}
-					{% assign tagData = tag | split: '##' %}
-					{% if tagData.size >= 2 %}
-					<span class="radius info label">{{ tagData[0] }}({{ tagData[1] }})</span>
-					{% endif %}
-					{% endfor %}
-				</span>
+				<div class="show-for-medium-up">
+					<h3 class="t30">Tags</h3>
+					<hr class="tm5 b10"/>
 
-				<!-- end of label -->
-				<hr/>
+					<!-- sort tags -IMPORTANT- do not split below statement as it starts capturing new line which causes problems- -->
+					{% capture tagNamesAndCount %}{% for tag in site.tags %}{{ tag[0] }}##{{ tag[1].size}}$${% endfor %}{% endcapture %}
+
+					{% assign sortedTags = tagNamesAndCount | split:'$$' | sort %}
+					<!-- end sort tags -->
+					<span>
+						{% for tag in sortedTags %}
+						{% assign tagData = tag | split: '##' %}
+						{% if tagData.size >= 2 %}
+						<span class="radius info label">{{ tagData[0] }}({{ tagData[1] }})</span>
+						{% endif %}
+						{% endfor %}
+					</span>
+					<hr/>
+				</div>
+				<!-- end tags label-->
+				<!-- month-year labels -->
+				<div class="show-for-medium-up">
+					<h3 class="t30">Year</h3>
+					<hr class="tm5 b10"/>
+					<span>
+						{% assign count = 0 %}
+						{% for post in site.posts %}
+
+						  {% assign currentYear = post.date | date: "%Y" %}
+						  {% assign nextYear = post.next.date | date: "%Y" %}
+						  {% if currentYear != nextYear %}
+						  <h5 class="t10" style="color:#777">{{ currentYear }}</h5>
+						  {% endif %}
+
+						  {% assign currentMonth = post.date | date: "%B" %}
+						  {% assign currentMonthYear = post.date | date: "%Y %B" %}
+						  {% assign prevMonthYear = post.previous.date | date: "%Y %B" %}
+						  {% assign count = count | plus: 1 %}
+
+						  {% if currentMonthYear != prevMonthYear %}
+							<span class="radius info label">{{ currentMonth }}({{ count }})</span>
+							{% assign count = 0 %}
+						  {% endif %}
+						{% endfor %}
+					</span>
+					<hr/>
+				</div>
+				<!-- end month-year labels -->
 			</span>
 			</div>
 		</div>

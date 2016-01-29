@@ -4,7 +4,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="{{ domain }}{{ site.url }}/blog/index.html">
+          <a href="{{ domain }}{{ site.url }}/index.html">
             <img src="{{ site.urlimg }}/logo.png"/>
           </a>
         </h1>
@@ -37,7 +37,7 @@
           {% comment %}   If there are links for right side begin   {% endcomment %}
           {% if link.side == 'right' %}
               <li class="divider"></li>
-              <li{% if link.section == page.section %} class="active"{% endif %}><a href="{{ domain }}{{ site.baseurl }}\{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
+              <li{% if link.section == page.section %} class="active"{% endif %}><a href="{{ domain }}{{ site.baseurl }}/{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
           {% endif %}
         {% endfor %}
         {% comment %}   First loop finished 1   {% endcomment %}
@@ -66,7 +66,7 @@
 
           {% comment %}   If there are links for left side begin   {% endcomment %}
           {% if link.side == 'left' %}
-              <li{% if link.section == page.section %} class="active"{% endif %}><a href="{{ domain }}{{ site.baseurl }}{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
+              <li{% if link.section == page.section %} class="active"{% endif %}><a href="{{ domain }}{{ site.baseurl }}/{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
               <li class="divider"></li>
           {% endif %}
         {% endfor %}

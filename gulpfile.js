@@ -103,8 +103,8 @@ gulp.task('build', function(callback) {
 /**
  * Delete folders and files
  */
-gulp.task('delete', function(callback) {
-  del('build/assets', callback);
+gulp.task('delete', function() {
+  return del('build/assets');
 });
 
 /**
@@ -308,8 +308,7 @@ gulp.task('build:production', function(callback) {
     'css:production',
     'js:production',
     'images:production',
-    'fonts:production',
-    'copynojekyll:production'
+    'fonts:production'
   ],
   callback);
 });
@@ -379,12 +378,12 @@ gulp.task('index:production', function(callback){
 
 /**
  * Copy .nojekyll file to production folder
- */
+ *
 gulp.task('copynojekyll:production', function(){
   gulp.src('app/.nojekyll')
       .pipe(gulp.dest('build/production'));
 });
-
+*/
 
 /*******************************************************************************
  *

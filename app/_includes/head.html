@@ -12,6 +12,9 @@
 	<script type="text/javascript"
 			src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	{% else %}
 	<script type="text/javascript"
 			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -19,7 +22,8 @@
 	{% endif %}
 	<script>
 		MathJax.Hub.Config({
-			"HTML-CSS": { scale: 82 }
+			"HTML-CSS": { scale: 82 },
+			"displayAlign": "left"
 		});
 	</script>
 
