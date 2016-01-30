@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Archives"
-initChosen: true
 section: archives
 ---
 <div class="row t40">
@@ -13,7 +12,6 @@ section: archives
 						<select class="tags-filter-box" multiple="true" placeholder="Tag1 & Tag2 & ...">
 						</select>
 				</div>
-				<hr class="show-for-small-only t20 b10"/>
 				<!-- tags lable -->
 				<div class="show-for-medium-up">
 					<h3 class="t30">Tags</h3>
@@ -36,33 +34,33 @@ section: archives
 				</div>
 				<!-- end tags label-->
 				<!-- month-year labels -->
-				<div class="show-for-medium-up">
-					<h3 class="t30">Year</h3>
-					<hr class="tm5 b10"/>
-					<span>
-						{% assign count = 0 %}
-						{% for post in site.posts %}
 
-						  {% assign currentYear = post.date | date: "%Y" %}
-						  {% assign nextYear = post.next.date | date: "%Y" %}
-						  {% if currentYear != nextYear %}
-						  <h5 class="t10" style="color:#777">{{ currentYear }}</h5>
-						  {% endif %}
+				<h3 class="t30">Year</h3>
+				<hr class="tm5 b10"/>
+				<span>
+					{% assign count = 0 %}
+					{% for post in site.posts %}
 
-						  {% assign currentMonth = post.date | date: "%B" %}
-						  {% assign currentMonthYear = post.date | date: "%Y %B" %}
-						  {% assign prevMonthYear = post.previous.date | date: "%Y %B" %}
-						  {% assign count = count | plus: 1 %}
+					  {% assign currentYear = post.date | date: "%Y" %}
+					  {% assign nextYear = post.next.date | date: "%Y" %}
+					  {% if currentYear != nextYear %}
+					  <h5 class="t10" style="color:#777">{{ currentYear }}</h5>
+					  {% endif %}
 
-						  {% if currentMonthYear != prevMonthYear %}
-							<span class="radius info label">{{ currentMonth }}({{ count }})</span>
-							{% assign count = 0 %}
-						  {% endif %}
-						{% endfor %}
-					</span>
-					<hr/>
-				</div>
+					  {% assign currentMonth = post.date | date: "%B" %}
+					  {% assign currentMonthYear = post.date | date: "%Y %B" %}
+					  {% assign prevMonthYear = post.previous.date | date: "%Y %B" %}
+					  {% assign count = count | plus: 1 %}
+
+					  {% if currentMonthYear != prevMonthYear %}
+						<span class="radius info label">{{ currentMonth }}({{ count }})</span>
+					    {% assign count = 0 %}
+					  {% endif %}
+					{% endfor %}
+				</span>
 				<!-- end month-year labels -->
+				<hr/>
+				<!-- end of label -->
 			</span>
 			</div>
 		</div>
@@ -74,3 +72,50 @@ section: archives
 		</div><!-- /.row -->
 	</div><!-- /.medium-8.columns -->
 </div><!-- /.row -->
+
+<script type="text/template" id="search-result">
+	<h3><a href="{{ site.url }}<%= url %>"><%= title %></a></h3>
+	<p class="tm10">
+		<time class="post-date pr10" datetime="<%= date[1] %> <%= date[2] %>, <%= date[0] %>" itemprop="datePublished"><%= date[1] %> <%= date[2] %>, <%= date[0] %></time>
+		<span><% _.each( tags, function( tag ){ %><span class="radius info label"><%= tag %></span> <% }); %></span>
+	</p>
+	<hr/>
+</script>
+
+<script type="text/template" id="total-result">
+	<p><b><%= total %></b> records matched.</p>
+</script>
+
+<!-- do not change the id. it follows a convention, see view rendering in backbone for further details -->
+<script type="text/template" id="result-message-invalid-url">
+	<p>It seems like you have entered invalid url.</p>
+</script>
+<script type="text/template" id="result-message-zero-results">
+	<p>Please note that it matches only those posts that contain <b>all</b> the selected tags.</p>
+</script>
+<script type="text/template" id="result-message-invalid-tags">
+	<p>It seems like you have entered invalid tags in url. Please use tags defined in filter drop-down only. Note that tags are case-sensitive. </p>
+</script>
+
+<script>
+var searchBoxOptions = [
+	{% for tag in site.tags %}
+	{ "group": "Tags", "value": "{{ tag[0] }}" }{% unless forloop.last %}, {% endunless %}
+	{% endfor %}{% if site.posts.size > 0 %}, {% endif %}
+	{% for post in site.posts %}
+	{% assign currentYear = post.date | date: "%Y" %}{% assign prevYear = post.previous.date | date: "%Y" %}{% if currentYear != prevYear %}{"group": "Year", "value": "{{ currentYear }}"},{% endif %}
+	{% endfor %}
+	{"group": "Month", "value":  "January" },
+	{"group": "Month", "value":  "February" },
+	{"group": "Month", "value":  "March" },
+	{"group": "Month", "value":  "April" },
+	{"group": "Month", "value":  "May" },
+	{"group": "Month", "value":  "June" },
+	{"group": "Month", "value":  "July" },
+	{"group": "Month", "value":  "August" },
+	{"group": "Month", "value":  "September" },
+	{"group": "Month", "value":  "October" },
+	{"group": "Month", "value":  "November" },
+	{"group": "Month", "value":  "December" }
+];
+</script>

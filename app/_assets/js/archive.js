@@ -26,11 +26,11 @@ var archivePage = {
 
           //on firt page load, check
           //if no search entered, call selectOptionChangeHandler explicitly
-          var fragment = Backbone.history.getFragment();
-          fragment = $.trim(fragment);
-          if(fragment.length === 0 || fragment == 'search' || fragment == 'search/' || fragment.indexOf('search') !== 0){
-              self.selectOptionChangeHandler();
-          }
+          //var fragment = Backbone.history.getFragment();
+          //fragment = $.trim(fragment);
+          //if(fragment.length === 0 || fragment == 'search' || fragment == 'search/' || fragment.indexOf('search') !== 0){
+          //    self.selectOptionChangeHandler();
+          //}
       });
   },
 
@@ -40,16 +40,16 @@ var archivePage = {
     //Check is required because
     //on page load it may happen that backbone is not yet started and we are trying to use it
     if(Backbone.History.started){
-      this.data.router.navigate('#search/' + fragment);
+        //note that this will not trigger urlchange handler. this is a silent navigation.
+        this.data.router.navigate('#search/' + fragment);
     }
-    var searchResults = this.data.allData.search(selectedValues);
+    var searchResults = this.data.allData.filter(selectedValues);
+    if(searchResults.length == 0) {
+        this.data.searchResultsCollection.messageId = "zero-results";
+    }else{
+        this.data.searchResultsCollection.messageId = null;
+    }
     this.data.searchResultsCollection.reset(searchResults);
-  },
-
-  "populateSelectizeFromUrl" : function(){
-      var fragment = Backbone.history.getFragment();
-      var selectedValues = this.convertFragmentToArray(fragment);
-      this.data.selectize.setValue(selectedValues);
   },
 
   "convertFragmentToArray" : function(fragment){
@@ -78,17 +78,70 @@ var archivePage = {
       var self = this;
       var AppRouter = Backbone.Router.extend({
           "routes": {
-              "": "tagsSearch",
-              "search/*tags": "tagsSearch"
+              "": "showAll",
+              "search": "showAll",
+              "search/": "showAll",
+              "search/*tags": "filterPosts",
+              "*actions": "invalidUrl"
           },
-          "tagsSearch": function (actions) {
-            //alert("Searched with tags : [" + actions + "]");
-            self.populateSelectizeFromUrl();
+          "showAll": function(){
+              self.data.searchResultsCollection.messageId = null;
+              self.data.searchResultsCollection.reset(self.data.allData.toJSON());
+          },
+          "filterPosts": function (searchTerms) {
+              var tagsToSelect = self.convertFragmentToArray(searchTerms);
+
+              if(self.areTagsValid(tagsToSelect)) {
+                  //passing true so that it will not trigger selectize change handler.
+                  self.data.selectize.setValue(tagsToSelect, true);
+
+                  //filter the values.
+                  var searchResults = self.data.allData.filter(tagsToSelect);
+                  if(searchResults.length == 0) {
+                      self.data.searchResultsCollection.messageId = "zero-results";
+                  }else{
+                      self.data.searchResultsCollection.messageId = null;
+                  }
+                  self.data.searchResultsCollection.reset(searchResults);
+              }else{
+                  self.data.searchResultsCollection.messageId = "invalid-tags";
+                  self.data.searchResultsCollection.reset();
+              }
+          },
+          "invalidUrl": function(){
+              self.data.searchResultsCollection.messageId = "invalid-url";
+              self.data.searchResultsCollection.reset();
           }
       });
       // Instantiate the router
       var instance = new AppRouter();
       return instance;
+  },
+
+  "areTagsValid": function(tagsToCheck){
+      //note that we are comparing this with the tags populated in filter.
+      //tags populated in filter are present in variable searchBoxOptions.
+      if(typeof tagsToCheck != 'undefined' && searchBoxOptions != 'undefined'){
+          for(var i = 0; i < tagsToCheck.length; i++){
+              var tagFound = false;
+              for(var j = 0; j < searchBoxOptions.length; j++){
+                  //console.log('Comparing: ' + searchBoxOptions[j]['value'] + ':' + tagsToCheck[i]);
+                  if(searchBoxOptions[j]['value'] == tagsToCheck[i]){
+                      tagFound = true;
+                      break;
+                  }
+              }
+              if(!tagFound){
+                  console.error("Tag not found: ["+tagsToCheck[i]+"]");
+                  return false;
+              }
+          }
+          return true;
+      }else{
+          console.error('Error while matching tags');
+          return false;
+      }
+      return true;
   },
 
   "createSelectize": function(){
@@ -124,7 +177,7 @@ var archivePage = {
                 this.index = lunr.Index.load(data.index);
                 return data.posts;
             },
-            "search": function(items){
+            "filter": function(items){
                 if(items !== null && items !== undefined && (Array.isArray(items)) && items.length > 0){
                     var searchTokens = _(items).map(function(item){
                         return item.split(/[\s\-]+/).join('%');
@@ -156,6 +209,15 @@ var archivePage = {
   },
 
   "createSearchResultsView" : function(searchResults){
+      var TotalCountView = Backbone.View.extend({
+          template: _.template($('#total-result').html().trim()),
+          render: function() {
+              var htmlContent = this.template(this.model);
+              this.$el.html(htmlContent);
+              return this;
+          }
+      });
+
       var SearchResultView = Backbone.View.extend({
           template: _.template($('#search-result').html().trim()),
           render: function() {
@@ -169,16 +231,27 @@ var archivePage = {
           el: '#search-results',
 
           initialize: function() {
-            this.listenTo(this.collection, 'reset', this.render);
+              this.listenTo(this.collection, 'reset', this.render);
           },
 
           render: function() {
-            var $list = this.$el.empty();
+              var $list = this.$el.empty();
 
-            this.collection.each(function(model) {
-              var item = new SearchResultView({model: model});
-              $list.append(item.render().$el);
-            }, this);
+              var totView = new TotalCountView({"model": {"total": this.collection.length}});
+              $list.append(totView.render().$el);
+
+              //Every message may need different html. Thus we defined all messages elements with a convention <result-message>-id.
+              //Controller will set correct messageId. Then this view will check if there is any messageId attached. If found it will
+              //look up for the element and append its html.
+              if(typeof this.collection.messageId != "undefined" && this.collection.messageId != null && this.collection.messageId.length > 0) {
+                  var htmlContent = $('#result-message-' + this.collection.messageId).html().trim();
+                  $list.append(htmlContent);
+              }
+
+              this.collection.each(function(model) {
+                  var item = new SearchResultView({model: model});
+                  $list.append(item.render().$el);
+              }, this);
 
             return this;
           }
