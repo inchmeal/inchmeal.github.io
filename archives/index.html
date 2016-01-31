@@ -210,47 +210,47 @@
 						
 						
 						
-						<span class="radius info label">blogging(2)</span>
+						<a tags="blogging" ><span class="radius info label">blogging(2)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">foundation(1)</span>
+						<a tags="foundation" ><span class="radius info label">foundation(1)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">gh-pages(1)</span>
+						<a tags="gh-pages" ><span class="radius info label">gh-pages(1)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">gulp(1)</span>
+						<a tags="gulp" ><span class="radius info label">gulp(1)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">howToProveIt(34)</span>
+						<a tags="howToProveIt" ><span class="radius info label">howToProveIt(34)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">jekyll(1)</span>
+						<a tags="jekyll" ><span class="radius info label">jekyll(1)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">lunr(1)</span>
+						<a tags="lunr" ><span class="radius info label">lunr(1)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">mathematics(34)</span>
+						<a tags="mathematics" ><span class="radius info label">mathematics(34)</span></a>
 						
 						
 						
 						
-						<span class="radius info label">personal-views(1)</span>
+						<a tags="personal-views" ><span class="radius info label">personal-views(1)</span></a>
 						
 						
 					</span>
@@ -337,7 +337,7 @@
 					  
 
 					  
-						<span class="radius info label">January(6)</span>
+						<a tags="January,2016" ><span class="radius info label">January(6)</span></a>
 					    
 					  
 					
@@ -402,7 +402,7 @@
 					  
 
 					  
-						<span class="radius info label">December(5)</span>
+						<a tags="December,2015" ><span class="radius info label">December(5)</span></a>
 					    
 					  
 					
@@ -429,106 +429,7 @@
 					  
 
 					  
-						<span class="radius info label">November(2)</span>
-					    
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-					
-
-					  
-					  
-					  
-
-					  
-					  
-					  
-					  
-
-					  
-						<span class="radius info label">October(8)</span>
+						<a tags="November,2015" ><span class="radius info label">November(2)</span></a>
 					    
 					  
 					
@@ -627,7 +528,7 @@
 					  
 
 					  
-						<span class="radius info label">September(8)</span>
+						<a tags="October,2015" ><span class="radius info label">October(8)</span></a>
 					    
 					  
 					
@@ -726,7 +627,106 @@
 					  
 
 					  
-						<span class="radius info label">July(8)</span>
+						<a tags="September,2015" ><span class="radius info label">September(8)</span></a>
+					    
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+					
+
+					  
+					  
+					  
+
+					  
+					  
+					  
+					  
+
+					  
+						<a tags="July,2015" ><span class="radius info label">July(8)</span></a>
 					    
 					  
 					
@@ -750,7 +750,7 @@
 	<h3><a href="http://inchmeal.io<%= url %>"><%= title %></a></h3>
 	<p class="tm10">
 		<time class="post-date pr10" datetime="<%= date[1] %> <%= date[2] %>, <%= date[0] %>" itemprop="datePublished"><%= date[1] %> <%= date[2] %>, <%= date[0] %></time>
-		<span><% _.each( tags, function( tag ){ %><span class="radius info label"><%= tag %></span> <% }); %></span>
+		<span><% _.each( tags, function( tag ){ %><a class="r6" tags="<%= tag %>" ><span class="radius info label"> <%= tag %></span></a><% }); %></span>
 	</p>
 	<hr/>
 </script>
