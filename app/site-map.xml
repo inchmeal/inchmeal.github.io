@@ -1,0 +1,63 @@
+---
+layout: null
+defaultPostPriority: 0.5
+defaultPagePriority: 0.3
+defaultPostFrequency: monthly
+defaultPageFrequency: monthly
+sitemap:
+    exclude: 'yes'
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in site.posts %}
+    {% unless post.sitemap.exclude == "yes" %}
+    <url>
+        <loc>{{ site.url }}{{ post.url }}</loc>
+        {% if post.sitemap.lastmod %}
+        <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+        {% elsif post.date %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        {% if post.sitemap.changefreq %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+        {% else %}
+        <changefreq>{{ page.defaultPostFrequency }}</changefreq>
+        {% endif %}
+        {% if post.sitemap.priority %}
+        <priority>{{ post.sitemap.priority }}</priority>
+        {% else %}
+        <priority>{{ page.defaultPostPriority }}</priority>
+        {% endif %}
+    </url>
+    {% endunless %}
+    {% endfor %}
+
+
+    {% for sitepage in site.pages %}
+    {% unless sitepage.sitemap.exclude == "yes" %}
+    <url>
+        <loc>{{ site.url }}{{ sitepage.url | remove: "index.html" }}</loc>
+        {% if sitepage.sitemap.lastmod %}
+        <lastmod>{{ sitepage.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+        {% elsif sitepage.date %}
+        <lastmod>{{ sitepage.date | date_to_xmlschema }}</lastmod>
+        {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        {% if sitepage.sitemap.changefreq %}
+        <changefreq>{{ sitepage.sitemap.changefreq }}</changefreq>
+        {% else %}
+        <changefreq>{{ page.defaultPageFrequency }}</changefreq>
+        {% endif %}
+        {% if sitepage.sitemap.priority %}
+        <priority>{{ sitepage.sitemap.priority }}</priority>
+        {% else %}
+        <priority>{{ page.defaultPagePriority }}</priority>
+        {% endif %}
+    </url>
+    {% endunless %}
+    {% endfor %}
+</urlset>

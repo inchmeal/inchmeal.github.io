@@ -2,6 +2,8 @@
 layout: blog
 title:  "Tech behind this blog"
 tags: blogging jekyll gulp gh-pages lunr foundation
+sitemap:
+    priority: 0.8
 ---
 From last 2-3 weeks I have been working on creating this blog. Still there are few items remaining to be completed.
 

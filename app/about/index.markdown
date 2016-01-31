@@ -2,6 +2,8 @@
 layout: page
 section: about
 title: About
+sitemap:
+    priority: 0.8
 ---
 I enjoy doing the following:
 

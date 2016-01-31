@@ -2,6 +2,8 @@
 layout: blog
 title:  "How To Prove It - Introduction"
 tags: mathematics howToProveIt
+sitemap:
+    priority: 0.8
 ---
 
 I have started reading a book - [How to Prove it][howToProveIt]. I shall be posting its solutions from this post onwards, each titled with corresponding chapter.

@@ -2,6 +2,8 @@
 layout: blog
 title:  "Figuring it out yourself"
 tags: personal-views
+sitemap:
+    priority: 0.7
 ---
 
 Confused with their career plans, Ram and Shyam, asked for guidance from their respective fathers. 

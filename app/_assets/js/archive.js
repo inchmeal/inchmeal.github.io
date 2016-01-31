@@ -33,6 +33,7 @@ var archivePage = {
       var tags = $(this).attr('tags');
       var tagsArray = tags.split(',');
       event.data.self.data.selectize.setValue(tagsArray);
+      $('html, body').animate({ scrollTop: 0 }, 'fast');
       //alert(tags);
   },
 

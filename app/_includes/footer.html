@@ -1,16 +1,25 @@
     <div id="up-to-top" class="row">
       <div class="small-12 columns" style="text-align: right;">
-        <a class="iconfont" href="#top-of-page">&#xf108;</a>
+        <a class="iconfont" title="Go to Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast')">&#xf108;</a>
       </div><!-- /.small-12.columns -->
     </div><!-- /.row -->
 
     <footer id="footer-content" class="bg-grau">
       <div id="subfooter">
         <nav class="row">
-          <section id="subfooter-left" class="b30 small-6 columns">
-            <ul class="inline-list">
-              <li>Created with &hearts; by ovais</li>
-            </ul>
+          <section id="subfooter-left" class="small-6 columns">
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        <li>Created with &hearts; by ovais</li>
+                    </ul>
+                </div>
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        {% for service_item in site.data.services %}
+                        <li><a href="{{ service_item.url }}" {% if service_item.newtab %} target="_blank" {% endif %} class="{{ service_item.class }}" title="{{ service_item.title }}">{{ service_item.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
           </section>
           <section id="subfooter-right" class="small-6 columns social-icons end">
             <ul class="inline-list">

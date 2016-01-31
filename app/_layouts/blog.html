@@ -33,7 +33,7 @@ section: blog
                 <time class="post-date pr20" datetime="{{ page.date | date: "%B %d, %Y" }}" itemprop="datePublished"> {{ page.date | date: "%B %d, %Y" }}</time>
                 {% endif %}
                 {% if page.tags %}
-                <span>{% for tag in page.tags %}<a title="View all posts in {{ tag }}" href="/archives/index.html#search/{{ tag }}"><span class="radius info label">{{ tag }}</span></a> {% endfor %}</span>
+                <span>{% for tag in page.tags %}<a title="View all posts in {{ tag }}" href="/archives/#search/{{ tag }}"><span class="radius info label">{{ tag }}</span></a> {% endfor %}</span>
                 {% endif %}
             </p>
             {% endif %}
@@ -44,7 +44,7 @@ section: blog
 
             {% if page.tags %}
             <p class="tm10">
-                <span>{% for tag in page.tags %}<a title="View all posts in {{ tag }}" href="/archives/index.html#search/{{ tag }}"><span class="radius info label">{{ tag }}</span></a> {% endfor %}</span>
+                <span>{% for tag in page.tags %}<a title="View all posts in {{ tag }}" href="/archives/#search/{{ tag }}"><span class="radius info label">{{ tag }}</span></a> {% endfor %}</span>
             </p>
             {% endif %}
 
