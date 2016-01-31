@@ -26,7 +26,7 @@ section: archives
 						{% for tag in sortedTags %}
 						{% assign tagData = tag | split: '##' %}
 						{% if tagData.size >= 2 %}
-						<span class="radius info label">{{ tagData[0] }}({{ tagData[1] }})</span>
+						<a tags="{{ tagData[0] }}" ><span class="radius info label">{{ tagData[0] }}({{ tagData[1] }})</span></a>
 						{% endif %}
 						{% endfor %}
 					</span>
@@ -53,7 +53,7 @@ section: archives
 					  {% assign count = count | plus: 1 %}
 
 					  {% if currentMonthYear != prevMonthYear %}
-						<span class="radius info label">{{ currentMonth }}({{ count }})</span>
+						<a tags="{{ currentMonth }},{{ currentYear }}" ><span class="radius info label">{{ currentMonth }}({{ count }})</span></a>
 					    {% assign count = 0 %}
 					  {% endif %}
 					{% endfor %}
@@ -77,7 +77,7 @@ section: archives
 	<h3><a href="{{ site.url }}<%= url %>"><%= title %></a></h3>
 	<p class="tm10">
 		<time class="post-date pr10" datetime="<%= date[1] %> <%= date[2] %>, <%= date[0] %>" itemprop="datePublished"><%= date[1] %> <%= date[2] %>, <%= date[0] %></time>
-		<span><% _.each( tags, function( tag ){ %><span class="radius info label"><%= tag %></span> <% }); %></span>
+		<span><% _.each( tags, function( tag ){ %><a class="r6" tags="<%= tag %>" ><span class="radius info label"> <%= tag %></span></a><% }); %></span>
 	</p>
 	<hr/>
 </script>

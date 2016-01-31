@@ -1,5 +1,68 @@
 ---
-layout: page
+layout: default
 section: blog
 ---
-{{content}}
+<div class="row t30">
+    <div class="medium-8 columns medium-offset-2 end">
+        <article itemscope itemtype="http://schema.org/Article">
+            <header>
+                {% if page.image.title %}
+                <figure>
+                    <img src="{{ site.urlimg }}/{{ page.image.title }}" width="970" alt="{{ page.title escape_once }}" itemprop="image">
+
+                    {% if page.image.caption_url && page.image.caption %}
+                    <figcaption class="text-right">
+                        <a href="{{ page.image.caption_url }}">{{ page.image.caption }}</a>
+                    </figcaption>
+                    {% elsif page.image.caption %}
+                    <figcaption class="text-right">
+                        {{ page.image.caption }}
+                    </figcaption>
+                    {% endif %}
+                </figure>
+                {% endif %}
+
+				<span itemprop="name">
+					<h1>{{ page.title }}</h1>
+				</span>
+            </header>
+
+            {% if page.date or page.tags %}
+            <p class="tm10">
+                {% if page.date %}
+                <time class="post-date pr20" datetime="{{ page.date | date: "%B %d, %Y" }}" itemprop="datePublished"> {{ page.date | date: "%B %d, %Y" }}</time>
+                {% endif %}
+                {% if page.tags %}
+                <span>{% for tag in page.tags %}<a title="View all posts in {{ tag }}" href="/archives/index.html#search/{{ tag }}"><span class="radius info label">{{ tag }}</span></a> {% endfor %}</span>
+                {% endif %}
+            </p>
+            {% endif %}
+
+			<span itemprop="articleSection">
+			{{ content }}
+			</span>
+
+            {% if page.tags %}
+            <p class="tm10">
+                <span>{% for tag in page.tags %}<a title="View all posts in {{ tag }}" href="/archives/index.html#search/{{ tag }}"><span class="radius info label">{{ tag }}</span></a> {% endfor %}</span>
+            </p>
+            {% endif %}
+
+            <p class="b60">
+            {% if page.next.url %}
+            <a class="left icon-chevron-left r15" title="{{ page.next.title }}" href="{{ page.next.url }}">{{ site.data.language.next_post }} {{ cat | upcase }}</a>
+            {% endif %}
+            {% if page.previous.url %}
+            <a class="right " title="{{ page.previous.title }}" href="{{ page.previous.url }}">{{ site.data.language.previous_post }} {{ cat | upcase }}<span class="icon-chevron-right"></span></a>
+            {% endif %}
+            </p>
+
+            <br/>
+
+            {% if page.comments == true %}
+            {% include comments.html %}
+            {% endif %}
+        </article>
+    </div><!-- /.medium-8.columns -->
+
+</div><!-- /.row -->

@@ -24,14 +24,16 @@ var archivePage = {
           //start Backbone history after initializing selectize
           Backbone.history.start();
 
-          //on firt page load, check
-          //if no search entered, call selectOptionChangeHandler explicitly
-          //var fragment = Backbone.history.getFragment();
-          //fragment = $.trim(fragment);
-          //if(fragment.length === 0 || fragment == 'search' || fragment == 'search/' || fragment.indexOf('search') !== 0){
-          //    self.selectOptionChangeHandler();
-          //}
+          //register handler for all tag labels.
+          $(document).on("click", "a[tags]", {"self": self}, self.tagLabelClicked);
       });
+  },
+
+  "tagLabelClicked": function(event){
+      var tags = $(this).attr('tags');
+      var tagsArray = tags.split(',');
+      event.data.self.data.selectize.setValue(tagsArray);
+      //alert(tags);
   },
 
   "selectOptionChangeHandler" : function(){
@@ -40,11 +42,16 @@ var archivePage = {
     //Check is required because
     //on page load it may happen that backbone is not yet started and we are trying to use it
     if(Backbone.History.started){
-        //note that this will not trigger urlchange handler. this is a silent navigation.
-        this.data.router.navigate('#search/' + fragment);
+        if(fragment.length > 0) {
+            //note that this will not trigger urlchange handler. this is a silent navigation.
+            this.data.router.navigate('#search/' + fragment);
+        }else{
+            //note that this will not trigger urlchange handler. this is a silent navigation.
+            this.data.router.navigate();
+        }
     }
     var searchResults = this.data.allData.filter(selectedValues);
-    if(searchResults.length == 0) {
+    if(searchResults.length === 0) {
         this.data.searchResultsCollection.messageId = "zero-results";
     }else{
         this.data.searchResultsCollection.messageId = null;
@@ -97,7 +104,7 @@ var archivePage = {
 
                   //filter the values.
                   var searchResults = self.data.allData.filter(tagsToSelect);
-                  if(searchResults.length == 0) {
+                  if(searchResults.length === 0) {
                       self.data.searchResultsCollection.messageId = "zero-results";
                   }else{
                       self.data.searchResultsCollection.messageId = null;
@@ -126,7 +133,7 @@ var archivePage = {
               var tagFound = false;
               for(var j = 0; j < searchBoxOptions.length; j++){
                   //console.log('Comparing: ' + searchBoxOptions[j]['value'] + ':' + tagsToCheck[i]);
-                  if(searchBoxOptions[j]['value'] == tagsToCheck[i]){
+                  if(searchBoxOptions[j].value == tagsToCheck[i]){
                       tagFound = true;
                       break;
                   }
@@ -243,7 +250,7 @@ var archivePage = {
               //Every message may need different html. Thus we defined all messages elements with a convention <result-message>-id.
               //Controller will set correct messageId. Then this view will check if there is any messageId attached. If found it will
               //look up for the element and append its html.
-              if(typeof this.collection.messageId != "undefined" && this.collection.messageId != null && this.collection.messageId.length > 0) {
+              if(typeof this.collection.messageId != "undefined" && this.collection.messageId !== null && this.collection.messageId.length > 0) {
                   var htmlContent = $('#result-message-' + this.collection.messageId).html().trim();
                   $list.append(htmlContent);
               }

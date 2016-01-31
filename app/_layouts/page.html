@@ -26,19 +26,10 @@ layout: default
 				</span>
 			</header>
 
-			{% if page.date %}
-			<p class="tm10">
-			<time class="post-date pr20" datetime="{{ page.date | date: "%B %d, %Y" }}" itemprop="datePublished"> {{ page.date | date: "%B %d, %Y" }}</time>
-			</p>
-			{% endif %}
-
 			<span itemprop="articleSection">
 			{{ content }}
 			</span>
 
-			{% if page.comments == true %}
-			{% include comments.html %}
-			{% endif %}
 		</article>
 	</div><!-- /.medium-8.columns -->
 
