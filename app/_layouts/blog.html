@@ -49,11 +49,11 @@ section: blog
             {% endif %}
 
             <p class="b60">
-            {% if page.next.url %}
-            <a class="left icon-chevron-left r15" title="{{ page.next.title }}" href="{{ page.next.url }}">{{ site.data.language.next_post }} {{ cat | upcase }}</a>
-            {% endif %}
             {% if page.previous.url %}
-            <a class="right " title="{{ page.previous.title }}" href="{{ page.previous.url }}">{{ site.data.language.previous_post }} {{ cat | upcase }}<span class="icon-chevron-right"></span></a>
+            <a class="left icon-chevron-left r15" title="{{ page.previous.title }}" href="{{ page.previous.url }}">{{ site.data.language.previous_post }} {{ cat | upcase }}</a>
+            {% endif %}
+            {% if page.next.url %}
+            <a class="right " title="{{ page.next.title }}" href="{{ page.next.url }}">{{ site.data.language.next_post }} {{ cat | upcase }}<span class="icon-chevron-right"></span></a>
             {% endif %}
             </p>
 
