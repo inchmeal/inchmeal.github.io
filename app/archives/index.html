@@ -12,6 +12,9 @@ section: archives
 						<select class="tags-filter-box" multiple="true" placeholder="Tag1 & Tag2 & ...">
 						</select>
 				</div>
+				<div class="show-for-small-down">
+					<hr class="t20"/>
+				</div>
 				<!-- tags lable -->
 				<div class="show-for-medium-up">
 					<h3 class="t30">Tags</h3>
@@ -35,31 +38,33 @@ section: archives
 				<!-- end tags label-->
 				<!-- month-year labels -->
 
-				<h3 class="t30">Year</h3>
-				<hr class="tm5 b10"/>
-				<span>
-					{% assign count = 0 %}
-					{% for post in site.posts %}
+				<div class="show-for-medium-up">
+					<h3 class="t30">Year</h3>
+					<hr class="tm5 b10"/>
+					<span>
+						{% assign count = 0 %}
+						{% for post in site.posts %}
 
-					  {% assign currentYear = post.date | date: "%Y" %}
-					  {% assign nextYear = post.next.date | date: "%Y" %}
-					  {% if currentYear != nextYear %}
-					  <h5 class="t10" style="color:#777">{{ currentYear }}</h5>
-					  {% endif %}
+						  {% assign currentYear = post.date | date: "%Y" %}
+						  {% assign nextYear = post.next.date | date: "%Y" %}
+						  {% if currentYear != nextYear %}
+						  <h5 class="t10" style="color:#777">{{ currentYear }}</h5>
+						  {% endif %}
 
-					  {% assign currentMonth = post.date | date: "%B" %}
-					  {% assign currentMonthYear = post.date | date: "%Y %B" %}
-					  {% assign prevMonthYear = post.previous.date | date: "%Y %B" %}
-					  {% assign count = count | plus: 1 %}
+						  {% assign currentMonth = post.date | date: "%B" %}
+						  {% assign currentMonthYear = post.date | date: "%Y %B" %}
+						  {% assign prevMonthYear = post.previous.date | date: "%Y %B" %}
+						  {% assign count = count | plus: 1 %}
 
-					  {% if currentMonthYear != prevMonthYear %}
-						<a tags="{{ currentMonth }},{{ currentYear }}" ><span class="radius info label">{{ currentMonth }}({{ count }})</span></a>
-					    {% assign count = 0 %}
-					  {% endif %}
-					{% endfor %}
-				</span>
+						  {% if currentMonthYear != prevMonthYear %}
+							<a tags="{{ currentMonth }},{{ currentYear }}" ><span class="radius info label">{{ currentMonth }}({{ count }})</span></a>
+							{% assign count = 0 %}
+						  {% endif %}
+						{% endfor %}
+					</span>
+					<hr/>
+				</div>
 				<!-- end month-year labels -->
-				<hr/>
 				<!-- end of label -->
 			</span>
 			</div>
