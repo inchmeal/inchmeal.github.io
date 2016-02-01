@@ -1,7 +1,7 @@
 ---
 layout: page
 section: about
-title: About
+title: "Inchmeal - About"
 sitemap:
     priority: 0.8
 ---
