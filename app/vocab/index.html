@@ -1,0 +1,30 @@
+---
+layout: default
+title: "Learning Vocabulary"
+section: vocab_all
+sitemap:
+    exclude: 'yes'
+---
+<div class="row t40">
+    <div class="medium-8 medium-centered medium-offset-2 columns">
+        {% for sitepage in site.pages %}
+        {% if sitepage.section == "vocab" %}
+        <p>
+        <h2><a href="{{ site.url }}{{ sitepage.url }}">{{ sitepage.title }}</a></h2>
+        <p class="tm10 bm0">
+            <time class="post-date pr20" datetime="{{ sitepage.date | date: "%B %d, %Y" }}" itemprop="datePublished"> {{ sitepage.date | date: "%B %d, %Y" }}</time>
+        </p>
+        <p>
+            <ul>
+                {% assign words = sitepage.words | split:',' %}
+                {% for word in words %}
+                <li>{{ word | strip }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+        <hr/>
+        </p>
+        {% endif %}
+        {% endfor %}
+    </div><!-- /.medium-8.columns -->
+</div><!-- /.row -->
