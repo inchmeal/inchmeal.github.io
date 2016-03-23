@@ -33,7 +33,7 @@
 
 	{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}
 	{% if site.bing_webmastertools_id %}<meta name="msvalidate.01" content="{{ site.bing_webmastertools_id }}" />{% endif %}
-	{% if page.description %}<meta name="description" content="{{ page.description | strip_html | escape }}"/>{% elsif page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html | escape }}"/>{% elsif site.description %}<meta name="description" content="{{ site.description | strip_html | escape }}"/>{% endif %}
+	{% if page.description %}<meta name="description" content="{{ page.description | strip_html | escape }}"/>{% else %}<meta name="description" content="Inchmeal - {{ page.title | strip_html | escape }}"/>{% endif %}
 
 	{% if site.google_author %}<link rel="author" href="{{ site.google_author }}"/>{% endif %}
 

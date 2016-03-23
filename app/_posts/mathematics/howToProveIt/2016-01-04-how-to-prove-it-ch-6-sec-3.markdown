@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-6 Sec-6.3, Recursion"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 6, Section - 6.3, Recursion.
+This post contains solutions of Chapter - 6, Section - 6.3, Recursion from Velleman's book **How To Prove It**.
 
 <!--more-->
 

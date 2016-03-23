@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-5 Sec-5.3, Inverses of Functions"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 5, Section - 5.3, Inverses of Functions.
+This post contains solutions of Chapter - 5, Section - 5.3, Inverses of Functions from Velleman's book **How To Prove It**.
 
 <!--more-->
 

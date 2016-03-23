@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-5 Sec-5.4, Images and Inverse Images: A Research Project"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 5, Section - 5.4, Images and Inverse Images: A Research Project.
+This post contains solutions of Chapter - 5, Section - 5.4, Images and Inverse Images: A Research Project from Velleman's book **How To Prove It**.
 
 <!--more-->
 

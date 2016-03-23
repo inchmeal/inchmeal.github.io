@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-7 Sec-7.1, Infinite Sets"
+description:  "Inchmeal - Velleman's How To Prove It Solutions, Ch-7 Sec-7.1, Infinite Sets"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 7, Section - 7.1, Infinite Sets.
+This post contains solutions of Chapter - 7, Section - 7.1, Infinite Sets from Velleman's book **How To Prove It**.
 
 <!--more-->
 

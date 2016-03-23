@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-3 Sec-3.6, Existence and Uniqueness Proofs"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 3, Section - 3.6, Existence and Uniqueness Proofs.
+This post contains solutions of Chapter - 3, Section - 3.6, Existence and Uniqueness Proofs from Velleman's book **How To Prove It**.
 
 <!--more-->
 

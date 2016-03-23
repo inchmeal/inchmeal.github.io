@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-3 Sec-3.3, Proofs Involving Quantifiers"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 3, Section - 3.3, Proofs Involving Quantifiers.
+This post contains solutions of Chapter - 3, Section - 3.3, Proofs Involving Quantifiers from Velleman's book **How To Prove It**..
 
 <!--more-->
 

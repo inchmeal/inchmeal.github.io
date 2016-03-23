@@ -1,6 +1,7 @@
 ---
 layout: blog
 title:  "Figuring it out yourself"
+description: "Inchmeal - Figuring it out yourself"
 tags: personal-views
 sitemap:
     priority: 0.7

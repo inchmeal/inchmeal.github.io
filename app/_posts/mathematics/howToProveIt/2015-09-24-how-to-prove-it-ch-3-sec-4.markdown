@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-3 Sec-3.4, Proofs Involving Conjunctions and Biconditionals"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 3, Section - 3.4, Proofs Involving Conjunctions and Biconditionals.
+This post contains solutions of Chapter - 3, Section - 3.4, Proofs Involving Conjunctions and Biconditionals from Velleman's book **How To Prove It**.
 
 <!--more-->
 

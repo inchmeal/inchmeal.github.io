@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-5 Sec-5.1, Functions"
+description:  "Inchmeal - Velleman's How To Prove It Solutions, Ch-5 Sec-5.1, Functions"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 5, Section - 5.1, Functions.
+This post contains solutions of Chapter - 5, Section - 5.1, Functions from Velleman's book **How To Prove It**.
 
 <!--more-->
 

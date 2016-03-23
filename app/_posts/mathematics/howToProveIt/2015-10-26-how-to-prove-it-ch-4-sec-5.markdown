@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-4 Sec-4.5, Closures"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 4, Section - 4.5, Closures.
+This post contains solutions of Chapter - 4, Section - 4.5, Closures from Velleman's book **How To Prove It**.
 
 <!--more-->
 

@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-2 Sec-2.1, Quantifiers"
+description:  "Inchmeal - Velleman's How To Prove It Solutions, Ch-2 Sec-2.1, Quantifiers"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 2, Section - 2.1, Quantifiers.
+This post contains solutions of Chapter - 2, Section - 2.1, Quantifiers from Velleman's book **How To Prove It**.
 <!--more-->
 <hr/>
 

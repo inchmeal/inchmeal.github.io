@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-1 Sec-1.5, The Conditional and Biconditional Connectives"
+description:  "Inchmeal - Velleman's How To Prove It, Ch-1 Sec-1.5, The Conditional and Biconditional Connectives"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 1, Section - 1.5, The Conditional and Biconditional Connectives.
+This post contains solutions of Chapter - 1, Section - 1.5, The Conditional and Biconditional Connectives from Velleman's book **How To Prove It**.
 <!--more-->
 <hr/>
 

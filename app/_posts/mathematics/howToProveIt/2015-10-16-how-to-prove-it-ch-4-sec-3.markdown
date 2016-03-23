@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-4 Sec-4.3, More About Relations"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 4, Section - 4.3, More About Relations.
+This post contains solutions of Chapter - 4, Section - 4.3, More About Relations from Velleman's book **How To Prove It**.
 
 <!--more-->
 

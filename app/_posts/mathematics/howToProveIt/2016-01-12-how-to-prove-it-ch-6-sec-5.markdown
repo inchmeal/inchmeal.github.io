@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-6 Sec-6.5, Closures Again"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 6, Section - 6.5, Closures Again.
+This post contains solutions of Chapter - 6, Section - 6.5, Closures Again from Velleman's book **How To Prove It**.
 
 <!--more-->
 

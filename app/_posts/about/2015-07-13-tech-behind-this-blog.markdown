@@ -1,6 +1,7 @@
 ---
 layout: blog
 title:  "Tech behind this blog"
+description: "Inchmeal - Tech behind this blog"
 tags: blogging jekyll gulp gh-pages lunr foundation
 sitemap:
     priority: 0.8

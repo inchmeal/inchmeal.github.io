@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-2 Sec-2.3, More Operations on Sets"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 2, Section - 2.3, More Operations on Sets.
+This post contains solutions of Chapter - 2, Section - 2.3, More Operations on Sets from Velleman's book **How To Prove It**.
 <!--more-->
 <hr/>
 

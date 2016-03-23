@@ -1,12 +1,13 @@
 ---
 layout: blog
 title:  "How To Prove It - Introduction"
+description: "Inchmeal - Velleman's How to Prove It Solutions"
 tags: mathematics howToProveIt
 sitemap:
     priority: 0.8
 ---
 
-I have started reading a book - [How to Prove it][howToProveIt]. I shall be posting its solutions from this post onwards, each titled with corresponding chapter.
+I have started reading a book - [How to Prove it][howToProveIt] (author: Daniel J. Velleman). I shall be posting its solutions from this post onwards, each titled with corresponding chapter.
 This post contains solutions for the introduction section of the book.
 <!--more-->
 

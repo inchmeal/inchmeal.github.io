@@ -1,6 +1,7 @@
 ---
 layout: blog
 title:  "Continuing the tradition, Hello World!!"
+description: "Inchmeal - Hello World"
 tags: blogging
 sitemap:
     priority: 0.6

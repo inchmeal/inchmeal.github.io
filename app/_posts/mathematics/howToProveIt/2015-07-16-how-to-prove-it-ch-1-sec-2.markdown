@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-1 Sec-1.2, Truth Tables"
+description:  "Inchmeal - Velleman's How To Prove It, Ch-1 Sec-1.2, Truth Tables"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 1, Section - 1.2, Truth Tables.
+This post contains solutions of Chapter - 1, Section - 1.2, Truth Tables from Daniel J. Velleman's book **How To Prove It**.
 <!--more-->
 <hr/>
 

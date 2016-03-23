@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-1 Sec-1.1, Deductive Reasoning and Logical Connectives"
+description: "Inchmeal - Velleman's How To Prove It Solutions, Ch-1 Sec-1.1, Deductive Reasoning and Logical Connectives" 
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 1, Section - 1.1, Deductive Reasoning and Logical Connectives, from book **How To Prove It**.
+This post contains solutions of Chapter - 1, Section - 1.1, Deductive Reasoning and Logical Connectives, from Daniel J. Velleman's book **How To Prove It**.
 <!--more-->
 <hr/>
 

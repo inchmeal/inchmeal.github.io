@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-4 Sec-4.2, Relations"
+description:  "Inchmeal - Velleman's How To Prove It Solutions, Ch-4 Sec-4.2, Relations"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 4, Section - 4.2, Relations.
+This post contains solutions of Chapter - 4, Section - 4.2, Relations from Velleman's book **How To Prove It**.
 
 <!--more-->
 

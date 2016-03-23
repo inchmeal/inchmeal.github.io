@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-6 Sec-6.4, Strong Induction"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 6, Section - 6.4, Strong Induction.
+This post contains solutions of Chapter - 6, Section - 6.4, Strong Induction from Velleman's book **How To Prove It**.
 
 <!--more-->
 

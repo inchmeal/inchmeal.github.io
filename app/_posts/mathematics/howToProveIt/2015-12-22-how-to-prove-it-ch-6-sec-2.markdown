@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-6 Sec-6.2, More Examples"
+description:  "Inchmeal Velleman's How To Prove It Solutions, Ch-6 Sec-6.2, More Examples"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 6, Section - 6.2, More Examples.
+This post contains solutions of Chapter - 6, Section - 6.2, More Examples from Velleman's book **How To Prove It**.
 
 <!--more-->
 

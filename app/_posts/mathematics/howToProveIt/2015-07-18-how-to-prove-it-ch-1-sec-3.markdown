@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-1 Sec-1.3, Variable and Sets"
+description:  "Inchmeal - Velleman's How To Prove It, Ch-1 Sec-1.3 Solutions, Variable and Sets"
 tags: mathematics howToProveIt
 ---
-This post contains exercises of Chapter - 1, Section - 1.3, Variable and Sets.
+This post contains solutions of Chapter - 1, Section - 1.3, Variable and Sets from Daniel J. Velleman's book **How To Prove It**.
 <!--more-->
 <hr/>
 

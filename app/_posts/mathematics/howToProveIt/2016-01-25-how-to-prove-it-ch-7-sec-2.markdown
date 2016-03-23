@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-7 Sec-7.2, Countable and Uncountable Sets"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 7, Section - 7.2, Countable and Uncountable Sets.
+This post contains solutions of Chapter - 7, Section - 7.2, Countable and Uncountable Sets from Velleman's book **How To Prove It**.
 
 <!--more-->
 

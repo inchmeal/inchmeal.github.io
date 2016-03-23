@@ -3,7 +3,7 @@ layout: blog
 title:  "How To Prove It, Ch-5 Sec-5.2, One-to-one and Onto"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 5, Section - 5.2, One-to-one and Onto.
+This post contains solutions of Chapter - 5, Section - 5.2, One-to-one and Onto from Velleman's book **How To Prove It**.
 
 <!--more-->
 

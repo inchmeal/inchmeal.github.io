@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-7 Sec-7.3, The Cantor–Schr&ouml;der–Bernstein Theorem"
+description:  "Inchmeal - Velleman's How To Prove It Solutions, Ch-7 Sec-7.3, The Cantor–Schr&ouml;der–Bernstein Theorem"
 tags: mathematics howToProveIt
 ---
-This post contains solutions of Chapter - 7, Section - 7.2, The Cantor–Schr&ouml;der–Bernstein Theorem.
+This post contains solutions of Chapter - 7, Section - 7.2, The Cantor–Schr&ouml;der–Bernstein Theorem from Velleman's book **How To Prove It**.
 
 <!--more-->
 

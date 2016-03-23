@@ -1,9 +1,10 @@
 ---
 layout: blog
 title:  "How To Prove It, Ch-3 Sec-3.1, Proof Strategies"
+description:  "Inchmeal - Velleman's How To Prove It solutions, Ch-3 Sec-3.1, Proof Strategies"
 tags: mathematics howToProveIt
 ---
-This post contains exercises from Chapter - 3, Section - 3.1, Proof Strategies.
+This post contains solutions from Chapter - 3, Section - 3.1, Proof Strategies from Velleman's book **How To Prove It**.
 
 <!--more-->
 
