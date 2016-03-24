@@ -20,13 +20,20 @@
                         {% endfor %}
                     </ul>
                 </div>
+              <div class="column pl0 pr0">
+                  <ul class="inline-list">
+                      <li>&copy;{{ site.time | date: '%Y' }} {{ site.title }}</li>
+                  </ul>
+              </div>
           </section>
           <section id="subfooter-right" class="small-6 columns social-icons end">
-            <ul class="inline-list">
-            {% for social_item in site.data.socialmedia %}
-              <li><a href="{{ social_item.url }}" target="_blank" class="{{ social_item.class }}" title="{{ social_item.title }}"></a></li>
-            {% endfor %}
-            </ul>
+              <div class="column pl0 pr0">
+              <ul class="inline-list">
+                {% for social_item in site.data.socialmedia %}
+                  <li><a href="{{ social_item.url }}" target="_blank" class="{{ social_item.class }}" title="{{ social_item.title }}"></a></li>
+                {% endfor %}
+              </ul>
+              </div>
           </section>
         </nav>
       </div><!-- /#subfooter -->
