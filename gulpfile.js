@@ -176,6 +176,7 @@ gulp.task('footer:scripts', function() {
     "app/bower_components/foundation/js/foundation/foundation.clearing.js",
     "app/bower_components/foundation/js/foundation/foundation.equalizer.js",
     "app/bower_components/foundation/js/foundation/foundation.topbar.js",
+    "app/bower_components/foundation/js/foundation/foundation.accordion.js",
     "app/bower_components/jquery-backstretch/jquery.backstretch.js",
     "app/bower_components/microplugin/src/microplugin.js",
     "app/bower_components/sifter/sifter.js",

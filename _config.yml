@@ -37,7 +37,7 @@ logo: "logo.png"
 # Theme works best with Kramdown (using the table of contents function)
 markdown: kramdown
 permalink: date
-highlight: pygments
+highlight: rouge
 excerpt_separator: "<!--more-->"
 include: ['.htaccess','.nojekyll']
 # Exclude these files from your production _site
@@ -53,6 +53,13 @@ language: "en"
 
 # Number of posts to show
 num_posts_home: 13
+
+# Collections
+
+collections:
+  sicp:
+    output: true
+
 
 #
 #       ____       ____            ____
@@ -82,6 +89,22 @@ defaults:
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: true
       loadMath: true
+  -
+    scope:
+      path: ""
+      type: "sicp"
+    values:
+      title: SICP Solutions
+      description: "Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"
+      show_meta: true   # Show metadata beneath all posts
+      # sidebar:        # Possible values › left, right › by default there will be no sidebar
+      comments: true
+      loadMath: true
+      layout: sicp
+      section: sicp
+      sitemap:
+          priority: 0.8
+          changefreq: weekly
 
 
 #       _   __            _             __  _
