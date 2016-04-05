@@ -403,8 +403,6 @@ $$ n = 15p $$. Thus we can conclude $$ 15\,\vert\,n $$.
 
 Suppose $$ n = 90 $$, then $$ 6\,\vert\,n $$ as well as $$ 10\,\vert\,n $$ are true, but $$ 60\,\vert\,n $$ is not true.
 
-<hr/>
-
 
 
 

@@ -291,5 +291,3 @@ iff, $$ ((a,c) \in S \circ R) \lor ((a,c)\in T \circ R)$$.
 iff, $$ (a,c) \in (S \circ R) \cup (T \circ R)$$.    
 
 Since, $$ (a,c) $$ is arbitrary, we can conclude that $$ (S \cup T) \circ R \, = \, (S \circ R) \cup (T \circ R) $$.
-
-<hr/>

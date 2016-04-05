@@ -711,8 +711,6 @@ Since $$ x $$ is arbitrary $$ \cap \mathcal F \subseteq X $$. Since $$ X $$ is a
  $$ \cap \mathcal F $$ is the smallest element(wrt subset relation) in $$ \mathcal F $$. Thus all the lower bounds of $$ \mathcal F $$ must be lesser than $$ \cap \mathcal F $$.
  Thus $$ \cap \mathcal F $$ is the largest element in all the lower bounds of $$ \mathcal F $$. Thus $$ \cap \mathcal F $$ is the greatest lower bound of $$ \mathcal F $$.
  
-<hr/>
-
 
 
 

@@ -574,4 +574,3 @@ $$ \Rightarrow (\frac {a+b} 2)^{n+1} < {\frac {a^{n+1+1} + b^{n+1+1}} 2} $$.
 
 Thus $$ P(n+1) $$ is true.
 
-<hr/>

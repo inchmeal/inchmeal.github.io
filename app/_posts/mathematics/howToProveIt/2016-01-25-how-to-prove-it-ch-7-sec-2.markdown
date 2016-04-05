@@ -248,7 +248,7 @@ Since $$ G $$ is denumerable, we can choose a one-to-one function $$ g: G \to Z^
 theorem 7.1.5, it follows that $$ \mathbb R $$ is countable. But $$ \mathbb R $$ is not countable. Thus we have a contradiction and our assumption is wrong.
 Thus there exist some real numbers that can not be defined by english sentences.
   
-<hr/>
+
   
           
 

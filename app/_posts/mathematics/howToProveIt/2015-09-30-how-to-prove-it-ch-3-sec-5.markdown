@@ -774,8 +774,6 @@ For any statement $$ P(x) $$, we can have following possible cases:
 
 Thus from both the cases, we can conclude that $$ \exists x (\lnot P(x) \lor \forall y P(y)) $$.
 
-<hr/>
-
 
 
 

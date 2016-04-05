@@ -685,7 +685,6 @@ We shall use induction on $$ n $$.
        
   Thus in both cases $$ (2+i) \; \vert \; (x+i) $$.
        
-<hr/>
        
        
               

@@ -492,7 +492,5 @@ Here it will be enough to show just one counter example. Suppose $$ x = 0, y = 5
 $$ h([o]_R) = h([5]_R $$. Now $$ h([0]_R) = [2^0]_R = [1]_R $$ and $$ h([5]_R) = [2^5]_R = [32]_R $$. Thus $$ [1]_R = [32]_R $$. But this is not correct
 because $$ 32 - 1 \ne 5k $$. Thus $$ h $$ is not a function.
 
-<hr/>
-
 
  

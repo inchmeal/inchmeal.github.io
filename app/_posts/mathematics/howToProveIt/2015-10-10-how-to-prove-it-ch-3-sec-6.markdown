@@ -382,6 +382,4 @@ Suppose for a value $$ x = z $$ such that $$ z \ne 0 \land z \ne 1 $$, and $$ x^
 sides by $$ \frac 1 {z^2} $$, we get $$ z = 1 $$. Thus it contradicts with the assumption $$ z \ne 1 $$. So we can conclude that $$ 0 $$ and 
 $$ 1 $$ are the only possible values for $$ x $$.
 
-<hr/>
-
 

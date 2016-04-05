@@ -1097,4 +1097,4 @@ $$ T \setminus A $$ and $$ T \setminus B $$. Thus $$ \vert T \setminus A \vert =
 This contradicts with $$ \vert T \vert \ge \vert A \vert + \vert B \vert $$. Thus our assumption is wrong. Thus either Alice or Bob missed atleast half of
 the classes.
 
-<hr/>
+

@@ -369,6 +369,6 @@ Thus $$ \mathcal F \sim Z^+ $$.
 
 TODO.
 
-<hr/>
+
 
 

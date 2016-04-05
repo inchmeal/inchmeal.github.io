@@ -192,7 +192,6 @@ Also suppose $$ Q $$ denotes image of $$ Y $$ under $$ f^{-1} $$. Thus $$ Q = \{
  
 Since $$ P \subseteq Q $$ and $$ Q \subseteq P $$, we can conclude that $$ P = Q $$.
 
-<hr/>
 
  
 

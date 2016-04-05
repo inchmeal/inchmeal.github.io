@@ -252,5 +252,3 @@ Thus, from both directions we have: $$ \cup_{p \in P}C_p = \cup_{i \in I}A_i \ti
 
 The theorem and proof both are not correct. It does not consider if some of the sets $$ A, B, C, $$ or $$ D $$ are empty.
 
-<hr/>
-

@@ -288,6 +288,4 @@ Thus both are same.
 
 Clearly (e) and (f) are same.
 
-<hr/>
-
 

@@ -7,8 +7,6 @@ sitemap:
     priority: 0.8
 ---
 
-<hr/>
-
 This is the first time after college(2007) I completed a book cover to cover while attempting all of its exercises. 
             
 This book was not a part of my initial plan for learning mathematics. I started with a book on [Linear Algebra][linear_algebra] and as soon  as I
@@ -73,8 +71,6 @@ To summarise,
 - Felt great in solving many problems.
 
 Overall it was a great endeavour and an enriching experience.
-
-<hr/>
 
 [linear_algebra]: http://www.amazon.com/Linear-Algebra-Introduction-Available-Enhanced/dp/0538735457
 [measuring_measures]: http://web.archive.org/web/20101102120728/http://measuringmeasures.com/blog/2010/3/12/learning-about-machine-learning-2nd-ed.html

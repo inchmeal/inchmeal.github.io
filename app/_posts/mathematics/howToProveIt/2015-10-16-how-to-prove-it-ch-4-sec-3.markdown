@@ -353,5 +353,3 @@ or $$ (X \cup \{a\} \cup \{c\}) \setminus \{b\} \in \mathcal F$$.
  it follows that $$ X \cup \{c\} \in \mathcal F $$.
  
 Thus from both cases $$ X \cup \{c\} \in \mathcal F $$.
-
-<hr/>

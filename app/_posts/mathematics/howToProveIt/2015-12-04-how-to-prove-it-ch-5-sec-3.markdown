@@ -349,8 +349,6 @@ Thus $$ f \circ f = h^{-1} \circ g \circ (h \circ h^{-1}) \circ g \circ h =  h^{
 Suppose $$ f(a) = a $$ and $$ fRg $$. Thus there exist an $$ h \in \mathcal P $$ such that $$ f = h^{-1} \circ g \circ h $$. Thus $$ f(a) = a = h^{-1} \circ g \circ h(a) $$. Applying $$ h $$ on both sides,
 $$ h(a) = g \circ h(a) $$. Thus $$ g(h(a)) = h(a) $$. Thus $$ g $$ also has a fixed point = $$ h(a) $$.
 
-<hr/>
-
 
 
 

@@ -623,8 +623,6 @@ In the induction step it assumed it is correct for $$ n \ge 1 $$. Then it procee
 elements it is assumed that $$ n + 1 \ge 3 $$. But this assumption is not correct as it can also be the case when $$ n + 1 = 2 $$. Since the assumption
 $$ n + 1 \ge 3 $$ is wrong, it follows that induction step is not correct.
 
-<hr/>
-
 
 
 

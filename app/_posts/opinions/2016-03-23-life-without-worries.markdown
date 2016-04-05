@@ -8,7 +8,6 @@ sitemap:
 
 <!--more-->
 
-<hr/>
 
 *Soon I will get rid of most of the problems.       
 Soon I will have an enchanting life.      
@@ -39,6 +38,5 @@ I should be living in each moment.
 This might be the easiest of time that may ever come.     
 Everything’s never gonna be alright.*
        
-<hr/>
 
        

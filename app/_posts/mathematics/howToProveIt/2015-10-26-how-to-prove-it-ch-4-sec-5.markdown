@@ -711,8 +711,6 @@ There does not exist any other set, say $$ X $$ in $$ \mathcal F $$ such that ap
 **(b)** Since smallest set in $$ \mathcal F $$ should be the subset of all other sets. Since $$ M_1 $$ and $$ M_2 $$ are sets in $$ \mathcal F $$ and $$ M_1 \cap M_2 = \phi $$, it
  follows that there is no smallest set in $$ \mathcal F $$.
  
-<hr/>
-
 
 
   

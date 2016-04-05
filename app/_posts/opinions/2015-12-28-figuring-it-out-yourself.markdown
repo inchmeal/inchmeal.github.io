@@ -74,4 +74,3 @@ Shyam was happy that he understood the message.
 <br/>
 So, which *way* do you prefer? Ram's Father or Shyam's Father...
 
-<hr/>

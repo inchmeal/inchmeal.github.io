@@ -284,7 +284,5 @@ The proof and theorem both are correct. Following strategies are used:
 1. To prove a goal of the form of $$ \exists x P(x) $$. Here existential instantiation is used.
 2. To prove a goal of the form of $$ P \lor Q $$, all possible cases are considered.
 
-<hr/>
-
 
 

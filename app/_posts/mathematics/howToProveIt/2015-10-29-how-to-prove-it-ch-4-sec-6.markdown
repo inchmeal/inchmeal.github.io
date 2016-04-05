@@ -791,8 +791,6 @@ Suppose $$ Z \in  \mathcal F \cdot \mathcal G  $$. Thus there exist a set $$ X \
  Thus $$ ( \mathcal F \cdot \mathcal G, \mathcal F) \in R $$ and $$ ( \mathcal F \cdot \mathcal G, \mathcal G ) \in R $$. Thus $$  \mathcal F \cdot \mathcal G $$ is the smallest
  element of the set $$  \{ \mathcal F, \mathcal G \} $$. Thus $$ \mathcal F \cdot \mathcal G  $$ is greatest lower bound of the set $$ \mathcal F \cdot \mathcal G $$.
  
-<hr/>
-
 
  
 

@@ -138,8 +138,6 @@ Leaving Problems 13 to 16, as all involve truth tables and such problems were al
 Suppose $$ x^2 + y = 13 $$. Suppose $$ y = 4 $$, it follows that $$ x^2 + 4 = 13 $$, or $$ x = 3 $$ or $$ x = -3 $$. Thus for $$ y = 4 $$ and $$ x = -3 $$, there is no contradiction.
 Thus theorem is not correct.
 
-<hr/>
-
 
 
 
