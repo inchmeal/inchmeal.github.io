@@ -29,7 +29,7 @@ Output returned by given statements:
 
 Mathematical definition for:
 
-{% highlight racket %}
+{% highlight racket linenos %}
 (define (f n) (A 0 n))
 {% endhighlight %}
 
@@ -39,7 +39,7 @@ Clearly it is: $$ 2n $$
 
 Mathematical definition for:
 
-{% highlight racket %}
+{% highlight racket linenos %}
 (define (f n) (A 1 n))
 
 ; We expand the function until it reaches to the most primitive form.
@@ -65,7 +65,7 @@ Clearly it is: $$ 2^n $$.
 
 Mathematical definition for:
 
-{% highlight racket %}
+{% highlight racket linenos %}
 (define (f n) (A 2 n))
 
 ; We expand the function until it reaches to the most primitive form.

@@ -22,7 +22,7 @@ date: 2016-03-29
 
 #### Normal Order Evaluation ####
 
-Here we *fully expand and then reduce*, thus expending it we get:
+Here we *fully expand and then reduce*, thus expanding it we get:
 
 {% highlight racket linenos %}
 (if (= 0 0)
