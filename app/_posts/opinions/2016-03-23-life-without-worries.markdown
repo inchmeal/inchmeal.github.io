@@ -25,7 +25,7 @@ When curiosity is there, who needs problems for enchantment?*
 
 *The only perennial thing from past are these problems.       
 If one gets resolved then other, even more daunting, may come in.    
-There can always be a worst situation then the present one.    
+There can always be a worst situation than the present one.    
 No upper limits.*        
 
 

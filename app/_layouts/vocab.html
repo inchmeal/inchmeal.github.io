@@ -1,0 +1,25 @@
+---
+layout: page
+---
+
+<p class="tm10">
+{% if page.date %}
+<time class="post-date pr20" datetime="{{ page.date | date: "%B %d, %Y" }}" itemprop="datePublished"> {{ page.date | date: "%B %d, %Y" }}</time>
+{% endif %}
+[<a href="/vocab" >Back to main</a>]
+</p>
+<p class="tm10">
+Total Words: {{ page.words.size }}
+</p>
+
+<hr/>
+
+<ul>
+	{% for word in page.words %}
+	<li><a href="{{ word.url }}">{{ word.title | strip }}</a></li>
+	{% endfor %}
+</ul>
+
+<hr/>
+
+{{ content }}

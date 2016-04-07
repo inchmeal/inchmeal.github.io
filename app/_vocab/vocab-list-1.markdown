@@ -1,23 +1,7 @@
 ---
-layout: page
 title: Vocab List - 1
-section: vocab
 date: 2016-03-18
-words: Rescind, Luminous, Perennial, Contention, Exculpate, Gregarious, Condone, Pathology, Pathological, Bondage, Obdurate, Antipathy, Invective, Fawning, Alacrity
-sitemap:
-   exclude: 'yes'
 ---
-
-<div class="panel radius" markdown="1">
-    
-**Words List**
-{: #toc }
-*  TOC
-{:toc}
-
-</div>
-
-<hr/>
 
 <h3> Experience with RandomX </h3> 
 
@@ -45,7 +29,7 @@ on with alacrity.
 
 <hr/>
 
-#### Rescind ####
+<h4 word id="rescind" >  Rescind </h4>
 
 Rescind means to cancel officially.
 
@@ -58,7 +42,7 @@ It generally refers to promises/offers/rules instead of tangible objects.
     
 <hr/>
 
-#### Luminous ####
+<h4 word id="Luminous" > Luminous </h4>
 
 Luminous means full of or giving off light.
  
@@ -74,7 +58,7 @@ and easily understood. And a luminous career is bright and inspiring.
     - She is wearing **luminous** blue blouse.
 <hr/>
     
-#### Perennial ####
+<h4 word id="Perennial" > Perennial </h4>
     
 Perennial typically describes things that are permanent, constant, or repeated.
     
@@ -88,7 +72,7 @@ Arguing with your roommate about who cleaned the bathroom last time might be a p
 
 <hr/>
           
-#### Contention ####
+<h4 word id="Contention" > Contention </h4>
           
 - the act of competing as for profit or a prize.
 - a contentious speech act; a dispute where there is strong disagreement.
@@ -103,7 +87,7 @@ Arguing with your roommate about who cleaned the bathroom last time might be a p
 
 <hr/>
              
-#### Exculpate ####
+<h4 word id="Exculpate" > Exculpate </h4>
 
 To exculpate means to find someone not guilty of criminal charges.
 
@@ -116,7 +100,7 @@ Exculpate comes from two Latin words: ex-, meaning "from," and culpa, meaning "b
       
 <hr/>
 
-#### Gregarious ####
+<h4 word id="Gregarious" > Gregarious </h4>
  
 - instinctively or temperamentally seeking and enjoying the company of others.
 - (of animals) tending to form a group with others of the same species.
@@ -130,7 +114,7 @@ Exculpate comes from two Latin words: ex-, meaning "from," and culpa, meaning "b
     
 <hr/>
     
-#### Condone ####
+<h4 word id="Condone" > Condone </h4>
 
 excuse, overlook, or make allowances for; be lenient with.
     
@@ -142,7 +126,7 @@ excuse, overlook, or make allowances for; be lenient with.
       
 <hr/>
 
-#### Pathology ###
+<h4 word id="Pathology" > Pathology </h4>
 
 The branch of medical science that studies the causes and nature and effects of diseases.
 
@@ -154,7 +138,7 @@ The branch of medical science that studies the causes and nature and effects of 
 
 <hr/>      
       
-#### Pathological ###
+<h4 word id="Pathological" > Pathological </h4>
       
 - of or relating to the practice of pathology.
 - caused by or evidencing a mentally disturbed condition.
@@ -170,7 +154,7 @@ pathological compulsion for cleanliness, or a growth on someone's elbow that tur
 
 <hr/>
 
-#### Bondage ####
+<h4 word id="Bondage" > Bondage </h4>
 
 - the state of being under the control of another person.
 - sexual practice that involves physically restraining (by cords or handcuffs) one of the partners.
@@ -183,7 +167,7 @@ pathological compulsion for cleanliness, or a growth on someone's elbow that tur
 
 <hr/>
 
-#### Obdurate ####
+<h4 word id="Obdurate" > Obdurate </h4>
 
 - Obdurate is a formal word meaning stubborn.
 - stubbornly persistent in wrongdoing.
@@ -197,7 +181,7 @@ pathological compulsion for cleanliness, or a growth on someone's elbow that tur
 
 <hr/>
 
-#### Antipathy ####
+<h4 word id="Antipathy" > Antipathy </h4>
 
 - a deep-seated dislike of something or someone.
 - the object of a feeling of intense aversion; something to be avoided.
@@ -210,7 +194,7 @@ pathological compulsion for cleanliness, or a growth on someone's elbow that tur
     
 <hr/>
     
-#### Invective ####
+<h4 word id="Invective" > Invective </h4>
 
 abusive or venomous language used to express blame or censure or bitter deep-seated ill will.
 
@@ -222,7 +206,7 @@ abusive or venomous language used to express blame or censure or bitter deep-sea
 
 <hr/>
 
-#### Fawning ####
+<h4 word id="Fawning" > Fawning </h4>
 
 - attempting to win favor by flattery.
 - attempting to win favor from influential people by flattery.
@@ -235,7 +219,7 @@ abusive or venomous language used to express blame or censure or bitter deep-sea
       
 <hr/>
   
-#### Alacrity ####
+<h4 word id="Alacrity" > Alacrity </h4>
 
 - liveliness and eagerness.
 - Someone with alacrity shows cheerful willingness and eager behavior, like a kid whose mother has told him he can buy anything in a candy store.

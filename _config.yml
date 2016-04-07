@@ -59,6 +59,8 @@ num_posts_home: 13
 collections:
   sicp:
     output: true
+  vocab:
+    output: true
 
 
 #
@@ -105,6 +107,17 @@ defaults:
       sitemap:
           priority: 0.7
           changefreq: weekly
+  -
+    scope:
+      path: ""
+      type: "vocab"
+    values:
+      description: "Inchmeal | Improving vocabulary"
+      layout: vocab
+      show_meta: false 	# Show metadata beneath all pages
+      section: vocab
+      sitemap:
+        exclude: 'yes'
 
 
 #       _   __            _             __  _

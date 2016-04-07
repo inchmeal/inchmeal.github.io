@@ -66,7 +66,7 @@ sitemap:
     {% endfor %}
 
     {% for collection in site.collections %}
-    {% unless collection.label == 'posts' %}
+    {% unless collection.label == 'posts' or collection.label == 'vocab' %}
     {% for doc in collection.docs %}
     {% unless doc.sitemap.exclude == "yes" %}
     <url>
