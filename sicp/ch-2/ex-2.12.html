@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-1/ex-1.30.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.12.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -884,7 +884,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-1">Chapter 1</a>
                         
-                        <div id="ch-1" class="content active">
+                        <div id="ch-1" class="content ">
                             
                             
 
@@ -1124,7 +1124,7 @@
 
                             
 
-                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius success label ">1.30</span></a>
+                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius info label ">1.30</span></a>
                             
                             
 
@@ -1264,7 +1264,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-2">Chapter 2</a>
                         
-                        <div id="ch-2" class="content ">
+                        <div id="ch-2" class="content active">
                             
                             
 
@@ -1360,7 +1360,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.12.html" ><span class="radius info label ">2.12</span></a>
+                            <a href="/sicp/ch-2/ex-2.12.html" ><span class="radius success label ">2.12</span></a>
                             
                             
 
@@ -1413,20 +1413,20 @@
                     <header>
                         <span itemprop="name">
                             
-                            <h3>Chapter 1, Building Abstractions with Procedures</h3>
+                            <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - Formulating Abstractions with Higher-Order Procedures</h3>
+                            <h3>Section - Introduction to Data Abstraction</h3>
                             
                             
-                            <h4>Exercise 1.30</h4>
+                            <h4>Exercise 2.12</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 04, 2016" itemprop="datePublished"> April 04, 2016</time>
+                        <time class="post-date pr20" datetime="April 23, 2016" itemprop="datePublished"> April 23, 2016</time>
                     </p>
                     
 
@@ -1440,15 +1440,99 @@
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="nv">result</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="nv">result</span>
-        <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">result</span> <span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)))</span>
-     <span class="p">)</span>
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+
+<span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="nv">c</span> <span class="nv">p</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">width</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">c</span> <span class="nv">p</span><span class="p">)</span> <span class="mi">100</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">make-interval</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">c</span> <span class="nv">width</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">c</span> <span class="nv">width</span><span class="p">))</span>
   <span class="p">)</span>
-  <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">percent-tolerance</span> <span class="nv">x</span><span class="p">)</span> 
+   <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
+           <span class="p">(</span><span class="nf">center</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">upper-bound</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">lower-bound</span> <span class="nv">x</span><span class="p">))</span> <span class="mf">2.0</span><span class="p">))</span> 
+           <span class="p">(</span><span class="nf">width</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nf">upper-bound</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">lower-bound</span> <span class="nv">x</span><span class="p">))</span> <span class="mf">2.0</span><span class="p">))</span>
+        <span class="p">)</span> 
+        <span class="p">(</span><span class="nb">*</span> <span class="p">(</span><span class="nb">/</span> <span class="nv">width</span> <span class="nv">center</span><span class="p">)</span> <span class="mi">100</span><span class="p">)</span>
+   <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-center-width</span> <span class="nv">c</span> <span class="nv">w</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">make-interval</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">c</span> <span class="nv">w</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">c</span> <span class="nv">w</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">center</span> <span class="nv">i</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">lower-bound</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nf">upper-bound</span> <span class="nv">i</span><span class="p">))</span> <span class="mi">2</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">width</span> <span class="nv">i</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nf">upper-bound</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nf">lower-bound</span> <span class="nv">i</span><span class="p">))</span> <span class="mi">2</span><span class="p">))</span>
+  
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lower-bound</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">min</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">upper-bound</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">max</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">x</span><span class="p">)</span> 
+   <span class="p">(</span><span class="nb">display</span> <span class="s">"["</span><span class="p">)</span> 
+   <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">lower-bound</span> <span class="nv">x</span><span class="p">))</span> 
+   <span class="p">(</span><span class="nb">display</span> <span class="s">","</span><span class="p">)</span> 
+   <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">upper-bound</span> <span class="nv">x</span><span class="p">))</span> 
+   <span class="p">(</span><span class="nb">display</span> <span class="s">"]"</span><span class="p">)</span>
+   <span class="p">(</span><span class="nb">newline</span><span class="p">)</span> 
+<span class="p">)</span>  <span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Output:</p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">intvl</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">100</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">intvl</span><span class="p">)</span>
+<span class="p">[</span><span class="nf">90</span><span class="o">,</span><span class="mi">110</span><span class="p">]</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">percent-tolerance</span> <span class="nv">intvl</span><span class="p">)</span>
+<span class="mf">10.0</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">intvl</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">500</span> <span class="mi">15</span><span class="p">))</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">intvl</span><span class="p">)</span>
+<span class="p">[</span><span class="nf">425</span><span class="o">,</span><span class="mi">575</span><span class="p">]</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
 
                         <hr/>
                     </span>
@@ -1468,7 +1552,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-1/ex-1.30.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.12.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 

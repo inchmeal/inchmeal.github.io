@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-1/ex-1.30.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.16.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -884,7 +884,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-1">Chapter 1</a>
                         
-                        <div id="ch-1" class="content active">
+                        <div id="ch-1" class="content ">
                             
                             
 
@@ -1124,7 +1124,7 @@
 
                             
 
-                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius success label ">1.30</span></a>
+                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius info label ">1.30</span></a>
                             
                             
 
@@ -1264,7 +1264,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-2">Chapter 2</a>
                         
-                        <div id="ch-2" class="content ">
+                        <div id="ch-2" class="content active">
                             
                             
 
@@ -1392,7 +1392,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.16.html" ><span class="radius info label todo">2.16</span></a>
+                            <a href="/sicp/ch-2/ex-2.16.html" ><span class="radius success label todo">2.16</span></a>
                             
                         </div>
                     </li>
@@ -1413,42 +1413,79 @@
                     <header>
                         <span itemprop="name">
                             
-                            <h3>Chapter 1, Building Abstractions with Procedures</h3>
+                            <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - Formulating Abstractions with Higher-Order Procedures</h3>
+                            <h3>Section - Introduction to Data Abstraction</h3>
                             
                             
-                            <h4>Exercise 1.30</h4>
+                            <h4>Exercise 2.16</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 04, 2016" itemprop="datePublished"> April 04, 2016</time>
+                        <time class="post-date pr20" datetime="April 24, 2016" itemprop="datePublished"> April 24, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="nv">result</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="nv">result</span>
-        <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">result</span> <span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)))</span>
-     <span class="p">)</span>
-  <span class="p">)</span>
-  <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                        <p>We know from previous exercise that this problem arises because we expect that an interval-variable should take same value in all
+the occurrences in an expression. Thus to fix this we have to make sure that an an interval-variable should takes same value in all
+the occurrences in an expression while doing the interval arithmetic.</p>
+
+<p>This problem can be approached in two ways:</p>
+
+<ul>
+  <li>
+    <p>Convert the expression so that each interval variable occurs only once. This is however not possible. For eg: <script type="math/tex">I^n + I^{n-1}</script>
+can not be converted to an expression containing <script type="math/tex">I</script> only once.</p>
+  </li>
+  <li>
+    <p>To do <em>interval-arithmetic</em> in such a way that when a variable is repeated then all occurrences of an interval variable takes same
+ value.</p>
+  </li>
+</ul>
+
+<p>Thus we have only second approach as first approach will not work. I will try to outline my approach how we may do it:</p>
+
+<p>Note: I think there are high chances that it is an incorrect approach. I wrote it to remember so that if I  ever visit again I may get
+some direction from this approach.</p>
+
+<p>We will do <em>lazy-evaluation</em> i.e. we will not perform computation till we get the whole expression and after analyzing the whole expression
+we will be able to come up with a formulae for lower-bound and upper-bound.</p>
+
+<p>Instead of computing lower-bound and upper-bound while doing <em>interval arithmetic</em> we will <em>remember</em> the interval-variables used for
+computing the lower-bounds and upper-bounds and the corresponding operation. For eg:</p>
+
+<p>In case of addition of <script type="math/tex">I_1 + I_2</script>, remember that <script type="math/tex">\text{ lower-bound } = \text{ lower-bound}( I_1 ) + \text{ lower-bound}(I_2)</script>.
+Note that we are not computing the sum, but we rememeber that the lower-bound of <script type="math/tex">I_1 + I_2</script> is sum of lower-bounds of <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>.
+Similarly we store for upper-bounds.</p>
+
+<p>Same process can be repeated for multiplication: <script type="math/tex">I_1 \times I_2</script>, we will follow the same process to remember which values are used
+of the intervals to compute lower or upper bounds.</p>
+
+<p>Thus we can extend the same process of remembering for finding upper-bound of <script type="math/tex">I_1 + I_2 + ... I_n</script> or <script type="math/tex">I_1 \times I_2 \times ... I_n</script>.</p>
+
+<p>Extending further we <em>recursively</em> keep remembering the overall formula for computing without actually computing the lower-bound and upper-bound till
+we are done reading the complete expression.</p>
+
+<p>For eg: <script type="math/tex">I_1 \times I_2 + I_2 \times I_3</script>, may be we have lower-bound = <script type="math/tex">lb(I_1) \times ub(I_2) + lb(I_1) \times lb(I_3)</script> where
+ <script type="math/tex">lb =</script> lower-bound and <script type="math/tex">ub =</script> upper-bound.</p>
+
+<p>Once we are done, we have the formulas for computing lower-bound and upper-bound(one for each). Now we can compute the final value of lower-bound and
+upper-bound using these formulas as follows:</p>
+
+<p>If a variable is repeated multiple times in the formula then we only need to worry when some repetitions are using lower-bound of the
+repeated variable and other using upper-bound. Otherwise if all repetitions uses same bound then we can use that value while computing the
+overall value of the bound(lower or upper).</p>
+
+<p>For the case, we compute the bound(lower or uppert) two times, one by using lower-bound and other by using upper-bound. And depending on
+ which bound, lower or upper, we are computing, we will pick the bound-value(lower or upper) of the repetitive variable which results in
+ smallest or largest value accordingly. We can use arbitrary values for other variables(obviously from the corresponding interval range only)</p>
+
 
                         <hr/>
                     </span>
@@ -1468,7 +1505,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-1/ex-1.30.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.16.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 

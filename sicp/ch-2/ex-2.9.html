@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-1/ex-1.30.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.9.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -884,7 +884,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-1">Chapter 1</a>
                         
-                        <div id="ch-1" class="content active">
+                        <div id="ch-1" class="content ">
                             
                             
 
@@ -1124,7 +1124,7 @@
 
                             
 
-                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius success label ">1.30</span></a>
+                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius info label ">1.30</span></a>
                             
                             
 
@@ -1264,7 +1264,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-2">Chapter 2</a>
                         
-                        <div id="ch-2" class="content ">
+                        <div id="ch-2" class="content active">
                             
                             
 
@@ -1336,7 +1336,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.9.html" ><span class="radius info label ">2.9</span></a>
+                            <a href="/sicp/ch-2/ex-2.9.html" ><span class="radius success label ">2.9</span></a>
                             
                             
 
@@ -1413,42 +1413,76 @@
                     <header>
                         <span itemprop="name">
                             
-                            <h3>Chapter 1, Building Abstractions with Procedures</h3>
+                            <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - Formulating Abstractions with Higher-Order Procedures</h3>
+                            <h3>Section - Introduction to Data Abstraction</h3>
                             
                             
-                            <h4>Exercise 1.30</h4>
+                            <h4>Exercise 2.9</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 04, 2016" itemprop="datePublished"> April 04, 2016</time>
+                        <time class="post-date pr20" datetime="April 22, 2016" itemprop="datePublished"> April 22, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="nv">result</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="nv">result</span>
-        <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">result</span> <span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)))</span>
-     <span class="p">)</span>
-  <span class="p">)</span>
-  <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                        <p>Lets consider the interval <script type="math/tex">I_1 = [l_1, u_1]</script> and <script type="math/tex">I_2 = [l_2, u_2]</script> with width <script type="math/tex">w_1 = \frac {u_1 - l_1} 2</script> and <script type="math/tex">w_2 = \frac {u_2 - l_2} 2</script>.</p>
+
+<p>Addition:</p>
+
+<p><script type="math/tex">I_{add} = I_1 + I_2 = [l_1 + l_2, u_1 + u_2]</script>. Thus the width is:</p>
+
+<p><script type="math/tex">w_{add} = \frac {(u_1+u_2) - (l_1+l_2)} 2</script>      <br />
+<script type="math/tex">= { \frac {u_1 - l_1} 2 } + { \frac {u_2 - l_2} 2 }</script>      <br />
+<script type="math/tex">= w_1 + w_2</script></p>
+
+<p>Subtraction:</p>
+
+<p><script type="math/tex">I_{sub} = I_1 - I_2 = [l_1 - u_2, u_1 - l_2]</script>. Thus the width is:</p>
+
+<p><script type="math/tex">w_{sub} = \frac {(l_1-u_2) - (u_1-l_2)} 2</script>      <br />
+<script type="math/tex">= { \frac {l_1 - u_1} 2 } + { \frac {l_2 - u_2} 2 }</script>      <br />
+<script type="math/tex">= - (w_1 + w_2)</script></p>
+
+<p>Clearly, width of addition and subtraction of intervals is a function of the width of individual intervals.</p>
+
+<p>If the width of the result of an operation(+, -, *, or /) between two intervals is a function of the widths of individual intervals, then 
+applying same operation(+, -, *, or /) on two different pairs of intervals such that both pairs have same widths, will result in intervals with 
+equals widths.</p>
+
+<p>Lets take two different intervals <script type="math/tex">I_1 = [l_1, u_1]</script> and <script type="math/tex">I_2 = [l_2, u_2]</script> with equal widths say <script type="math/tex">w_p =  \frac {u_1 - l_1} 2 =  \frac {u_2 - l_2} 2</script>.</p>
+
+<p>Now consider another interval <script type="math/tex">I_3 = [l_3, u_3]</script> with width say <script type="math/tex">w_q = \frac {u_3 - l_3} 2</script> such that <script type="math/tex">w_p \neq w_q</script>.</p>
+
+<p>Lets say width of interval <script type="math/tex">(I_1 \text{ op } I_3)</script> is <script type="math/tex">w_1</script> and width of <script type="math/tex">(I_2 \text{ op } I_3)</script> is <script type="math/tex">w_2</script>, where <script type="math/tex">\text{ op }</script>
+ denotes the arithmetic operation i.e. +, -, *, or /.</p>
+
+<p>If width is a function of individual intervals, then it must be the case that <script type="math/tex">w_1 = w_2</script> because width of pair <script type="math/tex">(I_1, I_3)</script> 
+and <script type="math/tex">(I_2, I_3)</script> is same i.e. <script type="math/tex">(w_p, w_q)</script>. Thus <script type="math/tex">w_1 = w_2 = f(w_p, w_q)</script> where <script type="math/tex">f</script> is some function.</p>
+
+<p>Lets take example for addition:</p>
+
+<p><script type="math/tex">I_1 = [0, 10], \; I_2 = [20, 30], \; I_3 = [100, 200]</script>.
+Thus we have <script type="math/tex">w_p = w_{I_1} = w_{I_2} = 5</script> and <script type="math/tex">w_q = w_{I_3} = 50</script>.</p>
+
+<p><script type="math/tex">I_1 + I_3 = [100, 210]</script>. Thus width <script type="math/tex">w_1 = (210-100)/2 = 55 = w_p + w_q</script>.
+Also, <script type="math/tex">I_1 + I_3 = [120, 230]</script>. Thus width <script type="math/tex">w_2 = (230-120)/2 = 55 = w_p + w_q</script>.</p>
+
+<p>Clearly <script type="math/tex">w_1 = w_2</script> in case of addition operation.</p>
+
+<p>Lets see for multiplication:</p>
+
+<p><script type="math/tex">I_1 \times I_3 = [0, 2000]</script>. Thus width <script type="math/tex">w_1 = (2000-0)/2 = 1000</script>.
+Also, <script type="math/tex">I_2 \times I_3 = [2000, 6000]</script>. Thus width <script type="math/tex">w_2 = (6000-2000)/2 = 2000</script>.</p>
+
+<p>Here <script type="math/tex">w_1 \neq w_2</script>. Hence width of the result of multiplication of two intervals is not a function of individual intervals.</p>
+
 
                         <hr/>
                     </span>
@@ -1468,7 +1502,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-1/ex-1.30.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.9.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
