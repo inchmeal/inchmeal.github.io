@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.14.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.23.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -1460,7 +1460,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.14.html" ><span class="radius success label ">2.14</span></a>
+                            <a href="/sicp/ch-2/ex-2.14.html" ><span class="radius info label ">2.14</span></a>
                             
                             
 
@@ -1532,7 +1532,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.23.html" ><span class="radius info label ">2.23</span></a>
+                            <a href="/sicp/ch-2/ex-2.23.html" ><span class="radius success label ">2.23</span></a>
                             
                         </div>
                     </li>
@@ -1556,62 +1556,23 @@
                             <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - 2.1 - Introduction to Data Abstraction</h3>
+                            <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.14</h4>
+                            <h4>Exercise 2.23</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 23, 2016" itemprop="datePublished"> April 23, 2016</time>
+                        <time class="post-date pr20" datetime="April 25, 2016" itemprop="datePublished"> April 25, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Lets first take an example of two intervals, <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>, and compute <script type="math/tex">\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }</script>
-and <script type="math/tex">\frac {I_1 I_2} {I_1 + I_2}</script> using the procedures <code class="highlighter-rouge">par1</code> and <code class="highlighter-rouge">par2</code> given in exercise.</p>
-
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">25</span> <span class="mf">1.5</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I2</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">75</span> <span class="mf">0.75</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">rs1</span> <span class="p">(</span><span class="nf">par1</span> <span class="nv">I1</span> <span class="nv">I2</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">rs2</span> <span class="p">(</span><span class="nf">par2</span> <span class="nv">I1</span> <span class="nv">I2</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">rs1</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">15998452012384</span><span class="o">,</span><span class="mf">19.35544164037855</span><span class="p">]</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">rs2</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">50370662460568</span><span class="o">,</span><span class="mf">18.995897832817338</span><span class="p">]</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>Clearly both results in different answers.</p>
-
-<p>Lets see if the formulas are actually equivalent when applied to intervals.</p>
-
-<p>We have:</p>
-
-<p><script type="math/tex">\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }</script>      <br />
-By algebra, we can simplify it as:   <br />
-<script type="math/tex">\frac 1 { { \frac { I_1 } { I_1 I_2 } } + { \frac { I_2 } { I_1 I_2 } } }</script></p>
-
-<p>This will be true for intervals, iff:</p>
-
-<ul>
-  <li><script type="math/tex">{ \frac 1 { I_1 } } = { \frac { I_1 } { I_1 I_2 } }</script> for any interval <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>. If we look closely this actually
-   means that <script type="math/tex">\frac I I = [1, 1]</script>.</li>
-  <li><script type="math/tex">\frac 1 { \frac 1 I } = I</script>, for any interval <script type="math/tex">I</script>.</li>
-</ul>
-
-<p>Lets see using Alyssa’s “interval arithmetic” that above is correct or not:</p>
-
+                        
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -1620,20 +1581,23 @@ By algebra, we can simplify it as:   <br />
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">25</span> <span class="mf">1.5</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">I1</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">24</span><span class="o">.</span><span class="mi">625</span><span class="o">,</span><span class="mf">25.375</span><span class="p">]</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">div</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">0</span><span class="o">.</span><span class="mi">9704433497536946</span><span class="o">,</span><span class="mf">1.030456852791878</span><span class="p">]</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">reverse</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">I1</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">reverse_reverse</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">reverse</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">reverse_reverse</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">24</span><span class="o">.</span><span class="mi">625000000000004</span><span class="o">,</span><span class="mf">25.375</span><span class="p">]</span><span class="w">
+9
+10
+11</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">for-each</span> <span class="nv">proc</span> <span class="nv">l</span><span class="p">)</span> 
+   <span class="p">(</span><span class="k">cond</span> 
+        <span class="p">((</span><span class="nb">null?</span> <span class="nv">l</span><span class="p">)</span> <span class="nv">true</span><span class="p">)</span> 
+        <span class="p">(</span><span class="nf">else</span>
+             <span class="p">(</span><span class="nf">proc</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">l</span><span class="p">))</span> 
+             <span class="p">(</span><span class="nb">for-each</span> <span class="nv">proc</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">l</span><span class="p">))</span>
+        <span class="p">)</span>
+   <span class="p">)</span>
+<span class="p">)</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>As we can see by <em>interval arithmetic</em> that <script type="math/tex">\frac I I \ne [1, 1]</script>. Thus the algebraic equivalent is not same as interval equivalent.
-However <script type="math/tex">\frac 1 { \frac 1 I } = I</script>, for any interval <script type="math/tex">I</script> holds true which means this farmulae alegebraic equivalent is same as
-arithmetic equivalent.</p>
+<p>Note that here, <code class="highlighter-rouge">cond</code> is used instead of <code class="highlighter-rouge">if</code> because in “else” part it is required to execute two statements. This cant be done
+ using <code class="highlighter-rouge">if</code>.</p>
 
 
                         <hr/>
@@ -1654,7 +1618,7 @@ arithmetic equivalent.</p>
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.14.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.23.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
