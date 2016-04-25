@@ -1,6 +1,6 @@
 ---
 chapterName: "Building Abstractions with Data"
-sectionName: "Introduction to Data Abstraction"
+sectionName: "2.1 - Introduction to Data Abstraction"
 chapter: 2
 solution: "2.16"
 order: "016"
