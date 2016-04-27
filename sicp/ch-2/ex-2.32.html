@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-1/ex-1.30.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.32.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -1088,7 +1088,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-1">Chapter 1</a>
                         
-                        <div id="ch-1" class="content active">
+                        <div id="ch-1" class="content ">
                             
                             
 
@@ -1328,7 +1328,7 @@
 
                             
 
-                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius success label ">1.30</span></a>
+                            <a href="/sicp/ch-1/ex-1.30.html" ><span class="radius info label ">1.30</span></a>
                             
                             
 
@@ -1468,7 +1468,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-2">Chapter 2</a>
                         
-                        <div id="ch-2" class="content ">
+                        <div id="ch-2" class="content active">
                             
                             
 
@@ -1724,7 +1724,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.32.html" ><span class="radius info label ">2.32</span></a>
+                            <a href="/sicp/ch-2/ex-2.32.html" ><span class="radius success label ">2.32</span></a>
                             
                             
 
@@ -1732,7 +1732,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.32.html" ><span class="radius info label ">2.32</span></a>
+                            <a href="/sicp/ch-2/ex-2.32.html" ><span class="radius success label ">2.32</span></a>
                             
                         </div>
                     </li>
@@ -1753,26 +1753,35 @@
                     <header>
                         <span itemprop="name">
                             
-                            <h3>Chapter 1, Building Abstractions with Procedures</h3>
+                            <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - Formulating Abstractions with Higher-Order Procedures</h3>
+                            <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 1.30</h4>
+                            <h4>Exercise 2.32</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 04, 2016" itemprop="datePublished"> April 04, 2016</time>
+                        <time class="post-date pr20" datetime="April 27, 2016" itemprop="datePublished"> April 27, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        
+                        <p>To find power set of a set, <script type="math/tex">S</script>, we can proceed as:</p>
+
+<p>Power set of <script type="math/tex">S</script> is:</p>
+
+<ul>
+  <li>if <script type="math/tex">S = \phi</script>, then <script type="math/tex">\mathcal P(S) = \{ \phi \}</script>.</li>
+  <li>if <script type="math/tex">S \ne \phi</script>, then choose any element <script type="math/tex">x \in S</script>, then:   <br />
+<script type="math/tex">\mathcal P(S) = \mathcal P(S \setminus \{ x \}) \; \cup \; \{ X \cup \{x\} \, \vert \; X \in  \mathcal P(S \setminus \{ x \}) \}</script>.</li>
+</ul>
+
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -1780,15 +1789,40 @@
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="nv">result</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="nv">result</span>
-        <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">result</span> <span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)))</span>
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">subsets</span> <span class="nv">s</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">s</span><span class="p">)</span>
+      <span class="p">(</span><span class="nb">list</span> <span class="nv">nil</span><span class="p">)</span>
+      <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
+             <span class="p">(</span><span class="nf">rest</span> <span class="p">(</span><span class="nf">subsets</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">s</span><span class="p">)))</span>
+           <span class="p">)</span>
+           <span class="p">(</span><span class="nb">append</span>
+                  <span class="nv">rest</span>
+                  <span class="p">(</span><span class="nb">map</span>
+                      <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span>
+                        <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">s</span><span class="p">)</span> <span class="nv">x</span><span class="p">)</span>
+                      <span class="p">)</span>  
+                      <span class="nv">rest</span>
+                  <span class="p">)</span>
+           <span class="p">)</span>
      <span class="p">)</span>
   <span class="p">)</span>
-  <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="mi">0</span><span class="p">)</span>
 <span class="p">)</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
+
 
                         <hr/>
                     </span>
@@ -1808,7 +1842,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-1/ex-1.30.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.32.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
