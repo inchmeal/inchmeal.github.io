@@ -25,7 +25,7 @@ comprehend the complexity and trade-offs  of a solution. It is difficult to reme
 can *fill* in the gaps. In need one should be able to take a deep dive to find new solutions or enhance the existing ones. 
      
 In general, a candidate is required to solve the problem in front of one or more interviewers in the company premises. An apprehensive candidate may not be able to *think loudly* 
-under the seemlingly intrusive presence of the interviewer. Also the unfamiliar environment of the company may appear obtrusive and aids to the pressure. Companies like 
+under the seemingly intrusive presence of the interviewer. Also the unfamiliar environment of the company may appear obtrusive and aids to the pressure. Companies like 
 four-square are coming with innovative ways like [*home-work problems*][four-square-hw] for mitigating such pressure. 
 
 The ubiquitous availability of the solutions have raised the bars of the problems. To assess a candidate, it is desirable to see how she performs on problems that she has 
