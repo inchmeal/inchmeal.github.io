@@ -297,7 +297,7 @@ gulp.task('browsersync:production', ['build:production'], function() {
  * Run all tasks needed for a build in defined order
  */
 gulp.task('build:production', function(callback) {
-  runSequence('delete',
+  runSequence('delete:production',
   [
     'jekyll-tasks:production',
     'sass',
@@ -313,6 +313,14 @@ gulp.task('build:production', function(callback) {
   ],
   callback);
 });
+
+/**
+ * Delete folders and files
+ */
+gulp.task('delete:production', function() {
+    return del('build/production');
+});
+
 
 /**
  * Build jekyll in production folder
