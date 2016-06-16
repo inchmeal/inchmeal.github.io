@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.23.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.54.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -1952,7 +1952,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.23.html" ><span class="radius success label ">2.23</span></a>
+                            <a href="/sicp/ch-2/ex-2.23.html" ><span class="radius info label ">2.23</span></a>
                             
                             
 
@@ -2200,7 +2200,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.54.html" ><span class="radius info label ">2.54</span></a>
+                            <a href="/sicp/ch-2/ex-2.54.html" ><span class="radius success label ">2.54</span></a>
                             
                             
 
@@ -2259,14 +2259,14 @@
                             <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.23</h4>
+                            <h4>Exercise 2.54</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 25, 2016" itemprop="datePublished"> April 25, 2016</time>
+                        <time class="post-date pr20" datetime="May 15, 2016" itemprop="datePublished"> May 15, 2016</time>
                     </p>
                     
 
@@ -2283,21 +2283,67 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">for-each</span> <span class="nv">proc</span> <span class="nv">l</span><span class="p">)</span> 
-   <span class="p">(</span><span class="k">cond</span> 
-        <span class="p">((</span><span class="nb">null?</span> <span class="nv">l</span><span class="p">)</span> <span class="nv">true</span><span class="p">)</span> 
-        <span class="p">(</span><span class="nf">else</span>
-             <span class="p">(</span><span class="nf">proc</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">l</span><span class="p">))</span> 
-             <span class="p">(</span><span class="nb">for-each</span> <span class="nv">proc</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">l</span><span class="p">))</span>
-        <span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">equal?</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+   <span class="p">(</span><span class="k">cond</span> <span class="p">(</span>
+          <span class="p">(</span><span class="nb">null?</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">y</span><span class="p">))</span>
+          <span class="p">((</span><span class="nb">null?</span> <span class="nv">y</span><span class="p">)</span> <span class="nv">false</span><span class="p">)</span>
+          <span class="p">((</span><span class="nb">pair?</span> <span class="nv">x</span><span class="p">)</span>
+                 <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">pair?</span> <span class="nv">y</span><span class="p">)</span>                         
+                        <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nb">equal?</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">y</span><span class="p">))</span> <span class="p">(</span><span class="nb">equal?</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">y</span><span class="p">)))</span>
+                        <span class="nv">false</span>
+                 <span class="p">)</span>
+          <span class="p">)</span>
+          <span class="p">((</span><span class="nb">pair?</span> <span class="nv">y</span><span class="p">)</span> <span class="nv">false</span><span class="p">)</span>
+          <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
    <span class="p">)</span>
-<span class="p">)</span><span class="w">
+<span class="p">)</span>  <span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that here, <code class="highlighter-rouge">cond</code> is used instead of <code class="highlighter-rouge">if</code> because in “else” part it is required to execute two statements. This cant be done
- using <code class="highlighter-rouge">if</code>.</p>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">equal?</span> <span class="ss">'1</span> <span class="ss">'2</span><span class="p">)</span>
+<span class="no">#f</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">equal?</span> <span class="ss">'1</span> <span class="ss">'1</span><span class="p">)</span>
+<span class="no">#t</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">equal?</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">5</span><span class="p">))</span>
+<span class="no">#f</span>
+<span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">equal?</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+<span class="no">#t</span>
+<span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">equal?</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="p">(</span><span class="nf">12</span> <span class="mi">13</span><span class="p">))</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">12</span> <span class="mi">13</span><span class="p">))</span>
+<span class="no">#f</span>
+<span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">equal?</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="p">(</span><span class="nf">12</span> <span class="mi">13</span><span class="p">))</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="p">(</span><span class="nf">12</span> <span class="mi">13</span><span class="p">)))</span>
+<span class="no">#t</span>
+<span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">equal?</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="p">(</span><span class="nf">12</span> <span class="mi">13</span><span class="p">))</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="p">(</span><span class="nf">13</span> <span class="mi">12</span><span class="p">)))</span>
+<span class="no">#f</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">equal?</span> <span class="o">'</span><span class="p">()</span> <span class="nv">nil</span><span class="p">)</span>
+<span class="no">#t</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">equal?</span> <span class="o">'</span><span class="p">()</span> <span class="ss">'1</span><span class="p">)</span>
+<span class="no">#f</span>
+<span class="nv">&gt;</span> <span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>
@@ -2318,7 +2364,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.23.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.54.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
