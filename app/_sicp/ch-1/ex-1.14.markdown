@@ -8,7 +8,7 @@ date: 2016-03-31
 todo: true
 ---
 
-I am not good in drawing. Just passing the drawing part.
+Too lazy to draw :)
 
 We can see by looking at the procedure that space complexity is $$ \theta (n) $$ as the deepest path of the tree can have at max $$ n $$ nodes.
  
