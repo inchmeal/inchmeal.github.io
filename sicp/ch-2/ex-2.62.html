@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.48.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.62.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -2200,7 +2200,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.48.html" ><span class="radius success label ">2.48</span></a>
+                            <a href="/sicp/ch-2/ex-2.48.html" ><span class="radius info label ">2.48</span></a>
                             
                             
 
@@ -2312,7 +2312,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.62.html" ><span class="radius info label ">2.62</span></a>
+                            <a href="/sicp/ch-2/ex-2.62.html" ><span class="radius success label ">2.62</span></a>
                             
                         </div>
                     </li>
@@ -2339,20 +2339,39 @@
                             <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.48</h4>
+                            <h4>Exercise 2.62</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="May 13, 2016" itemprop="datePublished"> May 13, 2016</time>
+                        <time class="post-date pr20" datetime="June 17, 2016" itemprop="datePublished"> June 17, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
                         
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">union-set</span> <span class="nv">set1</span> <span class="nv">set2</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">set1</span><span class="p">)</span> <span class="nv">set2</span><span class="p">)</span>
+        <span class="p">((</span><span class="nb">null?</span> <span class="nv">set2</span><span class="p">)</span> <span class="nv">set1</span><span class="p">)</span>        
+        <span class="p">((</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">set1</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">set2</span><span class="p">))</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">set1</span><span class="p">)</span> <span class="p">(</span><span class="nf">union-set</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">set1</span><span class="p">)</span> <span class="nv">set2</span><span class="p">)))</span>
+        <span class="p">((</span><span class="nb">=</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">set1</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">set2</span><span class="p">))</span> <span class="p">(</span><span class="nf">union-set</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">set1</span><span class="p">)</span> <span class="nv">set2</span><span class="p">))</span>
+        <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">set2</span><span class="p">)</span> <span class="p">(</span><span class="nf">union-set</span> <span class="nv">set1</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">set2</span><span class="p">))))</span>
+  <span class="p">)</span>
+<span class="p">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Test/Output:</p>
+
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -2367,36 +2386,25 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
-
-<span class="p">(</span><span class="nf">#%require</span> <span class="nv">sicp-pict</span><span class="p">)</span>
-
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-segment</span> <span class="nv">sg1</span> <span class="nv">sg2</span><span class="p">)</span>
-   <span class="p">(</span><span class="nb">cons</span> <span class="nv">sg1</span> <span class="nv">sg2</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">start-segment</span> <span class="nv">sg</span><span class="p">)</span>
-   <span class="p">(</span><span class="nb">car</span> <span class="nv">sg</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">end-segment</span> <span class="nv">sg</span><span class="p">)</span>
-   <span class="p">(</span><span class="nb">cdr</span> <span class="nv">sg</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>Output/Test:</p>
-
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">sgmnt</span> <span class="p">(</span><span class="nf">make-segment</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">)))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">start-segment</span> <span class="nv">sgmnt</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">mcons</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">end-segment</span> <span class="nv">sgmnt</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">mcons</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
+15
+16
+17</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">union-set</span> <span class="o">'</span><span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">11</span> <span class="mi">13</span> <span class="mi">15</span> <span class="mi">17</span> <span class="mi">19</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span> <span class="mi">11</span> <span class="mi">13</span> <span class="mi">15</span> <span class="mi">17</span> <span class="mi">19</span><span class="p">)</span>
+<span class="nv">&gt;</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
 
@@ -2418,7 +2426,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.48.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.62.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
