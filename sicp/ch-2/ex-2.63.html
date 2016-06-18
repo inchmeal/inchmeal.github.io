@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-1/ex-1.26.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.63.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -1484,7 +1484,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-1">Chapter 1</a>
                         
-                        <div id="ch-1" class="content active">
+                        <div id="ch-1" class="content ">
                             
                             
 
@@ -1692,7 +1692,7 @@
 
                             
 
-                            <a href="/sicp/ch-1/ex-1.26.html" ><span class="radius success label ">1.26</span></a>
+                            <a href="/sicp/ch-1/ex-1.26.html" ><span class="radius info label ">1.26</span></a>
                             
                             
 
@@ -1864,7 +1864,7 @@
                     <li class="accordion-navigation">
                         <a href="#ch-2">Chapter 2</a>
                         
-                        <div id="ch-2" class="content ">
+                        <div id="ch-2" class="content active">
                             
                             
 
@@ -2368,7 +2368,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.63.html" ><span class="radius info label ">2.63</span></a>
+                            <a href="/sicp/ch-2/ex-2.63.html" ><span class="radius success label ">2.63</span></a>
                             
                             
 
@@ -2413,36 +2413,61 @@
                     <header>
                         <span itemprop="name">
                             
-                            <h3>Chapter 1, Building Abstractions with Procedures</h3>
+                            <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - Procedures and the Processes They Generate</h3>
+                            <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 1.26</h4>
+                            <h4>Exercise 2.63</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 02, 2016" itemprop="datePublished"> April 02, 2016</time>
+                        <time class="post-date pr20" datetime="June 17, 2016" itemprop="datePublished"> June 17, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>The change made in function <code class="highlighter-rouge">expmod</code> by Louis Reasoner will cause <code class="highlighter-rouge">expmode</code> to be called twice in each recursive invocation.</p>
+                        <p><strong>(a)</strong></p>
 
-<p>The process becomes tree recursive as each invocation results in two branches. Clearly the height of the tree is <script type="math/tex">log_2 \, (base)</script> where 
-<script type="math/tex">base</script> is the input to this procedure.</p>
+<p>Yes, they will produce same results for every tree.</p>
 
-<p>Also note that number of steps in the process is equal to total number of nodes in the tree.</p>
+<p>Looking closely reveals that both algorithms are similar in the following way:</p>
 
-<p>Thus total nodes in the tree are <script type="math/tex">2 \cdot 2 \cdot 2 \cdot \cdot \cdot (log_2 \, (base) \text{ times }) = 2^{ log_2 \, (base) } = base</script>.</p>
+<ul>
+  <li>Convert left tree to list, lets call the result left-list.</li>
+  <li>Convert right tree to list, lets call the result right-list.</li>
+  <li>Create a combined list as (left-list, current-entry, right-list)</li>
+</ul>
 
-<p>Thus number of steps is equal to the input passed i.e. <script type="math/tex">\theta (n)</script>. As we can see this small mistake converted this code from <script type="math/tex">log_2 \, n</script>
-complexity to <script type="math/tex">n</script> order complexity.</p>
+<p>They differ only in the way left and right lists are merged. The first procedure uses <code class="highlighter-rouge">append</code> while other procedure does it employing the <em>recursive process</em>.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Clearly both procedures are invoked <script type="math/tex">n</script> number of times, where <script type="math/tex">n</script> is number of leaves in the tree.</p>
+
+<p>While in the first procedure, there is an additional invocation of <code class="highlighter-rouge">append</code>. In the second procedure there is no other function call(assuming null?, cons etc will 
+take constant time) that changes the time complexity. Thus complexity of second procedure is <script type="math/tex">O(n)</script>.</p>
+
+<p>Lets compute the complexity of first procedure.</p>
+
+<p>Assuming tree is balanced, the additional call <code class="highlighter-rouge">append</code> takes <script type="math/tex">O(m/2)</script> in each step, where <script type="math/tex">m</script> is the number of nodes present in the tree in that step.
+Since in each step, number of nodes are halved, the total time taken by compute is:</p>
+
+<p><script type="math/tex">= n/2 + n/4 + n/8 + ... n/(2^{\log n})</script>           <br />
+<script type="math/tex">= n(1/2 + 1/4 + 1/8 + ... 1/(2^{\log n})</script>           <br />
+<script type="math/tex">= n(\frac {1 - { {\frac 1 2} }^{\log n} } {1 - \frac 1 2}</script>    <br />
+<script type="math/tex">= n(\frac {2 (n-1) } n</script>     <br />
+<script type="math/tex">= 2(n-1)</script>     <br />
+<script type="math/tex">\approx 2n</script>.</p>
+
+<p>Thus total time will be <script type="math/tex">n + 2n = 3n</script>.</p>
+
+<p>Thus first procedure is roughly 3 times more costly than second procedure but note that both have same order of growth <script type="math/tex">O(n)</script>.</p>
 
 
                         <hr/>
@@ -2463,7 +2488,7 @@ complexity to <script type="math/tex">n</script> order complexity.</p>
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-1/ex-1.26.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.63.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
