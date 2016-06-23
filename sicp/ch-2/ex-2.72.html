@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.45.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.72.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -2296,7 +2296,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.45.html" ><span class="radius success label ">2.45</span></a>
+                            <a href="/sicp/ch-2/ex-2.45.html" ><span class="radius info label ">2.45</span></a>
                             
                             
 
@@ -2512,7 +2512,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.72.html" ><span class="radius info label ">2.72</span></a>
+                            <a href="/sicp/ch-2/ex-2.72.html" ><span class="radius success label ">2.72</span></a>
                             
                         </div>
                     </li>
@@ -2539,70 +2539,49 @@
                             <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.45</h4>
+                            <h4>Exercise 2.72</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="May 13, 2016" itemprop="datePublished"> May 13, 2016</time>
+                        <time class="post-date pr20" datetime="June 22, 2016" itemprop="datePublished"> June 22, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+                        <p>We need to look at maximum of <script type="math/tex">n</script> levels.</p>
 
-<span class="p">(</span><span class="nf">#%require</span> <span class="nv">sicp-pict</span><span class="p">)</span>
+<p>At each level we search in ordered set of symbols. Also at first node we search in <script type="math/tex">n</script> symbols then we search in <script type="math/tex">n/2</script> symbols and so on.</p>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">split</span> <span class="nv">align1</span> <span class="nv">align2</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">painter</span> <span class="nv">n</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">0</span><span class="p">)</span>
-      <span class="nv">painter</span>
-      <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
-              <span class="p">(</span><span class="nf">smaller</span> <span class="p">(</span>
-                         <span class="p">(</span><span class="nf">split</span>
-                             <span class="nv">align1</span> <span class="nv">align2</span>
-                         <span class="p">)</span>
-                         <span class="nv">painter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span>
-                      <span class="p">)</span>
-              <span class="p">)</span>
-           <span class="p">)</span>
-           <span class="p">(</span><span class="nf">align1</span>
-                <span class="nv">painter</span>
-                <span class="p">(</span><span class="nf">align2</span> <span class="nv">smaller</span> <span class="nv">smaller</span><span class="p">)</span>
-           <span class="p">)</span>
-      <span class="p">)</span>
-    <span class="p">)</span>
-  <span class="p">)</span>  
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<p>Worst case time in a search for <script type="math/tex">k</script> symbols is <script type="math/tex">k</script>.</p>
+
+<p>If an element is not found in left branch, we look for it in right branch. Thus total search time in this case is <script type="math/tex">n + n = 2n</script>.</p>
+
+<p>Since <script type="math/tex">n</script> is worst case search time as well as <em>on average</em> we shall only be looking in only left branch half of the time.</p>
+
+<p>On average we can say that <script type="math/tex">2n/2 = n</script> will be the time to lookup in a step where <script type="math/tex">n</script> is the number of symbols present in left or right node(assuming they will be equal).</p>
+
+<p>Each time when a branch is selected, number of symbols in branch are reduced by half.</p>
+
+<p>Thus in first step we shall be looking in <script type="math/tex">n</script> symbols.</p>
+
+<p>In second, we shall lookup in <script type="math/tex">n/2</script> symbols.</p>
+
+<p>and so on.</p>
+
+<p>Thus total complexity should be:      <br />
+<script type="math/tex">= n + n/2 + (n/2)/2 + ((n/2)/2)/2 ... 1</script>     <br />
+<script type="math/tex">= n(1 + 1/2 + 1/4 + 1/8 + 1/(2^{\log n})</script>     <br />
+<script type="math/tex">= n \times \frac { 1 - {(1/2)}^{\log n} } { 1 - 1/2 }</script>    <br />
+<script type="math/tex">= 2 \times n \times ( { 1 - {(1/2)}^{\log n} } )</script>    <br />
+<script type="math/tex">= 2 \times n \times ( 1 - 1/n )</script>    <br />
+<script type="math/tex">= 2 \times n \times ( (n - 1)/n )</script>    <br />
+<script type="math/tex">= 2 \times (n - 1)</script></p>
+
+<p>Thus average complexity shall be <script type="math/tex">O(2n)</script>.</p>
 
 
                         <hr/>
@@ -2623,7 +2602,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.45.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.72.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 

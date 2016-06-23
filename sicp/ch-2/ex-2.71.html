@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.45.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.71.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -2296,7 +2296,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.45.html" ><span class="radius success label ">2.45</span></a>
+                            <a href="/sicp/ch-2/ex-2.45.html" ><span class="radius info label ">2.45</span></a>
                             
                             
 
@@ -2504,7 +2504,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.71.html" ><span class="radius info label ">2.71</span></a>
+                            <a href="/sicp/ch-2/ex-2.71.html" ><span class="radius success label ">2.71</span></a>
                             
                             
 
@@ -2539,70 +2539,38 @@
                             <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.45</h4>
+                            <h4>Exercise 2.71</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="May 13, 2016" itemprop="datePublished"> May 13, 2016</time>
+                        <time class="post-date pr20" datetime="June 22, 2016" itemprop="datePublished"> June 22, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+                        <p>In huffmann encoding, we keep on combining a pair of leaves with minimum weights. Now in this case we shall first combine:</p>
 
-<span class="p">(</span><span class="nf">#%require</span> <span class="nv">sicp-pict</span><span class="p">)</span>
+<p><script type="math/tex">1 + 2 = 3</script>, then         <br />
+<script type="math/tex">3 + 4 = 7</script>, then         <br />
+<script type="math/tex">7 + 8 = 15</script>, then         <br />
+<script type="math/tex">15 + 16 = 31</script>, then         <br />
+…
+…
+<script type="math/tex">2^{n-1} - 1 + 2^{n-1} =  2^n - 1</script>.</p>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">split</span> <span class="nv">align1</span> <span class="nv">align2</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">painter</span> <span class="nv">n</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">0</span><span class="p">)</span>
-      <span class="nv">painter</span>
-      <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
-              <span class="p">(</span><span class="nf">smaller</span> <span class="p">(</span>
-                         <span class="p">(</span><span class="nf">split</span>
-                             <span class="nv">align1</span> <span class="nv">align2</span>
-                         <span class="p">)</span>
-                         <span class="nv">painter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span>
-                      <span class="p">)</span>
-              <span class="p">)</span>
-           <span class="p">)</span>
-           <span class="p">(</span><span class="nf">align1</span>
-                <span class="nv">painter</span>
-                <span class="p">(</span><span class="nf">align2</span> <span class="nv">smaller</span> <span class="nv">smaller</span><span class="p">)</span>
-           <span class="p">)</span>
-      <span class="p">)</span>
-    <span class="p">)</span>
-  <span class="p">)</span>  
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<p>We can see above that, except for the first one, every combination combines a new word/symbol or results in a leaf. The first node however combines two words
+for frequency <script type="math/tex">1</script> and <script type="math/tex">2</script>.</p>
+
+<p>Clearly the leaf that results from the last combination will correspond to the smallest number of bits because it will have least depth(=1). 
+It follows that smallest number of bits we need = <script type="math/tex">1</script>. Since this word is corresponding to the last combination, clearly it is the word with highest frequency
+i.e. <script type="math/tex">2^{n-1}</script>.</p>
+
+<p>Similarly leaf that results from first combination will correspond to the highest number of bits because it will have highest depth. It follows number of bits 
+we need is <script type="math/tex">{\log}_2 { 2^{n-1} } = n-1</script> bits.</p>
 
 
                         <hr/>
@@ -2623,7 +2591,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.45.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.71.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
