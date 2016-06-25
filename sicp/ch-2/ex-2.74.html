@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.66.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.74.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -2512,7 +2512,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.66.html" ><span class="radius success label ">2.66</span></a>
+                            <a href="/sicp/ch-2/ex-2.66.html" ><span class="radius info label ">2.66</span></a>
                             
                             
 
@@ -2576,7 +2576,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.74.html" ><span class="radius info label ">2.74</span></a>
+                            <a href="/sicp/ch-2/ex-2.74.html" ><span class="radius success label ">2.74</span></a>
                             
                             
 
@@ -2619,43 +2619,20 @@
                             <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.66</h4>
+                            <h4>Exercise 2.74</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="June 17, 2016" itemprop="datePublished"> June 17, 2016</time>
+                        <time class="post-date pr20" datetime="June 25, 2016" itemprop="datePublished"> June 25, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Here I am evading the implementation of records structure as exercise seems to focus more on the <code class="highlighter-rouge">lookup</code> instead of the record.</p>
-
-<p>It can be extended to use record.</p>
-
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lookup</span> <span class="nv">x</span> <span class="nv">set</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">set</span><span class="p">)</span> <span class="nv">false</span><span class="p">)</span>
-        <span class="p">((</span><span class="nb">=</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">entry</span> <span class="nv">set</span><span class="p">))</span> <span class="nv">true</span><span class="p">)</span>
-        <span class="p">((</span><span class="nb">&lt;</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">entry</span> <span class="nv">set</span><span class="p">))</span>
-            <span class="p">(</span><span class="nf">lookup</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">left-branch</span> <span class="nv">set</span><span class="p">)))</span>
-        <span class="p">(</span><span class="nf">else</span>
-            <span class="p">(</span><span class="nf">lookup</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">right-branch</span> <span class="nv">set</span><span class="p">)))</span>
-  <span class="p">)</span>      
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>Test/Output:</p>
+                        <p><strong>(a)</strong></p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -2671,22 +2648,112 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="c1">; using procedure from previous exercise to build tree.</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">my-tree</span> <span class="p">(</span><span class="nf">list-&gt;tree</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">0</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">9</span> <span class="mi">11</span> <span class="mi">20</span> <span class="mi">26</span> <span class="mi">29</span> <span class="mi">35</span> <span class="mi">76</span> <span class="mi">93</span> <span class="mi">97</span><span class="p">)))</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">lookup</span> <span class="mi">21</span> <span class="nv">my-tree</span><span class="p">)</span>
-<span class="no">#f</span>
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">lookup</span> <span class="mi">0</span> <span class="nv">my-tree</span><span class="p">)</span>
-<span class="no">#t</span>
-<span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">lookup</span> <span class="mi">10</span> <span class="nv">my-tree</span><span class="p">)</span>
-<span class="no">#f</span>
-<span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">lookup</span> <span class="mi">97</span> <span class="nv">my-tree</span><span class="p">)</span>
-<span class="no">#t</span>
-<span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">lookup</span> <span class="mi">35</span> <span class="nv">my-tree</span><span class="p">)</span>
-<span class="no">#t</span>
-<span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">lookup</span> <span class="mi">33</span> <span class="nv">my-tree</span><span class="p">)</span>
-<span class="no">#f</span>
-<span class="nv">&gt;</span> <span class="w">
+15
+16
+17
+18
+19
+20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-generic-file</span> <span class="nv">division</span> <span class="nv">specific-file</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">cons</span> <span class="nv">division</span> <span class="nv">specific-file</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">division-of-generic-file</span> <span class="nv">generic-file</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">car</span> <span class="nv">generic-file</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specific-file-of-generic-file</span> <span class="nv">generic-file</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">cadr</span> <span class="nv">generic-file</span><span class="p">)</span>
+<span class="p">)</span>  
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">get-record</span> <span class="nv">name</span> <span class="nv">generic-file</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
+         <span class="p">(</span><span class="nf">division</span> <span class="p">(</span><span class="nf">division-of-generic-file</span> <span class="nv">generic-file</span><span class="p">))</span>
+         <span class="p">(</span><span class="nf">specific-file</span> <span class="p">(</span><span class="nf">specific-file-of-generic-file</span> <span class="nv">generic-file</span><span class="p">))</span>
+       <span class="p">)</span>
+       <span class="p">(</span> <span class="p">(</span><span class="nf">get</span> <span class="ss">'get-record</span> <span class="nv">division</span><span class="p">)</span> <span class="nv">specific-file</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><strong>(b)</strong></p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-generic-record</span> <span class="nv">division</span> <span class="nv">specific-record</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">cons</span> <span class="nv">division</span> <span class="nv">specific-record</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">division-of-generic-record</span> <span class="nv">generic-record</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">car</span> <span class="nv">generic-record</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specific-record-of-generic-record</span> <span class="nv">generic-record</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">cadr</span> <span class="nv">generic-record</span><span class="p">)</span>
+<span class="p">)</span>  
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">get-salary</span> <span class="nv">name</span> <span class="nv">generic-record</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
+         <span class="p">(</span><span class="nf">division</span> <span class="p">(</span><span class="nf">division-of-generic-record</span> <span class="nv">generic-record</span><span class="p">))</span>
+         <span class="p">(</span><span class="nf">specific-record</span> <span class="p">(</span><span class="nf">specific-record-of-generic-record</span> <span class="nv">generic-record</span><span class="p">))</span>
+       <span class="p">)</span>
+       <span class="p">(</span> <span class="p">(</span><span class="nf">get</span> <span class="ss">'get-record</span> <span class="nv">division</span><span class="p">)</span> <span class="nv">specific-record</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><strong>(c)</strong></p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">find-employee-record</span> <span class="nv">name</span> <span class="nv">files</span><span class="p">)</span>
+   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">files</span><span class="p">)</span> <span class="o">'</span><span class="p">())</span>
+         <span class="p">((</span><span class="nb">pair?</span> <span class="nv">files</span><span class="p">)</span> <span class="p">(</span><span class="k">let</span>
+                            <span class="p">((</span><span class="nf">rs</span> <span class="p">(</span><span class="nf">get-record</span> <span class="nv">name</span> <span class="nv">files</span><span class="p">)))</span>
+                            <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">rs</span><span class="p">)</span>
+                                <span class="p">(</span><span class="nf">find-employee-record</span> <span class="nv">name</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">files</span><span class="p">))</span>
+                                <span class="nv">rs</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+         <span class="p">)</span>
+         <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Invalid files, list expected"</span><span class="p">))</span>
+  <span class="p">)</span>
+<span class="p">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><strong>(d)</strong></p>
+
+<ul>
+  <li>add the procedures to <em>tag</em> their files and employee-records with correct division.</li>
+  <li>procedure <code class="highlighter-rouge">get-record</code>, <code class="highlighter-rouge">get-salary</code>, <code class="highlighter-rouge">get-address</code> etc corresponding to their data records.</li>
+  <li>Submit/Store these procedures to the table using <code class="highlighter-rouge">put</code>.</li>
+</ul>
 
 
                         <hr/>
@@ -2707,7 +2774,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.66.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.74.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
