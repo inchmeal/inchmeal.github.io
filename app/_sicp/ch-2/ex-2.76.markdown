@@ -17,6 +17,3 @@ date: 2016-06-25
 
 Data directed style and Message passing style both are almost same and require equal amount of changes for new types or new operations.
 
-I think usage of message passing style is more elegant as compared to data directed style as we directly pass messages/invoke procedures as compared to data directed
-where we invoke another procedure(apply-generic) that internally invokes the correct procedure.
-
