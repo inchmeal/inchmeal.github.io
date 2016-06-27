@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.13.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.77.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -2136,7 +2136,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.13.html" ><span class="radius success label ">2.13</span></a>
+                            <a href="/sicp/ch-2/ex-2.13.html" ><span class="radius info label ">2.13</span></a>
                             
                             
 
@@ -2648,7 +2648,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.77.html" ><span class="radius info label ">2.77</span></a>
+                            <a href="/sicp/ch-2/ex-2.77.html" ><span class="radius success label ">2.77</span></a>
                             
                             
 
@@ -2696,36 +2696,34 @@
                             <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - 2.1 - Introduction to Data Abstraction</h3>
+                            <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.13</h4>
+                            <h4>Exercise 2.77</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 23, 2016" itemprop="datePublished"> April 23, 2016</time>
+                        <time class="post-date pr20" datetime="June 26, 2016" itemprop="datePublished"> June 26, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Suppose there are two intervals, <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>, with centers <script type="math/tex">c_1</script> and <script type="math/tex">c_2</script>, and tolerance <script type="math/tex">t_1</script> and <script type="math/tex">t_2</script> respectively.</p>
+                        <p>The expression <code class="highlighter-rouge">(magnitude z)</code> fails initially because it results in a call to <code class="highlighter-rouge">apply-generic</code>. As per figure(mentioned in question), <code class="highlighter-rouge">z</code> is tagged with <code class="highlighter-rouge">complex</code>,
+thus <code class="highlighter-rouge">apply-generic</code> will lookup in the <em>data directed table</em> using <code class="highlighter-rouge">get</code>. Since <code class="highlighter-rouge">magnitude</code> is not stored in the table corresponding to <code class="highlighter-rouge">complex</code>, it results in 
+error - “no method for the operation magnitude on the types (complex)”.</p>
 
-<p>Thus we have <script type="math/tex">I_1 = [c_1 - { \frac {c_1 \cdot t_1} { 100 } },  \; c_1 + { \frac {c_1 \cdot t_1} { 100 } }]</script> and   <br />
- <script type="math/tex">I_2 = [c_2 - { \frac {c_2 \cdot t_2} { 100 } }, \; c_2 + { \frac {c_2 \cdot t_2} { 100 } }]</script>.</p>
+<p>After adding the <code class="highlighter-rouge">put</code> statements, the error disappears because it adds <code class="highlighter-rouge">magnitude</code> to the table.</p>
 
-<p>Assuming that <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script> contains only positive end-points. Taking help from Ex-2.11 to find the product interval, we get:</p>
+<p>Now after the first call to <code class="highlighter-rouge">apply-generic</code>, it will result in <code class="highlighter-rouge">(magnitude zz)</code> where <code class="highlighter-rouge">zz</code> is <code class="highlighter-rouge">(content z)</code>. Thus <code class="highlighter-rouge">zz</code> is of type ‘rectangular` as can be seen form the figure.</p>
 
-<p><script type="math/tex">I_1 \times I_2 = [ (c_1 - { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 - { \frac {c_2 \cdot t_2} { 100 } }), \; (c_1 + { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 + { \frac {c_2 \cdot t_2} { 100 } })]</script>.     <br />
-<script type="math/tex">= [c_1c_2(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; c_1c_2(1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]</script>      <br />
-<script type="math/tex">= c_1c_2[(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]</script>      <br />
-Since <script type="math/tex">p</script> and <script type="math/tex">q</script> are small, it follows <script type="math/tex">{ \frac {pq} { 100 } }</script> will become smaller and we can ignore it. Thus we get:    <br />
-<script type="math/tex">= c_1c_2[(1 - {\frac {(p+q)} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } })]</script>.</p>
+<p>Now this will again invoke <code class="highlighter-rouge">apply-generic</code> which will invoke <code class="highlighter-rouge">magnitude</code> from the <code class="highlighter-rouge">rectangular</code> package. And which will finally return the <code class="highlighter-rouge">magnitude</code>.</p>
 
-<p>Thus we can see the tolerance of the product is sum of the percentage tolerances of individual intervals.</p>
+<p>Thus there are two invocations of <code class="highlighter-rouge">apply-generic</code>.</p>
+
 
                         <hr/>
                     </span>
@@ -2745,7 +2743,7 @@ Since <script type="math/tex">p</script> and <script type="math/tex">q</script> 
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.13.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.77.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 

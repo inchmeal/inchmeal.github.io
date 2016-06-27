@@ -110,7 +110,7 @@
 	
 	<meta property="og:title" content="SICP Solutions" />
 	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.13.html" />
+	<meta property="og:url" content="http://www.inchmeal.io//sicp/ch-2/ex-2.78.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -2136,7 +2136,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.13.html" ><span class="radius success label ">2.13</span></a>
+                            <a href="/sicp/ch-2/ex-2.13.html" ><span class="radius info label ">2.13</span></a>
                             
                             
 
@@ -2656,7 +2656,7 @@
 
                             
 
-                            <a href="/sicp/ch-2/ex-2.78.html" ><span class="radius info label ">2.78</span></a>
+                            <a href="/sicp/ch-2/ex-2.78.html" ><span class="radius success label ">2.78</span></a>
                             
                             
 
@@ -2696,36 +2696,207 @@
                             <h3>Chapter 2, Building Abstractions with Data</h3>
                             
                             
-                            <h3>Section - 2.1 - Introduction to Data Abstraction</h3>
+                            <h3>Section - 2.2 - Hierarchical Data and the Closure Property</h3>
                             
                             
-                            <h4>Exercise 2.13</h4>
+                            <h4>Exercise 2.78</h4>
                             
                         </span>
                     </header>
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="April 23, 2016" itemprop="datePublished"> April 23, 2016</time>
+                        <time class="post-date pr20" datetime="June 26, 2016" itemprop="datePublished"> June 26, 2016</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Suppose there are two intervals, <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>, with centers <script type="math/tex">c_1</script> and <script type="math/tex">c_2</script>, and tolerance <script type="math/tex">t_1</script> and <script type="math/tex">t_2</script> respectively.</p>
+                        <p>I have included the complete program so that it can be tested/executed easily.</p>
 
-<p>Thus we have <script type="math/tex">I_1 = [c_1 - { \frac {c_1 \cdot t_1} { 100 } },  \; c_1 + { \frac {c_1 \cdot t_1} { 100 } }]</script> and   <br />
- <script type="math/tex">I_2 = [c_2 - { \frac {c_2 \cdot t_2} { 100 } }, \; c_2 + { \frac {c_2 \cdot t_2} { 100 } }]</script>.</p>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
-<p>Assuming that <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script> contains only positive end-points. Taking help from Ex-2.11 to find the product interval, we get:</p>
+<span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">hash-set!</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">hash-ref</span><span class="p">))</span>
 
-<p><script type="math/tex">I_1 \times I_2 = [ (c_1 - { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 - { \frac {c_2 \cdot t_2} { 100 } }), \; (c_1 + { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 + { \frac {c_2 \cdot t_2} { 100 } })]</script>.     <br />
-<script type="math/tex">= [c_1c_2(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; c_1c_2(1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]</script>      <br />
-<script type="math/tex">= c_1c_2[(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]</script>      <br />
-Since <script type="math/tex">p</script> and <script type="math/tex">q</script> are small, it follows <script type="math/tex">{ \frac {pq} { 100 } }</script> will become smaller and we can ignore it. Thus we get:    <br />
-<script type="math/tex">= c_1c_2[(1 - {\frac {(p+q)} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } })]</script>.</p>
+<span class="c1">; helper procedures</span>
+<span class="p">(</span><span class="k">define</span> <span class="nv">*op-table*</span> <span class="p">(</span><span class="nf">make-hash</span><span class="p">))</span>
 
-<p>Thus we can see the tolerance of the product is sum of the percentage tolerances of individual intervals.</p>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">put</span> <span class="nv">op</span> <span class="nv">type</span> <span class="nv">proc</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">hash-set!</span> <span class="nv">*op-table*</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">op</span> <span class="nv">type</span><span class="p">)</span> <span class="nv">proc</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">get</span> <span class="nv">op</span> <span class="nv">type</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">hash-ref</span> <span class="nv">*op-table*</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">op</span> <span class="nv">type</span><span class="p">)</span> <span class="o">'</span><span class="p">())</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="nv">type-tag</span> <span class="nv">contents</span><span class="p">)</span> 
+   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">number?</span> <span class="nv">contents</span><span class="p">)</span> 
+       <span class="nv">contents</span> 
+       <span class="p">(</span><span class="nb">cons</span> <span class="nv">type-tag</span> <span class="nv">contents</span><span class="p">)</span>
+   <span class="p">)</span>
+<span class="p">)</span> 
+
+<span class="c1">; procedures implemented as per the requirement of exercise  </span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">type-tag</span> <span class="nv">datum</span><span class="p">)</span> 
+   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">number?</span> <span class="nv">datum</span><span class="p">)</span> <span class="ss">'scheme-number</span><span class="p">)</span>
+         <span class="p">((</span><span class="nb">pair?</span> <span class="nv">datum</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">datum</span><span class="p">))</span> 
+         <span class="p">(</span><span class="nb">error</span> <span class="s">"Bad tagged datum -- TYPE-TAG"</span> <span class="nv">datum</span><span class="p">)</span>
+   <span class="p">)</span>
+<span class="p">)</span>
+  
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">datum</span><span class="p">)</span> 
+   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">number?</span> <span class="nv">datum</span><span class="p">)</span> <span class="nv">datum</span><span class="p">)</span> 
+         <span class="p">((</span><span class="nb">pair?</span> <span class="nv">datum</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">datum</span><span class="p">))</span> 
+         <span class="p">(</span><span class="nb">error</span> <span class="s">"Bad tagged datum -- CONTENTS"</span> <span class="nv">datum</span><span class="p">)</span>
+   <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1">;remaining procedures</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">tag</span> <span class="nv">x</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'scheme-number</span> <span class="nv">x</span><span class="p">))</span>
+  <span class="p">(</span><span class="nf">put</span> <span class="ss">'add</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span>
+       <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nf">tag</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nf">put</span> <span class="ss">'sub</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span>
+       <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nf">tag</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nf">put</span> <span class="ss">'mul</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span>
+       <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nf">tag</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nf">put</span> <span class="ss">'div</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span>
+       <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nf">tag</span> <span class="p">(</span><span class="nb">/</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nf">put</span> <span class="ss">'make</span> <span class="ss">'scheme-number</span>
+       <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">tag</span> <span class="nv">x</span><span class="p">)))</span>
+  <span class="ss">'done</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-number</span> <span class="nv">n</span><span class="p">)</span>
+  <span class="p">((</span><span class="nf">get</span> <span class="ss">'make</span> <span class="ss">'scheme-number</span><span class="p">)</span> <span class="nv">n</span><span class="p">)</span>
+<span class="p">)</span>  
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="nv">op</span> <span class="o">.</span> <span class="nv">args</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">type-tags</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">type-tag</span> <span class="nv">args</span><span class="p">)))</span>
+
+    <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">proc</span> <span class="p">(</span><span class="nf">get</span> <span class="nv">op</span> <span class="nv">type-tags</span><span class="p">)))</span>
+      <span class="p">(</span><span class="k">if</span> <span class="nv">proc</span>
+          <span class="p">(</span><span class="nb">apply</span> <span class="nv">proc</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">contents</span> <span class="nv">args</span><span class="p">))</span>
+          <span class="p">(</span><span class="nb">error</span>
+            <span class="s">"No method for these types -- APPLY-GENERIC"</span>
+            <span class="p">(</span><span class="nb">list</span> <span class="nv">op</span> <span class="nv">type-tags</span><span class="p">))))))</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>I shall first add the output generated without the changes in <code class="highlighter-rouge">apply-tag</code>, <code class="highlighter-rouge">tag</code> or <code class="highlighter-rouge">contents</code>:</p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">scheme-number</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'add</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">scheme-number</span> <span class="mi">15</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'mul</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">scheme-number</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nv">&gt;</span> <span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Now, lets see the output after the changes:</p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">5</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
+<span class="mi">5</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'add</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">15</span>
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'mul</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">50</span>
+<span class="nv">&gt;</span> <span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
 
                         <hr/>
                     </span>
@@ -2745,7 +2916,7 @@ Since <script type="math/tex">p</script> and <script type="math/tex">q</script> 
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/ch-2/ex-2.13.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/ch-2/ex-2.78.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
