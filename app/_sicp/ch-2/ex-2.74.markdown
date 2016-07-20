@@ -1,6 +1,6 @@
 ---
 chapterName: "Building Abstractions with Data"
-sectionName: "2.2 - Hierarchical Data and the Closure Property"
+sectionName: "2.4 Multiple Representations for Abstract Data"
 chapter: 2
 solution: "2.74"
 order: "074"

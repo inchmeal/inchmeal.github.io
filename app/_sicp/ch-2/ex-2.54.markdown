@@ -1,6 +1,6 @@
 ---
 chapterName: "Building Abstractions with Data"
-sectionName: "2.2 - Hierarchical Data and the Closure Property"
+sectionName: "2.3 Symbolic Data"
 chapter: 2
 solution: "2.54"
 order: "054"

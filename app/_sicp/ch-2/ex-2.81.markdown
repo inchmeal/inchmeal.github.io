@@ -2,75 +2,69 @@
 chapterName: "Building Abstractions with Data"
 sectionName: "2.5 - Systems with Generic Operations"
 chapter: 2
-solution: "2.79"
-order: "079"
-date: 2016-06-27
+solution: "2.81"
+order: "081"
+date: 2016-06-28
 ---
 
-The changes required in each package is shown below. Added the complete code in the end. 
+**(a)** It will go into an infinite loop of recursive calls.
 
+**(b)** Program is *almost* correct and will work fine. A minor issue is when an *operation* is not defined, it unnecessarily tries for coercion. In this case
+        program should directly report the error that *operation* is not found. Here coercion is not required because a procedure that works on two same types
+        should be available in *op* table.       
+        Note that we may need to convert both of the arguments to super-type, if the operation is defined for super-types. But here in this exercise it is not required.
+
+**(c)**
+        
 {% highlight racket linenos %}
-;; number package:
-(put 'equ? '(scheme-number scheme-number) =)
-
-;; rational package:
-(define (equ? x y) 
- (and (= (numer x) (numer y)) (= (denom x) (denom y)))
-) 
- 
-(put 'equ? '(rational rational) equ?)
-
-
-;; complex package:
-(define (equ? z1 z2) 
- (and
-     (= (apply-generic 'real-part z1) (apply-generic 'real-part z2))
-     (= (apply-generic 'imag-part z1) (apply-generic 'imag-part z2))
- )
-) 
-
-(put 'equ? '(complex complex) equ?)
-
-; generic definition
-(define (equ? x y)
-  (apply-generic 'equ? x y)
-)
-
+(define (apply-generic op . args)
+  (let ((type-tags (map type-tag args)))
+    (let ((proc (get op type-tags)))
+      (if (not (null? proc))
+          (apply proc (map contents args))
+          (if (= (length args) 2)
+             (let
+                 (
+                   (type1 (car type-tags))
+                   (type2 (cadr type-tags))
+                   (a1 (car args))
+                   (a2 (cadr args))
+                 )
+                 (if (equal? type1 type2)
+                     (error "No method for these *same* types" (list op type-tags))
+                     (let
+                         (
+                           (t1->t2 (get-coercion type1 type2))
+                           (t2->t1 (get-coercion type2 type1))
+                         )
+                         (cond
+                              (t1->t2 (apply-generic op (t1->t2 a1) a2))
+                              (t2->t1 (apply-generic op a1 (t2->t1 a2)))
+                              (else   (error "No method for these types" (list op type-tags)))                              
+                         )
+                     )
+                 )
+                 (error "No method for these types" (list op type-tags))
+             )
+          )
+       )
+    )
+  )
+)        
 {% endhighlight %}
 
-Note that in comlex-number, we are using `apply-generic` for comparing real and imaginary parts. This is because complex number is an abstarction built on top of
-rectangular and polar packages.
-
 Test/Output:
-
+        
 {% highlight racket linenos %}
->  (define n1 (make-number 5))
->  (define n2 (make-number 5))
->  (define n3 (make-number 6))
-> (apply-generic 'equ? n1 n2)
-#t
->  (apply-generic 'equ? n1 n3)
-#f
->
-> (define r1 (make-rational 2 3))
-> (define r2 (make-rational 4 6))
-> (define r3 (make-rational 3 5))
-> (apply-generic 'equ? r1 r2)
-#t
-> (apply-generic 'equ? r1 r3)
-#f
-> (define c1 (make-complex-from-real-imag 2 3))
-> (define c2 (make-complex-from-real-imag 2 3))
-> (define c3 (make-complex-from-real-imag 3 4))
-> (apply-generic 'equ? c1 c2) 
-#t
-> (apply-generic 'equ? c1 c3)
-#f
+> (exp (make-complex-from-real-imag 2 3) (make-complex-from-real-imag 1 2))
+. . No method for these *same* types {exp {complex complex}}
+> (exp (make-number 2) (make-number 3))
+8
 > 
 {% endhighlight %}
 
-Complete code:
-
+Here is the complete code, with the changes suggested in exercise:
+         
 {% highlight racket linenos %}
 #lang sicp
 
@@ -89,6 +83,16 @@ Complete code:
 
 (define (get op type)
   (hash-ref *op-table* (list op type) '())
+)
+
+(define *coercion-table* (make-hash))
+
+(define (put-coercion op type proc)
+  (hash-set! *coercion-table* (list op type) proc)
+)
+
+(define (get-coercion op type)
+  (hash-ref *coercion-table* (list op type) '())
 )
 
 (define (attach-tag type-tag contents) 
@@ -115,16 +119,37 @@ Complete code:
 (define (apply-generic op . args)
   (let ((type-tags (map type-tag args)))
     (let ((proc (get op type-tags)))
-      (if proc
+      (if (not (null? proc))
           (apply proc (map contents args))
-          (error
-            "No method for these types -- APPLY-GENERIC"
-            (list op type-tags))
-      )
+          (if (= (length args) 2)
+             (let
+                 (
+                   (type1 (car type-tags))
+                   (type2 (cadr type-tags))
+                   (a1 (car args))
+                   (a2 (cadr args))
+                 )
+                 (if (equal? type1 type2)
+                     (error "No method for these *same* types" (list op type-tags))
+                     (let
+                         (
+                           (t1->t2 (get-coercion type1 type2))
+                           (t2->t1 (get-coercion type2 type1))
+                         )
+                         (cond
+                              (t1->t2 (apply-generic op (t1->t2 a1) a2))
+                              (t2->t1 (apply-generic op a1 (t2->t1 a2)))
+                              (else   (error "No method for these types" (list op type-tags)))                              
+                         )
+                     )
+                 )
+                 (error "No method for these types" (list op type-tags))
+             )
+          )
+       )
     )
   )
 )
-
 
 
 (define (install-scheme-number-package)
@@ -142,6 +167,11 @@ Complete code:
        (lambda (x) (tag x)))
   ;equ?
   (put 'equ? '(scheme-number scheme-number) =)
+  
+  ;; following added to Scheme-number package
+  (put 'exp '(scheme-number scheme-number)
+     (lambda (x y) (tag (expt x y)))) ; using primitive expt
+
   'done
 )
 
@@ -173,8 +203,7 @@ Complete code:
 
   ;; equ?
   (define (equ? x y) 
-     (and (= (numer x) (numer y)) (= (denom x) (denom y)))
-  ) 
+     (and (= (numer x) (numer y)) (= (denom x) (denom y)))) 
      
   ;; interface to rest of the system
   (define (tag x) (attach-tag 'rational x))
@@ -300,11 +329,25 @@ Complete code:
   (apply-generic 'equ? x y)
 )
 
+(define (scheme-number->complex n)
+  (make-complex-from-real-imag (contents n) 0)
+)
+(put-coercion 'scheme-number 'complex scheme-number->complex)
+
+;; added by Louis Reasoner
+(define (scheme-number->scheme-number n) n)
+(define (complex->complex z) z)
+(put-coercion 'scheme-number 'scheme-number
+              scheme-number->scheme-number)
+(put-coercion 'complex 'complex complex->complex)
+
+(define (exp x y) (apply-generic 'exp x y))
+
 (install-rectangular-package)
 (install-polar-package)
 (install-scheme-number-package)
 (install-rational-package)
 (install-complex-package)
 {% endhighlight %}
-
-
+         
+        

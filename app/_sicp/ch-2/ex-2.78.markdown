@@ -1,6 +1,6 @@
 ---
 chapterName: "Building Abstractions with Data"
-sectionName: "2.2 - Hierarchical Data and the Closure Property"
+sectionName: "2.5 - Systems with Generic Operations"
 chapter: 2
 solution: "2.78"
 order: "078"
