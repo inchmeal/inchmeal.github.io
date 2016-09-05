@@ -392,6 +392,8 @@ Then neither $$ ((y,a),(x,b)) \in T $$ and nor $$ ((x,b),(y,a)) \in T $$ is true
 
 **Soln9**
 
+**Note:** Proof of transitivity can be done in a shorter way as suggested in the [comment below][first-comment].
+
 <u>Reflexive:</u>
 Suppose $$ (a,b) \in A \times B $$. Since $$ R $$ is reflexive, it follows $$ (a,a) \in R $$. Similarly since $$ S $$ is reflexive, it
 follows that $$ (b,b) \in S $$. Thus $$ ((a,b),(a,b)) \in L $$. Since $$ (a,b) $$ is arbitrary, it follows that $$ T $$ is reflexive.
@@ -606,7 +608,9 @@ all values, say $$ (x,y) $$, of $$ B $$, $$ (0,0) R (x,y) $$.
 
 <hr/>
 
-**Soln18** 
+**Soln18**
+ 
+**Note:** There are errors in this solution. Refer to the [below comment][first-comment] for correct solution. 
 
 **(a)**
 
@@ -713,6 +717,7 @@ Since $$ x $$ is arbitrary $$ \cap \mathcal F \subseteq X $$. Since $$ X $$ is a
  
 
 
+[first-comment]: #comment-2877443544
 
 
 
