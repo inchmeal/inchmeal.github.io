@@ -25,8 +25,8 @@ $$ \exists x (P(x) \land \lnot \exists y (P(y) \land \lnot (y = x))) $$.
     - $$ \exists x \in A P(x) $$ is always false irrespective of P(x).
     - $$ \forall x \in A P(x) $$ is true irrespective of P(x).
 - Universal Quantifiers distributes over conjunction i.e. $$ \forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)$$.
-  But Universal Quantifiers does not distributes over interjection. 
-- Existential Quantifier distributes over interjection but does not distributes over conjunction. 
+  But Universal Quantifiers does not distributes over disjunction. 
+- Existential Quantifier distributes over disjunction but does not distributes over conjunction. 
 
 <hr/>
 
