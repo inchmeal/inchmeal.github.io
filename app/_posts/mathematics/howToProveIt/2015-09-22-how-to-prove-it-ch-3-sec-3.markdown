@@ -203,7 +203,7 @@ It is given that $$ b = ma $$ and $$ c = na $$, where $$ m, n$$ are integers. Ad
 
 **(b)**
 
-Given that $$ bc = mac $$. Since $$ a \neq 0 $$, it can be simplified to $$ b = ma $$. Thus $$ b \vert a $$.
+Given that $$ bc = mac $$. Since $$ c \neq 0 $$, it can be simplified to $$ b = ma $$. Thus $$ a \vert b $$.
  
 <hr/>
 
