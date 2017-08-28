@@ -4,24 +4,9 @@ section: blog
 ---
 <div class="row t30">
     <div class="medium-8 columns medium-offset-2 end">
+
         <article itemscope itemtype="http://schema.org/Article">
             <header>
-                {% if page.image.title %}
-                <figure>
-                    <img src="{{ site.urlimg }}/{{ page.image.title }}" width="970" alt="{{ page.title escape_once }}" itemprop="image">
-
-                    {% if page.image.caption_url && page.image.caption %}
-                    <figcaption class="text-right">
-                        <a href="{{ page.image.caption_url }}">{{ page.image.caption }}</a>
-                    </figcaption>
-                    {% elsif page.image.caption %}
-                    <figcaption class="text-right">
-                        {{ page.image.caption }}
-                    </figcaption>
-                    {% endif %}
-                </figure>
-                {% endif %}
-
 				<span itemprop="name">
 					<h1>{{ page.title }}</h1>
 				</span>
@@ -38,8 +23,49 @@ section: blog
             </p>
             {% endif %}
 
+            {% if page.series %}
+            <hr/>
+            <div class="row t10">
+                <div class="medium-9 medium-centered columns end">
+                    <p>This post is a part of the series - <em style="color: green; font-weight: 400; font-style: normal">{{ page.series.name }}</em>. The series contains the following posts: </p>
+                </div>
+            </div>
+            <div class="row t10">
+                <div class="medium-6 medium-centered columns end">
+                    <ul class="side-nav" role="navigation" title="Link List">
+                        {% for sibling in page.siblings %}
+                        {% if sibling.id == page.id %}
+                        <li role="menuitem" class="active"><a href="{{ sibling.url }}">{{ sibling.series.index }}. &nbsp; {{ sibling.title }}</a></li>
+                        {% else %}
+                        <li role="menuitem"><a href="{{ sibling.url }}">{{ sibling.series.index }}. &nbsp; {{ sibling.title }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row t10">
+                <div class="medium-9 medium-centered columns end">
+                    <p>To navigate to any part of the series, click on the corresponding link.</p>
+                </div>
+            </div>
+            {% endif %}
+
 			<span itemprop="articleSection">
             <hr/>
+
+            {% if page.coverimage and page.coverimage.showinblog %}
+            <figure>
+            <img src="{{ site.urlimg }}/{{ page.coverimage.path }}" class="t10 alignimgcenter" itemprop="image">
+
+            {% if page.coverimage.caption %}
+            <figcaption class="text-center">
+                {{ page.image.caption }}
+            </figcaption>
+            {% endif %}
+            </figure>
+            {% endif %}
+
+
 			{{ content }}
             <hr/>
 			</span>
@@ -51,12 +77,12 @@ section: blog
             {% endif %}
 
             <p class="b60">
-            {% if page.previous.url %}
-            <a class="left icon-chevron-left r15" title="{{ page.previous.title }}" href="{{ page.previous.url }}">{{ site.data.language.previous_post }} {{ cat | upcase }}</a>
-            {% endif %}
-            {% if page.next.url %}
-            <a class="right " title="{{ page.next.title }}" href="{{ page.next.url }}">{{ site.data.language.next_post }} {{ cat | upcase }}<span class="icon-chevron-right"></span></a>
-            {% endif %}
+                {% if page.previous.url %}
+                <a class="left icon-chevron-left r15" title="{{ page.previous.title }}" href="{{ page.previous.url }}">{{ site.data.language.previous_post }} {{ cat | upcase }}</a>
+                {% endif %}
+                {% if page.next.url %}
+                <a class="right " title="{{ page.next.title }}" href="{{ page.next.url }}">{{ site.data.language.next_post }} {{ cat | upcase }}<span class="icon-chevron-right"></span></a>
+                {% endif %}
             </p>
 
             <br/>

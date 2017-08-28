@@ -29,6 +29,9 @@ contact: mailovais85@gmail.com
 #
 urlimg: "http://inchmeal.io/assets/img"
 
+# gems to include
+gems:
+  - jekyll-redirect-from
 
 # Logo size is 600x80 pixels
 logo: "logo.png"
@@ -61,7 +64,8 @@ collections:
     output: true
   vocab:
     output: true
-
+  htpi:
+    output: true
 
 #
 #       ____       ____            ____
@@ -99,11 +103,25 @@ defaults:
       title: SICP Solutions
       description: "Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"
       show_meta: true   # Show metadata beneath all posts
-      # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: true
       loadMath: true
       layout: sicp
       section: sicp
+      sitemap:
+          priority: 0.7
+          changefreq: weekly
+  -
+    scope:
+      path: ""
+      type: "htpi"
+    values:
+      title: How to Prove It - Solutions
+      description: "Inchmeal | This page contains solutions for How to Prove it, htpi"
+      show_meta: true   # Show metadata beneath all posts
+      comments: true
+      loadMath: true
+      layout: htpi
+      section: htpi
       sitemap:
           priority: 0.7
           changefreq: weekly

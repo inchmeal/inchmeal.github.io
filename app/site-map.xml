@@ -35,9 +35,10 @@ sitemap:
     {% endunless %}
     {% endfor %}
 
-
     {% for sitepage in site.pages %}
     {% unless sitepage.sitemap.exclude == "yes" %}
+    {% assign isOldHTPIUrl = sitepage.url | split:'how-to-prove-it-' %}
+    {% unless isOldHTPIUrl.size == 2 %}
     <url>
         {% if sitepage.url == "/" %}
         <loc>{{ site.url }}</loc>
@@ -62,6 +63,7 @@ sitemap:
         <priority>{{ page.defaultPagePriority }}</priority>
         {% endif %}
     </url>
+    {% endunless %}
     {% endunless %}
     {% endfor %}
 
