@@ -7,7 +7,7 @@ order: "001"
 date: 2015-11-03
 description:  "Inchmeal - Velleman's How To Prove It Solutions, Ch-5 Sec-5.1, Functions"
 redirect_from:
-  - http://www.inchmeal.io/2015/11/03/how-to-prove-it-ch-5-sec-1.html
+  - /2015/11/03/how-to-prove-it-ch-5-sec-1.html
 ---
 
 ### Summary
