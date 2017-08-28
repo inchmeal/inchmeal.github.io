@@ -1,0 +1,1827 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>How to Prove It - Solutions</title>
+	<link rel="stylesheet" href="http://www.inchmeal.io/assets/css/styles_inchmeal.css"/>
+	<link rel="alternate" type="application/rss+xml" title="Inchmeal RSS" href="/rss-feed.xml" />
+
+	<script src="http://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
+
+	
+	
+	<script type="text/javascript"
+			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+	<script>
+		MathJax.Hub.Config({
+			"HTML-CSS": { scale: 82 },
+			"displayAlign": "left"
+		});
+	</script>
+	
+
+	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
+	
+	<meta name="description" content="Inchmeal - Velleman&#39;s How To Prove It Solutions, Ch-6 Sec-6.1, Proof by Mathematical Induction"/>
+
+	
+
+	
+
+
+
+	
+	<link rel="icon" sizes="32x32" href="http://www.inchmeal.io/assets/img/favicon-32x32.png">
+
+
+
+
+	
+	<link rel="icon" sizes="192x192" href="http://www.inchmeal.io/assets/img/touch-icon-192x192.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://www.inchmeal.io/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.inchmeal.io/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.inchmeal.io/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://www.inchmeal.io/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.inchmeal.io/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://www.inchmeal.io/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.inchmeal.io/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" href="http://www.inchmeal.io/assets/img/apple-touch-icon-precomposed.png">	
+
+
+
+
+	
+	<meta name="msapplication-TileImage" content="http://www.inchmeal.io/assets/img/msapplication_tileimage.png"/>
+
+
+
+
+	
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+
+	<!-- Facebook Optimization -->
+	<meta property="og:locale" content="en_EN" />
+	
+	<meta property="og:title" content="How to Prove It - Solutions" />
+	<meta property="og:description" content="Inchmeal - Velleman&#39;s How To Prove It Solutions, Ch-6 Sec-6.1, Proof by Mathematical Induction"/>
+	<meta property="og:url" content="http://www.inchmeal.io//htpi/ch-6/sec-6.1.html" />
+	<meta property="og:site_name" content="inchmeal" />
+	
+
+	
+
+	<!-- Search Engine Optimization -->
+	
+
+	<link type="text/plain" rel="author" href="http://www.inchmeal.io//humans.txt" />
+
+	
+</head>
+
+<body id="top-of-page" class="">
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="http://www.inchmeal.io">
+            <img src="http://inchmeal.io/assets/img/logo.png"/>
+          </a>
+        </h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu"(text inside span) to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/">home</a></li>
+          
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/archives/">archives</a></li>
+          
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/about/">about</a></li>
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        <li class="divider"></li>
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+
+	<!-- capture chapters -IMPORTANT- do not split below statement as it starts capturing new line which causes problems- -->
+
+
+
+
+
+<!-- remove duplicates, convert to num and insert in array -->
+
+    
+    
+
+    
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+
+
+
+<div class="row t30">
+    <div class="medium-4 columns medium-push-8">
+    </div>
+    <div class="medium-8 columns medium-pull-4">
+        <div class="row">
+            <div class="medium-11 medium-offset-1 columns">
+            <h1><a href="/htpi/index.html" >How to Prove It - Solutions</a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row t10">
+    <div class="medium-3 columns medium-push-9">
+        <div class="row t5">
+            <div class="medium-12 columns">
+
+                <ul class="accordion" data-accordion>
+                    <li class="accordion-navigation">
+                        <a href="#ch-introduction">Introduction</a>
+                        
+                        <div id="ch-introduction" class="content ">
+                            <a href="/htpi/index.html" ><span class="radius info label ">Section - Introduction</span></a>
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-1">Chapter 1</a>
+                        
+                        <div id="ch-1" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.1.html" ><span class="radius info label ">Section-1.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.2.html" ><span class="radius info label ">Section-1.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.3.html" ><span class="radius info label ">Section-1.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.4.html" ><span class="radius info label ">Section-1.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.5.html" ><span class="radius info label ">Section-1.5</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-2">Chapter 2</a>
+                        
+                        <div id="ch-2" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.1.html" ><span class="radius info label ">Section-2.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.2.html" ><span class="radius info label ">Section-2.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.3.html" ><span class="radius info label ">Section-2.3</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-3">Chapter 3</a>
+                        
+                        <div id="ch-3" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.1.html" ><span class="radius info label ">Section-3.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.2.html" ><span class="radius info label ">Section-3.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.3.html" ><span class="radius info label ">Section-3.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.4.html" ><span class="radius info label ">Section-3.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.5.html" ><span class="radius info label ">Section-3.5</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.6.html" ><span class="radius info label ">Section-3.6</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.7.html" ><span class="radius info label ">Section-3.7</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-4">Chapter 4</a>
+                        
+                        <div id="ch-4" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.1.html" ><span class="radius info label ">Section-4.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.2.html" ><span class="radius info label ">Section-4.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.3.html" ><span class="radius info label ">Section-4.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.4.html" ><span class="radius info label ">Section-4.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.5.html" ><span class="radius info label ">Section-4.5</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.6.html" ><span class="radius info label ">Section-4.6</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-5">Chapter 5</a>
+                        
+                        <div id="ch-5" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.1.html" ><span class="radius info label ">Section-5.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.2.html" ><span class="radius info label ">Section-5.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.3.html" ><span class="radius info label ">Section-5.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.4.html" ><span class="radius info label ">Section-5.4</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-6">Chapter 6</a>
+                        
+                        <div id="ch-6" class="content active">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.1.html" ><span class="radius success label ">Section-6.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.2.html" ><span class="radius info label ">Section-6.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.3.html" ><span class="radius info label ">Section-6.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.4.html" ><span class="radius info label ">Section-6.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.5.html" ><span class="radius info label ">Section-6.5</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-7">Chapter 7</a>
+                        
+                        <div id="ch-7" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.1.html" ><span class="radius info label ">Section-7.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.2.html" ><span class="radius info label ">Section-7.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.3.html" ><span class="radius info label ">Section-7.3</span></a>
+                            
+                        </div>
+                    </li>
+                    
+                </ul>
+
+                <div class="show-for-small-down">
+                    <hr class="t20"/>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.medium-4.columns -->
+    <div class="medium-9 columns medium-pull-3">
+        <div class="row">
+            <div class="medium-11 medium-offset-1 columns">
+                <article itemscope itemtype="http://schema.org/Article">
+                    <header>
+                        <span itemprop="name">
+                            
+                            <hr/>
+                            <h2>Chapter - 6, Mathematical Induction</h2>
+                            
+                            
+                            <h3>Section - 6.1 - Proof by Mathematical Induction</h3>
+                            
+                        </span>
+                    </header>
+
+                    
+                    <p class="tm10">
+                        <time class="post-date pr20" datetime="December 17, 2015" itemprop="datePublished"> December 17, 2015</time>
+                    </p>
+                    
+
+                    <span itemprop="articleSection">
+                        <hr/>
+                        <h3 id="summary">Summary</h3>
+
+<ul>
+  <li>To prove a goal of the form <script type="math/tex">\forall n \in N P(n)</script>:   <br />
+First prove <script type="math/tex">P(0)</script>, and then prove <script type="math/tex">\forall n \in N(P(n) \to P(n + 1))</script>. The first of these proofs is sometimes called the base case and the 
+second the induction step.</li>
+  <li>Form of the final proof:   <br />
+Base case: [Proof of <script type="math/tex">P(0)</script> goes here.]
+Induction step: [Proof of <script type="math/tex">\forall n \in N(P(n) \to P(n + 1))</script> goes here.].</li>
+</ul>
+
+<hr />
+
+<p><strong>Soln1</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">0 = \frac {0(0 + 1)} 2 = 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">0 + 1 + 2 + \cdot \cdot \cdot + n = \frac {n(n+1)} 2</script>.</p>
+
+<p>Thus we have  <script type="math/tex">0 + 1 + 2 + \cdot \cdot \cdot + n + (n + 1) = (\frac {n(n+1)} 2) + (n+1)</script>.  <br />
+<script type="math/tex">\quad = \frac {n(n+1) + 2(n+1)} 2</script>.    <br />
+<script type="math/tex">\quad = \frac {(n+1)(n + 2)} 2</script>.    <br />
+<script type="math/tex">\quad = \frac {(n+1)(n + 1 + 1)} 2</script>.</p>
+
+<p>Thus if <script type="math/tex">P(n)</script> is true then <script type="math/tex">P(n+1)</script> is also true.</p>
+
+<hr />
+
+<p><strong>Soln2</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">0^2 = \frac {0(0 + 1)(2 \times 0 + 1)} 6 = 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">0^2 + 1^2 + 2^2 + \cdot \cdot \cdot + n^2 = \frac {n(n+1)(2n+1)} 6</script>.</p>
+
+<p>Thus we have <script type="math/tex">0^2 + 1^2 + 2^2 + \cdot \cdot \cdot + n^2 + (n+1)^2 = {\frac {n(n+1)(2n+1)} 6} + (n+1)^2</script>.   <br />
+<script type="math/tex">= \frac {n(n+1)(2n+1) + 6(n+1)^2} 6</script>.           <br />
+<script type="math/tex">= \frac {(n+1)(n(2n+1) + 6(n+1))} 6</script>.           <br />
+<script type="math/tex">= \frac {(n+1)(2n^2 + 7n + 6)} 6</script>.           <br />
+<script type="math/tex">= \frac {(n+1)(n+2)(2n+3)} 6</script>.           <br />
+<script type="math/tex">= \frac {(n+1)(n+1+1)(2(n+1)+1)} 6</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln3</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">0^3 = {(\frac {0(0 + 1)} 2 = 0)}^2 = 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">0^3 + 1^3 + 2^3 + \cdot \cdot \cdot + n^3 = {(\frac {n(n+1)} 2)}^2</script>.</p>
+
+<p>Thus we have <script type="math/tex">0^3 + 1^3 + 2^3 + \cdot \cdot \cdot + n^3 + (n+1)^3 = {(\frac {n(n+1)} 2)}^2 + (n+1)^3</script>.   <br />
+<script type="math/tex">= (\frac {n^2 \times (n+1)^2 } 4) + (n+1)^3</script>.   <br />
+<script type="math/tex">= \frac {n^2 (n+1)^2 + 4{(n+1)}^3} 4</script>.   <br />
+<script type="math/tex">= \frac {(n+1)^2(n^2 + 4(n+1))} 4</script>.   <br />
+<script type="math/tex">= \frac {(n+1)^2(n^2 + 4n + 4)} 4</script>.   <br />
+<script type="math/tex">= \frac {(n+1)^2(n+2)^2} 4</script>.   <br />
+<script type="math/tex">= {(\frac {(n+1)(n+1+1)} 2)}^2</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+
+<p><strong>Soln4</strong></p>
+
+<p>To find the formulae we may proceed as:</p>
+
+<p>In the given series it includes only odd numbers. Consider the series containing both odd and even terms:</p>
+
+<p><script type="math/tex">0,1,2,3, \cdot \cdot \cdot (2n-1), (2n)</script>. Thus we have total <script type="math/tex">2n</script> terms. We know from soln1 sum of this = <script type="math/tex">2n(2n+1)/2</script>.</p>
+
+<p>Clearly if we remove all the even terms from this we will get our series. Also we have <script type="math/tex">n</script> even terms and <script type="math/tex">n</script> odd terms. Since we
+will always have atleast one term( becuase <script type="math/tex">n>=1</script>), we can think of the above modified series as consisting of pairs where each pair is 
+ one odd number and one even number with even number = 1 + odd number. Thus we have <script type="math/tex">n</script> such pairs. Suppose sum of odd terms is <script type="math/tex">x</script>.
+  Then clearly since each pair consists of one odd and one even term with even term = 1 + odd term. Thus sum of even terms is sum of odd terms
+ and total number of pairs. Thus sum of even terms = <script type="math/tex">x + n</script>. Total sum is sum of all even and all odd terms. Thus we have <script type="math/tex">x + (x+n) = 2n(2n+1)/2</script>.
+ On symplifying it gives <script type="math/tex">x = n^2</script>.</p>
+
+<p>Thus sum of the required/given series = <script type="math/tex">n^2</script>.</p>
+
+<p>We shall prove by inductions that <script type="math/tex">n^2</script> is correct sum.</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 1</script>, <script type="math/tex">1 = 1^2 = 1</script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">1 + 3 + 5 + \cdot \cdot \cdot + (2n-1) = n^2</script>.</p>
+
+<p>Thus we have <script type="math/tex">1 + 3 + 5 + \cdot \cdot \cdot + (2n-1) + (2(n+1)-1) = n^2 + (2(n+1)-1)</script>.  <br />
+<script type="math/tex">= n^2 + 2n + 1 = (n+1)^2</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln5</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">0 \cdot 1 = 0(0+1)(0+2)/3 = 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">0 \cdot 1 + 1 \cdot 2 + 2 \cdot 3 + \cdot \cdot \cdot + n(n+1) = n(n+1)(n+2)/3</script>.</p>
+
+<p>Thus we have <script type="math/tex">0 \cdot 1 + 1 \cdot 2 + 2 \cdot 3 + \cdot \cdot \cdot + n(n+1) + (n+1)(n+1+1)</script>.   <br />
+<script type="math/tex">=  n(n+1)(n+2)/3 + (n+1)(n+1+1)</script>.   <br />
+<script type="math/tex">=  n(n+1)(n+2)/3 + (n+1)(n+2)</script>.   <br />
+<script type="math/tex">=  (n(n+1)(n+2) + 3(n+1)(n+2))/3</script>.   <br />
+<script type="math/tex">=  (n+1)(n+2)(n + 3)/3</script>.   <br />
+<script type="math/tex">=  (n+1)(n+1+1)(n + 1 + 2)/3</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln6</strong></p>
+
+<p>By looking at Ex1 and Ex5, it seems that formulae is <script type="math/tex">n(n+1)(n+2)(n+3)/4</script>.</p>
+
+<p>We shall prove that formulae is correct by Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">0 \cdot 1 \cdot 2 = 0(0+1)(0+2)(0+3)/4 = 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">0 \cdot 1 \cdot 2 + 1 \cdot 2 \cdot 3 + 2 \cdot 3 \cdot 4 + \cdot \cdot \cdot + n(n+1)(n+2) = n(n+1)(n+2)(n+3)/4</script>.</p>
+
+<p>Thus we have <script type="math/tex">0 \cdot 1 \cdot 2 + 1 \cdot 2 \cdot 3 + 2 \cdot 3 \cdot 4 + \cdot \cdot \cdot + n(n+1)(n+2) + (n+1)(n+1+1)(n+1+2)</script>.   <br />
+<script type="math/tex">=  n(n+1)(n+2)(n+3)/4 + (n+1)(n+1+1)(n+1+2)</script>.   <br />
+<script type="math/tex">=  n(n+1)(n+2)(n+3)/4 + (n+1)(n+2)(n+3)</script>.   <br />
+<script type="math/tex">=  (n(n+1)(n+2)(n+3) + 4(n+1)(n+2)(n+3))/4</script>.   <br />
+<script type="math/tex">=  (n+1)(n+2)(n+3)(n+4)/4</script>.   <br />
+<script type="math/tex">=  (n+1)(n+1+1)(n+1+2)(n+1+3)/4</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln7</strong></p>
+
+<p>By checking the example mentioned and with some hit and try, it seems that formulae is <script type="math/tex">(3^{n+1} -1)/2</script>.</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">3^0 = (3^{0+1} -1)/2 = 1</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">3^0 + 3^1 + 3^2 + 3^3 + \cdot \cdot \cdot + 3^n = (3^{n+1} -1)/2</script>.</p>
+
+<p>Thus we have <script type="math/tex">3^0 + 3^1 + 3^2 + 3^3 + \cdot \cdot \cdot + 3^n + 3^{n+1}</script>.     <br />
+<script type="math/tex">= (3^{n+1} -1)/2 + 3^{n+1}</script>.    <br />
+<script type="math/tex">= ((3^{n+1} -1) + (2 \cdot 3^{n+1}))/2</script>.    <br />
+<script type="math/tex">= (3 \cdot 3^{n+1} - 1)/2</script>.    <br />
+<script type="math/tex">= (3^{n+1+1} - 1)/2</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln8</strong></p>
+
+<p>First we can observe that on LHS there are <script type="math/tex">2n</script> terms and on RHS there are <script type="math/tex">n</script> terms.</p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 1</script>. LHS will contain two terms = <script type="math/tex">\frac 1 {2 \cdot 1 - 1} - \frac 1 {2 \cdot 1} = 1 - \frac 1 2</script>. 
+And RHS will contain one term = <script type="math/tex">\frac 1 {1+1} = \frac 1 2</script>. Thus <script type="math/tex">LHS = RHS</script>, <script type="math/tex">P(1)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true.    <br />
+Thus <script type="math/tex">1 - \frac 1 2 + \frac 1 3 - \frac 1 4 + \cdot \cdot \cdot + \frac 1 {2n-1} - \frac 1 {2n} = \frac 1 {n+1} + \frac 1 {n+2} + \frac 1 {n+3} + \cdot \cdot \cdot + \frac 1 {2n}</script>.</p>
+
+<p>Thus LHS for <script type="math/tex">P(n+1)</script> is:</p>
+
+<p><script type="math/tex">1 - \frac 1 2 + \frac 1 3 - \frac 1 4 + \cdot \cdot \cdot + \frac 1 {2(n+1)-3} - \frac 1 {2(n+1) - 2} + \frac 1 {2(n+1)-1} - \frac 1 {2(n+1)}</script>.  <br />
+<script type="math/tex">= 1 - \frac 1 2 + \frac 1 3 - \frac 1 4 + \cdot \cdot \cdot + \frac 1 {2n-1} - \frac 1 {2n} + \frac 1 {2(n+1)-1} - \frac 1 {2(n+1)}</script>.</p>
+
+<p>Clearly except last two terms, it is equivalent to LHS of <script type="math/tex">P(n)</script>. Thus we can replace this with RHS of <script type="math/tex">P(n)</script> as <script type="math/tex">P(n)</script> is true.
+Thus we have:</p>
+
+<p><script type="math/tex">\frac 1 {n+1} + \frac 1 {n+2} + \frac 1 {n+3} + \frac 1 {n+4} + \cdot \cdot \cdot + \frac 1 {2n} + \frac 1 {2(n+1)-1} - \frac 1 {2(n+1)}</script>.  <br />
+Moving first term to the end:  <br />
+<script type="math/tex">= \frac 1 {n+2} + \frac 1 {n+3} + \frac 1 {n+4} + \cdot \cdot \cdot + \frac 1 {2n} + \frac 1 {2(n+1)-1} - \frac 1 {2(n+1)} + \frac 1 {n+1}</script>.  <br />
+On adding last two terms:  <br />
+<script type="math/tex">= \frac 1 {n+2} + \frac 1 {n+3} + \frac 1 {n+4} + \cdot \cdot \cdot + \frac 1 {2n} + \frac 1 {2(n+1)-1} + \frac 1 {2(n+1)}</script>.  <br />
+<script type="math/tex">= \frac 1 {n+1+1} + \frac 1 {n+1+2} + \frac 1 {n+1+3} + \cdot \cdot \cdot + \frac 1 {2n} + \frac 1 {2(n+1)-1} + \frac 1 {2(n+1)}</script>.</p>
+
+<p>Clearly it is equivalent to RHS of <script type="math/tex">P(n+1)</script>. Thus LHS and RHS of  <script type="math/tex">P(n+1)</script> are equal. Or <script type="math/tex">P(n+1)</script> is true.</p>
+
+<p>Thus if <script type="math/tex">P(n)</script> is true then <script type="math/tex">P(n+1)</script> is also true.</p>
+
+<hr />
+
+<p><strong>Soln9</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>. We have <script type="math/tex">0^2 + 0 = 0 = 2 \times 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus for some integer <script type="math/tex">k</script>, <script type="math/tex">2k = n^2 + n</script>.</p>
+
+<p>Thus we have for <script type="math/tex">P(n+1)</script>: <script type="math/tex">(n+1)^2 + n+1 = n^2 + 2n + 1 + n + 1 = n^2 + n + 2n + 2</script>.</p>
+
+<p>Since <script type="math/tex">n^2 + 2n = 2k</script>, we get <script type="math/tex">(n+1)^2 + n+1 = 2k + 2n + 2 = 2(k+n+1)</script>. Clearly for <script type="math/tex">l = k + n + 1</script>, <script type="math/tex">(n+1)^2 + n+1</script>
+is divisible by <script type="math/tex">2</script>. Thus if <script type="math/tex">P(n)</script> is correct then <script type="math/tex">P(n+1)</script> is also correct.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>. We have <script type="math/tex">0^3 - 0 = 0 = 6 \times 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus for some integer <script type="math/tex">k</script>, <script type="math/tex">6k = n^3 - n</script>.</p>
+
+<p>Thus we have for <script type="math/tex">P(n+1)</script>: <script type="math/tex">(n+1)^3 - (n+1) = n^3 + 1 + 3n^2 + 3n - n - 1 = n^3 - n + 3n^2 + 3n = 6k + 3(n^2 + n)</script>.</p>
+
+<p>Since from part(a) <script type="math/tex">n^2 + n</script> is divisible by <script type="math/tex">2</script>, it follows <script type="math/tex">n^2 + n = 2l</script> where <script type="math/tex">l</script> is integer. Thus we have:</p>
+
+<p><script type="math/tex">(n+1)^3 - (n+1) = 6k + 3(2l) = 6k + 6l = 6(k+l)</script>. Clearly <script type="math/tex">k+l</script> is integer, thus <script type="math/tex">P(n+1)</script> is also true.</p>
+
+<hr />
+
+<p><strong>Soln10</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">9^0 - 8 \times 0 - 1 = 0 = 64 \times 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus for some integer <script type="math/tex">k</script>, <script type="math/tex">64k = 9^n - 8n - 1</script>. Thus <script type="math/tex">9^n = 64k + 8n + 1</script>.
+Thus for <script type="math/tex">P(n+1)</script> we have:</p>
+
+<p><script type="math/tex">9^{n+1} -8(n+1) -1</script>.   <br />
+<script type="math/tex">= 9^{n+1} -8n - 9</script>.  <br />
+<script type="math/tex">= 9 \cdot 9^n -8n - 9</script>.  <br />
+<script type="math/tex">= 9 \cdot (64k + 8n + 1) -8n - 9</script>.  <br />
+<script type="math/tex">= 9 \times 64k + 9 \times 8n + 9 -8n - 9</script>.  <br />
+<script type="math/tex">= 9 \times 64k + 64n</script>.  <br />
+<script type="math/tex">= 64(9k + n)</script>.  <br />
+<script type="math/tex">= 64m</script>, where <script type="math/tex">m = 9k+n</script> is an integer.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln11</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">4^0 + 6 \times 0 - 1 = 0 = 9 \times 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus for some integer <script type="math/tex">k</script>, <script type="math/tex">9k = 4^n + 6n - 1</script>. Thus <script type="math/tex">4^n = 9k - 6n + 1</script>.
+Thus for <script type="math/tex">P(n+1)</script> we have:</p>
+
+<p><script type="math/tex">4^{n+1} + 6(n+1) -1</script>.   <br />
+<script type="math/tex">= 4 \cdot 4^n + 6n + 5</script>.  <br />
+<script type="math/tex">= 4 \cdot (9k - 6n + 1) + 6n + 5</script>.  <br />
+<script type="math/tex">= 4 \times 9k - 4 \times 6n + 4 + 6n + 5</script>.  <br />
+<script type="math/tex">= 4 \times 9k - 3 \times 6n + 9</script>.  <br />
+<script type="math/tex">= 9 (4k - 2n + 1)</script>.  <br />
+<script type="math/tex">= 9m</script>, where <script type="math/tex">m = 4k - 2n + 1</script> is an integer.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln12</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">a^0 - b^0 = 0 = (a-b) \times 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus for some integer <script type="math/tex">k</script>, <script type="math/tex">(a-b)k = a^n - b^n</script>.</p>
+
+<p>Thus for <script type="math/tex">P(n+1)</script> we have:</p>
+
+<p><script type="math/tex">a^{n+1} - b^{n+1}</script>.   <br />
+<script type="math/tex">= a(a^n - b^n) - b^{n+1} + ab^n</script>.   <br />
+<script type="math/tex">= a(a-b)k + b^n(a-b)</script>.   <br />
+<script type="math/tex">= (a-b)(ak + b^n)</script>.   <br />
+<script type="math/tex">= (a-b)m</script>, where <script type="math/tex">m = ak + b^n</script> is an integer.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln13</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">a^{2 \times 0 + 1} + b^{2 \times 0 + 1} = a+b = (a+b) \times 1</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus for some integer <script type="math/tex">k</script>, <script type="math/tex">(a+b)k = a^{2n + 1} + b^{2n + 1}</script>.</p>
+
+<p>Thus for <script type="math/tex">P(n+1)</script> we have:</p>
+
+<p><script type="math/tex">a^{2(n+1)+1} + b^{2(n+1)+1}</script>.   <br />
+<script type="math/tex">= a^{2n+3} + b^{2n+3}</script>.   <br />
+<script type="math/tex">= a^2(a^{2n+1} + b^{2n+1}) + b^{2n+3} - a^2 \cdot b^{2n+1}</script>.   <br />
+<script type="math/tex">= a^2(a+b)k + b^{2n+1}(b^2 - a^2)</script>.   <br />
+<script type="math/tex">= a^2(a+b)k + b^{2n+1}(b - a)(b+a)</script>.   <br />
+<script type="math/tex">= (a+b)(a^2k + b^{2n+1}(b - a))</script>.   <br />
+<script type="math/tex">= (a+b)m</script>, where <script type="math/tex">m = a^2k + b^{2n+1}(b - a)</script> is an integer.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln14</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 10</script>, we have <script type="math/tex">2^10 = 1024 > 10^3 = 1000</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">2^n > n^3</script>.</p>
+
+<p>Thus for <script type="math/tex">P(n+1)</script> we have <script type="math/tex">2^{n+1}</script>:    <br />
+<script type="math/tex">= 2 \cdot 2^n</script>.   <br />
+<script type="math/tex">> 2 \cdot n^3</script>, since <script type="math/tex">2^n > n^3</script>.   <br />
+<script type="math/tex">= n^3 + n^3</script>.   <br />
+<script type="math/tex">\ge n^3 + 10n^2</script>, since <script type="math/tex">n \ge 10</script>.   <br />
+<script type="math/tex">= n^3 + 3n^2 + 7n^2</script>.   <br />
+<script type="math/tex">\ge n^3 + 3n^2 + 70n</script>, since <script type="math/tex">n \ge 10</script>.   <br />
+<script type="math/tex">= n^3 + 3n^2 + 3n + 67n</script>.   <br />
+<script type="math/tex">> n^3 + 3n^2 + 3n + 1</script>, since <script type="math/tex">n \ge 10</script> means <script type="math/tex">67n \ge 1</script>.   <br />
+<script type="math/tex">= (n+1)^3</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln15</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">(n-0) = 0 = 3 \times 0</script>. Thus <script type="math/tex">n \equiv 0 (mod 3)</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus atleast one of the following is true:</p>
+<ul>
+  <li><script type="math/tex">n = 3k</script>.</li>
+  <li><script type="math/tex">n - 1 = 3l</script>.</li>
+  <li><script type="math/tex">n - 2 = 3m</script>.</li>
+</ul>
+
+<p>where <script type="math/tex">k,l,m</script> are integers.</p>
+
+<p>Now consider <script type="math/tex">P(n + 1)</script>, we have following possible cases:</p>
+
+<p>Case 1: <script type="math/tex">n = 3k</script>.   <br />
+Thus <script type="math/tex">n + 1 = 3k+1</script>, or <script type="math/tex">(n+1) - 1 = 3k</script>. Thus <script type="math/tex">(n+1) \equiv 1 (mod 3)</script>.</p>
+
+<p>Case 2: <script type="math/tex">n - 1 = 3l</script>.   <br />
+Thus <script type="math/tex">n + 1 = 3l+1+1</script>, or <script type="math/tex">(n+1) - 2 = 3l</script>. Thus <script type="math/tex">(n+1) \equiv 2 (mod 3)</script>.</p>
+
+<p>Case 3: <script type="math/tex">n - 2 = 3m</script>.   <br />
+Thus <script type="math/tex">n + 1 = 3(m+1)</script>, or <script type="math/tex">(n+1) - 0 = 3m</script>. Thus <script type="math/tex">(n+1) \equiv 0 (mod 3)</script>.</p>
+
+<p>Thus from all cases, <script type="math/tex">P(n+1)</script> is also true.</p>
+
+<hr />
+
+<p><strong>Soln16</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 1</script>, we have <script type="math/tex">(1+1)2^1 = 4 = 1 \times 2^{1+1}</script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">2 \cdot 2^1 + 2 \cdot 2^1 + 2 \cdot 2^1 + \cdot \cdot \cdot + (n+1) \cdot 2^n = n \cdot 2^{n+1}</script>.</p>
+
+<p>Thus for <script type="math/tex">P(n+1)</script> we have <script type="math/tex">2 \cdot 2^1 + 2 \cdot 2^1 + 2 \cdot 2^1 + \cdot \cdot \cdot + (n+1) \cdot 2^n + (n+2) \cdot 2^{n+1}</script>.    <br />
+<script type="math/tex">= n \cdot 2^{n+1} + (n+2) \cdot 2^{n+1}</script>, since <script type="math/tex">P(n)</script> is true.        <br />
+<script type="math/tex">= 2^{n+1}(n+n+2)</script>.    <br />
+<script type="math/tex">= 2^{n+1} \cdot 2(n+1)</script>.    <br />
+<script type="math/tex">= (n+1) \cdot 2^{n+1+1}</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is also true.</p>
+
+<hr />
+
+<p><strong>Soln17</strong></p>
+
+<p><strong>(a)</strong> Base case is not covered.</p>
+
+<p><strong>(b)</strong> It appears formulae should be <script type="math/tex">n \cdot 3^{n+1} + 1</script>.</p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">(2 \times 0 + 1) \cdot 3^0 = 1 = 0 \cdot 3^{0+1} + 1</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">1 \cdot 3^0 + 3 \cdot 3^1 + 5 \cdot 3^2 + \cdot \cdot \cdot + (2n + 1) \cdot 3^n = n \cdot 3^{n+1} + 1</script>.</p>
+
+<p>Thus for <script type="math/tex">P(n+1)</script> we have <script type="math/tex">1 \cdot 3^0 + 3 \cdot 3^1 + 5 \cdot 3^2 + \cdot \cdot \cdot + (2n + 1) \cdot 3^n + (2(n+1) + 1) \cdot 3^{n+1}</script>.
+<script type="math/tex">= n \cdot 3^{n+1} + 1 + (2(n+1) + 1) \cdot 3^{n+1}</script>, since <script type="math/tex">P(n)</script> is true.    <br />
+<script type="math/tex">=  n \cdot 3^{n+1} + (2n + 3) \cdot 3^{n+1} + 1</script>.   <br />
+<script type="math/tex">=  3^{n+1}(n + (2n + 3)) + 1</script>.   <br />
+<script type="math/tex">=  3^{n+1}(3n+3) + 1</script>.   <br />
+<script type="math/tex">=  (n+1) \cdot 3^{n+1+1} + 1</script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true.</p>
+
+<hr />
+
+<p><strong>Soln18</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 0</script>. Thus <script type="math/tex">n</script> is odd. So we have <script type="math/tex">a^0 = 1 > 0</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus if <script type="math/tex">n</script> is odd, <script type="math/tex">% <![CDATA[
+a^n < 0 %]]></script> and if <script type="math/tex">n</script> is even <script type="math/tex">a^n > 0</script>.</p>
+
+<p>Thus for <script type="math/tex">P(n+1)</script> we have following cases:</p>
+
+<p>Case 1: <script type="math/tex">n</script> is odd.
+Thus <script type="math/tex">a^{n+1} = a \cdot a^n</script>. Also since <script type="math/tex">P(n)</script> is true and <script type="math/tex">n</script> is odd, <script type="math/tex">% <![CDATA[
+a^n < 0 %]]></script>. Since <script type="math/tex">% <![CDATA[
+a < 0 %]]></script> and<br />
+<script type="math/tex">% <![CDATA[
+a^n < 0 %]]></script>, it follows that <script type="math/tex">a \cdot a^n > 0</script>. Thus <script type="math/tex">a^{n+1} > 0</script>. Since <script type="math/tex">n</script> is odd, it follows <script type="math/tex">n+1</script> is
+even. Thus <script type="math/tex">P(n+1)</script> is true if <script type="math/tex">n</script> is odd.</p>
+
+<p>Case 2: <script type="math/tex">n</script> is even.
+Thus <script type="math/tex">a^{n+1} = a \cdot a^n</script>. Also since <script type="math/tex">P(n)</script> is true and <script type="math/tex">n</script> is even, <script type="math/tex">a^n > 0</script>. Since <script type="math/tex">% <![CDATA[
+a < 0 %]]></script> and<br />
+<script type="math/tex">a^n > 0</script>, it follows that <script type="math/tex">% <![CDATA[
+a \cdot a^n < 0 %]]></script>. Thus <script type="math/tex">% <![CDATA[
+a^{n+1} < 0 %]]></script>. Since <script type="math/tex">n</script> is even, it follows <script type="math/tex">n+1</script> is
+odd. Thus <script type="math/tex">P(n+1)</script> is true if <script type="math/tex">n</script> is even.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true for all possible cases.</p>
+
+<hr />
+
+<p><strong>Soln19</strong></p>
+
+<p>Suppose <script type="math/tex">% <![CDATA[
+0 < a < b %]]></script>.</p>
+
+<p><strong>(a)</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 1</script>. Thus <script type="math/tex">a^1 = a</script> and <script type="math/tex">b^1 = b</script>. Clearly from the give <script type="math/tex">% <![CDATA[
+a < b %]]></script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">% <![CDATA[
+0 < a^n < b^n %]]></script>.</p>
+
+<p>Thus for <script type="math/tex">P(n+1)</script> we have <script type="math/tex">b^{n+1}</script>:
+<script type="math/tex">= b \cdot b^n</script>.   <br />
+<script type="math/tex">> a \cdot b^n</script>, Since <script type="math/tex">b > a</script>.   <br />
+<script type="math/tex">> a \cdot a^n</script>, Since <script type="math/tex">b^n > a^n</script>.   <br />
+<script type="math/tex">= a^{n+1}</script>.</p>
+
+<p>Since <script type="math/tex">P(n)</script> is true, <script type="math/tex">a^n > 0</script>. Since <script type="math/tex">a > 0</script>, it follows <script type="math/tex">a \cdot a^{n+1} > 0</script>. Thus <script type="math/tex">a^{n+1} > 0</script>.</p>
+
+<p>Thus <script type="math/tex">% <![CDATA[
+0 < a^{n+1} < b^{n+1} %]]></script>. It follows <script type="math/tex">P(n+1)</script> is true.</p>
+
+<p><strong>(b)</strong></p>
+
+<p>By definition of <script type="math/tex">\sqrt[n] a</script>, we have <script type="math/tex">\sqrt[n] a > 0</script>. Thus we only need to prove <script type="math/tex">% <![CDATA[
+\sqrt[n] a < \sqrt[n] b %]]></script>.</p>
+
+<p>Suppose <script type="math/tex">p = \sqrt[n] a</script> and <script type="math/tex">q = \sqrt[n] b</script>. We will prove this by contradiction. Suppose <script type="math/tex">p > q</script>. Thus by 
+part(a) we have <script type="math/tex">p^n > q^n</script>. It follows <script type="math/tex">(\sqrt[n] a)^n > (\sqrt[n] b)^n</script>. Thus <script type="math/tex">a > b</script>. But it contradicts with
+the given that <script type="math/tex">% <![CDATA[
+a < b %]]></script>. Thus <script type="math/tex">% <![CDATA[
+\sqrt[n] a < \sqrt[n] b %]]></script>.</p>
+
+<p><strong>(c)</strong></p>
+
+<p>To Prove <script type="math/tex">% <![CDATA[
+ab^n + ba^n < a^{n+1} + b^{n+1} %]]></script>, which is equivalent to proving:    <br />
+<script type="math/tex">% <![CDATA[
+\Leftrightarrow ab^n + ba^n - a^{n+1} - b^{n+1} < 0 %]]></script>.   <br />
+<script type="math/tex">% <![CDATA[
+\Leftrightarrow b^n(a-b) - a^n(a-b)< 0 %]]></script>.   <br />
+<script type="math/tex">% <![CDATA[
+\Leftrightarrow (a-b)(b^n - a^n)< 0 %]]></script>.</p>
+
+<p>Since <script type="math/tex">% <![CDATA[
+0 < a < b %]]></script>, <script type="math/tex">% <![CDATA[
+a - b < 0 %]]></script>. Also from part(a) <script type="math/tex">% <![CDATA[
+a^n < b^n %]]></script>, or <script type="math/tex">b^n - a^n > 0</script>. Since <script type="math/tex">a-b > 0</script> and
+<script type="math/tex">b^n - a^n > 0</script>, it follows <script type="math/tex">% <![CDATA[
+(a-b)(b^n - a^n)< 0 %]]></script>. Thus <script type="math/tex">% <![CDATA[
+ab^n + ba^n < a^{n+1} + b^{n+1} %]]></script> is true.</p>
+
+<p><strong>(d)</strong></p>
+
+<p>By Mathematical induction:</p>
+
+<p><u>Base Case:</u></p>
+
+<p>For <script type="math/tex">n = 2</script>. Thus we have to prove <script type="math/tex">% <![CDATA[
+(\frac {a+b} 2)^2 < \frac {a^2 + b^2} 2 %]]></script>, or <script type="math/tex">% <![CDATA[
+(a+b)^2 < 2(a^2 + b^2) %]]></script>, which 
+on simplifying <script type="math/tex">% <![CDATA[
+a^2 + b^2 + 2ab < 2a^2 + 2b^2 %]]></script>, or <script type="math/tex">% <![CDATA[
+2ab < a^2 + b^2 %]]></script>. Thus we need to prove <script type="math/tex">% <![CDATA[
+2ab < a^2 + b^2 %]]></script>. This
+is true as from part(c) for <script type="math/tex">n = 2</script>.</p>
+
+<p><u>Induction Step:</u></p>
+
+<p>Suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">% <![CDATA[
+(\frac {a+b} 2)^n < \frac {a^n + b^n} 2 %]]></script>.</p>
+
+<p>Multiplying both sides by <script type="math/tex">(a+b)/2</script>, we get:    <br />
+<script type="math/tex">% <![CDATA[
+(\frac {a+b} 2)^{n+1} < {\frac {a^n + b^n} 2} \times {\frac {a+b} 2} %]]></script>.    <br />
+<script type="math/tex">% <![CDATA[
+\Rightarrow (\frac {a+b} 2)^{n+1} < {\frac {a(a^n + b^n) + b(a^n + b^n)} 4} %]]></script>.   <br />
+<script type="math/tex">% <![CDATA[
+\Rightarrow (\frac {a+b} 2)^{n+1} < {\frac {a^{n+1} + ab^n + ba^n + b^{n+1}} 4} %]]></script>.   <br />
+Using part(c), <script type="math/tex">% <![CDATA[
+ab^n + ba^n < a^{n+1} + b^{n+1} %]]></script>, we get:   <br />
+<script type="math/tex">% <![CDATA[
+\Rightarrow (\frac {a+b} 2)^{n+1} < {\frac {a^{n+1} + a^{n+1} + b^{n+1} + b^{n+1}} 4} %]]></script>.   <br />
+<script type="math/tex">% <![CDATA[
+\Rightarrow (\frac {a+b} 2)^{n+1} < {\frac {a^{n+1+1} + b^{n+1+1}} 4} %]]></script>.   <br />
+Since <script type="math/tex">% <![CDATA[
+x > 0 \to \frac x 4 < \frac x 2 %]]></script>, we get:   <br />
+<script type="math/tex">% <![CDATA[
+\Rightarrow (\frac {a+b} 2)^{n+1} < {\frac {a^{n+1+1} + b^{n+1+1}} 2} %]]></script>.</p>
+
+<p>Thus <script type="math/tex">P(n+1)</script> is true.</p>
+
+
+                        <hr/>
+                    </span>
+
+                    <br/>
+
+                    
+
+	<div id="disqus_thread"></div>
+	<script>
+		/**
+		 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+		 */
+		var disqus_identifier = 'inchmeal';
+
+		
+		var disqus_config = function () {
+		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+		 this.page.identifier = "/htpi/ch-6/sec-6.1.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+
+
+		(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+
+			s.src = '//' + disqus_identifier + '.disqus.com/embed.js';
+
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+                </article>
+            </div><!-- /.small-11.columns -->
+        </div><!-- /.row -->
+    </div><!-- /.medium-8.columns -->
+</div><!-- /.row -->
+
+
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" title="Go to Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast')">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="small-6 columns">
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        <li>Created with &hearts; by ovais</li>
+                    </ul>
+                </div>
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        
+                        <li><a href="/rss-feed.xml"  target="_blank"  class="rss-link" title="Subscribe to RSS">RSS</a></li>
+                        
+                        <li><a href="mailto:mailovais85@gmail.com"  class="contact-link" title="Contact">Contact</a></li>
+                        
+                    </ul>
+                </div>
+              <div class="column pl0 pr0">
+                  <ul class="inline-list">
+                      <li>&copy;2017 inchmeal</li>
+                  </ul>
+              </div>
+          </section>
+          <section id="subfooter-right" class="small-6 columns social-icons end">
+              <div class="column pl0 pr0">
+              <ul class="inline-list">
+                
+                  <li><a href="http://twitter.com/ovais_" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
+                
+                  <li><a href="http://github.com/0vais" target="_blank" class="icon-github" title="Follow on github"></a></li>
+                
+              </ul>
+              </div>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+
+	<script src="http://www.inchmeal.io/assets/js/inchmeal_all.js"></script>
+
+<script>
+  var sectionName = "6.1";
+  
+  //google analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73233179-1', 'auto');
+  ga('send', 'pageview');
+  
+</script>
+
+</body>
+</html>

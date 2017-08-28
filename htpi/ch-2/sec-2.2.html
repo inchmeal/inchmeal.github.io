@@ -1,0 +1,1515 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>How to Prove It - Solutions</title>
+	<link rel="stylesheet" href="http://www.inchmeal.io/assets/css/styles_inchmeal.css"/>
+	<link rel="alternate" type="application/rss+xml" title="Inchmeal RSS" href="/rss-feed.xml" />
+
+	<script src="http://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
+
+	
+	
+	<script type="text/javascript"
+			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+	<script>
+		MathJax.Hub.Config({
+			"HTML-CSS": { scale: 82 },
+			"displayAlign": "left"
+		});
+	</script>
+	
+
+	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
+	
+	<meta name="description" content="Inchmeal - Velleman&#39;s How To Prove It, Ch-2 Sec-2.2, Equivalences Involving Quantifiers"/>
+
+	
+
+	
+
+
+
+	
+	<link rel="icon" sizes="32x32" href="http://www.inchmeal.io/assets/img/favicon-32x32.png">
+
+
+
+
+	
+	<link rel="icon" sizes="192x192" href="http://www.inchmeal.io/assets/img/touch-icon-192x192.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://www.inchmeal.io/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.inchmeal.io/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.inchmeal.io/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://www.inchmeal.io/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.inchmeal.io/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://www.inchmeal.io/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.inchmeal.io/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" href="http://www.inchmeal.io/assets/img/apple-touch-icon-precomposed.png">	
+
+
+
+
+	
+	<meta name="msapplication-TileImage" content="http://www.inchmeal.io/assets/img/msapplication_tileimage.png"/>
+
+
+
+
+	
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+
+	<!-- Facebook Optimization -->
+	<meta property="og:locale" content="en_EN" />
+	
+	<meta property="og:title" content="How to Prove It - Solutions" />
+	<meta property="og:description" content="Inchmeal - Velleman&#39;s How To Prove It, Ch-2 Sec-2.2, Equivalences Involving Quantifiers"/>
+	<meta property="og:url" content="http://www.inchmeal.io//htpi/ch-2/sec-2.2.html" />
+	<meta property="og:site_name" content="inchmeal" />
+	
+
+	
+
+	<!-- Search Engine Optimization -->
+	
+
+	<link type="text/plain" rel="author" href="http://www.inchmeal.io//humans.txt" />
+
+	
+</head>
+
+<body id="top-of-page" class="">
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="http://www.inchmeal.io">
+            <img src="http://inchmeal.io/assets/img/logo.png"/>
+          </a>
+        </h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu"(text inside span) to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/">home</a></li>
+          
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/archives/">archives</a></li>
+          
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/about/">about</a></li>
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        <li class="divider"></li>
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+
+	<!-- capture chapters -IMPORTANT- do not split below statement as it starts capturing new line which causes problems- -->
+
+
+
+
+
+<!-- remove duplicates, convert to num and insert in array -->
+
+    
+    
+
+    
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+
+
+
+<div class="row t30">
+    <div class="medium-4 columns medium-push-8">
+    </div>
+    <div class="medium-8 columns medium-pull-4">
+        <div class="row">
+            <div class="medium-11 medium-offset-1 columns">
+            <h1><a href="/htpi/index.html" >How to Prove It - Solutions</a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row t10">
+    <div class="medium-3 columns medium-push-9">
+        <div class="row t5">
+            <div class="medium-12 columns">
+
+                <ul class="accordion" data-accordion>
+                    <li class="accordion-navigation">
+                        <a href="#ch-introduction">Introduction</a>
+                        
+                        <div id="ch-introduction" class="content ">
+                            <a href="/htpi/index.html" ><span class="radius info label ">Section - Introduction</span></a>
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-1">Chapter 1</a>
+                        
+                        <div id="ch-1" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.1.html" ><span class="radius info label ">Section-1.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.2.html" ><span class="radius info label ">Section-1.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.3.html" ><span class="radius info label ">Section-1.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.4.html" ><span class="radius info label ">Section-1.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.5.html" ><span class="radius info label ">Section-1.5</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-2">Chapter 2</a>
+                        
+                        <div id="ch-2" class="content active">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.1.html" ><span class="radius info label ">Section-2.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.2.html" ><span class="radius success label ">Section-2.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.3.html" ><span class="radius info label ">Section-2.3</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-3">Chapter 3</a>
+                        
+                        <div id="ch-3" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.1.html" ><span class="radius info label ">Section-3.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.2.html" ><span class="radius info label ">Section-3.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.3.html" ><span class="radius info label ">Section-3.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.4.html" ><span class="radius info label ">Section-3.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.5.html" ><span class="radius info label ">Section-3.5</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.6.html" ><span class="radius info label ">Section-3.6</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.7.html" ><span class="radius info label ">Section-3.7</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-4">Chapter 4</a>
+                        
+                        <div id="ch-4" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.1.html" ><span class="radius info label ">Section-4.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.2.html" ><span class="radius info label ">Section-4.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.3.html" ><span class="radius info label ">Section-4.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.4.html" ><span class="radius info label ">Section-4.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.5.html" ><span class="radius info label ">Section-4.5</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.6.html" ><span class="radius info label ">Section-4.6</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-5">Chapter 5</a>
+                        
+                        <div id="ch-5" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.1.html" ><span class="radius info label ">Section-5.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.2.html" ><span class="radius info label ">Section-5.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.3.html" ><span class="radius info label ">Section-5.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.4.html" ><span class="radius info label ">Section-5.4</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-6">Chapter 6</a>
+                        
+                        <div id="ch-6" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.1.html" ><span class="radius info label ">Section-6.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.2.html" ><span class="radius info label ">Section-6.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.3.html" ><span class="radius info label ">Section-6.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.4.html" ><span class="radius info label ">Section-6.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.5.html" ><span class="radius info label ">Section-6.5</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-7">Chapter 7</a>
+                        
+                        <div id="ch-7" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.1.html" ><span class="radius info label ">Section-7.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.2.html" ><span class="radius info label ">Section-7.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.3.html" ><span class="radius info label ">Section-7.3</span></a>
+                            
+                        </div>
+                    </li>
+                    
+                </ul>
+
+                <div class="show-for-small-down">
+                    <hr class="t20"/>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.medium-4.columns -->
+    <div class="medium-9 columns medium-pull-3">
+        <div class="row">
+            <div class="medium-11 medium-offset-1 columns">
+                <article itemscope itemtype="http://schema.org/Article">
+                    <header>
+                        <span itemprop="name">
+                            
+                            <hr/>
+                            <h2>Chapter - 2, Quantificational Logic</h2>
+                            
+                            
+                            <h3>Section - 2.2 - Equivalences Involving Quantifiers</h3>
+                            
+                        </span>
+                    </header>
+
+                    
+                    <p class="tm10">
+                        <time class="post-date pr20" datetime="September 09, 2015" itemprop="datePublished"> September 09, 2015</time>
+                    </p>
+                    
+
+                    <span itemprop="articleSection">
+                        <hr/>
+                        <h3 id="summary">Summary</h3>
+
+<ul>
+  <li>Equivalances:
+    <ul>
+      <li><script type="math/tex">\lnot \forall x P(x) = \exists x \lnot P(x)</script>.</li>
+      <li><script type="math/tex">\lnot \exists x P(x) = \forall x \lnot P(x)</script>.</li>
+    </ul>
+  </li>
+  <li><script type="math/tex">\exists ! x P(x)</script> means P(x) is true for exactly one value of x. It is equivalent to   <br />
+<script type="math/tex">\exists x (P(x) \land \lnot \exists y (P(y) \land \lnot (y = x)))</script>.</li>
+  <li>Bounded Quantifiers:
+    <ul>
+      <li><script type="math/tex">\exists x \in A P(x) = \exists x (x \in A \land P(x))</script>.</li>
+      <li><script type="math/tex">\forall x \in A P(x) = \forall x (x \in A \to P(x))</script>.</li>
+    </ul>
+  </li>
+  <li>Similar to negation equivalances( in first point), Equivalences for Bounded Quantifiers:
+    <ul>
+      <li><script type="math/tex">\lnot \forall x \in A P(x) = \exists x \in A \lnot P(x)</script>.</li>
+      <li><script type="math/tex">\lnot \exists x \in A P(x) = \forall x \in A \lnot P(x)</script>.</li>
+    </ul>
+  </li>
+  <li>If <script type="math/tex">A = \phi</script> then:
+    <ul>
+      <li><script type="math/tex">\exists x \in A P(x)</script> is always false irrespective of P(x).</li>
+      <li><script type="math/tex">\forall x \in A P(x)</script> is true irrespective of P(x).</li>
+    </ul>
+  </li>
+  <li>Universal Quantifiers distributes over conjunction i.e. <script type="math/tex">\forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)</script>.
+But Universal Quantifiers does not distributes over disjunction.</li>
+  <li>Existential Quantifier distributes over disjunction but does not distributes over conjunction.</li>
+</ul>
+
+<hr />
+
+<p><strong>Soln1</strong></p>
+
+<p><strong>(a)</strong> <script type="math/tex">\forall x (M(x) \to \exists y(F(x, y) \land H(y))</script>  <br />
+where <script type="math/tex">M(x)</script> means <script type="math/tex">x</script> is maths major,  <br />
+and <script type="math/tex">F(x,y)</script> means <script type="math/tex">x</script> is a friend of <script type="math/tex">y</script>,  <br />
+and <script type="math/tex">H(y)</script> means <script type="math/tex">y</script> needs help in homework.</p>
+
+<p>Negation of the above statement:</p>
+
+<p><script type="math/tex">\quad \lnot \forall x (M(x) \to \exists y(F(x, y) \land H(y))</script>  <br />
+<script type="math/tex">\quad = \exists x \lnot (M(x) \to \exists y(F(x, y) \land H(y))</script>  <br />
+<script type="math/tex">\quad = \exists x \lnot (\lnot M(x) \lor \exists y(F(x, y) \land H(y))</script>  <br />
+<script type="math/tex">\quad = \exists x (\lnot \lnot M(x) \land \lnot \exists y(F(x, y) \land H(y))</script>  <br />
+<script type="math/tex">\quad = \exists x ( M(x) \land \forall y \lnot(F(x, y) \land H(y))</script>  <br />
+<script type="math/tex">\quad = \exists x ( M(x) \land \forall y (\lnot F(x, y) \lor \lnot H(y))</script>  <br />
+<script type="math/tex">\quad = \exists x ( M(x) \land \forall y ( F(x, y) \to \lnot H(y))</script></p>
+
+<p>There exists a maths major and all of his friends don’t need help in their homework.</p>
+
+<p><strong>(b)</strong> <script type="math/tex">\forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
+where <script type="math/tex">R(x,y)</script> means <script type="math/tex">x</script> is the roommate of <script type="math/tex">y</script>,  <br />
+and <script type="math/tex">L(y,z)</script> means <script type="math/tex">y</script> likes <script type="math/tex">z</script>.</p>
+
+<p>Negation of the above statement:</p>
+
+<p><script type="math/tex">\lnot \forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
+<script type="math/tex">\quad = \exists x \lnot \exists y(R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
+<script type="math/tex">\quad = \exists x \forall y \lnot (R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
+<script type="math/tex">\quad = \exists x \forall y (\lnot R(x,y) \lor \lnot \forall z \lnot L(y,z))</script>  <br />
+<script type="math/tex">\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z \lnot \lnot L(y,z))</script>  <br />
+<script type="math/tex">\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z L(y,z))</script>  <br />
+<script type="math/tex">\quad = \exists x \forall y (R(x,y) \to \exists z L(y,z))</script></p>
+
+<p>There exists someone whose all roommates likes atleast one person.</p>
+
+<p><strong>(c)</strong> Required statement is:   <br />
+    <script type="math/tex">\lnot \forall x ((x \in A \lor x \in B) \to (x \in C \land x \notin D))</script>    <br />
+    <script type="math/tex">\quad = \exists x \lnot ((x \in A \lor x \in B) \to (x \in C \land x \notin D))</script>    <br />
+    <script type="math/tex">\quad = \exists x \lnot (\lnot (x \in A \lor x \in B) \lor (x \in C \land x \notin D))</script>    <br />
+    <script type="math/tex">\quad = \exists x (\lnot \lnot (x \in A \lor x \in B) \land \lnot (x \in C \land x \notin D))</script>    <br />
+    <script type="math/tex">\quad = \exists x ((x \in A \lor x \in B) \land (x \notin C \lor x \in D))</script></p>
+
+<p><strong>(d)</strong> Required statement is:
+    <script type="math/tex">\lnot \exists x \forall y[ y > x \to \exists z(z^2 + 5z = y)]</script>  <br />
+    <script type="math/tex">\quad = \forall x \lnot \forall y[ y > x \to \exists z(z^2 + 5z = y)]</script>  <br />
+    <script type="math/tex">\quad = \forall x \exists y \lnot [ y > x \to \exists z(z^2 + 5z = y)]</script>  <br />
+    <script type="math/tex">\quad = \forall x \exists y \lnot [ \lnot (y > x) \lor \exists z(z^2 + 5z = y)]</script>  <br />
+    <script type="math/tex">\quad = \forall x \exists y [ \lnot \lnot (y > x) \land \lnot \exists z(z^2 + 5z = y)]</script>  <br />
+    <script type="math/tex">\quad = \forall x \exists y [ (y > x) \land \forall z \lnot(z^2 + 5z = y)]</script>  <br />
+    <script type="math/tex">\quad = \forall x \exists y [ (y > x) \land \forall z (z^2 + 5z \neq y)]</script></p>
+
+<hr />
+
+<p><strong>Soln2</strong></p>
+
+<p><strong>(a)</strong> <script type="math/tex">\exists x (F(x) \land \lnot \exists y R(x,y))</script>.</p>
+
+<p>Negation of above statement:</p>
+
+<p><script type="math/tex">\quad = \lnot \exists x (F(x) \land \lnot \exists y R(x,y))</script>  <br />
+ <script type="math/tex">\quad = \forall x \lnot (F(x) \land \lnot \exists y R(x,y))</script>  <br />
+ <script type="math/tex">\quad = \forall x (\lnot F(x) \lor \lnot \lnot \exists y R(x,y))</script>  <br />
+ <script type="math/tex">\quad = \forall x (\lnot F(x) \lor \exists y R(x,y))</script>  <br />
+ <script type="math/tex">\quad = \forall x ( F(x) \to \exists y R(x,y))</script>.</p>
+
+<p>where <script type="math/tex">F(x)</script> means <script type="math/tex">x</script> is a freshman.  <br />
+ and <script type="math/tex">R(x,y)</script> means <script type="math/tex">x</script> and <script type="math/tex">y</script> are roommates.</p>
+
+<p><strong>(b)</strong> <script type="math/tex">\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y)</script></p>
+
+<p>Negation of above statement:</p>
+
+<p><script type="math/tex">\lnot (\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y))</script>  <br />
+ <script type="math/tex">\quad = (\lnot (\forall x \exists y L(x,y)) \lor  \lnot (\lnot \exists x \forall y L(x,y)))</script>  <br />
+ <script type="math/tex">\quad = (\exists x \lnot \exists y L(x,y)) \lor  \exists x \forall y L(x,y)</script>  <br />
+ <script type="math/tex">\quad = (\exists x \forall y \lnot L(x,y)) \lor  \exists x \forall y L(x,y)</script></p>
+
+<p>Either there exists someone who does not like anyone or there exists someone who likes everyone.</p>
+
+<p><strong>(c)</strong> <script type="math/tex">\forall a \in A \exists b \in B (a \in C \leftrightarrow b \in C)</script>.</p>
+
+<p>This is equivalent to:</p>
+
+<p><script type="math/tex">\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C)</script>.</p>
+
+<p>Negation of the above statement:</p>
+
+<p><script type="math/tex">\lnot (\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C))</script>  <br />
+<script type="math/tex">\lnot \forall a \in A \exists b \in B (a \in C \to b \in C)  \lor \lnot \forall a \in A \exists b \in B (b \in C \to a \in C)</script>  <br />
+<script type="math/tex">\exists a \in A \lnot \exists b \in B (a \in C \to b \in C)  \lor \exists a \in A \lnot \exists b \in B (b \in C \to a \in C)</script>  <br />
+<script type="math/tex">\exists a \in A \forall b \in B \lnot (a \in C \to b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \in C \to a \in C)</script>  <br />
+<script type="math/tex">\exists a \in A \forall b \in B \lnot (a \notin C \lor b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \notin C \lor a \in C)</script>  <br />
+<script type="math/tex">\exists a \in A \forall b \in B (a \in C \land b \notin C)  \lor \exists a \in A \forall b \in B(b \in C \land a \notin C)</script></p>
+
+<p>There exists an a in A such that for all values of b in B, either a is in C and b is not in C, or a is not in C and b is in C.</p>
+
+<p><strong>(d)</strong> Required statement is:</p>
+
+<p><script type="math/tex">\lnot \forall y \gt 0 \exists x (ax^2 + bx + c = y)</script>   <br />
+ <script type="math/tex">\exists y \gt 0 \lnot \exists x (ax^2 + bx + c = y)</script>   <br />
+ <script type="math/tex">\exists y \gt 0 \forall x \lnot (ax^2 + bx + c = y)</script>   <br />
+ <script type="math/tex">\exists y \gt 0 \forall x (ax^2 + bx + c \neq y)</script></p>
+
+<hr />
+
+<p><strong>Soln3</strong></p>
+
+<p><strong>(a)</strong> All possible values of x are 0,1,2,3,4,5,6. It can be easily verified that there exists a,b and c such that <script type="math/tex">a^2 + b^2 + c^2 = x</script> for all possible values of x. Thus statement is True.</p>
+
+<p><strong>(b)</strong> False. x has two possible values 1 and 7.</p>
+
+<p><strong>(c)</strong> True. x has two values -1 and 9. But as x is Natural number. Thus only x has one posssible value 9.</p>
+
+<p><strong>(d)</strong> True. x = 9 and y = 9.</p>
+
+<hr />
+
+<p><strong>Soln4</strong></p>
+
+<p>Given: <script type="math/tex">\lnot \exists x P(x) = \forall x \lnot P(x)</script>.</p>
+
+<p>To Prove: <script type="math/tex">\lnot \forall x P(x) = \exists x \lnot P(x)</script>.</p>
+
+<p>Putting <script type="math/tex">P(x) = \lnot Q(x)</script> in the given equivalence:  <br />
+<script type="math/tex">\lnot \exists x \lnot Q(x) = \forall x Q(x)</script>  <br />
+Taking negation on both sides:  <br />
+<script type="math/tex">\lnot \lnot \exists x \lnot Q(x) = \lnot \forall x Q(x)</script>  <br />
+<script type="math/tex">\exists x \lnot Q(x) = \lnot \forall x Q(x)</script>  <br />
+Hence Proved.</p>
+
+<hr />
+
+<p><strong>Soln5</strong></p>
+
+<p>To Prove: <script type="math/tex">\lnot \exists x \in A P(x)</script> is equivalent to <script type="math/tex">\forall x \in A \lnot P(x)</script>.</p>
+
+<p>LHS: <script type="math/tex">\lnot \exists x \in A P(x)</script>  <br />
+<script type="math/tex">\quad = \lnot \exists x (x \in A \land P(x))</script>  <br />
+<script type="math/tex">\quad = \forall x \lnot (x \in A \land P(x))</script>  <br />
+<script type="math/tex">\quad = \forall x (x \notin A \lor \lnot P(x))</script>  <br />
+<script type="math/tex">\quad = \forall x (x \in A \to \lnot P(x))</script>  <br />
+<script type="math/tex">\quad = \forall x \in A \lnot P(x)</script> Hence Proved.</p>
+
+<hr />
+
+<p><strong>Soln6</strong></p>
+
+<p>To Prove <script type="math/tex">\exists x(P(x) \lor Q(x))</script> is equivalent to <script type="math/tex">\exists x P(x) \lor \exists x Q(x)</script>.</p>
+
+<p>Taking LHS: <script type="math/tex">\exists x(P(x) \lor Q(x))</script>  <br />
+<script type="math/tex">\quad = \lnot \lnot \exists x(P(x) \lor Q(x))</script>  <br />
+<script type="math/tex">\quad = \lnot \forall x \lnot (P(x) \lor Q(x))</script>  <br />
+<script type="math/tex">\quad = \lnot \forall x (\lnot P(x) \land \lnot Q(x))</script>  <br />
+<script type="math/tex">\quad = \lnot (\forall x \lnot P(x) \land \forall x \lnot Q(x))</script>  <br />
+<script type="math/tex">\quad = \lnot \forall x \lnot P(x) \lor \lnot \forall x \lnot Q(x))</script>  <br />
+<script type="math/tex">\quad = \exists x \lnot \lnot P(x) \lor \exists x \lnot \lnot Q(x))</script>  <br />
+<script type="math/tex">\quad = \exists x P(x) \lor \exists x Q(x))</script> Hence Proved.</p>
+
+<hr />
+
+<p><strong>Soln7</strong></p>
+
+<p>To Prove <script type="math/tex">\exists x (P(x) \to Q(x))</script> is equivalent to <script type="math/tex">\forall x P(x) \to \exists x Q(x)</script>.</p>
+
+<p>Starting from LHS <script type="math/tex">\exists x (P(x) \to Q(x))</script>  <br />
+<script type="math/tex">\quad = \exists x (\lnot P(x) \lor Q(x))</script>  <br />
+<script type="math/tex">\quad = \exists x \lnot P(x) \lor \exists x Q(x)</script>  <br />
+<script type="math/tex">\quad = \lnot \forall x P(x) \lor \exists x Q(x)</script>  <br />
+<script type="math/tex">\quad = \forall x P(x) \to \exists x Q(x)</script> Hence Proved.</p>
+
+<hr />
+
+<p><strong>Soln8</strong></p>
+
+<p>To Prove: <script type="math/tex">(\forall x \in A P(x)) \land (\forall x \in B P(x))</script> is equivalent to <script type="math/tex">\forall x \in (A \lor  B)P(x)</script></p>
+
+<p>Starting from LHS:</p>
+
+<p><script type="math/tex">(\forall x \in A P(x)) \land (\forall x \in B P(x))</script>  <br />
+<script type="math/tex">\quad = (\forall x (x \in A \to P(x))) \land (\forall x (x \in B \to P(x)))</script>  <br />
+<script type="math/tex">\quad = \forall x ((x \in A \to P(x)) \land (x \in B \to P(x)))</script>  <br />
+<script type="math/tex">\quad = \forall x ((x \notin A \lor P(x)) \land (x \notin B \lor P(x)))</script>  <br />
+Applying reverse distributive law:  <br />
+<script type="math/tex">\quad = \forall x ((x \notin A \land x \notin B) \lor P(x))</script>  <br />
+<script type="math/tex">\quad = \forall x ((\lnot(x \in A \lor x \in B)) \lor P(x))</script>  <br />
+<script type="math/tex">\quad = \forall x ((x \in A \lor x \in B) \to P(x))</script>  <br />
+<script type="math/tex">\quad = \forall (x \in A \lor x \in B) P(x))</script>  <br />
+<script type="math/tex">\quad = \forall x \in (A \lor B) P(x))</script> Hence Proved.</p>
+
+<hr />
+
+<p><strong>Soln9</strong></p>
+
+<p>Statement <script type="math/tex">\forall x (P(x) \lor Q(x))</script> is <em>not</em> equivalent to <script type="math/tex">\forall x P(x) \lor  \forall xQ(x)</script>.</p>
+
+<p>Assigning <script type="math/tex">P(x) = true</script>, if x is even.  <br />
+and <script type="math/tex">Q(x) = true</script>, if x is odd.</p>
+
+<p>Lets have Universe as all Natural Numbers.</p>
+
+<p>Clearly <script type="math/tex">\forall x (P(x) \lor Q(x))</script> is true as Every number is either even or odd.   <br />
+But <script type="math/tex">\forall x P(x) \lor  \forall xQ(x)</script> is not true. A neither all numbers are even not all numbers are odd.</p>
+
+<hr />
+
+<p><strong>Soln10</strong></p>
+
+<p><strong>(a)</strong> <script type="math/tex">\exists x \in A P(x) \lor \exists x \in B P(x)</script>  <br />
+<script type="math/tex">\quad = \exists x (x \in A \land P(x)) \lor \exists x (x \in B \land P(x))</script>  <br />
+<script type="math/tex">\quad = \exists x ((x \in A \land P(x)) \lor (x \in B \land P(x)))</script>  <br />
+Using Law of distribution in reverse:  <br />
+<script type="math/tex">\quad = \exists x ((x \in A \lor x \in B) \land P(x))</script>  <br />
+<script type="math/tex">\quad = \exists x ((x \in (A \lor B)) \land P(x))</script>  <br />
+<script type="math/tex">\quad = \exists x \in (A \lor B) P(x))</script> Hence Proved.</p>
+
+<p><strong>(b)</strong></p>
+
+<p><script type="math/tex">\exists x \in A P(x) \land \exists x \in B P(x)</script> is not equivalent to <script type="math/tex">\exists x \in (A \land B) P(x)</script>.</p>
+
+<p>If A and B are disjoint set, then clearly RHS will be false as <script type="math/tex">A \land B = \phi</script>. But even in this case 
+for some values of x LHS can be true.</p>
+
+<hr />
+
+<p><strong>Soln11</strong></p>
+
+<p><script type="math/tex">A \subseteq B</script> is equivalent to  <br />
+<script type="math/tex">\quad = \forall x (x \in A \to x \in B)</script></p>
+
+<p>Also, <script type="math/tex">A \setminus B = \phi</script>  <br />
+No elements exist in the <script type="math/tex">A \setminus B</script> set. Thus it is equivalent to:  <br />
+<script type="math/tex">\lnot \exists x (x \in (A \setminus B))</script>  <br />
+<script type="math/tex">\quad = \lnot \exists x (x \in A \land x \notin B)</script>  <br />
+<script type="math/tex">\quad = \forall x \lnot (x \in A \land x \notin B)</script>  <br />
+<script type="math/tex">\quad = \forall x (x \notin A \lor x \in B)</script>  <br />
+<script type="math/tex">\quad = \forall x (x \in A \to x \in B)</script></p>
+
+<p>Thus both are same.</p>
+
+<hr />
+
+<p><strong>Soln12</strong></p>
+
+<p><strong>(a)</strong> There is exactly one student who is taught by x.</p>
+
+<p><strong>(b)</strong> There exists atleast one teacher having exactly one student.</p>
+
+<p><strong>(c)</strong> There is exactly one teacher having at-least one student.</p>
+
+<p><strong>(d)</strong> There atleast exist one student having exactly one teacher.</p>
+
+<p><strong>(e)</strong> There is only one teacher having only one student.</p>
+
+<p><strong>(f)</strong> There is exactly one teacher having only one student.</p>
+
+<p>Clearly (e) and (f) are same.</p>
+
+
+                        <hr/>
+                    </span>
+
+                    <br/>
+
+                    
+
+	<div id="disqus_thread"></div>
+	<script>
+		/**
+		 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+		 */
+		var disqus_identifier = 'inchmeal';
+
+		
+		var disqus_config = function () {
+		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+		 this.page.identifier = "/htpi/ch-2/sec-2.2.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+
+
+		(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+
+			s.src = '//' + disqus_identifier + '.disqus.com/embed.js';
+
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+                </article>
+            </div><!-- /.small-11.columns -->
+        </div><!-- /.row -->
+    </div><!-- /.medium-8.columns -->
+</div><!-- /.row -->
+
+
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" title="Go to Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast')">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="small-6 columns">
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        <li>Created with &hearts; by ovais</li>
+                    </ul>
+                </div>
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        
+                        <li><a href="/rss-feed.xml"  target="_blank"  class="rss-link" title="Subscribe to RSS">RSS</a></li>
+                        
+                        <li><a href="mailto:mailovais85@gmail.com"  class="contact-link" title="Contact">Contact</a></li>
+                        
+                    </ul>
+                </div>
+              <div class="column pl0 pr0">
+                  <ul class="inline-list">
+                      <li>&copy;2017 inchmeal</li>
+                  </ul>
+              </div>
+          </section>
+          <section id="subfooter-right" class="small-6 columns social-icons end">
+              <div class="column pl0 pr0">
+              <ul class="inline-list">
+                
+                  <li><a href="http://twitter.com/ovais_" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
+                
+                  <li><a href="http://github.com/0vais" target="_blank" class="icon-github" title="Follow on github"></a></li>
+                
+              </ul>
+              </div>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+
+	<script src="http://www.inchmeal.io/assets/js/inchmeal_all.js"></script>
+
+<script>
+  var sectionName = "2.2";
+  
+  //google analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73233179-1', 'auto');
+  ga('send', 'pageview');
+  
+</script>
+
+</body>
+</html>

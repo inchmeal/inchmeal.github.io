@@ -1,0 +1,3333 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>How to Prove It - Solutions</title>
+	<link rel="stylesheet" href="http://www.inchmeal.io/assets/css/styles_inchmeal.css"/>
+	<link rel="alternate" type="application/rss+xml" title="Inchmeal RSS" href="/rss-feed.xml" />
+
+	<script src="http://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
+
+	
+	
+	<script type="text/javascript"
+			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+	<script>
+		MathJax.Hub.Config({
+			"HTML-CSS": { scale: 82 },
+			"displayAlign": "left"
+		});
+	</script>
+	
+
+	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
+	
+	<meta name="description" content="Inchmeal - Velleman&#39;s How To Prove It, Ch-1 Sec-1.2, Truth Tables"/>
+
+	
+
+	
+
+
+
+	
+	<link rel="icon" sizes="32x32" href="http://www.inchmeal.io/assets/img/favicon-32x32.png">
+
+
+
+
+	
+	<link rel="icon" sizes="192x192" href="http://www.inchmeal.io/assets/img/touch-icon-192x192.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://www.inchmeal.io/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.inchmeal.io/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.inchmeal.io/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://www.inchmeal.io/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.inchmeal.io/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://www.inchmeal.io/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.inchmeal.io/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" href="http://www.inchmeal.io/assets/img/apple-touch-icon-precomposed.png">	
+
+
+
+
+	
+	<meta name="msapplication-TileImage" content="http://www.inchmeal.io/assets/img/msapplication_tileimage.png"/>
+
+
+
+
+	
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+
+	<!-- Facebook Optimization -->
+	<meta property="og:locale" content="en_EN" />
+	
+	<meta property="og:title" content="How to Prove It - Solutions" />
+	<meta property="og:description" content="Inchmeal - Velleman&#39;s How To Prove It, Ch-1 Sec-1.2, Truth Tables"/>
+	<meta property="og:url" content="http://www.inchmeal.io//htpi/ch-1/sec-1.2.html" />
+	<meta property="og:site_name" content="inchmeal" />
+	
+
+	
+
+	<!-- Search Engine Optimization -->
+	
+
+	<link type="text/plain" rel="author" href="http://www.inchmeal.io//humans.txt" />
+
+	
+</head>
+
+<body id="top-of-page" class="">
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="http://www.inchmeal.io">
+            <img src="http://inchmeal.io/assets/img/logo.png"/>
+          </a>
+        </h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu"(text inside span) to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/">home</a></li>
+          
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/archives/">archives</a></li>
+          
+        
+
+              
+
+          
+          
+              <li class="divider"></li>
+              <li><a href="http://www.inchmeal.io/about/">about</a></li>
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        <li class="divider"></li>
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+
+	<!-- capture chapters -IMPORTANT- do not split below statement as it starts capturing new line which causes problems- -->
+
+
+
+
+
+<!-- remove duplicates, convert to num and insert in array -->
+
+    
+    
+
+    
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+    
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+
+    
+
+
+
+
+<div class="row t30">
+    <div class="medium-4 columns medium-push-8">
+    </div>
+    <div class="medium-8 columns medium-pull-4">
+        <div class="row">
+            <div class="medium-11 medium-offset-1 columns">
+            <h1><a href="/htpi/index.html" >How to Prove It - Solutions</a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row t10">
+    <div class="medium-3 columns medium-push-9">
+        <div class="row t5">
+            <div class="medium-12 columns">
+
+                <ul class="accordion" data-accordion>
+                    <li class="accordion-navigation">
+                        <a href="#ch-introduction">Introduction</a>
+                        
+                        <div id="ch-introduction" class="content ">
+                            <a href="/htpi/index.html" ><span class="radius info label ">Section - Introduction</span></a>
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-1">Chapter 1</a>
+                        
+                        <div id="ch-1" class="content active">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.1.html" ><span class="radius info label ">Section-1.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.2.html" ><span class="radius success label ">Section-1.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.3.html" ><span class="radius info label ">Section-1.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.4.html" ><span class="radius info label ">Section-1.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-1/sec-1.5.html" ><span class="radius info label ">Section-1.5</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-2">Chapter 2</a>
+                        
+                        <div id="ch-2" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.1.html" ><span class="radius info label ">Section-2.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.2.html" ><span class="radius info label ">Section-2.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-2/sec-2.3.html" ><span class="radius info label ">Section-2.3</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-3">Chapter 3</a>
+                        
+                        <div id="ch-3" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.1.html" ><span class="radius info label ">Section-3.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.2.html" ><span class="radius info label ">Section-3.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.3.html" ><span class="radius info label ">Section-3.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.4.html" ><span class="radius info label ">Section-3.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.5.html" ><span class="radius info label ">Section-3.5</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.6.html" ><span class="radius info label ">Section-3.6</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-3/sec-3.7.html" ><span class="radius info label ">Section-3.7</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-4">Chapter 4</a>
+                        
+                        <div id="ch-4" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.1.html" ><span class="radius info label ">Section-4.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.2.html" ><span class="radius info label ">Section-4.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.3.html" ><span class="radius info label ">Section-4.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.4.html" ><span class="radius info label ">Section-4.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.5.html" ><span class="radius info label ">Section-4.5</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-4/sec-4.6.html" ><span class="radius info label ">Section-4.6</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-5">Chapter 5</a>
+                        
+                        <div id="ch-5" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.1.html" ><span class="radius info label ">Section-5.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.2.html" ><span class="radius info label ">Section-5.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.3.html" ><span class="radius info label ">Section-5.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-5/sec-5.4.html" ><span class="radius info label ">Section-5.4</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-6">Chapter 6</a>
+                        
+                        <div id="ch-6" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.1.html" ><span class="radius info label ">Section-6.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.2.html" ><span class="radius info label ">Section-6.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.3.html" ><span class="radius info label ">Section-6.3</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.4.html" ><span class="radius info label ">Section-6.4</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-6/sec-6.5.html" ><span class="radius info label ">Section-6.5</span></a>
+                            
+                        </div>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="accordion-navigation">
+                        <a href="#ch-7">Chapter 7</a>
+                        
+                        <div id="ch-7" class="content ">
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.1.html" ><span class="radius info label ">Section-7.1</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.2.html" ><span class="radius info label ">Section-7.2</span></a>
+                            
+                            
+
+                            
+
+                            
+
+                            <a href="/htpi/ch-7/sec-7.3.html" ><span class="radius info label ">Section-7.3</span></a>
+                            
+                        </div>
+                    </li>
+                    
+                </ul>
+
+                <div class="show-for-small-down">
+                    <hr class="t20"/>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.medium-4.columns -->
+    <div class="medium-9 columns medium-pull-3">
+        <div class="row">
+            <div class="medium-11 medium-offset-1 columns">
+                <article itemscope itemtype="http://schema.org/Article">
+                    <header>
+                        <span itemprop="name">
+                            
+                            <hr/>
+                            <h2>Chapter - 1, Sentential Logic</h2>
+                            
+                            
+                            <h3>Section - 1.2 - Truth Tables</h3>
+                            
+                        </span>
+                    </header>
+
+                    
+                    <p class="tm10">
+                        <time class="post-date pr20" datetime="July 16, 2015" itemprop="datePublished"> July 16, 2015</time>
+                    </p>
+                    
+
+                    <span itemprop="articleSection">
+                        <hr/>
+                        <h3 id="summary">Summary</h3>
+
+<ul>
+  <li>Truth Tables</li>
+  <li>Argument Validation using Truth Tables. For all the rows in truth tables where “premises” are true, 
+corresponding rows of “conclusion” must also be true.</li>
+  <li>DeMorgan’s Laws:
+    <ul>
+      <li>\( \lnot (P \land Q) \text{ is equivalent to } \lnot P \lor \lnot Q \).</li>
+      <li>\( \lnot (P \lor Q) \text{ is equivalent to } \lnot P \land \lnot Q \).</li>
+    </ul>
+  </li>
+  <li>Commutative Laws:
+    <ul>
+      <li>\( P \land Q \text{ is equivalent to } Q \land P \).</li>
+      <li>\( P \lor Q \text{ is equivalent to } Q \lor P \).</li>
+    </ul>
+  </li>
+  <li>Associative Laws:
+    <ul>
+      <li>\( P \land (Q \land R) \text{ is equivalent to } (P \land Q) \land R \).</li>
+      <li>\( P \lor (Q \lor R) \text{ is equivalent to } (P \lor Q) \lor R \).</li>
+    </ul>
+  </li>
+  <li>Idemponent Laws:
+    <ul>
+      <li>\( P \land P \text{ is equivalent to } P \).</li>
+      <li>\( P \lor P \text{ is equivalent to } P \).</li>
+    </ul>
+  </li>
+  <li>Distributive Laws:
+    <ul>
+      <li>\( P \land (Q \lor R) \text{ is equivalent to } (P \land Q) \lor (P \land R) \).</li>
+      <li>\( P \lor (Q \land R) \text{ is equivalent to } (P \lor Q) \land (P \lor R) \).</li>
+    </ul>
+  </li>
+  <li>Absorption Laws:
+    <ul>
+      <li>\( P \lor (P \land Q) \text{ is equivalent to } P \).</li>
+      <li>\( P \land (P \lor Q) \text{ is equivalent to } P \).</li>
+    </ul>
+  </li>
+  <li>Double Negation Law:
+    <ul>
+      <li>\( \lnot \lnot P \text{ is equivalent to } P \).</li>
+    </ul>
+  </li>
+  <li>Tautologies: Formulas that are always true.</li>
+  <li>Contradictions: Formulas that are always false.</li>
+</ul>
+
+<hr />
+
+<h3 id="solutions">Solutions</h3>
+
+<p><strong>Soln.1</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th style="text-align: center">\( Q \)</th>
+      <th style="text-align: center">\( \lnot P \)</th>
+      <th style="text-align: center">\( \lnot P \lor Q \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(b)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( S \)</th>
+      <th style="text-align: center">\( G \)</th>
+      <th style="text-align: center">\( \lnot S \)</th>
+      <th style="text-align: center">\( \lnot G \)</th>
+      <th style="text-align: center">\( \lnot S \lor \lnot G \)</th>
+      <th>\( S \lor G \)</th>
+      <th>\( (S \lor G) \land (\lnot S \lor \lnot G) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><strong>Soln.2</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th style="text-align: center">\( Q \)</th>
+      <th style="text-align: center">\( \lnot P \)</th>
+      <th style="text-align: center">\( Q \lor \lnot P \)</th>
+      <th style="text-align: center">\( P \land (Q \lor \lnot P) \)</th>
+      <th style="text-align: center">\( \lnot (P \land (Q \lor \lnot P))  \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(b)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( R \)</th>
+      <th style="text-align: center">\( P \)</th>
+      <th style="text-align: center">\( Q \)</th>
+      <th style="text-align: center">\( P\lor Q \)</th>
+      <th style="text-align: center">\( \lnot P \)</th>
+      <th style="text-align: center">\( \lnot P \lor R \)</th>
+      <th style="text-align: center">\( (P\lor Q) \land (\lnot P \lor R) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">false</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><strong>Soln.3</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">P</th>
+      <th>Q</th>
+      <th>P + Q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(b)</strong></p>
+
+<p>We may proceed as follows:</p>
+
+<ul>
+  <li>P + Q is true only for two cases, P = true, Q = false and P = false, Q = true.</li>
+  <li>Similarly, P + Q is false only for two cases, P = Q = true anf P = Q = false.</li>
+</ul>
+
+<p>A point to note:</p>
+
+<ul>
+  <li>We know that \( \land \) gives true only when all of its input are true. Or returns false only if any of the input is false.</li>
+  <li>Also \( \lor \) returns true if any of the inputs are true. Or returns false only if all the inputs are false.</li>
+</ul>
+
+<p>We may see that to output a value true/false for a given input, we need to combine the values of input using operators, such that 
+they will result the required the required output only for that input or else there is any change in input it will not return the desired output.</p>
+
+<p>For eg, if we want false for input say P = true, Q = true:</p>
+
+<ul>
+  <li>To fix the values of input such that only for the given combination of input, we get the required result,
+we may use the point when all of the inputs are restricted by the operator.</li>
+  <li>Here we want false as output. We can see from the note above that false output is produced by both operators \( \lor, \land \)
+but only operator \( \lor \) restricts all of the inputs. As \( \land \) returns false if any of the input is false, hence putting
+no restriction on the input.</li>
+  <li>But current values of P and Q will not return false if we combine them with operator \( lor \).</li>
+  <li>Thus to get the required values we may revert the values of input using operator \( \lnot \).</li>
+  <li>So we have \( \lnot P \lor \lnot Q \).</li>
+  <li>Now check that only for the above input P = true, Q = true,  \( \lnot P \lor \lnot Q \) will return the required output false, else 
+it will return true.</li>
+</ul>
+
+<p>Similarly if we want true for input say P = true, Q = false, expression can be \( P \land \lnot Q \).</p>
+
+<p>Thus from above we created a way to form an expression that will result in required output only for the given input and for all other inputs
+it will not return the required output.</p>
+
+<p>Now to get the given set of outputs, for eg. in our case \( P + Q \), we can proceed as:</p>
+
+<ul>
+  <li>From the above method, we can create expression for each row. But we need to combine them such that
+ resulting expression gives the required output.</li>
+  <li>To get true/false only in one of row(single row), we can use the our expression of that row as it will return the required output only
+ for that row else it will return the opposite of the required output.</li>
+  <li>To get true or false only in the given set of rows(multiple row), we may combine the formula of the corresponding rows such that 
+ it returns required output for only these rows else it will not return required output.</li>
+  <li>For eg, in our case, to get false as output, we need to combine formulas of 1st and 4th row such that it returns false for 1st and 4th
+ row or else it returns true.</li>
+  <li>Or similarly the opposite eg can be, To get true, we need to combine formulas of 2nd and 3rd row such that it returns true for 2nd and 3rd
+ row or else it returns false.</li>
+  <li>Noting again, that, Each row formulae returns the required output only for that row else it return opposite output. We can use this fact to combine the 
+ these formulas.</li>
+  <li>To get false only in the required rows, we can combine formulas giving false output by operator \( \land \), than if any of the formulae returns false we will get false.
+ Also this combined formula will return true for any other row. This is because all other rows are those rows where each of the formula
+ returns true.</li>
+  <li>Similarly to get true only in the required rows, we can combine the formulas giving true output by operator \( \lor \), than if any of the formulae returns true we will get true.
+ Also this combined formula will return false for any other row because all other rows are those rows where each of the formulae returns false.</li>
+  <li>Thus we can get the required results either by combining formulas returning true by operator \( \lor \) or combining formulas returning false by operator \( \land \).</li>
+  <li>Thus we can get two formulas will be correct and both will be correct.</li>
+</ul>
+
+<p>From the method outlined, we can see that we have following two formulas:</p>
+
+<ul>
+  <li>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \). This is the resulting formula to get false in 1st row formula \( (\lnot P \lor \lnot Q) \) and 4th row formula \( (P \lor Q) \) and combining them by \( \land \).</li>
+  <li>\( (P \land \lnot Q) \lor (\lnot P \land Q) \). This is the resulting formula to get true in 2nd row formula \( ( P \land \lnot Q) \) and 3rd row formula \( (\lnot P \land Q) \) and combining them by \( \lor \).</li>
+</ul>
+
+<p>Lets create truth table for both formulas:</p>
+
+<p>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \) :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( (\lnot P \lor \lnot Q) \)</th>
+      <th>\( (P \lor Q) \)</th>
+      <th>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>\( (P \land \lnot Q) \lor (\lnot P \land Q) \) :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( ( P \land \lnot Q) \)</th>
+      <th>\( (\lnot P \land Q) \)</th>
+      <th>\( (P \land \lnot Q) \lor (\lnot P \land Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As can be seen above both formulas returns the same result.</p>
+
+<hr />
+
+<p><strong>Soln.4</strong></p>
+
+<p>We know that:</p>
+
+<p>\( P \lor Q  = \lnot \lnot (P \lor Q) \)</p>
+
+<p>Using Demorgans Law: \( P \lor Q  = \lnot (\lnot P \land \lnot Q) \)</p>
+
+<p>Truth table for \( \lnot (\lnot P \land \lnot Q) \) :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( (\lnot P \land \lnot Q) \)</th>
+      <th>\( \lnot (\lnot P \land \lnot Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As can be seen \( \lnot (\lnot P \land \lnot Q) \) is same as \( P \lor Q \).</p>
+
+<hr />
+
+<p><strong>Soln.5</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( P \downarrow Q \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(b)</strong></p>
+
+<p>To find formula for \( P \downarrow Q \) we can use the method outlined in Soln3-b above.</p>
+
+<p>We can get two formulas:</p>
+
+<ul>
+  <li>\( (\lnot P \lor \lnot Q) \land (\lnot P \lor Q) \land (\lnot P \lor Q) \)</li>
+  <li>\( \lnot P \land \lnot Q \)</li>
+</ul>
+
+<p><strong>(c)</strong></p>
+
+<p>It can be easily verified that \( \lnot P = P \downarrow P \) ….(i)</p>
+
+<p>From <em>Soln5(b)</em>, we have \( P \downarrow Q = \lnot P \land \lnot Q \).</p>
+
+<p>\( \Rightarrow P \land Q = \lnot P \downarrow \lnot Q \)</p>
+
+<p>\( \Rightarrow P \land Q = (P \downarrow P) \downarrow (Q \downarrow Q) \) …(ii)</p>
+
+<p>Also, using Demorgans law on <em>Soln5(b)</em>, \( \lnot P \land \lnot Q \) can be written as \( \lnot ( P \lor Q ) \).</p>
+
+<p>\( \Rightarrow P \downarrow Q = \lnot ( P \lor Q ) \)</p>
+
+<p>Or we can say,  \( P \lor Q = \lnot (P \downarrow Q) = (P \downarrow Q) \downarrow (P \downarrow Q) \) …..(ii)</p>
+
+<p>Thus (i), (ii) and (iii) are the desired answers.</p>
+
+<hr />
+
+<p><strong>Soln6</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( P \vert Q \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(b)</strong></p>
+
+<p>To find formula for \( P \downarrow Q \) we can use the method outlined in Soln3-b above.</p>
+
+<p>Also, we can directly see that ““P and Q are not both true.” is equivalent to \( \lnot (P \land Q) \).</p>
+
+<p><strong>(c)</strong></p>
+
+<p>It can be easily verified that \( \lnot P = P \vert P \) ….(i)</p>
+
+<p>Now from part(b), \( P \vert Q = \lnot (P \land Q) \)</p>
+
+<p>\( \Rightarrow P \land Q = \lnot (P \vert Q) = (P \vert Q) \vert (P \vert Q) \) …(ii)</p>
+
+<p>Again from part(b), \( P \vert Q = \lnot (P \land Q) = \lnot P \lor \lnot Q \)</p>
+
+<p>\( \Rightarrow P \lor Q = \lnot P \vert \lnot Q = (P \vert P) \vert (Q \vert Q) \) …(iii)</p>
+
+<p>Thus (i), (ii) and (iii) are the desired answers.</p>
+
+<hr />
+
+<p><strong>Soln7</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( JM \)</th>
+      <th>\( PM \)</th>
+      <th>\( PC \)</th>
+      <th>\( \lnot (JM \land PM) \)</th>
+      <th>\( PM \lor PC \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When values corresponding to all premises are true, than conclusion is also true.</p>
+
+<p><strong>(b)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( B \)</th>
+      <th>\( F \)</th>
+      <th>\( P \)</th>
+      <th>\( C \)</th>
+      <th>\( B \lor F \)</th>
+      <th>\( P \lor C \)</th>
+      <th>\( \lnot (F \land C) \)</th>
+      <th>\( \lnot (B \land P) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It can be easily seen that when all premises are true, than also conclusion \( \lnot (B \land P) \) is not true.</p>
+
+<p><strong>(c)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( J \)</th>
+      <th>\( B \)</th>
+      <th>\( S \)</th>
+      <th>\( \lnot B \)</th>
+      <th>\( \lnot S \)</th>
+      <th>\( J \lor \lnot B \)</th>
+      <th>\( \lnot S \lor \lnot B \)</th>
+      <th>\( J \lor \lnot S \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus it can be easily verified when premises are true, than conclusions are also true.</p>
+
+<p><strong>(d)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( S \)</th>
+      <th>\( E \)</th>
+      <th>\( B \)</th>
+      <th>\( S \land B \)</th>
+      <th>\( \lnot B \)</th>
+      <th>\( E \land \lnot B \)</th>
+      <th>\( (S \land B) \lor (E \land \lnot B) \)</th>
+      <th>\( S \land E \)</th>
+      <th>\( \lnot(S \land E) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus argument is not valid because when premise is true, conclusion is not true.</p>
+
+<hr />
+
+<p><strong>Soln8</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( P \land Q \)</th>
+      <th>\( \lnot P \land \lnot Q \)</th>
+      <th>\( (P \land Q) \lor (\lnot P \land \lnot Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(b)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot P \lor Q \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(c)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( P \lor \lnot Q \)</th>
+      <th>\( \lnot P \lor Q \)</th>
+      <th>\( (P \lor \lnot Q) \land (\lnot P \lor Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(d)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( P \lor Q \)</th>
+      <th>\( \lnot (P \lor Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>(e)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( P \land Q \)</th>
+      <th>\( (P \land Q) \lor \lnot P \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Clearly (a) and (c) are equivalent. Also (b) and (e) are equivalent. (d) is not equivalent to any.</p>
+
+<hr />
+
+<p><strong>Sol9</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( P \lor Q \)</th>
+      <th>\( \lnot P \lor \lnot Q \)</th>
+      <th>\( (P \lor Q) \land (\lnot P \lor \lnot Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus it is niether a tautology nor a contradiction.</p>
+
+<p><strong>(b)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( P \lor Q \)</th>
+      <th>\( \lnot P \land \lnot Q \)</th>
+      <th>\( (P \lor Q) \land (\lnot P \land \lnot Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus it is a contradiction.</p>
+
+<p><strong>(c)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( P \lor Q \)</th>
+      <th>\( \lnot P \lor \lnot Q \)</th>
+      <th>\( (P \lor Q) \lor (\lnot P \lor \lnot Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus it is a tautology.</p>
+
+<p><strong>(d)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( R \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot R \)</th>
+      <th>\( \lnot P \lor R \)</th>
+      <th>\( Q \lor \lnot R \)</th>
+      <th>\( P \land (Q \lor \lnot R) \)</th>
+      <th>\( [P \land (Q \lor \lnot R)] \lor (\lnot P \lor R) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus it is also a tautology.</p>
+
+<hr />
+
+<p><strong>Soln10</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( P \lor Q \)</th>
+      <th>\( \lnot (P \lor Q) \)</th>
+      <th>\( \lnot P \land \lnot Q \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus \( \lnot (P \lor Q) \) is equivalent to \( \lnot P \land \lnot Q \).</p>
+
+<p><strong>(b)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( R \)</th>
+      <th>\( Q \lor R \)</th>
+      <th>\( P \land (Q \lor R) \)</th>
+      <th>\( P \land Q \)</th>
+      <th>\( P \land R \)</th>
+      <th>\( (P \land Q) \lor ( P \land R) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As can be seen in the table  \( P \land (Q \lor R) \) is equivalent to \( (P \land Q) \lor ( P \land R) \)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( R \)</th>
+      <th>\( Q \land R \)</th>
+      <th>\( P \lor (Q \land R) \)</th>
+      <th>\( P \lor Q \)</th>
+      <th>\( P \lor R \)</th>
+      <th>\( (P \lor Q) \land ( P \lor R) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As can be seen in the table  \( P \lor (Q \land R) \) is equivalent to \( (P \lor Q) \land ( P \lor R) \).</p>
+
+<hr />
+
+<p><strong>Soln11</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>\( \lnot (\lnot P \land \lnot Q) = \lnot \lnot P \lor \lnot \lnot Q = P \lor Q\).</p>
+
+<p><strong>(b)</strong></p>
+
+<p>Using Distributive Law:</p>
+
+<p>\( (P \land Q ) \lor (P \land \lnot Q) = ((P \land Q ) \lor P) \land ((P \land Q ) \lor \lnot Q) \)</p>
+
+<p>\( \Rightarrow (P \land Q \lor P) \land (P \land Q \lor \lnot Q) \)</p>
+
+<p>Using Tautology \( A \lor \lnot A \)</p>
+
+<p>\( \Rightarrow (P \land Q \lor P) \land P \)</p>
+
+<p>Using Absorption law:</p>
+
+<p>\( \Rightarrow  P \land P \)</p>
+
+<p>\( \Rightarrow  P \)</p>
+
+<p><strong>(c)</strong></p>
+
+<p>\( \lnot(P \land \lnot Q) \lor (\lnot P \land Q) \)</p>
+
+<p>Using Demorgans Law: \( (\lnot P \lor \lnot \lnot Q) \lor (\lnot P \land Q) \)</p>
+
+<p>Double Negation Law: \( (\lnot P \lor Q) \lor (\lnot P \land Q) \)</p>
+
+<p>Distribution Law: \( ((\lnot P \lor Q) \lor \lnot P) \land ((\lnot P \lor Q) \lor Q) \)</p>
+
+<p>Associative Law: \( (\lnot P \lor Q \lor \lnot P) \land (\lnot P \lor Q \lor Q) \)</p>
+
+<p>Using Idempotent Law: \( (\lnot P \lor Q \lor \lnot P) \land (\lnot P \lor Q) \)</p>
+
+<p>Using associative, commutative and idempotent law: \( (\lnot P \lor Q) \land (\lnot P \lor Q) \)</p>
+
+<p>Using Idempotent Law: \( \lnot P \lor Q \)</p>
+
+<hr />
+
+<p><strong>Soln12</strong></p>
+
+<p><strong>(a)</strong></p>
+
+<p>\( \lnot(\lnot P \lor Q) \lor (P \land \lnot R) \)</p>
+
+<p>Using Demorgans and double Negation Law: \( ( P \land \lnot Q) \lor (P \land \lnot R) \)</p>
+
+<p>Using Distributed Law: \( ( P \land \lnot Q \lor P) \land ( (P \land \lnot Q) \lor \lnot R) \)</p>
+
+<p>Using Absorption law: \(  P \land ( (P \land \lnot Q) \lor \lnot R) \)</p>
+
+<p>Using Distributive law: \( (P \land (P \land \lnot Q)) \lor (P \land \lnot R) \)</p>
+
+<p>Using Idempotent Law: \( (P \land \lnot Q) \lor (P \land \lnot R) \)</p>
+
+<p><strong>(b)</strong></p>
+
+<p>\( \lnot (\lnot P \land Q) \lor (P \land \lnot R) \)</p>
+
+<p>Using Demorgans Law and Double Negation Law : \( ( P \lor \lnot Q) \lor (P \land \lnot R) \)</p>
+
+<p>Using Distributed Law : \( ( P \lor \lnot Q \lor P) \land ((P \lor \lnot Q) \lor \lnot R) \)</p>
+
+<p>Using Associative and Idempotent Law: \( ( P \lor \lnot Q ) \land ((P \lor \lnot Q) \lor \lnot R) \)</p>
+
+<p>Using Absorption Law: \( P \lor \lnot Q \)</p>
+
+<p><strong>(c)</strong></p>
+
+<p>\( ( P \land R ) \lor [ \lnot R \land ( P \lor Q ) ] \)</p>
+
+<p>Using Distributed Law: \( ( P \land R ) \lor [ (\lnot R \land P) \lor ( \lnot R \land Q ) ] \)</p>
+
+<p>Using Associative Law: \( [( P \land R ) \lor (\lnot R \land P)] \lor ( \lnot R \land Q ) \)</p>
+
+<p>Using Distributive Law: \( [(( P \land R ) \lor \lnot R) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)</p>
+
+<p>Using Distributive Law: \( [(( P \lor \lnot R) \land ( R \lor \lnot R )) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)</p>
+
+<p>Using Tautology: \( [( P \lor \lnot R) \land (( P \land R ) \lor P)] \lor ( \lnot R \land Q ) \)</p>
+
+<p>Using Absorption Law: \( [( P \lor \lnot R) \land P] \lor ( \lnot R \land Q ) \)</p>
+
+<p>Using Distributive Law: \( [( P \land P) \lor ( P \land \lnot R)] \lor ( \lnot R \land Q ) \)</p>
+
+<p>Using Idempotent Law: \( [ P \lor ( P \land \lnot R)] \lor ( \lnot R \land Q ) \)</p>
+
+<p>Using Absorption Law: \( [ P ] \lor ( \lnot R \land Q ) \)</p>
+
+<p>\( \Rightarrow  P \lor ( \lnot R \land Q ) \)</p>
+
+<p><strong>Soln13</strong></p>
+
+<p>\( \lnot (P \land Q) = \lnot P \lor \lnot Q \).</p>
+
+<p>Taking negation on both sides, \( \lnot \lnot (P \land Q) = \lnot (\lnot P \lor \lnot Q) \).</p>
+
+<p>Using Double negation law, \( P \land Q = \lnot (\lnot P \lor \lnot Q) \).</p>
+
+<p>Using \( P1 = !P, Q1 = !Q \), \( !P1 \land !Q1 = \lnot ( P1 \lor Q1) \).</p>
+
+<p>\( \Rightarrow \lnot ( P1 \lor Q1) = !P1 \land !Q1 \). .. which is the required derivation.</p>
+
+<p><strong>Soln14</strong></p>
+
+<p>We have \( [P \land (Q \land R)] \land S \)</p>
+
+<p>Using Associative law, \( [(P \land Q) \land R] \land S \)</p>
+
+<p>Using Associative law, \( (P \land Q) \land [R \land S] \) which is same as was required.</p>
+
+<p><strong>Soln15</strong></p>
+
+<p>Each letter doubles the number of lines. So total lines should be \( 2^n \)</p>
+
+<p><strong>Soln16</strong></p>
+
+<p>We can use same steps as in soln 3b:</p>
+
+<p>We can have two formulas:
+    - \( P \lor \lnot Q \)
+    - \( (\lnot P \land \lnot Q) \lor (P \land \lnot Q) \lor (P \land Q) \).</p>
+
+<p><strong>Soln17</strong></p>
+
+<p>We can use same steps as in soln 3b:</p>
+
+<p>We can have two formulas:
+    - \( (P \lor Q) \land (\lnot P \lor \lnot Q) \).
+    - \( (\lnot P \land Q) \lor (P \land \lnot Q) \).</p>
+
+<p><strong>Son18</strong></p>
+
+<ul>
+  <li>If the conclusion of an argument is a tautology. The argument is always true. We have two cases:
+    <ul>
+      <li>If all premises are true. In this case it is obvious that argument is valid.</li>
+      <li>All or some premises are not true then also argument will be valid. An argument is considered valid when all premises are true, 
+then conclusion should also be true. Thus argument validation check does not apply when premises are not true.</li>
+    </ul>
+  </li>
+  <li>If the conclusion is contradiction. We have two cases:
+    <ul>
+      <li>If premises are true, then argument is not valid.</li>
+      <li>If premises are false, then argument is valid.</li>
+    </ul>
+  </li>
+  <li>If one of the premise is a Tautology:
+    <ul>
+      <li>We are not sure of the other premises and also we dont know about the conclusion. Thus answer will depend on further datapoints.</li>
+    </ul>
+  </li>
+  <li>If one of the premise is Contradiction:
+  -Than argument is always valid. An argument is valid when all premises are true and then conclusion is also true. In this case all
+   premises will never be true thus .</li>
+</ul>
+
+
+                        <hr/>
+                    </span>
+
+                    <br/>
+
+                    
+
+	<div id="disqus_thread"></div>
+	<script>
+		/**
+		 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+		 */
+		var disqus_identifier = 'inchmeal';
+
+		
+		var disqus_config = function () {
+		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+		 this.page.identifier = "/htpi/ch-1/sec-1.2.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+
+
+		(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+
+			s.src = '//' + disqus_identifier + '.disqus.com/embed.js';
+
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+                </article>
+            </div><!-- /.small-11.columns -->
+        </div><!-- /.row -->
+    </div><!-- /.medium-8.columns -->
+</div><!-- /.row -->
+
+
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" title="Go to Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast')">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="small-6 columns">
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        <li>Created with &hearts; by ovais</li>
+                    </ul>
+                </div>
+                <div class="column pl0 pr0">
+                    <ul class="inline-list">
+                        
+                        <li><a href="/rss-feed.xml"  target="_blank"  class="rss-link" title="Subscribe to RSS">RSS</a></li>
+                        
+                        <li><a href="mailto:mailovais85@gmail.com"  class="contact-link" title="Contact">Contact</a></li>
+                        
+                    </ul>
+                </div>
+              <div class="column pl0 pr0">
+                  <ul class="inline-list">
+                      <li>&copy;2017 inchmeal</li>
+                  </ul>
+              </div>
+          </section>
+          <section id="subfooter-right" class="small-6 columns social-icons end">
+              <div class="column pl0 pr0">
+              <ul class="inline-list">
+                
+                  <li><a href="http://twitter.com/ovais_" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
+                
+                  <li><a href="http://github.com/0vais" target="_blank" class="icon-github" title="Follow on github"></a></li>
+                
+              </ul>
+              </div>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+
+	<script src="http://www.inchmeal.io/assets/js/inchmeal_all.js"></script>
+
+<script>
+  var sectionName = "1.2";
+  
+  //google analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73233179-1', 'auto');
+  ga('send', 'pageview');
+  
+</script>
+
+</body>
+</html>
