@@ -29,7 +29,7 @@ sitemap:
             {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
         <a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title escape_once }}">{{ site.data.language.read_more }}</a>
         </p>
-        {% elsif post.coverimage and post.coverimage.position  == "down" %}
+        {% elsif post.coverimage %}
         <p>
             {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
         </p>
