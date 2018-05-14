@@ -1,0 +1,43 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "51"
+order: "051"
+date: 2017-10-27 
+---
+
+To prove that bias of $$\, \hat \theta_J \,$$ is of the order of $$\, n^{-2} \,$$, we need to show $$\, \Exp(\hat \theta_J) \,$$ contains one term equals to $$\, \theta \,$$ and remaining terms contains $$\, n^{2} \,$$ or higher powers in denominator.
+
+Given:
+
+$$\, \Exp(\hat \theta) = \theta + \frac {b_1} n +  \frac {b_2} {n^2} + \frac {b_3} {n^3} + ... \,$$
+
+
+$$\, \Exp(\hat \theta_j) = \theta + \frac {b_1} {m(p-1)} +  \frac {b_2} {(m(p-1))^2} + ... \,$$
+
+$$\, V_j = p{\hat \theta} - (p-1){\hat \theta_j} \,$$
+
+$$\, \hat \theta_J = \frac 1 p \sum_{j=1}^{p} V_j \,$$
+
+Proof:
+
+$$\, 
+\begin{align*}
+\Exp(\hat \theta_J) &= \Exp \Prn{ \frac 1 p \sum_{j=1}^{p} V_j } \\
+					&= \Exp \Prn{ \frac 1 p \sum_{j=1}^{p} (p{\hat \theta} - (p-1){\hat \theta_j}) } \\
+					&= \frac 1 p\sum_{j=1}^{p} \Exp (p{\hat \theta} - (p-1){\hat \theta_j}) \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{p\Exp{\hat \theta} - (p-1)\Exp{\hat \theta_j} } \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{p\Prn{\theta + \frac {b_1} n +  \frac {b_2} {n^2} + ...} - (p-1)\Prn{\theta + \frac {b_1} {m(p-1)} +  \frac {b_2} {(m(p-1))^2} + ...} } \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{p\Prn{\theta + \frac {b_1} n +  \frac {b_2} {n^2} + ...} - \Prn{(p-1)\theta + \frac {b_1} {m} +  \frac {b_2} {m^2(p-1)^{2-1}} + ...} } \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{ (p+1-p)\theta + \Prn{\frac p n - \frac 1 m}b_1 + \Prn{\frac p {n^2} - \frac 1 {m^2(p-1)} }b_2 + \Prn{\frac p {n^3} - \frac 1 {m^3(p-1)^2} }b_3 + ...} \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{\theta + \Prn{\frac p {mp} - \frac 1 m}b_1 + \Prn{\frac {p m^2 (p-1) - n^2} {m^2 n^2 (p-1)} }b_2 + ...} \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{\theta + 0 + \Prn{\frac {p m^2 (p-1) - m^2 p^2} {m^2 n^2 (p-1)} }b_2 + ...} \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{\theta + \Prn{\frac {m^2 p} {m^2 n^2 (p-1)} }b_2 + ...} \\
+					&= \frac 1 p\sum_{j=1}^{p} \Prn{\theta + \Prn{\frac p {n^2 (p-1)} }b_2 + ...} \\
+					&= \theta + \Prn{\frac p {n^2 (p-1)} }b_2 + ... \\
+\end{align*}
+\,$$
+
+Last step is reduced by removing summation and division by $$\, p \,$$ because every terms occurs $$\, p \,$$ times in the sum.
+
+Thus all the terms contains $$\, n^2 \,$$ or higher powers in the denominator.

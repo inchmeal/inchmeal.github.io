@@ -79,4 +79,3 @@ Rejections are hard and insulting. They hurt. They are quite capable of destroyi
 [rocky]: https://en.wikipedia.org/wiki/Rocky_(film_series)
 [rocky_quote]: http://samplage.com/movie-quotes/it-aint-about-how-hard-you-hit/
 [dp]: https://en.wikipedia.org/wiki/Dynamic_programming
-       

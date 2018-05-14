@@ -1,0 +1,127 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "12"
+order: "012"
+date: 2017-09-13
+---
+
+#### (a) ##
+
+To prove that $$ s^2 $$ is unbiased in estimating $$ \sigma^2 $$, we need to show that $$ \mathrm{E}(s^2) = \sigma^2 $$.
+
+To Prove that we shall first prove the following Lemmas:
+
+**Lemma 1**
+
+$$ \mathrm{E}(X_i) = \mu $$, where $$ \mu $$ denotes the population mean.
+
+*Proof*
+
+Since this is a random sampling with replacement and every element having equal chance to be selected:
+
+$$ P(X_i = x_j) = \frac 1 N $$
+
+Thus $$ \mathrm{E}(X_i) = \sum_{i=1}^{i=n} x_i P(X_i = x_j) = \frac 1 N \sum_{i=1}^{i=n} x_i $$
+
+Thus $$ \mathrm{E}(X_i) = \mu $$
+
+**Lemma 2**
+
+$$ \mathrm{E}(\bar X) = \mu $$
+
+*Proof*
+
+$$ \mathrm{E}(\bar X) = \mathrm{E} \left( \frac 1 N \sum_{i=1}^{i=n} X_i \right) = \frac 1 n \sum_{i=1}^{i=n} \mathrm{E} (X_i) = \frac {n \mu} {n} = \mu $$
+
+<br/>
+Now, we will prove the main result $$ \mathrm{E}(s^2) = \sigma^2 $$
+
+We have: 
+
+$$\,
+\begin{align*}
+
+                           s^2 &= \frac 1 {n-1} \sum_{i=1}^{i=n} { \left( X_i - { \bar X} \right) }^2 \\
+         \Rightarrow (n-1) s^2 &= \sum_{i=1}^{i=n} \left( X_i^2 + {\bar X}^2 - 2 {X_i} { \bar X} \right) \\
+                               &= \sum^{n}_{i=1} X_i^2 + \sum^{n}_{i=1} {\bar X}^2 - 2 {\bar X} \sum^{n}_{i=1} X_i \\
+                               &= \sum^{n}_{i=1} X_i^2 \quad+\; n {\bar X}^2 - 2 {\bar X} n {\bar X} && \text{Using Lemma 1} \\
+                               &= \sum^{n}_{i=1} X_i^2 \quad- n {\bar X}^2 \\
+          (n-1)\mathrm{E}(s^2) &= \sum^{n}_{i=1} \mathrm{E}(X_i^2) \quad- n\mathrm{E} ({\bar X}^2) && \text{Taking Expectation, } \\
+							   &= \sum^{n}_{i=1} \left( \mathrm{Var}(X_i) + (\mathrm{E}X_i)^2 \right) \quad- n\mathrm{E} ({\bar X}^2) && \text{Using $\mathrm{Var}(X_i) = \mathrm{E}X_i^2 - (\mathrm{E}X_i)^2$} \\
+							   &= n\mathrm{Var}{X_1} + \sum^{n}_{i=1}(\mathrm{E}X_i)^2 \quad-\; n\mathrm{E} {(\bar X}^2) && \text{ Since all $X_i$ are i.i.d., $ \mathrm{Var}(X_i) = \mathrm{Var}(X_1)$} \\
+							   &= n \sigma^2 + \sum^{n}_{i=1} \left( (\mathrm{E}X_i)^2 - \mathrm{E} ({\bar X}^2) \right) \\ 
+							   &= n \sigma^2 - \sum^{n}_{i=1} \left( \mathrm{E}({\bar X}^2) - (\mathrm{E}X_i)^2 \right) && \text{ Rearranging terms } \\
+							   &= n \sigma^2 - \sum^{n}_{i=1} \left( \mathrm{E}({\bar X}^2) - (\mathrm{E}\bar X)^2 \right) && \text{ Using Lemma 2, $\mathrm{E} X_i = \mathrm{E}{\bar X} = \mu$ } \\ 
+							   &= n { \sigma }^2 - \sum^{n}_{i=1} \mathrm{ Var } \left( \bar X \right) && \text{ Using Variance formulae } \\
+							   &= n { \sigma }^2 - n \frac{\sigma^2}{n} && \text{ Since $\mathrm{Var}(\bar X) = \frac {\sigma^2} n$, as shown in book, Pg-207 } \\ 
+							   &= \left( n-1 \right) \sigma^2
+\end{align*}
+\,$$
+
+Cancelling $$ n-1 $$ from both sides, it follows $$ \mathrm{E}(s^2) = \sigma^2 $$.
+
+#### (b) ####
+
+No, it is not an unbiased estimate for sigma. By Jensen's Inequality:
+
+$$\,
+\begin{align*}
+\mathrm{E}(s) &= \mathrm{E} \left(\sqrt s^2 \right) \\ 
+			  &\leq \sqrt { \mathrm{E} ( s^2 ) } && \text{ Using Jensen's inequality } \\
+			  &= \sqrt{ \sigma^2 } && \text{ From part-a } \\
+			  &= \sigma
+\end{align*}
+\,$$
+
+Thus $$\, \mathrm{E}(s) \leq \sigma \,$$. It follows that $$\, \mathrm{E}(s) \,$$ is not always equal to $$ \sigma $$, or $$ s $$ is not an unbiased estimate of $$ \sigma $$.
+
+#### (c) ####
+
+We need to show $$\, \mathrm{E} \left( \frac{s^2}{n} \right) = \sigma^2_{\bar X} \,$$
+
+We have:
+
+$$\, 
+\begin{align*}
+	\mathrm{E} \left( \frac{s^2}{n} \right)	&= \frac 1 n \mathrm{E} (s^2) \\
+											&= \frac 1 n \sigma^2 && \text{ From Part a } \\
+											&= \sigma^2_{\bar X} && \text{ As shown in book, Pg-207 } 
+\end{align*}
+\,$$
+
+#### (d) ####
+
+We have:
+
+$$\,
+\begin{align*}
+	\mathrm{E} \left( \frac{N^2 s^2}{n} \right) &= N^2 \mathrm{E} \frac {s^2} n \\
+												&= N^2 \sigma^2_{\bar X} && \text{ From part b } \\
+												&= N^2 \mathrm{Var} (\bar X) \\
+												&= \mathrm{Var} (N \bar X) \\
+												&= \mathrm{Var} (T) \\
+												&= \sigma^2_T
+\end{align*}
+\,$$
+
+#### (e) ####
+
+To show $$\, \mathrm{E} \left( \frac { \hat p (1- \hat p) } {n-1} \right) = \sigma^2_{\hat p} \,$$, where $$\, \hat p = \bar X = \frac 1 n \sum_{i=1}^{n} X_i \,$$, the sample proportion.
+
+We have:
+
+$$\, 
+\begin{align*}
+\sigma^2_{\bar p} &= \mathrm{Var} \bar X \\
+				  &= \frac {\sigma^2} n && \text{Shown in book Pg 207, where $\sigma^2$ is population variance} \\
+				  &= \frac 1 n \mathrm{E} s^2 && \text{From part a} \\
+				  &= \frac 1 n \mathrm{E} \left( \frac 1 {n-1} \sum_{i=1}^{n}  (X_i - \bar X)^2 \right) \\
+				  &= \frac 1 {n(n-1)} \mathrm{E} \left( \sum_{i=1}^{n} X_i^2 \quad - n\bar X^2 \right) && \text{Shown in steps of part a}\\
+				  &= \frac 1 {n(n-1)} \mathrm{E} \left( \sum_{i=1}^{n} X_i \quad - n\bar X^2 \right) && \text{Since $X_i$ is $0$ or $1$, thus $X_i^2 = X_i$}\\
+				  &= \frac 1 {n(n-1)} \mathrm{E} ( n\hat p - n\hat p^2) \\
+				  &= \frac 1 {(n-1)} \mathrm{E} ( \hat p - \hat p^2) \\
+				  &= \mathrm{E} \left(\frac {\hat p(1 - \hat p)} {n-1} \right) \\
+\end{align*}
+\,$$
+

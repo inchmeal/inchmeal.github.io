@@ -27,7 +27,7 @@ sitemap:
         </figure>
         <p>
             {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
-        <a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title escape_once }}">{{ site.data.language.read_more }}</a>
+        <a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title }}">{{ site.data.language.read_more }}</a>
         </p>
         {% elsif post.coverimage %}
         <p>
@@ -43,12 +43,12 @@ sitemap:
             {% endif %}
         </figure>
         <p>
-            <a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title escape_once }}">{{ site.data.language.read_more }}</a>
+            <a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title }}">{{ site.data.language.read_more }}</a>
         </p>
         {% else %}
         <p>
             {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
-        <a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title escape_once }}">{{ site.data.language.read_more }}</a>
+        <a href="{{ site.url }}{{ post.url }}" title="Read {{ post.title }}">{{ site.data.language.read_more }}</a>
         </p>
         {% endif %}
 

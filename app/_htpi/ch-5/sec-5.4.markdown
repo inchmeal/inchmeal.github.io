@@ -72,6 +72,19 @@ Thus, $$ f(W) = \{ a,b\} $$.
 
 No, it is not true. Counter example:
 
+Note: Earlier solution was wrong. Check the comments.
+
+Updated Solution:
+
+Suppose $$ f = \{ (1,a), (2,b), (3,a) \} $$.     
+$$ W = \{1\}, X = \{2, 3\} $$.
+    
+Clearly $$ W \nsubseteq X $$.
+
+Now, $$ f(W) = \{a\} $$ and $$ f(X) = \{a, b\} $$. Clearly $$ f(W) \subseteq f(X) $$ but $$ W \nsubseteq X $$.
+
+Old(Wrong) Solution:
+
 Suppose $$ f = \{ (1,a), (2,b) \} $$.     
 $$ W = \{1\}, X = \{ 1, 2\} $$.
     

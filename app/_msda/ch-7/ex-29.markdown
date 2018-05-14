@@ -1,0 +1,48 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "29"
+order: "029"
+date: 2017-10-25 
+---
+
+#### (a) ####
+
+Let $$\, t \,$$ denote the probability of answerting yes if Question 2 was asked. Similar to the problem-28, we have:
+
+$$\,
+\begin{align*}
+r = P(yes) \\
+&= P(yes \,\vert\, \text{Q1 was asked})P(\text{Q1 was asked}) + P(yes \,\vert\, \text{Q2 was asked})P(\text{Q2 was asked}) \\
+&= qp + t(1-p) \\
+\end{align*}
+\,$$
+
+Thus we can estimate r, by $$\, R = Qp + t(1-p) \,$$(Note that $$\, t \,$$ and $$\, p \,$$ and constant for an experiment. Thus $$\, Q = \frac {R-t(1-p)} p \,$$.
+
+#### (b) ####
+
+$$\, 
+\begin{align*}
+\Exp Q \\
+&= \Exp\Prn{\frac {R-t(1-p)} p} \\
+&= \frac 1 {p^2} \Exp(R-t(1-p)) \\
+&= \frac 1 {p^2} (\Exp(R)-\Exp(t(1-p))) \\ 
+&= \frac 1 {p^2} (r-t(1-p)) \\ 
+&= q 
+\end{align*}
+\,$$
+
+Thus $$\, \Exp(Q) = q \,$$. It follows that $$\, Q \,$$ is unbiased in estimating $$\, q \,$$.
+
+#### (c) ####
+
+$$\, 
+\begin{align*}
+\Var(Q) \\
+&= \Var(\frac {R-t(1-p)} p) \\
+&= \frac 1 {p^2} \Var(R-t(1-p)) \\
+&= \frac 1 {p^2} \Var(R) && \text{$t$ and $p$ are constants} \\
+&= \frac {r(1-r)} {np^2} && \text{Using Problem 28, part-d}
+\end{align*}
+\,$$

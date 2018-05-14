@@ -211,7 +211,7 @@ Given that $$ bc = mac $$. Since $$ c \neq 0 $$, it can be simplified to $$ b = 
 
 **(a)**
 
-Suppose $$ z = \frac {y-x} 2 $$. Then $$ x + z = x + \frac {y-x} 2 = \frac {x + y} 2. Similarly $$ y - z = y - \frac {y - x} 2 = \frac {x + y} 2 $$.
+Suppose $$ z = \frac {y-x} 2 $$. Then $$ x + z = x + \frac {y-x} 2 = \frac {x + y} 2 $$. Similarly $$ y - z = y - \frac {y - x} 2 = \frac {x + y} 2 $$.
 Thus for $$ z = \frac {y-x} 2 $$, then  $$ x + z = y - z = \frac {x+y} 2$$. Since $$ z = \frac {y-x} 2 $$ is real, the equation is correct.
 
 **(b)**
@@ -298,15 +298,4 @@ Now taking $$ y = 2x $$, we have $$ yz = 2xz $$. Thus we can conclude that $$ yz
   Thus in both cases we work on finding specific value to move forward with the proof.
   
 **(b)** Not sure about the reason for these similarities.
-
-
-
-
-
-
- 
-
-
-
-
 

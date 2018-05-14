@@ -1,0 +1,61 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "28"
+order: "028"
+date: 2017-10-24 
+---
+
+#### (a) ####
+
+$$\,
+\begin{align*}
+r = P(yes) \\
+&= P(yes \,\vert\, \text{Q1 was asked})P(\text{Q1 was asked}) + P(yes \,\vert\, \text{Q2 was asked})P(\text{Q2 was asked}) \\
+&= qp + (1-q)(1-p) \\
+&= (2p-1)q + (1-p)
+\end{align*}
+\,$$
+
+#### (b) ####
+
+In part (a), we know $$\, r \,$$ and as well as $$\, p \,$$(known from the structure of the randomized device). Thus we can get $$\, q = \frac {p+r-1} {2p-1} \,$$.
+
+#### (c) ####
+
+Let $$\, X_i = 1 \,$$ if $$\, i^{th} \,$$ member of the random sample answers yes. Then $$\, R = \frac 1 n \sum_{i=1}^{n} X_i \,$$. Thus $$\, \Exp R = \frac 1 n \sum_{i=1}^{n} \Exp(X_i) = \frac n n \Exp(X_i) = r \,$$.
+
+Lets propose $$\, Q = \frac {p+R-1} {2p-1} \,$$ as an estimate of $$\, q \,$$. Since it is a linear expression in $$\, R \,$$, it follows that $$\, \Exp Q = \frac {p+\Exp R-1} {2p-1} = \frac {p+r-1} {2p-1} \,$$ which is same as $$\, q \,$$.
+
+#### (d) ####
+
+$$\, 
+\begin{align*}
+\Var(R) \\
+&= \Var(\frac 1 n \sum_{i=1}^{n} X_i) \\
+&= \frac 1 {n^2} \Var(\sum_{i=1}^{n} X_i) \\
+&= \frac 1 {n^2} (\sum_{i=1}^{n} \Var(X_i) + \sum_{i=1}^{n} \sum_{j=1}^{n} \Cov(X_i, X_j)) \\
+&= \frac {n\Var(X_i)} {n^2} + \frac {n(n-1)Cov(X_i,X_j)} {n^2} \\
+&= \frac {\Var(X_1)} n + \frac {(n-1)Cov(X_1,X_2)} {n} && \text{ Since } \Cov(X_i, X_j) = \Cov(X_1, X_2) \\
+\end{align*}
+\,$$
+
+Since $$\, X_1 \,$$ is a bernoulli's trial, $$\, \Var(X_1) = r(1-r) \,$$.
+
+We have $$\, \Cov(X_1, X_2) = \Exp(X_1 X_2) - \Exp X_1 \Exp X_2 \,$$. Now, $$\, \Exp(X_1 X_2) = 0 + 0 + 0 + 1 \times 1 \times P(X_1=1, X_2=1) = \frac {nr} N \times \frac {nr-1} {N-1} \,$$. Thus $$\, \Cov(X_1, X_2) = \frac {nr} N \times \frac {nr-1} {N-1} - r^2 \,$$.
+
+Putting the values in $$\, \Var(R) \,$$, we get $$\, \frac {r(1-r)} n + \frac {n-1} n \Prn{ \frac {nr} N \times \frac {nr-1} {N-1} \,-\, r^2 } \,$$. Approximating $$\, \frac {nr-1} {N-1} \approx \frac {nr} N \,$$, we get: $$\, \Var(R) = \frac {r(1-r)} n + \frac {r^2(n-1)} n \Prn{\frac {n^2} {N^2} - 1} \,$$.
+
+TODO: Not sure how if the extra term can be ignored using finite population correction as expected from the answer.
+
+#### (e) ####
+
+$$\,
+\begin{align*}
+\Var(Q) \\
+&= \Var\Prn{\frac {p+R-1} {2p-1}} \\
+&= \Var\Prn{\frac {p-1} {2p-1} + \frac R {2p-1}} \\
+&= \frac 1 {(2p-1)^2} \Var(R) && \text{Since $p$ is constant, first term was zero} \\
+&= \frac {r(1-r)} {n(2p-1)^2} && \text{ Using part-d result }
+\end{align*}
+\,$$

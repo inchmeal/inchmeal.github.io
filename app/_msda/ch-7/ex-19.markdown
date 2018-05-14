@@ -1,0 +1,47 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "19"
+order: "019"
+date: 2017-10-11
+---
+
+For the first part, we need to find the constant $$\, k \,$$ such that the interval $$\, (-\infty, \bar X + ks_{\bar X}) \,$$ is a 90% confidence interval for $$\, \mu \,$$.
+
+We shall use the same function here $$\, z(\alpha) \,$$ as used in the book. Also let $$\, Z \,$$ denotes the standard normal function.
+
+Thus we have:
+
+$$\, 
+P(Z < z(\alpha)) = \Phi(z(\alpha))
+\,$$
+
+$$\, 
+\begin{align*}
+&\Rightarrow P\left( \frac{\bar X - \mu}{s_{\bar X} } < z(\alpha)\right) = 1 - \alpha && \text{Using CLT in LHS and def. of $z$ in RHS} \\
+&\Rightarrow P(\bar X - \mu < z(\alpha)s_{\bar X}) = 1-\alpha \\
+&\Rightarrow P(\mu - \bar X > -z(\alpha)s_{\bar X}) = 1-\alpha && \text{Reversing the sign of inequality} \\
+&\Rightarrow P(\mu > \bar X - z(\alpha)s_{\bar X}) = 1-\alpha \\
+&\Rightarrow P(\mu > \bar X + z(1-\alpha)s_{\bar X}) = 1-\alpha && -z(\alpha) = z(1-\alpha) \text{ By its definition} \\
+&\Rightarrow P(\mu < \bar X + z(1 - \alpha)s_{\bar X}) = 1 - (1-\alpha) && \text{Sum of total probability is 1} \\
+&\Rightarrow P(\mu < \bar X + z(1 - \alpha)s_{\bar X}) = \alpha 
+\end{align*}
+\,$$
+
+Thus for 90% confidence interval we need $$\, \alpha = 0.9 \,$$. And $$\, k = z(1-\alpha) \,$$. By the definition of $$\, z \,$$, we have $$\, z(\alpha) = \Phi^{-1}(1-\alpha) \,$$. Thus $$\, k= \Phi^{-1}(1-(1-\alpha)) = \Phi^{-1}(0.9) \,$$
+
+Now we just need to lookup in the standard normal table to find $$\, k = 1.28 \,$$.
+
+Second part is also similar where we need to find the value of $$\, k \,$$ for the one sided confidence interval $$\, (\bar X - ks_{\bar X}) \,$$.
+
+We can proceed from the last result: 
+
+$$\,
+\begin{align*}
+&\Rightarrow P(\mu < \bar X + z(1 - \alpha)s_{\bar X}) = \alpha \\
+&\Rightarrow P(\mu < \bar X - z(\alpha)s_{\bar X}) = \alpha && \text{Since here $k$ is negative, we will use $-z(\alpha) = z(1-\alpha)$} \\
+&\Rightarrow P(\mu > \bar X - z(\alpha)s_{\bar X}) = 1-\alpha
+\end{align*}
+\,$$
+
+Thus for 95% confidence interval we need $$\, \alpha = 1-0.95=0.05 \,$$. And $$\, k = z(\alpha) \,$$. By the definition of $$\, z \,$$, we have $$\, z(\alpha) = \Phi^{-1}(1-\alpha) \,$$. Thus $$\, k= \Phi^{-1}(1-\alpha) = \Phi^{-1}(0.95) = 1.645 \,$$.

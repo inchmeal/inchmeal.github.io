@@ -7,13 +7,15 @@ order: "042"
 date: 2016-04-28
 ---
 
-There can be multiple ways to represent board. All we need to do is implement the procedures required in exerceise such that they 
+There can be multiple ways to represent board. All we need to do is implement the procedures required in exercise such that they 
 work correctly for our board representation. 
 
 Since at any point in the code, a column will contain only one queen. We can represent a solution by a simple list such that
- each element in the list corresponds to a row in board such that the row is equal to the position of this element in the list.
+ each element in the list corresponds to a row in board. 
+ 
+Thus the combination of position in this simple list and the value at this position gives us col-number and row-number of the place where queen is placed. For example: 
 
-We are assuming row and col numbers start from 1(not 0).  
+(Taking row and col numbers to start from 1(not 0).)
   
 For eg: Suppose one solution for 5 queens is: (4 2 5 3 1), then the corresponding board is:
   

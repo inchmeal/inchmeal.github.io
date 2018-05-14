@@ -1,0 +1,68 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "32"
+order: "032"
+date: 2017-10-25 
+---
+
+#### (a) ####
+
+We have:
+
+Total Population, $$\, N=12000 \,$$
+
+Sample size, $$\, n=200 \,$$
+
+Sample proportion, $$\, \hat p = 0.18 \,$$
+
+To compute estimated standard error, $$\, \sigma_{\hat p} \,$$, we use $$\, {\sigma_{\hat p}}^2 = \frac {\hat p(1-\hat p)} {n-1} \Prn{1 - \frac n N} \,$$. Thus we get $$\, {\sigma_{\hat p}^2} = \frac {0.18(1-0.18)} {200-1} \Prn{1-\frac {200} {12000}} = 0.0007417085 \,$$. Thus $$\, \sigma_{\hat p} = \sqrt {0.0007417085} = 0.027 \,$$.
+
+The confidence interval can be computed using $$\, \hat p \pm z(\alpha/2) = \hat p \pm \Phi^{-1}(1-\alpha/2)\sigma_{\hat p} \,$$ where $$\, \alpha = 1-0.90 = 0.1 \,$$. Thus the confidence interval becomes $$\, 0.18 \pm \Phi^{-1}(1-0.05) 0.027 = 0.18 \pm 1.645 \times 0.027 = 0.18 \pm 0.044415 \,$$, or $$\, (0.135585,0.224415) \,$$.
+
+#### (b) ####
+
+We are given two samples from two populations - one from the example quoted and another given in the problem itself.
+
+**Sample 1:**(from example)
+
+$$\, N_1 = 8000 \,$$
+
+$$\, n_1 = 100 \,$$
+
+$$\, \hat p_1 = 0.12 \,$$ 
+
+**Sample 2:**(from problem)
+
+$$\, N_2 = 12000 \,$$
+
+$$\, n_2 = 200 \,$$
+
+$$\, \hat p_2 = 0.18 \,$$ 
+
+
+
+and $$\, \hat p_2 = 0.18 \,$$ and $$\, \hat d = \hat p_1 - \hat p_2 \,$$.
+
+Since $$\, \hat p_1 \,$$ and $$\, \hat p_2 \,$$ are independent random variables, it follows that $$\, \Var(\hat d) = \Var(\hat p_1 - \hat p_2) = \Var(\hat p_1) + {-1}^2 \hat p_2) \,$$.
+
+Now putting $$\, \Var(\hat p_1) = \frac {\hat p_1(1-\hat p_1)} {n_1-1} \Prn{1 - \frac {n_1} {N_1} } \,$$ and $$\, \Var(\hat p_2) = \frac {\hat p_2(1-\hat p_2)} {n_2-1} \Prn{1 - \frac {n_2} {N_2} } \,$$, we get:
+
+$$\, \Var(\hat d) = \frac {\hat p_1(1-\hat p_1)} {n_1-1} \Prn{1 - \frac {n_1} {N_1} } + \frac {\hat p_2(1-\hat p_2)} {n_2-1} \Prn{1 - \frac {n_2} {N_2} } \,$$.
+
+Using the standard error computed in example, we have $$\, \Var(\hat p_1) = {0.03}^2 = 0.0009 \,$$. Similarly from part-a, we have $$\, \Var(\hat p_2) = 0.0007417085 \,$$. Thus $$\, \Var(\hat d) = 0.0009 + 0.0007417085 =0.001642 \,$$. Thus $$\, \sigma_{\hat d} = \sqrt {0.001642} = 0.0405215 \,$$.
+
+#### (c) ####
+
+The confidence interval is given by $$\, \hat d \pm z(\alpha/2) \sigma_{\hat d} \,$$.
+
+We have $$\, \hat d = \hat p_1 - \hat p_2 = -0.06 \,$$.
+
+For $$\, 99\% \,$$ confidence interval, $$\, \alpha = 1-0.99 = 0.01 \,$$. Thus $$\, z(\alpha/2) = \Phi^{-1}(1-\alpha/2) = \Phi^{-1}(1-0.01/2) = 2.575 \,$$.
+Thus the confidence interval is $$\, -0.06 \pm 2.575 \times 0.0405215 = -0.06 \pm 0.104343 = ( -0.164343, 0.044343) \,$$
+
+Similarly, for $$\, 95\% \,$$, we have $$\, z(\alpha/2) = 1.96 \,$$. Thus $$\, -0.06 \pm 1.96 \times 0.0405215 = -0.06 \pm 0.079422 = (-0.139422,0.019422) \,$$
+
+
+And for $$\, 90\% \,$$, we get $$\, z(\alpha/2) = 1.645 \,$$. Thus $$\, -0.06 \pm 1,645 \times 0.0405215 = -0.06 \pm 0.066658 = (-0.126658, 0.006658) \,$$
+

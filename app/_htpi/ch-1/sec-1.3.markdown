@@ -104,5 +104,14 @@ redirect_from:
 
 **(b)** $$ \phi $$
 
-**(c)** $$ \{1, 2, 3, 4, 5, 6, 7 \} $$
+**(c)** 
 
+Update:
+
+As pointed out in comments, I got this wrong first time. Here is the correct answer:
+
+$$ { x ∈ R | x^2 < 25 } $$ or, equivalently $$ |x| < 5 $$.
+
+Old Answer:
+
+$$ \{1, 2, 3, 4, 5, 6, 7 \} $$

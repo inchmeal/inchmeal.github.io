@@ -11,9 +11,39 @@
 	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/inchmeal_head.js"></script>
 
 	{% if page.loadMath %}
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			"HTML-CSS": {
+				linebreaks: { automatic: true },
+				scale: 82,
+				styles: {
+					".MathJax_Display": {
+						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
+					},
+					"p .MathJax": { //For inline
+						//"background-color": "#FFFF88",
+						//color:   "#CC0000",
+					}	
+				}
+			},
+			"displayAlign": "left",
+			TeX: { 
+				equationNumbers: { 
+					autoNumber: "AMS" 
+				},
+				Macros: {
+					Exp: "{\\operatorname{\\mathrm{E}}}",
+					Var: "{\\operatorname{\\mathrm{Var}}}",
+					Cov: "{\\operatorname{\\mathrm{Cov}}}",
+					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
+				}
+			}
+		});
+	</script>
 	{% if site.dev %}
 	<script type="text/javascript"
-			src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+			src="/bower_components/MathJax/MathJax.js?config=TeX-AMS_HTML-full">
 	</script>
 	<script>
 		var disqus_developer = 1; // Comment out when the site is live
@@ -23,12 +53,6 @@
 			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
 	{% endif %}
-	<script>
-		MathJax.Hub.Config({
-			"HTML-CSS": { scale: 82 },
-			"displayAlign": "left"
-		});
-	</script>
 	{% endif %}
 
 	{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}

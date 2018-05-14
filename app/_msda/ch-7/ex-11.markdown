@@ -1,0 +1,40 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "11"
+order: "011"
+date: 2017-09-13
+---
+
+#### (a) ####
+
+In simple random sampling, a sample of a given size is chosen from all possible samples with same size from the population. Thus the total samples are $$\, {4 \choose 2} = 6 \,$$.
+ 
+#### (b) ####
+
+We have sample mean equals to:
+
+$$\, \bar X = \frac 1 n \sum_{i=1}^n X_i \,$$
+
+Thus the expected value of the sample mean is $$\, E(\bar X) = \frac 1 n \mathrm{E}(\sum_{i=1}^n X_i) = \frac 1 2 \sum_{i=1}^2 \mathrm{E} X_i \,$$
+
+In the given samples $$\, (x_1, x_2), (x_2, x_3), (x_3, x_4), (x_1, x_4) \,$$, we can see that every element of the population is present in equal number of samples(i.e. 2). (Note that in a sample, order does not matter $$\, (x_1, x_2) \,$$ and $$\, (x_2, x_1) \,$$ are same samples.)
+
+Thus every $$\, i^{th} \,$$ member of a **random sample** has an equal chance to be any element $$\, x_1, x_2, x_3 \,$$ or $$\, x_4 \,$$ of the population. In other words, every element $$\, x_j \,$$ has an equal probability to become a part of a *random sample*. Thus probability $$\, P(X_i = x_j) \,$$ for any $$\, i^{th} \in \{1,2\} \,$$ member of sample and any $$\, j^{th} \in \{1,2,3,4\} \,$$ element of the population, is $$\, \frac 1 N = \frac 1 4 \,$$. It follows that $$\, \mathrm{E}(X_i) = \frac 1 4 \sum_{j=1}^4 x_j \,$$.
+
+( **Note:** Initially, I made a rookie mistake here by computing the probability $$\, = \frac 2 4 = \frac 1 2 \,$$, thinking that each member appears twice in total 4 samples. This is wrong because this probability is for whether a **specific element** is a member of a sample or not but the probability that we require is the probability of selection of an element in a random sample. Another way to see that $$\, \frac 1 2 \,$$ is wrong is that the sum of probabilities of choosing each of the members should equal 1 but in this case it becomes $$\, 4 \times \frac 1 2 = 2 \,$$, which is clearly wrong!)
+
+Thus $$\, \mathrm{E}(\bar X) =  \frac 1 2 \sum_{i=1}^2 \mathrm{E} X_i \,$$
+
+$$\, = \frac 1 2 \sum_{i=1}^2 \left( \frac 1 4 \sum_{j=1}^4 x_j \right) \,$$
+ 
+$$\, = \frac 1 8 \sum_{i=1}^2 \left( \sum_{j=1}^4 x_j \right) \,$$
+
+$$\, = \frac 2 8 \sum_{j=1}^4 x_j \,$$
+
+$$\, = \frac 1 4 \sum_{j=1}^4 x_j \,$$
+
+But this expression is the population mean $$\, \bar x \,$$.
+
+It follows that $$\, \mathrm{E}(\bar X) = \bar x \,$$. Thus the sample mean is unbiased.
+

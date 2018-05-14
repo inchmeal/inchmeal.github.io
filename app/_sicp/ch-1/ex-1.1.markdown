@@ -9,7 +9,7 @@ date: 2016-03-29
 
 Output generated is shown in comment below each statement.
 
-{% highlight racket linenos %}
+{% highlight scheme linenos %}
 
 #lang sicp
 

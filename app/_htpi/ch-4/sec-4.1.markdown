@@ -141,7 +141,7 @@ It follows that $$ x \in A \land x \in C $$, or $$ x \in A \cap C $$. Similarly,
 $$ (x,y) \in (A \cap C) \times (B \cap D) $$.
 
 ($$ \leftarrow $$)Let $$ p = (x,y) $$ be an arbitrary element of $$ (A \cap C) \times (B \cap D) $$. Thus $$ x \in A \land y \in B $$, it follows that
-$$ (x,y) \in A \times B $$. Similarly, since $$ x \in C \land y \in D $$, it follows that $$ (x,y) \in (C \times D) $$. Thus we have $$ p = (x,y) in (A \times B) \cap (C \times D) $$.
+$$ (x,y) \in A \times B $$. Similarly, since $$ x \in C \land y \in D $$, it follows that $$ (x,y) \in (C \times D) $$. Thus we have $$ p = (x,y) \in (A \times B) \cap (C \times D) $$.
 
 Thus from both directions we have $$ (A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D) $$.
 

@@ -8,7 +8,7 @@ date: 2016-06-26
 ---
 
 I have included the complete program so that it can be tested/executed easily.
-
+ 
 {% highlight racket linenos %}
 #lang sicp
 

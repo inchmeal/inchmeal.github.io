@@ -1,0 +1,124 @@
+---
+layout: default
+---
+
+<!-- capture chapters -IMPORTANT- do not split below statement as it starts capturing new line which causes problems- -->
+{% capture chapters %}{% for doc in site.msda %}{{ doc.chapter }}$${% endfor %}{% endcapture %}
+{% assign array = chapters | split:'$$' %}
+
+{% assign sortedChapterNumbers =  "" | split: "" %}
+
+<!-- remove duplicates, convert to num and insert in array -->
+{% for item in array %}
+    {% assign numItem = item | times: 1 %}
+    {% assign found = false %}
+
+    {% for ch in sortedChapterNumbers %}
+        {% if numItem == ch %}
+            {% assign found = true %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+
+    {% if found == false %}
+        {% assign sortedChapterNumbers =  sortedChapterNumbers | push: numItem %}
+    {% endif %}
+{% endfor %}
+
+{% assign sortedChapterNumbers =  sortedChapterNumbers | sort %}
+
+<div class="row t30">
+    <div class="medium-12 columns">
+        <div class="row">
+            <h1><a href="/msda/index.html" >{{ page.title }}</a></h1>
+        </div>
+    </div>
+</div>
+
+<div class="row t10">
+    <div class="medium-3 columns medium-push-9">
+        <div class="row t5">
+            <div class="medium-12 columns">
+
+                <ul class="accordion" data-accordion>
+                    {% for chapter in sortedChapterNumbers %}
+
+                    {% capture exercises %}{% for doc in site.msda %}{% if doc.chapter == chapter %}{{ doc.order }}##{{ doc.solution }}##{{ doc.todo }}$${% endif %}{% endfor %}{% endcapture %}
+                    {% assign array = exercises | split: '$$' | sort %}
+
+                    <li class="accordion-navigation">
+                        <a href="#ch-{{ chapter }}">Chapter {{ chapter }}</a>
+                        {% if page.chapter == chapter %}
+                            {% assign chActive = "active" %}
+                        {% else %}
+                            {% assign chActive = "" %}
+                        {% endif %}
+                        <div id="ch-{{ chapter }}" class="content {{ chActive }}">
+                            {% for item in array %}
+                            {% assign pair = item | split: "##" %}
+
+                            {% if page.chapter == chapter and page.order == pair[0] %}
+                                {% assign solActive = "success" %}
+                            {% else %}
+                                {% assign solActive = "info" %}
+                            {% endif %}
+
+                            {% if pair[2] == "true" %}
+                                {% assign todo = "todo" %}
+                            {% else %}
+                                {% assign todo = "" %}
+                            {% endif %}
+
+                            <a href="/msda/ch-{{ chapter }}/ex-{{ pair[1] }}.html" ><span class="radius {{ solActive }} label {{ todo }}">{{ pair[1] }}</span></a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="show-for-small-down">
+                    <hr class="t20"/>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.medium-4.columns -->
+    <div class="medium-9 columns medium-pull-3">
+        <div class="row">
+            <div class="medium-11 medium-offset-1 columns">
+                <article itemscope itemtype="http://schema.org/Article">
+                    <header>
+                        <span itemprop="name">
+                            {% if page.chapter %}
+                            <h3>Chapter {{ page.chapter }}, {{ page.chapterName }}</h3>
+                            {% endif %}
+                            {% if page.sectionName %}
+                            <h3>Section - {{ page.sectionName }}</h3>
+                            {% endif %}
+                            {% if page.solution %}
+                            <h4>Solution {{ page.solution }}</h4>
+                            {% endif %}
+                        </span>
+                    </header>
+
+                    {% if page.date %}
+                    <p class="tm10">
+                        <time class="post-date pr20" datetime="{{ page.date | date: "%B %d, %Y" }}" itemprop="datePublished"> {{ page.date | date: "%B %d, %Y" }}</time>
+                    </p>
+                    {% endif %}
+
+                    <span itemprop="articleSection">
+						<hr/>
+                        {{ content }}
+                        $$\tag*{$\blacksquare$} $$
+                        <hr/>
+                    </span>
+
+                    <br/>
+
+                    {% include comments.html %}
+                </article>
+            </div><!-- /.small-11.columns -->
+        </div><!-- /.row -->
+    </div><!-- /.medium-8.columns -->
+</div><!-- /.row -->

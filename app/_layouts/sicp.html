@@ -40,7 +40,7 @@ layout: default
 </div>
 
 <div class="row t10">
-    <div class="medium-4 columns medium-push-8">
+    <div class="medium-3 columns medium-push-9">
         <div class="row t5">
             <div class="medium-12 columns">
 
@@ -73,7 +73,12 @@ layout: default
                                 {% assign todo = "" %}
                             {% endif %}
 
-                            <a href="/sicp/ch-{{ chapter }}/ex-{{ pair[1] }}.html" ><span class="radius {{ solActive }} label {{ todo }}">{{ pair[1] }}</span></a>
+                            {% if pair[1] == "notes" %}
+							    <a href="/sicp/ch-{{ chapter }}/notes.html" ><span class="radius {{ solActive }} label {{ todo }} icon-edit"></span></a>
+                            {% else %}
+							    <a href="/sicp/ch-{{ chapter }}/ex-{{ pair[1] }}.html" ><span class="radius {{ solActive }} label {{ todo }}">{{ pair[1] }}</span></a>
+							{% endif %}
+
                             {% endfor %}
                         </div>
                     </li>
@@ -87,7 +92,7 @@ layout: default
             </div>
         </div>
     </div><!-- /.medium-4.columns -->
-    <div class="medium-8 columns medium-pull-4">
+    <div class="medium-9 columns medium-pull-3">
         <div class="row">
             <div class="medium-11 medium-offset-1 columns">
                 <article itemscope itemtype="http://schema.org/Article">
@@ -96,12 +101,14 @@ layout: default
                             {% if page.chapter %}
                             <h3>Chapter {{ page.chapter }}, {{ page.chapterName }}</h3>
                             {% endif %}
-                            {% if page.sectionName %}
-                            <h3>Section - {{ page.sectionName }}</h3>
-                            {% endif %}
-                            {% if page.solution %}
-                            <h4>Exercise {{ page.solution }}</h4>
-                            {% endif %}
+                            {% if page.solution != "notes" %}
+								{% if page.sectionName %}
+								<h3>Section - {{ page.sectionName }}</h3>
+								{% endif %}
+								{% if page.solution %}
+								<h4>Exercise {{ page.solution }}</h4>
+								{% endif %}
+							{% endif %}
                         </span>
                     </header>
 

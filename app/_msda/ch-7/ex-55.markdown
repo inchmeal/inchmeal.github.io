@@ -1,0 +1,33 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "55"
+order: "055"
+date: 2017-10-29 
+---
+
+#### (a) ####
+
+Estimate of the population mean, $$\, \bar X_s = \frac 1 N \sum_{l=1}^{L} N_l \bar X_l \,$$, which as proved in the book is an unbiased estimate of population mean.
+
+Thus $$\, \mu = \Exp(\bar X_s) = \frac 1 {100,000 + 500,000} (100,000 \Exp(\bar X_H) + 500,000 \Exp(\bar X_L)) = \frac 1 6 \Exp(\bar X_H) + \frac 5 6 \Exp(\bar X_L) \,$$.
+
+#### (b) ####
+
+Ignoring the finite population correction, We have $$\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \sigma_l^2 = \Prn{\frac 1 6}^2 \frac 1 {100} {20}^2 + \Prn{\frac 5 6}^2 \frac 1 {200} {10}^2  = \frac {1} {9} + \frac {25} {72} = 0.4583 \,$$. Thus standard error = $$\, \sqrt { 0.4583 } = 0.6770 \,$$.
+
+#### (c) ####
+
+If the standard error is less than the previous alllocation than the new allocation will be better. Thus, we first find standard error:
+
+Ignoring the finite population correction, We have $$\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \sigma_l^2 = \Prn{\frac 1 6}^2 \frac 1 {200} {20}^2 + \Prn{\frac 5 6}^2 \frac 1 {100} {10}^2  = \frac {1} {18} + \frac {25} {36} = 0.75 \,$$. Thus standard error = $$\, \sqrt { 0.75 } = 0.866 \,$$.
+
+The standard error for the present allocation is higher than that of the previous allocation, thus this allocation is not better than the previous allocation.
+
+#### (d) ####
+
+We first find the standard error for the proportional allocation:
+
+$$\, \Var(\bar X_{SP}) = \frac 1 n \sum_{l=1}^{L} W_l \sigma_l^2 = \frac 1 {300} \Prn{\frac 1 6 {20}^2 + \frac 5 6 {10}^2 } = \frac {900} {1800} = 0.5 \,$$. Thus standard error is $$\, \sqrt{0.5} = 0.707 \,$$.
+
+Here also standard error is more than the original allocation. Thus this allocation is also not better compared to the original allocation.

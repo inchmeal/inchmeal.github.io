@@ -924,9 +924,9 @@ Suppose $$ F_n = \{ f \; \vert \; \text{ f is a one-to-one and onto function fro
   Now note that for $$ i,j \in I_{n+1} $$, the sets $$ G_n^i $$ and $$ G_n^j $$ are disjoint. Consider a function $$ h: F_n^i \to G_n^i $$ such that $$ h(f) = f \cup \{(n+1, a_i)\} $$.
   Clearly $$ h $$ is one-to-one and onto function. Thus $$ \vert F_n^i \vert = \vert G_n^i \vert $$. But by our induction hypothesis $$ \vert F_n^i \vert = n! $$. Thus $$ \vert G_n^i \vert = n! $$.
   Since $$ F_{n+1} = S = \cup_{ i \in I_{n+1} } G_n^i $$ and $$ G_n^i \cap G_n^j = \phi $$, if $$ i \ne j $$, it follows from Soln19 that:        
-  $$ \vert F_{n+1} \vert = \sum_i^{n+1} \vert G_n^i \vert $$.           
-  $$ = \sum_i^{n+1} \vert F_n^i \vert $$.           
-  $$ = \sum_i^{n+1} n! $$.           
+  $$ \vert F_{n+1} \vert = \sum_{i=1}^{n+1} \vert G_n^i \vert $$.           
+  $$ = \sum_{i=1}^{n+1} \vert F_n^i \vert $$.           
+  $$ = \sum_{i=1}^{n+1} n! $$.           
   $$ = (n+1)n! $$.           
   $$ = (n+1)! $$.           
   

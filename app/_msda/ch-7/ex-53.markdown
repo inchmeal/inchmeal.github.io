@@ -1,0 +1,115 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "53"
+order: "053"
+date: 2017-10-28 
+---
+
+#### (a) ####
+
+$$\, N = \sum_{l=1}^{L} N_l = 2010 \,$$
+
+Proportional allocation:
+
+|---
+| Farm Size | \\( N_l \\) | \\( n_l = n \frac {N_l} N \\)
+| :-:       | :-:         | :-:
+| 0-40      | 394         | \\( 19.601 \approx 20 \\) 
+| 41-80     | 461         | \\( 22.935 \approx 23 \\)
+| 81-100    | 391         | \\( 19.453 \approx 19 \\)
+| 121-160   | 334         | \\( 16.617 \approx 17 \\)
+| 161-200   | 169         | \\( 8.407 \approx 8 \\)
+| 201-240   | 113         | \\( 5.621 \approx 6 \\)
+| 241 +     | 148         | \\( 7.363 \approx 7 \\)
+
+Optimal allocation:
+
+Since we need $$\, \sum_{l=1}^{L} W_l \sigma_l \,$$ in each of the computation, evalutating it gives $$\, 17.017758 \,$$
+
+|---
+| Farm Size | \\( N_l \\) | \\( \sigma_l \\) | \\( W_l = \frac {N_l} N \\) | \\( \sigma_l W_l \\) | \\( n_l = n \frac {W_l \sigma_l} {\sum_{l=1}^{L} W_l \sigma_l } \\)
+| :-:       | :-:         | :-:              | :-:                         | :-:                  | :-:
+| 0-40      | 394         | 8.3              | 0.19601                     | 1.626883             | \\( 09.5599 \approx 10 \\)
+| 41-80     | 461         | 13.3             | 0.22935                     | 3.050355             | \\( 17.9245 \approx 18 \\)
+| 81-100    | 391         | 15.1             | 0.19453                     | 2.937403             | \\( 17.2608 \approx 17 \\)
+| 121-160   | 334         | 19.8             | 0.16617                     | 3.290166             | \\( 19.3337 \approx 19 \\)
+| 161-200   | 169         | 24.5             | 0.08407                     | 2.059715             | \\( 12.1033 \approx 12 \\)
+| 201-240   | 113         | 26.0             | 0.05621                     | 1.461460             | \\( 08.5878 \approx 9 \\)
+| 241 +     | 148         | 35.2             | 0.07363                     | 2.591776             | \\( 15.2298 \approx 15 \\)
+
+#### (b) ####
+
+Proportional allocation:
+
+|---
+| Farm Size | \\( N_l \\) | \\( \sigma_l \\) | \\( W_l = \frac {N_l} N \\) | \\( W_l \sigma_l^2 \\) 
+| :-:       | :-:         | :-:              | :-:                         | :-:     
+| 0-40      | 394         |  8.3             | 0.19601                     | 13.503
+| 41-80     | 461         | 13.3             | 0.22935                     | 40.569
+| 81-100    | 391         | 15.1             | 0.19453                     | 44.355
+| 121-160   | 334         | 19.8             | 0.16617                     | 65.145
+| 161-200   | 169         | 24.5             | 0.08407                     | 50.463
+| 201-240   | 113         | 26.0             | 0.05621                     | 37.997
+| 241 +     | 148         | 35.2             | 0.07363                     | 91.230
+
+Thus $$\, \Var(\bar X_{SP}) = \frac 1 n \sum_{l=1}^{L} W_l \sigma_l^2 = \frac {343.262} {100} \approx 3.433 \,$$.
+
+Optimal allocation:
+
+|---
+| Farm Size | \\( N_l \\) | \\( \sigma_l \\) | \\( W_l = \frac {N_l} N \\) | \\( \sigma_l W_l \\) 
+| :-:       | :-:         | :-:              | :-:                         | :-:                  
+| 0-40      | 394         | 8.3              | 0.19601                     | 1.626883             
+| 41-80     | 461         | 13.3             | 0.22935                     | 3.050355             
+| 81-100    | 391         | 15.1             | 0.19453                     | 2.937403             
+| 121-160   | 334         | 19.8             | 0.16617                     | 3.290166             
+| 161-200   | 169         | 24.5             | 0.08407                     | 2.059715             
+| 201-240   | 113         | 26.0             | 0.05621                     | 1.461460             
+| 241 +     | 148         | 35.2             | 0.07363                     | 2.591776             
+
+Thus to compute $$\, \Var(\bar X_{SO} = \frac 1 n {\Prn{\sum_{l=1}^{L} W_l \sigma_l} }^2  \,$$, we square the sum of last column and divide it by $$\, n \,$$. Thus we get $$\, 2.896 \,$$.
+
+Simple Random Sampling:
+
+It was shown in the book that $$\, \Var(\bar X) - \Var(\bar X_{SP} = \frac 1 n \sum_{l=1}^{L} W_l (\mu_l - \mu)^2 \,$$. Thus $$\, \Var(\bar X) = \Var(\bar X_{SP}) + \sum_{l=1}^{L} W_l (\mu_l - \mu)^2 \,$$.
+
+We can compute $$\, \mu = \frac 1 N \sum_{l=1}^{L} N_l \mu_l \,$$, which gives $$\, \mu = 26.3108 \,$$.
+
+|---
+| Farm Size | \\( N_l \\) | \\( \mu_l \\) | \\( W_l = \frac {N_l} N \\)    | \\( W_l (\mu_l - \mu)^2 \\) 
+| :-:       | :-:         | :-:              | :-:                         | :-:
+| 0-40      | 394         | 5.4              | 0.19601                     | 85.707
+| 41-80     | 461         | 16.3             | 0.22935                     | 22.984
+| 81-100    | 391         | 24.3             | 0.19453                     | 0.786
+| 121-160   | 334         | 34.5             | 0.16617                     | 11.144
+| 161-200   | 169         | 42.1             | 0.08407                     | 20.958
+| 201-240   | 113         | 50.1             | 0.05621                     | 31.811
+| 241 +     | 148         | 63.8             | 0.07363                     | 103.482
+
+Thus $$\, \Var(\bar X) \,$$ is the sum of $$\, \Var(\bar X_{SP}) \,$$ and $$\, \frac 1 n \,$$ times sum of last column, which gives $$\, \Var(\bar X) = 6.202 \,$$.
+
+#### (c) ####
+
+Population mean we already computed in part-c, $$\, \mu = 26.3108 \,$$. Population Variance, $$\, \sigma^2 = n \Var(\bar X) = 100 \times 6.202 = 620.2 \,$$.
+
+#### (d) ####
+
+We have $$\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \Prn{ 1 - \frac {n_l-1} {N_l-1} } \sigma_l^2 \,$$.
+
+We have $$\, n_l = 10 \,$$ for all $$\, l \,$$.
+
+|---
+| Farm Size | \\( N_l \\) | \\( \sigma_l \\) | \\( \sigma^2_l \\) | \\( W_l = \frac {N_l} N \\) | \\( \frac {W_l^2} {n_l} \\) | \\( \Prn{1 - \frac {n_l-1} {N_l-1} } \\) | \\( W_l^2 \frac 1 {n_l} \Prn{ 1 - \frac {n_l-1} {N_l-1} } \sigma_l^2 \\)
+| :-:       | :-:         | :-:              | :-:                | :-:                         | :-:                         | :-:                                      | :-:
+| 0-40      | 394         | 8.3              | 68.89              | 0.19601                     | 0.00384                     | 0.977                                    | 0.2584
+| 41-80     | 461         | 13.3             | 176.89             | 0.22935                     | 0.00526                     | 0.980                                    | 0.9118
+| 81-100    | 391         | 15.1             | 228.01             | 0.19453                     | 0.00378                     | 0.977                                    | 0.8420
+| 121-160   | 334         | 19.8             | 392.04             | 0.16617                     | 0.00276                     | 0.972                                    | 1.0517
+| 161-200   | 169         | 24.5             | 600.5              | 0.08407                     | 0.00070                     | 0.946                                    | 3.9765
+| 201-240   | 113         | 26.0             | 676.0              | 0.05621                     | 0.00031                     | 0.920                                    | 0.1927
+| 241 +     | 148         | 35.2             | 1239.04            | 0.07363                     | 0.00054                     | 0.939                                    | 0.6282
+
+Thus $$\, \Var(\bar X_s) = 7.8614 \,$$.
+
+To get same variance of $$\, 7.8614 \,$$ from the simple random sampling, we need $$\, \Var(\bar X) = \frac {\sigma^2} n \,$$. Putting value of $$\, \Var(\bar X) \,$$ and $$\, \sigma^2 = 620.2\,$$(computed in last part-c). We get $$\, n \approx 79 \,$$. Thus using stratified sampling we used $$\, 10*7 = 70 \,$$ elements in the sample while to get same variance we needed $$\, 79 \,$$ elements in simple random sampling.

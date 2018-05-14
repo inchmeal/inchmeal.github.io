@@ -1,0 +1,61 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "26"
+order: "026"
+date: 2017-10-23 
+---
+
+#### (a) ####
+
+We need to show that $$\, \bar X = n^{-1} \sum_{i=1}^{N} U_i x_i \,$$. Since we have exactly $$\, n \,$$ terms in the sum $$\, \sum_{i=1}^{N} U_i x_i \,$$, where $$\, U_i x_i \ne 0 \,$$, we can denote those terms by $$\, X_j = U_i x_i \,$$, where $$\, j \,$$ varies from $$\, 1 \,$$ to $$\, n \,$$. Thus we have $$\, \sum_{i=1}^{N} U_i x_i = \sum_{j=1}^{n} X_j \,$$. But $$\, n^{-1} \sum_{j=1}^{n} X_j = \bar X \,$$, it follows that $$\, \bar X = n^{-1} \sum_{i=1}^{N} U_i x_i \,$$.
+
+#### (b) ####
+
+$$\, P(U_i = 1) \,$$ means the probability that $$\, i^{th} \,$$ element of the population is present in a random sample of size n. This is equivalent to the probability of selecting an element in a random sample of size $$\, n \,$$. Thus $$\, P(U_i = 1) = \frac n N \,$$.
+
+Since $$\, U_i \,$$ is either $$\, 0 \,$$ or $$\, 1 \,$$, by fundamental bridge, it follows $$\, \Exp(U_i) = P(U_i=1) = \frac n N \,$$.
+
+#### (c) ####
+
+$$\, \Var(U_i) = P(U_i=1)(1-P(U_i=1)) = \frac n N(1-\frac n N) = \frac n N \frac (N-n) N \,$$.
+
+#### (d) ####
+
+$$\, 
+\begin{align*}
+\Exp(U_i U_j) \\ 
+&= \sum_{m=0}^{1} \sum_{n=0}^{1} m n P(U_i = m, U_j = n) \\
+&= 0 + 0 + 0 + 1 \cdot 1 \cdot P(U_i=1, U_j=1) \\
+&= \frac n N \frac (n-1) (N-1) 
+\end{align*}
+\,$$
+
+#### (e) ####
+
+$$\, 
+\begin{align*}
+\Cov(U_i, U_j) \\
+&= \Exp(U_i U_j) - \Exp(U_i) \Exp(U_j) \\
+&= \frac n N \frac (n-1) (N-1) - \Prn{\frac n N}^2 \\
+&= \frac {-n} N \frac {N-n} {N(N-1)}
+\end{align*}
+\,$$
+
+#### (f) ####
+
+$$\, 
+\begin{align*}
+\Var(\bar X) \\
+&= \Var \Prn{\frac 1 n \sum_{i=1}^{N} U_i x_i} \\
+&= \frac 1 {n^2} \sum_{i=1}^{N} U_i x_i \\
+&= \frac 1 {n^2} \Prn{ \sum_{i=1}^{N} x_i^2 \Var(U_i) \; + \; \sum_{i=1}^{N} \sum_{j=1,\;j \ne i}^{N} x_i x_j \Cov(U_i, U_j) } \\
+&= \frac 1 {n^2} \Prn{ \sum_{i=1}^{N} x_i^2 \Prn{\frac n N \frac {N-n} N} \; + \; \sum_{i=1}^{N} \sum_{j=1,\;j \ne i}^{N} x_i x_j \Prn{\frac {-n} N \frac {N-n} {N(N-1)} } } \\
+&= \frac 1 {n^2} \frac n N \frac {N-n} N \Prn{ \sum_{i=1}^{N} x_i^2 \; - \; \frac 1 {N-1} \sum_{i=1}^{N} \sum_{j=1,\;j \ne i}^{N} x_i x_j } \\
+&= \frac 1 {n^2} \frac n N \frac {N-n} N \frac 1 {N-1} \Prn{ (N-1)\sum_{i=1}^{N} x_i^2 \; - \; \sum_{i=1}^{N} \sum_{j=1,\;j \ne i}^{N} x_i x_j } \\
+&= \frac 1 {n^2} \frac n N \frac {N-n} N \frac 1 {N-1} \Prn{ (N-1)\sum_{i=1}^{N} x_i^2 \; - \; \Prn{\sum_{i=1}^{N} \sum_{j=1}^{N} x_i x_j \; - \; \sum_{i=1}^{N} x_i^2 } } \\
+&= \frac 1 {n^2} \frac n N \frac {N-n} N \frac 1 {N-1} \Prn{ N\sum_{i=1}^{N} x_i^2 \; - \; \sum_{i=1}^{N} \sum_{j=1}^{N} x_i x_j } \\
+&= \frac 1 {n^2} \frac n N \frac {N-n} N \frac 1 {N-1} N^2 {\sigma^2} && \text{Using variance formulae} \\
+&= \frac 1 n \frac {N-n} {N-1} {\sigma^2} 
+\end{align*}
+\,$$

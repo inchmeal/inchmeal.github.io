@@ -1,0 +1,12 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "33"
+order: "033"
+date: 2017-10-26 
+---
+
+We have $$\, \hat d = \hat p_1 - \hat p_2 \,$$, and similar to Problem-32, we get $$\, \Var(\hat d) = \Var(p_1) + \Var(\hat p_2) = \frac 1 n \frac {N-n} {N-1} (\hat p_1(1-\hat p_1) + \hat p_2(1-\hat p_2))\,$$. Since $$\, \frac {N-n} {N-1} \approx 1 \,$$ and $$\, \hat p_1 \,$$ and $$\, \hat p_2 \,$$ are close to $$\, \frac 1 2 \,$$, it follows that $$\, \Var(\hat d) = \frac 1 n(\frac 1 2 \times \frac 1 2 + \frac 1 2 \times \frac 1 2) = \frac 1 {2n} \,$$.
+
+Thus $$\, \Var(\hat d) = \frac 1 {2n} \,$$. Since we need standard error to be less than $$\, 0.02 \,$$, it follows that we need variance,$$\, \Var(\hat d) \,$$, to be less than $$\, {0.02}^2 = 0.0004 \,$$. Thus the minimum amount of sample size $$\, n \,$$ that we need is $$\, \frac 1 {2n} \le 0.0004 \,$$, which results in $$\, n \ge 1250 \,$$.
+

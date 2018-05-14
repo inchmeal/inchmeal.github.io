@@ -30,7 +30,7 @@ contact: mailovais85@gmail.com
 urlimg: "http://inchmeal.io/assets/img"
 
 # gems to include
-gems:
+plugins:
   - jekyll-redirect-from
 
 # Logo size is 600x80 pixels
@@ -39,6 +39,9 @@ logo: "logo.png"
 
 # Theme works best with Kramdown (using the table of contents function)
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 permalink: date
 highlight: rouge
 excerpt_separator: "<!--more-->"
@@ -49,7 +52,6 @@ exclude:
     - bower_components
     - LICENSE
     - README.md
-
 
 # The language setting is used in /includes/header.html for html-settings
 language: "en"
@@ -65,6 +67,8 @@ collections:
   vocab:
     output: true
   htpi:
+    output: true
+  msda:
     output: true
 
 #
@@ -122,6 +126,21 @@ defaults:
       loadMath: true
       layout: htpi
       section: htpi
+      sitemap:
+          priority: 0.7
+          changefreq: monthly
+  -
+    scope:
+      path: ""
+      type: "msda"
+    values:
+      title: Mathematical Statistics and Data Analysis - Solutions
+      description: "Inchmeal | This page contains solutions for Mathematical Statistics and Data Analysis(John A. Rice)"
+      show_meta: true   # Show metadata beneath all posts
+      comments: true
+      loadMath: true
+      layout: msda
+      section: msda
       sitemap:
           priority: 0.7
           changefreq: weekly

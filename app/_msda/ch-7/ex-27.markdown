@@ -1,0 +1,39 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "27"
+order: "027"
+date: 2017-10-23
+---
+
+To show that the procedure given will generate a simple random sample of size $$\, n \,$$, we need to prove that the probability of selecting an element from the total population to form a random sample is same for every element and is equal to $$\, \frac n N \,$$ which is same as in the case of simple random sampling.
+
+Let $$\, u_i = 1 \,$$ denotes that $$\, i^{th} \,$$ element of the population is in the sample after the procedure completes and $$\, u_i = 0 \,$$ otherwise.
+
+Thus in the given procedure, we need to check that in the end when procedure completes, the probability $$\, P(u_i = 1) \,$$ should be $$\, \frac n N \,$$ irrespective of $$\, i \,$$.
+
+Let $$\, u_{ik} = 1 \,$$ if $$\, i^{th} \,$$ element of the population stays in the sample after the $$\, k^{th} \,$$ step of the procedure, assuming that it stayed in the sample in $$\, (k-1)^{th} \,$$ state. Thus $$\, P(u_i = 1) \,$$ is equal to the probability that $$\, P(u_{ik} = 1) \,$$ for all steps k.
+
+Let $$\, s_k = 1 \,$$ if $$\, (n+k)^{th} \,$$ element is selected from the list of population. Thus by definition, $$\, P(s_k = 1) = \frac n {n+k} \,$$ and $$\, P(s_k = 0) = (1-\frac n {n+k}) \,$$.
+
+
+Thus we have two cases to compute the probability, $$\, P(u_i = 1) \,$$:
+
+- Case $$\, i \le n \,$$(note that here $$\, i < n+k \,$$), Using LOTP, we have:
+$$\,
+\begin{align*}
+P(u_{ik} = 1) \\
+&= P(u_{ik} = 1 \,\vert\, s_k = 1) \times P(s_k = 1) + P(u_{i k} = 1 \,\vert\, s_k = 0) \times P(s_k = 0) \\
+&= \frac {n-1} n \times \frac n {n+k} + 1 \times (1 - \frac n {n+k}) = \frac {n+k-1} {n+k} \\
+\text{Thus we can compute} \\
+P(u_i = 1) \\
+&= \prod_{k=1}^{k=N-n} P(u_{ik} = 1) \\
+&= \frac n {n+1} \times \frac {n+1} {n+2} \times ... \times \frac {n+N-n-1} {n+N-n} \\
+&= \frac n N
+\end{align*}
+\,$$
+
+- Case $$\, i > n \,$$, In this case unlike in the last case $$\, P(u_i = 1) = P(s_i = 1) \times \prod_{k=i+1}^{k=N-n} P(u_{ik} = 1) \,$$. Note that $$\, k \,$$ starts from $$\, i+1 \,$$. Thus here also like in previous case $$\, i < n+k \,$$. Thus we can use the result $$\, P(u_{ik} = 1) = \frac {n+k-1} {n+k} \,$$ from the previous case. Thus we get $$\, P(u_i = 1) = \frac n {n+i} \times \frac {n+i} {n+i+1} \times ... \times \frac {n+N-n-1} {n+N-n} = \frac n N \,$$.
+
+
+Thus in both cases, we have $$\, P(u_i =1) = \frac n N \,$$. Thus the procedure is equivalent to simple random sampling.

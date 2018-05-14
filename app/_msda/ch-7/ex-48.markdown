@@ -1,0 +1,43 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "48"
+order: "048"
+date: 2017-10-28 
+---
+
+Note: Initially I planned to solve problem-49 instead of 48 as both are similar. In my copy of the book, it seems that the answer mentioned in the book for problem-49 are actually for problem-48 or perhaps while computing the answers data of problem 48 is used.
+
+#### (a) ####
+
+The estimate for the ratio $$\, r \,$$ is:
+
+$$\, R = \frac {\bar Y} {\bar X} = \frac {\sum_{i=1}^{n} Y_i} {\sum_{i=1}^{n} X_i} \,$$. Thus we only need to plugin the given values to get $$\, \frac {10000} {320} = 31.25 \,$$.
+
+#### (b) ####
+
+To compute $$\, 95\% \,$$ confidence interval, first we need to find the standard error, $$\, s_R \,$$ of our esitmate $$\, R \,$$. Now we just need to plugin the values in the expression derived in the book for $$\, s_R^2 = \frac 1 n \Prn{1-\frac {n-1} {N-1} } \frac 1 {\bar X} \Prn{ R^2 s_x^2 + s_y^2 - 2 R s_{xy} }\,$$.
+
+To compute $$\, s_x^2  \,$$, we use $$\, s_x^2 = \frac 1 {n-1} \sum_{i=1}^{n} (X_i - \bar X)^2 \,$$ which simplifies to $$\, \frac 1 {n-1} \sum_{i=1}^{n} X_i^2 \; - \; n {\bar X}^2 \,$$.
+
+Similarly, $$\, s_y^2 = \frac 1 {n-1} \sum_{i=1}^{n} Y_i^2 \; - \; n {\bar Y}^2 \,$$
+
+and, $$\, s_{xy}^2 = \frac 1 {n-1} \sum_{i=1}^{n} X_i Y_i \; - \; n {\bar X}{\bar Y} \,$$
+
+Pluging the values we get $$\, s_R^2 = 0.69743455 \,$$, which gives $$\, s_R = 0.835125 \,$$.
+
+Thus the $$\, 95\% \,$$ confidence interval is $$\, R \pm 1.96 s_R = 31.25 \pm 1.636845 \,$$.
+
+#### (c) ####
+
+We can estimate the total $$\, \tau \,$$ using $$\, T = N \bar Y \,$$. 
+
+Thus $$\, T = 100,000 \times \frac {10,000} {100} = {10}^7 \,$$
+
+To compute confidence interval,
+
+$$\, \Var(T) = N^2 \Var(\bar Y) \,$$.
+
+To compute variance of the sample mean $$\, \bar Y \,$$, we use $$\, \Var(\bar Y) = \frac {s_y^2} n \Prn{1 - \frac n N} \,$$, where $$\, s_y^2 \,$$, variance of the sample, is already computed in part-b. This gives $$\, \Var(\bar Y) = 10.1010 \,$$(ignoring the finite population correction).
+
+Thus we get $$\, \Var(T) = N^2 \Var(\bar Y) = 101, 010, 000 \,$$. Thus $$\, s_T = \sqrt{101,010, 000} = 317,820.704 \,$$. Thus the $$\, 90\% \,$$ condidence interval is $$\, 10^7 \pm 1.645 \times 317,820.704 = {10}^7 \pm 522,815.05808 \,$$.

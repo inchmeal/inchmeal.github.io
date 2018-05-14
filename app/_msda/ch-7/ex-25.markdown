@@ -1,0 +1,33 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "25"
+order: "025"
+date: 2017-10-18 
+---
+
+The joint distribution of any subcollection $$\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,$$ of $$\, Y_i \,$$ is same as of $$\, X_1, X_2, X_3, ..., X_n \,$$:
+
+Since each permutation has an equal probability, the joint distribution of the subcollections $$\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,$$ must be identically distributed i.e. the joint distribution of every subcollection is same. Thus the joint probability $$\, P(Y_{i_1} = a_1, Y_{i_2} = a_2, ... , Y_{i_n} = a_n) \; = \; P(Y_1 = a_1, Y_2 = a_2, ... , Y_n = a_n) \,$$ for any subcollection $$\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,$$ is same. 
+
+Now we can check easily $$\, P(Y_1 = a_1, Y_2 = a_2, ... , Y_n = a_n) \,$$ is equal to $$\, P(X_1 = a_1, Y_2 = a_2, ... , X_n = a_n) \,$$. For simplicity, consider for the case $$\, n=2 \,$$: $$\, P(Y_1 = a_1, Y_2 = a_2) \,$$ is the probability that first and second item of a random permutaion of $$\, Y_1,Y_2, ..., Y_N \,$$ are $$\, a_1 \,$$ and $$\, a_2 \,$$ respectively. This is clearly the same as drawing two items from $$\, N \,$$ items such that the first item drawn is $$\, a_1 \,$$ and second item drawn is $$\, a_2 \,$$. This in turn is same as $$\, P(X_1 = a_1, X_2 = a_2) \,$$. Similarly the result holds true for any size $$\, n < N \,$$.
+
+Now, it is easy to see $$\, \Var(Y_i) = \Var(X_i) = \sigma^2 \,$$. Since $$\, \Var(Y_i) = \Exp(Y_i^2) - (\Exp(Y_i))^2 \,$$ and $$\, \Exp(Y_i) = \Exp(X_i) \,$$ because $$\, Y_i \,$$ and $$\, X_i \,$$ are identically distributed, the required result $$\, \Var(Y_i) = \Var(X_i) \,$$ follows.
+
+Similarly, since the joint distribution of any subcollection of the permutations is identically distributed as that of a simple random sample, it follows that $$\, \Cov(Y_i, Y_j) = \Cov(X_i, X_j) \,$$.
+
+
+Now, since $$\, Y_1 + Y_2 + ... + Y_N = \tau \,$$, or a constant, it follows that variance of $$\, \Var\Prn{\sum_{i=1}^{n} Y_i} = 0 \,$$
+
+Using the variance formulae, 
+
+$$\,
+\begin{align*}
+\Var\Prn{\sum_{i=1}^{n} Y_i} \\ 
+&= \sum_{i=1}^{n} \Var(Y_i) \; + \; \sum_{i=1}^{n} \sum_{j=1, j \ne i}^{n} \Cov(Y_i, Y_j) \\
+&= N\sigma^2 \; + \; N(N-1) \gamma \\
+\end{align*}
+\,$$
+
+Thus we get $$\, \gamma = \frac {-\sigma^2} {N-1} \,$$
+

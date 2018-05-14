@@ -1,0 +1,51 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "23"
+order: "023"
+date: 2017-10-12
+---
+
+#### (a) ####
+
+The standard error of an estimated proportion is given by $$\, \sigma_{\bar p} = \sqrt{ \frac {p(1-p)} n \left( \frac {N-n} {N-1} \right) }\,$$. To maximize it by changing $$\, p \,$$, we need to maximize the term containing $$\, p \,$$ and can ignore the other terms as constant.
+
+Thus we shall maximize $$\, p(1-p) \,$$ by differentiating it:
+
+$$\, \frac {d\,p(1-p)} {dp} = 1-p + (-p) = 1-2p \,$$
+
+Equating the first derivative to zero, we get $$\, p=\frac 1 2 \,$$. Since the first derivative $$\, 1-2p \,$$ is a decreasing function, it follows that at $$\, p=\frac 1 2 \,$$, the function $$\, p(1-p) \,$$ will be maximum.
+
+#### (b) ####
+
+Corollary B says that $$\, Var(\hat p) \,$$ is:
+
+$$\, 
+s^2_{\hat p} = \frac {\hat p(1-\hat p)} {n-1} \left( 1 - \frac n N \right)
+\,$$
+
+Similar to part (a), we can find the value of $$\, \hat p \,$$ where $$\, s^2_{\hat p} \,$$ is maximum. Since the steps are similar - skipping the steps, we have $$\, \hat p = \frac 1 2 \,$$ maximizes $$\, s_{\hat p} \,$$.
+
+Now, putting this value in $$\, s_{\hat p} \,$$, gives:
+
+$$\, M_s = \frac 1 2 \sqrt{ \frac {N-n} {N(n-1)} } \,$$
+
+Denoting the above quantity, maximum value of $$\, s_{\hat p} \,$$ by $$\, M_{s} \,$$.
+
+Also, putting $$\, p = \frac 1 2 \,$$ in $$\, \sigma_{\bar p} = \sqrt{ \frac {p(1-p)} n \left( \frac {N-n} {N-1} \right) } \,$$, as shown in part-(a) will give the maximum value of $$\, \sigma_{\hat p} \,$$:
+
+$$\, M_{\sigma} = \frac 1 2 \sqrt{\left( \frac {N-n} {n(N-1)} \right) }\,$$
+
+Denoting this quantity, maximum value of $$\, \sigma_{\hat p} \,$$ by $$\, M_{\sigma} \,$$.
+
+Comparing the quantities, $$\, M_{\sigma} \,$$ and $$\, M_s \,$$ and since $$\, n < N \,$$, it follows that $$\, M_{\sigma} \le M_s \,$$. Since $$\, \sigma_{\hat p} \le M_{\sigma} \,$$(from part-(a)), it follows that, $$\, \sigma_{\hat p} \le M_s \,$$. Since $$\, \sigma_{\hat p} \,$$ is not associated with a particular value of $$\, p \,$$, it follows that the result holds for all $$\, p \,$$. 
+
+Note: By conservative estimate, it means we need to prove that the estimate will never over-estimate the quantity in consideration(here it is standard error).
+
+#### (c) ####
+
+We know that the $$\, 100(1-\alpha) \,$$% confidence interval for $$\, \hat p \,$$ is $$\, \hat p \pm z(\alpha/2) s_{\hat p} \,$$. Now if we use the maximum possible value of $$\, s_{\hat p} \,$$, it will give the interval that contains $$\, p \,$$ with atleast $$\, 100(1-\alpha) \,$$. This is because the maximum value of $$\, s_{\hat p} \,$$will give the widest interval for the given width $$\, 100(1-\alpha) \,$$.
+
+Comparing this with the given interval in the problem, $$\, \hat p \pm \sqrt{ \frac {N-n} {N(n-1)} } \,$$, it follows that $$\, z(\alpha/2) = 2 \,$$, since the maximum possible value of $$\, s_{\hat p} \,$$ is as found in part (b) equals $$\, \frac 1 2 \sqrt{ \frac {N-n} {N(n-1)} } \,$$.
+
+Now we shall compute $$\, \alpha/2 \,$$ using $$\, z(\alpha/2) = 2 \,$$. By definition of $$\, z \,$$, we get $$\, \Phi^{-1}(1-\alpha/2) = 2\,$$, which gives $$ \alpha = 0.0456 $$. Thus the confidence interval is $$\, 100(1-\alpha) = 95.44 \,$$. Thus it is even slightly better than, $$\, 95 \,$$, mentioned in the problem. 

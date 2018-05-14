@@ -1,0 +1,24 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "37"
+order: "037"
+date: 2017-10-25 
+---
+
+#### (a) ####
+
+We need $$\, \Exp X = \mu \,$$. Since $$\, X = \alpha \bar X_1 + \beta \bar X_2 \,$$, it follows that $$\, \Exp X = \alpha \Exp X_1 + \beta \Exp X_2 \,$$. Since $$\, \bar X_1 \,$$ and $$\, \bar X_2 \,$$ are unbiased estimates of the population mean, $$\, \mu \,$$, it follows $$\, \Exp X_1 = \Exp X_2 = \mu \,$$. Thus $$\, \Exp X = \alpha \mu + \beta \mu \,$$. Thus to make $$\, EX = \mu \,$$, we need $$\, \alpha + \beta = 1 \,$$.
+
+#### (b) ####
+
+We have $$\, \Var(X) = \Var(\alpha \bar X_1 + \beta X_2) \,$$. Since $$\, X_1 \,$$ and $$\, X_2 \,$$ are independent it follows that $$\, \Var(X) = \alpha^2 \sigma^2_{\bar X_1} + \beta^2 \sigma^2_{\bar X_2}\,$$.
+
+Thus we have to minimize the function, say f, $$\, \Var(X) = \alpha^2 \sigma^2_{\bar X_1} + \beta^2 \sigma^2_{\bar X_2}\,$$ under the constraint, say g, $$\, \alpha + \beta = 1 \,$$. We can use Lagranges multuplier here:
+
+$$\, f = \lambda \nabla g  \,$$, which gives $$\, \sigma^2_{\bar X_1} \times 2 \alpha = \lambda \,$$ and $$\, \sigma^2_{\bar X_2} \times 2 \beta = \lambda \,$$. We also have $$\, \alpha + \beta = 1 \,$$. Thus by solving these equations we get:
+
+$$\, \alpha = \frac {\sigma^2_{\bar X_2} } {\sigma^2_{\bar X_1} + \sigma^2_{\bar X_2} } \,$$
+
+
+$$\, \beta = \frac {\sigma^2_{\bar X_1} } {\sigma^2_{\bar X_1} + \sigma^2_{\bar X_2} }  \,$$

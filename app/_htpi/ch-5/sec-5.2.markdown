@@ -130,9 +130,17 @@ Thus $$ f \circ f = i_A $$.
 
 **(a)** $$ f(2) = \{y \in \mathbb R \, \vert \, - \sqrt 2 < y < \sqrt 2 \} $$.    
   
-**(b)** $$ f $$ is not one-to-one because $$ f(-1) = f(-2) = \{ \phi \} $$. $$ f $$ is onto because for any set $$ y = \{ q \in R \} $$, if $$ x = 1 + {(\text{largest element of y})}^2 $$,
+**(b)** $$ f $$ is not one-to-one because $$ f(-1) = f(-2) = \phi $$. $$ f $$ is onto because for any set $$ y = \{ q \in R \} $$, if $$ x = 1 + {(\text{largest element of y})}^2 $$,
 then $$ (x,y) \in f $$.
-      
+
+Update:
+
+Part(b) of this answer is wrong regarding the onto part(for one-to-one it is correct). Please check [here][stack-6b].
+
+I define $$ x = 1 + {(\text{largest element of y})}^2 $$ By this definition not every pair of $$ (x,y) $$ belongs to $$ f $$ or for same $$ x $$ there can be multiple $$ y $$.
+
+Now the correct answer(from [stackoverflow][stack-6b]) answer is, if $$ x > 0 $$ then $$ f(x) = (- \sqrt x, \sqrt x ) $$. Clearly there are many sets which do not fall in this category for eg: $$ (5, 23) \notin f $$.
+	
 <hr/>
 
 **Soln7**
@@ -458,3 +466,7 @@ Suppose $$ [s]_S \in \mathcal F / S $$ is set of all constant functions. Thus $$
 we prove $$ \forall [f]_S \in \mathcal F / S([s]_S T [f]_S) $$. Since it is given that $$ [f]_S T [g]_S $$ iff $$ f R g $$, it follows that we need to prove $$ s R f $$. Since $$ s $$ is contant
  function, thus using part(e) of this solution, it follows that $$ s R f $$. Thus $$ [f]_S T [s]_S $$. Since $$ [f]_S $$ is arbitrary, it follows that $$ [s]_S $$ is the smallest element of
 $$ \mathcal F / S $$ in the partial order $$ T $$.
+
+
+[stack-6b]: https://math.stackexchange.com/questions/2574301/is-this-function-onto
+

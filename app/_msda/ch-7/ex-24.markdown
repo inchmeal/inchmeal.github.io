@@ -1,0 +1,64 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "24"
+order: "024"
+date: 2017-10-13
+---
+
+Since this is a simple random sampling, we can use few results from the book:
+
+$$\, \Exp{X_i} = \mu \,$$, where $$\, \mu \,$$ is the population mean.
+
+$$\, \Var{X_i} = \sigma^2 \,$$, where $$\, \sigma^2 \,$$ is population variance.
+
+$$\, \Cov(X_i,X_j) = \frac {-\sigma^2} {N-1} \,$$.
+
+#### (a) ####
+
+For $$\, \bar X_c = \sum_{i=1}^{n} c_i X_i \,$$, to be unbiased estimate of population mean, $$\, \Exp {\bar X_c} = \mu \,$$ must be true.
+
+$$\,
+\begin{align*}
+\Exp{\bar X_c} &= \Exp\Prn{\sum_{i=1}^{n} c_i X_i} \\
+		  &= \sum_{i=1}^{n} \left( c_i \Exp{X_i} \right) \\
+		  &= \sum_{i=1}^{n} (c_i \mu) \\
+		  &= \mu \sum_{i=1}^{n} c_i
+\end{align*}		  
+\,$$
+
+Thus for $$\, \Exp {X_c} = \mu \,$$ to be true, we must have $$\, \sum_{i=1}^{n} c_i = 1 \,$$.
+
+#### (b) ####
+
+Lets first find an expression for the variance of the estimate, i.e. $$\, \Var(\bar X_c) \,$$:
+
+$$\, 
+\Var(\bar X_c) \\
+\begin{align*}
+			   &= \Var\Prn{\sum_{i=1}^{n} c_i X_i} \\
+			   &= \sum_{i=1}^{n} \sum_{j=1}^{n} \Prn{c_i c_j \Cov(X_i, X_j)} \\
+			   &= \sum_{i=1}^{n} c_i^2 \Cov(X_i,X_i) + \sum_{i=1}^{n} \sum^{n}_{j=1,j \ne i} \Prn{c_i c_j \frac {-\sigma^2} {N-1} } \\
+			   &= \sum_{i=1}^{n} c_i^2 \Var(X_i) - \frac {\sigma^2} {N-1}\sum_{i=1}^{n} \sum^{n}_{j=1,j \ne i} (c_i c_j) \\
+			   &= \sigma^2 \sum_{i=1}^{n} c_i^2  - \frac {\sigma^2} {N-1}\sum_{i=1}^{n} \Prn{c_i \sum^{n}_{j=1,j \ne i} c_j} \\
+			   &= \sigma^2 \sum_{i=1}^{n} c_i^2  - \frac {\sigma^2} {N-1}\sum_{i=1}^{n} (c_i(1-c_i)) && \text{Since }\sum_{i=1}^{n} c_i = 1 \\
+			   &= \sigma^2 \sum_{i=1}^{n} c_i^2 \Prn{1+\frac 1 {N-1}} - \frac {\sigma^2} {N-1} \sum_{i=1}^{n} c_i \\
+			   &= \sigma^2 \sum_{i=1}^{n} c_i^2 \Prn{1+\frac 1 {N-1}} - \frac {\sigma^2} {N-1} && \text{Since }\sum_{i=1}^{n} c_i = 1 \\
+\end{align*}			 
+\,$$
+
+Thus, to minimize $$\, \Var(\bar X_c) \,$$, we have to minimize $$\, \sum_{i=1}^{n} c_i^2 \,$$ under the given condition constraint $$\, \sum_{i=1}^{n} c_i = 1 \,$$.
+
+This can be solved using Lagranges multiplier where $$\, f = \sum_{i=1}^{n} c_i^2 \,$$ is the function we have to minimize under the constraint $$\, g = \sum_{i=1}^{n} c_i \,$$.
+
+We have:
+
+$$\, \nabla_c f = \lambda \nabla_c g \,$$
+
+Let $$\, f_{c_i} \,$$ is the partial differentiation of $$\, f \,$$ w.r.t $$\, c_i \,$$ and similarly $$\, g_{c_i} \,$$ is partial differentiation of $$\, g \,$$ w.r.t. $$\, c_i \,$$.
+
+Then by lagranges multiplier we should have $$\, f_{c_i} = \lambda g_{c_i} \,$$ for $$\, i \in \{x \in \mathbb N \; \vert \; 1 \le x \le n \}  \,$$. It follows that $$\, 2c_i = \lambda \,$$, or $$\, c_i = \frac {\lambda} 2  \,$$. Now putting the value of $$\, c_i \,$$ in the constraint $$\, g \,$$, gives $$\, \sum_{i=1}^{n} \frac {\lambda} 2 = 1 \,$$. Thus $$\, \lambda = \frac 2 n \,$$. Now since $$\, c_i = \frac {\lambda} 2 \,$$, we get $$\, c_i = \frac 1 n \,$$.
+
+Now to check that this value of $$\, c_i \,$$ minimizes the $$\, f \,$$, we can do the second derivative test, which I am skipping :)
+
+Thus $$\, c_i = \frac 1 n \,$$ is the value that minimizes $$\, \Var(\bar X_c) \,$$.

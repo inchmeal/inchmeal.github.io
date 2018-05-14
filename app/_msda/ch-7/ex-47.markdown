@@ -1,0 +1,17 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "47"
+order: "047"
+date: 2017-10-26 
+---
+
+From Corollary B we have:
+
+$$\, \Exp(\bar Y_R) - \mu_Y \approx \frac 1 n \Prn{1 - \frac {n-1} {N-1} } \frac 1 {\mu_x} \Prn{ r \sigma^2_x - \rho \sigma_x \sigma_y} \,$$.
+
+We just need to plugin the values in the above expression. All the values are given in Example-D on page-226 in the book.
+
+Skipping the computation part :)
+
+I think the point of this problem is to compare the bias and variance as sample size $$\, n \,$$ increases. Looking at the formulae we can see that the bias should decrease as sample size increases as well as the $$ {bias}^2 $$ is very small compared to the variance(because $$ {bias}^2 $$ contains $$\, n^2 \,$$ but variance contains $$\, n \,$$). Thus the take away point is that bias can be ignored if a sample size is large.

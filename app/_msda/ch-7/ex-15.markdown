@@ -1,0 +1,62 @@
+---
+chapterName: "Survey Sampling"
+chapter: 7
+solution: "15"
+order: "015"
+date: 2017-10-10
+---
+
+#### (b) ####
+We have $$\, P(\left\vert \bar X - \mu \right\vert > \delta) \approx l \,$$ 
+
+We shall first find an expression to compute $$\, \delta \,$$
+
+$$\,
+\begin{align*}
+P(\left\vert \bar X - \mu \right\vert > \delta) &= \\
+												&= 1 - P(-\delta < \bar X - \mu < \delta) \\
+												&= 1 - P(\frac {-\delta} {\sigma_{\bar X} } < \frac {\bar X - \mu} {\sigma_{\bar X} } < \frac {\delta} {\sigma_{\bar X} } \\
+												&= 2\left(1- \Phi\left( \frac {\delta} {\sigma_{\bar X} } \right) \right) && \text{Using CLT. See soln8 for detailed steps} \\
+\end{align*}
+\,$$
+
+Thus we can compute $$\, \delta \,$$ as:
+
+$$\,
+\begin{align*}
+&\Rightarrow 2\left(1- \Phi\left( \frac {\delta} {\sigma_{\bar X} } \right) \right) = l \\
+&\Rightarrow \Phi\left( \frac{\delta} {\sigma_{\bar X} } \right) = 1 - \frac l 2 \\
+&\Rightarrow \delta = \sigma_{\bar X} \times \Phi^{-1}\left( 1 - \frac l 2 \right)
+\end{align*}
+\,$$
+
+$$\, \sigma_{\bar X} \,$$ can be computed using the formuale $$\, \frac {\sigma} {\sqrt{n} } \sqrt{ 1 - \frac{n-1} {N-1} } \,$$
+
+We have $$\, \sigma = 589.716 \,$$ from the example quoted in the problem. To compute $$\, \Phi^{-1} \,$$, we can use the normal tables given in the end of the book.
+
+Now we just need to insert the values into the formulae to compute $$\, \delta \,$$
+
+|---
+|  | $$\, n=20 \,$$ | $$\, n=40 \,$$ | $$\, n=80 \,$$
+|:-:|:-:|:-:|:-:
+| $$\, l=0.10 \,$$ | $$\, 211.583 \,$$ | $$\, 145.650 \,$$ | $$\, 96.918 \,$$
+| $$\, l=0.50 \,$$ | $$\, 87.4677 \,$$ | $$\, 60.2 \,$$ | $$\, 40.06288 \,$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

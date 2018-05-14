@@ -183,7 +183,7 @@ var archivePage = {
             "url": '/json/all_index.json',
             "parse": function(data) {
                 this.index = lunr.Index.load(data.index);
-                return data.posts;
+				return data.posts;
             },
             "filter": function(items){
                 if(items !== null && items !== undefined && (Array.isArray(items)) && items.length > 0){

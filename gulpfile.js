@@ -16,89 +16,12 @@ var plumber = require('gulp-plumber');
 var base64 = require('gulp-base64');
 var runSequence = require('run-sequence');
 var size = require('gulp-size');
-var print = require('gulp-print');
-var minifycss = require('gulp-minify-css');
-var githubPages = require('gulp-gh-pages');
+//var print = require('gulp-print');
+var cleancss = require('gulp-clean-css');
+//var githubPages = require('gulp-gh-pages');
 var indexer = require('./lunr_index_builder.js');
 var fs = require('fs');
-
-
-gulp.task('default', ['watch']);
-
-/**
- * Start browsersync task and then watch files for changes
- */
-gulp.task('watch', ['browsersync'], function() {
-  //Watch fonts files
-  var fontFiles = 'app/_assets/fonts/**/*';
-  gulp.watch(fontFiles, ['fonts']);
-
-  // Watch image files
-  var imageFiles = 'app/_assets/img/**/*';
-  gulp.watch(imageFiles, ['images']);
-
-  // Watch .scss files
-  var sassFiles = 'app/_assets/scss/**/*.{sass,scss}';
-  gulp.watch(sassFiles, ['sass', 'scsslint']);
-
-  // Watch .js files
-  var jsFiles = 'app/_assets/js/**/*.js';
-  gulp.watch(jsFiles, ['scripts', 'jshint']);
-
-  // Watch (jekyll files) .html files and posts
-  var jekyllFiles = [
-      "_config.yml",
-      "_config.build.yml",
-      "app/_data/**/*.{json,yml,csv}",
-      "app/_includes/**/*.{html,xml}",
-      "app/_layouts/*.html",
-      "app/_locales/*.yml",
-      "app/_plugins/*.rb",
-      "app/_posts/*.{markdown,md}",
-      "app/**/*.{html,markdown,md,yml,json,txt,xml}",
-      "app/json/**/*.json",
-      "app/*"
-  ];
-  gulp.watch(jekyllFiles, ['jekyll-rebuild']);
-
-});
-
-/**
- * Run the build task and start a server with BrowserSync
- */
-gulp.task('browsersync', ['build'], function() {
-  var config = {
-        server: {
-          baseDir: ['build/development', 'build', 'app']
-        },
-        port: 9999,
-        files: [
-          'build/assets/css/*.css',
-          'build/assets/js/*.js',
-          'build/assets/images/**',
-        ]
-      };
-  browserSync(config);
-});
-
-/**
- * Run all tasks needed for a build in defined order
- */
-gulp.task('build', function(callback) {
-  runSequence('delete',
-  [
-    'jekyll-tasks',
-    'sass',
-    'scripts',
-    'images',
-    'fonts'
-  ],
-  [
-    'jshint',
-    'scsslint'
-  ],
-  callback);
-});
+var incremental = '--incremental';
 
 /**
  * Delete folders and files
@@ -120,36 +43,20 @@ gulp.task('index', function(callback){
 gulp.task('jekyll', function(done) {
   browserSync.notify('Compiling Jekyll');
 
-  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '-q', '--source=app', '--destination=build/development', '--config=_config.yml,_config_dev.yml'], { stdio: 'inherit' })
+  return cp.spawn('bundle', ['exec', 'jekyll', 'build', incremental, '--source=app', '--destination=build/development', '--config=_config.yml,_config_dev.yml'], { stdio: 'inherit' })
   .on('close', done);
 });
 
 /**
  * It executes jekyll and than all tasks dependent on jekyll
  */
- gulp.task('jekyll-tasks', function(callback){
-   runSequence(
-     'jekyll', 'index',
-   callback);
- });
+gulp.task('jekyll-tasks', 
+	gulp.series('jekyll','index'));
 
-
-gulp.task('jekyll-rebuild', ['jekyll-tasks'], function() {
+gulp.task('jekyll-rebuild', gulp.series('jekyll-tasks', function(callback) {
   browserSync.reload();
-});
-
-
-/**
- * Minimise javascripts, generate sourcemaps
- */
-gulp.task('scripts', function(callback) {
-  runSequence(
-  [
-    'header:scripts',
-    'footer:scripts'
-  ],
-  callback);
-});
+  callback();	
+}));
 
 gulp.task('header:scripts', function() {
    browserSync.notify('Minimising header scripts and generating sourcemaps...');
@@ -194,6 +101,11 @@ gulp.task('footer:scripts', function() {
     .pipe(sourceMaps.write('.'))
     .pipe(gulp.dest('build/assets/js'))
 });
+
+/**
+ * Minimise javascripts, generate sourcemaps
+ */
+gulp.task('scripts', gulp.parallel('header:scripts', 'footer:scripts'));
 
 /**
  * Check JavaScript sytax with JSHint
@@ -270,49 +182,92 @@ gulp.task('scsslint', function(callback) {
   */
 });
 
+/**
+ * Run all tasks needed for a build in defined order
+ */
+gulp.task('build', gulp.series('delete',
+	gulp.series(
+		gulp.parallel('jekyll-tasks', 'sass', 'scripts','images','fonts'),
+		gulp.parallel('jshint','scsslint')
+	))
+);
+	
+/**
+ * Run the build task and start a server with BrowserSync
+ */
+gulp.task('browsersync', gulp.series('build', function(callback) {
+  var config = {
+        server: {
+          baseDir: ['build/development', 'build', 'app']
+        },
+        port: 9999,
+        files: [
+          'build/assets/css/*.css',
+          'build/assets/js/*.js',
+          'build/assets/images/**',
+        ]
+      };
+  browserSync(config);
+  callback();	
+}));
+
+/**
+ * Start browsersync task and then watch files for changes
+ */
+gulp.task('watch', gulp.series('browsersync', function(callback) {
+  //Watch fonts files
+  var fontFiles = 'app/_assets/fonts/**/*';
+  gulp.watch(fontFiles, gulp.parallel('fonts'));
+
+  // Watch image files
+  var imageFiles = 'app/_assets/img/**/*';
+  gulp.watch(imageFiles, gulp.parallel('images'));
+
+  // Watch .scss files
+  var sassFiles = 'app/_assets/scss/**/*.{sass,scss}';
+  gulp.watch(sassFiles, gulp.series('sass', 'scsslint'));
+
+  // Watch .js files
+  var jsFiles = 'app/_assets/js/**/*.js';
+  gulp.watch(jsFiles, gulp.series('scripts', 'jshint'));
+
+  // Watch (jekyll files) .html files and posts
+  var jekyllFiles = [
+      "_config.yml",
+      "_config.build.yml",
+      "app/_data/**/*.{json,yml,csv}",
+      "app/_includes/**/*.{html,xml}",
+      "app/_layouts/*.html",
+      "app/_locales/*.yml",
+      "app/_plugins/*.rb",
+      "app/_posts/*.{markdown,md}",
+      "app/**/*.{html,markdown,md,yml,json,txt,xml}",
+      "app/json/**/*.json",
+      "app/*"
+  ];
+  gulp.watch(jekyllFiles, gulp.parallel('jekyll-rebuild'));
+  callback();	
+}));
+
+gulp.task('default', gulp.series('watch'));
+gulp.task('set-inc', function(callback) {
+		incremental = ' ';
+		callback();
+	}
+);
+gulp.task('reset-inc', function(callback) {
+		incremental = '--incremental';
+		callback();
+	}
+);
+gulp.task('fullbuild', gulp.series('set-inc', 'watch', 'reset-inc'));
+
 /**************************************************************************
  *
  * Below sections contains code for building for production
  *
  **************************************************************************
 */
-
-/**
- * Run task browsersync:production
- */
-gulp.task('publish', ['browsersync:production']);
-
-
-gulp.task('browsersync:production', ['build:production'], function() {
-  var config = {
-        server: {
-          baseDir: ['build/production']
-        },
-        port: 8888,
-  };
-  browserSync(config);
-});
-
-/**
- * Run all tasks needed for a build in defined order
- */
-gulp.task('build:production', function(callback) {
-  runSequence('delete:production',
-  [
-    'jekyll-tasks:production',
-    'sass',
-    'scripts',
-    'images',
-    'fonts'
-  ],
-  [
-    'css:production',
-    'js:production',
-    'images:production',
-    'fonts:production'
-  ],
-  callback);
-});
 
 /**
  * Delete folders and files
@@ -351,7 +306,7 @@ gulp.task('css:production', function() {
   browserSync.notify('Copying css files and Minimising (Production)..');
 
   return gulp.src('build/assets/css/*.css')
-    .pipe(minifycss({"keepSpecialComments": 0}))
+    .pipe(cleancss({"keepSpecialComments": 0}))
     .pipe(gulp.dest('build/production/assets/css'))
     .pipe(size());
 });
@@ -379,20 +334,33 @@ gulp.task('index:production', function(callback){
 /**
  * It executes jekyll and than all tasks dependent on jekyll
  */
- gulp.task('jekyll-tasks:production', function(callback){
-   runSequence(
-     'jekyll:production', 'index:production',
-   callback);
- });
+ gulp.task('jekyll-tasks:production', gulp.series('jekyll:production', 'index:production'));
 
 /**
- * Copy .nojekyll file to production folder
- *
-gulp.task('copynojekyll:production', function(){
-  gulp.src('app/.nojekyll')
-      .pipe(gulp.dest('build/production'));
-});
-*/
+ * Run all tasks needed for a build in defined order
+ */
+gulp.task('build:production', gulp.series('delete:production',
+	gulp.series(
+		gulp.parallel('jekyll-tasks:production', 'sass', 'scripts', 'images', 'fonts'),
+		gulp.parallel('css:production', 'js:production', 'images:production', 'fonts:production')
+	))
+);
+
+gulp.task('browsersync:production', gulp.series('build:production', function(callback) {
+  var config = {
+        server: {
+          baseDir: ['build/production']
+        },
+        port: 8888,
+  };
+  browserSync(config);
+  callback();	
+}));
+
+/**
+ * Run task browsersync:production
+ */
+gulp.task('publish', gulp.series('browsersync:production'));
 
 /*******************************************************************************
  *
@@ -400,13 +368,14 @@ gulp.task('copynojekyll:production', function(){
  *
  *******************************************************************************
  */
-gulp.task('deploy', ['build:production'], function(){
+gulp.task('deploy', gulp.series('build:production', function(callback){
 
    var options = {
      "remoteUrl": "https://github.com/inchmeal/inchmeal.github.io",
      "branch": "master"
    }
-
-   return gulp.src('build/production/**/*', {'dot': true})
-      .pipe(githubPages(options));
- });
+	//TODO FIXME as of now gulp-gh-pages is not causing issues of certain dependencies - gulp-util was deprecated but it is using it.
+   //return gulp.src('build/production/**/*', {'dot': true})
+   //   .pipe(githubPages(options));
+   callback();   
+ }));

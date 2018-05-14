@@ -10,7 +10,6 @@ redirect_from:
   - /2015/09/04/how-to-prove-it-ch-2-sec-1.html
 ---
 
-### Summary
 
 - $$ \forall $$ is used for statements which are true for all possible input values.
 - $$ \exists $$ is used for statements which are true for atleast one input value.
