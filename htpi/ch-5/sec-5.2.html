@@ -11,18 +11,41 @@
 	<script src="http://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			"HTML-CSS": {
+				linebreaks: { automatic: true },
+				scale: 82,
+				styles: {
+					".MathJax_Display": {
+						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
+					},
+					"p .MathJax": { //For inline
+						//"background-color": "#FFFF88",
+						//color:   "#CC0000",
+					}	
+				}
+			},
+			"displayAlign": "left",
+			TeX: { 
+				equationNumbers: { 
+					autoNumber: "AMS" 
+				},
+				Macros: {
+					Exp: "{\\operatorname{\\mathrm{E}}}",
+					Var: "{\\operatorname{\\mathrm{Var}}}",
+					Cov: "{\\operatorname{\\mathrm{Cov}}}",
+					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
+				}
+			}
+		});
+	</script>
 	
 	<script type="text/javascript"
 			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
 	
-	<script>
-		MathJax.Hub.Config({
-			"HTML-CSS": { scale: 84 },
-			"displayAlign": "left",
-			TeX: { equationNumbers: { autoNumber: "AMS" } }
-		});
-	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -1241,8 +1264,16 @@ there exists an <script type="math/tex">x = \frac {y + 1} {y - 1}</script> such 
 <p><strong>(a)</strong> <script type="math/tex">% <![CDATA[
 f(2) = \{y \in \mathbb R \, \vert \, - \sqrt 2 < y < \sqrt 2 \} %]]></script>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">f</script> is not one-to-one because <script type="math/tex">f(-1) = f(-2) = \{ \phi \}</script>. <script type="math/tex">f</script> is onto because for any set <script type="math/tex">y = \{ q \in R \}</script>, if <script type="math/tex">x = 1 + {(\text{largest element of y})}^2</script>,
+<p><strong>(b)</strong> <script type="math/tex">f</script> is not one-to-one because <script type="math/tex">f(-1) = f(-2) = \phi</script>. <script type="math/tex">f</script> is onto because for any set <script type="math/tex">y = \{ q \in R \}</script>, if <script type="math/tex">x = 1 + {(\text{largest element of y})}^2</script>,
 then <script type="math/tex">(x,y) \in f</script>.</p>
+
+<p>Update:</p>
+
+<p>Part(b) of this answer is wrong regarding the onto part(for one-to-one it is correct). Please check <a href="https://math.stackexchange.com/questions/2574301/is-this-function-onto">here</a>.</p>
+
+<p>I define <script type="math/tex">x = 1 + {(\text{largest element of y})}^2</script> By this definition not every pair of <script type="math/tex">(x,y)</script> belongs to <script type="math/tex">f</script> or for same <script type="math/tex">x</script> there can be multiple <script type="math/tex">y</script>.</p>
+
+<p>Now the correct answer(from <a href="https://math.stackexchange.com/questions/2574301/is-this-function-onto">stackoverflow</a>) answer is, if <script type="math/tex">x > 0</script> then <script type="math/tex">f(x) = (- \sqrt x, \sqrt x )</script>. Clearly there are many sets which do not fall in this category for eg: <script type="math/tex">(5, 23) \notin f</script>.</p>
 
 <hr />
 
@@ -1576,6 +1607,7 @@ we prove <script type="math/tex">\forall [f]_S \in \mathcal F / S([s]_S T [f]_S)
  function, thus using part(e) of this solution, it follows that <script type="math/tex">s R f</script>. Thus <script type="math/tex">[f]_S T [s]_S</script>. Since <script type="math/tex">[f]_S</script> is arbitrary, it follows that <script type="math/tex">[s]_S</script> is the smallest element of
 <script type="math/tex">\mathcal F / S</script> in the partial order <script type="math/tex">T</script>.</p>
 
+
                         <hr/>
                     </span>
 
@@ -1648,7 +1680,7 @@ we prove <script type="math/tex">\forall [f]_S \in \mathcal F / S([s]_S T [f]_S)
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2017 inchmeal</li>
+                      <li>&copy;2018 inchmeal</li>
                   </ul>
               </div>
           </section>
@@ -1656,7 +1688,7 @@ we prove <script type="math/tex">\forall [f]_S \in \mathcal F / S([s]_S T [f]_S)
               <div class="column pl0 pr0">
               <ul class="inline-list">
                 
-                  <li><a href="http://twitter.com/ovais_" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
+                  <li><a href="http://twitter.com/0vai5" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
                 
                   <li><a href="http://github.com/0vais" target="_blank" class="icon-github" title="Follow on github"></a></li>
                 

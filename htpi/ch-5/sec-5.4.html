@@ -11,18 +11,41 @@
 	<script src="http://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			"HTML-CSS": {
+				linebreaks: { automatic: true },
+				scale: 82,
+				styles: {
+					".MathJax_Display": {
+						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
+					},
+					"p .MathJax": { //For inline
+						//"background-color": "#FFFF88",
+						//color:   "#CC0000",
+					}	
+				}
+			},
+			"displayAlign": "left",
+			TeX: { 
+				equationNumbers: { 
+					autoNumber: "AMS" 
+				},
+				Macros: {
+					Exp: "{\\operatorname{\\mathrm{E}}}",
+					Var: "{\\operatorname{\\mathrm{Var}}}",
+					Cov: "{\\operatorname{\\mathrm{Cov}}}",
+					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
+				}
+			}
+		});
+	</script>
 	
 	<script type="text/javascript"
 			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
 	
-	<script>
-		MathJax.Hub.Config({
-			"HTML-CSS": { scale: 84 },
-			"displayAlign": "left",
-			TeX: { equationNumbers: { autoNumber: "AMS" } }
-		});
-	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -1178,6 +1201,19 @@ Thus for some <script type="math/tex">x \in X</script>, <script type="math/tex">
 
 <p>No, it is not true. Counter example:</p>
 
+<p>Note: Earlier solution was wrong. Check the comments.</p>
+
+<p>Updated Solution:</p>
+
+<p>Suppose <script type="math/tex">f = \{ (1,a), (2,b), (3,a) \}</script>.   <br />
+<script type="math/tex">W = \{1\}, X = \{2, 3\}</script>.</p>
+
+<p>Clearly <script type="math/tex">W \nsubseteq X</script>.</p>
+
+<p>Now, <script type="math/tex">f(W) = \{a\}</script> and <script type="math/tex">f(X) = \{a, b\}</script>. Clearly <script type="math/tex">f(W) \subseteq f(X)</script> but <script type="math/tex">W \nsubseteq X</script>.</p>
+
+<p>Old(Wrong) Solution:</p>
+
 <p>Suppose <script type="math/tex">f = \{ (1,a), (2,b) \}</script>.   <br />
 <script type="math/tex">W = \{1\}, X = \{ 1, 2\}</script>.</p>
 
@@ -1370,7 +1406,7 @@ that <script type="math/tex">f^{-1}(Y \cup Z) \; = \; f^{-1}(Y) \cup f^{-1}(Z)</
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2017 inchmeal</li>
+                      <li>&copy;2018 inchmeal</li>
                   </ul>
               </div>
           </section>
@@ -1378,7 +1414,7 @@ that <script type="math/tex">f^{-1}(Y \cup Z) \; = \; f^{-1}(Y) \cup f^{-1}(Z)</
               <div class="column pl0 pr0">
               <ul class="inline-list">
                 
-                  <li><a href="http://twitter.com/ovais_" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
+                  <li><a href="http://twitter.com/0vai5" target="_blank" class="icon-twitter" title="Follow on twitter"></a></li>
                 
                   <li><a href="http://github.com/0vais" target="_blank" class="icon-github" title="Follow on github"></a></li>
                 
