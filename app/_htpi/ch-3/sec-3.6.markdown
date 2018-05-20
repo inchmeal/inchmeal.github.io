@@ -52,6 +52,48 @@ Since $$ x $$ is arbitrary, we can conclude that for every value of $$ x $$, $$ 
 
 **Soln2**
 
+**Update**(20th-May-2018)
+
+Earlier solution was incorrect as pointed out by [William][william-sol2]. Here is the fixed version:
+
+------
+
+Suppose $$ P(x) = xy + x - 4 = 4y $$. Then we have to prove $$ \exists ! x \forall y P(x) $$.
+ 
+<u>Existence:</u>
+
+There are two possible cases:
+
+- Case 1: Suppose $$ y = -1 $$. Suppose $$ x = 0 $$. Then $$ xy + x - 4 = -4 $$, and $$ 4y = -4 $$. Thus LHS = RHS, or 
+ $$ xy + x - 4 = 4y $$.
+ 
+- Case 2: Suppose $$ y \ne -1 $$. Suppose $$ x = 4 $$. Then $$ xy + x - 4 = 4y $$. Thus LHS = RHS, or $$ xy + x - 4 = 4y $$.
+
+Thus from both cases we have for any arbitrary $$ y $$, $$ \exists x P(x) $$ is true.
+
+<u>Uniqueness:</u>
+
+Suppose for a value z $$ P(z) $$, then $$ P(z) = zy + z -4 = 4y $$, or $$ z = \frac {4(y+1)} {y+1} $$. Also suppose for a value $$ x $$, 
+$$ P(x) $$. 
+
+For $$\, P(z) \,$$, We have two possible cases:
+
+- Case 1: $$ y = -1 $$. Then we have $$ -z + z - 4 = -4 $$, which says that for any value of $$ z $$, $$ P(z) $$ is true.
+ 
+- Case 2: $$ y \ne 1 $$. Then we have $$ z = \frac {4(y+1)} {y+1} $$, or $$ z = 4 $$.
+
+Thus, case-1 and case-2 *together*, for every value of $$\, y \,$$, $$\, P(z) \,$$ is true when $$\, z = 4 \,$$ .
+
+Similarly, we can see that, for $$\, P(x) \,$$, when $$\, x = 4 \,$$, $$\, P(x) \,$$ is true. 
+
+Thus we have, for any arbitrary $$\, y \,$$,  $$ \forall x \forall z((P(x) \land P(z)) \to x = z) $$.
+
+It follows that $$ \exists ! x \forall y P(x) $$ is true.
+
+------
+
+**Earlier Solution**(with mistakes)
+
 Suppose $$ P(x) = xy + x - 4 = 4y $$. Then we have to prove $$ \forall y \exists ! x P(x) $$. 
  
 <u>Existence:</u>
@@ -382,4 +424,4 @@ Suppose for a value $$ x = z $$ such that $$ z \ne 0 \land z \ne 1 $$, and $$ x^
 sides by $$ \frac 1 {z^2} $$, we get $$ z = 1 $$. Thus it contradicts with the assumption $$ z \ne 1 $$. So we can conclude that $$ 0 $$ and 
 $$ 1 $$ are the only possible values for $$ x $$.
 
-
+[william-sol2]: #comment-3907926637

@@ -321,6 +321,7 @@ Suppose $$ x \in B \setminus (\cup_{i \in I} A_i) $$
 It is equivalent to:     
 $$ \quad = x \in B \land \lnot \exists i \in I (x \in A_i) $$     
 $$ \quad = x \in B \land \forall i \in I (x \notin A_i) $$    
+(Note that $$\, I \ne \phi \,$$)    
 $$ \quad = \forall i \in I (x \in B \land x \notin A_i) $$    
 $$ \quad = \forall i \in I (x \in B \setminus A_i) $$    
 $$ \quad = x \in \cap_{i \in I}(B \setminus A_i) $$    
