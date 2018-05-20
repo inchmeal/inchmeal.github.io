@@ -1184,6 +1184,58 @@ Since <script type="math/tex">x</script> is arbitrary, we can conclude that for 
 
 <p><strong>Soln2</strong></p>
 
+<p><strong>Update</strong>(20th-May-2018)</p>
+
+<p>Earlier solution was incorrect as pointed out by <a href="#comment-3907926637">William</a>. Here is the fixed version:</p>
+
+<hr />
+
+<p>Suppose <script type="math/tex">P(x) = xy + x - 4 = 4y</script>. Then we have to prove <script type="math/tex">\exists ! x \forall y P(x)</script>.</p>
+
+<p><u>Existence:</u></p>
+
+<p>There are two possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: Suppose <script type="math/tex">y = -1</script>. Suppose <script type="math/tex">x = 0</script>. Then <script type="math/tex">xy + x - 4 = -4</script>, and <script type="math/tex">4y = -4</script>. Thus LHS = RHS, or 
+ <script type="math/tex">xy + x - 4 = 4y</script>.</p>
+  </li>
+  <li>
+    <p>Case 2: Suppose <script type="math/tex">y \ne -1</script>. Suppose <script type="math/tex">x = 4</script>. Then <script type="math/tex">xy + x - 4 = 4y</script>. Thus LHS = RHS, or <script type="math/tex">xy + x - 4 = 4y</script>.</p>
+  </li>
+</ul>
+
+<p>Thus from both cases we have for any arbitrary <script type="math/tex">y</script>, <script type="math/tex">\exists x P(x)</script> is true.</p>
+
+<p><u>Uniqueness:</u></p>
+
+<p>Suppose for a value z <script type="math/tex">P(z)</script>, then <script type="math/tex">P(z) = zy + z -4 = 4y</script>, or <script type="math/tex">z = \frac {4(y+1)} {y+1}</script>. Also suppose for a value <script type="math/tex">x</script>, 
+<script type="math/tex">P(x)</script>.</p>
+
+<p>For <script type="math/tex">\, P(z) \,</script>, We have two possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <script type="math/tex">y = -1</script>. Then we have <script type="math/tex">-z + z - 4 = -4</script>, which says that for any value of <script type="math/tex">z</script>, <script type="math/tex">P(z)</script> is true.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">y \ne 1</script>. Then we have <script type="math/tex">z = \frac {4(y+1)} {y+1}</script>, or <script type="math/tex">z = 4</script>.</p>
+  </li>
+</ul>
+
+<p>Thus, case-1 and case-2 <em>together</em>, for every value of <script type="math/tex">\, y \,</script>, <script type="math/tex">\, P(z) \,</script> is true when <script type="math/tex">\, z = 4 \,</script> .</p>
+
+<p>Similarly, we can see that, for <script type="math/tex">\, P(x) \,</script>, when <script type="math/tex">\, x = 4 \,</script>, <script type="math/tex">\, P(x) \,</script> is true.</p>
+
+<p>Thus we have, for any arbitrary <script type="math/tex">\, y \,</script>,  <script type="math/tex">\forall x \forall z((P(x) \land P(z)) \to x = z)</script>.</p>
+
+<p>It follows that <script type="math/tex">\exists ! x \forall y P(x)</script> is true.</p>
+
+<hr />
+
+<p><strong>Earlier Solution</strong>(with mistakes)</p>
+
 <p>Suppose <script type="math/tex">P(x) = xy + x - 4 = 4y</script>. Then we have to prove <script type="math/tex">\forall y \exists ! x P(x)</script>.</p>
 
 <p><u>Existence:</u></p>
