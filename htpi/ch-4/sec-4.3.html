@@ -1428,10 +1428,24 @@ But in the proof, it was wrongly assumed.</p>
 
 <p><strong>(b)</strong></p>
 
+<p>(Update: 3rd June ‘18, Earlier solution contained mistakes. Thanks <a href="http://www.inchmeal.io/htpi/ch-4/sec-4.3.html#comment-3928527919">William</a> for pointing out.)</p>
+
 <p>Counter example:</p>
 
 <p><script type="math/tex">A = \{ 1, 2, 3 \}</script>.  <br />
-<script type="math/tex">R = \{ \{1, 2\}, \{2, 2\} \}</script>.</p>
+<script type="math/tex">R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \}</script>.</p>
+
+<p><script type="math/tex">\{ \{1,2\}, \{2,3\} \} \in S</script>, since <script type="math/tex">1 \in \{1,2\} \land 2 \in \{2,3\}</script> and <script type="math/tex">1 R 2</script>.  <br />
+<script type="math/tex">\{ \{2,3\}, \{1,3\} \} \in S</script>, since <script type="math/tex">3 \in \{2,3\} \land 3 \in \{1,3\}</script> and <script type="math/tex">3 R 3</script>.</p>
+
+<p>But <script type="math/tex">\{ \{1,2\}, \{1,3\} \} \notin S</script>.</p>
+
+<p><strong>Earlier incorrect solution</strong></p>
+
+<p>Counter example:</p>
+
+<p><script type="math/tex">A = \{ 1, 2, 3 \}</script>.  <br />
+<script type="math/tex">R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \}</script>.</p>
 
 <p><script type="math/tex">\{ \{1,2\}, \{2,3\} \} \in S</script>, since <script type="math/tex">1 \in \{1,2\} \land 2 \in \{2,3\}</script> and <script type="math/tex">1 R 2</script>.  <br />
 <script type="math/tex">\{ \{2,3\}, \{1,3\} \} \in S</script>, since <script type="math/tex">2 \in \{2,3\} \land 1 \in \{1,3\}</script> and <script type="math/tex">1 R 2</script>.</p>
@@ -1504,6 +1518,7 @@ or <script type="math/tex">(X \cup \{a\} \cup \{c\}) \setminus \{b\} \in \mathca
  it follows that <script type="math/tex">X \cup \{c\} \in \mathcal F</script>.</p>
 
 <p>Thus from both cases <script type="math/tex">X \cup \{c\} \in \mathcal F</script>.</p>
+
 
                         <hr/>
                     </span>
