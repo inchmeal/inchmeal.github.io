@@ -277,10 +277,24 @@ But in the proof, it was wrongly assumed.
 
 **(b)**
 
+(Update: 3rd June '18, Earlier solution contained mistakes. Thanks [William][william] for pointing out.)
+
 Counter example:
 
 $$ A = \{ 1, 2, 3 \} $$.    
-$$ R = \{ \{1, 2\}, \{2, 2\} \} $$.
+$$ R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \} $$.
+
+$$ \{ \{1,2\}, \{2,3\} \} \in S $$, since $$ 1 \in \{1,2\} \land 2 \in \{2,3\} $$ and $$ 1 R 2 $$.    
+$$ \{ \{2,3\}, \{1,3\} \} \in S $$, since $$ 3 \in \{2,3\} \land 3 \in \{1,3\} $$ and $$ 3 R 3 $$.    
+
+But $$ \{ \{1,2\}, \{1,3\} \} \notin S $$.
+
+**Earlier incorrect solution**
+
+Counter example:
+
+$$ A = \{ 1, 2, 3 \} $$.    
+$$ R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \} $$.
 
 $$ \{ \{1,2\}, \{2,3\} \} \in S $$, since $$ 1 \in \{1,2\} \land 2 \in \{2,3\} $$ and $$ 1 R 2 $$.    
 $$ \{ \{2,3\}, \{1,3\} \} \in S $$, since $$ 2 \in \{2,3\} \land 1 \in \{1,3\} $$ and $$ 1 R 2 $$.    
@@ -353,3 +367,6 @@ or $$ (X \cup \{a\} \cup \{c\}) \setminus \{b\} \in \mathcal F$$.
  it follows that $$ X \cup \{c\} \in \mathcal F $$.
  
 Thus from both cases $$ X \cup \{c\} \in \mathcal F $$.
+
+
+[william]: http://www.inchmeal.io/htpi/ch-4/sec-4.3.html#comment-3928527919

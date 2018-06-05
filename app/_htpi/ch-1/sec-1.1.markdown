@@ -84,7 +84,7 @@ potatoes.
 
 \\( A \\) = Alice is in the room.
 
-\\( B \\) = Alice is in the room.
+\\( B \\) = Bob is in the room.
 
 **(a)** \\( \lnot (A \land B) \\)
 

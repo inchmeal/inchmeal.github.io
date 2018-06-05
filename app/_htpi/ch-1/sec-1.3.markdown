@@ -110,7 +110,7 @@ Update:
 
 As pointed out in comments, I got this wrong first time. Here is the correct answer:
 
-$$ { x ∈ R | x^2 < 25 } $$ or, equivalently $$ |x| < 5 $$.
+$$ \{ x ∈ R \,\vert\, x^2 < 25 \} $$ or, equivalently $$ \,\vert x \vert\, \lt 5 $$. 
 
 Old Answer:
 
