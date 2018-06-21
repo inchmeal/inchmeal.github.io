@@ -1435,29 +1435,29 @@ corresponding rows of “conclusion” must also be true.</li>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">P</th>
+      <th>P</th>
       <th>Q</th>
       <th>P + Q</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">true</td>
+      <td>true</td>
       <td>true</td>
       <td>false</td>
     </tr>
     <tr>
-      <td style="text-align: center">true</td>
+      <td>true</td>
       <td>false</td>
       <td>true</td>
     </tr>
     <tr>
-      <td style="text-align: center">false</td>
+      <td>false</td>
       <td>true</td>
       <td>true</td>
     </tr>
     <tr>
-      <td style="text-align: center">false</td>
+      <td>false</td>
       <td>false</td>
       <td>false</td>
     </tr>
@@ -1466,136 +1466,126 @@ corresponding rows of “conclusion” must also be true.</li>
 
 <p><strong>(b)</strong></p>
 
-<p>We may proceed as follows:</p>
+<p>(Updated 20th June’18: I restructured this solution as per the suggestion from <a href="http://www.inchmeal.io/htpi/ch-1/sec-1.2.html#comment-3954333033">Maxwell</a>)</p>
+
+<p><strong>Approach</strong></p>
+
+<p>Before we proceed for this solution, let’s first come up with an approach to get a desired output for given inputs.</p>
+
+<p>First we note few properties about <script type="math/tex">\, \land \,</script> and <script type="math/tex">\, \lor \,</script> operators:</p>
+
+<ol>
+  <li>We know that \( \land \) gives true only when <strong>all</strong> of its inputs are true. Or returns false only if <strong>any</strong> of the input is false.</li>
+  <li>Also \( \lor \) returns true if <strong>any</strong> of the inputs are true. Or returns false only if <strong>all</strong> of the inputs are false.</li>
+</ol>
+
+<p>We can use the above properties to our advantage.</p>
+
+<p>If we want true we can use <script type="math/tex">\, \land \,</script> and <em>ensure</em> in some way that all of the inputs to <script type="math/tex">\, \land \,</script> are true.</p>
+
+<p>Similarly, if we want false, we can use <script type="math/tex">\, \lor \,</script> and <em>ensure</em> that all of the inputs to <script type="math/tex">\, \lor \,</script> are false.</p>
+
+<p>Consider a simple case:</p>
+
+<p><strong>Suppose we want desired output, say O, to be true</strong> for a given set of inputs, say M and N. Since we want output = true, we will use <script type="math/tex">\, \land \,</script>. To ensure that all the inputs to <script type="math/tex">\, \land \,</script> are true:</p>
+
+<ol>
+  <li>M = true, N = true. We can get the desired output = true, by using <script type="math/tex">\, M \,</script>  and <script type="math/tex">\, N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, M \land N \,</script> . And for any other values of M and N, generated output will be false.</li>
+  <li>M = true, N = false. We can get the desired output = true, by using <script type="math/tex">\, M \,</script>  and <script type="math/tex">\, \lnot N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, M \land \lnot N \,</script>. And for any other values of M and N, output generated will be false.</li>
+  <li>M = false, N = true. We can get the desired output = true, by using <script type="math/tex">\, \lnot M \,</script>  and <script type="math/tex">\, N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, \lnot M \land N \,</script>. And for every other value of M and N, output generated will be false.</li>
+  <li>M = false, N = false. We can get the desired output = true, by using <script type="math/tex">\, \lnot M \,</script>  and <script type="math/tex">\, \lnot N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, \lnot M \land \lnot N \,</script>. And for any other value of M and N, output generated will be false.</li>
+</ol>
+
+<p><strong>Similarly, if we want desired output = false</strong> for a given set of inputs, say M and N. We have to ensure that all the inputs to <script type="math/tex">\, \lor \,</script> are false:</p>
+
+<ol>
+  <li>For M = true, N = true. We can get the desired output = false, by using <script type="math/tex">\, \lnot M \,</script>  and <script type="math/tex">\, \lnot N \,</script>  as inputs to <script type="math/tex">\, \lor \,</script>. Thus we use <script type="math/tex">\, \lnot M \lor \lnot N \,</script>. Thus for any other values of M and N, generated output will be true.</li>
+  <li>… We use <script type="math/tex">\, \lnot M \lor N \,</script></li>
+  <li>… We use <script type="math/tex">\, M \lor \lnot N \,</script></li>
+  <li>… We use <script type="math/tex">\, M \lor N \,</script></li>
+</ol>
+
+<p>Till, now we figured a way to get a desired output for only one possible set of input. What <strong>if we want desired output = true for two possible sets of inputs</strong>, For eg: (i) When M = true and N = true, 
+and (ii) When M = true and N = false?</p>
+
+<p>We can use <script type="math/tex">\, \lor \,</script> to combine the isolated solutions for (i) and (ii) so that we get output = true if either (i) or (ii) is true. Thus we get <script type="math/tex">\, (M \land N) \lor (M \land \lnot N) \,</script>.</p>
+
+<p>In a similar way <strong>if we want desired output = false for two possible sets of inputs</strong>, for eg: (i) and (ii) from above. Since here we want false, we combine isolated solutions of (i) and (ii) using <script type="math/tex">\, \land \,</script>. Thus we get <script type="math/tex">\, (\lnot M \lor \lnot N) \land (\lnot M \lor N) \,</script>.</p>
+
+<p>Thus the above approach suggests that there two alternative(but similar) ways:</p>
 
 <ul>
-  <li>P + Q is true only for two cases, P = true, Q = false and P = false, Q = true.</li>
-  <li>Similarly, P + Q is false only for two cases, P = Q = true anf P = Q = false.</li>
+  <li>Either we focus on generating true as output by using <script type="math/tex">\, \land \,</script> and for multiple possible inputs, we combine the isolated solutions using <script type="math/tex">\, \lor \,</script>.</li>
+  <li>Or we focus on generating false as output by using <script type="math/tex">\, \lor \,</script> and for multiple possible inputs we combine isolated solutions using <script type="math/tex">\, \land \,</script>.</li>
 </ul>
 
-<p>A point to note:</p>
+<p><strong>Applying the above approach</strong></p>
 
-<ul>
-  <li>We know that \( \land \) gives true only when all of its input are true. Or returns false only if any of the input is false.</li>
-  <li>Also \( \lor \) returns true if any of the inputs are true. Or returns false only if all the inputs are false.</li>
-</ul>
-
-<p>We may see that to output a value true/false for a given input, we need to combine the values of input using operators, such that 
-they will result the required the required output only for that input or else there is any change in input it will not return the desired output.</p>
-
-<p>For eg, if we want false for input say P = true, Q = true:</p>
-
-<ul>
-  <li>To fix the values of input such that only for the given combination of input, we get the required result,
-we may use the point when all of the inputs are restricted by the operator.</li>
-  <li>Here we want false as output. We can see from the note above that false output is produced by both operators \( \lor, \land \)
-but only operator \( \lor \) restricts all of the inputs. As \( \land \) returns false if any of the input is false, hence putting
-no restriction on the input.</li>
-  <li>But current values of P and Q will not return false if we combine them with operator \( lor \).</li>
-  <li>Thus to get the required values we may revert the values of input using operator \( \lnot \).</li>
-  <li>So we have \( \lnot P \lor \lnot Q \).</li>
-  <li>Now check that only for the above input P = true, Q = true,  \( \lnot P \lor \lnot Q \) will return the required output false, else 
-it will return true.</li>
-</ul>
-
-<p>Similarly if we want true for input say P = true, Q = false, expression can be \( P \land \lnot Q \).</p>
-
-<p>Thus from above we created a way to form an expression that will result in required output only for the given input and for all other inputs
-it will not return the required output.</p>
-
-<p>Now to get the given set of outputs, for eg. in our case \( P + Q \), we can proceed as:</p>
-
-<ul>
-  <li>From the above method, we can create expression for each row. But we need to combine them such that
- resulting expression gives the required output.</li>
-  <li>To get true/false only in one of row(single row), we can use the our expression of that row as it will return the required output only
- for that row else it will return the opposite of the required output.</li>
-  <li>To get true or false only in the given set of rows(multiple row), we may combine the formula of the corresponding rows such that 
- it returns required output for only these rows else it will not return required output.</li>
-  <li>For eg, in our case, to get false as output, we need to combine formulas of 1st and 4th row such that it returns false for 1st and 4th
- row or else it returns true.</li>
-  <li>Or similarly the opposite eg can be, To get true, we need to combine formulas of 2nd and 3rd row such that it returns true for 2nd and 3rd
- row or else it returns false.</li>
-  <li>Noting again, that, Each row formulae returns the required output only for that row else it return opposite output. We can use this fact to combine the 
- these formulas.</li>
-  <li>To get false only in the required rows, we can combine formulas giving false output by operator \( \land \), than if any of the formulae returns false we will get false.
- Also this combined formula will return true for any other row. This is because all other rows are those rows where each of the formula
- returns true.</li>
-  <li>Similarly to get true only in the required rows, we can combine the formulas giving true output by operator \( \lor \), than if any of the formulae returns true we will get true.
- Also this combined formula will return false for any other row because all other rows are those rows where each of the formulae returns false.</li>
-  <li>Thus we can get the required results either by combining formulas returning true by operator \( \lor \) or combining formulas returning false by operator \( \land \).</li>
-  <li>Thus we can get two formulas will be correct and both will be correct.</li>
-</ul>
-
-<p>From the method outlined, we can see that we have following two formulas:</p>
-
-<ul>
-  <li>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \). This is the resulting formula to get false in 1st row formula \( (\lnot P \lor \lnot Q) \) and 4th row formula \( (P \lor Q) \) and combining them by \( \land \).</li>
-  <li>\( (P \land \lnot Q) \lor (\lnot P \land Q) \). This is the resulting formula to get true in 2nd row formula \( ( P \land \lnot Q) \) and 3rd row formula \( (\lnot P \land Q) \) and combining them by \( \lor \).</li>
-</ul>
-
-<p>Lets create truth table for both formulas:</p>
-
-<p>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \) :</p>
+<p>Let’s first see the truth table again from part(a):</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">\( P \)</th>
-      <th>\( Q \)</th>
-      <th>\( \lnot P \)</th>
-      <th>\( \lnot Q \)</th>
-      <th>\( (\lnot P \lor \lnot Q) \)</th>
-      <th>\( (P \lor Q) \)</th>
-      <th>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \)</th>
+      <th>P</th>
+      <th>Q</th>
+      <th>P + Q</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">true</td>
       <td>true</td>
-      <td>false</td>
-      <td>false</td>
-      <td>false</td>
       <td>true</td>
       <td>false</td>
     </tr>
     <tr>
-      <td style="text-align: center">true</td>
-      <td>false</td>
+      <td>true</td>
       <td>false</td>
       <td>true</td>
-      <td>true</td>
+    </tr>
+    <tr>
+      <td>false</td>
       <td>true</td>
       <td>true</td>
     </tr>
     <tr>
-      <td style="text-align: center">false</td>
-      <td>true</td>
-      <td>true</td>
       <td>false</td>
-      <td>true</td>
-      <td>true</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">false</td>
-      <td>false</td>
-      <td>true</td>
-      <td>true</td>
-      <td>true</td>
       <td>false</td>
       <td>false</td>
     </tr>
   </tbody>
 </table>
 
+<p>We may proceed as follows:</p>
+
+<ul>
+  <li>P + Q is true only for two cases:
+    <ol>
+      <li>P = true and Q = false</li>
+      <li>P = false and Q = true.</li>
+    </ol>
+  </li>
+  <li>Similarly, P + Q is false only for two cases:
+    <ol>
+      <li>P = Q = true</li>
+      <li>P = Q = false</li>
+    </ol>
+  </li>
+</ul>
+
+<p>From the method outlined, we can get two solutions corresponding to the two alternatives we saw above</p>
+<ul>
+  <li>By focusing on generating true, we get \( (P \land \lnot Q) \lor (\lnot P \land Q) \). This is the resulting formula to get output = true in 2nd row  and 3rd row in truth table and false in every other case(1st and 4th row).</li>
+  <li>By focussing on generating false, we get \( (\lnot P \lor \lnot Q) \land (P \lor Q) \). This is the resulting formula to get false in 1st row and 4th row in truth table and true in every other case (2nd and 3rd row).</li>
+</ul>
+
+<p>Let’s create truth table for both expressions:</p>
+
 <p>\( (P \land \lnot Q) \lor (\lnot P \land Q) \) :</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">\( P \)</th>
+      <th>\( P \)</th>
       <th>\( Q \)</th>
       <th>\( \lnot P \)</th>
       <th>\( \lnot Q \)</th>
@@ -1606,7 +1596,7 @@ it will not return the required output.</p>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">true</td>
+      <td>true</td>
       <td>true</td>
       <td>false</td>
       <td>false</td>
@@ -1615,7 +1605,7 @@ it will not return the required output.</p>
       <td>false</td>
     </tr>
     <tr>
-      <td style="text-align: center">true</td>
+      <td>true</td>
       <td>false</td>
       <td>false</td>
       <td>true</td>
@@ -1624,7 +1614,7 @@ it will not return the required output.</p>
       <td>true</td>
     </tr>
     <tr>
-      <td style="text-align: center">false</td>
+      <td>false</td>
       <td>true</td>
       <td>true</td>
       <td>false</td>
@@ -1633,7 +1623,7 @@ it will not return the required output.</p>
       <td>true</td>
     </tr>
     <tr>
-      <td style="text-align: center">false</td>
+      <td>false</td>
       <td>false</td>
       <td>true</td>
       <td>true</td>
@@ -1644,7 +1634,61 @@ it will not return the required output.</p>
   </tbody>
 </table>
 
-<p>As can be seen above both formulas returns the same result.</p>
+<p>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \) :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>\( P \)</th>
+      <th>\( Q \)</th>
+      <th>\( \lnot P \)</th>
+      <th>\( \lnot Q \)</th>
+      <th>\( (\lnot P \lor \lnot Q) \)</th>
+      <th>\( (P \lor Q) \)</th>
+      <th>\( (\lnot P \lor \lnot Q) \land (P \lor Q) \)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As can be seen above both expressions returns the same result.</p>
 
 <hr />
 
@@ -3186,11 +3230,15 @@ it will not return the required output.</p>
 
 <p>Taking negation on both sides, \( \lnot \lnot (P \land Q) = \lnot (\lnot P \lor \lnot Q) \).</p>
 
-<p>Using Double negation law, \( P \land Q = \lnot (\lnot P \lor \lnot Q) \).</p>
+<p>Applying Double negation law:</p>
 
-<p>Using \( P1 = !P, Q1 = !Q \), \( !P1 \land !Q1 = \lnot ( P1 \lor Q1) \).</p>
+<p>\( P \land Q = \lnot (\lnot P \lor \lnot Q) \)</p>
 
-<p>\( \Rightarrow \lnot ( P1 \lor Q1) = !P1 \land !Q1 \). .. which is the required derivation.</p>
+<p>Using \( P1 = \lnot P, Q1 = \lnot Q \), gives:</p>
+
+<p>\( \lnot P1 \land \lnot Q1 = \lnot ( P1 \lor Q1) \)</p>
+
+<p>\( \Rightarrow \lnot ( P1 \lor Q1) = \lnot P1 \land \lnot Q1 \). .. which is the required derivation.</p>
 
 <p><strong>Soln14</strong></p>
 
