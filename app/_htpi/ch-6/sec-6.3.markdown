@@ -687,14 +687,12 @@ Suppose theorem is correct for $$ n $$. Thus $$ {(x+y)}^n = \sum_{k=0}^n {\binom
 For $$ n+1 $$, we have $$ {(x+y)}^{n+1} = (x+y){(x+y)}^n $$. Thus by induction hypothesis:     
 $$ = (x+y)\sum_{k=0}^n {\binom {n} k} x^{n-k}y^k $$      
 $$ = (x+y)( { {\binom {n} {0} }x^{n-0}y^{0} } + { {\binom {n} {1} }x^{n-1}y^{1} } + { {\binom {n} {2} }x^{n-2}y^{2} } + { {\binom {n} {3} }x^{n-3}y^{3} } + \cdot \cdot \cdot + { {\binom {n} {n} }x^{n-n}y^{n} } ) $$       
-$$ = (x+y)( { {\binom {n} {0} }x^{n} } + { {\binom {n} {1} }x^{n-1}y^{1} } + { {\binom {n} {2} }x^{n-2}y^{2} } + { {\binom {n} {3} }x^{n-3}y^{3} } + \cdot \cdot \cdot + { {\binom {n} {n} }y^{n} } ) $$       
+$$ = (x+y)( { {\binom {n} {0} }x^{n} } + { {\binom {n} {1} }x^{n-1}y^{1} } + { {\binom {n} {2} }x^{n-2}y^{2} } + { {\binom {n} {3} }x^{n-3}y^{3} } + \cdot \cdot \cdot + { {\binom {n} {n} }y^{n} } ) $$
+
 Multiplying each term inside by $$ (x+y) $$ and using $$ \binom n 0 = \binom n n = 1 $$,       
-$$ = { x^{n+1} } + { {\binom {n} {0} }x^{n}y{1} } + { {\binom {n} {1} }x^{n}y^{1} } + { {\binom {n} {1} }x^{n-1}y^{2} } + { {\binom {n} {2} }x^{n-1}y^{2} } +{ {\binom {n} {2} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-3}y^{4} } + \cdot \cdot \cdot + { {\binom {n} {n} }x^{1}y^{n} } + { y^{n+1} } $$       
-
-$$ = { x^{n+1} } + ({\binom {n} {0} } + {\binom {n} {1} })x^{n}y^{1} + ({\binom {n} {1} } + {\binom {n} {2} })x^{n-1}y^{2} + ({\binom {n} {2} } + {\binom {n} {3} })x^{n-2}y^{3} + ({\binom {n} {3} } + {\binom {n} {4} })x^{n-3}y^{4} + \cdot \cdot \cdot + ({\binom {n} {n-1} } + {\binom {n} {n} })x^{1}y^{n} + { y^{n+1} } $$         
-
-$$ = { \binom {n+1} {0} }x^{n+1} + {\binom {n+1} {1} }x^{n}y^{1} + {\binom {n+1} {2} }x^{n-1}y^{2} + {\binom {n+1} {3} }x^{n-2}y^{3} + {\binom {n+1} {4} }x^{n-3}y^{4} + \cdot \cdot \cdot + {\binom {n+1} {n} }x^{1}y^{n} + {\binom {n+1} {n+1} }y^{n+1} $$         
-
+$$ = { x^{n+1} } + { {\binom {n} {0} }x^{n}y{1} } + { {\binom {n} {1} }x^{n}y^{1} } + { {\binom {n} {1} }x^{n-1}y^{2} } + { {\binom {n} {2} }x^{n-1}y^{2} } +{ {\binom {n} {2} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-3}y^{4} } + \cdot \cdot \cdot + { {\binom {n} {n} }x^{1}y^{n} } + { y^{n+1} } $$    
+$$\, = { x^{n+1} } + ({\binom {n} {0} } + {\binom {n} {1} })x^{n}y^{1} + ({\binom {n} {1} } + {\binom {n} {2} })x^{n-1}y^{2} + ({\binom {n} {2} } + {\binom {n} {3} })x^{n-2}y^{3} + ({\binom {n} {3} } + {\binom {n} {4} })x^{n-3}y^{4} + \cdot \cdot \cdot + ({\binom {n} {n-1} } + {\binom {n} {n} })x^{1}y^{n} + { y^{n+1} } \,$$    
+$$ = { \binom {n+1} {0} }x^{n+1} + {\binom {n+1} {1} }x^{n}y^{1} + {\binom {n+1} {2} }x^{n-1}y^{2} + {\binom {n+1} {3} }x^{n-2}y^{3} + {\binom {n+1} {4} }x^{n-3}y^{4} + \cdot \cdot \cdot + {\binom {n+1} {n} }x^{1}y^{n} + {\binom {n+1} {n+1} }y^{n+1} $$    
 $$ = \sum_{k=0}^{n+1} {\binom {n+1} k} x^{n+1-k}y^k $$      
 Thus if $$ P(n) $$ is true, then $$ P(n+1) $$ is also true.
  

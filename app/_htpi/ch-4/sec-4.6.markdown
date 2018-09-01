@@ -69,14 +69,18 @@ For $$ \mathcal F = \{ \{1,2,3\} \} $$,  $$ R = \{ (1,1), (2,2), (3,3), (1,2), (
 
 **(b)** It is an equivalence relation. To find equivalence classes, we know that :
 
-- Difference of two rational numbers is always rational.
-- If we have two real numbers such that one is irrational and other number is rational, then their difference will be irrational.
-- If we have two irrational numbers then either their difference can be rational or irrational. But clearly this case will not be a equivalence relation.
+1. Difference of two rational numbers is always rational.
+2. If we have two real numbers such that one is irrational and other number is rational, then their difference will be irrational.
+3. If we have two irrational numbers then either their difference can be rational or irrational.
     
-Thus equivalence classes contains all rational numbers: $$ \{ x \in Q \} $$.    
+From the first two points, the equivalence class is all rational numbers: $$ \{ x \in Q \} $$.    
+
+Now, from the third point which I got wrong earlier(Thanks [William][william-4b] for pointing out. Check his comment for a better desciption), the equivalance classes in this case should be: $$\, \{ [x]_S \; \vert \; x \text{ is irrational } \} \,$$, where $$\, S \,$$ is the given relation.
        
-**(c)** It is an equivalence relation. Its equivalnce classes are: $$ \{[x] \, \vert \, x \in R \} $$, where $$ [x] = \{... x^{-3}, x^{-2}, x^{-1}, x^{0}, x^{1}, x^{2}, x^{3}, ...\} $$.
-   
+**(c)** It is an equivalence relation. Its equivalnce classes are: $$ \{[x] \, \vert \, x \in \mathbb{R} \} $$, where $$ [x] = \{... x \times {10}^{-3}, x \times {10}^{-2}, x \times {10}^{-1}, x \times {10}^{0}, x \times {10}^{1}, x \times {10}^{2}, x \times {10}^{3}, ...\} $$ or equivalently $$\, \{ x \times {10}^z \; \vert \; z \in \mathbb{Z} \} \,$$ 
+
+Thanks [William][william-4c] for pointing out. Earlier I got this wrong: $$ [x] = \{... x^{-3}, x^{-2}, x^{-1}, x^{0}, x^{1}, x^{2}, x^{3}, ...\} $$.
+
 <hr/>
 
 **Soln5**
@@ -791,13 +795,5 @@ Suppose $$ Z \in  \mathcal F \cdot \mathcal G  $$. Thus there exist a set $$ X \
  Thus $$ ( \mathcal F \cdot \mathcal G, \mathcal F) \in R $$ and $$ ( \mathcal F \cdot \mathcal G, \mathcal G ) \in R $$. Thus $$  \mathcal F \cdot \mathcal G $$ is the smallest
  element of the set $$  \{ \mathcal F, \mathcal G \} $$. Thus $$ \mathcal F \cdot \mathcal G  $$ is greatest lower bound of the set $$ \mathcal F \cdot \mathcal G $$.
  
-
- 
-
-
-
-
-
-
-
-
+[william-4b]: http://www.inchmeal.io/htpi/ch-4/sec-4.6.html#comment-3952564441
+[william-4c]: http://www.inchmeal.io/htpi/ch-4/sec-4.6.html#comment-3952574884

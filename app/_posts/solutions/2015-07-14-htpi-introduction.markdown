@@ -95,7 +95,7 @@ Theorem 3 says:
 
 {% include alert mathsInfo="There are infinite prime numbers" %}
 
-Proof of this theorem is done by contradiction. It was shown if \\( m = p_1 \cdot p_2 \cdot p_3 ... p_n \\) where \\( p_1, p_2, p_3 ... p_n \\) are finite(assumption) list of prime numbers. Now it can be seen that \\( m \\) is a prime number which contradicts the assumption of finite prime numbers. 
+Proof of this theorem is done by contradiction. It was shown if \\( m = p_1 \cdot p_2 \cdot p_3 ... p_n + 1 \\) where \\( p_1, p_2, p_3 ... p_n \\) are finite(assumption) list of prime numbers. Now it can be seen that \\( m \\) is a prime number which contradicts the assumption of finite prime numbers. 
 
 *(a)* Use this method to find a prime different from 2, 3, 5, and 7. 
 

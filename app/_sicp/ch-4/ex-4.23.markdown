@@ -41,7 +41,7 @@ In both cases(two expressions or 3 expressions), it will return a lambda procdur
 
 But...
 
-During execution, even if there is no looping, there are still extra invocations of the `lambda` which were not there in Alyssa's version. Does these extra 'lambda' will incur less cost then the looping?
+During execution, even if there is no looping, there are still extra invocations of the `lambda` which were not there in Alyssa's version. Does these extra 'lambda' will incur less cost than the looping?
 
 Initially, I thought that number of `lambda` invocations in book's version is small because we are combining two in `sequentially` but if we look closely(try 4, 5, or more expressions) it becomes clear that number of these `lambda` is always = number of expressions - 1.
 

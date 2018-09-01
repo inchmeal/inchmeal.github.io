@@ -32,17 +32,17 @@ redirect_from:
   
 **(b)** $$ D(x,2) \land D(x,3) \land \lnot D(x, 4) $$ where $$ D(x, y) $$ means $$ x $$ is divisible by $$ y $$.
 
-**(c)** $$ (\lnot P(x) \lor P(y)) \land (P(x) \lor \lnot P(y) $$ where $$ P(x) = \{ x \in \mathbb{N}\,\vert\, x \text{ is prime} \} $$. 
+**(c)** $$ (\lnot P(x) \land P(y)) \lor (P(x) \land \lnot P(y) $$ where $$ P(x) = \{ x \in \mathbb{N}\,\vert\, x \text{ is prime} \} $$. 
   
 <hr/>
 
 **Soln2**
 
-**(a)** $$ M(x) \land M(y) \land (T(x,y), T(y,x)) $$ where $$ M(x) $$ is "x is men", $$ T(x, y) $$ means "x is taller than y".
+**(a)** $$ M(x) \land M(y) \land (T(x,y) \lor T(y,x)) $$ where $$ M(x) $$ is "x is men", $$ T(x, y) $$ means "x is taller than y".
 
-**(b)** $$ [(B(x) \lor B(y)) \land (R(x) \lor R(y)] $$ where $$ B(x)\text{ and }R(x) $$ means "x has brown eyes" nad "x has brown hairs" respectively.
+**(b)** $$ [(B(x) \lor B(y)) \land (R(x) \lor R(y)] $$ where $$ B(x)\text{ and }R(x) $$ means "x has brown eyes" and "x has brown hairs" respectively.
  
-**(c)** $$ [(B(x) \land R(x)) \lor (B(y) \land R(y)] $$ where $$ B(x)\text{ and }R(x) $$ means "x has brown eyes" nad "x has brown hairs" respectively.
+**(c)** $$ [(B(x) \land R(x)) \lor (B(y) \land R(y)] $$ where $$ B(x)\text{ and }R(x) $$ means "x has brown eyes" and "x has brown hairs" respectively.
 
 <hr/>
 
@@ -74,7 +74,7 @@ redirect_from:
 
 **(b)** $$ 4 ∈ \{x ∈ \mathbb{R^+}\vert\,13 − 2x > 1\} \Rightarrow 4 \in \mathbb{R^+} \land 5 > 1$$. No free variables in the statement. Statement is false.
 
-**(c)** $$ 5 \notin \{x ∈ \mathbb{R}\vert\,13 − 2x > c\} \Rightarrow 5 \notin \mathbb{R} \land 3 > c$$. One free variable(c) in the statement.
+**(c)** $$ 5 \notin \{x ∈ \mathbb{R}\vert\,13 − 2x > c\} \Rightarrow \lnot{ \{ 5 \in \mathbb{R} \land 3 > c \}} \Rightarrow 5 \notin \mathbb{R} \lor 3 \le c $$. One free variable(c) in the statement. (Thanks Maxwell for the correction)
 
 <hr/>
 

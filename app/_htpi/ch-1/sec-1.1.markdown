@@ -254,7 +254,7 @@ _Conclusion:_
 
 - Either John is telling the truth or Sam is lying.
 
-It will be difficult to check conclusion by combining premises. Instead we may check when conclusion is true, than whether premise are also true: 
+It will be difficult to check conclusion by combining premises. Instead we may check when conclusion is true, then whether premises are also true: 
 
 Conclusion is true if either:
 
@@ -262,17 +262,17 @@ Conclusion is true if either:
     
     Combining this with (1) \\( \Rightarrow \\) (1) is correct and Bill may be telling truth or lying. 
     
-    - Now if Bill is telling the truth, than from (2) Sam must be lying. Thus no contradictions.
+    - Now if Bill is telling the truth, then from (2) Sam must be lying. Thus no contradictions.
     
-    - Else if Bill is lying than also (2) becomes correct without any contradictions.
+    - Else if Bill is lying then also (2) becomes correct without any contradictions.
     
 - Sam is lying:
     
     Combining this with (2) \\( \Rightarrow \\) (2) is correct and Bill may be telling truth or lying.
     
-    - Bill is lying. than from (1) John must be telling truth. Thus no contradictions.
+    - Bill is lying. then from (1) John must be telling truth. Thus no contradictions.
     
-    - Bill is telling truth. Than (1) becomes correct thus no contradictions. 
+    - Bill is telling truth. Then (1) becomes correct thus no contradictions. 
     
 **(d)** Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy. 
 Therefore, sales and expenses will not both go up.

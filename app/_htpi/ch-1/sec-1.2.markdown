@@ -99,99 +99,110 @@ corresponding rows of "conclusion" must also be true.
 
 **(a)**
 
-|---
-| P | Q | P + Q
-|:-:
-| true | true | false
-| true | false | true
-| false | true | true
-| false | false | false
+|-------|-------|-------|
+| P     | Q     | P + Q |
+|-------|-------|-------|
+| true  | true  | false |
+| true  | false | true  |
+| false | true  | true  |
+| false | false | false |
 
 **(b)**
 
+(Updated 20th June'18: I restructured this solution as per the suggestion from [Maxwell][maxwell-3b])
+
+**Approach**
+
+Before we proceed for this solution, let's first come up with an approach to get a desired output for given inputs.
+
+First we note few properties about $$\, \land \,$$ and $$\, \lor \,$$ operators:
+
+1. We know that \\( \land \\) gives true only when **all** of its inputs are true. Or returns false only if **any** of the input is false.
+2. Also \\( \lor \\) returns true if **any** of the inputs are true. Or returns false only if **all** of the inputs are false.
+
+We can use the above properties to our advantage.
+
+If we want true we can use $$\, \land \,$$ and *ensure* in some way that all of the inputs to $$\, \land \,$$ are true.
+
+Similarly, if we want false, we can use $$\, \lor \,$$ and *ensure* that all of the inputs to $$\, \lor \,$$ are false.
+
+Consider a simple case:
+
+**Suppose we want desired output, say O, to be true** for a given set of inputs, say M and N. Since we want output = true, we will use $$\, \land \,$$. To ensure that all the inputs to $$\, \land \,$$ are true: 
+
+1. M = true, N = true. We can get the desired output = true, by using $$\, M \,$$  and $$\, N \,$$  as inputs to $$\, \land \,$$. Thus we use $$\, M \land N \,$$ . And for any other values of M and N, generated output will be false.
+2. M = true, N = false. We can get the desired output = true, by using $$\, M \,$$  and $$\, \lnot N \,$$  as inputs to $$\, \land \,$$. Thus we use $$\, M \land \lnot N \,$$. And for any other values of M and N, output generated will be false.
+3. M = false, N = true. We can get the desired output = true, by using $$\, \lnot M \,$$  and $$\, N \,$$  as inputs to $$\, \land \,$$. Thus we use $$\, \lnot M \land N \,$$. And for every other value of M and N, output generated will be false.
+4. M = false, N = false. We can get the desired output = true, by using $$\, \lnot M \,$$  and $$\, \lnot N \,$$  as inputs to $$\, \land \,$$. Thus we use $$\, \lnot M \land \lnot N \,$$. And for any other value of M and N, output generated will be false.
+
+**Similarly, if we want desired output = false** for a given set of inputs, say M and N. We have to ensure that all the inputs to $$\, \lor \,$$ are false:
+
+1. For M = true, N = true. We can get the desired output = false, by using $$\, \lnot M \,$$  and $$\, \lnot N \,$$  as inputs to $$\, \lor \,$$. Thus we use $$\, \lnot M \lor \lnot N \,$$. Thus for any other values of M and N, generated output will be true.
+2. ... We use $$\, \lnot M \lor N \,$$ 
+3. ... We use $$\, M \lor \lnot N \,$$ 
+4. ... We use $$\, M \lor N \,$$ 
+
+Till, now we figured a way to get a desired output for only one possible set of input. What **if we want desired output = true for two possible sets of inputs**, For eg: (i) When M = true and N = true, 
+and (ii) When M = true and N = false?
+
+We can use $$\, \lor \,$$ to combine the isolated solutions for (i) and (ii) so that we get output = true if either (i) or (ii) is true. Thus we get $$\, (M \land N) \lor (M \land \lnot N) \,$$.
+
+In a similar way **if we want desired output = false for two possible sets of inputs**, for eg: (i) and (ii) from above. Since here we want false, we combine isolated solutions of (i) and (ii) using $$\, \land \,$$. Thus we get $$\, (\lnot M \lor \lnot N) \land (\lnot M \lor N) \,$$.
+
+Thus the above approach suggests that there two alternative(but similar) ways:
+
+- Either we focus on generating true as output by using $$\, \land \,$$ and for multiple possible inputs, we combine the isolated solutions using $$\, \lor \,$$.
+- Or we focus on generating false as output by using $$\, \lor \,$$ and for multiple possible inputs we combine isolated solutions using $$\, \land \,$$. 
+
+**Applying the above approach**
+
+Let's first see the truth table again from part(a):
+
+|-------|-------|-------|
+| P     | Q     | P + Q |
+|-------|-------|-------|
+| true  | true  | false |
+| true  | false | true  |
+| false | true  | true  |
+| false | false | false |
+
 We may proceed as follows:
 
-   - P + Q is true only for two cases, P = true, Q = false and P = false, Q = true.
-   - Similarly, P + Q is false only for two cases, P = Q = true anf P = Q = false.
+   - P + Q is true only for two cases:
+	   1. P = true and Q = false
+	   2. P = false and Q = true.
+   - Similarly, P + Q is false only for two cases:
+	   1. P = Q = true
+	   2. P = Q = false
     
-A point to note:
+From the method outlined, we can get two solutions corresponding to the two alternatives we saw above
+- By focusing on generating true, we get \\( (P \land \lnot Q) \lor (\lnot P \land Q) \\). This is the resulting formula to get output = true in 2nd row  and 3rd row in truth table and false in every other case(1st and 4th row).
+- By focussing on generating false, we get \\( (\lnot P \lor \lnot Q) \land (P \lor Q) \\). This is the resulting formula to get false in 1st row and 4th row in truth table and true in every other case (2nd and 3rd row).
 
-   - We know that \\( \land \\) gives true only when all of its input are true. Or returns false only if any of the input is false.
-   - Also \\( \lor \\) returns true if any of the inputs are true. Or returns false only if all the inputs are false.
-
-We may see that to output a value true/false for a given input, we need to combine the values of input using operators, such that 
-they will result the required the required output only for that input or else there is any change in input it will not return the desired output.
-   
-For eg, if we want false for input say P = true, Q = true:
-
-   - To fix the values of input such that only for the given combination of input, we get the required result,
-     we may use the point when all of the inputs are restricted by the operator.
-   - Here we want false as output. We can see from the note above that false output is produced by both operators \\( \lor, \land \\)
-     but only operator \\( \lor \\) restricts all of the inputs. As \\( \land \\) returns false if any of the input is false, hence putting
-     no restriction on the input.
-   - But current values of P and Q will not return false if we combine them with operator \\( lor \\).
-   - Thus to get the required values we may revert the values of input using operator \\( \lnot \\).
-   - So we have \\( \lnot P \lor \lnot Q \\). 
-   - Now check that only for the above input P = true, Q = true,  \\( \lnot P \lor \lnot Q \\) will return the required output false, else 
-     it will return true.
-   
-Similarly if we want true for input say P = true, Q = false, expression can be \\( P \land \lnot Q \\).   
-   
-Thus from above we created a way to form an expression that will result in required output only for the given input and for all other inputs
-it will not return the required output.
-
-
-Now to get the given set of outputs, for eg. in our case \\( P + Q \\), we can proceed as:
-
-   - From the above method, we can create expression for each row. But we need to combine them such that
-      resulting expression gives the required output.
-   - To get true/false only in one of row(single row), we can use the our expression of that row as it will return the required output only
-      for that row else it will return the opposite of the required output.
-   - To get true or false only in the given set of rows(multiple row), we may combine the formula of the corresponding rows such that 
-      it returns required output for only these rows else it will not return required output.
-   - For eg, in our case, to get false as output, we need to combine formulas of 1st and 4th row such that it returns false for 1st and 4th
-      row or else it returns true.
-   - Or similarly the opposite eg can be, To get true, we need to combine formulas of 2nd and 3rd row such that it returns true for 2nd and 3rd
-      row or else it returns false.
-   - Noting again, that, Each row formulae returns the required output only for that row else it return opposite output. We can use this fact to combine the 
-      these formulas.
-   - To get false only in the required rows, we can combine formulas giving false output by operator \\( \land \\), than if any of the formulae returns false we will get false.
-      Also this combined formula will return true for any other row. This is because all other rows are those rows where each of the formula
-      returns true.
-   - Similarly to get true only in the required rows, we can combine the formulas giving true output by operator \\( \lor \\), than if any of the formulae returns true we will get true.
-      Also this combined formula will return false for any other row because all other rows are those rows where each of the formulae returns false.
-   - Thus we can get the required results either by combining formulas returning true by operator \\( \lor \\) or combining formulas returning false by operator \\( \land \\).
-   - Thus we can get two formulas will be correct and both will be correct.
-  
-From the method outlined, we can see that we have following two formulas:
-  
-   - \\( (\lnot P \lor \lnot Q) \land (P \lor Q) \\). This is the resulting formula to get false in 1st row formula \\( (\lnot P \lor \lnot Q) \\) and 4th row formula \\( (P \lor Q) \\) and combining them by \\( \land \\).
-   - \\( (P \land \lnot Q) \lor (\lnot P \land Q) \\). This is the resulting formula to get true in 2nd row formula \\( ( P \land \lnot Q) \\) and 3rd row formula \\( (\lnot P \land Q) \\) and combining them by \\( \lor \\).
-
-Lets create truth table for both formulas:
+Let's create truth table for both expressions:
     
-\\( (\lnot P \lor \lnot Q) \land (P \lor Q) \\) : 
-    
-|---
-| \\( P \\) | \\( Q \\) | \\( \lnot P \\) | \\( \lnot Q \\) | \\( (\lnot P \lor \lnot Q) \\) | \\( (P \lor Q) \\) | \\( (\lnot P \lor \lnot Q) \land (P \lor Q) \\)
-|:-:
-| true | true | false | false | false | true | false
-| true | false | false | true | true | true | true
-| false | true | true | false | true | true | true
-| false | false | true | true | true | false | false
-
 \\( (P \land \lnot Q) \lor (\lnot P \land Q) \\) : 
 
-|---
-| \\( P \\) | \\( Q \\) | \\( \lnot P \\) | \\( \lnot Q \\) | \\( ( P \land \lnot Q) \\) | \\( (\lnot P \land Q) \\) | \\( (P \land \lnot Q) \lor (\lnot P \land Q) \\)
-|:-:
-| true | true | false | false | false | false | false
-| true | false | false | true | true | false | true
-| false | true | true | false | false | true | true
-| false | false | true | true | false | false | false
+|-----------|-----------|-----------------|-----------------|----------------------------|---------------------------|--------------------------------------------------|
+| \\( P \\) | \\( Q \\) | \\( \lnot P \\) | \\( \lnot Q \\) | \\( ( P \land \lnot Q) \\) | \\( (\lnot P \land Q) \\) | \\( (P \land \lnot Q) \lor (\lnot P \land Q) \\) |
+|-----------|-----------|-----------------|-----------------|----------------------------|---------------------------|--------------------------------------------------|
+| true      | true      | false           | false           | false                      | false                     | false                                            |
+| true      | false     | false           | true            | true                       | false                     | true                                             |
+| false     | true      | true            | false           | false                      | true                      | true                                             |
+| false     | false     | true            | true            | false                      | false                     | false                                            |
       
 
-As can be seen above both formulas returns the same result.    
+\\( (\lnot P \lor \lnot Q) \land (P \lor Q) \\) : 
+    
+|-----------|-----------|-----------------|-----------------|--------------------------------|--------------------|-------------------------------------------------|
+| \\( P \\) | \\( Q \\) | \\( \lnot P \\) | \\( \lnot Q \\) | \\( (\lnot P \lor \lnot Q) \\) | \\( (P \lor Q) \\) | \\( (\lnot P \lor \lnot Q) \land (P \lor Q) \\) |
+|-----------|-----------|-----------------|-----------------|--------------------------------|--------------------|-------------------------------------------------|
+| true      | true      | false           | false           | false                          | true               | false                                           |
+| true      | false     | false           | true            | true                           | true               | true                                            |
+| false     | true      | true            | false           | true                           | true               | true                                            |
+| false     | false     | true            | true            | true                           | false              | false                                           |
+
+As can be seen above both expressions returns the same result.    
 
 <hr/>
 
@@ -308,7 +319,7 @@ Thus (i), (ii) and (iii) are the desired answers.
 | false | false | true | false | true
 | false | false | false | false | false
 
-When values corresponding to all premises are true, than conclusion is also true. 
+When values corresponding to all premises are true, then conclusion is also true. 
 
 **(b)**
 
@@ -332,23 +343,25 @@ When values corresponding to all premises are true, than conclusion is also true
 | false | false | false | true | false | true | true | true
 | false | false | false | false | false | false | true | true
 
-It can be easily seen that when all premises are true, than also conclusion \\( \lnot (B \land P) \\) is not true.
+It can be easily seen that when all premises are true, then also conclusion \\( \lnot (B \land P) \\) is not true.
  
 **(c)**
- 
+
+Thanks [Maxwell][maxwell-7c] for pointing out. Earlier got the column $$\, J \lor B \,$$ wrong in the table.
+
 |---
-| \\( J \\) | \\( B \\) | \\( S \\) | \\( \lnot B \\) | \\( \lnot S \\) | \\( J \lor \lnot B \\) | \\( \lnot S \lor \lnot B \\) | \\( J \lor \lnot S \\)
+| \\( J \\) | \\( B \\) | \\( S \\) | \\( \lnot B \\) | \\( \lnot S \\) | \\( J \lor B \\) | \\( \lnot S \lor \lnot B \\) | \\( J \lor \lnot S \\)
 | :-:
 | true | true | true | false | false | true | false | true
 | true | true | false | false | true | true | true | true
 | true | false | true | true | false | true | true | true
 | true | false | false | true | true | true | true | true
-| false | true | true | false | false | false | false | false
-| false | true | false | false | true | false | true | true
-| false | false | true | true | false | true | true | false
-| false | false | false | true | true | true | true | true
+| false | true | true | false | false | true | false | false
+| false | true | false | false | true | true | true | true
+| false | false | true | true | false | false | true | false
+| false | false | false | true | true | false | true | true
 
-Thus it can be easily verified when premises are true, than conclusions are also true.
+Thus it can be easily verified when premises are true, then conclusions are also true.
 
 **(d)**
 
@@ -631,11 +644,15 @@ Using Absorption Law: \\( [ P ] \lor ( \lnot R \land Q ) \\)
 
 Taking negation on both sides, \\( \lnot \lnot (P \land Q) = \lnot (\lnot P \lor \lnot Q) \\).
 
-Using Double negation law, \\( P \land Q = \lnot (\lnot P \lor \lnot Q) \\).
+Applying Double negation law:
 
-Using \\( P1 = !P, Q1 = !Q \\), \\( !P1 \land !Q1 = \lnot ( P1 \lor Q1) \\).
+\\( P \land Q = \lnot (\lnot P \lor \lnot Q) \\)      
 
-\\( \Rightarrow \lnot ( P1 \lor Q1) = !P1 \land !Q1 \\). .. which is the required derivation.
+Using \\( P1 = \lnot P, Q1 = \lnot Q \\), gives:
+
+\\( \lnot P1 \land \lnot Q1 = \lnot ( P1 \lor Q1) \\)    
+
+\\( \Rightarrow \lnot ( P1 \lor Q1) = \lnot P1 \land \lnot Q1 \\). .. which is the required derivation.
 
 **Soln14**
 
@@ -684,6 +701,5 @@ We can have two formulas:
      premises will never be true thus .
     
 
-
-
-
+[maxwell-7c]: http://www.inchmeal.io/htpi/ch-1/sec-1.2.html#comment-3953681369
+[maxwell-3b]: http://www.inchmeal.io/htpi/ch-1/sec-1.2.html#comment-3954333033

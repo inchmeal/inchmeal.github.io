@@ -1,22 +1,15 @@
 ---
 layout: page
 section: about
-title: "Inchmeal - About"
+title: "about"
 sitemap:
     priority: 0.8
 ---
-I enjoy doing the following:
 
-* Coding
-* Learning things
-* Thinking
-* Cooking occasionally.
-* Movies
+----
 
-Recently I am interested in learning Mathematics and AI.
+This blog is about my learning and experiences in improving myself to be a better software developer.
 
-I find myself continuously updating/changing my views about things.
+Writing helps me in organizing my thoughts and remember things. Everything that i write here is in the hope that it may be of some help as well as it may lead to a few interesting discussions. So here I am :)
 
-I have relatively strong opinions and I believe in them unless proven otherwise.
-
-I always seek for perfection in most of the things I do. It sometimes helps and sometimes it creates problems for not moving ahead.
+There are no guarantees of anything i post here and perhaps the only possible guarantee is there must be many miskates ;). Please feel free to comment for any mistakes, alternative approaches/ideas or anything related to the context.
