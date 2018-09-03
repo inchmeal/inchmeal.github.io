@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>SICP Solutions</title>
+	<title>SICP - Review</title>
 	<link rel="stylesheet" href="https://www.inchmeal.io/assets/css/styles_inchmeal.css"/>
 	<link rel="alternate" type="application/rss+xml" title="Inchmeal RSS" href="/rss-feed.xml" />
 
@@ -50,7 +50,7 @@
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
 	
-	<meta name="description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
+	<meta name="description" content="Inchmeal | SICP solutions "/>
 
 	
 
@@ -132,9 +132,9 @@
 	<!-- Facebook Optimization -->
 	<meta property="og:locale" content="en_EN" />
 	
-	<meta property="og:title" content="SICP Solutions" />
-	<meta property="og:description" content="Inchmeal | This page contains solutions for Structure and Interpretation of Computer Programs, SICP"/>
-	<meta property="og:url" content="https://www.inchmeal.io//sicp/sample.html" />
+	<meta property="og:title" content="SICP - Review" />
+	<meta property="og:description" content="Inchmeal | SICP solutions "/>
+	<meta property="og:url" content="https://www.inchmeal.io//sicp/review.html" />
 	<meta property="og:site_name" content="inchmeal" />
 	
 
@@ -5335,7 +5335,7 @@
     <div class="medium-8 columns medium-pull-4">
         <div class="row">
             <div class="medium-11 medium-offset-1 columns">
-            <h1><a href="/sicp/index.html" >SICP Solutions</a></h1>
+            <h1><a href="/sicp/index.html" >SICP - Review</a></h1>
             </div>
         </div>
     </div>
@@ -9404,351 +9404,229 @@
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="September 04, 2018" itemprop="datePublished"> September 04, 2018</time>
+                        <time class="post-date pr20" datetime="September 02, 2018" itemprop="datePublished"> September 02, 2018</time>
                     </p>
                     
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <h4 id="racket">Racket</h4>
+                        <p><a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">SICP</a> is one of the most venerable books in computer science, even claimed to be the greatest text in computer science by many. A book which is recommended by the likes of Peter Norvig and Paul Graham, and numerous praises all over the internet.
+<!--more--></p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54</pre></td><td class="code"><pre><span class="p">(</span><span class="k">require</span> <span class="p">(</span><span class="nf">for-syntax</span> <span class="nv">racket/base</span> <span class="nv">racket/list</span> <span class="nv">syntax/name</span><span class="p">)</span>
-         <span class="nv">racket/match</span> <span class="nv">racket/private/arity</span><span class="p">)</span>
+<p>In spite of all this, I heard about this book so late as if I was living under a rock where no sane voices could reach. A few years back when my friend Asif mentioned about this book, my initial thought was - why to spend time on reading a book written in the 90s! After all, what new an introductory book could teach a programmer having about a decade of experience? I could not be more wrong!</p>
 
-<span class="c1">;; ryanc: adjusted limit of inner cases from 8 to 2</span>
-<span class="c1">;; All uses so far seem to be predicates, so more cases seem</span>
-<span class="c1">;; unnecessary. Also, all uses so far are first-order, so</span>
-<span class="c1">;; outer case-lambda* might be better replaced with macro.</span>
+<p>The book turned out to be the greatest exposition of ideas compiled into a single place I had ever encountered. It even raised the bar for me to appreciate any subsequent book. The first three chapters of SICP already covered everything that I knew or had ever heard about in programming so I wondered what possibly could come next? Well, the rabbit hole goes real deep and not only I had the wrong impression of my current knowledge but I didn’t even have the faintest idea of my ignorance.</p>
 
+<p>I loved the writing style of the book - it always felt like reading a philosophical take on programming. Even while reading the implementation details of many programs, it created an impression of reading on a conceptual level rather than getting bogged down in details.</p>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-curry</span> <span class="nv">right?</span><span class="p">)</span>
-  <span class="c1">;; The real code is here</span>
-  <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">curry*</span> <span class="nv">f</span> <span class="nv">args</span> <span class="nv">kws</span> <span class="nv">kvs</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">unless</span> <span class="p">(</span><span class="nb">procedure?</span> <span class="nv">f</span><span class="p">)</span>
-      <span class="p">(</span><span class="nb">raise-argument-error</span> <span class="p">(</span><span class="k">if</span> <span class="nv">right?</span> <span class="ss">'curryr</span> <span class="ss">'curry</span><span class="p">)</span> <span class="s">"procedure?"</span> <span class="nv">f</span><span class="p">))</span>
-    <span class="p">(</span><span class="k">let*</span> <span class="p">([</span><span class="nf">arity</span> <span class="p">(</span><span class="nb">procedure-arity</span> <span class="nv">f</span><span class="p">)]</span>
-           <span class="p">[</span><span class="nf">max-arity</span> <span class="p">(</span><span class="k">cond</span> <span class="p">[(</span><span class="nb">integer?</span> <span class="nv">arity</span><span class="p">)</span> <span class="nv">arity</span><span class="p">]</span>
-                            <span class="p">[(</span><span class="nb">arity-at-least?</span> <span class="nv">arity</span><span class="p">)</span> <span class="no">#f</span><span class="p">]</span>
-                            <span class="p">[(</span><span class="nb">ormap</span> <span class="nv">arity-at-least?</span> <span class="nv">arity</span><span class="p">)</span> <span class="no">#f</span><span class="p">]</span>
-                            <span class="p">[</span><span class="nf">else</span> <span class="p">(</span><span class="nb">apply</span> <span class="nv">max</span> <span class="nv">arity</span><span class="p">)])]</span>
-           <span class="p">[</span><span class="nf">n</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">args</span><span class="p">)])</span>
-      <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">loop</span> <span class="nv">args</span> <span class="nv">n</span><span class="p">)</span>
-        <span class="p">(</span><span class="k">cond</span>
-          <span class="p">[(</span><span class="nb">procedure-arity-includes?</span> <span class="nv">f</span> <span class="nv">n</span><span class="p">)</span>
-           <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">kws</span><span class="p">)</span> <span class="p">(</span><span class="nb">apply</span> <span class="nv">f</span> <span class="nv">args</span><span class="p">)</span> <span class="p">(</span><span class="nf">keyword-apply</span> <span class="nv">f</span> <span class="nv">kws</span> <span class="nv">kvs</span> <span class="nv">args</span><span class="p">))]</span>
-          <span class="p">[(</span><span class="k">and</span> <span class="nv">max-arity</span> <span class="p">(</span><span class="nf">n</span> <span class="o">.</span> <span class="nv">&gt;</span> <span class="o">.</span> <span class="nv">max-arity</span><span class="p">))</span>
-           <span class="p">(</span><span class="nb">apply</span> <span class="nv">raise-arity-error</span> <span class="nv">f</span> <span class="nv">arity</span> <span class="nv">args</span><span class="p">)]</span>
-          <span class="p">[</span><span class="nf">else</span>
-           <span class="p">(</span><span class="k">letrec</span> <span class="p">[(</span><span class="nf">curried</span>
-                     <span class="p">(</span><span class="k">case-lambda</span>
-                       <span class="p">[()</span> <span class="nv">curried</span><span class="p">]</span> <span class="c1">; return itself on zero arguments</span>
-                       <span class="p">[</span><span class="nf">more</span> <span class="p">(</span><span class="nf">loop</span> <span class="p">(</span><span class="k">if</span> <span class="nv">right?</span>
-                                     <span class="p">(</span><span class="nb">append</span> <span class="nv">more</span> <span class="nv">args</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">args</span> <span class="nv">more</span><span class="p">))</span>
-                                   <span class="p">(</span><span class="nb">+</span> <span class="nv">n</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">more</span><span class="p">)))]))]</span>
-             <span class="nv">curried</span><span class="p">)]))</span>
-      <span class="c1">;; take at least one step if we can continue (there is a higher arity)</span>
-      <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">equal?</span> <span class="nv">n</span> <span class="nv">max-arity</span><span class="p">)</span>
-        <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">kws</span><span class="p">)</span> <span class="p">(</span><span class="nb">apply</span> <span class="nv">f</span> <span class="nv">args</span><span class="p">)</span> <span class="p">(</span><span class="nf">keyword-apply</span> <span class="nv">f</span> <span class="nv">kws</span> <span class="nv">kvs</span> <span class="nv">args</span><span class="p">))</span>
-        <span class="p">(</span><span class="k">letrec</span> <span class="p">([</span><span class="nf">curried</span>
-                  <span class="p">(</span><span class="k">lambda</span> <span class="nv">more</span>
-                    <span class="p">(</span><span class="k">let</span> <span class="p">([</span><span class="nf">args</span> <span class="p">(</span><span class="k">if</span> <span class="nv">right?</span>
-                                  <span class="p">(</span><span class="nb">append</span> <span class="nv">more</span> <span class="nv">args</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">args</span> <span class="nv">more</span><span class="p">))])</span>
-                      <span class="p">(</span><span class="nf">loop</span> <span class="nv">args</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">n</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">more</span><span class="p">)))))])</span>
-          <span class="nv">curried</span><span class="p">))))</span>
-  <span class="c1">;; curry is itself curried -- if we get args then they're the first step</span>
-  <span class="p">(</span><span class="k">define</span> <span class="nv">curry</span>
-    <span class="p">(</span><span class="k">case-lambda</span> <span class="p">[(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">curried</span> <span class="o">.</span> <span class="nv">args</span><span class="p">)</span> <span class="p">(</span><span class="nf">curry*</span> <span class="nv">f</span> <span class="nv">args</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">()))</span>
-                      <span class="nv">curried</span><span class="p">]</span>
-                 <span class="p">[(</span><span class="nf">f</span> <span class="o">.</span> <span class="nv">args</span><span class="p">)</span> <span class="p">(</span><span class="nf">curry*</span> <span class="nv">f</span> <span class="nv">args</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">())]))</span>
-  <span class="p">(</span><span class="nf">make-keyword-procedure</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">kws</span> <span class="nv">kvs</span> <span class="nv">f</span> <span class="o">.</span> <span class="nv">args</span><span class="p">)</span> <span class="p">(</span><span class="nf">curry*</span> <span class="nv">f</span> <span class="nv">args</span> <span class="nv">kws</span> <span class="nv">kvs</span><span class="p">))</span>
-                          <span class="nv">curry</span><span class="p">))</span>
+<p>To elaborate on the philosophical part, here’s an opening quote from chapter 3:</p>
 
-<span class="p">(</span><span class="k">define</span> <span class="nv">curry</span>  <span class="p">(</span><span class="nf">make-curry</span> <span class="no">#f</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="nv">curryr</span> <span class="p">(</span><span class="nf">make-curry</span> <span class="no">#t</span><span class="p">))</span>
-                       <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<blockquote>
+  <p>Even while it changes, it stands still.
+<cite>Heraclitus</cite></p>
+</blockquote>
 
-<h4 id="scala">Scala</h4>
+<p>How can something like this relate to programming?</p>
 
-<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></td><td class="code"><pre><span class="cm">/*
- * Copyright (C) 2009-2016 Lightbend Inc. &lt;http://www.lightbend.com&gt;
- */</span>
+<hr />
 
-<span class="k">package</span> <span class="nn">akka.http.impl.engine.server</span>
+<p>Before going further, let me first answer few questions which I had before reading it:</p>
 
-<span class="k">import</span> <span class="nn">java.net.InetSocketAddress</span>
+<h3 id="is-this-book-difficult">Is this book difficult?</h3>
+<p>Yes and No. It depends on the individual and his/her earlier experiences(not necessarily programming) in reading technical books.</p>
 
-<span class="k">import</span> <span class="nn">akka.stream.Attributes</span>
+<p>For me, it was approachable. Neither was it too easy to skim over the pages nor was it too difficult to get stuck on a page for more than a few hours. Few exercises were quite challenging though (for me, ymmv) and sometimes even a single one took my whole day.</p>
 
-<span class="cm">/**
- * INTERNAL API
- * Internally used attributes set in the HTTP pipeline.
- * May potentially be opened up in the future.
- */</span>
-<span class="k">private</span><span class="o">[</span><span class="kt">akka</span><span class="o">]</span> <span class="k">object</span> <span class="nc">HttpAttributes</span> <span class="o">{</span>
-  <span class="k">import</span> <span class="nn">Attributes._</span>
+<h3 id="what-are-the-prerequisites">What are the prerequisites?</h3>
+<p>There is no prerequisite apart from some basic high school math. It can even be read as the first exposure to programming. Although, it can get a bit daunting as that and some prior experience in programming would be helpful.</p>
 
-  <span class="k">private</span><span class="o">[</span><span class="kt">akka</span><span class="o">]</span> <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">RemoteAddress</span><span class="o">(</span><span class="n">address</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">InetSocketAddress</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">Attribute</span>
+<p>If an exercise/example requires some domain knowledge then it is explained in enough detail sufficient for the context.</p>
 
-  <span class="k">private</span><span class="o">[</span><span class="kt">akka</span><span class="o">]</span> <span class="k">def</span> <span class="n">remoteAddress</span><span class="o">(</span><span class="n">address</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">InetSocketAddress</span><span class="o">])</span> <span class="k">=</span>
-    <span class="nc">Attributes</span><span class="o">(</span><span class="nc">RemoteAddress</span><span class="o">(</span><span class="n">address</span><span class="o">))</span>
+<h3 id="should-i-learn-scheme-first">Should I learn <em>scheme</em> first?</h3>
+<p>No. Scheme is a very simple yet powerful language and the authors cover the necessary details as the book proceeds.</p>
 
-<span class="o">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<p>I made this mistake of reading another book for <em>scheme</em> before starting this book. It is not required at all.</p>
 
-<h4 id="java">Java</h4>
+<h3 id="is-the-book-about-functional-programming">Is the book about functional programming?</h3>
+<p>No. I had this wrong impression that it is only about functional programming. Although, I admit that a good amount of the content utilizes functional programming but that’s not the whole story.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileNotFoundException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+<p>This book is about different ideas and paradigms in programming. It is about a contrast of the different approaches in programming. It is about how abstractions play an important role. It is about not being limited to the constructs provided by the available programming languages. It is about creating our own languages. It is about writing interpreters and compilers.</p>
 
-<span class="kn">import</span> <span class="nn">javax.swing.JFileChooser</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.swing.UIManager</span><span class="o">;</span>
+<p>It’s an exhibition of so many ideas bundled together that it might take a lifetime to acquire as many new ideas.</p>
 
+<h3 id="should-i-attempt-this-book-in-another-programming-language">Should I attempt this book in another programming language?</h3>
+<p>I don’t think it is a good idea as in that case one will be dealing with two problems - how to make all the constructs needed in the book in a different language as well as understanding the content.</p>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WordCount</span> <span class="o">{</span>
+<p>I think any language from the Lisp family of programming languages won’t give much trouble. But attempting in statically typed language and/or a language with no FP support can be hard.</p>
 
-    <span class="c1">// allow user to pick file to exam via GUI.</span>
-    <span class="c1">// allow multiple picks</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">countWordsViaGUI</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">setLookAndFeel</span><span class="o">();</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">Scanner</span> <span class="n">key</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-            <span class="k">do</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Opening GUI to choose file."</span><span class="o">);</span>
-                <span class="n">Scanner</span> <span class="n">fileScanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">getFile</span><span class="o">());</span>
-                <span class="n">Stopwatch</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stopwatch</span><span class="o">();</span>
-                <span class="n">st</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-                <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="n">countWordsWithArrayList</span><span class="o">(</span><span class="n">fileScanner</span><span class="o">);</span>
-                <span class="n">st</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"time to count: "</span> <span class="o">+</span> <span class="n">st</span><span class="o">);</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Enter number of words to display: "</span><span class="o">);</span>
-                <span class="kt">int</span> <span class="n">numWordsToShow</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
-                <span class="n">showWords</span><span class="o">(</span><span class="n">words</span><span class="o">,</span> <span class="n">numWordsToShow</span><span class="o">);</span>
-                <span class="n">fileScanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Perform another count? "</span><span class="o">);</span>
-            <span class="o">}</span> <span class="k">while</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">nextLine</span><span class="o">().</span><span class="na">toLowerCase</span><span class="o">().</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">==</span> <span class="sc">'y'</span><span class="o">);</span>
-            <span class="n">key</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="k">catch</span><span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Problem reading the data file. Exiting the program."</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<p>I used racket for the first half of the book and later moved to MIT scheme.</p>
 
-    <span class="c1">// determine distinct words in a file using an array list</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">countWordsWithArrayList</span><span class="o">(</span><span class="n">Scanner</span> <span class="n">fileScanner</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Total number of words: "</span> <span class="o">+</span> <span class="n">numWords</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"number of distincy words: "</span> <span class="o">+</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
-        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-    <span class="o">}</span>
+<h3 id="should-i-attempt-all-exercises">Should I attempt all exercises?</h3>
+<p>The more the better.</p>
 
-<span class="o">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<p>I have written a small summary of the exercises that I found interesting at the bottom of the <a href="https://www.inchmeal.io/sicp/ch-1/notes.html">notes</a> section of each chapter.</p>
 
-<h4 id="haskell">Haskell</h4>
+<h3 id="anything-else-one-should-know">Anything else one should know?</h3>
+<ul>
+  <li>
+    <p>The <a href="https://mitpress.mit.edu/sites/default/files/sicp/code/index.html">source code</a> of all the examples given in the text is available on the MIT website. It was really helpful for the last two chapters. The source code is based on the MIT scheme.</p>
+  </li>
+  <li>
+    <p>There are <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/">video lectures</a> also available for this course as it was taught at MIT. These lectures follow the first edition of the book. Though I have not watched them, I think they can be very helpful.</p>
+  </li>
+  <li>
+    <p>Check out <a href="https://github.com/zv/SICP-guile">sicp-guile</a>. I saw this place when i reached the last chapter. I liked the idea of writing tests so perhaps guile can serve as a good replacement of MIT scheme.</p>
+  </li>
+  <li>
+    <p>The book follows top down approach while explaining concepts. I found this quite helpful but this can sometimes leave us wondering how a particular sub-task will get implemented. Sometimes it helped to first read the whole section without attempting exercises and then re-read again while attempting exercises.</p>
+  </li>
+  <li>
+    <p>In few exercises it is possible to get so lost in details that one can even forget the central idea behind the whole exercise. It is helpful to take a step back and see the whole picture and then re-attempt the exercise.</p>
+  </li>
+  <li>
+    <p>Few sections can take multiple readings to sink in.</p>
+  </li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-haskell" data-lang="haskell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37</pre></td><td class="code"><pre><span class="n">putTodo</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
-<span class="n">putTodo</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span> <span class="o">=</span> <span class="n">putStrLn</span> <span class="p">(</span><span class="n">show</span> <span class="n">n</span> <span class="o">++</span> <span class="s">": "</span> <span class="o">++</span> <span class="n">todo</span><span class="p">)</span>
+<hr />
 
-<span class="n">prompt</span> <span class="o">::</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
-<span class="n">prompt</span> <span class="n">todos</span> <span class="o">=</span> <span class="kr">do</span>
-    <span class="n">putStrLn</span> <span class="s">""</span>
-    <span class="n">putStrLn</span> <span class="s">"Current TODO list:"</span>
-    <span class="n">mapM_</span> <span class="n">putTodo</span> <span class="p">(</span><span class="n">zip</span> <span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="p">]</span> <span class="n">todos</span><span class="p">)</span>
-    <span class="n">command</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
-    <span class="n">interpret</span> <span class="n">command</span> <span class="n">todos</span>
+<h3 id="spoiler-alert">Spoiler alert</h3>
+<p>If you like surprises and don’t want to know too many details of the ideas presented in the book then perhaps just stop here. :)</p>
 
-<span class="n">interpret</span> <span class="o">::</span> <span class="kt">String</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
-<span class="n">interpret</span> <span class="p">(</span><span class="sc">'+'</span><span class="o">:</span><span class="sc">' '</span><span class="o">:</span><span class="n">todo</span><span class="p">)</span> <span class="n">todos</span> <span class="o">=</span> <span class="n">prompt</span> <span class="p">(</span><span class="n">todo</span><span class="o">:</span><span class="n">todos</span><span class="p">)</span>
-<span class="n">interpret</span> <span class="p">(</span><span class="sc">'-'</span><span class="o">:</span><span class="sc">' '</span><span class="o">:</span><span class="n">num</span> <span class="p">)</span> <span class="n">todos</span> <span class="o">=</span>
-    <span class="kr">case</span> <span class="n">delete</span> <span class="p">(</span><span class="n">read</span> <span class="n">num</span><span class="p">)</span> <span class="n">todos</span> <span class="kr">of</span>
-        <span class="kt">Nothing</span> <span class="o">-&gt;</span> <span class="kr">do</span>
-            <span class="n">putStrLn</span> <span class="s">"No TODO entry matches the given number"</span>
-            <span class="n">prompt</span> <span class="n">todos</span>
-        <span class="kt">Just</span> <span class="n">todos'</span> <span class="o">-&gt;</span> <span class="n">prompt</span> <span class="n">todos'</span>
-<span class="n">interpret</span>  <span class="s">"q"</span>           <span class="n">todos</span> <span class="o">=</span> <span class="n">return</span> <span class="nb">()</span>
-<span class="n">interpret</span>  <span class="n">command</span>       <span class="n">todos</span> <span class="o">=</span> <span class="kr">do</span>
-    <span class="n">putStrLn</span> <span class="p">(</span><span class="s">"Invalid command: `"</span> <span class="o">++</span> <span class="n">command</span> <span class="o">++</span> <span class="s">"`"</span><span class="p">)</span>
-    <span class="n">prompt</span> <span class="n">todos</span>
+<p>Of course I won’t be explaining these ideas, just outlining few of them.</p>
 
-<span class="n">delete</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Maybe</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-<span class="n">delete</span> <span class="mi">0</span> <span class="p">(</span><span class="kr">_</span><span class="o">:</span><span class="n">as</span><span class="p">)</span> <span class="o">=</span> <span class="kt">Just</span> <span class="n">as</span>
-<span class="n">delete</span> <span class="n">n</span> <span class="p">(</span><span class="n">a</span><span class="o">:</span><span class="n">as</span><span class="p">)</span> <span class="o">=</span> <span class="kr">do</span>
-    <span class="n">as'</span> <span class="o">&lt;-</span> <span class="n">delete</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="n">as</span>
-    <span class="n">return</span> <span class="p">(</span><span class="n">a</span><span class="o">:</span><span class="n">as'</span><span class="p">)</span>
-<span class="n">delete</span> <span class="kr">_</span>  <span class="kt">[]</span>    <span class="o">=</span> <span class="kt">Nothing</span>
+<h3 id="chapter-1---building-abstraction-with-procedures">Chapter 1 - Building abstraction with procedures</h3>
 
-<span class="n">main</span> <span class="o">=</span> <span class="kr">do</span>
-    <span class="n">putStrLn</span> <span class="s">"Commands:"</span>
-    <span class="n">putStrLn</span> <span class="s">"+ &lt;String&gt; - Add a TODO entry"</span>
-    <span class="n">putStrLn</span> <span class="s">"- &lt;Int&gt;    - Delete the numbered entry"</span>
-    <span class="n">putStrLn</span> <span class="s">"q          - Quit"</span>
-    <span class="n">prompt</span> <span class="kt">[]</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<ul>
+  <li>
+    <p>Combining simple ideas into complex ideas in a programming language. First, it shows three stages/features that <em>scheme</em> offers for combining ideas:</p>
+
+    <ul>
+      <li>Primitive expressions.</li>
+      <li>means of combining expressions.</li>
+      <li>means of building abstraction.</li>
+    </ul>
+
+    <p>Then later in the book, we recognize these exact same features in an entirely different language used for logic programming!</p>
+  </li>
+  <li>
+    <p>Different models of procedure application: Substitution model and Method call. These models are not limited to implementation details but also impacts our reasoning about programs. For example, it is easy to understand an output of a program using the substitution model but requires a more complex mental model to understand the output using the method call approach.</p>
+  </li>
+  <li>
+    <p>Different ways of evaluating procedure arguments: <strong>Normal order evaluation</strong>(lazy evaluation) and <strong>Applicative order evaluation</strong>. Later in the book(chapter-4), we experiment with both ways of evaluation in our own implemented language and compare and contrast between them.</p>
+  </li>
+  <li>
+    <p>Different types of processes generated by recursion - iterative and recursive process. Later in the book(chapters-4, 5), we implement tail call optimization which ensures that recursive <em>procedures</em> generate iterative <em>processes</em>.</p>
+  </li>
+  <li>
+    <p>Procedure as first class member in programming language, higher order procedures and anonymous procedures(lambda).</p>
+  </li>
+</ul>
+
+<h3 id="chapter-2---building-abstractions-with-data">Chapter 2 - Building abstractions with data</h3>
+<ul>
+  <li>
+    <p>Data abstraction - we use procedures for abstraction instead of using classes and objects as common in object oriented languages.</p>
+  </li>
+  <li>
+    <p>We see that data and procedures can be viewed as similar entities. The idea is that any data can be represented by procedure thus diminishing the difference between the two.</p>
+  </li>
+  <li>
+    <p>Stratified design. Decomposing a system in layers where each layer is built on top of another one. The abstractions implemented in the layers below become the primitives in the layers above.</p>
+  </li>
+  <li>
+    <p>Multiple representations of abstract data. This also includes abstractions similar in object oriented languages.</p>
+  </li>
+</ul>
+
+<h3 id="chapter-3---modularity-objects-and-state">Chapter 3 - Modularity, Objects and State</h3>
+<p>This chapter is fundamental in understanding the difficulties in combining the functional and object oriented programming. It illustrates why immutability is important in functional programming and how it conflicts with the main premise of object-oriented programming - that object has a state.</p>
+
+<ul>
+  <li>
+    <p>To implement a modular system, we discuss two worldviews: Object-oriented and stream based. These views differ in their relationship with time where the former is time bound and the latter is timeless.</p>
+  </li>
+  <li>
+    <p>The complexities in imperative programming introduced because of the assignment operator. Example: If an account balance is changed then we say that account has not changed but just the balance but when a number say 5 is changed to 6 we say that it’s a different number!</p>
+  </li>
+  <li>
+    <p>Concurrency - This is not as extensively covered but quite good for an introduction.</p>
+  </li>
+  <li>
+    <p>Streams or <strong>infinite lists</strong> - This was so awesome, so elegant. It makes it so easy to implement the infinite series from mathematics! And of course, streams are not limited to mathematics.</p>
+  </li>
+  <li>
+    <p>We compare the time dependent stateful object oriented systems <em>with</em> time independent stateless stream based systems. Also, why a grand unification of them is yet to emerge.</p>
+  </li>
+</ul>
+
+<h3 id="chapter-4---metalinguistic-abstraction">Chapter 4 - Metalinguistic abstraction</h3>
+<ul>
+  <li>
+    <p>Instead of being limited by the constructs of available programming languages, the trick is to learn the trick - design our own programming language!</p>
+  </li>
+  <li>
+    <p>We implement a scheme evaluator/interpreter in scheme itself!</p>
+  </li>
+  <li>
+    <p>Then we play with our language by introducing new constructs and ideas.</p>
+  </li>
+  <li>
+    <p>We modify our language by adding support for <em>normal order evaluation</em>. We learn how it becomes complicated when mixed with the assignment operator.</p>
+  </li>
+  <li>
+    <p>Mathematics is about “what” and programming is about “how”. Higher-order languages help us to move a bit close to “what” by freeing us from many details of “how”.</p>
+  </li>
+  <li>
+    <p><strong>Nondeterministic computing</strong>. In the spirit of the above idea, we develop higher level construct <strong>amb</strong> in our language for introducing backtracking in the language itself. Till now our program flows only in one direction depending on the program itself but the introduction of <em>amb</em> can make the program to automatically backtrack if some paths in the program lead to dead end. To emphasize, backtracking happens by the evaluator - the program does not explicitly contain code for backtracking.</p>
+  </li>
+  <li>
+    <p><strong>Logic Programming</strong>. Again in the same spirit of higher order language, we then implement a new query language inspired from mathematical logic by having constructs like “and”, “or”, “not” for solving specific kind of problems.</p>
+  </li>
+</ul>
+
+<h3 id="chapter-5---computing-with-register-machines">Chapter 5 - Computing with register machines</h3>
+<p>I found this chapter a bit boring in the beginning but things became really interesting eventually.</p>
+
+<ul>
+  <li>
+    <p>We implement the scheme evaluator built in the previous chapter in machine instructions.</p>
+  </li>
+  <li>
+    <p>We also build a compiler that converts scheme programs into assembly/machine instructions.</p>
+  </li>
+  <li>
+    <p>Compare and contrast evaluator and compiler.</p>
+  </li>
+  <li>
+    <p>Tail call optimization in both evaluator as well as compiler!</p>
+  </li>
+</ul>
+
+<h3 id="exercises-and-solutions">Exercises and solutions</h3>
+<p>They are an integral part of the book. All exercises are very carefully thought out. Read the problem statement carefully. I made this mistake of not reading them carefully and paid the price by wasting many hours.</p>
+
+<p>On a side note, the names of the characters in the exercises were funny. Hi Alyssa P. Hacker :)</p>
+
+<p>Doing SICP exercises also feels like a social acitivity. There are many people who have put their solutions online. It was motivating as well as fun comparing my solution with the others. Of course one should have self discipline to only look at other solutions after trying/implementing on their own. I found the following places helpful:</p>
+
+<ul>
+  <li><a href="http://www.billthelizard.com/2009/10/sicp-challenge.html">Bill the Lizard</a></li>
+  <li><a href="https://eli.thegreenplace.net/tag/sicp">Eli Bendersky</a></li>
+  <li><a href="https://github.com/l0stman/sicp">l0stman</a></li>
+  <li><a href="http://community.schemewiki.org/?SICP-Solutions">Scheme wiki</a></li>
+  <li><a href="https://wizardbook.wordpress.com/solutions-index/">wizardbook</a></li>
+</ul>
+
+<hr />
+
+<p>Wow!!</p>
+
+<p>Even after completing the whole book, I could not believe that so much content can be covered in a single book? No part of the book felt rushed, no part of the book appeared short in explanation</p>
+
+<p>Perhaps this is the only book till now where I can’t think of any criticism! It’s too perfect. I won’t change a single thing. Saying something is perfect is somewhat unsettling. How can it be possible to not have any room for improvement? Perhaps I lack experience and knowledge to criticise such a great work.</p>
+
+<p>Thanks a lot to the authors for writing this wonderful book. As is truely said - it is indeed a wizard book filled with sorceries!</p>
 
 
                         <hr/>
@@ -9769,7 +9647,7 @@
 		
 		var disqus_config = function () {
 		 //this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		 this.page.identifier = "/sicp/sample.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		 this.page.identifier = "/sicp/review.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 		};
 		
 
@@ -9846,7 +9724,7 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_all.js"></script>
 
 <script>
-  var sectionName = "sicp";
+  var sectionName = "";
   
   //google analytics
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

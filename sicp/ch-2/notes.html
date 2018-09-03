@@ -9409,7 +9409,7 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>In the last chapter the goal was to learn build abstraction using procedures. In this we turn our attention for building abstraction by combining data to form compound data.</p>
+                        <p>In the previous chapter the goal was to learn build abstraction using procedures. In this we turn our attention for building abstraction by combining data to form compound data.</p>
 
 <p>Data abstraction is a methodology that enables us to isolate how a compound data object is used from the details of how it is constructed from more primitive data objects.</p>
 
@@ -9629,7 +9629,7 @@ Explanation in book is really nice and I can not captured in small notes. Read S
 
 <h4 id="symbolic-data-sets-and-tree">Symbolic Data, Sets and Tree</h4>
 
-<p>Here we learned that scheme allows the language scheme itself to be manipulated as symbols. For eg: In English language when we want to literally say a word we enclose it in quote. Like “Say ‘your name’” means saying to say ‘your name’ which is defferent than actually respinding by saying your name :)</p>
+<p>Here we learned that scheme allows the language scheme itself to be manipulated as symbols. For eg: In English language when we want to literally say a word we enclose it in quote. Like “Say ‘your name’” means saying to say ‘your name’ which is defferent than actually responding by saying your name :)</p>
 
 <p>Scheme uses single quote as a syntatctic sugar for writing symbols:</p>
 
@@ -9682,7 +9682,7 @@ Explanation in book is really nice and I can not captured in small notes. Read S
   <li>Generic operations with explicit dispatch</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -9723,31 +9723,31 @@ Explanation in book is really nice and I can not captured in small notes. Read S
          <span class="p">(</span><span class="nf">real-part-rectangular</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
         <span class="p">((</span><span class="nf">polar?</span> <span class="nv">z</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">real-part-polar</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
-        <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Unknown type -- REAL-PART"</span> <span class="nv">z</span><span class="p">))))</span>
+        <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown type -- REAL-PART"</span> <span class="nv">z</span><span class="p">))))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">imag-part</span> <span class="nv">z</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nf">rectangular?</span> <span class="nv">z</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">imag-part-rectangular</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
         <span class="p">((</span><span class="nf">polar?</span> <span class="nv">z</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">imag-part-polar</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
-        <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Unknown type -- IMAG-PART"</span> <span class="nv">z</span><span class="p">))))</span>
+        <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown type -- IMAG-PART"</span> <span class="nv">z</span><span class="p">))))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">magnitude</span> <span class="nv">z</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nf">rectangular?</span> <span class="nv">z</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">magnitude-rectangular</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
         <span class="p">((</span><span class="nf">polar?</span> <span class="nv">z</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">magnitude-polar</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
-        <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Unknown type -- MAGNITUDE"</span> <span class="nv">z</span><span class="p">))))</span>
+        <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown type -- MAGNITUDE"</span> <span class="nv">z</span><span class="p">))))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">angle</span> <span class="nv">z</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nf">rectangular?</span> <span class="nv">z</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">angle-rectangular</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
         <span class="p">((</span><span class="nf">polar?</span> <span class="nv">z</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">angle-polar</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
-        <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Unknown type -- ANGLE"</span> <span class="nv">z</span><span class="p">))))</span>
+        <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown type -- ANGLE"</span> <span class="nv">z</span><span class="p">))))</span>
 
 <span class="c1">; generic construction</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-from-real-imag</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">make-from-real-imag-rectangular</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>   <span class="c1">;note that there is one more method make-from-real-imag-polar</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-from-mag-ang</span> <span class="nv">r</span> <span class="nv">a</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">make-from-mag-ang-polar</span> <span class="nv">r</span> <span class="nv">a</span><span class="p">))</span><span class="nv">&lt;Paste&gt;</span>
+  <span class="p">(</span><span class="nf">make-from-mag-ang-polar</span> <span class="nv">r</span> <span class="nv">a</span><span class="p">))</span>
 
 <span class="c1">; In usage</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">add-complex</span> <span class="nv">z1</span> <span class="nv">z2</span><span class="p">)</span>
@@ -9762,9 +9762,9 @@ Also, if there are two separate developers implementing each representation, the
   <li>Data directed</li>
 </ul>
 
-<p>Assume that we have a table(can be hash), where we can store and retirieve using get or put. Note that we stored in hash by passing 3 arguments - operation, operator, procedure and retrieve using operation, and operator. It is not discussed that how this table is implemented. I used hash-table provided by racket for doing exercises.</p>
+<p>Assume that we have a table(can be hash), where we can store and retrieve using get or put. Note that we stored in hash by passing 3 arguments - operation, operator, procedure and retrieve using operation, and operator. It is not discussed that how this table is implemented. I used hash-table provided by racket for doing exercises.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -9880,7 +9880,7 @@ Also, if there are two separate developers implementing each representation, the
     <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">proc</span> <span class="p">(</span><span class="nf">get</span> <span class="nv">op</span> <span class="nv">type-tags</span><span class="p">)))</span>
       <span class="p">(</span><span class="k">if</span> <span class="nv">proc</span>
           <span class="p">(</span><span class="nb">apply</span> <span class="nv">proc</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">contents</span> <span class="nv">args</span><span class="p">))</span>
-          <span class="p">(</span><span class="nb">error</span>
+          <span class="p">(</span><span class="nf">error</span>
             <span class="s">"No method for these types -- APPLY-GENERIC"</span>
             <span class="p">(</span><span class="nb">list</span> <span class="nv">op</span> <span class="nv">type-tags</span><span class="p">))))))</span>
 
@@ -9968,20 +9968,20 @@ This style of programming is called message passing. The name comes from the ima
 
 <h4 id="combining-data-of-different-types">Combining data of different types</h4>
 
-<p>Consider the situation of adding/multiplying two numbers of different types, say a complex by an integer. To accomplish this with our existing tool - data directed approach - we <code class="highlighter-rouge">put</code> add in hashtable as as <code class="highlighter-rouge">(put 'add '(complex scheme-number) &lt;procedure&gt;)</code>. Thus for every operation we want to mix we put the corresponding version in has. Obviously this requires lot of repeated work. One approach to fix this problem is to use <em>coercion</em> i.e. we coerce one type into another - for eg: we can coerce ‘scheme-number into a ‘complex number.</p>
+<p>Consider the situation of adding/multiplying two numbers of different types, say a complex number by an integer. To accomplish this with our existing tool - data directed approach - we <code class="highlighter-rouge">put</code> add in hashtable as <code class="highlighter-rouge">(put 'add '(complex scheme-number) &lt;procedure&gt;)</code>. Thus for every operation we want to mix we put the corresponding version in has. Obviously this requires lot of repeated work. One approach to fix this problem is to use <em>coercion</em> i.e. we coerce one type into another - for eg: we can coerce ‘scheme-number into a ‘complex number.</p>
 
 <p>There are two ways of implementing coercion:</p>
 
 <ul>
   <li>
-    <p>One is to write converters from one type to another. Eg: Writing converter for scheme-number to complex. Now our procedure <code class="highlighter-rouge">apply-generic</code> when fails to find an operation for the given types - tries to convert its arguments using these converters. Thus it also need to be aware of these converters - so we put them in a coercion hash-table using <code class="highlighter-rouge">(put-coercion 'scheme-number 'complex scheme-number-&gt;complex)</code>. Now <code class="highlighter-rouge">apply-generic</code> checks if there are converters and <em>tries</em> all the permutations to check if an operation is defined for that permutation. for eg: it check if ‘add is defined for <code class="highlighter-rouge">(scheme-number complex)</code> and if not found it tries for <code class="highlighter-rouge">(complex scheme-number)</code>.</p>
+    <p>One is to write converters from one type to another. Eg: Writing converter for scheme-number to complex. Now our procedure <code class="highlighter-rouge">apply-generic</code> when fails to find an operation for the given types - tries to convert its arguments using these converters. Thus it also need to be aware of these converters - so we put them in a coercion hash-table using <code class="highlighter-rouge">(put-coercion 'scheme-number 'complex scheme-number-&gt;complex)</code>. Now <code class="highlighter-rouge">apply-generic</code> checks if there are converters and <em>tries all the permutations</em> to check if an operation is defined for that permutation. for eg: it check if ‘add is defined for <code class="highlighter-rouge">(scheme-number complex)</code> and if not found it tries for  <code class="highlighter-rouge">(complex scheme-number)</code>, then <code class="highlighter-rouge">(complex complex)</code> and so on.</p>
   </li>
   <li>
-    <p>The above approach requires to write too many converters. For Eg: If we have integer, rational and complex then we need <script type="math/tex">3 \times 2 = 6</script> converters. Another approach is - To write converter from one lower type to higher type. And then <code class="highlighter-rouge">apply-generic</code> tries to convert recursivley from lower to higher then again to next higher in the type tower. This saves us from writing converters. Also it is more intuitive for some case.</p>
+    <p>The above approach requires to write too many converters. For Eg: If we have integer, rational and complex then we need <script type="math/tex">3 \times 2 = 6</script> converters. Another approach is - To write converter from one lower type to higher type. And then <code class="highlighter-rouge">apply-generic</code> tries to convert recursivley from lower to higher then again to next higher in the type tower. This saves us from writing converters. Also it is more intuitive for some cases.</p>
   </li>
 </ul>
 
-<p>There is one case to consider: Suppose there is an operaton defined only for complex numbers, but we pass rational numbers and thus this operation is invoked after <em>raising</em> our rational numbers into complex numbers. The problem appears when this operation returns a complex number - which migh be something we not expect. One approach is to always sympify the results by checking if the result can be <em>dropped</em> into a lower type without any loss.</p>
+<p>There is one case to consider: Suppose there is an operaton defined only for complex numbers, but we pass rational numbers and thus this operation is invoked after <em>raising</em> our rational numbers into complex numbers. The problem appears when this operation returns a complex number - which might be something we not expect. One approach is to always sympify the results by checking if the result can be <em>dropped</em> into a lower type without any loss.</p>
 
 <p>I felt I actually got these ideas only while working with exercises which reinforces the point that how important it is to work through the exercises. Another note to myself is - sometimes its easy to get lost in a big exercise and to not look at the bigger picture so it is useful to take a step back and reflect on what actually were the main ideas and look for the scope for improvement.</p>
 
