@@ -10,7 +10,7 @@ date: 2017-12-12
 tags: sicp code
 ---
 
-In the last chapter the goal was to learn build abstraction using procedures. In this we turn our attention for building abstraction by combining data to form compound data.
+In the previous chapter the goal was to learn build abstraction using procedures. In this we turn our attention for building abstraction by combining data to form compound data.
 
 Data abstraction is a methodology that enables us to isolate how a compound data object is used from the details of how it is constructed from more primitive data objects.
 
@@ -177,7 +177,7 @@ Stratified design pervades the engineering of complex systems. For example, in c
 
 #### Symbolic Data, Sets and Tree ####
 
-Here we learned that scheme allows the language scheme itself to be manipulated as symbols. For eg: In English language when we want to literally say a word we enclose it in quote. Like "Say 'your name'" means saying to say 'your name' which is defferent than actually respinding by saying your name :)
+Here we learned that scheme allows the language scheme itself to be manipulated as symbols. For eg: In English language when we want to literally say a word we enclose it in quote. Like "Say 'your name'" means saying to say 'your name' which is defferent than actually responding by saying your name :)
 
 Scheme uses single quote as a syntatctic sugar for writing symbols: 
 
@@ -219,7 +219,7 @@ There are **3 approaches** discussed:
 
 - Generic operations with explicit dispatch
 
-{% highlight racket linenos %}
+{% highlight scheme linenos %}
 
 ; generic selectors
 (define (real-part z)
@@ -251,7 +251,7 @@ There are **3 approaches** discussed:
 (define (make-from-real-imag x y)
   (make-from-real-imag-rectangular x y))   ;note that there is one more method make-from-real-imag-polar
 (define (make-from-mag-ang r a)
-  (make-from-mag-ang-polar r a))<Paste>
+  (make-from-mag-ang-polar r a))
 
 ; In usage
 (define (add-complex z1 z2)
@@ -264,9 +264,9 @@ Also, if there are two separate developers implementing each representation, the
 
 - Data directed
 
-Assume that we have a table(can be hash), where we can store and retirieve using get or put. Note that we stored in hash by passing 3 arguments - operation, operator, procedure and retrieve using operation, and operator. It is not discussed that how this table is implemented. I used hash-table provided by racket for doing exercises.
+Assume that we have a table(can be hash), where we can store and retrieve using get or put. Note that we stored in hash by passing 3 arguments - operation, operator, procedure and retrieve using operation, and operator. It is not discussed that how this table is implemented. I used hash-table provided by racket for doing exercises.
 
-{% highlight racket linenos %}
+{% highlight scheme linenos %}
 (define (install-rectangular-package)
   ;; internal procedures
   (define (real-part z) (car z))
@@ -385,15 +385,15 @@ Note that we still have not defined operations to add to numbers of different ki
 
 #### Combining data of different types ####
 
-Consider the situation of adding/multiplying two numbers of different types, say a complex by an integer. To accomplish this with our existing tool - data directed approach - we `put` add in hashtable as as `(put 'add '(complex scheme-number) <procedure>)`. Thus for every operation we want to mix we put the corresponding version in has. Obviously this requires lot of repeated work. One approach to fix this problem is to use *coercion* i.e. we coerce one type into another - for eg: we can coerce 'scheme-number into a 'complex number. 
+Consider the situation of adding/multiplying two numbers of different types, say a complex number by an integer. To accomplish this with our existing tool - data directed approach - we `put` add in hashtable as `(put 'add '(complex scheme-number) <procedure>)`. Thus for every operation we want to mix we put the corresponding version in has. Obviously this requires lot of repeated work. One approach to fix this problem is to use *coercion* i.e. we coerce one type into another - for eg: we can coerce 'scheme-number into a 'complex number. 
 
 There are two ways of implementing coercion:
 
-- One is to write converters from one type to another. Eg: Writing converter for scheme-number to complex. Now our procedure `apply-generic` when fails to find an operation for the given types - tries to convert its arguments using these converters. Thus it also need to be aware of these converters - so we put them in a coercion hash-table using `(put-coercion 'scheme-number 'complex scheme-number->complex)`. Now `apply-generic` checks if there are converters and *tries* all the permutations to check if an operation is defined for that permutation. for eg: it check if 'add is defined for `(scheme-number complex)` and if not found it tries for `(complex scheme-number)`.
+- One is to write converters from one type to another. Eg: Writing converter for scheme-number to complex. Now our procedure `apply-generic` when fails to find an operation for the given types - tries to convert its arguments using these converters. Thus it also need to be aware of these converters - so we put them in a coercion hash-table using `(put-coercion 'scheme-number 'complex scheme-number->complex)`. Now `apply-generic` checks if there are converters and *tries all the permutations* to check if an operation is defined for that permutation. for eg: it check if 'add is defined for `(scheme-number complex)` and if not found it tries for  `(complex scheme-number)`, then `(complex complex)` and so on.
 
-- The above approach requires to write too many converters. For Eg: If we have integer, rational and complex then we need $$ 3 \times 2 = 6 $$ converters. Another approach is - To write converter from one lower type to higher type. And then `apply-generic` tries to convert recursivley from lower to higher then again to next higher in the type tower. This saves us from writing converters. Also it is more intuitive for some case.
+- The above approach requires to write too many converters. For Eg: If we have integer, rational and complex then we need $$ 3 \times 2 = 6 $$ converters. Another approach is - To write converter from one lower type to higher type. And then `apply-generic` tries to convert recursivley from lower to higher then again to next higher in the type tower. This saves us from writing converters. Also it is more intuitive for some cases.
 
-There is one case to consider: Suppose there is an operaton defined only for complex numbers, but we pass rational numbers and thus this operation is invoked after *raising* our rational numbers into complex numbers. The problem appears when this operation returns a complex number - which migh be something we not expect. One approach is to always sympify the results by checking if the result can be *dropped* into a lower type without any loss.
+There is one case to consider: Suppose there is an operaton defined only for complex numbers, but we pass rational numbers and thus this operation is invoked after *raising* our rational numbers into complex numbers. The problem appears when this operation returns a complex number - which might be something we not expect. One approach is to always sympify the results by checking if the result can be *dropped* into a lower type without any loss.
 
 I felt I actually got these ideas only while working with exercises which reinforces the point that how important it is to work through the exercises. Another note to myself is - sometimes its easy to get lost in a big exercise and to not look at the bigger picture so it is useful to take a step back and reflect on what actually were the main ideas and look for the scope for improvement.
 

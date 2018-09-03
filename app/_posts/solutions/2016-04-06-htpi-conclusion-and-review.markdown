@@ -2,7 +2,7 @@
 layout: htpi
 title:  "How To Prove It - Conclusion and Review"
 description: "Inchmeal - Velleman's How to Prove It Conclusion"
-tags: howToProveIt
+tags: howToProveIt book-review
 date: 2016-04-06
 sitemap:
     priority: 0.8

@@ -56,7 +56,7 @@ Note that apart from primitive predicates `<,>,-`, we also have compound predica
 
 #### Procedures ####
 
-Procedures are decomposed analogously to the way we decompose our problem. Its not just simply to divide the procedure into parts but - each procedure is decomposed into identifiable tasks which can be used as *modules* in other procedures. A procedure is in an abstraction for the task it does and the procedures which uses it do not need to know how that task is accompalished.
+Procedures are decomposed analogously to the way we decompose our problem. Its not just simply to divide the procedure into parts but - each procedure is decomposed into identifiable tasks which can be used as *modules* in other procedures. A procedure is in an abstraction for the task it does and the procedures which uses it do not need to know how that task is accomplished.
 
 #### Bound and Free Variables ####
 
@@ -182,7 +182,7 @@ In general, programming languages impose restrictions on the ways in which compu
 - They may be named by variables.
 - They may be passed as arguments to procedures.
 - They may be returned as the results of procedures.
-- They may be included in data structures.65
+- They may be included in data structures.
 
 Lisp, unlike other common programming languages, awards procedures full first-class status. This poses challenges for efficient implementation, but the resulting gain in expressive power is enormous.
 
@@ -190,6 +190,6 @@ Lisp, unlike other common programming languages, awards procedures full first-cl
 
 Fibonacci: 1.13, 1.19
 
-Order of growth: 1.22,1.23, 1.25, 1.26 - a bit tedious but its interesting to see time/space growing as per our found order of growth.
+Order of growth: 1.22,1.23, 1.25, 1.26 - a bit tedious but its interesting to see in practice how time/space is growing compared our analysed order of growth.
 
 Higher Order procedures - accumulate and filter: 1.32, 1.33, 1.37, 1.42, 1.43, 1.46

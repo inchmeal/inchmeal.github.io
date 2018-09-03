@@ -43,7 +43,7 @@ Evaluator needs an environment where it looks for the variables as part of the e
 The new environment contains the parameters bounded to the actual values. Now, each of the expression inside the body of the procedure invoked is evaluated(thus calling eval) in the new environment.
 
 
-Tip: The environment stores the procedure object constructed by 'make-procedure** instead of the expressions list in procedure body. This procedure object internally contains the actual body as well as environment where the preocedure was defined. This procedure object is stored against the name of the procedure so that we can lookup the procedure using this name.
+Tip: The environment stores the procedure object constructed by 'make-procedure' instead of the expressions list in procedure body. This procedure object internally contains the actual body as well as environment where the preocedure was defined. This procedure object is stored against the name of the procedure so that we can lookup the procedure using this name.
 
 **special forms** are implemented directly in the evaluator for eg: to evaluate `(if pred consequent alternate)` we write a specific procedure to evalute `pred` and then based on it outcome we evaluate `consequent` or `alternate`.
 
@@ -190,10 +190,10 @@ Parsing english language section is interesting but can be skipped without losin
 Things get interesting further!
 
 - Mathematics is about "what" as described in first chapter and programming is about "how". Higher order languages helps us to move a bit close to "what" by freeing us from many details of "how"
-- Quoting from book: *Expression oriented languages are based on the "pun" that an expression that describes the value of a function may alos be interpreted as a means of computing that value.* Because of this most programming languages are strongly biased towards unidirectional style(computations with well defined inputs and outputs.)
-- Remember the constraint based program in the book for coverting temperature units - departs from the unidirectional approach. Similarly non-dterministic computing also departs from that approach as each expression can have more than one value and different paths are tried to arrive at a solution. Thus in deterministic programming we are dealing with relations(mathematical relations) rather than single valued functions.
-- Logic programming extends this idea further by combining the relational vision of programming witha powerful kind of symbolic pattern matching called *unification*.
-- This approach is certainly not for every programming but when it works, it can be quite powrful. For example, a single "what is" can solve multiple problems of "how to". Let's say we want to append two lists. We can describe "what is" as:
+- Quoting from book: *Expression oriented languages are based on the "pun" that an expression that describes the value of a function may also be interpreted as a means of computing that value.* Because of this most programming languages are strongly biased towards unidirectional style(computations with well defined inputs and outputs.)
+- Remember the constraint based program in the book for converting temperature units - departs from the unidirectional approach. Similarly non-deterministic computing also departs from that approach as each expression can have more than one value and different paths are tried to arrive at a solution. Thus in non deterministic programming we are dealing with relations(mathematical relations) rather than single valued functions.
+- Logic programming extends this idea further by combining the relational vision of programming with a powerful kind of symbolic pattern matching called *unification*.
+- This approach is certainly not for every programming but when it works, it can be quite powerful. For example, a single "what is" can solve multiple problems of "how to". Let's say we want to append two lists. We can describe "what is" as:
   - An empty list and any other list `y`, append to form `y`.
   - For any `u`, `v`, `y` and `z`, If `v` and `y` append to form `z` then `(cons u v)` and `y` append to form `(cons u z)`.
   - The program will look like:
