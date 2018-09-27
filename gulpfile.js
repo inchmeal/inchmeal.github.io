@@ -18,7 +18,7 @@ var runSequence = require('run-sequence');
 var size = require('gulp-size');
 //var print = require('gulp-print');
 var cleancss = require('gulp-clean-css');
-//var githubPages = require('gulp-gh-pages');
+var githubPages = require('gulp-gh-pages');
 var indexer = require('./lunr_index_builder.js');
 var fs = require('fs');
 var incremental = '--incremental';
@@ -198,7 +198,7 @@ gulp.task('build', gulp.series('delete',
 gulp.task('browsersync', gulp.series('build', function(callback) {
   var config = {
         server: {
-          baseDir: ['build/development', 'build', 'app']
+          baseDir: ['build/development', 'build', '.']
         },
         port: 9999,
         files: [
@@ -375,7 +375,7 @@ gulp.task('deploy', gulp.series('build:production', function(callback){
      "branch": "master"
    }
 	//TODO FIXME as of now gulp-gh-pages is not causing issues of certain dependencies - gulp-util was deprecated but it is using it.
-   //return gulp.src('build/production/**/*', {'dot': true})
-   //   .pipe(githubPages(options));
+   return gulp.src('build/production/**/*', {'dot': true})
+      .pipe(githubPages(options));
    callback();   
  }));

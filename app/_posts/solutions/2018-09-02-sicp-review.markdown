@@ -30,7 +30,7 @@ How can something like this relate to programming?
 Before going further, let me first answer few questions which I had before reading it:
 
 ### Is this book difficult?
-Yes and No. It depends on the individual and his/her earlier experiences(not necessarily programming) in reading technical books.
+Yes and No. It depends on the individual and their earlier experience(not necessarily programming) in reading technical books.
 
 For me, it was approachable. Neither was it too easy to skim over the pages nor was it too difficult to get stuck on a page for more than a few hours. Few exercises were quite challenging though (for me, ymmv) and sometimes even a single one took my whole day.
 
