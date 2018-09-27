@@ -9416,20 +9416,20 @@
                         <hr/>
                         <h4 id="a">(a)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lookup-variable-value</span> <span class="nv">var</span> <span class="nv">env</span><span class="p">)</span>
+7
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lookup-variable-value</span> <span class="nv">var</span> <span class="nv">env</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">pair</span> <span class="p">(</span><span class="nf">find-pair</span> <span class="nv">var</span> <span class="nv">env</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">if</span> <span class="nv">pair</span> 
 		<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">eq?</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">pair</span><span class="p">)</span> <span class="ss">'*unassigned*</span><span class="p">)</span>
 			<span class="p">(</span><span class="nf">error</span> <span class="s">"Variable is unassigned!"</span><span class="p">)</span>
 			<span class="p">(</span><span class="nb">cdr</span> <span class="nv">pair</span><span class="p">))</span>
-		<span class="p">(</span><span class="nf">error</span> <span class="s">"Unbound variable"</span> <span class="nv">var</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="p">(</span><span class="nf">error</span> <span class="s">"Unbound variable"</span> <span class="nv">var</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
@@ -9472,7 +9472,7 @@
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9490,7 +9490,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">scan-out-defines</span> <span class="nv">proc-body</span><span class="p">)</span>
+19
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">scan-out-defines</span> <span class="nv">proc-body</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">result</span>
 		 <span class="p">(</span><span class="nf">fold-right</span>
 		  <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">new</span> <span class="nv">rem</span><span class="p">)</span>
@@ -9508,23 +9509,22 @@
 		  <span class="nv">proc-body</span> <span class="c1">;;return original else infinite loop!</span>
 		  <span class="c1">;;put let in list bec apply expects it a list</span>
 		  <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">make-let</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">result</span><span class="p">)</span>
-						  <span class="p">(</span><span class="nb">cadr</span> <span class="nv">result</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+						  <span class="p">(</span><span class="nb">cadr</span> <span class="nv">result</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="c">(c)</h4>
 
 <p>I think <code class="highlighter-rouge">make-procedure</code> is better place to install it. because if we install it in <code class="highlighter-rouge">procedure-body</code> selector, then it can lead to multiple re-computation every time <code class="highlighter-rouge">procedure-body</code> is accessed. So here goes the installation code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-procedure</span> <span class="nv">parameters</span> <span class="nv">body</span> <span class="nv">env</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">list</span> <span class="ss">'procedure</span> <span class="nv">parameters</span> <span class="p">(</span><span class="nf">scan-out-defines</span> <span class="nv">body</span><span class="p">)</span> <span class="nv">env</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-procedure</span> <span class="nv">parameters</span> <span class="nv">body</span> <span class="nv">env</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">list</span> <span class="ss">'procedure</span> <span class="nv">parameters</span> <span class="p">(</span><span class="nf">scan-out-defines</span> <span class="nv">body</span><span class="p">)</span> <span class="nv">env</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <p><strong>Output:</strong></p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9587,7 +9587,8 @@
 61
 62
 63
-64</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+64
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">dummy</span><span class="p">)</span> <span class="p">(</span><span class="k">define</span> <span class="nv">a</span> <span class="mi">10</span><span class="p">)</span> <span class="nv">a</span> <span class="p">(</span><span class="k">define</span> <span class="nv">b</span> <span class="mi">20</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span>
 
 <span class="c1">;;; M-Eval value:</span>
@@ -9650,8 +9651,7 @@
 
 <span class="c1">;;; M-Eval value:</span>
 <span class="mi">30</span>
-<span class="c1">;;; will return 10 if set!(generated by transform, not to be confused with `(set! a 30)`) were added at the beginning.</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; will return 10 if set!(generated by transform, not to be confused with `(set! a 30)`) were added at the beginning.</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

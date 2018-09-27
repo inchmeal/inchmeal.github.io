@@ -9416,20 +9416,20 @@
                         <hr/>
                         <h4 id="a">(a)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+5
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">meeting</span> <span class="nv">?div</span> <span class="p">(</span><span class="nf">Friday</span> <span class="nv">?time</span><span class="p">))</span>
 
 <span class="c1">;;; Query results:</span>
-<span class="p">(</span><span class="nf">meeting</span> <span class="nv">administration</span> <span class="p">(</span><span class="nf">friday</span> <span class="mi">1</span><span class="nv">pm</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">meeting</span> <span class="nv">administration</span> <span class="p">(</span><span class="nf">friday</span> <span class="mi">1</span><span class="nv">pm</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9437,7 +9437,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+9
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">meeting-time</span> <span class="nv">?person</span> <span class="nv">?day-and-time</span><span class="p">)</span>
 			   <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">meeting</span> <span class="nv">whole-company</span> <span class="nv">?day-and-time</span><span class="p">)</span>
 				   <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">job</span> <span class="nv">?person</span> <span class="p">(</span><span class="nf">?div</span> <span class="o">.</span> <span class="nv">?sub</span><span class="p">))</span>
@@ -9445,27 +9446,26 @@
 
 <span class="nv">Assertion</span> <span class="nv">added</span> <span class="nv">to</span> <span class="nv">data</span> <span class="nv">base</span><span class="o">.</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="c">(c)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+8
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">meeting-time</span> <span class="p">(</span><span class="nf">Hacker</span> <span class="nv">Alyssa</span> <span class="nv">P</span><span class="p">)</span> <span class="p">(</span><span class="nf">Wednesday</span> <span class="nv">?time</span><span class="p">))</span>
 
 <span class="c1">;;; Query results:</span>
 <span class="p">(</span><span class="nf">meeting-time</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">wednesday</span> <span class="mi">4</span><span class="nv">pm</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">meeting-time</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">wednesday</span> <span class="mi">3</span><span class="nv">pm</span><span class="p">))</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

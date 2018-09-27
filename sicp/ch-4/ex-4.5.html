@@ -9422,7 +9422,7 @@
 
 <p>(Change the eval to use <code class="highlighter-rouge">eval-cond</code> instead of converting to if)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9455,7 +9455,8 @@
 31
 32
 33
-34</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">eval-cond</span> <span class="nv">exp</span> <span class="nv">env</span><span class="p">)</span>
+34
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">eval-cond</span> <span class="nv">exp</span> <span class="nv">env</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">clauses</span><span class="p">)</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">clauses</span><span class="p">)</span>
 		<span class="nv">false</span>
@@ -9488,14 +9489,13 @@
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">recp</span> <span class="p">(</span><span class="nb">cddr</span> <span class="nv">clause</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">last-exp?</span> <span class="nv">recp</span><span class="p">)</span>
 		<span class="p">(</span><span class="nf">first-exp</span> <span class="nv">recp</span><span class="p">)</span>
-		<span class="p">(</span><span class="nf">error</span> <span class="s">"recipient can not have multiple expressions"</span> <span class="nv">clause</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="p">(</span><span class="nf">error</span> <span class="s">"recipient can not have multiple expressions"</span> <span class="nv">clause</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that I added <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">cadr</code>, <code class="highlighter-rouge">cddr</code>, <code class="highlighter-rouge">assoc</code> also in the list of primitive procedures in the evaluator.</p>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9537,7 +9537,8 @@
 40
 41
 42
-43</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+43
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">5</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="mi">100</span><span class="p">))))</span>
 
 <span class="c1">;;; M-Eval value:</span>
@@ -9579,14 +9580,13 @@
 <span class="c1">;;; M-Eval value:</span>
 <span class="mi">1</span>
 
-<span class="c1">;;; M-Eval input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; M-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <h4 id="complete-code">Complete Code</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10023,7 +10023,8 @@
 435
 436
 437
-438</pre></td><td class="code"><pre><span class="c1">;;;;METACIRCULAR EVALUATOR FROM CHAPTER 4 (SECTIONS 4.1.1-4.1.4) of</span>
+438
+</pre></td><td class="code"><pre><span class="c1">;;;;METACIRCULAR EVALUATOR FROM CHAPTER 4 (SECTIONS 4.1.1-4.1.4) of</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm</span>
@@ -10460,8 +10461,7 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">the-global-environment</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
 
-<span class="ss">'METACIRCULAR-EVALUATOR-LOADED</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="ss">'METACIRCULAR-EVALUATOR-LOADED</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

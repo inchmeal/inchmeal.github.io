@@ -9424,22 +9424,22 @@
 
 <p>Here is my solution, which is slightly modified version of <em>meteorgan</em>’s solution:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">a-pythagorean-triple-from</span> <span class="nv">low</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">a-pythagorean-triple-from</span> <span class="nv">low</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">k</span> <span class="p">(</span><span class="nf">an-integer-starting-from</span> <span class="nv">low</span><span class="p">)))</span>
     <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">j</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">low</span> <span class="nv">k</span><span class="p">)))</span>
       <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">i</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">low</span> <span class="nv">j</span><span class="p">)))</span>
         <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">i</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">j</span> <span class="nv">j</span><span class="p">))</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">k</span> <span class="nv">k</span><span class="p">)))</span>
-        <span class="p">(</span><span class="nb">list</span> <span class="nv">i</span> <span class="nv">j</span> <span class="nv">k</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+        <span class="p">(</span><span class="nb">list</span> <span class="nv">i</span> <span class="nv">j</span> <span class="nv">k</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9464,7 +9464,8 @@
 23
 24
 25
-26</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+26
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="nf">a-pythagorean-triple-from</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;;; Starting a new problem </span>
@@ -9489,8 +9490,7 @@
 <span class="c1">;;; Amb-Eval value:</span>
 <span class="p">(</span><span class="nf">9</span> <span class="mi">12</span> <span class="mi">15</span><span class="p">)</span>
 
-<span class="c1">;;; Amb-Eval input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Amb-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I noticed that the first triplet generated from this version took less time than the first triplet in the previous version(with 1 and 100 as inputs). This is because in this solution, there are fewer elements in the third list compared to the previous solution and thus it exhausts faster.</p>
 

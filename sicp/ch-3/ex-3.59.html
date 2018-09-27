@@ -9420,7 +9420,7 @@
 
 <p>Code for both parts:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9432,7 +9432,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">integrate-series</span> <span class="nv">s</span><span class="p">)</span>
+13
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">integrate-series</span> <span class="nv">s</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">/</span> <span class="nv">s</span> <span class="nv">integers</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">exp-series</span>
@@ -9444,12 +9445,11 @@
 			   <span class="p">(</span><span class="nf">integrate-series</span> <span class="nv">cosine-series</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">cosine-series</span>
   <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span>
-			   <span class="p">(</span><span class="nf">integrate-series</span> <span class="p">(</span><span class="nf">scale-stream</span> <span class="nv">sine-series</span> <span class="mi">-1</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nf">integrate-series</span> <span class="p">(</span><span class="nf">scale-stream</span> <span class="nv">sine-series</span> <span class="mi">-1</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9486,45 +9486,45 @@
 35
 36
 37
-38</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">0</span><span class="p">)</span>
+38
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: memo-proc</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: 1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: 1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: 1/2</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1">;Value: 1/6</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">exp-series</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: 1/24</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">0</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: 0</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: 1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: 0</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">sine-series</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1">;Value: -1/6</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: -1/6</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

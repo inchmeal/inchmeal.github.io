@@ -9417,7 +9417,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9440,7 +9440,8 @@
 21
 22
 23
-24</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+24
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">cc</span> <span class="nv">amount</span> <span class="nv">coin-values</span><span class="p">)</span>
     <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">=</span> <span class="nv">amount</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">1</span><span class="p">)</span>
@@ -9463,8 +9464,7 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">except-first-denomination</span> <span class="nv">cdr</span><span class="p">)</span>
   
-<span class="p">(</span><span class="k">define</span> <span class="nv">no-more?</span> <span class="nv">null?</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="nv">no-more?</span> <span class="nv">null?</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Order of coins does not matter. If order of coin had any role then they should have also effected to the original solution which does
 not use list because there also <code class="highlighter-rouge">first-denomination</code> returns value of coin corresponding to a number.</p>

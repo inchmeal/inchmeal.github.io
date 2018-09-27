@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>We just need to add the following in polynomial package:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9426,7 +9426,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">=is-zero?</span> <span class="nv">poly</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">=is-zero?</span> <span class="nv">poly</span><span class="p">)</span>
     <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">terms</span> <span class="p">(</span><span class="nf">term-list</span> <span class="nv">poly</span><span class="p">)))</span>
          <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">empty-termlist?</span> <span class="nv">terms</span><span class="p">)</span>
 		     <span class="no">#t</span>
@@ -9434,12 +9435,11 @@
          <span class="p">)</span>
     <span class="p">)</span>
 <span class="p">)</span>
-<span class="p">(</span><span class="nf">put</span> <span class="ss">'=zero?</span> <span class="o">'</span><span class="p">(</span><span class="nf">polynomial</span><span class="p">)</span> <span class="nv">=is-zero?</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">put</span> <span class="ss">'=zero?</span> <span class="o">'</span><span class="p">(</span><span class="nf">polynomial</span><span class="p">)</span> <span class="nv">=is-zero?</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I used ‘list-and’ here. There have been many times, I felt its need in earlier exercises too. The <code class="highlighter-rouge">list-and</code> returns true checks if all the elements passed to it returns true on applying proc. Here is the code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9456,7 +9456,8 @@
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-and</span> <span class="nv">proc</span> <span class="nv">list</span><span class="p">)</span>
+18
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-and</span> <span class="nv">proc</span> <span class="nv">list</span><span class="p">)</span>
     <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">list</span><span class="p">)</span>
         <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">list</span><span class="p">)</span>
             <span class="no">#t</span>
@@ -9473,8 +9474,7 @@
           <span class="p">((</span><span class="nb">not</span> <span class="p">(</span><span class="nb">pair?</span> <span class="nv">list</span><span class="p">))</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Operation works only for lists"</span><span class="p">))</span>
           <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">list</span><span class="p">))</span>
     <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

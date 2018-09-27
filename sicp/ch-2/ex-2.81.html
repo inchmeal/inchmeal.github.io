@@ -9425,7 +9425,7 @@
 
 <p><strong>(c)</strong></p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9458,7 +9458,8 @@
 31
 32
 33
-34</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="nv">op</span> <span class="o">.</span> <span class="nv">args</span><span class="p">)</span>
+34
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="nv">op</span> <span class="o">.</span> <span class="nv">args</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">type-tags</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">type-tag</span> <span class="nv">args</span><span class="p">)))</span>
     <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">proc</span> <span class="p">(</span><span class="nf">get</span> <span class="nv">op</span> <span class="nv">type-tags</span><span class="p">)))</span>
       <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">proc</span><span class="p">))</span>
@@ -9491,25 +9492,24 @@
        <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span>        <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>        </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Test/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">exp</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">))</span>
+5
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">exp</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">))</span>
 <span class="o">.</span> <span class="o">.</span> <span class="nv">No</span> <span class="nv">method</span> <span class="nv">for</span> <span class="nv">these</span> <span class="nv">*same*</span> <span class="nv">types</span> <span class="p">{</span><span class="nb">exp</span> <span class="p">{</span><span class="nf">complex</span> <span class="nv">complex</span><span class="p">}}</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">exp</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">3</span><span class="p">))</span>
 <span class="mi">8</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here is the complete code, with the changes suggested in exercise:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9790,7 +9790,8 @@
 279
 280
 281
-282</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+282
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -10071,8 +10072,7 @@
 <span class="p">(</span><span class="nf">install-polar-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-rational-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

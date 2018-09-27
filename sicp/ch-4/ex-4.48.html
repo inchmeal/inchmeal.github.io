@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Compound sentences using conjunctions:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9429,7 +9429,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">conjunctions</span> <span class="o">'</span><span class="p">(</span><span class="nf">conj</span> <span class="nv">and</span> <span class="nv">or</span> <span class="nv">but</span> <span class="nv">yet</span><span class="p">))</span>
+14
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">conjunctions</span> <span class="o">'</span><span class="p">(</span><span class="nf">conj</span> <span class="nv">and</span> <span class="nv">or</span> <span class="nv">but</span> <span class="nv">yet</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">parse-sentence</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">maybe-extend</span> <span class="nv">sentence</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">amb</span> <span class="nv">sentence</span>
@@ -9442,12 +9443,11 @@
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">parse-simple-sentence</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">list</span> <span class="ss">'sentence</span>
          <span class="p">(</span><span class="nf">parse-noun-phrase</span><span class="p">)</span>
-         <span class="p">(</span><span class="nf">parse-verb-phrase</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+         <span class="p">(</span><span class="nf">parse-verb-phrase</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9466,7 +9466,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+20
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="nf">parse</span> <span class="o">'</span><span class="p">(</span><span class="nf">the</span> <span class="nv">professor</span> <span class="nv">lectures</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">student</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">cat</span> <span class="nv">sleeps</span> <span class="nv">but</span> <span class="nv">the</span> <span class="nv">student</span> <span class="nv">studies</span><span class="p">))</span>
 
 <span class="c1">;;; Starting a new problem </span>
@@ -9485,8 +9486,7 @@
    <span class="p">(</span><span class="nf">simple-noun-phrase</span> <span class="p">(</span><span class="nf">article</span> <span class="nv">the</span><span class="p">)</span> <span class="p">(</span><span class="nf">noun</span> <span class="nv">cat</span><span class="p">))</span> <span class="p">(</span><span class="nf">verb</span> <span class="nv">sleeps</span><span class="p">)))</span>
  <span class="p">(</span><span class="nf">conj</span> <span class="nv">but</span><span class="p">)</span>
  <span class="p">(</span><span class="nf">sentence</span>
-  <span class="p">(</span><span class="nf">simple-noun-phrase</span> <span class="p">(</span><span class="nf">article</span> <span class="nv">the</span><span class="p">)</span> <span class="p">(</span><span class="nf">noun</span> <span class="nv">student</span><span class="p">))</span> <span class="p">(</span><span class="nf">verb</span> <span class="nv">studies</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">simple-noun-phrase</span> <span class="p">(</span><span class="nf">article</span> <span class="nv">the</span><span class="p">)</span> <span class="p">(</span><span class="nf">noun</span> <span class="nv">student</span><span class="p">))</span> <span class="p">(</span><span class="nf">verb</span> <span class="nv">studies</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

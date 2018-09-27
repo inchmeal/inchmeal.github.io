@@ -9420,115 +9420,7 @@
 
 <p>(Used nested lets as in previous exercise to narrow down the possibilities)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">yacht-puzzle</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lorna-yacht-owner</span> <span class="ss">'moore</span><span class="p">)</span>
-        <span class="p">(</span><span class="nf">gabrielle-yacht-owner</span> <span class="ss">'barnacle</span><span class="p">)</span>
-        <span class="p">(</span><span class="nf">rosalind-yacht-owner</span> <span class="ss">'hall</span><span class="p">)</span>
-        <span class="p">(</span><span class="nf">melissa-yacht-owner</span> <span class="ss">'downing</span><span class="p">)</span>
-        <span class="p">(</span><span class="nf">melissa-father</span> <span class="ss">'barnacle</span><span class="p">)</span>
-        <span class="p">(</span><span class="nf">mary-father</span> <span class="ss">'moore</span><span class="p">)</span>
-        <span class="p">(</span><span class="nf">mary-yacht-owner</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">lorna-yacht-owner</span>
-                              <span class="nv">gabrielle-yacht-owner</span>
-                              <span class="nv">rosalind-yacht-owner</span>
-                              <span class="nv">melissa-yacht-owner</span>
-                              <span class="nv">mary-yacht-owner</span><span class="p">)))</span>
-	<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">mary-yacht-owner</span> <span class="nv">mary-father</span><span class="p">)))</span>
-
-	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">gabrielle-father</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
-	  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">melissa-father</span> <span class="nv">mary-father</span> <span class="nv">gabrielle-father</span><span class="p">)))</span>
-	  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">gabrielle-father</span> <span class="nv">gabrielle-yacht-owner</span><span class="p">)))</span>
-
-	  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">rosalind-father</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
-		<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">melissa-father</span> <span class="nv">mary-father</span> <span class="nv">gabrielle-father</span> <span class="nv">rosalind-father</span><span class="p">)))</span>
-		<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">rosalind-father</span> <span class="nv">rosalind-yacht-owner</span><span class="p">)))</span>
-
-		<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lorna-father</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
-		  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">melissa-father</span> <span class="nv">mary-father</span> <span class="nv">gabrielle-father</span> <span class="nv">rosalind-father</span> <span class="nv">lorna-father</span><span class="p">)))</span>
-		  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">lorna-father</span> <span class="nv">lorna-yacht-owner</span><span class="p">)))</span>
-
-		   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lorna</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">lorna-father</span> <span class="nv">lorna-yacht-owner</span><span class="p">))</span>
-				 <span class="p">(</span><span class="nf">gabrielle</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">gabrielle-father</span> <span class="nv">gabrielle-yacht-owner</span><span class="p">))</span>
-				 <span class="p">(</span><span class="nf">rosalind</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">rosalind-father</span> <span class="nv">rosalind-yacht-owner</span><span class="p">))</span>
-				 <span class="p">(</span><span class="nf">melissa</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">melissa-father</span> <span class="nv">melissa-yacht-owner</span><span class="p">))</span>
-				 <span class="p">(</span><span class="nf">mary</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">mary-father</span> <span class="nv">mary-yacht-owner</span><span class="p">)))</span>
-
-			 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">father</span> <span class="nv">daughter-name</span><span class="p">)</span>
-			   <span class="p">(</span><span class="nb">car</span> <span class="nv">daughter-name</span><span class="p">))</span>
-			 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">yacht-owner</span> <span class="nv">daughter-name</span><span class="p">)</span>
-			   <span class="p">(</span><span class="nb">cdr</span> <span class="nv">daughter-name</span><span class="p">))</span>
-
-			 <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">parker-daughter</span> <span class="p">(</span><span class="nf">amb</span> <span class="nv">lorna</span> <span class="nv">gabrielle</span> <span class="nv">rosalind</span> <span class="nv">melissa</span> <span class="nv">mary</span><span class="p">)))</span>
-			   <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">eq?</span> <span class="p">(</span><span class="nf">father</span> <span class="nv">parker-daughter</span><span class="p">)</span> <span class="ss">'parker</span><span class="p">))</span>
-			   <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">gabrielle-father</span> <span class="p">(</span><span class="nf">yacht-owner</span> <span class="nv">parker-daughter</span><span class="p">)))</span>
-
-			   <span class="p">(</span><span class="nb">list</span>
-				<span class="p">(</span><span class="nb">list</span> <span class="ss">'lorna-father</span> <span class="nv">lorna-father</span> <span class="ss">'lorna-yach-owner</span> <span class="nv">lorna-yacht-owner</span><span class="p">)</span>
-				<span class="p">(</span><span class="nb">list</span> <span class="ss">'gabrielle-father</span> <span class="nv">gabrielle-father</span> <span class="ss">'gabrielle-yacht-owner</span> <span class="nv">gabrielle-yacht-owner</span><span class="p">)</span>
-				<span class="p">(</span><span class="nb">list</span> <span class="ss">'rosalind-father</span> <span class="nv">rosalind-father</span> <span class="ss">'rosalind-yacht-owner</span> <span class="nv">rosalind-yacht-owner</span><span class="p">)</span>
-				<span class="p">(</span><span class="nb">list</span> <span class="ss">'melissa-father</span> <span class="nv">melissa-father</span> <span class="ss">'melissa-yacht-owner</span> <span class="nv">melissa-yacht-owner</span><span class="p">)</span>
-				<span class="p">(</span><span class="nb">list</span> <span class="ss">'mary-father</span> <span class="nv">mary-father</span> <span class="ss">'mary-yacht-owner</span> <span class="nv">mary-yacht-owner</span><span class="p">)))))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>This gives us answer:</p>
-
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval value:</span>
-<span class="p">((</span><span class="nf">lorna-father</span> <span class="nv">downing</span> <span class="nv">lorna-yach-owner</span> <span class="nv">moore</span><span class="p">)</span> <span class="p">(</span><span class="nf">gabrielle-father</span> <span class="nv">hall</span> <span class="nv">gabrielle-yacht-owner</span> <span class="nv">barnacle</span><span class="p">)</span> <span class="p">(</span><span class="nf">rosalind-father</span> <span class="nv">parker</span> <span class="nv">rosalind-yacht-owner</span> <span class="nv">hall</span><span class="p">)</span> <span class="p">(</span><span class="nf">melissa-father</span> <span class="nv">barnacle</span> <span class="nv">melissa-yacht-owner</span> <span class="nv">downing</span><span class="p">)</span> <span class="p">(</span><span class="nf">mary-father</span> <span class="nv">moore</span> <span class="nv">mary-yacht-owner</span> <span class="nv">parker</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<hr />
-
-<h4 id="change-in-marys-father">Change in mary’s father</h4>
-
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9576,7 +9468,116 @@
 46
 47
 48
-49</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">yacht-puzzle</span><span class="p">)</span>
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">yacht-puzzle</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lorna-yacht-owner</span> <span class="ss">'moore</span><span class="p">)</span>
+        <span class="p">(</span><span class="nf">gabrielle-yacht-owner</span> <span class="ss">'barnacle</span><span class="p">)</span>
+        <span class="p">(</span><span class="nf">rosalind-yacht-owner</span> <span class="ss">'hall</span><span class="p">)</span>
+        <span class="p">(</span><span class="nf">melissa-yacht-owner</span> <span class="ss">'downing</span><span class="p">)</span>
+        <span class="p">(</span><span class="nf">melissa-father</span> <span class="ss">'barnacle</span><span class="p">)</span>
+        <span class="p">(</span><span class="nf">mary-father</span> <span class="ss">'moore</span><span class="p">)</span>
+        <span class="p">(</span><span class="nf">mary-yacht-owner</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">lorna-yacht-owner</span>
+                              <span class="nv">gabrielle-yacht-owner</span>
+                              <span class="nv">rosalind-yacht-owner</span>
+                              <span class="nv">melissa-yacht-owner</span>
+                              <span class="nv">mary-yacht-owner</span><span class="p">)))</span>
+	<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">mary-yacht-owner</span> <span class="nv">mary-father</span><span class="p">)))</span>
+
+	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">gabrielle-father</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
+	  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">melissa-father</span> <span class="nv">mary-father</span> <span class="nv">gabrielle-father</span><span class="p">)))</span>
+	  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">gabrielle-father</span> <span class="nv">gabrielle-yacht-owner</span><span class="p">)))</span>
+
+	  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">rosalind-father</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
+		<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">melissa-father</span> <span class="nv">mary-father</span> <span class="nv">gabrielle-father</span> <span class="nv">rosalind-father</span><span class="p">)))</span>
+		<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">rosalind-father</span> <span class="nv">rosalind-yacht-owner</span><span class="p">)))</span>
+
+		<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lorna-father</span> <span class="p">(</span><span class="nf">amb</span> <span class="ss">'moore</span> <span class="ss">'downing</span> <span class="ss">'hall</span> <span class="ss">'barnacle</span> <span class="ss">'parker</span><span class="p">)))</span>
+		  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">melissa-father</span> <span class="nv">mary-father</span> <span class="nv">gabrielle-father</span> <span class="nv">rosalind-father</span> <span class="nv">lorna-father</span><span class="p">)))</span>
+		  <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">lorna-father</span> <span class="nv">lorna-yacht-owner</span><span class="p">)))</span>
+
+		   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lorna</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">lorna-father</span> <span class="nv">lorna-yacht-owner</span><span class="p">))</span>
+				 <span class="p">(</span><span class="nf">gabrielle</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">gabrielle-father</span> <span class="nv">gabrielle-yacht-owner</span><span class="p">))</span>
+				 <span class="p">(</span><span class="nf">rosalind</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">rosalind-father</span> <span class="nv">rosalind-yacht-owner</span><span class="p">))</span>
+				 <span class="p">(</span><span class="nf">melissa</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">melissa-father</span> <span class="nv">melissa-yacht-owner</span><span class="p">))</span>
+				 <span class="p">(</span><span class="nf">mary</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">mary-father</span> <span class="nv">mary-yacht-owner</span><span class="p">)))</span>
+
+			 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">father</span> <span class="nv">daughter-name</span><span class="p">)</span>
+			   <span class="p">(</span><span class="nb">car</span> <span class="nv">daughter-name</span><span class="p">))</span>
+			 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">yacht-owner</span> <span class="nv">daughter-name</span><span class="p">)</span>
+			   <span class="p">(</span><span class="nb">cdr</span> <span class="nv">daughter-name</span><span class="p">))</span>
+
+			 <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">parker-daughter</span> <span class="p">(</span><span class="nf">amb</span> <span class="nv">lorna</span> <span class="nv">gabrielle</span> <span class="nv">rosalind</span> <span class="nv">melissa</span> <span class="nv">mary</span><span class="p">)))</span>
+			   <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">eq?</span> <span class="p">(</span><span class="nf">father</span> <span class="nv">parker-daughter</span><span class="p">)</span> <span class="ss">'parker</span><span class="p">))</span>
+			   <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">gabrielle-father</span> <span class="p">(</span><span class="nf">yacht-owner</span> <span class="nv">parker-daughter</span><span class="p">)))</span>
+
+			   <span class="p">(</span><span class="nb">list</span>
+				<span class="p">(</span><span class="nb">list</span> <span class="ss">'lorna-father</span> <span class="nv">lorna-father</span> <span class="ss">'lorna-yach-owner</span> <span class="nv">lorna-yacht-owner</span><span class="p">)</span>
+				<span class="p">(</span><span class="nb">list</span> <span class="ss">'gabrielle-father</span> <span class="nv">gabrielle-father</span> <span class="ss">'gabrielle-yacht-owner</span> <span class="nv">gabrielle-yacht-owner</span><span class="p">)</span>
+				<span class="p">(</span><span class="nb">list</span> <span class="ss">'rosalind-father</span> <span class="nv">rosalind-father</span> <span class="ss">'rosalind-yacht-owner</span> <span class="nv">rosalind-yacht-owner</span><span class="p">)</span>
+				<span class="p">(</span><span class="nb">list</span> <span class="ss">'melissa-father</span> <span class="nv">melissa-father</span> <span class="ss">'melissa-yacht-owner</span> <span class="nv">melissa-yacht-owner</span><span class="p">)</span>
+				<span class="p">(</span><span class="nb">list</span> <span class="ss">'mary-father</span> <span class="nv">mary-father</span> <span class="ss">'mary-yacht-owner</span> <span class="nv">mary-yacht-owner</span><span class="p">)))))))))</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>This gives us answer:</p>
+
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval value:</span>
+<span class="p">((</span><span class="nf">lorna-father</span> <span class="nv">downing</span> <span class="nv">lorna-yach-owner</span> <span class="nv">moore</span><span class="p">)</span> <span class="p">(</span><span class="nf">gabrielle-father</span> <span class="nv">hall</span> <span class="nv">gabrielle-yacht-owner</span> <span class="nv">barnacle</span><span class="p">)</span> <span class="p">(</span><span class="nf">rosalind-father</span> <span class="nv">parker</span> <span class="nv">rosalind-yacht-owner</span> <span class="nv">hall</span><span class="p">)</span> <span class="p">(</span><span class="nf">melissa-father</span> <span class="nv">barnacle</span> <span class="nv">melissa-yacht-owner</span> <span class="nv">downing</span><span class="p">)</span> <span class="p">(</span><span class="nf">mary-father</span> <span class="nv">moore</span> <span class="nv">mary-yacht-owner</span> <span class="nv">parker</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<hr />
+
+<h4 id="change-in-marys-father">Change in mary’s father</h4>
+
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">yacht-puzzle</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lorna-yacht-owner</span> <span class="ss">'moore</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">gabrielle-yacht-owner</span> <span class="ss">'barnacle</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">rosalind-yacht-owner</span> <span class="ss">'hall</span><span class="p">)</span>
@@ -9624,27 +9625,26 @@
 				<span class="p">(</span><span class="nb">list</span> <span class="ss">'gabrielle-father</span> <span class="nv">gabrielle-father</span> <span class="ss">'gabrielle-yacht-owner</span> <span class="nv">gabrielle-yacht-owner</span><span class="p">)</span>
 				<span class="p">(</span><span class="nb">list</span> <span class="ss">'rosalind-father</span> <span class="nv">rosalind-father</span> <span class="ss">'rosalind-yacht-owner</span> <span class="nv">rosalind-yacht-owner</span><span class="p">)</span>
 				<span class="p">(</span><span class="nb">list</span> <span class="ss">'melissa-father</span> <span class="nv">melissa-father</span> <span class="ss">'melissa-yacht-owner</span> <span class="nv">melissa-yacht-owner</span><span class="p">)</span>
-				<span class="p">(</span><span class="nb">list</span> <span class="ss">'mary-father</span> <span class="nv">mary-father</span> <span class="ss">'mary-yacht-owner</span> <span class="nv">mary-yacht-owner</span><span class="p">)))))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+				<span class="p">(</span><span class="nb">list</span> <span class="ss">'mary-father</span> <span class="nv">mary-father</span> <span class="ss">'mary-yacht-owner</span> <span class="nv">mary-yacht-owner</span><span class="p">)))))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval value:</span>
+8
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval value:</span>
 <span class="p">((</span><span class="nf">lorna-father</span> <span class="nv">downing</span> <span class="nv">lorna-yach-owner</span> <span class="nv">moore</span><span class="p">)</span> <span class="p">(</span><span class="nf">gabrielle-father</span> <span class="nv">hall</span> <span class="nv">gabrielle-yacht-owner</span> <span class="nv">barnacle</span><span class="p">)</span> <span class="p">(</span><span class="nf">rosalind-father</span> <span class="nv">parker</span> <span class="nv">rosalind-yacht-owner</span> <span class="nv">hall</span><span class="p">)</span> <span class="p">(</span><span class="nf">melissa-father</span> <span class="nv">barnacle</span> <span class="nv">melissa-yacht-owner</span> <span class="nv">downing</span><span class="p">)</span> <span class="p">(</span><span class="nf">mary-father</span> <span class="nv">moore</span> <span class="nv">mary-yacht-owner</span> <span class="nv">parker</span><span class="p">))</span>
 
 <span class="c1">;;; Amb-Eval input:</span>
 <span class="nv">try-again</span>
 
 <span class="c1">;;; Amb-Eval value:</span>
-<span class="p">((</span><span class="nf">lorna-father</span> <span class="nv">parker</span> <span class="nv">lorna-yach-owner</span> <span class="nv">moore</span><span class="p">)</span> <span class="p">(</span><span class="nf">gabrielle-father</span> <span class="nv">moore</span> <span class="nv">gabrielle-yacht-owner</span> <span class="nv">barnacle</span><span class="p">)</span> <span class="p">(</span><span class="nf">rosalind-father</span> <span class="nv">downing</span> <span class="nv">rosalind-yacht-owner</span> <span class="nv">hall</span><span class="p">)</span> <span class="p">(</span><span class="nf">melissa-father</span> <span class="nv">barnacle</span> <span class="nv">melissa-yacht-owner</span> <span class="nv">downing</span><span class="p">)</span> <span class="p">(</span><span class="nf">mary-father</span> <span class="nv">hall</span> <span class="nv">mary-yacht-owner</span> <span class="nv">parker</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">((</span><span class="nf">lorna-father</span> <span class="nv">parker</span> <span class="nv">lorna-yach-owner</span> <span class="nv">moore</span><span class="p">)</span> <span class="p">(</span><span class="nf">gabrielle-father</span> <span class="nv">moore</span> <span class="nv">gabrielle-yacht-owner</span> <span class="nv">barnacle</span><span class="p">)</span> <span class="p">(</span><span class="nf">rosalind-father</span> <span class="nv">downing</span> <span class="nv">rosalind-yacht-owner</span> <span class="nv">hall</span><span class="p">)</span> <span class="p">(</span><span class="nf">melissa-father</span> <span class="nv">barnacle</span> <span class="nv">melissa-yacht-owner</span> <span class="nv">downing</span><span class="p">)</span> <span class="p">(</span><span class="nf">mary-father</span> <span class="nv">hall</span> <span class="nv">mary-yacht-owner</span> <span class="nv">parker</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here we get <strong>2</strong> possible answers.</p>
 

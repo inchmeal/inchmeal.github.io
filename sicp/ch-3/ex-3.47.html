@@ -9418,7 +9418,7 @@
 
 <p>Here goes the code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9447,7 +9447,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-semaphore</span> <span class="nv">n</span><span class="p">)</span>
+30
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-semaphore</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lock</span> <span class="p">(</span><span class="nf">make-mutex</span><span class="p">))</span>
 		<span class="p">(</span><span class="nf">wait</span> <span class="p">(</span><span class="nf">make-mutex</span><span class="p">))</span>
 		<span class="p">(</span><span class="nf">current-count</span> <span class="mi">0</span><span class="p">))</span>
@@ -9476,8 +9477,7 @@
 			<span class="p">((</span><span class="nb">eq?</span> <span class="nv">message</span> <span class="ss">'release</span><span class="p">)</span> <span class="p">(</span><span class="nf">release-semaphore</span><span class="p">))</span>
 			<span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Invalid operation - semaphore"</span><span class="p">))))</span>
 
-	<span class="nv">dispatch</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	<span class="nv">dispatch</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Code is simple except how to avoid busy-wait - Using two mutex objects solve the purpose. One mutex is basically for the count checks - lock.</p>
 
@@ -9489,7 +9489,7 @@
 
 <h4 id="using-atomic-test-and-set">Using atomic test-and-set!</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9521,7 +9521,8 @@
 30
 31
 32
-33</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-semaphore</span> <span class="nv">n</span><span class="p">)</span>
+33
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-semaphore</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">cell</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">false</span><span class="p">))</span>
 		<span class="p">(</span><span class="nf">current-count</span> <span class="mi">0</span><span class="p">))</span>
 
@@ -9553,8 +9554,7 @@
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">cell</span><span class="p">)</span>
       <span class="nv">true</span>
       <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nb">set-car!</span> <span class="nv">cell</span> <span class="nv">true</span><span class="p">)</span>
-             <span class="nv">false</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+             <span class="nv">false</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

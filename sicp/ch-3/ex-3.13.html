@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Clearly it creates a circle and when we call <code class="highlighter-rouge">last-pair?</code> it should get stuck in loop.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9430,7 +9430,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+15
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">append!</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">set-cdr!</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="nv">x</span><span class="p">)</span> <span class="nv">y</span><span class="p">)</span>
@@ -9444,27 +9445,26 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-cycle</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">set-cdr!</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="nv">x</span><span class="p">)</span> <span class="nv">x</span><span class="p">)</span>
-  <span class="nv">x</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">x</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">z</span> <span class="p">(</span><span class="nf">make-cycle</span> <span class="p">(</span><span class="nb">list</span> <span class="ss">'a</span> <span class="ss">'b</span> <span class="ss">'c</span><span class="p">)))</span>
+8
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">z</span> <span class="p">(</span><span class="nf">make-cycle</span> <span class="p">(</span><span class="nb">list</span> <span class="ss">'a</span> <span class="ss">'b</span> <span class="ss">'c</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="nv">z</span><span class="p">)</span>
 <span class="o">#</span><span class="mi">0</span><span class="nv">=</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="o">.</span> <span class="o">#</span><span class="mi">0</span><span class="o">#</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="nv">z</span>
 <span class="o">#</span><span class="mi">0</span><span class="nv">=</span><span class="p">(</span><span class="nb">mcons</span> <span class="ss">'a</span> <span class="p">(</span><span class="nb">mcons</span> <span class="ss">'b</span> <span class="p">(</span><span class="nb">mcons</span> <span class="ss">'c</span> <span class="o">#</span><span class="mi">0</span><span class="o">#</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="nv">z</span><span class="p">)</span>
 <span class="o">.</span> <span class="o">.</span> <span class="nv">user</span> <span class="nv">break</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

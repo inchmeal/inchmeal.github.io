@@ -9418,7 +9418,7 @@
 
 <p>The code uses two rules <code class="highlighter-rouge">find-son</code> and <code class="highlighter-rouge">find-grandson</code> from in ex-4.63 and <code class="highlighter-rouge">last-pair</code> from in ex-4.62</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9448,7 +9448,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+31
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">((</span><span class="nf">grandson</span><span class="p">)</span> <span class="nv">?g</span> <span class="nv">?s</span><span class="p">)</span> <span class="p">(</span><span class="nf">find-grandson</span> <span class="nv">?g</span> <span class="nv">?s</span><span class="p">)))</span>
 
 <span class="nv">Assertion</span> <span class="nv">added</span> <span class="nv">to</span> <span class="nv">data</span> <span class="nv">base</span><span class="o">.</span>
@@ -9478,12 +9479,11 @@
 <span class="c1">;;; Query results:</span>
 <span class="p">((</span><span class="nf">great</span> <span class="nv">grandson</span><span class="p">)</span> <span class="nv">adam</span> <span class="nv">irad</span><span class="p">)</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9500,7 +9500,8 @@
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+18
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">((</span><span class="nf">great</span> <span class="nv">grandson</span><span class="p">)</span> <span class="nv">?g</span> <span class="nv">?ggs</span><span class="p">)</span>
 
 <span class="c1">;;; Query results:</span>
@@ -9517,8 +9518,7 @@
 <span class="c1">;;; Query results:</span>
 <span class="p">((</span><span class="nf">great</span> <span class="nv">grandson</span><span class="p">)</span> <span class="nv">adam</span> <span class="nv">irad</span><span class="p">)</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

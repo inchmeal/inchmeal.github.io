@@ -9424,7 +9424,7 @@
 
 <p>And next statement prints the output of numbers divisible by 5.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9441,14 +9441,15 @@
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">y</span> <span class="mi">7</span><span class="p">)</span>
+18
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">y</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: memo-proc</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: 136</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">display-stream</span> <span class="nv">z</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">display-stream</span> <span class="nv">z</span><span class="p">)</span>
 
 <span class="mi">10</span>
 <span class="mi">15</span>
@@ -9458,8 +9459,7 @@
 <span class="mi">120</span>
 <span class="mi">190</span>
 <span class="mi">210</span>
-<span class="c1">;Value: done</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: done</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="without-memoization">Without memoization</h4>
 
@@ -9467,7 +9467,7 @@
 
 <p>Note that first term is not reevaluated! It is the second term where reevaluation happens because first term does not require <code class="highlighter-rouge">stream-cdr</code>. It is present directly just like as if we were using <code class="highlighter-rouge">car</code> for the object created using <code class="highlighter-rouge">cons</code> but all the later terms are delayed which causes their value to change in every evaluation!</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9494,14 +9494,15 @@
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">y</span> <span class="mi">7</span><span class="p">)</span>
+28
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">y</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: memo-proc</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: 162</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">display-stream</span> <span class="nv">z</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">display-stream</span> <span class="nv">z</span><span class="p">)</span>
 
 <span class="mi">15</span>
 <span class="mi">180</span>
@@ -9509,11 +9510,11 @@
 <span class="mi">305</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">y</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">y</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: 492</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">display-stream</span> <span class="nv">z</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">display-stream</span> <span class="nv">z</span><span class="p">)</span>
 
 <span class="mi">15</span>
 <span class="mi">510</span>
@@ -9521,8 +9522,7 @@
 <span class="mi">635</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

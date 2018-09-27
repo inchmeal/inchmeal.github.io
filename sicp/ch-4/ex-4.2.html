@@ -9424,12 +9424,12 @@
 
 <p>We just need to change the code for <code class="highlighter-rouge">application?</code> and selectors:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">application?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'call</span><span class="p">))</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">application?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'call</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">operator</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">operands</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cddr</span> <span class="nv">exp</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">operands</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cddr</span> <span class="nv">exp</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

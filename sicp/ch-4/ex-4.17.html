@@ -9428,37 +9428,37 @@
 
 <p>If we have a procedure:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">test</span> <span class="nv">x</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">test</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">set!</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="mi">1</span><span class="p">))</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">a</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">(</span><span class="k">set!</span> <span class="nv">a</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">a</span> <span class="mi">1</span><span class="p">))</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">b</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>It gets transformed to:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">test</span> <span class="nv">x</span><span class="p">)</span>
+8
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">test</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">a</span> <span class="ss">'*unassigned*</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">b</span> <span class="ss">'*unassigned*</span><span class="p">)</span>
   <span class="p">(</span><span class="k">set!</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="mi">1</span><span class="p">))</span>
   <span class="p">(</span><span class="k">set!</span> <span class="nv">a</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">(</span><span class="k">set!</span> <span class="nv">a</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">a</span> <span class="mi">1</span><span class="p">))</span>
   <span class="p">(</span><span class="k">set!</span> <span class="nv">b</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

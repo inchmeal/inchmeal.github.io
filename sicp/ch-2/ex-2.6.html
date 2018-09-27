@@ -9418,32 +9418,32 @@
                         <hr/>
                         <p>We are given these two procedures:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">zero</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))</span>
+4
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">zero</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">add-1</span> <span class="nv">n</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">n</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">n</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The procedure <code class="highlighter-rouge">zero</code> accepts an argument <code class="highlighter-rouge">f</code> and returns another procedure <code class="highlighter-rouge">(lambda (x) x)</code> which returns whatever is passed to it.
 Thus procedure <code class="highlighter-rouge">zero</code> accepts an argument <code class="highlighter-rouge">f</code> and returns an identity procedure.</p>
 
 <p>Now lets find <code class="highlighter-rouge">one</code> by expanding <code class="highlighter-rouge">(add-1 zero)</code> using substitution:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">add-1</span> <span class="nv">zero</span><span class="p">)</span>
-<span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">zero</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">add-1</span> <span class="nv">zero</span><span class="p">)</span>
+<span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">zero</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>It seems like we got stuck here but one more detailed look in last statement reveals that <code class="highlighter-rouge">zero f</code> can also be expanded using 
 substitution. Thus the call <code class="highlighter-rouge">(zero f)</code> can be expanded into <code class="highlighter-rouge">(lambda (x) x)</code> which is clearly an identity function i.e. it returns
 whatever is passed to it. It follows that the invocation <code class="highlighter-rouge">((zero f) x)</code> returns <code class="highlighter-rouge">x</code>. Thus substituting <code class="highlighter-rouge">x</code> inplace of  <code class="highlighter-rouge">((zero f) x)</code>
 in the above statement, we get:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This procedure, similar to <code class="highlighter-rouge">zero</code>, accepts an argument <code class="highlighter-rouge">f</code>. But unlike <code class="highlighter-rouge">zero</code>, it returns a procedure that accepts argument <code class="highlighter-rouge">x</code> and applies <code class="highlighter-rouge">f</code> to this 
 argument. In case of <code class="highlighter-rouge">zero</code> the procedure returned does not apply <code class="highlighter-rouge">f</code> to its argument.</p>
@@ -9452,18 +9452,18 @@ argument. In case of <code class="highlighter-rouge">zero</code> the procedure r
 
 <p>Now again we follow the same process to compute <code class="highlighter-rouge">two</code> by expanding <code class="highlighter-rouge">(add-1 one)</code>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">add-1</span> <span class="nv">one</span><span class="p">)</span>
-<span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">one</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">add-1</span> <span class="nv">one</span><span class="p">)</span>
+<span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">one</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Lets expand this part <code class="highlighter-rouge">((one f) x)</code> of the above statement. Clearly by the definition of <code class="highlighter-rouge">one</code>,   invocation: <code class="highlighter-rouge">(one f)</code> returns a procedure that
 accepts an argument, say a(to avoid conflict with above x), and applies <code class="highlighter-rouge">f</code> to this argument and returns the result.
 Thus <code class="highlighter-rouge">((one f) x)</code> means applying <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code> once i.e. <code class="highlighter-rouge">(f x)</code>. Thus <code class="highlighter-rouge">((one f) x)</code> can be substituted with <code class="highlighter-rouge">(f x)</code> in the above
 statement:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>It is exactly what we guessed i.e. the procedure <code class="highlighter-rouge">two</code> accepts <code class="highlighter-rouge">f</code> and returns another procedure that accepts an argument <code class="highlighter-rouge">x</code> and returns
 the result of applying <code class="highlighter-rouge">f</code> <strong>twice</strong> to the argument <code class="highlighter-rouge">x</code>.</p>
@@ -9471,7 +9471,7 @@ the result of applying <code class="highlighter-rouge">f</code> <strong>twice</s
 <p>We can take an example also to verify that procedure <code class="highlighter-rouge">zero</code> means applying <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code> <script type="math/tex">0</script> times and similarly <code class="highlighter-rouge">one</code> means 
 applying <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code> <script type="math/tex">1</script> times and so on:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9482,7 +9482,8 @@ applying <code class="highlighter-rouge">f</code> to <code class="highlighter-ro
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">((</span><span class="nf">zero</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">500</span><span class="p">)</span>
+12
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">((</span><span class="nf">zero</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">500</span><span class="p">)</span>
 <span class="mi">500</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">one</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">500</span><span class="p">)</span>
 <span class="mi">501</span>
@@ -9493,23 +9494,22 @@ applying <code class="highlighter-rouge">f</code> to <code class="highlighter-ro
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">one</span> <span class="nv">dec</span><span class="p">)</span> <span class="mi">500</span><span class="p">)</span>
 <span class="mi">499</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">two</span> <span class="nv">dec</span><span class="p">)</span> <span class="mi">500</span><span class="p">)</span>
-<span class="mi">498</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">498</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>After understanding this, we can try to make sense of the procedure <code class="highlighter-rouge">add-1</code>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">add-1</span> <span class="nv">n</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">n</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">add-1</span> <span class="nv">n</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">n</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Suppose that <code class="highlighter-rouge">n</code> is a procedure that accepts an argument <code class="highlighter-rouge">f'</code> and returns another procedure that accepts an argument <code class="highlighter-rouge">x'</code> and returns 
 the result of applying <code class="highlighter-rouge">f'</code> to <code class="highlighter-rouge">x'</code>, <script type="math/tex">p</script> number of times.</p>
 
 <p>Now if we pass this procedure <code class="highlighter-rouge">n</code> to <code class="highlighter-rouge">add-1</code>, we get the procedure:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">n</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">((</span><span class="nf">n</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now we can easily understand the invocation <code class="highlighter-rouge">((n f) x)</code> in the above procedure. Clearly <code class="highlighter-rouge">(n f)</code>  returns a procedure that accepts an argument <code class="highlighter-rouge">x'</code> and returns 
 the result of applying <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x'</code>, <script type="math/tex">p</script> number of times. Thus <code class="highlighter-rouge">((n f) x)</code> will result in apllying <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code>, <script type="math/tex">p</script> number of times.</p>
@@ -9522,19 +9522,19 @@ the result of applying <code class="highlighter-rouge">f</code> to <code class="
 returns another procedure that takes <code class="highlighter-rouge">x</code> as argument and returns the result of applying <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code> <script type="math/tex">q + p</script> times, where <script type="math/tex">p</script>
 is the number of times <code class="highlighter-rouge">n</code> applies <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code> and <script type="math/tex">q</script> is the number of times <code class="highlighter-rouge">m</code> applies <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code>.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">m</span> <span class="nv">n</span><span class="p">)</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">m</span> <span class="nv">n</span><span class="p">)</span>
      <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">f</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">((</span><span class="nf">m</span> <span class="nv">f</span><span class="p">)</span> <span class="p">((</span><span class="nf">n</span> <span class="nv">f</span><span class="p">)</span> <span class="nv">x</span><span class="p">))))</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Lets say <script type="math/tex">r_i</script> means the result of applying <code class="highlighter-rouge">f</code> to <code class="highlighter-rouge">x</code> <script type="math/tex">i</script> times. Thus <code class="highlighter-rouge">((n f) x)</code> returns <script type="math/tex">r_p</script>. Now this result is passed
   to <code class="highlighter-rouge">(m f)</code>, thus <code class="highlighter-rouge">f</code> is applied to <code class="highlighter-rouge">r_p</code> <script type="math/tex">q</script> times. Thus we get <script type="math/tex">r_{p+q}</script>.</p>
 
 <p>We can check our results:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9545,7 +9545,8 @@ is the number of times <code class="highlighter-rouge">n</code> applies <code cl
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">four</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">two</span> <span class="nv">two</span><span class="p">))</span>
+12
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">four</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">two</span> <span class="nv">two</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">four</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">500</span><span class="p">)</span>
 <span class="mi">504</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">otherzero</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">zero</span> <span class="nv">zero</span><span class="p">))</span>
@@ -9556,8 +9557,7 @@ is the number of times <code class="highlighter-rouge">n</code> applies <code cl
 <span class="mi">501</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">eight</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">four</span> <span class="nv">four</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">eight</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">500</span><span class="p">)</span>
-<span class="mi">508</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">508</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

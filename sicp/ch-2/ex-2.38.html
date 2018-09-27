@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Procedures for <em>fold-left</em> and <em>fold-right</em>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9433,7 +9433,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">fold-right</span> <span class="nv">op</span> <span class="nv">initial</span> <span class="nv">sequence</span><span class="p">)</span>
+16
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">fold-right</span> <span class="nv">op</span> <span class="nv">initial</span> <span class="nv">sequence</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">sequence</span><span class="p">)</span>
       <span class="nv">initial</span>
       <span class="p">(</span><span class="nf">op</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">sequence</span><span class="p">)</span>
@@ -9448,8 +9449,7 @@
         <span class="nv">result</span>
         <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">result</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">rest</span><span class="p">))</span>
               <span class="p">(</span><span class="nb">cdr</span> <span class="nv">rest</span><span class="p">))))</span>
-  <span class="p">(</span><span class="nf">iter</span> <span class="nv">initial</span> <span class="nv">sequence</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">iter</span> <span class="nv">initial</span> <span class="nv">sequence</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Fold-Right:</p>
 
@@ -9467,7 +9467,7 @@
 
 <p><script type="math/tex">(((\text{ init } \times a_1) \times a_2) \times a_3) \times a_4</script>.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9478,7 +9478,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">fold-right</span> <span class="nv">/</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+12
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">fold-right</span> <span class="nv">/</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
 <span class="mi">3</span><span class="nv">/2</span>
 
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">fold-left</span> <span class="nv">/</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
@@ -9489,8 +9490,7 @@
 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">fold-left</span> <span class="nv">list</span> <span class="nv">nil</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="p">(((()</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>If <em>fold-right</em> and <em>fold-left</em> produce same values then:</p>
 

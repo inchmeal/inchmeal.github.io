@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>This is just replica of <code class="highlighter-rouge">and-gate</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9425,7 +9425,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">or-gate</span> <span class="nv">a1</span> <span class="nv">a2</span> <span class="nv">output</span><span class="p">)</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">or-gate</span> <span class="nv">a1</span> <span class="nv">a2</span> <span class="nv">output</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">or-action-procedure</span><span class="p">)</span>
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">new-value</span>
 		   <span class="p">(</span><span class="nf">logical-or</span> <span class="p">(</span><span class="nf">get-signal</span> <span class="nv">a1</span><span class="p">)</span> <span class="p">(</span><span class="nf">get-signal</span> <span class="nv">a2</span><span class="p">))))</span>
@@ -9434,8 +9435,7 @@
 					 <span class="p">(</span><span class="nf">set-signal!</span> <span class="nv">output</span> <span class="nv">new-value</span><span class="p">)))))</span>
   <span class="p">(</span><span class="nf">add-action!</span> <span class="nv">a1</span> <span class="nv">or-action-procedure</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">add-action!</span> <span class="nv">a2</span> <span class="nv">or-action-procedure</span><span class="p">)</span>
-  <span class="ss">'ok</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="ss">'ok</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

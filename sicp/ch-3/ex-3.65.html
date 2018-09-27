@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9426,7 +9426,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">ln2-stream</span>
+12
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">ln2-stream</span>
   <span class="p">(</span><span class="nf">partial-sums</span> <span class="p">(</span><span class="nf">ln2-summands</span> <span class="mi">1</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">ln2-stream-euler</span>
@@ -9437,12 +9438,11 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ln2-summands</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nb">/</span> <span class="mf">1.0</span> <span class="nv">n</span><span class="p">)</span>
-               <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">-</span> <span class="p">(</span><span class="nf">ln2-summands</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+               <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">-</span> <span class="p">(</span><span class="nf">ln2-summands</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9583,96 +9583,97 @@
 139
 140
 141
-142</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">0</span><span class="p">)</span>
+142
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: memo-proc</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: 1.</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: .5</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: .8333333333333333</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1">;Value: .5833333333333333</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: .7833333333333332</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: .6166666666666666</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">6</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">6</span><span class="p">)</span>
 
 <span class="c1">;Value: .7595238095238095</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: .6345238095238095</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">8</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="c1">;Value: .7456349206349207</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">9</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">9</span><span class="p">)</span>
 
 <span class="c1">;Value: .6456349206349207</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="c1">;Value: .7365440115440116</span>
 
 <span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">0</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: .7</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: .6904761904761905</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: .6944444444444444</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1">;Value: .6924242424242424</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: .6935897435897436</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: .6928571428571428</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">6</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">6</span><span class="p">)</span>
 
 <span class="c1">;Value: .6933473389355742</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: .6930033416875522</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">8</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="c1">;Value: .6932539682539683</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">9</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">9</span><span class="p">)</span>
 
 <span class="c1">;Value: .6930657506744464</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-stream-euler</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="c1">;Value: .6932106782106783</span>
 
@@ -9682,50 +9683,49 @@
 
 
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">0</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: 1.</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: .7</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: .6932773109243697</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1">;Value: .6931488693329254</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: .6931471960735491</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: .6931471806635636</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">6</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">6</span><span class="p">)</span>
 
 <span class="c1">;Value: .6931471805604039</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: .6931471805599445</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">8</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="c1">;Value: .6931471805599427</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">9</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">9</span><span class="p">)</span>
 
 <span class="c1">;Value: .6931471805599454</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">ln2-accelerated</span> <span class="mi">10</span><span class="p">)</span>
 
-<span class="c1">;Value: #[NaN]</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: #[NaN]</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

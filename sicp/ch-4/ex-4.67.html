@@ -9441,7 +9441,7 @@
 
 <p>(Complete code is at the bottom of this page)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9475,7 +9475,8 @@
 32
 33
 34
-35</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-empty-history</span><span class="p">)</span> <span class="o">'</span><span class="p">())</span>
+35
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-empty-history</span><span class="p">)</span> <span class="o">'</span><span class="p">())</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-history-item</span> <span class="nv">pattern</span> <span class="nv">frame</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">instantiate</span> <span class="nv">pattern</span>
@@ -9509,12 +9510,11 @@
 				  <span class="nv">the-empty-stream</span><span class="p">)</span>
 				<span class="p">(</span><span class="nf">qeval</span> <span class="p">(</span><span class="nf">rule-body</span> <span class="nv">clean-rule</span><span class="p">)</span>
 					   <span class="p">(</span><span class="nf">singleton-stream</span> <span class="nv">unify-result</span><span class="p">)</span>
-					   <span class="p">(</span><span class="nf">add-item-in-history</span> <span class="nv">new-history-item</span> <span class="nv">history</span><span class="p">))))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+					   <span class="p">(</span><span class="nf">add-item-in-history</span> <span class="nv">new-history-item</span> <span class="nv">history</span><span class="p">))))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="testexample">Test/Example:</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9585,7 +9585,8 @@
 69
 70
 71
-72</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+72
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">append-to-form</span> <span class="p">()</span> <span class="nv">?y</span> <span class="nv">?y</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">append-to-form</span> <span class="p">(</span><span class="nf">?u</span> <span class="o">.</span> <span class="nv">?v</span><span class="p">)</span> <span class="nv">?y</span> <span class="p">(</span><span class="nf">?u</span> <span class="o">.</span> <span class="nv">?z</span><span class="p">))</span>
@@ -9656,8 +9657,7 @@
 <span class="p">(</span><span class="nf">married</span> <span class="nv">mickey</span> <span class="nv">minnie</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">Loop</span> <span class="nv">Detected!</span>  <span class="nv">the</span> <span class="nv">history</span> <span class="nv">item</span>  <span class="p">(</span><span class="nf">married</span> <span class="nv">mickey</span> <span class="nv">??</span><span class="p">)</span>  <span class="nv">is</span> <span class="nv">repeated</span> <span class="p">((</span><span class="nf">married</span> <span class="nv">??</span> <span class="nv">mickey</span><span class="p">)</span> <span class="p">(</span><span class="nf">married</span> <span class="nv">mickey</span> <span class="nv">??</span><span class="p">)))</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9673,7 +9673,7 @@
 
 <h4 id="complete-code">Complete code:</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10442,7 +10442,8 @@
 767
 768
 769
-770</pre></td><td class="code"><pre><span class="c1">;tom;;;QUERY SYSTEM FROM SECTION 4.4.4 OF</span>
+770
+</pre></td><td class="code"><pre><span class="c1">;tom;;;QUERY SYSTEM FROM SECTION 4.4.4 OF</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm</span>
@@ -11211,8 +11212,7 @@
       <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?staff-person</span> <span class="nv">?boss</span><span class="p">)</span>
           <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?staff-person</span> <span class="nv">?middle-manager</span><span class="p">)</span>
                <span class="p">(</span><span class="nf">outranked-by</span> <span class="nv">?middle-manager</span> <span class="nv">?boss</span><span class="p">))))</span>
-<span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

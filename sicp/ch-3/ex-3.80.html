@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>I can not test the exercises in this section as MIT scheme is giving an error for forward references: <strong>;Premature reference</strong>.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9426,7 +9426,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">RLC</span> <span class="nv">R</span> <span class="nv">L</span> <span class="nv">C</span> <span class="nv">dt</span><span class="p">)</span>
+11
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">RLC</span> <span class="nv">R</span> <span class="nv">L</span> <span class="nv">C</span> <span class="nv">dt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">vc0</span> <span class="nv">il0</span><span class="p">)</span>
 	<span class="p">(</span><span class="k">define</span> <span class="nv">vc</span> <span class="p">(</span><span class="nf">integral</span> <span class="p">(</span><span class="k">delay</span> <span class="nv">dvc</span><span class="p">)</span> <span class="nv">vc0</span> <span class="nv">dt</span><span class="p">))</span>
 	<span class="p">(</span><span class="k">define</span> <span class="nv">dvc</span> <span class="p">(</span><span class="nf">scale</span> <span class="nv">il</span> <span class="p">(</span><span class="nb">/</span> <span class="mi">-1</span> <span class="nv">C</span><span class="p">)))</span>
@@ -9436,8 +9437,7 @@
 				 <span class="p">(</span><span class="nf">scale-stream</span> <span class="nv">il</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">R</span><span class="p">)</span> <span class="nv">L</span><span class="p">))))</span>
 	<span class="p">(</span><span class="nb">cons</span> <span class="nv">vc</span> <span class="nv">il</span><span class="p">)))</span>
 
-<span class="p">(</span><span class="k">define</span> <span class="nv">RLC1</span> <span class="p">((</span><span class="nf">RLC</span> <span class="mi">1</span> <span class="mf">0.2</span> <span class="mi">1</span> <span class="mf">0.1</span><span class="p">)</span> <span class="mi">0</span> <span class="mi">10</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="nv">RLC1</span> <span class="p">((</span><span class="nf">RLC</span> <span class="mi">1</span> <span class="mf">0.2</span> <span class="mi">1</span> <span class="mf">0.1</span><span class="p">)</span> <span class="mi">0</span> <span class="mi">10</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

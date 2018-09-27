@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9430,7 +9430,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+16
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">append!</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">set-cdr!</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="nv">x</span><span class="p">)</span> <span class="nv">y</span><span class="p">)</span>
@@ -9445,12 +9446,11 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">list</span> <span class="ss">'a</span> <span class="ss">'b</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">y</span> <span class="p">(</span><span class="nb">list</span> <span class="ss">'c</span> <span class="ss">'d</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="nv">z</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="nv">z</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9461,7 +9461,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="nv">z</span><span class="p">)</span>
+12
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="nv">z</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="nv">d</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">b</span><span class="p">)</span>
@@ -9472,8 +9473,7 @@
 <span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="nv">d</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">b</span> <span class="nv">c</span> <span class="nv">d</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

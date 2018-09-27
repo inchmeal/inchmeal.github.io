@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Note that I am using <code class="highlighter-rouge">transform-painter</code> from the sicp package of Dr Racket. Its arguments are slightly different from the <code class="highlighter-rouge">transform-painter</code> code given in the book.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9445,7 +9445,8 @@
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">below</span> <span class="nv">painter1</span> <span class="nv">painter2</span><span class="p">)</span>
+28
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">below</span> <span class="nv">painter1</span> <span class="nv">painter2</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">split-point</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">0.0</span> <span class="mf">0.5</span><span class="p">)))</span>
     <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">paint-bot</span>
                    <span class="p">(</span> <span class="p">(</span><span class="nf">transform-painter</span> 
@@ -9472,17 +9473,16 @@
          <span class="p">)</span>
       <span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Alternative implementation of <code class="highlighter-rouge">below</code> using ‘beside` and rotations:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">below-alt</span> <span class="nv">painter1</span> <span class="nv">painter2</span><span class="p">)</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">below-alt</span> <span class="nv">painter1</span> <span class="nv">painter2</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">rotate90</span> <span class="p">(</span><span class="nf">beside</span> <span class="p">(</span><span class="nf">rotate270</span> <span class="nv">painter1</span><span class="p">)</span> <span class="p">(</span><span class="nf">rotate270</span> <span class="nv">painter2</span><span class="p">)))</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

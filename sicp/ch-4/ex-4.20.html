@@ -9420,7 +9420,7 @@
 
 <p>Here goes the code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9433,7 +9433,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">letrec?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'letrec</span><span class="p">))</span>
+14
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">letrec?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'letrec</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">letrec-vardefs</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">))</span>
 
@@ -9446,12 +9447,11 @@
 						<span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">list</span> <span class="ss">'set!</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">new</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">new</span><span class="p">))</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">rem</span><span class="p">))))</span>
 				<span class="p">(</span><span class="nb">cons</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">())</span>
 				<span class="p">(</span><span class="nf">letrec-vardefs</span> <span class="nv">exp</span><span class="p">)))</span>
-  <span class="p">(</span><span class="nf">make-let</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">rs</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">rs</span><span class="p">)</span> <span class="p">(</span><span class="nf">letrec-body</span> <span class="nv">exp</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">make-let</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">rs</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">rs</span><span class="p">)</span> <span class="p">(</span><span class="nf">letrec-body</span> <span class="nv">exp</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9495,7 +9495,8 @@
 42
 43
 44
-45</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+45
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">letrec</span> <span class="p">((</span><span class="nb">even?</span>
             <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">n</span><span class="p">)</span>
@@ -9539,8 +9540,7 @@
 <span class="p">(</span><span class="nf">f</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;;; M-Eval value:</span>
-<span class="no">#f</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="no">#f</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
@@ -9552,7 +9552,7 @@
 
 <p>Thus <code class="highlighter-rouge">odd?</code> won’t be found and it will report error. Eg:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9571,7 +9571,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+20
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nb">even?</span>
             <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">n</span><span class="p">)</span>
@@ -9590,8 +9591,7 @@
 
 <span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="nf">f</span> <span class="mi">5</span><span class="p">)</span>
-<span class="c1">;Unbound variable odd?</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Unbound variable odd?</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

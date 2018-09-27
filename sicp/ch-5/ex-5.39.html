@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9450,7 +9450,8 @@
 33
 34
 35
-36</pre></td><td class="code"><pre><span class="c1">;;ex-5.39</span>
+36
+</pre></td><td class="code"><pre><span class="c1">;;ex-5.39</span>
 <span class="c1">;;note that i later changed this from cons to list ex-5.41</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-lexical-address</span> <span class="nv">frame-num</span> <span class="nv">elem-num</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="nv">frame-num</span> <span class="nv">elem-num</span><span class="p">))</span>
@@ -9485,8 +9486,7 @@
 		<span class="p">((</span><span class="nb">=</span> <span class="nv">frame-num</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">env</span><span class="p">)</span>
 		<span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">env-ref</span>
 			   <span class="p">(</span><span class="nf">enclosing-environment</span> <span class="nv">env</span><span class="p">)</span>
-			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

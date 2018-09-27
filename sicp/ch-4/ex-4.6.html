@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Only one thing to mention, used fold-right to avoid looping twice.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9432,7 +9432,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">let?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'let</span><span class="p">))</span>
+17
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">let?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'let</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">let-varexps</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">))</span>
 
@@ -9448,12 +9449,11 @@
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">vars</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">res</span><span class="p">))</span>
 		  <span class="p">(</span><span class="nf">vexps</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">res</span><span class="p">)))</span>
 	  <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">make-lambda</span> <span class="nv">vars</span> <span class="p">(</span><span class="nf">let-body</span> <span class="nv">exp</span><span class="p">))</span> <span class="nv">vexps</span><span class="p">)</span>
-	  <span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9469,7 +9469,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+17
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">x</span> <span class="p">(</span><span class="nb">cons</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">))</span> <span class="p">(</span><span class="nf">y</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'a</span> <span class="ss">'b</span><span class="p">)))</span> <span class="ss">'hello</span> <span class="ss">'world</span><span class="p">)</span>
 
 <span class="c1">;;; M-Eval value:</span>
@@ -9485,8 +9486,7 @@
 <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">x</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">))</span> <span class="p">(</span><span class="nf">y</span> <span class="mi">100</span><span class="p">))</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
 
 <span class="c1">;;; M-Eval value:</span>
-<span class="mi">103</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">103</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

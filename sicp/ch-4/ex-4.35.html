@@ -9426,7 +9426,7 @@
 
 <p>After running the evaluator, I evaluated the following code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9438,7 +9438,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">require</span> <span class="nv">p</span><span class="p">)</span>
+13
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">require</span> <span class="nv">p</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">not</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">amb</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">low</span> <span class="nv">high</span><span class="p">)</span>
@@ -9450,12 +9451,11 @@
     <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">j</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">i</span> <span class="nv">high</span><span class="p">)))</span>
       <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">k</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">j</span> <span class="nv">high</span><span class="p">)))</span>
         <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">i</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">j</span> <span class="nv">j</span><span class="p">))</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">k</span> <span class="nv">k</span><span class="p">)))</span>
-        <span class="p">(</span><span class="nb">list</span> <span class="nv">i</span> <span class="nv">j</span> <span class="nv">k</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+        <span class="p">(</span><span class="nb">list</span> <span class="nv">i</span> <span class="nv">j</span> <span class="nv">k</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9484,7 +9484,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+30
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="nf">a-pythagorean-triple-between</span> <span class="mi">0</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="c1">;;; Starting a new problem </span>
@@ -9513,8 +9514,7 @@
 <span class="nv">try-again</span>
 
 <span class="c1">;;; Amb-Eval value:</span>
-<span class="p">(</span><span class="nf">8</span> <span class="mi">15</span> <span class="mi">17</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">8</span> <span class="mi">15</span> <span class="mi">17</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

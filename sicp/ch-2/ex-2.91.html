@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Here goes the code of the procedure <code class="highlighter-rouge">div-terms</code>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9449,7 +9449,8 @@
 29
 30
 31
-32</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">div-terms</span> <span class="nv">L1</span> <span class="nv">L2</span><span class="p">)</span>
+32
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">div-terms</span> <span class="nv">L1</span> <span class="nv">L2</span><span class="p">)</span>
       <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">empty-termlist?</span> <span class="nv">L1</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">the-empty-termlist</span><span class="p">)</span> <span class="p">(</span><span class="nf">the-empty-termlist</span><span class="p">))</span>
           <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">t1</span> <span class="p">(</span><span class="nf">first-term</span> <span class="nv">L1</span><span class="p">))</span>
@@ -9480,12 +9481,11 @@
                <span class="p">)</span>
           <span class="p">)</span>
       <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here goes the complete code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10370,7 +10370,8 @@
 883
 884
 885
-886</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+886
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -11255,12 +11256,11 @@
 <span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-sparse-termlist-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-dense-termlist-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-polynomial-package</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-polynomial-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Examples/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -11268,7 +11268,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">div</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'dense-termlist</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">1</span><span class="p">)))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'dense-termlist</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">1</span><span class="p">)))))</span>
+9
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">div</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'dense-termlist</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">1</span><span class="p">)))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'dense-termlist</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">1</span><span class="p">)))))</span>
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">dense-termlist</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">))</span> <span class="p">((</span><span class="nf">dense-termlist</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">div</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'dense-termlist</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">)))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'dense-termlist</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">1</span><span class="p">)))))</span>
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">dense-termlist</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">))</span> <span class="p">(((</span><span class="nf">dense-termlist</span><span class="p">))))</span>
@@ -11276,8 +11277,7 @@
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">dense-termlist</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">))</span> <span class="p">(((</span><span class="nf">dense-termlist</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">)))))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">div</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'sparse-termlist</span> <span class="o">'</span><span class="p">((</span><span class="nf">5</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">0</span> <span class="mi">-1</span><span class="p">))))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'sparse-termlist</span> <span class="o">'</span><span class="p">((</span><span class="nf">2</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">0</span> <span class="mi">-1</span><span class="p">))))))</span>
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">dense-termlist</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">0</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(((</span><span class="nf">sparse-termlist</span> <span class="p">(</span><span class="nf">1</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">1</span><span class="p">))</span> <span class="p">(</span><span class="nf">0</span> <span class="mi">-1</span><span class="p">)))))</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The last test/example is from the book.</p>
 

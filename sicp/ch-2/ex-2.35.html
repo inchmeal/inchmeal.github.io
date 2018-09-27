@@ -9426,7 +9426,7 @@
 
 <p>The above approach can be directly translated into the following procedure:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9437,7 +9437,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">count-leaves</span> <span class="nv">tree</span><span class="p">)</span>
+12
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">count-leaves</span> <span class="nv">tree</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">accumulate</span>
        <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span>
            <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">pair?</span> <span class="nv">x</span><span class="p">)</span>
@@ -9448,14 +9449,13 @@
        <span class="mi">0</span> 
        <span class="nv">tree</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As we can see, <code class="highlighter-rouge">accumulate</code> maps to <script type="math/tex">\sum</script> and <script type="math/tex">num\_of\_leaves</script> maps to <code class="highlighter-rouge">count-leaves</code>.</p>
 
 <p>But it does not fit with the exercise, as it expects to use map:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9486,7 +9486,8 @@
 29
 30
 31
-32</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+32
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">accumulate</span> <span class="nv">op</span> <span class="nv">initial</span> <span class="nv">sequence</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">sequence</span><span class="p">)</span>
@@ -9517,8 +9518,7 @@
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">x</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
         <span class="p">((</span><span class="nb">not</span> <span class="p">(</span><span class="nb">pair?</span> <span class="nv">x</span><span class="p">))</span> <span class="mi">1</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">count-leaves-orig</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">x</span><span class="p">))</span>
-                 <span class="p">(</span><span class="nf">count-leaves-orig</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                 <span class="p">(</span><span class="nf">count-leaves-orig</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here, <code class="highlighter-rouge">map</code> is used to convert(maps) each branch of the tree passed to it to(into) number of leaves.
 And procedure <code class="highlighter-rouge">accumulate</code> computes total number of leaves by adding the number of leaves of each branch.</p>
@@ -9527,18 +9527,18 @@ And procedure <code class="highlighter-rouge">accumulate</code> computes total n
 
 <p>Example/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">tree</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">2</span> <span class="mi">3</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">5</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">7</span><span class="p">))</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">))</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">10</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">11</span><span class="p">)))</span> <span class="mi">12</span> <span class="mi">13</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">14</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">16</span> <span class="mi">17</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">18</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">19</span> <span class="mi">20</span><span class="p">)))</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">21</span> <span class="mi">22</span><span class="p">))))</span>
+6
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">tree</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">2</span> <span class="mi">3</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">5</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">7</span><span class="p">))</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">))</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">10</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">11</span><span class="p">)))</span> <span class="mi">12</span> <span class="mi">13</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">14</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">16</span> <span class="mi">17</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">18</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">19</span> <span class="mi">20</span><span class="p">)))</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">21</span> <span class="mi">22</span><span class="p">))))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">count-leaves</span> <span class="nv">tree</span><span class="p">)</span>
 <span class="mi">19</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">count-leaves-orig</span> <span class="nv">tree</span><span class="p">)</span>
 <span class="mi">19</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

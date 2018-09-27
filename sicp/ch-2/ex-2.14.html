@@ -9419,22 +9419,22 @@
                         <p>Lets first take an example of two intervals, <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>, and compute <script type="math/tex">\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }</script>
 and <script type="math/tex">\frac {I_1 I_2} {I_1 + I_2}</script> using the procedures <code class="highlighter-rouge">par1</code> and <code class="highlighter-rouge">par2</code> given in exercise.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">25</span> <span class="mf">1.5</span><span class="p">))</span>
+8
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">25</span> <span class="mf">1.5</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I2</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">75</span> <span class="mf">0.75</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">rs1</span> <span class="p">(</span><span class="nf">par1</span> <span class="nv">I1</span> <span class="nv">I2</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">rs2</span> <span class="p">(</span><span class="nf">par2</span> <span class="nv">I1</span> <span class="nv">I2</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">rs1</span><span class="p">)</span>
 <span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">15998452012384</span><span class="o">,</span><span class="mf">19.35544164037855</span><span class="p">]</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">rs2</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">50370662460568</span><span class="o">,</span><span class="mf">18.995897832817338</span><span class="p">]</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">50370662460568</span><span class="o">,</span><span class="mf">18.995897832817338</span><span class="p">]</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Clearly both results in different answers.</p>
 
@@ -9456,7 +9456,7 @@ By algebra, we can simplify it as:   <br />
 
 <p>Lets see using Alyssa’s “interval arithmetic” that above is correct or not:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9464,7 +9464,8 @@ By algebra, we can simplify it as:   <br />
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">25</span> <span class="mf">1.5</span><span class="p">))</span>
+9
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-center-percent</span> <span class="mi">25</span> <span class="mf">1.5</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">I1</span><span class="p">)</span>
 <span class="p">[</span><span class="nf">24</span><span class="o">.</span><span class="mi">625</span><span class="o">,</span><span class="mf">25.375</span><span class="p">]</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">div</span><span class="p">)</span>
@@ -9472,8 +9473,7 @@ By algebra, we can simplify it as:   <br />
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">reverse</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">I1</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">reverse_reverse</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">reverse</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">reverse_reverse</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">24</span><span class="o">.</span><span class="mi">625000000000004</span><span class="o">,</span><span class="mf">25.375</span><span class="p">]</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">[</span><span class="nf">24</span><span class="o">.</span><span class="mi">625000000000004</span><span class="o">,</span><span class="mf">25.375</span><span class="p">]</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As we can see by <em>interval arithmetic</em> that <script type="math/tex">\frac I I \ne [1, 1]</script>. Thus the algebraic equivalent is not same as interval equivalent.
 However <script type="math/tex">\frac 1 { \frac 1 I } = I</script>, for any interval <script type="math/tex">I</script> holds true which means this farmulae alegebraic equivalent is same as

@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9466,7 +9466,8 @@
 49
 50
 51
-52</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-register</span> <span class="nv">name</span><span class="p">)</span>
+52
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-register</span> <span class="nv">name</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">contents</span> <span class="ss">'*unassigned*</span><span class="p">)</span>
 		<span class="p">(</span><span class="nf">trace-on</span> <span class="nv">false</span><span class="p">))</span>
     <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">dispatch</span> <span class="nv">message</span><span class="p">)</span>
@@ -9517,14 +9518,13 @@
 		   <span class="p">(</span><span class="nb">for-each</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">reg-name</span><span class="p">)</span>
 					   <span class="p">((</span><span class="nf">lookup-register</span> <span class="nv">reg-name</span><span class="p">)</span> <span class="ss">'trace-off</span><span class="p">))</span>
 					 <span class="p">(</span><span class="nb">cons</span> <span class="nv">first-reg</span> <span class="nv">reg-names</span><span class="p">))))</span>
-        <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- MACHINE"</span> <span class="nv">message</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+        <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- MACHINE"</span> <span class="nv">message</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9569,7 +9569,8 @@
 43
 44
 45
-46</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+46
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">gcd-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">t</span><span class="p">)</span>
@@ -9591,21 +9592,21 @@
 
 <span class="c1">;Value 18: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: gcd-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Unspecified return value</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="nv">Changing</span> <span class="nv">reg-a</span> <span class="nv">old-val:</span> <span class="nv">*unassigned*</span> <span class="nv">new-val:</span> <span class="mi">50</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="nv">Changing</span> <span class="nv">reg-b</span> <span class="nv">old-val:</span> <span class="nv">*unassigned*</span> <span class="nv">new-val:</span> <span class="mi">375</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="nv">Changing</span> <span class="nv">reg-a</span> <span class="nv">old-val:</span> <span class="mi">50</span> <span class="nv">new-val:</span> <span class="mi">375</span>
 <span class="nv">Changing</span> <span class="nv">reg-b</span> <span class="nv">old-val:</span> <span class="mi">375</span> <span class="nv">new-val:</span> <span class="mi">50</span>
 <span class="nv">Changing</span> <span class="nv">reg-a</span> <span class="nv">old-val:</span> <span class="mi">375</span> <span class="nv">new-val:</span> <span class="mi">50</span>
@@ -9614,8 +9615,7 @@
 <span class="nv">Changing</span> <span class="nv">reg-b</span> <span class="nv">old-val:</span> <span class="mi">25</span> <span class="nv">new-val:</span> <span class="mi">0</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

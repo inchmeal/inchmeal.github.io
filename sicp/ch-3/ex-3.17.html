@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Here first I have pasted the output by running the modified procedure on the same inputs as in last exercise:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9446,7 +9446,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">p1</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'a</span> <span class="o">'</span><span class="p">()))</span>
+31
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">p1</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'a</span> <span class="o">'</span><span class="p">()))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">p2</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'b</span> <span class="o">'</span><span class="p">()))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">p3</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'c</span> <span class="o">'</span><span class="p">()))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">set-cdr!</span> <span class="nv">p2</span> <span class="nv">p3</span><span class="p">)</span>
@@ -9476,12 +9477,11 @@
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">set-car!</span> <span class="nv">p1</span> <span class="nv">p1</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">count-pairs</span> <span class="nv">p1</span><span class="p">)</span>
 <span class="mi">3</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The auxillary data-structure I have used is list of pairs. Although, it is not ideal and a set/hash like structure would be more efficient. Since hashes are not yet introduced formally in the book, so using list. Here goes the code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9529,7 +9529,8 @@
 46
 47
 48
-49</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+49
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">count-pairs</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">counter</span> <span class="nv">x</span> <span class="nv">aux</span><span class="p">)</span>
@@ -9577,8 +9578,7 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">append!</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">set-cdr!</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="nv">x</span><span class="p">)</span> <span class="nv">y</span><span class="p">)</span>
-  <span class="nv">x</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">x</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

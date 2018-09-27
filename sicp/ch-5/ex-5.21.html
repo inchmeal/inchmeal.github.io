@@ -9418,7 +9418,7 @@
 
 <p>Code turned out quite similar to the book’s version of fibonacci(one with double recursion):</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9457,7 +9457,8 @@
 37
 38
 39
-40</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">count-leaves-machine</span>
+40
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">count-leaves-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">tree</span> <span class="nv">continue</span> <span class="nv">count</span> <span class="nv">temp</span><span class="p">)</span>
    <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="ss">'null?</span> <span class="nv">null?</span><span class="p">)</span>
@@ -9496,12 +9497,11 @@
 	<span class="nv">base-case-1</span>
 	 <span class="p">(</span><span class="nf">assign</span> <span class="nv">count</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">1</span><span class="p">))</span>
 	 <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">continue</span><span class="p">))</span>
-	<span class="nv">done</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	<span class="nv">done</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output/Test:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9565,15 +9565,16 @@
 62
 63
 64
-65</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">t</span> <span class="o">'</span><span class="p">((</span><span class="nf">1</span> <span class="o">.</span> <span class="p">(</span><span class="nf">2</span> <span class="o">.</span> <span class="mi">3</span><span class="p">))</span> <span class="o">.</span> <span class="p">((</span><span class="nf">4</span> <span class="o">.</span> <span class="mi">5</span><span class="p">)</span> <span class="o">.</span> <span class="p">((</span><span class="nf">6</span> <span class="o">.</span> <span class="p">())</span> <span class="o">.</span> <span class="mi">7</span><span class="p">))))</span>
+65
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">t</span> <span class="o">'</span><span class="p">((</span><span class="nf">1</span> <span class="o">.</span> <span class="p">(</span><span class="nf">2</span> <span class="o">.</span> <span class="mi">3</span><span class="p">))</span> <span class="o">.</span> <span class="p">((</span><span class="nf">4</span> <span class="o">.</span> <span class="mi">5</span><span class="p">)</span> <span class="o">.</span> <span class="p">((</span><span class="nf">6</span> <span class="o">.</span> <span class="p">())</span> <span class="o">.</span> <span class="mi">7</span><span class="p">))))</span>
 
 <span class="c1">;Value: t</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="nv">t</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="nv">t</span>
 
 <span class="c1">;Value 56: ((1 2 . 3) (4 . 5) (6) . 7)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">count-leaves-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">tree</span> <span class="nv">continue</span> <span class="nv">count</span> <span class="nv">temp</span><span class="p">)</span>
@@ -9617,20 +9618,19 @@
 
 <span class="c1">;Value: count-leaves-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">count-leaves-machine</span> <span class="ss">'tree</span> <span class="nv">t</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">count-leaves-machine</span> <span class="ss">'tree</span> <span class="nv">t</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">count-leaves-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">count-leaves-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">count-leaves-machine</span> <span class="ss">'count</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">count-leaves-machine</span> <span class="ss">'count</span><span class="p">)</span>
 
 <span class="c1">;Value: 7</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
@@ -9638,7 +9638,7 @@
 
 <p>(Note that there is still one recursive process(and one iterative process))</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9691,7 +9691,8 @@
 51
 52
 53
-54</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+54
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">count-leaves-iter-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">tree</span> <span class="nv">count</span> <span class="nv">continue</span> <span class="nv">temp</span><span class="p">)</span>
@@ -9728,24 +9729,23 @@
 
 <span class="c1">;Value: count-leaves-iter-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">t</span> <span class="o">'</span><span class="p">((</span><span class="nf">1</span> <span class="o">.</span> <span class="p">(</span><span class="nf">2</span> <span class="o">.</span> <span class="mi">3</span><span class="p">))</span> <span class="o">.</span> <span class="p">((</span><span class="nf">4</span> <span class="o">.</span> <span class="mi">5</span><span class="p">)</span> <span class="o">.</span> <span class="p">((</span><span class="nf">6</span> <span class="o">.</span> <span class="p">())</span> <span class="o">.</span> <span class="mi">7</span><span class="p">))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">t</span> <span class="o">'</span><span class="p">((</span><span class="nf">1</span> <span class="o">.</span> <span class="p">(</span><span class="nf">2</span> <span class="o">.</span> <span class="mi">3</span><span class="p">))</span> <span class="o">.</span> <span class="p">((</span><span class="nf">4</span> <span class="o">.</span> <span class="mi">5</span><span class="p">)</span> <span class="o">.</span> <span class="p">((</span><span class="nf">6</span> <span class="o">.</span> <span class="p">())</span> <span class="o">.</span> <span class="mi">7</span><span class="p">))))</span>
 
 <span class="c1">;Value: t</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">count-leaves-machine</span> <span class="ss">'tree</span> <span class="nv">t</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">count-leaves-machine</span> <span class="ss">'tree</span> <span class="nv">t</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">count-leaves-iter-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">count-leaves-iter-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">count-leaves-machine</span> <span class="ss">'count</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">count-leaves-machine</span> <span class="ss">'count</span><span class="p">)</span>
 
 <span class="c1">;Value: 7</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

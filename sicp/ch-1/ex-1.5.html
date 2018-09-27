@@ -9417,7 +9417,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9425,7 +9425,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">define </span><span class="p">(</span><span class="nf">p</span><span class="p">)</span><span class="nv"> </span><span class="p">(</span><span class="nf">p</span><span class="p">))</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">define </span><span class="p">(</span><span class="nf">p</span><span class="p">)</span><span class="nv"> </span><span class="p">(</span><span class="nf">p</span><span class="p">))</span>
 
 <span class="p">(</span><span class="nf">define </span><span class="p">(</span><span class="nf">test x y</span><span class="p">)</span>
 <span class="nv">  </span><span class="p">(</span><span class="nf">if </span><span class="p">(</span><span class="nf">= x 0</span><span class="p">)</span>
@@ -9433,19 +9434,18 @@
 <span class="nv">      y</span><span class="p">)</span>
 <span class="p">)</span>
 
-<span class="p">(</span><span class="nf">test 0 </span><span class="p">(</span><span class="nf">p</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">test 0 </span><span class="p">(</span><span class="nf">p</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="normal-order-evaluation">Normal Order Evaluation</h4>
 
 <p>Here we <em>fully expand and then reduce</em>, thus expanding it we get:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">if </span><span class="p">(</span><span class="nf">= 0 0</span><span class="p">)</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">if </span><span class="p">(</span><span class="nf">= 0 0</span><span class="p">)</span>
 <span class="nv">      0</span>
-<span class="nv">      </span><span class="p">(</span><span class="nf">p</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">      </span><span class="p">(</span><span class="nf">p</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now <em>if</em> is a special form, and scheme interpreter will first check for the predicate and evaluate the expression based on the result
 of predicate.</p>

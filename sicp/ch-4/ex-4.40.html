@@ -9456,7 +9456,7 @@
 
 <p>Here goes the code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9481,7 +9481,8 @@
 23
 24
 25
-26</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
+26
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">fletcher</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">fletcher</span> <span class="mi">5</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">fletcher</span> <span class="mi">1</span><span class="p">)))</span>
@@ -9506,8 +9507,7 @@
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">count</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">count</span> <span class="mi">0</span><span class="p">)</span>
 	  <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
-	  <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">count</span> <span class="mi">1</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">count</span> <span class="mi">1</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>First, now in this exercise, we are moving down <code class="highlighter-rouge">distinct</code> but it is making it more efficient, seems to be contradicting with previous result.</p>
 
@@ -9527,12 +9527,12 @@
 
 <p>What if we change the order of these two restrictions present in the last inner <code class="highlighter-rouge">let</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">require</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">require</span>
  <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">baker</span> <span class="nv">cooper</span> <span class="nv">fletcher</span> <span class="nv">miller</span> <span class="nv">smith</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">baker</span> <span class="mi">5</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">baker</span> <span class="mi">5</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Let’s call these versions as V1 and V2.</p>
 
@@ -9568,7 +9568,7 @@
 
 <p>Here comes even more optimised version:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9595,7 +9595,8 @@
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
+28
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">fletcher</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">fletcher</span> <span class="mi">5</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">fletcher</span> <span class="mi">1</span><span class="p">)))</span>
@@ -9622,8 +9623,7 @@
 				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'cooper</span> <span class="nv">cooper</span><span class="p">)</span>
 				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'fletcher</span> <span class="nv">fletcher</span><span class="p">)</span>
 				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'miller</span> <span class="nv">miller</span><span class="p">)</span>
-				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Executing it 100 times took 4 seconds and executing this 400 times took only 14 seconds!</p>
 

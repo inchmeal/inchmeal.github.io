@@ -9416,33 +9416,33 @@
                         <hr/>
                         <p>Left to right irrespective of the implmenting language order:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-of-values</span> <span class="nv">exps</span> <span class="nv">env</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-of-values</span> <span class="nv">exps</span> <span class="nv">env</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">no-operands?</span> <span class="nv">exps</span><span class="p">)</span>
 	  <span class="o">'</span><span class="p">()</span>
 	  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">first</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">first-operand</span> <span class="nv">exps</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span>
 		<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">remaining</span> <span class="p">(</span><span class="nf">list-of-values</span> <span class="p">(</span><span class="nf">rest-operands</span> <span class="nv">exps</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span>
-		  <span class="p">(</span><span class="nb">cons</span> <span class="nv">first</span> <span class="nv">remaining</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		  <span class="p">(</span><span class="nb">cons</span> <span class="nv">first</span> <span class="nv">remaining</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Right to left irrespective of the implementing language order:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-of-values</span> <span class="nv">exps</span> <span class="nv">env</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-of-values</span> <span class="nv">exps</span> <span class="nv">env</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">no-operands?</span> <span class="nv">exps</span><span class="p">)</span>
 	  <span class="o">'</span><span class="p">()</span>
 	  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">remaining</span> <span class="p">(</span><span class="nf">list-of-values</span> <span class="p">(</span><span class="nf">rest-operands</span> <span class="nv">exps</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span>
 		<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">first</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">first-operand</span> <span class="nv">exps</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span>
-		  <span class="p">(</span><span class="nb">cons</span> <span class="nv">first</span> <span class="nv">remaining</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		  <span class="p">(</span><span class="nb">cons</span> <span class="nv">first</span> <span class="nv">remaining</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Well, this can not be tested at this point as other methods are not yet implemented.</p>
 

@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Changes are marked with <code class="highlighter-rouge">;;;</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9481,7 +9481,8 @@
 63
 64
 65
-66</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-new-machine</span><span class="p">)</span>
+66
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-new-machine</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">pc</span> <span class="p">(</span><span class="nf">make-register</span> <span class="ss">'pc</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">flag</span> <span class="p">(</span><span class="nf">make-register</span> <span class="ss">'flag</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">stack</span> <span class="p">(</span><span class="nf">make-stack</span><span class="p">))</span>
@@ -9546,12 +9547,11 @@
               <span class="p">((</span><span class="nb">eq?</span> <span class="nv">message</span> <span class="ss">'trace-on</span><span class="p">)</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">trace-on</span> <span class="nv">true</span><span class="p">))</span>          <span class="c1">;;;</span>
               <span class="p">((</span><span class="nb">eq?</span> <span class="nv">message</span> <span class="ss">'trace-off</span><span class="p">)</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">trace-on</span> <span class="nv">false</span><span class="p">))</span>        <span class="c1">;;;</span>
               <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- MACHINE"</span> <span class="nv">message</span><span class="p">))))</span>
-      <span class="nv">dispatch</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="nv">dispatch</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9620,7 +9620,8 @@
 67
 68
 69
-70</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+70
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">gcd-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">t</span><span class="p">)</span>
@@ -9636,36 +9637,36 @@
 
 <span class="c1">;Value 8: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: gcd-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'a</span> <span class="mi">50</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'a</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'b</span> <span class="mi">375</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'b</span> <span class="mi">375</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
 <span class="c1">;;;;BY DEFAULT TRACE IS OFF</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">gcd-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">gcd-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
 <span class="c1">;;;NOW SWITCHING ON THE TRACE</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'trace-on</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'trace-on</span><span class="p">)</span>
 
 <span class="c1">;Value: #f</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'a</span> <span class="mi">50</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'a</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'b</span> <span class="mi">375</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'b</span> <span class="mi">375</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">gcd-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">gcd-machine</span><span class="p">)</span>
 
 <span class="nv">Executing</span> <span class="nv">instruction:</span> <span class="p">(</span><span class="nf">test</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">=</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">0</span><span class="p">))</span>
 <span class="nv">Executing</span> <span class="nv">instruction:</span> <span class="p">(</span><span class="nf">branch</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">gcd-done</span><span class="p">))</span>
@@ -9689,8 +9690,7 @@
 <span class="nv">Executing</span> <span class="nv">instruction:</span> <span class="p">(</span><span class="nf">branch</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">gcd-done</span><span class="p">))</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

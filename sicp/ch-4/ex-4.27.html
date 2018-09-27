@@ -9427,8 +9427,8 @@
 
 <hr />
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">w</span> <span class="p">(</span><span class="nf">id</span> <span class="p">(</span><span class="nf">id</span> <span class="mi">10</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">w</span> <span class="p">(</span><span class="nf">id</span> <span class="p">(</span><span class="nf">id</span> <span class="mi">10</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>On defining w, we invoke <code class="highlighter-rouge">id</code> with argument <code class="highlighter-rouge">(id 10)</code>.</li>
@@ -9437,14 +9437,14 @@
   <li>Since we do not access <code class="highlighter-rouge">x</code>, the <code class="highlighter-rouge">w</code> variable is binds it to <code class="highlighter-rouge">x</code> which contains <code class="highlighter-rouge">(id 10)</code>.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+4
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="nv">count</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">1</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Clearly, count is 1, because <code class="highlighter-rouge">id</code> is invoked only once till now.</li>
@@ -9453,22 +9453,22 @@
   <li>Because <code class="highlighter-rouge">actual-value</code> is recursive - it calls ‘force-it’ which again calls ‘actual-value’ untill all thunks are evaluated - we get the value 10.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+8
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="nv">w</span>
 <span class="c1">;;; L-Eval value:</span>
 <span class="mi">10</span>
 <span class="c1">;;; L-Eval input:</span>
 <span class="nv">count</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">2</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">2</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>One important and interesting thing to note is that without memoization in <code class="highlighter-rouge">force-it</code>, <code class="highlighter-rouge">w</code> still contains <code class="highlighter-rouge">'thunk (id 10)</code>. Thus every access of <code class="highlighter-rouge">w</code> would have caused invocation of <code class="highlighter-rouge">id</code> and thus <code class="highlighter-rouge">count</code> would have changed with each access!</p>
 

@@ -9428,7 +9428,7 @@
 
 <p>The code which contains the changes is below:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9507,7 +9507,8 @@
 77
 78
 79
-80</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-of-arg-values</span> <span class="nv">exps</span> <span class="nv">env</span><span class="p">)</span>
+80
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-of-arg-values</span> <span class="nv">exps</span> <span class="nv">env</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">no-operands?</span> <span class="nv">exps</span><span class="p">)</span>
       <span class="o">'</span><span class="p">()</span>
       <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">actual-value</span> <span class="p">(</span><span class="nf">first-operand</span> <span class="nv">exps</span><span class="p">)</span> <span class="nv">env</span><span class="p">)</span>
@@ -9586,8 +9587,7 @@
 		<span class="p">((</span><span class="nf">lazy-thunk?</span> <span class="nv">obj</span><span class="p">)</span> <span class="p">(</span><span class="nf">actual-value</span> <span class="p">(</span><span class="nf">thunk-exp</span> <span class="nv">obj</span><span class="p">)</span> <span class="p">(</span><span class="nf">thunk-env</span> <span class="nv">obj</span><span class="p">)))</span>
         <span class="p">((</span><span class="nf">evaluated-thunk?</span> <span class="nv">obj</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">thunk-value</span> <span class="nv">obj</span><span class="p">))</span>
-        <span class="p">(</span><span class="k">else</span> <span class="nv">obj</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+        <span class="p">(</span><span class="k">else</span> <span class="nv">obj</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9595,7 +9595,7 @@
 
 <p>First I tested with a small code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9605,7 +9605,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+11
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">test</span> <span class="nv">a</span> <span class="p">(</span><span class="nf">b</span> <span class="nv">lazy</span><span class="p">)</span> <span class="p">(</span><span class="nf">c</span> <span class="nv">memo-lazy</span><span class="p">))</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="ss">'done</span><span class="p">)</span>
 
 <span class="c1">;;; L-Eval value:</span>
@@ -9615,8 +9616,7 @@
 <span class="p">(</span><span class="nf">test</span> <span class="p">((</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'a-invoked</span><span class="p">)</span> <span class="ss">'a</span><span class="p">))</span> <span class="p">((</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'b-invoked</span><span class="p">)</span> <span class="ss">'b</span><span class="p">))</span> <span class="p">((</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'c-invoked</span><span class="p">)</span> <span class="ss">'c</span><span class="p">)))</span>
 <span class="nv">a-invoked</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="nv">done</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">done</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Then, I tested it using ex-4.27 code.</p>
 
@@ -9626,7 +9626,7 @@
 
 <p><strong>Without lazy or lazy-memo</strong></p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9655,7 +9655,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+30
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">count</span> <span class="mi">0</span><span class="p">)</span>
 <span class="c1">;;; L-Eval value:</span>
 <span class="nv">ok</span>
@@ -9684,12 +9685,11 @@
 <span class="c1">;;; L-Eval input:</span>
 <span class="nv">w</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">10</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">10</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>With lazy argument</strong></p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9730,7 +9730,8 @@
 39
 40
 41
-42</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+42
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">count</span> <span class="mi">0</span><span class="p">)</span>
 <span class="c1">;;; L-Eval value:</span>
 <span class="nv">ok</span>
@@ -9771,12 +9772,11 @@
 <span class="c1">;;; L-Eval input:</span>
 <span class="nv">count</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">4</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">4</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>With memo-lazy</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9809,7 +9809,8 @@
 31
 32
 33
-34</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+34
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">count</span> <span class="mi">0</span><span class="p">)</span>
 <span class="c1">;;; L-Eval value:</span>
 <span class="nv">ok</span>
@@ -9842,8 +9843,7 @@
 <span class="c1">;;; L-Eval input:</span>
 <span class="nv">count</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">2</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">2</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9853,7 +9853,7 @@
 
 <p>Note: Sometimes this code: <code class="highlighter-rouge">(ge (make-top-level-environment))</code> at the top does not correctly clear the environment. So, I executed this directly in scheme repl before loading the file.(I am using emacs). I wasted some time in it believing that there is a bug in code but the actual problem was this :(</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10065,7 +10065,8 @@
 210
 211
 212
-213</pre></td><td class="code"><pre><span class="c1">;;;;LAZY EVALUATOR FROM SECTION 4.2 OF</span>
+213
+</pre></td><td class="code"><pre><span class="c1">;;;;LAZY EVALUATOR FROM SECTION 4.2 OF</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm</span>
@@ -10277,8 +10278,7 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">the-global-environment</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
 
-<span class="ss">'LAZY-EVALUATOR-LOADED</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="ss">'LAZY-EVALUATOR-LOADED</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

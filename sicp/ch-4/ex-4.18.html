@@ -9416,31 +9416,31 @@
                         <hr/>
                         <p>We have procedure:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
+4
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">y</span> <span class="p">(</span><span class="nf">integral</span> <span class="p">(</span><span class="k">delay</span> <span class="nv">dy</span><span class="p">)</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">))</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">dy</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">f</span> <span class="nv">y</span><span class="p">))</span>
-  <span class="nv">y</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">y</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As shown in this exercise, this will get converted to:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
+7
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">y</span> <span class="ss">'*unassigned*</span><span class="p">)</span>
 		<span class="p">(</span><span class="nf">dy</span> <span class="ss">'*unassigned*</span><span class="p">))</span>
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">a</span> <span class="p">(</span><span class="nf">integral</span> <span class="p">(</span><span class="k">delay</span> <span class="nv">dy</span><span class="p">))</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
 		  <span class="p">(</span><span class="nf">b</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">f</span> <span class="nv">y</span><span class="p">)))</span>
 	  <span class="p">(</span><span class="k">set!</span> <span class="nv">y</span> <span class="nv">a</span><span class="p">)</span>
-	  <span class="p">(</span><span class="k">set!</span> <span class="nv">dy</span> <span class="nv">b</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">(</span><span class="k">set!</span> <span class="nv">dy</span> <span class="nv">b</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>Assuming</strong> that <code class="highlighter-rouge">delay</code> is implemented as special form in our evaluator such that it behaves as described in chapter-3, i.e. arguments to <code class="highlighter-rouge">delay</code> are not evaluated until it is accessed.</p>
 

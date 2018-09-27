@@ -9420,7 +9420,7 @@
 
 <p>I added eyes and mouth.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9450,7 +9450,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">wave</span> 
+31
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">wave</span> 
    <span class="p">(</span><span class="nf">segments-&gt;painter</span> 
         <span class="p">(</span><span class="nb">list</span> 
            <span class="p">(</span><span class="nf">make-segment</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">25</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">35</span> <span class="o">.</span><span class="mi">5</span><span class="p">))</span> 
@@ -9480,12 +9481,11 @@
            <span class="p">(</span><span class="nf">make-segment</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">0.47</span> <span class="mf">0.75</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">0.51</span> <span class="mf">0.75</span><span class="p">))</span> <span class="c1">;new segment</span>
         <span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>(b)</strong></p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9512,7 +9512,8 @@
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="c1">; using only one image as suggested in exercise</span>
+28
+</pre></td><td class="code"><pre><span class="c1">; using only one image as suggested in exercise</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">corner-split-alt1</span> <span class="nv">painter</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">0</span><span class="p">)</span>
       <span class="nv">painter</span>
@@ -9539,12 +9540,11 @@
               <span class="p">(</span><span class="nf">bottom-right</span> <span class="p">(</span><span class="nf">below</span> <span class="nv">right</span> <span class="nv">right</span><span class="p">))</span>
               <span class="p">(</span><span class="nf">corner</span> <span class="p">(</span><span class="nf">corner-split</span> <span class="nv">painter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">))))</span>
           <span class="p">(</span><span class="nf">below</span> <span class="p">(</span><span class="nf">beside</span> <span class="nv">painter</span> <span class="nv">top-left</span><span class="p">)</span>
-                  <span class="p">(</span><span class="nf">beside</span> <span class="nv">bottom-right</span> <span class="nv">corner</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                  <span class="p">(</span><span class="nf">beside</span> <span class="nv">bottom-right</span> <span class="nv">corner</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>(c)</strong></p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9559,7 +9559,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-limit-alt</span> <span class="nv">painter</span> <span class="nv">n</span><span class="p">)</span> 
+16
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-limit-alt</span> <span class="nv">painter</span> <span class="nv">n</span><span class="p">)</span> 
    <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
           <span class="p">(</span><span class="nf">combine4</span>
                 <span class="p">(</span><span class="nf">square-of-four</span>
@@ -9574,8 +9575,7 @@
               <span class="p">(</span><span class="nf">corner-split</span> <span class="nv">painter</span> <span class="nv">n</span><span class="p">)</span>
         <span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

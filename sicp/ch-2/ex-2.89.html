@@ -9420,7 +9420,7 @@
 
 <p>Here are the required changes:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9438,7 +9438,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">adjoin-term</span> <span class="nv">term</span> <span class="nv">term-list</span><span class="p">)</span>
+19
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">adjoin-term</span> <span class="nv">term</span> <span class="nv">term-list</span><span class="p">)</span>
       <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">count</span> <span class="nv">terms</span><span class="p">)</span>
           <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">count</span> <span class="mi">0</span><span class="p">)</span>
               <span class="nv">terms</span>
@@ -9456,12 +9457,11 @@
        <span class="p">)</span>
 <span class="p">)</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">first-term</span> <span class="nv">term-list</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-term</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">term-list</span><span class="p">)</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">term-list</span><span class="p">)))</span>
-<span class="c1">;all other procedures of term-list will remain same</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;all other procedures of term-list will remain same</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>And here goes the new <code class="highlighter-rouge">=zero?</code> implementation:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9469,7 +9469,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">=is-zero?</span> <span class="nv">poly</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">=is-zero?</span> <span class="nv">poly</span><span class="p">)</span>
        <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">terms</span><span class="p">)</span>
          <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">empty-termlist?</span> <span class="nv">terms</span><span class="p">)</span>
              <span class="no">#t</span>
@@ -9477,25 +9478,24 @@
          <span class="p">)</span>
        <span class="p">)</span>
        <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nf">term-list</span> <span class="nv">poly</span><span class="p">))</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Test:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))))</span>
+7
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))))</span>
 
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">6</span><span class="p">)</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">8</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">))))</span>
 
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="mi">4</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">7</span><span class="p">)</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">9</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

@@ -9418,16 +9418,16 @@
 
 <p>This code generates the same output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">compile</span> <span class="o">'</span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">g</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span> <span class="ss">'val</span> <span class="ss">'next</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">compile</span> <span class="o">'</span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">g</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span> <span class="ss">'val</span> <span class="ss">'next</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>How to arrive at this answer?</p>
 
 <p>Added the details in comments:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9501,7 +9501,8 @@
 72
 73
 74
-75</pre></td><td class="code"><pre><span class="c1">;;below two line of code suggests that between entry-16 and after-lambda-15 contains a compiled procedure</span>
+75
+</pre></td><td class="code"><pre><span class="c1">;;below two line of code suggests that between entry-16 and after-lambda-15 contains a compiled procedure</span>
 <span class="c1">;;and this proceudre is saved in register val</span>
 <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">make-compiled-procedure</span><span class="p">)</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">entry16</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">after-lambda15</span><span class="p">))</span> 
@@ -9575,8 +9576,7 @@
 <span class="c1">;;no more statements thus there is onlye one statment in the procedure.</span>
 <span class="nv">after-lambda15</span>
 <span class="p">(</span><span class="nf">perform</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">define-variable!</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">f</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span> <span class="c1">;the procedure is name is 'f'</span>
-<span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">ok</span><span class="p">))</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">ok</span><span class="p">))</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

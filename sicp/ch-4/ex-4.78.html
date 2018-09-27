@@ -9462,7 +9462,7 @@
   <li>This example explains why not to use <code class="highlighter-rouge">define</code> for <em>variable</em>(here aa or bb) definitions(procedure will work) and instead use <code class="highlighter-rouge">let</code>:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9485,7 +9485,8 @@
 21
 22
 23
-24</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+24
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">aa</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
 <span class="c1">;;; Starting a new problem </span>
 <span class="c1">;;; Amb-Eval value:</span>
@@ -9508,8 +9509,7 @@
 <span class="nv">try-again</span>
 <span class="c1">;;; There are no more values of</span>
 <span class="p">(</span><span class="nf">amb</span> <span class="nv">aa</span> <span class="nv">bb</span><span class="p">)</span>
-<span class="c1">;;; Amb-Eval input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Amb-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This problem won’t occur with using <code class="highlighter-rouge">let</code>.</p>
 
@@ -9517,7 +9517,7 @@
   <li>To support <code class="highlighter-rouge">interleaving</code>, I considered using <code class="highlighter-rouge">ramb</code>(implemented in previous section ex-4.50) but it won’t work as once it chooses a path then it first generates all the values from that path and then it chooses the other path. For example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9555,7 +9555,8 @@
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+39
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ff</span><span class="p">)</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
 <span class="c1">;;; Starting a new problem </span>
 <span class="c1">;;; Amb-Eval value:</span>
@@ -9593,12 +9594,11 @@
 <span class="c1">;;; Amb-Eval input:</span>
 <span class="nv">try-again</span>
 <span class="c1">;;; There are no more values of</span>
-<span class="p">(</span><span class="nf">ramb</span> <span class="p">(</span><span class="nf">ff</span><span class="p">)</span> <span class="p">(</span><span class="nf">gg</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">ramb</span> <span class="p">(</span><span class="nf">ff</span><span class="p">)</span> <span class="p">(</span><span class="nf">gg</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We can solve this using <code class="highlighter-rouge">let</code> but it has its own problem. We get duplicates because it tries all combinations(remember distinct!):</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9630,7 +9630,8 @@
 30
 31
 32
-33</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+33
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">test</span><span class="p">)</span> <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">aa</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
 					 <span class="p">(</span><span class="nf">bb</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">)))</span>
 				 <span class="p">(</span><span class="nf">ramb</span> <span class="nv">aa</span> <span class="nv">bb</span><span class="p">)))</span>
@@ -9662,8 +9663,7 @@
 <span class="nv">try-again</span>
 <span class="c1">;;; Amb-Eval value:</span>
 <span class="mi">1</span>
-<span class="c1">;;; Amb-Eval input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Amb-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Keeping track of duplicates, might solve this by providing a special form in the non-deterministic evaluator. I left it without interleaving. Probably, there can be other better solution without keeping track which I have not thought.</p>
 
@@ -9671,58 +9671,7 @@
   <li>Implementing <code class="highlighter-rouge">not</code> turned out to be more involved. We need a way to know that if a query results in a <em>failure</em>. It sorts of look like using <code class="highlighter-rouge">if-fail</code>(ex-4.52) can do the job as follows:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">negate</span> <span class="nv">operands</span> <span class="nv">frame</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">eq?</span>
-	   <span class="p">(</span><span class="nf">if-fail</span> <span class="p">(</span><span class="nf">qeval</span> <span class="p">(</span><span class="nf">negated-query</span> <span class="nv">operands</span><span class="p">)</span>
-					   <span class="nv">frame</span><span class="p">)</span>
-				<span class="ss">'failed</span><span class="p">)</span>
-	   <span class="ss">'failed</span><span class="p">)</span>
-	  <span class="nv">frame</span>
-	  <span class="p">(</span><span class="nf">amb</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>But it did not work! Why? Because when <code class="highlighter-rouge">qeval</code> failed, we correctly get <code class="highlighter-rouge">'failed</code> which causes the evaluation of <code class="highlighter-rouge">(amb)</code>. And evaluating <code class="highlighter-rouge">(amb)</code> caused to look for alternate path. This alternate path takes us to <code class="highlighter-rouge">if-fail</code> again which returns <code class="highlighter-rouge">'failed</code> as alternate path(failed path). And thus <code class="highlighter-rouge">if</code> returned the <code class="highlighter-rouge">frame</code> even when <code class="highlighter-rouge">qeval</code> failed!</p>
-
-<p>This made me realise that we don’t need a construct like <code class="highlighter-rouge">if-fail</code> but something like <code class="highlighter-rouge">(amb)</code> but that accepts an argument and fails if that argument succeeds. This lead to the implementation of <code class="highlighter-rouge">ensure-fail</code>. The code <code class="highlighter-rouge">(ensure-fail &lt;exp1&gt;) &lt;exp2&gt;</code> will evaluate <code class="highlighter-rouge">&lt;exp2&gt;</code> only if <code class="highlighter-rouge">&lt;exp1&gt;</code> failed. Here goes it’s implementation:</p>
-
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ensure-fail?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'ensure-fail</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ensure-fail-expression</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">analyze-ensure-fail</span> <span class="nv">exp</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">expr</span> <span class="p">(</span><span class="nf">analyze</span> <span class="p">(</span><span class="nf">ensure-fail-expression</span> <span class="nv">exp</span><span class="p">))))</span>
-	<span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">env</span> <span class="nv">succeed</span> <span class="nv">fail</span><span class="p">)</span>
-	  <span class="p">(</span><span class="nf">expr</span> <span class="nv">env</span>
-			  <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">ignore</span> <span class="nv">fail2</span><span class="p">)</span> <span class="p">(</span><span class="nf">fail</span><span class="p">))</span>
-			  <span class="p">(</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nf">succeed</span> <span class="ss">'ok</span> <span class="nv">fail</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<ul>
-  <li>Now, there is still one thing remaining <code class="highlighter-rouge">lisp-value</code>, which requires this procedure to be evaluated in the non-deterministic evaluator.</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">execute</span> <span class="nv">exp</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">apply</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">predicate</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">user-initial-environment</span><span class="p">)</span>
-         <span class="p">(</span><span class="nf">args</span> <span class="nv">exp</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>This can be solved simply providing <code class="highlighter-rouge">eval</code> and <code class="highlighter-rouge">appply</code> of our non-deterministic evaluator as primitive procedures. And <code class="highlighter-rouge">user-initial-environment</code> can be set similar to the way we set <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code> in the <code class="highlighter-rouge">setup-environment</code>:</p>
-
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9730,7 +9679,59 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">)</span>
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">negate</span> <span class="nv">operands</span> <span class="nv">frame</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">eq?</span>
+	   <span class="p">(</span><span class="nf">if-fail</span> <span class="p">(</span><span class="nf">qeval</span> <span class="p">(</span><span class="nf">negated-query</span> <span class="nv">operands</span><span class="p">)</span>
+					   <span class="nv">frame</span><span class="p">)</span>
+				<span class="ss">'failed</span><span class="p">)</span>
+	   <span class="ss">'failed</span><span class="p">)</span>
+	  <span class="nv">frame</span>
+	  <span class="p">(</span><span class="nf">amb</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>But it did not work! Why? Because when <code class="highlighter-rouge">qeval</code> failed, we correctly get <code class="highlighter-rouge">'failed</code> which causes the evaluation of <code class="highlighter-rouge">(amb)</code>. And evaluating <code class="highlighter-rouge">(amb)</code> caused to look for alternate path. This alternate path takes us to <code class="highlighter-rouge">if-fail</code> again which returns <code class="highlighter-rouge">'failed</code> as alternate path(failed path). And thus <code class="highlighter-rouge">if</code> returned the <code class="highlighter-rouge">frame</code> even when <code class="highlighter-rouge">qeval</code> failed!</p>
+
+<p>This made me realise that we don’t need a construct like <code class="highlighter-rouge">if-fail</code> but something like <code class="highlighter-rouge">(amb)</code> but that accepts an argument and fails if that argument succeeds. This lead to the implementation of <code class="highlighter-rouge">ensure-fail</code>. The code <code class="highlighter-rouge">(ensure-fail &lt;exp1&gt;) &lt;exp2&gt;</code> will evaluate <code class="highlighter-rouge">&lt;exp2&gt;</code> only if <code class="highlighter-rouge">&lt;exp1&gt;</code> failed. Here goes it’s implementation:</p>
+
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ensure-fail?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'ensure-fail</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ensure-fail-expression</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">analyze-ensure-fail</span> <span class="nv">exp</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">expr</span> <span class="p">(</span><span class="nf">analyze</span> <span class="p">(</span><span class="nf">ensure-fail-expression</span> <span class="nv">exp</span><span class="p">))))</span>
+	<span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">env</span> <span class="nv">succeed</span> <span class="nv">fail</span><span class="p">)</span>
+	  <span class="p">(</span><span class="nf">expr</span> <span class="nv">env</span>
+			  <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">ignore</span> <span class="nv">fail2</span><span class="p">)</span> <span class="p">(</span><span class="nf">fail</span><span class="p">))</span>
+			  <span class="p">(</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nf">succeed</span> <span class="ss">'ok</span> <span class="nv">fail</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Now, there is still one thing remaining <code class="highlighter-rouge">lisp-value</code>, which requires this procedure to be evaluated in the non-deterministic evaluator.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">execute</span> <span class="nv">exp</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">apply</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">predicate</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">user-initial-environment</span><span class="p">)</span>
+         <span class="p">(</span><span class="nf">args</span> <span class="nv">exp</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>This can be solved simply providing <code class="highlighter-rouge">eval</code> and <code class="highlighter-rouge">appply</code> of our non-deterministic evaluator as primitive procedures. And <code class="highlighter-rouge">user-initial-environment</code> can be set similar to the way we set <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code> in the <code class="highlighter-rouge">setup-environment</code>:</p>
+
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">initial-env</span>
          <span class="p">(</span><span class="nf">extend-environment</span> <span class="p">(</span><span class="nf">primitive-procedure-names</span><span class="p">)</span>
                              <span class="p">(</span><span class="nf">primitive-procedure-objects</span><span class="p">)</span>
@@ -9738,27 +9739,26 @@
     <span class="p">(</span><span class="nf">define-variable!</span> <span class="ss">'true</span> <span class="nv">true</span> <span class="nv">initial-env</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">define-variable!</span> <span class="ss">'false</span> <span class="nv">false</span> <span class="nv">initial-env</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">define-variable!</span> <span class="ss">'user-initial-environment</span> <span class="nv">initial-env</span> <span class="nv">initial-env</span><span class="p">)</span>
-    <span class="nv">initial-env</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="nv">initial-env</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li><em>Driver Loop</em>: Since the non-deterministic evaluator will run in driver loop, I implemented a procedure <code class="highlighter-rouge">lp</code>. It can be called as <code class="highlighter-rouge">(lp '(supervisor ?x (Bitdiddle Ben)))</code> for executing a query. Or for assertion use:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">lp</span> <span class="o">'</span><span class="p">(</span><span class="nf">assert!</span>
+7
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">lp</span> <span class="o">'</span><span class="p">(</span><span class="nf">assert!</span>
  <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">can-replace</span> <span class="nv">?per1</span> <span class="nv">?per2</span><span class="p">)</span>
 	   <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">job</span> <span class="nv">?per1</span> <span class="nv">?job1</span><span class="p">)</span>
 			<span class="p">(</span><span class="nf">job</span> <span class="nv">?per2</span> <span class="nv">?job2</span><span class="p">)</span>
 			<span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">same</span> <span class="nv">?per1</span> <span class="nv">?per2</span><span class="p">))</span>
 			<span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">same</span> <span class="nv">?job1</span> <span class="nv">?job2</span><span class="p">)</span>
-				<span class="p">(</span><span class="nf">can-do-job</span> <span class="nv">?job1</span> <span class="nv">?job2</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+				<span class="p">(</span><span class="nf">can-do-job</span> <span class="nv">?job1</span> <span class="nv">?job2</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Well thats it!</p>
 
@@ -9770,10 +9770,10 @@
   <li>Clear the environment. In scheme, I use this:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">ge</span> <span class="p">(</span><span class="nf">make-top-level-environment</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">restart</span> <span class="mi">1</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">ge</span> <span class="p">(</span><span class="nf">make-top-level-environment</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">restart</span> <span class="mi">1</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>
@@ -9790,7 +9790,7 @@
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9875,7 +9875,8 @@
 83
 84
 85
-86</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+86
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="nf">initialize-data-base</span> <span class="nv">microshaft-data-base</span><span class="p">)</span>
 <span class="c1">;;; Starting a new problem </span>
 <span class="c1">;;; Amb-Eval value:</span>
@@ -9960,12 +9961,11 @@
 <span class="c1">;;; Starting a new problem </span>
 <span class="p">(</span><span class="nf">Query</span> <span class="nv">Results:</span><span class="p">)</span>
 <span class="c1">;;; Amb-Eval value:</span>
-<span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">3</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">3</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h3 id="complete-code-of-logic-evaluator">Complete code of logic evaluator</h3>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10513,7 +10513,8 @@
 546
 547
 548
-549</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lp</span> <span class="nv">query</span><span class="p">)</span>
+549
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lp</span> <span class="nv">query</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">q</span> <span class="p">(</span><span class="nf">query-syntax-process</span> <span class="nv">query</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">assertion-to-be-added?</span> <span class="nv">q</span><span class="p">)</span>
 		<span class="p">(</span><span class="k">begin</span>
@@ -11061,12 +11062,11 @@
       <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?staff-person</span> <span class="nv">?boss</span><span class="p">)</span>
           <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?staff-person</span> <span class="nv">?middle-manager</span><span class="p">)</span>
                <span class="p">(</span><span class="nf">outranked-by</span> <span class="nv">?middle-manager</span> <span class="nv">?boss</span><span class="p">))))</span>
-<span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h3 id="complete-code-of-non-deterministic-evaluator">Complete code of non-deterministic evaluator</h3>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -11523,7 +11523,8 @@
 455
 456
 457
-458</pre></td><td class="code"><pre><span class="c1">;;;;AMB EVALUATOR FROM SECTION 4.3 OF</span>
+458
+</pre></td><td class="code"><pre><span class="c1">;;;;AMB EVALUATOR FROM SECTION 4.3 OF</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm.</span>
@@ -11980,8 +11981,7 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">the-global-environment</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
 
-<span class="ss">'AMB-EVALUATOR-LOADED</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="ss">'AMB-EVALUATOR-LOADED</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>In the above evaluator, file “ch4-mceval.scm” is used which can be downloaded from <a href="https://mitpress.mit.edu/sites/default/files/sicp/code/ch4-mceval.scm">mit</a>. Note that, there is one change to be done in this file in <code class="highlighter-rouge">setup-environment</code> mentioned in the above details.</p>
 

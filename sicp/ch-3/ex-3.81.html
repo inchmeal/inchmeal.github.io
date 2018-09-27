@@ -9420,7 +9420,7 @@
 
 <p>Let’s first check the output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9450,7 +9450,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span>
+31
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span>
        <span class="nv">requests</span>
         <span class="p">(</span><span class="nf">list-&gt;stream</span>
 		 <span class="o">'</span><span class="p">((</span><span class="nf">reset</span> <span class="mi">512</span><span class="p">)</span>
@@ -9470,22 +9471,21 @@
 
 <span class="c1">;Value: requests</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">random-stream-gen</span> <span class="p">(</span><span class="nf">make-rand-gen</span> <span class="mi">729</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">random-stream-gen</span> <span class="p">(</span><span class="nf">make-rand-gen</span> <span class="mi">729</span> <span class="mi">1000</span><span class="p">))</span>
 
 <span class="c1">;Value: random-stream-gen</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">random-stream</span> <span class="p">(</span><span class="nf">random-stream-gen</span> <span class="nv">requests</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">random-stream</span> <span class="p">(</span><span class="nf">random-stream-gen</span> <span class="nv">requests</span><span class="p">))</span>
 
 <span class="c1">;Value: random-stream</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-n-items-of-stream</span> <span class="nv">random-stream</span> <span class="mi">14</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-n-items-of-stream</span> <span class="nv">random-stream</span> <span class="mi">14</span><span class="p">)</span>
 
-<span class="c1">;Value 55: (871 282 201 871 282 201 852 164 779 614 164 779 614 . 829)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value 55: (871 282 201 871 282 201 852 164 779 614 164 779 614 . 829)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now, I think it is easier to understand the code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9508,7 +9508,8 @@
 21
 22
 23
-24</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-rand-gen</span> <span class="nv">default-seed</span> <span class="nv">upper-bound</span><span class="p">)</span>
+24
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-rand-gen</span> <span class="nv">default-seed</span> <span class="nv">upper-bound</span><span class="p">)</span>
   <span class="c1">;Using foot-note 6 from chapter-3 to implement rand-update</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">rand-update</span> <span class="nv">x</span><span class="p">)</span>
 	<span class="p">(</span><span class="nb">remainder</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">29</span> <span class="nv">x</span><span class="p">)</span> <span class="mi">23</span><span class="p">)</span> <span class="nv">upper-bound</span><span class="p">))</span>
@@ -9531,8 +9532,7 @@
   <span class="nv">make-rand-stream</span><span class="p">)</span>
 			  
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">list-&gt;stream</span> <span class="nv">l</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">l</span><span class="p">)</span> <span class="p">(</span><span class="nf">list-&gt;stream</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">l</span><span class="p">))))</span>  <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">l</span><span class="p">)</span> <span class="p">(</span><span class="nf">list-&gt;stream</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">l</span><span class="p">))))</span>  </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

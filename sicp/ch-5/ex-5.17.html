@@ -9420,7 +9420,7 @@
 
 <p>Here are the required changes:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9482,7 +9482,8 @@
 60
 61
 62
-63</pre></td><td class="code"><pre><span class="c1">;;CHANGES IN instruction DATA</span>
+63
+</pre></td><td class="code"><pre><span class="c1">;;CHANGES IN instruction DATA</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-instruction</span> <span class="nv">text</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="nv">text</span> <span class="p">(</span><span class="nb">cons</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">())))</span>
 
@@ -9544,14 +9545,13 @@
 			<span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">instruction-text</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">insts</span><span class="p">)))))</span>
        <span class="p">((</span><span class="nf">instruction-execution-proc</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">insts</span><span class="p">)))</span>
 	   <span class="p">(</span><span class="k">set!</span> <span class="nv">instruction-count</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">instruction-count</span> <span class="mi">1</span><span class="p">))</span>
-       <span class="p">(</span><span class="nf">execute</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+       <span class="p">(</span><span class="nf">execute</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9616,7 +9616,8 @@
 63
 64
 65
-66</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+66
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">gcd-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">t</span><span class="p">)</span>
@@ -9638,19 +9639,19 @@
 
 <span class="c1">;Value 12: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: gcd-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: #f</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="nv">Moving</span> <span class="nv">over</span> <span class="nv">label:</span> <span class="nv">test-b</span>
 <span class="nv">Moving</span> <span class="nv">over</span> <span class="nv">label:</span> <span class="nv">dummy-label</span>
 <span class="nv">Executing</span> <span class="nv">instruction:</span> <span class="p">(</span><span class="nf">test</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">=</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">0</span><span class="p">))</span>
@@ -9681,8 +9682,7 @@
 <span class="nv">Executing</span> <span class="nv">instruction:</span> <span class="p">(</span><span class="nf">branch</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">gcd-done</span><span class="p">))</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

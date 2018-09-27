@@ -9571,7 +9571,7 @@ steps =
 
 <p>For reference, let’s see the code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9583,7 +9583,8 @@ steps =
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">interleave</span> <span class="nv">s1</span> <span class="nv">s2</span><span class="p">)</span>
+13
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">interleave</span> <span class="nv">s1</span> <span class="nv">s2</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">stream-null?</span> <span class="nv">s1</span><span class="p">)</span>
       <span class="nv">s2</span>
       <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">s1</span><span class="p">)</span>
@@ -9595,8 +9596,7 @@ steps =
    <span class="p">(</span><span class="nf">interleave</span>
     <span class="p">(</span><span class="nf">stream-map</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">s</span><span class="p">)</span> <span class="nv">x</span><span class="p">))</span>
                 <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">t</span><span class="p">))</span>
-    <span class="p">(</span><span class="nf">pairs</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s</span><span class="p">)</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">t</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="p">(</span><span class="nf">pairs</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s</span><span class="p">)</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">t</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>One way to look at it is <em>imagine that every step is a space to be occupied by a pair</em>. Obviously a <em>pair</em> can occupy only one space.</p>
 

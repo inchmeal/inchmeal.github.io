@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Modified fixed-point procedure to print guesses:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9438,7 +9438,8 @@
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">tolerance</span> <span class="mf">0.00001</span><span class="p">)</span>
+21
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">tolerance</span> <span class="mf">0.00001</span><span class="p">)</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">fixed-point</span> <span class="nv">f</span> <span class="nv">first-guess</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">close-enough?</span> <span class="nv">v1</span> <span class="nv">v2</span><span class="p">)</span>
@@ -9458,12 +9459,11 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">average</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">)</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Solving <script type="math/tex">x \mapsto \frac { \log 1000 } {\log x}</script> <em>without</em> average-damping:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9498,7 +9498,8 @@
 33
 34
 35
-36</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">fixed-point</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">log</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">(</span><span class="nb">log</span> <span class="nv">x</span><span class="p">)))</span> <span class="mf">2.0</span><span class="p">)</span>
+36
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">fixed-point</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">log</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">(</span><span class="nb">log</span> <span class="nv">x</span><span class="p">)))</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="mf">9.965784284662087</span>
 <span class="mf">3.004472209841214</span>
 <span class="mf">6.279195757507157</span>
@@ -9533,12 +9534,11 @@
 <span class="mf">4.555527808516254</span>
 <span class="mf">4.555540912917957</span>
 <span class="mf">4.555532270803653</span>
-<span class="mf">4.555532270803653</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mf">4.555532270803653</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Solving <script type="math/tex">x \mapsto \frac { \log 1000 } {\log x}</script> <em>with</em> average-damping:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9548,7 +9548,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">fixed-point</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">average</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">log</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">(</span><span class="nb">log</span> <span class="nv">x</span><span class="p">)))</span> <span class="p">)</span> <span class="mf">2.0</span><span class="p">)</span>
+11
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">fixed-point</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">average</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">log</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">(</span><span class="nb">log</span> <span class="nv">x</span><span class="p">)))</span> <span class="p">)</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="mf">5.9828921423310435</span>
 <span class="mf">4.922168721308343</span>
 <span class="mf">4.628224318195455</span>
@@ -9558,8 +9559,7 @@
 <span class="mf">4.555599411610624</span>
 <span class="mf">4.5555465521473675</span>
 <span class="mf">4.555537551999825</span>
-<span class="mf">4.555537551999825</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mf">4.555537551999825</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As we can see there are 34 guesses without avg-damping and only 9 guesses with avg-damping. Clearly we can see here how damping makes 
  fast converge.</p>

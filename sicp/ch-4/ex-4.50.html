@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>I used dreaded assignment to move a random element at the beginning of the list and then using that as the next amb value.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9456,7 +9456,8 @@
 38
 39
 40
-41</pre></td><td class="code"><pre><span class="c1">;;add the below line in analyze</span>
+41
+</pre></td><td class="code"><pre><span class="c1">;;add the below line in analyze</span>
 <span class="c1">;; ((ramb? exp) (analyze-ramb exp))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ramb?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'ramb</span><span class="p">))</span>
@@ -9496,12 +9497,11 @@
                  <span class="p">(</span><span class="nf">try-next</span>
 				  <span class="p">(</span><span class="nb">cdr</span> <span class="nv">choices</span><span class="p">)</span>
 				  <span class="p">(</span><span class="nb">-</span> <span class="nv">length</span> <span class="mi">1</span><span class="p">)))))))</span>
-	  <span class="p">(</span><span class="nf">try-next</span> <span class="nv">cprocs</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">cprocs</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">(</span><span class="nf">try-next</span> <span class="nv">cprocs</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">cprocs</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9537,7 +9537,8 @@
 34
 35
 36
-37</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
+37
+</pre></td><td class="code"><pre><span class="c1">;;; Amb-Eval input:</span>
 <span class="p">(</span><span class="nf">ramb</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span> <span class="mi">40</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1">;;; Starting a new problem </span>
@@ -9573,8 +9574,7 @@
 <span class="nv">try-again</span>
 
 <span class="c1">;;; There are no more values of</span>
-<span class="p">(</span><span class="nf">ramb</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span> <span class="mi">40</span> <span class="mi">50</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">ramb</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span> <span class="mi">40</span> <span class="mi">50</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9588,16 +9588,16 @@
 
 <p>Here’s how the new <code class="highlighter-rouge">parse-word</code> will now look:(note that now we no longer use ‘<em>unparsed</em>’)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">parse-word</span> <span class="nv">word-list</span><span class="p">)</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">parse-word</span> <span class="nv">word-list</span><span class="p">)</span>
   <span class="c1">;(require (not (null? *unparsed*)))</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">found-word</span> <span class="p">(</span><span class="nf">list-amb</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">word-list</span><span class="p">))))</span>
     <span class="c1">;(set! *unparsed* (cdr *unparsed*))</span>
-    <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">word-list</span><span class="p">)</span> <span class="nv">found-word</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">word-list</span><span class="p">)</span> <span class="nv">found-word</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>With this and the replacing all the <code class="highlighter-rouge">amb</code> with <code class="highlighter-rouge">ramb</code>, we can get better sentences with variable lengths!</p>
 

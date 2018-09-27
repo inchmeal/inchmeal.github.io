@@ -9416,7 +9416,7 @@
                         <hr/>
                         <h4 id="a">(a)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9457,7 +9457,8 @@
 39
 40
 41
-42</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+42
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">expt-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">n</span> <span class="nv">b</span> <span class="nv">val</span> <span class="nv">continue</span><span class="p">)</span>
@@ -9482,28 +9483,27 @@
 
 <span class="c1">;Value: expt-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">expt-machine</span> <span class="ss">'n</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">expt-machine</span> <span class="ss">'b</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">expt-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">expt-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">expt-machine</span> <span class="ss">'val</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">expt-machine</span> <span class="ss">'val</span><span class="p">)</span>
 
-<span class="c1">;Value: 1024</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: 1024</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9534,7 +9534,8 @@
 29
 30
 31
-32</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+32
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">expt-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">n</span> <span class="nv">b</span> <span class="nv">product</span><span class="p">)</span>
@@ -9551,22 +9552,21 @@
 
 <span class="c1">;Value: expt-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">expt-machine</span> <span class="ss">'n</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">expt-machine</span> <span class="ss">'n</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">expt-machine</span> <span class="ss">'b</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">expt-machine</span> <span class="ss">'b</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">expt-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">expt-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">expt-machine</span> <span class="ss">'product</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">expt-machine</span> <span class="ss">'product</span><span class="p">)</span>
 
-<span class="c1">;Value: 1024</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: 1024</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

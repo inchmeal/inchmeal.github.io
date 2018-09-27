@@ -9426,21 +9426,21 @@
   <li>If the linkage is <em>label</em>:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">continue</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">&lt;linkage&gt;</span><span class="p">))</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">continue</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">&lt;linkage&gt;</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compiled-procedure-entry</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>If the linkage is <em>return</em>:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compiled-procedure-entry</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compiled-procedure-entry</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now, consider what happen if the procedure is iterative:</p>
 
@@ -9448,33 +9448,33 @@
 
 <p>Lets see the given <code class="highlighter-rouge">iter</code>, an iterative case, to understand:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">factorial</span> <span class="nv">n</span><span class="p">)</span>
+7
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">factorial</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">product</span> <span class="nv">counter</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">counter</span> <span class="nv">n</span><span class="p">)</span>
         <span class="nv">product</span>
         <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">counter</span> <span class="nv">product</span><span class="p">)</span>
               <span class="p">(</span><span class="nb">+</span> <span class="nv">counter</span> <span class="mi">1</span><span class="p">))))</span>
-  <span class="p">(</span><span class="nf">iter</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">iter</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>There is only one expression, <code class="highlighter-rouge">if</code> inside which for the false case we have a recursive invocation. Now this recursive invocation because of the book’s tail call optimization will cause to return to the same place <code class="highlighter-rouge">continue</code> from where we invoked <code class="highlighter-rouge">iter</code>.</p>
 
 <p>But what will happen for the recursive process case:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">factorial</span> <span class="nv">n</span><span class="p">)</span>
+4
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">factorial</span> <span class="nv">n</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span>
         <span class="mi">1</span>
-        <span class="p">(</span><span class="nb">*</span> <span class="p">(</span><span class="nf">factorial</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">))</span> <span class="nv">n</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+        <span class="p">(</span><span class="nb">*</span> <span class="p">(</span><span class="nf">factorial</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">))</span> <span class="nv">n</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The last expression here also is <code class="highlighter-rouge">if</code> and the recursive call happens in the false branch of <code class="highlighter-rouge">if</code>. Now notice that here <code class="highlighter-rouge">continue</code> after invocation of <code class="highlighter-rouge">factorial</code> will need to return to the place where we are creating <code class="highlighter-rouge">argl</code> for <code class="highlighter-rouge">*</code>.</p>
 
@@ -9486,19 +9486,19 @@
 
 <p>The iterative procedure will generate recursive call as:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compiled-procedure-entry</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compiled-procedure-entry</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>while the recursive version will generate the recursive call as:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">continue</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">&lt;linkage&gt;</span><span class="p">))</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">continue</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">&lt;linkage&gt;</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compiled-procedure-entry</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now we can see this in the assembly code generated:</p>
 
@@ -9506,7 +9506,7 @@
 
 <h4 id="lets-first-see-the-iterative-case-codecheck-under-false-branch">Let’s first see the iterative case code(check under false branch):</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9564,7 +9564,8 @@
 56
 57
 58
-59</pre></td><td class="code"><pre><span class="nv">false-branch9</span>
+59
+</pre></td><td class="code"><pre><span class="nv">false-branch9</span>
 <span class="c1">;;start of instructions to invoke recursive call to iter</span>
 <span class="p">(</span><span class="nf">assign</span> <span class="nv">proc</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">iter</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
 <span class="c1">;;this continue is saved because we are evaluating arguments which might change continue</span>
@@ -9622,14 +9623,13 @@
 <span class="c1">;;NOTICE that we are not saving any internal continue points but just using the same value of continue</span>
 <span class="c1">;;which was present originally when this procedure is invoked!</span>
 <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compiled-procedure-entry</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that in the above code the stack has same number of elements before and after each invocation of <code class="highlighter-rouge">iter</code>.</p>
 
 <p>Now, let’s see the recursive case(again just see the code under false branch):</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9686,7 +9686,8 @@
 55
 56
 57
-58</pre></td><td class="code"><pre><span class="nv">false-branch4</span>
+58
+</pre></td><td class="code"><pre><span class="nv">false-branch4</span>
 <span class="p">(</span><span class="nf">assign</span> <span class="nv">proc</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">*</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">save</span> <span class="nv">continue</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">save</span> <span class="nv">proc</span><span class="p">)</span>
@@ -9743,8 +9744,7 @@
 <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">continue</span><span class="p">))</span>
 <span class="nv">after-call12</span>
 <span class="nv">after-if3</span>
-<span class="nv">after-lambda1</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">after-lambda1</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that in this case after each invocation of <code class="highlighter-rouge">factorial</code> the number of elements in stack keeps growing till last recursive invocation and then the stack is unwind while performing the computations for <code class="highlighter-rouge">*</code>.</p>
 

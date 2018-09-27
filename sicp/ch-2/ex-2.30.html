@@ -9420,7 +9420,7 @@
   <li>Without using <code class="highlighter-rouge">map</code>:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9431,7 +9431,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+12
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-tree</span> <span class="nv">tree</span><span class="p">)</span>
 <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">tree</span><span class="p">)</span> <span class="nv">nil</span><span class="p">)</span>
@@ -9442,12 +9443,11 @@
               <span class="p">(</span><span class="nf">square-tree</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">tree</span><span class="p">)))</span>
      <span class="p">)</span>
 <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9462,7 +9462,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> 
+16
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> 
    <span class="p">(</span><span class="nf">square-tree</span>
        <span class="p">(</span><span class="nb">list</span> 
             <span class="mi">1</span>
@@ -9477,14 +9478,13 @@
 <span class="p">)</span>
 
 <span class="p">(</span><span class="nf">1</span> <span class="p">(</span><span class="nf">4</span> <span class="p">(</span><span class="nf">9</span> <span class="mi">16</span><span class="p">)</span> <span class="mi">25</span><span class="p">)</span> <span class="p">(</span><span class="nf">36</span> <span class="mi">49</span><span class="p">))</span>
- <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+ </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>With using <code class="highlighter-rouge">map</code>:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9496,7 +9496,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+13
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-tree</span> <span class="nv">tree</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">map</span>
@@ -9508,8 +9509,7 @@
     <span class="p">)</span>  
     <span class="nv">tree</span>
 <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

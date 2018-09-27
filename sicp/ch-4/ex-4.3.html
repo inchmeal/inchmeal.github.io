@@ -9438,7 +9438,7 @@
 
 <p>Also, it would have been better if <code class="highlighter-rouge">application?</code> part can also become part of this <em>data-driven</em> style using the strategey used in previous exercise.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9468,7 +9468,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">*op-table*</span> <span class="p">(</span><span class="nf">make-hash-table</span><span class="p">))</span>
+31
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">*op-table*</span> <span class="p">(</span><span class="nf">make-hash-table</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">put</span> <span class="nv">op</span> <span class="nv">type</span> <span class="nv">proc</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hash-table/put!</span> <span class="nv">*op-table*</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">op</span> <span class="nv">type</span><span class="p">)</span> <span class="nv">proc</span><span class="p">))</span>
@@ -9498,12 +9499,11 @@
 	 <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nb">exp</span> <span class="nv">env</span><span class="p">)</span>
 	   <span class="p">(</span><span class="nf">make-procedure</span> <span class="p">(</span><span class="nf">lambda-parameters</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">lambda-body</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">put</span> <span class="ss">'exp</span> <span class="ss">'begin</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nb">exp</span> <span class="nv">env</span><span class="p">)</span> <span class="p">(</span><span class="nf">eval-sequence</span> <span class="p">(</span><span class="nf">begin-actions</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">put</span> <span class="ss">'exp</span> <span class="ss">'cond</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nb">exp</span> <span class="nv">env</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">cond-&gt;if</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">put</span> <span class="ss">'exp</span> <span class="ss">'cond</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nb">exp</span> <span class="nv">env</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">cond-&gt;if</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">env</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I tested this on the example given in section 4.1.4:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9529,7 +9529,8 @@
 24
 25
 26
-27</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+27
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">x</span><span class="p">)</span>
       <span class="nv">y</span>
@@ -9555,8 +9556,7 @@
 <span class="nv">exit</span>
 <span class="c1">;Value: exiting..</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9564,7 +9564,7 @@
 
 <p>The code can be downloaded from <a href="https://mitpress.mit.edu/sicp/code/index.html">mit</a>. Still I am presenting the complete code here with the changes corresponding to this exercise as well as to reset the repl:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9959,7 +9959,8 @@
 393
 394
 395
-396</pre></td><td class="code"><pre><span class="c1">;;;;METACIRCULAR EVALUATOR FROM CHAPTER 4 (SECTIONS 4.1.1-4.1.4) of</span>
+396
+</pre></td><td class="code"><pre><span class="c1">;;;;METACIRCULAR EVALUATOR FROM CHAPTER 4 (SECTIONS 4.1.1-4.1.4) of</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm</span>
@@ -10354,8 +10355,7 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">the-global-environment</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
 
-<span class="ss">'METACIRCULAR-EVALUATOR-LOADED</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="ss">'METACIRCULAR-EVALUATOR-LOADED</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

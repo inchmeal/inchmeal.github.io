@@ -9420,29 +9420,29 @@
 
 <p>Changes in file ch5-syntax.scm to support special form <code class="highlighter-rouge">compile-and-run</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-and-run?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'compile-and-run</span><span class="p">))</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-and-run?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'compile-and-run</span><span class="p">))</span>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-and-run-expression</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">text-of-quotation</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-and-run-expression</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">text-of-quotation</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Changes in file ch5-eceval-compiler.scm for compile and assmbling instructions:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="c1">;;new procedure for compiling and return the assembled instructions.</span>
+5
+</pre></td><td class="code"><pre><span class="c1">;;new procedure for compiling and return the assembled instructions.</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-and-assemble</span> <span class="nv">expression</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">assemble</span> <span class="p">(</span><span class="nf">statements</span>
              <span class="p">(</span><span class="nf">compile</span> <span class="nv">expression</span> <span class="ss">'val</span> <span class="ss">'return</span> <span class="nv">the-empty-cenv</span><span class="p">))</span>
-            <span class="nv">eceval</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+            <span class="nv">eceval</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now add special form in evaluator <code class="highlighter-rouge">ch5-eceval-compiler.scm</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9478,7 +9478,8 @@
 34
 35
 36
-37</pre></td><td class="code"><pre><span class="c1">;;add these procedures in eceval-operations</span>
+37
+</pre></td><td class="code"><pre><span class="c1">;;add these procedures in eceval-operations</span>
 <span class="c1">;;ex-5.48</span>
 <span class="p">(</span><span class="nb">list</span> <span class="ss">'compile-and-run?</span> <span class="nv">compile-and-run?</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">list</span> <span class="ss">'compile-and-run-expression</span> <span class="nv">compile-and-run-expression</span><span class="p">)</span>
@@ -9514,8 +9515,7 @@
 <span class="nv">ev-compile-and-run</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">exp</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compile-and-run-expression</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">exp</span><span class="p">))</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">compile-and-assemble</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">exp</span><span class="p">))</span>
-  <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">external-entry</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">external-entry</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I had some difficulty in setting up the things in correct order so that no compilation error should come in a fresh start.</p>
 
@@ -9523,7 +9523,7 @@
 
 <p>Here’s the output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9579,7 +9579,8 @@
 54
 55
 56
-57</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start-eceval</span><span class="p">)</span>
+57
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start-eceval</span><span class="p">)</span>
 
 
 <span class="c1">;;; EC-Eval input:</span>
@@ -9635,8 +9636,7 @@
 <span class="c1">;;; EC-Eval value:</span>
 <span class="mi">505</span>
 
-<span class="c1">;;; EC-Eval input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; EC-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 

@@ -9418,7 +9418,7 @@
 
 <p>Lets first check the for some values of <code class="highlighter-rouge">n</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9453,7 +9453,8 @@
 33
 34
 35
-36</pre></td><td class="code"><pre><span class="c1">;;; EC-Eval input:</span>
+36
+</pre></td><td class="code"><pre><span class="c1">;;; EC-Eval input:</span>
 <span class="p">(</span><span class="nf">factorial</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nf">total-pushes</span> <span class="nv">=</span> <span class="mi">64</span> <span class="nv">maximum-depth</span> <span class="nv">=</span> <span class="mi">10</span><span class="p">)</span>
@@ -9488,8 +9489,7 @@
 <span class="c1">;;; EC-Eval value:</span>
 <span class="mi">120</span>
 
-<span class="c1">;;; EC-Eval input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; EC-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>(a) Clearly maximum-depth = 10. Note that this is not a mathamttical argument that maximum-depth = 10 independent of <code class="highlighter-rouge">n</code>. For that we need to go into the code of evaluator while executing each instruction of <code class="highlighter-rouge">fibonacci</code>. Well, this is not asked and neither it’s interesting so i will skip that :)</p>
 

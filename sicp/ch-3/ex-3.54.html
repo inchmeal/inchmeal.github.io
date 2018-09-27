@@ -9418,7 +9418,7 @@
 
 <p>Note we need, <script type="math/tex">n^{th}</script> element to be <script type="math/tex">(n+1)!</script>.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9460,54 +9460,54 @@
 40
 41
 42
-43</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">4</span><span class="p">)</span>
+43
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: 120</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1">;Value: 24</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: 6</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: 2</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">0</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: 1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: 720</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">20</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">20</span><span class="p">)</span>
 
 <span class="c1">;Value: 51090942171709440000</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">30</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="c1">;Value: 8222838654177922817725562880000000</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">40</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">40</span><span class="p">)</span>
 
 <span class="c1">;Value: 33452526613163807108170062053440751665152000000000</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">60</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">60</span><span class="p">)</span>
 
 <span class="c1">;Value: 507580213877224798800856812176625227226004528988036003099405939480985600000000000000</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">100</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">factorials</span> <span class="mi">100</span><span class="p">)</span>
 
-<span class="c1">;Value: 9425947759838359420851623124482936749562312794702543768327889353416977599316221476503087861591808346911623490003549599583369706302603264000000000000000000000000</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: 9425947759838359420851623124482936749562312794702543768327889353416977599316221476503087861591808346911623490003549599583369706302603264000000000000000000000000</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The code relevant for this exercise is at the top. However I am including the complete code.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9588,7 +9588,8 @@
 79
 80
 81
-82</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">factorials</span> <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">mul-streams</span> <span class="nv">factorials</span> <span class="p">(</span><span class="nf">integers-starting-from</span> <span class="mi">2</span><span class="p">))))</span>
+82
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">factorials</span> <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">mul-streams</span> <span class="nv">factorials</span> <span class="p">(</span><span class="nf">integers-starting-from</span> <span class="mi">2</span><span class="p">))))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">mul-streams</span> <span class="nv">s1</span> <span class="nv">s2</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">*</span> <span class="nv">s1</span> <span class="nv">s2</span><span class="p">))</span>
@@ -9669,8 +9670,7 @@
           <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">result</span> <span class="p">(</span><span class="nf">proc</span><span class="p">))</span>
                  <span class="p">(</span><span class="k">set!</span> <span class="nv">already-run?</span> <span class="nv">true</span><span class="p">)</span>
                  <span class="nv">result</span><span class="p">)</span>
-          <span class="nv">result</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="nv">result</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

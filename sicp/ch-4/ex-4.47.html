@@ -9418,16 +9418,16 @@
 
 <p>Let’s first see the code again:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">parse-verb-phrase</span><span class="p">)</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">parse-verb-phrase</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">amb</span> <span class="p">(</span><span class="nf">parse-word</span> <span class="nv">verbs</span><span class="p">)</span>
        <span class="p">(</span><span class="nb">list</span> <span class="ss">'verb-phrase</span>
              <span class="p">(</span><span class="nf">parse-verb-phrase</span><span class="p">)</span>
-             <span class="p">(</span><span class="nf">parse-prepositional-phrase</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+             <span class="p">(</span><span class="nf">parse-prepositional-phrase</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>First invocation will read a verb from the input because of <code class="highlighter-rouge">(parse-word verbs)</code>. Now if the first expression of <code class="highlighter-rouge">amb</code> <em>failed</em>(one eg when the input read is not verb) or we called <code class="highlighter-rouge">try-again</code>, then other expression in <code class="highlighter-rouge">amb</code> is evaluated. This will make a recursive call to <code class="highlighter-rouge">parse-verb-phrase</code>. Now, this recursive call again reads a <code class="highlighter-rouge">verb</code> and returns to evaluation of expression <code class="highlighter-rouge">(list 'verb-phrase (parse-ver-phrase) (parse-prepositional-phrase))</code>. And we try to read preposition phrase.</p>
 

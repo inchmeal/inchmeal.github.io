@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>There are two cases: (i) Supervisor does not exist (ii) Supervisor exists but does not work in same div.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9431,7 +9431,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+16
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">big-shot</span> <span class="nv">?person</span> <span class="nv">?div</span><span class="p">)</span>
 			   <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">job</span> <span class="nv">?person</span> <span class="p">(</span><span class="nf">?div</span> <span class="o">.</span> <span class="nv">?sub</span><span class="p">))</span>
 					<span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?person</span> <span class="nv">?sup</span><span class="p">))</span>
@@ -9446,8 +9447,7 @@
 <span class="c1">;;; Query results:</span>
 <span class="p">(</span><span class="nf">big-shot</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="nv">administration</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">big-shot</span> <span class="p">(</span><span class="nf">scrooge</span> <span class="nv">eben</span><span class="p">)</span> <span class="nv">accounting</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">big-shot</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="nv">computer</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">big-shot</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="nv">computer</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

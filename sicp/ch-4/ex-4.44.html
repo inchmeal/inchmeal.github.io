@@ -9420,7 +9420,7 @@
 
 <p>Note that I use the same structure to represent the board as i used in ex-2.42. Thus <code class="highlighter-rouge">display-board</code> procedure which i implemented there can work here too.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9462,7 +9462,8 @@
 40
 41
 42
-43</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">queens</span> <span class="nv">board-size</span><span class="p">)</span>
+43
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">queens</span> <span class="nv">board-size</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">queens-col</span> <span class="nv">k</span><span class="p">)</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">k</span> <span class="mi">0</span><span class="p">)</span>
 		<span class="nv">empty-board</span>
@@ -9504,15 +9505,14 @@
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">low</span> <span class="nv">high</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">l</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">low</span> <span class="mi">1</span><span class="p">)))</span>
 	<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">high</span> <span class="nv">l</span><span class="p">))</span>
-	<span class="p">(</span><span class="nf">amb</span> <span class="nv">l</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">l</span> <span class="nv">high</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	<span class="p">(</span><span class="nf">amb</span> <span class="nv">l</span> <span class="p">(</span><span class="nf">an-integer-between</span> <span class="nv">l</span> <span class="nv">high</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Also, i found one subtle bug in my procedure <code class="highlighter-rouge">an-integer-between</code>. It should return integer <em>between</em> them. Thus should(as per my understanding) <em>not</em> include the edge points. The old code can be found in ex-4.35.</p>
 
 <p>Output:
 (only tested for board-size 6, as most of the code is same as ex-2.42)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9541,7 +9541,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="nv">input:</span>
+30
+</pre></td><td class="code"><pre><span class="nv">input:</span>
 <span class="p">(</span><span class="nf">queens</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1">;;; Starting a new problem </span>
 
@@ -9570,8 +9571,7 @@
 <span class="nv">try-again</span>
 
 <span class="c1">;;; There are no more values of</span>
-<span class="p">(</span><span class="nf">queens</span> <span class="mi">6</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">queens</span> <span class="mi">6</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

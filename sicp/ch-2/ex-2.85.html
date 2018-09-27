@@ -9441,7 +9441,7 @@
 
 <p>So here goes the complete code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9960,7 +9960,8 @@
 517
 518
 519
-520</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+520
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -10479,12 +10480,11 @@
 <span class="p">(</span><span class="nf">install-polar-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-rational-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10515,7 +10515,8 @@
 29
 30
 31
-32</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mf">2.5</span> <span class="mi">-9</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">1</span> <span class="mi">9</span><span class="p">)))</span>
+32
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mf">2.5</span> <span class="mi">-9</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">1</span> <span class="mi">9</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">rational</span> <span class="mf">7.0</span> <span class="o">.</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">find-highest-type</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">type-tag</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">50000</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))))</span>
 <span class="ss">'complex</span>
@@ -10546,8 +10547,7 @@
 <span class="p">(</span><span class="nf">rational</span> <span class="mf">0.0</span> <span class="o">.</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">mul</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mf">2.5</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">complex</span> <span class="nv">polar</span> <span class="mf">19.525624189766635</span> <span class="o">.</span> <span class="mf">1.8033532685998055</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

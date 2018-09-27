@@ -9418,7 +9418,7 @@
 
 <p>For reference, register machine for fibonacci:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9448,7 +9448,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">controller</span>
+31
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">controller</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">continue</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">fib-done</span><span class="p">))</span>
  <span class="nv">fib-loop</span>
    <span class="p">(</span><span class="nf">test</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">&lt;</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">2</span><span class="p">))</span>
@@ -9478,8 +9479,7 @@
  <span class="nv">immediate-answer</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">n</span><span class="p">))</span>               <span class="c1">; base case:  Fib(n) = n</span>
    <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">continue</span><span class="p">))</span>
- <span class="nv">fib-done</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+ <span class="nv">fib-done</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>For clarity, I prefixed numbers in stack with the variable names.</p>
 

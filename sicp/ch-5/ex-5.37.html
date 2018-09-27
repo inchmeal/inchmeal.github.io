@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Changed code of <code class="highlighter-rouge">preserving</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9429,7 +9429,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">preserving</span> <span class="nv">regs</span> <span class="nv">seq1</span> <span class="nv">seq2</span><span class="p">)</span>
+14
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">preserving</span> <span class="nv">regs</span> <span class="nv">seq1</span> <span class="nv">seq2</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">regs</span><span class="p">)</span>
       <span class="p">(</span><span class="nf">append-instruction-sequences</span> <span class="nv">seq1</span> <span class="nv">seq2</span><span class="p">)</span>
       <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">first-reg</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">regs</span><span class="p">)))</span>
@@ -9442,14 +9443,13 @@
 					 <span class="p">(</span><span class="nb">append</span> <span class="o">`</span><span class="p">((</span><span class="nf">save</span> <span class="o">,</span><span class="nv">first-reg</span><span class="p">))</span>
 							 <span class="p">(</span><span class="nf">statements</span> <span class="nv">seq1</span><span class="p">)</span>
 							 <span class="o">`</span><span class="p">((</span><span class="nf">restore</span> <span class="o">,</span><span class="nv">first-reg</span><span class="p">))))</span>
-					<span class="nv">seq2</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+					<span class="nv">seq2</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="example-1-compile--1-2-3-val-next">Example 1 <code class="highlighter-rouge">(compile '(+ 1 2 3) 'val 'next)</code></h4>
 
 <p>Note that with preserve no stack operations are generated!</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9509,7 +9509,8 @@
 58
 59
 60
-61</pre></td><td class="code"><pre><span class="nv">|---------------------------------------------|----------------------------------------------|</span>
+61
+</pre></td><td class="code"><pre><span class="nv">|---------------------------------------------|----------------------------------------------|</span>
 <span class="nv">|</span> <span class="nv">Without</span> <span class="nv">Preserve</span>                            <span class="nv">|</span> <span class="nv">With</span> <span class="nv">Preserve</span>                                <span class="nv">|</span>
 <span class="nv">|---------------------------------------------|----------------------------------------------|</span>
 <span class="nv">|</span> <span class="p">((</span><span class="nf">env</span> <span class="nv">continue</span><span class="p">)</span>                             <span class="nv">|</span> <span class="p">((</span><span class="nf">env</span><span class="p">)</span>                                       <span class="nv">|</span>
@@ -9569,12 +9570,11 @@
 <span class="nv">|</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>                                 <span class="nv">|</span>                                              <span class="nv">|</span>
 <span class="nv">|</span> <span class="p">(</span><span class="nf">restore</span> <span class="nv">continue</span><span class="p">)</span>                          <span class="nv">|</span>                                              <span class="nv">|</span>
 <span class="nv">|</span> <span class="nv">after-call1</span><span class="p">))</span>                               <span class="nv">|</span>                                              <span class="nv">|</span>
-<span class="nv">|---------------------------------------------|----------------------------------------------|</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">|---------------------------------------------|----------------------------------------------|</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="example-2-compile--1--2-3-4-val-next">Example 2 <code class="highlighter-rouge">(compile '(+ 1 (+ 2 3) 4) 'val 'next)</code></h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9678,7 +9678,8 @@
 102
 103
 104
-105</pre></td><td class="code"><pre><span class="nv">|---------------------------------------------|---------------------------------------------|</span>
+105
+</pre></td><td class="code"><pre><span class="nv">|---------------------------------------------|---------------------------------------------|</span>
 <span class="nv">|</span> <span class="nv">Without</span> <span class="nv">Preserve</span>                            <span class="nv">|</span> <span class="nv">With</span> <span class="nv">Preserve</span>                               <span class="nv">|</span>
 <span class="nv">|---------------------------------------------|---------------------------------------------|</span>
 <span class="nv">|</span> <span class="p">((</span><span class="nf">env</span> <span class="nv">continue</span><span class="p">)</span>                             <span class="nv">|</span> <span class="p">((</span><span class="nf">env</span><span class="p">)</span> <span class="p">(</span><span class="nf">env</span> <span class="nv">proc</span> <span class="nv">argl</span> <span class="nv">continue</span> <span class="nv">val</span><span class="p">)</span>         <span class="nv">|</span>
@@ -9782,8 +9783,7 @@
 <span class="nv">|</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>                                 <span class="nv">|</span>                                             <span class="nv">|</span>
 <span class="nv">|</span> <span class="p">(</span><span class="nf">restore</span> <span class="nv">continue</span><span class="p">)</span>                          <span class="nv">|</span>                                             <span class="nv">|</span>
 <span class="nv">|</span> <span class="nv">after-call7</span><span class="p">))</span>                               <span class="nv">|</span>                                             <span class="nv">|</span>
-<span class="nv">|---------------------------------------------|---------------------------------------------|</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">|---------------------------------------------|---------------------------------------------|</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

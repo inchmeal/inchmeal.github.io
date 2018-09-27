@@ -9444,16 +9444,16 @@
 
 <p>Note that the fix is just a small check:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">transfer</span> <span class="nv">from-account</span> <span class="nv">to-account</span> <span class="nv">amount</span><span class="p">)</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">transfer</span> <span class="nv">from-account</span> <span class="nv">to-account</span> <span class="nv">amount</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">(</span><span class="nf">wrs</span> <span class="p">((</span><span class="nf">from-account</span> <span class="ss">'withdraw</span><span class="o">'</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">wrs</span> <span class="s">"Insuffecient Funds"</span><span class="p">)</span>
 		<span class="p">(</span><span class="nf">error</span> <span class="s">"Can not withdraw!"</span><span class="p">)</span>
-	  <span class="p">((</span><span class="nf">to-account</span> <span class="ss">'deposit</span><span class="p">)</span> <span class="nv">amount</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">((</span><span class="nf">to-account</span> <span class="ss">'deposit</span><span class="p">)</span> <span class="nv">amount</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Thus we have not used <em>sophisticated method</em> that Loius purposes but just a small fix.</p>
 

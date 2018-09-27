@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Lets define procedures for <code class="highlighter-rouge">area</code> and <code class="highlighter-rouge">parameter</code>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9432,7 +9432,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">area</span> <span class="nv">rect</span><span class="p">)</span>
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">area</span> <span class="nv">rect</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">*</span>
     <span class="p">(</span><span class="nf">width-rect</span> <span class="nv">rect</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">length-rect</span> <span class="nv">rect</span><span class="p">)</span>
@@ -9446,8 +9447,7 @@
          <span class="p">(</span><span class="nf">length-rect</span> <span class="nv">rect</span><span class="p">)</span>
        <span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We need to implement two rectangle implementation such that same area and parameter procedure will work for both.</p>
 
@@ -9460,7 +9460,7 @@
 <p>Here is the complete code, including above procedures(area, parameter) and constructors and selectors for rectangle as well as procedures 
 for segments from previous exercise.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9553,7 +9553,8 @@ for segments from previous exercise.</p>
 91
 92
 93
-94</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+94
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">area</span> <span class="nv">rect</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">*</span>
@@ -9646,23 +9647,22 @@ for segments from previous exercise.</p>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">y-point</span> <span class="nv">point</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cdr</span> <span class="nv">point</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>My second implementation is to create rectangle using any 3 <em>consecutive</em> points(clockwise or anti-clockwise) of the rectangle.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre> 
+6
+</pre></td><td class="code"><pre> 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-rect-by-points</span> <span class="nv">p1</span> <span class="nv">p2</span> <span class="nv">p3</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">make-segment</span> <span class="nv">p1</span> <span class="nv">p2</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">make-segment</span> <span class="nv">p2</span> <span class="nv">p3</span><span class="p">)</span>
   <span class="p">)</span>      
-<span class="p">)</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that this new rectangle constructor uses the old rectangle constructor. Another way is to implement all the selectors to 
 find width and length using these points.</p>
@@ -9682,7 +9682,7 @@ where one is using the other), we are left with only one option to create two ve
  to implement only one version of these procedures, we can solve the problem by passing the length and width procedure as arguments.
 Thus new <code class="highlighter-rouge">area</code> and <code class="highlighter-rouge">parameter</code> will look like following:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9696,7 +9696,8 @@ Thus new <code class="highlighter-rouge">area</code> and <code class="highlighte
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">area</span> <span class="nv">proc-width</span> <span class="nv">proc-length</span> <span class="nv">rect</span><span class="p">)</span>
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">area</span> <span class="nv">proc-width</span> <span class="nv">proc-length</span> <span class="nv">rect</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">*</span>
     <span class="p">(</span><span class="nf">proc-width</span> <span class="nv">rect</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">proc-length</span> <span class="nv">rect</span><span class="p">)</span>
@@ -9710,8 +9711,7 @@ Thus new <code class="highlighter-rouge">area</code> and <code class="highlighte
          <span class="p">(</span><span class="nf">proc-length</span> <span class="nv">rect</span><span class="p">)</span>
        <span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I am too lazy to write two versions for <code class="highlighter-rouge">width-rect</code> and <code class="highlighter-rouge">length-rect</code> :)</p>
 

@@ -9428,7 +9428,7 @@
 
 <p>It’s quite easy to implement derived form for <code class="highlighter-rouge">unless</code>. Since it is not mentioned, I am assuming that, Unlike <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">unless</code> won’t be used only with two arguments i.e. like <code class="highlighter-rouge">(unless &lt;c&gt; &lt;u&gt;)</code> but will only be used like <code class="highlighter-rouge">(unless &lt;c&gt; &lt;u&gt; &lt;e&gt;)</code>.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9438,7 +9438,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unless?</span> <span class="nv">expr</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">expr</span> <span class="ss">'unless</span><span class="p">))</span>
+11
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unless?</span> <span class="nv">expr</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">expr</span> <span class="ss">'unless</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unless-condition</span> <span class="nv">expr</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">expr</span><span class="p">))</span> 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unless-usual</span> <span class="nv">expr</span><span class="p">)</span> <span class="p">(</span><span class="nb">caddr</span> <span class="nv">expr</span><span class="p">))</span> 
@@ -9448,8 +9449,7 @@
   <span class="p">(</span><span class="nf">make-if</span> <span class="p">(</span><span class="nf">unless-condition</span> <span class="nv">expr</span><span class="p">)</span>
 		   <span class="p">(</span><span class="nf">unless-exceptional</span> <span class="nv">expr</span><span class="p">)</span>
 		   <span class="p">(</span><span class="nf">unless-usual</span> <span class="nv">expr</span><span class="p">)</span>
-		   <span class="p">))</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		   <span class="p">))</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

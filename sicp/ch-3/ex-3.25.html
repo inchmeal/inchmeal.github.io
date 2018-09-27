@@ -9418,7 +9418,7 @@
 
 <p>Code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9448,7 +9448,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+31
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-table</span><span class="p">)</span>
   
@@ -9478,12 +9479,11 @@
       <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'lookup-proc</span><span class="p">)</span> <span class="nv">lookup</span><span class="p">)</span>
             <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'insert-proc!</span><span class="p">)</span> <span class="nv">insert!</span><span class="p">)</span>
             <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Unknown operation -- TABLE"</span> <span class="nv">m</span><span class="p">))))</span>
-    <span class="nv">dispatch</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="nv">dispatch</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9496,7 +9496,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">tbl</span> <span class="p">(</span><span class="nf">make-table</span><span class="p">))</span>
+14
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">tbl</span> <span class="p">(</span><span class="nf">make-table</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">tbl</span> <span class="ss">'insert-proc!</span><span class="p">)</span> <span class="mi">43</span> <span class="ss">'math</span> <span class="ss">'+</span><span class="p">)</span>
 <span class="ss">'ok</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">tbl</span> <span class="ss">'lookup-proc</span><span class="p">)</span> <span class="ss">'math</span> <span class="ss">'+</span><span class="p">)</span>
@@ -9509,8 +9510,7 @@
 <span class="no">#f</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">tbl</span> <span class="ss">'lookup-proc</span><span class="p">)</span> <span class="ss">'math</span> <span class="ss">'poly</span> <span class="ss">'constant</span><span class="p">)</span>
 <span class="mi">5000</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

@@ -9418,7 +9418,7 @@
 
 <p>Notice <code class="highlighter-rouge">assert!</code> for adding rules.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9427,7 +9427,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+10
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">assert!</span>
  <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">can-replace</span> <span class="nv">?per1</span> <span class="nv">?per2</span><span class="p">)</span>
 	   <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">job</span> <span class="nv">?per1</span> <span class="nv">?job1</span><span class="p">)</span>
@@ -9436,38 +9437,37 @@
 			<span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">same</span> <span class="nv">?job1</span> <span class="nv">?job2</span><span class="p">)</span>
 				<span class="p">(</span><span class="nf">can-do-job</span> <span class="nv">?job1</span> <span class="nv">?job2</span><span class="p">)))))</span>
 
-<span class="nv">Assertion</span> <span class="nv">added</span> <span class="nv">to</span> <span class="nv">data</span> <span class="nv">base</span><span class="o">.</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">Assertion</span> <span class="nv">added</span> <span class="nv">to</span> <span class="nv">data</span> <span class="nv">base</span><span class="o">.</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="a">(a)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+6
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">can-replace</span> <span class="nv">?per1</span> <span class="p">(</span><span class="nf">Fect</span> <span class="nv">Cy</span> <span class="nv">D</span><span class="p">))</span>
 
 <span class="c1">;;; Query results:</span>
 <span class="p">(</span><span class="nf">can-replace</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">can-replace</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">can-replace</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+6
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">can-replace</span> <span class="nv">?p1</span> <span class="nv">?p2</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="nv">?p1</span> <span class="nv">?s1</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="nv">?p2</span> <span class="nv">?s2</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="nv">?s1</span> <span class="nv">?s2</span><span class="p">)))</span>
 
 <span class="c1">;;; Query results:</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">can-replace</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">)</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">))</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">)</span> <span class="mi">35000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="mi">40000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">35000</span> <span class="mi">40000</span><span class="p">)))</span>
-<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">can-replace</span> <span class="p">(</span><span class="nf">aull</span> <span class="nv">dewitt</span><span class="p">)</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">))</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">aull</span> <span class="nv">dewitt</span><span class="p">)</span> <span class="mi">25000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="mi">150000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">25000</span> <span class="mi">150000</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">can-replace</span> <span class="p">(</span><span class="nf">aull</span> <span class="nv">dewitt</span><span class="p">)</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">))</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">aull</span> <span class="nv">dewitt</span><span class="p">)</span> <span class="mi">25000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="mi">150000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">25000</span> <span class="mi">150000</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

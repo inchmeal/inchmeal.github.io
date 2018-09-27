@@ -9434,7 +9434,7 @@
 
 <p><code class="highlighter-rouge">find-pair</code>, implemented using <code class="highlighter-rouge">find</code> again, returns the pair that contains the variable else returns false.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9474,7 +9474,8 @@
 38
 39
 40
-41</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">find</span> <span class="nv">contains?</span> <span class="nv">next</span> <span class="nv">data</span><span class="p">)</span>
+41
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">find</span> <span class="nv">contains?</span> <span class="nv">next</span> <span class="nv">data</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">data</span><span class="p">)</span>
 	  <span class="no">#f</span>
 	  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">found</span> <span class="p">(</span><span class="nf">contains?</span> <span class="nv">data</span><span class="p">)))</span>
@@ -9514,8 +9515,7 @@
 	<span class="p">(</span><span class="k">if</span> <span class="nv">pair</span>
 		<span class="p">(</span><span class="nb">set-cdr!</span> <span class="nv">pair</span> <span class="nv">val</span><span class="p">)</span>
 		<span class="p">(</span><span class="nf">add-binding-to-frame!</span> <span class="nv">var</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">first-frame</span> <span class="nv">env</span><span class="p">))</span>
-		<span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9523,7 +9523,7 @@
 
 <p>Well, I tried few examples from previous exercise that involves creation of variables, lambdas…</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9574,7 +9574,8 @@
 49
 50
 51
-52</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+52
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">fib</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="nv">fib-iter</span> <span class="p">((</span><span class="nf">a</span> <span class="mi">1</span><span class="p">)</span>
                  <span class="p">(</span><span class="nf">b</span> <span class="mi">0</span><span class="p">)</span>
@@ -9625,8 +9626,7 @@
 <span class="p">(</span><span class="nf">fib</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;;; M-Eval value:</span>
-<span class="mi">5</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">5</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

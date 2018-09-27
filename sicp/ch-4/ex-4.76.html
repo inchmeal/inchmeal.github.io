@@ -9422,7 +9422,7 @@
   <li>I still used the <code class="highlighter-rouge">extend-if-possible</code> which internally does unify match for compatibility instead of simply using <code class="highlighter-rouge">equal?</code> for the values bounded. Well, just being lazy to implement :)</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9451,7 +9451,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">optimized-conjoin</span> <span class="nv">conjuncts</span> <span class="nv">frame-stream</span><span class="p">)</span>
+30
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">optimized-conjoin</span> <span class="nv">conjuncts</span> <span class="nv">frame-stream</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">conjuncts</span> <span class="nv">merged-stream</span><span class="p">)</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">empty-conjunction?</span> <span class="nv">conjuncts</span><span class="p">)</span>
 		<span class="nv">merged-stream</span>
@@ -9480,14 +9481,13 @@
 		<span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">merge-frames</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">frame1</span><span class="p">)</span>
 								   <span class="p">(</span><span class="nf">extend-if-possible</span> <span class="p">(</span><span class="nb">caar</span> <span class="nv">frame1</span><span class="p">)</span>
 													   <span class="p">(</span><span class="nb">cdar</span> <span class="nv">frame1</span><span class="p">)</span>
-													   <span class="nv">frame2</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+													   <span class="nv">frame2</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I tested this with few rules from previous example but it did not work for many of them!</p>
 
 <p>Let’s first see an example where it worked:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9521,7 +9521,8 @@
 32
 33
 34
-35</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+35
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">son</span> <span class="nv">Adam</span> <span class="nv">Cain</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">son</span> <span class="nv">Cain</span> <span class="nv">Enoch</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">son</span> <span class="nv">Enoch</span> <span class="nv">Irad</span><span class="p">))</span>
@@ -9555,8 +9556,7 @@
 <span class="p">(</span><span class="nf">find-son</span> <span class="nv">irad</span> <span class="nv">mehujael</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">find-son</span> <span class="nv">enoch</span> <span class="nv">irad</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">find-son</span> <span class="nv">cain</span> <span class="nv">enoch</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">find-son</span> <span class="nv">adam</span> <span class="nv">cain</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">find-son</span> <span class="nv">adam</span> <span class="nv">cain</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>But, it did <strong>not work</strong> for many of the previous exercises.(i tried reverse, unique, and few microshaft exercises which use <code class="highlighter-rouge">and</code>).</p>
 

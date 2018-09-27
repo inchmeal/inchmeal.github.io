@@ -9427,7 +9427,7 @@ for any value of <script type="math/tex">x</script> and <script type="math/tex">
 <p>Thus, to draw the outline of the frame, we just need to draw outline of unit square. The method  <code class="highlighter-rouge">frame-coord-map</code> will take care to transform our points to 
 the points in the designated frame.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9451,7 +9451,8 @@ the points in the designated frame.</p>
 22
 23
 24
-25</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+25
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="nv">sicp-pict</span><span class="p">)</span>
 
@@ -9475,15 +9476,14 @@ the points in the designated frame.</p>
        <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span> 
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output/Test:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">paint</span> <span class="nv">draw-frame</span><span class="p">)</span>
-<span class="c1">; A unit square is drawn</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">paint</span> <span class="nv">draw-frame</span><span class="p">)</span>
+<span class="c1">; A unit square is drawn</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Ideally <code class="highlighter-rouge">(draw-frame (make-frame (make-vect 0 0) (make-vect 5 5) (make-vect 10 10)))</code> should also draw the outline of the passed frame. It apparently does not work.
 It seems the <code class="highlighter-rouge">draw-line</code> procedure is works correctly only while using <code class="highlighter-rouge">paint</code>.</p>
@@ -9496,7 +9496,7 @@ to draw line.</p>
 
 <p>(b)</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9518,7 +9518,8 @@ to draw line.</p>
 20
 21
 22
-23</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+23
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="nv">sicp-pict</span><span class="p">)</span>
 
@@ -9540,19 +9541,18 @@ to draw line.</p>
       <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span> 
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output/Test:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">paint</span> <span class="nv">draw-X</span><span class="p">)</span>
-<span class="c1">; X is drawn </span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">paint</span> <span class="nv">draw-X</span><span class="p">)</span>
+<span class="c1">; X is drawn </span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>(c)</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9576,7 +9576,8 @@ to draw line.</p>
 22
 23
 24
-25</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+25
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="nv">sicp-pict</span><span class="p">)</span>
 
@@ -9600,14 +9601,13 @@ to draw line.</p>
       <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span> 
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>(d)</p>
 
 <p>It is too time consuming and similar to earlier exercises. As it is used in next exercise, I am using a solution from <a href="http://community.schemewiki.org/?sicp-ex-2.49">wiki</a>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9634,7 +9634,8 @@ to draw line.</p>
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">wave</span> 
+28
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">wave</span> 
    <span class="p">(</span><span class="nf">segments-&gt;painter</span> 
         <span class="p">(</span><span class="nb">list</span> 
                <span class="p">(</span><span class="nf">make-segment</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">25</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">35</span> <span class="o">.</span><span class="mi">5</span><span class="p">))</span> 
@@ -9661,8 +9662,7 @@ to draw line.</p>
                <span class="p">(</span><span class="nf">make-segment</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">4</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">25</span> <span class="mi">0</span><span class="p">))</span> 
         <span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

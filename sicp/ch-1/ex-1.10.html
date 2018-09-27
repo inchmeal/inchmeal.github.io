@@ -9417,44 +9417,44 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">A</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">A</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">=</span> <span class="nv">y</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
         <span class="p">((</span><span class="nb">=</span> <span class="nv">x</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="nv">y</span><span class="p">))</span>
         <span class="p">((</span><span class="nb">=</span> <span class="nv">y</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nf">A</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">x</span> <span class="mi">1</span><span class="p">)</span>
-                 <span class="p">(</span><span class="nf">A</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">y</span> <span class="mi">1</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                 <span class="p">(</span><span class="nf">A</span> <span class="nv">x</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">y</span> <span class="mi">1</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output returned by given statements:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="mi">10</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="mi">10</span><span class="p">)</span>
 <span class="c1">; 1024</span>
 <span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">)</span>
 <span class="c1">; 65536</span>
 <span class="p">(</span><span class="nf">A</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">)</span>
-<span class="c1">; 65536</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">; 65536</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Mathematical definition for:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">0</span> <span class="nv">n</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">0</span> <span class="nv">n</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Clearly it is: <script type="math/tex">2n</script></p>
 
 <p>Mathematical definition for:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9470,7 +9470,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="nv">n</span><span class="p">))</span>
+17
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="nv">n</span><span class="p">))</span>
 
 <span class="c1">; We expand the function until it reaches to the most primitive form.</span>
 
@@ -9486,14 +9487,13 @@
 <span class="p">(</span><span class="nf">A</span> <span class="mi">0</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">0</span> <span class="o">....</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">))))))</span>
 <span class="nv">A</span><span class="p">(</span><span class="nf">0</span><span class="o">,</span> <span class="nv">A</span><span class="p">(</span><span class="nf">0</span><span class="o">,</span> <span class="o">....</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)))))</span>
 <span class="o">...</span>
-<span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="o">....</span> <span class="nv">n</span> <span class="nv">times</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="o">....</span> <span class="nv">n</span> <span class="nv">times</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Clearly it is: <script type="math/tex">2^n</script>.</p>
 
 <p>Mathematical definition for:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9507,7 +9507,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="nv">n</span><span class="p">))</span>
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">2</span> <span class="nv">n</span><span class="p">))</span>
 
 <span class="c1">; We expand the function until it reaches to the most primitive form.</span>
 
@@ -9521,8 +9522,7 @@
 <span class="c1">; We know A(1, n) is 2^n</span>
 
 <span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="o">...</span> <span class="p">(</span><span class="nf">A</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">^</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">^</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">^</span> <span class="mi">2</span> <span class="o">...</span><span class="p">)</span> <span class="nv">n</span> <span class="nv">times</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">^</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">^</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">^</span> <span class="mi">2</span> <span class="o">...</span><span class="p">)</span> <span class="nv">n</span> <span class="nv">times</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Clearly it is:</p>
 

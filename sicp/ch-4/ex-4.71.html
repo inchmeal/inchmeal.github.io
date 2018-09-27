@@ -9422,10 +9422,10 @@
 
 <p>Consider the following:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">?x</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">?x</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Evaluating the query <code class="highlighter-rouge">(tmp1 a)</code></p>
 
@@ -9433,31 +9433,31 @@
   <li>With delay(original):</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">)</span>
+8
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">a</span><span class="p">)</span>
 <span class="o">....</span>
-<span class="c1">;;infinite loop</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;infinite loop</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Without delay(as suggested in exercise):</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="c1">;;; Query results:</span>
-<span class="c1">;Aborting!: maximum recursion depth exceeded</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="c1">;;; Query results:</span>
+<span class="c1">;Aborting!: maximum recursion depth exceeded</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9469,12 +9469,12 @@
 
 <p>Consider the following example:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">tmp3</span> <span class="nv">a</span><span class="p">))</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">tmp3</span> <span class="nv">a</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">tmp3</span> <span class="nv">?x</span><span class="p">)</span>
-							 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">?x</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+							 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">?x</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Evaluating the query <code class="highlighter-rouge">(tmp2 a)</code></p>
 
@@ -9482,31 +9482,31 @@
   <li>With delay(origninal):</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">tmp2</span> <span class="nv">a</span><span class="p">)</span>
+8
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">tmp2</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">a</span><span class="p">)</span>
 <span class="o">....</span>
-<span class="c1">;;infinite loop</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;infinite loop</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Without delay(as suggested in exercise):</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="c1">;;; Query results:</span>
-<span class="c1">;Aborting!: maximum recursion depth exceeded</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="c1">;;; Query results:</span>
+<span class="c1">;Aborting!: maximum recursion depth exceeded</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

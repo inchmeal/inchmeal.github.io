@@ -9418,21 +9418,21 @@
 
 <p>These two lines under label <code class="highlighter-rouge">afterfib-n-2</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">n</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>               <span class="c1">; n now contains Fib(n - 2)</span>
-<span class="p">(</span><span class="nf">restore</span> <span class="nv">val</span><span class="p">)</span>                      <span class="c1">; val now contains Fib(n - 1)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">n</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>               <span class="c1">; n now contains Fib(n - 2)</span>
+<span class="p">(</span><span class="nf">restore</span> <span class="nv">val</span><span class="p">)</span>                      <span class="c1">; val now contains Fib(n - 1)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>..can be replaced by a single line:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">restore</span> <span class="nv">n</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">restore</span> <span class="nv">n</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
 <p>Here are the changes:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9466,7 +9466,8 @@
 32
 33
 34
-35</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-save</span> <span class="nv">inst</span> <span class="nv">machine</span> <span class="nv">stack</span> <span class="nv">pc</span><span class="p">)</span>
+35
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-save</span> <span class="nv">inst</span> <span class="nv">machine</span> <span class="nv">stack</span> <span class="nv">pc</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">reg-name</span> <span class="p">(</span><span class="nf">stack-inst-reg-name</span> <span class="nv">inst</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">reg</span> <span class="p">(</span><span class="nf">get-register</span> <span class="nv">machine</span>
 							 <span class="nv">reg-name</span><span class="p">)))</span>
@@ -9500,12 +9501,11 @@
          <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- STACK"</span> <span class="nv">message</span><span class="p">))))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">top</span> <span class="nv">stack</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">stack</span> <span class="ss">'top</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">stack</span> <span class="ss">'top</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9530,7 +9530,8 @@
 23
 24
 25
-26</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+26
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">temp-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span>
@@ -9546,23 +9547,22 @@
 
 <span class="c1">;Value 11: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: temp-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
 
 <span class="c1">;Reg at stack top and Reg restored are not equal! b a</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
 <span class="c1">; (RESTART 1) =&gt; Return to read-eval-print level 1.</span>
 
-<span class="mi">2</span> <span class="nv">error&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">2</span> <span class="nv">error&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="c">(c)</h4>
 
 <p>Changes are marked with <code class="highlighter-rouge">;;;</code>. I created stacks for <code class="highlighter-rouge">pc</code> and <code class="highlighter-rouge">flag</code> too. Well, these stacks are not required, added them mindlessly :)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9641,7 +9641,8 @@
 77
 78
 79
-80</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-new-machine</span><span class="p">)</span>
+80
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-new-machine</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">pc</span> <span class="p">(</span><span class="nf">make-register</span> <span class="ss">'pc</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">flag</span> <span class="p">(</span><span class="nf">make-register</span> <span class="ss">'flag</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">the-instruction-sequence</span> <span class="o">'</span><span class="p">()))</span>
@@ -9720,12 +9721,11 @@
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">reg</span> <span class="p">(</span><span class="nf">get-register</span> <span class="nv">machine</span> <span class="nv">reg-name</span><span class="p">)))</span>       
       <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
 		<span class="p">(</span><span class="nf">set-contents!</span> <span class="nv">reg</span> <span class="p">(</span><span class="nf">pop</span> <span class="p">(</span><span class="nf">get-stack</span> <span class="nv">stacks</span> <span class="nv">reg-name</span><span class="p">)))</span> <span class="c1">;;;</span>
-		<span class="p">(</span><span class="nf">advance-pc</span> <span class="nv">pc</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="p">(</span><span class="nf">advance-pc</span> <span class="nv">pc</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9770,8 +9770,9 @@
 43
 44
 45
-46</pre></td><td class="code"><pre><span class="c1">;;example, i used in part (b) now gives different error as expected.</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+46
+</pre></td><td class="code"><pre><span class="c1">;;example, i used in part (b) now gives different error as expected.</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">temp-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span>
@@ -9785,10 +9786,10 @@
 
 <span class="c1">;Value 14: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: temp-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
 
 <span class="c1">;Empty stack -- POP</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
@@ -9796,7 +9797,7 @@
 
 <span class="mi">2</span> <span class="nv">error&gt;</span> <span class="p">(</span><span class="nf">restart</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">temp-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span>
@@ -9811,12 +9812,11 @@
 
 <span class="c1">;Value: temp-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

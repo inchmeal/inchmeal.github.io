@@ -9430,7 +9430,7 @@
   <li>It evaluates arguments to <code class="highlighter-rouge">*</code> from right, thus evaluating <code class="highlighter-rouge">(factorial-alt (- n 1))</code>. Since this is a procedure, this can change <code class="highlighter-rouge">env</code> which will be needed to evaluate the next argument, so we save <code class="highlighter-rouge">env</code>. This is apparent from the code generated:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9438,7 +9438,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="c1">;;....</span>
+9
+</pre></td><td class="code"><pre><span class="c1">;;....</span>
 	<span class="p">(</span><span class="nf">save</span> <span class="nv">continue</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">save</span> <span class="nv">proc</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">save</span> <span class="nv">env</span><span class="p">)</span>
@@ -9446,25 +9447,24 @@
 	<span class="p">(</span><span class="nf">save</span> <span class="nv">proc</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">proc</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">-</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">1</span><span class="p">))</span>
-<span class="c1">;;....</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;....</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Now, we evaluate the next argument which is <code class="highlighter-rouge">n</code>. Since this is just a variable, it does not change any registers apart from <code class="highlighter-rouge">val</code>. Thus we can avoid saving and restoring register <code class="highlighter-rouge">argl</code> while evaluating this. This is again apparent from the code generated:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="c1">;;....</span>
+6
+</pre></td><td class="code"><pre><span class="c1">;;....</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">argl</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">list</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
 	<span class="p">(</span><span class="nf">restore</span> <span class="nv">env</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">argl</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">cons</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
-<span class="c1">;;....</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;....</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="now-consider-the-orginal-factorial-version">Now consider the orginal <code class="highlighter-rouge">factorial</code> version:</h4>
 
@@ -9472,7 +9472,7 @@
   <li>Here, we first evaluate <code class="highlighter-rouge">n</code>. Since this can not change <code class="highlighter-rouge">env</code>, we do not save or restore <code class="highlighter-rouge">env</code> as is apparent from the code generated:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9480,7 +9480,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="c1">;;....</span>
+9
+</pre></td><td class="code"><pre><span class="c1">;;....</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">proc</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">*</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">save</span> <span class="nv">continue</span><span class="p">)</span>
    <span class="p">(</span><span class="nf">save</span> <span class="nv">proc</span><span class="p">)</span>
@@ -9488,8 +9489,7 @@
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">argl</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">list</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">save</span> <span class="nv">argl</span><span class="p">)</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">proc</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">factorial</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
-<span class="c1">;;....</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;....</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Now, we evaluate <code class="highlighter-rouge">(factorial-val (- n 1))</code>. Even though this can change <code class="highlighter-rouge">env</code> we don’t need to save n restore <code class="highlighter-rouge">env</code> because this is last argument and we do not need env after this argument. <em>But</em> here we need to save and restore <code class="highlighter-rouge">argl</code> since this can change <code class="highlighter-rouge">argl</code>. This can also be seen in the generated code shown above.</li>

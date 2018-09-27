@@ -9424,16 +9424,16 @@
 
 <p>Here is the fixed code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-zero-crossings</span> <span class="nv">input-stream</span> <span class="nv">last-value</span> <span class="nv">last-avpt</span><span class="p">)</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-zero-crossings</span> <span class="nv">input-stream</span> <span class="nv">last-value</span> <span class="nv">last-avpt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">avpt</span> <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">input-stream</span><span class="p">)</span> <span class="nv">last-value</span><span class="p">)</span> <span class="mi">2</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nf">sign-change-detector</span> <span class="nv">avpt</span> <span class="nv">last-avpt</span><span class="p">)</span>
                  <span class="p">(</span><span class="nf">make-zero-crossings</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">input-stream</span><span class="p">)</span>
-                                      <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">input-stream</span><span class="p">)</span> <span class="nv">avpt</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                                      <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">input-stream</span><span class="p">)</span> <span class="nv">avpt</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

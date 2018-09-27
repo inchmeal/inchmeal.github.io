@@ -9426,7 +9426,7 @@
 
 <p>Clearly all of these parts are of <script type="math/tex">O(n)</script> complexity. The overall complexity will be <script type="math/tex">O(n)</script>.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9440,7 +9440,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">union-set-tree</span> <span class="nv">tree1</span> <span class="nv">tree2</span><span class="p">)</span> 
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">union-set-tree</span> <span class="nv">tree1</span> <span class="nv">tree2</span><span class="p">)</span> 
    <span class="p">(</span><span class="nf">list-&gt;tree</span> <span class="p">(</span><span class="nf">union-set</span> 
                   <span class="p">(</span><span class="nf">tree-&gt;list</span> <span class="nv">tree1</span><span class="p">)</span> 
                   <span class="p">(</span><span class="nf">tree-&gt;list</span> <span class="nv">tree2</span><span class="p">)</span>
@@ -9454,8 +9455,7 @@
                   <span class="p">(</span><span class="nf">tree-&gt;list</span> <span class="nv">tree2</span><span class="p">)</span>
                <span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

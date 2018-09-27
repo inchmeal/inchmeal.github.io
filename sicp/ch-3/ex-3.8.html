@@ -9416,13 +9416,13 @@
                         <hr/>
                         <p>The idea is to save the new value and return the new value. And if called first time then use 0 as old-value.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">f</span> <span class="p">((</span><span class="k">lambda</span><span class="p">(</span><span class="nf">old</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">temp</span> <span class="nv">old</span><span class="p">))</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">old</span> <span class="nv">x</span><span class="p">)</span> <span class="nv">temp</span><span class="p">)))</span> <span class="mi">0</span><span class="p">))</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">f</span> <span class="p">((</span><span class="k">lambda</span><span class="p">(</span><span class="nf">old</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">temp</span> <span class="nv">old</span><span class="p">))</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">old</span> <span class="nv">x</span><span class="p">)</span> <span class="nv">temp</span><span class="p">)))</span> <span class="mi">0</span><span class="p">))</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="mi">0</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="mi">0</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Thus DrRacket evaluates from left to right.</p>
 

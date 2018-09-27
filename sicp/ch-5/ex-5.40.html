@@ -9424,7 +9424,7 @@
   <li><code class="highlighter-rouge">compile-procedure-call</code> (not to be confused with <code class="highlighter-rouge">compile-application</code> where <code class="highlighter-rouge">cenv</code> did get passed bec it is required for compiling the arguments there).</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9441,7 +9441,8 @@
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-lambda-body</span> <span class="nv">exp</span> <span class="nv">proc-entry</span> <span class="nv">cenv</span><span class="p">)</span>
+18
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-lambda-body</span> <span class="nv">exp</span> <span class="nv">proc-entry</span> <span class="nv">cenv</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">formals</span> <span class="p">(</span><span class="nf">lambda-parameters</span> <span class="nv">exp</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">append-instruction-sequences</span>
      <span class="p">(</span><span class="nf">make-instruction-sequence</span> <span class="o">'</span><span class="p">(</span><span class="nf">env</span> <span class="nv">proc</span> <span class="nv">argl</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">env</span><span class="p">)</span>
@@ -9458,8 +9459,7 @@
 					   <span class="p">(</span><span class="nf">extend-compile-time-env</span> <span class="nv">cenv</span> <span class="nv">formals</span><span class="p">))))</span> <span class="c1">;;;</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">extend-compile-time-env</span> <span class="nv">cenv</span> <span class="nv">frame</span><span class="p">)</span>  <span class="c1">;;;</span>
-  <span class="p">(</span><span class="nb">cons</span> <span class="nv">frame</span> <span class="nv">cenv</span><span class="p">))</span>                          <span class="c1">;;;</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nb">cons</span> <span class="nv">frame</span> <span class="nv">cenv</span><span class="p">))</span>                          <span class="c1">;;;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9429,7 +9429,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">same?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'=</span><span class="p">)</span>
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">same?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'=</span><span class="p">)</span>
 							  <span class="p">(</span><span class="nb">eq?</span> <span class="ss">'not-found</span> <span class="p">(</span><span class="nf">find-variable</span> <span class="ss">'=</span> <span class="nv">cenv</span><span class="p">))))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">mul?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'*</span><span class="p">)</span>
 							 <span class="p">(</span><span class="nb">eq?</span> <span class="ss">'not-found</span> <span class="p">(</span><span class="nf">find-variable</span> <span class="ss">'*</span> <span class="nv">cenv</span><span class="p">))))</span>
@@ -9443,8 +9444,7 @@
 <span class="p">((</span><span class="nf">same?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-same</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">add?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-add</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">sub?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-sub</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
-<span class="p">((</span><span class="nf">mul?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-mul</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">((</span><span class="nf">mul?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-mul</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This works fine as suggested in the problem but notice this statement in the problem:</p>
 
@@ -9462,7 +9462,7 @@
 
 <p>Tested on the example given in the problem:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9523,7 +9523,8 @@
 59
 60
 61
-62</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+62
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="nf">compile</span> <span class="o">'</span><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">*</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
                    <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">a</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">b</span> <span class="nv">y</span><span class="p">)))</span> <span class="ss">'val</span> <span class="ss">'next</span> <span class="nv">the-empty-cenv</span><span class="p">)</span>
 
@@ -9584,14 +9585,13 @@
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">apply-primitive-procedure</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
   <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">continue</span><span class="p">))</span>
   <span class="nv">after-call9</span>
-  <span class="nv">after-lambda1</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">after-lambda1</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Since this mark the completion of the changes because of <em>compile time environment</em>, I shall put the complete code here:</p>
 
 <p>File: ch5-compiler.scm:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10154,7 +10154,8 @@
 561
 562
 563
-564</pre></td><td class="code"><pre><span class="c1">;;;;COMPILER FROM SECTION 5.5 OF</span>
+564
+</pre></td><td class="code"><pre><span class="c1">;;;;COMPILER FROM SECTION 5.5 OF</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch5.scm</span>
@@ -10717,12 +10718,11 @@
                <span class="p">(</span><span class="nf">registers-modified</span> <span class="nv">seq2</span><span class="p">))</span>
    <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nf">statements</span> <span class="nv">seq1</span><span class="p">)</span> <span class="p">(</span><span class="nf">statements</span> <span class="nv">seq2</span><span class="p">))))</span>
 
-<span class="o">'</span><span class="p">(</span><span class="nf">COMPILER</span> <span class="nv">LOADED</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">'</span><span class="p">(</span><span class="nf">COMPILER</span> <span class="nv">LOADED</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>There are few changes in ch5-syntax.scm - to supprt <code class="highlighter-rouge">let?</code></p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10742,7 +10742,8 @@
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="c1">;; var-defs and body should be list</span>
+21
+</pre></td><td class="code"><pre><span class="c1">;; var-defs and body should be list</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-let</span> <span class="nv">var-defs</span> <span class="nv">body</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="ss">'let</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">var-defs</span> <span class="nv">body</span><span class="p">)))</span>
 
@@ -10762,14 +10763,13 @@
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">vars</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">res</span><span class="p">))</span>
 		  <span class="p">(</span><span class="nf">vexps</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">res</span><span class="p">)))</span>
 	  <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">make-lambda</span> <span class="nv">vars</span> <span class="p">(</span><span class="nf">let-body</span> <span class="nv">exp</span><span class="p">))</span> <span class="nv">vexps</span><span class="p">)</span>
-	  <span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Also, there are few changes as part of ex-5.39:</p>
 
 <p>(As of now i put these changes in ch5-eceval-support.scm):</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10802,7 +10802,8 @@
 31
 32
 33
-34</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-lexical-address</span> <span class="nv">frame-num</span> <span class="nv">elem-num</span><span class="p">)</span>
+34
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-lexical-address</span> <span class="nv">frame-num</span> <span class="nv">elem-num</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">list</span> <span class="nv">frame-num</span> <span class="nv">elem-num</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lex-addr-frame-num</span> <span class="nv">lexical-address</span><span class="p">)</span>
@@ -10835,8 +10836,7 @@
 		<span class="p">((</span><span class="nb">=</span> <span class="nv">frame-num</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">env</span><span class="p">)</span>
 		<span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">env-ref</span>
 			   <span class="p">(</span><span class="nf">enclosing-environment</span> <span class="nv">env</span><span class="p">)</span>
-			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

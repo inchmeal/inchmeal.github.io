@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Following is the code for negation(complete code is presented at the bottom):</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9448,7 +9448,8 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="c1">;; This goes inside polynomial package </span>
+31
+</pre></td><td class="code"><pre><span class="c1">;; This goes inside polynomial package </span>
  <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">sub-poly</span> <span class="nv">p1</span> <span class="nv">p2</span><span class="p">)</span> <span class="p">(</span><span class="nf">add-poly</span> <span class="nv">p1</span> <span class="p">(</span><span class="nf">negate-poly</span> <span class="nv">p2</span><span class="p">)))</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">negate-poly</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-poly</span> <span class="p">(</span><span class="nf">variable</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">negate-termlist</span> <span class="p">(</span><span class="nf">term-list</span> <span class="nv">p</span><span class="p">))))</span>
 
@@ -9478,12 +9479,11 @@
   <span class="p">(</span><span class="nf">put</span> <span class="ss">'negate</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span><span class="p">)</span> <span class="nv">-</span><span class="p">)</span>
 
 <span class="c1">; generic negate</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">negate</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'negate</span> <span class="nv">x</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">negate</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'negate</span> <span class="nv">x</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Examples:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9493,7 +9493,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">negate</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)))))</span>
+11
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">negate</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)))))</span>
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span><span class="p">)</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">=zero?</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">negate</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)))))</span>
 <span class="no">#t</span>
@@ -9503,12 +9504,11 @@
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">4</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">2</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">sub</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">)))</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">3</span><span class="p">)))))</span>
 <span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">4</span> <span class="p">(</span><span class="nf">int</span> <span class="o">.</span> <span class="mi">2</span><span class="p">))</span> <span class="p">(</span><span class="nf">7</span> <span class="mi">9</span><span class="p">))</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here goes the complete code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10284,7 +10284,8 @@
 774
 775
 776
-777</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+777
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -11060,8 +11061,7 @@
 <span class="p">(</span><span class="nf">install-rational-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-int-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-polynomial-package</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-polynomial-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note: Here, I felt need to add int package also - which I have not yet added before this solution - drop was dropping everything to rationals which was my lowest droppable type and the output was not looking pretty. So, added int -&gt; rational also into the existing hierarchy. I first tried to use <code class="highlighter-rouge">integer?</code> for tags like it was done for number/real package but it was causing issues because <code class="highlighter-rouge">number?</code> is true for both integer as well as real(atleast in the sicp package of DrRacket) - Even putting the check for integer first is not solving the problem as <code class="highlighter-rouge">raise-to-type</code> was going into infinite recursion when it tries to raise type of int to real. So, the only option left was to use tag - ‘int for integers. I also tried to use tag for ‘scheme-number(real) instead of just <code class="highlighter-rouge">number?</code> but it was making it difficult to write test functions - as i have to enter everythin using make-number or make-int - too much to type!</p>
 

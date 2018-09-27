@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>I could not find a way to <em>seed</em> in the sicp package of DrRacket. So just implement the procedure and used <code class="highlighter-rouge">random &lt;val&gt;</code> - and passed seed as val to this procedure for naive testing :)</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9432,7 +9432,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+17
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 
@@ -9448,8 +9449,7 @@
     <span class="p">(</span><span class="k">cond</span>
       <span class="p">((</span><span class="nb">eq?</span> <span class="ss">'generate</span> <span class="nv">m</span><span class="p">)</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">random-seed</span> <span class="p">(</span><span class="nf">rand-update</span> <span class="nv">random-seed</span><span class="p">))</span> <span class="nv">random-seed</span><span class="p">)</span>
       <span class="p">((</span><span class="nb">eq?</span> <span class="ss">'reset</span> <span class="nv">m</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">n</span><span class="p">)</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">random-seed</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">random-seed</span><span class="p">))</span>
-      <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Invalid parameter"</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Invalid parameter"</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

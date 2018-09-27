@@ -9418,14 +9418,14 @@
 
 <p>I used <code class="highlighter-rouge">trace-entry</code> which turns out very useful.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">trace-entry</span> <span class="nv">sqrt-stream</span><span class="p">)</span>
+4
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">trace-entry</span> <span class="nv">sqrt-stream</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">trace-entry</span> <span class="nv">sqrt-stream-1</span><span class="p">)</span> <span class="c1">;Louis version -renamed to avoid conflict </span>
 <span class="p">(</span><span class="nf">trace-entry</span> <span class="nv">stream-map</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">trace-entry</span> <span class="nv">sqrt-improve</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">trace-entry</span> <span class="nv">sqrt-improve</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>It will take quite a lot of writing to explain the exact behaviour. Instead I will just put the output from trace and give some pointers.</p>
 
@@ -9433,7 +9433,7 @@
 
 <h4 id="using-memoize">Using memoize</h4>
 
-<figure class="highlight"><pre><code class="language-table" data-lang="table"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-table" data-lang="table"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9476,7 +9476,8 @@
 41
 42
 43
-44</pre></td><td class="code"><pre>|-----------------------------------------|------------------------------------------|
+44
+</pre></td><td class="code"><pre>|-----------------------------------------|------------------------------------------|
 | Original                                | Louis                                    |
 |-----------------------------------------|------------------------------------------|
 | 1 ]=&gt; (define orig (sqrt-stream 2))     | 1 ]=&gt; (define louis (sqrt-stream-1 2))   |
@@ -9519,8 +9520,7 @@
 |                                         | 2]                                       |
 |                                         | ;Value: 1.4166666666666665               |
 |                                         |                                          |
-|-----------------------------------------|------------------------------------------|<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+|-----------------------------------------|------------------------------------------|</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Clearly, as we can see, Louis version computation do not take advantage of the previous values computed/accessed and accessing nth element of the stream requires O(n) operations <em>always</em>.</p>
 
@@ -9530,7 +9530,7 @@
 
 <h4 id="without-memoize">Without Memoize</h4>
 
-<figure class="highlight"><pre><code class="language-table" data-lang="table"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-table" data-lang="table"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9580,7 +9580,8 @@
 48
 49
 50
-51</pre></td><td class="code"><pre>|-----------------------------------------|-------------------------------------------|
+51
+</pre></td><td class="code"><pre>|-----------------------------------------|-------------------------------------------|
 | Original                                | Louis                                     |
 |-----------------------------------------|-------------------------------------------|
 | 1 ]=&gt; (define nm-orig (sqrt-stream 2))  | 1 ]=&gt; (define nm-louis (sqrt-stream-1 2)) |
@@ -9630,8 +9631,7 @@
 |                                         | Args: 1.5                                 |
 |                                         | 2]                                        |
 |                                         | ;Value: 1.4166666666666665                |
-|-----------------------------------------|-------------------------------------------|<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+|-----------------------------------------|-------------------------------------------|</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that here Louis has become exponential - accessing nth element requires <script type="math/tex">\, \sum_{i=1}^{n-1} g(i) \,</script> where g(i) is the cost of accessing ith element. This is similar to the fibonacci recursive process complexity as we have seen earlier and it requires similar run time - exponential.</p>
 

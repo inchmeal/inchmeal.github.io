@@ -9430,7 +9430,7 @@
 
 <p>(I built on top of the previous solutions. In last exercise I build <code class="highlighter-rouge">find-pair</code> it uses the same procedure.)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9448,7 +9448,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="c1">;;add following line in eval:</span>
+19
+</pre></td><td class="code"><pre><span class="c1">;;add following line in eval:</span>
 <span class="p">((</span><span class="nf">unbound!?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">eval-unbound!</span> <span class="nv">exp</span> <span class="nv">env</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unbound!?</span> <span class="nv">exp</span><span class="p">)</span>
@@ -9466,12 +9467,11 @@
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">pair</span> <span class="p">(</span><span class="nf">find-pair</span> <span class="nv">var</span> <span class="nv">env</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">if</span> <span class="nv">pair</span>
 		<span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nb">set-car!</span> <span class="nv">pair</span> <span class="o">'</span><span class="p">())</span> <span class="p">(</span><span class="nb">set-cdr!</span> <span class="nv">pair</span> <span class="o">'</span><span class="p">()))</span>
-		<span class="p">(</span><span class="nf">error</span> <span class="s">"Unbound variable"</span> <span class="nv">var</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="p">(</span><span class="nf">error</span> <span class="s">"Unbound variable"</span> <span class="nv">var</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now, a small test:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9491,7 +9491,8 @@
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+21
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;;; M-Eval value:</span>
@@ -9511,8 +9512,7 @@
 
 <span class="c1">;;; M-Eval input:</span>
 <span class="nv">x</span>
-<span class="c1">;Unbound variable x</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Unbound variable x</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

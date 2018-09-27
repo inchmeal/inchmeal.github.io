@@ -9421,7 +9421,7 @@
   <li>Rule to find grandson should use the results of the rule to find son.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9464,7 +9464,8 @@
 41
 42
 43
-44</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+44
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">find-son</span> <span class="nv">?father</span> <span class="nv">?son</span><span class="p">)</span>
 			   <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">son</span> <span class="nv">?father</span> <span class="nv">?son</span><span class="p">)</span>
 				   <span class="p">(</span><span class="k">and</span>
@@ -9507,8 +9508,7 @@
 <span class="p">(</span><span class="nf">find-grandson</span> <span class="nv">cain</span> <span class="nv">irad</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">find-grandson</span> <span class="nv">adam</span> <span class="nv">enoch</span><span class="p">)</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

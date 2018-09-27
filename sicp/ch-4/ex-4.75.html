@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9430,7 +9430,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="c1">;;Add this line in the initialize-database procedure    </span>
+15
+</pre></td><td class="code"><pre><span class="c1">;;Add this line in the initialize-database procedure    </span>
 <span class="c1">;; (put 'unique 'qeval uniquely-asserted)</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unique-query</span> <span class="nv">exps</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">exps</span><span class="p">))</span>
@@ -9444,12 +9445,11 @@
 			   <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">stream-null?</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">matched-frame-stream</span><span class="p">))))</span>
 		   <span class="nv">the-empty-stream</span>
 		   <span class="nv">matched-frame-stream</span><span class="p">)))</span>
-   <span class="nv">frame-stream</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+   <span class="nv">frame-stream</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9472,7 +9472,8 @@
 21
 22
 23
-24</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+24
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">unique</span> <span class="p">(</span><span class="nf">job</span> <span class="nv">?x</span> <span class="p">(</span><span class="nf">computer</span> <span class="nv">wizard</span><span class="p">)))</span>
 
 <span class="c1">;;; Query results:</span>
@@ -9495,8 +9496,7 @@
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">tweakit</span> <span class="nv">lem</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="nv">technician</span><span class="p">))</span> <span class="p">(</span><span class="nf">unique</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">tweakit</span> <span class="nv">lem</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="nv">technician</span><span class="p">))))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="nv">wizard</span><span class="p">))</span> <span class="p">(</span><span class="nf">unique</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="nv">wizard</span><span class="p">))))</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

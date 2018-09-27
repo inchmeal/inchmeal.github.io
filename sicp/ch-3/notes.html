@@ -9436,24 +9436,24 @@
 
 <p>There can be few variations on how we model such objects that change state. One straight forward way is:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-withdraw</span> <span class="nv">balance</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-withdraw</span> <span class="nv">balance</span><span class="p">)</span>
   <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">amount</span><span class="p">)</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;=</span> <span class="nv">balance</span> <span class="nv">amount</span><span class="p">)</span>
 		<span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">balance</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">balance</span> <span class="nv">amount</span><span class="p">))</span>
 			   <span class="nv">balance</span><span class="p">)</span>
-		<span class="s">"Insufficient funds"</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="s">"Insufficient funds"</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now we can create objects as <code class="highlighter-rouge">(define W1 (make-withdraw 100))</code> or <code class="highlighter-rouge">(define W2 (make-withdraw 200))</code>.</p>
 
 <p>Another way is <em>message-passing</em>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9467,7 +9467,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-account</span> <span class="nv">balance</span><span class="p">)</span>
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-account</span> <span class="nv">balance</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">withdraw</span> <span class="nv">amount</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;=</span> <span class="nv">balance</span> <span class="nv">amount</span><span class="p">)</span>
         <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">balance</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">balance</span> <span class="nv">amount</span><span class="p">))</span>
@@ -9481,8 +9482,7 @@
           <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'deposit</span><span class="p">)</span> <span class="nv">deposit</span><span class="p">)</span>
           <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- MAKE-ACCOUNT"</span>
                        <span class="nv">m</span><span class="p">))))</span>
-  <span class="nv">dispatch</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">dispatch</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="benefits-of-assignment">Benefits of assignment</h4>
 
@@ -9510,10 +9510,10 @@
 
 <p>Another problem is <strong>order of assignment</strong>, for example:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="k">set!</span> <span class="nv">counter</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">counter</span> <span class="mi">1</span><span class="p">))</span>
-<span class="p">(</span><span class="k">set!</span> <span class="nv">product</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">counter</span> <span class="nv">product</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">set!</span> <span class="nv">counter</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">counter</span> <span class="mi">1</span><span class="p">))</span>
+<span class="p">(</span><span class="k">set!</span> <span class="nv">product</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">counter</span> <span class="nv">product</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now, we need to be sure that which statement comes first. Consider when program gets bigger - this problem also becomes more difficult and a programmar must take care that he should use the value at appropriate place.</p>
 
@@ -9584,10 +9584,10 @@
 
 <p>Delayed evaluation gives us a powerful way and even we can sort of have <strong>Infinite Streams</strong>. In book, it is shown how to implement <strong>infinite series</strong>(eg: power series) using Infinite Streams. This is quite powerful way of doing things and I can not imagine such elegant code for writing the series(ex-3.59):</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">exp-series</span>
-  <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">integrate-series</span> <span class="nv">exp-series</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">exp-series</span>
+  <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">integrate-series</span> <span class="nv">exp-series</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Try doing some stream manipulations like adding two streams, scaling a stream etc.</p>
 
@@ -9597,14 +9597,14 @@
 
 <p>We can also use streams to implement signal processing systems with loops. The problem is the one definition of stream may depend on another stream not yet defined. For eg: The not yet defined stream have first element available but requires a stream defined earlier to compute the next element. For example, to solve first order differential equation: <script type="math/tex">\, f(y) = \frac {dy} {dt} \,</script>, we have the following procedure:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
+4
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">y</span> <span class="p">(</span><span class="nf">integral</span> <span class="p">(</span><span class="k">delay</span> <span class="nv">dy</span><span class="p">)</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">))</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">dy</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">f</span> <span class="nv">y</span><span class="p">))</span>
-  <span class="nv">y</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">y</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here <code class="highlighter-rouge">y</code> depends on <code class="highlighter-rouge">dy</code> and <code class="highlighter-rouge">dy</code> depends on <code class="highlighter-rouge">y</code>! Many implementations of scheme(including MIT scheme) do not provide any direct way of writing such definitions.</p>
 

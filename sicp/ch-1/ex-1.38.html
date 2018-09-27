@@ -9428,7 +9428,7 @@
 
 <p>Now we can easily write the procedure for computing <script type="math/tex">e</script> using <code class="highlighter-rouge">cont-frac</code> from previous exercise:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9436,7 +9436,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">e</span> <span class="nv">n</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">e</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">den</span> <span class="nv">k</span><span class="p">)</span>
       <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">&lt;</span> <span class="nv">k</span> <span class="mi">3</span><span class="p">)</span> <span class="nv">k</span><span class="p">)</span>
             <span class="p">((</span><span class="nb">=</span> <span class="p">(</span><span class="nb">remainder</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">k</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">quotient</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">k</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">1</span><span class="p">)))</span>
@@ -9444,19 +9445,18 @@
       <span class="p">)</span>
   <span class="p">)</span>
   <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">den</span> <span class="nv">n</span><span class="p">))</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that we are also adding 2 as call to <code class="highlighter-rouge">cont-frac</code> returns <script type="math/tex">e - 2</script>.</p>
 
 <p>Sample invocation using <script type="math/tex">k = 20</script>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre> 
+3
+</pre></td><td class="code"><pre> 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">e</span> <span class="mi">20</span><span class="p">)</span>
-<span class="mf">2.718281828459045</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mf">2.718281828459045</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

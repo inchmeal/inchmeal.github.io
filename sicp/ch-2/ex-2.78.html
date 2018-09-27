@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>I have included the complete program so that it can be tested/executed easily.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9489,7 +9489,8 @@
 69
 70
 71
-72</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+72
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -9560,29 +9561,28 @@
           <span class="p">(</span><span class="nb">apply</span> <span class="nv">proc</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">contents</span> <span class="nv">args</span><span class="p">))</span>
           <span class="p">(</span><span class="nb">error</span>
             <span class="s">"No method for these types -- APPLY-GENERIC"</span>
-            <span class="p">(</span><span class="nb">list</span> <span class="nv">op</span> <span class="nv">type-tags</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+            <span class="p">(</span><span class="nb">list</span> <span class="nv">op</span> <span class="nv">type-tags</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I shall first add the output generated without the changes in <code class="highlighter-rouge">apply-tag</code>, <code class="highlighter-rouge">tag</code> or <code class="highlighter-rouge">contents</code>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
+7
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">scheme-number</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'add</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">scheme-number</span> <span class="mi">15</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'mul</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">scheme-number</span> <span class="mi">50</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now, lets see the output after the changes:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9590,7 +9590,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">)</span>
 <span class="mi">5</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
 <span class="mi">5</span>
@@ -9598,8 +9599,7 @@
 <span class="mi">15</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'mul</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">)</span>
 <span class="mi">50</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

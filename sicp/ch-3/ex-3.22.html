@@ -9420,7 +9420,7 @@
 
 <p>Note that I returned front-ptr(inside insert and delete operations) instead of dispatch, as it simplified printing. Perhaps it is better to return dispatch because it can help in combining multiple operations in a single statement.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9459,7 +9459,8 @@
 37
 38
 39
-40</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+40
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-queue</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">front-ptr</span> <span class="o">'</span><span class="p">())</span>
@@ -9498,12 +9499,11 @@
             <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'insert-queue!</span><span class="p">)</span> <span class="nv">insert-queue!</span><span class="p">)</span>
             <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'delete-queue!</span><span class="p">)</span> <span class="p">(</span><span class="nf">delete-queue!</span><span class="p">))</span>
             <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Invalid operation: "</span> <span class="nv">m</span><span class="p">))))</span>
-    <span class="nv">dispatch</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="nv">dispatch</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9518,7 +9518,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">q1</span> <span class="p">(</span><span class="nf">make-queue</span><span class="p">))</span>
+16
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">q1</span> <span class="p">(</span><span class="nf">make-queue</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">((</span><span class="nf">q1</span> <span class="ss">'insert-queue!</span><span class="p">)</span> <span class="ss">'a</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">a</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">((</span><span class="nf">q1</span> <span class="ss">'insert-queue!</span><span class="p">)</span> <span class="ss">'b</span><span class="p">))</span>
@@ -9533,8 +9534,7 @@
 <span class="p">(</span><span class="nf">hello</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">((</span><span class="nf">q1</span> <span class="ss">'insert-queue!</span><span class="p">)</span> <span class="ss">'world</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">hello</span> <span class="nv">world</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

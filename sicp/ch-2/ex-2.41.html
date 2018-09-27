@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>I used procedure <code class="highlighter-rouge">unique-pairs</code> from previous exercise.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9436,7 +9436,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unique-triples</span> <span class="nv">n</span> <span class="nv">s</span><span class="p">)</span>
+19
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unique-triples</span> <span class="nv">n</span> <span class="nv">s</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">filter</span>
      <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">triplet</span><span class="p">)</span>
           <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
@@ -9454,12 +9455,11 @@
        <span class="p">(</span><span class="nf">unique-pairs</span> <span class="nv">n</span><span class="p">)</span>
      <span class="p">)</span>
  <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9471,7 +9471,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">unique-triples</span> <span class="mi">5</span> <span class="mi">8</span><span class="p">))</span>
+13
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">unique-triples</span> <span class="mi">5</span> <span class="mi">8</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">5</span><span class="p">)</span> <span class="p">(</span><span class="nf">1</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">unique-triples</span> <span class="mi">5</span> <span class="mi">9</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">1</span> <span class="mi">3</span> <span class="mi">5</span><span class="p">)</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))</span>
@@ -9483,12 +9484,11 @@
 <span class="p">()</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">unique-triples</span> <span class="mi">6</span> <span class="mi">13</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">3</span> <span class="mi">4</span> <span class="mi">6</span><span class="p">)</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">))</span>
-<span class="nv">&gt;</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that this method can be further optimized if we have a different form of <code class="highlighter-rouge">map</code> in which it discards <code class="highlighter-rouge">nil</code> elements or it also accepts a predicate by which we can select or reject.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9510,7 +9510,8 @@
 20
 21
 22
-23</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unique-triples-1</span> <span class="nv">n</span> <span class="nv">s</span><span class="p">)</span>        
+23
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">unique-triples-1</span> <span class="nv">n</span> <span class="nv">s</span><span class="p">)</span>        
       <span class="p">(</span><span class="nb">map</span>
        <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">pair</span><span class="p">)</span>
          <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
@@ -9532,8 +9533,7 @@
 <span class="c1">; Output</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">unique-triples-1</span> <span class="mi">5</span> <span class="mi">8</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">5</span><span class="p">)</span> <span class="p">(</span><span class="nf">1</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span> <span class="p">()</span> <span class="p">()</span> <span class="p">()</span> <span class="p">()</span> <span class="p">()</span> <span class="p">()</span> <span class="p">()</span> <span class="p">())</span>
-<span class="c1">; Thus we need a way to remove these empty elements.</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">; Thus we need a way to remove these empty elements.</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

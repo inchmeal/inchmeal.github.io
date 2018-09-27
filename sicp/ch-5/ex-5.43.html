@@ -9424,7 +9424,7 @@
 
 <p>Here are the changes:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9468,7 +9468,8 @@
 42
 43
 44
-45</pre></td><td class="code"><pre><span class="c1">;;Change in compile procedure</span>
+45
+</pre></td><td class="code"><pre><span class="c1">;;Change in compile procedure</span>
 <span class="p">((</span><span class="nf">let?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile</span> <span class="p">(</span><span class="nf">let-&gt;combination</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-lambda-body</span> <span class="nv">exp</span> <span class="nv">proc-entry</span> <span class="nv">cenv</span><span class="p">)</span>
@@ -9512,12 +9513,11 @@
 		  <span class="c1">;;compiler sequence and it expects a sequence</span>
 		  <span class="c1">;;which means a list!</span>
 		  <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">make-let</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">result</span><span class="p">)</span>
-						  <span class="p">(</span><span class="nb">cadr</span> <span class="nv">result</span><span class="p">))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+						  <span class="p">(</span><span class="nb">cadr</span> <span class="nv">result</span><span class="p">))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Also, there are few changes in ch5-syntax.scm - to add support for <code class="highlighter-rouge">let?</code>:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9537,7 +9537,8 @@
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="c1">;; var-defs and body should be list</span>
+21
+</pre></td><td class="code"><pre><span class="c1">;; var-defs and body should be list</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-let</span> <span class="nv">var-defs</span> <span class="nv">body</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="ss">'let</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">var-defs</span> <span class="nv">body</span><span class="p">)))</span>
 
@@ -9557,12 +9558,11 @@
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">vars</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">res</span><span class="p">))</span>
 		  <span class="p">(</span><span class="nf">vexps</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">res</span><span class="p">)))</span>
 	  <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">make-lambda</span> <span class="nv">vars</span> <span class="p">(</span><span class="nf">let-body</span> <span class="nv">exp</span><span class="p">))</span> <span class="nv">vexps</span><span class="p">)</span>
-	  <span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="examplecode">Example/Code</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9617,7 +9617,8 @@
 53
 54
 55
-56</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+56
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="nf">compile</span> <span class="o">'</span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">dummy</span><span class="p">)</span> <span class="p">(</span><span class="k">define</span> <span class="nv">a</span> <span class="mi">10</span><span class="p">)</span> <span class="nv">a</span> <span class="p">(</span><span class="k">define</span> <span class="nv">b</span> <span class="mi">20</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span> <span class="ss">'val</span> <span class="ss">'next</span> <span class="nv">the-empty-cenv</span><span class="p">)</span>
 
 <span class="c1">;;Output:</span>
@@ -9672,8 +9673,7 @@
   <span class="nv">after-lambda1</span>
   <span class="p">(</span><span class="nf">perform</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">define-variable!</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">dummy</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">ok</span><span class="p">))</span>
-  <span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

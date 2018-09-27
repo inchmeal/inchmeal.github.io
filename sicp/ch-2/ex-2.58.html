@@ -9420,7 +9420,7 @@
 
 <p>I am assuming operators are only restricted to <code class="highlighter-rouge">*</code> and <code class="highlighter-rouge">+</code>. However I think it should be easy to extend for other operators.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9437,7 +9437,8 @@
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">simplify</span> <span class="nv">expr</span><span class="p">)</span>
+18
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">simplify</span> <span class="nv">expr</span><span class="p">)</span>
     <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">expr</span><span class="p">)</span> <span class="nv">expr</span><span class="p">)</span>
           <span class="p">((</span><span class="nf">variable?</span> <span class="nv">expr</span><span class="p">)</span> <span class="nv">expr</span><span class="p">)</span>
           <span class="p">((</span><span class="nb">number?</span> <span class="nv">expr</span><span class="p">)</span> <span class="nv">expr</span><span class="p">)</span>
@@ -9454,12 +9455,11 @@
                   <span class="p">)</span>
           <span class="p">)</span>
     <span class="p">)</span>      
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Test/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9491,7 +9491,8 @@
 30
 31
 32
-33</pre></td><td class="code"><pre><span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">simplify</span> <span class="o">'</span><span class="p">(</span><span class="nf">x</span> <span class="nv">*</span> <span class="mi">3</span><span class="p">)))</span>
+33
+</pre></td><td class="code"><pre><span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">simplify</span> <span class="o">'</span><span class="p">(</span><span class="nf">x</span> <span class="nv">*</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">x</span> <span class="nv">*</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">deriv</span> <span class="p">(</span><span class="nf">simplify</span> <span class="o">'</span><span class="p">(</span><span class="nf">x</span> <span class="nv">*</span> <span class="mi">3</span><span class="p">))</span> <span class="ss">'x</span><span class="p">))</span>
 <span class="mi">3</span>
@@ -9523,8 +9524,7 @@
 <span class="nv">x</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">deriv</span> <span class="p">(</span><span class="nf">simplify</span> <span class="o">'</span><span class="p">(((((</span><span class="nf">x</span><span class="p">))))))</span> <span class="ss">'x</span><span class="p">))</span>
 <span class="mi">1</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that in the test example <code class="highlighter-rouge">'(x * 3 * 5 * y * 6))</code> all numbers are not multiplied(only those which are present next to each other). This was not required in
  the exercise, so leaving it :).</p>

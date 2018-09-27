@@ -9416,20 +9416,20 @@
                         <hr/>
                         <p>This is quite cool example!</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">S</span> <span class="p">(</span><span class="nf">cons-stream</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">S</span> <span class="p">(</span><span class="nf">cons-stream</span>
 		              <span class="mi">1</span>
 	  			      <span class="p">(</span><span class="nf">merge</span> <span class="p">(</span><span class="nf">scale-stream</span> <span class="nv">S</span> <span class="mi">2</span><span class="p">)</span>
 			   				 <span class="p">(</span><span class="nf">merge</span> <span class="p">(</span><span class="nf">scale-stream</span> <span class="nv">S</span> <span class="mi">3</span><span class="p">)</span>
-									<span class="p">(</span><span class="nf">scale-stream</span> <span class="nv">S</span> <span class="mi">5</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+									<span class="p">(</span><span class="nf">scale-stream</span> <span class="nv">S</span> <span class="mi">5</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9482,61 +9482,61 @@
 51
 52
 53
-54</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">0</span><span class="p">)</span>
+54
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: memo-proc</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: 1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: 2</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: 3</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1">;Value: 4</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1">;Value: 5</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: 6</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">6</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">6</span><span class="p">)</span>
 
 <span class="c1">;Value: 8</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: 9</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">8</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="c1">;Value: 10</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">9</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">9</span><span class="p">)</span>
 
 <span class="c1">;Value: 12</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="c1">;Value: 15</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">11</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">11</span><span class="p">)</span>
 
 <span class="c1">;Value: 16</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">12</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">12</span><span class="p">)</span>
 
-<span class="c1">;Value: 18</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: 18</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

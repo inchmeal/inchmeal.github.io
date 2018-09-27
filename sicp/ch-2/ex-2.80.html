@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>This is almost similar to the previous exercise. The changes required in each package is shown below.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9441,7 +9441,8 @@
 21
 22
 23
-24</pre></td><td class="code"><pre><span class="c1">;; number package:</span>
+24
+</pre></td><td class="code"><pre><span class="c1">;; number package:</span>
 <span class="p">(</span><span class="nf">put</span> <span class="ss">'=zero?</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">x</span> <span class="mi">0</span><span class="p">)))</span>
 
 <span class="c1">;; rational package:</span>
@@ -9464,8 +9465,7 @@
 <span class="c1">; generic definition</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">=zero?</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'=zero?</span> <span class="nv">x</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

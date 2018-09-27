@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Procedure for <code class="highlighter-rouge">filtered-accumulate</code>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9431,7 +9431,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">filtered-accumulate</span> <span class="nv">filter</span> <span class="nv">combiner</span> <span class="nv">null-value</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
+14
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">filtered-accumulate</span> <span class="nv">filter</span> <span class="nv">combiner</span> <span class="nv">null-value</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="nv">result</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="nv">result</span>        
         <span class="p">(</span><span class="nf">iter</span>
@@ -9444,12 +9445,11 @@
      <span class="p">)</span>
   <span class="p">)</span>
   <span class="p">(</span><span class="nf">iter</span> <span class="nv">a</span> <span class="nv">null-value</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here is the procedure to sum squares of prime numbers in the specified range:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9465,7 +9465,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">prime-sum</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+17
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">prime-sum</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">filtered-accumulate</span> <span class="nv">prime?</span> <span class="nv">+</span> <span class="mi">0</span> <span class="nv">square</span> <span class="nv">a</span> <span class="nv">inc</span> <span class="nv">b</span><span class="p">)</span>
 <span class="p">)</span>
 
@@ -9481,12 +9482,11 @@
         <span class="p">((</span><span class="nf">divides?</span> <span class="nv">test-divisor</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">test-divisor</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nf">find-divisor</span> <span class="nv">n</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">test-divisor</span> <span class="mi">1</span><span class="p">)))))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">divides?</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">remainder</span> <span class="nv">b</span> <span class="nv">a</span><span class="p">)</span> <span class="mi">0</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">remainder</span> <span class="nv">b</span> <span class="nv">a</span><span class="p">)</span> <span class="mi">0</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Procedure to find product of co-primes less than <script type="math/tex">n</script>:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9501,7 +9501,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">gcd</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+16
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">gcd</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">b</span> <span class="mi">0</span><span class="p">)</span>
       <span class="nv">a</span>
       <span class="p">(</span><span class="nb">gcd</span> <span class="nv">b</span> <span class="p">(</span><span class="nb">remainder</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span>
@@ -9516,8 +9517,7 @@
        <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">gcd</span> <span class="nv">k</span> <span class="nv">n</span><span class="p">)</span> <span class="mi">1</span><span class="p">)</span>
    <span class="p">)</span>
    <span class="p">(</span><span class="nf">filtered-accumulate</span> <span class="nv">rel-prime?</span> <span class="nv">*</span> <span class="mi">1</span> <span class="nv">identity</span> <span class="mi">1</span> <span class="nv">inc</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">))</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

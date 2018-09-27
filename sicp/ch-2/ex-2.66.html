@@ -9420,7 +9420,7 @@
 
 <p>It can be extended to use record.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9428,7 +9428,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lookup</span> <span class="nv">x</span> <span class="nv">set</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">lookup</span> <span class="nv">x</span> <span class="nv">set</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">set</span><span class="p">)</span> <span class="nv">false</span><span class="p">)</span>
         <span class="p">((</span><span class="nb">=</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">entry</span> <span class="nv">set</span><span class="p">))</span> <span class="nv">true</span><span class="p">)</span>
         <span class="p">((</span><span class="nb">&lt;</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">entry</span> <span class="nv">set</span><span class="p">))</span>
@@ -9436,12 +9437,11 @@
         <span class="p">(</span><span class="nf">else</span>
             <span class="p">(</span><span class="nf">lookup</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">right-branch</span> <span class="nv">set</span><span class="p">)))</span>
   <span class="p">)</span>      
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Test/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9455,7 +9455,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="c1">; using procedure from previous exercise to build tree.</span>
+15
+</pre></td><td class="code"><pre><span class="c1">; using procedure from previous exercise to build tree.</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">my-tree</span> <span class="p">(</span><span class="nf">list-&gt;tree</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">0</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">9</span> <span class="mi">11</span> <span class="mi">20</span> <span class="mi">26</span> <span class="mi">29</span> <span class="mi">35</span> <span class="mi">76</span> <span class="mi">93</span> <span class="mi">97</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">lookup</span> <span class="mi">21</span> <span class="nv">my-tree</span><span class="p">)</span>
 <span class="no">#f</span>
@@ -9469,8 +9470,7 @@
 <span class="no">#t</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">lookup</span> <span class="mi">33</span> <span class="nv">my-tree</span><span class="p">)</span>
 <span class="no">#f</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

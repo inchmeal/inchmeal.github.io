@@ -9418,7 +9418,7 @@
                         <hr/>
                         <h4 id="a">(a)</h4>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9442,7 +9442,8 @@
 22
 23
 24
-25</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+25
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-mobile</span> <span class="nv">left</span> <span class="nv">right</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">list</span> <span class="nv">left</span> <span class="nv">right</span><span class="p">)</span>
@@ -9466,12 +9467,11 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">branch-structure</span> <span class="nv">branch</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">branch</span><span class="p">))</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9480,7 +9480,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">total-weight</span> <span class="nv">mobile</span><span class="p">)</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">total-weight</span> <span class="nv">mobile</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">mobile</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
         <span class="p">((</span><span class="nb">not</span> <span class="p">(</span><span class="nb">pair?</span> <span class="nv">mobile</span><span class="p">))</span> <span class="nv">mobile</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">+</span>
@@ -9489,12 +9490,11 @@
               <span class="p">)</span>
         <span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Test:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9529,7 +9529,8 @@
 33
 34
 35
-36</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">mob</span>
+36
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">mob</span>
     <span class="p">(</span><span class="nf">make-mobile</span>
        <span class="p">(</span><span class="nf">make-branch</span>
              <span class="mi">100</span>
@@ -9564,8 +9565,7 @@
 <span class="mi">21</span>
 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">total-weight</span> <span class="o">'</span><span class="p">())</span>
-<span class="mi">0</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">0</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="c">(c)</h4>
 
@@ -9574,7 +9574,7 @@
 <p>To do that a procedure <code class="highlighter-rouge">chk-balance</code> is written which returns weight of the mobile if mobile is balanced else it returns a negative 
 number. As can be seen in code this helps in avoiding multiple visits to each branch.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9599,7 +9599,8 @@ number. As can be seen in code this helps in avoiding multiple visits to each br
 23
 24
 25
-26</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">balanced?</span> <span class="nv">m</span><span class="p">)</span>  
+26
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">balanced?</span> <span class="nv">m</span><span class="p">)</span>  
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">chk-balance</span> <span class="nv">mobile</span><span class="p">)</span>
      <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">mobile</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
         <span class="p">((</span><span class="nb">not</span> <span class="p">(</span><span class="nb">pair?</span> <span class="nv">mobile</span><span class="p">))</span> <span class="nv">mobile</span><span class="p">)</span>
@@ -9624,12 +9625,11 @@ number. As can be seen in code this helps in avoiding multiple visits to each br
      <span class="p">)</span>    
   <span class="p">)</span>
   <span class="p">(</span><span class="nb">&gt;=</span> <span class="p">(</span><span class="nf">chk-balance</span> <span class="nv">m</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Test:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9668,7 +9668,8 @@ number. As can be seen in code this helps in avoiding multiple visits to each br
 37
 38
 39
-40</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">mob</span>
+40
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">mob</span>
     <span class="p">(</span><span class="nf">make-mobile</span>
        <span class="p">(</span><span class="nf">make-branch</span>
              <span class="mi">100</span>
@@ -9707,8 +9708,7 @@ number. As can be seen in code this helps in avoiding multiple visits to each br
   <span class="p">)</span>
 <span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">balanced?</span> <span class="nv">mob</span><span class="p">)</span>
-<span class="no">#t</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="no">#t</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="d">(d)</h4>
 

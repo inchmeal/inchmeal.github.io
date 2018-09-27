@@ -9416,16 +9416,16 @@
                         <hr/>
                         <p>Code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">?x</span> <span class="o">.</span> <span class="p">())</span> <span class="p">(</span><span class="nf">?x</span> <span class="o">.</span> <span class="p">()))))</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">?x</span> <span class="o">.</span> <span class="p">())</span> <span class="p">(</span><span class="nf">?x</span> <span class="o">.</span> <span class="p">()))))</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">?x</span> <span class="nv">?y</span> <span class="o">.</span> <span class="nv">?z</span><span class="p">)</span> <span class="nv">?r</span><span class="p">)</span>
-			   <span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">?y</span> <span class="o">.</span> <span class="nv">?z</span><span class="p">)</span> <span class="nv">?r</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">?y</span> <span class="o">.</span> <span class="nv">?z</span><span class="p">)</span> <span class="nv">?r</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output/Test:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9443,7 +9443,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+19
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">3</span><span class="p">)</span> <span class="nv">?x</span><span class="p">)</span>
 
 <span class="c1">;;; Query results:</span>
@@ -9461,8 +9462,7 @@
 <span class="c1">;;; Query results:</span>
 <span class="p">(</span><span class="nf">last-pair</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">3</span><span class="p">))</span>
 
-<span class="c1">;;; Query input:</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; Query input:</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>On executing <code class="highlighter-rouge">(last-pair ?x (3))</code> the code outputs an error: <code class="highlighter-rouge">;Aborting!: maximum recursion depth exceeded</code></p>
 

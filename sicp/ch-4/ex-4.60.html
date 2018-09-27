@@ -9416,14 +9416,14 @@
                         <hr/>
                         <p>Duplication can be explained by looking at the rule:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">lives-near</span> <span class="nv">?person-1</span> <span class="nv">?person-2</span><span class="p">)</span>
+4
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">lives-near</span> <span class="nv">?person-1</span> <span class="nv">?person-2</span><span class="p">)</span>
       <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">address</span> <span class="nv">?person-1</span> <span class="p">(</span><span class="nf">?town</span> <span class="o">.</span> <span class="nv">?rest-1</span><span class="p">))</span>
            <span class="p">(</span><span class="nf">address</span> <span class="nv">?person-2</span> <span class="p">(</span><span class="nf">?town</span> <span class="o">.</span> <span class="nv">?rest-2</span><span class="p">))</span>
-           <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">same</span> <span class="nv">?person-1</span> <span class="nv">?person-2</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+           <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">same</span> <span class="nv">?person-1</span> <span class="nv">?person-2</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We lookup for <code class="highlighter-rouge">?person-1</code> and <code class="highlighter-rouge">?person-2</code> such that they have same <code class="highlighter-rouge">?town</code>. This can happen even when <code class="highlighter-rouge">?person1</code> and <code class="highlighter-rouge">?person2</code> are same so we removed that possibility with <code class="highlighter-rouge">(not (same ?person1 ?person2))</code>.</p>
 
@@ -9448,10 +9448,10 @@
 
 <p>This can be fixed by implementing a new <code class="highlighter-rouge">lives-near</code> that calls the above change version say <code class="highlighter-rouge">lives-near-ordered</code> like this:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">lives-near</span> <span class="nv">?x</span> <span class="nv">?y</span><span class="p">)</span>
- <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">lives-near-ordered</span> <span class="nv">?x</span> <span class="nv">?y</span><span class="p">)</span> <span class="p">(</span><span class="nf">lives-near-ordered</span> <span class="nv">?y</span> <span class="nv">?x</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">lives-near</span> <span class="nv">?x</span> <span class="nv">?y</span><span class="p">)</span>
+ <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">lives-near-ordered</span> <span class="nv">?x</span> <span class="nv">?y</span><span class="p">)</span> <span class="p">(</span><span class="nf">lives-near-ordered</span> <span class="nv">?y</span> <span class="nv">?x</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Well these are <em>speculations</em> because unlike last section(non-deterministic computing), I have not read the implementation details of query evaluator before using it!</p>
 

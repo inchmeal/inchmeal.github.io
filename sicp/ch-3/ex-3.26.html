@@ -9427,7 +9427,7 @@
 
 <p>First lets check the output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9442,7 +9442,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">tbl</span> <span class="p">(</span><span class="nf">make-table</span><span class="p">))</span>
+16
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">tbl</span> <span class="p">(</span><span class="nf">make-table</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">tbl</span> <span class="ss">'insert-proc!</span><span class="p">)</span> <span class="mi">100</span> <span class="ss">'hundred</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">tbl</span> <span class="ss">'insert-proc!</span><span class="p">)</span> <span class="mi">200</span> <span class="ss">'2hundred</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">tbl</span> <span class="ss">'insert-proc!</span><span class="p">)</span> <span class="mi">50</span> <span class="ss">'fifty</span><span class="p">)</span>
@@ -9457,14 +9458,13 @@
 <span class="p">(</span><span class="nf">mcons</span> <span class="mi">50</span> <span class="ss">'fiftish</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">tbl</span> <span class="ss">'lookup-proc</span><span class="p">)</span> <span class="mi">100</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">mcons</span> <span class="mi">100</span> <span class="ss">'hundred</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that, for for better readability I am returning the entry from the lookup procedure instead of returning only the value. If needed, this is a small change to return the value only.</p>
 
 <p>Code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9517,7 +9517,8 @@
 51
 52
 53
-54</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+54
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-tree</span> <span class="nv">entry</span> <span class="nv">left</span> <span class="nv">right</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">list</span> <span class="nv">entry</span> <span class="nv">left</span> <span class="nv">right</span><span class="p">))</span>
@@ -9570,8 +9571,7 @@
       <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'lookup-proc</span><span class="p">)</span> <span class="nv">lookup-local</span><span class="p">)</span>
             <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'insert-proc!</span><span class="p">)</span> <span class="nv">insert!</span><span class="p">)</span>
             <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown operation -- TABLE"</span> <span class="nv">m</span><span class="p">))))</span>
-    <span class="nv">dispatch</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="nv">dispatch</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

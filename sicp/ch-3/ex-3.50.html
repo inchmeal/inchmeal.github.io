@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>I added required stream preocedures from this <a href="https://stackoverflow.com/questions/24529271/sicp-cons-stream">answer</a>. Here goes the code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9452,7 +9452,8 @@
 34
 35
 36
-37</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">proc</span> <span class="o">.</span> <span class="nv">argstreams</span><span class="p">)</span>
+37
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">proc</span> <span class="o">.</span> <span class="nv">argstreams</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">stream-null?</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">argstreams</span><span class="p">))</span>
       <span class="nv">the-empty-stream</span>
       <span class="p">(</span><span class="nf">cons-stream</span>
@@ -9488,12 +9489,11 @@
           <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">result</span> <span class="p">(</span><span class="nf">proc</span><span class="p">))</span>
                  <span class="p">(</span><span class="k">set!</span> <span class="nv">already-run?</span> <span class="nv">true</span><span class="p">)</span>
                  <span class="nv">result</span><span class="p">)</span>
-          <span class="nv">result</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="nv">result</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9549,23 +9549,24 @@
 54
 55
 56
-57</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">s1</span> <span class="p">(</span><span class="nf">stream-enumerate-interval</span> <span class="mi">1</span> <span class="mi">5</span><span class="p">))</span>
+57
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">s1</span> <span class="p">(</span><span class="nf">stream-enumerate-interval</span> <span class="mi">1</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1">;Value: s1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">s2</span> <span class="p">(</span><span class="nf">stream-enumerate-interval</span> <span class="mi">1</span> <span class="mi">5</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">s2</span> <span class="p">(</span><span class="nf">stream-enumerate-interval</span> <span class="mi">1</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1">;Value: s2</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">sum-stream</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">+</span> <span class="nv">s1</span> <span class="nv">s2</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">sum-stream</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">+</span> <span class="nv">s1</span> <span class="nv">s2</span><span class="p">))</span>
 
 <span class="c1">;Value: sum-stream</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">sum-stream</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">sum-stream</span><span class="p">)</span>
 
 <span class="c1">;Value: 2</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">sum-stream</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">sum-stream</span><span class="p">))</span>
 
 <span class="c1">;The object 2, passed as the first argument to car, is not the correct type.</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
@@ -9576,23 +9577,23 @@
 
 <span class="c1">;Abort!</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">))</span>
 
 <span class="c1">;Value: 4</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">)))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">)))</span>
 
 <span class="c1">;Value: 6</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">))))</span>
 
 <span class="c1">;Value: 8</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">)))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">)))))</span>
 
 <span class="c1">;Value: 10</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">))))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">))))))</span>
 
 <span class="c1">;The object (), passed as the first argument to car, is not the correct type.</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
@@ -9603,10 +9604,9 @@
 
 <span class="c1">;Value: ()</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">sum-stream</span><span class="p">)</span>
 
-<span class="c1">;Value 4: (4 . #[compound-procedure 5])</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value 4: (4 . #[compound-procedure 5])</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

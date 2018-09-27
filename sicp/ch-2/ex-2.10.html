@@ -9417,7 +9417,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9428,7 +9428,8 @@
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> 
+12
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> 
    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nb">&lt;=</span> <span class="p">(</span><span class="nf">lower-bound</span> <span class="nv">y</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nb">&gt;=</span> <span class="p">(</span><span class="nf">upper-bound</span> <span class="nv">y</span><span class="p">)</span> <span class="mi">0</span><span class="p">))</span> 
        <span class="p">(</span><span class="nb">error</span> <span class="s">"Error: interval span contains 0 :"</span> <span class="nv">y</span><span class="p">)</span> 
        <span class="p">(</span><span class="nf">mul-interval</span>
@@ -9439,19 +9440,18 @@
                    <span class="p">)</span>
        <span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mi">1</span> <span class="mi">5</span><span class="p">))</span>
+4
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">I1</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mi">1</span> <span class="mi">5</span><span class="p">))</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="k">define</span> <span class="nv">I2</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mi">-5</span> <span class="mi">2</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="nv">I1</span> <span class="nv">I2</span><span class="p">)</span>
-<span class="o">.</span> <span class="o">.</span> <span class="nv">Error:</span> <span class="nv">interval</span> <span class="nv">span</span> <span class="nv">contains</span> <span class="mi">0</span> <span class="nv">:</span> <span class="p">{</span><span class="nf">-5</span> <span class="o">.</span> <span class="mi">2</span><span class="p">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">.</span> <span class="o">.</span> <span class="nv">Error:</span> <span class="nv">interval</span> <span class="nv">span</span> <span class="nv">contains</span> <span class="mi">0</span> <span class="nv">:</span> <span class="p">{</span><span class="nf">-5</span> <span class="o">.</span> <span class="mi">2</span><span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
                         <hr/>
                     </span>

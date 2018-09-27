@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>The changes required in each package is shown below. Added the complete code in the end.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9442,7 +9442,8 @@
 22
 23
 24
-25</pre></td><td class="code"><pre><span class="c1">;; number package:</span>
+25
+</pre></td><td class="code"><pre><span class="c1">;; number package:</span>
 <span class="p">(</span><span class="nf">put</span> <span class="ss">'equ?</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span> <span class="nv">=</span><span class="p">)</span>
 
 <span class="c1">;; rational package:</span>
@@ -9466,15 +9467,14 @@
 <span class="c1">; generic definition</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">equ?</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'equ?</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that in comlex-number, we are using <code class="highlighter-rouge">apply-generic</code> for comparing real and imaginary parts. This is because complex number is an abstarction built on top of
 rectangular and polar packages.</p>
 
 <p>Test/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9496,7 +9496,8 @@ rectangular and polar packages.</p>
 20
 21
 22
-23</pre></td><td class="code"><pre><span class="nv">&gt;</span>  <span class="p">(</span><span class="k">define</span> <span class="nv">n1</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
+23
+</pre></td><td class="code"><pre><span class="nv">&gt;</span>  <span class="p">(</span><span class="k">define</span> <span class="nv">n1</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="k">define</span> <span class="nv">n2</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">5</span><span class="p">))</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="k">define</span> <span class="nv">n3</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">6</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'equ?</span> <span class="nv">n1</span> <span class="nv">n2</span><span class="p">)</span>
@@ -9518,12 +9519,11 @@ rectangular and polar packages.</p>
 <span class="no">#t</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'equ?</span> <span class="nv">c1</span> <span class="nv">c3</span><span class="p">)</span>
 <span class="no">#f</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Complete code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9755,7 +9755,8 @@ rectangular and polar packages.</p>
 230
 231
 232
-233</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+233
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -9987,8 +9988,7 @@ rectangular and polar packages.</p>
 <span class="p">(</span><span class="nf">install-polar-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-rational-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

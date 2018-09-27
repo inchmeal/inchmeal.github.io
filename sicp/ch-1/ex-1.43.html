@@ -9417,25 +9417,25 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">repeated</span> <span class="nv">f</span> <span class="nv">n</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">repeated</span> <span class="nv">f</span> <span class="nv">n</span><span class="p">)</span>
     <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">repeat</span> <span class="nv">rs</span> <span class="nv">k</span><span class="p">)</span>
        <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">k</span> <span class="mi">1</span><span class="p">)</span> <span class="nv">rs</span> <span class="p">(</span><span class="nf">repeat</span> <span class="p">(</span><span class="nf">compose</span> <span class="nv">rs</span> <span class="nv">f</span><span class="p">)</span> <span class="p">(</span><span class="nf">dec</span> <span class="nv">k</span><span class="p">)))</span>
     <span class="p">)</span>
     <span class="p">(</span><span class="nf">repeat</span> <span class="nv">f</span> <span class="nv">n</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">((</span><span class="nf">repeated</span> <span class="nv">square</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">5</span><span class="p">)</span>
-<span class="mi">625</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">((</span><span class="nf">repeated</span> <span class="nv">square</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">625</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As mentioned in the problem we can see that <script type="math/tex">5^{(2^2)} = 5^4 = 625</script> i.e. number five is raised to the <script type="math/tex">2^n</script>-th power where <script type="math/tex">n</script>
   is the number of repetitions.</p>

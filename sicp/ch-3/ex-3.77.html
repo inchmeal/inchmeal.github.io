@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9423,7 +9423,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">integral</span> <span class="nv">delayed-integrand</span> <span class="nv">initial-value</span> <span class="nv">dt</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">integral</span> <span class="nv">delayed-integrand</span> <span class="nv">initial-value</span> <span class="nv">dt</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">cons-stream</span> <span class="nv">initial-value</span>
 			   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">integrand</span> <span class="p">(</span><span class="nb">force</span> <span class="nv">delayed-integrand</span><span class="p">)))</span>
 				 <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">stream-null?</span> <span class="nv">integrand</span><span class="p">)</span>
@@ -9431,8 +9432,7 @@
                      <span class="p">(</span><span class="nf">integral</span> <span class="p">(</span><span class="k">delay</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">integrand</span><span class="p">))</span>
                                <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">dt</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">integrand</span><span class="p">))</span>
                                   <span class="nv">initial-value</span><span class="p">)</span>
-                               <span class="nv">dt</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                               <span class="nv">dt</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

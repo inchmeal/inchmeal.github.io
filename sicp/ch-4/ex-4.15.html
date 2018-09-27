@@ -9416,18 +9416,18 @@
                         <hr/>
                         <p>Let’s first see the code again:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">run-forever</span><span class="p">)</span> <span class="p">(</span><span class="nf">run-forever</span><span class="p">))</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">run-forever</span><span class="p">)</span> <span class="p">(</span><span class="nf">run-forever</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">try</span> <span class="nv">p</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">halts?</span> <span class="nv">p</span> <span class="nv">p</span><span class="p">)</span>
       <span class="p">(</span><span class="nf">run-forever</span><span class="p">)</span>
-      <span class="ss">'halted</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="ss">'halted</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>(Knowing how to structure a proof, that I learned from book <em>How to prove it</em> helps)</p>
 
@@ -9457,7 +9457,7 @@
 
 <p>(note that evaluator does not use data driven approach for application? procedure but apart from this every exercise is built on top of the previous changes in the evaluator as part of previous exercies).</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10001,7 +10001,8 @@
 542
 543
 544
-545</pre></td><td class="code"><pre><span class="c1">;;;;METACIRCULAR EVALUATOR FROM CHAPTER 4 (SECTIONS 4.1.1-4.1.4) of</span>
+545
+</pre></td><td class="code"><pre><span class="c1">;;;;METACIRCULAR EVALUATOR FROM CHAPTER 4 (SECTIONS 4.1.1-4.1.4) of</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm</span>
@@ -10545,8 +10546,7 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">the-global-environment</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
 
-<span class="ss">'METACIRCULAR-EVALUATOR-LOADED</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="ss">'METACIRCULAR-EVALUATOR-LOADED</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

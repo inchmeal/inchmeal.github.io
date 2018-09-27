@@ -9419,7 +9419,7 @@
                         <p>We can simply write the procedure following the original integral procedure shown. Notice here that the arguments passed to sum are not
  <script type="math/tex">a</script> and <script type="math/tex">b</script> but the indexes of the terms i.e. 0, 1, 2 … n.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9460,7 +9460,8 @@
 39
 40
 41
-42</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+42
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span>
@@ -9501,27 +9502,26 @@
         <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="mi">0</span> <span class="nv">inc</span> <span class="nv">n</span><span class="p">)</span>
       <span class="p">)</span>
     <span class="p">)</span>  
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We can see the output of simpson is more accurate than original procedure.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">simpson-integral</span> <span class="nv">cube</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mi">100</span><span class="p">)</span>
+8
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">simpson-integral</span> <span class="nv">cube</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mi">100</span><span class="p">)</span>
 <span class="mf">0.24999999999999992</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">integral</span> <span class="nv">cube</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="mf">0.24998750000000042</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">simpson-integral</span> <span class="nv">cube</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="mf">0.2500000000000003</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">integral</span> <span class="nv">cube</span> <span class="mf">0.0</span> <span class="mf">1.0</span> <span class="mf">0.001</span><span class="p">)</span>
-<span class="mf">0.249999875000001</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mf">0.249999875000001</span></pre></td></tr></tbody></table></code></pre></figure>
 
                         <hr/>
                     </span>

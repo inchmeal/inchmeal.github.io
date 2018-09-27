@@ -9417,7 +9417,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9427,7 +9427,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-list</span> <span class="nv">items</span><span class="p">)</span>
+11
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-list</span> <span class="nv">items</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">things</span> <span class="nv">answer</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">things</span><span class="p">)</span>
         <span class="nv">answer</span>
@@ -9437,8 +9438,7 @@
     <span class="p">)</span>
   <span class="p">)</span>
   <span class="p">(</span><span class="nf">iter</span> <span class="nv">iterms</span> <span class="nv">nil</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This procedure removes an item from the original list, squares it, and add it to the start of the new list.</p>
 
@@ -9447,7 +9447,7 @@ of the list.</p>
 
 <p>Clearly the item does not reserve their original positions in new list. In fact they are present in exactly opposite position.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9457,7 +9457,8 @@ of the list.</p>
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-list</span> <span class="nv">items</span><span class="p">)</span>
+11
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square-list</span> <span class="nv">items</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">things</span> <span class="nv">answer</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">things</span><span class="p">)</span>
         <span class="nv">answer</span>
@@ -9467,8 +9468,7 @@ of the list.</p>
     <span class="p">)</span>
   <span class="p">)</span>
   <span class="p">(</span><span class="nf">iter</span> <span class="nv">iterms</span> <span class="nv">nil</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This is also not correct as it is no longer a list structure. More accurately it is exactly opposite of list structure i.e. each pair’s first 
 element is pointing to the next pair and second element is storing the data unlike in the list structure each pair’s first element contains data

@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9449,7 +9449,8 @@
 32
 33
 34
-35</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">c+</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+35
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">c+</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">z</span> <span class="p">(</span><span class="nf">make-connector</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">adder</span> <span class="nv">x</span> <span class="nv">y</span> <span class="nv">z</span><span class="p">)</span>
     <span class="nv">z</span><span class="p">))</span>
@@ -9483,12 +9484,11 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">FF</span> <span class="p">(</span><span class="nf">celsius-fahrenheit-converter-new</span> <span class="nv">CC</span><span class="p">))</span>
 
 <span class="p">(</span><span class="nf">probe</span> <span class="s">"Celsius temp"</span> <span class="nv">CC</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">probe</span> <span class="s">"Fahrenheit temp"</span> <span class="nv">FF</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">probe</span> <span class="s">"Fahrenheit temp"</span> <span class="nv">FF</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9514,13 +9514,14 @@
 24
 25
 26
-27</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">CC</span> <span class="mi">25</span> <span class="ss">'user</span><span class="p">)</span>
+27
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">CC</span> <span class="mi">25</span> <span class="ss">'user</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">Celsius</span> <span class="nv">temp</span> <span class="nv">=</span> <span class="mi">25</span>
 <span class="nv">Probe:</span> <span class="nv">Fahrenheit</span> <span class="nv">temp</span> <span class="nv">=</span> <span class="mi">77</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">FF</span> <span class="mi">212</span> <span class="ss">'user</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">FF</span> <span class="mi">212</span> <span class="ss">'user</span><span class="p">)</span>
 
 <span class="c1">;Contradiction (77 212)</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
@@ -9536,12 +9537,11 @@
 
 <span class="c1">;Abort!</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">FF</span> <span class="mi">212</span> <span class="ss">'user</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">FF</span> <span class="mi">212</span> <span class="ss">'user</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">Fahrenheit</span> <span class="nv">temp</span> <span class="nv">=</span> <span class="mi">212</span>
 <span class="nv">Probe:</span> <span class="nv">Celsius</span> <span class="nv">temp</span> <span class="nv">=</span> <span class="mi">100</span>
-<span class="c1">;Value: done</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: done</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

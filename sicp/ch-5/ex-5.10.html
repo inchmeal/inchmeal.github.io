@@ -9418,7 +9418,7 @@
 
 <p>Another way is to create new syntax in the existing evaluator which might not be available before. I implemented the new expression <code class="highlighter-rouge">(add &lt;r1&gt; &lt;r2&gt; &lt;r3&gt;)</code>. This expression adds the values in <code class="highlighter-rouge">r1</code> and <code class="highlighter-rouge">r2</code> and puts the sum in <code class="highlighter-rouge">r3</code>.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9456,7 +9456,8 @@
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-add</span> <span class="nv">inst</span> <span class="nv">machine</span> <span class="nv">pc</span><span class="p">)</span>
+39
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-add</span> <span class="nv">inst</span> <span class="nv">machine</span> <span class="nv">pc</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">first</span> <span class="p">(</span><span class="nf">get-register</span> <span class="nv">machine</span> <span class="p">(</span><span class="nf">add-first-reg-name</span> <span class="nv">inst</span><span class="p">)))</span>
 		<span class="p">(</span><span class="nf">second</span> <span class="p">(</span><span class="nf">get-register</span> <span class="nv">machine</span> <span class="p">(</span><span class="nf">add-second-reg-name</span> <span class="nv">inst</span><span class="p">)))</span>
 		<span class="p">(</span><span class="nf">rs</span> <span class="p">(</span><span class="nf">get-register</span> <span class="nv">machine</span> <span class="p">(</span><span class="nf">add-result-reg-name</span> <span class="nv">inst</span><span class="p">))))</span>
@@ -9494,12 +9495,11 @@
         <span class="p">((</span><span class="nb">eq?</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">inst</span><span class="p">)</span> <span class="ss">'perform</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">make-perform</span> <span class="nv">inst</span> <span class="nv">machine</span> <span class="nv">labels</span> <span class="nv">ops</span> <span class="nv">pc</span><span class="p">))</span>
         <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown instruction type -- ASSEMBLE"</span>
-                     <span class="nv">inst</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                     <span class="nv">inst</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9528,7 +9528,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span>
+30
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">temp-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span>
@@ -9538,27 +9539,26 @@
 
 <span class="c1">;Value 10: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: temp-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">temp-machine</span> <span class="ss">'a</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">temp-machine</span> <span class="ss">'a</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">temp-machine</span> <span class="ss">'b</span> <span class="mi">100</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">temp-machine</span> <span class="ss">'b</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">temp-machine</span> <span class="ss">'c</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">temp-machine</span> <span class="ss">'c</span><span class="p">)</span>
 
 <span class="c1">;Value: 110</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

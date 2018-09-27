@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9460,58 +9460,58 @@
 43
 44
 45
-46</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">squarer</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiplier</span> <span class="nv">a</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span>
+46
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">squarer</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiplier</span> <span class="nv">a</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span>
 
 <span class="c1">;Value: squarer</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">x1</span> <span class="p">(</span><span class="nf">make-connector</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">x1</span> <span class="p">(</span><span class="nf">make-connector</span><span class="p">))</span>
 
 <span class="c1">;Value: x1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">sqr</span> <span class="p">(</span><span class="nf">make-connector</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">sqr</span> <span class="p">(</span><span class="nf">make-connector</span><span class="p">))</span>
 
 <span class="c1">;Value: sqr</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">squarer</span> <span class="nv">x1</span> <span class="nv">sqr</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">squarer</span> <span class="nv">x1</span> <span class="nv">sqr</span><span class="p">)</span>
 
 <span class="c1">;Value 33: #[compound-procedure 33 me]</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">probe</span> <span class="s">"x1"</span> <span class="nv">x1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">probe</span> <span class="s">"x1"</span> <span class="nv">x1</span><span class="p">)</span>
 
 <span class="c1">;Value 34: #[compound-procedure 34 me]</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">probe</span> <span class="s">"square"</span> <span class="nv">sqr</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">probe</span> <span class="s">"square"</span> <span class="nv">sqr</span><span class="p">)</span>
 
 <span class="c1">;Value 35: #[compound-procedure 35 me]</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">x1</span> <span class="mi">10</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">x1</span> <span class="mi">10</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">x1</span> <span class="nv">=</span> <span class="mi">10</span>
 <span class="nv">Probe:</span> <span class="nv">square</span> <span class="nv">=</span> <span class="mi">100</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">forget-value!</span> <span class="nv">x1</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">forget-value!</span> <span class="nv">x1</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">x1</span> <span class="nv">=</span> <span class="nv">?</span>
 <span class="nv">Probe:</span> <span class="nv">square</span> <span class="nv">=</span> <span class="nv">?</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">sqr</span> <span class="mi">125</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">sqr</span> <span class="mi">125</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">square</span> <span class="nv">=</span> <span class="mi">125</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">x1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">x1</span><span class="p">)</span>
 
 <span class="c1">;Value: #f</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The problem is when we set the square, it does not automatically set a - because of this line in multiplier:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">((</span><span class="k">and</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">product</span><span class="p">)</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">m1</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">((</span><span class="k">and</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">product</span><span class="p">)</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">m1</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>For a multiplier, this is indeed the correct behavior for the multiplier. The problem lies in our squarer because multiplier is not aware/can not be aware of the inputs a and b are same.</p>
 

@@ -9418,57 +9418,7 @@
                         <hr/>
                         <p>Procedure definition that generates recursive process:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="nv">num</span> <span class="nv">den</span> <span class="nv">k</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">aux</span> <span class="nv">c</span><span class="p">)</span>
-        <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">&gt;</span> <span class="nv">c</span> <span class="nv">k</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
-              <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">/</span>
-                      <span class="p">(</span><span class="nf">num</span> <span class="nv">c</span><span class="p">)</span>
-                      <span class="p">(</span><span class="nb">+</span>
-                         <span class="p">(</span><span class="nf">den</span> <span class="nv">c</span><span class="p">)</span>
-                         <span class="p">(</span><span class="nf">aux</span> <span class="p">(</span><span class="nf">inc</span> <span class="nv">c</span><span class="p">))</span>
-                      <span class="p">)</span>
-                    <span class="p">)</span>
-              <span class="p">)</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-  <span class="p">(</span><span class="nf">aux</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>Value of <script type="math/tex">k</script> needed to generate <script type="math/tex">\frac 1 { \phi }</script> correct upto 4 decimal places:</p>
-
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7</pre></td><td class="code"><pre><span class="c1">; Correct value: 0.618033988749894848204586834365638117720309179805762862135</span>
-
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
-<span class="mf">0.6179775280898876</span>
-
-<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="mi">11</span><span class="p">)</span>
-<span class="mf">0.6180555555555556</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>Procedure definition that generates iterative process:</p>
-
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9483,7 +9433,58 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">cont-frac-itr</span> <span class="nv">num</span> <span class="nv">den</span> <span class="nv">k</span><span class="p">)</span>
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="nv">num</span> <span class="nv">den</span> <span class="nv">k</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">aux</span> <span class="nv">c</span><span class="p">)</span>
+        <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">&gt;</span> <span class="nv">c</span> <span class="nv">k</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
+              <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">/</span>
+                      <span class="p">(</span><span class="nf">num</span> <span class="nv">c</span><span class="p">)</span>
+                      <span class="p">(</span><span class="nb">+</span>
+                         <span class="p">(</span><span class="nf">den</span> <span class="nv">c</span><span class="p">)</span>
+                         <span class="p">(</span><span class="nf">aux</span> <span class="p">(</span><span class="nf">inc</span> <span class="nv">c</span><span class="p">))</span>
+                      <span class="p">)</span>
+                    <span class="p">)</span>
+              <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">(</span><span class="nf">aux</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Value of <script type="math/tex">k</script> needed to generate <script type="math/tex">\frac 1 { \phi }</script> correct upto 4 decimal places:</p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="c1">; Correct value: 0.618033988749894848204586834365638117720309179805762862135</span>
+
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
+<span class="mf">0.6179775280898876</span>
+
+<span class="nv">&gt;</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">i</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="mi">11</span><span class="p">)</span>
+<span class="mf">0.6180555555555556</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Procedure definition that generates iterative process:</p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">cont-frac-itr</span> <span class="nv">num</span> <span class="nv">den</span> <span class="nv">k</span><span class="p">)</span>
     <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">itr</span> <span class="nv">rs</span> <span class="nv">c</span><span class="p">)</span>
         <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">=</span> <span class="nv">c</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">rs</span><span class="p">)</span>
               <span class="p">(</span><span class="nf">else</span>
@@ -9498,8 +9499,7 @@
         <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">(</span><span class="nf">itr</span> <span class="mi">0</span> <span class="nv">k</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

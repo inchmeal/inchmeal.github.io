@@ -9415,24 +9415,24 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">invert-unit-series</span> <span class="nv">s</span><span class="p">)</span>
+6
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">invert-unit-series</span> <span class="nv">s</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span>
 			   <span class="p">(</span><span class="nf">scale-stream</span>
 				 <span class="p">(</span><span class="nf">mul-series</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s</span><span class="p">)</span>
 							 <span class="p">(</span><span class="nf">invert-unit-series</span> <span class="nv">s</span><span class="p">))</span>
-				 <span class="mi">-1</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+				 <span class="mi">-1</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Test:</p>
 
 <p>The product of a series by itself should return 1.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9469,45 +9469,45 @@
 35
 36
 37
-38</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">rexp</span> <span class="p">(</span><span class="nf">invert-unit-series</span> <span class="nv">exp-series</span><span class="p">))</span>
+38
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">rexp</span> <span class="p">(</span><span class="nf">invert-unit-series</span> <span class="nv">exp-series</span><span class="p">))</span>
 
 <span class="c1">;Value: memo-proc</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: rexp</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">rexp</span> <span class="mi">0</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">rexp</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: 1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">rexp</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">rexp</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: -1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">rexp</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">rexp</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: 1/2</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">prod</span> <span class="p">(</span><span class="nf">mul-series</span> <span class="nv">exp-series</span> <span class="nv">rexp</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">prod</span> <span class="p">(</span><span class="nf">mul-series</span> <span class="nv">exp-series</span> <span class="nv">rexp</span><span class="p">))</span>
 
 <span class="c1">;Value: prod</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">0</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: 1</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value: 0</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value: 0</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">prod</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1">;Value: 0</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: 0</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

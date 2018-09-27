@@ -9432,7 +9432,7 @@
   <li>I used two new tables - type-table and cast-table - which can be combined also but for simplicity i kept them separate.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9864,7 +9864,8 @@
 430
 431
 432
-433</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+433
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -10296,12 +10297,11 @@
 <span class="p">(</span><span class="nf">install-polar-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-rational-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output/Examples:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10315,7 +10315,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">50000</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
+15
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">50000</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">complex</span> <span class="nv">rectangular</span> <span class="mi">50002</span> <span class="o">.</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-rational</span> <span class="mi">1</span> <span class="mi">5</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mf">2.0</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">complex</span> <span class="nv">rectangular</span> <span class="mf">2.2</span> <span class="o">.</span> <span class="mi">3</span><span class="p">)</span>
@@ -10329,8 +10330,7 @@
 <span class="mi">1</span><span class="nv">/2</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">exp</span> <span class="p">(</span><span class="nf">make-rational</span> <span class="mf">25.0</span> <span class="mf">100.0</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-rational</span> <span class="mf">1.0</span> <span class="mf">2.0</span><span class="p">))</span>
 <span class="mf">0.5</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

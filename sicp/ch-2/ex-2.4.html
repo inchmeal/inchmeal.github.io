@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Lets first define procedure <code class="highlighter-rouge">cdr</code> and also test by invoking the procedures with an example.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9431,7 +9431,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+14
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">m</span><span class="p">)</span> <span class="p">(</span><span class="nf">m</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
@@ -9444,21 +9445,20 @@
 <span class="p">(</span><span class="nb">car</span> <span class="nv">pair</span><span class="p">)</span>
 <span class="c1">; 3</span>
 <span class="p">(</span><span class="nb">cdr</span> <span class="nv">pair</span><span class="p">)</span>
-<span class="c1">; 5</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">; 5</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>A we can see output is correct. Lets verify this using substitution for the invocation <code class="highlighter-rouge">(cdr pair)</code> in example above:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">cdr</span> <span class="nv">pair</span><span class="p">)</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">cdr</span> <span class="nv">pair</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">pair</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">p</span> <span class="nv">q</span><span class="p">)</span> <span class="nv">q</span><span class="p">))</span>
 <span class="p">((</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">m</span><span class="p">)</span> <span class="p">(</span><span class="nf">m</span> <span class="mi">3</span> <span class="mi">5</span><span class="p">)))</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">p</span> <span class="nv">q</span><span class="p">)</span> <span class="nv">q</span><span class="p">))</span>
 <span class="p">((</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">p</span> <span class="nv">q</span><span class="p">)</span> <span class="nv">q</span><span class="p">)</span> <span class="mi">3</span> <span class="mi">5</span><span class="p">)</span>
-<span class="mi">5</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">5</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Similarly it can be verified for procedure <code class="highlighter-rouge">cdr</code>.</p>
 

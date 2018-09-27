@@ -9426,7 +9426,7 @@
 
 <h4 id="change-in-the-existing-code">Change in the existing code</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9462,7 +9462,8 @@
 34
 35
 36
-37</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-id-generator</span><span class="p">)</span>
+37
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-id-generator</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">id</span> <span class="mi">0</span><span class="p">))</span>
 	<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">next</span><span class="p">)</span>
 	  <span class="p">(</span><span class="k">set!</span> <span class="nv">id</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">id</span> <span class="mi">1</span><span class="p">)))</span>
@@ -9498,8 +9499,7 @@
 		   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nf">account1</span> <span class="ss">'id</span><span class="p">)</span> <span class="p">(</span><span class="nf">account2</span> <span class="ss">'id2</span><span class="p">))</span>
 			   <span class="p">(</span><span class="nf">serializer1</span> <span class="p">(</span><span class="nf">serializer2</span> <span class="nv">exchange</span><span class="p">))</span>
 			   <span class="p">(</span><span class="nf">serializer2</span> <span class="p">(</span><span class="nf">serializer1</span> <span class="nv">exchange</span><span class="p">)))))</span>
-	  <span class="p">(</span><span class="nf">exchanger</span> <span class="nv">account1</span> <span class="nv">account2</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">(</span><span class="nf">exchanger</span> <span class="nv">account1</span> <span class="nv">account2</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

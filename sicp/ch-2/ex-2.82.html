@@ -9424,7 +9424,7 @@
 
 <p>The last part of the problem - Consider the case that we have an operation defined say <code class="highlighter-rouge">pow</code> for rational numbers, now if we pass two numbers - then ideally we would expect that both numbers are coerce into rational numbers and then <code class="highlighter-rouge">pow</code> is applied but our implementation does not support this.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9753,7 +9753,8 @@
 327
 328
 329
-330</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+330
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">make-hash</span><span class="p">))</span>
@@ -10082,12 +10083,11 @@
 <span class="p">(</span><span class="nf">install-polar-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-rational-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10099,7 +10099,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">50000</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+13
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">50000</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
 <span class="p">(</span><span class="nb">mcons</span> <span class="ss">'complex</span> <span class="p">(</span><span class="nb">mcons</span> <span class="ss">'rectangular</span> <span class="p">(</span><span class="nb">mcons</span> <span class="mi">50002</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">50000</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">complex</span> <span class="nv">rectangular</span> <span class="mi">50002</span> <span class="o">.</span> <span class="mi">3</span><span class="p">)</span>
@@ -10111,8 +10112,7 @@
 <span class="mi">25</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nb">exp</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">50000</span> <span class="mi">70000</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="o">.</span> <span class="o">.</span> <span class="nv">No</span> <span class="nv">method</span> <span class="nv">found</span> <span class="nv">for</span> <span class="nv">*same*</span> <span class="nv">types</span> <span class="p">{</span><span class="nb">exp</span> <span class="p">{</span><span class="nf">complex</span> <span class="nv">complex</span><span class="p">}}</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

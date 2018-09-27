@@ -9483,7 +9483,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 
 <p>Note that we also need to capture the environment while <em>delaying</em> an expression because when it is evaluated it must be evaluated in the same environment where the procedure was applied!</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9493,7 +9493,8 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">delay-it</span> <span class="nv">exp</span> <span class="nv">env</span><span class="p">)</span>
+11
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">delay-it</span> <span class="nv">exp</span> <span class="nv">env</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">list</span> <span class="ss">'thunk</span> <span class="nv">exp</span> <span class="nv">env</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">thunk?</span> <span class="nv">obj</span><span class="p">)</span>
@@ -9503,8 +9504,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">force-it</span> <span class="nv">obj</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">thunk?</span> <span class="nv">obj</span><span class="p">)</span>
       <span class="p">(</span><span class="nf">actual-value</span> <span class="p">(</span><span class="nf">thunk-exp</span> <span class="nv">obj</span><span class="p">)</span> <span class="p">(</span><span class="nf">thunk-env</span> <span class="nv">obj</span><span class="p">))</span>
-      <span class="nv">obj</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="nv">obj</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Apart from above change, there are other changes in procedure application for <em>delaying</em> the evaluation of arguments.</p>
 
@@ -9514,7 +9514,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 
 <p>These lazy lists provide atleast one advantage over the streams - to define circularly dependent things. We saw in chapter-3 streams that even using streams circular dependent definitions were not allowed in MIT scheme. For eg:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9523,7 +9523,8 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">y</span> <span class="p">(</span><span class="nf">integral</span> <span class="nv">dy</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">))</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">dy</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">f</span> <span class="nv">y</span><span class="p">))</span>
   <span class="nv">y</span><span class="p">)</span>
@@ -9532,8 +9533,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
     <span class="p">(</span><span class="nb">cons</span> <span class="nv">initial-value</span>
           <span class="p">(</span><span class="nf">add-lists</span> <span class="p">(</span><span class="nf">scale-list</span> <span class="nv">integrand</span> <span class="nv">dt</span><span class="p">)</span>
                     <span class="nv">int</span><span class="p">)))</span>
-  <span class="nv">int</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">int</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here y depends on dy and vice versa. This is possible to define such definitions with lazy lists.</p>
 
@@ -9553,7 +9553,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 
 <p>We can solve such puzzles by telling the <em>constraints</em> in our program instead of writing code on how to work our those constraints as follows:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9572,7 +9572,8 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
+20
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">baker</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">cooper</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">fletcher</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
@@ -9591,8 +9592,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'cooper</span> <span class="nv">cooper</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'fletcher</span> <span class="nv">fletcher</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'miller</span> <span class="nv">miller</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As we can see above the code is not completely avoiding <em>how</em> but still it is far closer to <em>what</em> then <em>how</em>.</p>
 
@@ -9651,12 +9651,12 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">append-to-form</span> <span class="p">()</span> <span class="nv">?y</span> <span class="nv">?y</span><span class="p">))</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">append-to-form</span> <span class="p">()</span> <span class="nv">?y</span> <span class="nv">?y</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">append-to-form</span> <span class="p">(</span><span class="nf">?u</span> <span class="o">.</span> <span class="nv">?v</span><span class="p">)</span> <span class="nv">?y</span> <span class="p">(</span><span class="nf">?u</span> <span class="o">.</span> <span class="nv">?z</span><span class="p">))</span>
-	  <span class="p">(</span><span class="nf">append-to-form</span> <span class="nv">?v</span> <span class="nv">?y</span> <span class="nv">?z</span><span class="p">))</span> <span class="c1">;if v and y append to form y then rule conclusion holds true.</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">(</span><span class="nf">append-to-form</span> <span class="nv">?v</span> <span class="nv">?y</span> <span class="nv">?z</span><span class="p">))</span> <span class="c1">;if v and y append to form y then rule conclusion holds true.</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>

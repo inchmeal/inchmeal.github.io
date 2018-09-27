@@ -9420,7 +9420,7 @@
 
 <p>(On a side note - I <em>feel</em> <code class="highlighter-rouge">cons</code>, <code class="highlighter-rouge">car</code>, <code class="highlighter-rouge">cdr</code> for list manipulations are not very pleasant to work)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9464,7 +9464,8 @@
 42
 43
 44
-45</pre></td><td class="code"><pre><span class="c1">;; we need cons to contain list of pairs.</span>
+45
+</pre></td><td class="code"><pre><span class="c1">;; we need cons to contain list of pairs.</span>
 <span class="c1">;; the reason is same as when we build tables in ch-3:</span>
 <span class="c1">;; if we add at beginning of list or pairs</span>
 <span class="c1">;; it will change the initial point of the pairs.</span>
@@ -9508,14 +9509,13 @@
 	<span class="p">(</span><span class="k">if</span> <span class="nv">pair</span>
 		<span class="p">(</span><span class="nb">set-cdr!</span> <span class="nv">pair</span> <span class="nv">val</span><span class="p">)</span>
 		<span class="p">(</span><span class="nf">add-binding-to-frame!</span> <span class="nv">var</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">first-frame</span> <span class="nv">env</span><span class="p">))</span>
-		<span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <p>For testing I executed few examples from previous exercises that I worked:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9542,7 +9542,8 @@
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
+28
+</pre></td><td class="code"><pre><span class="c1">;;; M-Eval input:</span>
 <span class="p">(</span><span class="nf">for</span> <span class="nv">iter</span> <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="nv">iter</span><span class="p">)</span>
 
 <span class="c1">;;; M-Eval value:</span>
@@ -9569,8 +9570,7 @@
 <span class="p">(</span><span class="nf">fib</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="c1">;;; M-Eval value:</span>
-<span class="mi">55</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">55</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

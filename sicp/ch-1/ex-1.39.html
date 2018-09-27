@@ -9418,37 +9418,37 @@
                         <hr/>
                         <p>Procedure:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">tan-cf</span> <span class="nv">x</span> <span class="nv">n</span><span class="p">)</span>
+7
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">tan-cf</span> <span class="nv">x</span> <span class="nv">n</span><span class="p">)</span>
     <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">num-const</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">-1</span> <span class="nv">x</span> <span class="nv">x</span><span class="p">)))</span>
       <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">num</span> <span class="nv">k</span><span class="p">)</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">k</span> <span class="mi">1</span><span class="p">)</span> <span class="nv">x</span> <span class="nv">num-const</span><span class="p">))</span>
       <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">den</span> <span class="nv">k</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">*</span> <span class="mi">2</span> <span class="nv">k</span><span class="p">)</span> <span class="mi">1</span><span class="p">))</span>
       <span class="p">(</span><span class="nf">cont-frac-itr</span> <span class="nv">num</span> <span class="nv">den</span> <span class="nv">n</span><span class="p">)</span>
     <span class="p">)</span>        
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Sample output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">pi</span> <span class="p">(</span><span class="nb">/</span> <span class="mf">22.0</span> <span class="mi">7</span><span class="p">))</span>
+7
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">pi</span> <span class="p">(</span><span class="nb">/</span> <span class="mf">22.0</span> <span class="mi">7</span><span class="p">))</span>
 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">tan-cf</span> <span class="p">(</span><span class="nb">/</span> <span class="nv">pi</span> <span class="mi">4</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
 <span class="c1">; 1.0006324445845896</span>
 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">tan-cf</span> <span class="mi">0</span> <span class="mi">10</span><span class="p">)</span>
-<span class="c1">; 0</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">; 0</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

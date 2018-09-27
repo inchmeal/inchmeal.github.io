@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>Here goes the completed code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9444,7 +9444,8 @@
 26
 27
 28
-29</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">squarer</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+29
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">squarer</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">process-new-value</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">b</span><span class="p">)</span>
         <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="p">(</span><span class="nf">get-value</span> <span class="nv">b</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
@@ -9472,12 +9473,11 @@
 <span class="p">(</span><span class="nf">squarer</span> <span class="nv">X</span> <span class="nv">SQR</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nf">probe</span> <span class="s">"X"</span> <span class="nv">X</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">probe</span> <span class="s">"SQR"</span> <span class="nv">SQR</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">probe</span> <span class="s">"SQR"</span> <span class="nv">SQR</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9495,26 +9495,26 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">SQR</span> <span class="mi">169</span> <span class="ss">'ovais</span><span class="p">)</span>
+19
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">SQR</span> <span class="mi">169</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">SQR</span> <span class="nv">=</span> <span class="mi">169</span>
 <span class="nv">Probe:</span> <span class="nv">X</span> <span class="nv">=</span> <span class="mi">13</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">forget-value!</span> <span class="nv">SQR</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">forget-value!</span> <span class="nv">SQR</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">SQR</span> <span class="nv">=</span> <span class="nv">?</span>
 <span class="nv">Probe:</span> <span class="nv">X</span> <span class="nv">=</span> <span class="nv">?</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">X</span> <span class="mi">25</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">X</span> <span class="mi">25</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">X</span> <span class="nv">=</span> <span class="mi">25</span>
 <span class="nv">Probe:</span> <span class="nv">SQR</span> <span class="nv">=</span> <span class="mi">625</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

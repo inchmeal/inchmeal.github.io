@@ -9452,7 +9452,7 @@
 
 <p>Note: I used MIT scheme version of <code class="highlighter-rouge">remove</code> which requires to pass <code class="highlighter-rouge">lambda</code> instead of the element.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9555,7 +9555,8 @@
 101
 102
 103
-104</pre></td><td class="code"><pre><span class="c1">;; This procedure all the combinations such that each combination is</span>
+104
+</pre></td><td class="code"><pre><span class="c1">;; This procedure all the combinations such that each combination is</span>
 <span class="c1">;; formed by selecting one item from each set. Then this combination is accumulated/added in results</span>
 <span class="c1">;; if it passes the predicate? test.</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">combinations</span> <span class="nv">predicate?</span> <span class="o">.</span> <span class="nv">sets</span><span class="p">)</span>
@@ -9658,12 +9659,11 @@
 
 			<span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">elem</span><span class="p">)</span>
 				   <span class="p">(</span><span class="nb">map</span> <span class="nv">list</span> <span class="o">'</span><span class="p">(</span><span class="nf">fletcher</span> <span class="nv">cooper</span> <span class="nv">miller</span> <span class="nv">smith</span> <span class="nv">baker</span><span class="p">)</span> <span class="nv">elem</span><span class="p">))</span>
-				 <span class="nv">result-f-c-m-s-b</span><span class="p">)))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+				 <span class="nv">result-f-c-m-s-b</span><span class="p">)))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here goes the ‘permutation’ based solution:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9682,7 +9682,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
+20
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">predicate?</span> <span class="nv">permutation</span><span class="p">)</span>
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">f</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">permutation</span><span class="p">))</span>
 		  <span class="p">(</span><span class="nf">c</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">permutation</span><span class="p">))</span>
@@ -9701,8 +9702,7 @@
  
   <span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="k">lambda</span><span class="p">(</span><span class="nf">elem</span><span class="p">)</span>
 		 <span class="p">(</span><span class="nb">map</span> <span class="nv">list</span> <span class="o">'</span><span class="p">(</span><span class="nf">fletcher</span> <span class="nv">cooper</span> <span class="nv">miller</span> <span class="nv">smith</span> <span class="nv">baker</span><span class="p">)</span> <span class="nv">elem</span><span class="p">))</span>
-	   <span class="nv">rs</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+	   <span class="nv">rs</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

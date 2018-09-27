@@ -9418,7 +9418,7 @@
 
 <p>Note that these changes are done on top of <a href="https://mitpress.mit.edu/sites/default/files/sicp/code/ch5-regsim.scm">this code</a>.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9549,7 +9549,8 @@
 129
 130
 131
-132</pre></td><td class="code"><pre><span class="c1">;;new procedure</span>
+132
+</pre></td><td class="code"><pre><span class="c1">;;new procedure</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">install-data-paths</span> <span class="nv">insts</span> <span class="nv">machine</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">inst-groups</span> <span class="o">'</span><span class="p">())</span>
 		<span class="p">(</span><span class="nf">entry-points</span> <span class="o">'</span><span class="p">())</span>
@@ -9680,8 +9681,7 @@
               <span class="p">((</span><span class="nb">eq?</span> <span class="nv">message</span> <span class="ss">'get-stack-registers</span><span class="p">)</span> <span class="nv">stack-regs</span><span class="p">)</span>           <span class="c1">;;;</span>
               <span class="p">((</span><span class="nb">eq?</span> <span class="nv">message</span> <span class="ss">'get-register-sources</span><span class="p">)</span> <span class="nv">sources</span><span class="p">)</span>             <span class="c1">;;;</span>
               <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- MACHINE"</span> <span class="nv">message</span><span class="p">))))</span>
-      <span class="nv">dispatch</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="nv">dispatch</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9689,7 +9689,7 @@
 
 <p>(note that i manually formatted some of the outputs for clarity)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9772,7 +9772,8 @@
 81
 82
 83
-84</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+84
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">fib-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">continue</span> <span class="nv">n</span> <span class="nv">val</span><span class="p">)</span>
@@ -9810,10 +9811,10 @@
 
 <span class="c1">;Value 18: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: fib-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-grouped-instructions</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-grouped-instructions</span><span class="p">)</span>
 
 <span class="c1">;Value 19: </span>
 <span class="p">((</span><span class="nf">restore</span> <span class="nv">val</span><span class="p">)</span>
@@ -9835,15 +9836,15 @@
  <span class="p">(</span><span class="nf">assign</span> <span class="nv">continue</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">afterfib-n-1</span><span class="p">))</span>
  <span class="p">(</span><span class="nf">assign</span> <span class="nv">continue</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">fib-done</span><span class="p">)))</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-entry-points</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-entry-points</span><span class="p">)</span>
 
 <span class="c1">;Value 20: (continue)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-stack-registers</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-stack-registers</span><span class="p">)</span>
 
 <span class="c1">;Value 21: (val n continue)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-register-sources</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">fib-machine</span> <span class="ss">'get-register-sources</span><span class="p">)</span>
 
 <span class="c1">;Value 22: </span>
 <span class="p">((</span><span class="nf">val</span> <span class="p">((</span><span class="nf">reg</span> <span class="nv">n</span><span class="p">))</span>
@@ -9855,8 +9856,7 @@
 		   <span class="p">((</span><span class="nf">label</span> <span class="nv">afterfib-n-1</span><span class="p">))</span>
 		   <span class="p">((</span><span class="nf">label</span> <span class="nv">fib-done</span><span class="p">))))</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

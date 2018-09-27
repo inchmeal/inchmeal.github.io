@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>The register will contain 3. This is because labels are stored in a table in the order in which they occur in instructions. Now when a label <em>lookup</em> is done, it returns the first entry in this table. Thus it will return 3. As we can see in the output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9443,7 +9443,8 @@
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+28
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">temp-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span><span class="p">)</span>
@@ -9461,23 +9462,22 @@
 
 <span class="c1">;Value 5: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: temp-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">temp-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">temp-machine</span> <span class="ss">'a</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">get-register-contents</span> <span class="nv">temp-machine</span> <span class="ss">'a</span><span class="p">)</span>
 
-<span class="c1">;Value: 3</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: 3</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <p>Here is the modified code to report error for duplicate labels:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9496,7 +9496,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">contains-label?</span> <span class="nv">labels</span> <span class="nv">label-name</span><span class="p">)</span>
+20
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">contains-label?</span> <span class="nv">labels</span> <span class="nv">label-name</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">val</span> <span class="p">(</span><span class="nb">assoc</span> <span class="nv">label-name</span> <span class="nv">labels</span><span class="p">)))</span>
     <span class="p">(</span><span class="k">if</span> <span class="nv">val</span> <span class="nv">true</span> <span class="nv">false</span><span class="p">)))</span>
 
@@ -9515,8 +9516,7 @@
                               <span class="nv">labels</span><span class="p">))</span>
                <span class="p">(</span><span class="nf">receive</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">make-instruction</span> <span class="nv">next-inst</span><span class="p">)</span>
                               <span class="nv">insts</span><span class="p">)</span>
-                   <span class="nv">labels</span><span class="p">)))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                   <span class="nv">labels</span><span class="p">)))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

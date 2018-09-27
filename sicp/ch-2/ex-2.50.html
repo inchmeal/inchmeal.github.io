@@ -9420,28 +9420,7 @@
 
 <p>Procedure <code class="highlighter-rouge">flip-horiz</code> :</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">flip-horiz</span> <span class="nv">painter</span><span class="p">)</span>
-  <span class="p">(</span> <span class="p">(</span><span class="nf">transform-painter</span>
-       <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">1.0</span> <span class="mf">0.0</span><span class="p">)</span> <span class="c1">; new origin</span>
-       <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span> <span class="c1">; new end of edge1</span>
-       <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">; new end of edge2</span>
-    <span class="p">)</span> 
-    <span class="nv">painter</span>
-  <span class="p">)</span>
-<span class="p">)</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>Procedure <code class="highlighter-rouge">rotate180</code> :</p>
-
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9450,7 +9429,29 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">rotate180</span> <span class="nv">painter</span><span class="p">)</span>
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">flip-horiz</span> <span class="nv">painter</span><span class="p">)</span>
+  <span class="p">(</span> <span class="p">(</span><span class="nf">transform-painter</span>
+       <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">1.0</span> <span class="mf">0.0</span><span class="p">)</span> <span class="c1">; new origin</span>
+       <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span> <span class="c1">; new end of edge1</span>
+       <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">; new end of edge2</span>
+    <span class="p">)</span> 
+    <span class="nv">painter</span>
+  <span class="p">)</span>
+<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Procedure <code class="highlighter-rouge">rotate180</code> :</p>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">rotate180</span> <span class="nv">painter</span><span class="p">)</span>
   <span class="p">(</span> 
     <span class="p">(</span><span class="nf">transform-painter</span>
        <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">; new origin</span>
@@ -9459,12 +9460,11 @@
     <span class="p">)</span> 
     <span class="nv">painter</span>
   <span class="p">)</span>
-<span class="p">)</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Procedure <code class="highlighter-rouge">rotate270</code> :</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9472,7 +9472,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">rotate270</span> <span class="nv">painter</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">rotate270</span> <span class="nv">painter</span><span class="p">)</span>
   <span class="p">(</span> <span class="p">(</span><span class="nf">transform-painter</span>
        <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">0.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">; new origin</span>
        <span class="p">(</span><span class="nf">make-vect</span> <span class="mf">0.0</span> <span class="mf">0.0</span><span class="p">)</span> <span class="c1">; new end of edge1</span>
@@ -9480,8 +9481,7 @@
     <span class="p">)</span> 
     <span class="nv">painter</span>
   <span class="p">)</span>
-<span class="p">)</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

@@ -9429,16 +9429,16 @@
 
 <p>Now to implement <code class="highlighter-rouge">make-rat</code>, we use <code class="highlighter-rouge">cons</code> a language supplied(primitive) procedure to define a pair, as follows:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-rat</span> <span class="nv">n</span> <span class="nv">d</span><span class="p">)</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">n</span> <span class="nv">d</span><span class="p">))</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-rat</span> <span class="nv">n</span> <span class="nv">d</span><span class="p">)</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">n</span> <span class="nv">d</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">numer</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">x</span><span class="p">))</span>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">denom</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">denom</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="what-is-meant-by-data">What is meant by Data</h4>
 
@@ -9450,7 +9450,7 @@
 
 <p>This point of view can serve to define not only <code class="highlighter-rouge">high-level</code> data objects, such as rational numbers, but lower-level objects as well. Consider the notion of a pair, we only need to supply <code class="highlighter-rouge">cons</code>, <code class="highlighter-rouge">car</code>, and <code class="highlighter-rouge">cdr</code> to implement a pair. We can implement these procedures even without using the language supplied procedures!</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9463,7 +9463,8 @@
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+14
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">dispatch</span> <span class="nv">m</span><span class="p">)</span>
     <span class="p">(</span><span class="k">cond</span> 
 	  <span class="p">((</span><span class="nb">=</span> <span class="nv">m</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">x</span><span class="p">)</span>
@@ -9476,8 +9477,7 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nf">z</span> <span class="mi">0</span><span class="p">))</span>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nf">z</span> <span class="mi">1</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nf">z</span> <span class="mi">1</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The point of exhibiting the procedural representation of pairs is not that our language works this way (Scheme, and Lisp systems in general, implement pairs directly, for efficiency reasons) but that it could work this way. The procedural representation, although obscure, is a perfectly adequate way to represent pairs, since it fulfills the only conditions that pairs need to fulfill. This example also demonstrates that the ability to manipulate procedures as objects automatically provides the ability to represent compound data. This may seem a curiosity now, but procedural representations of data will play a central role in our programming repertoire. This style of programming is often called <em>message passing</em>, and we will be using it as a basic tool in chapter 3 when we address the issues of modeling and simulation.</p>
 
@@ -9495,20 +9495,20 @@
 
 <p>Structures like sequences or also known by linked-lists can be easily constructed using <code class="highlighter-rouge">cons</code> as follows:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">cons</span> <span class="mi">1</span>
+7
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">cons</span> <span class="mi">1</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="mi">2</span>
     <span class="p">(</span><span class="nb">cons</span> <span class="mi">3</span>
 	  <span class="p">(</span><span class="nb">cons</span> <span class="mi">4</span> <span class="nv">nil</span><span class="p">)</span>
 	<span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The scheme also provides a primitive called <code class="highlighter-rouge">list</code> to create the same structure as: <code class="highlighter-rouge">(list 1 2 3 4)</code>. Suppose we associate this list by <code class="highlighter-rouge">l</code>, then <code class="highlighter-rouge">car l</code> will return <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">cdr l</code> returns <code class="highlighter-rouge">2 3 4</code>.</p>
 
@@ -9516,7 +9516,7 @@
 
 <p>Some list operations:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9539,7 +9539,8 @@
 21
 22
 23
-24</pre></td><td class="code"><pre><span class="c1">;Access elements by number/index starting from 0</span>
+24
+</pre></td><td class="code"><pre><span class="c1">;Access elements by number/index starting from 0</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">list-ref</span> <span class="nv">items</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">0</span><span class="p">)</span>
@@ -9562,14 +9563,13 @@
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">list1</span> <span class="nv">list2</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">list1</span><span class="p">)</span>
       <span class="nv">list2</span>
-      <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">list1</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">list1</span><span class="p">)</span> <span class="nv">list2</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">list1</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">list1</span><span class="p">)</span> <span class="nv">list2</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="map">map</h4>
 
 <p>If we want to perform some operation on each element on the list, then one way is to iterate/recurse on each element of the list and perform the operation and return the resulting list. Another way is to <em>abstract</em> this idea into a <em>higher-level</em> <code class="highlighter-rouge">map</code> procedure that accepts another procedure which specifies the required operation, and returns the new list by applying that operation on each element.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9578,7 +9578,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">proc</span> <span class="nv">items</span><span class="p">)</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">proc</span> <span class="nv">items</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">items</span><span class="p">)</span>
       <span class="nv">nil</span>
       <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">proc</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">items</span><span class="p">))</span>
@@ -9587,8 +9588,7 @@
 <span class="p">(</span><span class="nf">10</span> <span class="mf">2.5</span> <span class="mf">11.6</span> <span class="mi">17</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">x</span> <span class="nv">x</span><span class="p">))</span>
      <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">1</span> <span class="mi">4</span> <span class="mi">9</span> <span class="mi">16</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">1</span> <span class="mi">4</span> <span class="mi">9</span> <span class="mi">16</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="sequence-operations">Sequence Operations</h4>
 
@@ -9600,10 +9600,10 @@ Explanation in book is really nice and I can not captured in small notes. Read S
 
 <p>This section describes that the list operations like <code class="highlighter-rouge">map</code> can be used for computations which are generally expressed using nested loops. It also introduces <code class="highlighter-rouge">flatmap</code> which combines accumulate and map operations:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">flatmap</span> <span class="nv">proc</span> <span class="nv">seq</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">accumulate</span> <span class="nv">append</span> <span class="nv">nil</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">proc</span> <span class="nv">seq</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">flatmap</span> <span class="nv">proc</span> <span class="nv">seq</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">accumulate</span> <span class="nv">append</span> <span class="nv">nil</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">proc</span> <span class="nv">seq</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="a-picture-language">A picture Language</h4>
 
@@ -9633,7 +9633,7 @@ Explanation in book is really nice and I can not captured in small notes. Read S
 
 <p>Scheme uses single quote as a syntatctic sugar for writing symbols:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9643,7 +9643,8 @@ Explanation in book is really nice and I can not captured in small notes. Read S
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="mi">3</span><span class="p">)</span>
+11
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="nv">x</span>
 <span class="mi">3</span>
 <span class="nv">&gt;</span> <span class="ss">`x</span>
@@ -9653,8 +9654,7 @@ Explanation in book is really nice and I can not captured in small notes. Read S
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="o">`</span><span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="k">quote</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This provides a powerful mechanism that enables us to write program for differentiation and even this can be used for building the interpreter as mentioned will be done in later chapters of the book.</p>
 
@@ -9682,7 +9682,7 @@ Explanation in book is really nice and I can not captured in small notes. Read S
   <li>Generic operations with explicit dispatch</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9717,7 +9717,8 @@ Explanation in book is really nice and I can not captured in small notes. Read S
 33
 34
 35
-36</pre></td><td class="code"><pre><span class="c1">; generic selectors</span>
+36
+</pre></td><td class="code"><pre><span class="c1">; generic selectors</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">real-part</span> <span class="nv">z</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nf">rectangular?</span> <span class="nv">z</span><span class="p">)</span> 
          <span class="p">(</span><span class="nf">real-part-rectangular</span> <span class="p">(</span><span class="nf">contents</span> <span class="nv">z</span><span class="p">)))</span>
@@ -9752,8 +9753,7 @@ Explanation in book is really nice and I can not captured in small notes. Read S
 <span class="c1">; In usage</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">add-complex</span> <span class="nv">z1</span> <span class="nv">z2</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">make-from-real-imag</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">real-part</span> <span class="nv">z1</span><span class="p">)</span> <span class="p">(</span><span class="nb">real-part</span> <span class="nv">z2</span><span class="p">))</span>
-                       <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">imag-part</span> <span class="nv">z1</span><span class="p">)</span> <span class="p">(</span><span class="nb">imag-part</span> <span class="nv">z2</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                       <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">imag-part</span> <span class="nv">z1</span><span class="p">)</span> <span class="p">(</span><span class="nb">imag-part</span> <span class="nv">z2</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Think about the changes need to be done when a new representation of complex-number is required. When a new operation, say divide(to divide to complex numbers), is needed.
 Also, if there are two separate developers implementing each representation, then they both need to work on the above dispatching together.</p>
@@ -9764,7 +9764,7 @@ Also, if there are two separate developers implementing each representation, the
 
 <p>Assume that we have a table(can be hash), where we can store and retrieve using get or put. Note that we stored in hash by passing 3 arguments - operation, operator, procedure and retrieve using operation, and operator. It is not discussed that how this table is implemented. I used hash-table provided by racket for doing exercises.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9826,7 +9826,8 @@ Also, if there are two separate developers implementing each representation, the
 60
 61
 62
-63</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">install-rectangular-package</span><span class="p">)</span>
+63
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">install-rectangular-package</span><span class="p">)</span>
   <span class="c1">;; internal procedures</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">real-part</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">z</span><span class="p">))</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">imag-part</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">z</span><span class="p">))</span>
@@ -9888,8 +9889,7 @@ Also, if there are two separate developers implementing each representation, the
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">imag-part</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'imag-part</span> <span class="nv">z</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">magnitude</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'magnitude</span> <span class="nv">z</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">angle</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nf">apply-generic</span> <span class="ss">'angle</span> <span class="nv">z</span><span class="p">))</span>
-  <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note, how we separated the <em>things that change from the things that remain same</em> in the selectors of complex-number. Now two developers implementing different representation can work separately on their implementations. Note that <code class="highlighter-rouge">apply</code> is used for invoking the procedure retrieved from the table. <code class="highlighter-rouge">apply-generic</code> accepts variable number of arguments which is specified by <code class="highlighter-rouge">.</code>.</p>
 
@@ -9901,7 +9901,7 @@ Also, if there are two separate developers implementing each representation, the
 
 <p>An alternative implementation strategy is to decompose the table into columns and, instead of using <em>intelligent operations</em> that dispatch on data types, to work with <em>intelligent data objects</em> that dispatch on operation names. We can do this by arranging things so that a data object, such as a rectangular number, is represented as a procedure that takes as input the required operation name and performs the operation indicated. In such a discipline, make-from-real-imag could be written as</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9910,7 +9910,8 @@ Also, if there are two separate developers implementing each representation, the
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-from-real-imag</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-from-real-imag</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">dispatch</span> <span class="nv">op</span><span class="p">)</span>
     <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">eq?</span> <span class="nv">op</span> <span class="ss">'real-part</span><span class="p">)</span> <span class="nv">x</span><span class="p">)</span>
           <span class="p">((</span><span class="nb">eq?</span> <span class="nv">op</span> <span class="ss">'imag-part</span><span class="p">)</span> <span class="nv">y</span><span class="p">)</span>
@@ -9919,8 +9920,7 @@ Also, if there are two separate developers implementing each representation, the
           <span class="p">((</span><span class="nb">eq?</span> <span class="nv">op</span> <span class="ss">'angle</span><span class="p">)</span> <span class="p">(</span><span class="nb">atan</span> <span class="nv">y</span> <span class="nv">x</span><span class="p">))</span>
           <span class="p">(</span><span class="nf">else</span>
            <span class="p">(</span><span class="nb">error</span> <span class="s">"Unknown op -- MAKE-FROM-REAL-IMAG"</span> <span class="nv">op</span><span class="p">))))</span>
-  <span class="nv">dispatch</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">dispatch</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that the value returned by make-from-real-imag is a procedure – the internal dispatch procedure. And operations like <code class="highlighter-rouge">real-part</code> do not take care of dispatching in explicit way. 
 This style of programming is called message passing. The name comes from the image that a data object is an entity that receives the requested operation name as a <em>message</em>.</p>
@@ -9929,7 +9929,7 @@ This style of programming is called message passing. The name comes from the ima
 
 <p>The first section talks about how we can build a system will generic operations <code class="highlighter-rouge">add</code>, <code class="highlighter-rouge">multiply</code> etc for each type of number that we have worked till now: primitive numbers, rational number and complex number. These methods should work irrespective that the arguments are primitve numbers, rational or complex numbers. We use the <em>data directed</em> approach to accomplish it but since each of these methods take two arguments, we store the corresponding procedures with two types like:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9945,7 +9945,8 @@ This style of programming is called message passing. The name comes from the ima
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
+17
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">tag</span> <span class="nv">x</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'scheme-number</span> <span class="nv">x</span><span class="p">))</span>    
   <span class="p">(</span><span class="nf">put</span> <span class="ss">'add</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span>
@@ -9961,8 +9962,7 @@ This style of programming is called message passing. The name comes from the ima
   <span class="ss">'done</span><span class="p">)</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-scheme-number</span> <span class="nv">n</span><span class="p">)</span>
-  <span class="p">((</span><span class="nf">get</span> <span class="ss">'make</span> <span class="ss">'scheme-number</span><span class="p">)</span> <span class="nv">n</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">((</span><span class="nf">get</span> <span class="ss">'make</span> <span class="ss">'scheme-number</span><span class="p">)</span> <span class="nv">n</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that we still have not defined operations to add to numbers of different kinds - primitve and complex or rational and complex. Another point to note is that for complex number we need two levels of generic method calls - at first level complex number are added and while adding complex numbers we call <code class="highlighter-rouge">add</code> for adding primitive numbers. Do exercises(for tabular summary check - 2.76) to get a clearer picture.</p>
 

@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9424,7 +9424,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-operation-exp</span> <span class="nv">exp</span> <span class="nv">machine</span> <span class="nv">labels</span> <span class="nv">operations</span><span class="p">)</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-operation-exp</span> <span class="nv">exp</span> <span class="nv">machine</span> <span class="nv">labels</span> <span class="nv">operations</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">op</span> <span class="p">(</span><span class="nf">lookup-prim</span> <span class="p">(</span><span class="nf">operation-exp-op</span> <span class="nv">exp</span><span class="p">)</span> <span class="nv">operations</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">aprocs</span>
          <span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">e</span><span class="p">)</span>
@@ -9433,12 +9434,11 @@
 					<span class="p">(</span><span class="nf">make-primitive-exp</span> <span class="nv">e</span> <span class="nv">machine</span> <span class="nv">labels</span><span class="p">)))</span>
               <span class="p">(</span><span class="nf">operation-exp-operands</span> <span class="nv">exp</span><span class="p">))))</span>
     <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
-      <span class="p">(</span><span class="nb">apply</span> <span class="nv">op</span> <span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">p</span><span class="p">))</span> <span class="nv">aprocs</span><span class="p">)))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="p">(</span><span class="nb">apply</span> <span class="nv">op</span> <span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">p</span><span class="p">))</span> <span class="nv">aprocs</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9458,7 +9458,8 @@
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+21
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">temp-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span><span class="p">)</span>
@@ -9473,13 +9474,12 @@
 
 <span class="c1">;Value 7: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Operation expression can not contain label -  (label here)</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
 <span class="c1">; (RESTART 1) =&gt; Return to read-eval-print level 1.</span>
 
-<span class="mi">2</span> <span class="nv">error&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">2</span> <span class="nv">error&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

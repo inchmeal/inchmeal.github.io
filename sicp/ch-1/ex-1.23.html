@@ -9425,7 +9425,7 @@
 
 <p>First approach:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9484,7 +9484,8 @@
 57
 58
 59
-60</pre></td><td class="code"><pre> 
+60
+</pre></td><td class="code"><pre> 
 <span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">smallest-divisor</span> <span class="nv">n</span><span class="p">)</span>
@@ -9543,12 +9544,11 @@
          <span class="p">(</span><span class="nf">report-prime</span> <span class="nv">n</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nf">runtime</span><span class="p">)</span> <span class="nv">st</span><span class="p">))</span>
          <span class="mi">0</span>
      <span class="p">)</span> 
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Second approach:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9602,7 +9602,8 @@
 52
 53
 54
-55</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+55
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">smallest-divisor</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">even?</span> <span class="nv">n</span><span class="p">)</span>
@@ -9656,8 +9657,7 @@
          <span class="p">(</span><span class="nf">report-prime</span> <span class="nv">n</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nf">runtime</span><span class="p">)</span> <span class="nv">st</span><span class="p">))</span>
          <span class="mi">0</span>
      <span class="p">)</span> 
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now I will put all the timings from all three approaches in one place:</p>
 

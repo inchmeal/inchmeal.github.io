@@ -9448,7 +9448,7 @@
 
 <p>Here are the changes done:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9516,7 +9516,8 @@
 66
 67
 68
-69</pre></td><td class="code"><pre><span class="c1">;; primitve cons cdr and car are commented/removed</span>
+69
+</pre></td><td class="code"><pre><span class="c1">;; primitve cons cdr and car are commented/removed</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">primitive-procedures</span>
   <span class="p">(</span><span class="nb">list</span> <span class="c1">;(list 'car car)   ;;commmented </span>
         <span class="c1">;(list 'cdr cdr)</span>
@@ -9584,12 +9585,11 @@
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">l</span> <span class="p">(</span><span class="nf">text-of-quotation</span> <span class="nv">exp</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">pair?</span> <span class="nv">l</span><span class="p">)</span>
 		<span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">make-custom-cons-list</span> <span class="nv">l</span><span class="p">)</span> <span class="nv">env</span><span class="p">)</span>
-		<span class="nv">l</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="nv">l</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Test:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9616,7 +9616,8 @@
 25
 26
 27
-28</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+28
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="ss">'1</span>
 
 <span class="c1">;;; L-Eval value:</span>
@@ -9643,8 +9644,7 @@
 <span class="o">'</span><span class="ss">'1</span>
 
 <span class="c1">;;; L-Eval value:</span>
-<span class="p">(</span><span class="nf">compound-procedure</span> <span class="p">(</span><span class="nf">m</span><span class="p">)</span> <span class="p">((</span><span class="nf">m</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span> <span class="nv">&lt;procedure-env&gt;</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">compound-procedure</span> <span class="p">(</span><span class="nf">m</span><span class="p">)</span> <span class="p">((</span><span class="nf">m</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span> <span class="nv">&lt;procedure-env&gt;</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

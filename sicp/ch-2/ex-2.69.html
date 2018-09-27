@@ -9417,7 +9417,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9431,7 +9431,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">successive-merge</span> <span class="nv">pairs</span><span class="p">)</span>
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">successive-merge</span> <span class="nv">pairs</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">pairs</span><span class="p">))</span>
         <span class="p">(</span><span class="nb">car</span> <span class="nv">pairs</span><span class="p">)</span>
         <span class="p">(</span><span class="k">let</span> <span class="p">(</span>
@@ -9445,12 +9446,11 @@
              <span class="p">)</span>
         <span class="p">)</span>
     <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Test/Output</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9459,7 +9459,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">pairs</span> <span class="o">'</span><span class="p">((</span><span class="nf">A</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="nf">B</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">C</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">D</span> <span class="mi">1</span><span class="p">)))</span>
+10
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">pairs</span> <span class="o">'</span><span class="p">((</span><span class="nf">A</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="nf">B</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">C</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">D</span> <span class="mi">1</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">tree</span> <span class="p">(</span><span class="nf">generate-huffman-tree</span> <span class="nv">pairs</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="nv">tree</span><span class="p">)</span>
 <span class="p">((</span><span class="nf">leaf</span> <span class="nv">A</span> <span class="mi">4</span><span class="p">)</span> <span class="p">((</span><span class="nf">leaf</span> <span class="nv">B</span> <span class="mi">2</span><span class="p">)</span> <span class="p">((</span><span class="nf">leaf</span> <span class="nv">D</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">leaf</span> <span class="nv">C</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">D</span> <span class="nv">C</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">B</span> <span class="nv">D</span> <span class="nv">C</span><span class="p">)</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="nf">A</span> <span class="nv">B</span> <span class="nv">D</span> <span class="nv">C</span><span class="p">)</span> <span class="mi">8</span><span class="p">)</span>
@@ -9468,8 +9469,7 @@
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">encoded-msg</span> <span class="p">(</span><span class="nf">encode</span> <span class="o">'</span><span class="p">(</span><span class="nf">A</span> <span class="nv">D</span> <span class="nv">A</span> <span class="nv">B</span> <span class="nv">B</span> <span class="nv">C</span> <span class="nv">A</span><span class="p">)</span> <span class="nv">tree</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="nv">encoded-msg</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

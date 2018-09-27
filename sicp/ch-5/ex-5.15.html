@@ -9418,7 +9418,7 @@
 
 <p>(I also added it as an operation so that it can be called from within machine.)</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9476,7 +9476,8 @@
 56
 57
 58
-59</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-new-machine</span><span class="p">)</span>
+59
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-new-machine</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">pc</span> <span class="p">(</span><span class="nf">make-register</span> <span class="ss">'pc</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">flag</span> <span class="p">(</span><span class="nf">make-register</span> <span class="ss">'flag</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">stack</span> <span class="p">(</span><span class="nf">make-stack</span><span class="p">))</span>
@@ -9534,8 +9535,7 @@
               <span class="p">((</span><span class="nb">eq?</span> <span class="nv">message</span> <span class="ss">'operations</span><span class="p">)</span> <span class="nv">the-ops</span><span class="p">)</span>
               <span class="p">((</span><span class="nb">eq?</span> <span class="nv">message</span> <span class="ss">'reset-instruction-count</span><span class="p">)</span> <span class="p">(</span><span class="nf">reset-instruction-count</span><span class="p">))</span>   <span class="c1">;;;</span>
               <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- MACHINE"</span> <span class="nv">message</span><span class="p">))))</span>
-      <span class="nv">dispatch</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+      <span class="nv">dispatch</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9543,7 +9543,7 @@
 
 <p>By passing message to machine:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9589,7 +9589,8 @@
 44
 45
 46
-47</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+47
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="nv">gcd-machine</span>
   <span class="p">(</span><span class="nf">make-machine</span>
    <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">t</span><span class="p">)</span>
@@ -9605,42 +9606,41 @@
 
 <span class="c1">;Value 7: (register simulator loaded)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: gcd-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'a</span> <span class="mi">50</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'a</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'b</span> <span class="mi">375</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-register-contents!</span> <span class="nv">gcd-machine</span> <span class="ss">'b</span> <span class="mi">375</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'reset-instruction-count</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'reset-instruction-count</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nf">Total</span> <span class="nv">instructions</span> <span class="nv">executed:</span>  <span class="mi">0</span><span class="p">)</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">gcd-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">gcd-machine</span><span class="p">)</span>
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'reset-instruction-count</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'reset-instruction-count</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nf">Total</span> <span class="nv">instructions</span> <span class="nv">executed:</span>  <span class="mi">20</span><span class="p">)</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'reset-instruction-count</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">gcd-machine</span> <span class="ss">'reset-instruction-count</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nf">Total</span> <span class="nv">instructions</span> <span class="nv">executed:</span>  <span class="mi">0</span><span class="p">)</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>By installing it in the solution of previous exercise:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9719,7 +9719,8 @@
 77
 78
 79
-80</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+80
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">print</span> <span class="o">.</span> <span class="nv">items</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">newline</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">display</span> <span class="nv">items</span><span class="p">))</span>
@@ -9764,14 +9765,14 @@
 
 <span class="c1">;Value: print</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: read-at-newline</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 
 <span class="c1">;Value: fact-machine</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">fact-machine</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">start</span> <span class="nv">fact-machine</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nf">Total</span> <span class="nv">instructions</span> <span class="nv">executed:</span>  <span class="mi">0</span><span class="p">)</span>
 <span class="mi">1</span>
@@ -9798,8 +9799,7 @@
 
 <span class="p">(</span><span class="nf">total-pushes</span> <span class="nv">=</span> <span class="mi">8</span> <span class="nv">maximum-depth</span> <span class="nv">=</span> <span class="mi">8</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">120</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">Total</span> <span class="nv">instructions</span> <span class="nv">executed:</span>  <span class="mi">55</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">Total</span> <span class="nv">instructions</span> <span class="nv">executed:</span>  <span class="mi">55</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

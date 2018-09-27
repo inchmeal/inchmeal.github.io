@@ -9449,7 +9449,7 @@
 
 <p>Here are the <em>main</em> changes/additions for this exercise. Complete code is presented at the bottom of this page.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9574,7 +9574,8 @@
 123
 124
 125
-126</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">variables</span> <span class="nv">pattern</span><span class="p">)</span>
+126
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">variables</span> <span class="nv">pattern</span><span class="p">)</span>
   <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">pattern</span><span class="p">)</span> <span class="o">'</span><span class="p">())</span>
 		<span class="p">((</span><span class="nf">var?</span> <span class="nv">pattern</span><span class="p">)</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">pattern</span> <span class="o">'</span><span class="p">()))</span>
 		<span class="p">((</span><span class="nb">pair?</span> <span class="nv">pattern</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nf">variables</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">pattern</span><span class="p">))</span>
@@ -9699,14 +9700,13 @@
 					<span class="p">(</span><span class="nf">make-frame</span> <span class="p">(</span><span class="nf">extend-bindings</span> <span class="nv">variable</span>
 												 <span class="nv">value</span>
 												 <span class="p">(</span><span class="nf">frame-bindings</span> <span class="nv">frame</span><span class="p">))</span>
-								<span class="p">(</span><span class="nf">frame-promises</span> <span class="nv">frame</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+								<span class="p">(</span><span class="nf">frame-promises</span> <span class="nv">frame</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <h4 id="testexample">Test/Example</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9768,7 +9768,8 @@
 60
 61
 62
-63</pre></td><td class="code"><pre><span class="c1">;;; Example from book where the problems in `not` were discussed.</span>
+63
+</pre></td><td class="code"><pre><span class="c1">;;; Example from book where the problems in `not` were discussed.</span>
 <span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">job</span> <span class="nv">?x</span> <span class="p">(</span><span class="nf">computer</span> <span class="nv">programmer</span><span class="p">)))</span>
      <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?x</span> <span class="nv">?y</span><span class="p">))</span>
@@ -9830,8 +9831,7 @@
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">30000</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">reasoner</span> <span class="nv">louis</span><span class="p">)</span> <span class="mi">30000</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">25000</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">tweakit</span> <span class="nv">lem</span> <span class="nv">e</span><span class="p">)</span> <span class="mi">25000</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">35000</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">)</span> <span class="mi">35000</span><span class="p">)))</span>
-<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">40000</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="mi">40000</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">40000</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="mi">40000</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9839,7 +9839,7 @@
 
 <h4 id="complete-code">Complete code</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10694,7 +10694,8 @@
 853
 854
 855
-856</pre></td><td class="code"><pre><span class="c1">;tom;;;QUERY SYSTEM FROM SECTION 4.4.4 OF</span>
+856
+</pre></td><td class="code"><pre><span class="c1">;tom;;;QUERY SYSTEM FROM SECTION 4.4.4 OF</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm</span>
@@ -11549,8 +11550,7 @@
       <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?staff-person</span> <span class="nv">?boss</span><span class="p">)</span>
           <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?staff-person</span> <span class="nv">?middle-manager</span><span class="p">)</span>
                <span class="p">(</span><span class="nf">outranked-by</span> <span class="nv">?middle-manager</span> <span class="nv">?boss</span><span class="p">))))</span>
-<span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

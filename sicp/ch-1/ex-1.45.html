@@ -9421,7 +9421,7 @@ also as an argument.</p>
 
 <p>Here is the complete program including all the required other procedures:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9474,7 +9474,8 @@ also as an argument.</p>
 51
 52
 53
-54</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+54
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">tolerance</span> <span class="mf">0.00001</span><span class="p">)</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">fixed-point</span> <span class="nv">f</span> <span class="nv">first-guess</span><span class="p">)</span>
@@ -9527,8 +9528,7 @@ also as an argument.</p>
        <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">k</span> <span class="mi">1</span><span class="p">)</span> <span class="nv">rs</span> <span class="p">(</span><span class="nf">repeat</span> <span class="p">(</span><span class="nf">compose</span> <span class="nv">rs</span> <span class="nv">f</span><span class="p">)</span> <span class="p">(</span><span class="nf">dec</span> <span class="nv">k</span><span class="p">)))</span>
     <span class="p">)</span>
     <span class="p">(</span><span class="nf">repeat</span> <span class="nv">f</span> <span class="nv">n</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I verfied that 4th root requires twice damping as mentioned in exercise. Then I checked till 12th root and twice damping works fine.</p>
 
@@ -9546,7 +9546,7 @@ also as an argument.</p>
 
 <p>Here is the sample that I have tried:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9631,7 +9631,8 @@ also as an argument.</p>
 83
 84
 85
-86</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">nth-root</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">)</span>
+86
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">nth-root</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">)</span>
 <span class="mf">2.000000000000002</span>
 <span class="nv">&gt;</span>  <span class="p">(</span><span class="nf">nth-root</span> <span class="mi">16</span> <span class="mi">4</span> <span class="mi">1</span><span class="p">)</span>
 <span class="o">.</span> <span class="o">.</span> <span class="nv">user</span> <span class="nv">break</span>
@@ -9716,8 +9717,7 @@ also as an argument.</p>
 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">nth-root</span> <span class="mi">10000000000</span> <span class="mi">32</span> <span class="mi">4</span><span class="p">)</span>
 <span class="mf">3.7737871042519613</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

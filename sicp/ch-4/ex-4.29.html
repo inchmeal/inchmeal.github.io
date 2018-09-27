@@ -9421,26 +9421,26 @@ Memoized time: 0</p>
 
 <p>Here, is the code i used in both versions:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+8
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">((</span><span class="k">lambda</span><span class="p">()</span>
     <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">fact</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">n</span> <span class="p">(</span><span class="nf">fact</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)))))</span>
     <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">dummy</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span> <span class="nv">b</span><span class="p">))</span>
     <span class="p">(</span><span class="nf">dummy</span> <span class="p">(</span><span class="nf">fact</span> <span class="mi">100</span><span class="p">))</span>
     <span class="ss">'done</span><span class="p">))</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="nv">done</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">done</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Code changes for Time:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9451,7 +9451,8 @@ Memoized time: 0</p>
 9
 10
 11
-12</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
+12
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">prompt-for-input</span> <span class="nv">input-prompt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">input</span> <span class="p">(</span><span class="nb">read</span><span class="p">)))</span>
 	<span class="p">(</span><span class="k">define</span> <span class="nv">stime</span> <span class="p">(</span><span class="nf">get-universal-time</span><span class="p">))</span>
@@ -9462,8 +9463,7 @@ Memoized time: 0</p>
 	  <span class="p">(</span><span class="nb">newline</span><span class="p">)</span>
       <span class="p">(</span><span class="nf">announce-output</span> <span class="nv">output-prompt</span><span class="p">)</span>
       <span class="p">(</span><span class="nf">user-print</span> <span class="nv">output</span><span class="p">)))</span>
-  <span class="p">(</span><span class="nf">driver-loop</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">driver-loop</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9473,7 +9473,7 @@ Memoized time: 0</p>
 
 <p>Memoized:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9483,7 +9483,8 @@ Memoized time: 0</p>
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+11
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="nf">square</span> <span class="p">(</span><span class="nf">id</span> <span class="mi">10</span><span class="p">))</span>
 
 <span class="c1">;;; L-Eval value:</span>
@@ -9493,12 +9494,11 @@ Memoized time: 0</p>
 <span class="nv">count</span>
 
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">1</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Non-memoized:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9508,7 +9508,8 @@ Memoized time: 0</p>
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+11
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="nf">square</span> <span class="p">(</span><span class="nf">id</span> <span class="mi">10</span><span class="p">))</span>
 
 <span class="c1">;;; L-Eval value:</span>
@@ -9518,8 +9519,7 @@ Memoized time: 0</p>
 <span class="nv">count</span>
 
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">2</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">2</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

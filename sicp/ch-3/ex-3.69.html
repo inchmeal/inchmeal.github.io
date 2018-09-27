@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9429,7 +9429,8 @@
 12
 13
 14
-15</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">triples</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span>
+15
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">triples</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">cons-stream</span>
    <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">c</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">interleave</span>
@@ -9443,12 +9444,11 @@
 				   <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">square</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">triple</span><span class="p">))</span>
 						 <span class="p">(</span><span class="nf">square</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">triple</span><span class="p">)))</span>
 					  <span class="p">(</span><span class="nf">square</span> <span class="p">(</span><span class="nb">caddr</span> <span class="nv">triple</span><span class="p">))))</span>
-				 <span class="p">(</span><span class="nf">triples</span> <span class="nv">integers</span> <span class="nv">integers</span> <span class="nv">integers</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+				 <span class="p">(</span><span class="nf">triples</span> <span class="nv">integers</span> <span class="nv">integers</span> <span class="nv">integers</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9469,29 +9469,29 @@
 19
 20
 21
-22</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">0</span><span class="p">)</span>
+22
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">;Value: memo-proc</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value 4: (3 4 5)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">;Value 5: (6 8 10)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;Value 6: (5 12 13)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1">;Value 7: (9 12 15)</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">py-triplets</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1">;Value 7: (9 12 15)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value 7: (9 12 15)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

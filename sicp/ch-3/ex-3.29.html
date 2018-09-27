@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9423,7 +9423,8 @@
 6
 7
 8
-9</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">or-gate</span> <span class="nv">a1</span> <span class="nv">a2</span> <span class="nv">output</span><span class="p">)</span>
+9
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">or-gate</span> <span class="nv">a1</span> <span class="nv">a2</span> <span class="nv">output</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">na1</span> <span class="p">(</span><span class="nf">make-wire</span><span class="p">))</span>
 		<span class="p">(</span><span class="nf">na2</span> <span class="p">(</span><span class="nf">make-wire</span><span class="p">))</span>
 		<span class="p">(</span><span class="nf">nout</span> <span class="p">(</span><span class="nf">make-wire</span><span class="p">)))</span>
@@ -9431,8 +9432,7 @@
 	<span class="p">(</span><span class="nf">inverter</span> <span class="nv">a2</span> <span class="nv">na2</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">and-gate</span> <span class="nv">na1</span> <span class="nv">na2</span> <span class="nv">nout</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">inverter</span> <span class="nv">nout</span> <span class="nv">output</span><span class="p">))</span>
-  <span class="ss">'ok</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="ss">'ok</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that here it is not required to call <code class="highlighter-rouge">add-delay</code> since <code class="highlighter-rouge">inverter</code> and <code class="highlighter-rouge">and-gate</code> already takes care of that.</p>
 

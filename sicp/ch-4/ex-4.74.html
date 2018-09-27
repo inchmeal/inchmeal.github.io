@@ -9416,22 +9416,22 @@
                         <hr/>
                         <h4 id="a">(a)</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">simple-stream-flatmap</span> <span class="nv">proc</span> <span class="nv">s</span><span class="p">)</span>
+8
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">simple-stream-flatmap</span> <span class="nv">proc</span> <span class="nv">s</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">simple-flatten</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">proc</span> <span class="nv">s</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">simple-flatten</span> <span class="nv">stream</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">stream-car</span>
               <span class="p">(</span><span class="nf">stream-filter</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">s</span><span class="p">)</span>
                                <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">stream-null?</span> <span class="nv">s</span><span class="p">)))</span>
-                             <span class="nv">stream</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                             <span class="nv">stream</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 

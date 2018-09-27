@@ -9426,7 +9426,7 @@
 
 <p>That explains it!</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9462,12 +9462,13 @@
 34
 35
 36
-37</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span>  <span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">show</span> <span class="p">(</span><span class="nf">stream-enumerate-interval</span> <span class="mi">0</span> <span class="mi">10</span><span class="p">)))</span>
+37
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span>  <span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">show</span> <span class="p">(</span><span class="nf">stream-enumerate-interval</span> <span class="mi">0</span> <span class="mi">10</span><span class="p">)))</span>
 
 <span class="mi">0</span>
 <span class="c1">;Value: x</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="mi">1</span>
 <span class="mi">2</span>
@@ -9476,21 +9477,21 @@
 <span class="mi">5</span>
 <span class="c1">;Value: 5</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">5</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1">;Value: 5</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="mi">6</span>
 <span class="mi">7</span>
 <span class="c1">;Value: 7</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">7</span><span class="p">)</span>
 
 <span class="c1">;Value: 7</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">14</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">x</span> <span class="mi">14</span><span class="p">)</span>
 
 <span class="mi">8</span>
 <span class="mi">9</span>
@@ -9498,8 +9499,7 @@
 <span class="c1">;The object (), passed as the first argument to cdr, is not the correct type.</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
 <span class="c1">; (RESTART 2) =&gt; Specify an argument to use in its place.</span>
-<span class="c1">; (RESTART 1) =&gt; Return to read-eval-print level 1.</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">; (RESTART 1) =&gt; Return to read-eval-print level 1.</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

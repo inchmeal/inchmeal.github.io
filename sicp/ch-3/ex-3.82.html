@@ -9418,7 +9418,7 @@
 
 <p>Here goes the code:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9456,7 +9456,8 @@
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">random-in-range</span> <span class="nv">low</span> <span class="nv">high</span><span class="p">)</span>
+39
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">random-in-range</span> <span class="nv">low</span> <span class="nv">high</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">range</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">high</span> <span class="nv">low</span><span class="p">)))</span>
     <span class="p">(</span><span class="nb">+</span> <span class="nv">low</span> <span class="p">(</span><span class="nf">random</span> <span class="nv">range</span><span class="p">))))</span>
 
@@ -9494,12 +9495,11 @@
 				  <span class="p">)))</span>
        <span class="p">(</span><span class="nf">estimate-integral</span> <span class="nv">unit-circle-test-stream</span> <span class="nv">x1</span> <span class="nv">x2</span> <span class="nv">y1</span> <span class="nv">y2</span><span class="p">))))</span>
 
-<span class="p">(</span><span class="k">define</span> <span class="nv">pi-stream</span> <span class="p">(</span><span class="nf">estimate-pi</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="nv">pi-stream</span> <span class="p">(</span><span class="nf">estimate-pi</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9529,38 +9529,38 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">100</span><span class="p">)</span>
+31
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="c1">;Value: 3.089108910891089</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">1000</span><span class="p">)</span>
 
 <span class="c1">;Value: 3.104895104895105</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">3000</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">3000</span><span class="p">)</span>
 
 <span class="c1">;Value: 3.1189603465511495</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">5000</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">5000</span><span class="p">)</span>
 
 <span class="c1">;Value: 3.1369726054789044</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">8000</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">8000</span><span class="p">)</span>
 
 <span class="c1">;Value: 3.11411073615798</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">10000</span><span class="p">)</span>
 
 <span class="c1">;Value: 3.1112888711128885</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">100000</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">100000</span><span class="p">)</span>
 
 <span class="c1">;Value: 3.138408615913841</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">1000000</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">pi-stream</span> <span class="mi">1000000</span><span class="p">)</span>
 
-<span class="c1">;Aborting!: out of memory</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Aborting!: out of memory</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

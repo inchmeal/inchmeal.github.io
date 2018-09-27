@@ -9417,7 +9417,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9435,7 +9435,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+19
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">accumulate</span> <span class="nv">op</span> <span class="nv">initial</span> <span class="nv">sequence</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">sequence</span><span class="p">)</span>
@@ -9453,19 +9454,18 @@
             <span class="p">(</span><span class="nf">accumulate-n</span> <span class="nv">op</span> <span class="nv">init</span> <span class="p">(</span><span class="nb">map</span> <span class="nv">cdr</span> <span class="nv">seqs</span><span class="p">))</span>
       <span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example/Output:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">seqs</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span><span class="p">)))</span>
+4
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">seqs</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span><span class="p">)))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">accumulate-n</span> <span class="nv">+</span> <span class="mi">0</span> <span class="nv">seqs</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">22</span> <span class="mi">26</span> <span class="mi">30</span><span class="p">)</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

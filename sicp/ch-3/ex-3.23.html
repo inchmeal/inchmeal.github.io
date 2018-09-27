@@ -9422,7 +9422,7 @@
 
 <p>Note that <code class="highlighter-rouge">display-deque</code> is a procedure to display contents of deque. It prints <code class="highlighter-rouge">~</code> to mark the end of the list.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9471,7 +9471,8 @@
 47
 48
 49
-50</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">d1</span> <span class="p">(</span><span class="nf">make-deque</span><span class="p">))</span>
+50
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">d1</span> <span class="p">(</span><span class="nf">make-deque</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-deque</span> <span class="p">(</span><span class="nf">front-insert-deque!</span> <span class="nv">d1</span> <span class="ss">'1</span><span class="p">))</span>
 <span class="mi">1</span> <span class="nv">~</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-deque</span> <span class="p">(</span><span class="nf">front-delete-deque!</span> <span class="nv">d1</span><span class="p">))</span>
@@ -9520,12 +9521,11 @@
 <span class="nv">world</span> <span class="nv">~</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-deque</span> <span class="p">(</span><span class="nf">rear-delete-deque!</span> <span class="nv">d1</span><span class="p">))</span>
 <span class="nv">~</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now here goes the code:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9605,7 +9605,8 @@
 78
 79
 80
-81</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+81
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-deque</span><span class="p">)</span> <span class="p">(</span><span class="nb">cons</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">()))</span>
 
@@ -9685,8 +9686,7 @@
                 <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">empty-deque?</span> <span class="nv">deque</span><span class="p">)</span>
                     <span class="p">(</span><span class="nf">set-front-ptr!</span> <span class="nv">deque</span> <span class="o">'</span><span class="p">())</span>
                     <span class="p">(</span><span class="nf">set-next!</span> <span class="p">(</span><span class="nf">rear-ptr</span> <span class="nv">deque</span><span class="p">)</span> <span class="o">'</span><span class="p">()))</span>
-                <span class="nv">deque</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+                <span class="nv">deque</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

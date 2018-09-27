@@ -9419,7 +9419,7 @@
                         <p>Only changes are in <code class="highlighter-rouge">adjoin-set</code> and <code class="highlighter-rouge">union-set</code>. Procedure <code class="highlighter-rouge">adjoin-set</code> have <script type="math/tex">\theta(1)</script> time complexity and procedure <code class="highlighter-rouge">union-set</code> have <script type="math/tex">\theta(n)</script> time
 complexity.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9432,7 +9432,8 @@ complexity.</p>
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+14
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="nf">#%require</span> <span class="p">(</span><span class="nf">only</span> <span class="nv">racket/base</span> <span class="nv">error</span><span class="p">))</span>
 
@@ -9445,8 +9446,7 @@ complexity.</p>
         <span class="p">((</span><span class="nb">null?</span> <span class="nv">set2</span><span class="p">)</span> <span class="nv">set1</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">set1</span> <span class="nv">set2</span><span class="p">))</span>
   <span class="p">)</span>
-<span class="p">)</span>  <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>  </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Clearly the preferred places for this representation are those where it is required to collect/write/create the elements of the set most of the times and only rarely we 
 check presence of element in the set.</p>

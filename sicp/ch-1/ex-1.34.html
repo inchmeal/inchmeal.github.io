@@ -9418,32 +9418,32 @@
                         <hr/>
                         <p>We are given the following procedure:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">)</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">)</span>
  <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>When this prcedure is invoked by passing itself as argument, we get following error:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span> <span class="nv">f</span> <span class="nv">f</span><span class="p">)</span>
+4
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span> <span class="nv">f</span> <span class="nv">f</span><span class="p">)</span>
 <span class="o">.</span> <span class="o">.</span> <span class="nv">application:</span> <span class="nv">not</span> <span class="nv">a</span> <span class="nv">procedure;</span>
  <span class="nv">expected</span> <span class="nv">a</span> <span class="nv">procedure</span> <span class="nv">that</span> <span class="nv">can</span> <span class="nv">be</span> <span class="nv">applied</span> <span class="nv">to</span> <span class="nv">arguments</span>
-  <span class="nv">given:</span> <span class="mi">2</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">given:</span> <span class="mi">2</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We can understand this by substituting:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">f</span> <span class="nv">f</span><span class="p">)</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">f</span> <span class="nv">f</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">f</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">2</span> <span class="mi">2</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">2</span> <span class="mi">2</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As we can see in the last statement, interpreter expects a procedure after opening bracket but <code class="highlighter-rouge">2</code> is not a procedure.</p>
 

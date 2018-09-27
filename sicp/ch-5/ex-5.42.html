@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9453,7 +9453,8 @@
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-variable</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">)</span>
+39
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">compile-variable</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">lex-addr</span> <span class="p">(</span><span class="nf">find-variable</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)))</span>
 	<span class="p">(</span><span class="nf">end-with-linkage</span> <span class="nv">linkage</span>
 					  <span class="p">(</span><span class="nf">make-instruction-sequence</span>
@@ -9491,8 +9492,7 @@
 						<span class="p">(</span><span class="nf">const</span> <span class="o">,</span><span class="nv">lex-addr</span><span class="p">)</span>
 						<span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">)</span>
 						<span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
-			   <span class="p">(</span><span class="nf">assign</span> <span class="o">,</span><span class="nv">target</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">ok</span><span class="p">))))))))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nf">assign</span> <span class="o">,</span><span class="nv">target</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">ok</span><span class="p">))))))))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="exampleoutput">Example/Output:</h4>
 
@@ -9500,7 +9500,7 @@
 
 <p>Output after disabling the open-code changes from ex-4.38.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9606,7 +9606,8 @@
 104
 105
 106
-107</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+107
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="nf">compile</span> <span class="o">'</span><span class="p">((</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span>
    <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="nv">d</span> <span class="nv">e</span><span class="p">)</span>
      <span class="p">((</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">y</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">x</span> <span class="nv">y</span> <span class="nv">z</span><span class="p">))</span>
@@ -9712,14 +9713,13 @@
   <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
   <span class="nv">primitive-branch21</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">apply-primitive-procedure</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
-  <span class="nv">after-call19</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">after-call19</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
 <p>With open code changes included and output is as expected.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9796,7 +9796,8 @@
 75
 76
 77
-78</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+78
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="p">(</span><span class="nf">compile</span> <span class="o">'</span><span class="p">((</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span>
    <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="nv">d</span> <span class="nv">e</span><span class="p">)</span>
      <span class="p">((</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">y</span> <span class="nv">z</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">x</span> <span class="nv">y</span> <span class="nv">z</span><span class="p">))</span>
@@ -9873,8 +9874,7 @@
   <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
   <span class="nv">primitive-branch12</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">apply-primitive-procedure</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
-  <span class="nv">after-call10</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">after-call10</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

@@ -9441,12 +9441,12 @@
 
 <p>I tested by executing this statement:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The following version, where I moved the <code class="highlighter-rouge">distinct</code> as the last constraint, took much more time(13 seconds) than the original version(10 seconds):</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9465,7 +9465,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
+20
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">baker</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">cooper</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">fletcher</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
@@ -9484,12 +9485,11 @@
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'cooper</span> <span class="nv">cooper</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'fletcher</span> <span class="nv">fletcher</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'miller</span> <span class="nv">miller</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>And this combination seemed to take slightly less time(9 seconds) than the original version(10 seconds):</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9508,7 +9508,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
+20
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">baker</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">cooper</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">fletcher</span> <span class="p">(</span><span class="nf">amb</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
@@ -9527,15 +9528,14 @@
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'cooper</span> <span class="nv">cooper</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'fletcher</span> <span class="nv">fletcher</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'miller</span> <span class="nv">miller</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This is perhaps because, constraints:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">smith</span> <span class="nv">fletcher</span><span class="p">))</span> <span class="mi">1</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">fletcher</span> <span class="nv">cooper</span><span class="p">))</span> <span class="mi">1</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">smith</span> <span class="nv">fletcher</span><span class="p">))</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">fletcher</span> <span class="nv">cooper</span><span class="p">))</span> <span class="mi">1</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>… are more restrictive(because they restrict two variables) and thus lesser number of cases go down. Thus moving them up slighlty improves the time.</p>
 

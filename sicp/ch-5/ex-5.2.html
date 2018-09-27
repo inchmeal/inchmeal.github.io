@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9424,7 +9424,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">controller</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">controller</span>
  <span class="p">(</span><span class="nf">assign</span> <span class="nv">product</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">1</span><span class="p">))</span>
  <span class="p">(</span><span class="nf">assign</span> <span class="nv">counter</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">1</span><span class="p">))</span>
  <span class="nv">fact-loop</span>
@@ -9433,8 +9434,7 @@
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">product</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">*</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">product</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">counter</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">counter</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">+</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">counter</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">1</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">fact-loop</span><span class="p">))</span>
- <span class="nv">fact-done</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+ <span class="nv">fact-done</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

@@ -9415,7 +9415,7 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9433,7 +9433,8 @@
 16
 17
 18
-19</pre></td><td class="code"><pre><span class="c1">;; Averager</span>
+19
+</pre></td><td class="code"><pre><span class="c1">;; Averager</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">a</span> <span class="p">(</span><span class="nf">make-connector</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">b</span> <span class="p">(</span><span class="nf">make-connector</span><span class="p">))</span>
@@ -9451,12 +9452,11 @@
 
 <span class="p">(</span><span class="nf">probe</span> <span class="s">"a"</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">probe</span> <span class="s">"b"</span> <span class="nv">b</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">probe</span> <span class="s">"avg"</span> <span class="nv">avg</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">probe</span> <span class="s">"avg"</span> <span class="nv">avg</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9492,21 +9492,22 @@
 34
 35
 36
-37</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">a</span> <span class="mi">20</span> <span class="ss">'ovais</span><span class="p">)</span>
+37
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">a</span> <span class="mi">20</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="c1">;Value 32: #[compound-procedure 32 me]</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="nv">Probe:</span> <span class="nv">a</span> <span class="nv">=</span> <span class="mi">20</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">b</span> <span class="mi">30</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">b</span> <span class="mi">30</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">b</span> <span class="nv">=</span> <span class="mi">30</span>
 <span class="nv">Probe:</span> <span class="nv">avg</span> <span class="nv">=</span> <span class="mi">25</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">a</span> <span class="mi">50</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">a</span> <span class="mi">50</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="c1">;Contradiction (20 50)</span>
 <span class="c1">;To continue, call RESTART with an option number:</span>
@@ -9516,20 +9517,19 @@
 
 <span class="c1">;Abort!</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">forget-value!</span> <span class="nv">a</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">forget-value!</span> <span class="nv">a</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">a</span> <span class="nv">=</span> <span class="nv">?</span>
 <span class="nv">Probe:</span> <span class="nv">avg</span> <span class="nv">=</span> <span class="nv">?</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">a</span> <span class="mi">29</span> <span class="ss">'ovais</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set-value!</span> <span class="nv">a</span> <span class="mi">29</span> <span class="ss">'ovais</span><span class="p">)</span>
 
 <span class="nv">Probe:</span> <span class="nv">a</span> <span class="nv">=</span> <span class="mi">29</span>
 <span class="nv">Probe:</span> <span class="nv">avg</span> <span class="nv">=</span> <span class="mi">59</span><span class="nv">/2</span>
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that when some error occurs, MIT scheme keep showing it in prompt unless <code class="highlighter-rouge">(restart 1)</code> is called.</p>
 
@@ -9541,7 +9541,7 @@
 
 <p>I am also putting the complete code here for future reference:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9746,7 +9746,8 @@
 203
 204
 205
-206</pre></td><td class="code"><pre><span class="c1">;; primitives - adder, multiplier, constant and interfaces for these contstraints(inform-about-value, informa-about-no-value)</span>
+206
+</pre></td><td class="code"><pre><span class="c1">;; primitives - adder, multiplier, constant and interfaces for these contstraints(inform-about-value, informa-about-no-value)</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">adder</span> <span class="nv">a1</span> <span class="nv">a2</span> <span class="nv">sum</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">process-new-value</span><span class="p">)</span>
     <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="k">and</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">a1</span><span class="p">)</span> <span class="p">(</span><span class="nf">has-value?</span> <span class="nv">a2</span><span class="p">))</span>
@@ -9951,8 +9952,7 @@
 
 <span class="p">(</span><span class="nf">probe</span> <span class="s">"a"</span> <span class="nv">a</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">probe</span> <span class="s">"b"</span> <span class="nv">b</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">probe</span> <span class="s">"avg"</span> <span class="nv">avg</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">probe</span> <span class="s">"avg"</span> <span class="nv">avg</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

@@ -9416,7 +9416,7 @@
                         <hr/>
                         <p>My understanding is that joint account can only be created using the main-account i.e. we can not create another joint account using joint account.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9452,7 +9452,8 @@
 34
 35
 36
-37</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
+37
+</pre></td><td class="code"><pre><span class="o">#</span><span class="nv">lang</span> <span class="nv">sicp</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-account</span> <span class="nv">balance</span> <span class="nv">secretpwd</span><span class="p">)</span>
     <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">withdraw</span> <span class="nv">amount</span><span class="p">)</span>
@@ -9488,12 +9489,11 @@
               <span class="p">(</span><span class="nf">operation</span> <span class="nv">m</span><span class="p">)</span>
               <span class="p">(</span><span class="nb">error</span> <span class="s">"Invalid access to joint account"</span><span class="p">))))))</span>
               
-    <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+    </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9515,7 +9515,8 @@
 20
 21
 22
-23</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">acc</span> <span class="p">(</span><span class="nf">make-account</span> <span class="mi">100</span> <span class="ss">'secret-password</span><span class="p">))</span>
+23
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">acc</span> <span class="p">(</span><span class="nf">make-account</span> <span class="mi">100</span> <span class="ss">'secret-password</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">acc</span> <span class="ss">'secret-password</span> <span class="ss">'withdraw</span><span class="p">)</span> <span class="mi">40</span><span class="p">)</span>
 <span class="mi">60</span>
 <span class="nv">&gt;</span> <span class="p">((</span><span class="nf">acc</span> <span class="ss">'some-other-password</span> <span class="ss">'deposit</span><span class="p">)</span> <span class="mi">50</span><span class="p">)</span>
@@ -9537,8 +9538,7 @@
 <span class="c1">; Can not create joint using joint account</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">make-joint</span> <span class="nv">join-acc</span> <span class="ss">'secret-password</span> <span class="ss">'rosebud</span><span class="p">)</span>
 <span class="o">.</span> <span class="o">.</span> <span class="nv">Invalid</span> <span class="nv">access</span> <span class="nv">to</span> <span class="nv">joint</span> <span class="nv">account</span>
-<span class="nv">&gt;</span> <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

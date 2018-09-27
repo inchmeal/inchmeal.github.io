@@ -9417,17 +9417,17 @@
                     <span itemprop="articleSection">
                         <hr/>
                         
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">f</span><span class="p">)</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">f</span><span class="p">)</span>
   <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)))</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now evaluating the statement given:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">double</span><span class="p">))</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">5</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">double</span><span class="p">))</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">5</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The call <code class="highlighter-rouge">double double</code> returns a procedure, lets call this procedure X, that applies double twice to an argument passed to it.</p>
 
@@ -9437,12 +9437,12 @@
 
 <p>Thus now finally the call to <code class="highlighter-rouge">Z 5</code> is evaluated as follows:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">Z</span> <span class="mi">5</span><span class="p">)</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">Z</span> <span class="mi">5</span><span class="p">)</span>
 <span class="p">((</span><span class="nf">X</span> <span class="p">(</span><span class="nf">X</span> <span class="nv">inc</span><span class="p">))</span> <span class="mi">5</span><span class="p">)</span>
-<span class="p">((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">inc</span><span class="p">)))</span> <span class="mi">5</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">inc</span><span class="p">)))</span> <span class="mi">5</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now we can see that in the innermost call, inc is called twice, than it is doubled thus called 4 times, again it is doubled thus
 called 8 times and again it is double thus called 16 times.</p>

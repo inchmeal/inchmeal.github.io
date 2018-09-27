@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>Procedure for Recursive Process:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9427,7 +9427,8 @@
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span>
+10
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">n</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">n</span> <span class="mi">3</span><span class="p">)</span>
         <span class="nv">n</span>
         <span class="p">(</span><span class="nb">+</span> 
@@ -9436,12 +9437,11 @@
             <span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">3</span><span class="p">))</span>
         <span class="p">)</span>        
     <span class="p">)</span>
-<span class="p">)</span>        <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>        </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Procedure for Iterative Process:</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9470,7 +9470,8 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f-new</span> <span class="nv">n</span><span class="p">)</span>
+30
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">f-new</span> <span class="nv">n</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">comp</span> <span class="nv">t3</span> <span class="nv">t2</span> <span class="nv">t1</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">+</span>
        <span class="nv">t3</span>
@@ -9499,8 +9500,7 @@
              <span class="p">(</span><span class="nf">f-new</span> <span class="mi">0</span><span class="p">)</span>             
              <span class="nv">n</span><span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span>  <span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>  </pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

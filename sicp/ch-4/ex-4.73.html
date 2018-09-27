@@ -9422,21 +9422,21 @@
 
 <p>Using the same rules which i used in ex-4.72:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">ones</span> <span class="p">()))</span>
+5
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">ones</span> <span class="p">()))</span>
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">ones</span> <span class="p">(</span><span class="nf">1</span> <span class="o">.</span> <span class="nv">?x</span><span class="p">))</span> <span class="p">(</span><span class="nf">ones</span> <span class="nv">?x</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">twos</span> <span class="p">()))</span>
-<span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">twos</span> <span class="p">(</span><span class="nf">2</span> <span class="o">.</span> <span class="nv">?x</span><span class="p">))</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?x</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">twos</span> <span class="p">(</span><span class="nf">2</span> <span class="o">.</span> <span class="nv">?x</span><span class="p">))</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?x</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Unlike the previous exercise, now i used <code class="highlighter-rouge">and</code> query instead of <code class="highlighter-rouge">or</code> query:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?y</span><span class="p">))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?y</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Why <code class="highlighter-rouge">and</code>?</p>
 
@@ -9444,20 +9444,20 @@
 
 <h4 id="with-the-change-suggested-in-book">With the change suggested in book:</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+5
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?y</span><span class="p">))</span>
 
 <span class="c1">;;; Query results:</span>
-<span class="c1">;Aborting!: maximum recursion depth exceeded</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Aborting!: maximum recursion depth exceeded</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="with-the-original-version">With the original version</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9520,7 +9520,8 @@
 61
 62
 63
-64</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
+64
+</pre></td><td class="code"><pre><span class="c1">;;; Query input:</span>
 
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?y</span><span class="p">))</span>
 
@@ -9583,8 +9584,7 @@
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="p">(</span><span class="nf">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">))</span> <span class="p">(</span><span class="nf">twos</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="p">())</span> <span class="p">(</span><span class="nf">twos</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="p">(</span><span class="nf">1</span><span class="p">))</span> <span class="p">(</span><span class="nf">twos</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)))</span>
-<span class="o">....</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">....</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

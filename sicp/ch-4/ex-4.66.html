@@ -9424,12 +9424,12 @@
   <li>A way where we can identify the variable on which we detect duplicate records. Something like this:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">sum</span> <span class="nv">?amount</span> <span class="nv">?name</span>
+3
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">sum</span> <span class="nv">?amount</span> <span class="nv">?name</span>
      <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">job</span> <span class="nv">?name</span> <span class="p">(</span><span class="nf">computer</span> <span class="nv">programmer</span><span class="p">))</span>
-          <span class="p">(</span><span class="nf">salary</span> <span class="nv">?name</span> <span class="nv">?amount</span><span class="p">)))</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="p">(</span><span class="nf">salary</span> <span class="nv">?name</span> <span class="nv">?amount</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>where <code class="highlighter-rouge">?name</code> can help in removing duplicates.</p>
 

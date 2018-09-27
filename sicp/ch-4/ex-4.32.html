@@ -9418,24 +9418,24 @@
 
 <p><strong>Streams:</strong></p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">test</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'invoked</span><span class="p">)</span> <span class="mi">1</span><span class="p">))</span>
+7
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">test</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'invoked</span><span class="p">)</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="c1">;Value: test</span>
 
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nf">test</span><span class="p">)</span> <span class="p">(</span><span class="nf">test</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nf">test</span><span class="p">)</span> <span class="p">(</span><span class="nf">test</span><span class="p">))</span>
 <span class="nv">invoked</span>
-<span class="c1">;Value 76: (1 . #[compound-procedure 77])</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value 76: (1 . #[compound-procedure 77])</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>Lazier lazy:</strong></p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9445,7 +9445,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+11
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">test</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'invoked</span><span class="p">)</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="c1">;;; L-Eval value:</span>
@@ -9455,8 +9456,7 @@
 <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">test</span><span class="p">)</span> <span class="p">(</span><span class="nf">test</span><span class="p">))</span>
 
 <span class="c1">;;; L-Eval value:</span>
-<span class="p">(</span><span class="nf">compound-procedure</span> <span class="p">(</span><span class="nf">m</span><span class="p">)</span> <span class="p">((</span><span class="nf">m</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span> <span class="nv">&lt;procedure-env&gt;</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">compound-procedure</span> <span class="p">(</span><span class="nf">m</span><span class="p">)</span> <span class="p">((</span><span class="nf">m</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span> <span class="nv">&lt;procedure-env&gt;</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="take-advantage-of-extra-laziness">Take advantage of extra laziness</h4>
 

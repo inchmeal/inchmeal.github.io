@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p>It assumes <script type="math/tex">a,b \ge 0</script>.</p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9434,7 +9434,8 @@
 14
 15
 16
-17</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ml-itr</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+17
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">ml-itr</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">mitr</span> <span class="nv">r</span> <span class="nv">aa</span> <span class="nv">bb</span><span class="p">)</span>
      <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">=</span> <span class="nv">bb</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">r</span><span class="p">)</span>
          <span class="p">((</span><span class="nb">even?</span> <span class="nv">bb</span><span class="p">)</span> <span class="p">(</span><span class="nf">mitr</span> <span class="nv">r</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">aa</span><span class="p">)</span> <span class="p">(</span><span class="nf">half</span> <span class="nv">bb</span><span class="p">)))</span>
@@ -9450,8 +9451,7 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">a</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">*</span> <span class="nv">a</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

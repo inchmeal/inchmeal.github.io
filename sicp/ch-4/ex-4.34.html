@@ -9455,7 +9455,7 @@
 
 <h4 id="complete-code">Complete Code</h4>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9748,7 +9748,8 @@
 291
 292
 293
-294</pre></td><td class="code"><pre><span class="c1">;;;;LAZY EVALUATOR FROM SECTION 4.2 OF</span>
+294
+</pre></td><td class="code"><pre><span class="c1">;;;;LAZY EVALUATOR FROM SECTION 4.2 OF</span>
 <span class="c1">;;;; STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS</span>
 
 <span class="c1">;;;;Matches code in ch4.scm</span>
@@ -10041,8 +10042,7 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">the-global-environment</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
 
-<span class="ss">'LAZY-EVALUATOR-LOADED</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="ss">'LAZY-EVALUATOR-LOADED</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -10050,7 +10050,7 @@
 
 <p>First these are the outputs from my implementation as part of this exercise. Next, I also presented the output when same input is passed to the mit-scheme.</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10113,7 +10113,8 @@
 61
 62
 63
-64</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
+64
+</pre></td><td class="code"><pre><span class="c1">;;; L-Eval input:</span>
 <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">d</span> <span class="nv">e</span> <span class="o">'</span><span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">)</span> <span class="nv">h</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">i</span> <span class="nv">j</span><span class="p">)</span> <span class="nv">k</span><span class="p">)</span> <span class="nv">l</span> <span class="nv">m</span> <span class="nv">n</span> <span class="o">'</span><span class="p">(</span><span class="nf">o</span> <span class="nv">p</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">q</span> <span class="nv">r</span> <span class="nv">s</span><span class="p">)</span> <span class="nv">t</span> <span class="nv">u</span> <span class="nv">v</span> <span class="nv">w</span> <span class="nv">x</span> <span class="o">'</span><span class="p">(</span><span class="nf">y</span> <span class="nv">z</span><span class="p">))</span>
 <span class="c1">;;; L-Eval value:</span>
 <span class="p">((</span><span class="k">quote</span> <span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">))</span> <span class="p">(</span><span class="k">quote</span> <span class="p">(</span><span class="nf">d</span> <span class="nv">e</span> <span class="p">(</span><span class="k">quote</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">))</span> <span class="nv">h</span><span class="p">))</span> <span class="o">...</span><span class="p">)</span>
@@ -10176,12 +10177,11 @@
 <span class="c1">;;; L-Eval input:</span>
 <span class="p">(</span><span class="nb">cons</span> <span class="ss">'a</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'b</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'c</span> <span class="o">'</span><span class="p">())))</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output from MIT scheme:</p>
 
-<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -10210,37 +10210,37 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">d</span> <span class="nv">e</span> <span class="o">'</span><span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">)</span> <span class="nv">h</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">i</span> <span class="nv">j</span><span class="p">)</span> <span class="nv">k</span><span class="p">)</span> <span class="nv">l</span> <span class="nv">m</span> <span class="nv">n</span> <span class="o">'</span><span class="p">(</span><span class="nf">o</span> <span class="nv">p</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">q</span> <span class="nv">r</span> <span class="nv">s</span><span class="p">)</span> <span class="nv">t</span> <span class="nv">u</span> <span class="nv">v</span> <span class="nv">w</span> <span class="nv">x</span> <span class="o">'</span><span class="p">(</span><span class="nf">y</span> <span class="nv">z</span><span class="p">))</span>
+30
+</pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">d</span> <span class="nv">e</span> <span class="o">'</span><span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">)</span> <span class="nv">h</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">i</span> <span class="nv">j</span><span class="p">)</span> <span class="nv">k</span><span class="p">)</span> <span class="nv">l</span> <span class="nv">m</span> <span class="nv">n</span> <span class="o">'</span><span class="p">(</span><span class="nf">o</span> <span class="nv">p</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">q</span> <span class="nv">r</span> <span class="nv">s</span><span class="p">)</span> <span class="nv">t</span> <span class="nv">u</span> <span class="nv">v</span> <span class="nv">w</span> <span class="nv">x</span> <span class="o">'</span><span class="p">(</span><span class="nf">y</span> <span class="nv">z</span><span class="p">))</span>
 <span class="p">)</span>
 <span class="c1">;Value 3: ((quote (a b c)) (quote (d e (quote (f g)) h)) (quote ((quote (i j)) k)) l m n (quote (o p)) (quote (q r s)) t u v w x (quote (y z)))</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="o">'</span><span class="p">()</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> 
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="o">'</span><span class="p">()</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 <span class="c1">;Value: ()</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="ss">'1</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="ss">'1</span>
 <span class="c1">;Value: 1</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="ss">'a</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="ss">'a</span>
 <span class="c1">;Value: a</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="o">'</span><span class="ss">'a</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="o">'</span><span class="ss">'a</span>
 <span class="c1">;Value 4: (quote a)</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">))</span>
 <span class="c1">;Value: a</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="o">'</span><span class="p">(</span><span class="ss">'a</span> <span class="ss">'b</span><span class="p">))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="o">'</span><span class="p">(</span><span class="ss">'a</span> <span class="ss">'b</span><span class="p">))</span>
 <span class="c1">;Value 5: (quote a)</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">)))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">)))</span>
 <span class="c1">;Value 6: ((quote (c d)))</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">))))</span>
 <span class="c1">;Value 7: (quote (c d))</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">))))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">))))))</span>
 <span class="c1">;Value 8: (c d)</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">)))))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">)))))))</span>
 <span class="c1">;Value: c</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">)))))))</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="o">'</span><span class="p">(</span><span class="o">'</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="o">'</span><span class="p">(</span><span class="nf">c</span> <span class="nv">d</span><span class="p">)))))))</span>
 <span class="c1">;Value 9: (d)</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cons</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cons</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">)</span>
 <span class="c1">;Value 19: (1 . 2)</span>
-<span class="mi">1</span> <span class="err">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'a</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'b</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'c</span> <span class="o">'</span><span class="p">())))</span>
-<span class="c1">;Value 20: (a b c)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'a</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'b</span> <span class="p">(</span><span class="nb">cons</span> <span class="ss">'c</span> <span class="o">'</span><span class="p">())))</span>
+<span class="c1">;Value 20: (a b c)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 

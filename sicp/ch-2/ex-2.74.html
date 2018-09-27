@@ -9418,7 +9418,7 @@
                         <hr/>
                         <p><strong>(a)</strong></p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9437,7 +9437,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-generic-file</span> <span class="nv">division</span> <span class="nv">specific-file</span><span class="p">)</span>
+20
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-generic-file</span> <span class="nv">division</span> <span class="nv">specific-file</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="nv">division</span> <span class="nv">specific-file</span><span class="p">)</span>
 <span class="p">)</span>
 
@@ -9456,12 +9457,11 @@
        <span class="p">)</span>
        <span class="p">(</span> <span class="p">(</span><span class="nf">get</span> <span class="ss">'get-record</span> <span class="nv">division</span><span class="p">)</span> <span class="nv">specific-file</span><span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>(b)</strong></p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9480,7 +9480,8 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-generic-record</span> <span class="nv">division</span> <span class="nv">specific-record</span><span class="p">)</span>
+20
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-generic-record</span> <span class="nv">division</span> <span class="nv">specific-record</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">cons</span> <span class="nv">division</span> <span class="nv">specific-record</span><span class="p">)</span>
 <span class="p">)</span>
 
@@ -9499,12 +9500,11 @@
        <span class="p">)</span>
        <span class="p">(</span> <span class="p">(</span><span class="nf">get</span> <span class="ss">'get-record</span> <span class="nv">division</span><span class="p">)</span> <span class="nv">specific-record</span><span class="p">)</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>(c)</strong></p>
 
-<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -9516,7 +9516,8 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">find-employee-record</span> <span class="nv">name</span> <span class="nv">files</span><span class="p">)</span>
+13
+</pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">find-employee-record</span> <span class="nv">name</span> <span class="nv">files</span><span class="p">)</span>
    <span class="p">(</span><span class="k">cond</span> <span class="p">((</span><span class="nb">null?</span> <span class="nv">files</span><span class="p">)</span> <span class="o">'</span><span class="p">())</span>
          <span class="p">((</span><span class="nb">pair?</span> <span class="nv">files</span><span class="p">)</span> <span class="p">(</span><span class="k">let</span>
                             <span class="p">((</span><span class="nf">rs</span> <span class="p">(</span><span class="nf">get-record</span> <span class="nv">name</span> <span class="nv">files</span><span class="p">)))</span>
@@ -9528,8 +9529,7 @@
          <span class="p">)</span>
          <span class="p">(</span><span class="nf">else</span> <span class="p">(</span><span class="nb">error</span> <span class="s">"Invalid files, list expected"</span><span class="p">))</span>
   <span class="p">)</span>
-<span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>(d)</strong></p>
 
