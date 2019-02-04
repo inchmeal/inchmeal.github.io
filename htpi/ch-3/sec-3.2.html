@@ -1235,17 +1235,27 @@ a < \frac 1 a %]]></script>, it follows that <script type="math/tex">a \in (-\in
 Similarly, <script type="math/tex">b \in (-\infty, -1) \lor (0, 1)</script>. Thus there are four possible cases:</p>
 
 <ul>
-  <li>Case 1: <script type="math/tex">a \in (-\infty, -1)</script> and <script type="math/tex">b \in (-\infty, -1)</script>.</li>
-  <li>Case 2: <script type="math/tex">a \in (-\infty, -1)</script> and <script type="math/tex">b \in (0, 1)</script>.</li>
-  <li>Case 3: <script type="math/tex">a \in (0, 1)</script> and <script type="math/tex">b \in (-\infty, -1)</script>. This is not possible because <script type="math/tex">\frac 1 a > 1</script> and <script type="math/tex">% <![CDATA[
+  <li>
+    <p>Case 1: <script type="math/tex">a \in (-\infty, -1)</script> and <script type="math/tex">b \in (-\infty, -1)</script>. (Earlier I missed this case. As pointed out in comments this case is not possible either). Since <script type="math/tex">\, a \text{ and } b \,</script> are both negative(same sign) and <script type="math/tex">% <![CDATA[
+\, \frac 1 a < \frac 1 b \, %]]></script>, it follows that <script type="math/tex">\, a > b \,</script> which contradicts with <script type="math/tex">% <![CDATA[
+\, a < b \, %]]></script>.</p>
+  </li>
+  <li>
+    <p>Case 2: <script type="math/tex">a \in (-\infty, -1)</script> and <script type="math/tex">b \in (0, 1)</script>. This case is possible. For example, when <script type="math/tex">\, a = -2 \,</script> and <script type="math/tex">\, b = 0.5 \,</script>, the inequality holds.</p>
+  </li>
+  <li>
+    <p>Case 3: <script type="math/tex">a \in (0, 1)</script> and <script type="math/tex">b \in (-\infty, -1)</script>. This is not possible because <script type="math/tex">\frac 1 a > 1</script> and <script type="math/tex">% <![CDATA[
 \frac 1 a < b %]]></script>. But in this case <script type="math/tex">% <![CDATA[
-b < -1 %]]></script>.</li>
-  <li>Case 4: <script type="math/tex">a \in (0, 1)</script> and <script type="math/tex">b \in (0, 1)</script>. This is also not possible because <script type="math/tex">\frac 1 a > 1</script> and <script type="math/tex">% <![CDATA[
+b < -1 %]]></script>.</p>
+  </li>
+  <li>
+    <p>Case 4: <script type="math/tex">a \in (0, 1)</script> and <script type="math/tex">b \in (0, 1)</script>. This is also not possible because <script type="math/tex">\frac 1 a > 1</script> and <script type="math/tex">% <![CDATA[
 \frac 1 a < b %]]></script>. But in this case <script type="math/tex">% <![CDATA[
-0 < b < 1 %]]></script>.</li>
+0 < b < 1 %]]></script>.</p>
+  </li>
 </ul>
 
-<p>Thus only Case 1 and Case 2 are possible. It follows that <script type="math/tex">% <![CDATA[
+<p>Thus only Case 2 is possible. It follows that <script type="math/tex">% <![CDATA[
 a < -1 %]]></script>.</p>
 
 <hr />
@@ -1364,7 +1374,7 @@ Thus theorem is not correct.</p>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2018 inchmeal</li>
+                      <li>&copy;2019 inchmeal</li>
                   </ul>
               </div>
           </section>

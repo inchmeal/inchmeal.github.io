@@ -1312,6 +1312,12 @@ Or we can say that if <script type="math/tex">x \in {\cup}_{i \in I} \mathcal P(
 
 <p><strong>Soln15</strong></p>
 
+<p><strong>Update:</strong> (04, Feb. 2019) Earlier solution was not correct, as pointed out in the comments section. Here is the updated version:</p>
+
+<p>Suppose <script type="math/tex">\, X = {\cap}_{i \in I} \mathcal P(A_i) \,</script>. Or we can say that <script type="math/tex">\, X = \{ x \;\vert \; x \in {\cap}_{i \in I} \mathcal P(A_i) \} \,</script>. Since, for any <script type="math/tex">\, i \in I \,</script>, we have  <script type="math/tex">\, x \in \mathcal P(A_i)\,</script>, it follows that <script type="math/tex">\, x \subseteq A_i \,</script>. Thus <script type="math/tex">\, X = \{ x \;\vert\; \forall{i \in I} (x \subseteq A_i) \} \,</script> or, equivalently <script type="math/tex">\, X = \{ x \;\vert\; x \subseteq \cap_{i \in I} A_i\} \,</script>. Thus one possible value of <script type="math/tex">\, x = {\cap}_{i \in I} A_i \,</script>, such that <script type="math/tex">\, x \in X \,</script>. Thus <script type="math/tex">\, {\cap}_{i \in I} A_i \in {\cap}_{i \in I} \mathcal P(A_i) \,</script>.</p>
+
+<p><strong>Old version:</strong></p>
+
 <p>Suppose <script type="math/tex">x \in {\cap}_{i \in I} \mathcal P(A_i)</script>, then <script type="math/tex">\forall i \in I(x \in \mathcal P(A_i))</script>. Thus <script type="math/tex">x</script> is a subset of all the sets of <script type="math/tex">A_i</script> where <script type="math/tex">i \in I</script>.
 Or we can say that <script type="math/tex">x = {\cap}_{i \in I} A_i</script>. Thus <script type="math/tex">{\cap}_{i \in I} A_i = {\cap}_{i \in I} \mathcal P(A_i)</script>.</p>
 
@@ -1517,7 +1523,7 @@ Thus in both cases we work on finding specific value to move forward with the pr
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2018 inchmeal</li>
+                      <li>&copy;2019 inchmeal</li>
                   </ul>
               </div>
           </section>
