@@ -389,6 +389,12 @@ $$ \forall P \in \mathcal F (P \subseteq \cup \mathcal F)) $$.
  
 <u>Uniqueness:</u>    
 
+(Update: (04 Feb. 2019) As pointed out in comments, earlier this part of the solution was not correct. Here is the fixed version.)
+
+Suppose $$ Q_1 \in \mathcal F $$ and $$ Q_2 \in \mathcal F $$ are two different sets such that $$ \forall P \in \mathcal F (P \subseteq Q_1 )) $$ and $$ \forall P \in \mathcal F (P \subseteq Q_2 )) $$. Since $$ Q_1 \in \mathcal F $$, we can replace $$ P $$ with $$ Q_1 $$ in $$ \forall P \in \mathcal F (P \subseteq Q_2 )) $$ and $$ P $$ with $$ Q_2 $$ in $$ \forall P \in \mathcal F (P \subseteq Q_1 )) $$. Thus we get $$ Q_1 \subseteq Q_2 $$ and $$ Q_2 \subseteq Q_1 $$. It follows that $$ Q_1 = Q_2 $$.
+
+Earlier version:
+
 Suppose $$ Q_1 \subseteq \mathcal F $$ and $$ Q_2 \subseteq \mathcal F $$ are two different sets such that $$ \forall P \in \mathcal F (P \subseteq Q_1 )) $$ and 
 $$ \forall P \in \mathcal F (P \subseteq Q_2 )) $$. Since $$ Q_1 \subseteq \mathcal F $$, we can replace $$ P $$ with $$ Q_1 $$ in $$ \forall P \in \mathcal F (P \subseteq Q_2 )) $$ 
 and $$ P $$ with $$ Q_2 $$ in $$ \forall P \in \mathcal F (P \subseteq Q_1 )) $$. Thus we get $$ Q_1 \subseteq Q_2 $$ and $$ Q_2 \subseteq Q_1 $$. It follows that

@@ -174,6 +174,12 @@ Or we can say that if $$ x \in {\cup}_{i \in I} \mathcal P(A_i) $$ then $$ x \in
 
 **Soln15**
 
+**Update:** (04, Feb. 2019) Earlier solution was not correct, as pointed out in the comments section. Here is the updated version:
+
+Suppose $$\, X = {\cap}_{i \in I} \mathcal P(A_i) \,$$. Or we can say that $$\, X = \{ x \;\vert \; x \in {\cap}_{i \in I} \mathcal P(A_i) \} \,$$. Since, for any $$\, i \in I \,$$, we have  $$\, x \in \mathcal P(A_i)\,$$, it follows that $$\, x \subseteq A_i \,$$. Thus $$\, X = \{ x \;\vert\; \forall{i \in I} (x \subseteq A_i) \} \,$$ or, equivalently $$\, X = \{ x \;\vert\; x \subseteq \cap_{i \in I} A_i\} \,$$. Thus one possible value of $$\, x = {\cap}_{i \in I} A_i \,$$, such that $$\, x \in X \,$$. Thus $$\, {\cap}_{i \in I} A_i \in {\cap}_{i \in I} \mathcal P(A_i) \,$$.
+
+**Old version:**
+
 Suppose $$ x \in {\cap}_{i \in I} \mathcal P(A_i) $$, then $$ \forall i \in I(x \in \mathcal P(A_i))$$. Thus $$ x $$ is a subset of all the sets of $$ A_i $$ where $$ i \in I $$.
 Or we can say that $$ x = {\cap}_{i \in I} A_i $$. Thus $$ {\cap}_{i \in I} A_i = {\cap}_{i \in I} \mathcal P(A_i) $$.
 

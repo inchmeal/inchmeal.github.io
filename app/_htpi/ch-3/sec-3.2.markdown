@@ -89,12 +89,15 @@ Suppose $$ y = 0 $$. Since $$ y + x = 2y - x $$, it follows that $$ x = 0 $$. Bu
 Suppose $$ a < \frac 1 a < b < \frac 1 b $$. Since $$ a < \frac 1 a $$, it follows that $$ a \in (-\infty, -1) \lor (0, 1) $$.
 Similarly, $$ b \in (-\infty, -1) \lor (0, 1) $$. Thus there are four possible cases:
  
-- Case 1: $$ a \in (-\infty, -1) $$ and $$ b \in (-\infty, -1) $$.
-- Case 2: $$ a \in (-\infty, -1) $$ and $$ b \in (0, 1) $$.
+- Case 1: $$ a \in (-\infty, -1) $$ and $$ b \in (-\infty, -1) $$. (Earlier I missed this case. As pointed out in comments this case is not possible either). Since $$\, a \text{ and } b \,$$ are both negative(same sign) and $$\, \frac 1 a < \frac 1 b \,$$, it follows that $$\, a > b \,$$ which contradicts with $$\, a < b \,$$.  
+
+- Case 2: $$ a \in (-\infty, -1) $$ and $$ b \in (0, 1) $$. This case is possible. For example, when $$\, a = -2 \,$$ and $$\, b = 0.5 \,$$, the inequality holds. 
+
 - Case 3: $$ a \in (0, 1) $$ and $$ b \in (-\infty, -1) $$. This is not possible because $$ \frac 1 a > 1 $$ and $$ \frac 1 a < b $$. But in this case $$ b < -1 $$.
+
 - Case 4: $$ a \in (0, 1) $$ and $$ b \in (0, 1) $$. This is also not possible because $$ \frac 1 a > 1 $$ and $$ \frac 1 a < b $$. But in this case $$ 0 < b < 1 $$.
 
-Thus only Case 1 and Case 2 are possible. It follows that $$ a < -1 $$.
+Thus only Case 2 is possible. It follows that $$ a < -1 $$.
 
 <hr/>
 
