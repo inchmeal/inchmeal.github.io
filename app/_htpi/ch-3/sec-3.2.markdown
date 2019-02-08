@@ -80,7 +80,7 @@ Since $$ a \in A $$ and $$ A \subseteq B $$, it follows that $$ a \in B $$. Supp
 
 **Soln7**
 
-Suppose $$ y = 0 $$. Since $$ y + x = 2y - x $$, it follows that $$ x = 0 $$. But this contradicts the *given* that $$ x \neq 0 \land y \neq 0 $$. Thus $$ y \neq 0 $$.
+Suppose $$ y = 0 $$. Since $$ y + x = 2y - x $$, it follows that $$ x = 0 $$. But this contradicts the *given* that $$ \lnot (x = 0 \land y = 0) $$, or, equivalantly, $$ x \neq 0 \lor y \neq 0 $$. Thus $$ y \neq 0 $$.
 
 <hr/>
 
