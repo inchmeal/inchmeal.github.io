@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,7 +980,7 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<p>We need <script type="math/tex">\, \Exp(\hat \beta) = \beta \,</script>. Since <script type="math/tex">\, \hat \beta = w_1 \hat X_1 + w_2 \hat X_2 + w_3 \hat X_3 \,</script>, we have <script type="math/tex">\, \Exp(\hat \beta) = (w_1 + w_2 + w_3) \alpha + (w_1 + 2 w_2 + 3 w_3) \beta \,</script>(Using <script type="math/tex">\Exp(\bar X_i) = \mu(t_i) = \alpha + \beta t_i</script>) should be equal to <script type="math/tex">\, \beta \,</script>. Thus <script type="math/tex">\, w_1 + w_2 + w_3 = 0 \,</script> and <script type="math/tex">\, w_1 + 2 w_2 + 3 w_3 = 1 \,</script>.</p>
+<p>We need <span class="kdmath">$\, \Exp(\hat \beta) = \beta \,$</span>. Since <span class="kdmath">$\, \hat \beta = w_1 \hat X_1 + w_2 \hat X_2 + w_3 \hat X_3 \,$</span>, we have <span class="kdmath">$\, \Exp(\hat \beta) = (w_1 + w_2 + w_3) \alpha + (w_1 + 2 w_2 + 3 w_3) \beta \,$</span>(Using <span class="kdmath">$\Exp(\bar X_i) = \mu(t_i) = \alpha + \beta t_i$</span>) should be equal to <span class="kdmath">$\, \beta \,$</span>. Thus <span class="kdmath">$\, w_1 + w_2 + w_3 = 0 \,$</span> and <span class="kdmath">$\, w_1 + 2 w_2 + 3 w_3 = 1 \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 

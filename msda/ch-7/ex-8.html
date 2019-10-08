@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,46 +980,62 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<script type="math/tex; mode=display">P( \vert \; \bar p - p \; \vert \; \geq \delta ) = 1 - P( \vert \; \bar p - p \; \vert \; \leq \delta )</script>
+<div class="kdmath">$$
+P( \vert \; \bar p - p \; \vert \; \geq \delta ) = 1 - P( \vert \; \bar p - p \; \vert \; \leq \delta )
+$$</div>
 
-<script type="math/tex; mode=display">= 1 - P( { - \delta } \leq \bar p - p \leq \delta )</script>
+<div class="kdmath">$$
+= 1 - P( { - \delta } \leq \bar p - p \leq \delta )
+$$</div>
 
-<p>Dividing by, <script type="math/tex">\sigma_{\bar p}</script>, standard error of the sample mean:</p>
+<p>Dividing by, <span class="kdmath">$\sigma_{\bar p}$</span>, standard error of the sample mean:</p>
 
-<script type="math/tex; mode=display">= 1 - P( \frac { - \delta } { \sigma_{\bar p} } \leq \frac {\bar p - p} {\sigma_{\bar p} } \leq \frac { \delta } { \sigma_{\bar p} } )</script>
+<div class="kdmath">$$
+= 1 - P( \frac { - \delta } { \sigma_{\bar p} } \leq \frac {\bar p - p} {\sigma_{\bar p} } \leq \frac { \delta } { \sigma_{\bar p} } )
+$$</div>
 
 <p>Now we can approximate it by standard normal using Central Limit Theorem:</p>
 
-<script type="math/tex; mode=display">\approx 1 - \left( \Phi \left( \frac { \delta } { \sigma_{\bar p} } \right) - \Phi \left(   \frac { - \delta } { \sigma_{\bar p} } \right) \right)</script>
+<div class="kdmath">$$
+\approx 1 - \left( \Phi \left( \frac { \delta } { \sigma_{\bar p} } \right) - \Phi \left(   \frac { - \delta } { \sigma_{\bar p} } \right) \right)
+$$</div>
 
-<script type="math/tex; mode=display">= 1 - \left( \Phi \left(   \frac { \delta } { \sigma_{\bar p} } \right) - \left( 1 - \Phi \left(   \frac { \delta } { \sigma_{\bar p} } \right) \right) \right)</script>
+<div class="kdmath">$$
+= 1 - \left( \Phi \left(   \frac { \delta } { \sigma_{\bar p} } \right) - \left( 1 - \Phi \left(   \frac { \delta } { \sigma_{\bar p} } \right) \right) \right)
+$$</div>
 
-<script type="math/tex; mode=display">= 2 \left( 1 -  \Phi \left(   \frac { \delta } { \sigma_{\bar p} } \right) \right)</script>
+<div class="kdmath">$$
+= 2 \left( 1 -  \Phi \left(   \frac { \delta } { \sigma_{\bar p} } \right) \right)
+$$</div>
 
-<p>Since we are given that <script type="math/tex">P( \vert \; \bar p - p \; \vert \; \geq \delta ) = 0.025</script></p>
+<p>Since we are given that <span class="kdmath">$P( \vert \; \bar p - p \; \vert \; \geq \delta ) = 0.025$</span></p>
 
-<p>Thus we get <script type="math/tex">\delta = \sigma_{\bar p} \times \Phi^{-1} \left( 1 - { \frac {0.025} 2 } \right) = \sigma_{\bar p} \times 2.4 \text{ ( by looking up normal table ) }</script></p>
+<p>Thus we get <span class="kdmath">$\delta = \sigma_{\bar p} \times \Phi^{-1} \left( 1 - { \frac {0.025} 2 } \right) = \sigma_{\bar p} \times 2.4 \text{ ( by looking up normal table ) }$</span></p>
 
 <p>Now since this is a proportion, we know for dichotmous case, and also ignoring the finite population correction:</p>
 
-<script type="math/tex; mode=display">\sigma^2_{\bar p} = \frac { p(1 - p) } n = \frac 1 5 \times \frac 4 5 \times \frac 1 { 100 } = \frac 1 { 625 }</script>
+<div class="kdmath">$$
+\sigma^2_{\bar p} = \frac { p(1 - p) } n = \frac 1 5 \times \frac 4 5 \times \frac 1 { 100 } = \frac 1 { 625 }
+$$</div>
 
 <p>which gives us:</p>
 
-<script type="math/tex; mode=display">\delta = 2.4 \times \sigma_{\bar p} = { 2.4 } \times \sqrt{ \frac 1 { 625 } } = 0.096</script>
+<div class="kdmath">$$
+\delta = 2.4 \times \sigma_{\bar p} = { 2.4 } \times \sqrt{ \frac 1 { 625 } } = 0.096
+$$</div>
 
-<p>Thus the value of delta, which makes the probability of the difference between sample mean <script type="math/tex">\bar p</script> and the population mean <script type="math/tex">p</script> more than <script type="math/tex">\delta</script> apart equals to <script type="math/tex">0.025</script>, is <script type="math/tex">0.0384</script>.</p>
+<p>Thus the value of delta, which makes the probability of the difference between sample mean <span class="kdmath">$\bar p$</span> and the population mean <span class="kdmath">$p$</span> more than <span class="kdmath">$\delta$</span> apart equals to <span class="kdmath">$0.025$</span>, is <span class="kdmath">$0.0384$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
-<p>The 95% confidence interval is <script type="math/tex">\bar p \pm 1.96 \sigma_{\bar p}</script>.</p>
+<p>The 95% confidence interval is <span class="kdmath">$\bar p \pm 1.96 \sigma_{\bar p}$</span>.</p>
 
-<p>Ignoring the finite population correction, <script type="math/tex">\sigma^2_{\bar p} = \frac { \sigma^2 } n</script>, where <script type="math/tex">\sigma^2</script> is the population variance, which in this case(dichotomous) is <script type="math/tex">p(1-p) = \frac 1 5 \times \frac 4 5</script>. Thus <script type="math/tex">\sigma^2_{\bar p} = \frac 1 5 \times \frac 4 5 \times \frac 1 {100} = \frac 1 {625}</script>.</p>
+<p>Ignoring the finite population correction, <span class="kdmath">$\sigma^2_{\bar p} = \frac { \sigma^2 } n$</span>, where <span class="kdmath">$\sigma^2$</span> is the population variance, which in this case(dichotomous) is <span class="kdmath">$p(1-p) = \frac 1 5 \times \frac 4 5$</span>. Thus <span class="kdmath">$\sigma^2_{\bar p} = \frac 1 5 \times \frac 4 5 \times \frac 1 {100} = \frac 1 {625}$</span>.</p>
 
-<p>Thus the 95% confidence interval becomes <script type="math/tex">0.25 \pm 1.96 \times \sqrt { \frac 1 {625} } = 0.25 \pm 0.0784</script>, Or <script type="math/tex">(0.1716,   0.3284)</script>    <br />
- Clearly the interval contains <script type="math/tex">0.20</script></p>
+<p>Thus the 95% confidence interval becomes <span class="kdmath">$0.25 \pm 1.96 \times \sqrt { \frac 1 {625} } = 0.25 \pm 0.0784$</span>, Or <span class="kdmath">$(0.1716,   0.3284)$</span>    <br />
+ Clearly the interval contains <span class="kdmath">$0.20$</span></p>
 
-<p>Note: In both parts, <script type="math/tex">\sigma^2_{\bar p}</script> is used instead of <script type="math/tex">s^2_{\bar p}</script> because we can compute it using the population variance <script type="math/tex">\sigma^2 = p(1-p)</script>. Thus we need not to use <script type="math/tex">s^2_{\bar p}</script> as an approxiamtion for <script type="math/tex">\sigma^2_{\bar p}</script>. In other words, use <script type="math/tex">s^2_{\bar p}</script> only when we can not compute <script type="math/tex">\sigma^2_{\bar p}</script>.</p>
+<p>Note: In both parts, <span class="kdmath">$\sigma^2_{\bar p}$</span> is used instead of <span class="kdmath">$s^2_{\bar p}$</span> because we can compute it using the population variance <span class="kdmath">$\sigma^2 = p(1-p)$</span>. Thus we need not to use <span class="kdmath">$s^2_{\bar p}$</span> as an approxiamtion for <span class="kdmath">$\sigma^2_{\bar p}$</span>. In other words, use <span class="kdmath">$s^2_{\bar p}$</span> only when we can not compute <span class="kdmath">$\sigma^2_{\bar p}$</span>.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -269,41 +270,41 @@
 <ul>
   <li>A rule is a set of statement(s) about rules or some general phenomenon.</li>
   <li>An exception to a rule is any statement that contradicts with one or more statements of the rule.</li>
-  <li>A set <script type="math/tex">S</script> such that all the rules inside this set have one or more exceptions.</li>
-  <li>Rule <script type="math/tex">R</script> which says that - Every rule in set S has one or more exception.</li>
+  <li>A set <span class="kdmath">$S$</span> such that all the rules inside this set have one or more exceptions.</li>
+  <li>Rule <span class="kdmath">$R$</span> which says that - Every rule in set S has one or more exception.</li>
 </ul>
 
-<p>Clearly if <script type="math/tex">R \notin S</script> then there is no problem with the rule <script type="math/tex">R</script>. For the case when the set is empty rule <script type="math/tex">R</script> will be vacuously correct.</p>
+<p>Clearly if <span class="kdmath">$R \notin S$</span> then there is no problem with the rule <span class="kdmath">$R$</span>. For the case when the set is empty rule <span class="kdmath">$R$</span> will be vacuously correct.</p>
 
-<p>Things get interesting when rule <script type="math/tex">R</script> is also made an element of <script type="math/tex">S</script>.</p>
+<p>Things get interesting when rule <span class="kdmath">$R$</span> is also made an element of <span class="kdmath">$S$</span>.</p>
 
 <ul>
-  <li><script type="math/tex">R \in S</script>.</li>
+  <li><span class="kdmath">$R \in S$</span>.</li>
 </ul>
 
 <p><em>Is Rule R correct?</em></p>
 
-<p>No? Because, apparently, there are no exceptions to <script type="math/tex">R</script>. Since <script type="math/tex">R \in S</script>, for <script type="math/tex">R</script> to be true, all rules in <script type="math/tex">S</script> including <script type="math/tex">R</script> must have one or more exception.</p>
+<p>No? Because, apparently, there are no exceptions to <span class="kdmath">$R$</span>. Since <span class="kdmath">$R \in S$</span>, for <span class="kdmath">$R$</span> to be true, all rules in <span class="kdmath">$S$</span> including <span class="kdmath">$R$</span> must have one or more exception.</p>
 
-<p>Wait a minute. All rules in <script type="math/tex">S</script> have exceptions and rule <script type="math/tex">R</script> is the only one without exception! The rule <script type="math/tex">R</script> is the only <em>exceptional</em> rule without exception!</p>
+<p>Wait a minute. All rules in <span class="kdmath">$S$</span> have exceptions and rule <span class="kdmath">$R$</span> is the only one without exception! The rule <span class="kdmath">$R$</span> is the only <em>exceptional</em> rule without exception!</p>
 
-<p>Having no exceptions made an exception for rule <script type="math/tex">R</script>. So the rule is correct!</p>
+<p>Having no exceptions made an exception for rule <span class="kdmath">$R$</span>. So the rule is correct!</p>
 
 <p>Well, it does not stop here.</p>
 
-<p>Because if rule <script type="math/tex">R</script> has an exception then all the rules in the set <script type="math/tex">S</script> including <script type="math/tex">R</script> have exceptions. Thus rule <script type="math/tex">R</script> is correct without any exception!</p>
+<p>Because if rule <span class="kdmath">$R$</span> has an exception then all the rules in the set <span class="kdmath">$S$</span> including <span class="kdmath">$R$</span> have exceptions. Thus rule <span class="kdmath">$R$</span> is correct without any exception!</p>
 
-<p>What I just said? Rule <script type="math/tex">R</script> has no exception? But it has an exception?</p>
+<p>What I just said? Rule <span class="kdmath">$R$</span> has no exception? But it has an exception?</p>
 
 <p>To summarize,</p>
 
-<p>The absence of exception was an exception of <script type="math/tex">R</script> which in turn made <script type="math/tex">R</script> true for all elements in <script type="math/tex">S</script> and which in turn again contradicted with <script type="math/tex">R</script> because <script type="math/tex">R</script> must have an exception.</p>
+<p>The absence of exception was an exception of <span class="kdmath">$R$</span> which in turn made <span class="kdmath">$R$</span> true for all elements in <span class="kdmath">$S$</span> and which in turn again contradicted with <span class="kdmath">$R$</span> because <span class="kdmath">$R$</span> must have an exception.</p>
 
-<p>Or more clearly, for <script type="math/tex">R</script> to be correct, it means:</p>
+<p>Or more clearly, for <span class="kdmath">$R$</span> to be correct, it means:</p>
 
 <ul>
-  <li><script type="math/tex">R</script> has no exception.</li>
-  <li>Every rule in <script type="math/tex">S</script> has one or more exception.</li>
+  <li><span class="kdmath">$R$</span> has no exception.</li>
+  <li>Every rule in <span class="kdmath">$S$</span> has one or more exception.</li>
 </ul>
 
 <p>Thus they can’t both be true at the same time!</p>
@@ -314,21 +315,21 @@
 
 <p>Is it correct?</p>
 
-<p>The updated rule states that apart from rule <script type="math/tex">R</script>, every rule in <script type="math/tex">S</script> has an exception. Thus there must be no exception to rule <script type="math/tex">R</script>.</p>
+<p>The updated rule states that apart from rule <span class="kdmath">$R$</span>, every rule in <span class="kdmath">$S$</span> has an exception. Thus there must be no exception to rule <span class="kdmath">$R$</span>.</p>
 
-<p>In the <em>previous case</em>, Because the absence of exception became an exception which made <script type="math/tex">R</script> true but in this case, it makes <script type="math/tex">R</script>
- false in the first check! Because in this case <script type="math/tex">R</script> must not have any exception by its definition!</p>
+<p>In the <em>previous case</em>, Because the absence of exception became an exception which made <span class="kdmath">$R$</span> true but in this case, it makes <span class="kdmath">$R$</span>
+ false in the first check! Because in this case <span class="kdmath">$R$</span> must not have any exception by its definition!</p>
 
 <p>Eh?</p>
 
-<p>The updated part - <em>except this rule</em> - of <script type="math/tex">R</script> can be interpreted in two ways:</p>
+<p>The updated part - <em>except this rule</em> - of <span class="kdmath">$R$</span> can be interpreted in two ways:</p>
 
 <ul>
-  <li>Every rule except <script type="math/tex">R</script> inside the set <script type="math/tex">S</script> has an exception but <script type="math/tex">R</script> is without exception.</li>
-  <li>Every rule except <script type="math/tex">R</script> inside the set <script type="math/tex">S</script> has an exception and <script type="math/tex">R</script> can or can not have an exception. It does not say anything for itself.</li>
+  <li>Every rule except <span class="kdmath">$R$</span> inside the set <span class="kdmath">$S$</span> has an exception but <span class="kdmath">$R$</span> is without exception.</li>
+  <li>Every rule except <span class="kdmath">$R$</span> inside the set <span class="kdmath">$S$</span> has an exception and <span class="kdmath">$R$</span> can or can not have an exception. It does not say anything for itself.</li>
 </ul>
 
-<p>The second interpretation is almost as good as saying that <script type="math/tex">R \notin S</script>. Thus removing <script type="math/tex">R</script> from <script type="math/tex">S</script> seems to be the only way which can make this rule correct!</p>
+<p>The second interpretation is almost as good as saying that <span class="kdmath">$R \notin S$</span>. Thus removing <span class="kdmath">$R$</span> from <span class="kdmath">$S$</span> seems to be the only way which can make this rule correct!</p>
 
 
             <hr/>

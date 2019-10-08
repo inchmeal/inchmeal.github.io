@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,35 +980,45 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<p>In simple random sampling, a sample of a given size is chosen from all possible samples with same size from the population. Thus the total samples are <script type="math/tex">\, {4 \choose 2} = 6 \,</script>.</p>
+<p>In simple random sampling, a sample of a given size is chosen from all possible samples with same size from the population. Thus the total samples are <span class="kdmath">$\, {4 \choose 2} = 6 \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
 <p>We have sample mean equals to:</p>
 
-<script type="math/tex; mode=display">\, \bar X = \frac 1 n \sum_{i=1}^n X_i \,</script>
+<div class="kdmath">$$
+\, \bar X = \frac 1 n \sum_{i=1}^n X_i \,
+$$</div>
 
-<p>Thus the expected value of the sample mean is <script type="math/tex">\, E(\bar X) = \frac 1 n \mathrm{E}(\sum_{i=1}^n X_i) = \frac 1 2 \sum_{i=1}^2 \mathrm{E} X_i \,</script></p>
+<p>Thus the expected value of the sample mean is <span class="kdmath">$\, E(\bar X) = \frac 1 n \mathrm{E}(\sum_{i=1}^n X_i) = \frac 1 2 \sum_{i=1}^2 \mathrm{E} X_i \,$</span></p>
 
-<p>In the given samples <script type="math/tex">\, (x_1, x_2), (x_2, x_3), (x_3, x_4), (x_1, x_4) \,</script>, we can see that every element of the population is present in equal number of samples(i.e. 2). (Note that in a sample, order does not matter <script type="math/tex">\, (x_1, x_2) \,</script> and <script type="math/tex">\, (x_2, x_1) \,</script> are same samples.)</p>
+<p>In the given samples <span class="kdmath">$\, (x_1, x_2), (x_2, x_3), (x_3, x_4), (x_1, x_4) \,$</span>, we can see that every element of the population is present in equal number of samples(i.e. 2). (Note that in a sample, order does not matter <span class="kdmath">$\, (x_1, x_2) \,$</span> and <span class="kdmath">$\, (x_2, x_1) \,$</span> are same samples.)</p>
 
-<p>Thus every <script type="math/tex">\, i^{th} \,</script> member of a <strong>random sample</strong> has an equal chance to be any element <script type="math/tex">\, x_1, x_2, x_3 \,</script> or <script type="math/tex">\, x_4 \,</script> of the population. In other words, every element <script type="math/tex">\, x_j \,</script> has an equal probability to become a part of a <em>random sample</em>. Thus probability <script type="math/tex">\, P(X_i = x_j) \,</script> for any <script type="math/tex">\, i^{th} \in \{1,2\} \,</script> member of sample and any <script type="math/tex">\, j^{th} \in \{1,2,3,4\} \,</script> element of the population, is <script type="math/tex">\, \frac 1 N = \frac 1 4 \,</script>. It follows that <script type="math/tex">\, \mathrm{E}(X_i) = \frac 1 4 \sum_{j=1}^4 x_j \,</script>.</p>
+<p>Thus every <span class="kdmath">$\, i^{th} \,$</span> member of a <strong>random sample</strong> has an equal chance to be any element <span class="kdmath">$\, x_1, x_2, x_3 \,$</span> or <span class="kdmath">$\, x_4 \,$</span> of the population. In other words, every element <span class="kdmath">$\, x_j \,$</span> has an equal probability to become a part of a <em>random sample</em>. Thus probability <span class="kdmath">$\, P(X_i = x_j) \,$</span> for any <span class="kdmath">$\, i^{th} \in \{1,2\} \,$</span> member of sample and any <span class="kdmath">$\, j^{th} \in \{1,2,3,4\} \,$</span> element of the population, is <span class="kdmath">$\, \frac 1 N = \frac 1 4 \,$</span>. It follows that <span class="kdmath">$\, \mathrm{E}(X_i) = \frac 1 4 \sum_{j=1}^4 x_j \,$</span>.</p>
 
-<p>( <strong>Note:</strong> Initially, I made a rookie mistake here by computing the probability <script type="math/tex">\, = \frac 2 4 = \frac 1 2 \,</script>, thinking that each member appears twice in total 4 samples. This is wrong because this probability is for whether a <strong>specific element</strong> is a member of a sample or not but the probability that we require is the probability of selection of an element in a random sample. Another way to see that <script type="math/tex">\, \frac 1 2 \,</script> is wrong is that the sum of probabilities of choosing each of the members should equal 1 but in this case it becomes <script type="math/tex">\, 4 \times \frac 1 2 = 2 \,</script>, which is clearly wrong!)</p>
+<p>( <strong>Note:</strong> Initially, I made a rookie mistake here by computing the probability <span class="kdmath">$\, = \frac 2 4 = \frac 1 2 \,$</span>, thinking that each member appears twice in total 4 samples. This is wrong because this probability is for whether a <strong>specific element</strong> is a member of a sample or not but the probability that we require is the probability of selection of an element in a random sample. Another way to see that <span class="kdmath">$\, \frac 1 2 \,$</span> is wrong is that the sum of probabilities of choosing each of the members should equal 1 but in this case it becomes <span class="kdmath">$\, 4 \times \frac 1 2 = 2 \,$</span>, which is clearly wrong!)</p>
 
-<p>Thus <script type="math/tex">\, \mathrm{E}(\bar X) =  \frac 1 2 \sum_{i=1}^2 \mathrm{E} X_i \,</script></p>
+<p>Thus <span class="kdmath">$\, \mathrm{E}(\bar X) =  \frac 1 2 \sum_{i=1}^2 \mathrm{E} X_i \,$</span></p>
 
-<script type="math/tex; mode=display">\, = \frac 1 2 \sum_{i=1}^2 \left( \frac 1 4 \sum_{j=1}^4 x_j \right) \,</script>
+<div class="kdmath">$$
+\, = \frac 1 2 \sum_{i=1}^2 \left( \frac 1 4 \sum_{j=1}^4 x_j \right) \,
+$$</div>
 
-<script type="math/tex; mode=display">\, = \frac 1 8 \sum_{i=1}^2 \left( \sum_{j=1}^4 x_j \right) \,</script>
+<div class="kdmath">$$
+\, = \frac 1 8 \sum_{i=1}^2 \left( \sum_{j=1}^4 x_j \right) \,
+$$</div>
 
-<script type="math/tex; mode=display">\, = \frac 2 8 \sum_{j=1}^4 x_j \,</script>
+<div class="kdmath">$$
+\, = \frac 2 8 \sum_{j=1}^4 x_j \,
+$$</div>
 
-<script type="math/tex; mode=display">\, = \frac 1 4 \sum_{j=1}^4 x_j \,</script>
+<div class="kdmath">$$
+\, = \frac 1 4 \sum_{j=1}^4 x_j \,
+$$</div>
 
-<p>But this expression is the population mean <script type="math/tex">\, \bar x \,</script>.</p>
+<p>But this expression is the population mean <span class="kdmath">$\, \bar x \,$</span>.</p>
 
-<p>It follows that <script type="math/tex">\, \mathrm{E}(\bar X) = \bar x \,</script>. Thus the sample mean is unbiased.</p>
+<p>It follows that <span class="kdmath">$\, \mathrm{E}(\bar X) = \bar x \,$</span>. Thus the sample mean is unbiased.</p>
 
 
                         $$\tag*{$\blacksquare$} $$

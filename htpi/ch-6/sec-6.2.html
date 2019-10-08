@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1147,259 +1148,259 @@ It covers examples to show a wide range of uses of proof by mathematical inducti
 <p>Given:</p>
 
 <ul>
-  <li><script type="math/tex">A</script> is a set consisiting of <script type="math/tex">n+1</script> elements.</li>
-  <li><script type="math/tex">R</script> is a partial order on <script type="math/tex">A</script>.</li>
-  <li>From first example of this section in book, we know there must exist a minimal element in <script type="math/tex">R</script>. Lets call that minimal element as <script type="math/tex">a</script>.</li>
-  <li><script type="math/tex">A' = A \setminus \{a\}</script>.</li>
-  <li><script type="math/tex">R' = R \cap A' \times A'</script>.</li>
+  <li><span class="kdmath">$A$</span> is a set consisiting of <span class="kdmath">$n+1$</span> elements.</li>
+  <li><span class="kdmath">$R$</span> is a partial order on <span class="kdmath">$A$</span>.</li>
+  <li>From first example of this section in book, we know there must exist a minimal element in <span class="kdmath">$R$</span>. Lets call that minimal element as <span class="kdmath">$a$</span>.</li>
+  <li><span class="kdmath">$A' = A \setminus \{a\}$</span>.</li>
+  <li><span class="kdmath">$R' = R \cap A' \times A'$</span>.</li>
 </ul>
 
-<p>Once we proved in part(a) that <script type="math/tex">R'</script> is a partial order. Then by induction <em>hypothesis</em> there must exist some relation <script type="math/tex">T'</script> such that it is a 
-total order on <script type="math/tex">A'</script>.</p>
+<p>Once we proved in part(a) that <span class="kdmath">$R'$</span> is a partial order. Then by induction <em>hypothesis</em> there must exist some relation <span class="kdmath">$T'$</span> such that it is a 
+total order on <span class="kdmath">$A'$</span>.</p>
 <ul>
-  <li><script type="math/tex">T'</script> is a total order on <script type="math/tex">A'</script>.</li>
-  <li><script type="math/tex">T = T' \cup (\{a\} \times A)</script>.</li>
+  <li><span class="kdmath">$T'$</span> is a total order on <span class="kdmath">$A'$</span>.</li>
+  <li><span class="kdmath">$T = T' \cup (\{a\} \times A)$</span>.</li>
 </ul>
 
 <p><strong>(a)</strong></p>
 
-<p>To prove that <script type="math/tex">R'</script> is partial order we need to prove that <script type="math/tex">R'</script> is reflexive, transitive and antisymmetric.</p>
+<p>To prove that <span class="kdmath">$R'$</span> is partial order we need to prove that <span class="kdmath">$R'$</span> is reflexive, transitive and antisymmetric.</p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">x \in A'</script>. Then <script type="math/tex">x \in A</script>. Since <script type="math/tex">R</script> is reflexive, it follows <script type="math/tex">(x,x) \in R</script>. Since <script type="math/tex">x \in A'</script>, it follows
-<script type="math/tex">(x,x) \in A' \times A'</script>. Thus <script type="math/tex">(x,x) \in R \cap (A' \times A')</script>, or <script type="math/tex">(x,x) \in R'</script>. Thus <script type="math/tex">R'</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x \in A'$</span>. Then <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R$</span> is reflexive, it follows <span class="kdmath">$(x,x) \in R$</span>. Since <span class="kdmath">$x \in A'$</span>, it follows
+<span class="kdmath">$(x,x) \in A' \times A'$</span>. Thus <span class="kdmath">$(x,x) \in R \cap (A' \times A')$</span>, or <span class="kdmath">$(x,x) \in R'$</span>. Thus <span class="kdmath">$R'$</span> is reflexive.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R'</script>. Thus <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">R</script> is partial order, it follows <script type="math/tex">(y,x) \notin R</script>. Thus <script type="math/tex">(y,x) \notin R'</script>.
-It follows <script type="math/tex">R'</script> is antisymmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R'$</span>. Thus <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$R$</span> is partial order, it follows <span class="kdmath">$(y,x) \notin R$</span>. Thus <span class="kdmath">$(y,x) \notin R'$</span>.
+It follows <span class="kdmath">$R'$</span> is antisymmetric.</p>
 
 <p><u>Transitive:</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R'</script> and <script type="math/tex">(y,z) \in R'</script>. Thus <script type="math/tex">(x,y) \in R \land (y,z) \in R</script>. Since <script type="math/tex">R</script> is partial order, thus <script type="math/tex">R</script> is transitive.
-It follows <script type="math/tex">(x,z) \in R</script>. Since <script type="math/tex">(x,y) \in R'</script> and <script type="math/tex">(y,z) \in R'</script>, it follows <script type="math/tex">x,y,z \in A'</script>. Since <script type="math/tex">(x,z) \in R</script> and <script type="math/tex">x,z \in A'</script>,
-it follows <script type="math/tex">(x,z) \in R'</script>. Thus <script type="math/tex">R'</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R'$</span> and <span class="kdmath">$(y,z) \in R'$</span>. Thus <span class="kdmath">$(x,y) \in R \land (y,z) \in R$</span>. Since <span class="kdmath">$R$</span> is partial order, thus <span class="kdmath">$R$</span> is transitive.
+It follows <span class="kdmath">$(x,z) \in R$</span>. Since <span class="kdmath">$(x,y) \in R'$</span> and <span class="kdmath">$(y,z) \in R'$</span>, it follows <span class="kdmath">$x,y,z \in A'$</span>. Since <span class="kdmath">$(x,z) \in R$</span> and <span class="kdmath">$x,z \in A'$</span>,
+it follows <span class="kdmath">$(x,z) \in R'$</span>. Thus <span class="kdmath">$R'$</span> is transitive.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>To prove <script type="math/tex">T</script> is total order, we need to prove <script type="math/tex">T</script> is partial order and <script type="math/tex">\forall x \in A \forall y \in A(xTy \lor yTx)</script>. To prove <script type="math/tex">T</script> is
- partial order, we need to prove <script type="math/tex">T</script> is reflexive, transitive and antisymmetric:</p>
+<p>To prove <span class="kdmath">$T$</span> is total order, we need to prove <span class="kdmath">$T$</span> is partial order and <span class="kdmath">$\forall x \in A \forall y \in A(xTy \lor yTx)$</span>. To prove <span class="kdmath">$T$</span> is
+ partial order, we need to prove <span class="kdmath">$T$</span> is reflexive, transitive and antisymmetric:</p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. We have two possible cases:</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. We have two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x = a</script>    <br />
-Thus <script type="math/tex">(a,a) \in \{a\} \times A</script>. It follows <script type="math/tex">(x,x) \in T</script>.</p>
+    <p>Case 1: <span class="kdmath">$x = a$</span>    <br />
+Thus <span class="kdmath">$(a,a) \in \{a\} \times A$</span>. It follows <span class="kdmath">$(x,x) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \ne a</script>    <br />
-Thus <script type="math/tex">x \in A'</script>. Since <script type="math/tex">T'</script> is total order on <script type="math/tex">A'</script>, it follows <script type="math/tex">T'</script> is reflexive and <script type="math/tex">(x,x) \in T'</script>. Thus <script type="math/tex">(x,x) \in T</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \ne a$</span>    <br />
+Thus <span class="kdmath">$x \in A'$</span>. Since <span class="kdmath">$T'$</span> is total order on <span class="kdmath">$A'$</span>, it follows <span class="kdmath">$T'$</span> is reflexive and <span class="kdmath">$(x,x) \in T'$</span>. Thus <span class="kdmath">$(x,x) \in T$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases <script type="math/tex">(x,x) \in T</script>. Thus <script type="math/tex">T</script> is reflexive.</p>
+<p>Thus from both cases <span class="kdmath">$(x,x) \in T$</span>. Thus <span class="kdmath">$T$</span> is reflexive.</p>
 
 <p><u>Transitive:<u></u></u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in T \land (y,z) \in T</script>. We have following possible cases:</p>
+<p>Suppose <span class="kdmath">$(x,y) \in T \land (y,z) \in T$</span>. We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x = a</script>   <br />
-Since <script type="math/tex">x = a</script> and <script type="math/tex">z \in A</script>, it follows <script type="math/tex">(x,z) = (a,z) \in \{a\} \times A</script>. Thus <script type="math/tex">(x,z) \in T</script>.</p>
+    <p>Case 1: <span class="kdmath">$x = a$</span>   <br />
+Since <span class="kdmath">$x = a$</span> and <span class="kdmath">$z \in A$</span>, it follows <span class="kdmath">$(x,z) = (a,z) \in \{a\} \times A$</span>. Thus <span class="kdmath">$(x,z) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \ne a</script>    <br />
-Since <script type="math/tex">x \ne a</script>. It follows <script type="math/tex">(x,y) \notin \{a\} \times A</script> and <script type="math/tex">(x,y) \in T'</script>. Thus <script type="math/tex">y \in A'</script>. Thus <script type="math/tex">y \ne a</script>. Since <script type="math/tex">(y,z) \in T</script>
-and <script type="math/tex">y \ne a</script>, it follows <script type="math/tex">(y,z) \in T'</script> and <script type="math/tex">z \ne a</script>. Thus <script type="math/tex">(x,y) \in T'</script> and <script type="math/tex">(y,z) \in T'</script>. Since <script type="math/tex">T'</script> is total order, it follows
-<script type="math/tex">(x,z) \in T'</script>. Thus <script type="math/tex">(x,z) \in T</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \ne a$</span>    <br />
+Since <span class="kdmath">$x \ne a$</span>. It follows <span class="kdmath">$(x,y) \notin \{a\} \times A$</span> and <span class="kdmath">$(x,y) \in T'$</span>. Thus <span class="kdmath">$y \in A'$</span>. Thus <span class="kdmath">$y \ne a$</span>. Since <span class="kdmath">$(y,z) \in T$</span>
+and <span class="kdmath">$y \ne a$</span>, it follows <span class="kdmath">$(y,z) \in T'$</span> and <span class="kdmath">$z \ne a$</span>. Thus <span class="kdmath">$(x,y) \in T'$</span> and <span class="kdmath">$(y,z) \in T'$</span>. Since <span class="kdmath">$T'$</span> is total order, it follows
+<span class="kdmath">$(x,z) \in T'$</span>. Thus <span class="kdmath">$(x,z) \in T$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all possible cases <script type="math/tex">(x,z) \in T</script>, or <script type="math/tex">T</script> is transitive.</p>
+<p>Thus from all possible cases <span class="kdmath">$(x,z) \in T$</span>, or <span class="kdmath">$T$</span> is transitive.</p>
 
-<p>Note that here we need not to consider possible values of <script type="math/tex">y,z</script> as cases: <script type="math/tex">x = a</script> and <script type="math/tex">x \ne a</script> already covers those possible values.</p>
+<p>Note that here we need not to consider possible values of <span class="kdmath">$y,z$</span> as cases: <span class="kdmath">$x = a$</span> and <span class="kdmath">$x \ne a$</span> already covers those possible values.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in T</script>. Thus we have two possible cases:</p>
+<p>Suppose <span class="kdmath">$(x,y) \in T$</span>. Thus we have two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x = a</script>   <br />
-Thus <script type="math/tex">(x,y) \in \{a\} \times A</script>. It follows directly that if <script type="math/tex">(y,x) \in \{a\} \times A</script> then <script type="math/tex">y = x = a</script>.</p>
+    <p>Case 1: <span class="kdmath">$x = a$</span>   <br />
+Thus <span class="kdmath">$(x,y) \in \{a\} \times A$</span>. It follows directly that if <span class="kdmath">$(y,x) \in \{a\} \times A$</span> then <span class="kdmath">$y = x = a$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \ne a</script>   <br />
-Thus <script type="math/tex">(x,y) \in T'</script>. Since <script type="math/tex">T'</script> is total order. It follows if <script type="math/tex">(y,x) \in T'</script> then <script type="math/tex">x = y</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \ne a$</span>   <br />
+Thus <span class="kdmath">$(x,y) \in T'$</span>. Since <span class="kdmath">$T'$</span> is total order. It follows if <span class="kdmath">$(y,x) \in T'$</span> then <span class="kdmath">$x = y$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases if <script type="math/tex">(y,x) \in T</script> then <script type="math/tex">x = y</script>.</p>
+<p>Thus from both cases if <span class="kdmath">$(y,x) \in T$</span> then <span class="kdmath">$x = y$</span>.</p>
 
-<p>Thus we have proved that <script type="math/tex">T</script> is partial order.</p>
+<p>Thus we have proved that <span class="kdmath">$T$</span> is partial order.</p>
 
-<p>Now to prove <script type="math/tex">T</script> is total order, we need to further prove that: <script type="math/tex">\forall x \in A \forall y \in A(xTy \lor yTx)</script>.</p>
+<p>Now to prove <span class="kdmath">$T$</span> is total order, we need to further prove that: <span class="kdmath">$\forall x \in A \forall y \in A(xTy \lor yTx)$</span>.</p>
 
-<p>Suppose <script type="math/tex">x \in A</script> and <script type="math/tex">y \in A</script>. Thus we have following possible cases:</p>
+<p>Suppose <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in A$</span>. Thus we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x = a</script>.   <br />
-Thus <script type="math/tex">(x,y) \in \{a\} \times A</script>. It follows <script type="math/tex">(x,y) \in T</script>.</p>
+    <p>Case 1: <span class="kdmath">$x = a$</span>.   <br />
+Thus <span class="kdmath">$(x,y) \in \{a\} \times A$</span>. It follows <span class="kdmath">$(x,y) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">y = a</script>.  <br />
-Thus <script type="math/tex">(y,x) \in \{a\} \times A</script>. It follows <script type="math/tex">(y,x) \in T</script>.</p>
+    <p>Case 2: <span class="kdmath">$y = a$</span>.  <br />
+Thus <span class="kdmath">$(y,x) \in \{a\} \times A$</span>. It follows <span class="kdmath">$(y,x) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">x \ne a \land y \ne a</script>.  <br />
-Thus <script type="math/tex">(x,y) \in A' \times A'</script>. Since <script type="math/tex">T'</script> is total order on <script type="math/tex">A'</script>, it follows <script type="math/tex">(x,y) \in T'</script>. Thus <script type="math/tex">(x,y) \in T</script>.</p>
+    <p>Case 3: <span class="kdmath">$x \ne a \land y \ne a$</span>.  <br />
+Thus <span class="kdmath">$(x,y) \in A' \times A'$</span>. Since <span class="kdmath">$T'$</span> is total order on <span class="kdmath">$A'$</span>, it follows <span class="kdmath">$(x,y) \in T'$</span>. Thus <span class="kdmath">$(x,y) \in T$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all possible cases <script type="math/tex">(x,y) \in T \lor (y,x) \in T</script>.</p>
+<p>Thus from all possible cases <span class="kdmath">$(x,y) \in T \lor (y,x) \in T$</span>.</p>
 
-<p>Thus <script type="math/tex">T</script> is total order.</p>
+<p>Thus <span class="kdmath">$T$</span> is total order.</p>
 
-<p>Now we are left to prove that <script type="math/tex">R \subseteq T</script>.</p>
+<p>Now we are left to prove that <span class="kdmath">$R \subseteq T$</span>.</p>
 
-<p>Suppose <script type="math/tex">x,y \in A</script> such that <script type="math/tex">(x,y) \in R</script>. Thus we have following cases:</p>
+<p>Suppose <span class="kdmath">$x,y \in A$</span> such that <span class="kdmath">$(x,y) \in R$</span>. Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x = a</script>.  <br />
-Thus <script type="math/tex">(x,y) \in \{a\} \times A</script>. It follows <script type="math/tex">(x,y) \in T</script>.</p>
+    <p>Case 1: <span class="kdmath">$x = a$</span>.  <br />
+Thus <span class="kdmath">$(x,y) \in \{a\} \times A$</span>. It follows <span class="kdmath">$(x,y) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \ne a \land y = a</script>.  <br />
-Thus <script type="math/tex">(x,a) \in R</script>. But since <script type="math/tex">a</script> is <script type="math/tex">R-</script>minimal element of <script type="math/tex">A</script>, it follows that <script type="math/tex">(x,a) \notin R</script>. Thus this case <script type="math/tex">x \ne a \land y = a</script> is
+    <p>Case 2: <span class="kdmath">$x \ne a \land y = a$</span>.  <br />
+Thus <span class="kdmath">$(x,a) \in R$</span>. But since <span class="kdmath">$a$</span> is <span class="kdmath">$R-$</span>minimal element of <span class="kdmath">$A$</span>, it follows that <span class="kdmath">$(x,a) \notin R$</span>. Thus this case <span class="kdmath">$x \ne a \land y = a$</span> is
 not possible.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">x \ne a \land y \ne a</script>.  <br />
-Thus <script type="math/tex">(x,y) \in A' \times A'</script>. Since <script type="math/tex">R' = R \cap (A' \times A')</script>, it follows <script type="math/tex">(x,y) \in R'</script>. Since <script type="math/tex">R' \subseteq T' \subseteq T</script>, it follows that
-<script type="math/tex">(x,y) \in T</script>.</p>
+    <p>Case 3: <span class="kdmath">$x \ne a \land y \ne a$</span>.  <br />
+Thus <span class="kdmath">$(x,y) \in A' \times A'$</span>. Since <span class="kdmath">$R' = R \cap (A' \times A')$</span>, it follows <span class="kdmath">$(x,y) \in R'$</span>. Since <span class="kdmath">$R' \subseteq T' \subseteq T$</span>, it follows that
+<span class="kdmath">$(x,y) \in T$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases if <script type="math/tex">(x,y) \in R</script> then <script type="math/tex">(x,y) \in T</script>. It follows that <script type="math/tex">R \subseteq T</script>.</p>
+<p>Thus from all the cases if <span class="kdmath">$(x,y) \in R$</span> then <span class="kdmath">$(x,y) \in T$</span>. It follows that <span class="kdmath">$R \subseteq T$</span>.</p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p>Base Case: Suppose <script type="math/tex">B = \phi</script> and <script type="math/tex">T = R</script>. Clearly <script type="math/tex">R \subseteq T</script>. Since <script type="math/tex">T = R</script>, <script type="math/tex">T</script> is partial order on <script type="math/tex">A</script>. Since <script type="math/tex">B = \phi</script>,
- it follows that <script type="math/tex">\forall x \in B \forall y \in A (xTy \lor yTx)</script> is true.</p>
+<p>Base Case: Suppose <span class="kdmath">$B = \phi$</span> and <span class="kdmath">$T = R$</span>. Clearly <span class="kdmath">$R \subseteq T$</span>. Since <span class="kdmath">$T = R$</span>, <span class="kdmath">$T$</span> is partial order on <span class="kdmath">$A$</span>. Since <span class="kdmath">$B = \phi$</span>,
+ it follows that <span class="kdmath">$\forall x \in B \forall y \in A (xTy \lor yTx)$</span> is true.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose the conclusion is true for any set <script type="math/tex">B \subseteq A</script> with <script type="math/tex">n</script> elements.</p>
+<p>Suppose the conclusion is true for any set <span class="kdmath">$B \subseteq A$</span> with <span class="kdmath">$n$</span> elements.</p>
 
-<p>Now suppose <script type="math/tex">B \subseteq A</script> such that <script type="math/tex">B</script> has <script type="math/tex">n+1</script> elements. Suppose <script type="math/tex">b</script> is an arbitrary element of <script type="math/tex">B</script>. Consider the set <script type="math/tex">B' = B \setminus \{b\}</script>.
-Thus <script type="math/tex">B'</script> has <script type="math/tex">n</script> elements and thus by induction hypothesis, there exist a relation <script type="math/tex">T'</script> such that <script type="math/tex">T'</script> is partial order on <script type="math/tex">A</script> and <script type="math/tex">R \subseteq T'</script> and 
-<script type="math/tex">\forall x \in B' \forall y \in A(xT'y \lor yT'x)</script>. Suppose <script type="math/tex">A_1 = \{a \in A \, \vert \, aT'b \}</script> and <script type="math/tex">A_2 = A \setminus A_1</script>. Now consider the relation
-<script type="math/tex">T = T' \cup (A_1 \times A_2)</script>. Now to prove this step we shall prove the following:</p>
+<p>Now suppose <span class="kdmath">$B \subseteq A$</span> such that <span class="kdmath">$B$</span> has <span class="kdmath">$n+1$</span> elements. Suppose <span class="kdmath">$b$</span> is an arbitrary element of <span class="kdmath">$B$</span>. Consider the set <span class="kdmath">$B' = B \setminus \{b\}$</span>.
+Thus <span class="kdmath">$B'$</span> has <span class="kdmath">$n$</span> elements and thus by induction hypothesis, there exist a relation <span class="kdmath">$T'$</span> such that <span class="kdmath">$T'$</span> is partial order on <span class="kdmath">$A$</span> and <span class="kdmath">$R \subseteq T'$</span> and 
+<span class="kdmath">$\forall x \in B' \forall y \in A(xT'y \lor yT'x)$</span>. Suppose <span class="kdmath">$A_1 = \{a \in A \, \vert \, aT'b \}$</span> and <span class="kdmath">$A_2 = A \setminus A_1$</span>. Now consider the relation
+<span class="kdmath">$T = T' \cup (A_1 \times A_2)$</span>. Now to prove this step we shall prove the following:</p>
 
 <ul>
-  <li><script type="math/tex">T</script> is partial order on <script type="math/tex">A</script>.</li>
-  <li><script type="math/tex">R \subseteq T</script>.</li>
-  <li><script type="math/tex">\forall x \in B \forall y \in A(xTy \lor yTx)</script>.</li>
+  <li><span class="kdmath">$T$</span> is partial order on <span class="kdmath">$A$</span>.</li>
+  <li><span class="kdmath">$R \subseteq T$</span>.</li>
+  <li><span class="kdmath">$\forall x \in B \forall y \in A(xTy \lor yTx)$</span>.</li>
 </ul>
 
-<p>To prove <script type="math/tex">T</script> is partial order on <script type="math/tex">A</script>, we need to prove that it is reflexive, transitive and antisymmetric.</p>
+<p>To prove <span class="kdmath">$T$</span> is partial order on <span class="kdmath">$A$</span>, we need to prove that it is reflexive, transitive and antisymmetric.</p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Since <script type="math/tex">T' \subseteq T</script>, and <script type="math/tex">T'</script> is reflexive, it follows that <script type="math/tex">T</script> is reflexive.</p>
+<p>Since <span class="kdmath">$T' \subseteq T$</span>, and <span class="kdmath">$T'$</span> is reflexive, it follows that <span class="kdmath">$T$</span> is reflexive.</p>
 
 <p><u>Transitive:</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in T \land (y,z) \in T</script>. We have following possible cases:</p>
+<p>Suppose <span class="kdmath">$(x,y) \in T \land (y,z) \in T$</span>. We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in T' \land (y,z) \in T'</script>.    <br />
-Clearly since <script type="math/tex">T'</script> is transitive, <script type="math/tex">(x,z) \in T'</script>. Thus <script type="math/tex">(x,z) \in T</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in T' \land (y,z) \in T'$</span>.    <br />
+Clearly since <span class="kdmath">$T'$</span> is transitive, <span class="kdmath">$(x,z) \in T'$</span>. Thus <span class="kdmath">$(x,z) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in T' \land (y,z) \in A_1 \times A_2</script>.   <br />
-Since <script type="math/tex">(y,z) \in A_1 \times A_2</script>, it follows <script type="math/tex">y \in A_1</script> and <script type="math/tex">z \in A_2</script>. Thus by the definition of <script type="math/tex">A_1</script>, <script type="math/tex">(y,b) \in T'</script>. Since <script type="math/tex">(x,y) \in T'</script>  and 
-<script type="math/tex">(y,b) \in T'</script> and <script type="math/tex">T'</script> is transitive, it follows <script type="math/tex">(x,b) \in T'</script>. Since <script type="math/tex">(x,b) \in T'</script>, then by definition of <script type="math/tex">A_1</script>, <script type="math/tex">x \in A_1</script>. 
-Since <script type="math/tex">x \in A_1</script> and <script type="math/tex">z \in A_2</script>, it follows <script type="math/tex">(x,z) \in A_1 \times A_2</script>. Thus <script type="math/tex">(x,z) \in T</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in T' \land (y,z) \in A_1 \times A_2$</span>.   <br />
+Since <span class="kdmath">$(y,z) \in A_1 \times A_2$</span>, it follows <span class="kdmath">$y \in A_1$</span> and <span class="kdmath">$z \in A_2$</span>. Thus by the definition of <span class="kdmath">$A_1$</span>, <span class="kdmath">$(y,b) \in T'$</span>. Since <span class="kdmath">$(x,y) \in T'$</span>  and 
+<span class="kdmath">$(y,b) \in T'$</span> and <span class="kdmath">$T'$</span> is transitive, it follows <span class="kdmath">$(x,b) \in T'$</span>. Since <span class="kdmath">$(x,b) \in T'$</span>, then by definition of <span class="kdmath">$A_1$</span>, <span class="kdmath">$x \in A_1$</span>. 
+Since <span class="kdmath">$x \in A_1$</span> and <span class="kdmath">$z \in A_2$</span>, it follows <span class="kdmath">$(x,z) \in A_1 \times A_2$</span>. Thus <span class="kdmath">$(x,z) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,z) \in A_1 \times A_2</script>.    <br />
-This case is not possible since <script type="math/tex">y \in A_2</script> and <script type="math/tex">y \in A_1</script>. But <script type="math/tex">A_1</script> and <script type="math/tex">A_2</script> are disjoint by the definition.</p>
+    <p>Case 3: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,z) \in A_1 \times A_2$</span>.    <br />
+This case is not possible since <span class="kdmath">$y \in A_2$</span> and <span class="kdmath">$y \in A_1$</span>. But <span class="kdmath">$A_1$</span> and <span class="kdmath">$A_2$</span> are disjoint by the definition.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,z) \in T'</script>.   <br />
-Thus <script type="math/tex">x \in A_1</script> and <script type="math/tex">y \in A_2</script>. We will prove by contradiction that <script type="math/tex">z \in A_2</script>. We have only two possibilities: either <script type="math/tex">z \in A_1</script> or <script type="math/tex">z \in A_2</script>.
-Suppose <script type="math/tex">z \in A_1</script>. Thus <script type="math/tex">(z,b) \in T'</script>. Since <script type="math/tex">(y,z) \in T'</script> and <script type="math/tex">(z,b) \in T'</script> and <script type="math/tex">T'</script> is transitive, it follows <script type="math/tex">(y,b) \in T'</script>. Since <script type="math/tex">(y,b) \in T'</script>,
- then by definition of <script type="math/tex">A_1</script>, it follows <script type="math/tex">y \in A_1</script>. Since <script type="math/tex">A_1</script> and <script type="math/tex">A_2</script> are disjoint it follows <script type="math/tex">y</script> cant be in both sets <script type="math/tex">A_1</script> and <script type="math/tex">A_2</script>. Thus
- it contradicts our assumption that <script type="math/tex">z \in A_1</script>. Thus <script type="math/tex">z \in A_2</script>. Since <script type="math/tex">x \in A_1</script> and <script type="math/tex">z \in A_2</script>, it follows <script type="math/tex">(x,z) \in A_1 \times A_2</script>. Thus
- <script type="math/tex">(x,z) \in T</script>.</p>
+    <p>Case 4: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,z) \in T'$</span>.   <br />
+Thus <span class="kdmath">$x \in A_1$</span> and <span class="kdmath">$y \in A_2$</span>. We will prove by contradiction that <span class="kdmath">$z \in A_2$</span>. We have only two possibilities: either <span class="kdmath">$z \in A_1$</span> or <span class="kdmath">$z \in A_2$</span>.
+Suppose <span class="kdmath">$z \in A_1$</span>. Thus <span class="kdmath">$(z,b) \in T'$</span>. Since <span class="kdmath">$(y,z) \in T'$</span> and <span class="kdmath">$(z,b) \in T'$</span> and <span class="kdmath">$T'$</span> is transitive, it follows <span class="kdmath">$(y,b) \in T'$</span>. Since <span class="kdmath">$(y,b) \in T'$</span>,
+ then by definition of <span class="kdmath">$A_1$</span>, it follows <span class="kdmath">$y \in A_1$</span>. Since <span class="kdmath">$A_1$</span> and <span class="kdmath">$A_2$</span> are disjoint it follows <span class="kdmath">$y$</span> cant be in both sets <span class="kdmath">$A_1$</span> and <span class="kdmath">$A_2$</span>. Thus
+ it contradicts our assumption that <span class="kdmath">$z \in A_1$</span>. Thus <span class="kdmath">$z \in A_2$</span>. Since <span class="kdmath">$x \in A_1$</span> and <span class="kdmath">$z \in A_2$</span>, it follows <span class="kdmath">$(x,z) \in A_1 \times A_2$</span>. Thus
+ <span class="kdmath">$(x,z) \in T$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all cases <script type="math/tex">(x,z) \in T</script>. Thus <script type="math/tex">T</script> is transitive.</p>
+<p>Thus from all cases <span class="kdmath">$(x,z) \in T$</span>. Thus <span class="kdmath">$T$</span> is transitive.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in T</script> and <script type="math/tex">(y,x) \in T</script>. Thus we have following cases:</p>
+<p>Suppose <span class="kdmath">$(x,y) \in T$</span> and <span class="kdmath">$(y,x) \in T$</span>. Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in T' \land (y,x) \in T'</script>.    <br />
-Since <script type="math/tex">T'</script> is antisymmetric, it follows that <script type="math/tex">x = y</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in T' \land (y,x) \in T'$</span>.    <br />
+Since <span class="kdmath">$T'$</span> is antisymmetric, it follows that <span class="kdmath">$x = y$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in T' \land (y,x) \in A_1 \times A_2</script>.    <br />
-Since <script type="math/tex">y \in A_1</script>, it follows <script type="math/tex">(y,b) \in T'</script>. Since <script type="math/tex">(x,y) \in T'</script> and <script type="math/tex">(y,b) \in T'</script>, it follows <script type="math/tex">(x,b) \in T'</script>. Thus <script type="math/tex">x \in A_1</script>.
-But it contradicts with <script type="math/tex">x \in A_2</script>. Thus this case is not possible.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in T' \land (y,x) \in A_1 \times A_2$</span>.    <br />
+Since <span class="kdmath">$y \in A_1$</span>, it follows <span class="kdmath">$(y,b) \in T'$</span>. Since <span class="kdmath">$(x,y) \in T'$</span> and <span class="kdmath">$(y,b) \in T'$</span>, it follows <span class="kdmath">$(x,b) \in T'$</span>. Thus <span class="kdmath">$x \in A_1$</span>.
+But it contradicts with <span class="kdmath">$x \in A_2$</span>. Thus this case is not possible.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,x) \in T'</script>.    <br />
-Since <script type="math/tex">x \in A_1</script>, it follows <script type="math/tex">(x,b) \in T'</script>. Since <script type="math/tex">(y,x) \in T'</script> and <script type="math/tex">(x,b) \in T'</script>, it follows <script type="math/tex">(y,b) \in T'</script>. Thus <script type="math/tex">y \in A_1</script>.
-But it contradicts with <script type="math/tex">y \in A_2</script>. Thus this case is not possible.</p>
+    <p>Case 3: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,x) \in T'$</span>.    <br />
+Since <span class="kdmath">$x \in A_1$</span>, it follows <span class="kdmath">$(x,b) \in T'$</span>. Since <span class="kdmath">$(y,x) \in T'$</span> and <span class="kdmath">$(x,b) \in T'$</span>, it follows <span class="kdmath">$(y,b) \in T'$</span>. Thus <span class="kdmath">$y \in A_1$</span>.
+But it contradicts with <span class="kdmath">$y \in A_2$</span>. Thus this case is not possible.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,x) \in A_1 \times A_2</script>.    <br />
-This case is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>, thus <script type="math/tex">y</script> can not belong to both <script type="math/tex">A_1</script> and <script type="math/tex">A_2</script>.</p>
+    <p>Case 4: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,x) \in A_1 \times A_2$</span>.    <br />
+This case is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>, thus <span class="kdmath">$y$</span> can not belong to both <span class="kdmath">$A_1$</span> and <span class="kdmath">$A_2$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all possible cases, <script type="math/tex">T</script> is antisymmetric.</p>
+<p>Thus from all possible cases, <span class="kdmath">$T$</span> is antisymmetric.</p>
 
-<p>Since <script type="math/tex">T</script> is reflexive, transitive and antisymmetric, it follows that <script type="math/tex">T</script> is partial order on <script type="math/tex">A</script>.</p>
+<p>Since <span class="kdmath">$T$</span> is reflexive, transitive and antisymmetric, it follows that <span class="kdmath">$T$</span> is partial order on <span class="kdmath">$A$</span>.</p>
 
-<p>Also clearly since <script type="math/tex">T = T' \cup A_1 \times A_2</script> and <script type="math/tex">R \subseteq T'</script>, it follows <script type="math/tex">R \subseteq T</script>.</p>
+<p>Also clearly since <span class="kdmath">$T = T' \cup A_1 \times A_2$</span> and <span class="kdmath">$R \subseteq T'$</span>, it follows <span class="kdmath">$R \subseteq T$</span>.</p>
 
-<p>Now we shall prove the last part: <script type="math/tex">\forall x \in B \forall y \in A(xTy \lor yTx)</script>.</p>
+<p>Now we shall prove the last part: <span class="kdmath">$\forall x \in B \forall y \in A(xTy \lor yTx)$</span>.</p>
 
-<p>Suppose <script type="math/tex">x \in B</script> and <script type="math/tex">y \in A</script>. We have two cases:</p>
+<p>Suppose <span class="kdmath">$x \in B$</span> and <span class="kdmath">$y \in A$</span>. We have two cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x = b</script> and <script type="math/tex">y \in A_1</script>.   <br />
-Since <script type="math/tex">y \in A_1</script>, it follows <script type="math/tex">(y,b) \in T'</script>. Since <script type="math/tex">x = b</script>, it follows <script type="math/tex">(y,x) \in T'</script>. Since <script type="math/tex">T' \subseteq T</script>, it follows <script type="math/tex">(y,x) \in T</script>.</p>
+    <p>Case 1: <span class="kdmath">$x = b$</span> and <span class="kdmath">$y \in A_1$</span>.   <br />
+Since <span class="kdmath">$y \in A_1$</span>, it follows <span class="kdmath">$(y,b) \in T'$</span>. Since <span class="kdmath">$x = b$</span>, it follows <span class="kdmath">$(y,x) \in T'$</span>. Since <span class="kdmath">$T' \subseteq T$</span>, it follows <span class="kdmath">$(y,x) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x = b</script> and <script type="math/tex">y \in A_2</script>.     <br />
-Since <script type="math/tex">b \in A_1</script>, it follows <script type="math/tex">(b,y) \in A_1 \times A_2</script>. Since <script type="math/tex">A_1 \times A_2 \subseteq T</script>, it follows <script type="math/tex">(b,y) \in T</script>. Since <script type="math/tex">x = b</script>, it follows <script type="math/tex">(x,y) \in T</script>.</p>
+    <p>Case 2: <span class="kdmath">$x = b$</span> and <span class="kdmath">$y \in A_2$</span>.     <br />
+Since <span class="kdmath">$b \in A_1$</span>, it follows <span class="kdmath">$(b,y) \in A_1 \times A_2$</span>. Since <span class="kdmath">$A_1 \times A_2 \subseteq T$</span>, it follows <span class="kdmath">$(b,y) \in T$</span>. Since <span class="kdmath">$x = b$</span>, it follows <span class="kdmath">$(x,y) \in T$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">x \ne b</script>.   <br />
-Since <script type="math/tex">x \in B</script> and <script type="math/tex">x \ne b</script>, it follows <script type="math/tex">x \in B'</script>. Thus by induction hypothesis for set <script type="math/tex">B'</script> of <script type="math/tex">n</script> elements, we have <script type="math/tex">xT'y \lor yT'x</script>.
-Since <script type="math/tex">T' \subseteq T</script>, it follows <script type="math/tex">xTy \lor yTx</script>.</p>
+    <p>Case 3: <span class="kdmath">$x \ne b$</span>.   <br />
+Since <span class="kdmath">$x \in B$</span> and <span class="kdmath">$x \ne b$</span>, it follows <span class="kdmath">$x \in B'$</span>. Thus by induction hypothesis for set <span class="kdmath">$B'$</span> of <span class="kdmath">$n$</span> elements, we have <span class="kdmath">$xT'y \lor yT'x$</span>.
+Since <span class="kdmath">$T' \subseteq T$</span>, it follows <span class="kdmath">$xTy \lor yTx$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the possible cases we have <script type="math/tex">xTy \lor yTx</script>. Since <script type="math/tex">x,y</script> are arbitrary, it follows <script type="math/tex">\forall x \in B \forall y \in A(xTy \lor yTx)</script>.</p>
+<p>Thus from all the possible cases we have <span class="kdmath">$xTy \lor yTx$</span>. Since <span class="kdmath">$x,y$</span> are arbitrary, it follows <span class="kdmath">$\forall x \in B \forall y \in A(xTy \lor yTx)$</span>.</p>
 
 <hr />
 
@@ -1407,34 +1408,34 @@ Since <script type="math/tex">T' \subseteq T</script>, it follows <script type="
 
 <p>Base Case:</p>
 
-<p>Suppose <script type="math/tex">B \subseteq A</script> and it contains only one element say <script type="math/tex">a</script>. Thus clearly <script type="math/tex">\forall x \in B(aRx)</script> is true. Thus <script type="math/tex">a</script> is the <script type="math/tex">R</script>-smallest element.</p>
+<p>Suppose <span class="kdmath">$B \subseteq A$</span> and it contains only one element say <span class="kdmath">$a$</span>. Thus clearly <span class="kdmath">$\forall x \in B(aRx)$</span> is true. Thus <span class="kdmath">$a$</span> is the <span class="kdmath">$R$</span>-smallest element.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose if <script type="math/tex">B \subseteq A</script> contains <script type="math/tex">n</script> elements then conclusion is true i.e. there exist a <script type="math/tex">R</script>-smallest element of <script type="math/tex">B</script>.</p>
+<p>Suppose if <span class="kdmath">$B \subseteq A$</span> contains <span class="kdmath">$n$</span> elements then conclusion is true i.e. there exist a <span class="kdmath">$R$</span>-smallest element of <span class="kdmath">$B$</span>.</p>
 
-<p>Now suppose <script type="math/tex">B \subseteq A</script> and it contains <script type="math/tex">n+1</script> elements. Suppose <script type="math/tex">b</script> is arbitrary element of <script type="math/tex">B</script> and <script type="math/tex">B' = B \setminus \{b\}</script>.
-Thus <script type="math/tex">B'</script> contains <script type="math/tex">n</script> elements. Thus by induction hypothesis, <script type="math/tex">B'</script> has a <script type="math/tex">R</script>-smallest element say <script type="math/tex">s</script>.</p>
+<p>Now suppose <span class="kdmath">$B \subseteq A$</span> and it contains <span class="kdmath">$n+1$</span> elements. Suppose <span class="kdmath">$b$</span> is arbitrary element of <span class="kdmath">$B$</span> and <span class="kdmath">$B' = B \setminus \{b\}$</span>.
+Thus <span class="kdmath">$B'$</span> contains <span class="kdmath">$n$</span> elements. Thus by induction hypothesis, <span class="kdmath">$B'$</span> has a <span class="kdmath">$R$</span>-smallest element say <span class="kdmath">$s$</span>.</p>
 
-<p>Since <script type="math/tex">R</script> is total order on <script type="math/tex">A</script>, we have following possible cases:</p>
+<p>Since <span class="kdmath">$R$</span> is total order on <span class="kdmath">$A$</span>, we have following possible cases:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">bRs</script>.   <br />
- Suppose <script type="math/tex">x \in B</script>. Now if <script type="math/tex">x \ne b</script> then <script type="math/tex">x \in B'</script>. Since <script type="math/tex">s</script> is smallest element in <script type="math/tex">B'</script>, it follows <script type="math/tex">sRx</script>. Since <script type="math/tex">bRs</script> and <script type="math/tex">sRx</script>,
- it follows <script type="math/tex">bRx</script>.   <br />
- Now suppose if <script type="math/tex">x = b</script>. Since <script type="math/tex">R</script> is total order, it follows <script type="math/tex">bRb</script>. Since <script type="math/tex">x = b</script>, it follows <script type="math/tex">bRx</script>.   <br />
- Thus in either case, <script type="math/tex">bRx</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">b</script> is the <script type="math/tex">R</script>-smallest element of <script type="math/tex">B</script>.</p>
+    <p><span class="kdmath">$bRs$</span>.   <br />
+ Suppose <span class="kdmath">$x \in B$</span>. Now if <span class="kdmath">$x \ne b$</span> then <span class="kdmath">$x \in B'$</span>. Since <span class="kdmath">$s$</span> is smallest element in <span class="kdmath">$B'$</span>, it follows <span class="kdmath">$sRx$</span>. Since <span class="kdmath">$bRs$</span> and <span class="kdmath">$sRx$</span>,
+ it follows <span class="kdmath">$bRx$</span>.   <br />
+ Now suppose if <span class="kdmath">$x = b$</span>. Since <span class="kdmath">$R$</span> is total order, it follows <span class="kdmath">$bRb$</span>. Since <span class="kdmath">$x = b$</span>, it follows <span class="kdmath">$bRx$</span>.   <br />
+ Thus in either case, <span class="kdmath">$bRx$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$b$</span> is the <span class="kdmath">$R$</span>-smallest element of <span class="kdmath">$B$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">sRb</script>.    <br />
- Suppose <script type="math/tex">x \in B</script>. Now if <script type="math/tex">x \ne b</script> then <script type="math/tex">x \in B'</script>. Since <script type="math/tex">s</script> is smallest element in <script type="math/tex">B'</script>, it follows <script type="math/tex">sRx</script>.    <br />
- Now for the case if <script type="math/tex">x = b</script>, then clearly <script type="math/tex">sRb</script> is equivalent to <script type="math/tex">sRx</script>.   <br />
- Thus from either case <script type="math/tex">sRx</script>. Since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">s</script> is the smallest element of <script type="math/tex">B</script>.</p>
+    <p><span class="kdmath">$sRb$</span>.    <br />
+ Suppose <span class="kdmath">$x \in B$</span>. Now if <span class="kdmath">$x \ne b$</span> then <span class="kdmath">$x \in B'$</span>. Since <span class="kdmath">$s$</span> is smallest element in <span class="kdmath">$B'$</span>, it follows <span class="kdmath">$sRx$</span>.    <br />
+ Now for the case if <span class="kdmath">$x = b$</span>, then clearly <span class="kdmath">$sRb$</span> is equivalent to <span class="kdmath">$sRx$</span>.   <br />
+ Thus from either case <span class="kdmath">$sRx$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$s$</span> is the smallest element of <span class="kdmath">$B$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all possible cases, there exist an smallest element of <script type="math/tex">B</script>.</p>
+<p>Thus from all possible cases, there exist an smallest element of <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
@@ -1442,44 +1443,44 @@ Thus <script type="math/tex">B'</script> contains <script type="math/tex">n</scr
 
 <p>Base Case:</p>
 
-<p>Suppose <script type="math/tex">B \subseteq A</script> such that it contains only one element say <script type="math/tex">x</script>. Since <script type="math/tex">R</script> is reflexive, <script type="math/tex">(x,x) \in R</script>. It follows <script type="math/tex">(x,x) \in R \circ R</script>.
-Since <script type="math/tex">x</script> is the only element in <script type="math/tex">B</script>, it follows <script type="math/tex">\forall y \in B((x,y) in R \circ R</script>.</p>
+<p>Suppose <span class="kdmath">$B \subseteq A$</span> such that it contains only one element say <span class="kdmath">$x$</span>. Since <span class="kdmath">$R$</span> is reflexive, <span class="kdmath">$(x,x) \in R$</span>. It follows <span class="kdmath">$(x,x) \in R \circ R$</span>.
+Since <span class="kdmath">$x$</span> is the only element in <span class="kdmath">$B$</span>, it follows <span class="kdmath">$\forall y \in B((x,y) in R \circ R$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose conclusion is true if <script type="math/tex">B \subseteq A</script> such that it contains <script type="math/tex">n</script> elements.</p>
+<p>Suppose conclusion is true if <span class="kdmath">$B \subseteq A$</span> such that it contains <span class="kdmath">$n$</span> elements.</p>
 
-<p>Now consider <script type="math/tex">B \subseteq A</script> consisiting of <script type="math/tex">n+1</script> elements. Suppose <script type="math/tex">b \in B</script> and <script type="math/tex">B' = B \setminus \{b \}</script>. Thus <script type="math/tex">B'</script> consists of <script type="math/tex">n</script> elements.
-Thus by induction hypothesis, there exist some <script type="math/tex">x \in B'</script> such that <script type="math/tex">\forall y \in B'((x,y) \in R \circ R)</script>. Now we have following possible cases:</p>
+<p>Now consider <span class="kdmath">$B \subseteq A$</span> consisiting of <span class="kdmath">$n+1$</span> elements. Suppose <span class="kdmath">$b \in B$</span> and <span class="kdmath">$B' = B \setminus \{b \}$</span>. Thus <span class="kdmath">$B'$</span> consists of <span class="kdmath">$n$</span> elements.
+Thus by induction hypothesis, there exist some <span class="kdmath">$x \in B'$</span> such that <span class="kdmath">$\forall y \in B'((x,y) \in R \circ R)$</span>. Now we have following possible cases:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">(x,b) \in R \circ R</script>.    <br />
-Thus clearly <script type="math/tex">\forall y \in B((x,y) \in R \circ R)</script> is true. Thus there exist <script type="math/tex">x \in B</script> such that <script type="math/tex">\forall y \in B((x,y) \in R \circ R)</script>.</p>
+    <p><span class="kdmath">$(x,b) \in R \circ R$</span>.    <br />
+Thus clearly <span class="kdmath">$\forall y \in B((x,y) \in R \circ R)$</span> is true. Thus there exist <span class="kdmath">$x \in B$</span> such that <span class="kdmath">$\forall y \in B((x,y) \in R \circ R)$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">(x,b) \notin R \circ R</script>.    <br />
-Suppose <script type="math/tex">y \in B</script>. Now either <script type="math/tex">y = b</script> or <script type="math/tex">y \ne b</script>. If <script type="math/tex">y = b</script>, then since <script type="math/tex">R</script> is reflexive, <script type="math/tex">(b,y) = (b,b) \in R \circ R</script>.</p>
+    <p><span class="kdmath">$(x,b) \notin R \circ R$</span>.    <br />
+Suppose <span class="kdmath">$y \in B$</span>. Now either <span class="kdmath">$y = b$</span> or <span class="kdmath">$y \ne b$</span>. If <span class="kdmath">$y = b$</span>, then since <span class="kdmath">$R$</span> is reflexive, <span class="kdmath">$(b,y) = (b,b) \in R \circ R$</span>.</p>
   </li>
 </ul>
 
-<p>Now for the case when <script type="math/tex">y \ne b</script>, then <script type="math/tex">y \in B'</script>. Thus <script type="math/tex">(x,y) \in R \circ R</script>. Thus there exist some element <script type="math/tex">z</script> such that <script type="math/tex">(x,z) \in R</script>
-  and <script type="math/tex">(z,y) \in R</script>. Since we are given that <script type="math/tex">\forall x \in A \forall y \in B(xRy \lor yRx)</script>, it follows either <script type="math/tex">zRb</script> or <script type="math/tex">bRz</script>. Suppose
-  <script type="math/tex">(z,b) \in R</script>. Then since <script type="math/tex">(x,z) \in R</script> and <script type="math/tex">(z,b) \in R</script>, it follows <script type="math/tex">(x,b) \in R \circ R</script>. But <script type="math/tex">(x,b) \notin R \circ R</script>. Thus
- the assumption  <script type="math/tex">(z,b) \in R</script> is wrong. Thus <script type="math/tex">(b,z) \in R</script>. Since <script type="math/tex">(b,z) \in R</script> and <script type="math/tex">(z,y) \in R</script>, it follows <script type="math/tex">(b,y) \in R \circ R</script>.</p>
+<p>Now for the case when <span class="kdmath">$y \ne b$</span>, then <span class="kdmath">$y \in B'$</span>. Thus <span class="kdmath">$(x,y) \in R \circ R$</span>. Thus there exist some element <span class="kdmath">$z$</span> such that <span class="kdmath">$(x,z) \in R$</span>
+  and <span class="kdmath">$(z,y) \in R$</span>. Since we are given that <span class="kdmath">$\forall x \in A \forall y \in B(xRy \lor yRx)$</span>, it follows either <span class="kdmath">$zRb$</span> or <span class="kdmath">$bRz$</span>. Suppose
+  <span class="kdmath">$(z,b) \in R$</span>. Then since <span class="kdmath">$(x,z) \in R$</span> and <span class="kdmath">$(z,b) \in R$</span>, it follows <span class="kdmath">$(x,b) \in R \circ R$</span>. But <span class="kdmath">$(x,b) \notin R \circ R$</span>. Thus
+ the assumption  <span class="kdmath">$(z,b) \in R$</span> is wrong. Thus <span class="kdmath">$(b,z) \in R$</span>. Since <span class="kdmath">$(b,z) \in R$</span> and <span class="kdmath">$(z,y) \in R$</span>, it follows <span class="kdmath">$(b,y) \in R \circ R$</span>.</p>
 
-<p>Since <script type="math/tex">y</script> is arbitrary, it follows <script type="math/tex">\forall y \in B((b,y) \in R \circ R)</script>.</p>
+<p>Since <span class="kdmath">$y$</span> is arbitrary, it follows <span class="kdmath">$\forall y \in B((b,y) \in R \circ R)$</span>.</p>
 
-<p>Thus from both cases, there exist some element <script type="math/tex">p \in B</script> such that <script type="math/tex">\forall y \in B((p,y) \in R \circ R)</script> is true.</p>
+<p>Thus from both cases, there exist some element <span class="kdmath">$p \in B$</span> such that <span class="kdmath">$\forall y \in B((p,y) \in R \circ R)$</span> is true.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">A = B =</script> the set of contestants.</p>
+<p>Suppose <span class="kdmath">$A = B =$</span> the set of contestants.</p>
 
-<p>Suppose <script type="math/tex">R = \{(x, y) \in A \times A \, \vert \, x \text{ beats } y \} \cup i_A</script>. Clearly <script type="math/tex">\forall x \in A \forall y \in B(xRy \lor yRx)</script>. Thus
-we can apply part(a). Thus there exist a contestant say <script type="math/tex">x</script> such that <script type="math/tex">\forall x \in B((b,x) \in R \circ R)</script>.</p>
+<p>Suppose <span class="kdmath">$R = \{(x, y) \in A \times A \, \vert \, x \text{ beats } y \} \cup i_A$</span>. Clearly <span class="kdmath">$\forall x \in A \forall y \in B(xRy \lor yRx)$</span>. Thus
+we can apply part(a). Thus there exist a contestant say <span class="kdmath">$x$</span> such that <span class="kdmath">$\forall x \in B((b,x) \in R \circ R)$</span>.</p>
 
-<p>Clearly <script type="math/tex">x</script> is an excellent contestant.</p>
+<p>Clearly <span class="kdmath">$x$</span> is an excellent contestant.</p>
 
 <hr />
 
@@ -1487,28 +1488,28 @@ we can apply part(a). Thus there exist a contestant say <script type="math/tex">
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, we have: <script type="math/tex">F_1 = 2^{2^1} + 1 = 5</script>. Also <script type="math/tex">F_1 = F_0 + 2 = (2^{2^0} + 1) + 2 = 3+2 = 5</script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+<p>For <span class="kdmath">$n = 1$</span>, we have: <span class="kdmath">$F_1 = 2^{2^1} + 1 = 5$</span>. Also <span class="kdmath">$F_1 = F_0 + 2 = (2^{2^0} + 1) + 2 = 3+2 = 5$</span>. Thus <span class="kdmath">$P(1)$</span> is true.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose for <script type="math/tex">n</script> theorem is correct. Thus <script type="math/tex">F_n = (F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1}) + 2</script> is true.
-Thus <script type="math/tex">F_n - 2 = F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1}</script>.</p>
+<p>Suppose for <span class="kdmath">$n$</span> theorem is correct. Thus <span class="kdmath">$F_n = (F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1}) + 2$</span> is true.
+Thus <span class="kdmath">$F_n - 2 = F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1}$</span>.</p>
 
-<p>Now consider for <script type="math/tex">n+1</script>,</p>
+<p>Now consider for <span class="kdmath">$n+1$</span>,</p>
 
-<p><script type="math/tex">F_{n+1} = 2^{2^{n+1}} + 1</script>.   <br />
-<script type="math/tex">\Rightarrow F_{n+1} = 2^{2 \cdot 2^n} + 1</script>.   <br />
-<script type="math/tex">\Rightarrow F_{n+1} = 2^{2^n} \cdot 2^{2^n} + 1</script>.   <br />
-Since <script type="math/tex">F_n = 2^{2^n}</script>,    <br />
-<script type="math/tex">\Rightarrow F_{n+1} =  (F_n - 1) \cdot (F_n - 1) + 1</script>.   <br />
-<script type="math/tex">\Rightarrow F_{n+1} =  {F_n}^2 - 2F_n + 1 + 1</script>.   <br />
-<script type="math/tex">\Rightarrow F_{n+1} =  (F_n - 2) \cdot F_n + 2</script>.   <br />
-But by induction hypothesis, <script type="math/tex">F_n - 2 = (F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1})</script>.       <br />
-<script type="math/tex">\Rightarrow F_{n+1} =  (F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1}) \cdot F_n + 2</script>.   <br />
-<script type="math/tex">\Rightarrow F_{n+1} =  F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1} \cdot F_n + 2</script>.</p>
+<p><span class="kdmath">$F_{n+1} = 2^{2^{n+1}} + 1$</span>.   <br />
+<span class="kdmath">$\Rightarrow F_{n+1} = 2^{2 \cdot 2^n} + 1$</span>.   <br />
+<span class="kdmath">$\Rightarrow F_{n+1} = 2^{2^n} \cdot 2^{2^n} + 1$</span>.   <br />
+Since <span class="kdmath">$F_n = 2^{2^n}$</span>,    <br />
+<span class="kdmath">$\Rightarrow F_{n+1} =  (F_n - 1) \cdot (F_n - 1) + 1$</span>.   <br />
+<span class="kdmath">$\Rightarrow F_{n+1} =  {F_n}^2 - 2F_n + 1 + 1$</span>.   <br />
+<span class="kdmath">$\Rightarrow F_{n+1} =  (F_n - 2) \cdot F_n + 2$</span>.   <br />
+But by induction hypothesis, <span class="kdmath">$F_n - 2 = (F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1})$</span>.       <br />
+<span class="kdmath">$\Rightarrow F_{n+1} =  (F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1}) \cdot F_n + 2$</span>.   <br />
+<span class="kdmath">$\Rightarrow F_{n+1} =  F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1} \cdot F_n + 2$</span>.</p>
 
-<p>Thus <script type="math/tex">F_{n+1} = F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1} \cdot F_n + 2</script>.   <br />
-Thus <script type="math/tex">P(n+1)</script> is true.</p>
+<p>Thus <span class="kdmath">$F_{n+1} = F_0 \cdot F_1 \cdot F_2 \cdot \cdot \cdot F_{n-1} \cdot F_n + 2$</span>.   <br />
+Thus <span class="kdmath">$P(n+1)$</span> is true.</p>
 
 <hr />
 
@@ -1516,18 +1517,18 @@ Thus <script type="math/tex">P(n+1)</script> is true.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, clearly <script type="math/tex">\vert a_1 \vert \le \vert a_1 \vert</script>.</p>
+<p>For <span class="kdmath">$n = 1$</span>, clearly <span class="kdmath">$\vert a_1 \vert \le \vert a_1 \vert$</span>.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose <script type="math/tex">\vert a_1 + a_2 + \cdot \cdot \cdot a_n \vert \; \le \; \vert a_1 \vert + \vert a_2 \vert + \cdot \cdot \cdot + \vert a_n \vert</script></p>
+<p>Suppose <span class="kdmath">$\vert a_1 + a_2 + \cdot \cdot \cdot a_n \vert \; \le \; \vert a_1 \vert + \vert a_2 \vert + \cdot \cdot \cdot + \vert a_n \vert$</span></p>
 
-<p>Now consider <script type="math/tex">\vert a_1 + a_2 + \cdot \cdot \cdot a_n + a_{n+1} \vert</script>. By triangle inequality:    <br />
-<script type="math/tex">\vert a_1 + a_2 + \cdot \cdot \cdot a_n + a_{n+1} \vert  \; \le \; \vert a_1 + a_2 + \cdot \cdot \cdot a_n \vert + \vert a_{n+1} \vert</script>.     <br />
+<p>Now consider <span class="kdmath">$\vert a_1 + a_2 + \cdot \cdot \cdot a_n + a_{n+1} \vert$</span>. By triangle inequality:    <br />
+<span class="kdmath">$\vert a_1 + a_2 + \cdot \cdot \cdot a_n + a_{n+1} \vert  \; \le \; \vert a_1 + a_2 + \cdot \cdot \cdot a_n \vert + \vert a_{n+1} \vert$</span>.     <br />
 Thus by induction hypothesis:     <br />
-<script type="math/tex">\vert a_1 + a_2 + \cdot \cdot \cdot a_n + a_{n+1} \vert \; \le \; \vert a_1 \vert + \vert a_2 \vert + \cdot \cdot \cdot + \vert a_n \vert + \vert a_{n+1} \vert</script>.</p>
+<span class="kdmath">$\vert a_1 + a_2 + \cdot \cdot \cdot a_n + a_{n+1} \vert \; \le \; \vert a_1 \vert + \vert a_2 \vert + \cdot \cdot \cdot + \vert a_n \vert + \vert a_{n+1} \vert$</span>.</p>
 
-<p>Thus <script type="math/tex">P(n+1)</script> is true if <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus <span class="kdmath">$P(n+1)$</span> is true if <span class="kdmath">$P(n)$</span> is true.</p>
 
 <hr />
 
@@ -1535,41 +1536,39 @@ Thus by induction hypothesis:     <br />
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">a,b</script> are positive real numbers. It follows that <script type="math/tex">(a-b)^2 > 0</script>. Thus <script type="math/tex">a^2 + b^2 - 2ab > 0</script>.   <br />
-Or <script type="math/tex">a^2 + b^2 > 2ab</script>. We know that <script type="math/tex">ab > 0</script>. Dividing both sides by <script type="math/tex">ab</script>, we get:   <br />
- <script type="math/tex">\Rightarrow a/b + b/a > 2</script>.</p>
+<p>Suppose <span class="kdmath">$a,b$</span> are positive real numbers. It follows that <span class="kdmath">$(a-b)^2 > 0$</span>. Thus <span class="kdmath">$a^2 + b^2 - 2ab > 0$</span>.   <br />
+Or <span class="kdmath">$a^2 + b^2 > 2ab$</span>. We know that <span class="kdmath">$ab > 0$</span>. Dividing both sides by <span class="kdmath">$ab$</span>, we get:   <br />
+ <span class="kdmath">$\Rightarrow a/b + b/a > 2$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">% <![CDATA[
-0 < a \le b \le c %]]></script>. Thus <script type="math/tex">(c-a) \ge 0</script> and <script type="math/tex">(c-b) \ge 0</script>. Thus:   <br />
-<script type="math/tex">(c-a)(c-b) \ge 0</script>.   <br />
-<script type="math/tex">\Rightarrow c^2 -cb -ac + ab \ge 0</script>. Dividing by <script type="math/tex">ca</script>, we get:   <br />
-<script type="math/tex">\Rightarrow c/a - b/a -1 + b/c \ge 0</script>.    <br />
-<script type="math/tex">\Rightarrow b/c + c/a - b/a \ge 1</script>.</p>
+<p>Suppose <span class="kdmath">$0 < a \le b \le c$</span>. Thus <span class="kdmath">$(c-a) \ge 0$</span> and <span class="kdmath">$(c-b) \ge 0$</span>. Thus:   <br />
+<span class="kdmath">$(c-a)(c-b) \ge 0$</span>.   <br />
+<span class="kdmath">$\Rightarrow c^2 -cb -ac + ab \ge 0$</span>. Dividing by <span class="kdmath">$ca$</span>, we get:   <br />
+<span class="kdmath">$\Rightarrow c/a - b/a -1 + b/c \ge 0$</span>.    <br />
+<span class="kdmath">$\Rightarrow b/c + c/a - b/a \ge 1$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 2</script>, we have <script type="math/tex">P(2) = a_1/a_2 + a_2/a_1</script>. Clearly from part(a) we can say that <script type="math/tex">a_1/a_2 + a_2/a_1 \ge 2</script>.</p>
+<p>For <span class="kdmath">$n = 2$</span>, we have <span class="kdmath">$P(2) = a_1/a_2 + a_2/a_1$</span>. Clearly from part(a) we can say that <span class="kdmath">$a_1/a_2 + a_2/a_1 \ge 2$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Now suppose <script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_1 \ge n</script>.</p>
+<p>Now suppose <span class="kdmath">$P(n)$</span> is true. Thus <span class="kdmath">$a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_1 \ge n$</span>.</p>
 
-<p>Now consider <script type="math/tex">a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_{n+1} + a_{n+1}/a_1</script>. This is equivalent to:</p>
+<p>Now consider <span class="kdmath">$a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_{n+1} + a_{n+1}/a_1$</span>. This is equivalent to:</p>
 
-<p><script type="math/tex">a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_{n+1} + a_{n+1}/a_1 + a_n/a_1 - a_n/a_1</script>.  <br />
-<script type="math/tex">\Rightarrow a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_1 + a_n/a_{n+1} + a_{n+1}/a_1 - a_n/a_1</script>.  <br />
-Using induction hypothesis for <script type="math/tex">a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_1 \ge n</script>, we get:   <br />
-<script type="math/tex">\Rightarrow \ge n + a_n/a_1 + a_n/a_{n+1} + a_{n+1}/a_1 - a_n/a_1</script>.   <br />
-Since <script type="math/tex">% <![CDATA[
-0 < a_1 < a_n < a_{n+1} %]]></script>. By part(b) of the solution <script type="math/tex">a_n/a_{n+1} + a_{n+1}/a_1 - a_n/a_1 \ge 1</script>. Thus:   <br />
-<script type="math/tex">\Rightarrow \ge n + 1</script>.</p>
+<p><span class="kdmath">$a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_{n+1} + a_{n+1}/a_1 + a_n/a_1 - a_n/a_1$</span>.  <br />
+<span class="kdmath">$\Rightarrow a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_1 + a_n/a_{n+1} + a_{n+1}/a_1 - a_n/a_1$</span>.  <br />
+Using induction hypothesis for <span class="kdmath">$a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_1 \ge n$</span>, we get:   <br />
+<span class="kdmath">$\Rightarrow \ge n + a_n/a_1 + a_n/a_{n+1} + a_{n+1}/a_1 - a_n/a_1$</span>.   <br />
+Since <span class="kdmath">$0 < a_1 < a_n < a_{n+1}$</span>. By part(b) of the solution <span class="kdmath">$a_n/a_{n+1} + a_{n+1}/a_1 - a_n/a_1 \ge 1$</span>. Thus:   <br />
+<span class="kdmath">$\Rightarrow \ge n + 1$</span>.</p>
 
-<p>Thus <script type="math/tex">a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_{n+1} + a_{n+1}/a_1 \; \ge \; n+1</script>. Thus <script type="math/tex">P(n+1)</script> is true if
-<script type="math/tex">P(n)</script> is true.</p>
+<p>Thus <span class="kdmath">$a_1/a_2 + a_2/a_3 + \cdot \cdot \cdot + a_{n-1}/a_n + a_n/a_{n+1} + a_{n+1}/a_1 \; \ge \; n+1$</span>. Thus <span class="kdmath">$P(n+1)$</span> is true if
+<span class="kdmath">$P(n)$</span> is true.</p>
 
 <hr />
 
@@ -1577,109 +1576,101 @@ Since <script type="math/tex">% <![CDATA[
 
 <p><strong>(a)</strong></p>
 
-<p>We know that <script type="math/tex">{(a-b)}^2 \ge 0</script>. Thus:</p>
+<p>We know that <span class="kdmath">${(a-b)}^2 \ge 0$</span>. Thus:</p>
 
-<p><script type="math/tex">\Rightarrow a^2 + b^2 -2ab \ge 0</script>.   <br />
-<script type="math/tex">\Rightarrow a^2 + b^2 -2ab + 4ab \ge 0 + 4ab</script>.   <br />
-<script type="math/tex">\Rightarrow a^2 + b^2 +2ab \ge 4ab</script>.   <br />
-<script type="math/tex">\Rightarrow {(a+b)}^2 \ge 4ab</script>.   <br />
-<script type="math/tex">\Rightarrow {(a+b)}^2/4 \ge ab</script>.   <br />
-<script type="math/tex">\Rightarrow {((a+b)/2)}^2 \ge ab</script>.   <br />
-Since <script type="math/tex">a, b > 0</script>, it follows <script type="math/tex">ab > 0</script>. Thus:   <br />
-<script type="math/tex">\Rightarrow (a+b)/2 \ge \sqrt {ab}</script>.</p>
+<p><span class="kdmath">$\Rightarrow a^2 + b^2 -2ab \ge 0$</span>.   <br />
+<span class="kdmath">$\Rightarrow a^2 + b^2 -2ab + 4ab \ge 0 + 4ab$</span>.   <br />
+<span class="kdmath">$\Rightarrow a^2 + b^2 +2ab \ge 4ab$</span>.   <br />
+<span class="kdmath">$\Rightarrow {(a+b)}^2 \ge 4ab$</span>.   <br />
+<span class="kdmath">$\Rightarrow {(a+b)}^2/4 \ge ab$</span>.   <br />
+<span class="kdmath">$\Rightarrow {((a+b)/2)}^2 \ge ab$</span>.   <br />
+Since <span class="kdmath">$a, b > 0$</span>, it follows <span class="kdmath">$ab > 0$</span>. Thus:   <br />
+<span class="kdmath">$\Rightarrow (a+b)/2 \ge \sqrt {ab}$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Base Case:</p>
 
-<p>Clearly for <script type="math/tex">n = 2</script> from part(a) theorem is correct.</p>
+<p>Clearly for <span class="kdmath">$n = 2$</span> from part(a) theorem is correct.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">2^n</script>. Thus <script type="math/tex">\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n}} {2^n} \ge \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{2^n}}</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$2^n$</span>. Thus <span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n}} {2^n} \ge \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{2^n}}$</span>.</p>
 
-<p>Now consider the sum <script type="math/tex">\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n} + a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n + 2^n}</script>.</p>
+<p>Now consider the sum <span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n} + a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n + 2^n}$</span>.</p>
 
-<p>By induction hypothesis, clearly <script type="math/tex">\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n}} {2^n} \ge \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{2^n}}</script>.</p>
+<p>By induction hypothesis, clearly <span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n}} {2^n} \ge \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{2^n}}$</span>.</p>
 
-<p>Also by induction hypothesis, <script type="math/tex">\frac {a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n} \ge \sqrt[2^n] {a_{2^n+1} \cdot a_{2^n+2} \cdot \cdot \cdot a_{2^n+2^n}}</script>.</p>
+<p>Also by induction hypothesis, <span class="kdmath">$\frac {a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n} \ge \sqrt[2^n] {a_{2^n+1} \cdot a_{2^n+2} \cdot \cdot \cdot a_{2^n+2^n}}$</span>.</p>
 
 <p>Thus we have:</p>
 
-<p><script type="math/tex">\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n} + a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n + 2^n} \ge \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{2^n}} + \sqrt[2^n] {a_{2^n+1} \cdot a_{2^n+2} \cdot \cdot \cdot a_{2^n+2^n}}</script>.</p>
+<p><span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n} + a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n + 2^n} \ge \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{2^n}} + \sqrt[2^n] {a_{2^n+1} \cdot a_{2^n+2} \cdot \cdot \cdot a_{2^n+2^n}}$</span>.</p>
 
-<p>Suppose <script type="math/tex">p = \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n}</script> and <script type="math/tex">q = \sqrt[2^n] {a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^n+2^n}}</script>.</p>
+<p>Suppose <span class="kdmath">$p = \sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n}$</span> and <span class="kdmath">$q = \sqrt[2^n] {a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^n+2^n}}$</span>.</p>
 
-<p>Thus <script type="math/tex">p,q > 0</script>, it follows from part(a) that <script type="math/tex">p + q \ge 2 \sqrt {pq}</script>.</p>
+<p>Thus <span class="kdmath">$p,q > 0$</span>, it follows from part(a) that <span class="kdmath">$p + q \ge 2 \sqrt {pq}$</span>.</p>
 
 <p>It follows:</p>
 
-<p><script type="math/tex">\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n} + a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n + 2^n} \ge p + q</script>.   <br />
-<script type="math/tex">\ge 2 \sqrt {pq}</script>.    <br />
-<script type="math/tex">= 2 \sqrt {\sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n} \cdot \sqrt[2^n] {a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^n+2^n}} }</script>.   <br />
-<script type="math/tex">= 2 \cdot \sqrt[2^{n+1}] {a_1 \cdot a_2 \cdot \cdot \cdot a_n \cdot a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^n+2^n} }</script>.   <br />
-<script type="math/tex">= 2 \cdot \sqrt[2^{n+1}] {a_1 \cdot a_2 \cdot \cdot \cdot a_n \cdot a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^{n+1}} }</script>.   <br />
-<script type="math/tex">\ge \sqrt[2^{n+1}] {a_1 \cdot a_2 \cdot \cdot \cdot a_n \cdot a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^{n+1}} }</script>.</p>
+<p><span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{2^n} + a_{2^n+1} + a_{2^n+2} + \cdot \cdot \cdot + a_{2^n + 2^n}} {2^n + 2^n} \ge p + q$</span>.   <br />
+<span class="kdmath">$\ge 2 \sqrt {pq}$</span>.    <br />
+<span class="kdmath">$= 2 \sqrt {\sqrt[2^n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n} \cdot \sqrt[2^n] {a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^n+2^n}} }$</span>.   <br />
+<span class="kdmath">$= 2 \cdot \sqrt[2^{n+1}] {a_1 \cdot a_2 \cdot \cdot \cdot a_n \cdot a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^n+2^n} }$</span>.   <br />
+<span class="kdmath">$= 2 \cdot \sqrt[2^{n+1}] {a_1 \cdot a_2 \cdot \cdot \cdot a_n \cdot a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^{n+1}} }$</span>.   <br />
+<span class="kdmath">$\ge \sqrt[2^{n+1}] {a_1 \cdot a_2 \cdot \cdot \cdot a_n \cdot a^{2^n+1} \cdot a^{2^n+1} \cdot \cdot \cdot a^{2^{n+1}} }$</span>.</p>
 
-<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus <span class="kdmath">$P(n+1)$</span> is also true if <span class="kdmath">$P(n)$</span> is true.</p>
 
 <p><strong>(c)</strong></p>
 
 <p>Base Case:</p>
 
-<p>This directly follows from the assumption in the problem at <script type="math/tex">n = n_0</script>. Thus:</p>
+<p>This directly follows from the assumption in the problem at <span class="kdmath">$n = n_0$</span>. Thus:</p>
 
-<p><script type="math/tex">% <![CDATA[
-\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n_0}} {n_0} < \sqrt[n_0] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n_0}} %]]></script>.</p>
+<p><span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n_0}} {n_0} < \sqrt[n_0] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n_0}}$</span>.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is true for <script type="math/tex">n > n_0</script>. Thus <script type="math/tex">% <![CDATA[
-\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n}} {n} < \sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n}} %]]></script>.</p>
+<p>Suppose theorem is true for <span class="kdmath">$n > n_0$</span>. Thus <span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n}} {n} < \sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n}}$</span>.</p>
 
-<p>Now suppose <script type="math/tex">m = \frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n}} {n}</script> and <script type="math/tex">a_{n+1} = m</script>.</p>
+<p>Now suppose <span class="kdmath">$m = \frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n}} {n}$</span> and <span class="kdmath">$a_{n+1} = m$</span>.</p>
 
-<p>Thus <script type="math/tex">% <![CDATA[
-m < \sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n}} %]]></script>.  <br />
-Or <script type="math/tex">% <![CDATA[
-m^n < a_1 \cdot a_2 \cdot \cdot \cdot a_{n} %]]></script>.   <br />
-Or <script type="math/tex">% <![CDATA[
-m^n \cdot m < a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot m %]]></script>.   <br />
-Or <script type="math/tex">% <![CDATA[
-m^{n+1} < a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot a_{n+1} %]]></script>.   <br />
-Or <script type="math/tex">% <![CDATA[
-m < \sqrt [n+1] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot a_{n+1}} %]]></script>.</p>
+<p>Thus <span class="kdmath">$m < \sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n}}$</span>.  <br />
+Or <span class="kdmath">$m^n < a_1 \cdot a_2 \cdot \cdot \cdot a_{n}$</span>.   <br />
+Or <span class="kdmath">$m^n \cdot m < a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot m$</span>.   <br />
+Or <span class="kdmath">$m^{n+1} < a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot a_{n+1}$</span>.   <br />
+Or <span class="kdmath">$m < \sqrt [n+1] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot a_{n+1}}$</span>.</p>
 
-<p>Also since <script type="math/tex">m = \frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n}} {n}</script>, it follows <script type="math/tex">mn = a_1 + a_2 + \cdot \cdot \cdot + a_{n}</script>.</p>
+<p>Also since <span class="kdmath">$m = \frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n}} {n}$</span>, it follows <span class="kdmath">$mn = a_1 + a_2 + \cdot \cdot \cdot + a_{n}$</span>.</p>
 
-<p>Thus we have <script type="math/tex">\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n} + a_{n+1}} {n+1} = \frac {mn + m} {n+1} = \frac {m(n+1)} {n+1} = m</script>.</p>
+<p>Thus we have <span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n} + a_{n+1}} {n+1} = \frac {mn + m} {n+1} = \frac {m(n+1)} {n+1} = m$</span>.</p>
 
-<p>Thus <script type="math/tex">% <![CDATA[
-\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n} + a_{n+1}} {n+1} < \sqrt [n+1] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot a_{n+1}} %]]></script>.</p>
+<p>Thus <span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_{n} + a_{n+1}} {n+1} < \sqrt [n+1] {a_1 \cdot a_2 \cdot \cdot \cdot a_{n} \cdot a_{n+1}}$</span>.</p>
 
-<p>Thus <script type="math/tex">P(n+1)</script> is true if <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus <span class="kdmath">$P(n+1)$</span> is true if <span class="kdmath">$P(n)$</span> is true.</p>
 
 <p><strong>(d)</strong></p>
 
-<p>We shall prove this by contradiction. Suppose the inequality is not correct for some <script type="math/tex">n_0</script>. Now suppose <script type="math/tex">n</script> is an integer such that <script type="math/tex">2^n > n_0</script>. Thus by 
-part(c) it follows theorem fails for <script type="math/tex">2^n</script>. But from part(b) contradicts this as it says theorem is correct for <script type="math/tex">2^n</script>. Thus our assumption is wrong and the
- theorem is correct for all values of <script type="math/tex">n</script>.</p>
+<p>We shall prove this by contradiction. Suppose the inequality is not correct for some <span class="kdmath">$n_0$</span>. Now suppose <span class="kdmath">$n$</span> is an integer such that <span class="kdmath">$2^n > n_0$</span>. Thus by 
+part(c) it follows theorem fails for <span class="kdmath">$2^n$</span>. But from part(b) contradicts this as it says theorem is correct for <span class="kdmath">$2^n$</span>. Thus our assumption is wrong and the
+ theorem is correct for all values of <span class="kdmath">$n$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>From Soln8, we have <script type="math/tex">\frac {a_1 + a_2 + \cdot \cdot \cdot + a_n} {n} \ge \sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n}</script>.</p>
+<p>From Soln8, we have <span class="kdmath">$\frac {a_1 + a_2 + \cdot \cdot \cdot + a_n} {n} \ge \sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n}$</span>.</p>
 
-<p>We know that if <script type="math/tex">x \ge y</script> then <script type="math/tex">\frac 1 x \le \frac 1 y</script>. Thus:</p>
+<p>We know that if <span class="kdmath">$x \ge y$</span> then <span class="kdmath">$\frac 1 x \le \frac 1 y$</span>. Thus:</p>
 
-<p><script type="math/tex">\Rightarrow \frac {n} {a_1 + a_2 + \cdot \cdot \cdot + a_n} \le \frac 1 {\sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n}}</script>.</p>
+<p><span class="kdmath">$\Rightarrow \frac {n} {a_1 + a_2 + \cdot \cdot \cdot + a_n} \le \frac 1 {\sqrt[n] {a_1 \cdot a_2 \cdot \cdot \cdot a_n}}$</span>.</p>
 
-<p>Suppose <script type="math/tex">b_1 = \frac 1 {a_1}, b_2 = \frac 1 {a_2}, \cdot \cdot \cdot b_n = \frac 1 {a_n}</script>.</p>
+<p>Suppose <span class="kdmath">$b_1 = \frac 1 {a_1}, b_2 = \frac 1 {a_2}, \cdot \cdot \cdot b_n = \frac 1 {a_n}$</span>.</p>
 
-<p><script type="math/tex">\Rightarrow \frac {n} { {\frac 1 {b_1} } + {\frac 1 {b_2} } + \cdot \cdot \cdot + {\frac 1 {b_n} } } \le \frac 1 {\sqrt[n] { {\frac 1 {b_1} } \cdot {\frac 1 {b_2} } \cdot \cdot \cdot {\frac 1 {b_n} } } }</script>.</p>
+<p><span class="kdmath">$\Rightarrow \frac {n} { {\frac 1 {b_1} } + {\frac 1 {b_2} } + \cdot \cdot \cdot + {\frac 1 {b_n} } } \le \frac 1 {\sqrt[n] { {\frac 1 {b_1} } \cdot {\frac 1 {b_2} } \cdot \cdot \cdot {\frac 1 {b_n} } } }$</span>.</p>
 
-<p><script type="math/tex">\Rightarrow \frac {n} { {\frac 1 {b_1} } + {\frac 1 {b_2} } + \cdot \cdot \cdot + {\frac 1 {b_n} } } \le \sqrt[n] {b_1 \cdot b_2 \cdot \cdot \cdot b_n}</script>.</p>
+<p><span class="kdmath">$\Rightarrow \frac {n} { {\frac 1 {b_1} } + {\frac 1 {b_2} } + \cdot \cdot \cdot + {\frac 1 {b_n} } } \le \sqrt[n] {b_1 \cdot b_2 \cdot \cdot \cdot b_n}$</span>.</p>
 
 <hr />
 
@@ -1687,19 +1678,19 @@ part(c) it follows theorem fails for <script type="math/tex">2^n</script>. But f
 
 <p>Base Case:</p>
 
-<p>Suppose <script type="math/tex">A</script> has <script type="math/tex">n = 0</script>. Then <script type="math/tex">\mathcal P(A) = \{ \phi \}</script>. Thus <script type="math/tex">\mathcal P(A)</script> contains <script type="math/tex">2^0 = 1</script> element.</p>
+<p>Suppose <span class="kdmath">$A$</span> has <span class="kdmath">$n = 0$</span>. Then <span class="kdmath">$\mathcal P(A) = \{ \phi \}$</span>. Thus <span class="kdmath">$\mathcal P(A)$</span> contains <span class="kdmath">$2^0 = 1$</span> element.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose the theorem is true for <script type="math/tex">n</script>. Thus for a set <script type="math/tex">A</script> containing <script type="math/tex">n</script> elements, number of elements in <script type="math/tex">\mathcal P(A)</script> equals to <script type="math/tex">2^n</script>.</p>
+<p>Suppose the theorem is true for <span class="kdmath">$n$</span>. Thus for a set <span class="kdmath">$A$</span> containing <span class="kdmath">$n$</span> elements, number of elements in <span class="kdmath">$\mathcal P(A)$</span> equals to <span class="kdmath">$2^n$</span>.</p>
 
-<p>Suppose <script type="math/tex">A</script> contains <script type="math/tex">n+1</script> elements. Suppose <script type="math/tex">a \in A</script> is an arbitrary element of <script type="math/tex">A</script>. Suppose <script type="math/tex">A' = A \setminus \{a\}</script>. Thus <script type="math/tex">\mathcal P(A')</script>
-contains <script type="math/tex">2^n</script> elements. Since <script type="math/tex">A' \subseteq A</script>, it follows <script type="math/tex">\mathcal P(A') \subseteq \mathcal P(A)</script>. Every subset of <script type="math/tex">A</script> may either 
-contain <script type="math/tex">a</script> or not. Thus half of the subsets of <script type="math/tex">A</script> will contain <script type="math/tex">a</script> and other half will not. Since <script type="math/tex">A' = A \setminus \{a\}</script>, subsets os <script type="math/tex">A</script> 
-that does not contain <script type="math/tex">a</script> are also the subsets of <script type="math/tex">A'</script>. Since number of subsets of <script type="math/tex">A' = 2^n</script>, it follows number of subsets of <script type="math/tex">A</script> not 
- containing <script type="math/tex">a</script> is also <script type="math/tex">2^n</script>. It follows number of subsets of <script type="math/tex">A</script> containing <script type="math/tex">a</script> is also <script type="math/tex">2^n</script>. Thus total subsets of <script type="math/tex">A = 2^n + 2^n = 2^{n+1}</script>.</p>
+<p>Suppose <span class="kdmath">$A$</span> contains <span class="kdmath">$n+1$</span> elements. Suppose <span class="kdmath">$a \in A$</span> is an arbitrary element of <span class="kdmath">$A$</span>. Suppose <span class="kdmath">$A' = A \setminus \{a\}$</span>. Thus <span class="kdmath">$\mathcal P(A')$</span>
+contains <span class="kdmath">$2^n$</span> elements. Since <span class="kdmath">$A' \subseteq A$</span>, it follows <span class="kdmath">$\mathcal P(A') \subseteq \mathcal P(A)$</span>. Every subset of <span class="kdmath">$A$</span> may either 
+contain <span class="kdmath">$a$</span> or not. Thus half of the subsets of <span class="kdmath">$A$</span> will contain <span class="kdmath">$a$</span> and other half will not. Since <span class="kdmath">$A' = A \setminus \{a\}$</span>, subsets os <span class="kdmath">$A$</span> 
+that does not contain <span class="kdmath">$a$</span> are also the subsets of <span class="kdmath">$A'$</span>. Since number of subsets of <span class="kdmath">$A' = 2^n$</span>, it follows number of subsets of <span class="kdmath">$A$</span> not 
+ containing <span class="kdmath">$a$</span> is also <span class="kdmath">$2^n$</span>. It follows number of subsets of <span class="kdmath">$A$</span> containing <span class="kdmath">$a$</span> is also <span class="kdmath">$2^n$</span>. Thus total subsets of <span class="kdmath">$A = 2^n + 2^n = 2^{n+1}$</span>.</p>
 
-<p>Thus if P(n) is true then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if P(n) is true then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1707,23 +1698,23 @@ that does not contain <script type="math/tex">a</script> are also the subsets of
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">A</script> has <script type="math/tex">0</script> elements. Also <script type="math/tex">n(n-1)/2 = 0(0-1)/2 = 0</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, <span class="kdmath">$A$</span> has <span class="kdmath">$0$</span> elements. Also <span class="kdmath">$n(n-1)/2 = 0(0-1)/2 = 0$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script> elements. Thus <script type="math/tex">\mathcal P_2(A)</script> contains <script type="math/tex">n(n-1)/2</script> elements.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span> elements. Thus <span class="kdmath">$\mathcal P_2(A)$</span> contains <span class="kdmath">$n(n-1)/2$</span> elements.</p>
 
-<p>Suppose <script type="math/tex">A</script> contains <script type="math/tex">n+1</script> elements. Suppose <script type="math/tex">a \in A</script> is an arbitrary element of <script type="math/tex">A</script>. Suppose <script type="math/tex">A' = A \setminus \{a\}</script>.
-Thus <script type="math/tex">A'</script> contains <script type="math/tex">n</script> elements. Thus by induction hypothesis <script type="math/tex">\mathcal P_2(A')</script> contains <script type="math/tex">n(n-1)/2</script> elements.</p>
+<p>Suppose <span class="kdmath">$A$</span> contains <span class="kdmath">$n+1$</span> elements. Suppose <span class="kdmath">$a \in A$</span> is an arbitrary element of <span class="kdmath">$A$</span>. Suppose <span class="kdmath">$A' = A \setminus \{a\}$</span>.
+Thus <span class="kdmath">$A'$</span> contains <span class="kdmath">$n$</span> elements. Thus by induction hypothesis <span class="kdmath">$\mathcal P_2(A')$</span> contains <span class="kdmath">$n(n-1)/2$</span> elements.</p>
 
-<p>Clearly <script type="math/tex">\mathcal P_2(A)</script> contains all the elements of <script type="math/tex">\mathcal P_2(A')</script>. In addition <script type="math/tex">\mathcal P_2(A)</script> contains all the subsets of <script type="math/tex">A</script> containing
- exactly two elements such that each subset contains <script type="math/tex">a</script>. If <script type="math/tex">a</script> is combined with every element of <script type="math/tex">A'</script> then the result is the same as
-all the subsets of <script type="math/tex">A</script> containing exactly two elements that contains <script type="math/tex">a</script>. Since number of elements in <script type="math/tex">A</script> is <script type="math/tex">n</script>, it follows number of
-subsets of <script type="math/tex">A</script> containing exactly two elements such that each set contains <script type="math/tex">a</script> is equal to <script type="math/tex">n</script>. Thus number of elements in <script type="math/tex">\mathcal P_2(A)</script> is
-equal to sum of number of elements in <script type="math/tex">\mathcal P_2(A')</script> and <script type="math/tex">n</script>(number of elements in <script type="math/tex">A</script>). Thus number of elements in <script type="math/tex">\mathcal P_2(A)</script> is
-equal to <script type="math/tex">n(n-1)/2 + n = n(n+1)/2 = (n+1)(n+1-1)/2</script>.</p>
+<p>Clearly <span class="kdmath">$\mathcal P_2(A)$</span> contains all the elements of <span class="kdmath">$\mathcal P_2(A')$</span>. In addition <span class="kdmath">$\mathcal P_2(A)$</span> contains all the subsets of <span class="kdmath">$A$</span> containing
+ exactly two elements such that each subset contains <span class="kdmath">$a$</span>. If <span class="kdmath">$a$</span> is combined with every element of <span class="kdmath">$A'$</span> then the result is the same as
+all the subsets of <span class="kdmath">$A$</span> containing exactly two elements that contains <span class="kdmath">$a$</span>. Since number of elements in <span class="kdmath">$A$</span> is <span class="kdmath">$n$</span>, it follows number of
+subsets of <span class="kdmath">$A$</span> containing exactly two elements such that each set contains <span class="kdmath">$a$</span> is equal to <span class="kdmath">$n$</span>. Thus number of elements in <span class="kdmath">$\mathcal P_2(A)$</span> is
+equal to sum of number of elements in <span class="kdmath">$\mathcal P_2(A')$</span> and <span class="kdmath">$n$</span>(number of elements in <span class="kdmath">$A$</span>). Thus number of elements in <span class="kdmath">$\mathcal P_2(A)$</span> is
+equal to <span class="kdmath">$n(n-1)/2 + n = n(n+1)/2 = (n+1)(n+1-1)/2$</span>.</p>
 
-<p>Thus <script type="math/tex">P(n+1)</script> is also true if <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus <span class="kdmath">$P(n+1)$</span> is also true if <span class="kdmath">$P(n)$</span> is true.</p>
 
 <hr />
 
@@ -1731,28 +1722,28 @@ equal to <script type="math/tex">n(n-1)/2 + n = n(n+1)/2 = (n+1)(n+1-1)/2</scrip
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, we have <script type="math/tex">4^n = 4</script>. Clearly if any of the four triangles(thus any corner) is removed then the remaining shape is same as the trapezoidal tile.
-Thus for <script type="math/tex">n = 1</script> theorem is correct.</p>
+<p>For <span class="kdmath">$n = 1$</span>, we have <span class="kdmath">$4^n = 4$</span>. Clearly if any of the four triangles(thus any corner) is removed then the remaining shape is same as the trapezoidal tile.
+Thus for <span class="kdmath">$n = 1$</span> theorem is correct.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus if any equilateral triangle triangle is split into <script type="math/tex">4^n</script> small congruent triangles and one of them is removed, then the resulting shape can be covered
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus if any equilateral triangle triangle is split into <span class="kdmath">$4^n$</span> small congruent triangles and one of them is removed, then the resulting shape can be covered
  with trapezoidal tiles.</p>
 
-<p>Now consider a equilateral triangle is cut into <script type="math/tex">4^{n+1}</script> small congruent equilateral triangles. Thus the equilateral triangle is cut into <script type="math/tex">4 \cdot 4^n</script> smaller
- equilateral triangles. Thus we can also say there are <script type="math/tex">4</script> congruent equlateral triangle say <script type="math/tex">A,B,C,D</script> with each of the <script type="math/tex">4</script> triangle contains <script type="math/tex">4^n</script> small triangles.
-This can be imagined easily with one triangle on each corner(say <script type="math/tex">A,B,C</script>) of the equilateral triangle and one at the center(say <script type="math/tex">D</script>. Thus in a way this center triangle 
+<p>Now consider a equilateral triangle is cut into <span class="kdmath">$4^{n+1}$</span> small congruent equilateral triangles. Thus the equilateral triangle is cut into <span class="kdmath">$4 \cdot 4^n$</span> smaller
+ equilateral triangles. Thus we can also say there are <span class="kdmath">$4$</span> congruent equlateral triangle say <span class="kdmath">$A,B,C,D$</span> with each of the <span class="kdmath">$4$</span> triangle contains <span class="kdmath">$4^n$</span> small triangles.
+This can be imagined easily with one triangle on each corner(say <span class="kdmath">$A,B,C$</span>) of the equilateral triangle and one at the center(say <span class="kdmath">$D$</span>. Thus in a way this center triangle 
 is splitting the main triangle into 4 equal triangles and each corner of the center triangle touches midpoint of each side of the main triangle.</p>
 
-<p>Now suppose a triangle of the <script type="math/tex">4^{n+1}</script> equal triangles is removed from the corner of the main equilateral triangle. Thus this small triangle must belong
- to one of the three equilateral triangle <script type="math/tex">A,B</script> or <script type="math/tex">C</script>. Lets assume the small triangle is removed from <script type="math/tex">A</script>.</p>
+<p>Now suppose a triangle of the <span class="kdmath">$4^{n+1}$</span> equal triangles is removed from the corner of the main equilateral triangle. Thus this small triangle must belong
+ to one of the three equilateral triangle <span class="kdmath">$A,B$</span> or <span class="kdmath">$C$</span>. Lets assume the small triangle is removed from <span class="kdmath">$A$</span>.</p>
 
-<p>Since <script type="math/tex">A</script> contains <script type="math/tex">4^n</script> equal triangles, then by induction hypothesis <script type="math/tex">A</script> can be covered by trapezoidal tiles. Thus we need to prove that the remaining
-3 triangles <script type="math/tex">B,C,D</script> can also be covered by trapezoidal tiles.</p>
+<p>Since <span class="kdmath">$A$</span> contains <span class="kdmath">$4^n$</span> equal triangles, then by induction hypothesis <span class="kdmath">$A$</span> can be covered by trapezoidal tiles. Thus we need to prove that the remaining
+3 triangles <span class="kdmath">$B,C,D$</span> can also be covered by trapezoidal tiles.</p>
 
-<p>Now consider that we place trapezoidal tile on triangles <script type="math/tex">B,C,D</script> such that trapzoidal tiles covers exactly one small triangle of each triangle <script type="math/tex">B,C,D</script>.
-This placement will result in each triangle <script type="math/tex">B,C,D</script> with one smaller triangle of the corner covered. Thus now we need to cover only <script type="math/tex">4^n - 1</script> triangles
-of <script type="math/tex">B,C,D</script>. Thus by induction hypothesis this can be done.</p>
+<p>Now consider that we place trapezoidal tile on triangles <span class="kdmath">$B,C,D$</span> such that trapzoidal tiles covers exactly one small triangle of each triangle <span class="kdmath">$B,C,D$</span>.
+This placement will result in each triangle <span class="kdmath">$B,C,D$</span> with one smaller triangle of the corner covered. Thus now we need to cover only <span class="kdmath">$4^n - 1$</span> triangles
+of <span class="kdmath">$B,C,D$</span>. Thus by induction hypothesis this can be done.</p>
 
 <p>Thus whole main triangle can be covered with trapezoidal tiles.</p>
 
@@ -1762,19 +1753,19 @@ of <script type="math/tex">B,C,D</script>. Thus by induction hypothesis this can
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, total number of regions by one chord in the circle <script type="math/tex">= 2 = (1^2 + 1 + 2)/2</script>.</p>
+<p>For <span class="kdmath">$n = 1$</span>, total number of regions by one chord in the circle <span class="kdmath">$= 2 = (1^2 + 1 + 2)/2$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose this is true for <script type="math/tex">n</script>. Thus number of regions by <script type="math/tex">n</script> chords <script type="math/tex">= (n^2 + n + 2)/2</script>.</p>
+<p>Suppose this is true for <span class="kdmath">$n$</span>. Thus number of regions by <span class="kdmath">$n$</span> chords <span class="kdmath">$= (n^2 + n + 2)/2$</span>.</p>
 
-<p>Now consider for <script type="math/tex">n + 1</script> chords. Clearly, the way in which chord is drawn it will intersect every other chord(total <script type="math/tex">n</script>) at one point. And after 
-the starting point of the chord, on every point of intersection, that region is divided into two parts. Thus after drawing <script type="math/tex">n</script> chords, when we draw 
-<script type="math/tex">(n + 1)</script>-th chord, it will divide <script type="math/tex">(n + 1)</script> regions into two parts. Thus extra <script type="math/tex">n+1</script> regions are added. Thus total number of regions will be 
-sum of number of regions created by <script type="math/tex">n</script> chords and <script type="math/tex">n+1</script>. By induction hypothesis number of regions by <script type="math/tex">n</script> chords <script type="math/tex">= (n^2 + n + 2)/2</script>. Thus 
-total regions created by <script type="math/tex">n + 1</script> chords are <script type="math/tex">(n^2 + n + 2)/2 + (n + 1) = (n^2 + 3n + 4)/2 = ({(n+1)}^2 + (n+1) + 2)/2</script>.</p>
+<p>Now consider for <span class="kdmath">$n + 1$</span> chords. Clearly, the way in which chord is drawn it will intersect every other chord(total <span class="kdmath">$n$</span>) at one point. And after 
+the starting point of the chord, on every point of intersection, that region is divided into two parts. Thus after drawing <span class="kdmath">$n$</span> chords, when we draw 
+<span class="kdmath">$(n + 1)$</span>-th chord, it will divide <span class="kdmath">$(n + 1)$</span> regions into two parts. Thus extra <span class="kdmath">$n+1$</span> regions are added. Thus total number of regions will be 
+sum of number of regions created by <span class="kdmath">$n$</span> chords and <span class="kdmath">$n+1$</span>. By induction hypothesis number of regions by <span class="kdmath">$n$</span> chords <span class="kdmath">$= (n^2 + n + 2)/2$</span>. Thus 
+total regions created by <span class="kdmath">$n + 1$</span> chords are <span class="kdmath">$(n^2 + n + 2)/2 + (n + 1) = (n^2 + 3n + 4)/2 = ({(n+1)}^2 + (n+1) + 2)/2$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1782,33 +1773,33 @@ total regions created by <script type="math/tex">n + 1</script> chords are <scri
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, clearly it can be colored in the way required.</p>
+<p>For <span class="kdmath">$n = 1$</span>, clearly it can be colored in the way required.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script> chords.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span> chords.</p>
 
 <p>Every new chord we draw divides the circle into two parts. Also every new chord divides each region from which it passes  into two parts. 
-Now suppose a circle has <script type="math/tex">n</script> chords and we draw the <script type="math/tex">(n+1)</script>-th chord. Thus this <script type="math/tex">(n+1)</script>-th chord will divide the circle 
-in two parts say <script type="math/tex">A</script> and <script type="math/tex">B</script>.  Also this <script type="math/tex">(n+1)</script>-th chord divides every previous region which it passes into two parts.
-Clearly this division of the region is such that one region lies in <script type="math/tex">A</script> and other lies in <script type="math/tex">B</script>.</p>
+Now suppose a circle has <span class="kdmath">$n$</span> chords and we draw the <span class="kdmath">$(n+1)$</span>-th chord. Thus this <span class="kdmath">$(n+1)$</span>-th chord will divide the circle 
+in two parts say <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span>.  Also this <span class="kdmath">$(n+1)$</span>-th chord divides every previous region which it passes into two parts.
+Clearly this division of the region is such that one region lies in <span class="kdmath">$A$</span> and other lies in <span class="kdmath">$B$</span>.</p>
 
-<p>Now by hypothesis when <script type="math/tex">n</script> chords were drawn, the region was colored correctly. It follows that after dividing the corcle in two parts then
-each individual part is colored correctly. Thus <script type="math/tex">A</script> and <script type="math/tex">B</script> are colored correctly. But when we see <script type="math/tex">A</script> and <script type="math/tex">B</script> combined then 
+<p>Now by hypothesis when <span class="kdmath">$n$</span> chords were drawn, the region was colored correctly. It follows that after dividing the corcle in two parts then
+each individual part is colored correctly. Thus <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are colored correctly. But when we see <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> combined then 
 colors are not correct.</p>
 
-<p>Since both <script type="math/tex">A</script> and <script type="math/tex">B</script> are correct individually, we can invert all the colors and they will still be correctly colored. Thus if we 
-invert all the colors of only one part say <script type="math/tex">A</script>. Then <script type="math/tex">A</script> and <script type="math/tex">B</script> both are correctly colored. Also because of the inverse of colors they
+<p>Since both <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are correct individually, we can invert all the colors and they will still be correctly colored. Thus if we 
+invert all the colors of only one part say <span class="kdmath">$A$</span>. Then <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> both are correctly colored. Also because of the inverse of colors they
 will be correctly colored even if we combine them to form the circle.</p>
 
-<p>Thus if <script type="math/tex">n</script> is true then <script type="math/tex">n+1</script> is also true.</p>
+<p>Thus if <span class="kdmath">$n$</span> is true then <span class="kdmath">$n+1$</span> is also true.</p>
 
 <hr />
 
 <p><strong>Soln15</strong></p>
 
-<p>The flaw is in deducing that every natural number is an element of <script type="math/tex">A</script>. Clearly <script type="math/tex">n</script> was selected such that it belongs to both <script type="math/tex">\mathbb N</script>
-and <script type="math/tex">A</script>, thus it is not necessary that any other <script type="math/tex">n</script>, <script type="math/tex">n+1</script> in particular, which belongs to <script type="math/tex">\mathbb N</script> also belongs to <script type="math/tex">A</script>.</p>
+<p>The flaw is in deducing that every natural number is an element of <span class="kdmath">$A$</span>. Clearly <span class="kdmath">$n$</span> was selected such that it belongs to both <span class="kdmath">$\mathbb N$</span>
+and <span class="kdmath">$A$</span>, thus it is not necessary that any other <span class="kdmath">$n$</span>, <span class="kdmath">$n+1$</span> in particular, which belongs to <span class="kdmath">$\mathbb N$</span> also belongs to <span class="kdmath">$A$</span>.</p>
 
 <hr />
 
@@ -1816,9 +1807,9 @@ and <script type="math/tex">A</script>, thus it is not necessary that any other 
 
 <p>Base case is correct.</p>
 
-<p>In the induction step it assumed it is correct for <script type="math/tex">n \ge 1</script>. Then it proceeded for <script type="math/tex">n + 1</script> elements. Now while working with <script type="math/tex">n + 1</script>
-elements it is assumed that <script type="math/tex">n + 1 \ge 3</script>. But this assumption is not correct as it can also be the case when <script type="math/tex">n + 1 = 2</script>. Since the assumption
-<script type="math/tex">n + 1 \ge 3</script> is wrong, it follows that induction step is not correct.</p>
+<p>In the induction step it assumed it is correct for <span class="kdmath">$n \ge 1$</span>. Then it proceeded for <span class="kdmath">$n + 1$</span> elements. Now while working with <span class="kdmath">$n + 1$</span>
+elements it is assumed that <span class="kdmath">$n + 1 \ge 3$</span>. But this assumption is not correct as it can also be the case when <span class="kdmath">$n + 1 = 2$</span>. Since the assumption
+<span class="kdmath">$n + 1 \ge 3$</span> is wrong, it follows that induction step is not correct.</p>
 
 
                         <hr/>

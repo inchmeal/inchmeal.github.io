@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -988,13 +989,13 @@
 <p>d. Yes. It is not fixed and can acquire a different value as we change the sample. It is a function of the sample, if sample changes, then sample mean changes.</p>
 
 <p>e. No. Sample mean takes on different values based on sample and <strong>but variance of sample mean</strong> is the average of the squares of the differences between a <em>sample mean</em> and <em>expected value of sample mean</em>, - which is a constant. This can be verified by looking at its formulae for Simple Random Sampling 
-<script type="math/tex">{\sigma}^2_{\bar X} = \frac { {\sigma}^2 } n \left( \frac {n-1} {N-1} \right)</script>. As we can check this value does not change irrespective of the sample!</p>
+<span class="kdmath">${\sigma}^2_{\bar X} = \frac { {\sigma}^2 } n \left( \frac {n-1} {N-1} \right)$</span>. As we can check this value does not change irrespective of the sample!</p>
 
 <p>f. Yes. Again this is a function of the sample. sample changes, largest-value changes.</p>
 
 <p>g. No. It is also fixed for a population.</p>
 
-<p>h. Yes. It also depends on the sample. Change of the sample also changes the estimated variance. This can be checked by looking at its formulae for Simple random sampling: <script type="math/tex">s_{\bar X} = \frac { s^2 } n \left( 1 - \frac n N \right)</script>, where <script type="math/tex">s^2 = \frac 1 {n-1} \sum_{i=1} n { \left( X_i - {\bar X} \right) }^2</script>. The <script type="math/tex">s^2</script> depends on the given sample.</p>
+<p>h. Yes. It also depends on the sample. Change of the sample also changes the estimated variance. This can be checked by looking at its formulae for Simple random sampling: <span class="kdmath">$s_{\bar X} = \frac { s^2 } n \left( 1 - \frac n N \right)$</span>, where <span class="kdmath">$s^2 = \frac 1 {n-1} \sum_{i=1} n { \left( X_i - {\bar X} \right) }^2$</span>. The <span class="kdmath">$s^2$</span> depends on the given sample.</p>
 
 
                         $$\tag*{$\blacksquare$} $$

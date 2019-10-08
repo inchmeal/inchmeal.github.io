@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,21 +980,21 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<p>We need to show that <script type="math/tex">\, \bar X = n^{-1} \sum_{i=1}^{N} U_i x_i \,</script>. Since we have exactly <script type="math/tex">\, n \,</script> terms in the sum <script type="math/tex">\, \sum_{i=1}^{N} U_i x_i \,</script>, where <script type="math/tex">\, U_i x_i \ne 0 \,</script>, we can denote those terms by <script type="math/tex">\, X_j = U_i x_i \,</script>, where <script type="math/tex">\, j \,</script> varies from <script type="math/tex">\, 1 \,</script> to <script type="math/tex">\, n \,</script>. Thus we have <script type="math/tex">\, \sum_{i=1}^{N} U_i x_i = \sum_{j=1}^{n} X_j \,</script>. But <script type="math/tex">\, n^{-1} \sum_{j=1}^{n} X_j = \bar X \,</script>, it follows that <script type="math/tex">\, \bar X = n^{-1} \sum_{i=1}^{N} U_i x_i \,</script>.</p>
+<p>We need to show that <span class="kdmath">$\, \bar X = n^{-1} \sum_{i=1}^{N} U_i x_i \,$</span>. Since we have exactly <span class="kdmath">$\, n \,$</span> terms in the sum <span class="kdmath">$\, \sum_{i=1}^{N} U_i x_i \,$</span>, where <span class="kdmath">$\, U_i x_i \ne 0 \,$</span>, we can denote those terms by <span class="kdmath">$\, X_j = U_i x_i \,$</span>, where <span class="kdmath">$\, j \,$</span> varies from <span class="kdmath">$\, 1 \,$</span> to <span class="kdmath">$\, n \,$</span>. Thus we have <span class="kdmath">$\, \sum_{i=1}^{N} U_i x_i = \sum_{j=1}^{n} X_j \,$</span>. But <span class="kdmath">$\, n^{-1} \sum_{j=1}^{n} X_j = \bar X \,$</span>, it follows that <span class="kdmath">$\, \bar X = n^{-1} \sum_{i=1}^{N} U_i x_i \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
-<p><script type="math/tex">\, P(U_i = 1) \,</script> means the probability that <script type="math/tex">\, i^{th} \,</script> element of the population is present in a random sample of size n. This is equivalent to the probability of selecting an element in a random sample of size <script type="math/tex">\, n \,</script>. Thus <script type="math/tex">\, P(U_i = 1) = \frac n N \,</script>.</p>
+<p><span class="kdmath">$\, P(U_i = 1) \,$</span> means the probability that <span class="kdmath">$\, i^{th} \,$</span> element of the population is present in a random sample of size n. This is equivalent to the probability of selecting an element in a random sample of size <span class="kdmath">$\, n \,$</span>. Thus <span class="kdmath">$\, P(U_i = 1) = \frac n N \,$</span>.</p>
 
-<p>Since <script type="math/tex">\, U_i \,</script> is either <script type="math/tex">\, 0 \,</script> or <script type="math/tex">\, 1 \,</script>, by fundamental bridge, it follows <script type="math/tex">\, \Exp(U_i) = P(U_i=1) = \frac n N \,</script>.</p>
+<p>Since <span class="kdmath">$\, U_i \,$</span> is either <span class="kdmath">$\, 0 \,$</span> or <span class="kdmath">$\, 1 \,$</span>, by fundamental bridge, it follows <span class="kdmath">$\, \Exp(U_i) = P(U_i=1) = \frac n N \,$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
-<p><script type="math/tex">\, \Var(U_i) = P(U_i=1)(1-P(U_i=1)) = \frac n N(1-\frac n N) = \frac n N \frac (N-n) N \,</script>.</p>
+<p><span class="kdmath">$\, \Var(U_i) = P(U_i=1)(1-P(U_i=1)) = \frac n N(1-\frac n N) = \frac n N \frac (N-n) N \,$</span>.</p>
 
 <h4 id="d">(d)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 \Exp(U_i U_j) \\ 
@@ -1001,11 +1002,12 @@
 &= 0 + 0 + 0 + 1 \cdot 1 \cdot P(U_i=1, U_j=1) \\
 &= \frac n N \frac (n-1) (N-1) 
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
 <h4 id="e">(e)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 \Cov(U_i, U_j) \\
@@ -1013,11 +1015,12 @@
 &= \frac n N \frac (n-1) (N-1) - \Prn{\frac n N}^2 \\
 &= \frac {-n} N \frac {N-n} {N(N-1)}
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
 <h4 id="f">(f)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 \Var(\bar X) \\
@@ -1032,7 +1035,8 @@
 &= \frac 1 {n^2} \frac n N \frac {N-n} N \frac 1 {N-1} N^2 {\sigma^2} && \text{Using variance formulae} \\
 &= \frac 1 n \frac {N-n} {N-1} {\sigma^2} 
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

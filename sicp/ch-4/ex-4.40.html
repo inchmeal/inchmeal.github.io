@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9507,7 +9508,8 @@
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">iter</span> <span class="nv">count</span><span class="p">)</span>
   <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">count</span> <span class="mi">0</span><span class="p">)</span>
 	  <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span>
-	  <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">count</span> <span class="mi">1</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">count</span> <span class="mi">1</span><span class="p">)))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>First, now in this exercise, we are moving down <code class="highlighter-rouge">distinct</code> but it is making it more efficient, seems to be contradicting with previous result.</p>
 
@@ -9515,11 +9517,13 @@
 
 <p>Here, we are restricting the number of possibilities in every <code class="highlighter-rouge">let</code> expression. Recall that <code class="highlighter-rouge">let</code> is nothing but a procedure. Earlier version of let has 5 parameters. Thus it was giving:</p>
 
-<script type="math/tex; mode=display">\, { \text{num-of-args} }^{ \text{num-of-possible-values-of-an-arg } } = 5^5 \,</script>
+<div class="kdmath">$$
+\, { \text{num-of-args} }^{ \text{num-of-possible-values-of-an-arg } } = 5^5 \,
+$$</div>
 
-<p>Now, in this exercise, we have drastically reduced the number of possibilities of <code class="highlighter-rouge">let</code> parameters. The outermost <code class="highlighter-rouge">let</code> has only <script type="math/tex">\, 5 \,</script> possibilities. Then the next nested <code class="highlighter-rouge">let</code> gets approximately <script type="math/tex">\, 5 \times 5 \,</script>. (I am not considering the cases removed by restrictions in outer let. These values are only for approximations).</p>
+<p>Now, in this exercise, we have drastically reduced the number of possibilities of <code class="highlighter-rouge">let</code> parameters. The outermost <code class="highlighter-rouge">let</code> has only <span class="kdmath">$\, 5 \,$</span> possibilities. Then the next nested <code class="highlighter-rouge">let</code> gets approximately <span class="kdmath">$\, 5 \times 5 \,$</span>. (I am not considering the cases removed by restrictions in outer let. These values are only for approximations).</p>
 
-<p>Thus the last inner <code class="highlighter-rouge">let</code> we again, reach the same <em>order</em> of possibilities <script type="math/tex">\, 5^5 \,</script> (approximately).</p>
+<p>Thus the last inner <code class="highlighter-rouge">let</code> we again, reach the same <em>order</em> of possibilities <span class="kdmath">$\, 5^5 \,$</span> (approximately).</p>
 
 <p>But there are only 2 restrictions(requires) placed in last inner <code class="highlighter-rouge">let</code>! So, these huge number of possibilities are tested only for two requires!</p>
 
@@ -9532,7 +9536,8 @@
 3
 </pre></td><td class="code"><pre><span class="p">(</span><span class="nf">require</span>
  <span class="p">(</span><span class="nf">distinct?</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">baker</span> <span class="nv">cooper</span> <span class="nv">fletcher</span> <span class="nv">miller</span> <span class="nv">smith</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">baker</span> <span class="mi">5</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">baker</span> <span class="mi">5</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Let’s call these versions as V1 and V2.</p>
 
@@ -9623,7 +9628,8 @@
 				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'cooper</span> <span class="nv">cooper</span><span class="p">)</span>
 				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'fletcher</span> <span class="nv">fletcher</span><span class="p">)</span>
 				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'miller</span> <span class="nv">miller</span><span class="p">)</span>
-				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))))))</span></pre></td></tr></tbody></table></code></pre></figure>
+				  <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Executing it 100 times took 4 seconds and executing this 400 times took only 14 seconds!</p>
 

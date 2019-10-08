@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,9 +978,9 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>We have <script type="math/tex">\, \hat d = \hat p_1 - \hat p_2 \,</script>, and similar to Problem-32, we get <script type="math/tex">\, \Var(\hat d) = \Var(p_1) + \Var(\hat p_2) = \frac 1 n \frac {N-n} {N-1} (\hat p_1(1-\hat p_1) + \hat p_2(1-\hat p_2))\,</script>. Since <script type="math/tex">\, \frac {N-n} {N-1} \approx 1 \,</script> and <script type="math/tex">\, \hat p_1 \,</script> and <script type="math/tex">\, \hat p_2 \,</script> are close to <script type="math/tex">\, \frac 1 2 \,</script>, it follows that <script type="math/tex">\, \Var(\hat d) = \frac 1 n(\frac 1 2 \times \frac 1 2 + \frac 1 2 \times \frac 1 2) = \frac 1 {2n} \,</script>.</p>
+                        <p>We have <span class="kdmath">$\, \hat d = \hat p_1 - \hat p_2 \,$</span>, and similar to Problem-32, we get <span class="kdmath">$\, \Var(\hat d) = \Var(p_1) + \Var(\hat p_2) = \frac 1 n \frac {N-n} {N-1} (\hat p_1(1-\hat p_1) + \hat p_2(1-\hat p_2))\,$</span>. Since <span class="kdmath">$\, \frac {N-n} {N-1} \approx 1 \,$</span> and <span class="kdmath">$\, \hat p_1 \,$</span> and <span class="kdmath">$\, \hat p_2 \,$</span> are close to <span class="kdmath">$\, \frac 1 2 \,$</span>, it follows that <span class="kdmath">$\, \Var(\hat d) = \frac 1 n(\frac 1 2 \times \frac 1 2 + \frac 1 2 \times \frac 1 2) = \frac 1 {2n} \,$</span>.</p>
 
-<p>Thus <script type="math/tex">\, \Var(\hat d) = \frac 1 {2n} \,</script>. Since we need standard error to be less than <script type="math/tex">\, 0.02 \,</script>, it follows that we need variance,<script type="math/tex">\, \Var(\hat d) \,</script>, to be less than <script type="math/tex">\, {0.02}^2 = 0.0004 \,</script>. Thus the minimum amount of sample size <script type="math/tex">\, n \,</script> that we need is <script type="math/tex">\, \frac 1 {2n} \le 0.0004 \,</script>, which results in <script type="math/tex">\, n \ge 1250 \,</script>.</p>
+<p>Thus <span class="kdmath">$\, \Var(\hat d) = \frac 1 {2n} \,$</span>. Since we need standard error to be less than <span class="kdmath">$\, 0.02 \,$</span>, it follows that we need variance,<span class="kdmath">$\, \Var(\hat d) \,$</span>, to be less than <span class="kdmath">$\, {0.02}^2 = 0.0004 \,$</span>. Thus the minimum amount of sample size <span class="kdmath">$\, n \,$</span> that we need is <span class="kdmath">$\, \frac 1 {2n} \le 0.0004 \,$</span>, which results in <span class="kdmath">$\, n \ge 1250 \,$</span>.</p>
 
 
                         $$\tag*{$\blacksquare$} $$

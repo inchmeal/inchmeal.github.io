@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9528,11 +9529,12 @@ also as an argument.</p>
        <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">k</span> <span class="mi">1</span><span class="p">)</span> <span class="nv">rs</span> <span class="p">(</span><span class="nf">repeat</span> <span class="p">(</span><span class="nf">compose</span> <span class="nv">rs</span> <span class="nv">f</span><span class="p">)</span> <span class="p">(</span><span class="nf">dec</span> <span class="nv">k</span><span class="p">)))</span>
     <span class="p">)</span>
     <span class="p">(</span><span class="nf">repeat</span> <span class="nv">f</span> <span class="nv">n</span><span class="p">)</span>
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I verfied that 4th root requires twice damping as mentioned in exercise. Then I checked till 12th root and twice damping works fine.</p>
 
-<p>But at 13th root I tried with <script type="math/tex">3, 4</script> but program was not returning. There may be following cases:</p>
+<p>But at 13th root I tried with <span class="kdmath">$3, 4$</span> but program was not returning. There may be following cases:</p>
 
 <ul>
   <li>Either program is actually taking too much time for converging.</li>
@@ -9717,7 +9719,8 @@ also as an argument.</p>
 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">nth-root</span> <span class="mi">10000000000</span> <span class="mi">32</span> <span class="mi">4</span><span class="p">)</span>
 <span class="mf">3.7737871042519613</span>
-<span class="nv">&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">&gt;</span> 
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

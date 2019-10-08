@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9459,9 +9460,10 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">average</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">/</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> 
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Solving <script type="math/tex">x \mapsto \frac { \log 1000 } {\log x}</script> <em>without</em> average-damping:</p>
+<p>Solving <span class="kdmath">$x \mapsto \frac { \log 1000 } {\log x}$</span> <em>without</em> average-damping:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9534,9 +9536,10 @@
 <span class="mf">4.555527808516254</span>
 <span class="mf">4.555540912917957</span>
 <span class="mf">4.555532270803653</span>
-<span class="mf">4.555532270803653</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mf">4.555532270803653</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Solving <script type="math/tex">x \mapsto \frac { \log 1000 } {\log x}</script> <em>with</em> average-damping:</p>
+<p>Solving <span class="kdmath">$x \mapsto \frac { \log 1000 } {\log x}$</span> <em>with</em> average-damping:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9559,7 +9562,8 @@
 <span class="mf">4.555599411610624</span>
 <span class="mf">4.5555465521473675</span>
 <span class="mf">4.555537551999825</span>
-<span class="mf">4.555537551999825</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mf">4.555537551999825</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As we can see there are 34 guesses without avg-damping and only 9 guesses with avg-damping. Clearly we can see here how damping makes 
  fast converge.</p>

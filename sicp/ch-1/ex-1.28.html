@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9420,14 +9421,13 @@
 I will paste here again the corresponding part of the problem:</p>
 
 <blockquote>
-  <p>To test the primality of a number n by the Miller-Rabin test, we pick a random number <script type="math/tex">% <![CDATA[
-a < n %]]></script> and raise a to the <script type="math/tex">(n - 1)</script>st power modulo <script type="math/tex">n</script> using the expmod procedure. 
-However, whenever we perform the squaring step in expmod, we check to see if we have discovered a ‘‘nontrivial square root of <script type="math/tex">1\;modulo \; n</script>,’’ that is, a number not equal to 
-<script type="math/tex">1</script> or <script type="math/tex">n - 1</script> whose square is equal to <script type="math/tex">1\;modulo \; n</script>. It is possible to prove that if such a nontrivial square root of 1 exists, then <script type="math/tex">n</script> is not prime.</p>
+  <p>To test the primality of a number n by the Miller-Rabin test, we pick a random number <span class="kdmath">$a < n$</span> and raise a to the <span class="kdmath">$(n - 1)$</span>st power modulo <span class="kdmath">$n$</span> using the expmod procedure. 
+However, whenever we perform the squaring step in expmod, we check to see if we have discovered a ‘‘nontrivial square root of <span class="kdmath">$1\;modulo \; n$</span>,’’ that is, a number not equal to 
+<span class="kdmath">$1$</span> or <span class="kdmath">$n - 1$</span> whose square is equal to <span class="kdmath">$1\;modulo \; n$</span>. It is possible to prove that if such a nontrivial square root of 1 exists, then <span class="kdmath">$n$</span> is not prime.</p>
 </blockquote>
 
 <p>I have made the corresponding changes while squaring in <code class="highlighter-rouge">expmode</code> procedure. I have written a new procedure <code class="highlighter-rouge">check</code> that checks for the
-‘‘nontrivial square root of <script type="math/tex">1\;modulo \; n</script>,’’ as described in problem. It uses <code class="highlighter-rouge">let</code> expression to avoid computing that expression twice.</p>
+‘‘nontrivial square root of <span class="kdmath">$1\;modulo \; n$</span>,’’ as described in problem. It uses <code class="highlighter-rouge">let</code> expression to avoid computing that expression twice.</p>
 
 <p>Also note that if the number is prime than <code class="highlighter-rouge">expmod</code> process will return 1 as per Miller-Rabin test. Thus for the other case I am returning 0
 as also suggested in the book.</p>
@@ -9534,7 +9534,8 @@ false for all these numbers. Also I checked for all prime numbers discovered in 
      <span class="p">)</span>
   <span class="p">)</span>
   <span class="p">(</span><span class="nf">carmi-iter</span> <span class="nv">num</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">)</span>  </pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>  
+</pre></td></tr></tbody></table></code></pre></figure>
 
                         <hr/>
                     </span>

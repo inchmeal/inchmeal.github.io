@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,7 +978,7 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>To reduce the width of interval <script type="math/tex">\, \bar X \pm 1.96\sigma_{\bar X} \,</script> by half, we need to reduce the variance, <script type="math/tex">\, \sigma_{\bar X} \,</script> by half. Since <script type="math/tex">\, \sigma_{\bar X}=\frac {\sigma} {\sqrt n} \,</script>, it follows that we need to increase <script type="math/tex">\, \sqrt n \,</script> by two times which in turn means that we need to increase <script type="math/tex">\, n \,</script> or the sample the size by four times.</p>
+                        <p>To reduce the width of interval <span class="kdmath">$\, \bar X \pm 1.96\sigma_{\bar X} \,$</span> by half, we need to reduce the variance, <span class="kdmath">$\, \sigma_{\bar X} \,$</span> by half. Since <span class="kdmath">$\, \sigma_{\bar X}=\frac {\sigma} {\sqrt n} \,$</span>, it follows that we need to increase <span class="kdmath">$\, \sqrt n \,$</span> by two times which in turn means that we need to increase <span class="kdmath">$\, n \,$</span> or the sample the size by four times.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

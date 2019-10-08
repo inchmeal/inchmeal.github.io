@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,19 +980,23 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<p>We need <script type="math/tex">\, \Exp X = \mu \,</script>. Since <script type="math/tex">\, X = \alpha \bar X_1 + \beta \bar X_2 \,</script>, it follows that <script type="math/tex">\, \Exp X = \alpha \Exp X_1 + \beta \Exp X_2 \,</script>. Since <script type="math/tex">\, \bar X_1 \,</script> and <script type="math/tex">\, \bar X_2 \,</script> are unbiased estimates of the population mean, <script type="math/tex">\, \mu \,</script>, it follows <script type="math/tex">\, \Exp X_1 = \Exp X_2 = \mu \,</script>. Thus <script type="math/tex">\, \Exp X = \alpha \mu + \beta \mu \,</script>. Thus to make <script type="math/tex">\, EX = \mu \,</script>, we need <script type="math/tex">\, \alpha + \beta = 1 \,</script>.</p>
+<p>We need <span class="kdmath">$\, \Exp X = \mu \,$</span>. Since <span class="kdmath">$\, X = \alpha \bar X_1 + \beta \bar X_2 \,$</span>, it follows that <span class="kdmath">$\, \Exp X = \alpha \Exp X_1 + \beta \Exp X_2 \,$</span>. Since <span class="kdmath">$\, \bar X_1 \,$</span> and <span class="kdmath">$\, \bar X_2 \,$</span> are unbiased estimates of the population mean, <span class="kdmath">$\, \mu \,$</span>, it follows <span class="kdmath">$\, \Exp X_1 = \Exp X_2 = \mu \,$</span>. Thus <span class="kdmath">$\, \Exp X = \alpha \mu + \beta \mu \,$</span>. Thus to make <span class="kdmath">$\, EX = \mu \,$</span>, we need <span class="kdmath">$\, \alpha + \beta = 1 \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
-<p>We have <script type="math/tex">\, \Var(X) = \Var(\alpha \bar X_1 + \beta X_2) \,</script>. Since <script type="math/tex">\, X_1 \,</script> and <script type="math/tex">\, X_2 \,</script> are independent it follows that <script type="math/tex">\, \Var(X) = \alpha^2 \sigma^2_{\bar X_1} + \beta^2 \sigma^2_{\bar X_2}\,</script>.</p>
+<p>We have <span class="kdmath">$\, \Var(X) = \Var(\alpha \bar X_1 + \beta X_2) \,$</span>. Since <span class="kdmath">$\, X_1 \,$</span> and <span class="kdmath">$\, X_2 \,$</span> are independent it follows that <span class="kdmath">$\, \Var(X) = \alpha^2 \sigma^2_{\bar X_1} + \beta^2 \sigma^2_{\bar X_2}\,$</span>.</p>
 
-<p>Thus we have to minimize the function, say f, <script type="math/tex">\, \Var(X) = \alpha^2 \sigma^2_{\bar X_1} + \beta^2 \sigma^2_{\bar X_2}\,</script> under the constraint, say g, <script type="math/tex">\, \alpha + \beta = 1 \,</script>. We can use Lagranges multuplier here:</p>
+<p>Thus we have to minimize the function, say f, <span class="kdmath">$\, \Var(X) = \alpha^2 \sigma^2_{\bar X_1} + \beta^2 \sigma^2_{\bar X_2}\,$</span> under the constraint, say g, <span class="kdmath">$\, \alpha + \beta = 1 \,$</span>. We can use Lagranges multuplier here:</p>
 
-<p><script type="math/tex">\, f = \lambda \nabla g  \,</script>, which gives <script type="math/tex">\, \sigma^2_{\bar X_1} \times 2 \alpha = \lambda \,</script> and <script type="math/tex">\, \sigma^2_{\bar X_2} \times 2 \beta = \lambda \,</script>. We also have <script type="math/tex">\, \alpha + \beta = 1 \,</script>. Thus by solving these equations we get:</p>
+<p><span class="kdmath">$\, f = \lambda \nabla g  \,$</span>, which gives <span class="kdmath">$\, \sigma^2_{\bar X_1} \times 2 \alpha = \lambda \,$</span> and <span class="kdmath">$\, \sigma^2_{\bar X_2} \times 2 \beta = \lambda \,$</span>. We also have <span class="kdmath">$\, \alpha + \beta = 1 \,$</span>. Thus by solving these equations we get:</p>
 
-<script type="math/tex; mode=display">\, \alpha = \frac {\sigma^2_{\bar X_2} } {\sigma^2_{\bar X_1} + \sigma^2_{\bar X_2} } \,</script>
+<div class="kdmath">$$
+\, \alpha = \frac {\sigma^2_{\bar X_2} } {\sigma^2_{\bar X_1} + \sigma^2_{\bar X_2} } \,
+$$</div>
 
-<script type="math/tex; mode=display">\, \beta = \frac {\sigma^2_{\bar X_1} } {\sigma^2_{\bar X_1} + \sigma^2_{\bar X_2} }  \,</script>
+<div class="kdmath">$$
+\, \beta = \frac {\sigma^2_{\bar X_1} } {\sigma^2_{\bar X_1} + \sigma^2_{\bar X_2} }  \,
+$$</div>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

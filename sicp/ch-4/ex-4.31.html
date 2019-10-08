@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9587,7 +9588,8 @@
 		<span class="p">((</span><span class="nf">lazy-thunk?</span> <span class="nv">obj</span><span class="p">)</span> <span class="p">(</span><span class="nf">actual-value</span> <span class="p">(</span><span class="nf">thunk-exp</span> <span class="nv">obj</span><span class="p">)</span> <span class="p">(</span><span class="nf">thunk-env</span> <span class="nv">obj</span><span class="p">)))</span>
         <span class="p">((</span><span class="nf">evaluated-thunk?</span> <span class="nv">obj</span><span class="p">)</span>
          <span class="p">(</span><span class="nf">thunk-value</span> <span class="nv">obj</span><span class="p">))</span>
-        <span class="p">(</span><span class="k">else</span> <span class="nv">obj</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+        <span class="p">(</span><span class="k">else</span> <span class="nv">obj</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9616,7 +9618,8 @@
 <span class="p">(</span><span class="nf">test</span> <span class="p">((</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'a-invoked</span><span class="p">)</span> <span class="ss">'a</span><span class="p">))</span> <span class="p">((</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'b-invoked</span><span class="p">)</span> <span class="ss">'b</span><span class="p">))</span> <span class="p">((</span><span class="k">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nb">display</span> <span class="ss">'c-invoked</span><span class="p">)</span> <span class="ss">'c</span><span class="p">)))</span>
 <span class="nv">a-invoked</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="nv">done</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="nv">done</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Then, I tested it using ex-4.27 code.</p>
 
@@ -9685,7 +9688,8 @@
 <span class="c1">;;; L-Eval input:</span>
 <span class="nv">w</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">10</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">10</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>With lazy argument</strong></p>
 
@@ -9772,7 +9776,8 @@
 <span class="c1">;;; L-Eval input:</span>
 <span class="nv">count</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">4</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">4</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>With memo-lazy</strong>:</p>
 
@@ -9843,7 +9848,8 @@
 <span class="c1">;;; L-Eval input:</span>
 <span class="nv">count</span>
 <span class="c1">;;; L-Eval value:</span>
-<span class="mi">2</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">2</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -10278,7 +10284,8 @@
 <span class="p">(</span><span class="k">define</span> <span class="nv">the-global-environment</span> <span class="p">(</span><span class="nf">setup-environment</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">driver-loop</span><span class="p">)</span>
 
-<span class="ss">'LAZY-EVALUATOR-LOADED</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="ss">'LAZY-EVALUATOR-LOADED</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

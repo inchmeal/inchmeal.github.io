@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9414,7 +9415,7 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Note that we can use the same approach outlined in ex-5.29 to arrive at the expression for <code class="highlighter-rouge">total-pushes</code> or <script type="math/tex">\, S_n \,</script></p>
+                        <p>Note that we can use the same approach outlined in ex-5.29 to arrive at the expression for <code class="highlighter-rouge">total-pushes</code> or <span class="kdmath">$\, S_n \,$</span></p>
 
 <p>Here are the results:</p>
 
@@ -9422,40 +9423,40 @@
   <thead>
     <tr>
       <th> </th>
-      <th>total-pushes(<script type="math/tex">\, S_n \,</script> )</th>
+      <th>total-pushes(<span class="kdmath">$\, S_n \,$</span> )</th>
       <th>maximum-depth</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>special-purpose</td>
-      <td><script type="math/tex">\, 3 {\text{fib}}_{n+1} - 3 \,</script></td>
-      <td><script type="math/tex">\, 2n-2 \,</script></td>
+      <td><span class="kdmath">$\, 3 {\text{fib}}_{n+1} - 3 \,$</span></td>
+      <td><span class="kdmath">$\, 2n-2 \,$</span></td>
     </tr>
     <tr>
       <td>interpreter</td>
-      <td><script type="math/tex">\, 56 {\text{fib}}_{n+1} -40 \,</script></td>
-      <td><script type="math/tex">\, 5n+3 \,</script></td>
+      <td><span class="kdmath">$\, 56 {\text{fib}}_{n+1} -40 \,$</span></td>
+      <td><span class="kdmath">$\, 5n+3 \,$</span></td>
     </tr>
     <tr>
       <td>compiler</td>
-      <td><script type="math/tex">\, 10{\text{fib}}_{n+1} - 3 \,</script></td>
-      <td><script type="math/tex">\, 3n-1 \,</script></td>
+      <td><span class="kdmath">$\, 10{\text{fib}}_{n+1} - 3 \,$</span></td>
+      <td><span class="kdmath">$\, 3n-1 \,$</span></td>
     </tr>
     <tr>
       <td>compiler vs interpreter</td>
-      <td><script type="math/tex">\, \frac {10} {56} \,</script></td>
-      <td><script type="math/tex">\, \frac 3 5 \,</script></td>
+      <td><span class="kdmath">$\, \frac {10} {56} \,$</span></td>
+      <td><span class="kdmath">$\, \frac 3 5 \,$</span></td>
     </tr>
     <tr>
       <td>special vs interpreter</td>
-      <td><script type="math/tex">\, \frac 3 {56} \,</script></td>
-      <td><script type="math/tex">\, \frac 2 5 \,</script></td>
+      <td><span class="kdmath">$\, \frac 3 {56} \,$</span></td>
+      <td><span class="kdmath">$\, \frac 2 5 \,$</span></td>
     </tr>
     <tr>
       <td>special vs compiler</td>
-      <td><script type="math/tex">\, \frac 3 {10} \,</script></td>
-      <td><script type="math/tex">\, \frac 2 3 \,</script></td>
+      <td><span class="kdmath">$\, \frac 3 {10} \,$</span></td>
+      <td><span class="kdmath">$\, \frac 2 3 \,$</span></td>
     </tr>
   </tbody>
 </table>
@@ -9464,13 +9465,17 @@
 
 <p>Also, with open coding enabled in the compiler version, we get:</p>
 
-<script type="math/tex; mode=display">\, \text{total-pushes} = 3{\text{fib}}_{n+1} + 2\,</script>
+<div class="kdmath">$$
+\, \text{total-pushes} = 3{\text{fib}}_{n+1} + 2\,
+$$</div>
 
 <p>and,</p>
 
-<script type="math/tex; mode=display">\, \text{maximum-depth} = 2n - 2 \,</script>
+<div class="kdmath">$$
+\, \text{maximum-depth} = 2n - 2 \,
+$$</div>
 
-<p>Note that, for fib. there is one more operator <code class="highlighter-rouge">&lt;</code> that i added in open coding operators. Intially the results were quite far apart(it was <script type="math/tex">\, 7 \text{fib}_{n+1} \,</script> ) but after realising that <code class="highlighter-rouge">&lt;</code> is not open coded, fixing that made the compiler performance almost same as special-purpose performance.</p>
+<p>Note that, for fib. there is one more operator <code class="highlighter-rouge">&lt;</code> that i added in open coding operators. Intially the results were quite far apart(it was <span class="kdmath">$\, 7 \text{fib}_{n+1} \,$</span> ) but after realising that <code class="highlighter-rouge">&lt;</code> is not open coded, fixing that made the compiler performance almost same as special-purpose performance.</p>
 
 <p>For adding <code class="highlighter-rouge">&lt;</code>, just two things:</p>
 
@@ -9483,7 +9488,7 @@
 
 <hr />
 
-<p>(I am not sure why problem says that for large n, we won’t approach limiting value. As shown above, for large <script type="math/tex">\, n \,</script>, i think while comparing the <script type="math/tex">\, \text{fib}_{n+1} \,</script> term cancels out even if they are not linear. Probably i am wrong.)</p>
+<p>(I am not sure why problem says that for large n, we won’t approach limiting value. As shown above, for large <span class="kdmath">$\, n \,$</span>, i think while comparing the <span class="kdmath">$\, \text{fib}_{n+1} \,$</span> term cancels out even if they are not linear. Probably i am wrong.)</p>
 
 <p>To make it easier to work with special purpose fib, i made few changes so that it can read input from console without requiring to explicitly set in the register. Here’s the modified code:</p>
 
@@ -9580,7 +9585,8 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">read-at-newline</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">newline</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">read</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nb">read</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>For completion, let me also put the numbers which led to the above formulas. For interpreter version, they are already in ex-5.29.</p>
 
@@ -9671,7 +9677,8 @@
 <span class="mi">7</span>
 
 <span class="p">(</span><span class="nf">total-pushes</span> <span class="nv">=</span> <span class="mi">60</span> <span class="nv">maximum-depth</span> <span class="nv">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">13</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">13</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>For compiler version:</p>
 
@@ -9770,7 +9777,8 @@
 
 <span class="p">(</span><span class="nf">total-pushes</span> <span class="nv">=</span> <span class="mi">207</span> <span class="nv">maximum-depth</span> <span class="nv">=</span> <span class="mi">20</span><span class="p">)</span>
 <span class="c1">;;; EC-Eval value:</span>
-<span class="mi">13</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">13</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Compiler with open-coding enabled version(including <code class="highlighter-rouge">&lt;</code>):</p>
 
@@ -9887,7 +9895,8 @@
 <span class="c1">;;; EC-Eval value:</span>
 <span class="mi">13</span>
 
-<span class="c1">;;; EC-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; EC-Eval input:</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

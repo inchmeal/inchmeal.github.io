@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,17 +980,17 @@
 						<hr/>
                         <p>Since this is a simple random sampling, we can use few results from the book:</p>
 
-<p><script type="math/tex">\, \Exp{X_i} = \mu \,</script>, where <script type="math/tex">\, \mu \,</script> is the population mean.</p>
+<p><span class="kdmath">$\, \Exp{X_i} = \mu \,$</span>, where <span class="kdmath">$\, \mu \,$</span> is the population mean.</p>
 
-<p><script type="math/tex">\, \Var{X_i} = \sigma^2 \,</script>, where <script type="math/tex">\, \sigma^2 \,</script> is population variance.</p>
+<p><span class="kdmath">$\, \Var{X_i} = \sigma^2 \,$</span>, where <span class="kdmath">$\, \sigma^2 \,$</span> is population variance.</p>
 
-<p><script type="math/tex">\, \Cov(X_i,X_j) = \frac {-\sigma^2} {N-1} \,</script>.</p>
+<p><span class="kdmath">$\, \Cov(X_i,X_j) = \frac {-\sigma^2} {N-1} \,$</span>.</p>
 
 <h4 id="a">(a)</h4>
 
-<p>For <script type="math/tex">\, \bar X_c = \sum_{i=1}^{n} c_i X_i \,</script>, to be unbiased estimate of population mean, <script type="math/tex">\, \Exp {\bar X_c} = \mu \,</script> must be true.</p>
+<p>For <span class="kdmath">$\, \bar X_c = \sum_{i=1}^{n} c_i X_i \,$</span>, to be unbiased estimate of population mean, <span class="kdmath">$\, \Exp {\bar X_c} = \mu \,$</span> must be true.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 \Exp{\bar X_c} &= \Exp\Prn{\sum_{i=1}^{n} c_i X_i} \\
@@ -997,15 +998,16 @@
 		  &= \sum_{i=1}^{n} (c_i \mu) \\
 		  &= \mu \sum_{i=1}^{n} c_i
 \end{align*}		  
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus for <script type="math/tex">\, \Exp {X_c} = \mu \,</script> to be true, we must have <script type="math/tex">\, \sum_{i=1}^{n} c_i = 1 \,</script>.</p>
+<p>Thus for <span class="kdmath">$\, \Exp {X_c} = \mu \,$</span> to be true, we must have <span class="kdmath">$\, \sum_{i=1}^{n} c_i = 1 \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
-<p>Lets first find an expression for the variance of the estimate, i.e. <script type="math/tex">\, \Var(\bar X_c) \,</script>:</p>
+<p>Lets first find an expression for the variance of the estimate, i.e. <span class="kdmath">$\, \Var(\bar X_c) \,$</span>:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \Var(\bar X_c) \\
 \begin{align*}
@@ -1018,23 +1020,26 @@
 			   &= \sigma^2 \sum_{i=1}^{n} c_i^2 \Prn{1+\frac 1 {N-1}} - \frac {\sigma^2} {N-1} \sum_{i=1}^{n} c_i \\
 			   &= \sigma^2 \sum_{i=1}^{n} c_i^2 \Prn{1+\frac 1 {N-1}} - \frac {\sigma^2} {N-1} && \text{Since }\sum_{i=1}^{n} c_i = 1 \\
 \end{align*}			 
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus, to minimize <script type="math/tex">\, \Var(\bar X_c) \,</script>, we have to minimize <script type="math/tex">\, \sum_{i=1}^{n} c_i^2 \,</script> under the given condition constraint <script type="math/tex">\, \sum_{i=1}^{n} c_i = 1 \,</script>.</p>
+<p>Thus, to minimize <span class="kdmath">$\, \Var(\bar X_c) \,$</span>, we have to minimize <span class="kdmath">$\, \sum_{i=1}^{n} c_i^2 \,$</span> under the given condition constraint <span class="kdmath">$\, \sum_{i=1}^{n} c_i = 1 \,$</span>.</p>
 
-<p>This can be solved using Lagranges multiplier where <script type="math/tex">\, f = \sum_{i=1}^{n} c_i^2 \,</script> is the function we have to minimize under the constraint <script type="math/tex">\, g = \sum_{i=1}^{n} c_i \,</script>.</p>
+<p>This can be solved using Lagranges multiplier where <span class="kdmath">$\, f = \sum_{i=1}^{n} c_i^2 \,$</span> is the function we have to minimize under the constraint <span class="kdmath">$\, g = \sum_{i=1}^{n} c_i \,$</span>.</p>
 
 <p>We have:</p>
 
-<script type="math/tex; mode=display">\, \nabla_c f = \lambda \nabla_c g \,</script>
+<div class="kdmath">$$
+\, \nabla_c f = \lambda \nabla_c g \,
+$$</div>
 
-<p>Let <script type="math/tex">\, f_{c_i} \,</script> is the partial differentiation of <script type="math/tex">\, f \,</script> w.r.t <script type="math/tex">\, c_i \,</script> and similarly <script type="math/tex">\, g_{c_i} \,</script> is partial differentiation of <script type="math/tex">\, g \,</script> w.r.t. <script type="math/tex">\, c_i \,</script>.</p>
+<p>Let <span class="kdmath">$\, f_{c_i} \,$</span> is the partial differentiation of <span class="kdmath">$\, f \,$</span> w.r.t <span class="kdmath">$\, c_i \,$</span> and similarly <span class="kdmath">$\, g_{c_i} \,$</span> is partial differentiation of <span class="kdmath">$\, g \,$</span> w.r.t. <span class="kdmath">$\, c_i \,$</span>.</p>
 
-<p>Then by lagranges multiplier we should have <script type="math/tex">\, f_{c_i} = \lambda g_{c_i} \,</script> for <script type="math/tex">\, i \in \{x \in \mathbb N \; \vert \; 1 \le x \le n \}  \,</script>. It follows that <script type="math/tex">\, 2c_i = \lambda \,</script>, or <script type="math/tex">\, c_i = \frac {\lambda} 2  \,</script>. Now putting the value of <script type="math/tex">\, c_i \,</script> in the constraint <script type="math/tex">\, g \,</script>, gives <script type="math/tex">\, \sum_{i=1}^{n} \frac {\lambda} 2 = 1 \,</script>. Thus <script type="math/tex">\, \lambda = \frac 2 n \,</script>. Now since <script type="math/tex">\, c_i = \frac {\lambda} 2 \,</script>, we get <script type="math/tex">\, c_i = \frac 1 n \,</script>.</p>
+<p>Then by lagranges multiplier we should have <span class="kdmath">$\, f_{c_i} = \lambda g_{c_i} \,$</span> for <span class="kdmath">$\, i \in \{x \in \mathbb N \; \vert \; 1 \le x \le n \}  \,$</span>. It follows that <span class="kdmath">$\, 2c_i = \lambda \,$</span>, or <span class="kdmath">$\, c_i = \frac {\lambda} 2  \,$</span>. Now putting the value of <span class="kdmath">$\, c_i \,$</span> in the constraint <span class="kdmath">$\, g \,$</span>, gives <span class="kdmath">$\, \sum_{i=1}^{n} \frac {\lambda} 2 = 1 \,$</span>. Thus <span class="kdmath">$\, \lambda = \frac 2 n \,$</span>. Now since <span class="kdmath">$\, c_i = \frac {\lambda} 2 \,$</span>, we get <span class="kdmath">$\, c_i = \frac 1 n \,$</span>.</p>
 
-<p>Now to check that this value of <script type="math/tex">\, c_i \,</script> minimizes the <script type="math/tex">\, f \,</script>, we can do the second derivative test, which I am skipping :)</p>
+<p>Now to check that this value of <span class="kdmath">$\, c_i \,$</span> minimizes the <span class="kdmath">$\, f \,$</span>, we can do the second derivative test, which I am skipping :)</p>
 
-<p>Thus <script type="math/tex">\, c_i = \frac 1 n \,</script> is the value that minimizes <script type="math/tex">\, \Var(\bar X_c) \,</script>.</p>
+<p>Thus <span class="kdmath">$\, c_i = \frac 1 n \,$</span> is the value that minimizes <span class="kdmath">$\, \Var(\bar X_c) \,$</span>.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

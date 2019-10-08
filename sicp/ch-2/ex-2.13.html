@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9416,18 +9417,18 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Suppose there are two intervals, <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>, with centers <script type="math/tex">c_1</script> and <script type="math/tex">c_2</script>, and tolerance <script type="math/tex">t_1</script> and <script type="math/tex">t_2</script> respectively.</p>
+                        <p>Suppose there are two intervals, <span class="kdmath">$I_1$</span> and <span class="kdmath">$I_2$</span>, with centers <span class="kdmath">$c_1$</span> and <span class="kdmath">$c_2$</span>, and tolerance <span class="kdmath">$t_1$</span> and <span class="kdmath">$t_2$</span> respectively.</p>
 
-<p>Thus we have <script type="math/tex">I_1 = [c_1 - { \frac {c_1 \cdot t_1} { 100 } },  \; c_1 + { \frac {c_1 \cdot t_1} { 100 } }]</script> and   <br />
- <script type="math/tex">I_2 = [c_2 - { \frac {c_2 \cdot t_2} { 100 } }, \; c_2 + { \frac {c_2 \cdot t_2} { 100 } }]</script>.</p>
+<p>Thus we have <span class="kdmath">$I_1 = [c_1 - { \frac {c_1 \cdot t_1} { 100 } },  \; c_1 + { \frac {c_1 \cdot t_1} { 100 } }]$</span> and   <br />
+ <span class="kdmath">$I_2 = [c_2 - { \frac {c_2 \cdot t_2} { 100 } }, \; c_2 + { \frac {c_2 \cdot t_2} { 100 } }]$</span>.</p>
 
-<p>Assuming that <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script> contains only positive end-points. Taking help from Ex-2.11 to find the product interval, we get:</p>
+<p>Assuming that <span class="kdmath">$I_1$</span> and <span class="kdmath">$I_2$</span> contains only positive end-points. Taking help from Ex-2.11 to find the product interval, we get:</p>
 
-<p><script type="math/tex">I_1 \times I_2 = [ (c_1 - { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 - { \frac {c_2 \cdot t_2} { 100 } }), \; (c_1 + { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 + { \frac {c_2 \cdot t_2} { 100 } })]</script>.     <br />
-<script type="math/tex">= [c_1c_2(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; c_1c_2(1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]</script>      <br />
-<script type="math/tex">= c_1c_2[(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]</script>      <br />
-Since <script type="math/tex">p</script> and <script type="math/tex">q</script> are small, it follows <script type="math/tex">{ \frac {pq} { 100 } }</script> will become smaller and we can ignore it. Thus we get:    <br />
-<script type="math/tex">= c_1c_2[(1 - {\frac {(p+q)} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } })]</script>.</p>
+<p><span class="kdmath">$I_1 \times I_2 = [ (c_1 - { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 - { \frac {c_2 \cdot t_2} { 100 } }), \; (c_1 + { \frac {c_1 \cdot t_1} { 100 } }) \times (c_2 + { \frac {c_2 \cdot t_2} { 100 } })]$</span>.     <br />
+<span class="kdmath">$= [c_1c_2(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; c_1c_2(1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]$</span>      <br />
+<span class="kdmath">$= c_1c_2[(1 - {\frac {(p+q)} { 100 } } - { \frac {pq} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } } + { \frac {pq} { 100 } })]$</span>      <br />
+Since <span class="kdmath">$p$</span> and <span class="kdmath">$q$</span> are small, it follows <span class="kdmath">${ \frac {pq} { 100 } }$</span> will become smaller and we can ignore it. Thus we get:    <br />
+<span class="kdmath">$= c_1c_2[(1 - {\frac {(p+q)} { 100 } }), \; (1 + {\frac {(p+q)} { 100 } })]$</span>.</p>
 
 <p>Thus we can see the tolerance of the product is sum of the percentage tolerances of individual intervals.</p>
 

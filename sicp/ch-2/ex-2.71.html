@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9418,23 +9419,23 @@
                         <hr/>
                         <p>In huffmann encoding, we keep on combining a pair of leaves with minimum weights. Now in this case we shall first combine:</p>
 
-<p><script type="math/tex">1 + 2 = 3</script>, then         <br />
-<script type="math/tex">3 + 4 = 7</script>, then         <br />
-<script type="math/tex">7 + 8 = 15</script>, then         <br />
-<script type="math/tex">15 + 16 = 31</script>, then         <br />
+<p><span class="kdmath">$1 + 2 = 3$</span>, then         <br />
+<span class="kdmath">$3 + 4 = 7$</span>, then         <br />
+<span class="kdmath">$7 + 8 = 15$</span>, then         <br />
+<span class="kdmath">$15 + 16 = 31$</span>, then         <br />
 …
 …
-<script type="math/tex">2^{n-1} - 1 + 2^{n-1} =  2^n - 1</script>.</p>
+<span class="kdmath">$2^{n-1} - 1 + 2^{n-1} =  2^n - 1$</span>.</p>
 
 <p>We can see above that, except for the first one, every combination combines a new word/symbol or results in a leaf. The first node however combines two words
-for frequency <script type="math/tex">1</script> and <script type="math/tex">2</script>.</p>
+for frequency <span class="kdmath">$1$</span> and <span class="kdmath">$2$</span>.</p>
 
 <p>Clearly the leaf that results from the last combination will correspond to the smallest number of bits because it will have least depth(=1). 
-It follows that smallest number of bits we need = <script type="math/tex">1</script>. Since this word is corresponding to the last combination, clearly it is the word with highest frequency
-i.e. <script type="math/tex">2^{n-1}</script>.</p>
+It follows that smallest number of bits we need = <span class="kdmath">$1$</span>. Since this word is corresponding to the last combination, clearly it is the word with highest frequency
+i.e. <span class="kdmath">$2^{n-1}$</span>.</p>
 
 <p>Similarly leaf that results from first combination will correspond to the highest number of bits because it will have highest depth. It follows number of bits 
-we need is <script type="math/tex">{\log}_2 { 2^{n-1} } = n-1</script> bits.</p>
+we need is <span class="kdmath">${\log}_2 { 2^{n-1} } = n-1$</span> bits.</p>
 
 
                         <hr/>

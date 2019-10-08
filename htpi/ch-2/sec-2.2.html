@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1138,31 +1139,31 @@
 <ul>
   <li>Equivalances:
     <ul>
-      <li><script type="math/tex">\lnot \forall x P(x) = \exists x \lnot P(x)</script>.</li>
-      <li><script type="math/tex">\lnot \exists x P(x) = \forall x \lnot P(x)</script>.</li>
+      <li><span class="kdmath">$\lnot \forall x P(x) = \exists x \lnot P(x)$</span>.</li>
+      <li><span class="kdmath">$\lnot \exists x P(x) = \forall x \lnot P(x)$</span>.</li>
     </ul>
   </li>
-  <li><script type="math/tex">\exists ! x P(x)</script> means P(x) is true for exactly one value of x. It is equivalent to   <br />
-<script type="math/tex">\exists x (P(x) \land \lnot \exists y (P(y) \land \lnot (y = x)))</script>.</li>
+  <li><span class="kdmath">$\exists ! x P(x)$</span> means P(x) is true for exactly one value of x. It is equivalent to   <br />
+<span class="kdmath">$\exists x (P(x) \land \lnot \exists y (P(y) \land \lnot (y = x)))$</span>.</li>
   <li>Bounded Quantifiers:
     <ul>
-      <li><script type="math/tex">\exists x \in A P(x) = \exists x (x \in A \land P(x))</script>.</li>
-      <li><script type="math/tex">\forall x \in A P(x) = \forall x (x \in A \to P(x))</script>.</li>
+      <li><span class="kdmath">$\exists x \in A P(x) = \exists x (x \in A \land P(x))$</span>.</li>
+      <li><span class="kdmath">$\forall x \in A P(x) = \forall x (x \in A \to P(x))$</span>.</li>
     </ul>
   </li>
   <li>Similar to negation equivalances( in first point), Equivalences for Bounded Quantifiers:
     <ul>
-      <li><script type="math/tex">\lnot \forall x \in A P(x) = \exists x \in A \lnot P(x)</script>.</li>
-      <li><script type="math/tex">\lnot \exists x \in A P(x) = \forall x \in A \lnot P(x)</script>.</li>
+      <li><span class="kdmath">$\lnot \forall x \in A P(x) = \exists x \in A \lnot P(x)$</span>.</li>
+      <li><span class="kdmath">$\lnot \exists x \in A P(x) = \forall x \in A \lnot P(x)$</span>.</li>
     </ul>
   </li>
-  <li>If <script type="math/tex">A = \phi</script> then:
+  <li>If <span class="kdmath">$A = \phi$</span> then:
     <ul>
-      <li><script type="math/tex">\exists x \in A P(x)</script> is always false irrespective of P(x).</li>
-      <li><script type="math/tex">\forall x \in A P(x)</script> is true irrespective of P(x).</li>
+      <li><span class="kdmath">$\exists x \in A P(x)$</span> is always false irrespective of P(x).</li>
+      <li><span class="kdmath">$\forall x \in A P(x)$</span> is true irrespective of P(x).</li>
     </ul>
   </li>
-  <li>Universal Quantifiers distributes over conjunction i.e. <script type="math/tex">\forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)</script>.
+  <li>Universal Quantifiers distributes over conjunction i.e. <span class="kdmath">$\forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)$</span>.
 But Universal Quantifiers does not distributes over disjunction.</li>
   <li>Existential Quantifier distributes over disjunction but does not distributes over conjunction.</li>
 </ul>
@@ -1171,112 +1172,112 @@ But Universal Quantifiers does not distributes over disjunction.</li>
 
 <p><strong>Soln1</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\forall x (M(x) \to \exists y(F(x, y) \land H(y))</script>  <br />
-where <script type="math/tex">M(x)</script> means <script type="math/tex">x</script> is maths major,  <br />
-and <script type="math/tex">F(x,y)</script> means <script type="math/tex">x</script> is a friend of <script type="math/tex">y</script>,  <br />
-and <script type="math/tex">H(y)</script> means <script type="math/tex">y</script> needs help in homework.</p>
+<p><strong>(a)</strong> <span class="kdmath">$\forall x (M(x) \to \exists y(F(x, y) \land H(y))$</span>  <br />
+where <span class="kdmath">$M(x)$</span> means <span class="kdmath">$x$</span> is maths major,  <br />
+and <span class="kdmath">$F(x,y)$</span> means <span class="kdmath">$x$</span> is a friend of <span class="kdmath">$y$</span>,  <br />
+and <span class="kdmath">$H(y)$</span> means <span class="kdmath">$y$</span> needs help in homework.</p>
 
 <p>Negation of the above statement:</p>
 
-<p><script type="math/tex">\quad \lnot \forall x (M(x) \to \exists y(F(x, y) \land H(y))</script>  <br />
-<script type="math/tex">\quad = \exists x \lnot (M(x) \to \exists y(F(x, y) \land H(y))</script>  <br />
-<script type="math/tex">\quad = \exists x \lnot (\lnot M(x) \lor \exists y(F(x, y) \land H(y))</script>  <br />
-<script type="math/tex">\quad = \exists x (\lnot \lnot M(x) \land \lnot \exists y(F(x, y) \land H(y))</script>  <br />
-<script type="math/tex">\quad = \exists x ( M(x) \land \forall y \lnot(F(x, y) \land H(y))</script>  <br />
-<script type="math/tex">\quad = \exists x ( M(x) \land \forall y (\lnot F(x, y) \lor \lnot H(y))</script>  <br />
-<script type="math/tex">\quad = \exists x ( M(x) \land \forall y ( F(x, y) \to \lnot H(y))</script></p>
+<p><span class="kdmath">$\quad \lnot \forall x (M(x) \to \exists y(F(x, y) \land H(y))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \lnot (M(x) \to \exists y(F(x, y) \land H(y))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \lnot (\lnot M(x) \lor \exists y(F(x, y) \land H(y))$</span>  <br />
+<span class="kdmath">$\quad = \exists x (\lnot \lnot M(x) \land \lnot \exists y(F(x, y) \land H(y))$</span>  <br />
+<span class="kdmath">$\quad = \exists x ( M(x) \land \forall y \lnot(F(x, y) \land H(y))$</span>  <br />
+<span class="kdmath">$\quad = \exists x ( M(x) \land \forall y (\lnot F(x, y) \lor \lnot H(y))$</span>  <br />
+<span class="kdmath">$\quad = \exists x ( M(x) \land \forall y ( F(x, y) \to \lnot H(y))$</span></p>
 
 <p>There exists a maths major and all of his friends don’t need help in their homework.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
-where <script type="math/tex">R(x,y)</script> means <script type="math/tex">x</script> is the roommate of <script type="math/tex">y</script>,  <br />
-and <script type="math/tex">L(y,z)</script> means <script type="math/tex">y</script> likes <script type="math/tex">z</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$\forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))$</span>  <br />
+where <span class="kdmath">$R(x,y)$</span> means <span class="kdmath">$x$</span> is the roommate of <span class="kdmath">$y$</span>,  <br />
+and <span class="kdmath">$L(y,z)$</span> means <span class="kdmath">$y$</span> likes <span class="kdmath">$z$</span>.</p>
 
 <p>Negation of the above statement:</p>
 
-<p><script type="math/tex">\lnot \forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
-<script type="math/tex">\quad = \exists x \lnot \exists y(R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
-<script type="math/tex">\quad = \exists x \forall y \lnot (R(x,y) \land \forall z \lnot L(y,z))</script>  <br />
-<script type="math/tex">\quad = \exists x \forall y (\lnot R(x,y) \lor \lnot \forall z \lnot L(y,z))</script>  <br />
-<script type="math/tex">\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z \lnot \lnot L(y,z))</script>  <br />
-<script type="math/tex">\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z L(y,z))</script>  <br />
-<script type="math/tex">\quad = \exists x \forall y (R(x,y) \to \exists z L(y,z))</script></p>
+<p><span class="kdmath">$\lnot \forall x \exists y(R(x,y) \land \forall z \lnot L(y,z))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \lnot \exists y(R(x,y) \land \forall z \lnot L(y,z))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \forall y \lnot (R(x,y) \land \forall z \lnot L(y,z))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \forall y (\lnot R(x,y) \lor \lnot \forall z \lnot L(y,z))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z \lnot \lnot L(y,z))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \forall y (\lnot R(x,y) \lor \exists z L(y,z))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \forall y (R(x,y) \to \exists z L(y,z))$</span></p>
 
 <p>There exists someone whose all roommates likes atleast one person.</p>
 
 <p><strong>(c)</strong> Required statement is:   <br />
-    <script type="math/tex">\lnot \forall x ((x \in A \lor x \in B) \to (x \in C \land x \notin D))</script>    <br />
-    <script type="math/tex">\quad = \exists x \lnot ((x \in A \lor x \in B) \to (x \in C \land x \notin D))</script>    <br />
-    <script type="math/tex">\quad = \exists x \lnot (\lnot (x \in A \lor x \in B) \lor (x \in C \land x \notin D))</script>    <br />
-    <script type="math/tex">\quad = \exists x (\lnot \lnot (x \in A \lor x \in B) \land \lnot (x \in C \land x \notin D))</script>    <br />
-    <script type="math/tex">\quad = \exists x ((x \in A \lor x \in B) \land (x \notin C \lor x \in D))</script></p>
+    <span class="kdmath">$\lnot \forall x ((x \in A \lor x \in B) \to (x \in C \land x \notin D))$</span>    <br />
+    <span class="kdmath">$\quad = \exists x \lnot ((x \in A \lor x \in B) \to (x \in C \land x \notin D))$</span>    <br />
+    <span class="kdmath">$\quad = \exists x \lnot (\lnot (x \in A \lor x \in B) \lor (x \in C \land x \notin D))$</span>    <br />
+    <span class="kdmath">$\quad = \exists x (\lnot \lnot (x \in A \lor x \in B) \land \lnot (x \in C \land x \notin D))$</span>    <br />
+    <span class="kdmath">$\quad = \exists x ((x \in A \lor x \in B) \land (x \notin C \lor x \in D))$</span></p>
 
 <p><strong>(d)</strong> Required statement is:
-    <script type="math/tex">\lnot \exists x \forall y[ y > x \to \exists z(z^2 + 5z = y)]</script>  <br />
-    <script type="math/tex">\quad = \forall x \lnot \forall y[ y > x \to \exists z(z^2 + 5z = y)]</script>  <br />
-    <script type="math/tex">\quad = \forall x \exists y \lnot [ y > x \to \exists z(z^2 + 5z = y)]</script>  <br />
-    <script type="math/tex">\quad = \forall x \exists y \lnot [ \lnot (y > x) \lor \exists z(z^2 + 5z = y)]</script>  <br />
-    <script type="math/tex">\quad = \forall x \exists y [ \lnot \lnot (y > x) \land \lnot \exists z(z^2 + 5z = y)]</script>  <br />
-    <script type="math/tex">\quad = \forall x \exists y [ (y > x) \land \forall z \lnot(z^2 + 5z = y)]</script>  <br />
-    <script type="math/tex">\quad = \forall x \exists y [ (y > x) \land \forall z (z^2 + 5z \neq y)]</script></p>
+    <span class="kdmath">$\lnot \exists x \forall y[ y > x \to \exists z(z^2 + 5z = y)]$</span>  <br />
+    <span class="kdmath">$\quad = \forall x \lnot \forall y[ y > x \to \exists z(z^2 + 5z = y)]$</span>  <br />
+    <span class="kdmath">$\quad = \forall x \exists y \lnot [ y > x \to \exists z(z^2 + 5z = y)]$</span>  <br />
+    <span class="kdmath">$\quad = \forall x \exists y \lnot [ \lnot (y > x) \lor \exists z(z^2 + 5z = y)]$</span>  <br />
+    <span class="kdmath">$\quad = \forall x \exists y [ \lnot \lnot (y > x) \land \lnot \exists z(z^2 + 5z = y)]$</span>  <br />
+    <span class="kdmath">$\quad = \forall x \exists y [ (y > x) \land \forall z \lnot(z^2 + 5z = y)]$</span>  <br />
+    <span class="kdmath">$\quad = \forall x \exists y [ (y > x) \land \forall z (z^2 + 5z \neq y)]$</span></p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\exists x (F(x) \land \lnot \exists y R(x,y))</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$\exists x (F(x) \land \lnot \exists y R(x,y))$</span>.</p>
 
 <p>Negation of above statement:</p>
 
-<p><script type="math/tex">\quad = \lnot \exists x (F(x) \land \lnot \exists y R(x,y))</script>  <br />
- <script type="math/tex">\quad = \forall x \lnot (F(x) \land \lnot \exists y R(x,y))</script>  <br />
- <script type="math/tex">\quad = \forall x (\lnot F(x) \lor \lnot \lnot \exists y R(x,y))</script>  <br />
- <script type="math/tex">\quad = \forall x (\lnot F(x) \lor \exists y R(x,y))</script>  <br />
- <script type="math/tex">\quad = \forall x ( F(x) \to \exists y R(x,y))</script>.</p>
+<p><span class="kdmath">$\quad = \lnot \exists x (F(x) \land \lnot \exists y R(x,y))$</span>  <br />
+ <span class="kdmath">$\quad = \forall x \lnot (F(x) \land \lnot \exists y R(x,y))$</span>  <br />
+ <span class="kdmath">$\quad = \forall x (\lnot F(x) \lor \lnot \lnot \exists y R(x,y))$</span>  <br />
+ <span class="kdmath">$\quad = \forall x (\lnot F(x) \lor \exists y R(x,y))$</span>  <br />
+ <span class="kdmath">$\quad = \forall x ( F(x) \to \exists y R(x,y))$</span>.</p>
 
-<p>where <script type="math/tex">F(x)</script> means <script type="math/tex">x</script> is a freshman.  <br />
- and <script type="math/tex">R(x,y)</script> means <script type="math/tex">x</script> and <script type="math/tex">y</script> are roommates.</p>
+<p>where <span class="kdmath">$F(x)$</span> means <span class="kdmath">$x$</span> is a freshman.  <br />
+ and <span class="kdmath">$R(x,y)$</span> means <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> are roommates.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y)</script></p>
+<p><strong>(b)</strong> <span class="kdmath">$\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y)$</span></p>
 
 <p>Negation of above statement:</p>
 
-<p><script type="math/tex">\lnot (\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y))</script>  <br />
- <script type="math/tex">\quad = (\lnot (\forall x \exists y L(x,y)) \lor  \lnot (\lnot \exists x \forall y L(x,y)))</script>  <br />
- <script type="math/tex">\quad = (\exists x \lnot \exists y L(x,y)) \lor  \exists x \forall y L(x,y)</script>  <br />
- <script type="math/tex">\quad = (\exists x \forall y \lnot L(x,y)) \lor  \exists x \forall y L(x,y)</script></p>
+<p><span class="kdmath">$\lnot (\forall x \exists y L(x,y) \land  \lnot \exists x \forall y L(x,y))$</span>  <br />
+ <span class="kdmath">$\quad = (\lnot (\forall x \exists y L(x,y)) \lor  \lnot (\lnot \exists x \forall y L(x,y)))$</span>  <br />
+ <span class="kdmath">$\quad = (\exists x \lnot \exists y L(x,y)) \lor  \exists x \forall y L(x,y)$</span>  <br />
+ <span class="kdmath">$\quad = (\exists x \forall y \lnot L(x,y)) \lor  \exists x \forall y L(x,y)$</span></p>
 
 <p>Either there exists someone who does not like anyone or there exists someone who likes everyone.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">\forall a \in A \exists b \in B (a \in C \leftrightarrow b \in C)</script>.</p>
+<p><strong>(c)</strong> <span class="kdmath">$\forall a \in A \exists b \in B (a \in C \leftrightarrow b \in C)$</span>.</p>
 
 <p>This is equivalent to:</p>
 
-<p><script type="math/tex">\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C)</script>.</p>
+<p><span class="kdmath">$\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C)$</span>.</p>
 
 <p>Negation of the above statement:</p>
 
-<p><script type="math/tex">\lnot (\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C))</script>  <br />
-<script type="math/tex">\lnot \forall a \in A \exists b \in B (a \in C \to b \in C)  \lor \lnot \forall a \in A \exists b \in B (b \in C \to a \in C)</script>  <br />
-<script type="math/tex">\exists a \in A \lnot \exists b \in B (a \in C \to b \in C)  \lor \exists a \in A \lnot \exists b \in B (b \in C \to a \in C)</script>  <br />
-<script type="math/tex">\exists a \in A \forall b \in B \lnot (a \in C \to b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \in C \to a \in C)</script>  <br />
-<script type="math/tex">\exists a \in A \forall b \in B \lnot (a \notin C \lor b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \notin C \lor a \in C)</script>  <br />
-<script type="math/tex">\exists a \in A \forall b \in B (a \in C \land b \notin C)  \lor \exists a \in A \forall b \in B(b \in C \land a \notin C)</script></p>
+<p><span class="kdmath">$\lnot (\forall a \in A \exists b \in B (a \in C \to b \in C)  \land \forall a \in A \exists b \in B (b \in C \to a \in C))$</span>  <br />
+<span class="kdmath">$\lnot \forall a \in A \exists b \in B (a \in C \to b \in C)  \lor \lnot \forall a \in A \exists b \in B (b \in C \to a \in C)$</span>  <br />
+<span class="kdmath">$\exists a \in A \lnot \exists b \in B (a \in C \to b \in C)  \lor \exists a \in A \lnot \exists b \in B (b \in C \to a \in C)$</span>  <br />
+<span class="kdmath">$\exists a \in A \forall b \in B \lnot (a \in C \to b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \in C \to a \in C)$</span>  <br />
+<span class="kdmath">$\exists a \in A \forall b \in B \lnot (a \notin C \lor b \in C)  \lor \exists a \in A \forall b \in B \lnot(b \notin C \lor a \in C)$</span>  <br />
+<span class="kdmath">$\exists a \in A \forall b \in B (a \in C \land b \notin C)  \lor \exists a \in A \forall b \in B(b \in C \land a \notin C)$</span></p>
 
 <p>There exists an a in A such that for all values of b in B, either a is in C and b is not in C, or a is not in C and b is in C.</p>
 
 <p><strong>(d)</strong> Required statement is:</p>
 
-<p><script type="math/tex">\lnot \forall y \gt 0 \exists x (ax^2 + bx + c = y)</script>   <br />
- <script type="math/tex">\exists y \gt 0 \lnot \exists x (ax^2 + bx + c = y)</script>   <br />
- <script type="math/tex">\exists y \gt 0 \forall x \lnot (ax^2 + bx + c = y)</script>   <br />
- <script type="math/tex">\exists y \gt 0 \forall x (ax^2 + bx + c \neq y)</script></p>
+<p><span class="kdmath">$\lnot \forall y \gt 0 \exists x (ax^2 + bx + c = y)$</span>   <br />
+ <span class="kdmath">$\exists y \gt 0 \lnot \exists x (ax^2 + bx + c = y)$</span>   <br />
+ <span class="kdmath">$\exists y \gt 0 \forall x \lnot (ax^2 + bx + c = y)$</span>   <br />
+ <span class="kdmath">$\exists y \gt 0 \forall x (ax^2 + bx + c \neq y)$</span></p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p><strong>(a)</strong> All possible values of x are 0,1,2,3,4,5,6. It can be easily verified that there exists a,b and c such that <script type="math/tex">a^2 + b^2 + c^2 = x</script> for all possible values of x. Thus statement is True.</p>
+<p><strong>(a)</strong> All possible values of x are 0,1,2,3,4,5,6. It can be easily verified that there exists a,b and c such that <span class="kdmath">$a^2 + b^2 + c^2 = x$</span> for all possible values of x. Thus statement is True.</p>
 
 <p><strong>(b)</strong> False. x has two possible values 1 and 7.</p>
 
@@ -1288,123 +1289,123 @@ and <script type="math/tex">L(y,z)</script> means <script type="math/tex">y</scr
 
 <p><strong>Soln4</strong></p>
 
-<p>Given: <script type="math/tex">\lnot \exists x P(x) = \forall x \lnot P(x)</script>.</p>
+<p>Given: <span class="kdmath">$\lnot \exists x P(x) = \forall x \lnot P(x)$</span>.</p>
 
-<p>To Prove: <script type="math/tex">\lnot \forall x P(x) = \exists x \lnot P(x)</script>.</p>
+<p>To Prove: <span class="kdmath">$\lnot \forall x P(x) = \exists x \lnot P(x)$</span>.</p>
 
-<p>Putting <script type="math/tex">P(x) = \lnot Q(x)</script> in the given equivalence:  <br />
-<script type="math/tex">\lnot \exists x \lnot Q(x) = \forall x Q(x)</script>  <br />
+<p>Putting <span class="kdmath">$P(x) = \lnot Q(x)$</span> in the given equivalence:  <br />
+<span class="kdmath">$\lnot \exists x \lnot Q(x) = \forall x Q(x)$</span>  <br />
 Taking negation on both sides:  <br />
-<script type="math/tex">\lnot \lnot \exists x \lnot Q(x) = \lnot \forall x Q(x)</script>  <br />
-<script type="math/tex">\exists x \lnot Q(x) = \lnot \forall x Q(x)</script>  <br />
+<span class="kdmath">$\lnot \lnot \exists x \lnot Q(x) = \lnot \forall x Q(x)$</span>  <br />
+<span class="kdmath">$\exists x \lnot Q(x) = \lnot \forall x Q(x)$</span>  <br />
 Hence Proved.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p>To Prove: <script type="math/tex">\lnot \exists x \in A P(x)</script> is equivalent to <script type="math/tex">\forall x \in A \lnot P(x)</script>.</p>
+<p>To Prove: <span class="kdmath">$\lnot \exists x \in A P(x)$</span> is equivalent to <span class="kdmath">$\forall x \in A \lnot P(x)$</span>.</p>
 
-<p>LHS: <script type="math/tex">\lnot \exists x \in A P(x)</script>  <br />
-<script type="math/tex">\quad = \lnot \exists x (x \in A \land P(x))</script>  <br />
-<script type="math/tex">\quad = \forall x \lnot (x \in A \land P(x))</script>  <br />
-<script type="math/tex">\quad = \forall x (x \notin A \lor \lnot P(x))</script>  <br />
-<script type="math/tex">\quad = \forall x (x \in A \to \lnot P(x))</script>  <br />
-<script type="math/tex">\quad = \forall x \in A \lnot P(x)</script> Hence Proved.</p>
+<p>LHS: <span class="kdmath">$\lnot \exists x \in A P(x)$</span>  <br />
+<span class="kdmath">$\quad = \lnot \exists x (x \in A \land P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall x \lnot (x \in A \land P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall x (x \notin A \lor \lnot P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall x (x \in A \to \lnot P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall x \in A \lnot P(x)$</span> Hence Proved.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p>To Prove <script type="math/tex">\exists x(P(x) \lor Q(x))</script> is equivalent to <script type="math/tex">\exists x P(x) \lor \exists x Q(x)</script>.</p>
+<p>To Prove <span class="kdmath">$\exists x(P(x) \lor Q(x))$</span> is equivalent to <span class="kdmath">$\exists x P(x) \lor \exists x Q(x)$</span>.</p>
 
-<p>Taking LHS: <script type="math/tex">\exists x(P(x) \lor Q(x))</script>  <br />
-<script type="math/tex">\quad = \lnot \lnot \exists x(P(x) \lor Q(x))</script>  <br />
-<script type="math/tex">\quad = \lnot \forall x \lnot (P(x) \lor Q(x))</script>  <br />
-<script type="math/tex">\quad = \lnot \forall x (\lnot P(x) \land \lnot Q(x))</script>  <br />
-<script type="math/tex">\quad = \lnot (\forall x \lnot P(x) \land \forall x \lnot Q(x))</script>  <br />
-<script type="math/tex">\quad = \lnot \forall x \lnot P(x) \lor \lnot \forall x \lnot Q(x))</script>  <br />
-<script type="math/tex">\quad = \exists x \lnot \lnot P(x) \lor \exists x \lnot \lnot Q(x))</script>  <br />
-<script type="math/tex">\quad = \exists x P(x) \lor \exists x Q(x))</script> Hence Proved.</p>
+<p>Taking LHS: <span class="kdmath">$\exists x(P(x) \lor Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \lnot \lnot \exists x(P(x) \lor Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \lnot \forall x \lnot (P(x) \lor Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \lnot \forall x (\lnot P(x) \land \lnot Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \lnot (\forall x \lnot P(x) \land \forall x \lnot Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \lnot \forall x \lnot P(x) \lor \lnot \forall x \lnot Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \lnot \lnot P(x) \lor \exists x \lnot \lnot Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \exists x P(x) \lor \exists x Q(x))$</span> Hence Proved.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>To Prove <script type="math/tex">\exists x (P(x) \to Q(x))</script> is equivalent to <script type="math/tex">\forall x P(x) \to \exists x Q(x)</script>.</p>
+<p>To Prove <span class="kdmath">$\exists x (P(x) \to Q(x))$</span> is equivalent to <span class="kdmath">$\forall x P(x) \to \exists x Q(x)$</span>.</p>
 
-<p>Starting from LHS <script type="math/tex">\exists x (P(x) \to Q(x))</script>  <br />
-<script type="math/tex">\quad = \exists x (\lnot P(x) \lor Q(x))</script>  <br />
-<script type="math/tex">\quad = \exists x \lnot P(x) \lor \exists x Q(x)</script>  <br />
-<script type="math/tex">\quad = \lnot \forall x P(x) \lor \exists x Q(x)</script>  <br />
-<script type="math/tex">\quad = \forall x P(x) \to \exists x Q(x)</script> Hence Proved.</p>
+<p>Starting from LHS <span class="kdmath">$\exists x (P(x) \to Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \exists x (\lnot P(x) \lor Q(x))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \lnot P(x) \lor \exists x Q(x)$</span>  <br />
+<span class="kdmath">$\quad = \lnot \forall x P(x) \lor \exists x Q(x)$</span>  <br />
+<span class="kdmath">$\quad = \forall x P(x) \to \exists x Q(x)$</span> Hence Proved.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>To Prove: <script type="math/tex">(\forall x \in A P(x)) \land (\forall x \in B P(x))</script> is equivalent to <script type="math/tex">\forall x \in (A \lor  B)P(x)</script></p>
+<p>To Prove: <span class="kdmath">$(\forall x \in A P(x)) \land (\forall x \in B P(x))$</span> is equivalent to <span class="kdmath">$\forall x \in (A \lor  B)P(x)$</span></p>
 
 <p>Starting from LHS:</p>
 
-<p><script type="math/tex">(\forall x \in A P(x)) \land (\forall x \in B P(x))</script>  <br />
-<script type="math/tex">\quad = (\forall x (x \in A \to P(x))) \land (\forall x (x \in B \to P(x)))</script>  <br />
-<script type="math/tex">\quad = \forall x ((x \in A \to P(x)) \land (x \in B \to P(x)))</script>  <br />
-<script type="math/tex">\quad = \forall x ((x \notin A \lor P(x)) \land (x \notin B \lor P(x)))</script>  <br />
+<p><span class="kdmath">$(\forall x \in A P(x)) \land (\forall x \in B P(x))$</span>  <br />
+<span class="kdmath">$\quad = (\forall x (x \in A \to P(x))) \land (\forall x (x \in B \to P(x)))$</span>  <br />
+<span class="kdmath">$\quad = \forall x ((x \in A \to P(x)) \land (x \in B \to P(x)))$</span>  <br />
+<span class="kdmath">$\quad = \forall x ((x \notin A \lor P(x)) \land (x \notin B \lor P(x)))$</span>  <br />
 Applying reverse distributive law:  <br />
-<script type="math/tex">\quad = \forall x ((x \notin A \land x \notin B) \lor P(x))</script>  <br />
-<script type="math/tex">\quad = \forall x ((\lnot(x \in A \lor x \in B)) \lor P(x))</script>  <br />
-<script type="math/tex">\quad = \forall x ((x \in A \lor x \in B) \to P(x))</script>  <br />
-<script type="math/tex">\quad = \forall (x \in A \lor x \in B) P(x))</script>  <br />
-<script type="math/tex">\quad = \forall x \in (A \lor B) P(x))</script> Hence Proved.</p>
+<span class="kdmath">$\quad = \forall x ((x \notin A \land x \notin B) \lor P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall x ((\lnot(x \in A \lor x \in B)) \lor P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall x ((x \in A \lor x \in B) \to P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall (x \in A \lor x \in B) P(x))$</span>  <br />
+<span class="kdmath">$\quad = \forall x \in (A \lor B) P(x))$</span> Hence Proved.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>Statement <script type="math/tex">\forall x (P(x) \lor Q(x))</script> is <em>not</em> equivalent to <script type="math/tex">\forall x P(x) \lor  \forall xQ(x)</script>.</p>
+<p>Statement <span class="kdmath">$\forall x (P(x) \lor Q(x))$</span> is <em>not</em> equivalent to <span class="kdmath">$\forall x P(x) \lor  \forall xQ(x)$</span>.</p>
 
-<p>Assigning <script type="math/tex">P(x) = true</script>, if x is even.  <br />
-and <script type="math/tex">Q(x) = true</script>, if x is odd.</p>
+<p>Assigning <span class="kdmath">$P(x) = true$</span>, if x is even.  <br />
+and <span class="kdmath">$Q(x) = true$</span>, if x is odd.</p>
 
 <p>Lets have Universe as all Natural Numbers.</p>
 
-<p>Clearly <script type="math/tex">\forall x (P(x) \lor Q(x))</script> is true as Every number is either even or odd.   <br />
-But <script type="math/tex">\forall x P(x) \lor  \forall xQ(x)</script> is not true. A neither all numbers are even not all numbers are odd.</p>
+<p>Clearly <span class="kdmath">$\forall x (P(x) \lor Q(x))$</span> is true as Every number is either even or odd.   <br />
+But <span class="kdmath">$\forall x P(x) \lor  \forall xQ(x)$</span> is not true. A neither all numbers are even not all numbers are odd.</p>
 
 <hr />
 
 <p><strong>Soln10</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\exists x \in A P(x) \lor \exists x \in B P(x)</script>  <br />
-<script type="math/tex">\quad = \exists x (x \in A \land P(x)) \lor \exists x (x \in B \land P(x))</script>  <br />
-<script type="math/tex">\quad = \exists x ((x \in A \land P(x)) \lor (x \in B \land P(x)))</script>  <br />
+<p><strong>(a)</strong> <span class="kdmath">$\exists x \in A P(x) \lor \exists x \in B P(x)$</span>  <br />
+<span class="kdmath">$\quad = \exists x (x \in A \land P(x)) \lor \exists x (x \in B \land P(x))$</span>  <br />
+<span class="kdmath">$\quad = \exists x ((x \in A \land P(x)) \lor (x \in B \land P(x)))$</span>  <br />
 Using Law of distribution in reverse:  <br />
-<script type="math/tex">\quad = \exists x ((x \in A \lor x \in B) \land P(x))</script>  <br />
-<script type="math/tex">\quad = \exists x ((x \in (A \lor B)) \land P(x))</script>  <br />
-<script type="math/tex">\quad = \exists x \in (A \lor B) P(x))</script> Hence Proved.</p>
+<span class="kdmath">$\quad = \exists x ((x \in A \lor x \in B) \land P(x))$</span>  <br />
+<span class="kdmath">$\quad = \exists x ((x \in (A \lor B)) \land P(x))$</span>  <br />
+<span class="kdmath">$\quad = \exists x \in (A \lor B) P(x))$</span> Hence Proved.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">\exists x \in A P(x) \land \exists x \in B P(x)</script> is not equivalent to <script type="math/tex">\exists x \in (A \land B) P(x)</script>.</p>
+<p><span class="kdmath">$\exists x \in A P(x) \land \exists x \in B P(x)$</span> is not equivalent to <span class="kdmath">$\exists x \in (A \land B) P(x)$</span>.</p>
 
-<p>If A and B are disjoint set, then clearly RHS will be false as <script type="math/tex">A \land B = \phi</script>. But even in this case 
+<p>If A and B are disjoint set, then clearly RHS will be false as <span class="kdmath">$A \land B = \phi$</span>. But even in this case 
 for some values of x LHS can be true.</p>
 
 <hr />
 
 <p><strong>Soln11</strong></p>
 
-<p><script type="math/tex">A \subseteq B</script> is equivalent to  <br />
-<script type="math/tex">\quad = \forall x (x \in A \to x \in B)</script></p>
+<p><span class="kdmath">$A \subseteq B$</span> is equivalent to  <br />
+<span class="kdmath">$\quad = \forall x (x \in A \to x \in B)$</span></p>
 
-<p>Also, <script type="math/tex">A \setminus B = \phi</script>  <br />
-No elements exist in the <script type="math/tex">A \setminus B</script> set. Thus it is equivalent to:  <br />
-<script type="math/tex">\lnot \exists x (x \in (A \setminus B))</script>  <br />
-<script type="math/tex">\quad = \lnot \exists x (x \in A \land x \notin B)</script>  <br />
-<script type="math/tex">\quad = \forall x \lnot (x \in A \land x \notin B)</script>  <br />
-<script type="math/tex">\quad = \forall x (x \notin A \lor x \in B)</script>  <br />
-<script type="math/tex">\quad = \forall x (x \in A \to x \in B)</script></p>
+<p>Also, <span class="kdmath">$A \setminus B = \phi$</span>  <br />
+No elements exist in the <span class="kdmath">$A \setminus B$</span> set. Thus it is equivalent to:  <br />
+<span class="kdmath">$\lnot \exists x (x \in (A \setminus B))$</span>  <br />
+<span class="kdmath">$\quad = \lnot \exists x (x \in A \land x \notin B)$</span>  <br />
+<span class="kdmath">$\quad = \forall x \lnot (x \in A \land x \notin B)$</span>  <br />
+<span class="kdmath">$\quad = \forall x (x \notin A \lor x \in B)$</span>  <br />
+<span class="kdmath">$\quad = \forall x (x \in A \to x \in B)$</span></p>
 
 <p>Thus both are same.</p>
 

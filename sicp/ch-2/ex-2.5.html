@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9416,13 +9417,13 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>We have to show that any pair of non-negative integers, <script type="math/tex">a</script> and <script type="math/tex">b</script>, can be represented using a single integer: <script type="math/tex">2^a 3^b</script>.</p>
+                        <p>We have to show that any pair of non-negative integers, <span class="kdmath">$a$</span> and <span class="kdmath">$b$</span>, can be represented using a single integer: <span class="kdmath">$2^a 3^b$</span>.</p>
 
-<p>Since any number can be represented as a product of a unique combination of prime numbers, it follows that any number <script type="math/tex">2^a 3^b</script>
-will result in a unique number i.e. no other number will have same combination of <script type="math/tex">2</script> and <script type="math/tex">3</script>.</p>
+<p>Since any number can be represented as a product of a unique combination of prime numbers, it follows that any number <span class="kdmath">$2^a 3^b$</span>
+will result in a unique number i.e. no other number will have same combination of <span class="kdmath">$2$</span> and <span class="kdmath">$3$</span>.</p>
 
-<p>Thus we can get back the pair <script type="math/tex">(a,b)</script> using the number <script type="math/tex">2^a 3^b</script>. To get back the pair we need to find the number of times 
-we can divide the number by <script type="math/tex">2</script> and <script type="math/tex">3</script> to get <script type="math/tex">a</script> and <script type="math/tex">b</script> respectively.</p>
+<p>Thus we can get back the pair <span class="kdmath">$(a,b)$</span> using the number <span class="kdmath">$2^a 3^b$</span>. To get back the pair we need to find the number of times 
+we can divide the number by <span class="kdmath">$2$</span> and <span class="kdmath">$3$</span> to get <span class="kdmath">$a$</span> and <span class="kdmath">$b$</span> respectively.</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9471,7 +9472,8 @@ we can divide the number by <script type="math/tex">2</script> and <script type=
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">log</span> <span class="mi">3</span> <span class="nv">x</span><span class="p">)</span>
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
@@ -9486,7 +9488,8 @@ we can divide the number by <script type="math/tex">2</script> and <script type=
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">car</span> <span class="mi">11664</span><span class="p">)</span>
 <span class="mi">4</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">cdr</span> <span class="mi">11664</span><span class="p">)</span>
-<span class="mi">6</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">6</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

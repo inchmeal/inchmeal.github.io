@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,10 +1137,10 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li>Suppose <script type="math/tex">f : A → B</script> and <script type="math/tex">X \subseteq A</script>. Then the image of <script type="math/tex">X</script> under <script type="math/tex">f</script> is the set <script type="math/tex">f(X)</script> defined as follows:  <br />
-<script type="math/tex">f(X) = \{ f(x) \, \vert \, x \in X \} = \{ b \in B \, \vert \, \exists x \in X ( f(x) = b) \}</script>.</li>
-  <li>If <script type="math/tex">Y \subseteq B</script>, then the inverse image of <script type="math/tex">Y</script> under <script type="math/tex">f</script> is the set <script type="math/tex">f^{−1}(Y)</script> defined as follows:   <br />
-<script type="math/tex">f^{−1}(Y ) = \{ a \in A \, \vert \, f(a) \in Y \}</script>.</li>
+  <li>Suppose <span class="kdmath">$f : A → B$</span> and <span class="kdmath">$X \subseteq A$</span>. Then the image of <span class="kdmath">$X$</span> under <span class="kdmath">$f$</span> is the set <span class="kdmath">$f(X)$</span> defined as follows:  <br />
+<span class="kdmath">$f(X) = \{ f(x) \, \vert \, x \in X \} = \{ b \in B \, \vert \, \exists x \in X ( f(x) = b) \}$</span>.</li>
+  <li>If <span class="kdmath">$Y \subseteq B$</span>, then the inverse image of <span class="kdmath">$Y$</span> under <span class="kdmath">$f$</span> is the set <span class="kdmath">$f^{−1}(Y)$</span> defined as follows:   <br />
+<span class="kdmath">$f^{−1}(Y ) = \{ a \in A \, \vert \, f(a) \in Y \}$</span>.</li>
   <li>In this section, we also learned a way to come up with counter examples. It might not help always for finding counter examples but it may
   atleast give a starting point. The outline is as follows:
     <ul>
@@ -1158,44 +1159,44 @@
 
 <p>Yes it will always be true. Proof:</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">y \in f(W \cup X)</script>. Thus for some <script type="math/tex">x \in W \cup X</script>, <script type="math/tex">f(x) = y</script>. Thus we have two cases:</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$y \in f(W \cup X)$</span>. Thus for some <span class="kdmath">$x \in W \cup X$</span>, <span class="kdmath">$f(x) = y$</span>. Thus we have two cases:</p>
 
-<p>Case 1: <script type="math/tex">x \in X</script>  <br />
-Thus <script type="math/tex">y = f(x)</script> and <script type="math/tex">x \in X</script>, it follows <script type="math/tex">y \in f(X)</script>. Or we can also say <script type="math/tex">y \in (f(X) \cup f(W))</script>.</p>
+<p>Case 1: <span class="kdmath">$x \in X$</span>  <br />
+Thus <span class="kdmath">$y = f(x)$</span> and <span class="kdmath">$x \in X$</span>, it follows <span class="kdmath">$y \in f(X)$</span>. Or we can also say <span class="kdmath">$y \in (f(X) \cup f(W))$</span>.</p>
 
-<p>Case 2: <script type="math/tex">x \in W</script>   <br />
-Thus <script type="math/tex">y = f(x)</script> and <script type="math/tex">x \in W</script>, it follows <script type="math/tex">y \in f(W)</script>. Or we can also say <script type="math/tex">y \in (f(X) \cup f(W))</script>.</p>
+<p>Case 2: <span class="kdmath">$x \in W$</span>   <br />
+Thus <span class="kdmath">$y = f(x)$</span> and <span class="kdmath">$x \in W$</span>, it follows <span class="kdmath">$y \in f(W)$</span>. Or we can also say <span class="kdmath">$y \in (f(X) \cup f(W))$</span>.</p>
 
-<p>Thus from both cases, <script type="math/tex">y \in (f(X) \cup f(W))</script>. Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">f(W \cup X) \; \subseteq \; f(W) \cup f(X)</script>.</p>
+<p>Thus from both cases, <span class="kdmath">$y \in (f(X) \cup f(W))$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$f(W \cup X) \; \subseteq \; f(W) \cup f(X)$</span>.</p>
 
-<p>(<script type="math/tex">\rightarrow</script>) Suppose <script type="math/tex">y \in f(W) \cup f(X)</script>. Thus we have two possible cases:</p>
+<p>(<span class="kdmath">$\rightarrow$</span>) Suppose <span class="kdmath">$y \in f(W) \cup f(X)$</span>. Thus we have two possible cases:</p>
 
-<p>Case 1: <script type="math/tex">y \in f(W)</script>.  <br />
-Thus for some <script type="math/tex">x \in W</script>, <script type="math/tex">f(x) = y</script>. Since <script type="math/tex">x \in W</script>, it follows <script type="math/tex">x \in W \cup X</script>. Since <script type="math/tex">x \in W \cup X</script> and <script type="math/tex">f(x) = y</script>,
- it follows <script type="math/tex">y \in f(W \cup X)</script>.</p>
+<p>Case 1: <span class="kdmath">$y \in f(W)$</span>.  <br />
+Thus for some <span class="kdmath">$x \in W$</span>, <span class="kdmath">$f(x) = y$</span>. Since <span class="kdmath">$x \in W$</span>, it follows <span class="kdmath">$x \in W \cup X$</span>. Since <span class="kdmath">$x \in W \cup X$</span> and <span class="kdmath">$f(x) = y$</span>,
+ it follows <span class="kdmath">$y \in f(W \cup X)$</span>.</p>
 
-<p>Case 2: <script type="math/tex">y \in f(X)</script>.  <br />
-Thus for some <script type="math/tex">x \in X</script>, <script type="math/tex">f(x) = y</script>. Since <script type="math/tex">x \in X</script>, it follows <script type="math/tex">x \in W \cup X</script>. Since <script type="math/tex">x \in W \cup X</script> and <script type="math/tex">f(x) = y</script>,
- it follows <script type="math/tex">y \in f(W \cup X)</script>.</p>
+<p>Case 2: <span class="kdmath">$y \in f(X)$</span>.  <br />
+Thus for some <span class="kdmath">$x \in X$</span>, <span class="kdmath">$f(x) = y$</span>. Since <span class="kdmath">$x \in X$</span>, it follows <span class="kdmath">$x \in W \cup X$</span>. Since <span class="kdmath">$x \in W \cup X$</span> and <span class="kdmath">$f(x) = y$</span>,
+ it follows <span class="kdmath">$y \in f(W \cup X)$</span>.</p>
 
-<p>Thus from both cases <script type="math/tex">y \in f(W \cup X)</script>. Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">f(W) \cup f(X) \; \subseteq \; f(W \cup X)</script>.</p>
+<p>Thus from both cases <span class="kdmath">$y \in f(W \cup X)$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$f(W) \cup f(X) \; \subseteq \; f(W \cup X)$</span>.</p>
 
-<p>Since <script type="math/tex">f(W \cup X) \; \subseteq \; f(W) \cup f(X)</script> and <script type="math/tex">f(W) \cup f(X) \; \subseteq \; f(W \cup X)</script>, it follows that <script type="math/tex">f(W \cup X) \; = \; f(W) \cup f(X)</script>.</p>
+<p>Since <span class="kdmath">$f(W \cup X) \; \subseteq \; f(W) \cup f(X)$</span> and <span class="kdmath">$f(W) \cup f(X) \; \subseteq \; f(W \cup X)$</span>, it follows that <span class="kdmath">$f(W \cup X) \; = \; f(W) \cup f(X)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>No, it is not true. Counter example:</p>
 
-<p>Suppose <script type="math/tex">f = \{ (1,a), (2,b), (3,a) \}</script>.   <br />
-<script type="math/tex">W = \{1, 2\}, X = \{ 2, 3\}</script>.</p>
+<p>Suppose <span class="kdmath">$f = \{ (1,a), (2,b), (3,a) \}$</span>.   <br />
+<span class="kdmath">$W = \{1, 2\}, X = \{ 2, 3\}$</span>.</p>
 
-<p>Thus, <script type="math/tex">f(W) = \{ a,b\}</script>.   <br />
- <script type="math/tex">f(X) = \{b,a\}</script>.   <br />
- <script type="math/tex">f(W) \setminus f(X) = \phi</script>.</p>
+<p>Thus, <span class="kdmath">$f(W) = \{ a,b\}$</span>.   <br />
+ <span class="kdmath">$f(X) = \{b,a\}$</span>.   <br />
+ <span class="kdmath">$f(W) \setminus f(X) = \phi$</span>.</p>
 
-<p>Also, <script type="math/tex">W \setminus X = \{1 \}</script>, Thus <script type="math/tex">f(W \setminus X) = \{a\}</script>.</p>
+<p>Also, <span class="kdmath">$W \setminus X = \{1 \}$</span>, Thus <span class="kdmath">$f(W \setminus X) = \{a\}$</span>.</p>
 
-<p>Clearly <script type="math/tex">f(W \setminus X) \; \ne \; f(W) \setminus f(X)</script>.</p>
+<p>Clearly <span class="kdmath">$f(W \setminus X) \; \ne \; f(W) \setminus f(X)$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
@@ -1205,21 +1206,21 @@ Thus for some <script type="math/tex">x \in X</script>, <script type="math/tex">
 
 <p>Updated Solution:</p>
 
-<p>Suppose <script type="math/tex">f = \{ (1,a), (2,b), (3,a) \}</script>.   <br />
-<script type="math/tex">W = \{1\}, X = \{2, 3\}</script>.</p>
+<p>Suppose <span class="kdmath">$f = \{ (1,a), (2,b), (3,a) \}$</span>.   <br />
+<span class="kdmath">$W = \{1\}, X = \{2, 3\}$</span>.</p>
 
-<p>Clearly <script type="math/tex">W \nsubseteq X</script>.</p>
+<p>Clearly <span class="kdmath">$W \nsubseteq X$</span>.</p>
 
-<p>Now, <script type="math/tex">f(W) = \{a\}</script> and <script type="math/tex">f(X) = \{a, b\}</script>. Clearly <script type="math/tex">f(W) \subseteq f(X)</script> but <script type="math/tex">W \nsubseteq X</script>.</p>
+<p>Now, <span class="kdmath">$f(W) = \{a\}$</span> and <span class="kdmath">$f(X) = \{a, b\}$</span>. Clearly <span class="kdmath">$f(W) \subseteq f(X)$</span> but <span class="kdmath">$W \nsubseteq X$</span>.</p>
 
 <p>Old(Wrong) Solution:</p>
 
-<p>Suppose <script type="math/tex">f = \{ (1,a), (2,b) \}</script>.   <br />
-<script type="math/tex">W = \{1\}, X = \{ 1, 2\}</script>.</p>
+<p>Suppose <span class="kdmath">$f = \{ (1,a), (2,b) \}$</span>.   <br />
+<span class="kdmath">$W = \{1\}, X = \{ 1, 2\}$</span>.</p>
 
-<p>Clearly <script type="math/tex">W \subseteq X</script>.</p>
+<p>Clearly <span class="kdmath">$W \subseteq X$</span>.</p>
 
-<p>Now, <script type="math/tex">f(W) = \{a\}</script> and <script type="math/tex">f(X) = \{a, b\}</script>. Clearly <script type="math/tex">f(W) \nsubseteq f(X)</script>. Thus <script type="math/tex">W \subseteq X</script> but <script type="math/tex">f(W) \nsubseteq f(X)</script>.</p>
+<p>Now, <span class="kdmath">$f(W) = \{a\}$</span> and <span class="kdmath">$f(X) = \{a, b\}$</span>. Clearly <span class="kdmath">$f(W) \nsubseteq f(X)$</span>. Thus <span class="kdmath">$W \subseteq X$</span> but <span class="kdmath">$f(W) \nsubseteq f(X)$</span>.</p>
 
 <hr />
 
@@ -1229,89 +1230,89 @@ Thus for some <script type="math/tex">x \in X</script>, <script type="math/tex">
 
 <p>Yes, it will be always true. Proof:</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in f^{-1}(Y \cap Z)</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y \land f(x) \in Z</script>. Since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y</script>,
-it follows <script type="math/tex">x \in f^{-1}(Y)</script>. Similarly, since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Z</script>, it follows <script type="math/tex">x \in f^{-1}(Z)</script>. Thus <script type="math/tex">x \in f^{-1}(Y) \cap f^{-1}(Z)</script>.
-Since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">f^{-1}(Y \cap Z) \; \subseteq \; f^{-1}(Y) \cap f^{-1}(Z)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in f^{-1}(Y \cap Z)$</span>. Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y \land f(x) \in Z$</span>. Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y$</span>,
+it follows <span class="kdmath">$x \in f^{-1}(Y)$</span>. Similarly, since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Z$</span>, it follows <span class="kdmath">$x \in f^{-1}(Z)$</span>. Thus <span class="kdmath">$x \in f^{-1}(Y) \cap f^{-1}(Z)$</span>.
+Since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$f^{-1}(Y \cap Z) \; \subseteq \; f^{-1}(Y) \cap f^{-1}(Z)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in f^{-1}(Y) \cap f^{-1}(Z)</script>. Thus <script type="math/tex">x \in f^{-1}(Y)</script> and <script type="math/tex">x \in f^{-1}(Z)</script>. It follows that <script type="math/tex">x \in A</script> and
-<script type="math/tex">f(x) \in Y</script> and <script type="math/tex">f(x) \in Z</script>. It follows <script type="math/tex">f(x) \in Y \cap Z</script>. Since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y \cap Z</script>, it follows that <script type="math/tex">x \in f^{-1}(Y \cap Z)</script>.
-Since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">f^{-1}(Y) \cap f^{-1}(Z) \; \subseteq \; f^{-1}(Y \cap Z)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in f^{-1}(Y) \cap f^{-1}(Z)$</span>. Thus <span class="kdmath">$x \in f^{-1}(Y)$</span> and <span class="kdmath">$x \in f^{-1}(Z)$</span>. It follows that <span class="kdmath">$x \in A$</span> and
+<span class="kdmath">$f(x) \in Y$</span> and <span class="kdmath">$f(x) \in Z$</span>. It follows <span class="kdmath">$f(x) \in Y \cap Z$</span>. Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y \cap Z$</span>, it follows that <span class="kdmath">$x \in f^{-1}(Y \cap Z)$</span>.
+Since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$f^{-1}(Y) \cap f^{-1}(Z) \; \subseteq \; f^{-1}(Y \cap Z)$</span>.</p>
 
-<p>Thus from both directions, we can conclude <script type="math/tex">f^{-1}(Y \cap Z) \; = \; f^{-1}(Y) \cap f^{-1}(Z)</script></p>
+<p>Thus from both directions, we can conclude <span class="kdmath">$f^{-1}(Y \cap Z) \; = \; f^{-1}(Y) \cap f^{-1}(Z)$</span></p>
 
 <p><strong>(b)</strong></p>
 
 <p>Yes, it will be always true. Proof:</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in f^{-1}(Y \cup Z)</script>. Thus <script type="math/tex">x \in A</script> and f(x) \in Y \lor f(x) \in Z $$. Thus we have two cases:</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in f^{-1}(Y \cup Z)$</span>. Thus <span class="kdmath">$x \in A$</span> and f(x) \in Y \lor f(x) \in Z $$. Thus we have two cases:</p>
 
-<p>Case 1: <script type="math/tex">f(x) \in Y</script>   <br />
-Since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y</script>, it follows <script type="math/tex">x \in f^{-1}(Y)</script>.</p>
+<p>Case 1: <span class="kdmath">$f(x) \in Y$</span>   <br />
+Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y$</span>, it follows <span class="kdmath">$x \in f^{-1}(Y)$</span>.</p>
 
-<p>Case 2: <script type="math/tex">f(x) \in Z</script>   <br />
-Since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Z</script>, it follows <script type="math/tex">x \in f^{-1}(Z)</script>.</p>
+<p>Case 2: <span class="kdmath">$f(x) \in Z$</span>   <br />
+Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Z$</span>, it follows <span class="kdmath">$x \in f^{-1}(Z)$</span>.</p>
 
-<p>Thus we have <script type="math/tex">x \in f^{-1}(Y)</script> or <script type="math/tex">x \in  f^{-1}(Z)</script>. It follows <script type="math/tex">x \in f^{-1}(Y) \cup f^{-1}(Z)</script>.</p>
+<p>Thus we have <span class="kdmath">$x \in f^{-1}(Y)$</span> or <span class="kdmath">$x \in  f^{-1}(Z)$</span>. It follows <span class="kdmath">$x \in f^{-1}(Y) \cup f^{-1}(Z)$</span>.</p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">f^{-1}(Y \cup Z) \; \subseteq \; f^{-1}(Y) \cup f^{-1}(Z)</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$f^{-1}(Y \cup Z) \; \subseteq \; f^{-1}(Y) \cup f^{-1}(Z)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in f^{-1}(Y) \cup f^{-1}(Z)</script>. Thus <script type="math/tex">x \in f^{-1}(Y)</script> or <script type="math/tex">x \in f^{-1}(Z)</script>. It follows we have following cases:</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in f^{-1}(Y) \cup f^{-1}(Z)$</span>. Thus <span class="kdmath">$x \in f^{-1}(Y)$</span> or <span class="kdmath">$x \in f^{-1}(Z)$</span>. It follows we have following cases:</p>
 
-<p>Case 1: <script type="math/tex">x \in f^{-1}(Y)</script>   <br />
-Thus <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y</script>. Or we can also say <script type="math/tex">f(x) \in Y \cup Z</script>.</p>
+<p>Case 1: <span class="kdmath">$x \in f^{-1}(Y)$</span>   <br />
+Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y$</span>. Or we can also say <span class="kdmath">$f(x) \in Y \cup Z$</span>.</p>
 
-<p>Case 2: <script type="math/tex">x \in f^{-1}(Z)</script>   <br />
-Thus <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Z</script>. Or we can also say <script type="math/tex">f(x) \in Y \cup Z</script>.</p>
+<p>Case 2: <span class="kdmath">$x \in f^{-1}(Z)$</span>   <br />
+Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Z$</span>. Or we can also say <span class="kdmath">$f(x) \in Y \cup Z$</span>.</p>
 
-<p>It follows from all possible cases that <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y \cup Z</script>. Thus <script type="math/tex">x \in f^{-1}(Y \cup Z)</script>. Since <script type="math/tex">x</script> is arbitrary, it 
-follows that <script type="math/tex">f^{-1}(Y) \cup f^{-1}(Z) \; \subseteq \; f^{-1}(Y \cup Z)</script>.</p>
+<p>It follows from all possible cases that <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y \cup Z$</span>. Thus <span class="kdmath">$x \in f^{-1}(Y \cup Z)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it 
+follows that <span class="kdmath">$f^{-1}(Y) \cup f^{-1}(Z) \; \subseteq \; f^{-1}(Y \cup Z)$</span>.</p>
 
-<p>Thus we have <script type="math/tex">f^{-1}(Y \cup Z) \; \subseteq \; f^{-1}(Y) \cup f^{-1}(Z)</script> and <script type="math/tex">f^{-1}(Y) \cup f^{-1}(Z) \; \subseteq \; f^{-1}(Y \cup Z)</script>. We can conclude
-that <script type="math/tex">f^{-1}(Y \cup Z) \; = \; f^{-1}(Y) \cup f^{-1}(Z)</script>.</p>
+<p>Thus we have <span class="kdmath">$f^{-1}(Y \cup Z) \; \subseteq \; f^{-1}(Y) \cup f^{-1}(Z)$</span> and <span class="kdmath">$f^{-1}(Y) \cup f^{-1}(Z) \; \subseteq \; f^{-1}(Y \cup Z)$</span>. We can conclude
+that <span class="kdmath">$f^{-1}(Y \cup Z) \; = \; f^{-1}(Y) \cup f^{-1}(Z)$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
 <p>Yes, it will be always true. Proof:</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in f^{-1}(Y \setminus Z)</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y \setminus Z</script>. Thus <script type="math/tex">f(x) \in Y \land f(x) \notin Z</script>.
- Since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y</script>, it follows <script type="math/tex">x \in f^{-1}(Y)</script>. Also, since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \notin Z</script>, it follows <script type="math/tex">x \notin f^{-1}(Z)</script>.
- Since <script type="math/tex">x \in f^{-1}(Y)</script> and  <script type="math/tex">x \notin f^{-1}(Z)</script>, it follows that <script type="math/tex">x \in  f^{-1}(Y) \setminus  f^{-1}(Z)</script>. Since <script type="math/tex">x</script> is arbitrary, it follows
- <script type="math/tex">f^{-1}(Y \setminus Z) \; \subseteq \; f^{-1}(Y) \setminus  f^{-1}(Z)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in f^{-1}(Y \setminus Z)$</span>. Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y \setminus Z$</span>. Thus <span class="kdmath">$f(x) \in Y \land f(x) \notin Z$</span>.
+ Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y$</span>, it follows <span class="kdmath">$x \in f^{-1}(Y)$</span>. Also, since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \notin Z$</span>, it follows <span class="kdmath">$x \notin f^{-1}(Z)$</span>.
+ Since <span class="kdmath">$x \in f^{-1}(Y)$</span> and  <span class="kdmath">$x \notin f^{-1}(Z)$</span>, it follows that <span class="kdmath">$x \in  f^{-1}(Y) \setminus  f^{-1}(Z)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows
+ <span class="kdmath">$f^{-1}(Y \setminus Z) \; \subseteq \; f^{-1}(Y) \setminus  f^{-1}(Z)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in f^{-1}(Y) \setminus  f^{-1}(Z)</script>. Thus <script type="math/tex">x \in  f^{-1}(Y)</script> and <script type="math/tex">x \notin f^{-1}(Z)</script>. Since <script type="math/tex">x \in  f^{-1}(Y)</script>,
- it follows <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y</script>. Since <script type="math/tex">x \in A</script> and <script type="math/tex">x \notin f^{-1}(Z)</script>, it follows <script type="math/tex">f(x) \notin Z</script>. Thus we have <script type="math/tex">f(x) \in Y</script>
- and <script type="math/tex">f(x) \notin Z</script>. It follows <script type="math/tex">f(x) \in Y \setminus Z</script>. Since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y \setminus Z</script>, it follows that <script type="math/tex">x \in f^{-1}(Y \setminus Z)</script>.
- Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">f^{-1}(Y) \setminus  f^{-1}(Z) \; \subseteq \; f^{-1}(Y \setminus Z)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in f^{-1}(Y) \setminus  f^{-1}(Z)$</span>. Thus <span class="kdmath">$x \in  f^{-1}(Y)$</span> and <span class="kdmath">$x \notin f^{-1}(Z)$</span>. Since <span class="kdmath">$x \in  f^{-1}(Y)$</span>,
+ it follows <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y$</span>. Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$x \notin f^{-1}(Z)$</span>, it follows <span class="kdmath">$f(x) \notin Z$</span>. Thus we have <span class="kdmath">$f(x) \in Y$</span>
+ and <span class="kdmath">$f(x) \notin Z$</span>. It follows <span class="kdmath">$f(x) \in Y \setminus Z$</span>. Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y \setminus Z$</span>, it follows that <span class="kdmath">$x \in f^{-1}(Y \setminus Z)$</span>.
+ Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$f^{-1}(Y) \setminus  f^{-1}(Z) \; \subseteq \; f^{-1}(Y \setminus Z)$</span>.</p>
 
-<p>Now we can conclude from both directions that <script type="math/tex">f^{-1}(Y \setminus Z) \; = \; f^{-1}(Y) \setminus  f^{-1}(Z)</script>.</p>
+<p>Now we can conclude from both directions that <span class="kdmath">$f^{-1}(Y \setminus Z) \; = \; f^{-1}(Y) \setminus  f^{-1}(Z)$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
 <p>No, it is not always true. Counter example:</p>
 
-<p>Suppose <script type="math/tex">A=\{a,b\}, B = \{1,2,3\}, Y = \{1\}, Z = \{1,2\},  f = \{(a,1), (b,3) \}</script>.</p>
+<p>Suppose <span class="kdmath">$A=\{a,b\}, B = \{1,2,3\}, Y = \{1\}, Z = \{1,2\},  f = \{(a,1), (b,3) \}$</span>.</p>
 
-<p>Thus <script type="math/tex">Y \subseteq Z</script>.</p>
+<p>Thus <span class="kdmath">$Y \subseteq Z$</span>.</p>
 
-<p>Also, <script type="math/tex">f^{-1}(Y) = \{a\}</script> and <script type="math/tex">f^{-1}(Z) = \{a\}</script>. Thus <script type="math/tex">f^{-1}(Y) \subseteq f^{-1}(Z)</script>.</p>
+<p>Also, <span class="kdmath">$f^{-1}(Y) = \{a\}$</span> and <span class="kdmath">$f^{-1}(Z) = \{a\}$</span>. Thus <span class="kdmath">$f^{-1}(Y) \subseteq f^{-1}(Z)$</span>.</p>
 
-<p>Thus even if <script type="math/tex">f^{-1}(Y) \subseteq f^{-1}(Z)</script>, <script type="math/tex">Y \nsubseteq Z</script>.</p>
+<p>Thus even if <span class="kdmath">$f^{-1}(Y) \subseteq f^{-1}(Z)$</span>, <span class="kdmath">$Y \nsubseteq Z$</span>.</p>
 
 <hr />
 
 <p><strong>Soln3</strong> False.</p>
 
-<p>Suppose <script type="math/tex">A = \{1,2,3\}, X = \{1,3\}, f = \{(1,a), (2,a), (3,b) \}</script>.</p>
+<p>Suppose <span class="kdmath">$A = \{1,2,3\}, X = \{1,3\}, f = \{(1,a), (2,a), (3,b) \}$</span>.</p>
 
-<p>Thus <script type="math/tex">f(X) = \{a,b\}</script> and <script type="math/tex">f^{-1}(f(X)) = \{1,2,3\}</script>. Thus <script type="math/tex">f^{-1}(f(X)) \ne X</script>. Thus if <script type="math/tex">f</script> is not one-to-one, theorem is not correct.</p>
+<p>Thus <span class="kdmath">$f(X) = \{a,b\}$</span> and <span class="kdmath">$f^{-1}(f(X)) = \{1,2,3\}$</span>. Thus <span class="kdmath">$f^{-1}(f(X)) \ne X$</span>. Thus if <span class="kdmath">$f$</span> is not one-to-one, theorem is not correct.</p>
 
 <hr />
 
 <p><strong>Soln4</strong> False.</p>
 
-<p>Suppose <script type="math/tex">A=\{a,b\}, B = \{1,2,3\}, Y = \{1\}, Z = \{1,2\},  f = \{(a,1), (b,3) \}</script>.</p>
+<p>Suppose <span class="kdmath">$A=\{a,b\}, B = \{1,2,3\}, Y = \{1\}, Z = \{1,2\},  f = \{(a,1), (b,3) \}$</span>.</p>
 
-<p>Also, <script type="math/tex">f^{-1}(Y) = \{a\}</script> and <script type="math/tex">f(f^{-1}(Y)) = \{1,3\}</script>. Thus <script type="math/tex">f(f^{-1}(Y)) = \{1,3\} \ne Y</script>. Thus if <script type="math/tex">f</script> is not onto, theorem is incorrect.</p>
+<p>Also, <span class="kdmath">$f^{-1}(Y) = \{a\}$</span> and <span class="kdmath">$f(f^{-1}(Y)) = \{1,3\}$</span>. Thus <span class="kdmath">$f(f^{-1}(Y)) = \{1,3\} \ne Y$</span>. Thus if <span class="kdmath">$f$</span> is not onto, theorem is incorrect.</p>
 
 <hr />
 
@@ -1321,17 +1322,17 @@ that <script type="math/tex">f^{-1}(Y \cup Z) \; = \; f^{-1}(Y) \cup f^{-1}(Z)</
 
 <p><strong>Soln6</strong></p>
 
-<p>Suppose <script type="math/tex">P</script> denotes inverse image of <script type="math/tex">Y</script> under <script type="math/tex">f</script>. Thus <script type="math/tex">P = \{ a \in A \, \vert \, f(a) \in Y \}</script>.</p>
+<p>Suppose <span class="kdmath">$P$</span> denotes inverse image of <span class="kdmath">$Y$</span> under <span class="kdmath">$f$</span>. Thus <span class="kdmath">$P = \{ a \in A \, \vert \, f(a) \in Y \}$</span>.</p>
 
-<p>Also suppose <script type="math/tex">Q</script> denotes image of <script type="math/tex">Y</script> under <script type="math/tex">f^{-1}</script>. Thus <script type="math/tex">Q = \{ a \in A \, \vert \, \exists y \in Y(f^{-1}(y) = a) \}</script>.</p>
+<p>Also suppose <span class="kdmath">$Q$</span> denotes image of <span class="kdmath">$Y$</span> under <span class="kdmath">$f^{-1}$</span>. Thus <span class="kdmath">$Q = \{ a \in A \, \vert \, \exists y \in Y(f^{-1}(y) = a) \}$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in P</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) \in Y</script>. Suppose <script type="math/tex">y = f(x)</script>. Thus <script type="math/tex">y \in Y</script> and <script type="math/tex">f^{-1}(y) = x</script>. Thus there exists an
-  element <script type="math/tex">y \in Y</script> such that <script type="math/tex">f^{-1}(y) = x</script>. It follows that <script type="math/tex">x \in Q</script>. Thus <script type="math/tex">P \subseteq Q</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in P$</span>. Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) \in Y$</span>. Suppose <span class="kdmath">$y = f(x)$</span>. Thus <span class="kdmath">$y \in Y$</span> and <span class="kdmath">$f^{-1}(y) = x$</span>. Thus there exists an
+  element <span class="kdmath">$y \in Y$</span> such that <span class="kdmath">$f^{-1}(y) = x$</span>. It follows that <span class="kdmath">$x \in Q$</span>. Thus <span class="kdmath">$P \subseteq Q$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in Q</script>. Thus for some element <script type="math/tex">y \in Y</script> we have <script type="math/tex">f^{-1}(y) = x</script>. Since <script type="math/tex">f</script> is one-to-one and onto, and <script type="math/tex">f^{-1}(y) = x</script>, it follows <script type="math/tex">f(x) = y</script>. 
- Since <script type="math/tex">x \in Q</script>, it follows <script type="math/tex">x \in A</script>. Since <script type="math/tex">x \in A</script> and <script type="math/tex">f(x) = y \in Y</script>, it follows <script type="math/tex">x \in P</script>. Thus <script type="math/tex">Q \subseteq P</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in Q$</span>. Thus for some element <span class="kdmath">$y \in Y$</span> we have <span class="kdmath">$f^{-1}(y) = x$</span>. Since <span class="kdmath">$f$</span> is one-to-one and onto, and <span class="kdmath">$f^{-1}(y) = x$</span>, it follows <span class="kdmath">$f(x) = y$</span>. 
+ Since <span class="kdmath">$x \in Q$</span>, it follows <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$f(x) = y \in Y$</span>, it follows <span class="kdmath">$x \in P$</span>. Thus <span class="kdmath">$Q \subseteq P$</span>.</p>
 
-<p>Since <script type="math/tex">P \subseteq Q</script> and <script type="math/tex">Q \subseteq P</script>, we can conclude that <script type="math/tex">P = Q</script>.</p>
+<p>Since <span class="kdmath">$P \subseteq Q$</span> and <span class="kdmath">$Q \subseteq P$</span>, we can conclude that <span class="kdmath">$P = Q$</span>.</p>
 
 
                         <hr/>

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1138,37 +1139,37 @@
 <ul>
   <li>Antisymmetric Relation:
     <ul>
-      <li>Suppose <script type="math/tex">R</script> is a relation on a set <script type="math/tex">A</script>. Then <script type="math/tex">R</script> is said to be antisymmetric if 
-  <script type="math/tex">\forall x \in A \forall y \in A((xRy \land yRx) \to x = y)</script>.</li>
+      <li>Suppose <span class="kdmath">$R$</span> is a relation on a set <span class="kdmath">$A$</span>. Then <span class="kdmath">$R$</span> is said to be antisymmetric if 
+  <span class="kdmath">$\forall x \in A \forall y \in A((xRy \land yRx) \to x = y)$</span>.</li>
       <li>For example:
         <ol>
-          <li><script type="math/tex">x \le y</script>, where <script type="math/tex">x,y \in \mathbb R</script>.</li>
-          <li><script type="math/tex">x \subseteq y</script>, where <script type="math/tex">x,y \subseteq A</script>.</li>
+          <li><span class="kdmath">$x \le y$</span>, where <span class="kdmath">$x,y \in \mathbb R$</span>.</li>
+          <li><span class="kdmath">$x \subseteq y$</span>, where <span class="kdmath">$x,y \subseteq A$</span>.</li>
         </ol>
       </li>
-      <li>It can be seen from the above examples, that <script type="math/tex">y</script> is atleast as <script type="math/tex">x</script> . Thus antisymmetric relation gives a sense of ordering.</li>
+      <li>It can be seen from the above examples, that <span class="kdmath">$y$</span> is atleast as <span class="kdmath">$x$</span> . Thus antisymmetric relation gives a sense of ordering.</li>
     </ul>
   </li>
-  <li>Partial Order: Consider <script type="math/tex">R</script> a relation defined on set <script type="math/tex">A</script>. <script type="math/tex">R</script> will be called <em>partial order</em> on <script type="math/tex">A</script>, if <script type="math/tex">R</script> is reflexive,
+  <li>Partial Order: Consider <span class="kdmath">$R$</span> a relation defined on set <span class="kdmath">$A$</span>. <span class="kdmath">$R$</span> will be called <em>partial order</em> on <span class="kdmath">$A$</span>, if <span class="kdmath">$R$</span> is reflexive,
 transitive and antisymmetric.</li>
-  <li>Total Order: Consider <script type="math/tex">R</script> a relation defined on set <script type="math/tex">A</script>. <script type="math/tex">R</script> will be called <em>total order</em>, if <script type="math/tex">R</script> is partial order and
-<script type="math/tex">\forall x \in A \forall y \in A(xRy \lor yRx)</script>. As it can be seen from the definition, every two elements of the set <script type="math/tex">A</script> are in <script type="math/tex">R</script>. Also,
-since <script type="math/tex">R</script> is antisymmetric, everyone of these elements/objects have a sense of ordering with respect to every other element/object.</li>
-  <li>If <script type="math/tex">R</script> is a partial order on a set <script type="math/tex">A</script>. Suppose <script type="math/tex">B \subseteq A</script>:
+  <li>Total Order: Consider <span class="kdmath">$R$</span> a relation defined on set <span class="kdmath">$A$</span>. <span class="kdmath">$R$</span> will be called <em>total order</em>, if <span class="kdmath">$R$</span> is partial order and
+<span class="kdmath">$\forall x \in A \forall y \in A(xRy \lor yRx)$</span>. As it can be seen from the definition, every two elements of the set <span class="kdmath">$A$</span> are in <span class="kdmath">$R$</span>. Also,
+since <span class="kdmath">$R$</span> is antisymmetric, everyone of these elements/objects have a sense of ordering with respect to every other element/object.</li>
+  <li>If <span class="kdmath">$R$</span> is a partial order on a set <span class="kdmath">$A$</span>. Suppose <span class="kdmath">$B \subseteq A$</span>:
     <ul>
       <li>Smallest and Minimal element(s):
         <ul>
-          <li>Suppose <script type="math/tex">b \in B</script>. If <script type="math/tex">\forall x \in B(bRx)</script>, then <script type="math/tex">b</script> is called <script type="math/tex">R</script>-smallest element of <script type="math/tex">B</script>. Also, if 
-  <script type="math/tex">\lnot \exists x \in B(xRb \land x \ne b)</script> is called an <script type="math/tex">R</script>-minimal element of <script type="math/tex">B</script>.</li>
-          <li>If <script type="math/tex">B</script> has a smallest element then this element is unique.</li>
-          <li>If <script type="math/tex">b</script> is the smallest element of B, then <script type="math/tex">b</script> is also a minimal element of <script type="math/tex">B</script>, and it is the only minimal element.</li>
-          <li>If <script type="math/tex">R</script> is a total order and <script type="math/tex">b</script> is a minimal element of <script type="math/tex">B</script>, then <script type="math/tex">b</script> is the smallest element of <script type="math/tex">B</script>.</li>
+          <li>Suppose <span class="kdmath">$b \in B$</span>. If <span class="kdmath">$\forall x \in B(bRx)$</span>, then <span class="kdmath">$b$</span> is called <span class="kdmath">$R$</span>-smallest element of <span class="kdmath">$B$</span>. Also, if 
+  <span class="kdmath">$\lnot \exists x \in B(xRb \land x \ne b)$</span> is called an <span class="kdmath">$R$</span>-minimal element of <span class="kdmath">$B$</span>.</li>
+          <li>If <span class="kdmath">$B$</span> has a smallest element then this element is unique.</li>
+          <li>If <span class="kdmath">$b$</span> is the smallest element of B, then <span class="kdmath">$b$</span> is also a minimal element of <span class="kdmath">$B$</span>, and it is the only minimal element.</li>
+          <li>If <span class="kdmath">$R$</span> is a total order and <span class="kdmath">$b$</span> is a minimal element of <span class="kdmath">$B$</span>, then <span class="kdmath">$b$</span> is the smallest element of <span class="kdmath">$B$</span>.</li>
         </ul>
       </li>
       <li>Largest and Maximal element(s):
         <ul>
-          <li>If <script type="math/tex">\forall x \in B(xRb)</script>, then <script type="math/tex">b</script> is called <script type="math/tex">R</script>-largest element of <script type="math/tex">B</script>. Also, if <script type="math/tex">\lnot \exists x \in B(bRx \land x \ne b)</script> is 
-called an <script type="math/tex">R</script>-maximal element of <script type="math/tex">B</script>.</li>
+          <li>If <span class="kdmath">$\forall x \in B(xRb)$</span>, then <span class="kdmath">$b$</span> is called <span class="kdmath">$R$</span>-largest element of <span class="kdmath">$B$</span>. Also, if <span class="kdmath">$\lnot \exists x \in B(bRx \land x \ne b)$</span> is 
+called an <span class="kdmath">$R$</span>-maximal element of <span class="kdmath">$B$</span>.</li>
           <li>Other properties of largest and maximal are similar to smallest and minimal as above.</li>
         </ul>
       </li>
@@ -1176,19 +1177,19 @@ called an <script type="math/tex">R</script>-maximal element of <script type="ma
   </li>
   <li>Lower Bound and Upper Bound:
     <ul>
-      <li>Suppose <script type="math/tex">R</script> is a partial order on <script type="math/tex">A</script>, <script type="math/tex">B \subseteq A</script>, and <script type="math/tex">a \in A</script>. Then <script type="math/tex">a</script> is called a lower bound for <script type="math/tex">B</script>
-if <script type="math/tex">\forall x \in B(aRx)</script>. Similarly, it is an upper bound for <script type="math/tex">B</script> if <script type="math/tex">\forall x \in B(xRa)</script>.</li>
+      <li>Suppose <span class="kdmath">$R$</span> is a partial order on <span class="kdmath">$A$</span>, <span class="kdmath">$B \subseteq A$</span>, and <span class="kdmath">$a \in A$</span>. Then <span class="kdmath">$a$</span> is called a lower bound for <span class="kdmath">$B$</span>
+if <span class="kdmath">$\forall x \in B(aRx)$</span>. Similarly, it is an upper bound for <span class="kdmath">$B$</span> if <span class="kdmath">$\forall x \in B(xRa)$</span>.</li>
       <li>Thus there can be multiple lower bounds or upper bounds for a set.</li>
-      <li>Note that lower/upper bound need not be part of the set <script type="math/tex">B</script>. However, smallest/largest element of <script type="math/tex">B</script> must be the part of set <script type="math/tex">B</script>.</li>
+      <li>Note that lower/upper bound need not be part of the set <span class="kdmath">$B$</span>. However, smallest/largest element of <span class="kdmath">$B$</span> must be the part of set <span class="kdmath">$B$</span>.</li>
     </ul>
   </li>
   <li>Least Upper Bound and Greatest Lower Bound:  <br />
-  Suppose <script type="math/tex">R</script> is a partial order on <script type="math/tex">A</script> and <script type="math/tex">B \subseteq A</script>. Let <script type="math/tex">U</script> be the set of all upper bounds for <script type="math/tex">B</script>, and let <script type="math/tex">L</script> be the
-  set of all lower bounds. If <script type="math/tex">U</script> has a smallest element, then this smallest element is called the least upper bound of <script type="math/tex">B</script>. If <script type="math/tex">L</script> has a largest 
-  element, then this largest element is called the greatest lower bound of <script type="math/tex">B</script>. The phrases least upper bound and greatest lower bound are sometimes 
+  Suppose <span class="kdmath">$R$</span> is a partial order on <span class="kdmath">$A$</span> and <span class="kdmath">$B \subseteq A$</span>. Let <span class="kdmath">$U$</span> be the set of all upper bounds for <span class="kdmath">$B$</span>, and let <span class="kdmath">$L$</span> be the
+  set of all lower bounds. If <span class="kdmath">$U$</span> has a smallest element, then this smallest element is called the least upper bound of <span class="kdmath">$B$</span>. If <span class="kdmath">$L$</span> has a largest 
+  element, then this largest element is called the greatest lower bound of <span class="kdmath">$B$</span>. The phrases least upper bound and greatest lower bound are sometimes 
   abbreviated l.u.b. and g.l.b.</li>
-  <li>Suppose <script type="math/tex">A</script> is a set, <script type="math/tex">\mathcal F \subseteq P (A)</script>, and <script type="math/tex">\mathcal F \ne \phi</script>. Then the least upper bound of <script type="math/tex">\mathcal F</script> (in the subset partial order) 
-is <script type="math/tex">\cup \mathcal F</script> and the greatest lower bound of <script type="math/tex">\mathcal F</script> is <script type="math/tex">\cap \mathcal F</script>.</li>
+  <li>Suppose <span class="kdmath">$A$</span> is a set, <span class="kdmath">$\mathcal F \subseteq P (A)$</span>, and <span class="kdmath">$\mathcal F \ne \phi$</span>. Then the least upper bound of <span class="kdmath">$\mathcal F$</span> (in the subset partial order) 
+is <span class="kdmath">$\cup \mathcal F$</span> and the greatest lower bound of <span class="kdmath">$\mathcal F$</span> is <span class="kdmath">$\cap \mathcal F$</span>.</li>
 </ul>
 
 <hr />
@@ -1201,13 +1202,13 @@ is <script type="math/tex">\cup \mathcal F</script> and the greatest lower bound
 Transitive: True
 Antisymmetric: True</p>
 
-<p>Thus it is partial order. It is not total order since <script type="math/tex">(a,c) \notin R</script>.</p>
+<p>Thus it is partial order. It is not total order since <span class="kdmath">$(a,c) \notin R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Reflexive: True
 Transitive: True
-Antisymmetric: False, Because <script type="math/tex">(-1,1) \in R \land (1,-1) \in R</script> but <script type="math/tex">-1 \ne 1</script>.</p>
+Antisymmetric: False, Because <span class="kdmath">$(-1,1) \in R \land (1,-1) \in R$</span> but <span class="kdmath">$-1 \ne 1$</span>.</p>
 
 <p>Thus it is not partial order.</p>
 
@@ -1217,7 +1218,7 @@ Antisymmetric: False, Because <script type="math/tex">(-1,1) \in R \land (1,-1) 
 Transitive: True
 Antisymmetric: True</p>
 
-<p>Thus it is partial order. It is not total order because <script type="math/tex">(-1,1) \notin R</script>.</p>
+<p>Thus it is partial order. It is not total order because <span class="kdmath">$(-1,1) \notin R$</span>.</p>
 
 <hr />
 
@@ -1229,20 +1230,20 @@ Antisymmetric: True</p>
 Transitive: True
 Antisymmetric: True</p>
 
-<p>Thus it is partial order. It is also total order because every two english words, say <script type="math/tex">x</script> and <script type="math/tex">y</script>, 
-then either <script type="math/tex">(x,y) \in R</script> or <script type="math/tex">(y,x) \in R</script>.</p>
+<p>Thus it is partial order. It is also total order because every two english words, say <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span>, 
+then either <span class="kdmath">$(x,y) \in R$</span> or <span class="kdmath">$(y,x) \in R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Reflexive: True
 Transitive: True
-Antisymmetric: False. For example <script type="math/tex">(apple,ape) \in R \land (ape,apple) \in R</script> but <script type="math/tex">apple != ape</script>.</p>
+Antisymmetric: False. For example <span class="kdmath">$(apple,ape) \in R \land (ape,apple) \in R$</span> but <span class="kdmath">$apple != ape$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
 <p>Reflexive: True
 Transitive: True
-Antisymmetric: False. Suppose <script type="math/tex">x</script> and <script type="math/tex">y</script> are two different countries with same population. Then <script type="math/tex">(x,y) \in R \land (y,x) \in R</script> but <script type="math/tex">x != y</script>.</p>
+Antisymmetric: False. Suppose <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> are two different countries with same population. Then <span class="kdmath">$(x,y) \in R \land (y,x) \in R$</span> but <span class="kdmath">$x != y$</span>.</p>
 
 <hr />
 
@@ -1250,23 +1251,22 @@ Antisymmetric: False. Suppose <script type="math/tex">x</script> and <script typ
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">R = \{ (1,1),(1,2),(1,3),(1,4),(2,2),(2,3),(2,4),(3,3),(4,4) \}, B = \{2,3,4\}</script>.</p>
+<p><span class="kdmath">$R = \{ (1,1),(1,2),(1,3),(1,4),(2,2),(2,3),(2,4),(3,3),(4,4) \}, B = \{2,3,4\}$</span>.</p>
 
-<p>Minimal elements = <script type="math/tex">\{ 2 \}</script>.  <br />
-Smallest element = <script type="math/tex">2</script>  <br />
+<p>Minimal elements = <span class="kdmath">$\{ 2 \}$</span>.  <br />
+Smallest element = <span class="kdmath">$2$</span>  <br />
 Greatest Lower Bound = 2.</p>
 
-<p>Maximal elements = <script type="math/tex">\{3, 4 \}</script>.  <br />
+<p>Maximal elements = <span class="kdmath">$\{3, 4 \}$</span>.  <br />
 Largest = N.A.  <br />
 Least Upper Bound = N.A.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">% <![CDATA[
-R=\{(x,y) \in R \times R \, \vert \, x \le y\}, B=\{x \in R \, \vert \, 1 \le x < 2 \} %]]></script>.</p>
+<p><span class="kdmath">$R=\{(x,y) \in R \times R \, \vert \, x \le y\}, B=\{x \in R \, \vert \, 1 \le x < 2 \}$</span>.</p>
 
-<p>Minimal elements = <script type="math/tex">\{ 1 \}</script>.  <br />
-Smallest element = <script type="math/tex">1</script>  <br />
+<p>Minimal elements = <span class="kdmath">$\{ 1 \}$</span>.  <br />
+Smallest element = <span class="kdmath">$1$</span>  <br />
 Greatest Lower Bound = 1.</p>
 
 <p>Maximal elements = N.A.  <br />
@@ -1275,11 +1275,11 @@ Least Upper Bound = 2</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Minimal elements = <script type="math/tex">\{ \phi \}</script>.  <br />
-Smallest element = <script type="math/tex">\phi</script>  <br />
-Greatest Lower Bound = <script type="math/tex">\phi</script>.</p>
+<p>Minimal elements = <span class="kdmath">$\{ \phi \}$</span>.  <br />
+Smallest element = <span class="kdmath">$\phi$</span>  <br />
+Greatest Lower Bound = <span class="kdmath">$\phi$</span>.</p>
 
-<p>Maximal elements = <script type="math/tex">\{x \in \mathcal P(\mathbb N) \, \vert \, \text{x contains exactly 5 elements.} \}</script>   <br />
+<p>Maximal elements = <span class="kdmath">$\{x \in \mathcal P(\mathbb N) \, \vert \, \text{x contains exactly 5 elements.} \}$</span>   <br />
 Largest = N.A.  <br />
 Least Upper Bound = N.A.</p>
 
@@ -1287,306 +1287,306 @@ Least Upper Bound = N.A.</p>
 
 <p><strong>Soln4</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">R</script> is symmetric and antisymmetric. Suppose <script type="math/tex">(x,y)</script> in <script type="math/tex">R</script>. Since <script type="math/tex">R</script> is symmetric <script type="math/tex">xRy \land yRx</script>.
-Since <script type="math/tex">xRy \land yRx</script> and <script type="math/tex">R</script> is antisymmetric, it follows that <script type="math/tex">x = y</script>. Thus <script type="math/tex">(x,y) \in i_A</script>. Since <script type="math/tex">(x,y)</script> is arbitrary,
-it follows that <script type="math/tex">R \subseteq i_A</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$R$</span> is symmetric and antisymmetric. Suppose <span class="kdmath">$(x,y)$</span> in <span class="kdmath">$R$</span>. Since <span class="kdmath">$R$</span> is symmetric <span class="kdmath">$xRy \land yRx$</span>.
+Since <span class="kdmath">$xRy \land yRx$</span> and <span class="kdmath">$R$</span> is antisymmetric, it follows that <span class="kdmath">$x = y$</span>. Thus <span class="kdmath">$(x,y) \in i_A$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary,
+it follows that <span class="kdmath">$R \subseteq i_A$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">R \subseteq i_A</script>. Suppose <script type="math/tex">(x,y) \in R</script>, thus <script type="math/tex">(x,y) \in i_A</script>. Since <script type="math/tex">(x,y) \in i_A</script>, it follows <script type="math/tex">(x,y) \in i_A \land (y,x) \in i_A</script>.
-Thus <script type="math/tex">R</script> is symmetric. Now to prove antisymmetric, suppose <script type="math/tex">(x,y) \in R \land (y,x) \in R</script>. Since <script type="math/tex">R \subseteq i_A</script>, it follows <script type="math/tex">(x,y) \in i_A</script>.
-since <script type="math/tex">(x,y) \in i_A</script>, it follows that <script type="math/tex">x = y</script>. Thus <script type="math/tex">R</script> is antisymmetric.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$R \subseteq i_A$</span>. Suppose <span class="kdmath">$(x,y) \in R$</span>, thus <span class="kdmath">$(x,y) \in i_A$</span>. Since <span class="kdmath">$(x,y) \in i_A$</span>, it follows <span class="kdmath">$(x,y) \in i_A \land (y,x) \in i_A$</span>.
+Thus <span class="kdmath">$R$</span> is symmetric. Now to prove antisymmetric, suppose <span class="kdmath">$(x,y) \in R \land (y,x) \in R$</span>. Since <span class="kdmath">$R \subseteq i_A$</span>, it follows <span class="kdmath">$(x,y) \in i_A$</span>.
+since <span class="kdmath">$(x,y) \in i_A$</span>, it follows that <span class="kdmath">$x = y$</span>. Thus <span class="kdmath">$R$</span> is antisymmetric.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is a partial order on <script type="math/tex">A</script> and <script type="math/tex">B \subseteq A</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> is a partial order on <span class="kdmath">$A$</span> and <span class="kdmath">$B \subseteq A$</span>.</p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">x</script> is arbitrary element of <script type="math/tex">B</script>. Since <script type="math/tex">B \subseteq A</script>, <script type="math/tex">x \in A</script>. Since <script type="math/tex">R</script> is reflexive, if follows that
-<script type="math/tex">(x,x) \in R</script>. Since <script type="math/tex">x \in B</script>, it follows <script type="math/tex">(x,x) \in B \times B</script>. Thus if <script type="math/tex">x \in B</script>, then <script type="math/tex">(x,x) \in R \cap (B \times B)</script>. 
-Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">R \cap (B \times B)</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x$</span> is arbitrary element of <span class="kdmath">$B$</span>. Since <span class="kdmath">$B \subseteq A$</span>, <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R$</span> is reflexive, if follows that
+<span class="kdmath">$(x,x) \in R$</span>. Since <span class="kdmath">$x \in B$</span>, it follows <span class="kdmath">$(x,x) \in B \times B$</span>. Thus if <span class="kdmath">$x \in B$</span>, then <span class="kdmath">$(x,x) \in R \cap (B \times B)$</span>. 
+Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$R \cap (B \times B)$</span> is reflexive.</p>
 
 <p><u>Transitive:</u></p>
 
-<p>Suppose <script type="math/tex">x,y,z</script> are arbitrary elements of <script type="math/tex">B</script> such that <script type="math/tex">(x,y) \in R \cap (B \times B) \land (y,z) \in R \cap (B \times B)</script>. Thus <script type="math/tex">(x,y) \in R \land (y,z) \in R</script>. Since <script type="math/tex">R</script> is transitive, 
-it follows <script type="math/tex">(x,z) \in R</script>. Since <script type="math/tex">x \in B \land z \in B</script>, thus <script type="math/tex">(x,z) \in B \times B</script>. Thus if <script type="math/tex">(x,y) \in R \cap (B \times B) \land (y,z) \in R \cap (B \times B)</script>, then <script type="math/tex">(x,z) \in R \cap (B \times B)</script>.
-Since <script type="math/tex">x,y,z</script>, are arbitrary, we can conclude that <script type="math/tex">R \cap (B \times B)</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$x,y,z$</span> are arbitrary elements of <span class="kdmath">$B$</span> such that <span class="kdmath">$(x,y) \in R \cap (B \times B) \land (y,z) \in R \cap (B \times B)$</span>. Thus <span class="kdmath">$(x,y) \in R \land (y,z) \in R$</span>. Since <span class="kdmath">$R$</span> is transitive, 
+it follows <span class="kdmath">$(x,z) \in R$</span>. Since <span class="kdmath">$x \in B \land z \in B$</span>, thus <span class="kdmath">$(x,z) \in B \times B$</span>. Thus if <span class="kdmath">$(x,y) \in R \cap (B \times B) \land (y,z) \in R \cap (B \times B)$</span>, then <span class="kdmath">$(x,z) \in R \cap (B \times B)$</span>.
+Since <span class="kdmath">$x,y,z$</span>, are arbitrary, we can conclude that <span class="kdmath">$R \cap (B \times B)$</span> is transitive.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">x,y</script> are arbitrary elements of <script type="math/tex">B</script> such that <script type="math/tex">(x,y) \in R \cap (B \times B) \land (y,x) \in R \cap (B \times B)</script>. Thus <script type="math/tex">(x,y) \in R \land (y,x) \in R</script>. Since <script type="math/tex">R</script> is antisymmetric, 
-it follows <script type="math/tex">x = y</script>. Thus if <script type="math/tex">(x,y) \in R \cap (B \times B) \land (y,x) \in R \cap (B \times B)</script>, then <script type="math/tex">x = y</script>. Since <script type="math/tex">(x,y)</script>, is 
-arbitrary, we can conclude that <script type="math/tex">R \cap (B \times B)</script> is antisymmetric.</p>
+<p>Suppose <span class="kdmath">$x,y$</span> are arbitrary elements of <span class="kdmath">$B$</span> such that <span class="kdmath">$(x,y) \in R \cap (B \times B) \land (y,x) \in R \cap (B \times B)$</span>. Thus <span class="kdmath">$(x,y) \in R \land (y,x) \in R$</span>. Since <span class="kdmath">$R$</span> is antisymmetric, 
+it follows <span class="kdmath">$x = y$</span>. Thus if <span class="kdmath">$(x,y) \in R \cap (B \times B) \land (y,x) \in R \cap (B \times B)$</span>, then <span class="kdmath">$x = y$</span>. Since <span class="kdmath">$(x,y)$</span>, is 
+arbitrary, we can conclude that <span class="kdmath">$R \cap (B \times B)$</span> is antisymmetric.</p>
 
-<p>Since <script type="math/tex">R \cap (B \times B)</script> is reflexive, transitive, antisymmetric, it follows that <script type="math/tex">R \cap (B \times B)</script> is partial order on <script type="math/tex">B</script>.</p>
+<p>Since <span class="kdmath">$R \cap (B \times B)$</span> is reflexive, transitive, antisymmetric, it follows that <span class="kdmath">$R \cap (B \times B)$</span> is partial order on <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p><strong>(a)</strong> Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are partial orders on <script type="math/tex">A</script>.</p>
+<p><strong>(a)</strong> Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are partial orders on <span class="kdmath">$A$</span>.</p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">R_1</script> is reflexive, <script type="math/tex">(x,x) \in R_1</script>. Similarly since <script type="math/tex">R_2</script> is reflexive, <script type="math/tex">(x,x) \in R_2</script>.
-Thus <script type="math/tex">(x,x) \in R_1 \cap R_2</script>. Since <script type="math/tex">x</script> is arbitrary, <script type="math/tex">R_1 \cap R_2</script> is <u>reflexive</u>.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R_1$</span> is reflexive, <span class="kdmath">$(x,x) \in R_1$</span>. Similarly since <span class="kdmath">$R_2$</span> is reflexive, <span class="kdmath">$(x,x) \in R_2$</span>.
+Thus <span class="kdmath">$(x,x) \in R_1 \cap R_2$</span>. Since <span class="kdmath">$x$</span> is arbitrary, <span class="kdmath">$R_1 \cap R_2$</span> is <u>reflexive</u>.</p>
 
-<p>Suppose <script type="math/tex">x,y,z</script> are arbitrary elements of <script type="math/tex">A</script> such that <script type="math/tex">(x,y) \in R_1 \cap R_2 \land (y,z) \in R_1 \cap R_2</script>. It follows
-that <script type="math/tex">(x,y) \in R_1 \land (y,z) \in R_1</script>. Since <script type="math/tex">R_1</script> is transitive, it follows <script type="math/tex">(x,z) \in R_1</script>. Similarly since <script type="math/tex">(x,y) \in R_2 \land (y,z) \in R_2</script> 
-and <script type="math/tex">R_2</script> is transitive, it follows that <script type="math/tex">(x,z) \in R_2</script>. Thus we have <script type="math/tex">(x,z) \in R_1 \cap R_2</script>. Since <script type="math/tex">x,y,z</script> are arbitrary,
-it follows that <script type="math/tex">R_1 \cap R_2</script> is <u>transitive</u>.</p>
+<p>Suppose <span class="kdmath">$x,y,z$</span> are arbitrary elements of <span class="kdmath">$A$</span> such that <span class="kdmath">$(x,y) \in R_1 \cap R_2 \land (y,z) \in R_1 \cap R_2$</span>. It follows
+that <span class="kdmath">$(x,y) \in R_1 \land (y,z) \in R_1$</span>. Since <span class="kdmath">$R_1$</span> is transitive, it follows <span class="kdmath">$(x,z) \in R_1$</span>. Similarly since <span class="kdmath">$(x,y) \in R_2 \land (y,z) \in R_2$</span> 
+and <span class="kdmath">$R_2$</span> is transitive, it follows that <span class="kdmath">$(x,z) \in R_2$</span>. Thus we have <span class="kdmath">$(x,z) \in R_1 \cap R_2$</span>. Since <span class="kdmath">$x,y,z$</span> are arbitrary,
+it follows that <span class="kdmath">$R_1 \cap R_2$</span> is <u>transitive</u>.</p>
 
-<p>Suppose <script type="math/tex">x,y</script> are arbitrary elements of <script type="math/tex">A</script> such that <script type="math/tex">(x,y) \in R_1 \cap R_2 \land (y,x) \in R_1 \cap R_2</script>. Thus <script type="math/tex">(x,y) \in R_1 \land (y,x) \in R_1</script>. 
-Since <script type="math/tex">R_1</script> is antisymmetric, it follows <script type="math/tex">x = y</script>. Thus if <script type="math/tex">(x,y) \in R_1 \cap R_2 \land (y,x) \in R_1 \cap R_2</script>, then <script type="math/tex">x = y</script>. Since <script type="math/tex">(x,y)</script>, is 
-arbitrary, we can conclude that <script type="math/tex">R_1 \cap R_2</script> is <u>antisymmetric</u>.</p>
+<p>Suppose <span class="kdmath">$x,y$</span> are arbitrary elements of <span class="kdmath">$A$</span> such that <span class="kdmath">$(x,y) \in R_1 \cap R_2 \land (y,x) \in R_1 \cap R_2$</span>. Thus <span class="kdmath">$(x,y) \in R_1 \land (y,x) \in R_1$</span>. 
+Since <span class="kdmath">$R_1$</span> is antisymmetric, it follows <span class="kdmath">$x = y$</span>. Thus if <span class="kdmath">$(x,y) \in R_1 \cap R_2 \land (y,x) \in R_1 \cap R_2$</span>, then <span class="kdmath">$x = y$</span>. Since <span class="kdmath">$(x,y)$</span>, is 
+arbitrary, we can conclude that <span class="kdmath">$R_1 \cap R_2$</span> is <u>antisymmetric</u>.</p>
 
-<p>Thus <script type="math/tex">R_1 \cap R_2</script> is partial order on <script type="math/tex">A</script>.</p>
+<p>Thus <span class="kdmath">$R_1 \cap R_2$</span> is partial order on <span class="kdmath">$A$</span>.</p>
 
 <p><strong>(b)</strong> False. Counter example:</p>
 
-<p><script type="math/tex">A = \{ 1, 2, 3 \}, R_1 = \{ (1,1), (2,2), (3,3), (1,2) \}, R_2 = \{ (1,1), (2,2), (3,3), (2,3) \}</script>.</p>
+<p><span class="kdmath">$A = \{ 1, 2, 3 \}, R_1 = \{ (1,1), (2,2), (3,3), (1,2) \}, R_2 = \{ (1,1), (2,2), (3,3), (2,3) \}$</span>.</p>
 
-<p><script type="math/tex">R_1 \cup R_2 = \{ (1,1), (2,2), (3,3), (1,2), (2,3) \}</script>.</p>
+<p><span class="kdmath">$R_1 \cup R_2 = \{ (1,1), (2,2), (3,3), (1,2), (2,3) \}$</span>.</p>
 
-<p>As we can see <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are partial order. But <script type="math/tex">R_1 \cup R_2</script> is not partial order because it is not transitive.</p>
+<p>As we can see <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are partial order. But <span class="kdmath">$R_1 \cup R_2$</span> is not partial order because it is not transitive.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>Suppose <script type="math/tex">R_1</script> is partial order on <script type="math/tex">A_1</script> and <script type="math/tex">R_2</script> is partial order on <script type="math/tex">A_2</script>.</p>
+<p>Suppose <span class="kdmath">$R_1$</span> is partial order on <span class="kdmath">$A_1$</span> and <span class="kdmath">$R_2$</span> is partial order on <span class="kdmath">$A_2$</span>.</p>
 
 <p><strong>(a)</strong></p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">x \in A_1 \cup A_2</script>. Two possible cases:</p>
+<p>Suppose <span class="kdmath">$x \in A_1 \cup A_2$</span>. Two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in A_1</script>  <br />
-Since <script type="math/tex">R_1</script> is partial order, <script type="math/tex">(x,x) \in R_1</script>. Or we can also say <script type="math/tex">(x,x) \in R_1 \cup R_2</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A_1$</span>  <br />
+Since <span class="kdmath">$R_1$</span> is partial order, <span class="kdmath">$(x,x) \in R_1$</span>. Or we can also say <span class="kdmath">$(x,x) \in R_1 \cup R_2$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in A_2</script>  <br />
-Since <script type="math/tex">R_2</script> is partial order, <script type="math/tex">(x,x) \in R_2</script>. Or we can also say <script type="math/tex">(x,x) \in R_1 \cup R_2</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in A_2$</span>  <br />
+Since <span class="kdmath">$R_2$</span> is partial order, <span class="kdmath">$(x,x) \in R_2$</span>. Or we can also say <span class="kdmath">$(x,x) \in R_1 \cup R_2$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all cases, <script type="math/tex">R_1 \cup R_2</script> is reflexive on <script type="math/tex">A_1 \cup A_2</script>.</p>
+<p>Thus from all cases, <span class="kdmath">$R_1 \cup R_2$</span> is reflexive on <span class="kdmath">$A_1 \cup A_2$</span>.</p>
 
 <p><u>Transitive:<u></u></u></p>
 
-<p>Suppose <script type="math/tex">x,y,z</script> are arbitrary elements of <script type="math/tex">A_1 \cup A_2</script> such that <script type="math/tex">(x,y) \in R_1 \cup R_2 \land (y,z) \in R_1 \cup R_2</script>. 
+<p>Suppose <span class="kdmath">$x,y,z$</span> are arbitrary elements of <span class="kdmath">$A_1 \cup A_2$</span> such that <span class="kdmath">$(x,y) \in R_1 \cup R_2 \land (y,z) \in R_1 \cup R_2$</span>. 
 We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R_1 \land (y,z) \in R_1</script>:  <br />
-Since <script type="math/tex">R_1</script> is transitive, it follows <script type="math/tex">(x,z) \in R_1</script>. We can also say <script type="math/tex">(x,z) \in R_1 cup R_2</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R_1 \land (y,z) \in R_1$</span>:  <br />
+Since <span class="kdmath">$R_1$</span> is transitive, it follows <span class="kdmath">$(x,z) \in R_1$</span>. We can also say <span class="kdmath">$(x,z) \in R_1 cup R_2$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in R_2 \land (y,z) \in R_2</script>:  <br />
-Since <script type="math/tex">R_2</script> is transitive, it follows <script type="math/tex">(x,z) \in R_2</script>. We can also say <script type="math/tex">(x,z) \in R_1 cup R_2</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in R_2 \land (y,z) \in R_2$</span>:  <br />
+Since <span class="kdmath">$R_2$</span> is transitive, it follows <span class="kdmath">$(x,z) \in R_2$</span>. We can also say <span class="kdmath">$(x,z) \in R_1 cup R_2$</span>.</p>
   </li>
-  <li>Case 3: <script type="math/tex">(x,y) \in R_1 \land (y,z) \in R_2</script>:</li>
-  <li>Case 4: <script type="math/tex">(x,y) \in R_2 \land (y,z) \in R_1</script>:  <br />
-Both cases(3 &amp; 4) are not possible, since both of them require <script type="math/tex">y \in A_1 \cap A_ 2</script>. But <script type="math/tex">A_1 \cap A_2 = \phi</script>, so these cases
+  <li>Case 3: <span class="kdmath">$(x,y) \in R_1 \land (y,z) \in R_2$</span>:</li>
+  <li>Case 4: <span class="kdmath">$(x,y) \in R_2 \land (y,z) \in R_1$</span>:  <br />
+Both cases(3 &amp; 4) are not possible, since both of them require <span class="kdmath">$y \in A_1 \cap A_ 2$</span>. But <span class="kdmath">$A_1 \cap A_2 = \phi$</span>, so these cases
 do not exist.</li>
 </ul>
 
-<p>Thus from all cases, <script type="math/tex">R_1 \cup R_2</script> is transitive on <script type="math/tex">A_1 \cup A_2</script>.</p>
+<p>Thus from all cases, <span class="kdmath">$R_1 \cup R_2$</span> is transitive on <span class="kdmath">$A_1 \cup A_2$</span>.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">x,y</script> are arbitrary elements of <script type="math/tex">A_1 \cup A_2</script> such that <script type="math/tex">(x,y) \in R_1 \cup R_2 \land (y,x) \in R_1 \cup R_2</script>. 
+<p>Suppose <span class="kdmath">$x,y$</span> are arbitrary elements of <span class="kdmath">$A_1 \cup A_2$</span> such that <span class="kdmath">$(x,y) \in R_1 \cup R_2 \land (y,x) \in R_1 \cup R_2$</span>. 
 we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R_1 \land (y,x) \in R_1</script>:  <br />
-Since <script type="math/tex">R_1</script> is antisymmetric, it follows <script type="math/tex">x = y</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R_1 \land (y,x) \in R_1$</span>:  <br />
+Since <span class="kdmath">$R_1$</span> is antisymmetric, it follows <span class="kdmath">$x = y$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in R_2 \land (y,x) \in R_2</script>:  <br />
-Since <script type="math/tex">R_2</script> is antisymmetric, it follows <script type="math/tex">x = y</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in R_2 \land (y,x) \in R_2$</span>:  <br />
+Since <span class="kdmath">$R_2$</span> is antisymmetric, it follows <span class="kdmath">$x = y$</span>.</p>
   </li>
-  <li>Case 3: <script type="math/tex">(x,y) \in R_1 \land (y,x) \in R_2</script>:</li>
-  <li>Case 4: <script type="math/tex">(x,y) \in R_2 \land (y,x) \in R_1</script>:  <br />
-Both cases(3 &amp; 4) are not possible, since both of them require <script type="math/tex">y \in A_1 \cap A_ 2</script>. But <script type="math/tex">A_1 \cap A_2 = \phi</script>, so these cases
+  <li>Case 3: <span class="kdmath">$(x,y) \in R_1 \land (y,x) \in R_2$</span>:</li>
+  <li>Case 4: <span class="kdmath">$(x,y) \in R_2 \land (y,x) \in R_1$</span>:  <br />
+Both cases(3 &amp; 4) are not possible, since both of them require <span class="kdmath">$y \in A_1 \cap A_ 2$</span>. But <span class="kdmath">$A_1 \cap A_2 = \phi$</span>, so these cases
 do not exist.</li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">R_1 \cup R_2</script> is antisymmetric on <script type="math/tex">A_1 \cup A_2</script>.</p>
+<p>Thus from both cases, <span class="kdmath">$R_1 \cup R_2$</span> is antisymmetric on <span class="kdmath">$A_1 \cup A_2$</span>.</p>
 
-<p>As we can see now, <script type="math/tex">R_1 \cup R_2</script> is reflexive, transitive and antisymmetric, it follows that <script type="math/tex">R_1 \cup R_2</script> is partial order on 
-<script type="math/tex">A_1 \cup A_2</script>.</p>
+<p>As we can see now, <span class="kdmath">$R_1 \cup R_2$</span> is reflexive, transitive and antisymmetric, it follows that <span class="kdmath">$R_1 \cup R_2$</span> is partial order on 
+<span class="kdmath">$A_1 \cup A_2$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">x \in A_1 \cup A_2</script>. Two possible cases:</p>
+<p>Suppose <span class="kdmath">$x \in A_1 \cup A_2$</span>. Two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in A_1</script>  <br />
-Since <script type="math/tex">R_1</script> is partial order, <script type="math/tex">(x,x) \in R_1</script>. Or we can also say <script type="math/tex">(x,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A_1$</span>  <br />
+Since <span class="kdmath">$R_1$</span> is partial order, <span class="kdmath">$(x,x) \in R_1$</span>. Or we can also say <span class="kdmath">$(x,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in A_2</script>  <br />
-Since <script type="math/tex">R_2</script> is partial order, <script type="math/tex">(x,x) \in R_2</script>. Or we can also say <script type="math/tex">(x,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in A_2$</span>  <br />
+Since <span class="kdmath">$R_2$</span> is partial order, <span class="kdmath">$(x,x) \in R_2$</span>. Or we can also say <span class="kdmath">$(x,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all cases, <script type="math/tex">R_1 \cup R_2 \cup (A_1 \times A_2)</script> is reflexive on <script type="math/tex">A_1 \cup A_2</script>.</p>
+<p>Thus from all cases, <span class="kdmath">$R_1 \cup R_2 \cup (A_1 \times A_2)$</span> is reflexive on <span class="kdmath">$A_1 \cup A_2$</span>.</p>
 
 <p><u>Transitive:<u></u></u></p>
 
-<p>Suppose <script type="math/tex">x,y,z</script> are arbitrary elements of <script type="math/tex">A_1 \cup A_2</script> such that <script type="math/tex">(x,y) \in (R_1 \cup R_2) \cup (A_1 \times A_2) \land (y,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)</script>. 
+<p>Suppose <span class="kdmath">$x,y,z$</span> are arbitrary elements of <span class="kdmath">$A_1 \cup A_2$</span> such that <span class="kdmath">$(x,y) \in (R_1 \cup R_2) \cup (A_1 \times A_2) \land (y,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)$</span>. 
 We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in (R_1 \cup R_2) \land (y,z) \in (R_1 \cup R_2)</script>:  <br />
-Since <script type="math/tex">R_1 \cup R_2</script> is transitive(proved in part (a)), it follows <script type="math/tex">(x,z) \in R_1 \cup R_2</script>. We can also say <script type="math/tex">(x,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in (R_1 \cup R_2) \land (y,z) \in (R_1 \cup R_2)$</span>:  <br />
+Since <span class="kdmath">$R_1 \cup R_2$</span> is transitive(proved in part (a)), it follows <span class="kdmath">$(x,z) \in R_1 \cup R_2$</span>. We can also say <span class="kdmath">$(x,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,z) \in A_1 \times A_2</script>:  <br />
-Thus <script type="math/tex">y \in A_1 \land y \in A_2</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,z) \in A_1 \times A_2$</span>:  <br />
+Thus <span class="kdmath">$y \in A_1 \land y \in A_2$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
   </li>
-  <li>Case 3: <script type="math/tex">(x,y) \in (R_1 \cup R_2) \land (y,z) \in A_1 \times A_2</script>:  <br />
+  <li>Case 3: <span class="kdmath">$(x,y) \in (R_1 \cup R_2) \land (y,z) \in A_1 \times A_2$</span>:  <br />
 Here two further cases are possible:
     <ul>
       <li>
-        <p>Case a: <script type="math/tex">(x,y) \in R_1 \land (y,z) \in A_1 \times A_2</script>:  <br />
-Thus <script type="math/tex">x \in A_1 \land y \in A_1 \land z \in A_2</script>. Clearly <script type="math/tex">(x,z) \in A_1 \times A_2</script>. Or we can also say <script type="math/tex">(x,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)</script>.</p>
+        <p>Case a: <span class="kdmath">$(x,y) \in R_1 \land (y,z) \in A_1 \times A_2$</span>:  <br />
+Thus <span class="kdmath">$x \in A_1 \land y \in A_1 \land z \in A_2$</span>. Clearly <span class="kdmath">$(x,z) \in A_1 \times A_2$</span>. Or we can also say <span class="kdmath">$(x,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)$</span>.</p>
       </li>
       <li>
-        <p>Case b: <script type="math/tex">(x,y) \in R_2 \land (y,z) \in A_1 \times A_2</script>:  <br />
-Thus <script type="math/tex">y \in A_2 \land y \in A_1</script>. Clearly <script type="math/tex">(x,z) \in A_1 \times A_2</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+        <p>Case b: <span class="kdmath">$(x,y) \in R_2 \land (y,z) \in A_1 \times A_2$</span>:  <br />
+Thus <span class="kdmath">$y \in A_2 \land y \in A_1$</span>. Clearly <span class="kdmath">$(x,z) \in A_1 \times A_2$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
       </li>
     </ul>
   </li>
-  <li>Case 4: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,z) \in (R_1 \cup R_2)</script>:  <br />
+  <li>Case 4: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,z) \in (R_1 \cup R_2)$</span>:  <br />
 Here two further cases are possible:
     <ul>
       <li>
-        <p>Case a: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,z) \in R_1</script>:  <br />
-Thus <script type="math/tex">y \in A_1 \land y \in A_2</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+        <p>Case a: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,z) \in R_1$</span>:  <br />
+Thus <span class="kdmath">$y \in A_1 \land y \in A_2$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
       </li>
       <li>
-        <p>Case b: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,z) \in R_2</script>:  <br />
-Thus <script type="math/tex">x \in A_1 \land y \in A_2 \land z \in A_2</script>. Clearly <script type="math/tex">(x,z) \in A_1 \times A_2</script>. Or we can also say <script type="math/tex">(x,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)</script>.</p>
+        <p>Case b: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,z) \in R_2$</span>:  <br />
+Thus <span class="kdmath">$x \in A_1 \land y \in A_2 \land z \in A_2$</span>. Clearly <span class="kdmath">$(x,z) \in A_1 \times A_2$</span>. Or we can also say <span class="kdmath">$(x,z) \in (R_1 \cup R_2) \cup (A_1 \times A_2)$</span>.</p>
       </li>
     </ul>
   </li>
 </ul>
 
-<p>Thus from all cases, <script type="math/tex">R_1 \cup R_2 \cup (A_1 \times A_2)</script> is transitive on <script type="math/tex">A_1 \cup A_2</script>.</p>
+<p>Thus from all cases, <span class="kdmath">$R_1 \cup R_2 \cup (A_1 \times A_2)$</span> is transitive on <span class="kdmath">$A_1 \cup A_2$</span>.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">x,y</script> are arbitrary elements of <script type="math/tex">A_1 \cup A_2</script> such that <script type="math/tex">(x,y) \in (R_1 \cup R_2) \cup (A_1 \times A_2) \land (y,x) \in (R_1 \cup R_2) \times (A_1 \cup A_2)</script>. 
+<p>Suppose <span class="kdmath">$x,y$</span> are arbitrary elements of <span class="kdmath">$A_1 \cup A_2$</span> such that <span class="kdmath">$(x,y) \in (R_1 \cup R_2) \cup (A_1 \times A_2) \land (y,x) \in (R_1 \cup R_2) \times (A_1 \cup A_2)$</span>. 
 we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R_1 \cup R_2 \land (y,x) \in R_1 \cup R_2</script>:  <br />
-  Since we know from last part that <script type="math/tex">R_1 \cup R_2 is antisymmetric, thus</script> x = y $$.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R_1 \cup R_2 \land (y,x) \in R_1 \cup R_2$</span>:  <br />
+  Since we know from last part that <span class="kdmath">$R_1 \cup R_2 is antisymmetric, thus$</span> x = y $$.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,x) \in A_1 \times A_2</script>:  <br />
-Thus <script type="math/tex">y \in A_1 \land y \in A_2</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,x) \in A_1 \times A_2$</span>:  <br />
+Thus <span class="kdmath">$y \in A_1 \land y \in A_2$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
   </li>
-  <li>Case 3: <script type="math/tex">(x,y) \in R_1 \cup R_2 \land (y,x) \in A_1 \times A_2</script>:  <br />
+  <li>Case 3: <span class="kdmath">$(x,y) \in R_1 \cup R_2 \land (y,x) \in A_1 \times A_2$</span>:  <br />
 Here two further cases are possible:
     <ul>
       <li>
-        <p>Case a: <script type="math/tex">(x,y) \in R_1 \land (y,x) \in A_1 \times A_2</script>:  <br />
-Thus <script type="math/tex">x \in A_1 \land x \in A_2</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+        <p>Case a: <span class="kdmath">$(x,y) \in R_1 \land (y,x) \in A_1 \times A_2$</span>:  <br />
+Thus <span class="kdmath">$x \in A_1 \land x \in A_2$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
       </li>
       <li>
-        <p>Case b: <script type="math/tex">(x,y) \in R_2 \land (y,x) \in A_1 \times A_2</script>:  <br />
-Thus <script type="math/tex">y \in A_2 \land y \in A_2</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+        <p>Case b: <span class="kdmath">$(x,y) \in R_2 \land (y,x) \in A_1 \times A_2$</span>:  <br />
+Thus <span class="kdmath">$y \in A_2 \land y \in A_2$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
       </li>
     </ul>
   </li>
-  <li>Case 4: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,x) \in R_1 \cup R_2</script>:  <br />
+  <li>Case 4: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,x) \in R_1 \cup R_2$</span>:  <br />
 Here two further cases are possible:
     <ul>
       <li>
-        <p>Case a: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,x) \in R_1</script>:  <br />
-Thus <script type="math/tex">y \in A_2 \land y \in A_1</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+        <p>Case a: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,x) \in R_1$</span>:  <br />
+Thus <span class="kdmath">$y \in A_2 \land y \in A_1$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
       </li>
       <li>
-        <p>Case b: <script type="math/tex">(x,y) \in A_1 \times A_2 \land (y,x) \in R_2</script>:  <br />
-Thus <script type="math/tex">x \in A_1 \land x \in A_2</script>. This is not possible since <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+        <p>Case b: <span class="kdmath">$(x,y) \in A_1 \times A_2 \land (y,x) \in R_2$</span>:  <br />
+Thus <span class="kdmath">$x \in A_1 \land x \in A_2$</span>. This is not possible since <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
       </li>
     </ul>
   </li>
 </ul>
 
-<p>Thus from all cases, <script type="math/tex">R_1 \cup R_2 \cup (A_1 \times A_2)</script> is antisymmetric on <script type="math/tex">A_1 \cup A_2</script>.</p>
+<p>Thus from all cases, <span class="kdmath">$R_1 \cup R_2 \cup (A_1 \times A_2)$</span> is antisymmetric on <span class="kdmath">$A_1 \cup A_2$</span>.</p>
 
-<p>Thus from <script type="math/tex">R_1 \cup R_2 \cup (A_1 \times A_2)</script>  is partial order.</p>
+<p>Thus from <span class="kdmath">$R_1 \cup R_2 \cup (A_1 \times A_2)$</span>  is partial order.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are total order on <script type="math/tex">A_1</script> and <script type="math/tex">A_2</script> respectively.</p>
+<p>Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are total order on <span class="kdmath">$A_1$</span> and <span class="kdmath">$A_2$</span> respectively.</p>
 
-<p><script type="math/tex">R_1 \cup R_2</script> is not total order on <script type="math/tex">A_1 \cup A_2</script>. Counter example: Suppose <script type="math/tex">x \in A_1 \land y \in A_2</script>, then <script type="math/tex">x,y \text{are both} \in A_1 \cup A_2</script>
-but <script type="math/tex">(x,y) \notin R_1</script>, and also <script type="math/tex">(x,y) \notin R_2</script> because <script type="math/tex">A_1 \cap A_2 = \phi</script>.</p>
+<p><span class="kdmath">$R_1 \cup R_2$</span> is not total order on <span class="kdmath">$A_1 \cup A_2$</span>. Counter example: Suppose <span class="kdmath">$x \in A_1 \land y \in A_2$</span>, then <span class="kdmath">$x,y \text{are both} \in A_1 \cup A_2$</span>
+but <span class="kdmath">$(x,y) \notin R_1$</span>, and also <span class="kdmath">$(x,y) \notin R_2$</span> because <span class="kdmath">$A_1 \cap A_2 = \phi$</span>.</p>
 
-<p>Now suppose <script type="math/tex">(x,y) \in A_1 \cup A_2</script>, then we have following possible cases:</p>
+<p>Now suppose <span class="kdmath">$(x,y) \in A_1 \cup A_2$</span>, then we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in A_1 \land y \in A_1</script>:  <br />
-Since <script type="math/tex">R_1</script> is total order on <script type="math/tex">A_1</script>, <script type="math/tex">(x,y) \in R_1</script> or <script type="math/tex">(y,x) \in R_1</script>. Thus we can also say <script type="math/tex">(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script> or <script type="math/tex">(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A_1 \land y \in A_1$</span>:  <br />
+Since <span class="kdmath">$R_1$</span> is total order on <span class="kdmath">$A_1$</span>, <span class="kdmath">$(x,y) \in R_1$</span> or <span class="kdmath">$(y,x) \in R_1$</span>. Thus we can also say <span class="kdmath">$(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span> or <span class="kdmath">$(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in A_2 \land y \in A_2</script>:  <br />
-Since <script type="math/tex">R_2</script> is total order on <script type="math/tex">A_2</script>, <script type="math/tex">(x,y) \in R_2</script> or <script type="math/tex">(y,x) \in R_2</script>. Thus we can also say <script type="math/tex">(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script> or <script type="math/tex">(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in A_2 \land y \in A_2$</span>:  <br />
+Since <span class="kdmath">$R_2$</span> is total order on <span class="kdmath">$A_2$</span>, <span class="kdmath">$(x,y) \in R_2$</span> or <span class="kdmath">$(y,x) \in R_2$</span>. Thus we can also say <span class="kdmath">$(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span> or <span class="kdmath">$(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">x \in A_1 \land y \in A_2</script>:  <br />
-Thus <script type="math/tex">(x,y) \in A_1 \times A_2</script>. Thus we can also say <script type="math/tex">(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script> or <script type="math/tex">(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script>.</p>
+    <p>Case 3: <span class="kdmath">$x \in A_1 \land y \in A_2$</span>:  <br />
+Thus <span class="kdmath">$(x,y) \in A_1 \times A_2$</span>. Thus we can also say <span class="kdmath">$(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span> or <span class="kdmath">$(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span>.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">x \in A_2 \land y \in A_1</script>:  <br />
-Thus <script type="math/tex">(y,x) \in A_1 \times A_2</script>. Thus we can also say <script type="math/tex">(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script> or <script type="math/tex">(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)</script>.</p>
+    <p>Case 4: <span class="kdmath">$x \in A_2 \land y \in A_1$</span>:  <br />
+Thus <span class="kdmath">$(y,x) \in A_1 \times A_2$</span>. Thus we can also say <span class="kdmath">$(x,y) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span> or <span class="kdmath">$(y,x) \in R_1 \cup R_2 \cup (A_1 \times A_2)$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases, we can conclude that <script type="math/tex">R_1 \cup R_2 \cup (A_1 \times A_2)</script> is total order.</p>
+<p>Thus from all the cases, we can conclude that <span class="kdmath">$R_1 \cup R_2 \cup (A_1 \times A_2)$</span> is total order.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
 <p><u>Reflexive:</u>
-Suppose <script type="math/tex">(a,b) \in A \times B</script>. Since <script type="math/tex">R</script> is reflexive, it follows <script type="math/tex">(a,a) \in R</script>. Similarly since <script type="math/tex">S</script> is reflexive, it
-follows that <script type="math/tex">(b,b) \in S</script>. Thus <script type="math/tex">((a,b),(a,b)) \in T</script>. Since <script type="math/tex">(a,b)</script> is arbitrary, it follows that <script type="math/tex">T</script> is reflexive.</p>
+Suppose <span class="kdmath">$(a,b) \in A \times B$</span>. Since <span class="kdmath">$R$</span> is reflexive, it follows <span class="kdmath">$(a,a) \in R$</span>. Similarly since <span class="kdmath">$S$</span> is reflexive, it
+follows that <span class="kdmath">$(b,b) \in S$</span>. Thus <span class="kdmath">$((a,b),(a,b)) \in T$</span>. Since <span class="kdmath">$(a,b)$</span> is arbitrary, it follows that <span class="kdmath">$T$</span> is reflexive.</p>
 
 <p><u>Transitive:</u></p>
 
-<p>Suppose <script type="math/tex">(a,b),(c,d),(e,f) \in A \times B</script> such that <script type="math/tex">((a,b),(c,d)) \in T \land ((c,d),(e,f)) \in T</script>. Since <script type="math/tex">((a,b),(c,d)) \in T</script>,
-it follows <script type="math/tex">(a,c) \in R \land (c,e) \in R</script>. Since <script type="math/tex">R</script> is transitive, <script type="math/tex">(a,e) \in R</script>. Similarly, since <script type="math/tex">S</script> is transitive, and 
-<script type="math/tex">(b,d) \in S \land (d,f) \in A</script>, follows that <script type="math/tex">(b,f) \in S</script>. Now since <script type="math/tex">(a,e) \in R \land (b,f) \in S</script>, it follows that <script type="math/tex">((a,b),(e,f)) \in T</script>.
-Since <script type="math/tex">(a,b),(c,d),(e,f)</script> is arbitrary, we can conclude that <script type="math/tex">T</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(a,b),(c,d),(e,f) \in A \times B$</span> such that <span class="kdmath">$((a,b),(c,d)) \in T \land ((c,d),(e,f)) \in T$</span>. Since <span class="kdmath">$((a,b),(c,d)) \in T$</span>,
+it follows <span class="kdmath">$(a,c) \in R \land (c,e) \in R$</span>. Since <span class="kdmath">$R$</span> is transitive, <span class="kdmath">$(a,e) \in R$</span>. Similarly, since <span class="kdmath">$S$</span> is transitive, and 
+<span class="kdmath">$(b,d) \in S \land (d,f) \in A$</span>, follows that <span class="kdmath">$(b,f) \in S$</span>. Now since <span class="kdmath">$(a,e) \in R \land (b,f) \in S$</span>, it follows that <span class="kdmath">$((a,b),(e,f)) \in T$</span>.
+Since <span class="kdmath">$(a,b),(c,d),(e,f)$</span> is arbitrary, we can conclude that <span class="kdmath">$T$</span> is transitive.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">(a,b),(c,d) \in A \times B</script> such that <script type="math/tex">((a,b),(c,d)) \in T \land ((c,d),(a,b)) \in T</script>. Thus <script type="math/tex">(a,c) \in R \land (c,a) \in R</script>. Since <script type="math/tex">R</script>
-is antisymmetric, it follows that <script type="math/tex">a = c</script>. Similarly since <script type="math/tex">(b,d) \in S \land (d,b) \in S</script> and <script type="math/tex">S</script> is transitive, it follows that
-<script type="math/tex">b = d</script>. Thus <script type="math/tex">(a,b) = (c,d)</script>. Since <script type="math/tex">(a,b), (c,d)</script> are arbitrary, it follows that <script type="math/tex">T</script> is partial order.</p>
+<p>Suppose <span class="kdmath">$(a,b),(c,d) \in A \times B$</span> such that <span class="kdmath">$((a,b),(c,d)) \in T \land ((c,d),(a,b)) \in T$</span>. Thus <span class="kdmath">$(a,c) \in R \land (c,a) \in R$</span>. Since <span class="kdmath">$R$</span>
+is antisymmetric, it follows that <span class="kdmath">$a = c$</span>. Similarly since <span class="kdmath">$(b,d) \in S \land (d,b) \in S$</span> and <span class="kdmath">$S$</span> is transitive, it follows that
+<span class="kdmath">$b = d$</span>. Thus <span class="kdmath">$(a,b) = (c,d)$</span>. Since <span class="kdmath">$(a,b), (c,d)$</span> are arbitrary, it follows that <span class="kdmath">$T$</span> is partial order.</p>
 
-<p>Thus <script type="math/tex">T</script> is partial order.</p>
+<p>Thus <span class="kdmath">$T$</span> is partial order.</p>
 
 <p><u>Total Order:</u></p>
 
-<p><script type="math/tex">T</script> is not total order even if <script type="math/tex">R</script> and <script type="math/tex">S</script> are full order. Suppose <script type="math/tex">(x,y) \in R \land (y,x) \notin R</script> and <script type="math/tex">(a,b) \in S \land (b,a) \notin S</script>. 
-Then neither <script type="math/tex">((y,a),(x,b)) \in T</script> and nor <script type="math/tex">((x,b),(y,a)) \in T</script> is true.</p>
+<p><span class="kdmath">$T$</span> is not total order even if <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are full order. Suppose <span class="kdmath">$(x,y) \in R \land (y,x) \notin R$</span> and <span class="kdmath">$(a,b) \in S \land (b,a) \notin S$</span>. 
+Then neither <span class="kdmath">$((y,a),(x,b)) \in T$</span> and nor <span class="kdmath">$((x,b),(y,a)) \in T$</span> is true.</p>
 
 <hr />
 
@@ -1595,175 +1595,171 @@ Then neither <script type="math/tex">((y,a),(x,b)) \in T</script> and nor <scrip
 <p><strong>Note:</strong> Proof of transitivity can be done in a shorter way as suggested in the <a href="#comment-2877443544">comment below</a>.</p>
 
 <p><u>Reflexive:</u>
-Suppose <script type="math/tex">(a,b) \in A \times B</script>. Since <script type="math/tex">R</script> is reflexive, it follows <script type="math/tex">(a,a) \in R</script>. Similarly since <script type="math/tex">S</script> is reflexive, it
-follows that <script type="math/tex">(b,b) \in S</script>. Thus <script type="math/tex">((a,b),(a,b)) \in L</script>. Since <script type="math/tex">(a,b)</script> is arbitrary, it follows that <script type="math/tex">T</script> is reflexive.</p>
+Suppose <span class="kdmath">$(a,b) \in A \times B$</span>. Since <span class="kdmath">$R$</span> is reflexive, it follows <span class="kdmath">$(a,a) \in R$</span>. Similarly since <span class="kdmath">$S$</span> is reflexive, it
+follows that <span class="kdmath">$(b,b) \in S$</span>. Thus <span class="kdmath">$((a,b),(a,b)) \in L$</span>. Since <span class="kdmath">$(a,b)$</span> is arbitrary, it follows that <span class="kdmath">$T$</span> is reflexive.</p>
 
 <p><u>Transitive:</u></p>
 
-<p>Suppose <script type="math/tex">(a,b),(c,d),(e,f) \in A \times B</script> such that <script type="math/tex">((a,b),(c,d)) \in L \land ((c,d),(e,f)) \in L</script>. Since <script type="math/tex">((a,b),(c,d)) \in L</script>,
-it follows <script type="math/tex">(a,c) \in R \land (c,e) \in R</script>. Since <script type="math/tex">R</script> is transitive, <script type="math/tex">(a,e) \in R</script>. Now we have following cases:</p>
+<p>Suppose <span class="kdmath">$(a,b),(c,d),(e,f) \in A \times B$</span> such that <span class="kdmath">$((a,b),(c,d)) \in L \land ((c,d),(e,f)) \in L$</span>. Since <span class="kdmath">$((a,b),(c,d)) \in L$</span>,
+it follows <span class="kdmath">$(a,c) \in R \land (c,e) \in R$</span>. Since <span class="kdmath">$R$</span> is transitive, <span class="kdmath">$(a,e) \in R$</span>. Now we have following cases:</p>
 
-<p>Case 1: <script type="math/tex">a = c \land c = e</script>
-Since  <script type="math/tex">((a,b),(c,d)) \in L \land a = c</script>, it follows <script type="math/tex">(b,d) \in S</script>. Similarly since <script type="math/tex">((c,d),(e,f)) \in L \land c = e</script>, it follows <script type="math/tex">(d,f) \in S</script>.
-Now since <script type="math/tex">(a,e) \in R</script> and <script type="math/tex">a = e</script> and <script type="math/tex">(b,f) in S</script>, it follows <script type="math/tex">((a,b),(e,f)) \in L</script>.</p>
+<p>Case 1: <span class="kdmath">$a = c \land c = e$</span>
+Since  <span class="kdmath">$((a,b),(c,d)) \in L \land a = c$</span>, it follows <span class="kdmath">$(b,d) \in S$</span>. Similarly since <span class="kdmath">$((c,d),(e,f)) \in L \land c = e$</span>, it follows <span class="kdmath">$(d,f) \in S$</span>.
+Now since <span class="kdmath">$(a,e) \in R$</span> and <span class="kdmath">$a = e$</span> and <span class="kdmath">$(b,f) in S$</span>, it follows <span class="kdmath">$((a,b),(e,f)) \in L$</span>.</p>
 
-<p>Case 2: <script type="math/tex">a = c \land c \ne e</script>
-Since <script type="math/tex">a = c \land c \ne e</script>, it follows <script type="math/tex">a \ne e</script>. Since <script type="math/tex">(a,e) \in R</script>, it follows <script type="math/tex">((a,b),(e,f)) \in L</script>.</p>
+<p>Case 2: <span class="kdmath">$a = c \land c \ne e$</span>
+Since <span class="kdmath">$a = c \land c \ne e$</span>, it follows <span class="kdmath">$a \ne e$</span>. Since <span class="kdmath">$(a,e) \in R$</span>, it follows <span class="kdmath">$((a,b),(e,f)) \in L$</span>.</p>
 
-<p>Case 3: <script type="math/tex">a \ne c \land c = e</script>
-Since <script type="math/tex">a \ne c \land c = e</script>, it follows <script type="math/tex">a \ne e</script>. Since <script type="math/tex">(a,e) \in R</script>, it follows <script type="math/tex">((a,b),(e,f)) \in L</script>.</p>
+<p>Case 3: <span class="kdmath">$a \ne c \land c = e$</span>
+Since <span class="kdmath">$a \ne c \land c = e$</span>, it follows <span class="kdmath">$a \ne e$</span>. Since <span class="kdmath">$(a,e) \in R$</span>, it follows <span class="kdmath">$((a,b),(e,f)) \in L$</span>.</p>
 
-<p>Case 4: <script type="math/tex">a \ne c \land c \ne e</script>
-Since <script type="math/tex">a \ne c \land c \ne e</script>, it may be either <script type="math/tex">a = e</script>, or <script type="math/tex">a \ne e</script>. Suppose <script type="math/tex">a = e</script>, then since <script type="math/tex">(c,e) \in R</script>, it follows <script type="math/tex">(c,a) \in R</script>.
-Thus <script type="math/tex">(a,c) \in R \land (c,a) \in R</script> and <script type="math/tex">R</script> is antisymmetric, it follows <script type="math/tex">a = c</script>. But we have <script type="math/tex">a \ne c</script>. Thus our assumption <script type="math/tex">a = e</script> is not correct.
-Or <script type="math/tex">a \ne e</script>. Now since <script type="math/tex">(a,e) \in R \land a \ne e</script>, it follows <script type="math/tex">((a,b),(e,f)) \in L</script>.</p>
+<p>Case 4: <span class="kdmath">$a \ne c \land c \ne e$</span>
+Since <span class="kdmath">$a \ne c \land c \ne e$</span>, it may be either <span class="kdmath">$a = e$</span>, or <span class="kdmath">$a \ne e$</span>. Suppose <span class="kdmath">$a = e$</span>, then since <span class="kdmath">$(c,e) \in R$</span>, it follows <span class="kdmath">$(c,a) \in R$</span>.
+Thus <span class="kdmath">$(a,c) \in R \land (c,a) \in R$</span> and <span class="kdmath">$R$</span> is antisymmetric, it follows <span class="kdmath">$a = c$</span>. But we have <span class="kdmath">$a \ne c$</span>. Thus our assumption <span class="kdmath">$a = e$</span> is not correct.
+Or <span class="kdmath">$a \ne e$</span>. Now since <span class="kdmath">$(a,e) \in R \land a \ne e$</span>, it follows <span class="kdmath">$((a,b),(e,f)) \in L$</span>.</p>
 
-<p>Thus from all cases <script type="math/tex">L</script> is transitive.</p>
+<p>Thus from all cases <span class="kdmath">$L$</span> is transitive.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">(a,b),(c,d) \in A \times B</script> such that <script type="math/tex">((a,b),(c,d)) \in L \land ((c,d),(a,b)) \in L</script>. Since <script type="math/tex">((a,b),(c,d)) \in L</script>,
-it follows <script type="math/tex">(a,c) \in R</script>. Similarly since <script type="math/tex">((c,d),(a,b)) \in L</script>, it follows <script type="math/tex">(c,a) \in R</script>. Since <script type="math/tex">(a,c) \in R \land (c,a) \in R</script>
-and <script type="math/tex">R</script> is antisymmetric, it follows <script type="math/tex">a = c</script>. Since <script type="math/tex">a = c</script> and <script type="math/tex">((a,b),(c,d)) \in L</script>, it follows <script type="math/tex">(b,d) \in S</script>. Also,
-since <script type="math/tex">((c,d),(a,b)) \in L</script> and <script type="math/tex">a = c</script>, it follows <script type="math/tex">(d,b) \in S</script>. Since <script type="math/tex">S</script> is antisymmetric, it follows <script type="math/tex">b = d</script>. Thus 
-<script type="math/tex">a = c \land b = d</script>, or we can say <script type="math/tex">(a,b) = (c,d)</script>. Thus <script type="math/tex">L</script> is antisymmetric.</p>
+<p>Suppose <span class="kdmath">$(a,b),(c,d) \in A \times B$</span> such that <span class="kdmath">$((a,b),(c,d)) \in L \land ((c,d),(a,b)) \in L$</span>. Since <span class="kdmath">$((a,b),(c,d)) \in L$</span>,
+it follows <span class="kdmath">$(a,c) \in R$</span>. Similarly since <span class="kdmath">$((c,d),(a,b)) \in L$</span>, it follows <span class="kdmath">$(c,a) \in R$</span>. Since <span class="kdmath">$(a,c) \in R \land (c,a) \in R$</span>
+and <span class="kdmath">$R$</span> is antisymmetric, it follows <span class="kdmath">$a = c$</span>. Since <span class="kdmath">$a = c$</span> and <span class="kdmath">$((a,b),(c,d)) \in L$</span>, it follows <span class="kdmath">$(b,d) \in S$</span>. Also,
+since <span class="kdmath">$((c,d),(a,b)) \in L$</span> and <span class="kdmath">$a = c$</span>, it follows <span class="kdmath">$(d,b) \in S$</span>. Since <span class="kdmath">$S$</span> is antisymmetric, it follows <span class="kdmath">$b = d$</span>. Thus 
+<span class="kdmath">$a = c \land b = d$</span>, or we can say <span class="kdmath">$(a,b) = (c,d)$</span>. Thus <span class="kdmath">$L$</span> is antisymmetric.</p>
 
-<p>Thus <script type="math/tex">L</script> is partial order.</p>
+<p>Thus <span class="kdmath">$L$</span> is partial order.</p>
 
 <p><u>Total Order:</u></p>
 
-<p>Suppose <script type="math/tex">R</script> and <script type="math/tex">S</script> are total orders.</p>
+<p>Suppose <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are total orders.</p>
 
-<p>Now suppose <script type="math/tex">(x,y),(a,b)</script> are in  <script type="math/tex">A \times B</script>. Thus <script type="math/tex">a</script> and <script type="math/tex">x</script> are in <script type="math/tex">A</script> and <script type="math/tex">y</script> and <script type="math/tex">b</script> are in <script type="math/tex">B</script>.
-Since <script type="math/tex">R</script> is total order on <script type="math/tex">A</script> and <script type="math/tex">S</script> is total order on <script type="math/tex">B</script>. Thus we have <script type="math/tex">(x,a) \in R \lor (a,x) \in R</script> and 
-<script type="math/tex">(y,b) \in S \lor (b,y) \in S</script>. Thus we have following cases:</p>
+<p>Now suppose <span class="kdmath">$(x,y),(a,b)$</span> are in  <span class="kdmath">$A \times B$</span>. Thus <span class="kdmath">$a$</span> and <span class="kdmath">$x$</span> are in <span class="kdmath">$A$</span> and <span class="kdmath">$y$</span> and <span class="kdmath">$b$</span> are in <span class="kdmath">$B$</span>.
+Since <span class="kdmath">$R$</span> is total order on <span class="kdmath">$A$</span> and <span class="kdmath">$S$</span> is total order on <span class="kdmath">$B$</span>. Thus we have <span class="kdmath">$(x,a) \in R \lor (a,x) \in R$</span> and 
+<span class="kdmath">$(y,b) \in S \lor (b,y) \in S$</span>. Thus we have following cases:</p>
 
 <ul>
-  <li>Case 1: <script type="math/tex">(x,a) \in R \land (y,b) \in S</script>.
+  <li>Case 1: <span class="kdmath">$(x,a) \in R \land (y,b) \in S$</span>.
     <ul>
-      <li>Case a: <script type="math/tex">x = a</script>  <br />
-  Thus <script type="math/tex">((x,y),(a,b)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</li>
-      <li>Case b: <script type="math/tex">x \ne a</script>  <br />
-  Thus <script type="math/tex">((x,y),(a,b)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</li>
+      <li>Case a: <span class="kdmath">$x = a$</span>  <br />
+  Thus <span class="kdmath">$((x,y),(a,b)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</li>
+      <li>Case b: <span class="kdmath">$x \ne a$</span>  <br />
+  Thus <span class="kdmath">$((x,y),(a,b)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</li>
     </ul>
   </li>
-  <li>Case 2: <script type="math/tex">(x,a) \in R \land (b,y) \in S</script>.
+  <li>Case 2: <span class="kdmath">$(x,a) \in R \land (b,y) \in S$</span>.
     <ul>
       <li>
-        <p>Case a: <script type="math/tex">x = a</script>  <br />
-  Since <script type="math/tex">x = a</script>, if follows <script type="math/tex">(a,x) \in R</script>. Thus <script type="math/tex">((a,b),(x,y)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</p>
+        <p>Case a: <span class="kdmath">$x = a$</span>  <br />
+  Since <span class="kdmath">$x = a$</span>, if follows <span class="kdmath">$(a,x) \in R$</span>. Thus <span class="kdmath">$((a,b),(x,y)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</p>
       </li>
       <li>
-        <p>Case b: <script type="math/tex">x \ne a</script>  <br />
-  Thus <script type="math/tex">((x,y),(a,b)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</p>
-      </li>
-    </ul>
-  </li>
-  <li>Case 3: <script type="math/tex">(a,x) \in R \land (y,b) \in S</script>.
-    <ul>
-      <li>
-        <p>Case a: <script type="math/tex">x = a</script>  <br />
-  Since <script type="math/tex">x = a</script>, if follows <script type="math/tex">(x,a) \in R</script>. Thus <script type="math/tex">((x,y),(a,b)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</p>
-      </li>
-      <li>
-        <p>Case b: <script type="math/tex">x \ne a</script>  <br />
-  Thus <script type="math/tex">((a,b),(x,y)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</p>
+        <p>Case b: <span class="kdmath">$x \ne a$</span>  <br />
+  Thus <span class="kdmath">$((x,y),(a,b)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</p>
       </li>
     </ul>
   </li>
-  <li>Case 4: <script type="math/tex">(a,x) \in R \land (b,y) \in S</script>.
+  <li>Case 3: <span class="kdmath">$(a,x) \in R \land (y,b) \in S$</span>.
     <ul>
       <li>
-        <p>Case a: <script type="math/tex">x = a</script>  <br />
-  Thus <script type="math/tex">((a,b),(x,y)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</p>
+        <p>Case a: <span class="kdmath">$x = a$</span>  <br />
+  Since <span class="kdmath">$x = a$</span>, if follows <span class="kdmath">$(x,a) \in R$</span>. Thus <span class="kdmath">$((x,y),(a,b)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</p>
       </li>
       <li>
-        <p>Case b: <script type="math/tex">x \ne a</script>  <br />
-  Thus <script type="math/tex">((a,b),(x,y)) \in L</script>. We can also say <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>.</p>
+        <p>Case b: <span class="kdmath">$x \ne a$</span>  <br />
+  Thus <span class="kdmath">$((a,b),(x,y)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>Case 4: <span class="kdmath">$(a,x) \in R \land (b,y) \in S$</span>.
+    <ul>
+      <li>
+        <p>Case a: <span class="kdmath">$x = a$</span>  <br />
+  Thus <span class="kdmath">$((a,b),(x,y)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</p>
+      </li>
+      <li>
+        <p>Case b: <span class="kdmath">$x \ne a$</span>  <br />
+  Thus <span class="kdmath">$((a,b),(x,y)) \in L$</span>. We can also say <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>.</p>
       </li>
     </ul>
   </li>
 </ul>
 
-<p>Thus from all the cases, <script type="math/tex">((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L</script>. Since <script type="math/tex">(x,y),(a,b)</script> are arbitrary, we can conclude that
-<script type="math/tex">L</script> is total order.</p>
+<p>Thus from all the cases, <span class="kdmath">$((x,y),(a,b)) \in L \lor ((a,b),(x,y)) \in L$</span>. Since <span class="kdmath">$(x,y),(a,b)$</span> are arbitrary, we can conclude that
+<span class="kdmath">$L$</span> is total order.</p>
 
 <hr />
 
 <p><strong>Soln10</strong></p>
 
-<p>Suppose <script type="math/tex">x,y</script> are arbitrary elements of <script type="math/tex">A</script>.</p>
+<p>Suppose <span class="kdmath">$x,y$</span> are arbitrary elements of <span class="kdmath">$A$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">xRy</script>. Suppose <script type="math/tex">a \in P_x</script>. Since <script type="math/tex">a \in P_x</script>, it follows <script type="math/tex">aRx</script>.
- Since <script type="math/tex">aRx</script> and <script type="math/tex">xRy</script> and <script type="math/tex">R</script> is partial order, it follows <script type="math/tex">aRy</script>. Thus <script type="math/tex">a \in P_y</script>. Since <script type="math/tex">a</script> is arbitrary,
- it follows that <script type="math/tex">P_x \subseteq P_y</script>.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$xRy$</span>. Suppose <span class="kdmath">$a \in P_x$</span>. Since <span class="kdmath">$a \in P_x$</span>, it follows <span class="kdmath">$aRx$</span>.
+ Since <span class="kdmath">$aRx$</span> and <span class="kdmath">$xRy$</span> and <span class="kdmath">$R$</span> is partial order, it follows <span class="kdmath">$aRy$</span>. Thus <span class="kdmath">$a \in P_y$</span>. Since <span class="kdmath">$a$</span> is arbitrary,
+ it follows that <span class="kdmath">$P_x \subseteq P_y$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">P_x \subseteq P_y</script>. Since <script type="math/tex">R</script> is partial order, xRx. Thus <script type="math/tex">x \in P_x</script>. Since <script type="math/tex">P_x \subseteq P_y</script>, it follows
-<script type="math/tex">x \in P_y</script>, thus <script type="math/tex">xRy</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$P_x \subseteq P_y$</span>. Since <span class="kdmath">$R$</span> is partial order, xRx. Thus <span class="kdmath">$x \in P_x$</span>. Since <span class="kdmath">$P_x \subseteq P_y$</span>, it follows
+<span class="kdmath">$x \in P_y$</span>, thus <span class="kdmath">$xRy$</span>.</p>
 
-<p>Since <script type="math/tex">x</script> and <script type="math/tex">y</script> are arbitrary elements, we can conclude that <script type="math/tex">\forall x \in A \forall y \in A (xRy \leftrightarrow P_x \subseteq P_y)</script>.</p>
+<p>Since <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> are arbitrary elements, we can conclude that <span class="kdmath">$\forall x \in A \forall y \in A (xRy \leftrightarrow P_x \subseteq P_y)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln11</strong></p>
 
-<p>Minimal elements: <script type="math/tex">\{ x \in B \, \vert \, x \text{ is prime} \}</script>.
+<p>Minimal elements: <span class="kdmath">$\{ x \in B \, \vert \, x \text{ is prime} \}$</span>.
 Smallest element: N.A.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
-<p>We shall prove this by contradiction. Suppose <script type="math/tex">% <![CDATA[
-\mathcal F = \{X \subseteq \mathbb R \, | \, X \ne \phi \; and \; \forall x \forall y((x \in X \land x < y) \to y \in X)\} %]]></script> has a 
-minimal element, say <script type="math/tex">M</script>. Thus <script type="math/tex">% <![CDATA[
-\forall x \forall y((x \in M \land x < y) \to y \in M) %]]></script>. Also since <script type="math/tex">M</script> is minimal, it follows <script type="math/tex">\lnot \exists X \in F (X \subseteq M )</script>. 
-Since <script type="math/tex">X \ne \phi</script>, suppose <script type="math/tex">x_0</script> is an element in <script type="math/tex">M</script>. Then <script type="math/tex">M</script> contains all elements of set <script type="math/tex">% <![CDATA[
-\forall y(x_0 < y) %]]></script>. Now consider the set <script type="math/tex">% <![CDATA[
-N = \{ y \in \mathbb R \, \vert \, x_0 < y \} %]]></script>. 
-Clearly <script type="math/tex">N \in \mathcal F</script>. Also all the elements that exist in <script type="math/tex">N</script> are greater than <script type="math/tex">x_0</script>, thus <script type="math/tex">N \subseteq M</script>. Also, since <script type="math/tex">x_0 \in M \land x_0 \notin N</script>, <script type="math/tex">M \ne N</script>.
-Thus <script type="math/tex">N \in \mathcal F \land N \subseteq M</script>. But it contradicts our assumption that <script type="math/tex">\lnot \exists X \in F (X \subseteq M )</script>. Thus we can conclude that there does not exist
-any minimal element in <script type="math/tex">\mathcal F</script>.</p>
+<p>We shall prove this by contradiction. Suppose <span class="kdmath">$\mathcal F = \{X \subseteq \mathbb R \, | \, X \ne \phi \; and \; \forall x \forall y((x \in X \land x < y) \to y \in X)\}$</span> has a 
+minimal element, say <span class="kdmath">$M$</span>. Thus <span class="kdmath">$\forall x \forall y((x \in M \land x < y) \to y \in M)$</span>. Also since <span class="kdmath">$M$</span> is minimal, it follows <span class="kdmath">$\lnot \exists X \in F (X \subseteq M )$</span>. 
+Since <span class="kdmath">$X \ne \phi$</span>, suppose <span class="kdmath">$x_0$</span> is an element in <span class="kdmath">$M$</span>. Then <span class="kdmath">$M$</span> contains all elements of set <span class="kdmath">$\forall y(x_0 < y)$</span>. Now consider the set <span class="kdmath">$N = \{ y \in \mathbb R \, \vert \, x_0 < y \}$</span>. 
+Clearly <span class="kdmath">$N \in \mathcal F$</span>. Also all the elements that exist in <span class="kdmath">$N$</span> are greater than <span class="kdmath">$x_0$</span>, thus <span class="kdmath">$N \subseteq M$</span>. Also, since <span class="kdmath">$x_0 \in M \land x_0 \notin N$</span>, <span class="kdmath">$M \ne N$</span>.
+Thus <span class="kdmath">$N \in \mathcal F \land N \subseteq M$</span>. But it contradicts our assumption that <span class="kdmath">$\lnot \exists X \in F (X \subseteq M )$</span>. Thus we can conclude that there does not exist
+any minimal element in <span class="kdmath">$\mathcal F$</span>.</p>
 
 <hr />
 
 <p><strong>Soln13</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is partial order on <script type="math/tex">A</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> is partial order on <span class="kdmath">$A$</span>.</p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">R</script> is partial order, <script type="math/tex">(x,x) \in R</script>. Thus <script type="math/tex">(x,x) \in R^{-1}</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">R^{-1}</script>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R$</span> is partial order, <span class="kdmath">$(x,x) \in R$</span>. Thus <span class="kdmath">$(x,x) \in R^{-1}$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$R^{-1}$</span>
 is reflexive.</p>
 
 <p><u>Transitive:</u></p>
 
-<p>Suppose <script type="math/tex">x, y, z</script> are arbitrary elements of <script type="math/tex">A</script> such that <script type="math/tex">(x,y) \in R^{-1} \land (y,z) \in R^{-1}</script>. It follows that <script type="math/tex">(y,x) \in R \land (z,y) \in R</script>.
- Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">(z,x) \in R</script>. Thus <script type="math/tex">(x,z) in R^{-1}</script>. Since <script type="math/tex">x,y,z</script> are arbitrary, we can conclude the <script type="math/tex">R^{-1}</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$x, y, z$</span> are arbitrary elements of <span class="kdmath">$A$</span> such that <span class="kdmath">$(x,y) \in R^{-1} \land (y,z) \in R^{-1}$</span>. It follows that <span class="kdmath">$(y,x) \in R \land (z,y) \in R$</span>.
+ Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$(z,x) \in R$</span>. Thus <span class="kdmath">$(x,z) in R^{-1}$</span>. Since <span class="kdmath">$x,y,z$</span> are arbitrary, we can conclude the <span class="kdmath">$R^{-1}$</span> is transitive.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">x, y</script> are arbitrary elements of <script type="math/tex">A</script> such that <script type="math/tex">(x,y) \in R^{-1} \land (y,x) \in R^{-1}</script>. It follows that <script type="math/tex">(y,x) \in R \land (x,y) \in R</script>.
-Since <script type="math/tex">R</script> is antisymmetric, it follows that <script type="math/tex">y = x</script>. Since <script type="math/tex">x,y</script> are arbitrary, we can conclude the <script type="math/tex">R^{-1}</script> is antisymmetric.</p>
+<p>Suppose <span class="kdmath">$x, y$</span> are arbitrary elements of <span class="kdmath">$A$</span> such that <span class="kdmath">$(x,y) \in R^{-1} \land (y,x) \in R^{-1}$</span>. It follows that <span class="kdmath">$(y,x) \in R \land (x,y) \in R$</span>.
+Since <span class="kdmath">$R$</span> is antisymmetric, it follows that <span class="kdmath">$y = x$</span>. Since <span class="kdmath">$x,y$</span> are arbitrary, we can conclude the <span class="kdmath">$R^{-1}$</span> is antisymmetric.</p>
 
-<p>Thus <script type="math/tex">R</script> is reflexive, transitive and antisymmetric, we can conclude that <script type="math/tex">R</script> is partial order.</p>
+<p>Thus <span class="kdmath">$R$</span> is reflexive, transitive and antisymmetric, we can conclude that <span class="kdmath">$R$</span> is partial order.</p>
 
 <p><u>Total Order:</u></p>
 
-<p>Suppose <script type="math/tex">R</script> is total order. Suppose <script type="math/tex">x,y</script> are arbitrary elements of <script type="math/tex">A</script>. Since <script type="math/tex">R</script> is total order we have two possible cases:</p>
+<p>Suppose <span class="kdmath">$R$</span> is total order. Suppose <span class="kdmath">$x,y$</span> are arbitrary elements of <span class="kdmath">$A$</span>. Since <span class="kdmath">$R$</span> is total order we have two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R</script>.  <br />
-  Thus <script type="math/tex">(y,x) \in R^{-1}</script>. We can also say that <script type="math/tex">(x,y) \in R^{-1} \lor (y,x) \in R^{-1}</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R$</span>.  <br />
+  Thus <span class="kdmath">$(y,x) \in R^{-1}$</span>. We can also say that <span class="kdmath">$(x,y) \in R^{-1} \lor (y,x) \in R^{-1}$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(y,x) \in R</script>.  <br />
-  Thus <script type="math/tex">(x,y) \in R^{-1}</script>. We can also say that <script type="math/tex">(x,y) \in R^{-1} \lor (y,x) \in R^{-1}</script>.</p>
+    <p>Case 2: <span class="kdmath">$(y,x) \in R$</span>.  <br />
+  Thus <span class="kdmath">$(x,y) \in R^{-1}$</span>. We can also say that <span class="kdmath">$(x,y) \in R^{-1} \lor (y,x) \in R^{-1}$</span>.</p>
   </li>
 </ul>
 
-<p>Since <script type="math/tex">x,y</script> are arbitrary, we can conclude that <script type="math/tex">R^{-1}</script> is total order.</p>
+<p>Since <span class="kdmath">$x,y$</span> are arbitrary, we can conclude that <span class="kdmath">$R^{-1}$</span> is total order.</p>
 
 <hr />
 
@@ -1771,19 +1767,19 @@ Since <script type="math/tex">R</script> is antisymmetric, it follows that <scri
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">b</script> is the <script type="math/tex">R</script>-largest element of <script type="math/tex">B</script>, iff  <br />
-<script type="math/tex">\forall x \in B(xRb)</script> iff  <br />
-<script type="math/tex">\forall x \in B((x,b) \in R))</script> iff  <br />
-<script type="math/tex">\forall x \in B((b,x) \in R^{-1})</script> iff  <br />
-<script type="math/tex">\forall x \in B(b R^{-1} x)</script> iff  <br />
-<script type="math/tex">x</script> is the <script type="math/tex">R^{-1}</script>-smallest element of <script type="math/tex">B</script>.</p>
+<p>Suppose <span class="kdmath">$b$</span> is the <span class="kdmath">$R$</span>-largest element of <span class="kdmath">$B$</span>, iff  <br />
+<span class="kdmath">$\forall x \in B(xRb)$</span> iff  <br />
+<span class="kdmath">$\forall x \in B((x,b) \in R))$</span> iff  <br />
+<span class="kdmath">$\forall x \in B((b,x) \in R^{-1})$</span> iff  <br />
+<span class="kdmath">$\forall x \in B(b R^{-1} x)$</span> iff  <br />
+<span class="kdmath">$x$</span> is the <span class="kdmath">$R^{-1}$</span>-smallest element of <span class="kdmath">$B$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">b</script> is the <script type="math/tex">R</script>-maximal element of <script type="math/tex">B</script>. iff  <br />
-<script type="math/tex">\lnot \exists x \in B(bRx \land b \ne x)</script>. iff    <br />
-<script type="math/tex">\lnot \exists x \in B(x R^{-1} b \land b \ne x)</script>. iff   <br />
-<script type="math/tex">x</script> is the <script type="math/tex">R^{-1}</script>-minimal element of <script type="math/tex">B</script>.</p>
+<p>Suppose <span class="kdmath">$b$</span> is the <span class="kdmath">$R$</span>-maximal element of <span class="kdmath">$B$</span>. iff  <br />
+<span class="kdmath">$\lnot \exists x \in B(bRx \land b \ne x)$</span>. iff    <br />
+<span class="kdmath">$\lnot \exists x \in B(x R^{-1} b \land b \ne x)$</span>. iff   <br />
+<span class="kdmath">$x$</span> is the <span class="kdmath">$R^{-1}$</span>-minimal element of <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
@@ -1791,26 +1787,26 @@ Since <script type="math/tex">R</script> is antisymmetric, it follows that <scri
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">b</script> is the <script type="math/tex">R_11</script>-smallest element of <script type="math/tex">B</script>. Suppose <script type="math/tex">x</script> is arbitrary element in <script type="math/tex">B</script>. Since <script type="math/tex">b</script> is <script type="math/tex">R_1</script>-smallest element in <script type="math/tex">B</script>,
-it follows that <script type="math/tex">(b,x) \in R_1</script>. Since <script type="math/tex">R_1 \subseteq R_2</script>, it follows <script type="math/tex">(b,x) \in R_2</script>. Since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">\forall x \in B(b R_2 x)</script>.
-Thus <script type="math/tex">b</script> is also the <script type="math/tex">R_2</script>-smallest element of <script type="math/tex">B</script>.</p>
+<p>Suppose <span class="kdmath">$b$</span> is the <span class="kdmath">$R_11$</span>-smallest element of <span class="kdmath">$B$</span>. Suppose <span class="kdmath">$x$</span> is arbitrary element in <span class="kdmath">$B$</span>. Since <span class="kdmath">$b$</span> is <span class="kdmath">$R_1$</span>-smallest element in <span class="kdmath">$B$</span>,
+it follows that <span class="kdmath">$(b,x) \in R_1$</span>. Since <span class="kdmath">$R_1 \subseteq R_2$</span>, it follows <span class="kdmath">$(b,x) \in R_2$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$\forall x \in B(b R_2 x)$</span>.
+Thus <span class="kdmath">$b$</span> is also the <span class="kdmath">$R_2$</span>-smallest element of <span class="kdmath">$B$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">b</script> is an <script type="math/tex">R_2</script>-minimal element of <script type="math/tex">B</script>. Suppose <script type="math/tex">x</script> is arbitrary element in <script type="math/tex">B</script> such that <script type="math/tex">x \ne b</script>. Then <script type="math/tex">(x,b) \notin R_2</script>. Since
-<script type="math/tex">R_1 \subseteq R_2</script>, it follows that such element <script type="math/tex">(b,x)</script> must also not exist in <script type="math/tex">R_1</script>. Thus <script type="math/tex">\lnot \exists x \in B(x R_1 b \land x != b</script>. It follows
-that <script type="math/tex">b</script> is the <script type="math/tex">R_1</script>-minimal element of <script type="math/tex">B</script>.</p>
+<p>Suppose <span class="kdmath">$b$</span> is an <span class="kdmath">$R_2$</span>-minimal element of <span class="kdmath">$B$</span>. Suppose <span class="kdmath">$x$</span> is arbitrary element in <span class="kdmath">$B$</span> such that <span class="kdmath">$x \ne b$</span>. Then <span class="kdmath">$(x,b) \notin R_2$</span>. Since
+<span class="kdmath">$R_1 \subseteq R_2$</span>, it follows that such element <span class="kdmath">$(b,x)$</span> must also not exist in <span class="kdmath">$R_1$</span>. Thus <span class="kdmath">$\lnot \exists x \in B(x R_1 b \land x != b$</span>. It follows
+that <span class="kdmath">$b$</span> is the <span class="kdmath">$R_1$</span>-minimal element of <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln16</strong></p>
 
-<p>Suppose <script type="math/tex">b</script> is the <script type="math/tex">R</script>-largest element of <script type="math/tex">B</script>. Suppose <script type="math/tex">b</script> is not a maximal element of <script type="math/tex">B</script>. Thus there exist an element <script type="math/tex">x \in B</script> such 
-that <script type="math/tex">bRx</script>. But it contradicts with the given that <script type="math/tex">b</script> is the largest element of <script type="math/tex">B</script>. Thus assumption <script type="math/tex">b</script> is not a maximal element is not correct.
-Hence, <script type="math/tex">b</script> is a maximal element of <script type="math/tex">B</script>.</p>
+<p>Suppose <span class="kdmath">$b$</span> is the <span class="kdmath">$R$</span>-largest element of <span class="kdmath">$B$</span>. Suppose <span class="kdmath">$b$</span> is not a maximal element of <span class="kdmath">$B$</span>. Thus there exist an element <span class="kdmath">$x \in B$</span> such 
+that <span class="kdmath">$bRx$</span>. But it contradicts with the given that <span class="kdmath">$b$</span> is the largest element of <span class="kdmath">$B$</span>. Thus assumption <span class="kdmath">$b$</span> is not a maximal element is not correct.
+Hence, <span class="kdmath">$b$</span> is a maximal element of <span class="kdmath">$B$</span>.</p>
 
-<p>Suppose <script type="math/tex">c</script> is also a maximal element of <script type="math/tex">B</script>. Thus <script type="math/tex">\lnot \exists x \in B(cRx \land c \ne x)</script>, or <script type="math/tex">\forall x \in B(cRx \to c = x)</script>. Also since 
-<script type="math/tex">b</script> is largest element of <script type="math/tex">B</script>, <script type="math/tex">cRb</script>. Thus <script type="math/tex">c = b</script>. Thus we can conclude that <script type="math/tex">b</script> is the only maximal element.</p>
+<p>Suppose <span class="kdmath">$c$</span> is also a maximal element of <span class="kdmath">$B$</span>. Thus <span class="kdmath">$\lnot \exists x \in B(cRx \land c \ne x)$</span>, or <span class="kdmath">$\forall x \in B(cRx \to c = x)$</span>. Also since 
+<span class="kdmath">$b$</span> is largest element of <span class="kdmath">$B$</span>, <span class="kdmath">$cRb$</span>. Thus <span class="kdmath">$c = b$</span>. Thus we can conclude that <span class="kdmath">$b$</span> is the only maximal element.</p>
 
 <hr />
 
@@ -1818,22 +1814,22 @@ Hence, <script type="math/tex">b</script> is a maximal element of <script type="
 
 <p>False. Counter example:</p>
 
-<p>Suppose <script type="math/tex">A = \mathbb R \times \mathbb R</script>, and let <script type="math/tex">R = \{((x, y), (x', y')) \in A \times A \, \vert \, x \le x' and y \le y' \}</script>.</p>
+<p>Suppose <span class="kdmath">$A = \mathbb R \times \mathbb R$</span>, and let <span class="kdmath">$R = \{((x, y), (x', y')) \in A \times A \, \vert \, x \le x' and y \le y' \}$</span>.</p>
 
 <p>This can be proved directly using excercise - 8 that it is partial order.</p>
 
-<p>Now, suppose <script type="math/tex">B = \{ (0, 0) \} \cup (\{1\} \times \mathbb R)</script>.</p>
+<p>Now, suppose <span class="kdmath">$B = \{ (0, 0) \} \cup (\{1\} \times \mathbb R)$</span>.</p>
 
-<p>Thus, <script type="math/tex">R</script> contains elements like …. <script type="math/tex">((1,-3),(1,0))</script>, <script type="math/tex">((1,-2),(1,0))</script>, <script type="math/tex">((1,-1),(1,0))</script>, <script type="math/tex">((1,0),(1,0))</script>, <script type="math/tex">((0,0),(0,0))</script>, <script type="math/tex">((0,0),(1,0))</script>, <script type="math/tex">((0,0),(1,1))</script>,
- <script type="math/tex">((0,0),(1,2))</script>, <script type="math/tex">((0,0),(1,3))</script>, <script type="math/tex">((0,0),(1,3))</script>,…..</p>
+<p>Thus, <span class="kdmath">$R$</span> contains elements like …. <span class="kdmath">$((1,-3),(1,0))$</span>, <span class="kdmath">$((1,-2),(1,0))$</span>, <span class="kdmath">$((1,-1),(1,0))$</span>, <span class="kdmath">$((1,0),(1,0))$</span>, <span class="kdmath">$((0,0),(0,0))$</span>, <span class="kdmath">$((0,0),(1,0))$</span>, <span class="kdmath">$((0,0),(1,1))$</span>,
+ <span class="kdmath">$((0,0),(1,2))$</span>, <span class="kdmath">$((0,0),(1,3))$</span>, <span class="kdmath">$((0,0),(1,3))$</span>,…..</p>
 
-<p>Thus it can be noticed here, how might this example is developed. <script type="math/tex">B</script> got created in such a way that <script type="math/tex">R</script> looks like it will contain two minimals but
-because other minimal moves towards infinity, we only get one defined minimal. There is no element such that <script type="math/tex">x R (0,0)</script> is defined, so <script type="math/tex">(0,0)</script>
+<p>Thus it can be noticed here, how might this example is developed. <span class="kdmath">$B$</span> got created in such a way that <span class="kdmath">$R$</span> looks like it will contain two minimals but
+because other minimal moves towards infinity, we only get one defined minimal. There is no element such that <span class="kdmath">$x R (0,0)$</span> is defined, so <span class="kdmath">$(0,0)$</span>
 is the only minimal.</p>
 
-<p>Now since elements like <script type="math/tex">((0,0),(1,-1)), ((0,0),(1,-2)), ((0,0),(1,-3))</script> …. are not present in <script type="math/tex">R</script>(which can be seen that it is because of the particular choice of B), 
-<script type="math/tex">(0,0)</script> is not the smallest element as an element <script type="math/tex">s</script> is smallest iff <script type="math/tex">\forall x \in B(s R x)</script>. Thus in our example, this is not the case that for
-all values, say <script type="math/tex">(x,y)</script>, of <script type="math/tex">B</script>, <script type="math/tex">(0,0) R (x,y)</script>.</p>
+<p>Now since elements like <span class="kdmath">$((0,0),(1,-1)), ((0,0),(1,-2)), ((0,0),(1,-3))$</span> …. are not present in <span class="kdmath">$R$</span>(which can be seen that it is because of the particular choice of B), 
+<span class="kdmath">$(0,0)$</span> is not the smallest element as an element <span class="kdmath">$s$</span> is smallest iff <span class="kdmath">$\forall x \in B(s R x)$</span>. Thus in our example, this is not the case that for
+all values, say <span class="kdmath">$(x,y)$</span>, of <span class="kdmath">$B$</span>, <span class="kdmath">$(0,0) R (x,y)$</span>.</p>
 
 <hr />
 
@@ -1843,36 +1839,36 @@ all values, say <script type="math/tex">(x,y)</script>, of <script type="math/te
 
 <p><strong>(a)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x</script> is upper bound on <script type="math/tex">B_1</script>. Suppose <script type="math/tex">b_2</script> is arbitrary element of <script type="math/tex">B_2</script>. Since it is given that <script type="math/tex">\forall x \in B_2 \exists y \in B_1(x R y)</script>,
-if suppose for <script type="math/tex">m \in B_1</script>, we have <script type="math/tex">\forall x \in B_2 (x R m)</script>. Since <script type="math/tex">b_2 \in B_2</script>, it follows <script type="math/tex">b_2 R m</script>. But since <script type="math/tex">x</script> is upper bound for
- <script type="math/tex">B_1</script> and <script type="math/tex">m \in B_1</script>, it follows <script type="math/tex">(m R x )</script>. Since <script type="math/tex">R</script> is partial order on <script type="math/tex">A</script> and <script type="math/tex">(b_2 R m) \land (m R x)</script>, it follows <script type="math/tex">b_2 R x</script>. Since <script type="math/tex">b_2</script> is
- arbitrary element of <script type="math/tex">B_2</script>, it follows that <script type="math/tex">x</script> is upper bound for <script type="math/tex">B_2</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x$</span> is upper bound on <span class="kdmath">$B_1$</span>. Suppose <span class="kdmath">$b_2$</span> is arbitrary element of <span class="kdmath">$B_2$</span>. Since it is given that <span class="kdmath">$\forall x \in B_2 \exists y \in B_1(x R y)$</span>,
+if suppose for <span class="kdmath">$m \in B_1$</span>, we have <span class="kdmath">$\forall x \in B_2 (x R m)$</span>. Since <span class="kdmath">$b_2 \in B_2$</span>, it follows <span class="kdmath">$b_2 R m$</span>. But since <span class="kdmath">$x$</span> is upper bound for
+ <span class="kdmath">$B_1$</span> and <span class="kdmath">$m \in B_1$</span>, it follows <span class="kdmath">$(m R x )$</span>. Since <span class="kdmath">$R$</span> is partial order on <span class="kdmath">$A$</span> and <span class="kdmath">$(b_2 R m) \land (m R x)$</span>, it follows <span class="kdmath">$b_2 R x$</span>. Since <span class="kdmath">$b_2$</span> is
+ arbitrary element of <span class="kdmath">$B_2$</span>, it follows that <span class="kdmath">$x$</span> is upper bound for <span class="kdmath">$B_2$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x</script> is upper bound on <script type="math/tex">B_2</script>. Suppose <script type="math/tex">b_1</script> is arbitrary element of <script type="math/tex">B_1</script>. Since it is given that <script type="math/tex">\forall x \in B_1 \exists y \in B_2(x R y)</script>,
-if suppose for <script type="math/tex">m \in B_2</script>, we have <script type="math/tex">\forall x \in B_1 (x R m)</script>. Since <script type="math/tex">b_1 \in B_1</script>, it follows <script type="math/tex">b_1 R m</script>. But since <script type="math/tex">x</script> is upper bound for
-<script type="math/tex">B_2</script> and <script type="math/tex">m \in B_2</script>, it follows <script type="math/tex">(m R x )</script>. Since <script type="math/tex">R</script> is partial order on <script type="math/tex">A</script> and <script type="math/tex">(b_1 R m) \land (m R x)</script>, it follows <script type="math/tex">b_1 R x</script>. Since <script type="math/tex">b_1</script> is
-arbitrary element of <script type="math/tex">B_1</script>, it follows that <script type="math/tex">x</script> is upper bound for <script type="math/tex">B_1</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x$</span> is upper bound on <span class="kdmath">$B_2$</span>. Suppose <span class="kdmath">$b_1$</span> is arbitrary element of <span class="kdmath">$B_1$</span>. Since it is given that <span class="kdmath">$\forall x \in B_1 \exists y \in B_2(x R y)$</span>,
+if suppose for <span class="kdmath">$m \in B_2$</span>, we have <span class="kdmath">$\forall x \in B_1 (x R m)$</span>. Since <span class="kdmath">$b_1 \in B_1$</span>, it follows <span class="kdmath">$b_1 R m$</span>. But since <span class="kdmath">$x$</span> is upper bound for
+<span class="kdmath">$B_2$</span> and <span class="kdmath">$m \in B_2$</span>, it follows <span class="kdmath">$(m R x )$</span>. Since <span class="kdmath">$R$</span> is partial order on <span class="kdmath">$A$</span> and <span class="kdmath">$(b_1 R m) \land (m R x)$</span>, it follows <span class="kdmath">$b_1 R x$</span>. Since <span class="kdmath">$b_1$</span> is
+arbitrary element of <span class="kdmath">$B_1$</span>, it follows that <span class="kdmath">$x$</span> is upper bound for <span class="kdmath">$B_1$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>We will prove this by contra-positive. Suppose <script type="math/tex">m</script> is a maximal element of <script type="math/tex">B_1</script>. Similarly, suppose <script type="math/tex">n</script> is a maximal element of <script type="math/tex">B_2</script>.</p>
+<p>We will prove this by contra-positive. Suppose <span class="kdmath">$m$</span> is a maximal element of <span class="kdmath">$B_1$</span>. Similarly, suppose <span class="kdmath">$n$</span> is a maximal element of <span class="kdmath">$B_2$</span>.</p>
 
-<p>Since it is given that <script type="math/tex">\forall x \in B_1 \exists y \in B_2(x R y)</script>, suppose for the value <script type="math/tex">b_2 \in B_2</script>, we have <script type="math/tex">\forall x \in B_1 (x R b_2)</script>. Similarly, since it is given 
-that <script type="math/tex">\forall x \in B_2 \exists y \in B_1(x R y)</script>, suppose for the value <script type="math/tex">b_1 \in B_2</script>, we have <script type="math/tex">\forall x \in B_2 (x R b_1)</script>. 
-Now since <script type="math/tex">b_1 \in B_1</script> and <script type="math/tex">\forall x \in B_1 (x R b_2)</script>, it follows that <script type="math/tex">b_1 R b_2</script>. Similarly, since <script type="math/tex">b_2 \in B_2</script> and <script type="math/tex">\forall x \in B_2 (x R b_1)</script>, it follows that <script type="math/tex">b_2 R b_1</script>.
-Thus <script type="math/tex">b_1 R b_2 \land b_2 R b_1</script> and since <script type="math/tex">R</script> is partial order, it follows that <script type="math/tex">b_1 = b_2</script>.</p>
+<p>Since it is given that <span class="kdmath">$\forall x \in B_1 \exists y \in B_2(x R y)$</span>, suppose for the value <span class="kdmath">$b_2 \in B_2$</span>, we have <span class="kdmath">$\forall x \in B_1 (x R b_2)$</span>. Similarly, since it is given 
+that <span class="kdmath">$\forall x \in B_2 \exists y \in B_1(x R y)$</span>, suppose for the value <span class="kdmath">$b_1 \in B_2$</span>, we have <span class="kdmath">$\forall x \in B_2 (x R b_1)$</span>. 
+Now since <span class="kdmath">$b_1 \in B_1$</span> and <span class="kdmath">$\forall x \in B_1 (x R b_2)$</span>, it follows that <span class="kdmath">$b_1 R b_2$</span>. Similarly, since <span class="kdmath">$b_2 \in B_2$</span> and <span class="kdmath">$\forall x \in B_2 (x R b_1)$</span>, it follows that <span class="kdmath">$b_2 R b_1$</span>.
+Thus <span class="kdmath">$b_1 R b_2 \land b_2 R b_1$</span> and since <span class="kdmath">$R$</span> is partial order, it follows that <span class="kdmath">$b_1 = b_2$</span>.</p>
 
-<p>Since <script type="math/tex">m</script> is a maximal element of <script type="math/tex">B_1</script>, it follows <script type="math/tex">b_1 R m</script>. Also since  <script type="math/tex">\forall x \in B_1 (x R b_2)</script>, it follows, <script type="math/tex">m R b_2</script>. Since <script type="math/tex">b_2 = b_1</script>, it follows <script type="math/tex">m R b_1</script>.
-But <script type="math/tex">m</script> is a maximal element of <script type="math/tex">B_1</script>, thus <script type="math/tex">m = b_1 = b_2</script>.</p>
+<p>Since <span class="kdmath">$m$</span> is a maximal element of <span class="kdmath">$B_1$</span>, it follows <span class="kdmath">$b_1 R m$</span>. Also since  <span class="kdmath">$\forall x \in B_1 (x R b_2)$</span>, it follows, <span class="kdmath">$m R b_2$</span>. Since <span class="kdmath">$b_2 = b_1$</span>, it follows <span class="kdmath">$m R b_1$</span>.
+But <span class="kdmath">$m$</span> is a maximal element of <span class="kdmath">$B_1$</span>, thus <span class="kdmath">$m = b_1 = b_2$</span>.</p>
 
-<p>Since <script type="math/tex">n</script> is a maximal element of <script type="math/tex">B_2</script>, it follows <script type="math/tex">b_2 R n</script>. Also since  <script type="math/tex">\forall x \in B_2 (x R b_1)</script>, it follows, <script type="math/tex">n R b_1</script>. Since <script type="math/tex">b_2 = b_1</script>, it follows <script type="math/tex">n R b_2</script>.
-But <script type="math/tex">n</script> is a maximal element of <script type="math/tex">B_2</script>, thus <script type="math/tex">n = b_2 = b_1</script>.</p>
+<p>Since <span class="kdmath">$n$</span> is a maximal element of <span class="kdmath">$B_2$</span>, it follows <span class="kdmath">$b_2 R n$</span>. Also since  <span class="kdmath">$\forall x \in B_2 (x R b_1)$</span>, it follows, <span class="kdmath">$n R b_1$</span>. Since <span class="kdmath">$b_2 = b_1$</span>, it follows <span class="kdmath">$n R b_2$</span>.
+But <span class="kdmath">$n$</span> is a maximal element of <span class="kdmath">$B_2$</span>, thus <span class="kdmath">$n = b_2 = b_1$</span>.</p>
 
-<p>Thus <script type="math/tex">m = n = b_1 = b_2</script>. Thus <script type="math/tex">B_1</script> and <script type="math/tex">B_2</script> are not disjoint. Thus by contra-positive, if <script type="math/tex">B_1</script> and <script type="math/tex">B_2</script> are disjoint, then there is 
-no element <script type="math/tex">b_1 \in B_1</script> and <script type="math/tex">b_2 \in B_2</script> such that <script type="math/tex">b_1 = b_2</script>. And if there is no such element, then <script type="math/tex">B_1</script> and <script type="math/tex">B_2</script> does not have a maximal element.</p>
+<p>Thus <span class="kdmath">$m = n = b_1 = b_2$</span>. Thus <span class="kdmath">$B_1$</span> and <span class="kdmath">$B_2$</span> are not disjoint. Thus by contra-positive, if <span class="kdmath">$B_1$</span> and <span class="kdmath">$B_2$</span> are disjoint, then there is 
+no element <span class="kdmath">$b_1 \in B_1$</span> and <span class="kdmath">$b_2 \in B_2$</span> such that <span class="kdmath">$b_1 = b_2$</span>. And if there is no such element, then <span class="kdmath">$B_1$</span> and <span class="kdmath">$B_2$</span> does not have a maximal element.</p>
 
-<p>Note: I am not confident of this proof. As from the givens it can be easily seen that <script type="math/tex">B_1</script> and <script type="math/tex">B_2</script> are not disjoint. Or the other cases might be that
-<script type="math/tex">B_1</script> and <script type="math/tex">B_2</script> are empty.</p>
+<p>Note: I am not confident of this proof. As from the givens it can be easily seen that <span class="kdmath">$B_1$</span> and <span class="kdmath">$B_2$</span> are not disjoint. Or the other cases might be that
+<span class="kdmath">$B_1$</span> and <span class="kdmath">$B_2$</span> are empty.</p>
 
 <hr />
 
@@ -1881,74 +1877,74 @@ no element <script type="math/tex">b_1 \in B_1</script> and <script type="math/t
 <p><strong>(a)</strong> The proof is not correct. The problem with the proof is conclusion in both cases are wrong i.e.:</p>
 
 <ul>
-  <li>Case 1: <script type="math/tex">bRx</script>. Since <script type="math/tex">x</script> was arbitrary, we can conclude that <script type="math/tex">\forall x \in B(bRx)</script>, so <script type="math/tex">b</script> is the smallest element of <script type="math/tex">R</script>.</li>
+  <li>Case 1: <span class="kdmath">$bRx$</span>. Since <span class="kdmath">$x$</span> was arbitrary, we can conclude that <span class="kdmath">$\forall x \in B(bRx)$</span>, so <span class="kdmath">$b$</span> is the smallest element of <span class="kdmath">$R$</span>.</li>
 </ul>
 
-<p>Here the conclusion is wrong, because <script type="math/tex">bRx</script> is not true for all values of <script type="math/tex">x</script>. it does not consider the other case, <script type="math/tex">xRb</script>. Similarly, in
-the other case <script type="math/tex">xRb</script>, we can not conclude that <script type="math/tex">xRb</script> is true for all <script type="math/tex">x</script> because it does not consider the case when <script type="math/tex">bRx</script>.</p>
+<p>Here the conclusion is wrong, because <span class="kdmath">$bRx$</span> is not true for all values of <span class="kdmath">$x$</span>. it does not consider the other case, <span class="kdmath">$xRb$</span>. Similarly, in
+the other case <span class="kdmath">$xRb$</span>, we can not conclude that <span class="kdmath">$xRb$</span> is true for all <span class="kdmath">$x$</span> because it does not consider the case when <span class="kdmath">$bRx$</span>.</p>
 
 <p><strong>(b)</strong> Theorem is not correct. Counter example:</p>
 
-<p><script type="math/tex">A = \{1,2,3\}, B = \{1,2,3\}, R = \{(1,1),(2,2),(3,3),(1,2),(1,3),(2,3)\}</script>. Clearly <script type="math/tex">B \subseteq A</script> and <script type="math/tex">R</script> is partial order on <script type="math/tex">A</script>.
-Note that <script type="math/tex">2 \in B</script> but <script type="math/tex">2</script> is niether <script type="math/tex">R</script>-largest element of <script type="math/tex">B</script> nor the <script type="math/tex">R</script>-smallest element of <script type="math/tex">B</script>.</p>
+<p><span class="kdmath">$A = \{1,2,3\}, B = \{1,2,3\}, R = \{(1,1),(2,2),(3,3),(1,2),(1,3),(2,3)\}$</span>. Clearly <span class="kdmath">$B \subseteq A$</span> and <span class="kdmath">$R$</span> is partial order on <span class="kdmath">$A$</span>.
+Note that <span class="kdmath">$2 \in B$</span> but <span class="kdmath">$2$</span> is niether <span class="kdmath">$R$</span>-largest element of <span class="kdmath">$B$</span> nor the <span class="kdmath">$R$</span>-smallest element of <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln20</strong></p>
 
-<p><strong>(a)</strong> Suppose <script type="math/tex">b</script> is smallest element of <script type="math/tex">B</script>. Thus <script type="math/tex">\forall x \in B(bRx)</script>. Thus the set of all lower bound elements of <script type="math/tex">B</script> is <script type="math/tex">\forall x \in A(xRb)</script>
-Since <script type="math/tex">B \subseteq A</script>, <script type="math/tex">b \in A</script>, and clearly in the set <script type="math/tex">\forall x \in A(xRb)</script>, <script type="math/tex">b</script> is the greatest element. Thus <script type="math/tex">b</script> is the greatest lower
-bound element of <script type="math/tex">B</script>.</p>
+<p><strong>(a)</strong> Suppose <span class="kdmath">$b$</span> is smallest element of <span class="kdmath">$B$</span>. Thus <span class="kdmath">$\forall x \in B(bRx)$</span>. Thus the set of all lower bound elements of <span class="kdmath">$B$</span> is <span class="kdmath">$\forall x \in A(xRb)$</span>
+Since <span class="kdmath">$B \subseteq A$</span>, <span class="kdmath">$b \in A$</span>, and clearly in the set <span class="kdmath">$\forall x \in A(xRb)$</span>, <span class="kdmath">$b$</span> is the greatest element. Thus <span class="kdmath">$b$</span> is the greatest lower
+bound element of <span class="kdmath">$B$</span>.</p>
 
-<p><strong>(b)</strong> Suppose <script type="math/tex">b</script> is largest element of <script type="math/tex">B</script>. Thus <script type="math/tex">\forall x \in B(xRb)</script>. Thus the set of all upper bound elements of <script type="math/tex">B</script> is <script type="math/tex">\forall x \in A(bRx)</script>
-Since <script type="math/tex">B \subseteq A</script>, <script type="math/tex">b \in A</script>, and clearly in the set <script type="math/tex">\forall x \in A(xRb)</script>, <script type="math/tex">b</script> is the least element. Thus <script type="math/tex">b</script> is the least upper 
-bound element of <script type="math/tex">B</script>.</p>
+<p><strong>(b)</strong> Suppose <span class="kdmath">$b$</span> is largest element of <span class="kdmath">$B$</span>. Thus <span class="kdmath">$\forall x \in B(xRb)$</span>. Thus the set of all upper bound elements of <span class="kdmath">$B$</span> is <span class="kdmath">$\forall x \in A(bRx)$</span>
+Since <span class="kdmath">$B \subseteq A$</span>, <span class="kdmath">$b \in A$</span>, and clearly in the set <span class="kdmath">$\forall x \in A(xRb)$</span>, <span class="kdmath">$b$</span> is the least element. Thus <span class="kdmath">$b$</span> is the least upper 
+bound element of <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln21</strong></p>
 
-<p><strong>(a)</strong> Suppose <script type="math/tex">U</script> is the set of upper bound elements of <script type="math/tex">B</script>. Suppose <script type="math/tex">x \in U</script> and suppose <script type="math/tex">y \in A</script> such that <script type="math/tex">xRy</script>. Since <script type="math/tex">x \in U</script>,
- it follows that <script type="math/tex">\forall b \in B(bRx)</script>. Thus for any arbitrary element <script type="math/tex">b \in B</script>, <script type="math/tex">bRx</script>. Since <script type="math/tex">bRx \land xRy</script>, and <script type="math/tex">R</script> is partial order,
- it follows <script type="math/tex">bRy</script>. Since <script type="math/tex">b</script> is arbitrary, it follows <script type="math/tex">\forall b \in B(bRy)</script>. Thus <script type="math/tex">y</script> is upper bound of <script type="math/tex">B</script>, or <script type="math/tex">y \in U</script>.</p>
+<p><strong>(a)</strong> Suppose <span class="kdmath">$U$</span> is the set of upper bound elements of <span class="kdmath">$B$</span>. Suppose <span class="kdmath">$x \in U$</span> and suppose <span class="kdmath">$y \in A$</span> such that <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$x \in U$</span>,
+ it follows that <span class="kdmath">$\forall b \in B(bRx)$</span>. Thus for any arbitrary element <span class="kdmath">$b \in B$</span>, <span class="kdmath">$bRx$</span>. Since <span class="kdmath">$bRx \land xRy$</span>, and <span class="kdmath">$R$</span> is partial order,
+ it follows <span class="kdmath">$bRy$</span>. Since <span class="kdmath">$b$</span> is arbitrary, it follows <span class="kdmath">$\forall b \in B(bRy)$</span>. Thus <span class="kdmath">$y$</span> is upper bound of <span class="kdmath">$B$</span>, or <span class="kdmath">$y \in U$</span>.</p>
 
-<p><strong>(b)</strong> Suppose <script type="math/tex">x</script> is an arbitrary element of <script type="math/tex">B</script>. Suppose <script type="math/tex">y \in U</script>. Since <script type="math/tex">U</script> is the set of upper bound of <script type="math/tex">B</script>, it follows that
- <script type="math/tex">xRy</script>. Since <script type="math/tex">y</script> is arbitrary, it follows <script type="math/tex">\forall y \in U(xRy)</script>. Since <script type="math/tex">x \in A</script>(because <script type="math/tex">B \subseteq A</script>) and <script type="math/tex">\forall y \in U(xRy)</script>, it follows <script type="math/tex">x</script> is a lower 
- bound of <script type="math/tex">U</script>. Since <script type="math/tex">x</script> is arbitrary, it follows every element of <script type="math/tex">B</script> is lower bound element of <script type="math/tex">U</script>.</p>
+<p><strong>(b)</strong> Suppose <span class="kdmath">$x$</span> is an arbitrary element of <span class="kdmath">$B$</span>. Suppose <span class="kdmath">$y \in U$</span>. Since <span class="kdmath">$U$</span> is the set of upper bound of <span class="kdmath">$B$</span>, it follows that
+ <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows <span class="kdmath">$\forall y \in U(xRy)$</span>. Since <span class="kdmath">$x \in A$</span>(because <span class="kdmath">$B \subseteq A$</span>) and <span class="kdmath">$\forall y \in U(xRy)$</span>, it follows <span class="kdmath">$x$</span> is a lower 
+ bound of <span class="kdmath">$U$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows every element of <span class="kdmath">$B$</span> is lower bound element of <span class="kdmath">$U$</span>.</p>
 
-<p><strong>(c)</strong> Suppose <script type="math/tex">x</script> is the greatest lower bound of <script type="math/tex">U</script>. Suppose <script type="math/tex">y</script> is an arbitrary element of <script type="math/tex">B</script>. Then from part (b), <script type="math/tex">y</script> is lower
-   bound for <script type="math/tex">U</script>. Since <script type="math/tex">x</script> is greatest lower bound of <script type="math/tex">U</script>, it follows <script type="math/tex">yRx</script>. Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">\forall y \in B(yRx)</script>.
-   Thus <script type="math/tex">x</script> is upper bound of <script type="math/tex">B</script>. Thus <script type="math/tex">x \in U</script>. Since <script type="math/tex">x</script> is lower bound of <script type="math/tex">U</script>, it follows <script type="math/tex">\forall y \in U(xRy)</script>. Thus <script type="math/tex">x</script>
-   is the lowest element in <script type="math/tex">U</script>. Since <script type="math/tex">U</script> is the set of all upper bounds of <script type="math/tex">B</script>, it follows that <script type="math/tex">x</script> is least upper bound of <script type="math/tex">B</script>.</p>
+<p><strong>(c)</strong> Suppose <span class="kdmath">$x$</span> is the greatest lower bound of <span class="kdmath">$U$</span>. Suppose <span class="kdmath">$y$</span> is an arbitrary element of <span class="kdmath">$B$</span>. Then from part (b), <span class="kdmath">$y$</span> is lower
+   bound for <span class="kdmath">$U$</span>. Since <span class="kdmath">$x$</span> is greatest lower bound of <span class="kdmath">$U$</span>, it follows <span class="kdmath">$yRx$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$\forall y \in B(yRx)$</span>.
+   Thus <span class="kdmath">$x$</span> is upper bound of <span class="kdmath">$B$</span>. Thus <span class="kdmath">$x \in U$</span>. Since <span class="kdmath">$x$</span> is lower bound of <span class="kdmath">$U$</span>, it follows <span class="kdmath">$\forall y \in U(xRy)$</span>. Thus <span class="kdmath">$x$</span>
+   is the lowest element in <span class="kdmath">$U$</span>. Since <span class="kdmath">$U$</span> is the set of all upper bounds of <span class="kdmath">$B$</span>, it follows that <span class="kdmath">$x$</span> is least upper bound of <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln22</strong></p>
 
-<p>Suppose <script type="math/tex">B_1 \subseteq B_2</script>. Since <script type="math/tex">B_1 \subseteq B_2</script>, <script type="math/tex">x_2</script> is also the upper bound of <script type="math/tex">B_1</script>. But since <script type="math/tex">x_1</script> is the <strong>least</strong> upper bound of <script type="math/tex">B_1</script>, it must be smaller than all other upper
-bounds of <script type="math/tex">B_1</script>. Thus <script type="math/tex">x_1 R x_2</script>.</p>
+<p>Suppose <span class="kdmath">$B_1 \subseteq B_2$</span>. Since <span class="kdmath">$B_1 \subseteq B_2$</span>, <span class="kdmath">$x_2$</span> is also the upper bound of <span class="kdmath">$B_1$</span>. But since <span class="kdmath">$x_1$</span> is the <strong>least</strong> upper bound of <span class="kdmath">$B_1$</span>, it must be smaller than all other upper
+bounds of <span class="kdmath">$B_1$</span>. Thus <span class="kdmath">$x_1 R x_2$</span>.</p>
 
 <hr />
 
 <p><strong>Soln23</strong></p>
 
 <ul>
-  <li>Proof of  <script type="math/tex">\cup \mathcal F</script> is l.u.b. of <script type="math/tex">\mathcal F</script>:</li>
+  <li>Proof of  <span class="kdmath">$\cup \mathcal F$</span> is l.u.b. of <span class="kdmath">$\mathcal F$</span>:</li>
 </ul>
 
-<p>Suppose <script type="math/tex">X \in \mathcal F</script>. Suppose <script type="math/tex">x \in X</script>. Since <script type="math/tex">\forall X \in \mathcal F(x \in X \to x \in \cup \mathcal F)</script>, it follows that <script type="math/tex">x \in \cup \mathcal F</script>. 
-Since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">X \subseteq \cup \mathcal F</script>. Since <script type="math/tex">X</script> is arbitrary, it follows that <script type="math/tex">\forall X \in \mathcal F(X \subseteq \cup \mathcal F)</script>, 
-or <script type="math/tex">\cup \mathcal F</script> is the largest subset element of <script type="math/tex">\mathcal F</script>. Thus all the upper bounds of <script type="math/tex">\mathcal F</script> must be larger than <script type="math/tex">\cup \mathcal F</script>.
-Thus <script type="math/tex">\cup \mathcal F</script> is the smallest element in all the uppper bounds of <script type="math/tex">\mathcal F</script>. Thus <script type="math/tex">\cup \mathcal F</script> is the least upper bound of <script type="math/tex">\mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$X \in \mathcal F$</span>. Suppose <span class="kdmath">$x \in X$</span>. Since <span class="kdmath">$\forall X \in \mathcal F(x \in X \to x \in \cup \mathcal F)$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal F$</span>. 
+Since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$X \subseteq \cup \mathcal F$</span>. Since <span class="kdmath">$X$</span> is arbitrary, it follows that <span class="kdmath">$\forall X \in \mathcal F(X \subseteq \cup \mathcal F)$</span>, 
+or <span class="kdmath">$\cup \mathcal F$</span> is the largest subset element of <span class="kdmath">$\mathcal F$</span>. Thus all the upper bounds of <span class="kdmath">$\mathcal F$</span> must be larger than <span class="kdmath">$\cup \mathcal F$</span>.
+Thus <span class="kdmath">$\cup \mathcal F$</span> is the smallest element in all the uppper bounds of <span class="kdmath">$\mathcal F$</span>. Thus <span class="kdmath">$\cup \mathcal F$</span> is the least upper bound of <span class="kdmath">$\mathcal F$</span>.</p>
 
 <ul>
-  <li>Proof of  <script type="math/tex">\cap \mathcal F</script> is g.l.b. of <script type="math/tex">\mathcal F</script>:</li>
+  <li>Proof of  <span class="kdmath">$\cap \mathcal F$</span> is g.l.b. of <span class="kdmath">$\mathcal F$</span>:</li>
 </ul>
 
-<p>Suppose <script type="math/tex">X \in \mathcal F</script>. Suppose <script type="math/tex">x \in \cap \mathcal F</script>. Then <script type="math/tex">\forall X \in \mathcal F(x \in X)</script>. Thus if <script type="math/tex">x \in \cap \mathcal F</script>, then <script type="math/tex">x \in X</script>. 
-Since <script type="math/tex">x</script> is arbitrary <script type="math/tex">\cap \mathcal F \subseteq X</script>. Since <script type="math/tex">X</script> is arbitrary, it follows that <script type="math/tex">\forall X \in \mathcal F (\cap \mathcal F \subseteq X)</script>. Thus
- <script type="math/tex">\cap \mathcal F</script> is the smallest element(wrt subset relation) in <script type="math/tex">\mathcal F</script>. Thus all the lower bounds of <script type="math/tex">\mathcal F</script> must be lesser than <script type="math/tex">\cap \mathcal F</script>.
- Thus <script type="math/tex">\cap \mathcal F</script> is the largest element in all the lower bounds of <script type="math/tex">\mathcal F</script>. Thus <script type="math/tex">\cap \mathcal F</script> is the greatest lower bound of <script type="math/tex">\mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$X \in \mathcal F$</span>. Suppose <span class="kdmath">$x \in \cap \mathcal F$</span>. Then <span class="kdmath">$\forall X \in \mathcal F(x \in X)$</span>. Thus if <span class="kdmath">$x \in \cap \mathcal F$</span>, then <span class="kdmath">$x \in X$</span>. 
+Since <span class="kdmath">$x$</span> is arbitrary <span class="kdmath">$\cap \mathcal F \subseteq X$</span>. Since <span class="kdmath">$X$</span> is arbitrary, it follows that <span class="kdmath">$\forall X \in \mathcal F (\cap \mathcal F \subseteq X)$</span>. Thus
+ <span class="kdmath">$\cap \mathcal F$</span> is the smallest element(wrt subset relation) in <span class="kdmath">$\mathcal F$</span>. Thus all the lower bounds of <span class="kdmath">$\mathcal F$</span> must be lesser than <span class="kdmath">$\cap \mathcal F$</span>.
+ Thus <span class="kdmath">$\cap \mathcal F$</span> is the largest element in all the lower bounds of <span class="kdmath">$\mathcal F$</span>. Thus <span class="kdmath">$\cap \mathcal F$</span> is the greatest lower bound of <span class="kdmath">$\mathcal F$</span>.</p>
 
 
                         <hr/>

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9418,45 +9419,45 @@
 
 <p>We have two series:</p>
 
-<p><script type="math/tex">\, S_0 = b_0 + \sum_{i=1}^{\infty} b_i x^{i} \,</script> and <script type="math/tex">\, S_1 = a_0 + \sum_{i=1}^{\infty} a_i x^{i} \,</script>. Lets denote the sums part in each of them as <script type="math/tex">\, X \,</script> and <script type="math/tex">\, Y \,</script>. Thus we have:</p>
+<p><span class="kdmath">$\, S_0 = b_0 + \sum_{i=1}^{\infty} b_i x^{i} \,$</span> and <span class="kdmath">$\, S_1 = a_0 + \sum_{i=1}^{\infty} a_i x^{i} \,$</span>. Lets denote the sums part in each of them as <span class="kdmath">$\, X \,$</span> and <span class="kdmath">$\, Y \,$</span>. Thus we have:</p>
 
-<p><script type="math/tex">\, S_0 = b_0 + Y \,</script>  and <script type="math/tex">\, S_1 = a_0 + X \,</script></p>
+<p><span class="kdmath">$\, S_0 = b_0 + Y \,$</span>  and <span class="kdmath">$\, S_1 = a_0 + X \,$</span></p>
 
 <p>There multiplication gives us:</p>
 
-<p><script type="math/tex">\, S_0S_1 = a_0b_0 + b_0X + (a_0 + X)Y \,</script>. I have intentionally chosen to not expand the last term.</p>
+<p><span class="kdmath">$\, S_0S_1 = a_0b_0 + b_0X + (a_0 + X)Y \,$</span>. I have intentionally chosen to not expand the last term.</p>
 
 <p>The reason for breaking it down this way is to - <em>divide the problems</em> in simple parts - such that those simple part may reveal that they can be solved again using the same “divide” approach. Well another way to say that trying to find a recursive solution :)</p>
 
-<p>Now back to our expanded form. We can see that which of those terms are the versions of the same problem. Clearly the <strong>first term</strong> <script type="math/tex">\, a_0 b_0 \,</script> is a constant and it will be the lowest(power) term in the final result of <script type="math/tex">\, S_0 S_1 \,</script>. This can be computed easily.</p>
+<p>Now back to our expanded form. We can see that which of those terms are the versions of the same problem. Clearly the <strong>first term</strong> <span class="kdmath">$\, a_0 b_0 \,$</span> is a constant and it will be the lowest(power) term in the final result of <span class="kdmath">$\, S_0 S_1 \,$</span>. This can be computed easily.</p>
 
 <p>The other two terms are not simple terms like the first term - they are series!</p>
 
-<p>The <strong>second term</strong> <script type="math/tex">\, b_0X \,</script> is nothing but another power series which is obtained by scaling <script type="math/tex">\, X \,</script> by a factor of <script type="math/tex">\, b_0 \,</script>. Note that <script type="math/tex">\, X \,</script> is a power series - only the first term missing. We can easily compute <script type="math/tex">\, b_0X \,</script>  using <code class="highlighter-rouge">scale</code>.</p>
+<p>The <strong>second term</strong> <span class="kdmath">$\, b_0X \,$</span> is nothing but another power series which is obtained by scaling <span class="kdmath">$\, X \,$</span> by a factor of <span class="kdmath">$\, b_0 \,$</span>. Note that <span class="kdmath">$\, X \,$</span> is a power series - only the first term missing. We can easily compute <span class="kdmath">$\, b_0X \,$</span>  using <code class="highlighter-rouge">scale</code>.</p>
 
-<p>Now the <strong>third term</strong> <script type="math/tex">\, (a_0 + X)Y \,</script> is a product of two power series - we are back to the same problem but in smaller terms. So, we can compute it by recursively calling the same procedure again.</p>
+<p>Now the <strong>third term</strong> <span class="kdmath">$\, (a_0 + X)Y \,$</span> is a product of two power series - we are back to the same problem but in smaller terms. So, we can compute it by recursively calling the same procedure again.</p>
 
-<p>But there is a <strong>small catch</strong> here that may sound obvious but it took me quite some time to understand. Can we add the last two terms <script type="math/tex">\, b_0X \,</script> and <script type="math/tex">\, (a_0+X)Y \,</script> using <code class="highlighter-rouge">add-streams</code>?</p>
+<p>But there is a <strong>small catch</strong> here that may sound obvious but it took me quite some time to understand. Can we add the last two terms <span class="kdmath">$\, b_0X \,$</span> and <span class="kdmath">$\, (a_0+X)Y \,$</span> using <code class="highlighter-rouge">add-streams</code>?</p>
 
-<p>The procedure <code class="highlighter-rouge">add-streams</code> assumes that the terms are in right order - it adds first term with first term, second with second and so on. So, that means the series resuling from <script type="math/tex">\, b_0X \,</script> and <script type="math/tex">\, (a_0 + X)Y \,</script> should represent the same powers in each position.</p>
+<p>The procedure <code class="highlighter-rouge">add-streams</code> assumes that the terms are in right order - it adds first term with first term, second with second and so on. So, that means the series resuling from <span class="kdmath">$\, b_0X \,$</span> and <span class="kdmath">$\, (a_0 + X)Y \,$</span> should represent the same powers in each position.</p>
 
 <p>The answer is Yes! It’s possible because we are using power series - The terms are the coefficients corresponding to the powers and terms are ordered in increasing order of power.</p>
 
-<p>So, we just need to verify that first term in both the series <script type="math/tex">\, (a_0+X)Y \,</script> and <script type="math/tex">\, b_0X \,</script> represents/contains the coefficient for the same power. If first is correct then rest will automatically be correct because both are power series!</p>
+<p>So, we just need to verify that first term in both the series <span class="kdmath">$\, (a_0+X)Y \,$</span> and <span class="kdmath">$\, b_0X \,$</span> represents/contains the coefficient for the same power. If first is correct then rest will automatically be correct because both are power series!</p>
 
-<p>First note that <script type="math/tex">\, b_0X \,</script> series starts from power 1(not 0) i.e. its first term will correspond to the coefficient of <script type="math/tex">\, x^1 \,</script>. Thus we must have the other series <script type="math/tex">\, (a_0 + X)Y \,</script> starting from the same power term - or should represent coefficient of power 1.</p>
+<p>First note that <span class="kdmath">$\, b_0X \,$</span> series starts from power 1(not 0) i.e. its first term will correspond to the coefficient of <span class="kdmath">$\, x^1 \,$</span>. Thus we must have the other series <span class="kdmath">$\, (a_0 + X)Y \,$</span> starting from the same power term - or should represent coefficient of power 1.</p>
 
-<p>Since we are using our own procedure to multiple power series - we can <em>assume</em>(we will make sure of this while returning the results) that <script type="math/tex">\, (a_0+X)Y \,</script> will also be a power series - each term representing coefficeint and terms are ordered in increasing order of power.</p>
+<p>Since we are using our own procedure to multiple power series - we can <em>assume</em>(we will make sure of this while returning the results) that <span class="kdmath">$\, (a_0+X)Y \,$</span> will also be a power series - each term representing coefficeint and terms are ordered in increasing order of power.</p>
 
-<p>The first term in <script type="math/tex">\, (a_0+X)Y \,</script> would correspond to <script type="math/tex">\, x^1 \,</script> - because we used our procedure which returns in correct order - and smallest power term in <script type="math/tex">\, (a_0+X)Y \,</script> is:</p>
+<p>The first term in <span class="kdmath">$\, (a_0+X)Y \,$</span> would correspond to <span class="kdmath">$\, x^1 \,$</span> - because we used our procedure which returns in correct order - and smallest power term in <span class="kdmath">$\, (a_0+X)Y \,$</span> is:</p>
 
-<p>Sum of smallest power term in <script type="math/tex">\, a_0+X \,</script> and <script type="math/tex">\, Y \,</script> = 0 + 1 = 1.</p>
+<p>Sum of smallest power term in <span class="kdmath">$\, a_0+X \,$</span> and <span class="kdmath">$\, Y \,$</span> = 0 + 1 = 1.</p>
 
-<p>Thus the power of the first term in <script type="math/tex">\, (a_0+X)Y \,</script> is same as in the series <script type="math/tex">\, b_0X \,</script> and since both are power series the rest of the terms will also follow. Thus we can indeed add them using <code class="highlighter-rouge">add-streams</code>.</p>
+<p>Thus the power of the first term in <span class="kdmath">$\, (a_0+X)Y \,$</span> is same as in the series <span class="kdmath">$\, b_0X \,$</span> and since both are power series the rest of the terms will also follow. Thus we can indeed add them using <code class="highlighter-rouge">add-streams</code>.</p>
 
-<p>Note that <script type="math/tex">\, a_0+X = S_1 \,</script>. Thus <script type="math/tex">\, S_0S_1 = a_0b_0 + b_0X + (a_0 + X)Y = a_0b_0 + b_0X + S_1Y\,</script></p>
+<p>Note that <span class="kdmath">$\, a_0+X = S_1 \,$</span>. Thus <span class="kdmath">$\, S_0S_1 = a_0b_0 + b_0X + (a_0 + X)Y = a_0b_0 + b_0X + S_1Y\,$</span></p>
 
-<p>Also <script type="math/tex">\, X \,</script> = <code class="highlighter-rouge">(stream-cdr S_1)</code> and <script type="math/tex">\, Y \,</script> = <code class="highlighter-rouge">(stream-cdr s_0)</code>.</p>
+<p>Also <span class="kdmath">$\, X \,$</span> = <code class="highlighter-rouge">(stream-cdr S_1)</code> and <span class="kdmath">$\, Y \,$</span> = <code class="highlighter-rouge">(stream-cdr s_0)</code>.</p>
 
 <p>Now, I think code is straightforward to understand:</p>
 
@@ -9475,7 +9476,8 @@
 				  <span class="p">(</span><span class="nf">scale-stream</span>
 				       <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s1</span><span class="p">)</span>
 				       <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">s0</span><span class="p">))</span> 
-                  <span class="p">(</span><span class="nf">mul-series</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s0</span><span class="p">)</span> <span class="nv">s1</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+                  <span class="p">(</span><span class="nf">mul-series</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s0</span><span class="p">)</span> <span class="nv">s1</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Test/Output:</p>
 
@@ -9602,7 +9604,8 @@
 
 <span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">c2</span> <span class="mi">10</span><span class="p">)</span>
 
-<span class="c1">;Value: -2/14175</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: -2/14175</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

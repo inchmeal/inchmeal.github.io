@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,17 +978,17 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>Ignoring the finite population correction: <script type="math/tex">{\sigma}^2_{\bar X} = \frac { {\sigma}^2 } {n}</script>.</p>
+                        <p>Ignoring the finite population correction: <span class="kdmath">${\sigma}^2_{\bar X} = \frac { {\sigma}^2 } {n}$</span>.</p>
 
-<p>Since it is a dichotomous case i.e. value of each member can either be 1 or 0 based on if this member/family is below the poverty level or not respectively, we have <script type="math/tex">{\sigma}^2 = p(1 - p)</script> where p denotes the fraction of population below the poverty line.</p>
+<p>Since it is a dichotomous case i.e. value of each member can either be 1 or 0 based on if this member/family is below the poverty level or not respectively, we have <span class="kdmath">${\sigma}^2 = p(1 - p)$</span> where p denotes the fraction of population below the poverty line.</p>
 
 <p>This give us:</p>
 
-<p><script type="math/tex">{\sigma}^2_{\bar X} = \frac { p(1-p) } {n}</script>.</p>
+<p><span class="kdmath">${\sigma}^2_{\bar X} = \frac { p(1-p) } {n}$</span>.</p>
 
-<p>We know <script type="math/tex">p = 0.15</script> and <script type="math/tex">{\sigma}^2_{\bar X} = {(0.02)}^2</script>.</p>
+<p>We know <span class="kdmath">$p = 0.15$</span> and <span class="kdmath">${\sigma}^2_{\bar X} = {(0.02)}^2$</span>.</p>
 
-<p>This gives us <script type="math/tex">n = \frac { p(1-p) } { {\sigma}^2_{\bar X} } = 318.75</script></p>
+<p>This gives us <span class="kdmath">$n = \frac { p(1-p) } { {\sigma}^2_{\bar X} } = 318.75$</span></p>
 
 
                         $$\tag*{$\blacksquare$} $$

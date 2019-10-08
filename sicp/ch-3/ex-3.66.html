@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9418,7 +9419,7 @@
 
 <p>Let’s say we start from a point (S,T). Then number of steps to arrive at (S+a,T+b) can be given by:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 steps = 
 \begin{cases}
@@ -9426,7 +9427,8 @@ steps =
   2^{a+1} - 1 + 2^a + 2^{a+1}(b-a-1) & \text{if $b-a \ge 1$} \\
   \text{Undefined} & \text{otherwise}
 \end{cases}
-\, %]]></script>
+\,
+$$</div>
 
 <p>Let’s first verify it. I generated the following sequence using the code given in book with the starting point (1,1):</p>
 
@@ -9541,23 +9543,23 @@ steps =
 
 <p>Let’s check our formulae on <strong>(1,1)</strong>:</p>
 
-<p>Here a = 0, b = 0, Thus <script type="math/tex">\, b-a = 0 \,</script> , so we apply <script type="math/tex">\, 2^{a+1}-1 \,</script> which gives 1. Since we count from 0, so this is correct(1-1 = <strong>0</strong>).</p>
+<p>Here a = 0, b = 0, Thus <span class="kdmath">$\, b-a = 0 \,$</span> , so we apply <span class="kdmath">$\, 2^{a+1}-1 \,$</span> which gives 1. Since we count from 0, so this is correct(1-1 = <strong>0</strong>).</p>
 
 <p><strong>(4,4)</strong></p>
 
-<p>Here, a = 3, b = 3, Thus <script type="math/tex">\, b-a = 0 \,</script> , so we apply <script type="math/tex">\, 2^{a+1}-1 \,</script> which gives 15. Since we count from 0, this is correct(15-1 = <strong>14</strong>).</p>
+<p>Here, a = 3, b = 3, Thus <span class="kdmath">$\, b-a = 0 \,$</span> , so we apply <span class="kdmath">$\, 2^{a+1}-1 \,$</span> which gives 15. Since we count from 0, this is correct(15-1 = <strong>14</strong>).</p>
 
 <p><strong>(4,5)</strong></p>
 
-<p>Here, a = 3, b = 4, Thus <script type="math/tex">\, b-a \ge 1 \,</script> , so we apply <script type="math/tex">\, 2^{a+1} - 1 + 2^a + 2^{a+1}{b-a-1}\,</script> which gives 23. Since we count from 0, this is correct(23-1 = <strong>22</strong>).</p>
+<p>Here, a = 3, b = 4, Thus <span class="kdmath">$\, b-a \ge 1 \,$</span> , so we apply <span class="kdmath">$\, 2^{a+1} - 1 + 2^a + 2^{a+1}{b-a-1}\,$</span> which gives 23. Since we count from 0, this is correct(23-1 = <strong>22</strong>).</p>
 
 <p><strong>(2,52)</strong></p>
 
-<p>Here, a = 1, b = 51, Thus <script type="math/tex">\, b-a \ge 1 \,</script> , so we apply <script type="math/tex">\, 2^{a+1} - 1 + 2^a + 2^{a+1}(b-a-1)\,</script> which gives 201. Since we count from 0, this is correct(201-1 = <strong>200</strong>).</p>
+<p>Here, a = 1, b = 51, Thus <span class="kdmath">$\, b-a \ge 1 \,$</span> , so we apply <span class="kdmath">$\, 2^{a+1} - 1 + 2^a + 2^{a+1}(b-a-1)\,$</span> which gives 201. Since we count from 0, this is correct(201-1 = <strong>200</strong>).</p>
 
 <p><strong>(3,128)</strong></p>
 
-<p>Here, a = 2, b = 127, Thus <script type="math/tex">\, b-a \ge 1 \,</script> , so we apply <script type="math/tex">\, 2^{a+1} - 1 + 2^a + 2^{a+1}(b-a-1)\,</script> which gives 1003. Since we count from 0, this is correct(1003-1 = <strong>1002</strong>).</p>
+<p>Here, a = 2, b = 127, Thus <span class="kdmath">$\, b-a \ge 1 \,$</span> , so we apply <span class="kdmath">$\, 2^{a+1} - 1 + 2^a + 2^{a+1}(b-a-1)\,$</span> which gives 1003. Since we count from 0, this is correct(1003-1 = <strong>1002</strong>).</p>
 
 <hr />
 
@@ -9596,7 +9598,8 @@ steps =
    <span class="p">(</span><span class="nf">interleave</span>
     <span class="p">(</span><span class="nf">stream-map</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">s</span><span class="p">)</span> <span class="nv">x</span><span class="p">))</span>
                 <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">t</span><span class="p">))</span>
-    <span class="p">(</span><span class="nf">pairs</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s</span><span class="p">)</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">t</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="p">(</span><span class="nf">pairs</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s</span><span class="p">)</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">t</span><span class="p">)))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>One way to look at it is <em>imagine that every step is a space to be occupied by a pair</em>. Obviously a <em>pair</em> can occupy only one space.</p>
 
@@ -9617,18 +9620,18 @@ steps =
 
 <p>Now, we shall see how the spaces are occupied by the streams generated in the above steps.</p>
 
-<p>First let’s assume that at first invocation <script type="math/tex">\, s_1, s_2, ... s_i, ... \,</script> spaces are available.</p>
+<p>First let’s assume that at first invocation <span class="kdmath">$\, s_1, s_2, ... s_i, ... \,$</span> spaces are available.</p>
 
 <p>Then:</p>
 
 <ul>
-  <li><strong>fp</strong> takes the first available space i.e. <script type="math/tex">\, s_1 \,</script>.</li>
-  <li><strong>sm</strong> and <strong>sp</strong> takes spaces alternatively. first pair of <strong>sm</strong> gets <script type="math/tex">\, s_2 \,</script> then first pair of <strong>sp</strong> gets <script type="math/tex">\, s_3 \,</script> and so on.</li>
+  <li><strong>fp</strong> takes the first available space i.e. <span class="kdmath">$\, s_1 \,$</span>.</li>
+  <li><strong>sm</strong> and <strong>sp</strong> takes spaces alternatively. first pair of <strong>sm</strong> gets <span class="kdmath">$\, s_2 \,$</span> then first pair of <strong>sp</strong> gets <span class="kdmath">$\, s_3 \,$</span> and so on.</li>
 </ul>
 
 <p>Since <strong>sp</strong> is the stream generated by recursive invocation of <code class="highlighter-rouge">pairs</code>, we just need to focus on the spaces which are occupied by <strong>sm</strong> and <strong>sp</strong> will be automatically considered because of recursion.</p>
 
-<p>Now, we can see that <strong>sm</strong> takes <script type="math/tex">\, s_2, s_4, s_6, .. \,</script> or the even spaces from the available spaces.</p>
+<p>Now, we can see that <strong>sm</strong> takes <span class="kdmath">$\, s_2, s_4, s_6, .. \,$</span> or the even spaces from the available spaces.</p>
 
 <p>Let’s take concrete cases:</p>
 
@@ -9669,14 +9672,14 @@ steps =
 
     <p>How much we move on the left side or right side to get empty space from the space taken by <strong>sm2</strong>? Since in last invocation all spaces were contigous, so we need to move only one space left and one space right to get the empty space.</p>
 
-    <p>So, spaces to be taken by <strong>fp</strong> and first element of <strong>sm</strong>: <strong>lsm2</strong> <script type="math/tex">\, \pm 1 \,</script> = space(S, T+1+1) <script type="math/tex">\, \pm 1 \,</script> = 3 and 5(since lsm2 = 4) respectively.</p>
+    <p>So, spaces to be taken by <strong>fp</strong> and first element of <strong>sm</strong>: <strong>lsm2</strong> <span class="kdmath">$\, \pm 1 \,$</span> = space(S, T+1+1) <span class="kdmath">$\, \pm 1 \,$</span> = 3 and 5(since lsm2 = 4) respectively.</p>
   </li>
   <li>
     <p>Rest of the elements of <strong>sm</strong>, <strong>(S+1, T+1+1+x)</strong>, where x &gt; 1, take the <strong>available spaces alternatingly</strong>. That is we leave the first available space then occupy the next and then leave the next and occupy the next and so on.</p>
 
-    <p>Since all the multiples of 2 are taken in previous step, <strong>how</strong> we can leave and occupy alternatingly from the current available spaces? We take even of the even places or every <script type="math/tex">\, 2+2 = 2^2\,</script> place!</p>
+    <p>Since all the multiples of 2 are taken in previous step, <strong>how</strong> we can leave and occupy alternatingly from the current available spaces? We take even of the even places or every <span class="kdmath">$\, 2+2 = 2^2\,$</span> place!</p>
 
-    <p>Thus we take <strong>space(S+1, T+1+1)</strong> + <script type="math/tex">\, 2^2 x \,</script>.</p>
+    <p>Thus we take <strong>space(S+1, T+1+1)</strong> + <span class="kdmath">$\, 2^2 x \,$</span>.</p>
 
     <p>Note, it may seem like 2^2 is also even and we may conflict with the spaces occupied by previous invocation - which wont happen because we are adding <strong>space(S+1, T+1+1)</strong>. For example, we get following spaces occupied: (9, 13, 17, 21, 25, 29, …). Clearly there is no conflict because of our offset.</p>
 
@@ -9696,9 +9699,9 @@ steps =
     <p>Well, unlike in previous step we added/subtracted 2 instead of 1. The reason is in previous step when lsm2 takes space, the empty space was available after every two space not after every one space!</p>
   </li>
   <li>
-    <p>Rest of elements of <strong>sm</strong> = <strong>(S+2, T+2+1+x)</strong> where x &gt; 1. Again we follow the same method, we take <strong>available spaces alternatingly</strong>. But in last step there is one empty space in every four spaces, so now to leave one and take one alternatingly we need to take spaces in the multiples of <script type="math/tex">\, 4+4 = 2^3 \,</script>.</p>
+    <p>Rest of elements of <strong>sm</strong> = <strong>(S+2, T+2+1+x)</strong> where x &gt; 1. Again we follow the same method, we take <strong>available spaces alternatingly</strong>. But in last step there is one empty space in every four spaces, so now to leave one and take one alternatingly we need to take spaces in the multiples of <span class="kdmath">$\, 4+4 = 2^3 \,$</span>.</p>
 
-    <p>Thus we take <strong>space(S+2, T+2+1)</strong> + <script type="math/tex">\, 2^3 x \,</script> .</p>
+    <p>Thus we take <strong>space(S+2, T+2+1)</strong> + <span class="kdmath">$\, 2^3 x \,$</span> .</p>
   </li>
 </ol>
 
@@ -9707,7 +9710,7 @@ steps =
 <ol>
   <li><strong>fp=(S+3, T+3)</strong> occupies <strong>lsm2 - 4</strong>.</li>
   <li>First element of <strong>sm = (S+3, T+3+1)</strong> occupies <strong>lsm2 + 4</strong>.</li>
-  <li>Rest of elements of <strong>sm</strong> = <strong>(S+3, T+3+1+x)</strong> where x&gt;1 occupies <strong>(S+3, T+3+1)</strong> + <script type="math/tex">\, 2^3x \,</script> .</li>
+  <li>Rest of elements of <strong>sm</strong> = <strong>(S+3, T+3+1+x)</strong> where x&gt;1 occupies <strong>(S+3, T+3+1)</strong> + <span class="kdmath">$\, 2^3x \,$</span> .</li>
 </ol>
 
 <h4 id="can-we-write-it-in-generic-form-for-sa-tb">Can we write it in generic form for (S+a, T+b)?</h4>
@@ -9726,17 +9729,17 @@ steps =
 
     <p>Clearly this is <strong>fp</strong> and from the above we first need <strong>lsm2</strong> which is obviously = (S+a-1, T+a+1).</p>
 
-    <p>Thus space(S+a, T+b) = lsm2 <strong>-</strong> <script type="math/tex">\, 2^{a-1} \,</script> = space(S+a-1, T+a+1) - <script type="math/tex">\, 2^{a-1} \,</script> .</p>
+    <p>Thus space(S+a, T+b) = lsm2 <strong>-</strong> <span class="kdmath">$\, 2^{a-1} \,$</span> = space(S+a-1, T+a+1) - <span class="kdmath">$\, 2^{a-1} \,$</span> .</p>
   </li>
   <li>
     <p>If b-a = 1:</p>
 
-    <p>Clearly this is first element of <strong>sm</strong>. Thus the space taken by it is = space(S+a-1, T+a+1) <strong>+</strong> <script type="math/tex">\, 2^{a-1} \,</script>.</p>
+    <p>Clearly this is first element of <strong>sm</strong>. Thus the space taken by it is = space(S+a-1, T+a+1) <strong>+</strong> <span class="kdmath">$\, 2^{a-1} \,$</span>.</p>
   </li>
   <li>
     <p>If b-a &gt; x:</p>
 
-    <p>This if the rest of elements of <strong>sm</strong>. Thus the space taken by them is = space(S+a, T+a+1) + <script type="math/tex">\, 2^{a+1} \,</script>.</p>
+    <p>This if the rest of elements of <strong>sm</strong>. Thus the space taken by them is = space(S+a, T+a+1) + <span class="kdmath">$\, 2^{a+1} \,$</span>.</p>
   </li>
 </ol>
 
@@ -9746,15 +9749,17 @@ steps =
 
 <p><strong>If a = b:</strong></p>
 
-<script type="math/tex; mode=display">\, 2^{a+1} - 1 \,</script>
+<div class="kdmath">$$
+\, 2^{a+1} - 1 \,
+$$</div>
 
 <p><strong>If b-a = 1:</strong></p>
 
-<p><script type="math/tex">\, 2^{a+1} - 1 + 2^a \,</script>, or <script type="math/tex">\, 3.2^a - 1 \,</script></p>
+<p><span class="kdmath">$\, 2^{a+1} - 1 + 2^a \,$</span>, or <span class="kdmath">$\, 3.2^a - 1 \,$</span></p>
 
 <p><strong>If b-a &gt; 1:</strong></p>
 
-<p><script type="math/tex">\, 2^{a+1} - 1 + 2^a + 2^{a+1}(b-a-1) \,</script>.</p>
+<p><span class="kdmath">$\, 2^{a+1} - 1 + 2^a + 2^{a+1}(b-a-1) \,$</span>.</p>
 
 <p>The last two equations can be combined! And we get the same result as shown in the beginning.</p>
 

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,35 +1137,35 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li><em>Equivalence Relation:</em> Suppose <script type="math/tex">R</script> is a relation on a set <script type="math/tex">A</script>. Then <script type="math/tex">R</script> is called an equivalence relation on <script type="math/tex">A</script> if it is reflexive, 
+  <li><em>Equivalence Relation:</em> Suppose <span class="kdmath">$R$</span> is a relation on a set <span class="kdmath">$A$</span>. Then <span class="kdmath">$R$</span> is called an equivalence relation on <span class="kdmath">$A$</span> if it is reflexive, 
 symmetric, and transitive.</li>
-  <li>Suppose <script type="math/tex">A</script> is a set and <script type="math/tex">\mathcal F \subseteq \mathcal P(A)</script>. We will say that <script type="math/tex">\mathcal F</script> is pairwise disjoint if every pair of distinct 
-elements of <script type="math/tex">\mathcal F</script> are disjoint, or in other words <script type="math/tex">\forall X \in \mathcal F \forall Y \in \mathcal F(X \ne Y \to X \cap Y = \phi)</script>. <script type="math/tex">\mathcal F</script> is
-called a partition of <script type="math/tex">A</script> if it has the following properties:
+  <li>Suppose <span class="kdmath">$A$</span> is a set and <span class="kdmath">$\mathcal F \subseteq \mathcal P(A)$</span>. We will say that <span class="kdmath">$\mathcal F$</span> is pairwise disjoint if every pair of distinct 
+elements of <span class="kdmath">$\mathcal F$</span> are disjoint, or in other words <span class="kdmath">$\forall X \in \mathcal F \forall Y \in \mathcal F(X \ne Y \to X \cap Y = \phi)$</span>. <span class="kdmath">$\mathcal F$</span> is
+called a partition of <span class="kdmath">$A$</span> if it has the following properties:
     <ul>
-      <li><script type="math/tex">\cup \mathcal F</script> = A.</li>
-      <li><script type="math/tex">\mathcal F</script> is pairwise disjoint.</li>
-      <li><script type="math/tex">\forall X \in \mathcal F(X \ne \phi)</script>.</li>
+      <li><span class="kdmath">$\cup \mathcal F$</span> = A.</li>
+      <li><span class="kdmath">$\mathcal F$</span> is pairwise disjoint.</li>
+      <li><span class="kdmath">$\forall X \in \mathcal F(X \ne \phi)$</span>.</li>
     </ul>
   </li>
-  <li>Suppose <script type="math/tex">R</script> is an equivalence relation on a set <script type="math/tex">A</script>, and <script type="math/tex">x \in A</script>. Then the equivalence class of <script type="math/tex">x</script> with respect to <script type="math/tex">R</script> is the set:
+  <li>Suppose <span class="kdmath">$R$</span> is an equivalence relation on a set <span class="kdmath">$A$</span>, and <span class="kdmath">$x \in A$</span>. Then the equivalence class of <span class="kdmath">$x$</span> with respect to <span class="kdmath">$R$</span> is the set:
     <ul>
-      <li><script type="math/tex">[x]_R = \{ y \in A \, \vert \, yRx \}</script>.
-If <script type="math/tex">R</script> is clear from context, then we can use <script type="math/tex">[x]</script> instead of <script type="math/tex">[x]_R</script>. The set of all equivalence classes of elements of <script type="math/tex">A</script> is called <script type="math/tex">A</script> modulo <script type="math/tex">R</script>, 
-and is denoted <script type="math/tex">A \, / \,  R</script>. Thus,</li>
-      <li><script type="math/tex">A \, / \,  R = \{ [x]_R \, \vert \, x \in A \} = \{ X \subseteq A \, \vert \, \exists x \in A(X = [x]_R) \}</script>.</li>
+      <li><span class="kdmath">$[x]_R = \{ y \in A \, \vert \, yRx \}$</span>.
+If <span class="kdmath">$R$</span> is clear from context, then we can use <span class="kdmath">$[x]$</span> instead of <span class="kdmath">$[x]_R$</span>. The set of all equivalence classes of elements of <span class="kdmath">$A$</span> is called <span class="kdmath">$A$</span> modulo <span class="kdmath">$R$</span>, 
+and is denoted <span class="kdmath">$A \, / \,  R$</span>. Thus,</li>
+      <li><span class="kdmath">$A \, / \,  R = \{ [x]_R \, \vert \, x \in A \} = \{ X \subseteq A \, \vert \, \exists x \in A(X = [x]_R) \}$</span>.</li>
     </ul>
   </li>
-  <li>Suppose <script type="math/tex">R</script> is an equivalence relation on a set <script type="math/tex">A</script>. Then <script type="math/tex">A \, / \,  R</script> is a partition of <script type="math/tex">A</script>. This is proved using following lemmas:
+  <li>Suppose <span class="kdmath">$R$</span> is an equivalence relation on a set <span class="kdmath">$A$</span>. Then <span class="kdmath">$A \, / \,  R$</span> is a partition of <span class="kdmath">$A$</span>. This is proved using following lemmas:
     <ul>
-      <li>For every <script type="math/tex">x \in A, x \in [x]</script>.</li>
-      <li>For every <script type="math/tex">x \in A</script> and <script type="math/tex">y \in A</script>, <script type="math/tex">y \in [x]</script> iff <script type="math/tex">[y] = [x]</script>.</li>
+      <li>For every <span class="kdmath">$x \in A, x \in [x]$</span>.</li>
+      <li>For every <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in A$</span>, <span class="kdmath">$y \in [x]$</span> iff <span class="kdmath">$[y] = [x]$</span>.</li>
     </ul>
   </li>
-  <li>Suppose <script type="math/tex">A</script> is a set and <script type="math/tex">\mathcal F</script> is a partition of <script type="math/tex">A</script>. Then there is an equivalence relation <script type="math/tex">R</script> on <script type="math/tex">A</script> such that <script type="math/tex">A \, / \,  R = \mathcal F</script>. It uses
+  <li>Suppose <span class="kdmath">$A$</span> is a set and <span class="kdmath">$\mathcal F$</span> is a partition of <span class="kdmath">$A$</span>. Then there is an equivalence relation <span class="kdmath">$R$</span> on <span class="kdmath">$A$</span> such that <span class="kdmath">$A \, / \,  R = \mathcal F$</span>. It uses
 the following lemma:
     <ul>
-      <li>Suppose <script type="math/tex">A</script> is a set and <script type="math/tex">\mathcal F</script> is a partition of <script type="math/tex">A</script>. Let <script type="math/tex">R = \cup X \in \mathcal F (X \times X)</script>. Then <script type="math/tex">R</script> is an equivalence relation on <script type="math/tex">A</script>.</li>
+      <li>Suppose <span class="kdmath">$A$</span> is a set and <span class="kdmath">$\mathcal F$</span> is a partition of <span class="kdmath">$A$</span>. Let <span class="kdmath">$R = \cup X \in \mathcal F (X \times X)$</span>. Then <span class="kdmath">$R$</span> is an equivalence relation on <span class="kdmath">$A$</span>.</li>
     </ul>
   </li>
 </ul>
@@ -1173,31 +1174,31 @@ the following lemma:
 
 <p><strong>Soln1</strong></p>
 
-<p><script type="math/tex">\{ \{1\}, \{2\}, \{3\} \}</script>,  <br />
-<script type="math/tex">\{ \{1\}, \{2,3\} \}</script>,  <br />
-<script type="math/tex">\{ \{1,2\}, \{3\} \}</script>,   <br />
-<script type="math/tex">\{ \{1,3\}, \{2\} \}</script>,  <br />
-<script type="math/tex">\{ \{1,2,3\} \}</script>.</p>
+<p><span class="kdmath">$\{ \{1\}, \{2\}, \{3\} \}$</span>,  <br />
+<span class="kdmath">$\{ \{1\}, \{2,3\} \}$</span>,  <br />
+<span class="kdmath">$\{ \{1,2\}, \{3\} \}$</span>,   <br />
+<span class="kdmath">$\{ \{1,3\}, \{2\} \}$</span>,  <br />
+<span class="kdmath">$\{ \{1,2,3\} \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p>For <script type="math/tex">\mathcal F = \{ \{1\}, \{2\}, \{3\} \}</script>, <script type="math/tex">R = \{ (1,1), (2,2), (3,3) \}</script>   <br />
-For <script type="math/tex">\mathcal F = \{ \{1\}, \{2,3\} \}</script>, <script type="math/tex">R = \{ (1,1), (2,2), (3,3), (2,3), (3,2) \}</script>   <br />
-For <script type="math/tex">\mathcal F = \{ \{1,2\}, \{3\} \}</script>, <script type="math/tex">R = \{ (1,1), (2,2), (1,2), (2,2), (3,3) \}</script>    <br />
-For <script type="math/tex">\mathcal F = \{ \{1,3\}, \{2\} \}</script>, <script type="math/tex">R = \{ (1,1), (3,3), (1,3), (3,1), (2,2) \}</script>  <br />
-For <script type="math/tex">\mathcal F = \{ \{1,2,3\} \}</script>,  <script type="math/tex">R = \{ (1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2), (1,3), (3,1) \}</script>.</p>
+<p>For <span class="kdmath">$\mathcal F = \{ \{1\}, \{2\}, \{3\} \}$</span>, <span class="kdmath">$R = \{ (1,1), (2,2), (3,3) \}$</span>   <br />
+For <span class="kdmath">$\mathcal F = \{ \{1\}, \{2,3\} \}$</span>, <span class="kdmath">$R = \{ (1,1), (2,2), (3,3), (2,3), (3,2) \}$</span>   <br />
+For <span class="kdmath">$\mathcal F = \{ \{1,2\}, \{3\} \}$</span>, <span class="kdmath">$R = \{ (1,1), (2,2), (1,2), (2,2), (3,3) \}$</span>    <br />
+For <span class="kdmath">$\mathcal F = \{ \{1,3\}, \{2\} \}$</span>, <span class="kdmath">$R = \{ (1,1), (3,3), (1,3), (3,1), (2,2) \}$</span>  <br />
+For <span class="kdmath">$\mathcal F = \{ \{1,2,3\} \}$</span>,  <span class="kdmath">$R = \{ (1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2), (1,3), (3,1) \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p><strong>(a)</strong> Yes it is a equivalence relation. Equivalence classes = <script type="math/tex">\{ X \subseteq W, X \ne \phi \, \vert \, \text{ if }x \in X \text{ and } w \in W \text{ and}, (w \text{ and } x \text{ both starts with same letter}), \text{ then } w \in X\}</script>.</p>
+<p><strong>(a)</strong> Yes it is a equivalence relation. Equivalence classes = <span class="kdmath">$\{ X \subseteq W, X \ne \phi \, \vert \, \text{ if }x \in X \text{ and } w \in W \text{ and}, (w \text{ and } x \text{ both starts with same letter}), \text{ then } w \in X\}$</span>.</p>
 
 <p><strong>(b)</strong> It is not an equivalence relation.</p>
 
-<p><strong>(c)</strong> This is an equivalence relation.  Equivalence classes = <script type="math/tex">\{ X \subseteq W, X \ne \phi \, \vert \, \text{ if }x \in X \text{ and } w \in W \text{ and}, (w \text{ and } x \text{ both contains same number of letters }), \text{ then } w \in X\}</script>.</p>
+<p><strong>(c)</strong> This is an equivalence relation.  Equivalence classes = <span class="kdmath">$\{ X \subseteq W, X \ne \phi \, \vert \, \text{ if }x \in X \text{ and } w \in W \text{ and}, (w \text{ and } x \text{ both contains same number of letters }), \text{ then } w \in X\}$</span>.</p>
 
 <hr />
 
@@ -1213,98 +1214,98 @@ For <script type="math/tex">\mathcal F = \{ \{1,2,3\} \}</script>,  <script type
   <li>If we have two irrational numbers then either their difference can be rational or irrational.</li>
 </ol>
 
-<p>From the first two points, the equivalence class is all rational numbers: <script type="math/tex">\{ x \in Q \}</script>.</p>
+<p>From the first two points, the equivalence class is all rational numbers: <span class="kdmath">$\{ x \in Q \}$</span>.</p>
 
-<p>Now, from the third point which I got wrong earlier(Thanks <a href="http://www.inchmeal.io/htpi/ch-4/sec-4.6.html#comment-3952564441">William</a> for pointing out. Check his comment for a better desciption), the equivalance classes in this case should be: <script type="math/tex">\, \{ [x]_S \; \vert \; x \text{ is irrational } \} \,</script>, where <script type="math/tex">\, S \,</script> is the given relation.</p>
+<p>Now, from the third point which I got wrong earlier(Thanks <a href="http://www.inchmeal.io/htpi/ch-4/sec-4.6.html#comment-3952564441">William</a> for pointing out. Check his comment for a better desciption), the equivalance classes in this case should be: <span class="kdmath">$\, \{ [x]_S \; \vert \; x \text{ is irrational } \} \,$</span>, where <span class="kdmath">$\, S \,$</span> is the given relation.</p>
 
-<p><strong>(c)</strong> It is an equivalence relation. Its equivalnce classes are: <script type="math/tex">\{[x] \, \vert \, x \in \mathbb{R} \}</script>, where <script type="math/tex">[x] = \{... x \times {10}^{-3}, x \times {10}^{-2}, x \times {10}^{-1}, x \times {10}^{0}, x \times {10}^{1}, x \times {10}^{2}, x \times {10}^{3}, ...\}</script> or equivalently <script type="math/tex">\, \{ x \times {10}^z \; \vert \; z \in \mathbb{Z} \} \,</script></p>
+<p><strong>(c)</strong> It is an equivalence relation. Its equivalnce classes are: <span class="kdmath">$\{[x] \, \vert \, x \in \mathbb{R} \}$</span>, where <span class="kdmath">$[x] = \{... x \times {10}^{-3}, x \times {10}^{-2}, x \times {10}^{-1}, x \times {10}^{0}, x \times {10}^{1}, x \times {10}^{2}, x \times {10}^{3}, ...\}$</span> or equivalently <span class="kdmath">$\, \{ x \times {10}^z \; \vert \; z \in \mathbb{Z} \} \,$</span></p>
 
-<p>Thanks <a href="http://www.inchmeal.io/htpi/ch-4/sec-4.6.html#comment-3952574884">William</a> for pointing out. Earlier I got this wrong: <script type="math/tex">[x] = \{... x^{-3}, x^{-2}, x^{-1}, x^{0}, x^{1}, x^{2}, x^{3}, ...\}</script>.</p>
+<p>Thanks <a href="http://www.inchmeal.io/htpi/ch-4/sec-4.6.html#comment-3952574884">William</a> for pointing out. Earlier I got this wrong: <span class="kdmath">$[x] = \{... x^{-3}, x^{-2}, x^{-1}, x^{0}, x^{1}, x^{2}, x^{3}, ...\}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p>We are given that <script type="math/tex">\mathcal F = \{ P_d \, \vert \, d \in D \}</script>.</p>
+<p>We are given that <span class="kdmath">$\mathcal F = \{ P_d \, \vert \, d \in D \}$</span>.</p>
 
 <ul>
-  <li><script type="math/tex">\cup \mathcal F = P</script>:</li>
+  <li><span class="kdmath">$\cup \mathcal F = P$</span>:</li>
 </ul>
 
-<p>(<script type="math/tex">\to</script>). Suppose <script type="math/tex">x \in \cup \mathcal F</script>. Thus there exist atleast one set <script type="math/tex">P_d</script>, where <script type="math/tex">d \in D</script>, such that <script type="math/tex">x \in P_d</script>. Thus <script type="math/tex">x</script> is a person
-must be be born on day <script type="math/tex">d</script>. It follows that <script type="math/tex">x \in P</script>. Thus <script type="math/tex">\cup \mathcal F \subseteq P</script>.</p>
+<p>(<span class="kdmath">$\to$</span>). Suppose <span class="kdmath">$x \in \cup \mathcal F$</span>. Thus there exist atleast one set <span class="kdmath">$P_d$</span>, where <span class="kdmath">$d \in D$</span>, such that <span class="kdmath">$x \in P_d$</span>. Thus <span class="kdmath">$x$</span> is a person
+must be be born on day <span class="kdmath">$d$</span>. It follows that <span class="kdmath">$x \in P$</span>. Thus <span class="kdmath">$\cup \mathcal F \subseteq P$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>). Suppose <script type="math/tex">x \in P</script>. Thus <script type="math/tex">x</script> must/will be born on some day <script type="math/tex">d</script>. Thus <script type="math/tex">x \in P_d</script>. It follows that <script type="math/tex">x \in cup \mathcal F</script>. 
-Thus <script type="math/tex">P \subseteq \cup \mathcal F</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>). Suppose <span class="kdmath">$x \in P$</span>. Thus <span class="kdmath">$x$</span> must/will be born on some day <span class="kdmath">$d$</span>. Thus <span class="kdmath">$x \in P_d$</span>. It follows that <span class="kdmath">$x \in cup \mathcal F$</span>. 
+Thus <span class="kdmath">$P \subseteq \cup \mathcal F$</span>.</p>
 
 <ul>
-  <li><script type="math/tex">P_{d_1} \cap P_{d_2} = \phi</script>, where <script type="math/tex">d_1 \ne d_2</script>.</li>
+  <li><span class="kdmath">$P_{d_1} \cap P_{d_2} = \phi$</span>, where <span class="kdmath">$d_1 \ne d_2$</span>.</li>
 </ul>
 
-<p>Suppose <script type="math/tex">P_{d_1} \cap P_{d_2} \ne \phi</script>. Thus there must exist atleast one person who is born on <script type="math/tex">d_1</script> and on <script type="math/tex">d_2</script>. But this is not possible for a person to take birth
- on two different dates. Thus it contradicts the assumption <script type="math/tex">P_{d_1} \cap P_{d_2} \ne \phi</script>. Thus <script type="math/tex">P_{d_1} \cap P_{d_2} = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$P_{d_1} \cap P_{d_2} \ne \phi$</span>. Thus there must exist atleast one person who is born on <span class="kdmath">$d_1$</span> and on <span class="kdmath">$d_2$</span>. But this is not possible for a person to take birth
+ on two different dates. Thus it contradicts the assumption <span class="kdmath">$P_{d_1} \cap P_{d_2} \ne \phi$</span>. Thus <span class="kdmath">$P_{d_1} \cap P_{d_2} = \phi$</span>.</p>
 
 <ul>
-  <li><script type="math/tex">\forall X \in \mathcal F(X \ne \phi)</script>.</li>
+  <li><span class="kdmath">$\forall X \in \mathcal F(X \ne \phi)$</span>.</li>
 </ul>
 
-<p>Suppose <script type="math/tex">P_d \in \mathcal F</script>. We can assume here that there is atleast one person born on every day. Thus atleast one person is born on <script type="math/tex">P_d</script>, <script type="math/tex">P_d \ne \phi</script>.
-Thus <script type="math/tex">\forall X \in \mathcal F(X \ne \phi)</script>.</p>
+<p>Suppose <span class="kdmath">$P_d \in \mathcal F$</span>. We can assume here that there is atleast one person born on every day. Thus atleast one person is born on <span class="kdmath">$P_d$</span>, <span class="kdmath">$P_d \ne \phi$</span>.
+Thus <span class="kdmath">$\forall X \in \mathcal F(X \ne \phi)$</span>.</p>
 
-<p>Now see that <script type="math/tex">[x]_B = \{ y \, \vert \, x \text{ and } y \text{ are born on same day } \} = \{ y \, \vert \, x \text{ and } y \text{ are born on some day } d \} = P_d</script>.</p>
+<p>Now see that <span class="kdmath">$[x]_B = \{ y \, \vert \, x \text{ and } y \text{ are born on same day } \} = \{ y \, \vert \, x \text{ and } y \text{ are born on some day } d \} = P_d$</span>.</p>
 
-<p>Thus <script type="math/tex">P \, \ \, B</script> satisfies all the conditions of a partition.</p>
+<p>Thus <span class="kdmath">$P \, \ \, B$</span> satisfies all the conditions of a partition.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p>Suppose <script type="math/tex">x \in T</script>. Since all the angles of <script type="math/tex">x</script> are equal to itself, <script type="math/tex">(x,x) \in S $. Thus</script> S $$ is reflexive.</p>
+<p>Suppose <span class="kdmath">$x \in T$</span>. Since all the angles of <span class="kdmath">$x$</span> are equal to itself, <span class="kdmath">$(x,x) \in S $. Thus$</span> S $$ is reflexive.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in S</script>. Thus all angles of <script type="math/tex">x</script> are equal to <script type="math/tex">y</script>. Or we can also say that all angles of <script type="math/tex">y</script> are equal to <script type="math/tex">x</script>, or <script type="math/tex">(y,x) \in S</script>.
- Thus <script type="math/tex">S</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in S$</span>. Thus all angles of <span class="kdmath">$x$</span> are equal to <span class="kdmath">$y$</span>. Or we can also say that all angles of <span class="kdmath">$y$</span> are equal to <span class="kdmath">$x$</span>, or <span class="kdmath">$(y,x) \in S$</span>.
+ Thus <span class="kdmath">$S$</span> is symmetric.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in S \land (y,z) \in S</script>. Thus all angles of <script type="math/tex">x</script> are equal to <script type="math/tex">y</script>. Also all angles of <script type="math/tex">y</script> are equal to <script type="math/tex">z</script>. Thus all angles of <script type="math/tex">x</script> are
- equal to <script type="math/tex">z</script>. Thus <script type="math/tex">(x,z) \in S</script>. We can conclude that <script type="math/tex">S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in S \land (y,z) \in S$</span>. Thus all angles of <span class="kdmath">$x$</span> are equal to <span class="kdmath">$y$</span>. Also all angles of <span class="kdmath">$y$</span> are equal to <span class="kdmath">$z$</span>. Thus all angles of <span class="kdmath">$x$</span> are
+ equal to <span class="kdmath">$z$</span>. Thus <span class="kdmath">$(x,z) \in S$</span>. We can conclude that <span class="kdmath">$S$</span> is transitive.</p>
 
-<p>Thus <script type="math/tex">S</script> is reflexive, symmetric and transitive, we can conclude that <script type="math/tex">S</script> is equivalence relation.</p>
+<p>Thus <span class="kdmath">$S$</span> is reflexive, symmetric and transitive, we can conclude that <span class="kdmath">$S$</span> is equivalence relation.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>To complete the proof, we need to prove that <script type="math/tex">R</script> is symmetric and transitive.</p>
+<p>To complete the proof, we need to prove that <span class="kdmath">$R$</span> is symmetric and transitive.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">R = \cup_{X \in \mathcal F}(X \times X)</script>, it follows that there exist an <script type="math/tex">X</script> such that <script type="math/tex">(x,y) \in X \times X</script>.
-Thus <script type="math/tex">x \in X</script> and <script type="math/tex">y \in X</script>. Thus <script type="math/tex">(y,x) \in X \times X</script>. It follows that <script type="math/tex">(y,x) \in \cup_{X \in \mathcal F}(X \times X)</script>. Thus <script type="math/tex">(y,x) \in R</script>.
-We can conclude that <script type="math/tex">R</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$R = \cup_{X \in \mathcal F}(X \times X)$</span>, it follows that there exist an <span class="kdmath">$X$</span> such that <span class="kdmath">$(x,y) \in X \times X$</span>.
+Thus <span class="kdmath">$x \in X$</span> and <span class="kdmath">$y \in X$</span>. Thus <span class="kdmath">$(y,x) \in X \times X$</span>. It follows that <span class="kdmath">$(y,x) \in \cup_{X \in \mathcal F}(X \times X)$</span>. Thus <span class="kdmath">$(y,x) \in R$</span>.
+We can conclude that <span class="kdmath">$R$</span> is symmetric.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R \land (y,x) \in R</script>. Thus <script type="math/tex">(x,y) \in X</script> and <script type="math/tex">(y,z) \in Y</script> for some <script type="math/tex">X \in \mathcal F</script> and <script type="math/tex">Y \in \mathcal F</script>. Thus <script type="math/tex">x \in X</script> and <script type="math/tex">x \in Y</script>. Since <script type="math/tex">\mathcal F</script>
- is a partition of <script type="math/tex">A</script>, it follows that <script type="math/tex">X \cap Y = \phi</script>. Thus only if <script type="math/tex">X = Y</script>, then <script type="math/tex">x \in X</script> and <script type="math/tex">x \in Y</script> is possible. Thus <script type="math/tex">z \in X \times X</script>. It follows that <script type="math/tex">(x,z) \in \cup_{X \in \mathcal F}(X \times X)</script>.
-Thus <script type="math/tex">S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R \land (y,x) \in R$</span>. Thus <span class="kdmath">$(x,y) \in X$</span> and <span class="kdmath">$(y,z) \in Y$</span> for some <span class="kdmath">$X \in \mathcal F$</span> and <span class="kdmath">$Y \in \mathcal F$</span>. Thus <span class="kdmath">$x \in X$</span> and <span class="kdmath">$x \in Y$</span>. Since <span class="kdmath">$\mathcal F$</span>
+ is a partition of <span class="kdmath">$A$</span>, it follows that <span class="kdmath">$X \cap Y = \phi$</span>. Thus only if <span class="kdmath">$X = Y$</span>, then <span class="kdmath">$x \in X$</span> and <span class="kdmath">$x \in Y$</span> is possible. Thus <span class="kdmath">$z \in X \times X$</span>. It follows that <span class="kdmath">$(x,z) \in \cup_{X \in \mathcal F}(X \times X)$</span>.
+Thus <span class="kdmath">$S$</span> is transitive.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>Suppose <script type="math/tex">A \, / \, R = A \, / \, S</script>.</p>
+<p>Suppose <span class="kdmath">$A \, / \, R = A \, / \, S$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>). Suppose <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">R</script> is equivalence relation, it follows that <script type="math/tex">y \in [x]_R</script> and <script type="math/tex">[x]_R \in A \, / \, R</script>. Since <script type="math/tex">A \, / \, R = A \, / \, S</script>, it
-follows that <script type="math/tex">[x]_R \in A \, / \, S</script>. Since <script type="math/tex">S</script> is equivalence relation, <script type="math/tex">x</script> must exist in <script type="math/tex">[x]_S</script>. Also since <script type="math/tex">A \, / \, S</script> is a partition and
-<script type="math/tex">x \in [x]_R</script> and <script type="math/tex">x \in [x]_S</script> and <script type="math/tex">[x]_R \in A \, / \, S</script> and <script type="math/tex">[x]_S \in A \, / \, S</script>, it follows that <script type="math/tex">[x]_R = [x[_S</script>. Since <script type="math/tex">y \in [x]_R</script>, it follows <script type="math/tex">y \in [x]_S</script>. Thus <script type="math/tex">(x,y) \in S</script>.
-Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">R \subseteq S</script>.</p>
+<p>(<span class="kdmath">$\to$</span>). Suppose <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$R$</span> is equivalence relation, it follows that <span class="kdmath">$y \in [x]_R$</span> and <span class="kdmath">$[x]_R \in A \, / \, R$</span>. Since <span class="kdmath">$A \, / \, R = A \, / \, S$</span>, it
+follows that <span class="kdmath">$[x]_R \in A \, / \, S$</span>. Since <span class="kdmath">$S$</span> is equivalence relation, <span class="kdmath">$x$</span> must exist in <span class="kdmath">$[x]_S$</span>. Also since <span class="kdmath">$A \, / \, S$</span> is a partition and
+<span class="kdmath">$x \in [x]_R$</span> and <span class="kdmath">$x \in [x]_S$</span> and <span class="kdmath">$[x]_R \in A \, / \, S$</span> and <span class="kdmath">$[x]_S \in A \, / \, S$</span>, it follows that <span class="kdmath">$[x]_R = [x[_S$</span>. Since <span class="kdmath">$y \in [x]_R$</span>, it follows <span class="kdmath">$y \in [x]_S$</span>. Thus <span class="kdmath">$(x,y) \in S$</span>.
+Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$R \subseteq S$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>). Suppose <script type="math/tex">(x,y) \in S</script>. Since <script type="math/tex">S</script> is equivalence relation, it follows that <script type="math/tex">y \in [x]_S</script> and <script type="math/tex">[x]_S \in A \, / \, S</script>. Since <script type="math/tex">A \, / \, R = A \, / \, S</script>, it
-follows that <script type="math/tex">[x]_S \in A \, / \, R</script>. Since <script type="math/tex">R</script> is equivalence relation, <script type="math/tex">x</script> must exist in <script type="math/tex">[x]_R</script>. Also since <script type="math/tex">A \, / \, R</script> is a partition and
-<script type="math/tex">x \in [x]_R</script> and <script type="math/tex">x \in [x]_S</script>, it follows that <script type="math/tex">[x]_R = [x[_S</script>. Since <script type="math/tex">y \in [x]_S</script>, it follows <script type="math/tex">y \in [x]_R</script>. Thus <script type="math/tex">(x,y) \in R</script>.
-Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">S \subseteq R</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>). Suppose <span class="kdmath">$(x,y) \in S$</span>. Since <span class="kdmath">$S$</span> is equivalence relation, it follows that <span class="kdmath">$y \in [x]_S$</span> and <span class="kdmath">$[x]_S \in A \, / \, S$</span>. Since <span class="kdmath">$A \, / \, R = A \, / \, S$</span>, it
+follows that <span class="kdmath">$[x]_S \in A \, / \, R$</span>. Since <span class="kdmath">$R$</span> is equivalence relation, <span class="kdmath">$x$</span> must exist in <span class="kdmath">$[x]_R$</span>. Also since <span class="kdmath">$A \, / \, R$</span> is a partition and
+<span class="kdmath">$x \in [x]_R$</span> and <span class="kdmath">$x \in [x]_S$</span>, it follows that <span class="kdmath">$[x]_R = [x[_S$</span>. Since <span class="kdmath">$y \in [x]_S$</span>, it follows <span class="kdmath">$y \in [x]_R$</span>. Thus <span class="kdmath">$(x,y) \in R$</span>.
+Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$S \subseteq R$</span>.</p>
 
-<p>Thus <script type="math/tex">R \subseteq S</script> and <script type="math/tex">S \subseteq R</script>, it follows that <script type="math/tex">R = S</script>.</p>
+<p>Thus <span class="kdmath">$R \subseteq S$</span> and <span class="kdmath">$S \subseteq R$</span>, it follows that <span class="kdmath">$R = S$</span>.</p>
 
 <hr />
 
-<p><strong>Soln9</strong> Since <script type="math/tex">S</script> is an equivalence relation on <script type="math/tex">\mathcal F</script>, it follows that <script type="math/tex">\mathcal F = A \, / \, S</script>. Since it is given that <script type="math/tex">\mathcal F = = A \, / \, R</script>, it follows that
-  <script type="math/tex">A \, / \, R  = A \, / \, S</script>. Thus by using the result of Soln8, we have <script type="math/tex">R = S</script>.</p>
+<p><strong>Soln9</strong> Since <span class="kdmath">$S$</span> is an equivalence relation on <span class="kdmath">$\mathcal F$</span>, it follows that <span class="kdmath">$\mathcal F = A \, / \, S$</span>. Since it is given that <span class="kdmath">$\mathcal F = = A \, / \, R$</span>, it follows that
+  <span class="kdmath">$A \, / \, R  = A \, / \, S$</span>. Thus by using the result of Soln8, we have <span class="kdmath">$R = S$</span>.</p>
 
 <hr />
 
@@ -1314,89 +1315,89 @@ Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <scri
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">x</script> is an integer. Thus <script type="math/tex">x - x = 0</script>, or <script type="math/tex">(x-y) = 0 \times m</script>. Thus for <script type="math/tex">k = 0</script>, <script type="math/tex">x \equiv x (mod \; m)</script>. It follows that <script type="math/tex">(x,x) \in C_m</script>.
-Thus <script type="math/tex">C_m</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x$</span> is an integer. Thus <span class="kdmath">$x - x = 0$</span>, or <span class="kdmath">$(x-y) = 0 \times m$</span>. Thus for <span class="kdmath">$k = 0$</span>, <span class="kdmath">$x \equiv x (mod \; m)$</span>. It follows that <span class="kdmath">$(x,x) \in C_m$</span>.
+Thus <span class="kdmath">$C_m$</span> is reflexive.</p>
 
 <p><u>Symmetric:</u></p>
 
-<p>Suppose <script type="math/tex">x,y</script> are integers such that <script type="math/tex">(x,y) \in C_m</script>. Thus <script type="math/tex">x - y = k \times m</script> where <script type="math/tex">k \in \mathbb Z</script>. It follows that <script type="math/tex">-(x-y) = - km</script>, or
-<script type="math/tex">y - x = -k \times m</script>. Since <script type="math/tex">k \in \mathbb Z</script>, it follows <script type="math/tex">-k \in \mathbb Z</script>. Thus <script type="math/tex">(y,x) \in C_m</script>. It follows that <script type="math/tex">C_m</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$x,y$</span> are integers such that <span class="kdmath">$(x,y) \in C_m$</span>. Thus <span class="kdmath">$x - y = k \times m$</span> where <span class="kdmath">$k \in \mathbb Z$</span>. It follows that <span class="kdmath">$-(x-y) = - km$</span>, or
+<span class="kdmath">$y - x = -k \times m$</span>. Since <span class="kdmath">$k \in \mathbb Z$</span>, it follows <span class="kdmath">$-k \in \mathbb Z$</span>. Thus <span class="kdmath">$(y,x) \in C_m$</span>. It follows that <span class="kdmath">$C_m$</span> is symmetric.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Equivalence classes of <script type="math/tex">C_2</script>:</p>
+<p>Equivalence classes of <span class="kdmath">$C_2$</span>:</p>
 
-<p><script type="math/tex">\{..., -3, -1, 1, 3, 5, 7, .... \}</script>,  <br />
-<script type="math/tex">\{..., -2, 0, 2, 4, 6, 8, .... \}</script>,</p>
+<p><span class="kdmath">$\{..., -3, -1, 1, 3, 5, 7, .... \}$</span>,  <br />
+<span class="kdmath">$\{..., -2, 0, 2, 4, 6, 8, .... \}$</span>,</p>
 
-<p>Equivalence classes of <script type="math/tex">C_3</script>:</p>
+<p>Equivalence classes of <span class="kdmath">$C_3$</span>:</p>
 
-<p><script type="math/tex">\{...,-2, 1, 4, 7, 10, 13, .... \}</script>,  <br />
-<script type="math/tex">\{...,-1, 2, 5, 8, 11, 14, .... \}</script>,  <br />
-<script type="math/tex">\{...,0,  3, 6, 9, 12, 15, .... \}</script>,</p>
+<p><span class="kdmath">$\{...,-2, 1, 4, 7, 10, 13, .... \}$</span>,  <br />
+<span class="kdmath">$\{...,-1, 2, 5, 8, 11, 14, .... \}$</span>,  <br />
+<span class="kdmath">$\{...,0,  3, 6, 9, 12, 15, .... \}$</span>,</p>
 
-<p>Clearly there are <script type="math/tex">m</script> equivalence classes of <script type="math/tex">C_m</script>.</p>
+<p>Clearly there are <span class="kdmath">$m$</span> equivalence classes of <span class="kdmath">$C_m$</span>.</p>
 
 <hr />
 
 <p><strong>Soln11</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is integer, then <script type="math/tex">n</script> is either even or odd. We have following cases:</p>
+<p>Suppose <span class="kdmath">$n$</span> is integer, then <span class="kdmath">$n$</span> is either even or odd. We have following cases:</p>
 
-<p>Case 1: <script type="math/tex">n</script> is even.  <br />
-Thus <script type="math/tex">n = 2t</script>, where <script type="math/tex">t</script> is any integer. It follows that <script type="math/tex">n^2 = 4t^2</script>. Thus <script type="math/tex">4t^2 - 0 = k \times 4</script>, where <script type="math/tex">k = t^2</script>. Thus
-<script type="math/tex">4t^2 \equiv 0 (mod \; 4)</script>, or <script type="math/tex">n^2 \equiv 0(mod \; 4)</script>. Thus we can also say <script type="math/tex">n^2 \equiv 0(mod \; 4) \lor n^2 \equiv 1 (mod \; 4)</script>.</p>
+<p>Case 1: <span class="kdmath">$n$</span> is even.  <br />
+Thus <span class="kdmath">$n = 2t$</span>, where <span class="kdmath">$t$</span> is any integer. It follows that <span class="kdmath">$n^2 = 4t^2$</span>. Thus <span class="kdmath">$4t^2 - 0 = k \times 4$</span>, where <span class="kdmath">$k = t^2$</span>. Thus
+<span class="kdmath">$4t^2 \equiv 0 (mod \; 4)$</span>, or <span class="kdmath">$n^2 \equiv 0(mod \; 4)$</span>. Thus we can also say <span class="kdmath">$n^2 \equiv 0(mod \; 4) \lor n^2 \equiv 1 (mod \; 4)$</span>.</p>
 
-<p>Case 2: <script type="math/tex">n</script> is odd.
-Thus <script type="math/tex">n = 2t + 1</script>, where <script type="math/tex">t</script> is any natural number. It follows that <script type="math/tex">n^2 = 4(t^2 + t) + 1</script>. Thus <script type="math/tex">4(t^2 + t) + 1 - 1 = k \times 4</script>, where <script type="math/tex">k = t^2 + t</script>. 
-Thus <script type="math/tex">4(t^2 + t) + 1 \equiv 1 (mod \; 4)</script>, or <script type="math/tex">n^2 \equiv 1 (mod \; 4)</script>. Thus we can also say <script type="math/tex">n^2 \equiv 0 (mod \; 4) \lor n^2 \equiv 1 (mod \; 4)</script>.</p>
+<p>Case 2: <span class="kdmath">$n$</span> is odd.
+Thus <span class="kdmath">$n = 2t + 1$</span>, where <span class="kdmath">$t$</span> is any natural number. It follows that <span class="kdmath">$n^2 = 4(t^2 + t) + 1$</span>. Thus <span class="kdmath">$4(t^2 + t) + 1 - 1 = k \times 4$</span>, where <span class="kdmath">$k = t^2 + t$</span>. 
+Thus <span class="kdmath">$4(t^2 + t) + 1 \equiv 1 (mod \; 4)$</span>, or <span class="kdmath">$n^2 \equiv 1 (mod \; 4)$</span>. Thus we can also say <span class="kdmath">$n^2 \equiv 0 (mod \; 4) \lor n^2 \equiv 1 (mod \; 4)$</span>.</p>
 
-<p>Thus from both cases, we have <script type="math/tex">n^2 - 1 \equiv (mod \; 4)</script> or <script type="math/tex">n^2 - 1 \equiv (mod \; 4)</script>.</p>
+<p>Thus from both cases, we have <span class="kdmath">$n^2 - 1 \equiv (mod \; 4)$</span> or <span class="kdmath">$n^2 - 1 \equiv (mod \; 4)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
-<p>Suppose <script type="math/tex">a,b,c,d</script> are integers such that <script type="math/tex">a \equiv c (mod \; m)</script> and <script type="math/tex">b \equiv d(mod \; m)</script>. Thus we have <script type="math/tex">a - c = k_1m</script> and <script type="math/tex">b - d = k_2m</script>.
-Thus <script type="math/tex">a = c + k_1m</script> and <script type="math/tex">b = d + k_2m</script>.</p>
+<p>Suppose <span class="kdmath">$a,b,c,d$</span> are integers such that <span class="kdmath">$a \equiv c (mod \; m)$</span> and <span class="kdmath">$b \equiv d(mod \; m)$</span>. Thus we have <span class="kdmath">$a - c = k_1m$</span> and <span class="kdmath">$b - d = k_2m$</span>.
+Thus <span class="kdmath">$a = c + k_1m$</span> and <span class="kdmath">$b = d + k_2m$</span>.</p>
 
-<p>Thus <script type="math/tex">a + b = c + k_1m + d + k_2m</script>, which means <script type="math/tex">a + b = c + d + (k_1 + k_2)m</script>, or <script type="math/tex">(a+b) - (c+d) = km</script>, where <script type="math/tex">k = k_1 + k_2</script>. Thus <script type="math/tex">a+b \equiv (c+d) (mod \; m)</script>.</p>
+<p>Thus <span class="kdmath">$a + b = c + k_1m + d + k_2m$</span>, which means <span class="kdmath">$a + b = c + d + (k_1 + k_2)m$</span>, or <span class="kdmath">$(a+b) - (c+d) = km$</span>, where <span class="kdmath">$k = k_1 + k_2$</span>. Thus <span class="kdmath">$a+b \equiv (c+d) (mod \; m)$</span>.</p>
 
-<p>Similarly, we have <script type="math/tex">ab = (c + k_1m)(d + k_2m) = cd + ck_2m + dk_1m + k_1k_2m = cd + (ck_2 + dk_1 + k_1k_1)m</script>. It follows that <script type="math/tex">ab - cd = km</script> where <script type="math/tex">k = ck_2 + dk_1 + k_1k_1</script>.
-Thus <script type="math/tex">ab \equiv cd(mod \; m )</script>.</p>
+<p>Similarly, we have <span class="kdmath">$ab = (c + k_1m)(d + k_2m) = cd + ck_2m + dk_1m + k_1k_2m = cd + (ck_2 + dk_1 + k_1k_1)m$</span>. It follows that <span class="kdmath">$ab - cd = km$</span> where <span class="kdmath">$k = ck_2 + dk_1 + k_1k_1$</span>.
+Thus <span class="kdmath">$ab \equiv cd(mod \; m )$</span>.</p>
 
 <hr />
 
 <p><strong>Soln13</strong></p>
 
-<p>Clearly <script type="math/tex">S</script> is a relation on <script type="math/tex">B</script>.</p>
+<p>Clearly <span class="kdmath">$S$</span> is a relation on <span class="kdmath">$B$</span>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x</script> in B. Thus <script type="math/tex">(x,x) \in B \times B</script>. Since <script type="math/tex">B \subseteq A</script>, and <script type="math/tex">R</script> is reflexive, it follows that <script type="math/tex">(x,x) \in R</script>. Thus <script type="math/tex">(x,x) \in R \cap (B \times B)</script>.
-Thus <script type="math/tex">S</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x$</span> in B. Thus <span class="kdmath">$(x,x) \in B \times B$</span>. Since <span class="kdmath">$B \subseteq A$</span>, and <span class="kdmath">$R$</span> is reflexive, it follows that <span class="kdmath">$(x,x) \in R$</span>. Thus <span class="kdmath">$(x,x) \in R \cap (B \times B)$</span>.
+Thus <span class="kdmath">$S$</span> is reflexive.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in S</script>. Since <script type="math/tex">S = R \cap (B \times B)</script>, it follows <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(x,y) \in B \times B</script>. Since <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">R</script> is symmetric,
-it follows that <script type="math/tex">(y,x) \in R</script>. Also since <script type="math/tex">(x,y) \in B \times B</script>, it follows <script type="math/tex">(y,x) \in B \times B</script>. Thus <script type="math/tex">(y,x) \in R \land (y,x) \in B \times B</script>.
-Thus <script type="math/tex">(y,x) \in S</script>. We can conclude that <script type="math/tex">S</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in S$</span>. Since <span class="kdmath">$S = R \cap (B \times B)$</span>, it follows <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(x,y) \in B \times B$</span>. Since <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$R$</span> is symmetric,
+it follows that <span class="kdmath">$(y,x) \in R$</span>. Also since <span class="kdmath">$(x,y) \in B \times B$</span>, it follows <span class="kdmath">$(y,x) \in B \times B$</span>. Thus <span class="kdmath">$(y,x) \in R \land (y,x) \in B \times B$</span>.
+Thus <span class="kdmath">$(y,x) \in S$</span>. We can conclude that <span class="kdmath">$S$</span> is symmetric.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in S \land (y,z) \in S</script>. Thus <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(y,z) \in R</script> and <script type="math/tex">x,y,z \in B</script>. Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">(x,z) \in R</script>.
-Also since <script type="math/tex">x,y,z \in B</script>, it follows that <script type="math/tex">(x,z) \in B \times B</script>. Thus <script type="math/tex">(x,z) \in R \cap (B \times B)</script>. Thus <script type="math/tex">(y,z) \in S</script>. Thus we can conclude that <script type="math/tex">S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in S \land (y,z) \in S$</span>. Thus <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(y,z) \in R$</span> and <span class="kdmath">$x,y,z \in B$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$(x,z) \in R$</span>.
+Also since <span class="kdmath">$x,y,z \in B$</span>, it follows that <span class="kdmath">$(x,z) \in B \times B$</span>. Thus <span class="kdmath">$(x,z) \in R \cap (B \times B)$</span>. Thus <span class="kdmath">$(y,z) \in S$</span>. Thus we can conclude that <span class="kdmath">$S$</span> is transitive.</p>
 
-<p>Since <script type="math/tex">S</script> is reflexive, symmetric and transitive, it follows that <script type="math/tex">S</script> is equivalence relation.</p>
+<p>Since <span class="kdmath">$S$</span> is reflexive, symmetric and transitive, it follows that <span class="kdmath">$S$</span> is equivalence relation.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in B</script>. Since <script type="math/tex">S</script> is an equivalence relation on <script type="math/tex">B</script>, it follows that <script type="math/tex">[x]_S \subseteq B</script>.</p>
+<p>Suppose <span class="kdmath">$x \in B$</span>. Since <span class="kdmath">$S$</span> is an equivalence relation on <span class="kdmath">$B$</span>, it follows that <span class="kdmath">$[x]_S \subseteq B$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">y \in [x]_S</script>. It follows that <script type="math/tex">(y,x) \in S</script>. Since <script type="math/tex">S = R \cap (B \times B)</script>, <script type="math/tex">(y,x) \in R</script>, thus, <script type="math/tex">y \in [x]_R</script>. Also since <script type="math/tex">(y,x) \in S</script>, 
-it follows that <script type="math/tex">(y,x) \in B \times</script>, thus, <script type="math/tex">y \in B</script>. Thus <script type="math/tex">y \in [x]_R \cap B</script>. Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">[x]_S \subseteq [x]_R \cap B</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$y \in [x]_S$</span>. It follows that <span class="kdmath">$(y,x) \in S$</span>. Since <span class="kdmath">$S = R \cap (B \times B)$</span>, <span class="kdmath">$(y,x) \in R$</span>, thus, <span class="kdmath">$y \in [x]_R$</span>. Also since <span class="kdmath">$(y,x) \in S$</span>, 
+it follows that <span class="kdmath">$(y,x) \in B \times$</span>, thus, <span class="kdmath">$y \in B$</span>. Thus <span class="kdmath">$y \in [x]_R \cap B$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$[x]_S \subseteq [x]_R \cap B$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">y \in [x]_R \cap B</script>. Thus <script type="math/tex">y \in B</script> and <script type="math/tex">(y,x) \in [x]_R</script>. Since <script type="math/tex">x \in B</script>(given), and <script type="math/tex">y \in B</script>, it follows <script type="math/tex">(y,x) \in B \times B</script>. 
-Thus we have <script type="math/tex">(y,x) \in R</script> and <script type="math/tex">(y,x) \in B \times B</script>, it follows that <script type="math/tex">(y,x) \in R \cap (B \times B)</script>. Thus <script type="math/tex">(y,x) \in S</script>. It follows that <script type="math/tex">y \in [x]_S</script>.
-Since <script type="math/tex">y</script> is arbitrary, we can conclude that <script type="math/tex">[x]_R \cap B \subseteq [x]_S</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$y \in [x]_R \cap B$</span>. Thus <span class="kdmath">$y \in B$</span> and <span class="kdmath">$(y,x) \in [x]_R$</span>. Since <span class="kdmath">$x \in B$</span>(given), and <span class="kdmath">$y \in B$</span>, it follows <span class="kdmath">$(y,x) \in B \times B$</span>. 
+Thus we have <span class="kdmath">$(y,x) \in R$</span> and <span class="kdmath">$(y,x) \in B \times B$</span>, it follows that <span class="kdmath">$(y,x) \in R \cap (B \times B)$</span>. Thus <span class="kdmath">$(y,x) \in S$</span>. It follows that <span class="kdmath">$y \in [x]_S$</span>.
+Since <span class="kdmath">$y$</span> is arbitrary, we can conclude that <span class="kdmath">$[x]_R \cap B \subseteq [x]_S$</span>.</p>
 
-<p>Since <script type="math/tex">[x]_S \subseteq [x]_R \cap B</script> and <script type="math/tex">[x]_R \cap B \subseteq [x]_S</script>. We can conclude <script type="math/tex">[x]_S = [x]_R \cap B</script>.</p>
+<p>Since <span class="kdmath">$[x]_S \subseteq [x]_R \cap B$</span> and <span class="kdmath">$[x]_R \cap B \subseteq [x]_S$</span>. We can conclude <span class="kdmath">$[x]_S = [x]_R \cap B$</span>.</p>
 
 <hr />
 
@@ -1404,238 +1405,238 @@ Since <script type="math/tex">y</script> is arbitrary, we can conclude that <scr
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">X \in \mathcal P(A)</script>. Then clearly, <script type="math/tex">X \triangle X = \phi</script>. Since <script type="math/tex">\phi \subseteq B</script>, it follows that <script type="math/tex">(X,X) \in R</script>. Thus <script type="math/tex">R</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$X \in \mathcal P(A)$</span>. Then clearly, <span class="kdmath">$X \triangle X = \phi$</span>. Since <span class="kdmath">$\phi \subseteq B$</span>, it follows that <span class="kdmath">$(X,X) \in R$</span>. Thus <span class="kdmath">$R$</span> is reflexive.</p>
 
-<p>Suppose <script type="math/tex">(X,Y) \in R</script>. Thus <script type="math/tex">X \triangle Y \subseteq B</script>. Since <script type="math/tex">X \triangle Y = Y \triangle X</script>, it follows <script type="math/tex">Y \triangle X \subseteq B</script>. Thus <script type="math/tex">(Y,X) \in R</script>. 
-It follows that <script type="math/tex">R</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(X,Y) \in R$</span>. Thus <span class="kdmath">$X \triangle Y \subseteq B$</span>. Since <span class="kdmath">$X \triangle Y = Y \triangle X$</span>, it follows <span class="kdmath">$Y \triangle X \subseteq B$</span>. Thus <span class="kdmath">$(Y,X) \in R$</span>. 
+It follows that <span class="kdmath">$R$</span> is symmetric.</p>
 
-<p>Suppose <script type="math/tex">(X,Y) \in R \land (Y,Z) \in R</script>. Suppose <script type="math/tex">x \in X \triangle Z</script>. Thus <script type="math/tex">x \in (X \setminus Z)</script> or <script type="math/tex">x \in Z \setminus X</script>. Thus we have
+<p>Suppose <span class="kdmath">$(X,Y) \in R \land (Y,Z) \in R$</span>. Suppose <span class="kdmath">$x \in X \triangle Z$</span>. Thus <span class="kdmath">$x \in (X \setminus Z)$</span> or <span class="kdmath">$x \in Z \setminus X$</span>. Thus we have
 following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in X \setminus Z</script> and <script type="math/tex">x \in Y</script>.
-  Since <script type="math/tex">x \in Y \land x \notin Z</script>, it follows <script type="math/tex">x \in Y \triangle Z</script>. Since <script type="math/tex">(Y,Z) \in R</script>, it follows <script type="math/tex">x \in B</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in X \setminus Z$</span> and <span class="kdmath">$x \in Y$</span>.
+  Since <span class="kdmath">$x \in Y \land x \notin Z$</span>, it follows <span class="kdmath">$x \in Y \triangle Z$</span>. Since <span class="kdmath">$(Y,Z) \in R$</span>, it follows <span class="kdmath">$x \in B$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in X \setminus Z</script> and <script type="math/tex">x \notin Y</script>.  <br />
-  Since <script type="math/tex">x \in X \land x \notin Y</script>, it follows <script type="math/tex">x \in X \triangle Y</script>. Since <script type="math/tex">(X,Y) \in R</script>, it follows <script type="math/tex">x \in B</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in X \setminus Z$</span> and <span class="kdmath">$x \notin Y$</span>.  <br />
+  Since <span class="kdmath">$x \in X \land x \notin Y$</span>, it follows <span class="kdmath">$x \in X \triangle Y$</span>. Since <span class="kdmath">$(X,Y) \in R$</span>, it follows <span class="kdmath">$x \in B$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">x \in Z \setminus X</script> and <script type="math/tex">x \in Y</script>.  <br />
-  Since <script type="math/tex">x \in Y \land x \notin X</script>, it follows <script type="math/tex">x \in X \triangle Y</script>. Since <script type="math/tex">(X,Y) \in R</script>, it follows <script type="math/tex">x \in B</script>.</p>
+    <p>Case 3: <span class="kdmath">$x \in Z \setminus X$</span> and <span class="kdmath">$x \in Y$</span>.  <br />
+  Since <span class="kdmath">$x \in Y \land x \notin X$</span>, it follows <span class="kdmath">$x \in X \triangle Y$</span>. Since <span class="kdmath">$(X,Y) \in R$</span>, it follows <span class="kdmath">$x \in B$</span>.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">x \in Z \setminus X</script> and <script type="math/tex">x \notin Y</script>.  <br />
-  Since <script type="math/tex">x \in Y \land x \notin Z</script>, it follows <script type="math/tex">x \in Y \triangle Z</script>. Since <script type="math/tex">(Y,Z) \in R</script>, it follows <script type="math/tex">x \in B</script>.</p>
+    <p>Case 4: <span class="kdmath">$x \in Z \setminus X$</span> and <span class="kdmath">$x \notin Y$</span>.  <br />
+  Since <span class="kdmath">$x \in Y \land x \notin Z$</span>, it follows <span class="kdmath">$x \in Y \triangle Z$</span>. Since <span class="kdmath">$(Y,Z) \in R$</span>, it follows <span class="kdmath">$x \in B$</span>.</p>
   </li>
 </ul>
 
-<p>Thus if <script type="math/tex">x \in X \triangle Z</script>, then form all the possible cases above <script type="math/tex">x \in B</script>. Thus <script type="math/tex">(X,Z) \subseteq B</script>. It follows that <script type="math/tex">(X,Z) \in R</script>.</p>
+<p>Thus if <span class="kdmath">$x \in X \triangle Z$</span>, then form all the possible cases above <span class="kdmath">$x \in B$</span>. Thus <span class="kdmath">$(X,Z) \subseteq B$</span>. It follows that <span class="kdmath">$(X,Z) \in R$</span>.</p>
 
-<p>Thus <script type="math/tex">R</script> is symmetric.</p>
+<p>Thus <span class="kdmath">$R$</span> is symmetric.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">X \in P(A)</script>. Suppose <script type="math/tex">Y = X \setminus B</script>. Clearly <script type="math/tex">Y \cap B = \phi</script> because <script type="math/tex">Y</script> contains only those elements which are in <script type="math/tex">X</script> but not in <script type="math/tex">B</script>. 
-Now we will prove that <script type="math/tex">Y \in [X]_R</script>. Suppose <script type="math/tex">x \in X \triangle Y</script>. Thus we have:</p>
+<p>Suppose <span class="kdmath">$X \in P(A)$</span>. Suppose <span class="kdmath">$Y = X \setminus B$</span>. Clearly <span class="kdmath">$Y \cap B = \phi$</span> because <span class="kdmath">$Y$</span> contains only those elements which are in <span class="kdmath">$X$</span> but not in <span class="kdmath">$B$</span>. 
+Now we will prove that <span class="kdmath">$Y \in [X]_R$</span>. Suppose <span class="kdmath">$x \in X \triangle Y$</span>. Thus we have:</p>
 
-<p><script type="math/tex">x \in (X \setminus Y) \lor x \in (Y \setminus X)</script> iff.    <br />
-<script type="math/tex">(x \in X \land x \notin (X \setminus B)) \lor (x \in (X \setminus B) \land x \notin X)</script> iff.    <br />
-<script type="math/tex">(x \in X \land \lnot (x \in X \land x \notin B)) \lor ((x \in X \land x \notin B) \land x \notin X)</script> iff.    <br />
-<script type="math/tex">(x \in X \land (x \notin X \lor x \in B)) \lor (x \in X \land x \notin B \land x \notin X)</script> iff.    <br />
-Since <script type="math/tex">x \in X \land x \notin X</script> is always false.  <br />
-<script type="math/tex">x \in X \land (x \notin X \lor x \in B)</script> iff.    <br />
-<script type="math/tex">(x \in X \land x \notin X) \lor (x \in X \land x \in B)</script> iff.    <br />
-Since <script type="math/tex">x \in X \land x \notin X</script> is always false.  <br />
-<script type="math/tex">x \in X \land x \in B</script></p>
+<p><span class="kdmath">$x \in (X \setminus Y) \lor x \in (Y \setminus X)$</span> iff.    <br />
+<span class="kdmath">$(x \in X \land x \notin (X \setminus B)) \lor (x \in (X \setminus B) \land x \notin X)$</span> iff.    <br />
+<span class="kdmath">$(x \in X \land \lnot (x \in X \land x \notin B)) \lor ((x \in X \land x \notin B) \land x \notin X)$</span> iff.    <br />
+<span class="kdmath">$(x \in X \land (x \notin X \lor x \in B)) \lor (x \in X \land x \notin B \land x \notin X)$</span> iff.    <br />
+Since <span class="kdmath">$x \in X \land x \notin X$</span> is always false.  <br />
+<span class="kdmath">$x \in X \land (x \notin X \lor x \in B)$</span> iff.    <br />
+<span class="kdmath">$(x \in X \land x \notin X) \lor (x \in X \land x \in B)$</span> iff.    <br />
+Since <span class="kdmath">$x \in X \land x \notin X$</span> is always false.  <br />
+<span class="kdmath">$x \in X \land x \in B$</span></p>
 
-<p>Thus if <script type="math/tex">x \in X \triangle Y</script>, then <script type="math/tex">x \in B</script>. Thus if <script type="math/tex">Y = X \setminus B</script>, then <script type="math/tex">X \triangle Y \subseteq B</script>.
-And we already prove that for <script type="math/tex">Y = X \setminus B</script>, <script type="math/tex">Y \cap B = \phi</script>.</p>
+<p>Thus if <span class="kdmath">$x \in X \triangle Y$</span>, then <span class="kdmath">$x \in B$</span>. Thus if <span class="kdmath">$Y = X \setminus B$</span>, then <span class="kdmath">$X \triangle Y \subseteq B$</span>.
+And we already prove that for <span class="kdmath">$Y = X \setminus B$</span>, <span class="kdmath">$Y \cap B = \phi$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">Y, Z \in \mathcal P(A)</script>, and <script type="math/tex">Y \in [X]_R</script> and <script type="math/tex">Z \in [X]_R</script> and <script type="math/tex">Y \cap B = Z \cap B = \phi</script> such that <script type="math/tex">Y \ne Z</script>. 
-First we will prove that <script type="math/tex">Y</script> and <script type="math/tex">Z</script> are not empty. Suppose <script type="math/tex">Y</script> is empty. Thus <script type="math/tex">X \triangle \phi \subseteq B</script>. But <script type="math/tex">X \triangle \phi = X</script>.
-Thus <script type="math/tex">X \subseteq B</script>. Since <script type="math/tex">X</script> is arbitrary, it follows <script type="math/tex">\forall X \in \mathcal P(A) (X \subseteq B)</script>. Since <script type="math/tex">A \in P(A)</script>, it follows <script type="math/tex">A \subseteq B</script>.
-But it contradicts with the given that <script type="math/tex">B \subseteq A</script>. Thus <script type="math/tex">Y</script> is not empty. Similarly we can show that <script type="math/tex">Z</script> is not empty.</p>
+<p>Suppose <span class="kdmath">$Y, Z \in \mathcal P(A)$</span>, and <span class="kdmath">$Y \in [X]_R$</span> and <span class="kdmath">$Z \in [X]_R$</span> and <span class="kdmath">$Y \cap B = Z \cap B = \phi$</span> such that <span class="kdmath">$Y \ne Z$</span>. 
+First we will prove that <span class="kdmath">$Y$</span> and <span class="kdmath">$Z$</span> are not empty. Suppose <span class="kdmath">$Y$</span> is empty. Thus <span class="kdmath">$X \triangle \phi \subseteq B$</span>. But <span class="kdmath">$X \triangle \phi = X$</span>.
+Thus <span class="kdmath">$X \subseteq B$</span>. Since <span class="kdmath">$X$</span> is arbitrary, it follows <span class="kdmath">$\forall X \in \mathcal P(A) (X \subseteq B)$</span>. Since <span class="kdmath">$A \in P(A)$</span>, it follows <span class="kdmath">$A \subseteq B$</span>.
+But it contradicts with the given that <span class="kdmath">$B \subseteq A$</span>. Thus <span class="kdmath">$Y$</span> is not empty. Similarly we can show that <span class="kdmath">$Z$</span> is not empty.</p>
 
-<p>Since <script type="math/tex">R</script> is symmetric and <script type="math/tex">YRX</script>, thus <script type="math/tex">XRY</script>. Since <script type="math/tex">R</script> is transitive and <script type="math/tex">ZRX \land XRY</script>, it follows <script type="math/tex">ZRY</script>. Thus <script type="math/tex">Z \triangle Y \subseteq B</script>. 
-This is true for <script type="math/tex">Y = Z</script>, but that is not that the case since we assumed <script type="math/tex">Y = Z</script>. Since <script type="math/tex">Y</script> and <script type="math/tex">Z</script> are not empty, we have following possible cases:
-Suppose <script type="math/tex">x \in Z \triangle Y</script>. Thus either <script type="math/tex">x \in Z \setminus Y</script> or <script type="math/tex">x \in Y \setminus Z</script>. Thus we have following cases:</p>
+<p>Since <span class="kdmath">$R$</span> is symmetric and <span class="kdmath">$YRX$</span>, thus <span class="kdmath">$XRY$</span>. Since <span class="kdmath">$R$</span> is transitive and <span class="kdmath">$ZRX \land XRY$</span>, it follows <span class="kdmath">$ZRY$</span>. Thus <span class="kdmath">$Z \triangle Y \subseteq B$</span>. 
+This is true for <span class="kdmath">$Y = Z$</span>, but that is not that the case since we assumed <span class="kdmath">$Y = Z$</span>. Since <span class="kdmath">$Y$</span> and <span class="kdmath">$Z$</span> are not empty, we have following possible cases:
+Suppose <span class="kdmath">$x \in Z \triangle Y$</span>. Thus either <span class="kdmath">$x \in Z \setminus Y$</span> or <span class="kdmath">$x \in Y \setminus Z$</span>. Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in Z \setminus Y</script>  <br />
-Thus <script type="math/tex">x \in Z</script>. Since <script type="math/tex">x \in Z</script> and we have from above that <script type="math/tex">Z \cap B = \phi</script>, it follows that <script type="math/tex">x \notin B</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in Z \setminus Y$</span>  <br />
+Thus <span class="kdmath">$x \in Z$</span>. Since <span class="kdmath">$x \in Z$</span> and we have from above that <span class="kdmath">$Z \cap B = \phi$</span>, it follows that <span class="kdmath">$x \notin B$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in Y \setminus Z</script>  <br />
-Thus <script type="math/tex">x \in Y</script>. Since <script type="math/tex">x \in Y</script> and we have from above that <script type="math/tex">Y \cap B = \phi</script>, it follows that <script type="math/tex">x \notin B</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in Y \setminus Z$</span>  <br />
+Thus <span class="kdmath">$x \in Y$</span>. Since <span class="kdmath">$x \in Y$</span> and we have from above that <span class="kdmath">$Y \cap B = \phi$</span>, it follows that <span class="kdmath">$x \notin B$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases if <script type="math/tex">x \in Y \triangle Z</script> then <script type="math/tex">x \notin B</script>. Thus <script type="math/tex">(Y,Z) \notin R</script>. But it contradicts with <script type="math/tex">(Y,Z) \in R</script>.
- Thus the assumtion that <script type="math/tex">Y \ne Z</script> is wrong. Thus <script type="math/tex">Y = Z</script>.</p>
+<p>Thus from both cases if <span class="kdmath">$x \in Y \triangle Z$</span> then <span class="kdmath">$x \notin B$</span>. Thus <span class="kdmath">$(Y,Z) \notin R$</span>. But it contradicts with <span class="kdmath">$(Y,Z) \in R$</span>.
+ Thus the assumtion that <span class="kdmath">$Y \ne Z$</span> is wrong. Thus <span class="kdmath">$Y = Z$</span>.</p>
 
-<p>Thus there exist a unique <script type="math/tex">Y</script> such that <script type="math/tex">Y \in [X]_R</script> and <script type="math/tex">Y \cap B = \phi</script>.</p>
+<p>Thus there exist a unique <span class="kdmath">$Y$</span> such that <span class="kdmath">$Y \in [X]_R$</span> and <span class="kdmath">$Y \cap B = \phi$</span>.</p>
 
 <hr />
 
 <p><strong>Soln15</strong></p>
 
-<p>To Prove <script type="math/tex">\mathcal F \cup \mathcal G</script> is a partition of <script type="math/tex">A \cup B</script>, we need to prove the following three things:</p>
+<p>To Prove <span class="kdmath">$\mathcal F \cup \mathcal G$</span> is a partition of <span class="kdmath">$A \cup B$</span>, we need to prove the following three things:</p>
 
 <ul>
-  <li><script type="math/tex">\cup (\mathcal F \cup \mathcal G) = A \cup B</script>.</li>
-  <li>if <script type="math/tex">X \in (\mathcal F \cup \mathcal G)</script> and <script type="math/tex">Y \in (\mathcal F \cup \mathcal G)</script> and <script type="math/tex">X \ne Y</script>, then <script type="math/tex">X \cap Y = \phi</script>.</li>
-  <li><script type="math/tex">\forall X \in (\mathcal F \cup \mathcal G)(X \ne \phi )</script>.</li>
+  <li><span class="kdmath">$\cup (\mathcal F \cup \mathcal G) = A \cup B$</span>.</li>
+  <li>if <span class="kdmath">$X \in (\mathcal F \cup \mathcal G)$</span> and <span class="kdmath">$Y \in (\mathcal F \cup \mathcal G)$</span> and <span class="kdmath">$X \ne Y$</span>, then <span class="kdmath">$X \cap Y = \phi$</span>.</li>
+  <li><span class="kdmath">$\forall X \in (\mathcal F \cup \mathcal G)(X \ne \phi )$</span>.</li>
 </ul>
 
 <p>Following are the proofs for each of them:</p>
 
-<p><strong>Proof of</strong> <script type="math/tex">\cup (\mathcal F \cup \mathcal G) = A \cup B</script>.</p>
+<p><strong>Proof of</strong> <span class="kdmath">$\cup (\mathcal F \cup \mathcal G) = A \cup B$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in \cup (\mathcal F \cup \mathcal G)</script>. Thus there exist an <script type="math/tex">X \in (\mathcal F \cup \mathcal G)</script> such that <script type="math/tex">x \in X</script>.
-Since <script type="math/tex">X \in (\mathcal F \cup \mathcal G)</script>, it follows that either <script type="math/tex">X \in \mathcal F</script> or <script type="math/tex">X \in \mathcal G</script>. Thus we have the following cases:</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in \cup (\mathcal F \cup \mathcal G)$</span>. Thus there exist an <span class="kdmath">$X \in (\mathcal F \cup \mathcal G)$</span> such that <span class="kdmath">$x \in X$</span>.
+Since <span class="kdmath">$X \in (\mathcal F \cup \mathcal G)$</span>, it follows that either <span class="kdmath">$X \in \mathcal F$</span> or <span class="kdmath">$X \in \mathcal G$</span>. Thus we have the following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">X \in \mathcal F</script>.
-Since <script type="math/tex">x \in X</script> and <script type="math/tex">X \in \mathcal F</script>, it follows that <script type="math/tex">x \in \cup \mathcal F</script>. Since <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>, <script type="math/tex">\cup \mathcal F = A</script>.
-Thus <script type="math/tex">x \in A</script>. Or we can also say <script type="math/tex">x \in A \cup B</script>.</p>
+    <p>Case 1: <span class="kdmath">$X \in \mathcal F$</span>.
+Since <span class="kdmath">$x \in X$</span> and <span class="kdmath">$X \in \mathcal F$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal F$</span>. Since <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>, <span class="kdmath">$\cup \mathcal F = A$</span>.
+Thus <span class="kdmath">$x \in A$</span>. Or we can also say <span class="kdmath">$x \in A \cup B$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">X \in \mathcal G</script>.
-Since <script type="math/tex">x \in X</script> and <script type="math/tex">X \in \mathcal G</script>, it follows that <script type="math/tex">x \in \cup \mathcal G</script>. Since <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>, <script type="math/tex">\cup \mathcal G = B</script>.
-Thus <script type="math/tex">x \in B</script>. Or we can also say that <script type="math/tex">x \in A \cup B</script>.</p>
+    <p>Case 2: <span class="kdmath">$X \in \mathcal G$</span>.
+Since <span class="kdmath">$x \in X$</span> and <span class="kdmath">$X \in \mathcal G$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal G$</span>. Since <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>, <span class="kdmath">$\cup \mathcal G = B$</span>.
+Thus <span class="kdmath">$x \in B$</span>. Or we can also say that <span class="kdmath">$x \in A \cup B$</span>.</p>
   </li>
 </ul>
 
-<p>Thus if <script type="math/tex">x \in \cup (\mathcal F \cup \mathcal G)</script>, then <script type="math/tex">x \in A \cup B</script>. Thus <script type="math/tex">\cup (\mathcal F \cup \mathcal G) \subseteq (A \cup B)</script>.</p>
+<p>Thus if <span class="kdmath">$x \in \cup (\mathcal F \cup \mathcal G)$</span>, then <span class="kdmath">$x \in A \cup B$</span>. Thus <span class="kdmath">$\cup (\mathcal F \cup \mathcal G) \subseteq (A \cup B)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in (A \cup B)</script>. Since <script type="math/tex">\cup \mathcal F = A</script> and <script type="math/tex">\cup \mathcal G = B</script>, it follows that either <script type="math/tex">x \in \cup \mathcal F</script> or 
- <script type="math/tex">x \in \cup \mathcal G</script>.  Thus we can also say <script type="math/tex">x \in (\cup \mathcal F) \cup (\cup \mathcal G)</script>, which is equivalent to <script type="math/tex">x \in \cup (\mathcal F \cup \mathcal G)</script>.
- Since <script type="math/tex">x</script> was arbitrary, it follows that <script type="math/tex">A \cup B \subseteq \cup (\mathcal F \cup \mathcal G)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in (A \cup B)$</span>. Since <span class="kdmath">$\cup \mathcal F = A$</span> and <span class="kdmath">$\cup \mathcal G = B$</span>, it follows that either <span class="kdmath">$x \in \cup \mathcal F$</span> or 
+ <span class="kdmath">$x \in \cup \mathcal G$</span>.  Thus we can also say <span class="kdmath">$x \in (\cup \mathcal F) \cup (\cup \mathcal G)$</span>, which is equivalent to <span class="kdmath">$x \in \cup (\mathcal F \cup \mathcal G)$</span>.
+ Since <span class="kdmath">$x$</span> was arbitrary, it follows that <span class="kdmath">$A \cup B \subseteq \cup (\mathcal F \cup \mathcal G)$</span>.</p>
 
-<p>Since <script type="math/tex">\cup (\mathcal F \cup \mathcal G) \subseteq (A \cup B)</script> and <script type="math/tex">A \cup B \subseteq \cup (\mathcal F \cup \mathcal G)</script>, it follows that
-<script type="math/tex">A \cup B \subseteq = (\mathcal F \cup \mathcal G)</script>.</p>
+<p>Since <span class="kdmath">$\cup (\mathcal F \cup \mathcal G) \subseteq (A \cup B)$</span> and <span class="kdmath">$A \cup B \subseteq \cup (\mathcal F \cup \mathcal G)$</span>, it follows that
+<span class="kdmath">$A \cup B \subseteq = (\mathcal F \cup \mathcal G)$</span>.</p>
 
-<p><strong>Proof of:</strong>  if <script type="math/tex">X \in (\mathcal F \cup \mathcal G)</script> and <script type="math/tex">Y \in (\mathcal F \cup \mathcal G)</script> and <script type="math/tex">X \ne Y</script>, then <script type="math/tex">X \cap Y = \phi</script>.</p>
+<p><strong>Proof of:</strong>  if <span class="kdmath">$X \in (\mathcal F \cup \mathcal G)$</span> and <span class="kdmath">$Y \in (\mathcal F \cup \mathcal G)$</span> and <span class="kdmath">$X \ne Y$</span>, then <span class="kdmath">$X \cap Y = \phi$</span>.</p>
 
-<p>Suppose <script type="math/tex">X \in (\mathcal F \cup \mathcal G)</script> and <script type="math/tex">Y \in (\mathcal F \cup \mathcal G)</script> and <script type="math/tex">X \ne Y</script>. Thus we have following possible cases:</p>
-
-<ul>
-  <li>Case 1: <script type="math/tex">X \in \mathcal F</script> and <script type="math/tex">Y \in \mathcal F</script></li>
-</ul>
-
-<p>Since <script type="math/tex">X \ne Y</script> and <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>, it follows that <script type="math/tex">X \cap Y = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$X \in (\mathcal F \cup \mathcal G)$</span> and <span class="kdmath">$Y \in (\mathcal F \cup \mathcal G)$</span> and <span class="kdmath">$X \ne Y$</span>. Thus we have following possible cases:</p>
 
 <ul>
-  <li>Case 2: <script type="math/tex">X \in \mathcal G</script> and <script type="math/tex">Y \in \mathcal F</script></li>
+  <li>Case 1: <span class="kdmath">$X \in \mathcal F$</span> and <span class="kdmath">$Y \in \mathcal F$</span></li>
 </ul>
 
-<p>Since <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>, it follows that <script type="math/tex">X \subseteq B</script>. Similarly since <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>, it follows that 
-<script type="math/tex">Y \subseteq A</script>. Since <script type="math/tex">A \cap B = \phi</script>, it follows that <script type="math/tex">X \cap Y = \phi</script>.</p>
+<p>Since <span class="kdmath">$X \ne Y$</span> and <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>, it follows that <span class="kdmath">$X \cap Y = \phi$</span>.</p>
 
 <ul>
-  <li>Case 3: <script type="math/tex">X \in \mathcal G</script> and <script type="math/tex">Y \in \mathcal G</script></li>
+  <li>Case 2: <span class="kdmath">$X \in \mathcal G$</span> and <span class="kdmath">$Y \in \mathcal F$</span></li>
 </ul>
 
-<p>Since <script type="math/tex">X \ne Y</script> and <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>, it follows that <script type="math/tex">X \cap Y = \phi</script>.</p>
+<p>Since <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>, it follows that <span class="kdmath">$X \subseteq B$</span>. Similarly since <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>, it follows that 
+<span class="kdmath">$Y \subseteq A$</span>. Since <span class="kdmath">$A \cap B = \phi$</span>, it follows that <span class="kdmath">$X \cap Y = \phi$</span>.</p>
 
 <ul>
-  <li>Case 4: <script type="math/tex">X \in \mathcal F</script> and <script type="math/tex">Y \in \mathcal G</script></li>
+  <li>Case 3: <span class="kdmath">$X \in \mathcal G$</span> and <span class="kdmath">$Y \in \mathcal G$</span></li>
 </ul>
 
-<p>Since <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>, it follows that <script type="math/tex">X \subseteq A</script>. Similarly since <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>, it follows that 
-<script type="math/tex">Y \subseteq B</script>. Since <script type="math/tex">A \cap B = \phi</script>, it follows that <script type="math/tex">X \cap Y = \phi</script>.</p>
+<p>Since <span class="kdmath">$X \ne Y$</span> and <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>, it follows that <span class="kdmath">$X \cap Y = \phi$</span>.</p>
 
-<p>Thus from all the cases above <script type="math/tex">X \cap Y = \phi</script>.</p>
+<ul>
+  <li>Case 4: <span class="kdmath">$X \in \mathcal F$</span> and <span class="kdmath">$Y \in \mathcal G$</span></li>
+</ul>
 
-<p><strong>Proof of</strong> <script type="math/tex">\forall X \in (\mathcal F \cup \mathcal G)(X \ne \phi )</script>.</p>
+<p>Since <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>, it follows that <span class="kdmath">$X \subseteq A$</span>. Similarly since <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>, it follows that 
+<span class="kdmath">$Y \subseteq B$</span>. Since <span class="kdmath">$A \cap B = \phi$</span>, it follows that <span class="kdmath">$X \cap Y = \phi$</span>.</p>
 
-<p>Suppose <script type="math/tex">X \in (\mathcal F \cup \mathcal G)</script>. Thus either <script type="math/tex">X \in \mathcal F</script> or <script type="math/tex">X \in \mathcal G</script>. If <script type="math/tex">X \in \mathcal F</script>, then <script type="math/tex">X \ne \phi</script> because <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>.
-Similarly if <script type="math/tex">X \in \mathcal G</script>, <script type="math/tex">X \ne \phi</script> since <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>.</p>
+<p>Thus from all the cases above <span class="kdmath">$X \cap Y = \phi$</span>.</p>
+
+<p><strong>Proof of</strong> <span class="kdmath">$\forall X \in (\mathcal F \cup \mathcal G)(X \ne \phi )$</span>.</p>
+
+<p>Suppose <span class="kdmath">$X \in (\mathcal F \cup \mathcal G)$</span>. Thus either <span class="kdmath">$X \in \mathcal F$</span> or <span class="kdmath">$X \in \mathcal G$</span>. If <span class="kdmath">$X \in \mathcal F$</span>, then <span class="kdmath">$X \ne \phi$</span> because <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>.
+Similarly if <span class="kdmath">$X \in \mathcal G$</span>, <span class="kdmath">$X \ne \phi$</span> since <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln16</strong></p>
 
-<p><strong>(a)</strong> Since <script type="math/tex">R</script> is an equivalence relation on <script type="math/tex">A</script>, it follows that <script type="math/tex">A \, / \, R</script> is a partition of <script type="math/tex">A</script>. Similarly since <script type="math/tex">S</script> is an equivalence relation on <script type="math/tex">B</script>, it follows that <script type="math/tex">B \, / \, S</script> is a partition of <script type="math/tex">B</script>.
- Thus we have <script type="math/tex">A \, / \, R</script> is a partition of <script type="math/tex">A</script> and <script type="math/tex">B \, / \, S</script> is a partition of <script type="math/tex">B</script> and <script type="math/tex">A \land B</script> are disjoint, then from the soln15, it follows that <script type="math/tex">(A \, / \, R) \cup (B \, / \, S)</script> is a partition of <script type="math/tex">A \cup B</script>.
- We know that from theorems in this section that if <script type="math/tex">A \, / \, R</script> is a partition of <script type="math/tex">A</script>, then <script type="math/tex">R</script> is an equivalence relation on <script type="math/tex">A</script>. Thus, since <script type="math/tex">(A \, / \, R) \cup (B \, / \, S)</script> is a partition on <script type="math/tex">A \cup B</script>, it follows that <script type="math/tex">R \cup S</script> is an equivalence
- relation on <script type="math/tex">A \cup B</script>.</p>
+<p><strong>(a)</strong> Since <span class="kdmath">$R$</span> is an equivalence relation on <span class="kdmath">$A$</span>, it follows that <span class="kdmath">$A \, / \, R$</span> is a partition of <span class="kdmath">$A$</span>. Similarly since <span class="kdmath">$S$</span> is an equivalence relation on <span class="kdmath">$B$</span>, it follows that <span class="kdmath">$B \, / \, S$</span> is a partition of <span class="kdmath">$B$</span>.
+ Thus we have <span class="kdmath">$A \, / \, R$</span> is a partition of <span class="kdmath">$A$</span> and <span class="kdmath">$B \, / \, S$</span> is a partition of <span class="kdmath">$B$</span> and <span class="kdmath">$A \land B$</span> are disjoint, then from the soln15, it follows that <span class="kdmath">$(A \, / \, R) \cup (B \, / \, S)$</span> is a partition of <span class="kdmath">$A \cup B$</span>.
+ We know that from theorems in this section that if <span class="kdmath">$A \, / \, R$</span> is a partition of <span class="kdmath">$A$</span>, then <span class="kdmath">$R$</span> is an equivalence relation on <span class="kdmath">$A$</span>. Thus, since <span class="kdmath">$(A \, / \, R) \cup (B \, / \, S)$</span> is a partition on <span class="kdmath">$A \cup B$</span>, it follows that <span class="kdmath">$R \cup S$</span> is an equivalence
+ relation on <span class="kdmath">$A \cup B$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">y \in [x]_{R \cup S}</script>. Thus <script type="math/tex">(y,x) \in (R \cup S)</script>. It follows that <script type="math/tex">(y,x) \in R</script> or <script type="math/tex">(y,x) \in S</script>. Since <script type="math/tex">A \cap B = \phi</script> and <script type="math/tex">x \in A</script>, it
-follows that <script type="math/tex">x \notin B</script>. Since <script type="math/tex">S</script> is a relation on <script type="math/tex">B</script> and <script type="math/tex">x \notin B</script>, it follows that <script type="math/tex">(y,x) \notin S</script>. Thus <script type="math/tex">(y,x) \in R</script>, or <script type="math/tex">y \in [x]_R</script>.
- Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">[x]_{R \cup S} \subseteq [x]_R</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$y \in [x]_{R \cup S}$</span>. Thus <span class="kdmath">$(y,x) \in (R \cup S)$</span>. It follows that <span class="kdmath">$(y,x) \in R$</span> or <span class="kdmath">$(y,x) \in S$</span>. Since <span class="kdmath">$A \cap B = \phi$</span> and <span class="kdmath">$x \in A$</span>, it
+follows that <span class="kdmath">$x \notin B$</span>. Since <span class="kdmath">$S$</span> is a relation on <span class="kdmath">$B$</span> and <span class="kdmath">$x \notin B$</span>, it follows that <span class="kdmath">$(y,x) \notin S$</span>. Thus <span class="kdmath">$(y,x) \in R$</span>, or <span class="kdmath">$y \in [x]_R$</span>.
+ Since <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$[x]_{R \cup S} \subseteq [x]_R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">y \in [x]_R</script>. Thus <script type="math/tex">(y,x) \in R</script>. Since <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">x \in (A \cup B)</script>. Since <script type="math/tex">(y,x) \in R</script>, it follows <script type="math/tex">y \in A</script>.
-Thus <script type="math/tex">y \in A \cup B</script>. Thus we can also say that <script type="math/tex">(y,x) \in (R \cup S)</script>, where <script type="math/tex">y,x \in (A \cup B)</script>. Thus <script type="math/tex">y \in [x]_{R \cup S}</script>. Since <script type="math/tex">y</script> is arbitrary, it follows
- that <script type="math/tex">[x]_R \subseteq [x]_{R \cup S}</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$y \in [x]_R$</span>. Thus <span class="kdmath">$(y,x) \in R$</span>. Since <span class="kdmath">$x \in A$</span>, it follows that <span class="kdmath">$x \in (A \cup B)$</span>. Since <span class="kdmath">$(y,x) \in R$</span>, it follows <span class="kdmath">$y \in A$</span>.
+Thus <span class="kdmath">$y \in A \cup B$</span>. Thus we can also say that <span class="kdmath">$(y,x) \in (R \cup S)$</span>, where <span class="kdmath">$y,x \in (A \cup B)$</span>. Thus <span class="kdmath">$y \in [x]_{R \cup S}$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows
+ that <span class="kdmath">$[x]_R \subseteq [x]_{R \cup S}$</span>.</p>
 
-<p>Since <script type="math/tex">[x]_{R \cup S} \subseteq [x]_R</script> and <script type="math/tex">[x]_R \subseteq [x]_{R \cup S}</script>, it follows that <script type="math/tex">[x]_R = [x]_{R \cup S}</script>.</p>
+<p>Since <span class="kdmath">$[x]_{R \cup S} \subseteq [x]_R$</span> and <span class="kdmath">$[x]_R \subseteq [x]_{R \cup S}$</span>, it follows that <span class="kdmath">$[x]_R = [x]_{R \cup S}$</span>.</p>
 
-<p>Proof of if <script type="math/tex">x \in B</script>, then <script type="math/tex">[x]_S = [x]_{R \cup S}</script> is exactly similar.</p>
+<p>Proof of if <span class="kdmath">$x \in B$</span>, then <span class="kdmath">$[x]_S = [x]_{R \cup S}$</span> is exactly similar.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">X \in (A \cup B) \, / \, (R \cup S)</script>. Suppose <script type="math/tex">x \in X</script>. Since <script type="math/tex">R \cup S</script>, is an equivalence relation on <script type="math/tex">A \cup B</script>, it follows
- <script type="math/tex">X = [x]_{R \cup S}</script>. Since <script type="math/tex">X \in (A \cup B) \, / \, (R \cup S)</script>, it follows <script type="math/tex">X \subseteq (A \cup B)</script>. Thus <script type="math/tex">x \in A \cup B</script>. It follows 
-that either <script type="math/tex">x \in A</script> or <script type="math/tex">x \in B</script>. If <script type="math/tex">x \in A</script>, then from part(b), <script type="math/tex">[x]_{R \cup S} = [x]_R</script>. Similarly if <script type="math/tex">x \in B</script>, then from part(b)
-<script type="math/tex">[x]_S = [x]_{R \cup S}</script>. Thus <script type="math/tex">[x]_{R \cup S} = [x]_R</script> or <script type="math/tex">[x]_{R \cup S} = [x]_S</script>. Since <script type="math/tex">X = [x]_{R \cup S}</script>, it follows that either
- <script type="math/tex">X = [x]_R</script> or <script type="math/tex">X = [x]_S</script>. If <script type="math/tex">X = [x]_R</script>, then <script type="math/tex">X \in (A \, / \, R)</script> because <script type="math/tex">[x]_R \in (A \, / \, R)</script>. Similarly if 
-<script type="math/tex">X = [x]_S</script>, then <script type="math/tex">X \in (B \, / \, S)</script> because <script type="math/tex">[x]_S \in (B \, / \, S)</script>. Thus <script type="math/tex">X \in (A \, / \, R) \cup (B \, / \, S)</script>. Since <script type="math/tex">X</script> is
-arbitrary, it follows that <script type="math/tex">(A \cup B) \, / \, (R \cup S) \subseteq (A \, / \, R) \cup (B \, / \, S)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$X \in (A \cup B) \, / \, (R \cup S)$</span>. Suppose <span class="kdmath">$x \in X$</span>. Since <span class="kdmath">$R \cup S$</span>, is an equivalence relation on <span class="kdmath">$A \cup B$</span>, it follows
+ <span class="kdmath">$X = [x]_{R \cup S}$</span>. Since <span class="kdmath">$X \in (A \cup B) \, / \, (R \cup S)$</span>, it follows <span class="kdmath">$X \subseteq (A \cup B)$</span>. Thus <span class="kdmath">$x \in A \cup B$</span>. It follows 
+that either <span class="kdmath">$x \in A$</span> or <span class="kdmath">$x \in B$</span>. If <span class="kdmath">$x \in A$</span>, then from part(b), <span class="kdmath">$[x]_{R \cup S} = [x]_R$</span>. Similarly if <span class="kdmath">$x \in B$</span>, then from part(b)
+<span class="kdmath">$[x]_S = [x]_{R \cup S}$</span>. Thus <span class="kdmath">$[x]_{R \cup S} = [x]_R$</span> or <span class="kdmath">$[x]_{R \cup S} = [x]_S$</span>. Since <span class="kdmath">$X = [x]_{R \cup S}$</span>, it follows that either
+ <span class="kdmath">$X = [x]_R$</span> or <span class="kdmath">$X = [x]_S$</span>. If <span class="kdmath">$X = [x]_R$</span>, then <span class="kdmath">$X \in (A \, / \, R)$</span> because <span class="kdmath">$[x]_R \in (A \, / \, R)$</span>. Similarly if 
+<span class="kdmath">$X = [x]_S$</span>, then <span class="kdmath">$X \in (B \, / \, S)$</span> because <span class="kdmath">$[x]_S \in (B \, / \, S)$</span>. Thus <span class="kdmath">$X \in (A \, / \, R) \cup (B \, / \, S)$</span>. Since <span class="kdmath">$X$</span> is
+arbitrary, it follows that <span class="kdmath">$(A \cup B) \, / \, (R \cup S) \subseteq (A \, / \, R) \cup (B \, / \, S)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">X \in (A \, / \, R) \cup (B \, / \, S)</script>. Suppose <script type="math/tex">x \in X</script>. Thus either <script type="math/tex">X \in (A \, / \, R)</script> or <script type="math/tex">X \in (B \, / \, S)</script>.
- If <script type="math/tex">X \in (A \, / \, R)</script>, then <script type="math/tex">X = [x]_R</script>, then from part(b), <script type="math/tex">X = [x]_{R \cup S}</script>. Similarly if <script type="math/tex">X \in (B \, / \, S)</script>, then <script type="math/tex">X = [x]_{R \cup S}</script>.
-Thus from both cases <script type="math/tex">X = [x]_{R \cup S}</script>. Since <script type="math/tex">R \cup S</script> is equivalence relation on <script type="math/tex">A \cup B</script>, it follows that <script type="math/tex">X \in (A \cup B) \, / \, (R \cup S)</script>.
-Thus <script type="math/tex">(A \, / \, R) \cup (B \, / \, S) \subseteq (A \, / \, R) \cup (B \, / \, S)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$X \in (A \, / \, R) \cup (B \, / \, S)$</span>. Suppose <span class="kdmath">$x \in X$</span>. Thus either <span class="kdmath">$X \in (A \, / \, R)$</span> or <span class="kdmath">$X \in (B \, / \, S)$</span>.
+ If <span class="kdmath">$X \in (A \, / \, R)$</span>, then <span class="kdmath">$X = [x]_R$</span>, then from part(b), <span class="kdmath">$X = [x]_{R \cup S}$</span>. Similarly if <span class="kdmath">$X \in (B \, / \, S)$</span>, then <span class="kdmath">$X = [x]_{R \cup S}$</span>.
+Thus from both cases <span class="kdmath">$X = [x]_{R \cup S}$</span>. Since <span class="kdmath">$R \cup S$</span> is equivalence relation on <span class="kdmath">$A \cup B$</span>, it follows that <span class="kdmath">$X \in (A \cup B) \, / \, (R \cup S)$</span>.
+Thus <span class="kdmath">$(A \, / \, R) \cup (B \, / \, S) \subseteq (A \, / \, R) \cup (B \, / \, S)$</span>.</p>
 
-<p>Thus from both directions, <script type="math/tex">(A \cup B) \, / \, (R \cup S) = (A \, / \, R) \cup (B \, / \, S)</script>.</p>
+<p>Thus from both directions, <span class="kdmath">$(A \cup B) \, / \, (R \cup S) = (A \, / \, R) \cup (B \, / \, S)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln17</strong></p>
 
-<p><strong>Proof of</strong> <script type="math/tex">\cup \mathcal F \cdot \mathcal G = A</script>.</p>
+<p><strong>Proof of</strong> <span class="kdmath">$\cup \mathcal F \cdot \mathcal G = A$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in \cup \mathcal F \cdot \mathcal G</script>. Thus there exist an <script type="math/tex">T</script> in <script type="math/tex">\mathcal F \cdot \mathcal G</script> such that <script type="math/tex">x \in T</script>. Thus <script type="math/tex">T \in \mathcal P(A)</script>.
-This follows that <script type="math/tex">T \subseteq A</script>. Since <script type="math/tex">x \in T</script>, <script type="math/tex">x \in A</script>. Thus <script type="math/tex">\cup \mathcal F \cdot \mathcal G \subseteq A</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in \cup \mathcal F \cdot \mathcal G$</span>. Thus there exist an <span class="kdmath">$T$</span> in <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> such that <span class="kdmath">$x \in T$</span>. Thus <span class="kdmath">$T \in \mathcal P(A)$</span>.
+This follows that <span class="kdmath">$T \subseteq A$</span>. Since <span class="kdmath">$x \in T$</span>, <span class="kdmath">$x \in A$</span>. Thus <span class="kdmath">$\cup \mathcal F \cdot \mathcal G \subseteq A$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>, it follows that there exist an <script type="math/tex">X \in \mathcal F</script> such that
-<script type="math/tex">x \in X</script>. Similarly since <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>, it follows that there exist a <script type="math/tex">Y \in \mathcal G</script>, such that <script type="math/tex">x \in Y</script>.
-Thus <script type="math/tex">x \in X \land x \in Y</script>, or <script type="math/tex">x \in X \cap Y</script>. If <script type="math/tex">T = X \cap Y</script>, then <script type="math/tex">T \in \mathcal F \cdot \mathcal G</script>. Since <script type="math/tex">x \in T</script> and <script type="math/tex">T \in \mathcal F \cdot \mathcal G</script>,
-it follows that <script type="math/tex">x \in \cup (\mathcal F \cdot \mathcal G)</script>. Thus <script type="math/tex">A \subseteq  (\cup \mathcal F \cdot \mathcal G)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>, it follows that there exist an <span class="kdmath">$X \in \mathcal F$</span> such that
+<span class="kdmath">$x \in X$</span>. Similarly since <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>, it follows that there exist a <span class="kdmath">$Y \in \mathcal G$</span>, such that <span class="kdmath">$x \in Y$</span>.
+Thus <span class="kdmath">$x \in X \land x \in Y$</span>, or <span class="kdmath">$x \in X \cap Y$</span>. If <span class="kdmath">$T = X \cap Y$</span>, then <span class="kdmath">$T \in \mathcal F \cdot \mathcal G$</span>. Since <span class="kdmath">$x \in T$</span> and <span class="kdmath">$T \in \mathcal F \cdot \mathcal G$</span>,
+it follows that <span class="kdmath">$x \in \cup (\mathcal F \cdot \mathcal G)$</span>. Thus <span class="kdmath">$A \subseteq  (\cup \mathcal F \cdot \mathcal G)$</span>.</p>
 
-<p>Thus from both sides, <script type="math/tex">\cup \mathcal F \cdot \mathcal G = A</script>.</p>
+<p>Thus from both sides, <span class="kdmath">$\cup \mathcal F \cdot \mathcal G = A$</span>.</p>
 
-<p><strong>Proof of</strong> <script type="math/tex">\mathcal F \cdot \mathcal G</script> is pairwise disjoint.</p>
+<p><strong>Proof of</strong> <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> is pairwise disjoint.</p>
 
-<p>Suppose <script type="math/tex">T_0 \in  \mathcal F \cdot \mathcal G</script> and <script type="math/tex">T_0 \in  \mathcal F \cdot \mathcal G</script> such that <script type="math/tex">T_0 \ne T_1</script>. Thus there exist <script type="math/tex">X_0 \in \mathcal F</script> and <script type="math/tex">Y_0 \in \mathcal G</script> such that <script type="math/tex">T = X_0 \cap Y_0</script>.
-Similarly there must be <script type="math/tex">X_1 \in \mathcal F</script> and <script type="math/tex">Y_1 \in \mathcal G</script> such that <script type="math/tex">T_1 = X_1 \cap Y_1</script>. Since <script type="math/tex">\mathcal F</script> is a partition, it follows <script type="math/tex">X_0 \cap X_1 = \phi</script>.
-Similarly <script type="math/tex">Y_0 \cap Y_1 = \phi</script>. Suppose <script type="math/tex">T_0 \cap T_1 \ne \phi</script>. Thus there exist an <script type="math/tex">x</script> such that <script type="math/tex">x</script> in <script type="math/tex">T_0 \cap T_1</script>. Thus <script type="math/tex">x \in X_0 \cap Y_0</script>
-and <script type="math/tex">x \in X_1 \cap Y_1</script>. Thus <script type="math/tex">x \in X_0 \cap X_1</script>. Thus <script type="math/tex">X_0 \cap X_1 \ne \phi</script>. This is a contradiction thus <script type="math/tex">T_0 \cap T_1 = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$T_0 \in  \mathcal F \cdot \mathcal G$</span> and <span class="kdmath">$T_0 \in  \mathcal F \cdot \mathcal G$</span> such that <span class="kdmath">$T_0 \ne T_1$</span>. Thus there exist <span class="kdmath">$X_0 \in \mathcal F$</span> and <span class="kdmath">$Y_0 \in \mathcal G$</span> such that <span class="kdmath">$T = X_0 \cap Y_0$</span>.
+Similarly there must be <span class="kdmath">$X_1 \in \mathcal F$</span> and <span class="kdmath">$Y_1 \in \mathcal G$</span> such that <span class="kdmath">$T_1 = X_1 \cap Y_1$</span>. Since <span class="kdmath">$\mathcal F$</span> is a partition, it follows <span class="kdmath">$X_0 \cap X_1 = \phi$</span>.
+Similarly <span class="kdmath">$Y_0 \cap Y_1 = \phi$</span>. Suppose <span class="kdmath">$T_0 \cap T_1 \ne \phi$</span>. Thus there exist an <span class="kdmath">$x$</span> such that <span class="kdmath">$x$</span> in <span class="kdmath">$T_0 \cap T_1$</span>. Thus <span class="kdmath">$x \in X_0 \cap Y_0$</span>
+and <span class="kdmath">$x \in X_1 \cap Y_1$</span>. Thus <span class="kdmath">$x \in X_0 \cap X_1$</span>. Thus <span class="kdmath">$X_0 \cap X_1 \ne \phi$</span>. This is a contradiction thus <span class="kdmath">$T_0 \cap T_1 = \phi$</span>.</p>
 
-<p><strong>Proof of</strong> <script type="math/tex">\forall X \in \mathcal F \cdot \mathcal G (X \ne \phi)</script>. This is clear from the definition of <script type="math/tex">\mathcal F \cdot \mathcal G</script>.</p>
+<p><strong>Proof of</strong> <span class="kdmath">$\forall X \in \mathcal F \cdot \mathcal G (X \ne \phi)$</span>. This is clear from the definition of <span class="kdmath">$\mathcal F \cdot \mathcal G$</span>.</p>
 
-<p>Thus <script type="math/tex">\mathcal F \cdot \mathcal G</script> is a partition of <script type="math/tex">A</script>.</p>
+<p>Thus <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> is a partition of <span class="kdmath">$A$</span>.</p>
 
 <hr />
 
 <p><strong>Soln18</strong></p>
 
-<p><script type="math/tex">\mathcal F \cdot \mathcal G = \{ \mathbb R^- \cap \mathbb Z, \mathbb R^- \cap \mathbb (R \setminus Z), \mathbb R^+ \cap \mathbb Z, \mathbb R^+ \cap \mathbb (R \setminus Z), 0 \cap \mathbb Z, 0 \cap \mathbb (R \setminus Z) \}</script>.      <br />
-<script type="math/tex">\leftrightarrow \mathcal F \cdot \mathcal G = \{ Z^-, (R^- \setminus Z), Z^+, (R^+ \setminus Z), \{0\}, \{0\} \}</script>.      <br />
-<script type="math/tex">\leftrightarrow \mathcal F \cdot \mathcal G = \{ Z^-, (R^- \setminus Z), Z^+, (R^+ \setminus Z), \{0\} \}</script>.</p>
+<p><span class="kdmath">$\mathcal F \cdot \mathcal G = \{ \mathbb R^- \cap \mathbb Z, \mathbb R^- \cap \mathbb (R \setminus Z), \mathbb R^+ \cap \mathbb Z, \mathbb R^+ \cap \mathbb (R \setminus Z), 0 \cap \mathbb Z, 0 \cap \mathbb (R \setminus Z) \}$</span>.      <br />
+<span class="kdmath">$\leftrightarrow \mathcal F \cdot \mathcal G = \{ Z^-, (R^- \setminus Z), Z^+, (R^+ \setminus Z), \{0\}, \{0\} \}$</span>.      <br />
+<span class="kdmath">$\leftrightarrow \mathcal F \cdot \mathcal G = \{ Z^-, (R^- \setminus Z), Z^+, (R^+ \setminus Z), \{0\} \}$</span>.</p>
 
 <hr />
 
@@ -1643,97 +1644,97 @@ and <script type="math/tex">x \in X_1 \cap Y_1</script>. Thus <script type="math
 
 <p><strong>(a)</strong></p>
 
-<p><strong>Proof of</strong> <script type="math/tex">R \cap S</script> <strong>is reflexive</strong></p>
+<p><strong>Proof of</strong> <span class="kdmath">$R \cap S$</span> <strong>is reflexive</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">R</script> is reflexive, it follows that <script type="math/tex">(x,x) \in R</script>. Similarly since <script type="math/tex">R</script> is reflexive, it follows that <script type="math/tex">(x,x) \in S</script>.
-Thus <script type="math/tex">(x,x) \in R \cap S</script>. Thus <script type="math/tex">R \cap S</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R$</span> is reflexive, it follows that <span class="kdmath">$(x,x) \in R$</span>. Similarly since <span class="kdmath">$R$</span> is reflexive, it follows that <span class="kdmath">$(x,x) \in S$</span>.
+Thus <span class="kdmath">$(x,x) \in R \cap S$</span>. Thus <span class="kdmath">$R \cap S$</span> is reflexive.</p>
 
-<p><strong>Proof of</strong> <script type="math/tex">R \cap S</script> <strong>is symmetric</strong></p>
+<p><strong>Proof of</strong> <span class="kdmath">$R \cap S$</span> <strong>is symmetric</strong></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R \cap S</script>. Thus <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(x,y) \in S</script>. Since <script type="math/tex">R</script> and <script type="math/tex">S</script> are both symmetric, it follows that <script type="math/tex">(y,x) \in R \cap S</script>.
-Thus <script type="math/tex">R \cap S</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R \cap S$</span>. Thus <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(x,y) \in S$</span>. Since <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are both symmetric, it follows that <span class="kdmath">$(y,x) \in R \cap S$</span>.
+Thus <span class="kdmath">$R \cap S$</span> is symmetric.</p>
 
-<p><strong>Proof of</strong> <script type="math/tex">R \cap S</script> <strong>is transitive</strong></p>
+<p><strong>Proof of</strong> <span class="kdmath">$R \cap S$</span> <strong>is transitive</strong></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R \cap S</script> and <script type="math/tex">(y,z) \in R \cap S</script>. Thus <script type="math/tex">(x,y) \in R \land (y,z) \in S</script>. Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">(x,z) \in R</script>.
- Similarly since <script type="math/tex">(x,y) \in S \land (y,z) \in S</script> and <script type="math/tex">S</script> is transitive, it follows that <script type="math/tex">(x,z) \in S</script>. Thus we have <script type="math/tex">(x,z) \in R \cap S</script>. Thus
-<script type="math/tex">R \cap S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R \cap S$</span> and <span class="kdmath">$(y,z) \in R \cap S$</span>. Thus <span class="kdmath">$(x,y) \in R \land (y,z) \in S$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$(x,z) \in R$</span>.
+ Similarly since <span class="kdmath">$(x,y) \in S \land (y,z) \in S$</span> and <span class="kdmath">$S$</span> is transitive, it follows that <span class="kdmath">$(x,z) \in S$</span>. Thus we have <span class="kdmath">$(x,z) \in R \cap S$</span>. Thus
+<span class="kdmath">$R \cap S$</span> is transitive.</p>
 
-<p>Since <script type="math/tex">R \cap S</script> is reflexive, symmetric and transitive, it follows that <script type="math/tex">R \cap S</script> is equivalence relation.</p>
+<p>Since <span class="kdmath">$R \cap S$</span> is reflexive, symmetric and transitive, it follows that <span class="kdmath">$R \cap S$</span> is equivalence relation.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">y \in [x]_T</script>. Thus <script type="math/tex">(y,x) \in (R \cap S)</script>. Thus <script type="math/tex">(y,x) \in R</script> and <script type="math/tex">(y,x) \in S</script>. Since <script type="math/tex">R</script> is equivalence relation on
-<script type="math/tex">A</script> and <script type="math/tex">x \in A</script> and <script type="math/tex">(y,x) \in R</script>, it follows that <script type="math/tex">y \in [x]_R</script>. Similarly since <script type="math/tex">S</script> is equivalence relation on <script type="math/tex">A</script> and <script type="math/tex">x \in A</script> 
-and <script type="math/tex">(y,x) \in S</script>, it follows that <script type="math/tex">y \in [x]_S</script>. Thus <script type="math/tex">y \in [x]_R \cap [x]_S</script>. Thus <script type="math/tex">[x]_T \subseteq [x]_R \cap [x]_S</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$y \in [x]_T$</span>. Thus <span class="kdmath">$(y,x) \in (R \cap S)$</span>. Thus <span class="kdmath">$(y,x) \in R$</span> and <span class="kdmath">$(y,x) \in S$</span>. Since <span class="kdmath">$R$</span> is equivalence relation on
+<span class="kdmath">$A$</span> and <span class="kdmath">$x \in A$</span> and <span class="kdmath">$(y,x) \in R$</span>, it follows that <span class="kdmath">$y \in [x]_R$</span>. Similarly since <span class="kdmath">$S$</span> is equivalence relation on <span class="kdmath">$A$</span> and <span class="kdmath">$x \in A$</span> 
+and <span class="kdmath">$(y,x) \in S$</span>, it follows that <span class="kdmath">$y \in [x]_S$</span>. Thus <span class="kdmath">$y \in [x]_R \cap [x]_S$</span>. Thus <span class="kdmath">$[x]_T \subseteq [x]_R \cap [x]_S$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">y \in [x]_R \cap [x]_S</script>. Thus <script type="math/tex">(y,x) \in R</script> and <script type="math/tex">(y,x) \in S</script>. Thus <script type="math/tex">(y,x) \in R \cap S</script>. Since <script type="math/tex">R \cap S</script> is
- an equivalence relation on <script type="math/tex">A</script> and <script type="math/tex">x \in A</script> and <script type="math/tex">(y,x) \in R \cap S</script>, it follows that <script type="math/tex">y \in [x]_{R \cap S}</script>, or <script type="math/tex">y \in [x]_T</script>. Thus
-<script type="math/tex">[x]_R \cap [x]_S \subseteq [x]_T</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$y \in [x]_R \cap [x]_S$</span>. Thus <span class="kdmath">$(y,x) \in R$</span> and <span class="kdmath">$(y,x) \in S$</span>. Thus <span class="kdmath">$(y,x) \in R \cap S$</span>. Since <span class="kdmath">$R \cap S$</span> is
+ an equivalence relation on <span class="kdmath">$A$</span> and <span class="kdmath">$x \in A$</span> and <span class="kdmath">$(y,x) \in R \cap S$</span>, it follows that <span class="kdmath">$y \in [x]_{R \cap S}$</span>, or <span class="kdmath">$y \in [x]_T$</span>. Thus
+<span class="kdmath">$[x]_R \cap [x]_S \subseteq [x]_T$</span>.</p>
 
-<p>Since <script type="math/tex">[x]_T \subseteq [x]_R \cap [x]_S</script> and <script type="math/tex">[x]_R \cap [x]_S \subseteq [x]_T</script>, it follows that <script type="math/tex">[x]_T = [x]_R \cap [x]_S</script>.</p>
+<p>Since <span class="kdmath">$[x]_T \subseteq [x]_R \cap [x]_S$</span> and <span class="kdmath">$[x]_R \cap [x]_S \subseteq [x]_T$</span>, it follows that <span class="kdmath">$[x]_T = [x]_R \cap [x]_S$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">X \in A \, / \, T</script>. Thus we have:</p>
+<p>Suppose <span class="kdmath">$X \in A \, / \, T$</span>. Thus we have:</p>
 
-<p><script type="math/tex">X \in A \, / \, T</script>. iff  <br />
-<script type="math/tex">\exists x \in A (X = [x]_T)</script>. iff  <br />
-Since from last part, if <script type="math/tex">x \in A</script> then <script type="math/tex">[x]_T = [x]_R \cap [x]_S</script>, we have:   <br />
-<script type="math/tex">\exists x \in A (X = [x]_R \cap [x]_S)</script>. iff      <br />
-<script type="math/tex">X \in (A \, / \, R) \land X \in (A \, / \, S)</script>. iff      <br />
-<script type="math/tex">X \in ( A \, / \, R) \cdot ( A \, / \, S)</script>.</p>
+<p><span class="kdmath">$X \in A \, / \, T$</span>. iff  <br />
+<span class="kdmath">$\exists x \in A (X = [x]_T)$</span>. iff  <br />
+Since from last part, if <span class="kdmath">$x \in A$</span> then <span class="kdmath">$[x]_T = [x]_R \cap [x]_S$</span>, we have:   <br />
+<span class="kdmath">$\exists x \in A (X = [x]_R \cap [x]_S)$</span>. iff      <br />
+<span class="kdmath">$X \in (A \, / \, R) \land X \in (A \, / \, S)$</span>. iff      <br />
+<span class="kdmath">$X \in ( A \, / \, R) \cdot ( A \, / \, S)$</span>.</p>
 
-<p>Since <script type="math/tex">X</script> is arbitrary, it follows that <script type="math/tex">A \, / \, T = (A \, / \, R) \cdot (A \, / \, S)</script>.</p>
+<p>Since <span class="kdmath">$X$</span> is arbitrary, it follows that <span class="kdmath">$A \, / \, T = (A \, / \, R) \cdot (A \, / \, S)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln20</strong></p>
 
-<p><strong>Proof of</strong> <script type="math/tex">\cup (\mathcal F \otimes \mathcal G) = A \times B</script>.</p>
+<p><strong>Proof of</strong> <span class="kdmath">$\cup (\mathcal F \otimes \mathcal G) = A \times B$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(x,y) \in  \cup (\mathcal F \otimes \mathcal G)</script>. Thus there exist an element <script type="math/tex">Z \in \mathcal F \otimes \mathcal G</script> such that <script type="math/tex">(x,y) \in Z</script>. 
-Since <script type="math/tex">Z \in P(A) \times P(B)</script>, it follows that there exist an <script type="math/tex">X \in \mathcal P(A)</script> and <script type="math/tex">Y \in \mathcal P(B)</script> such that <script type="math/tex">Z = X \times Y</script>. Since
-<script type="math/tex">X \in \mathcal P(A)</script>, <script type="math/tex">X \subseteq A</script>. Similarly since <script type="math/tex">Y \in \mathcal P(B)</script>, <script type="math/tex">Y \subseteq B</script>. Thus <script type="math/tex">(x,y) \in A \times B</script>. Thus <script type="math/tex">\cup (\mathcal F \otimes \mathcal G) \subseteq A \times B</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(x,y) \in  \cup (\mathcal F \otimes \mathcal G)$</span>. Thus there exist an element <span class="kdmath">$Z \in \mathcal F \otimes \mathcal G$</span> such that <span class="kdmath">$(x,y) \in Z$</span>. 
+Since <span class="kdmath">$Z \in P(A) \times P(B)$</span>, it follows that there exist an <span class="kdmath">$X \in \mathcal P(A)$</span> and <span class="kdmath">$Y \in \mathcal P(B)$</span> such that <span class="kdmath">$Z = X \times Y$</span>. Since
+<span class="kdmath">$X \in \mathcal P(A)$</span>, <span class="kdmath">$X \subseteq A$</span>. Similarly since <span class="kdmath">$Y \in \mathcal P(B)$</span>, <span class="kdmath">$Y \subseteq B$</span>. Thus <span class="kdmath">$(x,y) \in A \times B$</span>. Thus <span class="kdmath">$\cup (\mathcal F \otimes \mathcal G) \subseteq A \times B$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">(x,y) \in A \times B</script>. Thus for some set, say,  <script type="math/tex">X \subseteq A</script>, <script type="math/tex">x \in X</script>. Similarly for some set <script type="math/tex">Y \subseteq B</script>, <script type="math/tex">y \in Y</script>.
-Thus <script type="math/tex">(x,y) \in X \times Y</script>. Thus <script type="math/tex">(x,y) \in Z</script> where <script type="math/tex">Z \in \mathcal P(A) \times \mathcal P(A)</script>. Thus <script type="math/tex">(x,y) \in \cup (\mathcal F \otimes \mathcal G)</script>.
-Thus <script type="math/tex">A \times B \subseteq \cup (\mathcal F \otimes \mathcal G)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$(x,y) \in A \times B$</span>. Thus for some set, say,  <span class="kdmath">$X \subseteq A$</span>, <span class="kdmath">$x \in X$</span>. Similarly for some set <span class="kdmath">$Y \subseteq B$</span>, <span class="kdmath">$y \in Y$</span>.
+Thus <span class="kdmath">$(x,y) \in X \times Y$</span>. Thus <span class="kdmath">$(x,y) \in Z$</span> where <span class="kdmath">$Z \in \mathcal P(A) \times \mathcal P(A)$</span>. Thus <span class="kdmath">$(x,y) \in \cup (\mathcal F \otimes \mathcal G)$</span>.
+Thus <span class="kdmath">$A \times B \subseteq \cup (\mathcal F \otimes \mathcal G)$</span>.</p>
 
-<p><strong>Proof of</strong> <script type="math/tex">\mathcal F \otimes \mathcal G</script> is pairwise disjoint.</p>
+<p><strong>Proof of</strong> <span class="kdmath">$\mathcal F \otimes \mathcal G$</span> is pairwise disjoint.</p>
 
-<p>Suppose <script type="math/tex">Z_1 \in \mathcal F \otimes \mathcal G</script> and <script type="math/tex">Z_2 \in \mathcal F \otimes \mathcal G</script> and <script type="math/tex">Z_1 \ne Z_2</script>. We will prove by contradiction. Suppose <script type="math/tex">Z_1 \cap Z_2 \ne \phi</script>.
-Thus there atleast exist a pair <script type="math/tex">(x,y)</script> such that <script type="math/tex">(x,y) \in Z_1</script> and <script type="math/tex">(x,y) \in Z_2</script>. Since <script type="math/tex">Z_1 \in \mathcal F \otimes \mathcal G</script>, it
-follows that for some <script type="math/tex">X_1 \in \mathcal F</script> and <script type="math/tex">Y_1 \in \mathcal G</script>, <script type="math/tex">Z_1 = X_1 \times Y_1</script>. Similarly since <script type="math/tex">Z_2 \in \mathcal F \otimes \mathcal G</script>, it
-follows that for some <script type="math/tex">X_2 \in \mathcal F</script> and <script type="math/tex">Y_2 \in \mathcal G</script>, <script type="math/tex">Z_2 = X_2 \times Y_2</script>. Since <script type="math/tex">(x,y) \in Z_1</script> and <script type="math/tex">Z_1 = X_1 \times Y_1</script>, it follows
-that <script type="math/tex">x \in X_1</script> and <script type="math/tex">y \in Y_1</script>. Similarly since <script type="math/tex">(x,y) \in Z_2</script>, it follows that <script type="math/tex">x \in X_2</script> and <script type="math/tex">y \in Y_2</script>. Thus <script type="math/tex">x \in X_1 \cap X_2</script> and
-<script type="math/tex">y \in Y_1 \cap Y_2</script>. Since <script type="math/tex">X_1 \in \mathcal F</script> and <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>, ans since <script type="math/tex">x</script> exist in both <script type="math/tex">X_1</script> and <script type="math/tex">X_2</script>, it follows that
-<script type="math/tex">X_1 = X_2</script>. Similarly <script type="math/tex">Y_1 \in \mathcal G</script> and <script type="math/tex">Y_2 \in \mathcal G</script>, and <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>, it follows that <script type="math/tex">Y_1 = Y_2</script>. Since <script type="math/tex">Z_1 = X_1 \times Y_1</script>
-and <script type="math/tex">Z_2 = X_2 \times Y_2</script>, it follows that <script type="math/tex">Z_1 = Z_2</script> because <script type="math/tex">X_1 = X_2</script> and <script type="math/tex">Y_1 = Y_2</script>. This contradicts with <script type="math/tex">Z_1 \ne Z_2</script>. Thus <script type="math/tex">Z_1 \cap Z_2 = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$Z_1 \in \mathcal F \otimes \mathcal G$</span> and <span class="kdmath">$Z_2 \in \mathcal F \otimes \mathcal G$</span> and <span class="kdmath">$Z_1 \ne Z_2$</span>. We will prove by contradiction. Suppose <span class="kdmath">$Z_1 \cap Z_2 \ne \phi$</span>.
+Thus there atleast exist a pair <span class="kdmath">$(x,y)$</span> such that <span class="kdmath">$(x,y) \in Z_1$</span> and <span class="kdmath">$(x,y) \in Z_2$</span>. Since <span class="kdmath">$Z_1 \in \mathcal F \otimes \mathcal G$</span>, it
+follows that for some <span class="kdmath">$X_1 \in \mathcal F$</span> and <span class="kdmath">$Y_1 \in \mathcal G$</span>, <span class="kdmath">$Z_1 = X_1 \times Y_1$</span>. Similarly since <span class="kdmath">$Z_2 \in \mathcal F \otimes \mathcal G$</span>, it
+follows that for some <span class="kdmath">$X_2 \in \mathcal F$</span> and <span class="kdmath">$Y_2 \in \mathcal G$</span>, <span class="kdmath">$Z_2 = X_2 \times Y_2$</span>. Since <span class="kdmath">$(x,y) \in Z_1$</span> and <span class="kdmath">$Z_1 = X_1 \times Y_1$</span>, it follows
+that <span class="kdmath">$x \in X_1$</span> and <span class="kdmath">$y \in Y_1$</span>. Similarly since <span class="kdmath">$(x,y) \in Z_2$</span>, it follows that <span class="kdmath">$x \in X_2$</span> and <span class="kdmath">$y \in Y_2$</span>. Thus <span class="kdmath">$x \in X_1 \cap X_2$</span> and
+<span class="kdmath">$y \in Y_1 \cap Y_2$</span>. Since <span class="kdmath">$X_1 \in \mathcal F$</span> and <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>, ans since <span class="kdmath">$x$</span> exist in both <span class="kdmath">$X_1$</span> and <span class="kdmath">$X_2$</span>, it follows that
+<span class="kdmath">$X_1 = X_2$</span>. Similarly <span class="kdmath">$Y_1 \in \mathcal G$</span> and <span class="kdmath">$Y_2 \in \mathcal G$</span>, and <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>, it follows that <span class="kdmath">$Y_1 = Y_2$</span>. Since <span class="kdmath">$Z_1 = X_1 \times Y_1$</span>
+and <span class="kdmath">$Z_2 = X_2 \times Y_2$</span>, it follows that <span class="kdmath">$Z_1 = Z_2$</span> because <span class="kdmath">$X_1 = X_2$</span> and <span class="kdmath">$Y_1 = Y_2$</span>. This contradicts with <span class="kdmath">$Z_1 \ne Z_2$</span>. Thus <span class="kdmath">$Z_1 \cap Z_2 = \phi$</span>.</p>
 
-<p><strong>Proof of</strong> <script type="math/tex">\forall Z \in (\mathcal F \otimes \mathcal G)(Z \ne \phi)</script>.</p>
+<p><strong>Proof of</strong> <span class="kdmath">$\forall Z \in (\mathcal F \otimes \mathcal G)(Z \ne \phi)$</span>.</p>
 
-<p>Suppose <script type="math/tex">Z \in \mathcal F \otimes \mathcal G</script>. Thus for some <script type="math/tex">X \in \mathcal F</script> and <script type="math/tex">Y \in \mathcal G</script>, <script type="math/tex">Z = X \times Y</script>. Since <script type="math/tex">\mathcal F</script> is a partition on <script type="math/tex">A</script>,
-it follows that <script type="math/tex">X \ne \phi</script>. Similarly since <script type="math/tex">\mathcal G</script> is a partition on <script type="math/tex">B</script>, <script type="math/tex">Y \ne \phi</script>. Thus <script type="math/tex">Z \ne \phi</script>. Since <script type="math/tex">Z</script> is arbitrary, it follows that
-<script type="math/tex">\forall Z \in (\mathcal F \otimes \mathcal G)(Z \ne \phi)</script>.</p>
+<p>Suppose <span class="kdmath">$Z \in \mathcal F \otimes \mathcal G$</span>. Thus for some <span class="kdmath">$X \in \mathcal F$</span> and <span class="kdmath">$Y \in \mathcal G$</span>, <span class="kdmath">$Z = X \times Y$</span>. Since <span class="kdmath">$\mathcal F$</span> is a partition on <span class="kdmath">$A$</span>,
+it follows that <span class="kdmath">$X \ne \phi$</span>. Similarly since <span class="kdmath">$\mathcal G$</span> is a partition on <span class="kdmath">$B$</span>, <span class="kdmath">$Y \ne \phi$</span>. Thus <span class="kdmath">$Z \ne \phi$</span>. Since <span class="kdmath">$Z$</span> is arbitrary, it follows that
+<span class="kdmath">$\forall Z \in (\mathcal F \otimes \mathcal G)(Z \ne \phi)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln21</strong></p>
 
-<p><script type="math/tex">\mathcal F \otimes \mathcal F = \{ R^- \times R^-, R^- \times R^+, R^- \times 0, R^+ \times R^-, R^+ \times R^+, R^+ \times 0, 0 \times R^-, 0 \times R^+, \{ 0 \times 0 \} \}</script>.</p>
+<p><span class="kdmath">$\mathcal F \otimes \mathcal F = \{ R^- \times R^-, R^- \times R^+, R^- \times 0, R^+ \times R^-, R^+ \times R^+, R^+ \times 0, 0 \times R^-, 0 \times R^+, \{ 0 \times 0 \} \}$</span>.</p>
 
-<p><script type="math/tex">R^- \times R^-</script>: Bottom left quadrant.   <br />
-<script type="math/tex">R^- \times R^+</script>: Top Right quadrant.   <br />
-<script type="math/tex">R^- \times 0</script>: Negative <script type="math/tex">x</script> axis  <br />
-<script type="math/tex">R^+ \times R^-</script>: Bottom left quadrant.    <br />
-<script type="math/tex">R^+ \times R^+</script>: Top left quadrant.   <br />
-<script type="math/tex">R^+ \times 0</script>: Positive <script type="math/tex">x</script> axis  <br />
-<script type="math/tex">0 \times R^-</script>: Negative <script type="math/tex">y</script> axis  <br />
-<script type="math/tex">0 \times R^+</script>: Positive <script type="math/tex">y</script> axis.  <br />
-<script type="math/tex">0 \times 0</script>: Origin</p>
+<p><span class="kdmath">$R^- \times R^-$</span>: Bottom left quadrant.   <br />
+<span class="kdmath">$R^- \times R^+$</span>: Top Right quadrant.   <br />
+<span class="kdmath">$R^- \times 0$</span>: Negative <span class="kdmath">$x$</span> axis  <br />
+<span class="kdmath">$R^+ \times R^-$</span>: Bottom left quadrant.    <br />
+<span class="kdmath">$R^+ \times R^+$</span>: Top left quadrant.   <br />
+<span class="kdmath">$R^+ \times 0$</span>: Positive <span class="kdmath">$x$</span> axis  <br />
+<span class="kdmath">$0 \times R^-$</span>: Negative <span class="kdmath">$y$</span> axis  <br />
+<span class="kdmath">$0 \times R^+$</span>: Positive <span class="kdmath">$y$</span> axis.  <br />
+<span class="kdmath">$0 \times 0$</span>: Origin</p>
 
 <hr />
 
@@ -1743,45 +1744,45 @@ it follows that <script type="math/tex">X \ne \phi</script>. Similarly since <sc
 
 <p><u>Reflexive</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in A \times B</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script>. Since <script type="math/tex">R</script> is equivalence relation on <script type="math/tex">A</script>, it follows that <script type="math/tex">(x,x) \in R</script>.
-Similarly since <script type="math/tex">S</script> is equivalence relation on <script type="math/tex">B</script>, it follows <script type="math/tex">(y,y) \in S</script>. Thus <script type="math/tex">((x,y),(x,y)) \in T</script> because <script type="math/tex">xRx</script> and <script type="math/tex">yRy</script>.
-Thus <script type="math/tex">T</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in A \times B$</span>. Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span>. Since <span class="kdmath">$R$</span> is equivalence relation on <span class="kdmath">$A$</span>, it follows that <span class="kdmath">$(x,x) \in R$</span>.
+Similarly since <span class="kdmath">$S$</span> is equivalence relation on <span class="kdmath">$B$</span>, it follows <span class="kdmath">$(y,y) \in S$</span>. Thus <span class="kdmath">$((x,y),(x,y)) \in T$</span> because <span class="kdmath">$xRx$</span> and <span class="kdmath">$yRy$</span>.
+Thus <span class="kdmath">$T$</span> is reflexive.</p>
 
 <p><u>Symmetric</u></p>
 
-<p>Suppose <script type="math/tex">((x,y),(x',y')) \in T</script>. Thus <script type="math/tex">xRx'</script> and <script type="math/tex">ySy'</script>. Since <script type="math/tex">R</script> and <script type="math/tex">S</script> are symmetric, it follows that
-<script type="math/tex">x'Rx</script> and <script type="math/tex">y'Ry</script>. Thus <script type="math/tex">((x',y'),(x,y)) \in T</script>. Thus <script type="math/tex">T</script> symmetric.</p>
+<p>Suppose <span class="kdmath">$((x,y),(x',y')) \in T$</span>. Thus <span class="kdmath">$xRx'$</span> and <span class="kdmath">$ySy'$</span>. Since <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are symmetric, it follows that
+<span class="kdmath">$x'Rx$</span> and <span class="kdmath">$y'Ry$</span>. Thus <span class="kdmath">$((x',y'),(x,y)) \in T$</span>. Thus <span class="kdmath">$T$</span> symmetric.</p>
 
 <p><u>Transitive</u></p>
 
-<p>Suppose <script type="math/tex">((x,y),(x',y')) \in T</script> and <script type="math/tex">((x',y'),(x'',y'')) \in T</script>. Thus <script type="math/tex">(x,x') \in R</script>, <script type="math/tex">(x',x'') \in R</script>, <script type="math/tex">(y,y') \in S</script>, <script type="math/tex">(y',y'') \\in S</script>.
-Since <script type="math/tex">(x,x') \in R</script> and <script type="math/tex">(x',x'') \in R</script>, it follows that <script type="math/tex">(x,x'') \in R</script> because <script type="math/tex">R</script> is transitive. Similarly since <script type="math/tex">(y,y') \in S</script> and 
-<script type="math/tex">(y',y'') \in S</script>, it follows that <script type="math/tex">(y,y'') \in S</script> because <script type="math/tex">S</script> is transitive. Thus <script type="math/tex">((x,y),(x'',y'')) \in T</script>. Thus <script type="math/tex">T</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$((x,y),(x',y')) \in T$</span> and <span class="kdmath">$((x',y'),(x'',y'')) \in T$</span>. Thus <span class="kdmath">$(x,x') \in R$</span>, <span class="kdmath">$(x',x'') \in R$</span>, <span class="kdmath">$(y,y') \in S$</span>, <span class="kdmath">$(y',y'') \\in S$</span>.
+Since <span class="kdmath">$(x,x') \in R$</span> and <span class="kdmath">$(x',x'') \in R$</span>, it follows that <span class="kdmath">$(x,x'') \in R$</span> because <span class="kdmath">$R$</span> is transitive. Similarly since <span class="kdmath">$(y,y') \in S$</span> and 
+<span class="kdmath">$(y',y'') \in S$</span>, it follows that <span class="kdmath">$(y,y'') \in S$</span> because <span class="kdmath">$S$</span> is transitive. Thus <span class="kdmath">$((x,y),(x'',y'')) \in T$</span>. Thus <span class="kdmath">$T$</span> is transitive.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">a \in A, b \in B</script>. Suppose <script type="math/tex">(x,y) \in [(a,b)]_T</script>. Thus,</p>
+<p>Suppose <span class="kdmath">$a \in A, b \in B$</span>. Suppose <span class="kdmath">$(x,y) \in [(a,b)]_T$</span>. Thus,</p>
 
-<p><script type="math/tex">(x,y) \in [(a,b)]_T</script>. iff   <br />
-<script type="math/tex">((x,y),(a,b)) \in T</script>. iff   <br />
-<script type="math/tex">xRa \land ySb</script>. iff   <br />
-<script type="math/tex">x \in [a]_R \land y \in [b]_S</script>. iff    <br />
-<script type="math/tex">(x,y) \in [a]_R \times [b]_S</script>.</p>
+<p><span class="kdmath">$(x,y) \in [(a,b)]_T$</span>. iff   <br />
+<span class="kdmath">$((x,y),(a,b)) \in T$</span>. iff   <br />
+<span class="kdmath">$xRa \land ySb$</span>. iff   <br />
+<span class="kdmath">$x \in [a]_R \land y \in [b]_S$</span>. iff    <br />
+<span class="kdmath">$(x,y) \in [a]_R \times [b]_S$</span>.</p>
 
-<p>Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">[(a,b)]_T = [a]_R \times [b]_S</script>.</p>
+<p>Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$[(a,b)]_T = [a]_R \times [b]_S$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">Z \in (A \times B)/T</script>. Thus,</p>
+<p>Suppose <span class="kdmath">$Z \in (A \times B)/T$</span>. Thus,</p>
 
-<p><script type="math/tex">Z \in (A \times B)/T</script>. iff  <br />
-<script type="math/tex">\exists (x,y) \in A \times B (Z = [(x,y)]_T)</script>. iff  <br />
+<p><span class="kdmath">$Z \in (A \times B)/T$</span>. iff  <br />
+<span class="kdmath">$\exists (x,y) \in A \times B (Z = [(x,y)]_T)$</span>. iff  <br />
 Using part(b),  <br />
-<script type="math/tex">\exists (x,y) \in A \times B (Z = ([x]_R \times [y]_S))</script>. iff  <br />
-Since <script type="math/tex">[x]_R \in A/R</script> and <script type="math/tex">[y]_S \in B/R</script> and using the definition of <script type="math/tex">\mathcal F \otimes \mathcal G</script>.   <br />
-<script type="math/tex">Z \in (A/R) \otimes (B/S)</script></p>
+<span class="kdmath">$\exists (x,y) \in A \times B (Z = ([x]_R \times [y]_S))$</span>. iff  <br />
+Since <span class="kdmath">$[x]_R \in A/R$</span> and <span class="kdmath">$[y]_S \in B/R$</span> and using the definition of <span class="kdmath">$\mathcal F \otimes \mathcal G$</span>.   <br />
+<span class="kdmath">$Z \in (A/R) \otimes (B/S)$</span></p>
 
-<p>Since <script type="math/tex">Z</script> is arbitrary, it follows that <script type="math/tex">(A \times B)/T = (A/R) \otimes (B/R)</script>.</p>
+<p>Since <span class="kdmath">$Z$</span> is arbitrary, it follows that <span class="kdmath">$(A \times B)/T = (A/R) \otimes (B/R)$</span>.</p>
 
 <hr />
 
@@ -1791,40 +1792,40 @@ Since <script type="math/tex">[x]_R \in A/R</script> and <script type="math/tex"
 
 <p>For uniqueness proofs, we need to prove two things: Existence and Uniqueness.</p>
 
-<p>We shall prove this using the following strategy: <script type="math/tex">\exists x (P(x) \land \forall y (P(y) \to y = x) )</script>.
-Here <script type="math/tex">P(x)</script> denotes there is a relation <script type="math/tex">T</script> such that <script type="math/tex">[x]_S T [y]_S \leftrightarrow xRy</script>.</p>
+<p>We shall prove this using the following strategy: <span class="kdmath">$\exists x (P(x) \land \forall y (P(y) \to y = x) )$</span>.
+Here <span class="kdmath">$P(x)$</span> denotes there is a relation <span class="kdmath">$T$</span> such that <span class="kdmath">$[x]_S T [y]_S \leftrightarrow xRy$</span>.</p>
 
 <p>To understand what it means by compatible:  <br />
-Suppose <script type="math/tex">x,y,x',y' \in A</script> such that <script type="math/tex">xSx'</script> and <script type="math/tex">ySy'</script>. Then if <script type="math/tex">xRy</script> iff <script type="math/tex">x'Ry'</script>.</p>
+Suppose <span class="kdmath">$x,y,x',y' \in A$</span> such that <span class="kdmath">$xSx'$</span> and <span class="kdmath">$ySy'$</span>. Then if <span class="kdmath">$xRy$</span> iff <span class="kdmath">$x'Ry'$</span>.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">T = \{ (X,Y) \in A/S \times A/S \, \vert \, \exists x \in X \exists y \in Y (xRy) \}</script>.</p>
+<p>Suppose <span class="kdmath">$T = \{ (X,Y) \in A/S \times A/S \, \vert \, \exists x \in X \exists y \in Y (xRy) \}$</span>.</p>
 
-<p>Suppose <script type="math/tex">R</script> is compatible with <script type="math/tex">S</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$S$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">[x]_S T [y]_S</script>. Thus by our definition of <script type="math/tex">T</script>, <script type="math/tex">\exists x' \in [x]_S \land y' \in [y]_S (x'Ry')</script>. Thus <script type="math/tex">x'Sx \land y'Sy</script> and <script type="math/tex">xRy</script>. 
-Because <script type="math/tex">R</script> is compatible with <script type="math/tex">S</script> and <script type="math/tex">x'Rx and y'Ry</script> and <script type="math/tex">x'Ry'</script>, it follows that <script type="math/tex">xRy</script>. Thus <script type="math/tex">([x]_S T [y]_S) \to xRy</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$[x]_S T [y]_S$</span>. Thus by our definition of <span class="kdmath">$T$</span>, <span class="kdmath">$\exists x' \in [x]_S \land y' \in [y]_S (x'Ry')$</span>. Thus <span class="kdmath">$x'Sx \land y'Sy$</span> and <span class="kdmath">$xRy$</span>. 
+Because <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$S$</span> and <span class="kdmath">$x'Rx and y'Ry$</span> and <span class="kdmath">$x'Ry'$</span>, it follows that <span class="kdmath">$xRy$</span>. Thus <span class="kdmath">$([x]_S T [y]_S) \to xRy$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x,y \in A</script> such that <script type="math/tex">xRy</script>. Since <script type="math/tex">S</script> is an equivalence relation, we have <script type="math/tex">x \in [x]_S, y \in [y]_S</script>. Thus
-<script type="math/tex">\exists x \in [x]_S \exists y \in [y]_S (xRy)</script>. Thus we can also say <script type="math/tex">[x]_S T [y]_S</script>. Thus <script type="math/tex">xRy \to ([x]_S T [y]_S)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x,y \in A$</span> such that <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$S$</span> is an equivalence relation, we have <span class="kdmath">$x \in [x]_S, y \in [y]_S$</span>. Thus
+<span class="kdmath">$\exists x \in [x]_S \exists y \in [y]_S (xRy)$</span>. Thus we can also say <span class="kdmath">$[x]_S T [y]_S$</span>. Thus <span class="kdmath">$xRy \to ([x]_S T [y]_S)$</span>.</p>
 
-<p>Thus from both directions we have: <script type="math/tex">([x]_S T [y]_S) \leftrightarrow xRy</script>.</p>
+<p>Thus from both directions we have: <span class="kdmath">$([x]_S T [y]_S) \leftrightarrow xRy$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose that there is some relation <script type="math/tex">T'</script> such that <script type="math/tex">[x]_S T' [y]_S \to xRy</script>. Now we will prove that <script type="math/tex">T' = T</script> for proving uniqueness. Suppose <script type="math/tex">x,y \in A</script>
-such that <script type="math/tex">[x]_S T' [y]_S</script> is true. It follows that <script type="math/tex">xRy</script> must be true. Since <script type="math/tex">x \in A</script> and <script type="math/tex">y \in A</script> and <script type="math/tex">S</script> is a equivalence relation, it follows that
-<script type="math/tex">[x]_S \in A/S</script> and <script type="math/tex">[y]_S \in A/S</script>. Also we know that <script type="math/tex">x \in [x]_S</script> and <script type="math/tex">y \in [y]_S</script>. Since <script type="math/tex">xRy</script>, thus there atleast exist an element in <script type="math/tex">[x]_S</script>
-and there exist atleast an element in <script type="math/tex">[y]_S</script> such that <script type="math/tex">xRy</script>. Thus we can also say, <script type="math/tex">\exists x' \in [x]_S \exists y' \in [y]_S (x' R y')</script>. But this is
- same as relation <script type="math/tex">T</script>. Thus <script type="math/tex">T' = T</script>.</p>
+<p>Suppose that there is some relation <span class="kdmath">$T'$</span> such that <span class="kdmath">$[x]_S T' [y]_S \to xRy$</span>. Now we will prove that <span class="kdmath">$T' = T$</span> for proving uniqueness. Suppose <span class="kdmath">$x,y \in A$</span>
+such that <span class="kdmath">$[x]_S T' [y]_S$</span> is true. It follows that <span class="kdmath">$xRy$</span> must be true. Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in A$</span> and <span class="kdmath">$S$</span> is a equivalence relation, it follows that
+<span class="kdmath">$[x]_S \in A/S$</span> and <span class="kdmath">$[y]_S \in A/S$</span>. Also we know that <span class="kdmath">$x \in [x]_S$</span> and <span class="kdmath">$y \in [y]_S$</span>. Since <span class="kdmath">$xRy$</span>, thus there atleast exist an element in <span class="kdmath">$[x]_S$</span>
+and there exist atleast an element in <span class="kdmath">$[y]_S$</span> such that <span class="kdmath">$xRy$</span>. Thus we can also say, <span class="kdmath">$\exists x' \in [x]_S \exists y' \in [y]_S (x' R y')$</span>. But this is
+ same as relation <span class="kdmath">$T$</span>. Thus <span class="kdmath">$T' = T$</span>.</p>
 
 <p>Note: Not sure about the correctness of this proof.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x,y,x',y' \in A</script> such that <script type="math/tex">xSx'</script> and <script type="math/tex">ySy'</script>. Thus <script type="math/tex">xRy</script> iff <script type="math/tex">[x]_S T [y]_S</script>. Since <script type="math/tex">S</script> is equivalence relation, <script type="math/tex">[x]_S =[x′]_S</script>. Also <script type="math/tex">[y]_S = [y′]_S</script>. Thus
-<script type="math/tex">xRy</script> iff <script type="math/tex">[x′]_S T [y′]_S</script>. But <script type="math/tex">[x′]_S T [y′]_S</script>,  iff <script type="math/tex">x′Ry′</script>. Thus <script type="math/tex">xRy</script> iff <script type="math/tex">x'Ry'</script>.</p>
+<p>Suppose <span class="kdmath">$x,y,x',y' \in A$</span> such that <span class="kdmath">$xSx'$</span> and <span class="kdmath">$ySy'$</span>. Thus <span class="kdmath">$xRy$</span> iff <span class="kdmath">$[x]_S T [y]_S$</span>. Since <span class="kdmath">$S$</span> is equivalence relation, <span class="kdmath">$[x]_S =[x′]_S$</span>. Also <span class="kdmath">$[y]_S = [y′]_S$</span>. Thus
+<span class="kdmath">$xRy$</span> iff <span class="kdmath">$[x′]_S T [y′]_S$</span>. But <span class="kdmath">$[x′]_S T [y′]_S$</span>,  iff <span class="kdmath">$x′Ry′$</span>. Thus <span class="kdmath">$xRy$</span> iff <span class="kdmath">$x'Ry'$</span>.</p>
 
 <hr />
 
@@ -1834,60 +1835,60 @@ and there exist atleast an element in <script type="math/tex">[y]_S</script> suc
 
 <p><u>Reflexive</u></p>
 
-<p>Suppose <script type="math/tex">x</script> in <script type="math/tex">A</script>. Since <script type="math/tex">R</script> is reflexive, <script type="math/tex">(x,x) \in R</script>. Thus <script type="math/tex">(x,x) \in R^{-1}</script>. Thus <script type="math/tex">(x,x) \in R \cap R^{-1}</script>. Thus <script type="math/tex">R \cap R^{-1}</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x$</span> in <span class="kdmath">$A$</span>. Since <span class="kdmath">$R$</span> is reflexive, <span class="kdmath">$(x,x) \in R$</span>. Thus <span class="kdmath">$(x,x) \in R^{-1}$</span>. Thus <span class="kdmath">$(x,x) \in R \cap R^{-1}$</span>. Thus <span class="kdmath">$R \cap R^{-1}$</span> is reflexive.</p>
 
 <p><u>Symmetric</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R \cap R^{-1}</script>. Thus <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(x,y) \in R^{-1}</script>. Since <script type="math/tex">R</script> and <script type="math/tex">R^{-1}</script> are inverse of each other, and <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(x,y) \in R^{-1}</script>,
- it follows that <script type="math/tex">(y,x) \in R^{-1}</script> and <script type="math/tex">(y,x) \in R</script>. Thus <script type="math/tex">(y,x) \in R^{-1} \cap R</script>, or <script type="math/tex">(y,x) \in R \cap R{-1}</script>. Thus <script type="math/tex">R \cap R{-1}</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R \cap R^{-1}$</span>. Thus <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(x,y) \in R^{-1}$</span>. Since <span class="kdmath">$R$</span> and <span class="kdmath">$R^{-1}$</span> are inverse of each other, and <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(x,y) \in R^{-1}$</span>,
+ it follows that <span class="kdmath">$(y,x) \in R^{-1}$</span> and <span class="kdmath">$(y,x) \in R$</span>. Thus <span class="kdmath">$(y,x) \in R^{-1} \cap R$</span>, or <span class="kdmath">$(y,x) \in R \cap R{-1}$</span>. Thus <span class="kdmath">$R \cap R{-1}$</span> is symmetric.</p>
 
 <hr />
 
 <p><u>Transitive</u></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R \cap R{-1} \land (y,z) \in R^{-1} \cap R</script>. Thus  <script type="math/tex">(x,y)</script> in <script type="math/tex">R^{-1} \land (y,z) \in R^{-1}</script> and <script type="math/tex">(x,y)</script> in <script type="math/tex">R \land (y,z) \in R</script>. Since <script type="math/tex">R</script> is transitive, 
-it follows <script type="math/tex">(x,z)</script> in <script type="math/tex">R</script>. Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">R^{-1}</script> is also transitive, Thus since <script type="math/tex">(x,y)</script> in <script type="math/tex">R^{-1} \land (y,z) \in R^{-1}</script>, it follows <script type="math/tex">(x,z) \in R^{-1}</script>.
-Thus <script type="math/tex">(x,z) \in R \cap R^{-1}</script>. Thus <script type="math/tex">R \cap R^{-1}</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R \cap R{-1} \land (y,z) \in R^{-1} \cap R$</span>. Thus  <span class="kdmath">$(x,y)$</span> in <span class="kdmath">$R^{-1} \land (y,z) \in R^{-1}$</span> and <span class="kdmath">$(x,y)$</span> in <span class="kdmath">$R \land (y,z) \in R$</span>. Since <span class="kdmath">$R$</span> is transitive, 
+it follows <span class="kdmath">$(x,z)$</span> in <span class="kdmath">$R$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$R^{-1}$</span> is also transitive, Thus since <span class="kdmath">$(x,y)$</span> in <span class="kdmath">$R^{-1} \land (y,z) \in R^{-1}$</span>, it follows <span class="kdmath">$(x,z) \in R^{-1}$</span>.
+Thus <span class="kdmath">$(x,z) \in R \cap R^{-1}$</span>. Thus <span class="kdmath">$R \cap R^{-1}$</span> is transitive.</p>
 
-<p>Since <script type="math/tex">R \cap R^{-1}</script> is reflexive, symmetric and transitive, it follows that <script type="math/tex">R \cap R^{-1}</script> is an equivalence relation.</p>
+<p>Since <span class="kdmath">$R \cap R^{-1}$</span> is reflexive, symmetric and transitive, it follows that <span class="kdmath">$R \cap R^{-1}$</span> is an equivalence relation.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>From Soln23(a), we know that if <script type="math/tex">R</script> is compatible with <script type="math/tex">S</script>, then there exist a unique relation <script type="math/tex">T</script>  such that <script type="math/tex">[x]_S T [y]_S</script>. Thus if we 
-prove that <script type="math/tex">R</script> is compatible with <script type="math/tex">S</script>, then such relation exist can be followed from Soln23(a).</p>
+<p>From Soln23(a), we know that if <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$S$</span>, then there exist a unique relation <span class="kdmath">$T$</span>  such that <span class="kdmath">$[x]_S T [y]_S$</span>. Thus if we 
+prove that <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$S$</span>, then such relation exist can be followed from Soln23(a).</p>
 
-<p>Suppose <script type="math/tex">x,y,x',y' \in A</script> such that <script type="math/tex">xSx'</script> and <script type="math/tex">ySy'</script>.</p>
+<p>Suppose <span class="kdmath">$x,y,x',y' \in A$</span> such that <span class="kdmath">$xSx'$</span> and <span class="kdmath">$ySy'$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">xSx'</script>, it follows <script type="math/tex">x'Sx</script>. Since <script type="math/tex">S = R \cap R^{-1}</script>, it follows that <script type="math/tex">(x',x) \in R</script>.
-Since <script type="math/tex">(x',x) \in R</script> \land <script type="math/tex">(x,y) \in R</script>, and <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">(x',y) \in R</script>. Since <script type="math/tex">ySy'</script>, it follows <script type="math/tex">(y,y') \in R</script>.
-Since <script type="math/tex">R</script> is transitive, it follows <script type="math/tex">(x',y') \in R</script>. Thus <script type="math/tex">xRy \to x'Ry'</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$xSx'$</span>, it follows <span class="kdmath">$x'Sx$</span>. Since <span class="kdmath">$S = R \cap R^{-1}$</span>, it follows that <span class="kdmath">$(x',x) \in R$</span>.
+Since <span class="kdmath">$(x',x) \in R$</span> \land <span class="kdmath">$(x,y) \in R$</span>, and <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$(x',y) \in R$</span>. Since <span class="kdmath">$ySy'$</span>, it follows <span class="kdmath">$(y,y') \in R$</span>.
+Since <span class="kdmath">$R$</span> is transitive, it follows <span class="kdmath">$(x',y') \in R$</span>. Thus <span class="kdmath">$xRy \to x'Ry'$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">(x',y') \in R</script>. Then it can be proved similarly that <script type="math/tex">x'Ry' \to xRy</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$(x',y') \in R$</span>. Then it can be proved similarly that <span class="kdmath">$x'Ry' \to xRy$</span>.</p>
 
-<p>Thus from both direction we have <script type="math/tex">xRy \leftrightarrow x'Ry'</script>. Thus we can conclude that if <script type="math/tex">xSx' \land ySy'</script>, then <script type="math/tex">xRy \leftrightarrow x'Ry'</script>.
- Thus <script type="math/tex">R</script> is compatible with <script type="math/tex">S</script>.</p>
+<p>Thus from both direction we have <span class="kdmath">$xRy \leftrightarrow x'Ry'$</span>. Thus we can conclude that if <span class="kdmath">$xSx' \land ySy'$</span>, then <span class="kdmath">$xRy \leftrightarrow x'Ry'$</span>.
+ Thus <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$S$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>To prove <script type="math/tex">T</script> partial order on <script type="math/tex">A/S</script>, we need to prove that <script type="math/tex">T</script> is reflexive, transitive and antisymmetric.</p>
+<p>To prove <span class="kdmath">$T$</span> partial order on <span class="kdmath">$A/S$</span>, we need to prove that <span class="kdmath">$T$</span> is reflexive, transitive and antisymmetric.</p>
 
 <p><u>Reflexive:/u&gt;</u></p>
 
-<p>Suppose <script type="math/tex">X \in A/S</script>. Since <script type="math/tex">S</script> is equivalence relation, <script type="math/tex">X \ne \phi</script>. Suppose <script type="math/tex">x \in X</script>. Thus <script type="math/tex">x = [x]_S</script>. Since <script type="math/tex">R</script> is reflexive,
-it follows <script type="math/tex">xRx</script>. Thus <script type="math/tex">[x]_S T [x]_S</script>. Thus <script type="math/tex">X</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$X \in A/S$</span>. Since <span class="kdmath">$S$</span> is equivalence relation, <span class="kdmath">$X \ne \phi$</span>. Suppose <span class="kdmath">$x \in X$</span>. Thus <span class="kdmath">$x = [x]_S$</span>. Since <span class="kdmath">$R$</span> is reflexive,
+it follows <span class="kdmath">$xRx$</span>. Thus <span class="kdmath">$[x]_S T [x]_S$</span>. Thus <span class="kdmath">$X$</span> is reflexive.</p>
 
 <p><u>Transitive</u></p>
 
-<p>Suppose <script type="math/tex">X,Y,Z \in A/S</script> such that <script type="math/tex">XTY \land YTZ</script>. Suppose <script type="math/tex">x \in X, y \in Y, z \in Z</script>. Thus <script type="math/tex">X = [x]_S, Y = [y]_S, Z = [z]_S</script>. Since <script type="math/tex">[x]_S T [y]_S</script>,
-it follows <script type="math/tex">xRy</script>. Similarly since <script type="math/tex">[y]_S T [z]_S</script> it follows <script type="math/tex">yRz</script>. Since <script type="math/tex">R</script> is transitive, it follows <script type="math/tex">xRz</script>. Since <script type="math/tex">xRz</script> it follows <script type="math/tex">[x]_S T [z]_S</script>.
- Thus <script type="math/tex">XTZ</script>. Thus <script type="math/tex">T</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$X,Y,Z \in A/S$</span> such that <span class="kdmath">$XTY \land YTZ$</span>. Suppose <span class="kdmath">$x \in X, y \in Y, z \in Z$</span>. Thus <span class="kdmath">$X = [x]_S, Y = [y]_S, Z = [z]_S$</span>. Since <span class="kdmath">$[x]_S T [y]_S$</span>,
+it follows <span class="kdmath">$xRy$</span>. Similarly since <span class="kdmath">$[y]_S T [z]_S$</span> it follows <span class="kdmath">$yRz$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows <span class="kdmath">$xRz$</span>. Since <span class="kdmath">$xRz$</span> it follows <span class="kdmath">$[x]_S T [z]_S$</span>.
+ Thus <span class="kdmath">$XTZ$</span>. Thus <span class="kdmath">$T$</span> is transitive.</p>
 
 <p><u>Antisymmetric</u></p>
 
-<p>Suppose <script type="math/tex">X,Y \in A/S</script> such that <script type="math/tex">XTY \land YTX</script>. Suppose <script type="math/tex">x \in X \land y \in Y</script>. Thus <script type="math/tex">x \in [x]_S</script> and <script type="math/tex">y \in [y]_S</script>. Since <script type="math/tex">[x]_S T [y]_S</script>,
-  it follows <script type="math/tex">xRy</script>. Similarly since <script type="math/tex">[y]_S T [x]_S</script>, it follows <script type="math/tex">yRx</script>. Since <script type="math/tex">yRx</script>, it follows that <script type="math/tex">xR^{-1}y</script>. Thus we have <script type="math/tex">(x,y) \in R</script> and
-  <script type="math/tex">(x,y) \in R^{-1}</script>. Thus <script type="math/tex">(x,y) \in R \cap R^{-1}</script>. Thus <script type="math/tex">(x,y) \in S</script>. Since <script type="math/tex">S</script> is an equivalence relation, it follows that <script type="math/tex">[x]_S = [y]_S</script>. 
-  Thus <script type="math/tex">X = Y</script>. Thus <script type="math/tex">T</script> is antisymmetric.</p>
+<p>Suppose <span class="kdmath">$X,Y \in A/S$</span> such that <span class="kdmath">$XTY \land YTX$</span>. Suppose <span class="kdmath">$x \in X \land y \in Y$</span>. Thus <span class="kdmath">$x \in [x]_S$</span> and <span class="kdmath">$y \in [y]_S$</span>. Since <span class="kdmath">$[x]_S T [y]_S$</span>,
+  it follows <span class="kdmath">$xRy$</span>. Similarly since <span class="kdmath">$[y]_S T [x]_S$</span>, it follows <span class="kdmath">$yRx$</span>. Since <span class="kdmath">$yRx$</span>, it follows that <span class="kdmath">$xR^{-1}y$</span>. Thus we have <span class="kdmath">$(x,y) \in R$</span> and
+  <span class="kdmath">$(x,y) \in R^{-1}$</span>. Thus <span class="kdmath">$(x,y) \in R \cap R^{-1}$</span>. Thus <span class="kdmath">$(x,y) \in S$</span>. Since <span class="kdmath">$S$</span> is an equivalence relation, it follows that <span class="kdmath">$[x]_S = [y]_S$</span>. 
+  Thus <span class="kdmath">$X = Y$</span>. Thus <span class="kdmath">$T$</span> is antisymmetric.</p>
 
 <hr />
 
@@ -1895,31 +1896,31 @@ it follows <script type="math/tex">xRy</script>. Similarly since <script type="m
 
 <p><strong>(a)</strong></p>
 
-<p>To prove that <script type="math/tex">R</script> is preorder we need to prove that <script type="math/tex">R</script> is reflexive and transitive.</p>
+<p>To prove that <span class="kdmath">$R$</span> is preorder we need to prove that <span class="kdmath">$R$</span> is reflexive and transitive.</p>
 
-<p>Suppose <script type="math/tex">X \in A</script>. Thus <script type="math/tex">(X,X) \in R</script> since <script type="math/tex">X</script> has atleast as many elements as <script type="math/tex">X</script>. Thus <script type="math/tex">R</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$X \in A$</span>. Thus <span class="kdmath">$(X,X) \in R$</span> since <span class="kdmath">$X$</span> has atleast as many elements as <span class="kdmath">$X$</span>. Thus <span class="kdmath">$R$</span> is reflexive.</p>
 
-<p>Suppose <script type="math/tex">X,Y,Z \in A</script> such that <script type="math/tex">(X,Y) \in A \land (Y,Z) \in A</script>. Thus <script type="math/tex">Y</script> has atleast as many elements as <script type="math/tex">X</script>. Also <script type="math/tex">Z</script> has atleast as many elements as <script type="math/tex">Y</script>.
- Thus <script type="math/tex">Z</script> has atleast as many elements as <script type="math/tex">X</script>. Thus <script type="math/tex">(X,Z) \in R</script>. Thus <script type="math/tex">R</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$X,Y,Z \in A$</span> such that <span class="kdmath">$(X,Y) \in A \land (Y,Z) \in A$</span>. Thus <span class="kdmath">$Y$</span> has atleast as many elements as <span class="kdmath">$X$</span>. Also <span class="kdmath">$Z$</span> has atleast as many elements as <span class="kdmath">$Y$</span>.
+ Thus <span class="kdmath">$Z$</span> has atleast as many elements as <span class="kdmath">$X$</span>. Thus <span class="kdmath">$(X,Z) \in R$</span>. Thus <span class="kdmath">$R$</span> is transitive.</p>
 
-<p>Since <script type="math/tex">R</script> is reflexive and transitive, it follows that <script type="math/tex">R</script> is preorder.</p>
+<p>Since <span class="kdmath">$R$</span> is reflexive and transitive, it follows that <span class="kdmath">$R$</span> is preorder.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Since <script type="math/tex">S = R \cap R^{-1}</script>, it follows that <script type="math/tex">S = \{ (X,Y) \in A \times A \, \vert \, X and Y contains same number of elements. \}</script>.</p>
+<p>Since <span class="kdmath">$S = R \cap R^{-1}$</span>, it follows that <span class="kdmath">$S = \{ (X,Y) \in A \times A \, \vert \, X and Y contains same number of elements. \}$</span>.</p>
 
-<p>Since <script type="math/tex">S</script> is an equivalence relation as prove in Soln24, <script type="math/tex">A\S</script> is a partition of <script type="math/tex">A</script> on <script type="math/tex">S</script> with every parition containing equal number of elements.
-Also since <script type="math/tex">S</script> creates a partioton on <script type="math/tex">A</script>, no set in the partition is empty. Thus we will have many paritions with each partition containing sets with equal number
+<p>Since <span class="kdmath">$S$</span> is an equivalence relation as prove in Soln24, <span class="kdmath">$A\S$</span> is a partition of <span class="kdmath">$A$</span> on <span class="kdmath">$S$</span> with every parition containing equal number of elements.
+Also since <span class="kdmath">$S$</span> creates a partioton on <span class="kdmath">$A$</span>, no set in the partition is empty. Thus we will have many paritions with each partition containing sets with equal number
 of elements.</p>
 
-<p>Now consider <script type="math/tex">T</script>, which is a partial order on <script type="math/tex">A/S</script>. Suppose <script type="math/tex">[X]_S T [Y]_S</script>. It follows that <script type="math/tex">XRY</script>. Thus <script type="math/tex">Y</script> contains atleast as many elements as <script type="math/tex">X</script>.
- Also since all elements of <script type="math/tex">[X]_S</script> have same number of elements, it follows that all the elements of <script type="math/tex">[Y]_S</script> will have atleast same number of elements as all elements of <script type="math/tex">[X]_S</script>.
+<p>Now consider <span class="kdmath">$T$</span>, which is a partial order on <span class="kdmath">$A/S$</span>. Suppose <span class="kdmath">$[X]_S T [Y]_S$</span>. It follows that <span class="kdmath">$XRY$</span>. Thus <span class="kdmath">$Y$</span> contains atleast as many elements as <span class="kdmath">$X$</span>.
+ Also since all elements of <span class="kdmath">$[X]_S$</span> have same number of elements, it follows that all the elements of <span class="kdmath">$[Y]_S$</span> will have atleast same number of elements as all elements of <span class="kdmath">$[X]_S$</span>.
 Thus partial order is giving a order to these sets, with initially only those sets having one element followed by the set having two, … and so on.</p>
 
-<p>Suppose <script type="math/tex">X,Y \in A</script>. Then either <script type="math/tex">(X,Y) \in R</script> or <script type="math/tex">(Y,X) \in R</script>. Thus either <script type="math/tex">[X]_S T [Y]_S</script> or <script type="math/tex">[Y]_S T [X]_S</script>. Thus <script type="math/tex">T</script> is a total order.</p>
+<p>Suppose <span class="kdmath">$X,Y \in A$</span>. Then either <span class="kdmath">$(X,Y) \in R$</span> or <span class="kdmath">$(Y,X) \in R$</span>. Thus either <span class="kdmath">$[X]_S T [Y]_S$</span> or <span class="kdmath">$[Y]_S T [X]_S$</span>. Thus <span class="kdmath">$T$</span> is a total order.</p>
 
-<p><script type="math/tex">A/S</script> contains the maximum number of elements that <script type="math/tex">A</script> can have. I am not sure about the number. As I am not sure of the notation <script type="math/tex">A = \mathcal P(I)</script>. It seems like
-<script type="math/tex">A</script> may contain maximum 100 elements. but need to confirm this.</p>
+<p><span class="kdmath">$A/S$</span> contains the maximum number of elements that <span class="kdmath">$A$</span> can have. I am not sure about the number. As I am not sure of the notation <span class="kdmath">$A = \mathcal P(I)$</span>. It seems like
+<span class="kdmath">$A$</span> may contain maximum 100 elements. but need to confirm this.</p>
 
 <hr />
 
@@ -1929,43 +1930,43 @@ Thus partial order is giving a order to these sets, with initially only those se
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">\mathcal F \in P</script>. Suppose <script type="math/tex">X \in \mathcal F</script>. Thus <script type="math/tex">X \subseteq X</script>. Thus <script type="math/tex">(\mathcal F, \mathcal F) \in R</script>. Thus <script type="math/tex">R</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$\mathcal F \in P$</span>. Suppose <span class="kdmath">$X \in \mathcal F$</span>. Thus <span class="kdmath">$X \subseteq X$</span>. Thus <span class="kdmath">$(\mathcal F, \mathcal F) \in R$</span>. Thus <span class="kdmath">$R$</span> is reflexive.</p>
 
 <p><u>Transitive:</u></p>
 
-<p>Suppose <script type="math/tex">\mathcal F, \mathcal G, \mathcal H \in P</script> such that <script type="math/tex">(\mathcal F, \mathcal G) \in R</script> and <script type="math/tex">(\mathcal G, \mathcal H) \in R</script>. Thus for every set <script type="math/tex">X \in \mathcal F</script>, there exist a 
- set <script type="math/tex">Y \in \mathcal G</script> such that <script type="math/tex">X \subseteq Y</script>. Similarly for every set <script type="math/tex">S \in \mathcal G</script>, there exist a set <script type="math/tex">T \in \mathcal H</script>, such that <script type="math/tex">S \subseteq T</script>.
-  Thus clearly it follows that for every set <script type="math/tex">X \in \mathcal F</script> there exist a set <script type="math/tex">Y \in \mathcal H</script>, such that <script type="math/tex">X \subseteq Y</script>. Thus <script type="math/tex">(\mathcal F, \mathcal H) \in R</script>.
-  Thus <script type="math/tex">R</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$\mathcal F, \mathcal G, \mathcal H \in P$</span> such that <span class="kdmath">$(\mathcal F, \mathcal G) \in R$</span> and <span class="kdmath">$(\mathcal G, \mathcal H) \in R$</span>. Thus for every set <span class="kdmath">$X \in \mathcal F$</span>, there exist a 
+ set <span class="kdmath">$Y \in \mathcal G$</span> such that <span class="kdmath">$X \subseteq Y$</span>. Similarly for every set <span class="kdmath">$S \in \mathcal G$</span>, there exist a set <span class="kdmath">$T \in \mathcal H$</span>, such that <span class="kdmath">$S \subseteq T$</span>.
+  Thus clearly it follows that for every set <span class="kdmath">$X \in \mathcal F$</span> there exist a set <span class="kdmath">$Y \in \mathcal H$</span>, such that <span class="kdmath">$X \subseteq Y$</span>. Thus <span class="kdmath">$(\mathcal F, \mathcal H) \in R$</span>.
+  Thus <span class="kdmath">$R$</span> is transitive.</p>
 
 <p><u>Antisymmetric:</u></p>
 
-<p>Suppose <script type="math/tex">\mathcal F, \mathcal G \in P</script> such that <script type="math/tex">(\mathcal F, \mathcal G) \in R</script> and <script type="math/tex">(\mathcal G, \mathcal F) \in R</script>. Thus <script type="math/tex">\forall X \in \mathcal F \forall Y \in \mathcal G(X \subseteq Y)</script> and <script type="math/tex">\forall X \in \mathcal G \forall Y \in \mathcal F(X \subseteq Y)</script>.
-This is possible only if <script type="math/tex">\mathcal F = \mathcal G</script>. Thus <script type="math/tex">R</script> is antisymmetric.</p>
+<p>Suppose <span class="kdmath">$\mathcal F, \mathcal G \in P$</span> such that <span class="kdmath">$(\mathcal F, \mathcal G) \in R$</span> and <span class="kdmath">$(\mathcal G, \mathcal F) \in R$</span>. Thus <span class="kdmath">$\forall X \in \mathcal F \forall Y \in \mathcal G(X \subseteq Y)$</span> and <span class="kdmath">$\forall X \in \mathcal G \forall Y \in \mathcal F(X \subseteq Y)$</span>.
+This is possible only if <span class="kdmath">$\mathcal F = \mathcal G$</span>. Thus <span class="kdmath">$R$</span> is antisymmetric.</p>
 
-<p>Since <script type="math/tex">R</script> is reflexive, transitive and antisymmetric, it follows that <script type="math/tex">R</script> is partial order.</p>
+<p>Since <span class="kdmath">$R$</span> is reflexive, transitive and antisymmetric, it follows that <span class="kdmath">$R$</span> is partial order.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">S \subseteq T</script>. Suppose <script type="math/tex">x \in A</script>. Thus <script type="math/tex">[x]_S \in \mathcal F</script> and <script type="math/tex">[x]_T \in \mathcal G</script>. Suppose <script type="math/tex">y \in [x]_S</script>. Thus <script type="math/tex">(y,x) \in S</script>.
- Since <script type="math/tex">S \subseteq T</script>, it follows <script type="math/tex">(y,x) \in T</script>. Thus <script type="math/tex">(y,x) \in [x]_T</script>. Since <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">[x]_S \subseteq [y]_T</script>.
- Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\forall X \in \mathcal F \forall Y \in \mathcal G(X \subseteq Y)</script>. Thus <script type="math/tex">\mathcal F</script> refines <script type="math/tex">\mathcal G</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$S \subseteq T$</span>. Suppose <span class="kdmath">$x \in A$</span>. Thus <span class="kdmath">$[x]_S \in \mathcal F$</span> and <span class="kdmath">$[x]_T \in \mathcal G$</span>. Suppose <span class="kdmath">$y \in [x]_S$</span>. Thus <span class="kdmath">$(y,x) \in S$</span>.
+ Since <span class="kdmath">$S \subseteq T$</span>, it follows <span class="kdmath">$(y,x) \in T$</span>. Thus <span class="kdmath">$(y,x) \in [x]_T$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$[x]_S \subseteq [y]_T$</span>.
+ Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$\forall X \in \mathcal F \forall Y \in \mathcal G(X \subseteq Y)$</span>. Thus <span class="kdmath">$\mathcal F$</span> refines <span class="kdmath">$\mathcal G$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">\mathcal F</script> refine <script type="math/tex">\mathcal G</script>. Suppose <script type="math/tex">X \in \mathcal F</script> is an arbitrary partition in <script type="math/tex">\mathcal F</script>. Since <script type="math/tex">\mathcal F</script> refines <script type="math/tex">\mathcal G</script>, suppose <script type="math/tex">Y \in \mathcal G</script>,
-such that <script type="math/tex">X \subseteq Y</script>. Suppose <script type="math/tex">y \in Y</script>. Thus <script type="math/tex">Y = [y]_T</script>. Since <script type="math/tex">X \subseteq Y</script>, <script type="math/tex">y \in X</script>. Thus <script type="math/tex">X = [y]_S</script>. Suppose <script type="math/tex">x \in [y]_T</script>. Thus
- <script type="math/tex">(x,y) \in T</script>. Since <script type="math/tex">x \in Y</script>, it follows <script type="math/tex">x \in X</script>. Thus <script type="math/tex">(x,y) \in S</script>. Thus if <script type="math/tex">(x,y) \in T</script> then <script type="math/tex">(x,y) \in S</script>. Thus <script type="math/tex">S \subseteq T</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$\mathcal F$</span> refine <span class="kdmath">$\mathcal G$</span>. Suppose <span class="kdmath">$X \in \mathcal F$</span> is an arbitrary partition in <span class="kdmath">$\mathcal F$</span>. Since <span class="kdmath">$\mathcal F$</span> refines <span class="kdmath">$\mathcal G$</span>, suppose <span class="kdmath">$Y \in \mathcal G$</span>,
+such that <span class="kdmath">$X \subseteq Y$</span>. Suppose <span class="kdmath">$y \in Y$</span>. Thus <span class="kdmath">$Y = [y]_T$</span>. Since <span class="kdmath">$X \subseteq Y$</span>, <span class="kdmath">$y \in X$</span>. Thus <span class="kdmath">$X = [y]_S$</span>. Suppose <span class="kdmath">$x \in [y]_T$</span>. Thus
+ <span class="kdmath">$(x,y) \in T$</span>. Since <span class="kdmath">$x \in Y$</span>, it follows <span class="kdmath">$x \in X$</span>. Thus <span class="kdmath">$(x,y) \in S$</span>. Thus if <span class="kdmath">$(x,y) \in T$</span> then <span class="kdmath">$(x,y) \in S$</span>. Thus <span class="kdmath">$S \subseteq T$</span>.</p>
 
-<p>Thus from both directions, we have <script type="math/tex">S \subseteq T</script>, iff <script type="math/tex">\mathcal F</script> refines <script type="math/tex">\mathcal G</script>.</p>
+<p>Thus from both directions, we have <span class="kdmath">$S \subseteq T$</span>, iff <span class="kdmath">$\mathcal F$</span> refines <span class="kdmath">$\mathcal G$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>To prove that <script type="math/tex">\mathcal F \cdot \mathcal G</script> is the greatest lower bound of the set <script type="math/tex">\{ \mathcal F, \mathcal G \}</script>, if we prove that <script type="math/tex">\mathcal F \cdot \mathcal G</script> is
- the <script type="math/tex">R</script>-smallest element in the set <script type="math/tex">\{ \mathcal F, \mathcal G \}</script>, then it will also be the greatest lower bound.</p>
+<p>To prove that <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> is the greatest lower bound of the set <span class="kdmath">$\{ \mathcal F, \mathcal G \}$</span>, if we prove that <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> is
+ the <span class="kdmath">$R$</span>-smallest element in the set <span class="kdmath">$\{ \mathcal F, \mathcal G \}$</span>, then it will also be the greatest lower bound.</p>
 
-<p>Suppose <script type="math/tex">Z \in  \mathcal F \cdot \mathcal G</script>. Thus there exist a set <script type="math/tex">X \in \mathcal F</script> and <script type="math/tex">Y \in \mathcal G</script> such that <script type="math/tex">Z = X \cap Y</script>.
- Thus <script type="math/tex">Z \subseteq X</script> and <script type="math/tex">Z \subseteq Y</script>. Thus <script type="math/tex">\mathcal F \cdot \mathcal G</script> refines <script type="math/tex">\mathcal F</script> as well as <script type="math/tex">\mathcal F \cdot \mathcal G</script> refines <script type="math/tex">\mathcal G</script>.
- Thus <script type="math/tex">( \mathcal F \cdot \mathcal G, \mathcal F) \in R</script> and <script type="math/tex">( \mathcal F \cdot \mathcal G, \mathcal G ) \in R</script>. Thus <script type="math/tex">\mathcal F \cdot \mathcal G</script> is the smallest
- element of the set <script type="math/tex">\{ \mathcal F, \mathcal G \}</script>. Thus <script type="math/tex">\mathcal F \cdot \mathcal G</script> is greatest lower bound of the set <script type="math/tex">\mathcal F \cdot \mathcal G</script>.</p>
+<p>Suppose <span class="kdmath">$Z \in  \mathcal F \cdot \mathcal G$</span>. Thus there exist a set <span class="kdmath">$X \in \mathcal F$</span> and <span class="kdmath">$Y \in \mathcal G$</span> such that <span class="kdmath">$Z = X \cap Y$</span>.
+ Thus <span class="kdmath">$Z \subseteq X$</span> and <span class="kdmath">$Z \subseteq Y$</span>. Thus <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> refines <span class="kdmath">$\mathcal F$</span> as well as <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> refines <span class="kdmath">$\mathcal G$</span>.
+ Thus <span class="kdmath">$( \mathcal F \cdot \mathcal G, \mathcal F) \in R$</span> and <span class="kdmath">$( \mathcal F \cdot \mathcal G, \mathcal G ) \in R$</span>. Thus <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> is the smallest
+ element of the set <span class="kdmath">$\{ \mathcal F, \mathcal G \}$</span>. Thus <span class="kdmath">$\mathcal F \cdot \mathcal G$</span> is greatest lower bound of the set <span class="kdmath">$\mathcal F \cdot \mathcal G$</span>.</p>
 
 
                         <hr/>

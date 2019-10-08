@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,7 +980,9 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<script type="math/tex; mode=display">\, N = \sum_{l=1}^{L} N_l = 2010 \,</script>
+<div class="kdmath">$$
+\, N = \sum_{l=1}^{L} N_l = 2010 \,
+$$</div>
 
 <p>Proportional allocation:</p>
 
@@ -1032,7 +1035,7 @@
 
 <p>Optimal allocation:</p>
 
-<p>Since we need <script type="math/tex">\, \sum_{l=1}^{L} W_l \sigma_l \,</script> in each of the computation, evalutating it gives <script type="math/tex">\, 17.017758 \,</script></p>
+<p>Since we need <span class="kdmath">$\, \sum_{l=1}^{L} W_l \sigma_l \,$</span> in each of the computation, evalutating it gives <span class="kdmath">$\, 17.017758 \,$</span></p>
 
 <table>
   <thead>
@@ -1172,7 +1175,7 @@
   </tbody>
 </table>
 
-<p>Thus <script type="math/tex">\, \Var(\bar X_{SP}) = \frac 1 n \sum_{l=1}^{L} W_l \sigma_l^2 = \frac {343.262} {100} \approx 3.433 \,</script>.</p>
+<p>Thus <span class="kdmath">$\, \Var(\bar X_{SP}) = \frac 1 n \sum_{l=1}^{L} W_l \sigma_l^2 = \frac {343.262} {100} \approx 3.433 \,$</span>.</p>
 
 <p>Optimal allocation:</p>
 
@@ -1239,13 +1242,13 @@
   </tbody>
 </table>
 
-<p>Thus to compute <script type="math/tex">\, \Var(\bar X_{SO} = \frac 1 n {\Prn{\sum_{l=1}^{L} W_l \sigma_l} }^2  \,</script>, we square the sum of last column and divide it by <script type="math/tex">\, n \,</script>. Thus we get <script type="math/tex">\, 2.896 \,</script>.</p>
+<p>Thus to compute <span class="kdmath">$\, \Var(\bar X_{SO} = \frac 1 n {\Prn{\sum_{l=1}^{L} W_l \sigma_l} }^2  \,$</span>, we square the sum of last column and divide it by <span class="kdmath">$\, n \,$</span>. Thus we get <span class="kdmath">$\, 2.896 \,$</span>.</p>
 
 <p>Simple Random Sampling:</p>
 
-<p>It was shown in the book that <script type="math/tex">\, \Var(\bar X) - \Var(\bar X_{SP} = \frac 1 n \sum_{l=1}^{L} W_l (\mu_l - \mu)^2 \,</script>. Thus <script type="math/tex">\, \Var(\bar X) = \Var(\bar X_{SP}) + \sum_{l=1}^{L} W_l (\mu_l - \mu)^2 \,</script>.</p>
+<p>It was shown in the book that <span class="kdmath">$\, \Var(\bar X) - \Var(\bar X_{SP} = \frac 1 n \sum_{l=1}^{L} W_l (\mu_l - \mu)^2 \,$</span>. Thus <span class="kdmath">$\, \Var(\bar X) = \Var(\bar X_{SP}) + \sum_{l=1}^{L} W_l (\mu_l - \mu)^2 \,$</span>.</p>
 
-<p>We can compute <script type="math/tex">\, \mu = \frac 1 N \sum_{l=1}^{L} N_l \mu_l \,</script>, which gives <script type="math/tex">\, \mu = 26.3108 \,</script>.</p>
+<p>We can compute <span class="kdmath">$\, \mu = \frac 1 N \sum_{l=1}^{L} N_l \mu_l \,$</span>, which gives <span class="kdmath">$\, \mu = 26.3108 \,$</span>.</p>
 
 <table>
   <thead>
@@ -1310,17 +1313,17 @@
   </tbody>
 </table>
 
-<p>Thus <script type="math/tex">\, \Var(\bar X) \,</script> is the sum of <script type="math/tex">\, \Var(\bar X_{SP}) \,</script> and <script type="math/tex">\, \frac 1 n \,</script> times sum of last column, which gives <script type="math/tex">\, \Var(\bar X) = 6.202 \,</script>.</p>
+<p>Thus <span class="kdmath">$\, \Var(\bar X) \,$</span> is the sum of <span class="kdmath">$\, \Var(\bar X_{SP}) \,$</span> and <span class="kdmath">$\, \frac 1 n \,$</span> times sum of last column, which gives <span class="kdmath">$\, \Var(\bar X) = 6.202 \,$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
-<p>Population mean we already computed in part-c, <script type="math/tex">\, \mu = 26.3108 \,</script>. Population Variance, <script type="math/tex">\, \sigma^2 = n \Var(\bar X) = 100 \times 6.202 = 620.2 \,</script>.</p>
+<p>Population mean we already computed in part-c, <span class="kdmath">$\, \mu = 26.3108 \,$</span>. Population Variance, <span class="kdmath">$\, \sigma^2 = n \Var(\bar X) = 100 \times 6.202 = 620.2 \,$</span>.</p>
 
 <h4 id="d">(d)</h4>
 
-<p>We have <script type="math/tex">\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \Prn{ 1 - \frac {n_l-1} {N_l-1} } \sigma_l^2 \,</script>.</p>
+<p>We have <span class="kdmath">$\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \Prn{ 1 - \frac {n_l-1} {N_l-1} } \sigma_l^2 \,$</span>.</p>
 
-<p>We have <script type="math/tex">\, n_l = 10 \,</script> for all <script type="math/tex">\, l \,</script>.</p>
+<p>We have <span class="kdmath">$\, n_l = 10 \,$</span> for all <span class="kdmath">$\, l \,$</span>.</p>
 
 <table>
   <thead>
@@ -1409,9 +1412,9 @@
   </tbody>
 </table>
 
-<p>Thus <script type="math/tex">\, \Var(\bar X_s) = 7.8614 \,</script>.</p>
+<p>Thus <span class="kdmath">$\, \Var(\bar X_s) = 7.8614 \,$</span>.</p>
 
-<p>To get same variance of <script type="math/tex">\, 7.8614 \,</script> from the simple random sampling, we need <script type="math/tex">\, \Var(\bar X) = \frac {\sigma^2} n \,</script>. Putting value of <script type="math/tex">\, \Var(\bar X) \,</script> and <script type="math/tex">\, \sigma^2 = 620.2\,</script>(computed in last part-c). We get <script type="math/tex">\, n \approx 79 \,</script>. Thus using stratified sampling we used <script type="math/tex">\, 10*7 = 70 \,</script> elements in the sample while to get same variance we needed <script type="math/tex">\, 79 \,</script> elements in simple random sampling.</p>
+<p>To get same variance of <span class="kdmath">$\, 7.8614 \,$</span> from the simple random sampling, we need <span class="kdmath">$\, \Var(\bar X) = \frac {\sigma^2} n \,$</span>. Putting value of <span class="kdmath">$\, \Var(\bar X) \,$</span> and <span class="kdmath">$\, \sigma^2 = 620.2\,$</span>(computed in last part-c). We get <span class="kdmath">$\, n \approx 79 \,$</span>. Thus using stratified sampling we used <span class="kdmath">$\, 10*7 = 70 \,$</span> elements in the sample while to get same variance we needed <span class="kdmath">$\, 79 \,$</span> elements in simple random sampling.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

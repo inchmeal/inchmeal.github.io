@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9634,7 +9635,8 @@
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">env</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">extend-environment</span><span class="p">)</span>
               <span class="p">(</span><span class="nf">reg</span> <span class="nv">unev</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">unev</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">procedure-body</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">))</span>
-  <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">ev-sequence</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">ev-sequence</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>(Above code does not contain changes in <code class="highlighter-rouge">ev-if</code>, <code class="highlighter-rouge">ev-cond</code> and <code class="highlighter-rouge">read-eval-print-loop</code> - check complete code at the bottom to view those changes)</p>
 
@@ -9693,7 +9695,8 @@
       <span class="o">'</span><span class="p">()</span>
       <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">delay-it</span> <span class="p">(</span><span class="nf">first-operand</span> <span class="nv">exps</span><span class="p">)</span> <span class="nv">env</span><span class="p">)</span>
             <span class="p">(</span><span class="nf">list-of-delayed-args</span> <span class="p">(</span><span class="nf">rest-operands</span> <span class="nv">exps</span><span class="p">)</span>
-                                  <span class="nv">env</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+                                  <span class="nv">env</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9816,7 +9819,8 @@
 <span class="c1">;;; EC-Eval value:</span>
 <span class="mi">620448401733239439360000</span>
 
-<span class="c1">;;; EC-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; EC-Eval input:</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now, I tested with ex-4.27 - which demostrates that arguments are indeed delayed:</p>
 
@@ -9937,7 +9941,8 @@
 <span class="c1">;;; EC-Eval value:</span>
 <span class="mi">2</span>
 
-<span class="c1">;;; EC-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; EC-Eval input:</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -10778,7 +10783,8 @@
    <span class="p">)))</span>
 
 
-<span class="o">'</span><span class="p">(</span><span class="nf">EXPLICIT</span> <span class="nv">CONTROL</span> <span class="nv">EVALUATOR</span> <span class="nv">LOADED</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">'</span><span class="p">(</span><span class="nf">EXPLICIT</span> <span class="nv">CONTROL</span> <span class="nv">EVALUATOR</span> <span class="nv">LOADED</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that there are few changes in file ch5-eceval-support.scm which i have shown above.</p>
 
@@ -10817,7 +10823,8 @@
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">vars</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">res</span><span class="p">))</span>
 		  <span class="p">(</span><span class="nf">vexps</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">res</span><span class="p">)))</span>
 	  <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">make-lambda</span> <span class="nv">vars</span> <span class="p">(</span><span class="nf">let-body</span> <span class="nv">exp</span><span class="p">))</span> <span class="nv">vexps</span><span class="p">)</span>
-	  <span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

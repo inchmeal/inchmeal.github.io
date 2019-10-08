@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,11 +978,11 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>Since the confidence interval is <script type="math/tex">\, \bar X \pm s_{\bar X} \,</script>, thus by comparing it with <script type="math/tex">\, \bar X \pm z(\alpha/2)s_{\bar X} \,</script>, it follows that <script type="math/tex">\, z(\alpha/2) =1 \,</script>.</p>
+                        <p>Since the confidence interval is <span class="kdmath">$\, \bar X \pm s_{\bar X} \,$</span>, thus by comparing it with <span class="kdmath">$\, \bar X \pm z(\alpha/2)s_{\bar X} \,$</span>, it follows that <span class="kdmath">$\, z(\alpha/2) =1 \,$</span>.</p>
 
-<p>Thus we can compute <script type="math/tex">\, \alpha \,</script> as:</p>
+<p>Thus we can compute <span class="kdmath">$\, \alpha \,$</span> as:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 &\Rightarrow z(\alpha/2) = 1 \\
@@ -989,9 +990,10 @@
 &\Rightarrow \alpha = 2(1-\Phi(1)) \\
 &\Rightarrow \alpha = 0.3174 
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus the size of confidence interval is <script type="math/tex">\, 1-\alpha = 0.6826 \,</script>.</p>
+<p>Thus the size of confidence interval is <span class="kdmath">$\, 1-\alpha = 0.6826 \,$</span>.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,49 +1137,49 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li><script type="math/tex">\exists ! x P(x)</script> means there exists only one value of <script type="math/tex">x</script> for which <script type="math/tex">P (x)</script> is true.</li>
-  <li><script type="math/tex">\exists ! x P(x)</script> is equivalent to all of the following:
+  <li><span class="kdmath">$\exists ! x P(x)$</span> means there exists only one value of <span class="kdmath">$x$</span> for which <span class="kdmath">$P (x)$</span> is true.</li>
+  <li><span class="kdmath">$\exists ! x P(x)$</span> is equivalent to all of the following:
     <ul>
-      <li><script type="math/tex">\exists x (P(x) \land \forall y(P(y) \to y = x))</script>.</li>
-      <li><script type="math/tex">\exists x \forall y(P(y) \leftrightarrow  y = x)</script>.</li>
-      <li><script type="math/tex">\exists x P(x) \land \forall y \forall z((P(y) \land P(z)) \to y = z)</script>.</li>
+      <li><span class="kdmath">$\exists x (P(x) \land \forall y(P(y) \to y = x))$</span>.</li>
+      <li><span class="kdmath">$\exists x \forall y(P(y) \leftrightarrow  y = x)$</span>.</li>
+      <li><span class="kdmath">$\exists x P(x) \land \forall y \forall z((P(y) \land P(z)) \to y = z)$</span>.</li>
     </ul>
   </li>
-  <li>To prove a goal of the form of <script type="math/tex">\exists ! x P(x)</script>:
+  <li>To prove a goal of the form of <span class="kdmath">$\exists ! x P(x)$</span>:
     <ul>
-      <li>Strategy 1: Prove <script type="math/tex">\exists x P(x)</script> and <script type="math/tex">\forall y \forall z((P(y) \land P(z)) \to y = z)</script>. The first of these goals
-shows that there exists an <script type="math/tex">x</script> such that P(x) is true, and the second shows that it is unique. The two parts of the proof 
+      <li>Strategy 1: Prove <span class="kdmath">$\exists x P(x)$</span> and <span class="kdmath">$\forall y \forall z((P(y) \land P(z)) \to y = z)$</span>. The first of these goals
+shows that there exists an <span class="kdmath">$x$</span> such that P(x) is true, and the second shows that it is unique. The two parts of the proof 
 are therefore sometimes labeled existence and uniqueness.</li>
-      <li>Strategy 2: Prove <script type="math/tex">\exists x(P(x) \land \forall y(P(y) \to y = x))</script>, using strategies from previous
+      <li>Strategy 2: Prove <span class="kdmath">$\exists x(P(x) \land \forall y(P(y) \to y = x))$</span>, using strategies from previous
 sections.</li>
     </ul>
   </li>
-  <li>To use a given of the form of <script type="math/tex">\exists ! x P(x)</script>:  <br />
-  Consider it as two given statements, <script type="math/tex">\exists x P(x)</script> and <script type="math/tex">\forall y \forall z((P(y) \land P(z)) \to y = z)</script>. To use the 
-  first statement you should probably choose a name, say <script type="math/tex">x_0</script>, to stand for some object such that <script type="math/tex">P(x_0)</script> is true. The second
-  tells you that if you ever come across two objects <script type="math/tex">y</script> and <script type="math/tex">z</script> such that <script type="math/tex">P(y)</script> and <script type="math/tex">P(z)</script> are both true, you can 
-  conclude that <script type="math/tex">y = z</script>.</li>
+  <li>To use a given of the form of <span class="kdmath">$\exists ! x P(x)$</span>:  <br />
+  Consider it as two given statements, <span class="kdmath">$\exists x P(x)$</span> and <span class="kdmath">$\forall y \forall z((P(y) \land P(z)) \to y = z)$</span>. To use the 
+  first statement you should probably choose a name, say <span class="kdmath">$x_0$</span>, to stand for some object such that <span class="kdmath">$P(x_0)$</span> is true. The second
+  tells you that if you ever come across two objects <span class="kdmath">$y$</span> and <span class="kdmath">$z$</span> such that <span class="kdmath">$P(y)$</span> and <span class="kdmath">$P(z)$</span> are both true, you can 
+  conclude that <span class="kdmath">$y = z$</span>.</li>
 </ul>
 
 <hr />
 
 <p><strong>Soln1</strong></p>
 
-<p>Suppose <script type="math/tex">x</script> is arbitrary. Lets say <script type="math/tex">P(y) = x^2y = x - y</script>. Thus we have to prove <script type="math/tex">\exists ! y P(y)</script>:</p>
+<p>Suppose <span class="kdmath">$x$</span> is arbitrary. Lets say <span class="kdmath">$P(y) = x^2y = x - y$</span>. Thus we have to prove <span class="kdmath">$\exists ! y P(y)$</span>:</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">y = \frac x {1 + x^2}</script>. Then <script type="math/tex">x^2y = \frac {x^3} {1 + x^2}</script>. Also <script type="math/tex">x - y = \frac {x^3} {1 + x^2}</script>.
-Thus we have <script type="math/tex">x^2y = x - y</script>. Since <script type="math/tex">x</script> is arbitrary, we can say that for all values of <script type="math/tex">x</script>, there exists a <script type="math/tex">y =  \frac x {1 + x^2}</script> such that
-<script type="math/tex">x^2y = x - y</script>. Thus we can conclude <script type="math/tex">\exists y P(y)</script>.</p>
+<p>Suppose <span class="kdmath">$y = \frac x {1 + x^2}$</span>. Then <span class="kdmath">$x^2y = \frac {x^3} {1 + x^2}$</span>. Also <span class="kdmath">$x - y = \frac {x^3} {1 + x^2}$</span>.
+Thus we have <span class="kdmath">$x^2y = x - y$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can say that for all values of <span class="kdmath">$x$</span>, there exists a <span class="kdmath">$y =  \frac x {1 + x^2}$</span> such that
+<span class="kdmath">$x^2y = x - y$</span>. Thus we can conclude <span class="kdmath">$\exists y P(y)$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">P(z_1)</script>, then <script type="math/tex">x^2z_1 = x - z_1</script>, which give <script type="math/tex">z_1 = \frac x {1 + x^2}</script>. Similarly suppose <script type="math/tex">P(z_2)</script>, gives
- <script type="math/tex">z_2 = \frac x {1 + x^2}</script>. Thus <script type="math/tex">z_1 = z_2</script>. Thus we can conclude that <script type="math/tex">\forall y \forall z((P(y) \land P(z)) \to y = z)</script> $$.</p>
+<p>Suppose <span class="kdmath">$P(z_1)$</span>, then <span class="kdmath">$x^2z_1 = x - z_1$</span>, which give <span class="kdmath">$z_1 = \frac x {1 + x^2}$</span>. Similarly suppose <span class="kdmath">$P(z_2)$</span>, gives
+ <span class="kdmath">$z_2 = \frac x {1 + x^2}$</span>. Thus <span class="kdmath">$z_1 = z_2$</span>. Thus we can conclude that <span class="kdmath">$\forall y \forall z((P(y) \land P(z)) \to y = z)$</span> $$.</p>
 
-<p>Thus we can say <script type="math/tex">\exists y P(y) \land \forall y \forall z((P(y) \land P(z)) \to y = z)</script>. Thus we can conclude <script type="math/tex">\exists ! y P(y)</script>.
-Since <script type="math/tex">x</script> is arbitrary, we can conclude that for every value of <script type="math/tex">x</script>, <script type="math/tex">\exists ! y P(y)</script> is true.</p>
+<p>Thus we can say <span class="kdmath">$\exists y P(y) \land \forall y \forall z((P(y) \land P(z)) \to y = z)$</span>. Thus we can conclude <span class="kdmath">$\exists ! y P(y)$</span>.
+Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that for every value of <span class="kdmath">$x$</span>, <span class="kdmath">$\exists ! y P(y)$</span> is true.</p>
 
 <hr />
 
@@ -1190,7 +1191,7 @@ Since <script type="math/tex">x</script> is arbitrary, we can conclude that for 
 
 <hr />
 
-<p>Suppose <script type="math/tex">P(x) = xy + x - 4 = 4y</script>. Then we have to prove <script type="math/tex">\exists ! x \forall y P(x)</script>.</p>
+<p>Suppose <span class="kdmath">$P(x) = xy + x - 4 = 4y$</span>. Then we have to prove <span class="kdmath">$\exists ! x \forall y P(x)$</span>.</p>
 
 <p><u>Existence:</u></p>
 
@@ -1198,45 +1199,45 @@ Since <script type="math/tex">x</script> is arbitrary, we can conclude that for 
 
 <ul>
   <li>
-    <p>Case 1: Suppose <script type="math/tex">y = -1</script>. Suppose <script type="math/tex">x = 0</script>. Then <script type="math/tex">xy + x - 4 = -4</script>, and <script type="math/tex">4y = -4</script>. Thus LHS = RHS, or 
- <script type="math/tex">xy + x - 4 = 4y</script>.</p>
+    <p>Case 1: Suppose <span class="kdmath">$y = -1$</span>. Suppose <span class="kdmath">$x = 0$</span>. Then <span class="kdmath">$xy + x - 4 = -4$</span>, and <span class="kdmath">$4y = -4$</span>. Thus LHS = RHS, or 
+ <span class="kdmath">$xy + x - 4 = 4y$</span>.</p>
   </li>
   <li>
-    <p>Case 2: Suppose <script type="math/tex">y \ne -1</script>. Suppose <script type="math/tex">x = 4</script>. Then <script type="math/tex">xy + x - 4 = 4y</script>. Thus LHS = RHS, or <script type="math/tex">xy + x - 4 = 4y</script>.</p>
+    <p>Case 2: Suppose <span class="kdmath">$y \ne -1$</span>. Suppose <span class="kdmath">$x = 4$</span>. Then <span class="kdmath">$xy + x - 4 = 4y$</span>. Thus LHS = RHS, or <span class="kdmath">$xy + x - 4 = 4y$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases we have for any arbitrary <script type="math/tex">y</script>, <script type="math/tex">\exists x P(x)</script> is true.</p>
+<p>Thus from both cases we have for any arbitrary <span class="kdmath">$y$</span>, <span class="kdmath">$\exists x P(x)$</span> is true.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose for a value z <script type="math/tex">P(z)</script>, then <script type="math/tex">P(z) = zy + z -4 = 4y</script>, or <script type="math/tex">z = \frac {4(y+1)} {y+1}</script>. Also suppose for a value <script type="math/tex">x</script>, 
-<script type="math/tex">P(x)</script>.</p>
+<p>Suppose for a value z <span class="kdmath">$P(z)$</span>, then <span class="kdmath">$P(z) = zy + z -4 = 4y$</span>, or <span class="kdmath">$z = \frac {4(y+1)} {y+1}$</span>. Also suppose for a value <span class="kdmath">$x$</span>, 
+<span class="kdmath">$P(x)$</span>.</p>
 
-<p>For <script type="math/tex">\, P(z) \,</script>, We have two possible cases:</p>
+<p>For <span class="kdmath">$\, P(z) \,$</span>, We have two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">y = -1</script>. Then we have <script type="math/tex">-z + z - 4 = -4</script>, which says that for any value of <script type="math/tex">z</script>, <script type="math/tex">P(z)</script> is true.</p>
+    <p>Case 1: <span class="kdmath">$y = -1$</span>. Then we have <span class="kdmath">$-z + z - 4 = -4$</span>, which says that for any value of <span class="kdmath">$z$</span>, <span class="kdmath">$P(z)$</span> is true.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">y \ne 1</script>. Then we have <script type="math/tex">z = \frac {4(y+1)} {y+1}</script>, or <script type="math/tex">z = 4</script>.</p>
+    <p>Case 2: <span class="kdmath">$y \ne 1$</span>. Then we have <span class="kdmath">$z = \frac {4(y+1)} {y+1}$</span>, or <span class="kdmath">$z = 4$</span>.</p>
   </li>
 </ul>
 
-<p>Thus, case-1 and case-2 <em>together</em>, for every value of <script type="math/tex">\, y \,</script>, <script type="math/tex">\, P(z) \,</script> is true when <script type="math/tex">\, z = 4 \,</script> .</p>
+<p>Thus, case-1 and case-2 <em>together</em>, for every value of <span class="kdmath">$\, y \,$</span>, <span class="kdmath">$\, P(z) \,$</span> is true when <span class="kdmath">$\, z = 4 \,$</span> .</p>
 
-<p>Similarly, we can see that, for <script type="math/tex">\, P(x) \,</script>, when <script type="math/tex">\, x = 4 \,</script>, <script type="math/tex">\, P(x) \,</script> is true.</p>
+<p>Similarly, we can see that, for <span class="kdmath">$\, P(x) \,$</span>, when <span class="kdmath">$\, x = 4 \,$</span>, <span class="kdmath">$\, P(x) \,$</span> is true.</p>
 
-<p>Thus we have, for any arbitrary <script type="math/tex">\, y \,</script>,  <script type="math/tex">\forall x \forall z((P(x) \land P(z)) \to x = z)</script>.</p>
+<p>Thus we have, for any arbitrary <span class="kdmath">$\, y \,$</span>,  <span class="kdmath">$\forall x \forall z((P(x) \land P(z)) \to x = z)$</span>.</p>
 
-<p>It follows that <script type="math/tex">\exists ! x \forall y P(x)</script> is true.</p>
+<p>It follows that <span class="kdmath">$\exists ! x \forall y P(x)$</span> is true.</p>
 
 <hr />
 
 <p><strong>Earlier Solution</strong>(with mistakes)</p>
 
-<p>Suppose <script type="math/tex">P(x) = xy + x - 4 = 4y</script>. Then we have to prove <script type="math/tex">\forall y \exists ! x P(x)</script>.</p>
+<p>Suppose <span class="kdmath">$P(x) = xy + x - 4 = 4y$</span>. Then we have to prove <span class="kdmath">$\forall y \exists ! x P(x)$</span>.</p>
 
 <p><u>Existence:</u></p>
 
@@ -1244,56 +1245,56 @@ Since <script type="math/tex">x</script> is arbitrary, we can conclude that for 
 
 <ul>
   <li>
-    <p>Case 1: Suppose <script type="math/tex">y = -1</script>. Suppose <script type="math/tex">x = 0</script>. Then <script type="math/tex">xy + x - 4 = -4</script>, and <script type="math/tex">4y = -4</script>. Thus LHS = RHS, or 
- <script type="math/tex">xy + x - 4 = 4y</script>.</p>
+    <p>Case 1: Suppose <span class="kdmath">$y = -1$</span>. Suppose <span class="kdmath">$x = 0$</span>. Then <span class="kdmath">$xy + x - 4 = -4$</span>, and <span class="kdmath">$4y = -4$</span>. Thus LHS = RHS, or 
+ <span class="kdmath">$xy + x - 4 = 4y$</span>.</p>
   </li>
   <li>
-    <p>Case 2: Suppose <script type="math/tex">y \ne -1</script>. Suppose <script type="math/tex">x = 4</script>. Then <script type="math/tex">xy + x - 4 = 4y</script>. Thus LHS = RHS, or <script type="math/tex">xy + x - 4 = 4y</script>.</p>
+    <p>Case 2: Suppose <span class="kdmath">$y \ne -1$</span>. Suppose <span class="kdmath">$x = 4$</span>. Then <span class="kdmath">$xy + x - 4 = 4y$</span>. Thus LHS = RHS, or <span class="kdmath">$xy + x - 4 = 4y$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases we have for any arbitrary <script type="math/tex">y</script>, <script type="math/tex">\exists x P(x)</script> is true.</p>
+<p>Thus from both cases we have for any arbitrary <span class="kdmath">$y$</span>, <span class="kdmath">$\exists x P(x)$</span> is true.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose for a value z <script type="math/tex">P(z)</script>, then <script type="math/tex">P(z) = zy + z -4 = 4y</script>, or <script type="math/tex">z = \frac {4(y+1)} {y+1}</script>. Also suppose for a value <script type="math/tex">x</script>, 
-<script type="math/tex">P(x)</script>. We have two possible cases:</p>
+<p>Suppose for a value z <span class="kdmath">$P(z)$</span>, then <span class="kdmath">$P(z) = zy + z -4 = 4y$</span>, or <span class="kdmath">$z = \frac {4(y+1)} {y+1}$</span>. Also suppose for a value <span class="kdmath">$x$</span>, 
+<span class="kdmath">$P(x)$</span>. We have two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">y = -1</script>. Then we have <script type="math/tex">-z + z - 4 = -4</script>, which says that for any value of <script type="math/tex">z</script>, <script type="math/tex">P(z)</script> is true. 
-Similarly, it can be shown that for <script type="math/tex">P(x)</script> is true for any value of <script type="math/tex">x</script>.</p>
+    <p>Case 1: <span class="kdmath">$y = -1$</span>. Then we have <span class="kdmath">$-z + z - 4 = -4$</span>, which says that for any value of <span class="kdmath">$z$</span>, <span class="kdmath">$P(z)$</span> is true. 
+Similarly, it can be shown that for <span class="kdmath">$P(x)$</span> is true for any value of <span class="kdmath">$x$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">y \ne 1</script>. Then we have <script type="math/tex">z = \frac {4(y+1)} {y+1}</script>, or <script type="math/tex">z = 4</script>. Similarly it can be proved that, if <script type="math/tex">P(x)</script>, then 
-<script type="math/tex">x = 4</script>. Or we can say that
- <script type="math/tex">\forall x \forall z((P(x) \land P(z)) \to x = z)</script>.</p>
+    <p>Case 2: <span class="kdmath">$y \ne 1$</span>. Then we have <span class="kdmath">$z = \frac {4(y+1)} {y+1}$</span>, or <span class="kdmath">$z = 4$</span>. Similarly it can be proved that, if <span class="kdmath">$P(x)$</span>, then 
+<span class="kdmath">$x = 4$</span>. Or we can say that
+ <span class="kdmath">$\forall x \forall z((P(x) \land P(z)) \to x = z)$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, if <script type="math/tex">y \ne 1</script>, then <script type="math/tex">\forall y \exists ! x P(x)</script> is true.</p>
+<p>Thus from both cases, if <span class="kdmath">$y \ne 1$</span>, then <span class="kdmath">$\forall y \exists ! x P(x)$</span> is true.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p>Suppose <script type="math/tex">x</script> is arbitrary. Suppose <script type="math/tex">P(y) = \frac y x = y - x</script>.</p>
+<p>Suppose <span class="kdmath">$x$</span> is arbitrary. Suppose <span class="kdmath">$P(y) = \frac y x = y - x$</span>.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">y = \frac {x^2} {x - 1}</script>. Thus <script type="math/tex">\frac y x = \frac {x^2} {x - 1} \times \frac 1 x</script>. Since <script type="math/tex">x \ne 0</script>, we get 
-<script type="math/tex">\frac x {x - 1}</script>. Also <script type="math/tex">y - x = \frac {x^2} {x - 1} - x = \frac x {x-1}</script>. Thus <script type="math/tex">\frac y x = y - x</script>. It follows that
-<script type="math/tex">\exists y P(y)</script>.</p>
+<p>Suppose <span class="kdmath">$y = \frac {x^2} {x - 1}$</span>. Thus <span class="kdmath">$\frac y x = \frac {x^2} {x - 1} \times \frac 1 x$</span>. Since <span class="kdmath">$x \ne 0$</span>, we get 
+<span class="kdmath">$\frac x {x - 1}$</span>. Also <span class="kdmath">$y - x = \frac {x^2} {x - 1} - x = \frac x {x-1}$</span>. Thus <span class="kdmath">$\frac y x = y - x$</span>. It follows that
+<span class="kdmath">$\exists y P(y)$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">P(z) \land P(y)</script> for values <script type="math/tex">z</script> and <script type="math/tex">y</script> respectively. Since <script type="math/tex">P(z)</script>, then <script type="math/tex">\frac z x = z - x</script>. Since 
-<script type="math/tex">x \ne 0 \land x \ne 1</script>, it can be simplified to <script type="math/tex">z = \frac {x^2} {x - 1}</script>.   <br />
-Similarly, since <script type="math/tex">P(y)</script>, we can get <script type="math/tex">y = \frac {x^2} {x - 1}</script>.</p>
+<p>Suppose <span class="kdmath">$P(z) \land P(y)$</span> for values <span class="kdmath">$z$</span> and <span class="kdmath">$y$</span> respectively. Since <span class="kdmath">$P(z)$</span>, then <span class="kdmath">$\frac z x = z - x$</span>. Since 
+<span class="kdmath">$x \ne 0 \land x \ne 1$</span>, it can be simplified to <span class="kdmath">$z = \frac {x^2} {x - 1}$</span>.   <br />
+Similarly, since <span class="kdmath">$P(y)$</span>, we can get <span class="kdmath">$y = \frac {x^2} {x - 1}$</span>.</p>
 
-<p>Thus we have <script type="math/tex">y = z = \frac {x^2} {x - 1}</script>. It follows that <script type="math/tex">\forall y \forall z((P(y) \land P(z)) \to y = z)</script>.</p>
+<p>Thus we have <span class="kdmath">$y = z = \frac {x^2} {x - 1}$</span>. It follows that <span class="kdmath">$\forall y \forall z((P(y) \land P(z)) \to y = z)$</span>.</p>
 
-<p>Thus we can conclude that for all <script type="math/tex">x</script>, <script type="math/tex">\exists ! y P(y)</script>.</p>
+<p>Thus we can conclude that for all <span class="kdmath">$x$</span>, <span class="kdmath">$\exists ! y P(y)$</span>.</p>
 
 <hr />
 
@@ -1301,13 +1302,13 @@ Similarly, since <script type="math/tex">P(y)</script>, we can get <script type=
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">x \ne 0</script>, then <script type="math/tex">\frac 1 x</script> is defined. Suppose <script type="math/tex">y = \frac 1 x</script>. Suppose <script type="math/tex">z</script> is arbitrary, then <script type="math/tex">zy = z \times \frac 1 x = \frac z x</script>.
-Thus there exists a <script type="math/tex">y = \frac 1 x</script> such that for all <script type="math/tex">x \ne 0</script> and for all <script type="math/tex">z</script>, we have <script type="math/tex">zy = \frac z x</script>.</p>
+<p>Suppose <span class="kdmath">$x \ne 0$</span>, then <span class="kdmath">$\frac 1 x$</span> is defined. Suppose <span class="kdmath">$y = \frac 1 x$</span>. Suppose <span class="kdmath">$z$</span> is arbitrary, then <span class="kdmath">$zy = z \times \frac 1 x = \frac z x$</span>.
+Thus there exists a <span class="kdmath">$y = \frac 1 x$</span> such that for all <span class="kdmath">$x \ne 0$</span> and for all <span class="kdmath">$z$</span>, we have <span class="kdmath">$zy = \frac z x$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">y_1</script>, such that <script type="math/tex">zy_1 = \frac z x</script>. Multiplying each side by <script type="math/tex">\frac 1 z</script>, we get <script type="math/tex">y_1 = \frac 1 x</script>. Thus <script type="math/tex">y_1 = y = \frac 1 x</script>.
-Thus we can say that <script type="math/tex">y = \frac 1 x</script> is a unique value of <script type="math/tex">y</script> for the given statement is to be correct.</p>
+<p>Suppose <span class="kdmath">$y_1$</span>, such that <span class="kdmath">$zy_1 = \frac z x$</span>. Multiplying each side by <span class="kdmath">$\frac 1 z$</span>, we get <span class="kdmath">$y_1 = \frac 1 x$</span>. Thus <span class="kdmath">$y_1 = y = \frac 1 x$</span>.
+Thus we can say that <span class="kdmath">$y = \frac 1 x$</span> is a unique value of <span class="kdmath">$y$</span> for the given statement is to be correct.</p>
 
 <hr />
 
@@ -1315,24 +1316,24 @@ Thus we can say that <script type="math/tex">y = \frac 1 x</script> is a unique 
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in \cup ! \mathcal F</script>. Then there exists a set <script type="math/tex">A \in \mathcal F</script> such that <script type="math/tex">x \in \mathcal F</script>. Thus we can also say 
-that <script type="math/tex">x \in \cup \mathcal F</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\cup ! \mathcal F \subseteq \cup \mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$x \in \cup ! \mathcal F$</span>. Then there exists a set <span class="kdmath">$A \in \mathcal F$</span> such that <span class="kdmath">$x \in \mathcal F$</span>. Thus we can also say 
+that <span class="kdmath">$x \in \cup \mathcal F$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$\cup ! \mathcal F \subseteq \cup \mathcal F$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>(<script type="math/tex">\cup ! \mathcal F \subseteq \cup \mathcal F</script>)</p>
+<p>(<span class="kdmath">$\cup ! \mathcal F \subseteq \cup \mathcal F$</span>)</p>
 
 <p>This is already proved in first part.</p>
 
-<p>(<script type="math/tex">\cup \mathcal F \subseteq \cup ! \mathcal F</script>)</p>
+<p>(<span class="kdmath">$\cup \mathcal F \subseteq \cup ! \mathcal F$</span>)</p>
 
-<p>Suppose <script type="math/tex">x \in \cup \mathcal F</script>. Thus there atleast exists one set, say <script type="math/tex">A</script>, in <script type="math/tex">\mathcal F</script> such that <script type="math/tex">x \in A</script>.
-Now suppose there is one more set, say <script type="math/tex">B</script>, such that <script type="math/tex">B \in \mathcal F</script> and <script type="math/tex">x \in B</script>. Since <script type="math/tex">x \in A \land x \in B</script>,
-it follows that <script type="math/tex">A \cap B \ne \phi</script>. But it contradicts with the given that all sets of <script type="math/tex">\mathcal F</script> are disjoint. Thus <script type="math/tex">A = B</script>.
-Or we can say that only one set exists such that <script type="math/tex">x \in A \land A \in \mathcal F</script>. It follows that <script type="math/tex">x \in \cup ! \mathcal F</script>.
-Now since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">\cup \mathcal F \subseteq \cup ! \mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$x \in \cup \mathcal F$</span>. Thus there atleast exists one set, say <span class="kdmath">$A$</span>, in <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$x \in A$</span>.
+Now suppose there is one more set, say <span class="kdmath">$B$</span>, such that <span class="kdmath">$B \in \mathcal F$</span> and <span class="kdmath">$x \in B$</span>. Since <span class="kdmath">$x \in A \land x \in B$</span>,
+it follows that <span class="kdmath">$A \cap B \ne \phi$</span>. But it contradicts with the given that all sets of <span class="kdmath">$\mathcal F$</span> are disjoint. Thus <span class="kdmath">$A = B$</span>.
+Or we can say that only one set exists such that <span class="kdmath">$x \in A \land A \in \mathcal F$</span>. It follows that <span class="kdmath">$x \in \cup ! \mathcal F$</span>.
+Now since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$\cup \mathcal F \subseteq \cup ! \mathcal F$</span>.</p>
 
-<p>Thus from both directions, we can say that <script type="math/tex">\cup \mathcal F = \cup ! \mathcal F</script>.</p>
+<p>Thus from both directions, we can say that <span class="kdmath">$\cup \mathcal F = \cup ! \mathcal F$</span>.</p>
 
 <hr />
 
@@ -1341,23 +1342,23 @@ Now since <script type="math/tex">x</script> is arbitrary, it follows <script ty
 <p><strong>(a)</strong></p>
 
 <p><u>Existence:</u>   <br />
-Suppose <script type="math/tex">A = \phi</script>. Clearly <script type="math/tex">\phi \in \mathcal P(U)</script>. Also <script type="math/tex">\phi \cup B = B</script>. Thus there exist a set, <script type="math/tex">A = \phi \in \mathcal P(U)</script>
-such that for every set <script type="math/tex">B \in \mathcal P(U)</script>, <script type="math/tex">A \cup B = B</script>.</p>
+Suppose <span class="kdmath">$A = \phi$</span>. Clearly <span class="kdmath">$\phi \in \mathcal P(U)$</span>. Also <span class="kdmath">$\phi \cup B = B$</span>. Thus there exist a set, <span class="kdmath">$A = \phi \in \mathcal P(U)$</span>
+such that for every set <span class="kdmath">$B \in \mathcal P(U)$</span>, <span class="kdmath">$A \cup B = B$</span>.</p>
 
 <p><u>Uniqueness:</u>  <br />
-Suppose there is another set say, <script type="math/tex">A' \in \mathcal P(U) \land A' \cup B = B</script>. Now for <script type="math/tex">B = \phi</script>, <script type="math/tex">A' \cup \phi = \phi</script>.
-Thus we can say that <script type="math/tex">A' = A</script>. Thus <script type="math/tex">A</script> is unique set such that <script type="math/tex">A \in \mathcal P(U) \land A \cup B = B</script>.</p>
+Suppose there is another set say, <span class="kdmath">$A' \in \mathcal P(U) \land A' \cup B = B$</span>. Now for <span class="kdmath">$B = \phi$</span>, <span class="kdmath">$A' \cup \phi = \phi$</span>.
+Thus we can say that <span class="kdmath">$A' = A$</span>. Thus <span class="kdmath">$A$</span> is unique set such that <span class="kdmath">$A \in \mathcal P(U) \land A \cup B = B$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><u>Existence:</u>   <br />
-Suppose <script type="math/tex">A = U</script>. Clearly <script type="math/tex">U \in \mathcal P(U)</script>. Also <script type="math/tex">U \cup B = U</script>. Thus there exist a set, <script type="math/tex">A = U \in \mathcal P(U)</script>
-such that for every set <script type="math/tex">B \in \mathcal P(U)</script>, we have <script type="math/tex">A \cup B = A</script>.</p>
+Suppose <span class="kdmath">$A = U$</span>. Clearly <span class="kdmath">$U \in \mathcal P(U)$</span>. Also <span class="kdmath">$U \cup B = U$</span>. Thus there exist a set, <span class="kdmath">$A = U \in \mathcal P(U)$</span>
+such that for every set <span class="kdmath">$B \in \mathcal P(U)$</span>, we have <span class="kdmath">$A \cup B = A$</span>.</p>
 
 <p><u>Uniqueness:</u>  <br />
-Suppose there is another set say, <script type="math/tex">A' \in \mathcal P(U) \land A' \cup B = A'</script>. Now for <script type="math/tex">B = U</script>, <script type="math/tex">A' \cup U = A'</script>. Since 
-<script type="math/tex">A' \in \mathcal P(U)</script>, it follows <script type="math/tex">A' \subseteq U</script>. Thus it follows that <script type="math/tex">A' \cup U = U</script>. Since <script type="math/tex">A' \cup U = A'</script>,
- it follows that <script type="math/tex">A' = U</script>, or <script type="math/tex">A' = A = U</script>. Thus <script type="math/tex">A</script> is unique set such that <script type="math/tex">A \in \mathcal P(U) \land A \cup B = A</script>.</p>
+Suppose there is another set say, <span class="kdmath">$A' \in \mathcal P(U) \land A' \cup B = A'$</span>. Now for <span class="kdmath">$B = U$</span>, <span class="kdmath">$A' \cup U = A'$</span>. Since 
+<span class="kdmath">$A' \in \mathcal P(U)$</span>, it follows <span class="kdmath">$A' \subseteq U$</span>. Thus it follows that <span class="kdmath">$A' \cup U = U$</span>. Since <span class="kdmath">$A' \cup U = A'$</span>,
+ it follows that <span class="kdmath">$A' = U$</span>, or <span class="kdmath">$A' = A = U$</span>. Thus <span class="kdmath">$A$</span> is unique set such that <span class="kdmath">$A \in \mathcal P(U) \land A \cup B = A$</span>.</p>
 
 <hr />
 
@@ -1366,23 +1367,23 @@ Suppose there is another set say, <script type="math/tex">A' \in \mathcal P(U) \
 <p><strong>(a)</strong></p>
 
 <p><u>Existence:</u>   <br />
-Suppose <script type="math/tex">B</script> is arbitrary and <script type="math/tex">B \in \mathcal P(U)</script>, or <script type="math/tex">B \subseteq U</script>. Suppose <script type="math/tex">A = U</script>. Clearly <script type="math/tex">U \in \mathcal P(U)</script>. Also since <script type="math/tex">B \subseteq U</script>, it follows that 
-<script type="math/tex">U \cap B = B</script>. Thus there exist a set, <script type="math/tex">A = U \in \mathcal P(U)</script> such that for every set <script type="math/tex">B \in \mathcal P(U)</script>, and <script type="math/tex">A \cap B = B</script>.</p>
+Suppose <span class="kdmath">$B$</span> is arbitrary and <span class="kdmath">$B \in \mathcal P(U)$</span>, or <span class="kdmath">$B \subseteq U$</span>. Suppose <span class="kdmath">$A = U$</span>. Clearly <span class="kdmath">$U \in \mathcal P(U)$</span>. Also since <span class="kdmath">$B \subseteq U$</span>, it follows that 
+<span class="kdmath">$U \cap B = B$</span>. Thus there exist a set, <span class="kdmath">$A = U \in \mathcal P(U)$</span> such that for every set <span class="kdmath">$B \in \mathcal P(U)$</span>, and <span class="kdmath">$A \cap B = B$</span>.</p>
 
 <p><u>Uniqueness:</u>  <br />
-Suppose <script type="math/tex">A' \in \mathcal P(U)</script> such that <script type="math/tex">A' \cap B = B</script>.  Now for <script type="math/tex">B = U</script>, we have <script type="math/tex">A' \cap U = U</script>. But since <script type="math/tex">A' \subseteq U</script>, <script type="math/tex">A' \cap U = A'</script>.
-It follows that <script type="math/tex">A' = U</script>. Thus <script type="math/tex">A' = A = U</script>.</p>
+Suppose <span class="kdmath">$A' \in \mathcal P(U)$</span> such that <span class="kdmath">$A' \cap B = B$</span>.  Now for <span class="kdmath">$B = U$</span>, we have <span class="kdmath">$A' \cap U = U$</span>. But since <span class="kdmath">$A' \subseteq U$</span>, <span class="kdmath">$A' \cap U = A'$</span>.
+It follows that <span class="kdmath">$A' = U$</span>. Thus <span class="kdmath">$A' = A = U$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">B \in \mathcal P(U)</script>. Suppose <script type="math/tex">A = \phi</script>. Clearly <script type="math/tex">\phi \in \mathcal P(U)</script>. Also <script type="math/tex">\phi \cap B = \phi</script>. Thus there exist a set, <script type="math/tex">A = \phi \in \mathcal P(U)</script>
-such that for every set <script type="math/tex">B \in \mathcal P(U)</script>, <script type="math/tex">A \cap B = A</script>.</p>
+<p>Suppose <span class="kdmath">$B \in \mathcal P(U)$</span>. Suppose <span class="kdmath">$A = \phi$</span>. Clearly <span class="kdmath">$\phi \in \mathcal P(U)$</span>. Also <span class="kdmath">$\phi \cap B = \phi$</span>. Thus there exist a set, <span class="kdmath">$A = \phi \in \mathcal P(U)$</span>
+such that for every set <span class="kdmath">$B \in \mathcal P(U)$</span>, <span class="kdmath">$A \cap B = A$</span>.</p>
 
 <p><u>Uniqueness:</u>  <br />
-Suppose there is another set say, <script type="math/tex">A' \in \mathcal P(U) \land A' \cap B = A'</script>. Now for <script type="math/tex">B = \phi</script>, <script type="math/tex">A' \cap \phi = \phi</script>.
-But <script type="math/tex">A' \cap \phi = A'</script>, it follows that <script type="math/tex">A' = A = \phi</script>. Thus we can conclude that <script type="math/tex">A</script> is unique.</p>
+Suppose there is another set say, <span class="kdmath">$A' \in \mathcal P(U) \land A' \cap B = A'$</span>. Now for <span class="kdmath">$B = \phi$</span>, <span class="kdmath">$A' \cap \phi = \phi$</span>.
+But <span class="kdmath">$A' \cap \phi = A'$</span>, it follows that <span class="kdmath">$A' = A = \phi$</span>. Thus we can conclude that <span class="kdmath">$A$</span> is unique.</p>
 
 <hr />
 
@@ -1392,52 +1393,52 @@ But <script type="math/tex">A' \cap \phi = A'</script>, it follows that <script 
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">A</script> is arbitrary and <script type="math/tex">A \in \mathcal P(U)</script>. Also suppose <script type="math/tex">B = U \setminus A</script>. Suppose <script type="math/tex">C \in \mathcal P (U)</script>.
-Suppose <script type="math/tex">x \in C \cap B</script>. Then:</p>
+<p>Suppose <span class="kdmath">$A$</span> is arbitrary and <span class="kdmath">$A \in \mathcal P(U)$</span>. Also suppose <span class="kdmath">$B = U \setminus A$</span>. Suppose <span class="kdmath">$C \in \mathcal P (U)$</span>.
+Suppose <span class="kdmath">$x \in C \cap B$</span>. Then:</p>
 
-<p><script type="math/tex">\leftrightarrow x \in C \cap B</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land x \in B</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land (x \in U \setminus A)</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land (x \in U \land x \notin A)</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land x \in U \land x \notin A</script>  <br />
-Since <script type="math/tex">C \subseteq U</script>,   <br />
-<script type="math/tex">\leftrightarrow x \in C \land x \notin A</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \setminus A</script></p>
+<p><span class="kdmath">$\leftrightarrow x \in C \cap B$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land x \in B$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land (x \in U \setminus A)$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land (x \in U \land x \notin A)$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land x \in U \land x \notin A$</span>  <br />
+Since <span class="kdmath">$C \subseteq U$</span>,   <br />
+<span class="kdmath">$\leftrightarrow x \in C \land x \notin A$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \setminus A$</span></p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, we have <script type="math/tex">C \cap B = C \setminus A</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, we have <span class="kdmath">$C \cap B = C \setminus A$</span>.</p>
 
-<p>Thus there exists a set <script type="math/tex">B = U \setminus A</script> such that <script type="math/tex">C \setminus A = C \cap B</script>.</p>
+<p>Thus there exists a set <span class="kdmath">$B = U \setminus A$</span> such that <span class="kdmath">$C \setminus A = C \cap B$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Now for uniqueness proof. Lets assume <script type="math/tex">B' \in P(U)</script> such that  <script type="math/tex">C \setminus A = C \cap B'</script>. Suppose <script type="math/tex">C = U</script>, it follows that 
-<script type="math/tex">U \setminus A = U \cap B'</script>. But since <script type="math/tex">B' \subseteq U</script>, <script type="math/tex">U \cap B' = B'</script>, it follows that <script type="math/tex">U \setminus A = B'</script>. Thus we 
-have <script type="math/tex">B' = B = U \setminus A</script>.</p>
+<p>Now for uniqueness proof. Lets assume <span class="kdmath">$B' \in P(U)$</span> such that  <span class="kdmath">$C \setminus A = C \cap B'$</span>. Suppose <span class="kdmath">$C = U$</span>, it follows that 
+<span class="kdmath">$U \setminus A = U \cap B'$</span>. But since <span class="kdmath">$B' \subseteq U$</span>, <span class="kdmath">$U \cap B' = B'$</span>, it follows that <span class="kdmath">$U \setminus A = B'$</span>. Thus we 
+have <span class="kdmath">$B' = B = U \setminus A$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">A</script> is arbitrary and <script type="math/tex">A \in \mathcal P(U)</script>. Also suppose <script type="math/tex">B = U \setminus A</script>. Suppose <script type="math/tex">C \in \mathcal P (U)</script>.
-Suppose <script type="math/tex">x \in C \setminus B</script>. Then:</p>
+<p>Suppose <span class="kdmath">$A$</span> is arbitrary and <span class="kdmath">$A \in \mathcal P(U)$</span>. Also suppose <span class="kdmath">$B = U \setminus A$</span>. Suppose <span class="kdmath">$C \in \mathcal P (U)$</span>.
+Suppose <span class="kdmath">$x \in C \setminus B$</span>. Then:</p>
 
-<p><script type="math/tex">\leftrightarrow x \in C \land x \notin B</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land \lnot (x \in U \setminus A )</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land \lnot (x \in U \land x \notin A )</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land (x \notin U \lor x \in A )</script>  <br />
-Since <script type="math/tex">x \notin U</script> is always false as we assumed <script type="math/tex">x \in C \setminus B</script>:  <br />
-<script type="math/tex">\leftrightarrow x \in C \land (false \lor x \in A )</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \land x \in A</script>  <br />
-<script type="math/tex">\leftrightarrow x \in C \cap A</script></p>
+<p><span class="kdmath">$\leftrightarrow x \in C \land x \notin B$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land \lnot (x \in U \setminus A )$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land \lnot (x \in U \land x \notin A )$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land (x \notin U \lor x \in A )$</span>  <br />
+Since <span class="kdmath">$x \notin U$</span> is always false as we assumed <span class="kdmath">$x \in C \setminus B$</span>:  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land (false \lor x \in A )$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \land x \in A$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in C \cap A$</span></p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, we have <script type="math/tex">C \setminus B = C \cap A</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, we have <span class="kdmath">$C \setminus B = C \cap A$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Now for uniqueness proof. Lets assume <script type="math/tex">B' \in P(U)</script> such that  <script type="math/tex">C \setminus B' = C \cap A</script>. Suppose <script type="math/tex">C = U</script>, it follows that 
-<script type="math/tex">U \setminus B' = U \cap A</script>. Since <script type="math/tex">A \subseteq U</script>, it follows <script type="math/tex">U \cap A = A</script>. Thus we have <script type="math/tex">U \setminus B' = A</script>. Thus if 
-if <script type="math/tex">x \in B'</script>, then <script type="math/tex">x \notin A</script>. Thus <script type="math/tex">B'</script> contains all the elements which are not in <script type="math/tex">A</script>, or <script type="math/tex">B' = U \setminus A</script>.
-Thus <script type="math/tex">B' = B = U \setminus A</script>.</p>
+<p>Now for uniqueness proof. Lets assume <span class="kdmath">$B' \in P(U)$</span> such that  <span class="kdmath">$C \setminus B' = C \cap A$</span>. Suppose <span class="kdmath">$C = U$</span>, it follows that 
+<span class="kdmath">$U \setminus B' = U \cap A$</span>. Since <span class="kdmath">$A \subseteq U$</span>, it follows <span class="kdmath">$U \cap A = A$</span>. Thus we have <span class="kdmath">$U \setminus B' = A$</span>. Thus if 
+if <span class="kdmath">$x \in B'$</span>, then <span class="kdmath">$x \notin A$</span>. Thus <span class="kdmath">$B'$</span> contains all the elements which are not in <span class="kdmath">$A$</span>, or <span class="kdmath">$B' = U \setminus A$</span>.
+Thus <span class="kdmath">$B' = B = U \setminus A$</span>.</p>
 
 <hr />
 
@@ -1447,70 +1448,70 @@ Thus <script type="math/tex">B' = B = U \setminus A</script>.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">X = \phi</script>. Now suppose <script type="math/tex">x \in A \triangle \phi</script>, then it follows that <script type="math/tex">x \in A</script>. Similarly if <script type="math/tex">x \in A</script>, then
- <script type="math/tex">x \in A \triangle \phi</script>. Since <script type="math/tex">x</script> is arbitrary, <script type="math/tex">A \triangle \phi = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$X = \phi$</span>. Now suppose <span class="kdmath">$x \in A \triangle \phi$</span>, then it follows that <span class="kdmath">$x \in A$</span>. Similarly if <span class="kdmath">$x \in A$</span>, then
+ <span class="kdmath">$x \in A \triangle \phi$</span>. Since <span class="kdmath">$x$</span> is arbitrary, <span class="kdmath">$A \triangle \phi = \phi$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">X'</script> is a set such that <script type="math/tex">A \triangle X' = A</script>. Now for <script type="math/tex">A = \phi</script>, we have <script type="math/tex">\phi \triangle X' = \phi</script>. But <script type="math/tex">\phi \triangle X' = X'</script>.
-It follows that <script type="math/tex">X' = X = \phi</script>. Or we can say that <script type="math/tex">X</script> is unique.</p>
+<p>Suppose <span class="kdmath">$X'$</span> is a set such that <span class="kdmath">$A \triangle X' = A$</span>. Now for <span class="kdmath">$A = \phi$</span>, we have <span class="kdmath">$\phi \triangle X' = \phi$</span>. But <span class="kdmath">$\phi \triangle X' = X'$</span>.
+It follows that <span class="kdmath">$X' = X = \phi$</span>. Or we can say that <span class="kdmath">$X$</span> is unique.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">A</script> is arbitrary. From last part we know that <script type="math/tex">X = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$A$</span> is arbitrary. From last part we know that <span class="kdmath">$X = \phi$</span>.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">B = A</script>. Then <script type="math/tex">A \triangle B = A \triangle A</script>. Since <script type="math/tex">A \triangle A</script> contains all element which exists in <script type="math/tex">A \setminus A</script>.
-But clearly <script type="math/tex">A \setminus A = \phi</script>. Thus <script type="math/tex">A \triangle A = \phi</script>. Thus there exists a set <script type="math/tex">B = A</script> such that <script type="math/tex">A \triangle B = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$B = A$</span>. Then <span class="kdmath">$A \triangle B = A \triangle A$</span>. Since <span class="kdmath">$A \triangle A$</span> contains all element which exists in <span class="kdmath">$A \setminus A$</span>.
+But clearly <span class="kdmath">$A \setminus A = \phi$</span>. Thus <span class="kdmath">$A \triangle A = \phi$</span>. Thus there exists a set <span class="kdmath">$B = A$</span> such that <span class="kdmath">$A \triangle B = \phi$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">B'</script> is a set such that <script type="math/tex">A \triangle B' = \phi</script>. Now for <script type="math/tex">A = \phi</script>, we have <script type="math/tex">\phi \triangle B' = \phi</script>. But since 
-<script type="math/tex">\phi \triangle B' = B'</script>, it follows that <script type="math/tex">B' = \phi</script>. Or we can conclude that <script type="math/tex">B</script> is unique.</p>
+<p>Suppose <span class="kdmath">$B'$</span> is a set such that <span class="kdmath">$A \triangle B' = \phi$</span>. Now for <span class="kdmath">$A = \phi$</span>, we have <span class="kdmath">$\phi \triangle B' = \phi$</span>. But since 
+<span class="kdmath">$\phi \triangle B' = B'$</span>, it follows that <span class="kdmath">$B' = \phi$</span>. Or we can conclude that <span class="kdmath">$B$</span> is unique.</p>
 
 <p><strong>(c)</strong></p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">C = A \triangle B</script>. Then we have <script type="math/tex">A \triangle C</script>:
-<script type="math/tex">\leftrightarrow= A \triangle ( A \triangle B)</script>    <br />
-<script type="math/tex">\leftrightarrow= (A \triangle  A) \triangle B</script>    <br />
-<script type="math/tex">\leftrightarrow= \phi \triangle B</script>    <br />
-<script type="math/tex">\leftrightarrow= B</script></p>
+<p>Suppose <span class="kdmath">$C = A \triangle B$</span>. Then we have <span class="kdmath">$A \triangle C$</span>:
+<span class="kdmath">$\leftrightarrow= A \triangle ( A \triangle B)$</span>    <br />
+<span class="kdmath">$\leftrightarrow= (A \triangle  A) \triangle B$</span>    <br />
+<span class="kdmath">$\leftrightarrow= \phi \triangle B$</span>    <br />
+<span class="kdmath">$\leftrightarrow= B$</span></p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">C'</script> is a set such that <script type="math/tex">A \triangle C' = B</script>. Suppose <script type="math/tex">A = C' \triangle B</script>. Thus we have <script type="math/tex">A \triangle B</script> :
-<script type="math/tex">\leftrightarrow (C' \triangle B) \triangle B</script>  <br />
-<script type="math/tex">\leftrightarrow C' \triangle (B \triangle B)</script>  <br />
-<script type="math/tex">\leftrightarrow C' \triangle \phi</script>  <br />
-<script type="math/tex">\leftrightarrow C'</script></p>
+<p>Suppose <span class="kdmath">$C'$</span> is a set such that <span class="kdmath">$A \triangle C' = B$</span>. Suppose <span class="kdmath">$A = C' \triangle B$</span>. Thus we have <span class="kdmath">$A \triangle B$</span> :
+<span class="kdmath">$\leftrightarrow (C' \triangle B) \triangle B$</span>  <br />
+<span class="kdmath">$\leftrightarrow C' \triangle (B \triangle B)$</span>  <br />
+<span class="kdmath">$\leftrightarrow C' \triangle \phi$</span>  <br />
+<span class="kdmath">$\leftrightarrow C'$</span></p>
 
-<p>Thus we have <script type="math/tex">C' = A \triangle B</script>. Or we can say that <script type="math/tex">C</script> is unique.</p>
+<p>Thus we have <span class="kdmath">$C' = A \triangle B$</span>. Or we can say that <span class="kdmath">$C$</span> is unique.</p>
 
 <hr />
 
 <p><strong>(d)</strong></p>
 
-<p>Suppose <script type="math/tex">A</script> is arbitrary.</p>
+<p>Suppose <span class="kdmath">$A$</span> is arbitrary.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">B = A</script>. Suppose <script type="math/tex">C \subseteq A</script>. Then we have <script type="math/tex">B \triangle C</script> : 
-<script type="math/tex">\leftrightarrow A \triangle C</script>.  <br />
-<script type="math/tex">\leftrightarrow A \setminus C \cup C \setminus A</script>.  <br />
-Since <script type="math/tex">C \subseteq A</script>, <script type="math/tex">C \setminus A = \phi</script>:  <br />
-<script type="math/tex">\leftrightarrow A \setminus C \cup \phi</script>.  <br />
-<script type="math/tex">\leftrightarrow A \setminus C</script>.</p>
+<p>Suppose <span class="kdmath">$B = A$</span>. Suppose <span class="kdmath">$C \subseteq A$</span>. Then we have <span class="kdmath">$B \triangle C$</span> : 
+<span class="kdmath">$\leftrightarrow A \triangle C$</span>.  <br />
+<span class="kdmath">$\leftrightarrow A \setminus C \cup C \setminus A$</span>.  <br />
+Since <span class="kdmath">$C \subseteq A$</span>, <span class="kdmath">$C \setminus A = \phi$</span>:  <br />
+<span class="kdmath">$\leftrightarrow A \setminus C \cup \phi$</span>.  <br />
+<span class="kdmath">$\leftrightarrow A \setminus C$</span>.</p>
 
-<p>Thus there exists a <script type="math/tex">B = A</script>, such that <script type="math/tex">B \triangle C = A \setminus C</script>.</p>
+<p>Thus there exists a <span class="kdmath">$B = A$</span>, such that <span class="kdmath">$B \triangle C = A \setminus C$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">B'</script> is a set such that <script type="math/tex">B' \triangle C = A \setminus C</script>. Since this is true for all sets <script type="math/tex">A</script> and all sets <script type="math/tex">C</script> such that 
-<script type="math/tex">C \subseteq A</script>, this must be true for <script type="math/tex">C = \phi</script>. Thus <script type="math/tex">B' \triangle \phi = A \setminus \phi</script>, which is equivalent to <script type="math/tex">B' = A</script>.
-Thus we can conclude that <script type="math/tex">B'</script> is unique.</p>
+<p>Suppose <span class="kdmath">$B'$</span> is a set such that <span class="kdmath">$B' \triangle C = A \setminus C$</span>. Since this is true for all sets <span class="kdmath">$A$</span> and all sets <span class="kdmath">$C$</span> such that 
+<span class="kdmath">$C \subseteq A$</span>, this must be true for <span class="kdmath">$C = \phi$</span>. Thus <span class="kdmath">$B' \triangle \phi = A \setminus \phi$</span>, which is equivalent to <span class="kdmath">$B' = A$</span>.
+Thus we can conclude that <span class="kdmath">$B'$</span> is unique.</p>
 
 <hr />
 
@@ -1518,39 +1519,39 @@ Thus we can conclude that <script type="math/tex">B'</script> is unique.</p>
 
 <p>We can have following cases:</p>
 
-<p>Case 1: <script type="math/tex">A = \phi</script>.   <br />
-Suppose <script type="math/tex">\mathcal F</script> does not contain any set. Thus <script type="math/tex">\cup \mathcal F = \phi</script>. But since <script type="math/tex">\mathcal F</script> is empty, <script type="math/tex">A \in \mathcal F</script> 
-is false. Thus if <script type="math/tex">A = \phi</script> then <script type="math/tex">\cup \mathcal F = A \to A \in \mathcal F</script> is false. Or by contra-positive, we can conclude that if 
-<script type="math/tex">\cup \mathcal F = A \to A \in \mathcal F</script> then <script type="math/tex">A \ne \phi</script>.</p>
+<p>Case 1: <span class="kdmath">$A = \phi$</span>.   <br />
+Suppose <span class="kdmath">$\mathcal F$</span> does not contain any set. Thus <span class="kdmath">$\cup \mathcal F = \phi$</span>. But since <span class="kdmath">$\mathcal F$</span> is empty, <span class="kdmath">$A \in \mathcal F$</span> 
+is false. Thus if <span class="kdmath">$A = \phi$</span> then <span class="kdmath">$\cup \mathcal F = A \to A \in \mathcal F$</span> is false. Or by contra-positive, we can conclude that if 
+<span class="kdmath">$\cup \mathcal F = A \to A \in \mathcal F$</span> then <span class="kdmath">$A \ne \phi$</span>.</p>
 
-<p>Case 2: <script type="math/tex">A</script> contains more than one element:  <br />
-Suppose <script type="math/tex">x \in A</script>. Suppose <script type="math/tex">\mathcal F = \{ A_1, A_2 \}</script> such that sets <script type="math/tex">A_1 = \{ x \}</script> and <script type="math/tex">A_2 = A \setminus  A_1</script>. Thus <script type="math/tex">A = A_1 \cup A_2</script>.
-Or we can say that <script type="math/tex">\cup \mathcal F = A</script>. But clearly <script type="math/tex">A \notin \mathcal F</script>. Or <script type="math/tex">\cup \mathcal F = A \to A \in \mathcal F</script> is false.
-Thus by contrapositive we can say that if <script type="math/tex">\cup \mathcal F = A \to A \in \mathcal F</script> then <script type="math/tex">A</script> does not contains more then one element.</p>
+<p>Case 2: <span class="kdmath">$A$</span> contains more than one element:  <br />
+Suppose <span class="kdmath">$x \in A$</span>. Suppose <span class="kdmath">$\mathcal F = \{ A_1, A_2 \}$</span> such that sets <span class="kdmath">$A_1 = \{ x \}$</span> and <span class="kdmath">$A_2 = A \setminus  A_1$</span>. Thus <span class="kdmath">$A = A_1 \cup A_2$</span>.
+Or we can say that <span class="kdmath">$\cup \mathcal F = A$</span>. But clearly <span class="kdmath">$A \notin \mathcal F$</span>. Or <span class="kdmath">$\cup \mathcal F = A \to A \in \mathcal F$</span> is false.
+Thus by contrapositive we can say that if <span class="kdmath">$\cup \mathcal F = A \to A \in \mathcal F$</span> then <span class="kdmath">$A$</span> does not contains more then one element.</p>
 
-<p>Thus combining both cases 1 and 2, there is only one possibility that <script type="math/tex">A</script> contains only one element.</p>
+<p>Thus combining both cases 1 and 2, there is only one possibility that <span class="kdmath">$A$</span> contains only one element.</p>
 
 <hr />
 
 <p><strong>Soln11</strong></p>
 
 <p><u>Existence:</u>   <br />
-Suppose <script type="math/tex">A = \cup \mathcal F</script>. Since <script type="math/tex">\mathcal F \subseteq \mathcal F</script>, it follows that <script type="math/tex">\cup \mathcal F \in \mathcal F</script>. Suppose <script type="math/tex">P \in \mathcal F</script>, 
-then if <script type="math/tex">x \in P</script>, it follows that <script type="math/tex">x \in \cup \mathcal F</script>. Thus <script type="math/tex">P \subseteq \cup \mathcal F</script>. Since <script type="math/tex">P</script> is arbitrary, 
-<script type="math/tex">\forall P \in \mathcal F (P \subseteq \cup \mathcal F))</script>.</p>
+Suppose <span class="kdmath">$A = \cup \mathcal F$</span>. Since <span class="kdmath">$\mathcal F \subseteq \mathcal F$</span>, it follows that <span class="kdmath">$\cup \mathcal F \in \mathcal F$</span>. Suppose <span class="kdmath">$P \in \mathcal F$</span>, 
+then if <span class="kdmath">$x \in P$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal F$</span>. Thus <span class="kdmath">$P \subseteq \cup \mathcal F$</span>. Since <span class="kdmath">$P$</span> is arbitrary, 
+<span class="kdmath">$\forall P \in \mathcal F (P \subseteq \cup \mathcal F))$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
 <p>(Update: (04 Feb. 2019) As pointed out in comments, earlier this part of the solution was not correct. Here is the fixed version.)</p>
 
-<p>Suppose <script type="math/tex">Q_1 \in \mathcal F</script> and <script type="math/tex">Q_2 \in \mathcal F</script> are two different sets such that <script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_1 ))</script> and <script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_2 ))</script>. Since <script type="math/tex">Q_1 \in \mathcal F</script>, we can replace <script type="math/tex">P</script> with <script type="math/tex">Q_1</script> in <script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_2 ))</script> and <script type="math/tex">P</script> with <script type="math/tex">Q_2</script> in <script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_1 ))</script>. Thus we get <script type="math/tex">Q_1 \subseteq Q_2</script> and <script type="math/tex">Q_2 \subseteq Q_1</script>. It follows that <script type="math/tex">Q_1 = Q_2</script>.</p>
+<p>Suppose <span class="kdmath">$Q_1 \in \mathcal F$</span> and <span class="kdmath">$Q_2 \in \mathcal F$</span> are two different sets such that <span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_1 ))$</span> and <span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_2 ))$</span>. Since <span class="kdmath">$Q_1 \in \mathcal F$</span>, we can replace <span class="kdmath">$P$</span> with <span class="kdmath">$Q_1$</span> in <span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_2 ))$</span> and <span class="kdmath">$P$</span> with <span class="kdmath">$Q_2$</span> in <span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_1 ))$</span>. Thus we get <span class="kdmath">$Q_1 \subseteq Q_2$</span> and <span class="kdmath">$Q_2 \subseteq Q_1$</span>. It follows that <span class="kdmath">$Q_1 = Q_2$</span>.</p>
 
 <p>Earlier version:</p>
 
-<p>Suppose <script type="math/tex">Q_1 \subseteq \mathcal F</script> and <script type="math/tex">Q_2 \subseteq \mathcal F</script> are two different sets such that <script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_1 ))</script> and 
-<script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_2 ))</script>. Since <script type="math/tex">Q_1 \subseteq \mathcal F</script>, we can replace <script type="math/tex">P</script> with <script type="math/tex">Q_1</script> in <script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_2 ))</script> 
-and <script type="math/tex">P</script> with <script type="math/tex">Q_2</script> in <script type="math/tex">\forall P \in \mathcal F (P \subseteq Q_1 ))</script>. Thus we get <script type="math/tex">Q_1 \subseteq Q_2</script> and <script type="math/tex">Q_2 \subseteq Q_1</script>. It follows that
-<script type="math/tex">Q_1 = Q_2</script>.</p>
+<p>Suppose <span class="kdmath">$Q_1 \subseteq \mathcal F$</span> and <span class="kdmath">$Q_2 \subseteq \mathcal F$</span> are two different sets such that <span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_1 ))$</span> and 
+<span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_2 ))$</span>. Since <span class="kdmath">$Q_1 \subseteq \mathcal F$</span>, we can replace <span class="kdmath">$P$</span> with <span class="kdmath">$Q_1$</span> in <span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_2 ))$</span> 
+and <span class="kdmath">$P$</span> with <span class="kdmath">$Q_2$</span> in <span class="kdmath">$\forall P \in \mathcal F (P \subseteq Q_1 ))$</span>. Thus we get <span class="kdmath">$Q_1 \subseteq Q_2$</span> and <span class="kdmath">$Q_2 \subseteq Q_1$</span>. It follows that
+<span class="kdmath">$Q_1 = Q_2$</span>.</p>
 
 <hr />
 
@@ -1558,29 +1559,29 @@ and <script type="math/tex">P</script> with <script type="math/tex">Q_2</script>
 
 <p><strong>(a)</strong></p>
 
-<p>Required statement: <script type="math/tex">\exists x \exists y ( P(x) \land P(y) \land x \ne y \land \forall z (P(z) \to (z = x \lor z = y)) )</script>.</p>
+<p>Required statement: <span class="kdmath">$\exists x \exists y ( P(x) \land P(y) \land x \ne y \land \forall z (P(z) \to (z = x \lor z = y)) )$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>We shall prove it in two steps:</p>
 
-<p><u>Existence Proof:</u> First prove two such value exists so that <script type="math/tex">P(x)</script> is true.</p>
+<p><u>Existence Proof:</u> First prove two such value exists so that <span class="kdmath">$P(x)$</span> is true.</p>
 
-<p><u>Uniqueness Proof:</u> Prove if there is any value, say <script type="math/tex">z</script> so that <script type="math/tex">P(z)</script> is true, then this value must be equal to any of the two values find in previous step.</p>
+<p><u>Uniqueness Proof:</u> Prove if there is any value, say <span class="kdmath">$z$</span> so that <span class="kdmath">$P(z)$</span> is true, then this value must be equal to any of the two values find in previous step.</p>
 
 <p><strong>(c)</strong></p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">x = 0</script>, then we have <script type="math/tex">x^3 = x^2 = 0</script>.</p>
+<p>Suppose <span class="kdmath">$x = 0$</span>, then we have <span class="kdmath">$x^3 = x^2 = 0$</span>.</p>
 
-<p>Also suppose <script type="math/tex">x = 1</script>, then we have <script type="math/tex">x^3 = x^2 = 1</script>.</p>
+<p>Also suppose <span class="kdmath">$x = 1$</span>, then we have <span class="kdmath">$x^3 = x^2 = 1$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose for a value <script type="math/tex">x = z</script> such that <script type="math/tex">z \ne 0 \land z \ne 1</script>, and <script type="math/tex">x^3 = x^2</script>. Thus <script type="math/tex">z^3 = z^2</script>. Since <script type="math/tex">z \ne 0</script>, multiplying both
-sides by <script type="math/tex">\frac 1 {z^2}</script>, we get <script type="math/tex">z = 1</script>. Thus it contradicts with the assumption <script type="math/tex">z \ne 1</script>. So we can conclude that <script type="math/tex">0</script> and 
-<script type="math/tex">1</script> are the only possible values for <script type="math/tex">x</script>.</p>
+<p>Suppose for a value <span class="kdmath">$x = z$</span> such that <span class="kdmath">$z \ne 0 \land z \ne 1$</span>, and <span class="kdmath">$x^3 = x^2$</span>. Thus <span class="kdmath">$z^3 = z^2$</span>. Since <span class="kdmath">$z \ne 0$</span>, multiplying both
+sides by <span class="kdmath">$\frac 1 {z^2}$</span>, we get <span class="kdmath">$z = 1$</span>. Thus it contradicts with the assumption <span class="kdmath">$z \ne 1$</span>. So we can conclude that <span class="kdmath">$0$</span> and 
+<span class="kdmath">$1$</span> are the only possible values for <span class="kdmath">$x$</span>.</p>
 
 
                         <hr/>

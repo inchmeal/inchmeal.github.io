@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -978,11 +979,11 @@
                     <span itemprop="articleSection">
 						<hr/>
                         <h4 id="b">(b)</h4>
-<p>We have <script type="math/tex">\, P(\left\vert \bar X - \mu \right\vert > \delta) \approx l \,</script></p>
+<p>We have <span class="kdmath">$\, P(\left\vert \bar X - \mu \right\vert > \delta) \approx l \,$</span></p>
 
-<p>We shall first find an expression to compute <script type="math/tex">\, \delta \,</script></p>
+<p>We shall first find an expression to compute <span class="kdmath">$\, \delta \,$</span></p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 P(\left\vert \bar X - \mu \right\vert > \delta) &= \\
@@ -990,46 +991,48 @@ P(\left\vert \bar X - \mu \right\vert > \delta) &= \\
 												&= 1 - P(\frac {-\delta} {\sigma_{\bar X} } < \frac {\bar X - \mu} {\sigma_{\bar X} } < \frac {\delta} {\sigma_{\bar X} } \\
 												&= 2\left(1- \Phi\left( \frac {\delta} {\sigma_{\bar X} } \right) \right) && \text{Using CLT. See soln8 for detailed steps} \\
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus we can compute <script type="math/tex">\, \delta \,</script> as:</p>
+<p>Thus we can compute <span class="kdmath">$\, \delta \,$</span> as:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 &\Rightarrow 2\left(1- \Phi\left( \frac {\delta} {\sigma_{\bar X} } \right) \right) = l \\
 &\Rightarrow \Phi\left( \frac{\delta} {\sigma_{\bar X} } \right) = 1 - \frac l 2 \\
 &\Rightarrow \delta = \sigma_{\bar X} \times \Phi^{-1}\left( 1 - \frac l 2 \right)
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p><script type="math/tex">\, \sigma_{\bar X} \,</script> can be computed using the formuale <script type="math/tex">\, \frac {\sigma} {\sqrt{n} } \sqrt{ 1 - \frac{n-1} {N-1} } \,</script></p>
+<p><span class="kdmath">$\, \sigma_{\bar X} \,$</span> can be computed using the formuale <span class="kdmath">$\, \frac {\sigma} {\sqrt{n} } \sqrt{ 1 - \frac{n-1} {N-1} } \,$</span></p>
 
-<p>We have <script type="math/tex">\, \sigma = 589.716 \,</script> from the example quoted in the problem. To compute <script type="math/tex">\, \Phi^{-1} \,</script>, we can use the normal tables given in the end of the book.</p>
+<p>We have <span class="kdmath">$\, \sigma = 589.716 \,$</span> from the example quoted in the problem. To compute <span class="kdmath">$\, \Phi^{-1} \,$</span>, we can use the normal tables given in the end of the book.</p>
 
-<p>Now we just need to insert the values into the formulae to compute <script type="math/tex">\, \delta \,</script></p>
+<p>Now we just need to insert the values into the formulae to compute <span class="kdmath">$\, \delta \,$</span></p>
 
 <table>
   <thead>
     <tr>
       <th style="text-align: center"> </th>
-      <th style="text-align: center"><script type="math/tex">\, n=20 \,</script></th>
-      <th style="text-align: center"><script type="math/tex">\, n=40 \,</script></th>
-      <th style="text-align: center"><script type="math/tex">\, n=80 \,</script></th>
+      <th style="text-align: center"><span class="kdmath">$\, n=20 \,$</span></th>
+      <th style="text-align: center"><span class="kdmath">$\, n=40 \,$</span></th>
+      <th style="text-align: center"><span class="kdmath">$\, n=80 \,$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">\, l=0.10 \,</script></td>
-      <td style="text-align: center"><script type="math/tex">\, 211.583 \,</script></td>
-      <td style="text-align: center"><script type="math/tex">\, 145.650 \,</script></td>
-      <td style="text-align: center"><script type="math/tex">\, 96.918 \,</script></td>
+      <td style="text-align: center"><span class="kdmath">$\, l=0.10 \,$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\, 211.583 \,$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\, 145.650 \,$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\, 96.918 \,$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">\, l=0.50 \,</script></td>
-      <td style="text-align: center"><script type="math/tex">\, 87.4677 \,</script></td>
-      <td style="text-align: center"><script type="math/tex">\, 60.2 \,</script></td>
-      <td style="text-align: center"><script type="math/tex">\, 40.06288 \,</script></td>
+      <td style="text-align: center"><span class="kdmath">$\, l=0.50 \,$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\, 87.4677 \,$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\, 60.2 \,$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\, 40.06288 \,$</span></td>
     </tr>
   </tbody>
 </table>

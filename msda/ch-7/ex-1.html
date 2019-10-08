@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,22 +980,26 @@
 						<hr/>
                         <p>Population mean:</p>
 
-<script type="math/tex; mode=display">\mu = \frac 1 N \sum_{i=1}^{i=N} x_i = \frac {1 + 2 + 2 + 4 + 8} 5 = 3.4</script>
+<div class="kdmath">$$
+\mu = \frac 1 N \sum_{i=1}^{i=N} x_i = \frac {1 + 2 + 2 + 4 + 8} 5 = 3.4
+$$</div>
 
 <p>Population varaince:</p>
 
-<p><script type="math/tex">{\sigma}^2 = \frac 1 N \sum_{i=1}^{i=N} {(x_i - \mu)}^2</script>      <br />
-<script type="math/tex">\quad = \frac { {(1-3.4)}^2 + {(2-3.4)}^2 + {(2-3.4)}^2 + {(4-3.4)}^2 + {(8-3.4)}^2 } 5</script>    <br />
-<script type="math/tex">\quad = \frac {31.2} 5 = 6.24</script></p>
+<p><span class="kdmath">${\sigma}^2 = \frac 1 N \sum_{i=1}^{i=N} {(x_i - \mu)}^2$</span>      <br />
+<span class="kdmath">$\quad = \frac { {(1-3.4)}^2 + {(2-3.4)}^2 + {(2-3.4)}^2 + {(4-3.4)}^2 + {(8-3.4)}^2 } 5$</span>    <br />
+<span class="kdmath">$\quad = \frac {31.2} 5 = 6.24$</span></p>
 
 <p>Samples of size 2:</p>
 
-<script type="math/tex; mode=display">(1,2), (1,2), (1,4), (1,8), (2,2), (2,4), (2,8), (2,4), (2,8), (4,8)</script>
+<div class="kdmath">$$
+(1,2), (1,2), (1,4), (1,8), (2,2), (2,4), (2,8), (2,4), (2,8), (4,8)
+$$</div>
 
-<p>Note that every sample containing <script type="math/tex">2</script> appears twice except for <script type="math/tex">(2,2)</script>. Since in a sample order does not
-matter and both <script type="math/tex">2</script>’s are taken from the population, so there is only one possible sample for <script type="math/tex">(2,2)</script>.</p>
+<p>Note that every sample containing <span class="kdmath">$2$</span> appears twice except for <span class="kdmath">$(2,2)$</span>. Since in a sample order does not
+matter and both <span class="kdmath">$2$</span>’s are taken from the population, so there is only one possible sample for <span class="kdmath">$(2,2)$</span>.</p>
 
-<p>Thus we have total <script type="math/tex">{ 5 \choose 2 } = 10</script> samples. The probability of occurance of a sample is the fraction of times it appears in the total(10) samples. For eg: Prob. of choosing sample <script type="math/tex">(1,2)</script> is <script type="math/tex">\frac 2 {10}</script>.</p>
+<p>Thus we have total <span class="kdmath">${ 5 \choose 2 } = 10$</span> samples. The probability of occurance of a sample is the fraction of times it appears in the total(10) samples. For eg: Prob. of choosing sample <span class="kdmath">$(1,2)$</span> is <span class="kdmath">$\frac 2 {10}$</span>.</p>
 
 <p>Sampling Distribution of the mean of samples of size 2:</p>
 
@@ -1002,56 +1007,58 @@ matter and both <script type="math/tex">2</script>’s are taken from the popula
   <thead>
     <tr>
       <th style="text-align: center">Sample</th>
-      <th style="text-align: center">Mean( <script type="math/tex">{\mu}_i = {\bar X}</script> )</th>
-      <th style="text-align: center">Probability( <script type="math/tex">p_i</script> )</th>
+      <th style="text-align: center">Mean( <span class="kdmath">${\mu}_i = {\bar X}$</span> )</th>
+      <th style="text-align: center">Probability( <span class="kdmath">$p_i$</span> )</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(1,2)</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac {1+2} 2 = 1.5</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 2 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(1,2)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac {1+2} 2 = 1.5$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 2 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(1,4)</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac {1+4} 2 = 2.5</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(1,4)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac {1+4} 2 = 2.5$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(1,8)</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac {1+8} 2 = 4.5</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(1,8)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac {1+8} 2 = 4.5$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(2,2)</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac {2+2} 2 = 2.0</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(2,2)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac {2+2} 2 = 2.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(2,4)</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac {2+4} 2 = 3.0</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 2 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(2,4)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac {2+4} 2 = 3.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 2 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(2,8)</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac {2+8} 2 = 5.0</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 2 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(2,8)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac {2+8} 2 = 5.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 2 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(4,8)</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac {4+8} 2 = 6.0</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(4,8)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac {4+8} 2 = 6.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Mean of all the sample means, <script type="math/tex">\mathrm{E} {\bar X} = \sum_{i=1}^{i=N} p_i {\mu}_i</script></p>
+<p>Mean of all the sample means, <span class="kdmath">$\mathrm{E} {\bar X} = \sum_{i=1}^{i=N} p_i {\mu}_i$</span></p>
 
-<script type="math/tex; mode=display">\quad = { \frac 2 {10} \times 1.5 } + { \frac 1 {10} \times 2.5 } + { \frac 1 {10} \times 4.5 } + { \frac 1 {10} \times 2.0 } + { \frac 2 {10} \times 3.0 } + { \frac 2 {10} \times 5.0 } + { \frac 1 {10} \times 6.0 }</script>
+<div class="kdmath">$$
+\quad = { \frac 2 {10} \times 1.5 } + { \frac 1 {10} \times 2.5 } + { \frac 1 {10} \times 4.5 } + { \frac 1 {10} \times 2.0 } + { \frac 2 {10} \times 3.0 } + { \frac 2 {10} \times 5.0 } + { \frac 1 {10} \times 6.0 }
+$$</div>
 
-<p><script type="math/tex">\quad = 3.4</script>.</p>
+<p><span class="kdmath">$\quad = 3.4$</span>.</p>
 
-<p>Variance of all the sample means, <script type="math/tex">\mathrm{Var} ({\bar X}) = \mathrm{E} { ( {\mu}_i - \mathrm{E} {\bar X} ) }^2</script>.</p>
+<p>Variance of all the sample means, <span class="kdmath">$\mathrm{Var} ({\bar X}) = \mathrm{E} { ( {\mu}_i - \mathrm{E} {\bar X} ) }^2$</span>.</p>
 
 <p>For better visibility, using the following table for computation:</p>
 
@@ -1059,64 +1066,64 @@ matter and both <script type="math/tex">2</script>’s are taken from the popula
   <thead>
     <tr>
       <th style="text-align: center">Sample</th>
-      <th style="text-align: center">Mean( <script type="math/tex">{\mu}_i = {\bar X}</script> )</th>
-      <th style="text-align: center"><script type="math/tex">{ ( {\mu}_i - \mathrm{E} {\bar X} ) }^2</script></th>
-      <th style="text-align: center">Probability( <script type="math/tex">p_i</script> )</th>
+      <th style="text-align: center">Mean( <span class="kdmath">${\mu}_i = {\bar X}$</span> )</th>
+      <th style="text-align: center"><span class="kdmath">${ ( {\mu}_i - \mathrm{E} {\bar X} ) }^2$</span></th>
+      <th style="text-align: center">Probability( <span class="kdmath">$p_i$</span> )</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(1,2)</script></td>
-      <td style="text-align: center"><script type="math/tex">1.5</script></td>
-      <td style="text-align: center"><script type="math/tex">{ ( 1.5 - 3.4 ) }^2 = 3.61</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 2 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(1,2)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$1.5$</span></td>
+      <td style="text-align: center"><span class="kdmath">${ ( 1.5 - 3.4 ) }^2 = 3.61$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 2 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(1,4)</script></td>
-      <td style="text-align: center"><script type="math/tex">2.5</script></td>
-      <td style="text-align: center"><script type="math/tex">{ ( 2.5 - 3.4 ) }^2 = 0.81</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(1,4)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$2.5$</span></td>
+      <td style="text-align: center"><span class="kdmath">${ ( 2.5 - 3.4 ) }^2 = 0.81$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(1,8)</script></td>
-      <td style="text-align: center"><script type="math/tex">4.5</script></td>
-      <td style="text-align: center"><script type="math/tex">{ ( 4.5 - 3.4 ) }^2 = 1.21</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(1,8)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$4.5$</span></td>
+      <td style="text-align: center"><span class="kdmath">${ ( 4.5 - 3.4 ) }^2 = 1.21$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(2,2)</script></td>
-      <td style="text-align: center"><script type="math/tex">2.0</script></td>
-      <td style="text-align: center"><script type="math/tex">{ ( 2.0 - 3.4 ) }^2 = 1.96</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(2,2)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$2.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">${ ( 2.0 - 3.4 ) }^2 = 1.96$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(2,4)</script></td>
-      <td style="text-align: center"><script type="math/tex">3.0</script></td>
-      <td style="text-align: center"><script type="math/tex">{ ( 3.0 - 3.4 ) }^2 = 0.16</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 2 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(2,4)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$3.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">${ ( 3.0 - 3.4 ) }^2 = 0.16$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 2 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(2,8)</script></td>
-      <td style="text-align: center"><script type="math/tex">5.0</script></td>
-      <td style="text-align: center"><script type="math/tex">{ ( 5.0 - 3.4 ) }^2 = 2.56</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 2 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(2,8)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$5.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">${ ( 5.0 - 3.4 ) }^2 = 2.56$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 2 {10}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">(4,8)</script></td>
-      <td style="text-align: center"><script type="math/tex">6.0</script></td>
-      <td style="text-align: center"><script type="math/tex">{ ( 5.0 - 3.4 ) }^2 = 6.76</script></td>
-      <td style="text-align: center"><script type="math/tex">\frac 1 {10}</script></td>
+      <td style="text-align: center"><span class="kdmath">$(4,8)$</span></td>
+      <td style="text-align: center"><span class="kdmath">$6.0$</span></td>
+      <td style="text-align: center"><span class="kdmath">${ ( 5.0 - 3.4 ) }^2 = 6.76$</span></td>
+      <td style="text-align: center"><span class="kdmath">$\frac 1 {10}$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Clearly, Variance is the dot product of last two columns, <script type="math/tex">\mathrm{Var} ({\bar X}) = 2.34</script>.</p>
+<p>Clearly, Variance is the dot product of last two columns, <span class="kdmath">$\mathrm{Var} ({\bar X}) = 2.34$</span>.</p>
 
-<p>Comparing the values of <script type="math/tex">\mathrm{E} {\bar X}</script> and population mean, <script type="math/tex">\mu</script>, both are equal to <script type="math/tex">3.4</script>, in agreement with the Theorem mentioned in problem.</p>
+<p>Comparing the values of <span class="kdmath">$\mathrm{E} {\bar X}$</span> and population mean, <span class="kdmath">$\mu$</span>, both are equal to <span class="kdmath">$3.4$</span>, in agreement with the Theorem mentioned in problem.</p>
 
-<p>Comparing the values of <script type="math/tex">\mathrm{Var} ({\bar X})</script> and population variance, <script type="math/tex">\sigma</script>, as per theorem <script type="math/tex">\mathrm{Var} ({\bar X}) = \frac { {\sigma}^2 } n ( 1 - \frac {n-1} {N-1} )</script>. Here, <script type="math/tex">n = 2</script> is the sample size and <script type="math/tex">N = 5</script>, total population.</p>
+<p>Comparing the values of <span class="kdmath">$\mathrm{Var} ({\bar X})$</span> and population variance, <span class="kdmath">$\sigma$</span>, as per theorem <span class="kdmath">$\mathrm{Var} ({\bar X}) = \frac { {\sigma}^2 } n ( 1 - \frac {n-1} {N-1} )$</span>. Here, <span class="kdmath">$n = 2$</span> is the sample size and <span class="kdmath">$N = 5$</span>, total population.</p>
 
-<p>Putting these values ion RHS, <script type="math/tex">\frac {6.24} 2 ( 1 - \frac 1 4 ) = 2.34</script>, which is same as the <script type="math/tex">\mathrm{Var} ({\bar X})</script>.</p>
+<p>Putting these values ion RHS, <span class="kdmath">$\frac {6.24} 2 ( 1 - \frac 1 4 ) = 2.34$</span>, which is same as the <span class="kdmath">$\mathrm{Var} ({\bar X})$</span>.</p>
 
 
                         $$\tag*{$\blacksquare$} $$

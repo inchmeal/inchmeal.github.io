@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,20 +1137,20 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li><em>Function</em> : Suppose <script type="math/tex">F</script> is a relation from <script type="math/tex">A</script> to <script type="math/tex">B</script>. Then <script type="math/tex">F</script> is called a <em>function</em> from <script type="math/tex">A</script> to <script type="math/tex">B</script> if for every <script type="math/tex">a \in A</script> there 
-is exactly one <script type="math/tex">b \in B</script> such that <script type="math/tex">(a, b) \in F</script>. In other words, <script type="math/tex">F</script> is a function from <script type="math/tex">A</script> to <script type="math/tex">B</script> means:  <br />
-  <script type="math/tex">\forall a \in A \exists ! b \in B((a,b) \in F)</script>.  <br />
-To indicate that <script type="math/tex">F</script> is a function from <script type="math/tex">A</script> to <script type="math/tex">B</script>, we will write <script type="math/tex">F : A \to B</script>.</li>
-  <li>Suppose <script type="math/tex">f</script> and <script type="math/tex">g</script> are functions from <script type="math/tex">A</script> to <script type="math/tex">B</script>. If <script type="math/tex">\forall a \in A( f (a) = g(a))</script>, then <script type="math/tex">f = g</script>. This theorem can be used in 
+  <li><em>Function</em> : Suppose <span class="kdmath">$F$</span> is a relation from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>. Then <span class="kdmath">$F$</span> is called a <em>function</em> from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span> if for every <span class="kdmath">$a \in A$</span> there 
+is exactly one <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a, b) \in F$</span>. In other words, <span class="kdmath">$F$</span> is a function from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span> means:  <br />
+  <span class="kdmath">$\forall a \in A \exists ! b \in B((a,b) \in F)$</span>.  <br />
+To indicate that <span class="kdmath">$F$</span> is a function from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>, we will write <span class="kdmath">$F : A \to B$</span>.</li>
+  <li>Suppose <span class="kdmath">$f$</span> and <span class="kdmath">$g$</span> are functions from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>. If <span class="kdmath">$\forall a \in A( f (a) = g(a))$</span>, then <span class="kdmath">$f = g$</span>. This theorem can be used in 
 proving two functions are equal.</li>
-  <li>As can be seen from the definition of function, funtionsa are special kind of relations. Thus all the theorems of relations applies to functions also. Domain of the function <script type="math/tex">f</script>
- from <script type="math/tex">A</script> to <script type="math/tex">B</script> must contain each element of the range as first coordinate of an ordered pair in <script type="math/tex">f</script>. The elements of the range of <script type="math/tex">f</script> will be the second coordinates 
- of all the ordered pairs in <script type="math/tex">f</script>. Thus range need not be all of <script type="math/tex">B</script>. Also this second coordinate is also sometimes called as image of the first coordinate.</li>
+  <li>As can be seen from the definition of function, funtionsa are special kind of relations. Thus all the theorems of relations applies to functions also. Domain of the function <span class="kdmath">$f$</span>
+ from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span> must contain each element of the range as first coordinate of an ordered pair in <span class="kdmath">$f$</span>. The elements of the range of <span class="kdmath">$f$</span> will be the second coordinates 
+ of all the ordered pairs in <span class="kdmath">$f$</span>. Thus range need not be all of <span class="kdmath">$B$</span>. Also this second coordinate is also sometimes called as image of the first coordinate.</li>
   <li>As noted earlier, since function is a relation, all definitions that apply to relation also aplly to function. Thus definition of composition of relation also
 apply here as follows:
     <ul>
-      <li><em>Composition of function</em>: Suppose <script type="math/tex">f : A \to B</script> and <script type="math/tex">g : B \to C</script>. Then <script type="math/tex">g \circ f : A \to C</script>, and for any <script type="math/tex">a \in A</script>, the value of <script type="math/tex">g \circ f</script> 
-at <script type="math/tex">a</script> is given by the formula <script type="math/tex">(g \circ f )(a) = g( f (a))</script>.</li>
+      <li><em>Composition of function</em>: Suppose <span class="kdmath">$f : A \to B$</span> and <span class="kdmath">$g : B \to C$</span>. Then <span class="kdmath">$g \circ f : A \to C$</span>, and for any <span class="kdmath">$a \in A$</span>, the value of <span class="kdmath">$g \circ f$</span> 
+at <span class="kdmath">$a$</span> is given by the formula <span class="kdmath">$(g \circ f )(a) = g( f (a))$</span>.</li>
     </ul>
   </li>
 </ul>
@@ -1168,9 +1169,9 @@ at <script type="math/tex">a</script> is given by the formula <script type="math
 
 <p><strong>Soln2</strong></p>
 
-<p><strong>(a)</strong> False. Because there is no image for point <script type="math/tex">d</script>.</p>
+<p><strong>(a)</strong> False. Because there is no image for point <span class="kdmath">$d$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">f</script> is not a function. Because for eg: “ape” has <script type="math/tex">3</script> images. <script type="math/tex">g</script> is a function.</p>
+<p><strong>(b)</strong> <span class="kdmath">$f$</span> is not a function. Because for eg: “ape” has <span class="kdmath">$3$</span> images. <span class="kdmath">$g$</span> is a function.</p>
 
 <p><strong>(c)</strong> True.</p>
 
@@ -1178,11 +1179,11 @@ at <script type="math/tex">a</script> is given by the formula <script type="math
 
 <p><strong>Soln3</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">f(a) = b, f(b) = b, f(c) = a</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$f(a) = b, f(b) = b, f(c) = a$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">f(2) = 2^2 - 2 \times 2 = 0</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$f(2) = 2^2 - 2 \times 2 = 0$</span>.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">f(\pi) = 3, f(- \pi) = -4</script>.</p>
+<p><strong>(c)</strong> <span class="kdmath">$f(\pi) = 3, f(- \pi) = -4$</span>.</p>
 
 <hr />
 
@@ -1190,62 +1191,62 @@ at <script type="math/tex">a</script> is given by the formula <script type="math
 
 <p><strong>(a)</strong> Capital of Italy = Rome.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\{1,2,3\} \setminus \{1,3\} = \{2\}</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$\{1,2,3\} \setminus \{1,3\} = \{2\}$</span>.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">f(2) = (3,1)</script>.</p>
+<p><strong>(c)</strong> <span class="kdmath">$f(2) = (3,1)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p><script type="math/tex">L \circ H</script>: It is an identity function on all countries.</p>
+<p><span class="kdmath">$L \circ H$</span>: It is an identity function on all countries.</p>
 
-<p><script type="math/tex">H \circ L</script>: This function maps a city <script type="math/tex">c</script> to another city <script type="math/tex">C</script> such that <script type="math/tex">C</script> is the capital of the country of of the city <script type="math/tex">c</script>.</p>
+<p><span class="kdmath">$H \circ L$</span>: This function maps a city <span class="kdmath">$c$</span> to another city <span class="kdmath">$C$</span> such that <span class="kdmath">$C$</span> is the capital of the country of of the city <span class="kdmath">$c$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p><script type="math/tex">f \circ g (x) = f(g(x)) = \frac 1 {(2x-1)^2 + 2} = \frac 1 {4x^2 -4x + 3}</script>.</p>
+<p><span class="kdmath">$f \circ g (x) = f(g(x)) = \frac 1 {(2x-1)^2 + 2} = \frac 1 {4x^2 -4x + 3}$</span>.</p>
 
-<p><script type="math/tex">g \circ f (x) = g(f(x)) = 2 \times { \frac 1 {x^2 + 2} } - 1</script>.  <br />
-<script type="math/tex">= \frac 2 {x^2 + 2} - 1</script>.   <br />
-<script type="math/tex">= \frac {2 - x^2 - 2} {x^2 + 2}</script>.  <br />
-<script type="math/tex">= \frac {-x^2} {x^2 + 2}</script>.</p>
+<p><span class="kdmath">$g \circ f (x) = g(f(x)) = 2 \times { \frac 1 {x^2 + 2} } - 1$</span>.  <br />
+<span class="kdmath">$= \frac 2 {x^2 + 2} - 1$</span>.   <br />
+<span class="kdmath">$= \frac {2 - x^2 - 2} {x^2 + 2}$</span>.  <br />
+<span class="kdmath">$= \frac {-x^2} {x^2 + 2}$</span>.</p>
 
 <p><strong>Soln7</strong></p>
 
 <p><strong>(a)</strong></p>
 
-<p>To prove <script type="math/tex">f \upharpoonright C</script> is a function,we need to prove that for every <script type="math/tex">c \in C</script> there exists a unique <script type="math/tex">b \in B</script> such that <script type="math/tex">(c,b) \in f \upharpoonright C</script>.</p>
+<p>To prove <span class="kdmath">$f \upharpoonright C$</span> is a function,we need to prove that for every <span class="kdmath">$c \in C$</span> there exists a unique <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(c,b) \in f \upharpoonright C$</span>.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">c \in C</script>. Since <script type="math/tex">C \subseteq A</script>, <script type="math/tex">c \in A</script>. Since <script type="math/tex">f : A \to B</script>, it follows that there exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(c,b) \in f</script>.
-Thus <script type="math/tex">b \in B</script>. It follows that <script type="math/tex">(c,b) \in C \times B</script>. Since <script type="math/tex">(c,b) \in f</script> and <script type="math/tex">(c,b) \in C \times B</script>. It follows that <script type="math/tex">(c,b) \in f \upharpoonright C</script>.</p>
+<p>Suppose <span class="kdmath">$c \in C$</span>. Since <span class="kdmath">$C \subseteq A$</span>, <span class="kdmath">$c \in A$</span>. Since <span class="kdmath">$f : A \to B$</span>, it follows that there exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(c,b) \in f$</span>.
+Thus <span class="kdmath">$b \in B$</span>. It follows that <span class="kdmath">$(c,b) \in C \times B$</span>. Since <span class="kdmath">$(c,b) \in f$</span> and <span class="kdmath">$(c,b) \in C \times B$</span>. It follows that <span class="kdmath">$(c,b) \in f \upharpoonright C$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">(c,b_1) \in f \upharpoonright C</script> and <script type="math/tex">(c,b_2) \in f \upharpoonright C</script>. Thus <script type="math/tex">(c,b_1) \in f</script> and <script type="math/tex">(c,b_2) \in f</script>. Since <script type="math/tex">f</script> is a function, it
- follows that <script type="math/tex">b_1 = b_2</script>. Thus there exist only one element <script type="math/tex">b</script> such that <script type="math/tex">(c,b) \in f \upharpoonright C</script>.</p>
+<p>Suppose <span class="kdmath">$(c,b_1) \in f \upharpoonright C$</span> and <span class="kdmath">$(c,b_2) \in f \upharpoonright C$</span>. Thus <span class="kdmath">$(c,b_1) \in f$</span> and <span class="kdmath">$(c,b_2) \in f$</span>. Since <span class="kdmath">$f$</span> is a function, it
+ follows that <span class="kdmath">$b_1 = b_2$</span>. Thus there exist only one element <span class="kdmath">$b$</span> such that <span class="kdmath">$(c,b) \in f \upharpoonright C$</span>.</p>
 
-<p>Suppose <script type="math/tex">(c,b) \in f \upharpoonright C</script>. Thus <script type="math/tex">b = f(c)</script>. Since <script type="math/tex">(c,b) \in f \upharpoonright C</script>, <script type="math/tex">b = f \upharpoonright C (c)</script>. Thus <script type="math/tex">b = f(c) = f \upharpoonright C (c)</script>.</p>
+<p>Suppose <span class="kdmath">$(c,b) \in f \upharpoonright C$</span>. Thus <span class="kdmath">$b = f(c)$</span>. Since <span class="kdmath">$(c,b) \in f \upharpoonright C$</span>, <span class="kdmath">$b = f \upharpoonright C (c)$</span>. Thus <span class="kdmath">$b = f(c) = f \upharpoonright C (c)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">g = f \upharpoonright C</script>. Suppose <script type="math/tex">(c,b) \in g</script>. Thus <script type="math/tex">(c,b) \in f \upharpoonright C</script>. It follows that <script type="math/tex">(c,b) \in f</script>.
- Thus <script type="math/tex">g \subseteq f</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$g = f \upharpoonright C$</span>. Suppose <span class="kdmath">$(c,b) \in g$</span>. Thus <span class="kdmath">$(c,b) \in f \upharpoonright C$</span>. It follows that <span class="kdmath">$(c,b) \in f$</span>.
+ Thus <span class="kdmath">$g \subseteq f$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">g \subseteq f</script>. Suppose <script type="math/tex">c \in C</script>. Since <script type="math/tex">g: C \to B</script>, there must exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">b = g(c)</script>.
- Thus <script type="math/tex">(c,b) \in g</script>. Since <script type="math/tex">g \subseteq f</script>, it follows <script type="math/tex">(c,b) \in f</script>. Thus <script type="math/tex">b = f(c)</script>. Since <script type="math/tex">b \in B</script> and <script type="math/tex">c \in C</script>, it follows <script type="math/tex">(c,b) \in C \times B</script>.
- Since <script type="math/tex">(c,b) \in C \times B</script> and <script type="math/tex">(c,b) \in f</script>, if follows that <script type="math/tex">(c,b) \in f \upharpoonright C</script>. Thus <script type="math/tex">b = g(c) = f(c) = f \upharpoonright C(c)</script>.
-Since <script type="math/tex">c</script> is arbitrary, it follows that <script type="math/tex">g = f \upharpoonright C</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$g \subseteq f$</span>. Suppose <span class="kdmath">$c \in C$</span>. Since <span class="kdmath">$g: C \to B$</span>, there must exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$b = g(c)$</span>.
+ Thus <span class="kdmath">$(c,b) \in g$</span>. Since <span class="kdmath">$g \subseteq f$</span>, it follows <span class="kdmath">$(c,b) \in f$</span>. Thus <span class="kdmath">$b = f(c)$</span>. Since <span class="kdmath">$b \in B$</span> and <span class="kdmath">$c \in C$</span>, it follows <span class="kdmath">$(c,b) \in C \times B$</span>.
+ Since <span class="kdmath">$(c,b) \in C \times B$</span> and <span class="kdmath">$(c,b) \in f$</span>, if follows that <span class="kdmath">$(c,b) \in f \upharpoonright C$</span>. Thus <span class="kdmath">$b = g(c) = f(c) = f \upharpoonright C(c)$</span>.
+Since <span class="kdmath">$c$</span> is arbitrary, it follows that <span class="kdmath">$g = f \upharpoonright C$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>We have <script type="math/tex">h : \mathbb R \to \mathbb Z</script> and <script type="math/tex">g = \mathbb Z \to \mathbb Z</script>. By the definition of restiction, we have <script type="math/tex">h \upharpoonright \mathbb Z = h \cap (\mathbb Z \times \mathbb Z)</script>.
-Thus <script type="math/tex">h \cap (\mathbb Z \times \mathbb Z) = \{(x,y) \in \mathbb R \times \mathbb Z \, \vert \, y = 2x+3 \} \cap  (\mathbb Z \times \mathbb Z)</script>. Thus we 
-have <script type="math/tex">h \cap (\mathbb Z \times \mathbb Z) = \{(x,y) \in \mathbb Z \times \mathbb Z \, \vert \, y = 2x+3 \}</script>. Thus <script type="math/tex">h \upharpoonright \mathbb Z =  h \cap (\mathbb Z \times \mathbb Z) = g</script>.</p>
+<p>We have <span class="kdmath">$h : \mathbb R \to \mathbb Z$</span> and <span class="kdmath">$g = \mathbb Z \to \mathbb Z$</span>. By the definition of restiction, we have <span class="kdmath">$h \upharpoonright \mathbb Z = h \cap (\mathbb Z \times \mathbb Z)$</span>.
+Thus <span class="kdmath">$h \cap (\mathbb Z \times \mathbb Z) = \{(x,y) \in \mathbb R \times \mathbb Z \, \vert \, y = 2x+3 \} \cap  (\mathbb Z \times \mathbb Z)$</span>. Thus we 
+have <span class="kdmath">$h \cap (\mathbb Z \times \mathbb Z) = \{(x,y) \in \mathbb Z \times \mathbb Z \, \vert \, y = 2x+3 \}$</span>. Thus <span class="kdmath">$h \upharpoonright \mathbb Z =  h \cap (\mathbb Z \times \mathbb Z) = g$</span>.</p>
 
 <hr />
 
@@ -1255,24 +1256,24 @@ have <script type="math/tex">h \cap (\mathbb Z \times \mathbb Z) = \{(x,y) \in \
 
 <p><u>Existence:</u></p>
 
-<p>Since <script type="math/tex">i_A</script> is reflexive, transitive and symmetric, it is a equivalence relation. Also since for each value <script type="math/tex">x</script> in <script type="math/tex">A</script> there is a unique value
-<script type="math/tex">x</script> \in A such that <script type="math/tex">(x,x) \in i_A</script>. Thus <script type="math/tex">i_A</script> is a function and a equivalence relation.</p>
+<p>Since <span class="kdmath">$i_A$</span> is reflexive, transitive and symmetric, it is a equivalence relation. Also since for each value <span class="kdmath">$x$</span> in <span class="kdmath">$A$</span> there is a unique value
+<span class="kdmath">$x$</span> \in A such that <span class="kdmath">$(x,x) \in i_A$</span>. Thus <span class="kdmath">$i_A$</span> is a function and a equivalence relation.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose there exists a function say <script type="math/tex">f</script>, such that it is a equivalence relation. Suppose <script type="math/tex">(x,y) \in f</script>. Thus we have:</p>
+<p>Suppose there exists a function say <span class="kdmath">$f$</span>, such that it is a equivalence relation. Suppose <span class="kdmath">$(x,y) \in f$</span>. Thus we have:</p>
 
-<p><script type="math/tex">(x,y) \in f</script>. iff  <br />
-Since <script type="math/tex">f</script> is symmetric,   <br />
-<script type="math/tex">(x,y) \in f \land (y,x) \in f</script>. iff  <br />
-Since <script type="math/tex">f</script> is transitive,  <br />
-<script type="math/tex">(x,x) \in f</script>. iff      <br />
-Since <script type="math/tex">f</script> is a function and <script type="math/tex">(x,y) \in f</script> and <script type="math/tex">(x,x) \in f</script>, <br />
-<script type="math/tex">x = y</script></p>
+<p><span class="kdmath">$(x,y) \in f$</span>. iff  <br />
+Since <span class="kdmath">$f$</span> is symmetric,   <br />
+<span class="kdmath">$(x,y) \in f \land (y,x) \in f$</span>. iff  <br />
+Since <span class="kdmath">$f$</span> is transitive,  <br />
+<span class="kdmath">$(x,x) \in f$</span>. iff      <br />
+Since <span class="kdmath">$f$</span> is a function and <span class="kdmath">$(x,y) \in f$</span> and <span class="kdmath">$(x,x) \in f$</span>, <br />
+<span class="kdmath">$x = y$</span></p>
 
-<p>Since <script type="math/tex">(x,y)</script> are arbitrary, it follows that <script type="math/tex">f = i_A</script>.</p>
+<p>Since <span class="kdmath">$(x,y)$</span> are arbitrary, it follows that <span class="kdmath">$f = i_A$</span>.</p>
 
-<p>Thus <script type="math/tex">i_A</script> is the only unique function.</p>
+<p>Thus <span class="kdmath">$i_A$</span> is the only unique function.</p>
 
 <hr />
 
@@ -1280,94 +1281,94 @@ Since <script type="math/tex">f</script> is a function and <script type="math/te
 
 <p><strong>(a)</strong></p>
 
-<p>To prove that <script type="math/tex">f \cup g</script> is a function from <script type="math/tex">A \cup B</script> to <script type="math/tex">C</script>, we need to prove that for all <script type="math/tex">x \in A \cup B</script>, there exist a image of <script type="math/tex">x</script> in
- <script type="math/tex">C</script>. Also we need to prove that for each <script type="math/tex">x</script>, this image is unique. Thus we need to do existence and uniqueness proof.</p>
+<p>To prove that <span class="kdmath">$f \cup g$</span> is a function from <span class="kdmath">$A \cup B$</span> to <span class="kdmath">$C$</span>, we need to prove that for all <span class="kdmath">$x \in A \cup B$</span>, there exist a image of <span class="kdmath">$x$</span> in
+ <span class="kdmath">$C$</span>. Also we need to prove that for each <span class="kdmath">$x$</span>, this image is unique. Thus we need to do existence and uniqueness proof.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">x \in A \cup B</script>. Thus we have following cases:</p>
+<p>Suppose <span class="kdmath">$x \in A \cup B$</span>. Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in A</script>.  <br />
-Since <script type="math/tex">x \in A</script> and since <script type="math/tex">f</script> is a function on <script type="math/tex">A \to C</script>. Thus there exist a <script type="math/tex">y \in C</script> such that <script type="math/tex">(x,y) \in f</script>. Thus <script type="math/tex">(x,y) \in f \cup g</script>. 
-It follows that <script type="math/tex">\exists y \in B((y,x) \in f \cup g)</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A$</span>.  <br />
+Since <span class="kdmath">$x \in A$</span> and since <span class="kdmath">$f$</span> is a function on <span class="kdmath">$A \to C$</span>. Thus there exist a <span class="kdmath">$y \in C$</span> such that <span class="kdmath">$(x,y) \in f$</span>. Thus <span class="kdmath">$(x,y) \in f \cup g$</span>. 
+It follows that <span class="kdmath">$\exists y \in B((y,x) \in f \cup g)$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in B</script>.
-Since <script type="math/tex">x \in B</script> and since <script type="math/tex">g</script> is a function on <script type="math/tex">B \to C</script>. Thus there exist a <script type="math/tex">y \in C</script> such that <script type="math/tex">(x,y) \in g</script>. Thus <script type="math/tex">(x,y) \in f \cup g</script>. 
-It follows that <script type="math/tex">\exists y \in B((y,x) \in f \cup g)</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in B$</span>.
+Since <span class="kdmath">$x \in B$</span> and since <span class="kdmath">$g$</span> is a function on <span class="kdmath">$B \to C$</span>. Thus there exist a <span class="kdmath">$y \in C$</span> such that <span class="kdmath">$(x,y) \in g$</span>. Thus <span class="kdmath">$(x,y) \in f \cup g$</span>. 
+It follows that <span class="kdmath">$\exists y \in B((y,x) \in f \cup g)$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases <script type="math/tex">\exists y \in B((y,x) \in f \cup g)</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\forall x \in A \cup B \exists y \in C((y,x) \in f \cup g)</script>.</p>
+<p>Thus from both cases <span class="kdmath">$\exists y \in B((y,x) \in f \cup g)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$\forall x \in A \cup B \exists y \in C((y,x) \in f \cup g)$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">x \in A \cup B</script> and <script type="math/tex">y_1, y_2 \in C</script> such that <script type="math/tex">(x,y_1) \in f \cup g</script> and <script type="math/tex">(x,y_2) \in f \cup g</script>. Thus we have following possible cases:</p>
+<p>Suppose <span class="kdmath">$x \in A \cup B$</span> and <span class="kdmath">$y_1, y_2 \in C$</span> such that <span class="kdmath">$(x,y_1) \in f \cup g$</span> and <span class="kdmath">$(x,y_2) \in f \cup g$</span>. Thus we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y_1) \in f</script> and <script type="math/tex">(x,y_2) \in f</script>.  <br />
-Since <script type="math/tex">f</script> is a function, it follows that <script type="math/tex">y_1 = y_2</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y_1) \in f$</span> and <span class="kdmath">$(x,y_2) \in f$</span>.  <br />
+Since <span class="kdmath">$f$</span> is a function, it follows that <span class="kdmath">$y_1 = y_2$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y_1) \in g</script> and <script type="math/tex">(x,y_2) \in g</script>.  <br />
-Since <script type="math/tex">g</script> is a function, it follows that <script type="math/tex">y_1 = y_2</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y_1) \in g$</span> and <span class="kdmath">$(x,y_2) \in g$</span>.  <br />
+Since <span class="kdmath">$g$</span> is a function, it follows that <span class="kdmath">$y_1 = y_2$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">(x,y_1) \in f</script> and <script type="math/tex">(x,y_2) \in g</script>.  <br />
-Thus <script type="math/tex">x \in A</script> and <script type="math/tex">x \in B</script>. But this is not possible since <script type="math/tex">A \cap B = \phi</script>.</p>
+    <p>Case 3: <span class="kdmath">$(x,y_1) \in f$</span> and <span class="kdmath">$(x,y_2) \in g$</span>.  <br />
+Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$x \in B$</span>. But this is not possible since <span class="kdmath">$A \cap B = \phi$</span>.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">(x,y_1) \in g</script> and <script type="math/tex">(x,y_2) \in f</script>.  <br />
-Thus <script type="math/tex">x \in B</script> and <script type="math/tex">x \in A</script>. But this is not possible since <script type="math/tex">A \cap B = \phi</script>.</p>
+    <p>Case 4: <span class="kdmath">$(x,y_1) \in g$</span> and <span class="kdmath">$(x,y_2) \in f$</span>.  <br />
+Thus <span class="kdmath">$x \in B$</span> and <span class="kdmath">$x \in A$</span>. But this is not possible since <span class="kdmath">$A \cap B = \phi$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all possible cases, <script type="math/tex">y_1 = y_2</script>. Thus there is only one image of <script type="math/tex">x \in A \cup B</script> in the set <script type="math/tex">C</script>. Thus <script type="math/tex">f \cup g : A \cup B \to C</script> is
+<p>Thus from all possible cases, <span class="kdmath">$y_1 = y_2$</span>. Thus there is only one image of <span class="kdmath">$x \in A \cup B$</span> in the set <span class="kdmath">$C$</span>. Thus <span class="kdmath">$f \cup g : A \cup B \to C$</span> is
   a function.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">f \cup g: A \cup B \to C</script>. Suppose <script type="math/tex">(x,y) \in f \upharpoonright (A \cap B)</script>. It follows that <script type="math/tex">(x,y) \in f</script> and <script type="math/tex">(x,y) \in (A \cap B) \times C</script>.
-Since <script type="math/tex">(x,y) \in f</script>, it follows that <script type="math/tex">(x,y) \in f \cup g</script>. Also since <script type="math/tex">x \in B</script>, and <script type="math/tex">g: B \to C</script>, there exist an element <script type="math/tex">y'</script> such that <script type="math/tex">(x,y') \in g</script>.
-Since <script type="math/tex">(x,y') \in g</script>, it follows that <script type="math/tex">(x,y') \in f \cup g</script>. Since <script type="math/tex">f \cup g: A \cup B \to C</script>, it follows that <script type="math/tex">y = y'</script>. Thus <script type="math/tex">(x,y) \in g</script>. Since 
-<script type="math/tex">(x,y) \in (A \cap B) \times C</script> and <script type="math/tex">(x,y) \in g</script>, it follows that <script type="math/tex">(x,y) \in f \upharpoonright (A \cap B)</script>. Since <script type="math/tex">(x,y)</script> are arbitrary,
-it follows <script type="math/tex">f \upharpoonright (A \cap B) \subseteq g \upharpoonright (A \cap B)</script>.  <br />
-Using similar argument it can be proved that  <script type="math/tex">g \upharpoonright (A \cap B) \subseteq f \upharpoonright (A \cap B)</script>. Thus we can conclude that 
-<script type="math/tex">f \upharpoonright (A \cap B) = g \upharpoonright (A \cap B)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$f \cup g: A \cup B \to C$</span>. Suppose <span class="kdmath">$(x,y) \in f \upharpoonright (A \cap B)$</span>. It follows that <span class="kdmath">$(x,y) \in f$</span> and <span class="kdmath">$(x,y) \in (A \cap B) \times C$</span>.
+Since <span class="kdmath">$(x,y) \in f$</span>, it follows that <span class="kdmath">$(x,y) \in f \cup g$</span>. Also since <span class="kdmath">$x \in B$</span>, and <span class="kdmath">$g: B \to C$</span>, there exist an element <span class="kdmath">$y'$</span> such that <span class="kdmath">$(x,y') \in g$</span>.
+Since <span class="kdmath">$(x,y') \in g$</span>, it follows that <span class="kdmath">$(x,y') \in f \cup g$</span>. Since <span class="kdmath">$f \cup g: A \cup B \to C$</span>, it follows that <span class="kdmath">$y = y'$</span>. Thus <span class="kdmath">$(x,y) \in g$</span>. Since 
+<span class="kdmath">$(x,y) \in (A \cap B) \times C$</span> and <span class="kdmath">$(x,y) \in g$</span>, it follows that <span class="kdmath">$(x,y) \in f \upharpoonright (A \cap B)$</span>. Since <span class="kdmath">$(x,y)$</span> are arbitrary,
+it follows <span class="kdmath">$f \upharpoonright (A \cap B) \subseteq g \upharpoonright (A \cap B)$</span>.  <br />
+Using similar argument it can be proved that  <span class="kdmath">$g \upharpoonright (A \cap B) \subseteq f \upharpoonright (A \cap B)$</span>. Thus we can conclude that 
+<span class="kdmath">$f \upharpoonright (A \cap B) = g \upharpoonright (A \cap B)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">f \upharpoonright (A \cap B) = g \upharpoonright (A \cap B)</script>. To prove <script type="math/tex">f \cup g: A \cup B \to C</script>, we need to do
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$f \upharpoonright (A \cap B) = g \upharpoonright (A \cap B)$</span>. To prove <span class="kdmath">$f \cup g: A \cup B \to C$</span>, we need to do
 existence and uniqueness proofs. Clearly in this case existence proof is exactly same as in part(a). Thus we shall only do the uniqueness proof:</p>
 
-<p>Suppose <script type="math/tex">(x,y_1) \in f \cup g</script> and <script type="math/tex">(x,y_2) \in f \cup g</script>. Thus we have following possible cases:</p>
+<p>Suppose <span class="kdmath">$(x,y_1) \in f \cup g$</span> and <span class="kdmath">$(x,y_2) \in f \cup g$</span>. Thus we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y_1) \in f</script> and <script type="math/tex">(x,y_2) \in f</script>.  <br />
-Since <script type="math/tex">f</script> is a function, it follows that <script type="math/tex">y_1 = y_2</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y_1) \in f$</span> and <span class="kdmath">$(x,y_2) \in f$</span>.  <br />
+Since <span class="kdmath">$f$</span> is a function, it follows that <span class="kdmath">$y_1 = y_2$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y_1) \in g</script> and <script type="math/tex">(x,y_2) \in g</script>.  <br />
-Since <script type="math/tex">g</script> is a function, it follows that <script type="math/tex">y_1 = y_2</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y_1) \in g$</span> and <span class="kdmath">$(x,y_2) \in g$</span>.  <br />
+Since <span class="kdmath">$g$</span> is a function, it follows that <span class="kdmath">$y_1 = y_2$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">(x,y_1) \in f</script> and <script type="math/tex">(x,y_2) \in g</script>.  <br />
-Thus <script type="math/tex">x \in A \cap B</script>. It follows that <script type="math/tex">(x,y_1) \in (A \cap B) \times C</script> and <script type="math/tex">(x,y_2) \in (A \cap B) \times C</script>. Since <script type="math/tex">(x,y_1) \in f</script> and<br />
-<script type="math/tex">(x,y_1) \in (A \cap B) \times C</script>, it follows that <script type="math/tex">(x,y_1) \in f \upharpoonright (A \cap B)</script>. Similarly since <script type="math/tex">(x,y_2) \in g</script> and<br />
-<script type="math/tex">(x,y_2) \in (A \cap B) \times C</script>, it follows that <script type="math/tex">(x,y_2) \in g \upharpoonright (A \cap B)</script>. Since <script type="math/tex">f \upharpoonright (A \cap B) = g \upharpoonright (A \cap B)</script>,
-if follows that <script type="math/tex">(x,y_1)</script> and <script type="math/tex">(x,y_2)</script> both exist in <script type="math/tex">f</script> and <script type="math/tex">g</script>. Thus <script type="math/tex">y_1 = y_2</script>.</p>
+    <p>Case 3: <span class="kdmath">$(x,y_1) \in f$</span> and <span class="kdmath">$(x,y_2) \in g$</span>.  <br />
+Thus <span class="kdmath">$x \in A \cap B$</span>. It follows that <span class="kdmath">$(x,y_1) \in (A \cap B) \times C$</span> and <span class="kdmath">$(x,y_2) \in (A \cap B) \times C$</span>. Since <span class="kdmath">$(x,y_1) \in f$</span> and<br />
+<span class="kdmath">$(x,y_1) \in (A \cap B) \times C$</span>, it follows that <span class="kdmath">$(x,y_1) \in f \upharpoonright (A \cap B)$</span>. Similarly since <span class="kdmath">$(x,y_2) \in g$</span> and<br />
+<span class="kdmath">$(x,y_2) \in (A \cap B) \times C$</span>, it follows that <span class="kdmath">$(x,y_2) \in g \upharpoonright (A \cap B)$</span>. Since <span class="kdmath">$f \upharpoonright (A \cap B) = g \upharpoonright (A \cap B)$</span>,
+if follows that <span class="kdmath">$(x,y_1)$</span> and <span class="kdmath">$(x,y_2)$</span> both exist in <span class="kdmath">$f$</span> and <span class="kdmath">$g$</span>. Thus <span class="kdmath">$y_1 = y_2$</span>.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">(x,y_1) \in g</script> and <script type="math/tex">(x,y_2) \in f</script>.  <br />
-This case is exactly same as Case 3, just need to swap <script type="math/tex">f</script> and <script type="math/tex">g</script> in the case 3.</p>
+    <p>Case 4: <span class="kdmath">$(x,y_1) \in g$</span> and <span class="kdmath">$(x,y_2) \in f$</span>.  <br />
+This case is exactly same as Case 3, just need to swap <span class="kdmath">$f$</span> and <span class="kdmath">$g$</span> in the case 3.</p>
   </li>
 </ul>
 
-<p>Thus from all the possible cases <script type="math/tex">y_1 = y_2</script>.</p>
+<p>Thus from all the possible cases <span class="kdmath">$y_1 = y_2$</span>.</p>
 
-<p>Thus <script type="math/tex">f \cup g: A \cup B \to C</script>.</p>
+<p>Thus <span class="kdmath">$f \cup g: A \cup B \to C$</span>.</p>
 
 <hr />
 
@@ -1377,28 +1378,28 @@ This case is exactly same as Case 3, just need to swap <script type="math/tex">f
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">b \in B</script>. Since <script type="math/tex">Dom(S) = B</script>, there must exist <script type="math/tex">c \in C</script> such that <script type="math/tex">(b,c) \in S</script>. Since <script type="math/tex">b</script> is arbitrary, it follows that
-for all <script type="math/tex">b \in B</script> there exist an element <script type="math/tex">c \in C</script> such that <script type="math/tex">(b,c) \in S</script>.</p>
+<p>Suppose <span class="kdmath">$b \in B$</span>. Since <span class="kdmath">$Dom(S) = B$</span>, there must exist <span class="kdmath">$c \in C$</span> such that <span class="kdmath">$(b,c) \in S$</span>. Since <span class="kdmath">$b$</span> is arbitrary, it follows that
+for all <span class="kdmath">$b \in B$</span> there exist an element <span class="kdmath">$c \in C$</span> such that <span class="kdmath">$(b,c) \in S$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">b \in B</script> and <script type="math/tex">c_1, c_2 \in C</script> such that <script type="math/tex">(b,c_1) \in S</script> and <script type="math/tex">(b,c_2) \in S</script>. Since <script type="math/tex">Ran(R) = B</script>, it follows that there must
- exist an element <script type="math/tex">a \in A</script> such that <script type="math/tex">(a,b) \in R</script>. Thus <script type="math/tex">(a,c_1) \in S \circ R</script> and <script type="math/tex">(a,c_2) \in S \circ R</script>. But <script type="math/tex">S \circ R</script> is a function,
-it follows that <script type="math/tex">c_1 = c_2</script>.</p>
+<p>Suppose <span class="kdmath">$b \in B$</span> and <span class="kdmath">$c_1, c_2 \in C$</span> such that <span class="kdmath">$(b,c_1) \in S$</span> and <span class="kdmath">$(b,c_2) \in S$</span>. Since <span class="kdmath">$Ran(R) = B$</span>, it follows that there must
+ exist an element <span class="kdmath">$a \in A$</span> such that <span class="kdmath">$(a,b) \in R$</span>. Thus <span class="kdmath">$(a,c_1) \in S \circ R$</span> and <span class="kdmath">$(a,c_2) \in S \circ R$</span>. But <span class="kdmath">$S \circ R$</span> is a function,
+it follows that <span class="kdmath">$c_1 = c_2$</span>.</p>
 
-<p>Thus we can conclude that <script type="math/tex">S</script> is a function.</p>
+<p>Thus we can conclude that <span class="kdmath">$S$</span> is a function.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">A = \{1,2\}</script>  <br />
-<script type="math/tex">B = \{a,b,c\}</script>  <br />
-<script type="math/tex">C = \{u,v\}</script></p>
+<p><span class="kdmath">$A = \{1,2\}$</span>  <br />
+<span class="kdmath">$B = \{a,b,c\}$</span>  <br />
+<span class="kdmath">$C = \{u,v\}$</span></p>
 
-<p><script type="math/tex">R = \{ (1,a), (1,b), (2,c) \}</script>.  <br />
-<script type="math/tex">S = \{ (a,u), (b,u), (c,v) \}</script>.  <br />
-<script type="math/tex">S \circ R = \{ (1,u), (2,v) \}</script>.</p>
+<p><span class="kdmath">$R = \{ (1,a), (1,b), (2,c) \}$</span>.  <br />
+<span class="kdmath">$S = \{ (a,u), (b,u), (c,v) \}$</span>.  <br />
+<span class="kdmath">$S \circ R = \{ (1,u), (2,v) \}$</span>.</p>
 
-<p>Clearly, <script type="math/tex">S</script> and <script type="math/tex">S \circ R</script> are functions but <script type="math/tex">R</script> is not a function.</p>
+<p>Clearly, <span class="kdmath">$S$</span> and <span class="kdmath">$S \circ R$</span> are functions but <span class="kdmath">$R$</span> is not a function.</p>
 
 <hr />
 
@@ -1406,18 +1407,18 @@ it follows that <script type="math/tex">c_1 = c_2</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">S</script> is reflexive. Suppose <script type="math/tex">x \in A</script> is an arbitrary element. Since <script type="math/tex">f: A \to B</script>, thus <script type="math/tex">f(x) \in B</script>. Since <script type="math/tex">S</script> is relation on <script type="math/tex">B</script>
- and <script type="math/tex">S</script> is reflexive, it follows that <script type="math/tex">(f(x),f(x)) \in S</script>. Thus <script type="math/tex">(x,x) \in R</script>. Thus <script type="math/tex">R</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$S$</span> is reflexive. Suppose <span class="kdmath">$x \in A$</span> is an arbitrary element. Since <span class="kdmath">$f: A \to B$</span>, thus <span class="kdmath">$f(x) \in B$</span>. Since <span class="kdmath">$S$</span> is relation on <span class="kdmath">$B$</span>
+ and <span class="kdmath">$S$</span> is reflexive, it follows that <span class="kdmath">$(f(x),f(x)) \in S$</span>. Thus <span class="kdmath">$(x,x) \in R$</span>. Thus <span class="kdmath">$R$</span> is reflexive.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">S</script> is symmetric. Suppose <script type="math/tex">(x,y) \in R</script>. Thus <script type="math/tex">(f(x), f(y)) \in S</script>. Since <script type="math/tex">S</script> is symmetric, it follows that <script type="math/tex">(f(y),f(x)) \in S</script>. Thus <script type="math/tex">(y,x) \in R</script>.
-Thus <script type="math/tex">R</script> symmetric.</p>
+<p>Suppose <span class="kdmath">$S$</span> is symmetric. Suppose <span class="kdmath">$(x,y) \in R$</span>. Thus <span class="kdmath">$(f(x), f(y)) \in S$</span>. Since <span class="kdmath">$S$</span> is symmetric, it follows that <span class="kdmath">$(f(y),f(x)) \in S$</span>. Thus <span class="kdmath">$(y,x) \in R$</span>.
+Thus <span class="kdmath">$R$</span> symmetric.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">S</script> is transitive. Suppose <script type="math/tex">x,y,z \in A</script> such that <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(y,z) \in R</script>. Thus <script type="math/tex">(f(x),f(y)) \in S</script> and <script type="math/tex">(f(y),(f(z))) \in S</script>. Since
-<script type="math/tex">S</script> is transitive, it follows that <script type="math/tex">(f(x),f(z)) \in S</script>. Thus <script type="math/tex">(x,z) \in R</script>. Thus <script type="math/tex">R</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$S$</span> is transitive. Suppose <span class="kdmath">$x,y,z \in A$</span> such that <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(y,z) \in R$</span>. Thus <span class="kdmath">$(f(x),f(y)) \in S$</span> and <span class="kdmath">$(f(y),(f(z))) \in S$</span>. Since
+<span class="kdmath">$S$</span> is transitive, it follows that <span class="kdmath">$(f(x),f(z)) \in S$</span>. Thus <span class="kdmath">$(x,z) \in R$</span>. Thus <span class="kdmath">$R$</span> is transitive.</p>
 
 <hr />
 
@@ -1427,25 +1428,25 @@ Thus <script type="math/tex">R</script> symmetric.</p>
 
 <p>Counter example:</p>
 
-<p><script type="math/tex">A = \{1,2,3\}, B = \{a,b,c,d\}, f = \{(1,a),(2,b),(3,c)\}, R = \{(1,1), (2,2), (3,3), (4,4) \}</script>.</p>
+<p><span class="kdmath">$A = \{1,2,3\}, B = \{a,b,c,d\}, f = \{(1,a),(2,b),(3,c)\}, R = \{(1,1), (2,2), (3,3), (4,4) \}$</span>.</p>
 
-<p>Clearly <script type="math/tex">(d,d) \notin S</script>, because there is no element <script type="math/tex">u</script> in <script type="math/tex">A</script> such that <script type="math/tex">f(x) = d</script>.</p>
+<p>Clearly <span class="kdmath">$(d,d) \notin S$</span>, because there is no element <span class="kdmath">$u$</span> in <span class="kdmath">$A$</span> such that <span class="kdmath">$f(x) = d$</span>.</p>
 
 <p><strong>(b)</strong> True.</p>
 
-<p>Suppose <script type="math/tex">R</script> is symmetric. Suppose <script type="math/tex">(x,y) \in S</script>. Thus there must exist some <script type="math/tex">u \in A</script> such that <script type="math/tex">f(u) = x</script> and there must exist some <script type="math/tex">v \in A</script>
-such that <script type="math/tex">f(v) = x</script> and <script type="math/tex">(u,v) \in R</script>. Since <script type="math/tex">R</script> is symmetric, it follows that <script type="math/tex">(v,u) \in R</script>. Since <script type="math/tex">y = f(v)</script> and <script type="math/tex">x = f(u)</script>, it follows
-that <script type="math/tex">(y,x) \in S</script>. Thus <script type="math/tex">S</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$R$</span> is symmetric. Suppose <span class="kdmath">$(x,y) \in S$</span>. Thus there must exist some <span class="kdmath">$u \in A$</span> such that <span class="kdmath">$f(u) = x$</span> and there must exist some <span class="kdmath">$v \in A$</span>
+such that <span class="kdmath">$f(v) = x$</span> and <span class="kdmath">$(u,v) \in R$</span>. Since <span class="kdmath">$R$</span> is symmetric, it follows that <span class="kdmath">$(v,u) \in R$</span>. Since <span class="kdmath">$y = f(v)$</span> and <span class="kdmath">$x = f(u)$</span>, it follows
+that <span class="kdmath">$(y,x) \in S$</span>. Thus <span class="kdmath">$S$</span> is symmetric.</p>
 
 <p><strong>(c)</strong> False.</p>
 
-<p><script type="math/tex">A = \{1.2.3.4\}</script>.  <br />
-<script type="math/tex">B = \{u,v,w\}</script>.  <br />
-<script type="math/tex">f = \{(1,u),(2,v),(3,v),(4,w)\}</script>.  <br />
-<script type="math/tex">R = \{(1,2), (3,4) \}</script>.</p>
+<p><span class="kdmath">$A = \{1.2.3.4\}$</span>.  <br />
+<span class="kdmath">$B = \{u,v,w\}$</span>.  <br />
+<span class="kdmath">$f = \{(1,u),(2,v),(3,v),(4,w)\}$</span>.  <br />
+<span class="kdmath">$R = \{(1,2), (3,4) \}$</span>.</p>
 
-<p>Clearly <script type="math/tex">R</script> is transitive. Clearly <script type="math/tex">(u,v) \in S</script>, because <script type="math/tex">(1,2) \in R</script>. Similarly <script type="math/tex">(v,w) \in S</script>, since <script type="math/tex">(3,4) \in R</script>. But <script type="math/tex">(u,w) \notin S</script>
- because <script type="math/tex">(1,4) \notin R</script>.</p>
+<p>Clearly <span class="kdmath">$R$</span> is transitive. Clearly <span class="kdmath">$(u,v) \in S$</span>, because <span class="kdmath">$(1,2) \in R$</span>. Similarly <span class="kdmath">$(v,w) \in S$</span>, since <span class="kdmath">$(3,4) \in R$</span>. But <span class="kdmath">$(u,w) \notin S$</span>
+ because <span class="kdmath">$(1,4) \notin R$</span>.</p>
 
 <hr />
 
@@ -1453,20 +1454,20 @@ that <script type="math/tex">(y,x) \in S</script>. Thus <script type="math/tex">
 
 <p><strong>(a)</strong></p>
 
-<p>True. Suppose <script type="math/tex">R</script> is reflexive. Suppose <script type="math/tex">f \in \mathcal F</script>. Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">f</script> is a function, <script type="math/tex">f(x) \in B</script> will be a unique value.
-Since <script type="math/tex">f(x) \in B</script>, and <script type="math/tex">R</script> is reflexive, it follows that <script type="math/tex">(f(x), f(x)) \in R</script>. Since <script type="math/tex">x</script> is arbitrary, <script type="math/tex">\forall x \in A((f(x), f(x)) \in R)</script>.
-Thus <script type="math/tex">(f,f) \in S</script>. Thus <script type="math/tex">S</script> is reflexive.</p>
+<p>True. Suppose <span class="kdmath">$R$</span> is reflexive. Suppose <span class="kdmath">$f \in \mathcal F$</span>. Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$f$</span> is a function, <span class="kdmath">$f(x) \in B$</span> will be a unique value.
+Since <span class="kdmath">$f(x) \in B$</span>, and <span class="kdmath">$R$</span> is reflexive, it follows that <span class="kdmath">$(f(x), f(x)) \in R$</span>. Since <span class="kdmath">$x$</span> is arbitrary, <span class="kdmath">$\forall x \in A((f(x), f(x)) \in R)$</span>.
+Thus <span class="kdmath">$(f,f) \in S$</span>. Thus <span class="kdmath">$S$</span> is reflexive.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>True. Suppose <script type="math/tex">R</script> is symmetric. Suppose <script type="math/tex">(f,g) \in \mathcal F</script>. Thus <script type="math/tex">\forall x \in A((f(x), g(x)) \in R)</script>. Since <script type="math/tex">R</script> is transitive, it follows that 
- <script type="math/tex">\forall x \in A((g(x), f(x)) \in R)</script>. Thus <script type="math/tex">(g,f) \in S</script>. Thus <script type="math/tex">R</script> is symmetric.</p>
+<p>True. Suppose <span class="kdmath">$R$</span> is symmetric. Suppose <span class="kdmath">$(f,g) \in \mathcal F$</span>. Thus <span class="kdmath">$\forall x \in A((f(x), g(x)) \in R)$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows that 
+ <span class="kdmath">$\forall x \in A((g(x), f(x)) \in R)$</span>. Thus <span class="kdmath">$(g,f) \in S$</span>. Thus <span class="kdmath">$R$</span> is symmetric.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>True. Suppose <script type="math/tex">R</script> is transitive. Suppose <script type="math/tex">(f,g) \in \mathcal F</script> and <script type="math/tex">(g,h) \in \mathcal F</script>. Thus <script type="math/tex">\forall x \in A((f(x), g(x)) \in R)</script> and
-Thus <script type="math/tex">\forall x \in A((g(x), h(x)) \in R)</script>. Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">\forall x \in A((f(x), h(x)) \in R)</script>. Thus <script type="math/tex">(f,h) \in S</script>.
-Thus <script type="math/tex">S</script> is transitive.</p>
+<p>True. Suppose <span class="kdmath">$R$</span> is transitive. Suppose <span class="kdmath">$(f,g) \in \mathcal F$</span> and <span class="kdmath">$(g,h) \in \mathcal F$</span>. Thus <span class="kdmath">$\forall x \in A((f(x), g(x)) \in R)$</span> and
+Thus <span class="kdmath">$\forall x \in A((g(x), h(x)) \in R)$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$\forall x \in A((f(x), h(x)) \in R)$</span>. Thus <span class="kdmath">$(f,h) \in S$</span>.
+Thus <span class="kdmath">$S$</span> is transitive.</p>
 
 <hr />
 
@@ -1474,15 +1475,15 @@ Thus <script type="math/tex">S</script> is transitive.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Thus <script type="math/tex">f(x) = a</script>. Also, <script type="math/tex">f \circ g (x) = f (g(x)) = a</script>. Thus <script type="math/tex">f \circ g (x) = f(x)</script>. Since <script type="math/tex">x</script> is arbitrary, it follows
- <script type="math/tex">f \circ g = f</script>(using theorem for that talks about two functions are equals if for all values of <script type="math/tex">x</script>, corresponding images are also equal).</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Thus <span class="kdmath">$f(x) = a$</span>. Also, <span class="kdmath">$f \circ g (x) = f (g(x)) = a$</span>. Thus <span class="kdmath">$f \circ g (x) = f(x)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows
+ <span class="kdmath">$f \circ g = f$</span>(using theorem for that talks about two functions are equals if for all values of <span class="kdmath">$x$</span>, corresponding images are also equal).</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">f \circ g = f</script>. Since <script type="math/tex">g</script> is arbitrary, <script type="math/tex">g</script> can be any function. Suppose <script type="math/tex">g</script> is a constant function such that <script type="math/tex">\forall x \in A(g(x) = b)</script>. 
-Suppose <script type="math/tex">x \in A</script> is an arbitrary element. Thus <script type="math/tex">f \circ g (x) = f(g(x)) = f(b)</script>. Since <script type="math/tex">f \circ g = f</script>, it follows <script type="math/tex">f \circ g(x) = f(x)</script>. It follows 
-that <script type="math/tex">f(b) = f(x)</script>. Since <script type="math/tex">f</script> is a function, <script type="math/tex">f(b)</script> is a unique value. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\forall x \in A(f(x) = f(b)</script>. 
-Thus <script type="math/tex">f(x)</script> is a constant function.</p>
+<p>Suppose <span class="kdmath">$f \circ g = f$</span>. Since <span class="kdmath">$g$</span> is arbitrary, <span class="kdmath">$g$</span> can be any function. Suppose <span class="kdmath">$g$</span> is a constant function such that <span class="kdmath">$\forall x \in A(g(x) = b)$</span>. 
+Suppose <span class="kdmath">$x \in A$</span> is an arbitrary element. Thus <span class="kdmath">$f \circ g (x) = f(g(x)) = f(b)$</span>. Since <span class="kdmath">$f \circ g = f$</span>, it follows <span class="kdmath">$f \circ g(x) = f(x)$</span>. It follows 
+that <span class="kdmath">$f(b) = f(x)$</span>. Since <span class="kdmath">$f$</span> is a function, <span class="kdmath">$f(b)$</span> is a unique value. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$\forall x \in A(f(x) = f(b)$</span>. 
+Thus <span class="kdmath">$f(x)$</span> is a constant function.</p>
 
 <hr />
 
@@ -1490,28 +1491,28 @@ Thus <script type="math/tex">f(x)</script> is a constant function.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Clearly for <script type="math/tex">a = 0</script>, we have <script type="math/tex">\vert x \vert = x</script>. Thus <script type="math/tex">(f,g) \in R</script>.</p>
+<p>Clearly for <span class="kdmath">$a = 0$</span>, we have <span class="kdmath">$\vert x \vert = x$</span>. Thus <span class="kdmath">$(f,g) \in R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><u>Reflexive:</u></p>
 
-<p>Suppose <script type="math/tex">f \in \mathcal F</script>. Suppose <script type="math/tex">a</script> is any real number, clearly <script type="math/tex">f(x) = f(x)</script> for all <script type="math/tex">x > a</script>. Thus <script type="math/tex">(f,f) \in R</script>. Thus <script type="math/tex">R</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$f \in \mathcal F$</span>. Suppose <span class="kdmath">$a$</span> is any real number, clearly <span class="kdmath">$f(x) = f(x)$</span> for all <span class="kdmath">$x > a$</span>. Thus <span class="kdmath">$(f,f) \in R$</span>. Thus <span class="kdmath">$R$</span> is reflexive.</p>
 
 <p><u>Transitive</u></p>
 
-<p>Suppose <script type="math/tex">(f,g) \in R</script> and <script type="math/tex">(g,h) \in R</script>. Since <script type="math/tex">(f,g) \in R</script>, it follows that there is an element <script type="math/tex">a \in R</script> such that <script type="math/tex">\forall x > a(f(x) = g(x))</script>. 
-   Similarly since <script type="math/tex">(g,h) \in R</script>, it follows that there is an element <script type="math/tex">b \in R</script> such that <script type="math/tex">\forall x > b (g(x) = h(x))</script>.</p>
+<p>Suppose <span class="kdmath">$(f,g) \in R$</span> and <span class="kdmath">$(g,h) \in R$</span>. Since <span class="kdmath">$(f,g) \in R$</span>, it follows that there is an element <span class="kdmath">$a \in R$</span> such that <span class="kdmath">$\forall x > a(f(x) = g(x))$</span>. 
+   Similarly since <span class="kdmath">$(g,h) \in R$</span>, it follows that there is an element <span class="kdmath">$b \in R$</span> such that <span class="kdmath">$\forall x > b (g(x) = h(x))$</span>.</p>
 
-<p>Now there are two cases, <script type="math/tex">a \ge b</script> or <script type="math/tex">b > a</script>. If <script type="math/tex">a \ge b</script>, then suppose <script type="math/tex">x > a</script> is any arbitrary number. Then <script type="math/tex">f(x) = g(x)</script> and <script type="math/tex">g(x) = h(x)</script>.
-Thus <script type="math/tex">f(x) = h(x)</script>.  <br />
-Similarly if <script type="math/tex">b > a</script>, and suppose <script type="math/tex">x > b</script> is any arbitrary number. Then also we have <script type="math/tex">f(x) = g(x) = h(x)</script>.   <br />
-Thus in either case there exist a number <script type="math/tex">c</script> such that <script type="math/tex">\forall x > c (f(x) = h(x))</script>. Thus <script type="math/tex">R</script> is transitive.</p>
+<p>Now there are two cases, <span class="kdmath">$a \ge b$</span> or <span class="kdmath">$b > a$</span>. If <span class="kdmath">$a \ge b$</span>, then suppose <span class="kdmath">$x > a$</span> is any arbitrary number. Then <span class="kdmath">$f(x) = g(x)$</span> and <span class="kdmath">$g(x) = h(x)$</span>.
+Thus <span class="kdmath">$f(x) = h(x)$</span>.  <br />
+Similarly if <span class="kdmath">$b > a$</span>, and suppose <span class="kdmath">$x > b$</span> is any arbitrary number. Then also we have <span class="kdmath">$f(x) = g(x) = h(x)$</span>.   <br />
+Thus in either case there exist a number <span class="kdmath">$c$</span> such that <span class="kdmath">$\forall x > c (f(x) = h(x))$</span>. Thus <span class="kdmath">$R$</span> is transitive.</p>
 
 <p><u>Symmetric:</u></p>
 
-<p>Suppose <script type="math/tex">(f,g) \in R</script>. Thus there is an element <script type="math/tex">a \in R</script> such that <script type="math/tex">\forall x > a(f(x) = g(x))</script>. Or we can also say that <script type="math/tex">\forall x > a(g(x) = f(x))</script>. 
- It follows that <script type="math/tex">(g,f) \in R</script>. Thus <script type="math/tex">R</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(f,g) \in R$</span>. Thus there is an element <span class="kdmath">$a \in R$</span> such that <span class="kdmath">$\forall x > a(f(x) = g(x))$</span>. Or we can also say that <span class="kdmath">$\forall x > a(g(x) = f(x))$</span>. 
+ It follows that <span class="kdmath">$(g,f) \in R$</span>. Thus <span class="kdmath">$R$</span> is symmetric.</p>
 
 <hr />
 
@@ -1519,44 +1520,41 @@ Thus in either case there exist a number <script type="math/tex">c</script> such
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">a = 3, c = 8</script>. Then for any <script type="math/tex">x > a</script>,</p>
+<p>Suppose <span class="kdmath">$a = 3, c = 8$</span>. Then for any <span class="kdmath">$x > a$</span>,</p>
 
-<p><script type="math/tex">% <![CDATA[
-\vert f(x) \vert = \vert 7x + 3 \vert = 7x + 3 < 7x + x = 8x < 8x^2 = c \vert g(x) \vert %]]></script>.</p>
+<p><span class="kdmath">$\vert f(x) \vert = \vert 7x + 3 \vert = 7x + 3 < 7x + x = 8x < 8x^2 = c \vert g(x) \vert$</span>.</p>
 
-<p>Thus <script type="math/tex">f \in O(g)</script>.</p>
+<p>Thus <span class="kdmath">$f \in O(g)$</span>.</p>
 
-<p>We will prove it by contradiction. Suppose <script type="math/tex">g \in O(f)</script>. Then for some <script type="math/tex">a \in Z^+</script> and <script type="math/tex">c \in R^+</script>, we have <script type="math/tex">\forall x > a (\vert g(x) \vert\le c \vert f(x) \vert)</script>.
-Thus <script type="math/tex">\forall x > a (x^2 \le c (7x + 3)</script>. Suppose <script type="math/tex">x > 10c</script> is an arbitrary number such that <script type="math/tex">x > a</script>. Thus <script type="math/tex">x^2 > 10cx</script>. Also, since
-<script type="math/tex">g \in O(f)</script>,we have <script type="math/tex">% <![CDATA[
-x^2 \le c(7x+3) < c(7x + 3x) = 10cx %]]></script>. Thus <script type="math/tex">% <![CDATA[
-x^2 < 10cx %]]></script>. But <script type="math/tex">x^2 > 10cx</script>. Thus we have a contradiction. Thus
-<script type="math/tex">f \notin O(g)</script>.</p>
+<p>We will prove it by contradiction. Suppose <span class="kdmath">$g \in O(f)$</span>. Then for some <span class="kdmath">$a \in Z^+$</span> and <span class="kdmath">$c \in R^+$</span>, we have <span class="kdmath">$\forall x > a (\vert g(x) \vert\le c \vert f(x) \vert)$</span>.
+Thus <span class="kdmath">$\forall x > a (x^2 \le c (7x + 3)$</span>. Suppose <span class="kdmath">$x > 10c$</span> is an arbitrary number such that <span class="kdmath">$x > a$</span>. Thus <span class="kdmath">$x^2 > 10cx$</span>. Also, since
+<span class="kdmath">$g \in O(f)$</span>,we have <span class="kdmath">$x^2 \le c(7x+3) < c(7x + 3x) = 10cx$</span>. Thus <span class="kdmath">$x^2 < 10cx$</span>. But <span class="kdmath">$x^2 > 10cx$</span>. Thus we have a contradiction. Thus
+<span class="kdmath">$f \notin O(g)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>If a relation is preorder, it means it is reflexive and transitive. Thus we will prove these two properties to prove the relation as preorder.</p>
 
-<p>Suppose <script type="math/tex">f \in \mathcal F</script>. Thus for <script type="math/tex">a = 1</script> and <script type="math/tex">c = 1</script>, we have <script type="math/tex">\forall x > 1 (f(x) \le f(x)</script>. Thus <script type="math/tex">(f,f) \in S</script>. Thus <script type="math/tex">S</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$f \in \mathcal F$</span>. Thus for <span class="kdmath">$a = 1$</span> and <span class="kdmath">$c = 1$</span>, we have <span class="kdmath">$\forall x > 1 (f(x) \le f(x)$</span>. Thus <span class="kdmath">$(f,f) \in S$</span>. Thus <span class="kdmath">$S$</span> is reflexive.</p>
 
-<p>Suppose <script type="math/tex">(f,g) \in S</script> and <script type="math/tex">(g,h) \in S</script>. Thus there exist <script type="math/tex">a_1, c_1, a_2, c_2</script> such that <script type="math/tex">\forall x > a_1 (\vert f(x) \vert \le c_1 \vert g(x) \vert)</script>
-and <script type="math/tex">\forall x > a_2 (\vert g(x) \vert \le c_2 \vert h(x) \vert)</script>. Suppose <script type="math/tex">a</script> is the maximum of <script type="math/tex">a_1, a_2</script>. Suppose <script type="math/tex">x > a</script>, it follows that
-<script type="math/tex">\vert f(x) \vert \le c_1 \vert g(x) \vert \le c_1 c_2 \vert h(x) \vert</script>. Since <script type="math/tex">x</script> is arbitrary, we have 
-<script type="math/tex">\forall x > a (\vert f(x) \vert \le c \vert h(x) \vert)</script>, where <script type="math/tex">c = c_1 c_2</script>. Thus <script type="math/tex">(f,h) \in S</script>. Thus <script type="math/tex">S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(f,g) \in S$</span> and <span class="kdmath">$(g,h) \in S$</span>. Thus there exist <span class="kdmath">$a_1, c_1, a_2, c_2$</span> such that <span class="kdmath">$\forall x > a_1 (\vert f(x) \vert \le c_1 \vert g(x) \vert)$</span>
+and <span class="kdmath">$\forall x > a_2 (\vert g(x) \vert \le c_2 \vert h(x) \vert)$</span>. Suppose <span class="kdmath">$a$</span> is the maximum of <span class="kdmath">$a_1, a_2$</span>. Suppose <span class="kdmath">$x > a$</span>, it follows that
+<span class="kdmath">$\vert f(x) \vert \le c_1 \vert g(x) \vert \le c_1 c_2 \vert h(x) \vert$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we have 
+<span class="kdmath">$\forall x > a (\vert f(x) \vert \le c \vert h(x) \vert)$</span>, where <span class="kdmath">$c = c_1 c_2$</span>. Thus <span class="kdmath">$(f,h) \in S$</span>. Thus <span class="kdmath">$S$</span> is transitive.</p>
 
-<p>To prove that <script type="math/tex">S</script> is not partial order, we shall prove that <script type="math/tex">S</script> is not antisymmetric. We will take a counter example to prove <script type="math/tex">S</script> is not symmetric.
-Suppose <script type="math/tex">f(x) = x</script> and <script type="math/tex">g(x) = 2x</script>. Then <script type="math/tex">\forall x > 0 (\vert f(x) \vert \le \vert g(x) \vert )</script> and <script type="math/tex">\forall x > 0 (\vert g(x) \vert \le 2 \vert f(x) \vert )</script>.
-Thus <script type="math/tex">(f,g) \in S</script> and <script type="math/tex">(g,f) \in S</script> but <script type="math/tex">f \ne g</script>. Thus <script type="math/tex">S</script> is not antisymmetric.</p>
+<p>To prove that <span class="kdmath">$S$</span> is not partial order, we shall prove that <span class="kdmath">$S$</span> is not antisymmetric. We will take a counter example to prove <span class="kdmath">$S$</span> is not symmetric.
+Suppose <span class="kdmath">$f(x) = x$</span> and <span class="kdmath">$g(x) = 2x$</span>. Then <span class="kdmath">$\forall x > 0 (\vert f(x) \vert \le \vert g(x) \vert )$</span> and <span class="kdmath">$\forall x > 0 (\vert g(x) \vert \le 2 \vert f(x) \vert )$</span>.
+Thus <span class="kdmath">$(f,g) \in S$</span> and <span class="kdmath">$(g,f) \in S$</span> but <span class="kdmath">$f \ne g$</span>. Thus <span class="kdmath">$S$</span> is not antisymmetric.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">f_1 \in O(g)</script> and <script type="math/tex">f_2 \in O(g)</script>. Thus there exist <script type="math/tex">a_1, c_1, a_2, c_2</script> such that <script type="math/tex">\forall x > a_1 (\vert f_1(x) \vert \le c_1 \vert g(x) \vert)</script>
-and <script type="math/tex">\forall x > a_2 (\vert f_2(x) \vert \le c_2 \vert g(x) \vert)</script>. Suppose <script type="math/tex">a</script> is maximum of <script type="math/tex">a_1, a_2</script>. Suppose <script type="math/tex">x > a</script> is any arbitrary number.
-Thus we have <script type="math/tex">\vert f_1(x) \vert \le c_1 \vert g(x) \vert</script> and <script type="math/tex">\vert f_2(x) \vert \le c_2 \vert g(x) \vert</script>.
-Now <script type="math/tex">f(x) = sf_1(x) + tf_2(x)</script>. Thus by triangular inequality, we have <script type="math/tex">\vert sf_1(x) + tf_2(x) \vert \le \vert s \vert \vert f_1(x) \vert + \vert t \vert \vert f_2(x) \vert</script>.  <br />
-Since <script type="math/tex">\vert f_1(x) \vert \le c_1 \vert g(x) \vert</script> and <script type="math/tex">\vert f_2(x) \vert \le c_2 \vert g(x) \vert</script>, it follows that 
-<script type="math/tex">\vert sf_1(x) + tf_2(x) \vert \le \vert s \vert \vert f_1(x) \vert + \vert t \vert \vert f_2(x) \vert  \le \vert s \vert c_1 \vert g(x) \vert + \vert t \vert c_2 \vert g(x) \vert \le (c_1 \vert s \vert + c_2 \vert t \vert ) \vert g(x) \vert</script>.
-Thus <script type="math/tex">\vert f(x) \vert \le c \vert g(x) \vert</script>, where <script type="math/tex">c = (c_1 \vert s \vert + c_2 \vert t \vert )</script>. Thus <script type="math/tex">f \in O(g)</script>.</p>
+<p>Suppose <span class="kdmath">$f_1 \in O(g)$</span> and <span class="kdmath">$f_2 \in O(g)$</span>. Thus there exist <span class="kdmath">$a_1, c_1, a_2, c_2$</span> such that <span class="kdmath">$\forall x > a_1 (\vert f_1(x) \vert \le c_1 \vert g(x) \vert)$</span>
+and <span class="kdmath">$\forall x > a_2 (\vert f_2(x) \vert \le c_2 \vert g(x) \vert)$</span>. Suppose <span class="kdmath">$a$</span> is maximum of <span class="kdmath">$a_1, a_2$</span>. Suppose <span class="kdmath">$x > a$</span> is any arbitrary number.
+Thus we have <span class="kdmath">$\vert f_1(x) \vert \le c_1 \vert g(x) \vert$</span> and <span class="kdmath">$\vert f_2(x) \vert \le c_2 \vert g(x) \vert$</span>.
+Now <span class="kdmath">$f(x) = sf_1(x) + tf_2(x)$</span>. Thus by triangular inequality, we have <span class="kdmath">$\vert sf_1(x) + tf_2(x) \vert \le \vert s \vert \vert f_1(x) \vert + \vert t \vert \vert f_2(x) \vert$</span>.  <br />
+Since <span class="kdmath">$\vert f_1(x) \vert \le c_1 \vert g(x) \vert$</span> and <span class="kdmath">$\vert f_2(x) \vert \le c_2 \vert g(x) \vert$</span>, it follows that 
+<span class="kdmath">$\vert sf_1(x) + tf_2(x) \vert \le \vert s \vert \vert f_1(x) \vert + \vert t \vert \vert f_2(x) \vert  \le \vert s \vert c_1 \vert g(x) \vert + \vert t \vert c_2 \vert g(x) \vert \le (c_1 \vert s \vert + c_2 \vert t \vert ) \vert g(x) \vert$</span>.
+Thus <span class="kdmath">$\vert f(x) \vert \le c \vert g(x) \vert$</span>, where <span class="kdmath">$c = (c_1 \vert s \vert + c_2 \vert t \vert )$</span>. Thus <span class="kdmath">$f \in O(g)$</span>.</p>
 
 <hr />
 
@@ -1564,24 +1562,24 @@ Thus <script type="math/tex">\vert f(x) \vert \le c \vert g(x) \vert</script>, w
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">g: A \to B</script>, <script type="math/tex">g(x) = g(x)</script>. Thus <script type="math/tex">(x,x) \in R</script>. Thus <script type="math/tex">R</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$g: A \to B$</span>, <span class="kdmath">$g(x) = g(x)$</span>. Thus <span class="kdmath">$(x,x) \in R$</span>. Thus <span class="kdmath">$R$</span> is reflexive.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R</script>. Thus <script type="math/tex">g(x) = g(y)</script>. Or we can also say <script type="math/tex">g(y) = g(x)</script>. Thus <script type="math/tex">(y,x) \in R</script>. Thus <script type="math/tex">R</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R$</span>. Thus <span class="kdmath">$g(x) = g(y)$</span>. Or we can also say <span class="kdmath">$g(y) = g(x)$</span>. Thus <span class="kdmath">$(y,x) \in R$</span>. Thus <span class="kdmath">$R$</span> is symmetric.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(y,z) \in R</script>. Thus <script type="math/tex">g(x) = g(y) = g(z)</script>. Since <script type="math/tex">g(x) = g(z)</script>, it follows <script type="math/tex">(x,z) \in R</script>. Thus <script type="math/tex">R</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(y,z) \in R$</span>. Thus <span class="kdmath">$g(x) = g(y) = g(z)$</span>. Since <span class="kdmath">$g(x) = g(z)$</span>, it follows <span class="kdmath">$(x,z) \in R$</span>. Thus <span class="kdmath">$R$</span> is transitive.</p>
 
-<p>Since <script type="math/tex">R</script> is reflexive, symmetric and transitive, it follows that <script type="math/tex">R</script> is an equivalence relation.</p>
+<p>Since <span class="kdmath">$R$</span> is reflexive, symmetric and transitive, it follows that <span class="kdmath">$R$</span> is an equivalence relation.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is an equivalence relation on <script type="math/tex">A</script>. Suppose <script type="math/tex">g: A \to A/R</script> and <script type="math/tex">g(x) = [x]_R</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> is an equivalence relation on <span class="kdmath">$A$</span>. Suppose <span class="kdmath">$g: A \to A/R$</span> and <span class="kdmath">$g(x) = [x]_R$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">R</script> is an equivalence relation, it follows that <script type="math/tex">[x]_R = [y]_R</script>. Thus <script type="math/tex">g(x) = g(y)</script>. Thus <script type="math/tex">R \subseteq \{(x,y) \in A \times A \, \vert \, g(x) = g(y) \}</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$R$</span> is an equivalence relation, it follows that <span class="kdmath">$[x]_R = [y]_R$</span>. Thus <span class="kdmath">$g(x) = g(y)$</span>. Thus <span class="kdmath">$R \subseteq \{(x,y) \in A \times A \, \vert \, g(x) = g(y) \}$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)suppose <script type="math/tex">(x,y) \in \{(x,y) \in A \times A \, \vert \, g(x) = g(y) \}</script>. Since <script type="math/tex">g(x) = [x]_R</script>, it follows that <script type="math/tex">[x]_R = [y]_R</script>. Thus <script type="math/tex">(x,y) \in R</script>.
- Thus <script type="math/tex">\{(x,y) \in A \times A \, \vert \, g(x) = g(y) \} \subseteq R</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)suppose <span class="kdmath">$(x,y) \in \{(x,y) \in A \times A \, \vert \, g(x) = g(y) \}$</span>. Since <span class="kdmath">$g(x) = [x]_R$</span>, it follows that <span class="kdmath">$[x]_R = [y]_R$</span>. Thus <span class="kdmath">$(x,y) \in R$</span>.
+ Thus <span class="kdmath">$\{(x,y) \in A \times A \, \vert \, g(x) = g(y) \} \subseteq R$</span>.</p>
 
-<p>Thus from both directions, we have <script type="math/tex">R = \{(x,y) \in A \times A \, \vert \, g(x) = g(y) \}</script>.</p>
+<p>Thus from both directions, we have <span class="kdmath">$R = \{(x,y) \in A \times A \, \vert \, g(x) = g(y) \}$</span>.</p>
 
 <hr />
 
@@ -1589,28 +1587,28 @@ Thus <script type="math/tex">\vert f(x) \vert \le c \vert g(x) \vert</script>, w
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is compatible with <script type="math/tex">f</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$f$</span>.</p>
 
-<p>Suppose <script type="math/tex">h = \{ (X,y) \in A/R \times B \, \vert \, \exists x \in X (f(x) = y) \}</script>.</p>
+<p>Suppose <span class="kdmath">$h = \{ (X,y) \in A/R \times B \, \vert \, \exists x \in X (f(x) = y) \}$</span>.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">X \in A/R</script> and <script type="math/tex">y \in B</script> such that <script type="math/tex">(X,y) \in h</script>. Thus there exist an <script type="math/tex">x</script> such that <script type="math/tex">x \in X</script> and <script type="math/tex">y = f(x)</script>. Since <script type="math/tex">x \in X</script> and <script type="math/tex">X \in A/R</script>, it
-  follows that <script type="math/tex">X = [x]_R</script>. Thus <script type="math/tex">([x]_R,f(x)) \in h</script>. Or <script type="math/tex">h([x]_R) = f(x)</script>. Thus such a relation exists.</p>
+<p>Suppose <span class="kdmath">$X \in A/R$</span> and <span class="kdmath">$y \in B$</span> such that <span class="kdmath">$(X,y) \in h$</span>. Thus there exist an <span class="kdmath">$x$</span> such that <span class="kdmath">$x \in X$</span> and <span class="kdmath">$y = f(x)$</span>. Since <span class="kdmath">$x \in X$</span> and <span class="kdmath">$X \in A/R$</span>, it
+  follows that <span class="kdmath">$X = [x]_R$</span>. Thus <span class="kdmath">$([x]_R,f(x)) \in h$</span>. Or <span class="kdmath">$h([x]_R) = f(x)$</span>. Thus such a relation exists.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose there is another relation <script type="math/tex">k</script>. Suppose <script type="math/tex">(X,y) \in k</script> such that <script type="math/tex">X = [x]_R</script>, <script type="math/tex">y = f(x)</script> and <script type="math/tex">h(X) = f(x)</script>. Suppose <script type="math/tex">p \in [x]_R</script>. Thus <script type="math/tex">pRx</script>. Since <script type="math/tex">R</script> is compatible with <script type="math/tex">f</script>, it 
- follows that <script type="math/tex">f(p) = f(x)</script>. Thus there exists a <script type="math/tex">p</script> such that <script type="math/tex">p \in [x]_R</script> and <script type="math/tex">p = f(x)</script>. It follows that <script type="math/tex">([x]_p,f(x)) \in h</script>(where h is the function we defined).
- Or <script type="math/tex">(X,y) \in h</script>. Since <script type="math/tex">(X,y)</script> are arbitrary, it follows that <script type="math/tex">k = h</script>.</p>
+<p>Suppose there is another relation <span class="kdmath">$k$</span>. Suppose <span class="kdmath">$(X,y) \in k$</span> such that <span class="kdmath">$X = [x]_R$</span>, <span class="kdmath">$y = f(x)$</span> and <span class="kdmath">$h(X) = f(x)$</span>. Suppose <span class="kdmath">$p \in [x]_R$</span>. Thus <span class="kdmath">$pRx$</span>. Since <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$f$</span>, it 
+ follows that <span class="kdmath">$f(p) = f(x)$</span>. Thus there exists a <span class="kdmath">$p$</span> such that <span class="kdmath">$p \in [x]_R$</span> and <span class="kdmath">$p = f(x)$</span>. It follows that <span class="kdmath">$([x]_p,f(x)) \in h$</span>(where h is the function we defined).
+ Or <span class="kdmath">$(X,y) \in h$</span>. Since <span class="kdmath">$(X,y)$</span> are arbitrary, it follows that <span class="kdmath">$k = h$</span>.</p>
 
 <p>Note: Not confident about the solution.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script> and <script type="math/tex">y \in A</script>. Suppose <script type="math/tex">xRy</script>. Since <script type="math/tex">x \in A</script>, <script type="math/tex">h([x]_R) = f(x)</script>. Similarly, since <script type="math/tex">y \in A</script>, <script type="math/tex">h([y]_R) = f(y)</script>.
-Since <script type="math/tex">xRy</script>, it follows that <script type="math/tex">[x]_R = [y]_R</script>. Since <script type="math/tex">f</script> is a function, it follows <script type="math/tex">h([x]_R) = h([y]_R)</script>. Thus <script type="math/tex">f(x) = f(y)</script>. Thus if <script type="math/tex">xRy</script>, then
-<script type="math/tex">f(x) = f(y)</script>. Since <script type="math/tex">x,y</script> are arbitrary, it follows that <script type="math/tex">\forall x \in A \forall y \in A(xRy \to f(x) = f(y))</script>. Thus <script type="math/tex">R</script> is compatible with <script type="math/tex">f</script>.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in A$</span>. Suppose <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$x \in A$</span>, <span class="kdmath">$h([x]_R) = f(x)$</span>. Similarly, since <span class="kdmath">$y \in A$</span>, <span class="kdmath">$h([y]_R) = f(y)$</span>.
+Since <span class="kdmath">$xRy$</span>, it follows that <span class="kdmath">$[x]_R = [y]_R$</span>. Since <span class="kdmath">$f$</span> is a function, it follows <span class="kdmath">$h([x]_R) = h([y]_R)$</span>. Thus <span class="kdmath">$f(x) = f(y)$</span>. Thus if <span class="kdmath">$xRy$</span>, then
+<span class="kdmath">$f(x) = f(y)$</span>. Since <span class="kdmath">$x,y$</span> are arbitrary, it follows that <span class="kdmath">$\forall x \in A \forall y \in A(xRy \to f(x) = f(y))$</span>. Thus <span class="kdmath">$R$</span> is compatible with <span class="kdmath">$f$</span>.</p>
 
 <hr />
 
@@ -1618,29 +1616,29 @@ Since <script type="math/tex">xRy</script>, it follows that <script type="math/t
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">xRy</script>, then <script type="math/tex">x - y = 5k</script>. Thus <script type="math/tex">x = y + 5k</script>. Thus <script type="math/tex">x^2 = y^2 + 10yk + 25k^2</script>, or <script type="math/tex">x^2 - y^2 = 5k(2y + 5k)</script>. Thus <script type="math/tex">(x^2,y^2) \in R</script>.
-Or we can also say that if <script type="math/tex">xRy</script> then <script type="math/tex">x^2Ry^2</script>.</p>
+<p>Suppose <span class="kdmath">$xRy$</span>, then <span class="kdmath">$x - y = 5k$</span>. Thus <span class="kdmath">$x = y + 5k$</span>. Thus <span class="kdmath">$x^2 = y^2 + 10yk + 25k^2$</span>, or <span class="kdmath">$x^2 - y^2 = 5k(2y + 5k)$</span>. Thus <span class="kdmath">$(x^2,y^2) \in R$</span>.
+Or we can also say that if <span class="kdmath">$xRy$</span> then <span class="kdmath">$x^2Ry^2$</span>.</p>
 
-<p>Now consider the function <script type="math/tex">h = \{ (X,Y) \in Z/R \times Z/R \, \vert \, \exists x \in X \exists y \in Y(y = x^2) \}</script>.</p>
+<p>Now consider the function <span class="kdmath">$h = \{ (X,Y) \in Z/R \times Z/R \, \vert \, \exists x \in X \exists y \in Y(y = x^2) \}$</span>.</p>
 
-<p>Now we will prove that <script type="math/tex">h</script> is the unique function to satisfy <script type="math/tex">h([x]_R) = [x^2]_R</script>.</p>
+<p>Now we will prove that <span class="kdmath">$h$</span> is the unique function to satisfy <span class="kdmath">$h([x]_R) = [x^2]_R$</span>.</p>
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">(X,Y) \in h</script>. Thus there exists an element <script type="math/tex">x \in X</script> and <script type="math/tex">y \in Y</script> such that <script type="math/tex">y = x^2</script>. Since <script type="math/tex">R</script> is an equivalence relation,
-it follows that <script type="math/tex">X = [x]_R</script> and <script type="math/tex">Y = [y]_R = [x^2]_R</script>. Thus <script type="math/tex">([x]_R,[x^2]_R) \in h</script>, or <script type="math/tex">h([x]_R) = [x^2]_R</script>.</p>
+<p>Suppose <span class="kdmath">$(X,Y) \in h$</span>. Thus there exists an element <span class="kdmath">$x \in X$</span> and <span class="kdmath">$y \in Y$</span> such that <span class="kdmath">$y = x^2$</span>. Since <span class="kdmath">$R$</span> is an equivalence relation,
+it follows that <span class="kdmath">$X = [x]_R$</span> and <span class="kdmath">$Y = [y]_R = [x^2]_R$</span>. Thus <span class="kdmath">$([x]_R,[x^2]_R) \in h$</span>, or <span class="kdmath">$h([x]_R) = [x^2]_R$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">k: Z/R \to Z/R</script> is a function such that <script type="math/tex">k([x]_R) = [x^2]_R</script>. Suppose <script type="math/tex">p \in [x]_R</script>. Thus <script type="math/tex">pRx</script>. We proved above that if <script type="math/tex">pRx</script> then
-<script type="math/tex">p^2Rx^2</script>. Thus <script type="math/tex">[x^2]_R = [p^2]_R</script>. It is also clear that <script type="math/tex">p^2 \in [p^2]_R</script>, or <script type="math/tex">p^2 \in [x^2]_R</script>. Thus there exist a <script type="math/tex">p \in [x]_R</script> such 
-<script type="math/tex">p^2 \in [x^2]_R</script>. Thus <script type="math/tex">([x]_R,[x^2]_R) \in h</script>. Since <script type="math/tex">([x]_R,[x^2]_R)</script> is arbitrary, it follows that <script type="math/tex">k = h</script>.</p>
+<p>Suppose <span class="kdmath">$k: Z/R \to Z/R$</span> is a function such that <span class="kdmath">$k([x]_R) = [x^2]_R$</span>. Suppose <span class="kdmath">$p \in [x]_R$</span>. Thus <span class="kdmath">$pRx$</span>. We proved above that if <span class="kdmath">$pRx$</span> then
+<span class="kdmath">$p^2Rx^2$</span>. Thus <span class="kdmath">$[x^2]_R = [p^2]_R$</span>. It is also clear that <span class="kdmath">$p^2 \in [p^2]_R$</span>, or <span class="kdmath">$p^2 \in [x^2]_R$</span>. Thus there exist a <span class="kdmath">$p \in [x]_R$</span> such 
+<span class="kdmath">$p^2 \in [x^2]_R$</span>. Thus <span class="kdmath">$([x]_R,[x^2]_R) \in h$</span>. Since <span class="kdmath">$([x]_R,[x^2]_R)$</span> is arbitrary, it follows that <span class="kdmath">$k = h$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Here it will be enough to show just one counter example. Suppose <script type="math/tex">x = 0, y = 5</script>. Clearly <script type="math/tex">(x,y) \in R</script>. If <script type="math/tex">h: Z/R \to Z/R</script> is a function, it follows that,
-<script type="math/tex">h([o]_R) = h([5]_R</script>. Now <script type="math/tex">h([0]_R) = [2^0]_R = [1]_R</script> and <script type="math/tex">h([5]_R) = [2^5]_R = [32]_R</script>. Thus <script type="math/tex">[1]_R = [32]_R</script>. But this is not correct
-because <script type="math/tex">32 - 1 \ne 5k</script>. Thus <script type="math/tex">h</script> is not a function.</p>
+<p>Here it will be enough to show just one counter example. Suppose <span class="kdmath">$x = 0, y = 5$</span>. Clearly <span class="kdmath">$(x,y) \in R$</span>. If <span class="kdmath">$h: Z/R \to Z/R$</span> is a function, it follows that,
+<span class="kdmath">$h([o]_R) = h([5]_R$</span>. Now <span class="kdmath">$h([0]_R) = [2^0]_R = [1]_R$</span> and <span class="kdmath">$h([5]_R) = [2^5]_R = [32]_R$</span>. Thus <span class="kdmath">$[1]_R = [32]_R$</span>. But this is not correct
+because <span class="kdmath">$32 - 1 \ne 5k$</span>. Thus <span class="kdmath">$h$</span> is not a function.</p>
 
 
                         <hr/>

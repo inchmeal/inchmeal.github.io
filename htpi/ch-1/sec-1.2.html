@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1472,7 +1473,7 @@ corresponding rows of “conclusion” must also be true.</li>
 
 <p>Before we proceed for this solution, let’s first come up with an approach to get a desired output for given inputs.</p>
 
-<p>First we note few properties about <script type="math/tex">\, \land \,</script> and <script type="math/tex">\, \lor \,</script> operators:</p>
+<p>First we note few properties about <span class="kdmath">$\, \land \,$</span> and <span class="kdmath">$\, \lor \,$</span> operators:</p>
 
 <ol>
   <li>We know that \( \land \) gives true only when <strong>all</strong> of its inputs are true. Or returns false only if <strong>any</strong> of the input is false.</li>
@@ -1481,42 +1482,42 @@ corresponding rows of “conclusion” must also be true.</li>
 
 <p>We can use the above properties to our advantage.</p>
 
-<p>If we want true we can use <script type="math/tex">\, \land \,</script> and <em>ensure</em> in some way that all of the inputs to <script type="math/tex">\, \land \,</script> are true.</p>
+<p>If we want true we can use <span class="kdmath">$\, \land \,$</span> and <em>ensure</em> in some way that all of the inputs to <span class="kdmath">$\, \land \,$</span> are true.</p>
 
-<p>Similarly, if we want false, we can use <script type="math/tex">\, \lor \,</script> and <em>ensure</em> that all of the inputs to <script type="math/tex">\, \lor \,</script> are false.</p>
+<p>Similarly, if we want false, we can use <span class="kdmath">$\, \lor \,$</span> and <em>ensure</em> that all of the inputs to <span class="kdmath">$\, \lor \,$</span> are false.</p>
 
 <p>Consider a simple case:</p>
 
-<p><strong>Suppose we want desired output, say O, to be true</strong> for a given set of inputs, say M and N. Since we want output = true, we will use <script type="math/tex">\, \land \,</script>. To ensure that all the inputs to <script type="math/tex">\, \land \,</script> are true:</p>
+<p><strong>Suppose we want desired output, say O, to be true</strong> for a given set of inputs, say M and N. Since we want output = true, we will use <span class="kdmath">$\, \land \,$</span>. To ensure that all the inputs to <span class="kdmath">$\, \land \,$</span> are true:</p>
 
 <ol>
-  <li>M = true, N = true. We can get the desired output = true, by using <script type="math/tex">\, M \,</script>  and <script type="math/tex">\, N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, M \land N \,</script> . And for any other values of M and N, generated output will be false.</li>
-  <li>M = true, N = false. We can get the desired output = true, by using <script type="math/tex">\, M \,</script>  and <script type="math/tex">\, \lnot N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, M \land \lnot N \,</script>. And for any other values of M and N, output generated will be false.</li>
-  <li>M = false, N = true. We can get the desired output = true, by using <script type="math/tex">\, \lnot M \,</script>  and <script type="math/tex">\, N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, \lnot M \land N \,</script>. And for every other value of M and N, output generated will be false.</li>
-  <li>M = false, N = false. We can get the desired output = true, by using <script type="math/tex">\, \lnot M \,</script>  and <script type="math/tex">\, \lnot N \,</script>  as inputs to <script type="math/tex">\, \land \,</script>. Thus we use <script type="math/tex">\, \lnot M \land \lnot N \,</script>. And for any other value of M and N, output generated will be false.</li>
+  <li>M = true, N = true. We can get the desired output = true, by using <span class="kdmath">$\, M \,$</span>  and <span class="kdmath">$\, N \,$</span>  as inputs to <span class="kdmath">$\, \land \,$</span>. Thus we use <span class="kdmath">$\, M \land N \,$</span> . And for any other values of M and N, generated output will be false.</li>
+  <li>M = true, N = false. We can get the desired output = true, by using <span class="kdmath">$\, M \,$</span>  and <span class="kdmath">$\, \lnot N \,$</span>  as inputs to <span class="kdmath">$\, \land \,$</span>. Thus we use <span class="kdmath">$\, M \land \lnot N \,$</span>. And for any other values of M and N, output generated will be false.</li>
+  <li>M = false, N = true. We can get the desired output = true, by using <span class="kdmath">$\, \lnot M \,$</span>  and <span class="kdmath">$\, N \,$</span>  as inputs to <span class="kdmath">$\, \land \,$</span>. Thus we use <span class="kdmath">$\, \lnot M \land N \,$</span>. And for every other value of M and N, output generated will be false.</li>
+  <li>M = false, N = false. We can get the desired output = true, by using <span class="kdmath">$\, \lnot M \,$</span>  and <span class="kdmath">$\, \lnot N \,$</span>  as inputs to <span class="kdmath">$\, \land \,$</span>. Thus we use <span class="kdmath">$\, \lnot M \land \lnot N \,$</span>. And for any other value of M and N, output generated will be false.</li>
 </ol>
 
-<p><strong>Similarly, if we want desired output = false</strong> for a given set of inputs, say M and N. We have to ensure that all the inputs to <script type="math/tex">\, \lor \,</script> are false:</p>
+<p><strong>Similarly, if we want desired output = false</strong> for a given set of inputs, say M and N. We have to ensure that all the inputs to <span class="kdmath">$\, \lor \,$</span> are false:</p>
 
 <ol>
-  <li>For M = true, N = true. We can get the desired output = false, by using <script type="math/tex">\, \lnot M \,</script>  and <script type="math/tex">\, \lnot N \,</script>  as inputs to <script type="math/tex">\, \lor \,</script>. Thus we use <script type="math/tex">\, \lnot M \lor \lnot N \,</script>. Thus for any other values of M and N, generated output will be true.</li>
-  <li>… We use <script type="math/tex">\, \lnot M \lor N \,</script></li>
-  <li>… We use <script type="math/tex">\, M \lor \lnot N \,</script></li>
-  <li>… We use <script type="math/tex">\, M \lor N \,</script></li>
+  <li>For M = true, N = true. We can get the desired output = false, by using <span class="kdmath">$\, \lnot M \,$</span>  and <span class="kdmath">$\, \lnot N \,$</span>  as inputs to <span class="kdmath">$\, \lor \,$</span>. Thus we use <span class="kdmath">$\, \lnot M \lor \lnot N \,$</span>. Thus for any other values of M and N, generated output will be true.</li>
+  <li>… We use <span class="kdmath">$\, \lnot M \lor N \,$</span></li>
+  <li>… We use <span class="kdmath">$\, M \lor \lnot N \,$</span></li>
+  <li>… We use <span class="kdmath">$\, M \lor N \,$</span></li>
 </ol>
 
 <p>Till, now we figured a way to get a desired output for only one possible set of input. What <strong>if we want desired output = true for two possible sets of inputs</strong>, For eg: (i) When M = true and N = true, 
 and (ii) When M = true and N = false?</p>
 
-<p>We can use <script type="math/tex">\, \lor \,</script> to combine the isolated solutions for (i) and (ii) so that we get output = true if either (i) or (ii) is true. Thus we get <script type="math/tex">\, (M \land N) \lor (M \land \lnot N) \,</script>.</p>
+<p>We can use <span class="kdmath">$\, \lor \,$</span> to combine the isolated solutions for (i) and (ii) so that we get output = true if either (i) or (ii) is true. Thus we get <span class="kdmath">$\, (M \land N) \lor (M \land \lnot N) \,$</span>.</p>
 
-<p>In a similar way <strong>if we want desired output = false for two possible sets of inputs</strong>, for eg: (i) and (ii) from above. Since here we want false, we combine isolated solutions of (i) and (ii) using <script type="math/tex">\, \land \,</script>. Thus we get <script type="math/tex">\, (\lnot M \lor \lnot N) \land (\lnot M \lor N) \,</script>.</p>
+<p>In a similar way <strong>if we want desired output = false for two possible sets of inputs</strong>, for eg: (i) and (ii) from above. Since here we want false, we combine isolated solutions of (i) and (ii) using <span class="kdmath">$\, \land \,$</span>. Thus we get <span class="kdmath">$\, (\lnot M \lor \lnot N) \land (\lnot M \lor N) \,$</span>.</p>
 
 <p>Thus the above approach suggests that there two alternative(but similar) ways:</p>
 
 <ul>
-  <li>Either we focus on generating true as output by using <script type="math/tex">\, \land \,</script> and for multiple possible inputs, we combine the isolated solutions using <script type="math/tex">\, \lor \,</script>.</li>
-  <li>Or we focus on generating false as output by using <script type="math/tex">\, \lor \,</script> and for multiple possible inputs we combine isolated solutions using <script type="math/tex">\, \land \,</script>.</li>
+  <li>Either we focus on generating true as output by using <span class="kdmath">$\, \land \,$</span> and for multiple possible inputs, we combine the isolated solutions using <span class="kdmath">$\, \lor \,$</span>.</li>
+  <li>Or we focus on generating false as output by using <span class="kdmath">$\, \lor \,$</span> and for multiple possible inputs we combine isolated solutions using <span class="kdmath">$\, \land \,$</span>.</li>
 </ul>
 
 <p><strong>Applying the above approach</strong></p>
@@ -2137,7 +2138,7 @@ and (ii) When M = true and N = false?</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Thanks <a href="http://www.inchmeal.io/htpi/ch-1/sec-1.2.html#comment-3953681369">Maxwell</a> for pointing out. Earlier got the column <script type="math/tex">\, J \lor B \,</script> wrong in the table.</p>
+<p>Thanks <a href="http://www.inchmeal.io/htpi/ch-1/sec-1.2.html#comment-3953681369">Maxwell</a> for pointing out. Earlier got the column <span class="kdmath">$\, J \lor B \,$</span> wrong in the table.</p>
 
 <table>
   <thead>

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1142,10 +1143,10 @@
   <li>A theorem that says that if certain assumptions called the hypotheses of the theorem are true, then some conclusion must also be true.</li>
   <li>The hypothesis and conclusion of a theorem often contains free variables. When values are substituted/assigned for these variables, it is called an instance of the theorem.</li>
   <li>A proof of a theorem is simply a deductive argument whose premises are the hypotheses of the theorem and whose conclusion is the conclusion of the theorem.</li>
-  <li>To prove a conclusion of the form of <script type="math/tex">P \to Q</script>, there can be two strategies:
+  <li>To prove a conclusion of the form of <span class="kdmath">$P \to Q$</span>, there can be two strategies:
     <ul>
-      <li>Assuming <script type="math/tex">P</script> is true, Prove <script type="math/tex">Q</script>. In this way this strategy transformed the problem  of proving <script type="math/tex">P \to Q</script> to proving <script type="math/tex">Q</script>. After this transformation, <script type="math/tex">P</script> is now the part of the hypothesis.</li>
-      <li>Prove contra-positive: assuming <script type="math/tex">\lnot Q</script> is true, prove <script type="math/tex">\lnot P</script>. Similarly here also problem is transformed from proving  <script type="math/tex">P \to Q</script> to proving <script type="math/tex">\lnot P</script>.</li>
+      <li>Assuming <span class="kdmath">$P$</span> is true, Prove <span class="kdmath">$Q$</span>. In this way this strategy transformed the problem  of proving <span class="kdmath">$P \to Q$</span> to proving <span class="kdmath">$Q$</span>. After this transformation, <span class="kdmath">$P$</span> is now the part of the hypothesis.</li>
+      <li>Prove contra-positive: assuming <span class="kdmath">$\lnot Q$</span> is true, prove <span class="kdmath">$\lnot P$</span>. Similarly here also problem is transformed from proving  <span class="kdmath">$P \to Q$</span> to proving <span class="kdmath">$\lnot P$</span>.</li>
     </ul>
   </li>
   <li>Thus multiple transformations can be applied to convert the problem to simpler one.</li>
@@ -1171,30 +1172,30 @@
       <li>Justifying the conclusions.</li>
     </ul>
   </li>
-  <li>Thus proof of the goal <script type="math/tex">P \to Q</script> will look as follows:
+  <li>Thus proof of the goal <span class="kdmath">$P \to Q$</span> will look as follows:
     <ul>
       <li>Given: ,   <br />
-Goal <script type="math/tex">P \to Q</script></li>
+Goal <span class="kdmath">$P \to Q$</span></li>
       <li>Using strategy-1:
         <ul>
           <li>Scratch work will look as:  <br />
-  Given: <script type="math/tex">P</script> ,  <br />
-  Goal <script type="math/tex">Q</script>.</li>
+  Given: <span class="kdmath">$P$</span> ,  <br />
+  Goal <span class="kdmath">$Q$</span>.</li>
           <li>Final proof will look as:  <br />
- Suppose <script type="math/tex">P</script> is true.  <br />
- [Proof of <script type="math/tex">Q</script> ]  <br />
- Therefore <script type="math/tex">P \to Q</script>.</li>
+ Suppose <span class="kdmath">$P$</span> is true.  <br />
+ [Proof of <span class="kdmath">$Q$</span> ]  <br />
+ Therefore <span class="kdmath">$P \to Q$</span>.</li>
         </ul>
       </li>
       <li>Using strategy-2:
         <ul>
           <li>Scratch work will look as:  <br />
-  Given: <script type="math/tex">\lnot Q</script> ,  <br />
-  Goal <script type="math/tex">\lnot P</script>.</li>
+  Given: <span class="kdmath">$\lnot Q$</span> ,  <br />
+  Goal <span class="kdmath">$\lnot P$</span>.</li>
           <li>Final proof will look as:
- Suppose <script type="math/tex">Q</script> is false.  <br />
- [Proof of <script type="math/tex">\lnot P</script> ]  <br />
- Therefore <script type="math/tex">P \to Q</script>.</li>
+ Suppose <span class="kdmath">$Q$</span> is false.  <br />
+ [Proof of <span class="kdmath">$\lnot P$</span> ]  <br />
+ Therefore <span class="kdmath">$P \to Q$</span>.</li>
         </ul>
       </li>
     </ul>
@@ -1209,29 +1210,29 @@ Goal <script type="math/tex">P \to Q</script></li>
 <p>Hypothesis:</p>
 
 <ul>
-  <li><script type="math/tex">n</script> is an integer and <script type="math/tex">n > 1</script>.</li>
-  <li><script type="math/tex">n</script> is not prime.</li>
+  <li><span class="kdmath">$n$</span> is an integer and <span class="kdmath">$n > 1$</span>.</li>
+  <li><span class="kdmath">$n$</span> is not prime.</li>
 </ul>
 
 <p>Conclusion:  <br />
-    <script type="math/tex">2^n - 1</script> is not prime.</p>
+    <span class="kdmath">$2^n - 1$</span> is not prime.</p>
 
 <ul>
-  <li>For <script type="math/tex">n = 6</script>, hypothesis is true.</li>
-  <li>Conclusion is <script type="math/tex">2^6 - 1 = 63</script> is not prime. This is also true.</li>
+  <li>For <span class="kdmath">$n = 6$</span>, hypothesis is true.</li>
+  <li>Conclusion is <span class="kdmath">$2^6 - 1 = 63$</span> is not prime. This is also true.</li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
 <ul>
-  <li>For <script type="math/tex">n = 15</script>, hypothesis is true.</li>
-  <li>Conclusion is <script type="math/tex">2^{15} - 1 = 32767</script> is not prime. This is also true: <script type="math/tex">32767 = 7 * 4681</script>.</li>
+  <li>For <span class="kdmath">$n = 15$</span>, hypothesis is true.</li>
+  <li>Conclusion is <span class="kdmath">$2^{15} - 1 = 32767$</span> is not prime. This is also true: <span class="kdmath">$32767 = 7 * 4681$</span>.</li>
 </ul>
 
 <p><strong>(c)</strong></p>
 
 <ul>
-  <li>For <script type="math/tex">n = 11</script>, hypothesis is <em>not</em> true.</li>
+  <li>For <span class="kdmath">$n = 11$</span>, hypothesis is <em>not</em> true.</li>
   <li>Thus theorem does not say anything.</li>
 </ul>
 
@@ -1241,22 +1242,22 @@ Goal <script type="math/tex">P \to Q</script></li>
 
 <p><strong>(a)</strong></p>
 
-<p>Hypothesis: <script type="math/tex">b^2 > 4ac</script>.</p>
+<p>Hypothesis: <span class="kdmath">$b^2 > 4ac$</span>.</p>
 
-<p>Conclusion: <script type="math/tex">ax^2 + bx + c = 0</script> has exactly 2 solutions.</p>
+<p>Conclusion: <span class="kdmath">$ax^2 + bx + c = 0$</span> has exactly 2 solutions.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">a,\,b,\, c</script> are free variables. <script type="math/tex">x</script> is not a free variable.</p>
+<p><strong>(b)</strong> <span class="kdmath">$a,\,b,\, c$</span> are free variables. <span class="kdmath">$x$</span> is not a free variable.</p>
 
-<p><strong>(c)</strong> Substituting the values: <script type="math/tex">(-5)^2 > 4 \times 2 \times 3</script> gives <script type="math/tex">25 > 24</script>. This is true. Thus hypothesis is true.</p>
+<p><strong>(c)</strong> Substituting the values: <span class="kdmath">$(-5)^2 > 4 \times 2 \times 3$</span> gives <span class="kdmath">$25 > 24$</span>. This is true. Thus hypothesis is true.</p>
 
-<p>Conclusion is <script type="math/tex">2x^2 -5x + 3 = 0</script>  <br />
-<script type="math/tex">\quad = 2x^2 -3x -2x + 3 = 0</script>  <br />
-<script type="math/tex">\quad = x(2x - 3) -3(x - 1) = 0</script>  <br />
-<script type="math/tex">\quad = (2x - 3)(x - 1) = 0</script></p>
+<p>Conclusion is <span class="kdmath">$2x^2 -5x + 3 = 0$</span>  <br />
+<span class="kdmath">$\quad = 2x^2 -3x -2x + 3 = 0$</span>  <br />
+<span class="kdmath">$\quad = x(2x - 3) -3(x - 1) = 0$</span>  <br />
+<span class="kdmath">$\quad = (2x - 3)(x - 1) = 0$</span></p>
 
-<p>Thus $ x = 1<script type="math/tex">and</script> x = 3/2 $$ are two solutions. That means conclusion is also correct.</p>
+<p>Thus $ x = 1<span class="kdmath">$and$</span> x = 3/2 $$ are two solutions. That means conclusion is also correct.</p>
 
-<p><strong>(d)</strong> Substituting the values: <script type="math/tex">(4)^2 > 4 \times 2 \times 3</script> gives <script type="math/tex">16 > 24</script>. This is false. Thus hypothesis is false.  <br />
+<p><strong>(d)</strong> Substituting the values: <span class="kdmath">$(4)^2 > 4 \times 2 \times 3$</span> gives <span class="kdmath">$16 > 24$</span>. This is false. Thus hypothesis is false.  <br />
 Theorem does not say anything as hypothesis is not true.</p>
 
 <hr />
@@ -1266,183 +1267,150 @@ Theorem does not say anything as hypothesis is not true.</p>
 <p>Hypothesis:</p>
 
 <ul>
-  <li><script type="math/tex">n</script> is a natural number and <script type="math/tex">n > 2</script>.</li>
-  <li><script type="math/tex">n</script> is not prime.</li>
+  <li><span class="kdmath">$n$</span> is a natural number and <span class="kdmath">$n > 2$</span>.</li>
+  <li><span class="kdmath">$n$</span> is not prime.</li>
 </ul>
 
 <p>Conclusion:  <br />
-    <script type="math/tex">2n + 13</script> is not prime.</p>
+    <span class="kdmath">$2n + 13$</span> is not prime.</p>
 
-<p>For <script type="math/tex">n = 9</script>, Hypothesis is true. Conclusion: <script type="math/tex">2 \times 9 + 13 = 31</script>, which is a prime number. Thus conclusion is not true.</p>
+<p>For <span class="kdmath">$n = 9$</span>, Hypothesis is true. Conclusion: <span class="kdmath">$2 \times 9 + 13 = 31$</span>, which is a prime number. Thus conclusion is not true.</p>
 
 <hr />
 
 <p><strong>Soln4</strong></p>
 
-<p>Suppose <script type="math/tex">% <![CDATA[
-0 < a < b %]]></script>. Then <script type="math/tex">b−a > 0</script>.  <br />
-Also <script type="math/tex">a + b > 0</script>. Multiplying <script type="math/tex">b−a > 0</script> by <script type="math/tex">b + a</script>  <br />
-We get <script type="math/tex">(b-a)(b+a) > 0</script>. Which gives:  <br />
-<script type="math/tex">b^2 - a^2 > 0</script>.  <br />
-Since <script type="math/tex">b^2 − a^2 > 0</script>, it follows that <script type="math/tex">% <![CDATA[
-a^2 < b^2 %]]></script>.</p>
+<p>Suppose <span class="kdmath">$0 < a < b$</span>. Then <span class="kdmath">$b−a > 0$</span>.  <br />
+Also <span class="kdmath">$a + b > 0$</span>. Multiplying <span class="kdmath">$b−a > 0$</span> by <span class="kdmath">$b + a$</span>  <br />
+We get <span class="kdmath">$(b-a)(b+a) > 0$</span>. Which gives:  <br />
+<span class="kdmath">$b^2 - a^2 > 0$</span>.  <br />
+Since <span class="kdmath">$b^2 − a^2 > 0$</span>, it follows that <span class="kdmath">$a^2 < b^2$</span>.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p>if <script type="math/tex">% <![CDATA[
-a < b < 0 %]]></script> then <script type="math/tex">b - a > 0</script> and <script type="math/tex">% <![CDATA[
-b + a < 0 %]]></script>   <br />
-Thus, the product <script type="math/tex">% <![CDATA[
-(b-a)(b+a) < 0 %]]></script> because product of a positive and negative number is negative.  <br />
-Expanding the product, we get <script type="math/tex">% <![CDATA[
-b^2 - a^2 < 0 %]]></script>.  <br />
-Now since <script type="math/tex">% <![CDATA[
-b^2 - a^2 < 0 %]]></script>, It follows that <script type="math/tex">% <![CDATA[
-b^2 < a^2 %]]></script>.</p>
+<p>if <span class="kdmath">$a < b < 0$</span> then <span class="kdmath">$b - a > 0$</span> and <span class="kdmath">$b + a < 0$</span>   <br />
+Thus, the product <span class="kdmath">$(b-a)(b+a) < 0$</span> because product of a positive and negative number is negative.  <br />
+Expanding the product, we get <span class="kdmath">$b^2 - a^2 < 0$</span>.  <br />
+Now since <span class="kdmath">$b^2 - a^2 < 0$</span>, It follows that <span class="kdmath">$b^2 < a^2$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p>if <script type="math/tex">% <![CDATA[
-0 < a < b %]]></script>, Multiplying both sides by positive number <script type="math/tex">\frac 1 {ab}</script>.  <br />
-<script type="math/tex">% <![CDATA[
-\quad = \frac a {ab} < \frac b {ab} %]]></script>  <br />
-<script type="math/tex">% <![CDATA[
-\quad = \frac 1 b < \frac 1 a %]]></script></p>
+<p>if <span class="kdmath">$0 < a < b$</span>, Multiplying both sides by positive number <span class="kdmath">$\frac 1 {ab}$</span>.  <br />
+<span class="kdmath">$\quad = \frac a {ab} < \frac b {ab}$</span>  <br />
+<span class="kdmath">$\quad = \frac 1 b < \frac 1 a$</span></p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>Suppose <script type="math/tex">a^3 > a</script>. Subtracting <script type="math/tex">a</script> from both sides:  <br />
- <script type="math/tex">\quad a^3 - a > 0</script>.  <br />
- Multiplying by <script type="math/tex">a^2 + 1</script> on both sides:  <br />
- <script type="math/tex">\quad = (a^3 - a)(a^2 + 1) > 0</script> <br />
+<p>Suppose <span class="kdmath">$a^3 > a$</span>. Subtracting <span class="kdmath">$a$</span> from both sides:  <br />
+ <span class="kdmath">$\quad a^3 - a > 0$</span>.  <br />
+ Multiplying by <span class="kdmath">$a^2 + 1$</span> on both sides:  <br />
+ <span class="kdmath">$\quad = (a^3 - a)(a^2 + 1) > 0$</span> <br />
  Simplifying:  <br />
- <script type="math/tex">\quad = a^5 - a^3 + a^3 - a > 0</script>    <br />
- <script type="math/tex">\quad = a^5 - a > 0</script>  <br />
- Thus we have: <script type="math/tex">a^5 > a</script>.</p>
+ <span class="kdmath">$\quad = a^5 - a^3 + a^3 - a > 0$</span>    <br />
+ <span class="kdmath">$\quad = a^5 - a > 0$</span>  <br />
+ Thus we have: <span class="kdmath">$a^5 > a$</span>.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>We are given that <script type="math/tex">A \setminus B \subseteq C \cap D</script> and <script type="math/tex">x \in A</script>.  <br />
-Thus we have <script type="math/tex">\forall y (y \in A \land y \notin B) \to (y in C \land y \in D)</script>  <br />
-For <script type="math/tex">y = x</script>, we have:  <br />
- <script type="math/tex">x \in A \land x \notin B \to (x \in C \land x \in D)</script>    <br />
-As <script type="math/tex">x \in A</script> and suppose <script type="math/tex">x \notin D</script>, then we get:  <br />
- <script type="math/tex">true \land x \notin B \to (x \in C \land false)</script>  <br />
+<p>We are given that <span class="kdmath">$A \setminus B \subseteq C \cap D$</span> and <span class="kdmath">$x \in A$</span>.  <br />
+Thus we have <span class="kdmath">$\forall y (y \in A \land y \notin B) \to (y in C \land y \in D)$</span>  <br />
+For <span class="kdmath">$y = x$</span>, we have:  <br />
+ <span class="kdmath">$x \in A \land x \notin B \to (x \in C \land x \in D)$</span>    <br />
+As <span class="kdmath">$x \in A$</span> and suppose <span class="kdmath">$x \notin D$</span>, then we get:  <br />
+ <span class="kdmath">$true \land x \notin B \to (x \in C \land false)$</span>  <br />
  Simplifying:  <br />
- <script type="math/tex">x \notin B \to false</script>  <br />
- It follows that <script type="math/tex">x \notin B = false</script>, or <script type="math/tex">x \in B</script>.</p>
+ <span class="kdmath">$x \notin B \to false$</span>  <br />
+ It follows that <span class="kdmath">$x \notin B = false$</span>, or <span class="kdmath">$x \in B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>Given that <script type="math/tex">% <![CDATA[
-a < b %]]></script>, then adding <script type="math/tex">b</script> to both sides:</p>
+<p>Given that <span class="kdmath">$a < b$</span>, then adding <span class="kdmath">$b$</span> to both sides:</p>
 
-<p><script type="math/tex">% <![CDATA[
-a + b < b + b %]]></script>  <br />
-<script type="math/tex">% <![CDATA[
-\quad = a + b < 2b %]]></script>  <br />
+<p><span class="kdmath">$a + b < b + b$</span>  <br />
+<span class="kdmath">$\quad = a + b < 2b$</span>  <br />
 Dividing both sides by 2:  <br />
-<script type="math/tex">% <![CDATA[
-\frac {a+b} 2 < b %]]></script></p>
+<span class="kdmath">$\frac {a+b} 2 < b$</span></p>
 
 <hr />
 
 <p><strong>Soln10</strong></p>
 
 <p>We shall prove it by proving contra-positive.  <br />
-Suppose <script type="math/tex">x = 8</script>, we get  <br />
-<script type="math/tex">\frac {\sqrt[3]{8} + 5} {8^2 + 6} = \frac 1 8</script>  <br />
+Suppose <span class="kdmath">$x = 8$</span>, we get  <br />
+<span class="kdmath">$\frac {\sqrt[3]{8} + 5} {8^2 + 6} = \frac 1 8$</span>  <br />
 Simplifying:  <br />
-<script type="math/tex">\quad \frac {7} {70} = \frac 1 8</script>  <br />
-<script type="math/tex">\quad \frac {1} {10} = \frac 1 8</script>  <br />
-Clearly which is not correct. Thus if <script type="math/tex">x = 8</script>, then  <script type="math/tex">\frac {\sqrt[3]{x} + 5} {8^2 + 6} \neq \frac 1 x</script>  <br />
-Thus if <script type="math/tex">\frac {\sqrt[3]{x} + 5} {8^2 + 6} = \frac 1 x</script>, then <script type="math/tex">x \neq 8</script></p>
+<span class="kdmath">$\quad \frac {7} {70} = \frac 1 8$</span>  <br />
+<span class="kdmath">$\quad \frac {1} {10} = \frac 1 8$</span>  <br />
+Clearly which is not correct. Thus if <span class="kdmath">$x = 8$</span>, then  <span class="kdmath">$\frac {\sqrt[3]{x} + 5} {8^2 + 6} \neq \frac 1 x$</span>  <br />
+Thus if <span class="kdmath">$\frac {\sqrt[3]{x} + 5} {8^2 + 6} = \frac 1 x$</span>, then <span class="kdmath">$x \neq 8$</span></p>
 
 <hr />
 
 <p><strong>Soln11</strong></p>
 
 <p>We shall prove this using contra-positive.
-Given that <script type="math/tex">% <![CDATA[
-0 < a < b %]]></script>, and <script type="math/tex">d > 0</script>  <br />
-Multiplying <script type="math/tex">% <![CDATA[
-a < b %]]></script>, by <script type="math/tex">d</script> on both sides: <script type="math/tex">% <![CDATA[
-ad < bd %]]></script> <br />
-Suppose that <script type="math/tex">% <![CDATA[
-c <= d %]]></script>, Multiplying both sides by <script type="math/tex">a</script> gives: <script type="math/tex">% <![CDATA[
-ac <= ad %]]></script>  <br />
-Thus we have <script type="math/tex">% <![CDATA[
-ad < bd %]]></script> and <script type="math/tex">% <![CDATA[
-ac <= ad %]]></script>, which gives <script type="math/tex">% <![CDATA[
-ac <= ad < bd %]]></script> <br />
-Or we can say that: <script type="math/tex">% <![CDATA[
-ac < bd %]]></script>.</p>
+Given that <span class="kdmath">$0 < a < b$</span>, and <span class="kdmath">$d > 0$</span>  <br />
+Multiplying <span class="kdmath">$a < b$</span>, by <span class="kdmath">$d$</span> on both sides: <span class="kdmath">$ad < bd$</span> <br />
+Suppose that <span class="kdmath">$c <= d$</span>, Multiplying both sides by <span class="kdmath">$a$</span> gives: <span class="kdmath">$ac <= ad$</span>  <br />
+Thus we have <span class="kdmath">$ad < bd$</span> and <span class="kdmath">$ac <= ad$</span>, which gives <span class="kdmath">$ac <= ad < bd$</span> <br />
+Or we can say that: <span class="kdmath">$ac < bd$</span>.</p>
 
-<p>Thus we proved that if <script type="math/tex">% <![CDATA[
-c <= d %]]></script>, then <script type="math/tex">% <![CDATA[
-ac < bd %]]></script>.  <br />
-It follows that if <script type="math/tex">ac >= bd</script>, then <script type="math/tex">c > d</script>.</p>
+<p>Thus we proved that if <span class="kdmath">$c <= d$</span>, then <span class="kdmath">$ac < bd$</span>.  <br />
+It follows that if <span class="kdmath">$ac >= bd$</span>, then <span class="kdmath">$c > d$</span>.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
-<p>Suppose <script type="math/tex">x > 1</script>, then <script type="math/tex">3x > 3</script>  <br />
+<p>Suppose <span class="kdmath">$x > 1$</span>, then <span class="kdmath">$3x > 3$</span>  <br />
 Adding 2 on both sides:  <br />
-<script type="math/tex">3x + 2 > 5</script>, or <script type="math/tex">2 > 5 - 3x</script>, which is same as <script type="math/tex">% <![CDATA[
-5 - 3x < 2 %]]></script></p>
+<span class="kdmath">$3x + 2 > 5$</span>, or <span class="kdmath">$2 > 5 - 3x$</span>, which is same as <span class="kdmath">$5 - 3x < 2$</span></p>
 
-<p>Also, given that <script type="math/tex">3x + 2y \le 5</script>  <br />
+<p>Also, given that <span class="kdmath">$3x + 2y \le 5$</span>  <br />
 Subtracting 3x from both sides:  <br />
-<script type="math/tex">2y \le 5 - 3x</script></p>
+<span class="kdmath">$2y \le 5 - 3x$</span></p>
 
-<p>Thus we have <script type="math/tex">% <![CDATA[
-2y \le 5 - 3x < 2 %]]></script>  <br />
+<p>Thus we have <span class="kdmath">$2y \le 5 - 3x < 2$</span>  <br />
 Simplifying:  <br />
-<script type="math/tex">% <![CDATA[
-2y < 2 %]]></script>, or <script type="math/tex">% <![CDATA[
-y < 1 %]]></script></p>
+<span class="kdmath">$2y < 2$</span>, or <span class="kdmath">$y < 1$</span></p>
 
 <hr />
 
 <p><strong>Soln13</strong></p>
 
-<p>Given that <script type="math/tex">x^2 + y = −3</script> and <script type="math/tex">2x − y = 2</script>  <br />
+<p>Given that <span class="kdmath">$x^2 + y = −3$</span> and <span class="kdmath">$2x − y = 2$</span>  <br />
 Adding both:  <br />
-<script type="math/tex">x^2 + y + 2x - y = -3 + 2</script>  <br />
+<span class="kdmath">$x^2 + y + 2x - y = -3 + 2$</span>  <br />
 Simplifying:  <br />
-<script type="math/tex">x^2 + 2x + 1 = 0</script>  <br />
-Or <script type="math/tex">{(x+1)}^2 = 0</script>  <br />
-which means <script type="math/tex">x = -1</script>.</p>
+<span class="kdmath">$x^2 + 2x + 1 = 0$</span>  <br />
+Or <span class="kdmath">${(x+1)}^2 = 0$</span>  <br />
+which means <span class="kdmath">$x = -1$</span>.</p>
 
 <hr />
 
 <p><strong>Soln14</strong></p>
 
-<p>Given that <script type="math/tex">x > 3</script>  <br />
-As <script type="math/tex">x > 0</script> and <script type="math/tex">3 > 0</script>, we can apply the theorem: If <script type="math/tex">% <![CDATA[
-0 < a < b %]]></script>, then <script type="math/tex">% <![CDATA[
-a^2 < b^2 %]]></script>  <br />
-Thus we have <script type="math/tex">x^2 > 9</script></p>
+<p>Given that <span class="kdmath">$x > 3$</span>  <br />
+As <span class="kdmath">$x > 0$</span> and <span class="kdmath">$3 > 0$</span>, we can apply the theorem: If <span class="kdmath">$0 < a < b$</span>, then <span class="kdmath">$a^2 < b^2$</span>  <br />
+Thus we have <span class="kdmath">$x^2 > 9$</span></p>
 
-<p>Also, it is givem that <script type="math/tex">% <![CDATA[
-y < 2 %]]></script>.  <br />
+<p>Also, it is givem that <span class="kdmath">$y < 2$</span>.  <br />
 Multiplying both sides by -2, and reverting the sign of inequality:  <br />
-<script type="math/tex">-2y > -4</script></p>
+<span class="kdmath">$-2y > -4$</span></p>
 
 <p>Adding both inequalities: 
-<script type="math/tex">x^2 - 2y > 9 - 4</script>  <br />
-Or <script type="math/tex">x^2 - 2y > 5</script>.</p>
+<span class="kdmath">$x^2 - 2y > 9 - 4$</span>  <br />
+Or <span class="kdmath">$x^2 - 2y > 5$</span>.</p>
 
 <hr />
 
@@ -1450,16 +1418,16 @@ Or <script type="math/tex">x^2 - 2y > 5</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>The proof is for: if <script type="math/tex">x = 7</script>, then <script type="math/tex">\frac {2x-5} {x -4} = 3</script>  <br />
-while the required proof was for: if <script type="math/tex">\frac {2x-5} {x -4} = 3</script>, then <script type="math/tex">x = 7</script>.</p>
+<p>The proof is for: if <span class="kdmath">$x = 7$</span>, then <span class="kdmath">$\frac {2x-5} {x -4} = 3$</span>  <br />
+while the required proof was for: if <span class="kdmath">$\frac {2x-5} {x -4} = 3$</span>, then <span class="kdmath">$x = 7$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Given that <script type="math/tex">\frac {2x-5} {x -4} = 3</script>  <br />
+<p>Given that <span class="kdmath">$\frac {2x-5} {x -4} = 3$</span>  <br />
 Cross multiplying:  <br />
-<script type="math/tex">2x - 5 = 3x - 12</script>  <br />
+<span class="kdmath">$2x - 5 = 3x - 12$</span>  <br />
 Simplifying:  <br />
-<script type="math/tex">x = 7</script>.</p>
+<span class="kdmath">$x = 7$</span>.</p>
 
 <hr />
 
@@ -1467,11 +1435,11 @@ Simplifying:  <br />
 
 <p><strong>(a)</strong></p>
 
-<p>The issue is that value of <script type="math/tex">x = -3</script> is not taken into consideration. As for this value <script type="math/tex">x^2 = 9</script>.</p>
+<p>The issue is that value of <span class="kdmath">$x = -3$</span> is not taken into consideration. As for this value <span class="kdmath">$x^2 = 9$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>If x = -3, then the equation gives <script type="math/tex">y = 1</script>, thus theorem is not correct as it says if <script type="math/tex">x \ne 3</script>, then <script type="math/tex">y = 0</script>.</p>
+<p>If x = -3, then the equation gives <span class="kdmath">$y = 1$</span>, thus theorem is not correct as it says if <span class="kdmath">$x \ne 3$</span>, then <span class="kdmath">$y = 0$</span>.</p>
 
 
                         <hr/>

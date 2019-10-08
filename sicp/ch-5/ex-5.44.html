@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9444,7 +9445,8 @@
 <span class="p">((</span><span class="nf">same?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-same</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">add?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-add</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
 <span class="p">((</span><span class="nf">sub?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-sub</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
-<span class="p">((</span><span class="nf">mul?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-mul</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">((</span><span class="nf">mul?</span> <span class="nv">exp</span> <span class="nv">cenv</span><span class="p">)</span> <span class="p">(</span><span class="nf">compile-mul</span> <span class="nv">exp</span> <span class="nv">target</span> <span class="nv">linkage</span> <span class="nv">cenv</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This works fine as suggested in the problem but notice this statement in the problem:</p>
 
@@ -9585,7 +9587,8 @@
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">apply-primitive-procedure</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
   <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">continue</span><span class="p">))</span>
   <span class="nv">after-call9</span>
-  <span class="nv">after-lambda1</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">after-lambda1</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Since this mark the completion of the changes because of <em>compile time environment</em>, I shall put the complete code here:</p>
 
@@ -10718,7 +10721,8 @@
                <span class="p">(</span><span class="nf">registers-modified</span> <span class="nv">seq2</span><span class="p">))</span>
    <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nf">statements</span> <span class="nv">seq1</span><span class="p">)</span> <span class="p">(</span><span class="nf">statements</span> <span class="nv">seq2</span><span class="p">))))</span>
 
-<span class="o">'</span><span class="p">(</span><span class="nf">COMPILER</span> <span class="nv">LOADED</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">'</span><span class="p">(</span><span class="nf">COMPILER</span> <span class="nv">LOADED</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>There are few changes in ch5-syntax.scm - to supprt <code class="highlighter-rouge">let?</code></p>
 
@@ -10763,7 +10767,8 @@
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">vars</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">res</span><span class="p">))</span>
 		  <span class="p">(</span><span class="nf">vexps</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">res</span><span class="p">)))</span>
 	  <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nf">make-lambda</span> <span class="nv">vars</span> <span class="p">(</span><span class="nf">let-body</span> <span class="nv">exp</span><span class="p">))</span> <span class="nv">vexps</span><span class="p">)</span>
-	  <span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Also, there are few changes as part of ex-5.39:</p>
 
@@ -10836,7 +10841,8 @@
 		<span class="p">((</span><span class="nb">=</span> <span class="nv">frame-num</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">env</span><span class="p">)</span>
 		<span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">env-ref</span>
 			   <span class="p">(</span><span class="nf">enclosing-environment</span> <span class="nv">env</span><span class="p">)</span>
-			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

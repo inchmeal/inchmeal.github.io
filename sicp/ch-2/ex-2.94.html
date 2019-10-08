@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9487,7 +9488,8 @@
 <span class="p">(</span><span class="nf">put</span> <span class="ss">'greatest-common-divisor</span> <span class="o">'</span><span class="p">(</span><span class="nf">int</span> <span class="nv">int</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nf">tag</span> <span class="p">(</span><span class="nb">gcd</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))))</span>
 
 <span class="c1">; in 'scheme-number package</span>
-<span class="p">(</span><span class="nf">put</span> <span class="ss">'greatest-common-divisor</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span> <span class="nv">gcd</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">put</span> <span class="ss">'greatest-common-divisor</span> <span class="o">'</span><span class="p">(</span><span class="nf">scheme-number</span> <span class="nv">scheme-number</span><span class="p">)</span> <span class="nv">gcd</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
@@ -9498,9 +9500,10 @@
 </pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">p1</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'sparse-termlist</span> <span class="o">'</span><span class="p">((</span><span class="nf">4</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">3</span> <span class="mi">-1</span><span class="p">)</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">-2</span><span class="p">)</span> <span class="p">(</span><span class="nf">1</span> <span class="mi">2</span><span class="p">)))))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">p2</span> <span class="p">(</span><span class="nf">make-polynomial</span> <span class="ss">'x</span> <span class="p">(</span><span class="nf">attach-tag</span> <span class="ss">'sparse-termlist</span> <span class="o">'</span><span class="p">((</span><span class="nf">3</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">1</span> <span class="mi">-1</span><span class="p">)))))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">greatest-common-divisor</span> <span class="nv">p1</span> <span class="nv">p2</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="nv">sparse-termlist</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">-1</span><span class="p">)</span> <span class="p">(</span><span class="nf">1</span> <span class="mi">1</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">polynomial</span> <span class="nv">x</span> <span class="nv">sparse-termlist</span> <span class="p">(</span><span class="nf">2</span> <span class="mi">-1</span><span class="p">)</span> <span class="p">(</span><span class="nf">1</span> <span class="mi">1</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Thus the gcd of <script type="math/tex">x^4 - x^3 - 2x^2 + 2x</script> and <script type="math/tex">x^3 - x</script> is <script type="math/tex">-x^2 + x</script>. Manually I got the same gcd but with opposite sign i.e. <script type="math/tex">x^2 - x</script>.</p>
+<p>Thus the gcd of <span class="kdmath">$x^4 - x^3 - 2x^2 + 2x$</span> and <span class="kdmath">$x^3 - x$</span> is <span class="kdmath">$-x^2 + x$</span>. Manually I got the same gcd but with opposite sign i.e. <span class="kdmath">$x^2 - x$</span>.</p>
 
 <p>Note that I also found a bug in my old <code class="highlighter-rouge">div-terms</code> procedure where I should be using <code class="highlighter-rouge">cadr</code> but was using <code class="highlighter-rouge">cdr</code> instead.</p>
 

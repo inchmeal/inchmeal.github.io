@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9464,19 +9465,20 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">except-first-denomination</span> <span class="nv">cdr</span><span class="p">)</span>
   
-<span class="p">(</span><span class="k">define</span> <span class="nv">no-more?</span> <span class="nv">null?</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="nv">no-more?</span> <span class="nv">null?</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Order of coins does not matter. If order of coin had any role then they should have also effected to the original solution which does
 not use list because there also <code class="highlighter-rouge">first-denomination</code> returns value of coin corresponding to a number.</p>
 
 <p>To understand why it does not depend on order, we shall outline the approach to find total ways for change for
-amount <script type="math/tex">amt</script> using given denominations: <script type="math/tex">D</script></p>
+amount <span class="kdmath">$amt$</span> using given denominations: <span class="kdmath">$D$</span></p>
 
-<p>Lets take any random denomination, say <script type="math/tex">d_r</script> from <script type="math/tex">D</script>. Now total number of ways is the sum of:</p>
+<p>Lets take any random denomination, say <span class="kdmath">$d_r$</span> from <span class="kdmath">$D$</span>. Now total number of ways is the sum of:</p>
 
 <ul>
-  <li>number of ways for coin-change for amount, <script type="math/tex">amt</script>, without using denomination <script type="math/tex">d</script>. Thus we are using denominations: <script type="math/tex">D \setminus \{ d \}</script>.</li>
-  <li>number of ways for coin-change for amount, <script type="math/tex">amt - d</script>, using denominations <script type="math/tex">D</script>.</li>
+  <li>number of ways for coin-change for amount, <span class="kdmath">$amt$</span>, without using denomination <span class="kdmath">$d$</span>. Thus we are using denominations: <span class="kdmath">$D \setminus \{ d \}$</span>.</li>
+  <li>number of ways for coin-change for amount, <span class="kdmath">$amt - d$</span>, using denominations <span class="kdmath">$D$</span>.</li>
 </ul>
 
 <p>Thus we choose any random denomination and proceed recursively. Since we are <em>free</em> to choose any denomination, we proceed choosing

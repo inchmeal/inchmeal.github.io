@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9418,43 +9419,41 @@
                         <hr/>
                         <p>We will prove this by strong induction.</p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary integer greater than zero. Suppose theorem is correct for all integers <script type="math/tex">k \ge 0</script> and <script type="math/tex">% <![CDATA[
-k < n %]]></script>.
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary integer greater than zero. Suppose theorem is correct for all integers <span class="kdmath">$k \ge 0$</span> and <span class="kdmath">$k < n$</span>.
 We have the following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 0</script>:
-We have <script type="math/tex">\frac { {\phi}^n - {\psi}^n } {\sqrt 5} =  \frac { {\phi}^0 - {\psi}^0 } {\sqrt 5} = \frac { 1 - 1 } {\sqrt 5} = 0 = fib(0)</script>.
-Clearly theorem is correct for <script type="math/tex">n = 0</script>.</p>
+    <p>Case <span class="kdmath">$n = 0$</span>:
+We have <span class="kdmath">$\frac { {\phi}^n - {\psi}^n } {\sqrt 5} =  \frac { {\phi}^0 - {\psi}^0 } {\sqrt 5} = \frac { 1 - 1 } {\sqrt 5} = 0 = fib(0)$</span>.
+Clearly theorem is correct for <span class="kdmath">$n = 0$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>:
-For <script type="math/tex">n = 1</script>, we have <script type="math/tex">\frac { {\phi}^n - {\psi}^n } {\sqrt 5} =  \frac { {\phi}^1 - {\psi}^1 } {\sqrt 5} = \frac { (1 + \sqrt 5) - (1 - \sqrt 5) } {2 \sqrt 5} = \frac {\sqrt 5} {2 \sqrt 5} = 1 = fib(1)</script>.
-Clearly theorem is correct for <script type="math/tex">n = 1</script>.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>:
+For <span class="kdmath">$n = 1$</span>, we have <span class="kdmath">$\frac { {\phi}^n - {\psi}^n } {\sqrt 5} =  \frac { {\phi}^1 - {\psi}^1 } {\sqrt 5} = \frac { (1 + \sqrt 5) - (1 - \sqrt 5) } {2 \sqrt 5} = \frac {\sqrt 5} {2 \sqrt 5} = 1 = fib(1)$</span>.
+Clearly theorem is correct for <span class="kdmath">$n = 1$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n \ge 2</script>:
-Since theorem is correct for all <script type="math/tex">% <![CDATA[
-k < n %]]></script> where <script type="math/tex">k \ge 0</script>, we have:     <br />
-<script type="math/tex">fib(n-2) = \frac { {\phi}^{n-2} - {\psi}^{n-2} } {\sqrt 5}</script>.    <br />
-<script type="math/tex">fib(n-1) = \frac { {\phi}^{n-1} - {\psi}^{n-1} } {\sqrt 5}</script>.    <br />
-Now consider <script type="math/tex">fib(n-1) + fib(n-2)</script>:      <br />
-<script type="math/tex">= { \frac { {\phi}^{n-2} - {\psi}^{n-2} } {\sqrt 5} } + { \frac { {\phi}^{n-1} - {\psi}^{n-1} } {\sqrt 5} }</script>.   <br />
-<script type="math/tex">= { \frac 1 {\sqrt 5} } ( ({\phi}^{n-2} + {\phi}^{n-1}) - ({\psi}^{n-2} + {\psi}^{n-1}) )</script>.    <br />
-<script type="math/tex">= { \frac 1 {\sqrt 5} } ( {\phi}^{n-2} \cdot ( 1 + \phi ) - {\psi}^{n-2} \cdot ( 1 + \psi ) )</script>.    <br />
-We know that <script type="math/tex">1 + \phi = {\phi}^2</script> and <script type="math/tex">1 + \psi = {\psi}^2</script>:    <br />
+    <p>Case <span class="kdmath">$n \ge 2$</span>:
+Since theorem is correct for all <span class="kdmath">$k < n$</span> where <span class="kdmath">$k \ge 0$</span>, we have:     <br />
+<span class="kdmath">$fib(n-2) = \frac { {\phi}^{n-2} - {\psi}^{n-2} } {\sqrt 5}$</span>.    <br />
+<span class="kdmath">$fib(n-1) = \frac { {\phi}^{n-1} - {\psi}^{n-1} } {\sqrt 5}$</span>.    <br />
+Now consider <span class="kdmath">$fib(n-1) + fib(n-2)$</span>:      <br />
+<span class="kdmath">$= { \frac { {\phi}^{n-2} - {\psi}^{n-2} } {\sqrt 5} } + { \frac { {\phi}^{n-1} - {\psi}^{n-1} } {\sqrt 5} }$</span>.   <br />
+<span class="kdmath">$= { \frac 1 {\sqrt 5} } ( ({\phi}^{n-2} + {\phi}^{n-1}) - ({\psi}^{n-2} + {\psi}^{n-1}) )$</span>.    <br />
+<span class="kdmath">$= { \frac 1 {\sqrt 5} } ( {\phi}^{n-2} \cdot ( 1 + \phi ) - {\psi}^{n-2} \cdot ( 1 + \psi ) )$</span>.    <br />
+We know that <span class="kdmath">$1 + \phi = {\phi}^2$</span> and <span class="kdmath">$1 + \psi = {\psi}^2$</span>:    <br />
 Thus we get:
-<script type="math/tex">= {\frac 1 {\sqrt 5} } ( {\phi}^{n-2} \cdot {\phi}^2 - {\psi}^{n-2} \cdot {\psi}^2 )</script>.  <br />
-<script type="math/tex">= {\frac 1 {\sqrt 5} } ( {\phi}^{n} - {\psi}^{n} )</script>.    <br />
-<script type="math/tex">= \frac { {\phi}^n - {\psi}^n } {\sqrt 5}</script>.    <br />
-<script type="math/tex">= fib(n)</script></p>
+<span class="kdmath">$= {\frac 1 {\sqrt 5} } ( {\phi}^{n-2} \cdot {\phi}^2 - {\psi}^{n-2} \cdot {\psi}^2 )$</span>.  <br />
+<span class="kdmath">$= {\frac 1 {\sqrt 5} } ( {\phi}^{n} - {\psi}^{n} )$</span>.    <br />
+<span class="kdmath">$= \frac { {\phi}^n - {\psi}^n } {\sqrt 5}$</span>.    <br />
+<span class="kdmath">$= fib(n)$</span></p>
 
-    <p>Thus theorem is correct for <script type="math/tex">n \ge 2</script>.</p>
+    <p>Thus theorem is correct for <span class="kdmath">$n \ge 2$</span>.</p>
   </li>
 </ul>
 
-<p>Thus for all the cases we can conclude that theorem is correct for all <script type="math/tex">n</script>.</p>
+<p>Thus for all the cases we can conclude that theorem is correct for all <span class="kdmath">$n$</span>.</p>
 
 
                         <hr/>

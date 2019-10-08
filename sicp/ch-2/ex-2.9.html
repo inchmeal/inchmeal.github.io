@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9416,23 +9417,23 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Lets consider the interval <script type="math/tex">I_1 = [l_1, u_1]</script> and <script type="math/tex">I_2 = [l_2, u_2]</script> with width <script type="math/tex">w_1 = \frac {u_1 - l_1} 2</script> and <script type="math/tex">w_2 = \frac {u_2 - l_2} 2</script>.</p>
+                        <p>Lets consider the interval <span class="kdmath">$I_1 = [l_1, u_1]$</span> and <span class="kdmath">$I_2 = [l_2, u_2]$</span> with width <span class="kdmath">$w_1 = \frac {u_1 - l_1} 2$</span> and <span class="kdmath">$w_2 = \frac {u_2 - l_2} 2$</span>.</p>
 
 <p>Addition:</p>
 
-<p><script type="math/tex">I_{add} = I_1 + I_2 = [l_1 + l_2, u_1 + u_2]</script>. Thus the width is:</p>
+<p><span class="kdmath">$I_{add} = I_1 + I_2 = [l_1 + l_2, u_1 + u_2]$</span>. Thus the width is:</p>
 
-<p><script type="math/tex">w_{add} = \frac {(u_1+u_2) - (l_1+l_2)} 2</script>      <br />
-<script type="math/tex">= { \frac {u_1 - l_1} 2 } + { \frac {u_2 - l_2} 2 }</script>      <br />
-<script type="math/tex">= w_1 + w_2</script></p>
+<p><span class="kdmath">$w_{add} = \frac {(u_1+u_2) - (l_1+l_2)} 2$</span>      <br />
+<span class="kdmath">$= { \frac {u_1 - l_1} 2 } + { \frac {u_2 - l_2} 2 }$</span>      <br />
+<span class="kdmath">$= w_1 + w_2$</span></p>
 
 <p>Subtraction:</p>
 
-<p><script type="math/tex">I_{sub} = I_1 - I_2 = [l_1 - u_2, u_1 - l_2]</script>. Thus the width is:</p>
+<p><span class="kdmath">$I_{sub} = I_1 - I_2 = [l_1 - u_2, u_1 - l_2]$</span>. Thus the width is:</p>
 
-<p><script type="math/tex">w_{sub} = \frac {(l_1-u_2) - (u_1-l_2)} 2</script>      <br />
-<script type="math/tex">= { \frac {l_1 - u_1} 2 } + { \frac {l_2 - u_2} 2 }</script>      <br />
-<script type="math/tex">= - (w_1 + w_2)</script></p>
+<p><span class="kdmath">$w_{sub} = \frac {(l_1-u_2) - (u_1-l_2)} 2$</span>      <br />
+<span class="kdmath">$= { \frac {l_1 - u_1} 2 } + { \frac {l_2 - u_2} 2 }$</span>      <br />
+<span class="kdmath">$= - (w_1 + w_2)$</span></p>
 
 <p>Clearly, width of addition and subtraction of intervals is a function of the width of individual intervals.</p>
 
@@ -9440,32 +9441,32 @@
 applying same operation(+, -, *, or /) on two different pairs of intervals such that both pairs have same widths, will result in intervals with 
 equals widths.</p>
 
-<p>Lets take two different intervals <script type="math/tex">I_1 = [l_1, u_1]</script> and <script type="math/tex">I_2 = [l_2, u_2]</script> with equal widths say <script type="math/tex">w_p =  \frac {u_1 - l_1} 2 =  \frac {u_2 - l_2} 2</script>.</p>
+<p>Lets take two different intervals <span class="kdmath">$I_1 = [l_1, u_1]$</span> and <span class="kdmath">$I_2 = [l_2, u_2]$</span> with equal widths say <span class="kdmath">$w_p =  \frac {u_1 - l_1} 2 =  \frac {u_2 - l_2} 2$</span>.</p>
 
-<p>Now consider another interval <script type="math/tex">I_3 = [l_3, u_3]</script> with width say <script type="math/tex">w_q = \frac {u_3 - l_3} 2</script> such that <script type="math/tex">w_p \neq w_q</script>.</p>
+<p>Now consider another interval <span class="kdmath">$I_3 = [l_3, u_3]$</span> with width say <span class="kdmath">$w_q = \frac {u_3 - l_3} 2$</span> such that <span class="kdmath">$w_p \neq w_q$</span>.</p>
 
-<p>Lets say width of interval <script type="math/tex">(I_1 \text{ op } I_3)</script> is <script type="math/tex">w_1</script> and width of <script type="math/tex">(I_2 \text{ op } I_3)</script> is <script type="math/tex">w_2</script>, where <script type="math/tex">\text{ op }</script>
+<p>Lets say width of interval <span class="kdmath">$(I_1 \text{ op } I_3)$</span> is <span class="kdmath">$w_1$</span> and width of <span class="kdmath">$(I_2 \text{ op } I_3)$</span> is <span class="kdmath">$w_2$</span>, where <span class="kdmath">$\text{ op }$</span>
  denotes the arithmetic operation i.e. +, -, *, or /.</p>
 
-<p>If width is a function of individual intervals, then it must be the case that <script type="math/tex">w_1 = w_2</script> because width of pair <script type="math/tex">(I_1, I_3)</script> 
-and <script type="math/tex">(I_2, I_3)</script> is same i.e. <script type="math/tex">(w_p, w_q)</script>. Thus <script type="math/tex">w_1 = w_2 = f(w_p, w_q)</script> where <script type="math/tex">f</script> is some function.</p>
+<p>If width is a function of individual intervals, then it must be the case that <span class="kdmath">$w_1 = w_2$</span> because width of pair <span class="kdmath">$(I_1, I_3)$</span> 
+and <span class="kdmath">$(I_2, I_3)$</span> is same i.e. <span class="kdmath">$(w_p, w_q)$</span>. Thus <span class="kdmath">$w_1 = w_2 = f(w_p, w_q)$</span> where <span class="kdmath">$f$</span> is some function.</p>
 
 <p>Lets take example for addition:</p>
 
-<p><script type="math/tex">I_1 = [0, 10], \; I_2 = [20, 30], \; I_3 = [100, 200]</script>.
-Thus we have <script type="math/tex">w_p = w_{I_1} = w_{I_2} = 5</script> and <script type="math/tex">w_q = w_{I_3} = 50</script>.</p>
+<p><span class="kdmath">$I_1 = [0, 10], \; I_2 = [20, 30], \; I_3 = [100, 200]$</span>.
+Thus we have <span class="kdmath">$w_p = w_{I_1} = w_{I_2} = 5$</span> and <span class="kdmath">$w_q = w_{I_3} = 50$</span>.</p>
 
-<p><script type="math/tex">I_1 + I_3 = [100, 210]</script>. Thus width <script type="math/tex">w_1 = (210-100)/2 = 55 = w_p + w_q</script>.
-Also, <script type="math/tex">I_1 + I_3 = [120, 230]</script>. Thus width <script type="math/tex">w_2 = (230-120)/2 = 55 = w_p + w_q</script>.</p>
+<p><span class="kdmath">$I_1 + I_3 = [100, 210]$</span>. Thus width <span class="kdmath">$w_1 = (210-100)/2 = 55 = w_p + w_q$</span>.
+Also, <span class="kdmath">$I_1 + I_3 = [120, 230]$</span>. Thus width <span class="kdmath">$w_2 = (230-120)/2 = 55 = w_p + w_q$</span>.</p>
 
-<p>Clearly <script type="math/tex">w_1 = w_2</script> in case of addition operation.</p>
+<p>Clearly <span class="kdmath">$w_1 = w_2$</span> in case of addition operation.</p>
 
 <p>Lets see for multiplication:</p>
 
-<p><script type="math/tex">I_1 \times I_3 = [0, 2000]</script>. Thus width <script type="math/tex">w_1 = (2000-0)/2 = 1000</script>.
-Also, <script type="math/tex">I_2 \times I_3 = [2000, 6000]</script>. Thus width <script type="math/tex">w_2 = (6000-2000)/2 = 2000</script>.</p>
+<p><span class="kdmath">$I_1 \times I_3 = [0, 2000]$</span>. Thus width <span class="kdmath">$w_1 = (2000-0)/2 = 1000$</span>.
+Also, <span class="kdmath">$I_2 \times I_3 = [2000, 6000]$</span>. Thus width <span class="kdmath">$w_2 = (6000-2000)/2 = 2000$</span>.</p>
 
-<p>Here <script type="math/tex">w_1 \neq w_2</script>. Hence width of the result of multiplication of two intervals is not a function of individual intervals.</p>
+<p>Here <span class="kdmath">$w_1 \neq w_2$</span>. Hence width of the result of multiplication of two intervals is not a function of individual intervals.</p>
 
 
                         <hr/>

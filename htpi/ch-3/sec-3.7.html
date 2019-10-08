@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1143,28 +1144,28 @@
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">A = \cup \mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$A = \cup \mathcal F$</span>.</p>
 
-<p>Proof for: <script type="math/tex">\mathcal F \subseteq \mathcal P(A)</script>:</p>
+<p>Proof for: <span class="kdmath">$\mathcal F \subseteq \mathcal P(A)$</span>:</p>
 
-<p>Suppose <script type="math/tex">X \in \mathcal F</script>. Suppose <script type="math/tex">x \in X</script>, then <script type="math/tex">x \in \cup \mathcal F</script>. Since <script type="math/tex">x</script> is 
-arbitrary, we can say <script type="math/tex">X \subseteq \cup \mathcal F</script>. Since <script type="math/tex">X \subseteq \cup \mathcal F</script>, it follows that <script type="math/tex">X \in \mathcal P(\cup \mathcal F)</script>.
-Thus we have, if <script type="math/tex">X \in \mathcal F</script>, then <script type="math/tex">X \in \mathcal P(\cup \mathcal F)</script>. Since <script type="math/tex">X</script> is arbitrary, it follows that <script type="math/tex">\mathcal F \subseteq \mathcal P(\cup \mathcal F)</script>.</p>
+<p>Suppose <span class="kdmath">$X \in \mathcal F$</span>. Suppose <span class="kdmath">$x \in X$</span>, then <span class="kdmath">$x \in \cup \mathcal F$</span>. Since <span class="kdmath">$x$</span> is 
+arbitrary, we can say <span class="kdmath">$X \subseteq \cup \mathcal F$</span>. Since <span class="kdmath">$X \subseteq \cup \mathcal F$</span>, it follows that <span class="kdmath">$X \in \mathcal P(\cup \mathcal F)$</span>.
+Thus we have, if <span class="kdmath">$X \in \mathcal F$</span>, then <span class="kdmath">$X \in \mathcal P(\cup \mathcal F)$</span>. Since <span class="kdmath">$X$</span> is arbitrary, it follows that <span class="kdmath">$\mathcal F \subseteq \mathcal P(\cup \mathcal F)$</span>.</p>
 
-<p>Proof for: <script type="math/tex">\forall B(\mathcal F \subseteq \mathcal P(B) \to A ⊆ B)</script>:</p>
+<p>Proof for: <span class="kdmath">$\forall B(\mathcal F \subseteq \mathcal P(B) \to A ⊆ B)$</span>:</p>
 
-<p>Suppose <script type="math/tex">B</script> is arbitrary. Suppose <script type="math/tex">\mathcal F \subseteq \mathcal P(B)</script>. Suppose <script type="math/tex">x \in A</script>, or <script type="math/tex">x \in \cup \mathcal F</script>. Then there must
-exist some set, say <script type="math/tex">X \in \mathcal F</script> such that <script type="math/tex">x \in \mathcal F</script>. Since <script type="math/tex">\mathcal F \subseteq \mathcal P(B)</script>, it follows that <script type="math/tex">X \subseteq B</script>.
-Thus <script type="math/tex">x \in B</script>. Thus we have <script type="math/tex">x \in A \to x \in B</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude <script type="math/tex">A \subseteq B</script>.</p>
+<p>Suppose <span class="kdmath">$B$</span> is arbitrary. Suppose <span class="kdmath">$\mathcal F \subseteq \mathcal P(B)$</span>. Suppose <span class="kdmath">$x \in A$</span>, or <span class="kdmath">$x \in \cup \mathcal F$</span>. Then there must
+exist some set, say <span class="kdmath">$X \in \mathcal F$</span> such that <span class="kdmath">$x \in \mathcal F$</span>. Since <span class="kdmath">$\mathcal F \subseteq \mathcal P(B)$</span>, it follows that <span class="kdmath">$X \subseteq B$</span>.
+Thus <span class="kdmath">$x \in B$</span>. Thus we have <span class="kdmath">$x \in A \to x \in B$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude <span class="kdmath">$A \subseteq B$</span>.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose <script type="math/tex">A'</script> is a set such that <script type="math/tex">\mathcal F \subseteq \mathcal P(A')</script> and <script type="math/tex">\forall B(\mathcal F \subseteq \mathcal P(B) \to A' ⊆ B)</script> are true.
-Now since this is true for all possible values of <script type="math/tex">B</script> and we know that if <script type="math/tex">B = \cup \mathcal F</script> then <script type="math/tex">\mathcal F \subseteq \mathcal P(B)</script> is true.
-Thus if <script type="math/tex">B = \cup \mathcal F</script>, it follows that <script type="math/tex">A' \subseteq B</script>, or <script type="math/tex">A' \subseteq \cup \mathcal F</script>. Now suppose <script type="math/tex">x \in \cup \mathcal F</script>.
-Then there exists some set, say <script type="math/tex">X \in \mathcal F</script> such that <script type="math/tex">x \in X</script>. But since <script type="math/tex">\mathcal F \subseteq \mathcal P(A')</script>, 
- it follows that <script type="math/tex">X \in P(A')</script>, or <script type="math/tex">X \subseteq A'</script>. Thus <script type="math/tex">x \in A'</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\cup \mathcal F \subseteq A'</script>.
- Thus we have <script type="math/tex">A' \subseteq \cup \mathcal F \land \cup \mathcal F \subseteq A'</script>. It follows that <script type="math/tex">A' = \cup \mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$A'$</span> is a set such that <span class="kdmath">$\mathcal F \subseteq \mathcal P(A')$</span> and <span class="kdmath">$\forall B(\mathcal F \subseteq \mathcal P(B) \to A' ⊆ B)$</span> are true.
+Now since this is true for all possible values of <span class="kdmath">$B$</span> and we know that if <span class="kdmath">$B = \cup \mathcal F$</span> then <span class="kdmath">$\mathcal F \subseteq \mathcal P(B)$</span> is true.
+Thus if <span class="kdmath">$B = \cup \mathcal F$</span>, it follows that <span class="kdmath">$A' \subseteq B$</span>, or <span class="kdmath">$A' \subseteq \cup \mathcal F$</span>. Now suppose <span class="kdmath">$x \in \cup \mathcal F$</span>.
+Then there exists some set, say <span class="kdmath">$X \in \mathcal F$</span> such that <span class="kdmath">$x \in X$</span>. But since <span class="kdmath">$\mathcal F \subseteq \mathcal P(A')$</span>, 
+ it follows that <span class="kdmath">$X \in P(A')$</span>, or <span class="kdmath">$X \subseteq A'$</span>. Thus <span class="kdmath">$x \in A'$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$\cup \mathcal F \subseteq A'$</span>.
+ Thus we have <span class="kdmath">$A' \subseteq \cup \mathcal F \land \cup \mathcal F \subseteq A'$</span>. It follows that <span class="kdmath">$A' = \cup \mathcal F$</span>.</p>
 
 <hr />
 
@@ -1172,37 +1173,37 @@ Then there exists some set, say <script type="math/tex">X \in \mathcal F</script
 
 <p><u>Existence:</u></p>
 
-<p>Suppose <script type="math/tex">X \in \mathcal P(A \setminus B) \setminus (\mathcal P(A) \setminus \mathcal P(B))</script>. Thus we have:  <br />
-<script type="math/tex">\leftrightarrow X \in P(A \setminus B) \land \lnot (X \in \mathcal P(A) \land X \notin \mathcal P(B))</script>   <br />
-<script type="math/tex">\leftrightarrow X \in P(A \setminus B) \land (X \notin \mathcal P(A) \lor X \in \mathcal P(B))</script></p>
+<p>Suppose <span class="kdmath">$X \in \mathcal P(A \setminus B) \setminus (\mathcal P(A) \setminus \mathcal P(B))$</span>. Thus we have:  <br />
+<span class="kdmath">$\leftrightarrow X \in P(A \setminus B) \land \lnot (X \in \mathcal P(A) \land X \notin \mathcal P(B))$</span>   <br />
+<span class="kdmath">$\leftrightarrow X \in P(A \setminus B) \land (X \notin \mathcal P(A) \lor X \in \mathcal P(B))$</span></p>
 
-<p>We know that every power set contains a set with empty element, or <script type="math/tex">\{ \phi \}</script>. Thus one possible value of <script type="math/tex">X = \{ \phi \}</script> and it clearly
+<p>We know that every power set contains a set with empty element, or <span class="kdmath">$\{ \phi \}$</span>. Thus one possible value of <span class="kdmath">$X = \{ \phi \}$</span> and it clearly
 satisfies the above statement.</p>
 
 <p><u>Uniqueness:</u></p>
 
-<p>Suppose if <script type="math/tex">X \ne \{ \phi \}</script>, then,  <br />
-<script type="math/tex">\leftrightarrow X \in P(A \setminus B) \land (X \notin \mathcal P(A) \lor X \in \mathcal P(B))</script>   <br />
+<p>Suppose if <span class="kdmath">$X \ne \{ \phi \}$</span>, then,  <br />
+<span class="kdmath">$\leftrightarrow X \in P(A \setminus B) \land (X \notin \mathcal P(A) \lor X \in \mathcal P(B))$</span>   <br />
 is equivalent to:  <br />
-<script type="math/tex">\leftrightarrow X \subseteq (A \setminus B) \land (X \nsubseteq A \lor X \subseteq B)</script>   <br />
-<script type="math/tex">\leftrightarrow (X \subseteq A \land X \nsubseteq B) \land (X \nsubseteq A \lor X \subseteq B)</script></p>
+<span class="kdmath">$\leftrightarrow X \subseteq (A \setminus B) \land (X \nsubseteq A \lor X \subseteq B)$</span>   <br />
+<span class="kdmath">$\leftrightarrow (X \subseteq A \land X \nsubseteq B) \land (X \nsubseteq A \lor X \subseteq B)$</span></p>
 
 <p>This can be true only in following cases:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">X \subseteq A \land X \nsubseteq B \land X \nsubseteq A</script>:   <br />
+    <p><span class="kdmath">$X \subseteq A \land X \nsubseteq B \land X \nsubseteq A$</span>:   <br />
  Clearly this is not possible.</p>
   </li>
   <li>
-    <p><script type="math/tex">X \subseteq A \land X \nsubseteq B \land X \subseteq B</script>:
+    <p><span class="kdmath">$X \subseteq A \land X \nsubseteq B \land X \subseteq B$</span>:
  Clearly this is also not possible.</p>
   </li>
 </ul>
 
-<p>Thus it contradicts the assumption that such set <script type="math/tex">X \ne  \{ \phi \}</script> exists.</p>
+<p>Thus it contradicts the assumption that such set <span class="kdmath">$X \ne  \{ \phi \}$</span> exists.</p>
 
-<p>Thus there is only one such set <script type="math/tex">X = \{ \phi \}</script>.</p>
+<p>Thus there is only one such set <span class="kdmath">$X = \{ \phi \}$</span>.</p>
 
 <hr />
 
@@ -1220,70 +1221,70 @@ is equivalent to:  <br />
 
 <p><em><u>- if (a) then (b).</u></em></p>
 
-<p>Suppose (a), is true. Thus <script type="math/tex">(A \triangle C) \cap (B \triangle C) = \phi</script> is true.</p>
+<p>Suppose (a), is true. Thus <span class="kdmath">$(A \triangle C) \cap (B \triangle C) = \phi$</span> is true.</p>
 
-<p>We will prove this part : <script type="math/tex">A \cap B \subseteq C</script> by contradiction. Suppose <script type="math/tex">x \in A \cap B</script>. Suppose <script type="math/tex">x \notin C</script>. Since <script type="math/tex">x \in A \land x \notin C</script>,
-it follows that <script type="math/tex">x \in A \triangle C</script>. Similarly, since <script type="math/tex">x \in B \land x \notin C</script>, it follows <script type="math/tex">x \in B \triangle C</script>. Thus <script type="math/tex">A \triangle C) \cap (B \triangle C) \ne \phi</script>.
-But this contradicts with the assumption <script type="math/tex">(A \triangle C) \cap (B \triangle C) = \phi</script>. Thus we have if <script type="math/tex">x \in A \cap B</script>, then <script type="math/tex">x \in C</script>. Since
-<script type="math/tex">x</script> is arbitrary, we can conclude <script type="math/tex">A \cap B \subseteq C</script>.</p>
+<p>We will prove this part : <span class="kdmath">$A \cap B \subseteq C$</span> by contradiction. Suppose <span class="kdmath">$x \in A \cap B$</span>. Suppose <span class="kdmath">$x \notin C$</span>. Since <span class="kdmath">$x \in A \land x \notin C$</span>,
+it follows that <span class="kdmath">$x \in A \triangle C$</span>. Similarly, since <span class="kdmath">$x \in B \land x \notin C$</span>, it follows <span class="kdmath">$x \in B \triangle C$</span>. Thus <span class="kdmath">$A \triangle C) \cap (B \triangle C) \ne \phi$</span>.
+But this contradicts with the assumption <span class="kdmath">$(A \triangle C) \cap (B \triangle C) = \phi$</span>. Thus we have if <span class="kdmath">$x \in A \cap B$</span>, then <span class="kdmath">$x \in C$</span>. Since
+<span class="kdmath">$x$</span> is arbitrary, we can conclude <span class="kdmath">$A \cap B \subseteq C$</span>.</p>
 
-<p>Now we will prove part : <script type="math/tex">C \subseteq A \cup B</script> by contradiction. Suppose <script type="math/tex">x \in C</script>. Suppose <script type="math/tex">x \notin (A \cup B)</script>. It follows that <script type="math/tex">\lnot (x \in A \lor x \in B</script>,
- which is equivalent to <script type="math/tex">x \notin A \land x \notin B</script>. Since <script type="math/tex">x \in C \land x \notin A</script>, it follows that <script type="math/tex">x \in A \triangle C</script>. Similarly, since
- <script type="math/tex">x \in C \land x \notin B</script>, it follows that <script type="math/tex">x \in B \triangle C</script>. Thus <script type="math/tex">(A \triangle C) \cap (B \triangle C) \ne \phi</script>, which contradicts our assumption.
- Thus if <script type="math/tex">x \in C</script>, then <script type="math/tex">x \in (A \cup B)</script>. Since <script type="math/tex">x</script> is arbitrary, we can say that <script type="math/tex">C \subseteq A \cup B</script>.</p>
+<p>Now we will prove part : <span class="kdmath">$C \subseteq A \cup B$</span> by contradiction. Suppose <span class="kdmath">$x \in C$</span>. Suppose <span class="kdmath">$x \notin (A \cup B)$</span>. It follows that <span class="kdmath">$\lnot (x \in A \lor x \in B$</span>,
+ which is equivalent to <span class="kdmath">$x \notin A \land x \notin B$</span>. Since <span class="kdmath">$x \in C \land x \notin A$</span>, it follows that <span class="kdmath">$x \in A \triangle C$</span>. Similarly, since
+ <span class="kdmath">$x \in C \land x \notin B$</span>, it follows that <span class="kdmath">$x \in B \triangle C$</span>. Thus <span class="kdmath">$(A \triangle C) \cap (B \triangle C) \ne \phi$</span>, which contradicts our assumption.
+ Thus if <span class="kdmath">$x \in C$</span>, then <span class="kdmath">$x \in (A \cup B)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can say that <span class="kdmath">$C \subseteq A \cup B$</span>.</p>
 
 <p><em><u>- if (b) then (c).</u></em></p>
 
-<p>Suppose (b) is true. Thus <script type="math/tex">A \cap B \subseteq C \subseteq A \cup B</script> is true. Suppose <script type="math/tex">x \in A \triangle C</script>, then we have following possible cases:</p>
+<p>Suppose (b) is true. Thus <span class="kdmath">$A \cap B \subseteq C \subseteq A \cup B$</span> is true. Suppose <span class="kdmath">$x \in A \triangle C$</span>, then we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in A</script>, <script type="math/tex">x \notin C</script>, <script type="math/tex">x \in B</script>: This case is not possible because we know that if <script type="math/tex">x \in A \cap B</script>, then <script type="math/tex">x \in C</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A$</span>, <span class="kdmath">$x \notin C$</span>, <span class="kdmath">$x \in B$</span>: This case is not possible because we know that if <span class="kdmath">$x \in A \cap B$</span>, then <span class="kdmath">$x \in C$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in A</script>, <script type="math/tex">x \notin C</script>, <script type="math/tex">x \notin B</script>: Thus <script type="math/tex">x \in A \setminus B</script>. It follows that <script type="math/tex">x \in A \triangle B</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in A$</span>, <span class="kdmath">$x \notin C$</span>, <span class="kdmath">$x \notin B$</span>: Thus <span class="kdmath">$x \in A \setminus B$</span>. It follows that <span class="kdmath">$x \in A \triangle B$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">x \in C</script>, <script type="math/tex">x \notin A</script>, <script type="math/tex">x \in B</script>:  Thus <script type="math/tex">x \in B \setminus A</script>. It follows that <script type="math/tex">x \in A \triangle B</script>.</p>
+    <p>Case 3: <span class="kdmath">$x \in C$</span>, <span class="kdmath">$x \notin A$</span>, <span class="kdmath">$x \in B$</span>:  Thus <span class="kdmath">$x \in B \setminus A$</span>. It follows that <span class="kdmath">$x \in A \triangle B$</span>.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">x \in C</script>, <script type="math/tex">x \notin A</script>, <script type="math/tex">x \notin B</script>:  This case is not possible because we know that if <script type="math/tex">x \in C</script>, then <script type="math/tex">x \in A \cup B</script>.</p>
+    <p>Case 4: <span class="kdmath">$x \in C$</span>, <span class="kdmath">$x \notin A$</span>, <span class="kdmath">$x \notin B$</span>:  This case is not possible because we know that if <span class="kdmath">$x \in C$</span>, then <span class="kdmath">$x \in A \cup B$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases, if <script type="math/tex">x \in A \triangle C</script>, then <script type="math/tex">x \in A \triangle B</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">A \triangle C \subseteq A \triangle B</script>.</p>
+<p>Thus from all the cases, if <span class="kdmath">$x \in A \triangle C$</span>, then <span class="kdmath">$x \in A \triangle B$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$A \triangle C \subseteq A \triangle B$</span>.</p>
 
 <p><em><u>- if (c) then (a).</u></em></p>
 
-<p>Suppose (c) is true. Thus <script type="math/tex">A \triangle C \subseteq B \triangle C</script> is true.  Suppose <script type="math/tex">x \in A \triangle C</script>. It follows that <script type="math/tex">x \in A \triangle B</script>.
+<p>Suppose (c) is true. Thus <span class="kdmath">$A \triangle C \subseteq B \triangle C$</span> is true.  Suppose <span class="kdmath">$x \in A \triangle C$</span>. It follows that <span class="kdmath">$x \in A \triangle B$</span>.
 Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in A \setminus C</script>, <script type="math/tex">x \in A \setminus B</script>: In this case <script type="math/tex">x \notin B \setminus C</script>. It follows that <script type="math/tex">x \notin B \triangle C</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A \setminus C$</span>, <span class="kdmath">$x \in A \setminus B$</span>: In this case <span class="kdmath">$x \notin B \setminus C$</span>. It follows that <span class="kdmath">$x \notin B \triangle C$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \in A \setminus C</script>, <script type="math/tex">x \in B \setminus A</script>: This case is not possible as <script type="math/tex">x \in A \land x \notin A</script> is not possible.</p>
+    <p>Case 2: <span class="kdmath">$x \in A \setminus C$</span>, <span class="kdmath">$x \in B \setminus A$</span>: This case is not possible as <span class="kdmath">$x \in A \land x \notin A$</span> is not possible.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">x \in C \setminus A</script>, <script type="math/tex">x \in A \setminus B</script>: This case is also not possible as <script type="math/tex">x \notin A \land x \in A</script> is not possible.</p>
+    <p>Case 3: <span class="kdmath">$x \in C \setminus A$</span>, <span class="kdmath">$x \in A \setminus B$</span>: This case is also not possible as <span class="kdmath">$x \notin A \land x \in A$</span> is not possible.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">x \in C \setminus A</script>, <script type="math/tex">x \in B \setminus A</script>: Since <script type="math/tex">x \in B \land x \in C</script>, it follows that <script type="math/tex">x \notin B \triangle C</script>.</p>
+    <p>Case 4: <span class="kdmath">$x \in C \setminus A$</span>, <span class="kdmath">$x \in B \setminus A$</span>: Since <span class="kdmath">$x \in B \land x \in C$</span>, it follows that <span class="kdmath">$x \notin B \triangle C$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases we have, <script type="math/tex">x \notin B \triangle C</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">(A \triangle C) \cap (B \triangle C) = \phi</script>.</p>
+<p>Thus from all the cases we have, <span class="kdmath">$x \notin B \triangle C$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$(A \triangle C) \cap (B \triangle C) = \phi$</span>.</p>
 
 <hr />
 
 <p><strong>Soln4</strong></p>
 
-<p>Suppose <script type="math/tex">\mathcal P(\cup_{i \in I} A_i) \subseteq \cup_{i \in I} \mathcal P(A_i)</script>. Thus if <script type="math/tex">X \in \mathcal P(\cup_{i \in I} A_i)</script>, then <script type="math/tex">X \in \cup_{i \in I} \mathcal P(A_i)</script>.
-Since <script type="math/tex">\cup_{i \in I} A_i \in P(\cup_{i \in I} A_i)</script>, it follows that <script type="math/tex">\cup_{i \in I} A_i \in \cup_{i \in I} \mathcal P(A_i)</script>. Thus <script type="math/tex">\cup_{i \in I} A_i</script> exists in at-least 
-one of the sets, say <script type="math/tex">\mathcal P(A_i)</script> in <script type="math/tex">\cup_{i \in I} \mathcal P(A_i)</script>. Thus we have <script type="math/tex">\cup_{i \in I} A_i \subseteq A_i</script>. Now suppose <script type="math/tex">j \in I</script>, then
-<script type="math/tex">A_j \subseteq \cup_{i \in I} A_i</script>. And since <script type="math/tex">\cup_{i \in I} A_i \subseteq A_i</script>, we can conclude that <script type="math/tex">A_j \subseteq A_i</script>. Since <script type="math/tex">j</script> is arbitrary, we
-can conclude that <script type="math/tex">\forall j \in I (A_j \subseteq A_i)</script>.</p>
+<p>Suppose <span class="kdmath">$\mathcal P(\cup_{i \in I} A_i) \subseteq \cup_{i \in I} \mathcal P(A_i)$</span>. Thus if <span class="kdmath">$X \in \mathcal P(\cup_{i \in I} A_i)$</span>, then <span class="kdmath">$X \in \cup_{i \in I} \mathcal P(A_i)$</span>.
+Since <span class="kdmath">$\cup_{i \in I} A_i \in P(\cup_{i \in I} A_i)$</span>, it follows that <span class="kdmath">$\cup_{i \in I} A_i \in \cup_{i \in I} \mathcal P(A_i)$</span>. Thus <span class="kdmath">$\cup_{i \in I} A_i$</span> exists in at-least 
+one of the sets, say <span class="kdmath">$\mathcal P(A_i)$</span> in <span class="kdmath">$\cup_{i \in I} \mathcal P(A_i)$</span>. Thus we have <span class="kdmath">$\cup_{i \in I} A_i \subseteq A_i$</span>. Now suppose <span class="kdmath">$j \in I$</span>, then
+<span class="kdmath">$A_j \subseteq \cup_{i \in I} A_i$</span>. And since <span class="kdmath">$\cup_{i \in I} A_i \subseteq A_i$</span>, we can conclude that <span class="kdmath">$A_j \subseteq A_i$</span>. Since <span class="kdmath">$j$</span> is arbitrary, we
+can conclude that <span class="kdmath">$\forall j \in I (A_j \subseteq A_i)$</span>.</p>
 
 <hr />
 
@@ -1291,151 +1292,133 @@ can conclude that <script type="math/tex">\forall j \in I (A_j \subseteq A_i)</s
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in \cup_{i \in I} A_i</script>. Thus we have:  <br />
-<script type="math/tex">\leftrightarrow \exists i \in I ( x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \exists i(i \in I \land x \in A_i )</script>  <br />
-Since <script type="math/tex">I = \cup \mathcal F</script>,  <br />
-<script type="math/tex">\leftrightarrow \exists i(i \in \cup \mathcal F \land x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \exists i(\exists X \in \mathcal F(i \in X) \land x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \exists i(\exists X (X \in \mathcal F \land i \in X) \land x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \exists i(\exists X (X \in \mathcal F \land i \in X \land x \in A_i ))</script>  <br />
-<script type="math/tex">\leftrightarrow \exists i \exists X (X \in \mathcal F \land i \in X \land x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \exists X \exists i (X \in \mathcal F \land (i \in X \land x \in A_i ))</script>  <br />
-<script type="math/tex">\leftrightarrow \exists X (X \in \mathcal F \land \exists i (i \in X \land x \in A_i ))</script>  <br />
-<script type="math/tex">\leftrightarrow \exists X (X \in \mathcal F \land x \in \cup_{i \in X}A_i)</script>  <br />
-<script type="math/tex">\leftrightarrow \exists X \in \mathcal F(x \in \cup_{i \in X}A_i)</script>  <br />
-<script type="math/tex">\leftrightarrow x \in \cup_{X \in \mathcal F} (\cup_{i \in X}A_i)</script></p>
+<p>Suppose <span class="kdmath">$x \in \cup_{i \in I} A_i$</span>. Thus we have:  <br />
+<span class="kdmath">$\leftrightarrow \exists i \in I ( x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists i(i \in I \land x \in A_i )$</span>  <br />
+Since <span class="kdmath">$I = \cup \mathcal F$</span>,  <br />
+<span class="kdmath">$\leftrightarrow \exists i(i \in \cup \mathcal F \land x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists i(\exists X \in \mathcal F(i \in X) \land x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists i(\exists X (X \in \mathcal F \land i \in X) \land x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists i(\exists X (X \in \mathcal F \land i \in X \land x \in A_i ))$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists i \exists X (X \in \mathcal F \land i \in X \land x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists X \exists i (X \in \mathcal F \land (i \in X \land x \in A_i ))$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists X (X \in \mathcal F \land \exists i (i \in X \land x \in A_i ))$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists X (X \in \mathcal F \land x \in \cup_{i \in X}A_i)$</span>  <br />
+<span class="kdmath">$\leftrightarrow \exists X \in \mathcal F(x \in \cup_{i \in X}A_i)$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in \cup_{X \in \mathcal F} (\cup_{i \in X}A_i)$</span></p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, we can conclude <script type="math/tex">\cup_{i \in I} A_i = \cup_{X \in \mathcal F} (\cup_{i \in X}A_i)</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, we can conclude <span class="kdmath">$\cup_{i \in I} A_i = \cup_{X \in \mathcal F} (\cup_{i \in X}A_i)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in \cap_{i \in I} A_i</script>. Thus we have:  <br />
-<script type="math/tex">\leftrightarrow \forall i \in I ( x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i(i \in I \to x \in A_i )</script>  <br />
-Since <script type="math/tex">I = \cup \mathcal F</script>,  <br />
-<script type="math/tex">\leftrightarrow \forall i(i \in \cup \mathcal F \to x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i( \exists X \in \mathcal F(i \in X) \to x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i( \exists X(X \in \mathcal F \land i \in X) \to x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i( \lnot \exists X(X \in \mathcal F \land i \in X) \lor x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i( \forall X \lnot (X \in \mathcal F \land i \in X) \lor x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i( \forall X (X \notin \mathcal F \lor i \notin X) \lor x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i( \forall X (X \notin \mathcal F \lor i \notin X \lor x \in A_i ))</script>  <br />
-<script type="math/tex">\leftrightarrow \forall i \forall X (X \notin \mathcal F \lor i \notin X \lor x \in A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall X \forall i (X \notin \mathcal F \lor (i \notin X \lor x \in A_i) )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall X (X \notin \mathcal F \lor \forall i(i \notin X \lor x \in A_i) )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall X (X \notin \mathcal F \lor \forall i(i \in X \to x \in A_i) )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall X (X \notin \mathcal F \lor x \in \cap_{i \in X}A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow \forall X (X \in \mathcal F \to x \in \cap_{i \in X}A_i )</script>  <br />
-<script type="math/tex">\leftrightarrow x \in \cap_{X \in \mathcal F}(\cap_{i \in X}A_i ))</script></p>
+<p>Suppose <span class="kdmath">$x \in \cap_{i \in I} A_i$</span>. Thus we have:  <br />
+<span class="kdmath">$\leftrightarrow \forall i \in I ( x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i(i \in I \to x \in A_i )$</span>  <br />
+Since <span class="kdmath">$I = \cup \mathcal F$</span>,  <br />
+<span class="kdmath">$\leftrightarrow \forall i(i \in \cup \mathcal F \to x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i( \exists X \in \mathcal F(i \in X) \to x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i( \exists X(X \in \mathcal F \land i \in X) \to x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i( \lnot \exists X(X \in \mathcal F \land i \in X) \lor x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i( \forall X \lnot (X \in \mathcal F \land i \in X) \lor x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i( \forall X (X \notin \mathcal F \lor i \notin X) \lor x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i( \forall X (X \notin \mathcal F \lor i \notin X \lor x \in A_i ))$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall i \forall X (X \notin \mathcal F \lor i \notin X \lor x \in A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall X \forall i (X \notin \mathcal F \lor (i \notin X \lor x \in A_i) )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall X (X \notin \mathcal F \lor \forall i(i \notin X \lor x \in A_i) )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall X (X \notin \mathcal F \lor \forall i(i \in X \to x \in A_i) )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall X (X \notin \mathcal F \lor x \in \cap_{i \in X}A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow \forall X (X \in \mathcal F \to x \in \cap_{i \in X}A_i )$</span>  <br />
+<span class="kdmath">$\leftrightarrow x \in \cap_{X \in \mathcal F}(\cap_{i \in X}A_i ))$</span></p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, we can conclude <script type="math/tex">\cap_{i \in I} A_i = \cap_{X \in \mathcal F} (\cap_{i \in X}A_i)</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, we can conclude <span class="kdmath">$\cap_{i \in I} A_i = \cap_{X \in \mathcal F} (\cap_{i \in X}A_i)$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in \cup_{i \in J}A_i</script>. Thus <script type="math/tex">x</script> exist in atleast one of the sets, say <script type="math/tex">A_k</script>,  such that <script type="math/tex">k \in \cap \mathcal F</script>.
-Thus <script type="math/tex">k</script> exist in all the sets of <script type="math/tex">\mathcal F</script>. Thus for any set, say <script type="math/tex">X \in \mathcal F</script>, we have <script type="math/tex">k \in X</script>. Thus if <script type="math/tex">x \in A_k</script>,
- then <script type="math/tex">x \in \cup_{i \in X}A_i</script> because <script type="math/tex">k \in X</script>. Since <script type="math/tex">X</script> can be any set such that <script type="math/tex">X \in F</script>, it follows that <script type="math/tex">x</script> exists in
- all the sets <script type="math/tex">\cup_{i \in X}A_i</script> such that <script type="math/tex">X \in \mathcal F</script>. Thus <script type="math/tex">x</script> also exists in <script type="math/tex">\cap_{X \in \mathcal F} (\cup_{i \in X}A_i)</script>.
-Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">\cup_{i \in J}A_i \subseteq \cap_{X \in \mathcal F} (\cup_{i \in X}A_i)</script>.</p>
+<p>Suppose <span class="kdmath">$x \in \cup_{i \in J}A_i$</span>. Thus <span class="kdmath">$x$</span> exist in atleast one of the sets, say <span class="kdmath">$A_k$</span>,  such that <span class="kdmath">$k \in \cap \mathcal F$</span>.
+Thus <span class="kdmath">$k$</span> exist in all the sets of <span class="kdmath">$\mathcal F$</span>. Thus for any set, say <span class="kdmath">$X \in \mathcal F$</span>, we have <span class="kdmath">$k \in X$</span>. Thus if <span class="kdmath">$x \in A_k$</span>,
+ then <span class="kdmath">$x \in \cup_{i \in X}A_i$</span> because <span class="kdmath">$k \in X$</span>. Since <span class="kdmath">$X$</span> can be any set such that <span class="kdmath">$X \in F$</span>, it follows that <span class="kdmath">$x$</span> exists in
+ all the sets <span class="kdmath">$\cup_{i \in X}A_i$</span> such that <span class="kdmath">$X \in \mathcal F$</span>. Thus <span class="kdmath">$x$</span> also exists in <span class="kdmath">$\cap_{X \in \mathcal F} (\cup_{i \in X}A_i)$</span>.
+Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$\cup_{i \in J}A_i \subseteq \cap_{X \in \mathcal F} (\cup_{i \in X}A_i)$</span>.</p>
 
-<p>Counterexample for:  <script type="math/tex">\cap_{X \in \mathcal F} (\cup_{i \in X}A_i) \subseteq \cup_{i \in J}A_i</script>:</p>
+<p>Counterexample for:  <span class="kdmath">$\cap_{X \in \mathcal F} (\cup_{i \in X}A_i) \subseteq \cup_{i \in J}A_i$</span>:</p>
 
-<p>Suppose <script type="math/tex">\mathcal F = \{ \{1, 2\}, \{1, 3\} \}</script>  <br />
-<script type="math/tex">I = \cup \mathcal F = \{1, 2, 3\}</script>  <br />
-<script type="math/tex">J = \cap \mathcal F = \{1\}</script></p>
+<p>Suppose <span class="kdmath">$\mathcal F = \{ \{1, 2\}, \{1, 3\} \}$</span>  <br />
+<span class="kdmath">$I = \cup \mathcal F = \{1, 2, 3\}$</span>  <br />
+<span class="kdmath">$J = \cap \mathcal F = \{1\}$</span></p>
 
-<p>Suppose <script type="math/tex">A_1 = \{a, b, c\}</script>, <script type="math/tex">A_2 = \{b, c, d\}</script>, <script type="math/tex">A_3 = \{d, e, f\}</script>.</p>
+<p>Suppose <span class="kdmath">$A_1 = \{a, b, c\}$</span>, <span class="kdmath">$A_2 = \{b, c, d\}$</span>, <span class="kdmath">$A_3 = \{d, e, f\}$</span>.</p>
 
-<p>Thus <script type="math/tex">\cup_{i \in J}A_i = A_1 = \{a, b, c\}</script>  <br />
-And <script type="math/tex">\cap_{X \in \mathcal F} (\cup_{i \in X}A_i) = (A_1 \cup A_2) \cap (A_1 \cup A_3) = \{a, b, c, d\} \cap \{a, b, c, d, e, f\} = \{a, b, c, d\}</script>.</p>
+<p>Thus <span class="kdmath">$\cup_{i \in J}A_i = A_1 = \{a, b, c\}$</span>  <br />
+And <span class="kdmath">$\cap_{X \in \mathcal F} (\cup_{i \in X}A_i) = (A_1 \cup A_2) \cap (A_1 \cup A_3) = \{a, b, c, d\} \cap \{a, b, c, d, e, f\} = \{a, b, c, d\}$</span>.</p>
 
-<p>Thus <script type="math/tex">\cap_{X \in \mathcal F} (\cup_{i \in X}A_i) \nsubseteq \cup_{i \in J}A_i</script>.</p>
+<p>Thus <span class="kdmath">$\cap_{X \in \mathcal F} (\cup_{i \in X}A_i) \nsubseteq \cup_{i \in J}A_i$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
-<p>We shall prove the theorem <script type="math/tex">\cup_{X \in \mathcal F}(\cap_{i \in X} A_i ) \subseteq \cap_{i \in J} A_i</script>.</p>
+<p>We shall prove the theorem <span class="kdmath">$\cup_{X \in \mathcal F}(\cap_{i \in X} A_i ) \subseteq \cap_{i \in J} A_i$</span>.</p>
 
-<p>Suppose <script type="math/tex">x \in \cup_{X \in \mathcal F}(\cap_{i \in X} A_i)</script>. Thus <script type="math/tex">x</script> must exist in atleast one of the set, <script type="math/tex">\cap_{i \in P} A_i</script>, such that
- <script type="math/tex">P \in \mathcal F</script>. Since <script type="math/tex">x \in \cap_{i \in P} A_i</script>, and <script type="math/tex">J \subseteq P</script>, it follows that <script type="math/tex">x</script> must exist in <script type="math/tex">\cap_{i \in J} A_i</script>.
-Thus we can conclude that if <script type="math/tex">x \in \cup_{X \in \mathcal F}(\cap_{i \in X} A_i )</script>, then <script type="math/tex">x \in \cap_{i \in J} A_i</script>.</p>
+<p>Suppose <span class="kdmath">$x \in \cup_{X \in \mathcal F}(\cap_{i \in X} A_i)$</span>. Thus <span class="kdmath">$x$</span> must exist in atleast one of the set, <span class="kdmath">$\cap_{i \in P} A_i$</span>, such that
+ <span class="kdmath">$P \in \mathcal F$</span>. Since <span class="kdmath">$x \in \cap_{i \in P} A_i$</span>, and <span class="kdmath">$J \subseteq P$</span>, it follows that <span class="kdmath">$x$</span> must exist in <span class="kdmath">$\cap_{i \in J} A_i$</span>.
+Thus we can conclude that if <span class="kdmath">$x \in \cup_{X \in \mathcal F}(\cap_{i \in X} A_i )$</span>, then <span class="kdmath">$x \in \cap_{i \in J} A_i$</span>.</p>
 
-<p>Suppose <script type="math/tex">\mathcal F = \{ \{1, 2\}, \{1, 3\} \}</script>  <br />
-<script type="math/tex">I = \cup \mathcal F = \{1, 2, 3\}</script>  <br />
-<script type="math/tex">J = \cap \mathcal F = \{1\}</script></p>
+<p>Suppose <span class="kdmath">$\mathcal F = \{ \{1, 2\}, \{1, 3\} \}$</span>  <br />
+<span class="kdmath">$I = \cup \mathcal F = \{1, 2, 3\}$</span>  <br />
+<span class="kdmath">$J = \cap \mathcal F = \{1\}$</span></p>
 
-<p>Suppose <script type="math/tex">A_1 = \{a, b, c\}</script>, <script type="math/tex">A_2 = \{b, c, d\}</script>, <script type="math/tex">A_3 = \{b, d, e\}</script>.</p>
+<p>Suppose <span class="kdmath">$A_1 = \{a, b, c\}$</span>, <span class="kdmath">$A_2 = \{b, c, d\}$</span>, <span class="kdmath">$A_3 = \{b, d, e\}$</span>.</p>
 
-<p>Thus <script type="math/tex">\cap_{i \in J}A_i = A_1 = \{a, b, c\}</script>  <br />
-And <script type="math/tex">\cup_{X \in \mathcal F} (\cap_{i \in X}A_i) = (A_1 \cap A_2) \cup (A_1 \cap A_3) = \{b, c\} \cup \{b\} = \{b, c\}</script>.</p>
+<p>Thus <span class="kdmath">$\cap_{i \in J}A_i = A_1 = \{a, b, c\}$</span>  <br />
+And <span class="kdmath">$\cup_{X \in \mathcal F} (\cap_{i \in X}A_i) = (A_1 \cap A_2) \cup (A_1 \cap A_3) = \{b, c\} \cup \{b\} = \{b, c\}$</span>.</p>
 
-<p>Thus <script type="math/tex">\cap_{i \in J} A_i \nsubseteq \cup_{X \in \mathcal F}(\cap_{i \in X} A_i )</script>.</p>
+<p>Thus <span class="kdmath">$\cap_{i \in J} A_i \nsubseteq \cup_{X \in \mathcal F}(\cap_{i \in X} A_i )$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p>Suppose <script type="math/tex">\varepsilon > 0</script> is arbitrary. Suppose <script type="math/tex">\delta = \frac {\varepsilon} 3</script>. Suppose <script type="math/tex">x</script> is an arbitrary real number and <script type="math/tex">% <![CDATA[
-0 < \vert x - 2 \vert < \delta %]]></script>.
-Then we have: <script type="math/tex">\vert \, \frac {3x^2 - 12} {x-2} - 12 \, \vert</script>, is equivalent to:  <br />
-<script type="math/tex">\leftrightarrow \vert \, \frac {3x^2 - 12x + 12} {x-2} \, \vert</script>  <br />
-<script type="math/tex">\leftrightarrow \vert \, \frac {3(x^2 - 4x + 4)} {x-2} \, \vert</script>  <br />
-<script type="math/tex">\leftrightarrow \vert \, \frac {3(x - 2)^2} {x-2} \, \vert</script>  <br />
-Since <script type="math/tex">% <![CDATA[
-0 < \vert\,x - 2\,\vert < \delta %]]></script>, thus <script type="math/tex">x - 2 \ne 0</script>   <br />
-<script type="math/tex">\leftrightarrow \vert \, 3(x - 2) \, \vert</script>  <br />
-Since <script type="math/tex">% <![CDATA[
-0 < \vert\,x - 2\,\vert < \delta %]]></script>:   <br />
-<script type="math/tex">% <![CDATA[
-\vert \, 3(x - 2) \, \vert < 3 \delta %]]></script>  <br />
-<script type="math/tex">% <![CDATA[
-\leftrightarrow \vert \, 3(x - 2) \, \vert < 3 \times \frac {\varepsilon} 3 %]]></script>  <br />
-<script type="math/tex">% <![CDATA[
-\leftrightarrow \vert \,3(x - 2) \, \vert < \varepsilon %]]></script></p>
+<p>Suppose <span class="kdmath">$\varepsilon > 0$</span> is arbitrary. Suppose <span class="kdmath">$\delta = \frac {\varepsilon} 3$</span>. Suppose <span class="kdmath">$x$</span> is an arbitrary real number and <span class="kdmath">$0 < \vert x - 2 \vert < \delta$</span>.
+Then we have: <span class="kdmath">$\vert \, \frac {3x^2 - 12} {x-2} - 12 \, \vert$</span>, is equivalent to:  <br />
+<span class="kdmath">$\leftrightarrow \vert \, \frac {3x^2 - 12x + 12} {x-2} \, \vert$</span>  <br />
+<span class="kdmath">$\leftrightarrow \vert \, \frac {3(x^2 - 4x + 4)} {x-2} \, \vert$</span>  <br />
+<span class="kdmath">$\leftrightarrow \vert \, \frac {3(x - 2)^2} {x-2} \, \vert$</span>  <br />
+Since <span class="kdmath">$0 < \vert\,x - 2\,\vert < \delta$</span>, thus <span class="kdmath">$x - 2 \ne 0$</span>   <br />
+<span class="kdmath">$\leftrightarrow \vert \, 3(x - 2) \, \vert$</span>  <br />
+Since <span class="kdmath">$0 < \vert\,x - 2\,\vert < \delta$</span>:   <br />
+<span class="kdmath">$\vert \, 3(x - 2) \, \vert < 3 \delta$</span>  <br />
+<span class="kdmath">$\leftrightarrow \vert \, 3(x - 2) \, \vert < 3 \times \frac {\varepsilon} 3$</span>  <br />
+<span class="kdmath">$\leftrightarrow \vert \,3(x - 2) \, \vert < \varepsilon$</span></p>
 
-<p>Thus, <script type="math/tex">% <![CDATA[
-\vert \, \frac {3x^2 - 12x + 12} {x-2} \, \vert < \varepsilon %]]></script></p>
+<p>Thus, <span class="kdmath">$\vert \, \frac {3x^2 - 12x + 12} {x-2} \, \vert < \varepsilon$</span></p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>Suppose that <script type="math/tex">\lim_{x \to c} f(x) = L</script>. Thus for all <script type="math/tex">\varepsilon > 0</script>, there exists a <script type="math/tex">\delta</script> such that for all <script type="math/tex">x</script>, if <script type="math/tex">% <![CDATA[
-0 < \vert\,x - c\,\vert < \delta %]]></script>, then</p>
+<p>Suppose that <span class="kdmath">$\lim_{x \to c} f(x) = L$</span>. Thus for all <span class="kdmath">$\varepsilon > 0$</span>, there exists a <span class="kdmath">$\delta$</span> such that for all <span class="kdmath">$x$</span>, if <span class="kdmath">$0 < \vert\,x - c\,\vert < \delta$</span>, then</p>
 
-<p><script type="math/tex">% <![CDATA[
-\vert f(x) - L \vert < \varepsilon %]]></script>.   <br />
-Since <script type="math/tex">L > 0</script>, if <script type="math/tex">\varepsilon = L</script>, then:   <br />
-<script type="math/tex">% <![CDATA[
-\vert f(x) - L \vert < L %]]></script>.   <br />
-<script type="math/tex">% <![CDATA[
-= -L < f(x) - L < L %]]></script>.   <br />
-<script type="math/tex">% <![CDATA[
-= 0 < f(x) < 2L %]]></script>.</p>
+<p><span class="kdmath">$\vert f(x) - L \vert < \varepsilon$</span>.   <br />
+Since <span class="kdmath">$L > 0$</span>, if <span class="kdmath">$\varepsilon = L$</span>, then:   <br />
+<span class="kdmath">$\vert f(x) - L \vert < L$</span>.   <br />
+<span class="kdmath">$= -L < f(x) - L < L$</span>.   <br />
+<span class="kdmath">$= 0 < f(x) < 2L$</span>.</p>
 
-<p>Thus <script type="math/tex">f(x) > 0</script>.</p>
+<p>Thus <span class="kdmath">$f(x) > 0$</span>.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>Suppose that <script type="math/tex">\lim_{x \to c} f(x) = L</script>. Thus for all <script type="math/tex">\varepsilon > 0</script>, there exists a <script type="math/tex">\delta</script> such that for all <script type="math/tex">x</script>, if <script type="math/tex">% <![CDATA[
-0 < \vert\,x - c\,\vert < \delta %]]></script>, then</p>
+<p>Suppose that <span class="kdmath">$\lim_{x \to c} f(x) = L$</span>. Thus for all <span class="kdmath">$\varepsilon > 0$</span>, there exists a <span class="kdmath">$\delta$</span> such that for all <span class="kdmath">$x$</span>, if <span class="kdmath">$0 < \vert\,x - c\,\vert < \delta$</span>, then</p>
 
-<p><script type="math/tex">% <![CDATA[
-\vert f(x) - L \vert < \varepsilon %]]></script>.   <br />
-<script type="math/tex">% <![CDATA[
-\leftrightarrow 7 \times \vert f(x) - L \vert < 7 \times \varepsilon %]]></script>.   <br />
-<script type="math/tex">% <![CDATA[
-\leftrightarrow \vert 7f(x) - 7L \vert < 7 \varepsilon %]]></script>.</p>
+<p><span class="kdmath">$\vert f(x) - L \vert < \varepsilon$</span>.   <br />
+<span class="kdmath">$\leftrightarrow 7 \times \vert f(x) - L \vert < 7 \times \varepsilon$</span>.   <br />
+<span class="kdmath">$\leftrightarrow \vert 7f(x) - 7L \vert < 7 \varepsilon$</span>.</p>
 
-<p>Since <script type="math/tex">\varepsilon > 0</script>, <script type="math/tex">7 \varepsilon > 0</script>.</p>
+<p>Since <span class="kdmath">$\varepsilon > 0$</span>, <span class="kdmath">$7 \varepsilon > 0$</span>.</p>
 
-<p>Thus, if <script type="math/tex">% <![CDATA[
-0 < \vert\,x - c\,\vert < \delta %]]></script>, then <script type="math/tex">% <![CDATA[
-\leftrightarrow \vert 7f(x) - 7L \vert < \varepsilon' %]]></script>, where <script type="math/tex">\varepsilon' = 7 \varepsilon > 0</script>.</p>
+<p>Thus, if <span class="kdmath">$0 < \vert\,x - c\,\vert < \delta$</span>, then <span class="kdmath">$\leftrightarrow \vert 7f(x) - 7L \vert < \varepsilon'$</span>, where <span class="kdmath">$\varepsilon' = 7 \varepsilon > 0$</span>.</p>
 
-<p>Thus <script type="math/tex">\lim_{x \to c} 7 f(x) = 7L</script>.</p>
+<p>Thus <span class="kdmath">$\lim_{x \to c} 7 f(x) = 7L$</span>.</p>
 
 <hr />
 
@@ -1444,8 +1427,8 @@ Since <script type="math/tex">L > 0</script>, if <script type="math/tex">\vareps
 <p>The proof and theorem both are correct. Following strategies are used:</p>
 
 <ol>
-  <li>To prove a goal of the form of <script type="math/tex">\exists x P(x)</script>. Here existential instantiation is used.</li>
-  <li>To prove a goal of the form of <script type="math/tex">P \lor Q</script>, all possible cases are considered.</li>
+  <li>To prove a goal of the form of <span class="kdmath">$\exists x P(x)$</span>. Here existential instantiation is used.</li>
+  <li>To prove a goal of the form of <span class="kdmath">$P \lor Q$</span>, all possible cases are considered.</li>
 </ol>
 
 

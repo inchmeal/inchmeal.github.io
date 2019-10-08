@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,11 +978,9 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>Since <script type="math/tex">\, \mu \,</script> is a fixed number it does not make sense that <script type="math/tex">% <![CDATA[
-\, P(1.44 < \mu < 1.76) = 0.95 \, %]]></script>. Just to make it clear - probability means that there is a range/set of values that a random variable can take. Here the population mean is a fixed value, thus it does not make sense to say  <script type="math/tex">% <![CDATA[
-\, P(1.44 < \mu < 1.76) = 0.95 \, %]]></script>.</p>
+                        <p>Since <span class="kdmath">$\, \mu \,$</span> is a fixed number it does not make sense that <span class="kdmath">$\, P(1.44 < \mu < 1.76) = 0.95 \,$</span>. Just to make it clear - probability means that there is a range/set of values that a random variable can take. Here the population mean is a fixed value, thus it does not make sense to say  <span class="kdmath">$\, P(1.44 < \mu < 1.76) = 0.95 \,$</span>.</p>
 
-<p>The confidence interval <script type="math/tex">\, (1.44, 1.76) \,</script> means that 95% of the confidence intervals formed in this way contains <script type="math/tex">\, \mu \,</script>. Or there is a 95% chance that this interval contains <script type="math/tex">\, \mu \,</script> but it does <strong>not</strong> say that the probability that <script type="math/tex">\, \mu \,</script>  takes one of the values in the interval <script type="math/tex">\, (1.44, 1,76) \,</script> is <script type="math/tex">\, 0.95 \,</script>. The value of <script type="math/tex">\, \mu \,</script> is fixed and it does not take any values from the interval! It’s the interval that we say that the chance that this interval containing the value of <script type="math/tex">\, \mu \,</script> is 95% because intervals are random and the interval we formed in this way have the probability for containing <script type="math/tex">\, \mu \,</script> is 95%.</p>
+<p>The confidence interval <span class="kdmath">$\, (1.44, 1.76) \,$</span> means that 95% of the confidence intervals formed in this way contains <span class="kdmath">$\, \mu \,$</span>. Or there is a 95% chance that this interval contains <span class="kdmath">$\, \mu \,$</span> but it does <strong>not</strong> say that the probability that <span class="kdmath">$\, \mu \,$</span>  takes one of the values in the interval <span class="kdmath">$\, (1.44, 1,76) \,$</span> is <span class="kdmath">$\, 0.95 \,$</span>. The value of <span class="kdmath">$\, \mu \,$</span> is fixed and it does not take any values from the interval! It’s the interval that we say that the chance that this interval containing the value of <span class="kdmath">$\, \mu \,$</span> is 95% because intervals are random and the interval we formed in this way have the probability for containing <span class="kdmath">$\, \mu \,$</span> is 95%.</p>
 
 <p>The confidence interval says about the probability of the interval not of the population mean.</p>
 

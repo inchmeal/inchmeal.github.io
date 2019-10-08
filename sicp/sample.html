@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9404,7 +9405,7 @@
 
                     
                     <p class="tm10">
-                        <time class="post-date pr20" datetime="February 08, 2019" itemprop="datePublished"> February 08, 2019</time>
+                        <time class="post-date pr20" datetime="October 08, 2019" itemprop="datePublished"> October 08, 2019</time>
                     </p>
                     
 
@@ -9519,7 +9520,8 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">curry</span>  <span class="p">(</span><span class="nf">make-curry</span> <span class="no">#f</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="nv">curryr</span> <span class="p">(</span><span class="nf">make-curry</span> <span class="no">#t</span><span class="p">))</span>
-                       </pre></td></tr></tbody></table></code></pre></figure>
+                       
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="scala">Scala</h4>
 
@@ -9567,10 +9569,11 @@
 
   <span class="k">private</span><span class="o">[</span><span class="kt">akka</span><span class="o">]</span> <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">RemoteAddress</span><span class="o">(</span><span class="n">address</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">InetSocketAddress</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">Attribute</span>
 
-  <span class="k">private</span><span class="o">[</span><span class="kt">akka</span><span class="o">]</span> <span class="k">def</span> <span class="n">remoteAddress</span><span class="o">(</span><span class="n">address</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">InetSocketAddress</span><span class="o">])</span> <span class="k">=</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">akka</span><span class="o">]</span> <span class="k">def</span> <span class="nf">remoteAddress</span><span class="o">(</span><span class="n">address</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">InetSocketAddress</span><span class="o">])</span> <span class="k">=</span>
     <span class="nc">Attributes</span><span class="o">(</span><span class="nc">RemoteAddress</span><span class="o">(</span><span class="n">address</span><span class="o">))</span>
 
-<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="java">Java</h4>
 
@@ -9642,36 +9645,37 @@
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">countWordsViaGUI</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">setLookAndFeel</span><span class="o">();</span>
         <span class="k">try</span> <span class="o">{</span>
-            <span class="n">Scanner</span> <span class="n">key</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+            <span class="nc">Scanner</span> <span class="n">key</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
             <span class="k">do</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Opening GUI to choose file."</span><span class="o">);</span>
-                <span class="n">Scanner</span> <span class="n">fileScanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">getFile</span><span class="o">());</span>
-                <span class="n">Stopwatch</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stopwatch</span><span class="o">();</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Opening GUI to choose file."</span><span class="o">);</span>
+                <span class="nc">Scanner</span> <span class="n">fileScanner</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="n">getFile</span><span class="o">());</span>
+                <span class="nc">Stopwatch</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stopwatch</span><span class="o">();</span>
                 <span class="n">st</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-                <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="n">countWordsWithArrayList</span><span class="o">(</span><span class="n">fileScanner</span><span class="o">);</span>
+                <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="n">countWordsWithArrayList</span><span class="o">(</span><span class="n">fileScanner</span><span class="o">);</span>
                 <span class="n">st</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"time to count: "</span> <span class="o">+</span> <span class="n">st</span><span class="o">);</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Enter number of words to display: "</span><span class="o">);</span>
-                <span class="kt">int</span> <span class="n">numWordsToShow</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"time to count: "</span> <span class="o">+</span> <span class="n">st</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Enter number of words to display: "</span><span class="o">);</span>
+                <span class="kt">int</span> <span class="n">numWordsToShow</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
                 <span class="n">showWords</span><span class="o">(</span><span class="n">words</span><span class="o">,</span> <span class="n">numWordsToShow</span><span class="o">);</span>
                 <span class="n">fileScanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Perform another count? "</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Perform another count? "</span><span class="o">);</span>
             <span class="o">}</span> <span class="k">while</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">nextLine</span><span class="o">().</span><span class="na">toLowerCase</span><span class="o">().</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">==</span> <span class="sc">'y'</span><span class="o">);</span>
             <span class="n">key</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
         <span class="o">}</span>
-        <span class="k">catch</span><span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Problem reading the data file. Exiting the program."</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
+        <span class="k">catch</span><span class="o">(</span><span class="nc">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Problem reading the data file. Exiting the program."</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
     <span class="c1">// determine distinct words in a file using an array list</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">countWordsWithArrayList</span><span class="o">(</span><span class="n">Scanner</span> <span class="n">fileScanner</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Total number of words: "</span> <span class="o">+</span> <span class="n">numWords</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"number of distincy words: "</span> <span class="o">+</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">countWordsWithArrayList</span><span class="o">(</span><span class="nc">Scanner</span> <span class="n">fileScanner</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Total number of words: "</span> <span class="o">+</span> <span class="n">numWords</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"number of distincy words: "</span> <span class="o">+</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
         <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
     <span class="o">}</span>
 
-<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="haskell">Haskell</h4>
 
@@ -9748,7 +9752,8 @@
     <span class="n">putStrLn</span> <span class="s">"+ &lt;String&gt; - Add a TODO entry"</span>
     <span class="n">putStrLn</span> <span class="s">"- &lt;Int&gt;    - Delete the numbered entry"</span>
     <span class="n">putStrLn</span> <span class="s">"q          - Quit"</span>
-    <span class="n">prompt</span> <span class="kt">[]</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="n">prompt</span> <span class="kt">[]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

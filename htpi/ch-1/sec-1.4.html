@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,32 +1137,32 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li>We can see a correspondence between set operations and statements. <script type="math/tex">A</script> is the truth set of <script type="math/tex">P(x)</script> 
-and <script type="math/tex">B</script> is the truth set of <script type="math/tex">Q(x)</script> then
+  <li>We can see a correspondence between set operations and statements. <span class="kdmath">$A$</span> is the truth set of <span class="kdmath">$P(x)$</span> 
+and <span class="kdmath">$B$</span> is the truth set of <span class="kdmath">$Q(x)$</span> then
     <ul>
-      <li>Truth set of <script type="math/tex">P(x) \land Q(x)</script> is <script type="math/tex">A \cap B</script>.</li>
-      <li>Truth set of <script type="math/tex">P(x) \lor Q(x)</script> is <script type="math/tex">A \cup B</script>.</li>
-      <li>Truth set of <script type="math/tex">\lnot P(x)</script> is <script type="math/tex">U \setminus A</script>.</li>
+      <li>Truth set of <span class="kdmath">$P(x) \land Q(x)$</span> is <span class="kdmath">$A \cap B$</span>.</li>
+      <li>Truth set of <span class="kdmath">$P(x) \lor Q(x)$</span> is <span class="kdmath">$A \cup B$</span>.</li>
+      <li>Truth set of <span class="kdmath">$\lnot P(x)$</span> is <span class="kdmath">$U \setminus A$</span>.</li>
     </ul>
   </li>
   <li>
     <p>Using logical forms of the statement, identities corresponding to set can be derived. 
-For eg: <script type="math/tex">A \cup (B \cap C)</script> is equivalent to <script type="math/tex">( A \cup B ) \cap (A \cup C)</script> can be proved as:  <br />
-<script type="math/tex">A \cup (B \cap C) = x \in A \cup (B \cap C)</script>  <br />
-<script type="math/tex">\quad = x \in A \lor (x \in B \land x \in C)</script>    <br />
+For eg: <span class="kdmath">$A \cup (B \cap C)$</span> is equivalent to <span class="kdmath">$( A \cup B ) \cap (A \cup C)$</span> can be proved as:  <br />
+<span class="kdmath">$A \cup (B \cap C) = x \in A \cup (B \cap C)$</span>  <br />
+<span class="kdmath">$\quad = x \in A \lor (x \in B \land x \in C)$</span>    <br />
 Using distributive law,    <br />
-<script type="math/tex">\quad = (x \in A \lor x \in B) \land ( x \in A \lor x \in C)</script>  <br />
-Using definition of <script type="math/tex">\cup</script>           <br />
-<script type="math/tex">\quad = x \in (A \cup B) \land x \in (A \cup C)</script>  <br />
-Using definition of <script type="math/tex">\cup</script>           <br />
-<script type="math/tex">\quad = x \in ((A \cup B) \cap (A \cup C))</script>  <br />
-<script type="math/tex">\quad = ((A \cup B) \cap (A \cup C))</script></p>
+<span class="kdmath">$\quad = (x \in A \lor x \in B) \land ( x \in A \lor x \in C)$</span>  <br />
+Using definition of <span class="kdmath">$\cup$</span>           <br />
+<span class="kdmath">$\quad = x \in (A \cup B) \land x \in (A \cup C)$</span>  <br />
+Using definition of <span class="kdmath">$\cup$</span>           <br />
+<span class="kdmath">$\quad = x \in ((A \cup B) \cap (A \cup C))$</span>  <br />
+<span class="kdmath">$\quad = ((A \cup B) \cap (A \cup C))$</span></p>
 
     <p>The above identity is similar to distributive law.</p>
   </li>
-  <li><script type="math/tex">(A \cup B) \setminus (A \cap B) = (A \setminus B) \cup (A \setminus B)</script>. This can also be proved similarly as above.</li>
+  <li><span class="kdmath">$(A \cup B) \setminus (A \cap B) = (A \setminus B) \cup (A \setminus B)$</span>. This can also be proved similarly as above.</li>
   <li>Set identities can also be proved using venn diagrams. One more way to prove them is by using truth tables also.</li>
-  <li>Sets <script type="math/tex">A</script> and <script type="math/tex">B</script> are disjoint <script type="math/tex">iff\;A \cap B = \phi</script>.</li>
+  <li>Sets <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are disjoint <span class="kdmath">$iff\;A \cap B = \phi$</span>.</li>
 </ul>
 
 <hr />
@@ -1170,11 +1171,11 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><strong>Soln1</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">A \cap B = \{3, 12\}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$A \cap B = \{3, 12\}$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">(A \cup B) \setminus C = \{1, 12, 20, 35\}</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$(A \cup B) \setminus C = \{1, 12, 20, 35\}$</span>.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">A \cup (B \setminus C) = \{1, 3, 12, 20, 35\}</script>.</p>
+<p><strong>(c)</strong> <span class="kdmath">$A \cup (B \setminus C) = \{1, 3, 12, 20, 35\}$</span>.</p>
 
 <p>No sets from above are disjoint. Set <strong>(a)</strong> and <strong>(b)</strong> both are subsets of <strong>(c)</strong>.</p>
 
@@ -1182,11 +1183,11 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><strong>Soln2</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">A \cup B = \{</script> United States, Germany, China, Australia, France, India, Brazil <script type="math/tex">\}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$A \cup B = \{$</span> United States, Germany, China, Australia, France, India, Brazil <span class="kdmath">$\}$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">(A \cap B) \setminus C = \phi</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$(A \cap B) \setminus C = \phi$</span>.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">(B \cap C) \setminus A  = \{\text{France}\}</script>.</p>
+<p><strong>(c)</strong> <span class="kdmath">$(B \cap C) \setminus A  = \{\text{France}\}$</span>.</p>
 
 <p>We can see from above <strong>(c)</strong> is subset of <strong>(a)</strong>. Also <strong>(b)</strong>, <strong>(a)</strong> and <strong>(b)</strong>, <strong>(c)</strong> are disjoint sets.</p>
 
@@ -1196,7 +1197,7 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><img src="https://www.inchmeal.io/assets/img/htpi/ch_1_s_4_q_3.png" /></p>
 
-<p>It can be easily seen that both <script type="math/tex">(A ∪ B)\setminus(A \cap B)\text{ and }(A \setminus B) \cup (B \setminus A)</script> covers the same region.</p>
+<p>It can be easily seen that both <span class="kdmath">$(A ∪ B)\setminus(A \cap B)\text{ and }(A \setminus B) \cup (B \setminus A)$</span> covers the same region.</p>
 
 <hr />
 
@@ -1206,13 +1207,13 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><img src="https://www.inchmeal.io/assets/img/htpi/ch_1_s_4_q_4a.png" /></p>
 
-<p>This can be verified easily from above diagram that <script type="math/tex">A \setminus (A \cap B) = A \setminus B</script>.</p>
+<p>This can be verified easily from above diagram that <span class="kdmath">$A \setminus (A \cap B) = A \setminus B$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><img src="https://www.inchmeal.io/assets/img/htpi/ch_1_s_4_q_4b.png" /></p>
 
-<p>This can be verified easily from above diagram that <script type="math/tex">A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</script>.</p>
+<p>This can be verified easily from above diagram that <span class="kdmath">$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$</span>.</p>
 
 <hr />
 
@@ -1220,29 +1221,29 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p>Proof for first part(soln4a):</p>
 
-<p><script type="math/tex">A \setminus (A \cap B)</script> is equivalent to:     <br />
-  <script type="math/tex">\quad= x \in A \land \lnot(x \in A \land x \in B)</script>  <br />
+<p><span class="kdmath">$A \setminus (A \cap B)$</span> is equivalent to:     <br />
+  <span class="kdmath">$\quad= x \in A \land \lnot(x \in A \land x \in B)$</span>  <br />
   Using Demorgan’s Law,  <br />
-  <script type="math/tex">\quad= x \in A \land (x \notin A \lor x \notin B)</script>  <br />
+  <span class="kdmath">$\quad= x \in A \land (x \notin A \lor x \notin B)$</span>  <br />
   Using Distribution Law,  <br />
-  <script type="math/tex">\quad= (x \in A \land x \notin A) \lor (x \in A \land x \notin B)</script><br />
-  As <script type="math/tex">(x \in A \land x \notin A)</script> is a contradiction,  <br />
-  <script type="math/tex">\quad= (x \in A \land x \notin B)</script>  <br />
+  <span class="kdmath">$\quad= (x \in A \land x \notin A) \lor (x \in A \land x \notin B)$</span><br />
+  As <span class="kdmath">$(x \in A \land x \notin A)$</span> is a contradiction,  <br />
+  <span class="kdmath">$\quad= (x \in A \land x \notin B)$</span>  <br />
   Using definition of set minus,          <br />
-  <script type="math/tex">\quad= (x \in A \setminus B)</script>  <br />
-  <script type="math/tex">\quad= (A \setminus B)</script> Hence proved.</p>
+  <span class="kdmath">$\quad= (x \in A \setminus B)$</span>  <br />
+  <span class="kdmath">$\quad= (A \setminus B)$</span> Hence proved.</p>
 
 <p>Proof for second part(soln4b):</p>
 
-<p><script type="math/tex">A \cup (B \cap C) = x \in A \cup (B \cap C)</script>  <br />
-  <script type="math/tex">\quad  = x \in A \lor (x \in B \land x \in C)</script>  <br />
+<p><span class="kdmath">$A \cup (B \cap C) = x \in A \cup (B \cap C)$</span>  <br />
+  <span class="kdmath">$\quad  = x \in A \lor (x \in B \land x \in C)$</span>  <br />
   Using Distributive Law,  <br />
-  <script type="math/tex">\quad  = (x \in A \lor x \in B) \land ( x \in A \lor x \in C)</script>  <br />
-  Using definition of <script type="math/tex">\cup</script>  <br />
-  <script type="math/tex">\quad  = x \in (A \cup B) \land x \in (A \cup C)</script>    <br />
-  Using definition of <script type="math/tex">\cap</script>  <br />
-  <script type="math/tex">\quad  = x \in ((A \cup B) \cap (A \cup C))</script>  <br />
-  <script type="math/tex">\quad  = ((A \cup B) \cap (A \cup C))</script> Hence Proved.</p>
+  <span class="kdmath">$\quad  = (x \in A \lor x \in B) \land ( x \in A \lor x \in C)$</span>  <br />
+  Using definition of <span class="kdmath">$\cup$</span>  <br />
+  <span class="kdmath">$\quad  = x \in (A \cup B) \land x \in (A \cup C)$</span>    <br />
+  Using definition of <span class="kdmath">$\cap$</span>  <br />
+  <span class="kdmath">$\quad  = x \in ((A \cup B) \cap (A \cup C))$</span>  <br />
+  <span class="kdmath">$\quad  = ((A \cup B) \cap (A \cup C))$</span> Hence Proved.</p>
 
 <hr />
 
@@ -1252,13 +1253,13 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><img src="https://www.inchmeal.io/assets/img/htpi/ch_1_s_4_q_6a.png" /></p>
 
-<p>This can be verified from above diagram that <script type="math/tex">(A ∪ B) \setminus C = (A \setminus C) ∪ (B \setminus C)</script>.</p>
+<p>This can be verified from above diagram that <span class="kdmath">$(A ∪ B) \setminus C = (A \setminus C) ∪ (B \setminus C)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p><img src="https://www.inchmeal.io/assets/img/htpi/ch_1_s_4_q_6b.png" /></p>
 
-<p>This can be verified from above diagram that <script type="math/tex">A ∪ (B \setminus C) = (A ∪ B) \setminus (C \setminus A)</script>.</p>
+<p>This can be verified from above diagram that <span class="kdmath">$A ∪ (B \setminus C) = (A ∪ B) \setminus (C \setminus A)$</span>.</p>
 
 <hr />
 
@@ -1267,35 +1268,35 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 <p><strong>(a)</strong><br />
   LHS:</p>
 
-<p><script type="math/tex">(A ∪ B) \setminus C = (x \in A \lor x \in B) \land x \notin C</script>  <br />
+<p><span class="kdmath">$(A ∪ B) \setminus C = (x \in A \lor x \in B) \land x \notin C$</span>  <br />
   Using Distributive Law,  <br />
-  <script type="math/tex">\quad = (x \notin C \land x \in A) \lor (x \notin C \land x \in B)</script>  <br />
+  <span class="kdmath">$\quad = (x \notin C \land x \in A) \lor (x \notin C \land x \in B)$</span>  <br />
   Using commutative law,  <br />
-  <script type="math/tex">\quad = (x \in A \land x \notin C) \lor (x \in B \land x \notin C)</script>  <br />
-  Using definition of <script type="math/tex">\setminus</script>   <br />
-  <script type="math/tex">\quad = (x \in (A \setminus C)) \lor (x \in (B \setminus C))</script>  <br />
-  Using definition of <script type="math/tex">\lor</script> <br />
-  <script type="math/tex">\quad = x \in ((A \setminus C) \cup (B \setminus C))</script></p>
+  <span class="kdmath">$\quad = (x \in A \land x \notin C) \lor (x \in B \land x \notin C)$</span>  <br />
+  Using definition of <span class="kdmath">$\setminus$</span>   <br />
+  <span class="kdmath">$\quad = (x \in (A \setminus C)) \lor (x \in (B \setminus C))$</span>  <br />
+  Using definition of <span class="kdmath">$\lor$</span> <br />
+  <span class="kdmath">$\quad = x \in ((A \setminus C) \cup (B \setminus C))$</span></p>
 
 <p>RHS:</p>
 
-<p><script type="math/tex">(A \setminus C) ∪ (B \setminus C) = (x \in A \land x \notin C) \lor (x \in B \land x \notin C)</script>  <br />
+<p><span class="kdmath">$(A \setminus C) ∪ (B \setminus C) = (x \in A \land x \notin C) \lor (x \in B \land x \notin C)$</span>  <br />
   Using distributive law,  <br />
-  <script type="math/tex">\quad = ((x \in A \land x \notin C) \lor x \in B) \land ((x \in A \land x \notin C) \lor x \notin c)</script>  <br />
+  <span class="kdmath">$\quad = ((x \in A \land x \notin C) \lor x \in B) \land ((x \in A \land x \notin C) \lor x \notin c)$</span>  <br />
   Using Absorption law,  <br />
-  <script type="math/tex">\quad = ((x \in A \land x \notin C) \lor x \in B) \land (x \notin C))</script>  <br />
+  <span class="kdmath">$\quad = ((x \in A \land x \notin C) \lor x \in B) \land (x \notin C))$</span>  <br />
   Using Commutative law,  <br />
-  <script type="math/tex">\quad = (x \in B \lor (x \in A \land x \notin C)) \land (x \notin C))</script>  <br />
+  <span class="kdmath">$\quad = (x \in B \lor (x \in A \land x \notin C)) \land (x \notin C))$</span>  <br />
   Using distributive law,  <br />
-  <script type="math/tex">\quad = ((x \in B \land x \notin C) \lor ((x \in A \land x \notin C) \land (x \notin C))</script>  <br />
+  <span class="kdmath">$\quad = ((x \in B \land x \notin C) \lor ((x \in A \land x \notin C) \land (x \notin C))$</span>  <br />
   Using associative law,  <br />
-  <script type="math/tex">\quad = ((x \in B \land x \notin C) \lor (x \in A \land (x \notin C \land x \notin C))</script>  <br />
+  <span class="kdmath">$\quad = ((x \in B \land x \notin C) \lor (x \in A \land (x \notin C \land x \notin C))$</span>  <br />
   Using Idempotent law,  <br />
-  <script type="math/tex">\quad = ((x \in B \land x \notin C) \lor (x \in A \land x \notin C))</script>  <br />
-  Using definition of <script type="math/tex">\setminus</script>  <br />
-  <script type="math/tex">\quad = x \in (B \setminus C) \lor (x \in (A \setminus C)</script>  <br />
-  Using definition of <script type="math/tex">\cup</script>  <br />
-  <script type="math/tex">\quad = x \in (B \setminus C) \cup (A \setminus C)</script></p>
+  <span class="kdmath">$\quad = ((x \in B \land x \notin C) \lor (x \in A \land x \notin C))$</span>  <br />
+  Using definition of <span class="kdmath">$\setminus$</span>  <br />
+  <span class="kdmath">$\quad = x \in (B \setminus C) \lor (x \in (A \setminus C)$</span>  <br />
+  Using definition of <span class="kdmath">$\cup$</span>  <br />
+  <span class="kdmath">$\quad = x \in (B \setminus C) \cup (A \setminus C)$</span></p>
 
 <p>From above we can see that after simplification LHS and RHS are same.</p>
 
@@ -1303,20 +1304,20 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p>LHS:</p>
 
-<p><script type="math/tex">A ∪ (B \setminus C) = x \in A \lor (x \in B \land x \notin C)</script>  <br />
+<p><span class="kdmath">$A ∪ (B \setminus C) = x \in A \lor (x \in B \land x \notin C)$</span>  <br />
    Using Distributive Law,  <br />
-   <script type="math/tex">\quad = (x \in A \lor x \in B) \land (x \in A \lor x \notin C)</script>  <br />
+   <span class="kdmath">$\quad = (x \in A \lor x \in B) \land (x \in A \lor x \notin C)$</span>  <br />
    Using Double Negation law,  <br />
-   <script type="math/tex">\quad = (x \in A \lor x \in B) \land \lnot \lnot(x \in A \lor x \notin C)</script>  <br />
+   <span class="kdmath">$\quad = (x \in A \lor x \in B) \land \lnot \lnot(x \in A \lor x \notin C)$</span>  <br />
    Using Demorgans Law,  <br />
-   <script type="math/tex">\quad = (x \in A \lor x \in B) \land \lnot(x \notin A \land x \in C))</script>  <br />
-   Using defn. of <script type="math/tex">\setminus</script>  <br />
-   <script type="math/tex">\quad = (x \in A \lor x \in B) \land \lnot(x \in (C \setminus A))</script>  <br />
-   Using defn. of <script type="math/tex">\cap</script>  <br />
-   <script type="math/tex">\quad = (x \in (A \cup B) \land \lnot(x \in (C \setminus A))</script> <br />
-   Using defn. of <script type="math/tex">\setminus</script> <br />
-   <script type="math/tex">\quad = x \in (A \cup B) \setminus (C \setminus A)</script>  <br />
-   <script type="math/tex">\quad = (A \cup B) \setminus (C \setminus A)</script> = RHS. Hence Proved.</p>
+   <span class="kdmath">$\quad = (x \in A \lor x \in B) \land \lnot(x \notin A \land x \in C))$</span>  <br />
+   Using defn. of <span class="kdmath">$\setminus$</span>  <br />
+   <span class="kdmath">$\quad = (x \in A \lor x \in B) \land \lnot(x \in (C \setminus A))$</span>  <br />
+   Using defn. of <span class="kdmath">$\cap$</span>  <br />
+   <span class="kdmath">$\quad = (x \in (A \cup B) \land \lnot(x \in (C \setminus A))$</span> <br />
+   Using defn. of <span class="kdmath">$\setminus$</span> <br />
+   <span class="kdmath">$\quad = x \in (A \cup B) \setminus (C \setminus A)$</span>  <br />
+   <span class="kdmath">$\quad = (A \cup B) \setminus (C \setminus A)$</span> = RHS. Hence Proved.</p>
 
 <hr />
 
@@ -1324,36 +1325,36 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">(A \setminus B) \setminus C = (x \in A \land x \notin B) \land x \notin C</script>  <br />
-  <script type="math/tex">\quad = x \in A \land x \notin B \land x \notin C</script></p>
+<p><span class="kdmath">$(A \setminus B) \setminus C = (x \in A \land x \notin B) \land x \notin C$</span>  <br />
+  <span class="kdmath">$\quad = x \in A \land x \notin B \land x \notin C$</span></p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">A \setminus (B \setminus C) = x \in A \land \lnot (x in B \land x \notin C)</script>  <br />
+<p><span class="kdmath">$A \setminus (B \setminus C) = x \in A \land \lnot (x in B \land x \notin C)$</span>  <br />
   Using Demorgans Law,  <br />
-  <script type="math/tex">\quad = x \in A \land (x \notin B \lor x \in C)</script>  <br />
+  <span class="kdmath">$\quad = x \in A \land (x \notin B \lor x \in C)$</span>  <br />
   Using Demorgans Law,  <br />
-  <script type="math/tex">\quad = (x \in A \land x \notin B) \lor (x \in A \land x \in C)</script>  <br />
-  <script type="math/tex">\quad = x \in (A \setminus B) \lor (x \in (A \land C))</script>  <br />
-  <script type="math/tex">\quad = x \in ((A \setminus B) \cup (A \cap C))</script></p>
+  <span class="kdmath">$\quad = (x \in A \land x \notin B) \lor (x \in A \land x \in C)$</span>  <br />
+  <span class="kdmath">$\quad = x \in (A \setminus B) \lor (x \in (A \land C))$</span>  <br />
+  <span class="kdmath">$\quad = x \in ((A \setminus B) \cup (A \cap C))$</span></p>
 
 <p><strong>(c)</strong></p>
 
-<p><script type="math/tex">(A \setminus B) ∪ (A ∩ C) = x \in (A \setminus B) \cup (A \cap C)</script>.</p>
+<p><span class="kdmath">$(A \setminus B) ∪ (A ∩ C) = x \in (A \setminus B) \cup (A \cap C)$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
-<p><script type="math/tex">(A \setminus B) \cup (A \setminus C) = (x \in A \land x \notin B) \land (x \in A \land x \notin C)</script>  <br />
-  <script type="math/tex">\quad = ((x \in A \land x \notin B) \land x \in A) \land ((x \in A \land x \notin B) \land x \notin C)</script>   <br />
-  <script type="math/tex">\quad = (x \in A \land x \notin B) \land ((x \in A \land x \notin B) \land x \notin C)</script>   <br />
-  <script type="math/tex">\quad = (x \in A \land x \notin B) \land x \notin C</script>   <br />
-  <script type="math/tex">\quad = x \in A \land x \notin B \land x \notin C</script></p>
+<p><span class="kdmath">$(A \setminus B) \cup (A \setminus C) = (x \in A \land x \notin B) \land (x \in A \land x \notin C)$</span>  <br />
+  <span class="kdmath">$\quad = ((x \in A \land x \notin B) \land x \in A) \land ((x \in A \land x \notin B) \land x \notin C)$</span>   <br />
+  <span class="kdmath">$\quad = (x \in A \land x \notin B) \land ((x \in A \land x \notin B) \land x \notin C)$</span>   <br />
+  <span class="kdmath">$\quad = (x \in A \land x \notin B) \land x \notin C$</span>   <br />
+  <span class="kdmath">$\quad = x \in A \land x \notin B \land x \notin C$</span></p>
 
 <p><strong>(e)</strong></p>
 
-<p><script type="math/tex">A \setminus (B \cup C) = x \in A \land \lnot(x \in B \lor x \in C)</script>  <br />
-   <script type="math/tex">\quad = x \in A \land (x \notin B \land x \notin C)</script>  <br />
-   <script type="math/tex">\quad = x \in A \land x \notin B \land x \notin C</script></p>
+<p><span class="kdmath">$A \setminus (B \cup C) = x \in A \land \lnot(x \in B \lor x \in C)$</span>  <br />
+   <span class="kdmath">$\quad = x \in A \land (x \notin B \land x \notin C)$</span>  <br />
+   <span class="kdmath">$\quad = x \in A \land x \notin B \land x \notin C$</span></p>
 
 <p>As can be seen above a, d and e are equivalent. Also b, and c are equivalent.</p>
 
@@ -1363,10 +1364,10 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <ol>
   <li>
-    <p><script type="math/tex">A = \{1, 2, 3, 4\}</script>, <script type="math/tex">B = \{3, 4, 5, 6\}</script> then <script type="math/tex">(A \cup B) \setminus B = \{1, 2\}</script>.</p>
+    <p><span class="kdmath">$A = \{1, 2, 3, 4\}$</span>, <span class="kdmath">$B = \{3, 4, 5, 6\}$</span> then <span class="kdmath">$(A \cup B) \setminus B = \{1, 2\}$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">A = \{john, peter, amit, goldsmith\}</script>, <script type="math/tex">B = \{goldsmith, joshua\}</script> then <script type="math/tex">(A \cup B) \setminus B = \{john, peter, amit\}</script>.</p>
+    <p><span class="kdmath">$A = \{john, peter, amit, goldsmith\}$</span>, <span class="kdmath">$B = \{goldsmith, joshua\}$</span> then <span class="kdmath">$(A \cup B) \setminus B = \{john, peter, amit\}$</span>.</p>
   </li>
 </ol>
 
@@ -1374,7 +1375,7 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><strong>Soln10</strong></p>
 
-<p><strong>(a)</strong> In the venn diagram given, there is no region corresponding to <script type="math/tex">(A \cap D) \setminus (B \cup C)</script>.</p>
+<p><strong>(a)</strong> In the venn diagram given, there is no region corresponding to <span class="kdmath">$(A \cap D) \setminus (B \cup C)$</span>.</p>
 
 <p><strong>(b)</strong> First draw venn diagram for A, B and C using circles. Then draw a curve for D such that there is a region for every possible set that have possibility to contain some elements.</p>
 
@@ -1384,15 +1385,15 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><img src="https://www.inchmeal.io/assets/img/htpi/ch_1_s_4_q_11a.png" /></p>
 
-<p>It can be seen from above diagram that <script type="math/tex">(A ∪ B)\setminus C \subseteq A ∪ (B \setminus C)</script>.</p>
+<p>It can be seen from above diagram that <span class="kdmath">$(A ∪ B)\setminus C \subseteq A ∪ (B \setminus C)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Let <script type="math/tex">A=\{1,2,3\}, B=\{1,4,5\}, C=\{1,4,6\}</script>.</p>
+<p>Let <span class="kdmath">$A=\{1,2,3\}, B=\{1,4,5\}, C=\{1,4,6\}$</span>.</p>
 
-<p><script type="math/tex">(A ∪ B)\setminus C = \{2, 3, 5\}</script>.</p>
+<p><span class="kdmath">$(A ∪ B)\setminus C = \{2, 3, 5\}$</span>.</p>
 
-<p><script type="math/tex">A ∪ (B \setminus C) = \{1, 2, 3, 5\}</script>.</p>
+<p><span class="kdmath">$A ∪ (B \setminus C) = \{1, 2, 3, 5\}$</span>.</p>
 
 <hr />
 
@@ -1400,70 +1401,70 @@ Using definition of <script type="math/tex">\cup</script>           <br />
 
 <p><img src="https://www.inchmeal.io/assets/img/htpi/ch_1_s_4_q_12.png" /></p>
 
-<p>It can be verified that both <script type="math/tex">A \triangle (B \triangle C)</script>, and <script type="math/tex">(A \triangle B) \triangle C</script> are equivalent as they corresponds to same region.</p>
+<p>It can be verified that both <span class="kdmath">$A \triangle (B \triangle C)$</span>, and <span class="kdmath">$(A \triangle B) \triangle C$</span> are equivalent as they corresponds to same region.</p>
 
 <hr />
 
 <p><strong>Soln13</strong></p>
 
-<p>For simplicity, I shall be using <script type="math/tex">A,\,B\,and\,C</script> as logical statements corresponding to <script type="math/tex">x \in A, x \in B, x \in C</script>.</p>
+<p>For simplicity, I shall be using <span class="kdmath">$A,\,B\,and\,C$</span> as logical statements corresponding to <span class="kdmath">$x \in A, x \in B, x \in C$</span>.</p>
 
 <p><strong>(a)</strong></p>
 
 <p>RHS:</p>
 
-<p><script type="math/tex">(A \cup C) \triangle (B \setminus C)</script>  <br />
-<script type="math/tex">\quad = ((A \lor C) \lor (B \land \lnot C)) \land \lnot ((A \lor C) \land (B \land \lnot C))</script>  <br />
-<script type="math/tex">\quad = ((A \lor C) \lor (B \land \lnot C)) \land (\lnot(A \lor C) \lor \lnot(B \land \lnot C))</script>  <br />
-<script type="math/tex">\quad = ((A \lor C) \lor (B \land \lnot C)) \land ((\lnot A \land \lnot C) \lor (\lnot B \lor C))</script>  <br />
-<script type="math/tex">\quad = (((A \lor C) \lor B) \land ((A \lor C) \lor \lnot C)) \land (((\lnot A \land \lnot C) \lor \lnot B) \lor ((\lnot A \land \lnot C) \lor C)))</script>      <br />
-<script type="math/tex">\quad = ((A \lor C \lor B) \land (A \lor C \lor \lnot C)) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor ((\lnot A \lor C) \land (\lnot C \lor C)))</script>      <br />
-<script type="math/tex">\quad = ((A \lor C \lor B) \land true) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor ((\lnot A \lor C) \land true))</script>      <br />
-<script type="math/tex">\quad = (A \lor C \lor B) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor (\lnot A \lor C))</script>      <br />
-<script type="math/tex">\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor ((\lnot A \lor \lnot B) \land \lnot B)) \lor (\lnot A \lor C))</script>      <br />
-<script type="math/tex">\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor \lnot B) \lor (\lnot A \lor C))</script>      <br />
-<script type="math/tex">\quad = (A \lor C \lor B) \land (((\lnot A \lor \lnot B) \land \lnot C) \lor \lnot B \lor \lnot A \lor C)</script>      <br />
-<script type="math/tex">\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor (\lnot B \lor \lnot A)) \lor C)</script>      <br />
-<script type="math/tex">\quad = (A \lor C \lor B) \land ((\lnot B \lor \lnot A) \lor C)</script>      <br />
-<script type="math/tex">\quad = ((A \lor B) \lor C) \land ((\lnot A \lor \lnot B) \lor C)</script>      <br />
-<script type="math/tex">\quad = ((A \lor B) \land (\lnot A \lor \lnot B)) \lor C</script>      <br />
-<script type="math/tex">\quad = ((A \lor B) \land \lnot( A \land B)) \lor C</script>      <br />
-<script type="math/tex">\quad = (A \triangle B) \cup C</script> = LHS.</p>
+<p><span class="kdmath">$(A \cup C) \triangle (B \setminus C)$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor C) \lor (B \land \lnot C)) \land \lnot ((A \lor C) \land (B \land \lnot C))$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor C) \lor (B \land \lnot C)) \land (\lnot(A \lor C) \lor \lnot(B \land \lnot C))$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor C) \lor (B \land \lnot C)) \land ((\lnot A \land \lnot C) \lor (\lnot B \lor C))$</span>  <br />
+<span class="kdmath">$\quad = (((A \lor C) \lor B) \land ((A \lor C) \lor \lnot C)) \land (((\lnot A \land \lnot C) \lor \lnot B) \lor ((\lnot A \land \lnot C) \lor C)))$</span>      <br />
+<span class="kdmath">$\quad = ((A \lor C \lor B) \land (A \lor C \lor \lnot C)) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor ((\lnot A \lor C) \land (\lnot C \lor C)))$</span>      <br />
+<span class="kdmath">$\quad = ((A \lor C \lor B) \land true) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor ((\lnot A \lor C) \land true))$</span>      <br />
+<span class="kdmath">$\quad = (A \lor C \lor B) \land (((\lnot A \lor \lnot B) \land (\lnot C \lor \lnot B))  \lor (\lnot A \lor C))$</span>      <br />
+<span class="kdmath">$\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor ((\lnot A \lor \lnot B) \land \lnot B)) \lor (\lnot A \lor C))$</span>      <br />
+<span class="kdmath">$\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor \lnot B) \lor (\lnot A \lor C))$</span>      <br />
+<span class="kdmath">$\quad = (A \lor C \lor B) \land (((\lnot A \lor \lnot B) \land \lnot C) \lor \lnot B \lor \lnot A \lor C)$</span>      <br />
+<span class="kdmath">$\quad = (A \lor C \lor B) \land ((((\lnot A \lor \lnot B) \land \lnot C) \lor (\lnot B \lor \lnot A)) \lor C)$</span>      <br />
+<span class="kdmath">$\quad = (A \lor C \lor B) \land ((\lnot B \lor \lnot A) \lor C)$</span>      <br />
+<span class="kdmath">$\quad = ((A \lor B) \lor C) \land ((\lnot A \lor \lnot B) \lor C)$</span>      <br />
+<span class="kdmath">$\quad = ((A \lor B) \land (\lnot A \lor \lnot B)) \lor C$</span>      <br />
+<span class="kdmath">$\quad = ((A \lor B) \land \lnot( A \land B)) \lor C$</span>      <br />
+<span class="kdmath">$\quad = (A \triangle B) \cup C$</span> = LHS.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>RHS:</p>
 
-<p><script type="math/tex">(A \cap C) \triangle (B \cap C)</script>  <br />
-<script type="math/tex">\quad = ((A \land C) \lor (B \land C)) \land \lnot ((A \land C) \land (B \land C))</script>      <br />
-<script type="math/tex">\quad = ((A \land C) \lor (B \land C)) \land (\lnot (A \land C) \lor \lnot(B \land C))</script>      <br />
-<script type="math/tex">\quad = ((A \land C) \lor (B \land C)) \land ( (\lnot A \lor \lnot C) \lor (\lnot B \lor \lnot C))</script>      <br />
-<script type="math/tex">\quad = ((A \lor B) \land C) \land ( (\lnot A \lor \lnot B \lor \lnot C))</script>      <br />
-<script type="math/tex">\quad = ((A \lor B) \land C) \land ( \lnot A \lor \lnot B \lor \lnot C)</script>      <br />
-<script type="math/tex">\quad = (A \lor B) \land C \land ( \lnot A \lor \lnot B \lor \lnot C)</script>      <br />
-<script type="math/tex">\quad = (A \lor B) \land (C \land (\lnot A \lor \lnot B \lor \lnot C))</script>      <br />
-<script type="math/tex">\quad = (A \lor B) \land ((C \land (\lnot A \lor \lnot B)) \lor (C \land \lnot C))</script>      <br />
-<script type="math/tex">\quad = (A \lor B) \land (C \land (\lnot A \lor \lnot B))</script>      <br />
-<script type="math/tex">\quad = (A \lor B) \land (\lnot A \lor \lnot B) \land C</script>      <br />
-<script type="math/tex">\quad = (A \lor B) \land \lnot ( A \land B) \land C</script>      <br />
-<script type="math/tex">\quad = (A \triangle B) \cap C</script> = LHS.</p>
+<p><span class="kdmath">$(A \cap C) \triangle (B \cap C)$</span>  <br />
+<span class="kdmath">$\quad = ((A \land C) \lor (B \land C)) \land \lnot ((A \land C) \land (B \land C))$</span>      <br />
+<span class="kdmath">$\quad = ((A \land C) \lor (B \land C)) \land (\lnot (A \land C) \lor \lnot(B \land C))$</span>      <br />
+<span class="kdmath">$\quad = ((A \land C) \lor (B \land C)) \land ( (\lnot A \lor \lnot C) \lor (\lnot B \lor \lnot C))$</span>      <br />
+<span class="kdmath">$\quad = ((A \lor B) \land C) \land ( (\lnot A \lor \lnot B \lor \lnot C))$</span>      <br />
+<span class="kdmath">$\quad = ((A \lor B) \land C) \land ( \lnot A \lor \lnot B \lor \lnot C)$</span>      <br />
+<span class="kdmath">$\quad = (A \lor B) \land C \land ( \lnot A \lor \lnot B \lor \lnot C)$</span>      <br />
+<span class="kdmath">$\quad = (A \lor B) \land (C \land (\lnot A \lor \lnot B \lor \lnot C))$</span>      <br />
+<span class="kdmath">$\quad = (A \lor B) \land ((C \land (\lnot A \lor \lnot B)) \lor (C \land \lnot C))$</span>      <br />
+<span class="kdmath">$\quad = (A \lor B) \land (C \land (\lnot A \lor \lnot B))$</span>      <br />
+<span class="kdmath">$\quad = (A \lor B) \land (\lnot A \lor \lnot B) \land C$</span>      <br />
+<span class="kdmath">$\quad = (A \lor B) \land \lnot ( A \land B) \land C$</span>      <br />
+<span class="kdmath">$\quad = (A \triangle B) \cap C$</span> = LHS.</p>
 
 <p><strong>(c)</strong></p>
 
 <p>RHS:</p>
 
-<p><script type="math/tex">(A \setminus C) \triangle (B \setminus C)</script>      <br />
-<script type="math/tex">\quad = ((A \land \lnot C) \lor (B \land \lnot C)) \land \lnot((A \land \lnot C) \land (B \land \lnot C))</script>  <br />
-<script type="math/tex">\quad = ((A \lor B) \land \lnot C) \land \lnot(A \land \lnot C \land B \land \lnot C)</script>  <br />
-<script type="math/tex">\quad = ((A \lor B) \land \lnot C) \land \lnot(A \land B \land \lnot C)</script>  <br />
-<script type="math/tex">\quad = ((A \lor B) \land \lnot C) \land \lnot((A \land B) \land \lnot C)</script>  <br />
-<script type="math/tex">\quad = ((A \lor B) \land \lnot C) \land (\lnot(A \land B) \lor \lnot \lnot C)</script>  <br />
-<script type="math/tex">\quad = (A \lor B) \land \lnot C \land (\lnot(A \land B) \lor C)</script>  <br />
-<script type="math/tex">\quad = (A \lor B) \land (\lnot(A \land B) \lor C) \land \lnot C</script>  <br />
-<script type="math/tex">\quad = (A \lor B) \land ((\lnot(A \land B) \land \lnot C)\lor (C \land \lnot C))</script>  <br />
-<script type="math/tex">\quad = (A \lor B) \land (\lnot(A \land B) \land \lnot C)</script>  <br />
-<script type="math/tex">\quad = ((A \lor B) \land \lnot(A \land B)) \land \lnot C</script>  <br />
-<script type="math/tex">\quad = (A \triangle B) \setminus C</script> = LHS.</p>
+<p><span class="kdmath">$(A \setminus C) \triangle (B \setminus C)$</span>      <br />
+<span class="kdmath">$\quad = ((A \land \lnot C) \lor (B \land \lnot C)) \land \lnot((A \land \lnot C) \land (B \land \lnot C))$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor B) \land \lnot C) \land \lnot(A \land \lnot C \land B \land \lnot C)$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor B) \land \lnot C) \land \lnot(A \land B \land \lnot C)$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor B) \land \lnot C) \land \lnot((A \land B) \land \lnot C)$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor B) \land \lnot C) \land (\lnot(A \land B) \lor \lnot \lnot C)$</span>  <br />
+<span class="kdmath">$\quad = (A \lor B) \land \lnot C \land (\lnot(A \land B) \lor C)$</span>  <br />
+<span class="kdmath">$\quad = (A \lor B) \land (\lnot(A \land B) \lor C) \land \lnot C$</span>  <br />
+<span class="kdmath">$\quad = (A \lor B) \land ((\lnot(A \land B) \land \lnot C)\lor (C \land \lnot C))$</span>  <br />
+<span class="kdmath">$\quad = (A \lor B) \land (\lnot(A \land B) \land \lnot C)$</span>  <br />
+<span class="kdmath">$\quad = ((A \lor B) \land \lnot(A \land B)) \land \lnot C$</span>  <br />
+<span class="kdmath">$\quad = (A \triangle B) \setminus C$</span> = LHS.</p>
 
 <p>Skipping 14 and 15 as they are similar to 13.</p>
 

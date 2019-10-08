@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9416,8 +9417,8 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Lets first take an example of two intervals, <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>, and compute <script type="math/tex">\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }</script>
-and <script type="math/tex">\frac {I_1 I_2} {I_1 + I_2}</script> using the procedures <code class="highlighter-rouge">par1</code> and <code class="highlighter-rouge">par2</code> given in exercise.</p>
+                        <p>Lets first take an example of two intervals, <span class="kdmath">$I_1$</span> and <span class="kdmath">$I_2$</span>, and compute <span class="kdmath">$\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }$</span>
+and <span class="kdmath">$\frac {I_1 I_2} {I_1 + I_2}$</span> using the procedures <code class="highlighter-rouge">par1</code> and <code class="highlighter-rouge">par2</code> given in exercise.</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9434,7 +9435,8 @@ and <script type="math/tex">\frac {I_1 I_2} {I_1 + I_2}</script> using the proce
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">rs1</span><span class="p">)</span>
 <span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">15998452012384</span><span class="o">,</span><span class="mf">19.35544164037855</span><span class="p">]</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">rs2</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">50370662460568</span><span class="o">,</span><span class="mf">18.995897832817338</span><span class="p">]</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">[</span><span class="nf">18</span><span class="o">.</span><span class="mi">50370662460568</span><span class="o">,</span><span class="mf">18.995897832817338</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Clearly both results in different answers.</p>
 
@@ -9442,16 +9444,16 @@ and <script type="math/tex">\frac {I_1 I_2} {I_1 + I_2}</script> using the proce
 
 <p>We have:</p>
 
-<p><script type="math/tex">\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }</script>      <br />
+<p><span class="kdmath">$\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }$</span>      <br />
 By algebra, we can simplify it as:   <br />
-<script type="math/tex">\frac 1 { { \frac { I_1 } { I_1 I_2 } } + { \frac { I_2 } { I_1 I_2 } } }</script></p>
+<span class="kdmath">$\frac 1 { { \frac { I_1 } { I_1 I_2 } } + { \frac { I_2 } { I_1 I_2 } } }$</span></p>
 
 <p>This will be true for intervals, iff:</p>
 
 <ul>
-  <li><script type="math/tex">{ \frac 1 { I_1 } } = { \frac { I_1 } { I_1 I_2 } }</script> for any interval <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>. If we look closely this actually
-   means that <script type="math/tex">\frac I I = [1, 1]</script>.</li>
-  <li><script type="math/tex">\frac 1 { \frac 1 I } = I</script>, for any interval <script type="math/tex">I</script>.</li>
+  <li><span class="kdmath">${ \frac 1 { I_1 } } = { \frac { I_1 } { I_1 I_2 } }$</span> for any interval <span class="kdmath">$I_1$</span> and <span class="kdmath">$I_2$</span>. If we look closely this actually
+   means that <span class="kdmath">$\frac I I = [1, 1]$</span>.</li>
+  <li><span class="kdmath">$\frac 1 { \frac 1 I } = I$</span>, for any interval <span class="kdmath">$I$</span>.</li>
 </ul>
 
 <p>Lets see using Alyssa’s “interval arithmetic” that above is correct or not:</p>
@@ -9473,10 +9475,11 @@ By algebra, we can simplify it as:   <br />
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">reverse</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">I1</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="k">define</span> <span class="nv">reverse_reverse</span> <span class="p">(</span><span class="nf">div-interval</span> <span class="p">(</span><span class="nf">make-interval</span> <span class="mf">1.0</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">reverse</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">display-interval</span> <span class="nv">reverse_reverse</span><span class="p">)</span>
-<span class="p">[</span><span class="nf">24</span><span class="o">.</span><span class="mi">625000000000004</span><span class="o">,</span><span class="mf">25.375</span><span class="p">]</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">[</span><span class="nf">24</span><span class="o">.</span><span class="mi">625000000000004</span><span class="o">,</span><span class="mf">25.375</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>As we can see by <em>interval arithmetic</em> that <script type="math/tex">\frac I I \ne [1, 1]</script>. Thus the algebraic equivalent is not same as interval equivalent.
-However <script type="math/tex">\frac 1 { \frac 1 I } = I</script>, for any interval <script type="math/tex">I</script> holds true which means this farmulae alegebraic equivalent is same as
+<p>As we can see by <em>interval arithmetic</em> that <span class="kdmath">$\frac I I \ne [1, 1]$</span>. Thus the algebraic equivalent is not same as interval equivalent.
+However <span class="kdmath">$\frac 1 { \frac 1 I } = I$</span>, for any interval <span class="kdmath">$I$</span> holds true which means this farmulae alegebraic equivalent is same as
 arithmetic equivalent.</p>
 
 

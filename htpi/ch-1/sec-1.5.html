@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1140,27 +1141,27 @@
 <h3 id="summary">Summary</h3>
 
 <ul>
-  <li><script type="math/tex">P \to Q</script> is equivalent to :
+  <li><span class="kdmath">$P \to Q$</span> is equivalent to :
     <ul>
-      <li><script type="math/tex">\lnot P \lor Q</script>.</li>
-      <li><script type="math/tex">\lnot ( P \land \lnot Q)</script>.</li>
+      <li><span class="kdmath">$\lnot P \lor Q$</span>.</li>
+      <li><span class="kdmath">$\lnot ( P \land \lnot Q)$</span>.</li>
     </ul>
   </li>
-  <li><script type="math/tex">P \to Q</script> and <script type="math/tex">Q \to P</script> are not equivalent. They are called converse of each other.</li>
-  <li><script type="math/tex">P \to Q</script> and <script type="math/tex">\lnot Q \to \lnot P</script> are equivalent. They are called contrapositive of each other.</li>
-  <li><script type="math/tex">P \to Q</script> is equivalent to following:
+  <li><span class="kdmath">$P \to Q$</span> and <span class="kdmath">$Q \to P$</span> are not equivalent. They are called converse of each other.</li>
+  <li><span class="kdmath">$P \to Q$</span> and <span class="kdmath">$\lnot Q \to \lnot P$</span> are equivalent. They are called contrapositive of each other.</li>
+  <li><span class="kdmath">$P \to Q$</span> is equivalent to following:
     <ul>
-      <li><script type="math/tex">P</script> implies <script type="math/tex">Q</script>.</li>
-      <li><script type="math/tex">Q</script>, if <script type="math/tex">P</script>.</li>
-      <li><script type="math/tex">P</script>, only if <script type="math/tex">Q</script>.</li>
-      <li><script type="math/tex">P</script> is a sufficient condition for <script type="math/tex">Q</script>.</li>
-      <li><script type="math/tex">Q</script> is necessary condition for <script type="math/tex">P</script>.</li>
+      <li><span class="kdmath">$P$</span> implies <span class="kdmath">$Q$</span>.</li>
+      <li><span class="kdmath">$Q$</span>, if <span class="kdmath">$P$</span>.</li>
+      <li><span class="kdmath">$P$</span>, only if <span class="kdmath">$Q$</span>.</li>
+      <li><span class="kdmath">$P$</span> is a sufficient condition for <span class="kdmath">$Q$</span>.</li>
+      <li><span class="kdmath">$Q$</span> is necessary condition for <span class="kdmath">$P$</span>.</li>
     </ul>
   </li>
-  <li><script type="math/tex">P \leftrightarrow Q</script> is equivalent to <script type="math/tex">(P \to Q) \land (Q \to P)</script>. Thus it means:
+  <li><span class="kdmath">$P \leftrightarrow Q$</span> is equivalent to <span class="kdmath">$(P \to Q) \land (Q \to P)$</span>. Thus it means:
     <ul>
-      <li><script type="math/tex">P</script> is a necessary and sufficient condition for <script type="math/tex">Q</script>.</li>
-      <li><script type="math/tex">P\,iff\,Q</script>.</li>
+      <li><span class="kdmath">$P$</span> is a necessary and sufficient condition for <span class="kdmath">$Q$</span>.</li>
+      <li><span class="kdmath">$P\,iff\,Q$</span>.</li>
     </ul>
   </li>
 </ul>
@@ -1173,21 +1174,21 @@
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">P</script> Gas has pleasant smell.  <br />
-<script type="math/tex">E</script> Gas is explosive.
-<script type="math/tex">H</script> Gas is hydrogen.</p>
+<p><span class="kdmath">$P$</span> Gas has pleasant smell.  <br />
+<span class="kdmath">$E$</span> Gas is explosive.
+<span class="kdmath">$H$</span> Gas is hydrogen.</p>
 
-<p><script type="math/tex">(\lnot P \lor \lnot E) \to \lnot G</script>. This is equivalent to <script type="math/tex">\lnot (P \land E) \to \lnot H</script> which
-is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
+<p><span class="kdmath">$(\lnot P \lor \lnot E) \to \lnot G$</span>. This is equivalent to <span class="kdmath">$\lnot (P \land E) \to \lnot H$</span> which
+is equivalent to <span class="kdmath">$H \to (P \land Q)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">F =</script> Fever, <script type="math/tex">H =</script> Headache, <script type="math/tex">D =</script> Doctor.   <br />
-<script type="math/tex">(F \land H) \to D</script>.</p>
+<p><span class="kdmath">$F =$</span> Fever, <span class="kdmath">$H =$</span> Headache, <span class="kdmath">$D =$</span> Doctor.   <br />
+<span class="kdmath">$(F \land H) \to D$</span>.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">(F \to D) \land (H \to D)</script>.</p>
+<p><strong>(c)</strong> <span class="kdmath">$(F \to D) \land (H \to D)$</span>.</p>
 
-<p><strong>(d)</strong> <script type="math/tex">(x != 2) \to (P(x) \to O(x))</script>, where <script type="math/tex">P(x)</script> is “x is prime” and <script type="math/tex">O(x)</script> is “x is odd”.</p>
+<p><strong>(d)</strong> <span class="kdmath">$(x != 2) \to (P(x) \to O(x))$</span>, where <span class="kdmath">$P(x)$</span> is “x is prime” and <span class="kdmath">$O(x)$</span> is “x is odd”.</p>
 
 <hr />
 
@@ -1195,41 +1196,41 @@ is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">G =</script> Good Price, <script type="math/tex">N =</script> Nice Apartment, <script type="math/tex">S =</script> Sell house.</p>
+<p><span class="kdmath">$G =$</span> Good Price, <span class="kdmath">$N =$</span> Nice Apartment, <span class="kdmath">$S =$</span> Sell house.</p>
 
-<p><script type="math/tex">S \to (G \land N)</script>.</p>
+<p><span class="kdmath">$S \to (G \land N)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">G =</script> Good Credit History, <script type="math/tex">A =</script> Adequate down payment, <script type="math/tex">M</script> Getting mortgage.</p>
+<p><span class="kdmath">$G =$</span> Good Credit History, <span class="kdmath">$A =$</span> Adequate down payment, <span class="kdmath">$M$</span> Getting mortgage.</p>
 
-<p><script type="math/tex">M \to (G \land A)</script>.</p>
+<p><span class="kdmath">$M \to (G \land A)$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>If someone not stops John then he will kill himself. <script type="math/tex">\lnot S \to K</script>.</p>
+<p>If someone not stops John then he will kill himself. <span class="kdmath">$\lnot S \to K$</span>.</p>
 
-<p><strong>(d)</strong> <script type="math/tex">D(x,4) \lor D(x,6) \to \lnot P(x)</script>, where <script type="math/tex">D(x,y)</script> means “ x is divisible by y”, <script type="math/tex">P(x)</script> means x is prime.</p>
+<p><strong>(d)</strong> <span class="kdmath">$D(x,4) \lor D(x,6) \to \lnot P(x)$</span>, where <span class="kdmath">$D(x,y)$</span> means “ x is divisible by y”, <span class="kdmath">$P(x)$</span> means x is prime.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p><script type="math/tex">R =</script> Raining, <script type="math/tex">W =</script> Windy, <script type="math/tex">S =</script> Shining.</p>
+<p><span class="kdmath">$R =$</span> Raining, <span class="kdmath">$W =$</span> Windy, <span class="kdmath">$S =$</span> Shining.</p>
 
-<p><strong>(a)</strong> <script type="math/tex">R \to (W \land \lnot S)</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$R \to (W \land \lnot S)$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">(W \land \lnot S) \to R</script>. It is converse of (a).</p>
+<p><strong>(b)</strong> <span class="kdmath">$(W \land \lnot S) \to R$</span>. It is converse of (a).</p>
 
-<p><strong>(c)</strong> <script type="math/tex">R \to (W \land \lnot S)</script>. It is equivalent to (a).</p>
+<p><strong>(c)</strong> <span class="kdmath">$R \to (W \land \lnot S)$</span>. It is equivalent to (a).</p>
 
-<p><strong>(d)</strong> <script type="math/tex">(W \land \lnot S) \to R</script>. It is converse of (a).</p>
+<p><strong>(d)</strong> <span class="kdmath">$(W \land \lnot S) \to R$</span>. It is converse of (a).</p>
 
-<p><strong>(e)</strong> <script type="math/tex">(S \lor \lnot W) \to \lnot R</script>. It is same as <script type="math/tex">\lnot (\lnot S \land W) \to \lnot R</script>. It is equivalent to (a).</p>
+<p><strong>(e)</strong> <span class="kdmath">$(S \lor \lnot W) \to \lnot R$</span>. It is same as <span class="kdmath">$\lnot (\lnot S \land W) \to \lnot R$</span>. It is equivalent to (a).</p>
 
-<p><strong>(f)</strong> <script type="math/tex">(R \to W) \land (R \to \lnot S)</script>. It is equivalent to <script type="math/tex">R \to (W \land \lnot S)</script>. It is equivalent to (a).</p>
+<p><strong>(f)</strong> <span class="kdmath">$(R \to W) \land (R \to \lnot S)$</span>. It is equivalent to <span class="kdmath">$R \to (W \land \lnot S)$</span>. It is equivalent to (a).</p>
 
-<p><strong>(g)</strong> <script type="math/tex">(W \to R) \lor (\lnot S \to R)</script>.  IT is equivalent to <script type="math/tex">(W \land \lnot S) \to R</script>. It is converse of (a).</p>
+<p><strong>(g)</strong> <span class="kdmath">$(W \to R) \lor (\lnot S \to R)$</span>.  IT is equivalent to <span class="kdmath">$(W \land \lnot S) \to R$</span>. It is converse of (a).</p>
 
 <hr />
 
@@ -1240,13 +1241,13 @@ is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">S</script></th>
-      <th><script type="math/tex">E</script></th>
-      <th><script type="math/tex">B</script></th>
-      <th><script type="math/tex">S \lor E</script></th>
-      <th><script type="math/tex">S \to B</script></th>
-      <th><script type="math/tex">E \to \lnot B</script></th>
-      <th><script type="math/tex">\lnot (S \land E)</script></th>
+      <th style="text-align: center"><span class="kdmath">$S$</span></th>
+      <th><span class="kdmath">$E$</span></th>
+      <th><span class="kdmath">$B$</span></th>
+      <th><span class="kdmath">$S \lor E$</span></th>
+      <th><span class="kdmath">$S \to B$</span></th>
+      <th><span class="kdmath">$E \to \lnot B$</span></th>
+      <th><span class="kdmath">$\lnot (S \land E)$</span></th>
     </tr>
   </thead>
   <tbody>
@@ -1325,22 +1326,22 @@ is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
   </tbody>
 </table>
 
-<p>From the table when all premises : <script type="math/tex">( S \lor E),\,(S \to B),\,(E \to \lnot B)</script> are true then conclusion, <script type="math/tex">\lnot (S \land E)</script> is also true.</p>
+<p>From the table when all premises : <span class="kdmath">$( S \lor E),\,(S \to B),\,(E \to \lnot B)$</span> are true then conclusion, <span class="kdmath">$\lnot (S \land E)$</span> is also true.</p>
 
 <p><strong>(b)</strong></p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">T</script></th>
-      <th><script type="math/tex">U</script></th>
-      <th><script type="math/tex">G</script></th>
-      <th><script type="math/tex">R</script></th>
-      <th><script type="math/tex">T \land U</script></th>
-      <th><script type="math/tex">(T \land U) \to R</script></th>
-      <th><script type="math/tex">G \to \lnot R</script></th>
-      <th><script type="math/tex">G \land T</script></th>
-      <th><script type="math/tex">\lnot U</script></th>
+      <th style="text-align: center"><span class="kdmath">$T$</span></th>
+      <th><span class="kdmath">$U$</span></th>
+      <th><span class="kdmath">$G$</span></th>
+      <th><span class="kdmath">$R$</span></th>
+      <th><span class="kdmath">$T \land U$</span></th>
+      <th><span class="kdmath">$(T \land U) \to R$</span></th>
+      <th><span class="kdmath">$G \to \lnot R$</span></th>
+      <th><span class="kdmath">$G \land T$</span></th>
+      <th><span class="kdmath">$\lnot U$</span></th>
     </tr>
   </thead>
   <tbody>
@@ -1527,17 +1528,17 @@ is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p><script type="math/tex">W =</script> Warning Light is on, <script type="math/tex">P =</script> Pressure is too high, <script type="math/tex">R =</script> Relief valve is clogged.</p>
+<p><span class="kdmath">$W =$</span> Warning Light is on, <span class="kdmath">$P =$</span> Pressure is too high, <span class="kdmath">$R =$</span> Relief valve is clogged.</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">W</script></th>
-      <th><script type="math/tex">P</script></th>
-      <th><script type="math/tex">R</script></th>
-      <th><script type="math/tex">W \leftrightarrow (P \land R)</script></th>
-      <th><script type="math/tex">\lnot R</script></th>
-      <th><script type="math/tex">W \leftrightarrow P</script></th>
+      <th style="text-align: center"><span class="kdmath">$W$</span></th>
+      <th><span class="kdmath">$P$</span></th>
+      <th><span class="kdmath">$R$</span></th>
+      <th><span class="kdmath">$W \leftrightarrow (P \land R)$</span></th>
+      <th><span class="kdmath">$\lnot R$</span></th>
+      <th><span class="kdmath">$W \leftrightarrow P$</span></th>
     </tr>
   </thead>
   <tbody>
@@ -1616,21 +1617,21 @@ is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">P \leftrightarrow Q</script> is equivalent to  <br />
-<script type="math/tex">\; = (P \to Q) \land (Q \to P)</script>  <br />
-<script type="math/tex">\; = (\lnot P \lor Q) \land (\lnot Q \lor P)</script>  <br />
-<script type="math/tex">\; = ((\lnot P \lor Q) \land \lnot Q) \lor ((\lnot P \lor Q) \land P)</script>  <br />
-<script type="math/tex">\; = ((\lnot P \land \lnot Q) \lor (Q \land \lnot Q)) \lor ((\lnot P \land P) \lor (Q \land P))</script>  <br />
-<script type="math/tex">\; = ((\lnot P \land \lnot Q) \lor false) \lor (false \lor (Q \land P))</script>  <br />
-<script type="math/tex">\; = (\lnot P \land \lnot Q) \lor (Q \land P)</script>  <br />
-<script type="math/tex">\; = (P \land Q) \lor (\lnot P \land \lnot Q)</script></p>
+<p><span class="kdmath">$P \leftrightarrow Q$</span> is equivalent to  <br />
+<span class="kdmath">$\; = (P \to Q) \land (Q \to P)$</span>  <br />
+<span class="kdmath">$\; = (\lnot P \lor Q) \land (\lnot Q \lor P)$</span>  <br />
+<span class="kdmath">$\; = ((\lnot P \lor Q) \land \lnot Q) \lor ((\lnot P \lor Q) \land P)$</span>  <br />
+<span class="kdmath">$\; = ((\lnot P \land \lnot Q) \lor (Q \land \lnot Q)) \lor ((\lnot P \land P) \lor (Q \land P))$</span>  <br />
+<span class="kdmath">$\; = ((\lnot P \land \lnot Q) \lor false) \lor (false \lor (Q \land P))$</span>  <br />
+<span class="kdmath">$\; = (\lnot P \land \lnot Q) \lor (Q \land P)$</span>  <br />
+<span class="kdmath">$\; = (P \land Q) \lor (\lnot P \land \lnot Q)$</span></p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">(P \to Q) \lor (P \to R)</script>  <br />
-<script type="math/tex">\quad = (\lnot P \lor Q) \lor (\lnot P \lor R)</script>  <br />
-<script type="math/tex">\quad = \lnot P \lor (Q \lor R)</script>  <br />
-<script type="math/tex">\quad =  P \leftrightarrow (Q \lor R)</script>.</p>
+<p><span class="kdmath">$(P \to Q) \lor (P \to R)$</span>  <br />
+<span class="kdmath">$\quad = (\lnot P \lor Q) \lor (\lnot P \lor R)$</span>  <br />
+<span class="kdmath">$\quad = \lnot P \lor (Q \lor R)$</span>  <br />
+<span class="kdmath">$\quad =  P \leftrightarrow (Q \lor R)$</span>.</p>
 
 <hr />
 
@@ -1638,19 +1639,19 @@ is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">(P \to R) \land (Q \to R)</script>  <br />
-<script type="math/tex">\quad = (\lnot P \lor R) \land (\lnot Q \lor R)</script>  <br />
-<script type="math/tex">\quad = (\lnot P \land \lnot Q) \lor R</script>  <br />
-<script type="math/tex">\quad = \lnot ( P \lor Q) \lor R</script>  <br />
-<script type="math/tex">\quad = ( P \lor Q) \to R</script>.</p>
+<p><span class="kdmath">$(P \to R) \land (Q \to R)$</span>  <br />
+<span class="kdmath">$\quad = (\lnot P \lor R) \land (\lnot Q \lor R)$</span>  <br />
+<span class="kdmath">$\quad = (\lnot P \land \lnot Q) \lor R$</span>  <br />
+<span class="kdmath">$\quad = \lnot ( P \lor Q) \lor R$</span>  <br />
+<span class="kdmath">$\quad = ( P \lor Q) \to R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">(P \to R) \lor (Q \to R)</script>  <br />
-<script type="math/tex">\quad = (\lnot P \lor R) \lor (\lnot Q \lor R)</script>  <br />
-<script type="math/tex">\quad = (\lnot P \lor \lnot Q) \lor R</script>  <br />
-<script type="math/tex">\quad = \lnot ( P \land Q) \lor R</script>  <br />
-<script type="math/tex">\quad = ( P \land Q) \to R</script>.</p>
+<p><span class="kdmath">$(P \to R) \lor (Q \to R)$</span>  <br />
+<span class="kdmath">$\quad = (\lnot P \lor R) \lor (\lnot Q \lor R)$</span>  <br />
+<span class="kdmath">$\quad = (\lnot P \lor \lnot Q) \lor R$</span>  <br />
+<span class="kdmath">$\quad = \lnot ( P \land Q) \lor R$</span>  <br />
+<span class="kdmath">$\quad = ( P \land Q) \to R$</span>.</p>
 
 <hr />
 
@@ -1660,62 +1661,62 @@ is equivalent to <script type="math/tex">H \to (P \land Q)</script>.</p>
 
 <p>RHS:</p>
 
-<p><script type="math/tex">(P \to R) \land [(P \leftrightarrow Q) \lor (R \leftrightarrow Q)]</script>  <br />
-<script type="math/tex">\quad = ( P \to R )(((P \land Q) \lor (\lnot P \land \lnot Q)) \lor ((R \land Q) \lor (\lnot R \land \lnot Q)))</script>   <br />
-<script type="math/tex">\quad = ( P \to R )(((P \land Q) \lor (R \land Q)) \lor ((\lnot P \land \lnot Q) \lor (\lnot R \land \lnot Q)))</script>   <br />
-<script type="math/tex">\quad = ( P \to R )(((P \land Q) \lor (R \land Q)) \lor ((\lnot P \land \lnot Q) \lor (\lnot R \land \lnot Q)))</script>   <br />
-<script type="math/tex">\quad = ( \lnot P \lor R )(((P \lor R) \land Q) \lor ((\lnot P \lor \lnot R) \land \lnot Q))</script>   <br />
-<script type="math/tex">\quad = (( \lnot P \lor R ) \land (P \lor R) \land Q) \lor (( \lnot P \lor R ) \land (\lnot P \lor \lnot R) \land \lnot Q)</script>   <br />
-<script type="math/tex">\quad = ((( \lnot P \land P ) \lor R) \land Q) \lor ((( R \lor \land R) \lor \lnot P) \land \lnot Q)</script>   <br />
-<script type="math/tex">\quad = ((R) \land Q) \lor ((\lnot P) \land \lnot Q)</script>       <br />
-<script type="math/tex">\quad = (R \land Q) \lor (\lnot P \land \lnot Q)</script>   <br />
-<script type="math/tex">\quad = ((R \land Q) \lor \lnot P) \land ((R \land Q) \lor \lnot Q)</script>  <br />
-<script type="math/tex">\quad = ((R \lor \lnot P) \land (Q \lor \lnot P)) \land ((R \lor \lnot Q) \land (Q \lor \lnot Q))</script>  <br />
-<script type="math/tex">\quad = ((R \lor \lnot P) \land (Q \lor \lnot P)) \land ((R \lor \lnot Q))</script>  <br />
-<script type="math/tex">\quad = (R \lor \lnot P) \land (Q \lor \lnot P) \land (R \lor \lnot Q)</script>  <br />
-<script type="math/tex">\quad = (R \lor \lnot P) \land (\lnot P \lor Q) \land (R \lor \lnot Q)</script></p>
+<p><span class="kdmath">$(P \to R) \land [(P \leftrightarrow Q) \lor (R \leftrightarrow Q)]$</span>  <br />
+<span class="kdmath">$\quad = ( P \to R )(((P \land Q) \lor (\lnot P \land \lnot Q)) \lor ((R \land Q) \lor (\lnot R \land \lnot Q)))$</span>   <br />
+<span class="kdmath">$\quad = ( P \to R )(((P \land Q) \lor (R \land Q)) \lor ((\lnot P \land \lnot Q) \lor (\lnot R \land \lnot Q)))$</span>   <br />
+<span class="kdmath">$\quad = ( P \to R )(((P \land Q) \lor (R \land Q)) \lor ((\lnot P \land \lnot Q) \lor (\lnot R \land \lnot Q)))$</span>   <br />
+<span class="kdmath">$\quad = ( \lnot P \lor R )(((P \lor R) \land Q) \lor ((\lnot P \lor \lnot R) \land \lnot Q))$</span>   <br />
+<span class="kdmath">$\quad = (( \lnot P \lor R ) \land (P \lor R) \land Q) \lor (( \lnot P \lor R ) \land (\lnot P \lor \lnot R) \land \lnot Q)$</span>   <br />
+<span class="kdmath">$\quad = ((( \lnot P \land P ) \lor R) \land Q) \lor ((( R \lor \land R) \lor \lnot P) \land \lnot Q)$</span>   <br />
+<span class="kdmath">$\quad = ((R) \land Q) \lor ((\lnot P) \land \lnot Q)$</span>       <br />
+<span class="kdmath">$\quad = (R \land Q) \lor (\lnot P \land \lnot Q)$</span>   <br />
+<span class="kdmath">$\quad = ((R \land Q) \lor \lnot P) \land ((R \land Q) \lor \lnot Q)$</span>  <br />
+<span class="kdmath">$\quad = ((R \lor \lnot P) \land (Q \lor \lnot P)) \land ((R \lor \lnot Q) \land (Q \lor \lnot Q))$</span>  <br />
+<span class="kdmath">$\quad = ((R \lor \lnot P) \land (Q \lor \lnot P)) \land ((R \lor \lnot Q))$</span>  <br />
+<span class="kdmath">$\quad = (R \lor \lnot P) \land (Q \lor \lnot P) \land (R \lor \lnot Q)$</span>  <br />
+<span class="kdmath">$\quad = (R \lor \lnot P) \land (\lnot P \lor Q) \land (R \lor \lnot Q)$</span></p>
 
 <p>Consider:</p>
 
 <ul>
-  <li>In above equation, Q is present two times, <script type="math/tex">(\lnot P \lor Q)</script> and <script type="math/tex">(R \lor \lnot Q)</script>.</li>
-  <li>The equation will be true when all of the terms  <script type="math/tex">(R \lor \lnot P)</script> and <script type="math/tex">(\lnot P \lor Q)</script> and <script type="math/tex">(R \lor \lnot Q)</script> are true.</li>
-  <li>That means <script type="math/tex">(\lnot P \lor Q)</script> and <script type="math/tex">(R \lor \lnot Q)</script> should be true. Here <script type="math/tex">Q</script> is present in both terms, <script type="math/tex">Q</script> and <script type="math/tex">\lnot Q</script>. So for both terms to become true, <script type="math/tex">\lnot P</script> and <script type="math/tex">R</script> must be true.</li>
-  <li>Thus we have from the two terms containing <script type="math/tex">Q</script>, that <script type="math/tex">(R \lor \lnot P)</script> must be true, for these two terms to become true.</li>
-  <li>That means we can safely remove the term <script type="math/tex">(R \lor \lnot P)</script> from the equation as it will be true if next two terms are also true.</li>
+  <li>In above equation, Q is present two times, <span class="kdmath">$(\lnot P \lor Q)$</span> and <span class="kdmath">$(R \lor \lnot Q)$</span>.</li>
+  <li>The equation will be true when all of the terms  <span class="kdmath">$(R \lor \lnot P)$</span> and <span class="kdmath">$(\lnot P \lor Q)$</span> and <span class="kdmath">$(R \lor \lnot Q)$</span> are true.</li>
+  <li>That means <span class="kdmath">$(\lnot P \lor Q)$</span> and <span class="kdmath">$(R \lor \lnot Q)$</span> should be true. Here <span class="kdmath">$Q$</span> is present in both terms, <span class="kdmath">$Q$</span> and <span class="kdmath">$\lnot Q$</span>. So for both terms to become true, <span class="kdmath">$\lnot P$</span> and <span class="kdmath">$R$</span> must be true.</li>
+  <li>Thus we have from the two terms containing <span class="kdmath">$Q$</span>, that <span class="kdmath">$(R \lor \lnot P)$</span> must be true, for these two terms to become true.</li>
+  <li>That means we can safely remove the term <span class="kdmath">$(R \lor \lnot P)$</span> from the equation as it will be true if next two terms are also true.</li>
 </ul>
 
 <p>Thus we have:</p>
 
-<p><script type="math/tex">\quad = (\lnot P \lor Q) \land (R \lor \lnot Q)</script>      <br />
-<script type="math/tex">\quad = (\lnot P \lor Q) \land (\lnot Q \lor R)</script>  <br />
-<script type="math/tex">\quad = ( P \to Q) \land ( Q \to R)</script> = LHS.</p>
+<p><span class="kdmath">$\quad = (\lnot P \lor Q) \land (R \lor \lnot Q)$</span>      <br />
+<span class="kdmath">$\quad = (\lnot P \lor Q) \land (\lnot Q \lor R)$</span>  <br />
+<span class="kdmath">$\quad = ( P \to Q) \land ( Q \to R)$</span> = LHS.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">(P \to Q) \lor (Q \to R)</script>  <br />
-<script type="math/tex">\quad = (\lnot P \lor Q) \lor (\lnot Q \lor R)</script>      <br />
-<script type="math/tex">\quad = \lnot P \lor Q \lor \lnot Q \lor R</script>      <br />
-<script type="math/tex">\quad = \lnot P \lor true \lor R</script>      <br />
-<script type="math/tex">\quad = true</script>.</p>
+<p><span class="kdmath">$(P \to Q) \lor (Q \to R)$</span>  <br />
+<span class="kdmath">$\quad = (\lnot P \lor Q) \lor (\lnot Q \lor R)$</span>      <br />
+<span class="kdmath">$\quad = \lnot P \lor Q \lor \lnot Q \lor R$</span>      <br />
+<span class="kdmath">$\quad = \lnot P \lor true \lor R$</span>      <br />
+<span class="kdmath">$\quad = true$</span>.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p><script type="math/tex">P \to Q = \lnot (P \land \lnot Q)</script>         <br />
-<script type="math/tex">\quad \Rightarrow P \to Q = \lnot (P \land \lnot Q)</script>             <br />
-<script type="math/tex">\quad \Rightarrow \lnot (P \land \lnot Q) = P \to Q</script>             <br />
-<script type="math/tex">\quad \Rightarrow (P \land \lnot Q) = \lnot (P \to Q)</script>             <br />
-<script type="math/tex">\quad \Rightarrow (P \land Q) = \lnot (P \to \lnot Q)</script>.</p>
+<p><span class="kdmath">$P \to Q = \lnot (P \land \lnot Q)$</span>         <br />
+<span class="kdmath">$\quad \Rightarrow P \to Q = \lnot (P \land \lnot Q)$</span>             <br />
+<span class="kdmath">$\quad \Rightarrow \lnot (P \land \lnot Q) = P \to Q$</span>             <br />
+<span class="kdmath">$\quad \Rightarrow (P \land \lnot Q) = \lnot (P \to Q)$</span>             <br />
+<span class="kdmath">$\quad \Rightarrow (P \land Q) = \lnot (P \to \lnot Q)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p><script type="math/tex">P \leftrightarrow Q = (P \to Q) \land (Q \to P)</script>  <br />
+<p><span class="kdmath">$P \leftrightarrow Q = (P \to Q) \land (Q \to P)$</span>  <br />
 Using Soln8,             <br />
-<script type="math/tex">\quad \Rightarrow P \leftrightarrow Q =  \lnot((P \to Q) \to \lnot (Q \to P))</script>.</p>
+<span class="kdmath">$\quad \Rightarrow P \leftrightarrow Q =  \lnot((P \to Q) \to \lnot (Q \to P))$</span>.</p>
 
 <hr />
 
@@ -1723,31 +1724,31 @@ Using Soln8,             <br />
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">P \to (Q \to R)</script>  <br />
-<script type="math/tex">\quad = \lnot P \lor (\lnot Q \lor R)</script>  <br />
-<script type="math/tex">\quad = \lnot P \lor \lnot Q \lor R</script>.</p>
+<p><span class="kdmath">$P \to (Q \to R)$</span>  <br />
+<span class="kdmath">$\quad = \lnot P \lor (\lnot Q \lor R)$</span>  <br />
+<span class="kdmath">$\quad = \lnot P \lor \lnot Q \lor R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">Q \to (P \to R) = \lnot Q \lor \lnot P \lor R</script>. This is equivalent to (a).</p>
+<p><span class="kdmath">$Q \to (P \to R) = \lnot Q \lor \lnot P \lor R$</span>. This is equivalent to (a).</p>
 
 <p><strong>(c)</strong></p>
 
-<p><script type="math/tex">(P \to Q) \land (P \to R)</script>  <br />
-<script type="math/tex">\quad =  (\lnot P \lor Q) \land (\lnot P \lor R)</script>  <br />
-<script type="math/tex">\quad =  \lnot P \lor (Q \land R)</script></p>
+<p><span class="kdmath">$(P \to Q) \land (P \to R)$</span>  <br />
+<span class="kdmath">$\quad =  (\lnot P \lor Q) \land (\lnot P \lor R)$</span>  <br />
+<span class="kdmath">$\quad =  \lnot P \lor (Q \land R)$</span></p>
 
 <p><strong>(d)</strong></p>
 
-<p><script type="math/tex">(P \land Q) \to R</script>        <br />
-<script type="math/tex">\quad = \lnot (P \land Q) \lor R</script>   <br />
-<script type="math/tex">\quad = (\lnot P \lor \lnot Q) \lor R</script>   <br />
-<script type="math/tex">\quad = \lnot P \lor \lnot Q \lor R</script>. This is equivalent to (a).</p>
+<p><span class="kdmath">$(P \land Q) \to R$</span>        <br />
+<span class="kdmath">$\quad = \lnot (P \land Q) \lor R$</span>   <br />
+<span class="kdmath">$\quad = (\lnot P \lor \lnot Q) \lor R$</span>   <br />
+<span class="kdmath">$\quad = \lnot P \lor \lnot Q \lor R$</span>. This is equivalent to (a).</p>
 
 <p><strong>(e)</strong></p>
 
-<p><script type="math/tex">P \to (Q \land R)</script>  <br />
-<script type="math/tex">\quad = \lnot P \lor (Q \land R)</script>. This is equivalent to (c).</p>
+<p><span class="kdmath">$P \to (Q \land R)$</span>  <br />
+<span class="kdmath">$\quad = \lnot P \lor (Q \land R)$</span>. This is equivalent to (c).</p>
 
 
                         <hr/>

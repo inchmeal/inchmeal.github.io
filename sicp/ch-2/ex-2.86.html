@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -10493,7 +10494,8 @@
 <span class="p">(</span><span class="nf">install-polar-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-scheme-number-package</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">install-rational-package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">install-complex-package</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Examples/Output:</p>
 
@@ -10522,7 +10524,8 @@
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-number</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">mul</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="p">(</span><span class="nf">make-rational</span> <span class="mi">5</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))))</span>
 <span class="p">(</span><span class="nf">complex</span> <span class="nv">rectangular</span> <span class="mf">-4.4999999999999964</span> <span class="nv">rational</span> <span class="mf">19.0</span> <span class="o">.</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">add</span> <span class="p">(</span><span class="nf">make-rational</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="nf">mul</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="p">(</span><span class="nf">make-rational</span> <span class="mi">5</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-complex-from-real-imag</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))))</span>
-<span class="p">(</span><span class="nf">complex</span> <span class="nv">rectangular</span> <span class="mf">-3.7499999999999964</span> <span class="nv">rational</span> <span class="mf">19.0</span> <span class="o">.</span> <span class="mf">1.0</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">complex</span> <span class="nv">rectangular</span> <span class="mf">-3.7499999999999964</span> <span class="nv">rational</span> <span class="mf">19.0</span> <span class="o">.</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

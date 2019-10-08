@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9424,8 +9425,8 @@ the occurrences in an expression while doing the interval arithmetic.</p>
 
 <ul>
   <li>
-    <p>Convert the expression so that each interval variable occurs only once. This is however not possible. For eg: <script type="math/tex">I^n + I^{n-1}</script>
-can not be converted to an expression containing <script type="math/tex">I</script> only once.</p>
+    <p>Convert the expression so that each interval variable occurs only once. This is however not possible. For eg: <span class="kdmath">$I^n + I^{n-1}$</span>
+can not be converted to an expression containing <span class="kdmath">$I$</span> only once.</p>
   </li>
   <li>
     <p>To do <em>interval-arithmetic</em> in such a way that when a variable is repeated then all occurrences of an interval variable takes same
@@ -9444,20 +9445,20 @@ we will be able to come up with a formulae for lower-bound and upper-bound.</p>
 <p>Instead of computing lower-bound and upper-bound while doing <em>interval arithmetic</em> we will <em>remember</em> the interval-variables used for
 computing the lower-bounds and upper-bounds and the corresponding operation. For eg:</p>
 
-<p>In case of addition of <script type="math/tex">I_1 + I_2</script>, remember that <script type="math/tex">\text{ lower-bound } = \text{ lower-bound}( I_1 ) + \text{ lower-bound}(I_2)</script>.
-Note that we are not computing the sum, but we rememeber that the lower-bound of <script type="math/tex">I_1 + I_2</script> is sum of lower-bounds of <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>.
+<p>In case of addition of <span class="kdmath">$I_1 + I_2$</span>, remember that <span class="kdmath">$\text{ lower-bound } = \text{ lower-bound}( I_1 ) + \text{ lower-bound}(I_2)$</span>.
+Note that we are not computing the sum, but we rememeber that the lower-bound of <span class="kdmath">$I_1 + I_2$</span> is sum of lower-bounds of <span class="kdmath">$I_1$</span> and <span class="kdmath">$I_2$</span>.
 Similarly we store for upper-bounds.</p>
 
-<p>Same process can be repeated for multiplication: <script type="math/tex">I_1 \times I_2</script>, we will follow the same process to remember which values are used
+<p>Same process can be repeated for multiplication: <span class="kdmath">$I_1 \times I_2$</span>, we will follow the same process to remember which values are used
 of the intervals to compute lower or upper bounds.</p>
 
-<p>Thus we can extend the same process of remembering for finding upper-bound of <script type="math/tex">I_1 + I_2 + ... I_n</script> or <script type="math/tex">I_1 \times I_2 \times ... I_n</script>.</p>
+<p>Thus we can extend the same process of remembering for finding upper-bound of <span class="kdmath">$I_1 + I_2 + ... I_n$</span> or <span class="kdmath">$I_1 \times I_2 \times ... I_n$</span>.</p>
 
 <p>Extending further we <em>recursively</em> keep remembering the overall formula for computing without actually computing the lower-bound and upper-bound till
 we are done reading the complete expression.</p>
 
-<p>For eg: <script type="math/tex">I_1 \times I_2 + I_2 \times I_3</script>, may be we have lower-bound = <script type="math/tex">lb(I_1) \times ub(I_2) + lb(I_1) \times lb(I_3)</script> where
- <script type="math/tex">lb =</script> lower-bound and <script type="math/tex">ub =</script> upper-bound.</p>
+<p>For eg: <span class="kdmath">$I_1 \times I_2 + I_2 \times I_3$</span>, may be we have lower-bound = <span class="kdmath">$lb(I_1) \times ub(I_2) + lb(I_1) \times lb(I_3)$</span> where
+ <span class="kdmath">$lb =$</span> lower-bound and <span class="kdmath">$ub =$</span> upper-bound.</p>
 
 <p>Once we are done, we have the formulas for computing lower-bound and upper-bound(one for each). Now we can compute the final value of lower-bound and
 upper-bound using these formulas as follows:</p>

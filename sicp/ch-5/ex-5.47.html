@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9555,7 +9556,8 @@
 			<span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">compapp</span><span class="p">)))))</span>
         <span class="p">((</span><span class="k">and</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">target</span> <span class="ss">'val</span><span class="p">))</span> <span class="p">(</span><span class="nb">eq?</span> <span class="nv">linkage</span> <span class="ss">'return</span><span class="p">))</span>
          <span class="p">(</span><span class="nf">error</span> <span class="s">"return linkage, target not val -- COMPILE"</span>
-                <span class="nv">target</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+                <span class="nv">target</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="exampleoutput">Example/Output</h4>
 
@@ -9656,7 +9658,8 @@
 <span class="c1">;;; EC-Eval value:</span>
 <span class="mi">102</span>
 
-<span class="c1">;;; EC-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; EC-Eval input:</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 

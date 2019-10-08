@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9424,7 +9425,7 @@
 
 <ul>
   <li>
-    <p>For <script type="math/tex">n = 0</script>,</p>
+    <p>For <span class="kdmath">$n = 0$</span>,</p>
 
     <p>It is clear that <code class="highlighter-rouge">partial-tree</code> returns cons with first element as empty and second element containing the list passed.</p>
 
@@ -9432,28 +9433,28 @@
  list passed.</p>
   </li>
   <li>
-    <p>For <script type="math/tex">n = 1</script>,</p>
+    <p>For <span class="kdmath">$n = 1$</span>,</p>
 
-    <p>In this case calls to build left tree and right tree are done using <script type="math/tex">n = (1 - 1)/2 = 0</script> and <script type="math/tex">n = 1 - (0+1) = 0</script> respectively. We know from previous step
+    <p>In this case calls to build left tree and right tree are done using <span class="kdmath">$n = (1 - 1)/2 = 0$</span> and <span class="kdmath">$n = 1 - (0+1) = 0$</span> respectively. We know from previous step
 that these calls will return in empty tree.</p>
 
     <p>But notice that call for creating the left tree is done by passing the complete list to it <em>while</em> call to create right tree is done by removing one element from 
 the list returned from the result of call to left tree.</p>
 
-    <p>Now the call for creating right tree will return the same list passed to it(because it was called with  <script type="math/tex">n = 0</script>). Since list passed to this call was one created
+    <p>Now the call for creating right tree will return the same list passed to it(because it was called with  <span class="kdmath">$n = 0$</span>). Since list passed to this call was one created
  by removing the first element from it. This same list is returned.</p>
 
     <p>Thus the result returned will be contains a cons with first element containing a tree with only one element and second element of the cons will contain the list with
  first element removed.</p>
 
-    <p>Clearly this is what is expected from the partial tree to do for <script type="math/tex">n = 1</script>.</p>
+    <p>Clearly this is what is expected from the partial tree to do for <span class="kdmath">$n = 1$</span>.</p>
   </li>
   <li>
-    <p>For <script type="math/tex">n = 2</script>,</p>
+    <p>For <span class="kdmath">$n = 2$</span>,</p>
 
-    <p>In this case call for creating left tree will be done with <script type="math/tex">n = (2-1)/2 = 0</script> and right-tree with <script type="math/tex">n = 2 - (0+1) = 1</script>.</p>
+    <p>In this case call for creating left tree will be done with <span class="kdmath">$n = (2-1)/2 = 0$</span> and right-tree with <span class="kdmath">$n = 2 - (0+1) = 1$</span>.</p>
 
-    <p>The call for creating left tree will return the same list as it was passed because <script type="math/tex">n = 0</script>.</p>
+    <p>The call for creating left tree will return the same list as it was passed because <span class="kdmath">$n = 0$</span>.</p>
 
     <p>As noted in the previous case that call to right-tree will again be done with the remaining list, with one element removed from it.</p>
 
@@ -9463,29 +9464,26 @@ remaining list except the item that was added in the tree.(this can be verified 
     <p>Thus the result will be a cons with first element is a tree with two nodes and second element with the list with first two elements removed.</p>
   </li>
   <li>
-    <p>For <script type="math/tex">n \ge 3</script>.</p>
+    <p>For <span class="kdmath">$n \ge 3$</span>.</p>
 
-    <p>Now here comes the fun part, lets assume that for for all <script type="math/tex">% <![CDATA[
-0 \ge k < n %]]></script>, the procedure works as expected.</p>
+    <p>Now here comes the fun part, lets assume that for for all <span class="kdmath">$0 \ge k < n$</span>, the procedure works as expected.</p>
 
-    <p>Call to create left tree is done with <script type="math/tex">n_l = (n-1)/2</script>. Since <script type="math/tex">n \ge 3</script>, it follows <script type="math/tex">n_l \ge 1</script>. Thus <script type="math/tex">% <![CDATA[
-0 \le n_l < n %]]></script>. By our hypothesis this will
-result in a cons with first element a tree with <script type="math/tex">n_l</script> nodes and second element containing <script type="math/tex">n - n_l</script>.</p>
+    <p>Call to create left tree is done with <span class="kdmath">$n_l = (n-1)/2$</span>. Since <span class="kdmath">$n \ge 3$</span>, it follows <span class="kdmath">$n_l \ge 1$</span>. Thus <span class="kdmath">$0 \le n_l < n$</span>. By our hypothesis this will
+result in a cons with first element a tree with <span class="kdmath">$n_l$</span> nodes and second element containing <span class="kdmath">$n - n_l$</span>.</p>
 
-    <p>Call to create right tree is done with <script type="math/tex">n_r = n - (n_l + 1)</script> and the list with first <script type="math/tex">n_l + 1</script> elements removed. Clearly <script type="math/tex">n_r \ge 2</script>. Thus 
-<script type="math/tex">% <![CDATA[
-0 \le n_r < n %]]></script>. By our hypothesis this will result in a cons with first element a tree with <script type="math/tex">n_r</script> nodes and second element a list which has first <script type="math/tex">n_r</script> elements
- removed from it. Thus effectively the list returned is the list with first <script type="math/tex">n_l + 1 +  n_r = n_l + 1 + n - (n_l + 1) = n</script> elements removed.</p>
+    <p>Call to create right tree is done with <span class="kdmath">$n_r = n - (n_l + 1)$</span> and the list with first <span class="kdmath">$n_l + 1$</span> elements removed. Clearly <span class="kdmath">$n_r \ge 2$</span>. Thus 
+<span class="kdmath">$0 \le n_r < n$</span>. By our hypothesis this will result in a cons with first element a tree with <span class="kdmath">$n_r$</span> nodes and second element a list which has first <span class="kdmath">$n_r$</span> elements
+ removed from it. Thus effectively the list returned is the list with first <span class="kdmath">$n_l + 1 +  n_r = n_l + 1 + n - (n_l + 1) = n$</span> elements removed.</p>
 
-    <p>Thus the result will be a cons with first element with a tree with <script type="math/tex">n_l</script> element in left and <script type="math/tex">n_r</script> elements in right.
- And the second element of the cons will be the remaining list with first <script type="math/tex">n</script> elements removed.</p>
+    <p>Thus the result will be a cons with first element with a tree with <span class="kdmath">$n_l$</span> element in left and <span class="kdmath">$n_r$</span> elements in right.
+ And the second element of the cons will be the remaining list with first <span class="kdmath">$n$</span> elements removed.</p>
   </li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
 <p>We can note that for each element in the tree, procedure is invoked only once. Assuming all other calls are of constant order we can conclude that the overall time 
-complexity is of the order <script type="math/tex">O(n)</script>.</p>
+complexity is of the order <span class="kdmath">$O(n)$</span>.</p>
 
                         <hr/>
                     </span>

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,50 +1137,50 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li><em>Reflexive Closure</em>:  Suppose <script type="math/tex">R</script> is a relation on a set <script type="math/tex">A</script>. Then the reflexive closure of <script type="math/tex">R</script> is the smallest set <script type="math/tex">S \subseteq A \times A</script> 
-such that <script type="math/tex">R \subseteq S</script> and <script type="math/tex">S</script> is reflexive, if there is such a smallest set. In other words, a relation <script type="math/tex">S \subseteq A \times A</script> is the reflexive 
-closure of <script type="math/tex">R</script> if it has the following three properties:
+  <li><em>Reflexive Closure</em>:  Suppose <span class="kdmath">$R$</span> is a relation on a set <span class="kdmath">$A$</span>. Then the reflexive closure of <span class="kdmath">$R$</span> is the smallest set <span class="kdmath">$S \subseteq A \times A$</span> 
+such that <span class="kdmath">$R \subseteq S$</span> and <span class="kdmath">$S$</span> is reflexive, if there is such a smallest set. In other words, a relation <span class="kdmath">$S \subseteq A \times A$</span> is the reflexive 
+closure of <span class="kdmath">$R$</span> if it has the following three properties:
     <ol>
-      <li><script type="math/tex">R \subseteq S</script>.</li>
-      <li><script type="math/tex">S</script> is reflexive.</li>
-      <li>For every relation <script type="math/tex">T \subseteq A \times A</script>,if <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is reflexive, then <script type="math/tex">S \subseteq T</script>.</li>
+      <li><span class="kdmath">$R \subseteq S$</span>.</li>
+      <li><span class="kdmath">$S$</span> is reflexive.</li>
+      <li>For every relation <span class="kdmath">$T \subseteq A \times A$</span>,if <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is reflexive, then <span class="kdmath">$S \subseteq T$</span>.</li>
     </ol>
   </li>
-  <li><em>Strict Partial Order and Strict Total Order</em>: Suppose <script type="math/tex">R</script> is a relation on <script type="math/tex">A</script>. Then <script type="math/tex">R</script> is said to be irreflexive if <script type="math/tex">\forall x \in A((x, x) \notin R)</script>. 
-<script type="math/tex">R</script> is called a strict partial order if it is irreflexive and transitive. It is called a strict total order if it is a strict partial order, and in addition it 
+  <li><em>Strict Partial Order and Strict Total Order</em>: Suppose <span class="kdmath">$R$</span> is a relation on <span class="kdmath">$A$</span>. Then <span class="kdmath">$R$</span> is said to be irreflexive if <span class="kdmath">$\forall x \in A((x, x) \notin R)$</span>. 
+<span class="kdmath">$R$</span> is called a strict partial order if it is irreflexive and transitive. It is called a strict total order if it is a strict partial order, and in addition it 
 satisfies the following requirement, called trichotomy:  <br />
-<script type="math/tex">\forall x \in A \forall y \in A(xRy \lor yRx \lor x = y)</script>.</li>
-  <li><em>Symmetric Closure</em>: Suppose <script type="math/tex">R</script> is a relation on <script type="math/tex">A</script>. The symmetric closure of <script type="math/tex">R</script> is the smallest set <script type="math/tex">S \subseteq A \times A</script> such that <script type="math/tex">R \subseteq S</script> 
-and <script type="math/tex">S</script> is symmetric, if there is such a smallest set. In other words, a relation <script type="math/tex">S \subseteq A \times A</script> is the symmetric closure of R if it has the following properties:
+<span class="kdmath">$\forall x \in A \forall y \in A(xRy \lor yRx \lor x = y)$</span>.</li>
+  <li><em>Symmetric Closure</em>: Suppose <span class="kdmath">$R$</span> is a relation on <span class="kdmath">$A$</span>. The symmetric closure of <span class="kdmath">$R$</span> is the smallest set <span class="kdmath">$S \subseteq A \times A$</span> such that <span class="kdmath">$R \subseteq S$</span> 
+and <span class="kdmath">$S$</span> is symmetric, if there is such a smallest set. In other words, a relation <span class="kdmath">$S \subseteq A \times A$</span> is the symmetric closure of R if it has the following properties:
     <ol>
-      <li><script type="math/tex">R \subseteq S</script>.</li>
-      <li><script type="math/tex">S</script> is symmetric.</li>
-      <li>For every relation <script type="math/tex">T \subseteq A \times A</script>,if <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is symmetric, then <script type="math/tex">S \subseteq T</script>.</li>
+      <li><span class="kdmath">$R \subseteq S$</span>.</li>
+      <li><span class="kdmath">$S$</span> is symmetric.</li>
+      <li>For every relation <span class="kdmath">$T \subseteq A \times A$</span>,if <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is symmetric, then <span class="kdmath">$S \subseteq T$</span>.</li>
     </ol>
   </li>
-  <li><em>Transitive Closure</em>: The transitive closure of <script type="math/tex">R</script> is the smallest set <script type="math/tex">S \subseteq A \times A</script> such that <script type="math/tex">R \subseteq S</script> and <script type="math/tex">S</script> is transitive, if there is such a 
-smallest set. In other words, a relation <script type="math/tex">S \subseteq A \times A</script> is the transitive closure of <script type="math/tex">R</script> if it has the following properties:
+  <li><em>Transitive Closure</em>: The transitive closure of <span class="kdmath">$R$</span> is the smallest set <span class="kdmath">$S \subseteq A \times A$</span> such that <span class="kdmath">$R \subseteq S$</span> and <span class="kdmath">$S$</span> is transitive, if there is such a 
+smallest set. In other words, a relation <span class="kdmath">$S \subseteq A \times A$</span> is the transitive closure of <span class="kdmath">$R$</span> if it has the following properties:
     <ol>
-      <li><script type="math/tex">R \subseteq S</script>.</li>
-      <li><script type="math/tex">S</script> is transitive.</li>
-      <li>For every relation <script type="math/tex">T \subseteq A \times A</script>,if <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is transitive, then <script type="math/tex">S \subseteq T</script>.</li>
+      <li><span class="kdmath">$R \subseteq S$</span>.</li>
+      <li><span class="kdmath">$S$</span> is transitive.</li>
+      <li>For every relation <span class="kdmath">$T \subseteq A \times A$</span>,if <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is transitive, then <span class="kdmath">$S \subseteq T$</span>.</li>
     </ol>
   </li>
-  <li>Suppose <script type="math/tex">R</script> is a relation on <script type="math/tex">A</script> and suppose:
+  <li>Suppose <span class="kdmath">$R$</span> is a relation on <span class="kdmath">$A$</span> and suppose:
     <ul>
-      <li><script type="math/tex">S</script> is Reflexive closure of <script type="math/tex">R</script>. Then <script type="math/tex">S</script> is the smallest element of the family of sets <script type="math/tex">\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is reflexive } \}</script>.
-   Since we know the smallest element of a family of sets <script type="math/tex">\mathcal F</script> is <script type="math/tex">\cap \mathcal F</script>, <script type="math/tex">S = \cap \mathcal F</script>.</li>
-      <li><script type="math/tex">S</script> is Symmetric closure of <script type="math/tex">R</script>. Then <script type="math/tex">S</script> is the smallest element of the family of sets <script type="math/tex">\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is symmetric } \}</script>.
-   Since we know the smallest element of a family of sets <script type="math/tex">\mathcal F</script> is <script type="math/tex">\cap \mathcal F</script>, <script type="math/tex">S = \cap \mathcal F</script>.</li>
-      <li><script type="math/tex">S</script> is Transitive closure of <script type="math/tex">R</script>. Then <script type="math/tex">S</script> is the smallest element of the family of sets <script type="math/tex">\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is transitive } \}</script>.
-   Since we know the smallest element of a family of sets <script type="math/tex">\mathcal F</script> is <script type="math/tex">\cap \mathcal F</script>, <script type="math/tex">S = \cap \mathcal F</script>.</li>
+      <li><span class="kdmath">$S$</span> is Reflexive closure of <span class="kdmath">$R$</span>. Then <span class="kdmath">$S$</span> is the smallest element of the family of sets <span class="kdmath">$\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is reflexive } \}$</span>.
+   Since we know the smallest element of a family of sets <span class="kdmath">$\mathcal F$</span> is <span class="kdmath">$\cap \mathcal F$</span>, <span class="kdmath">$S = \cap \mathcal F$</span>.</li>
+      <li><span class="kdmath">$S$</span> is Symmetric closure of <span class="kdmath">$R$</span>. Then <span class="kdmath">$S$</span> is the smallest element of the family of sets <span class="kdmath">$\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is symmetric } \}$</span>.
+   Since we know the smallest element of a family of sets <span class="kdmath">$\mathcal F$</span> is <span class="kdmath">$\cap \mathcal F$</span>, <span class="kdmath">$S = \cap \mathcal F$</span>.</li>
+      <li><span class="kdmath">$S$</span> is Transitive closure of <span class="kdmath">$R$</span>. Then <span class="kdmath">$S$</span> is the smallest element of the family of sets <span class="kdmath">$\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and }  T \text{ is transitive } \}$</span>.
+   Since we know the smallest element of a family of sets <span class="kdmath">$\mathcal F$</span> is <span class="kdmath">$\cap \mathcal F$</span>, <span class="kdmath">$S = \cap \mathcal F$</span>.</li>
     </ul>
   </li>
-  <li>Since all the family of sets mentioned above, contains the element <script type="math/tex">A \times A</script>(because <script type="math/tex">R \subseteq A \times A \land A \times A</script> is reflexive, symmetric and transitive), <script type="math/tex">\mathcal F \ne \phi</script>. Thus
-<script type="math/tex">\cap \mathcal F</script> is defined. So we can conclude that reflexive, symmetric and transitive closures exist for every relation. Also since a set has a smallest element, it can have only one such element. Thus
+  <li>Since all the family of sets mentioned above, contains the element <span class="kdmath">$A \times A$</span>(because <span class="kdmath">$R \subseteq A \times A \land A \times A$</span> is reflexive, symmetric and transitive), <span class="kdmath">$\mathcal F \ne \phi$</span>. Thus
+<span class="kdmath">$\cap \mathcal F$</span> is defined. So we can conclude that reflexive, symmetric and transitive closures exist for every relation. Also since a set has a smallest element, it can have only one such element. Thus
  reflective, symmetric, and transitive closures are unique.</li>
-  <li>Reflexive closure of a relation <script type="math/tex">R</script> on <script type="math/tex">A</script> is <script type="math/tex">S = R \cup i_A</script>.</li>
-  <li>Symmetric closure of a relation <script type="math/tex">R</script> on <script type="math/tex">A</script> is <script type="math/tex">S = R \cup R^{-1}</script>.</li>
+  <li>Reflexive closure of a relation <span class="kdmath">$R$</span> on <span class="kdmath">$A$</span> is <span class="kdmath">$S = R \cup i_A$</span>.</li>
+  <li>Symmetric closure of a relation <span class="kdmath">$R$</span> on <span class="kdmath">$A$</span> is <span class="kdmath">$S = R \cup R^{-1}$</span>.</li>
 </ul>
 
 <hr />
@@ -1189,45 +1190,40 @@ smallest set. In other words, a relation <script type="math/tex">S \subseteq A \
 <p><strong>(a)</strong></p>
 
 <p>Reflexive Closure:  <br />
-<script type="math/tex">S = \{ (a,a), (b,b), (c,c), (a,b), (b,c), (c,b) \}</script>.</p>
+<span class="kdmath">$S = \{ (a,a), (b,b), (c,c), (a,b), (b,c), (c,b) \}$</span>.</p>
 
 <p>Symmetric Closure:  <br />
-<script type="math/tex">S = \{ (a,a), (a,b), (b,a), (b,c), (c,b) \}</script>.</p>
+<span class="kdmath">$S = \{ (a,a), (a,b), (b,a), (b,c), (c,b) \}$</span>.</p>
 
 <p>Transitive Closure:  <br />
-<script type="math/tex">S = \{ (a,a), (a,b), (b,c), (a,c), (c,b), (c,c), (b,b) \}</script>.</p>
+<span class="kdmath">$S = \{ (a,a), (a,b), (b,c), (a,c), (c,b), (c,c), (b,b) \}$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Reflexive Closure:  <br />
-<script type="math/tex">% <![CDATA[
-S = \{(x,y) \in R \times R \, \vert \, x < y \text{ or } x = y \} %]]></script>.   <br />
+<span class="kdmath">$S = \{(x,y) \in R \times R \, \vert \, x < y \text{ or } x = y \}$</span>.   <br />
 which is equivalent to,  <br />
-<script type="math/tex">S = \{(x,y) \in R \times R \, \vert \, x \le y \}</script>.</p>
+<span class="kdmath">$S = \{(x,y) \in R \times R \, \vert \, x \le y \}$</span>.</p>
 
 <p>Symmetric Closure:  <br />
-<script type="math/tex">% <![CDATA[
-S = \{(x,y) \in R \times R \, \vert \, x < y \text{ or } x > y\} %]]></script>.</p>
+<span class="kdmath">$S = \{(x,y) \in R \times R \, \vert \, x < y \text{ or } x > y\}$</span>.</p>
 
 <p>Transitive Closure:  <br />
-As we can see, <script type="math/tex">R</script> is alreast a transitive closure:  <br />
-<script type="math/tex">% <![CDATA[
-S = \{(x,y) \in R \times R \, \vert \, x < y \} %]]></script>.</p>
+As we can see, <span class="kdmath">$R$</span> is alreast a transitive closure:  <br />
+<span class="kdmath">$S = \{(x,y) \in R \times R \, \vert \, x < y \}$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
 <p>Reflexive Closure:  <br />
-Since <script type="math/tex">D_r</script> is defined for positive number <script type="math/tex">r</script>, thus <script type="math/tex">r \ne 0</script>, so <script type="math/tex">(x,x) \notin D_r</script>, Thus including it,  <br />
-<script type="math/tex">% <![CDATA[
-S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert < r \text{ or } x = y \} %]]></script>.</p>
+Since <span class="kdmath">$D_r$</span> is defined for positive number <span class="kdmath">$r$</span>, thus <span class="kdmath">$r \ne 0$</span>, so <span class="kdmath">$(x,x) \notin D_r$</span>, Thus including it,  <br />
+<span class="kdmath">$S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert < r \text{ or } x = y \}$</span>.</p>
 
 <p>Symmetric Closure:  <br />
-As we can see <script type="math/tex">R</script> is already symmetric,  <br />
-<script type="math/tex">% <![CDATA[
-S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert < r \} %]]></script>.</p>
+As we can see <span class="kdmath">$R$</span> is already symmetric,  <br />
+<span class="kdmath">$S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert < r \}$</span>.</p>
 
 <p>Transitive Closure:  <br />
-<script type="math/tex">S = R \times R</script>.</p>
+<span class="kdmath">$S = R \times R$</span>.</p>
 
 <hr />
 
@@ -1237,13 +1233,13 @@ S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert < r \} %]]></script>.</
 
 <p><strong>Soln3</strong></p>
 
-<p><strong>(a)</strong> Suppose <script type="math/tex">R</script> is asymmetric relation. Suppose <script type="math/tex">x,y</script> are arbitrary elements of <script type="math/tex">A</script> such that <script type="math/tex">xRy</script>. Thus <script type="math/tex">yRx</script> is false. Or we 
-    can also say that <script type="math/tex">xRy \land yRx</script> is false, or <script type="math/tex">\lnot (xRy \land yRx)</script>. Thus we can also say <script type="math/tex">(xRy \land yRx) \to x = y</script>. Since 
-    <script type="math/tex">x</script> and <script type="math/tex">y</script> are arbitrary, we can conclude that <script type="math/tex">\forall x \forall y((xRy \land yRx) \to x = y)</script>. Thus <script type="math/tex">R</script> is antisymmetric.</p>
+<p><strong>(a)</strong> Suppose <span class="kdmath">$R$</span> is asymmetric relation. Suppose <span class="kdmath">$x,y$</span> are arbitrary elements of <span class="kdmath">$A$</span> such that <span class="kdmath">$xRy$</span>. Thus <span class="kdmath">$yRx$</span> is false. Or we 
+    can also say that <span class="kdmath">$xRy \land yRx$</span> is false, or <span class="kdmath">$\lnot (xRy \land yRx)$</span>. Thus we can also say <span class="kdmath">$(xRy \land yRx) \to x = y$</span>. Since 
+    <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> are arbitrary, we can conclude that <span class="kdmath">$\forall x \forall y((xRy \land yRx) \to x = y)$</span>. Thus <span class="kdmath">$R$</span> is antisymmetric.</p>
 
-<p><strong>(b)</strong> Suppose <script type="math/tex">R</script> is strict partial order. Suppose <script type="math/tex">x</script> and <script type="math/tex">y</script> are arbitrary elements of <script type="math/tex">A</script> such that <script type="math/tex">xRy</script>. We will prove by contradiction that <script type="math/tex">(y,x) \notin R</script>.
-    Suppose <script type="math/tex">yRx</script>. Since <script type="math/tex">xRy \land yRx</script> and <script type="math/tex">R</script> is transitive, it follows <script type="math/tex">xRx</script>. This contradicts with the given that <script type="math/tex">R</script> is strict partial order,
-    and <script type="math/tex">(x,x) \notin R</script>. Thus if <script type="math/tex">xRy</script> then <script type="math/tex">(y,x) \notin R</script>. Thus we can conclude that <script type="math/tex">R</script> is asymmetric.</p>
+<p><strong>(b)</strong> Suppose <span class="kdmath">$R$</span> is strict partial order. Suppose <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> are arbitrary elements of <span class="kdmath">$A$</span> such that <span class="kdmath">$xRy$</span>. We will prove by contradiction that <span class="kdmath">$(y,x) \notin R$</span>.
+    Suppose <span class="kdmath">$yRx$</span>. Since <span class="kdmath">$xRy \land yRx$</span> and <span class="kdmath">$R$</span> is transitive, it follows <span class="kdmath">$xRx$</span>. This contradicts with the given that <span class="kdmath">$R$</span> is strict partial order,
+    and <span class="kdmath">$(x,x) \notin R$</span>. Thus if <span class="kdmath">$xRy$</span> then <span class="kdmath">$(y,x) \notin R$</span>. Thus we can conclude that <span class="kdmath">$R$</span> is asymmetric.</p>
 
 <hr />
 
@@ -1251,76 +1247,76 @@ S = \{(x,y) \in R \times R \, \vert \, \vert x - y \vert < r \} %]]></script>.</
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is strict partial order.</p>
+<p>Suppose <span class="kdmath">$R$</span> is strict partial order.</p>
 
-<p><u>Reflexive:</u> Since <script type="math/tex">S</script> is reflexive closure of <script type="math/tex">R</script>, it follows that <script type="math/tex">i_A \subseteq S</script>. Thus <script type="math/tex">S</script> is reflexive.</p>
+<p><u>Reflexive:</u> Since <span class="kdmath">$S$</span> is reflexive closure of <span class="kdmath">$R$</span>, it follows that <span class="kdmath">$i_A \subseteq S$</span>. Thus <span class="kdmath">$S$</span> is reflexive.</p>
 
-<p><u>Transitive:</u> Suppose <script type="math/tex">x,y,z \in S</script> such that <script type="math/tex">(x,y) \in S \land (y,z) \in S</script>. Since <script type="math/tex">S = R \cup i_A</script>, <script type="math/tex">(x,y) \in R \cup i_A</script> and 
- <script type="math/tex">(y,z) \in R \cup i_A</script>. Thus we have <script type="math/tex">(x,y) \in R \lor (x,y) \in i_A</script> and <script type="math/tex">(y,z) \in R \lor (y,z) \in i_A</script>. Thus we have following possible
+<p><u>Transitive:</u> Suppose <span class="kdmath">$x,y,z \in S$</span> such that <span class="kdmath">$(x,y) \in S \land (y,z) \in S$</span>. Since <span class="kdmath">$S = R \cup i_A$</span>, <span class="kdmath">$(x,y) \in R \cup i_A$</span> and 
+ <span class="kdmath">$(y,z) \in R \cup i_A$</span>. Thus we have <span class="kdmath">$(x,y) \in R \lor (x,y) \in i_A$</span> and <span class="kdmath">$(y,z) \in R \lor (y,z) \in i_A$</span>. Thus we have following possible
  cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(y,z) \in i_A</script>:  <br />
-Since <script type="math/tex">(y,z) \in i_A</script>, <script type="math/tex">y = z</script>. Since <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">y = z</script>, it follows <script type="math/tex">(x,z) \in R</script>. Or we can also say <script type="math/tex">(x,z) \in S</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(y,z) \in i_A$</span>:  <br />
+Since <span class="kdmath">$(y,z) \in i_A$</span>, <span class="kdmath">$y = z$</span>. Since <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$y = z$</span>, it follows <span class="kdmath">$(x,z) \in R$</span>. Or we can also say <span class="kdmath">$(x,z) \in S$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in i_A</script> and <script type="math/tex">(y,z) \in R</script>:
-Since <script type="math/tex">(x,y) \in i_A</script>, <script type="math/tex">x = y</script>. Since <script type="math/tex">(y,z) \in R</script> and <script type="math/tex">y = x</script>, it follows <script type="math/tex">(x,z) \in R</script>. Or we can also say <script type="math/tex">(x,z) \in S</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in i_A$</span> and <span class="kdmath">$(y,z) \in R$</span>:
+Since <span class="kdmath">$(x,y) \in i_A$</span>, <span class="kdmath">$x = y$</span>. Since <span class="kdmath">$(y,z) \in R$</span> and <span class="kdmath">$y = x$</span>, it follows <span class="kdmath">$(x,z) \in R$</span>. Or we can also say <span class="kdmath">$(x,z) \in S$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(y,z) \in R</script>:  <br />
-Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">(x,z) \in R</script>. Or we can also say <script type="math/tex">(x,z) \in S</script>.</p>
+    <p>Case 3: <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(y,z) \in R$</span>:  <br />
+Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$(x,z) \in R$</span>. Or we can also say <span class="kdmath">$(x,z) \in S$</span>.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">(x,y) \in i_A</script> and <script type="math/tex">(y,z) \in i_A</script>:  <br />
- Thus <script type="math/tex">x = y = z</script>. Since <script type="math/tex">x = z</script>, it follows <script type="math/tex">(x,z) \in i_A</script>. Or we can also say <script type="math/tex">(x,z) \in S</script>.</p>
+    <p>Case 4: <span class="kdmath">$(x,y) \in i_A$</span> and <span class="kdmath">$(y,z) \in i_A$</span>:  <br />
+ Thus <span class="kdmath">$x = y = z$</span>. Since <span class="kdmath">$x = z$</span>, it follows <span class="kdmath">$(x,z) \in i_A$</span>. Or we can also say <span class="kdmath">$(x,z) \in S$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases, <script type="math/tex">(x,z) \in S</script>. Since <script type="math/tex">x,y,z</script> are arbitrary, we can conlude that <script type="math/tex">S</script> is arbitrary.</p>
+<p>Thus from all the cases, <span class="kdmath">$(x,z) \in S$</span>. Since <span class="kdmath">$x,y,z$</span> are arbitrary, we can conlude that <span class="kdmath">$S$</span> is arbitrary.</p>
 
-<p><u>Antisymmetric:</u> Suppose <script type="math/tex">x,y \in A</script> such that <script type="math/tex">(x,y) \in S \land (y,x) \in S</script>. Thus <script type="math/tex">(x,y) \in R \cup i_A</script> and <script type="math/tex">(y,x) \in R \cup i_A</script>.
+<p><u>Antisymmetric:</u> Suppose <span class="kdmath">$x,y \in A$</span> such that <span class="kdmath">$(x,y) \in S \land (y,x) \in S$</span>. Thus <span class="kdmath">$(x,y) \in R \cup i_A$</span> and <span class="kdmath">$(y,x) \in R \cup i_A$</span>.
 Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(y,x) \in i_A</script>:  <br />
-Since <script type="math/tex">x = y</script>. But since <script type="math/tex">(x,y) \in R</script>, <script type="math/tex">(x,y) \notin R</script>. Thus this cases is not possible.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(y,x) \in i_A$</span>:  <br />
+Since <span class="kdmath">$x = y$</span>. But since <span class="kdmath">$(x,y) \in R$</span>, <span class="kdmath">$(x,y) \notin R$</span>. Thus this cases is not possible.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in i_A</script> and <script type="math/tex">(y,x) \in R</script>:
-Since <script type="math/tex">x = y</script>. But since <script type="math/tex">(x,y) \in R</script>, <script type="math/tex">(x,y) \notin R</script>. Thus this cases is not possible.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in i_A$</span> and <span class="kdmath">$(y,x) \in R$</span>:
+Since <span class="kdmath">$x = y$</span>. But since <span class="kdmath">$(x,y) \in R$</span>, <span class="kdmath">$(x,y) \notin R$</span>. Thus this cases is not possible.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">(x,y) \in R</script> and <script type="math/tex">(y,x) \in R</script>:  <br />
-Since <script type="math/tex">R</script> is transitive, it follows <script type="math/tex">(x,x) \in R</script>. But since <script type="math/tex">R</script> is irreflexive, <script type="math/tex">(x,x) \notin R</script>. Thus this case is also not possible.</p>
+    <p>Case 3: <span class="kdmath">$(x,y) \in R$</span> and <span class="kdmath">$(y,x) \in R$</span>:  <br />
+Since <span class="kdmath">$R$</span> is transitive, it follows <span class="kdmath">$(x,x) \in R$</span>. But since <span class="kdmath">$R$</span> is irreflexive, <span class="kdmath">$(x,x) \notin R$</span>. Thus this case is also not possible.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">(x,y) \in i_A</script> and <script type="math/tex">(y,x) \in i_A</script>:  <br />
- Thus <script type="math/tex">x = y</script>.</p>
+    <p>Case 4: <span class="kdmath">$(x,y) \in i_A$</span> and <span class="kdmath">$(y,x) \in i_A$</span>:  <br />
+ Thus <span class="kdmath">$x = y$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases, if <script type="math/tex">(x,y) \in S \land (y,x) \in S</script>, then <script type="math/tex">x = y</script>. Thus <script type="math/tex">S</script> is antisymmetric.</p>
+<p>Thus from all the cases, if <span class="kdmath">$(x,y) \in S \land (y,x) \in S$</span>, then <span class="kdmath">$x = y$</span>. Thus <span class="kdmath">$S$</span> is antisymmetric.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x,y \in A</script>. Since <script type="math/tex">R</script> is strict partial order we have following cases:</p>
+<p>Suppose <span class="kdmath">$x,y \in A$</span>. Since <span class="kdmath">$R$</span> is strict partial order we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x = y</script>. Thus <script type="math/tex">(x,y) \in i_A</script>. Since <script type="math/tex">i_A \subseteq S</script>, <script type="math/tex">(x,y) \in S</script>. Thus <script type="math/tex">(x,y) \in S \lor (y,x) \in S</script>.</p>
+    <p>Case 1: <span class="kdmath">$x = y$</span>. Thus <span class="kdmath">$(x,y) \in i_A$</span>. Since <span class="kdmath">$i_A \subseteq S$</span>, <span class="kdmath">$(x,y) \in S$</span>. Thus <span class="kdmath">$(x,y) \in S \lor (y,x) \in S$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x R y</script>. Thus <script type="math/tex">(x,y) \in S</script>. Or we can also say <script type="math/tex">(x,y) \in S \lor (y,x) \in S</script>.</p>
+    <p>Case 2: <span class="kdmath">$x R y$</span>. Thus <span class="kdmath">$(x,y) \in S$</span>. Or we can also say <span class="kdmath">$(x,y) \in S \lor (y,x) \in S$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">y R x</script>. Thus <script type="math/tex">(y,x) \in S</script>. Or we can also say <script type="math/tex">(x,y) \in S \lor (y,x) \in S</script>.</p>
+    <p>Case 3: <span class="kdmath">$y R x$</span>. Thus <span class="kdmath">$(y,x) \in S$</span>. Or we can also say <span class="kdmath">$(x,y) \in S \lor (y,x) \in S$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases, we have <script type="math/tex">(x,y) \in S \lor (y,x) \in S</script>. Since <script type="math/tex">x,y</script> are arbitrary, it follows that <script type="math/tex">S</script> is total order.</p>
+<p>Thus from all the cases, we have <span class="kdmath">$(x,y) \in S \lor (y,x) \in S$</span>. Since <span class="kdmath">$x,y$</span> are arbitrary, it follows that <span class="kdmath">$S$</span> is total order.</p>
 
 <hr />
 
@@ -1328,50 +1324,50 @@ Since <script type="math/tex">R</script> is transitive, it follows <script type=
 
 <p><strong>(a)</strong></p>
 
-<p>To prove that <script type="math/tex">S</script> is the largest element of <script type="math/tex">\mathcal F = \{ T \subseteq A \times A \, \vert \, T \subseteq R \text{ and } T \text{ is irreflexive } \}</script>.
-We need to prove that <script type="math/tex">S \in \mathcal F</script> and <script type="math/tex">\forall T \in \mathcal F (T \subseteq \mathcal S)</script>.</p>
+<p>To prove that <span class="kdmath">$S$</span> is the largest element of <span class="kdmath">$\mathcal F = \{ T \subseteq A \times A \, \vert \, T \subseteq R \text{ and } T \text{ is irreflexive } \}$</span>.
+We need to prove that <span class="kdmath">$S \in \mathcal F$</span> and <span class="kdmath">$\forall T \in \mathcal F (T \subseteq \mathcal S)$</span>.</p>
 
-<p>Suppose <script type="math/tex">x,y \in A</script> such that <script type="math/tex">(x,y) \in S</script>. Thus <script type="math/tex">(x,y) \in R \land (x,y) \notin i_A</script>. Thus if <script type="math/tex">(x,y) \in S</script> then <script type="math/tex">(x,y) \in R</script>.
-Thus <script type="math/tex">S \subseteq R</script>. Also since <script type="math/tex">(x,y) \notin i_A</script>, it follows that <script type="math/tex">x \ne y</script>. Thus if <script type="math/tex">(x,y) \in S</script>, then <script type="math/tex">x \ne y</script>. It follows that
-<script type="math/tex">S</script> is irreflexive. Also <script type="math/tex">S = R \setminus i_A</script>, it follows that <script type="math/tex">S \subseteq A \times A</script>. Since <script type="math/tex">S \subseteq A \times A</script> and <script type="math/tex">S \subseteq R</script>
-and <script type="math/tex">S</script> is irreflexive, it follows that <script type="math/tex">S \in \mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$x,y \in A$</span> such that <span class="kdmath">$(x,y) \in S$</span>. Thus <span class="kdmath">$(x,y) \in R \land (x,y) \notin i_A$</span>. Thus if <span class="kdmath">$(x,y) \in S$</span> then <span class="kdmath">$(x,y) \in R$</span>.
+Thus <span class="kdmath">$S \subseteq R$</span>. Also since <span class="kdmath">$(x,y) \notin i_A$</span>, it follows that <span class="kdmath">$x \ne y$</span>. Thus if <span class="kdmath">$(x,y) \in S$</span>, then <span class="kdmath">$x \ne y$</span>. It follows that
+<span class="kdmath">$S$</span> is irreflexive. Also <span class="kdmath">$S = R \setminus i_A$</span>, it follows that <span class="kdmath">$S \subseteq A \times A$</span>. Since <span class="kdmath">$S \subseteq A \times A$</span> and <span class="kdmath">$S \subseteq R$</span>
+and <span class="kdmath">$S$</span> is irreflexive, it follows that <span class="kdmath">$S \in \mathcal F$</span>.</p>
 
-<p>Suppose <script type="math/tex">T \in \mathcal F</script>. Suppose <script type="math/tex">x,y \in A</script> such that <script type="math/tex">(x,y) \in T</script>. Since <script type="math/tex">R \subseteq T</script>, it follows that <script type="math/tex">(x,y) \in R</script>. Also since <script type="math/tex">T</script> is irreflexive,
- it follows that <script type="math/tex">x \ne y</script>. Thus <script type="math/tex">(x,y) \notin i_A</script>. Since <script type="math/tex">(x,y) \in R \land (x,y) \notin i_A</script>, it follows that <script type="math/tex">(x,y) \in R \setminus i_A</script>.
- Thus <script type="math/tex">(x,y) \in S</script>. Since <script type="math/tex">x,y</script> are arbitrary, it follows that <script type="math/tex">T \subseteq S</script>. Since <script type="math/tex">T</script> is arbitrary, it follows that <script type="math/tex">\forall T \in \mathcal F(T \subseteq S)</script>.</p>
+<p>Suppose <span class="kdmath">$T \in \mathcal F$</span>. Suppose <span class="kdmath">$x,y \in A$</span> such that <span class="kdmath">$(x,y) \in T$</span>. Since <span class="kdmath">$R \subseteq T$</span>, it follows that <span class="kdmath">$(x,y) \in R$</span>. Also since <span class="kdmath">$T$</span> is irreflexive,
+ it follows that <span class="kdmath">$x \ne y$</span>. Thus <span class="kdmath">$(x,y) \notin i_A$</span>. Since <span class="kdmath">$(x,y) \in R \land (x,y) \notin i_A$</span>, it follows that <span class="kdmath">$(x,y) \in R \setminus i_A$</span>.
+ Thus <span class="kdmath">$(x,y) \in S$</span>. Since <span class="kdmath">$x,y$</span> are arbitrary, it follows that <span class="kdmath">$T \subseteq S$</span>. Since <span class="kdmath">$T$</span> is arbitrary, it follows that <span class="kdmath">$\forall T \in \mathcal F(T \subseteq S)$</span>.</p>
 
-<p>Thus <script type="math/tex">S \in \mathcal F</script> and <script type="math/tex">\forall T \in \mathcal F(T \subseteq S)</script>, it follows that <script type="math/tex">S</script> is the largest element of <script type="math/tex">\mathcal F</script>.</p>
+<p>Thus <span class="kdmath">$S \in \mathcal F$</span> and <span class="kdmath">$\forall T \in \mathcal F(T \subseteq S)$</span>, it follows that <span class="kdmath">$S$</span> is the largest element of <span class="kdmath">$\mathcal F$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is partial order on <script type="math/tex">A</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> is partial order on <span class="kdmath">$A$</span>.</p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">R</script> is partial order, <script type="math/tex">(x,x) \in R</script>. Also <script type="math/tex">(x,x) \in i_A</script>. Thus <script type="math/tex">(x,x) \notin R \setminus i_A</script>, or <script type="math/tex">(x,x) \notin S</script>.
-Thus <script type="math/tex">S</script> is irreflexive.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R$</span> is partial order, <span class="kdmath">$(x,x) \in R$</span>. Also <span class="kdmath">$(x,x) \in i_A$</span>. Thus <span class="kdmath">$(x,x) \notin R \setminus i_A$</span>, or <span class="kdmath">$(x,x) \notin S$</span>.
+Thus <span class="kdmath">$S$</span> is irreflexive.</p>
 
-<p>Suppose <script type="math/tex">x,y,z \in A</script> such that <script type="math/tex">(x,y) \in S \land (y,z) \in S</script>. Since <script type="math/tex">S = R \setminus i_A</script>, it follows <script type="math/tex">(x,y) \in R \land (y,z) \in R \land x \ne y \land y \ne z</script>.
-Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">(x,z) \in R</script>. We will prove by contradiction that <script type="math/tex">x \ne z</script>. Suppose <script type="math/tex">x = z</script>, then since <script type="math/tex">(x,y) \in R</script>, it follows <script type="math/tex">(z,y) \in R</script>.
-Also we have <script type="math/tex">(y,z) \in R</script> and since <script type="math/tex">R</script> is antisymmetric, it follows that <script type="math/tex">y = z</script>. But since <script type="math/tex">(y,z) \in S</script>, <script type="math/tex">y \ne z</script>. Thus <script type="math/tex">x = z</script> leads to 
-contradiction. Thus <script type="math/tex">x \ne z</script>, or <script type="math/tex">(x,z) \notin i_A</script>. Since <script type="math/tex">(x,z) \in R \land (x,z) \notin i_A</script>, it follows that <script type="math/tex">(x,z) \in S</script>. Since <script type="math/tex">x,y,z</script> are
-arbitrary, it follows that <script type="math/tex">S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$x,y,z \in A$</span> such that <span class="kdmath">$(x,y) \in S \land (y,z) \in S$</span>. Since <span class="kdmath">$S = R \setminus i_A$</span>, it follows <span class="kdmath">$(x,y) \in R \land (y,z) \in R \land x \ne y \land y \ne z$</span>.
+Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$(x,z) \in R$</span>. We will prove by contradiction that <span class="kdmath">$x \ne z$</span>. Suppose <span class="kdmath">$x = z$</span>, then since <span class="kdmath">$(x,y) \in R$</span>, it follows <span class="kdmath">$(z,y) \in R$</span>.
+Also we have <span class="kdmath">$(y,z) \in R$</span> and since <span class="kdmath">$R$</span> is antisymmetric, it follows that <span class="kdmath">$y = z$</span>. But since <span class="kdmath">$(y,z) \in S$</span>, <span class="kdmath">$y \ne z$</span>. Thus <span class="kdmath">$x = z$</span> leads to 
+contradiction. Thus <span class="kdmath">$x \ne z$</span>, or <span class="kdmath">$(x,z) \notin i_A$</span>. Since <span class="kdmath">$(x,z) \in R \land (x,z) \notin i_A$</span>, it follows that <span class="kdmath">$(x,z) \in S$</span>. Since <span class="kdmath">$x,y,z$</span> are
+arbitrary, it follows that <span class="kdmath">$S$</span> is transitive.</p>
 
-<p>Thus <script type="math/tex">S</script> is irreflexive and transitive, it follows that <script type="math/tex">S</script> is strict partial order.</p>
+<p>Thus <span class="kdmath">$S$</span> is irreflexive and transitive, it follows that <span class="kdmath">$S$</span> is strict partial order.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">S = \{ (p,q) \, \vert \, p \text{ is ancestor of } q \}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$S = \{ (p,q) \, \vert \, p \text{ is ancestor of } q \}$</span>.</p>
 
-<p><strong>(b)</strong> We know that <script type="math/tex">S^{-1} = \{(p,q) \, \vert \, q is ancestor of p \}</script>.</p>
+<p><strong>(b)</strong> We know that <span class="kdmath">$S^{-1} = \{(p,q) \, \vert \, q is ancestor of p \}$</span>.</p>
 
-<p>Thus <script type="math/tex">S \circ S^{-1} = \{ (p,r) \, \vert \,</script> There exists a <script type="math/tex">q</script> such that <script type="math/tex">(p,q) \in S^{-1}</script> and <script type="math/tex">(q,r) \in S \}</script>.  <br />
+<p>Thus <span class="kdmath">$S \circ S^{-1} = \{ (p,r) \, \vert \,$</span> There exists a <span class="kdmath">$q$</span> such that <span class="kdmath">$(p,q) \in S^{-1}$</span> and <span class="kdmath">$(q,r) \in S \}$</span>.  <br />
 It is equivalent to:  <br />
-<script type="math/tex">S \circ S^{-1} = \{ (p,r) \, \vert \,</script> There exists a <script type="math/tex">q</script> such that <script type="math/tex">q</script> is the ancestor of <script type="math/tex">p</script> and <script type="math/tex">q</script> is the ancestor of <script type="math/tex">r \}</script>.      <br />
+<span class="kdmath">$S \circ S^{-1} = \{ (p,r) \, \vert \,$</span> There exists a <span class="kdmath">$q$</span> such that <span class="kdmath">$q$</span> is the ancestor of <span class="kdmath">$p$</span> and <span class="kdmath">$q$</span> is the ancestor of <span class="kdmath">$r \}$</span>.      <br />
 It is equivalent to:  <br />
-<script type="math/tex">S \circ S^{-1} = \{ (p,r) \, \vert \,</script> There exists a <script type="math/tex">q</script> such that <script type="math/tex">p</script> and <script type="math/tex">r</script> have a ancestor <script type="math/tex">q \}</script>.      <br />
+<span class="kdmath">$S \circ S^{-1} = \{ (p,r) \, \vert \,$</span> There exists a <span class="kdmath">$q$</span> such that <span class="kdmath">$p$</span> and <span class="kdmath">$r$</span> have a ancestor <span class="kdmath">$q \}$</span>.      <br />
 It is equivalent to:  <br />
-<script type="math/tex">S \circ S^{-1} = \{ (p,r) \, \vert \,  p</script> and <script type="math/tex">r</script> have a common ancestor <script type="math/tex">\}</script>.</p>
+<span class="kdmath">$S \circ S^{-1} = \{ (p,r) \, \vert \,  p$</span> and <span class="kdmath">$r$</span> have a common ancestor <span class="kdmath">$\}$</span>.</p>
 
 <hr />
 
@@ -1379,92 +1375,92 @@ It is equivalent to:  <br />
 
 <p><strong>(a)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">S = R</script> and <script type="math/tex">R</script> is reflexive. Thus:</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$S = R$</span> and <span class="kdmath">$R$</span> is reflexive. Thus:</p>
 <ol>
-  <li><script type="math/tex">R \subseteq S</script>.</li>
-  <li><script type="math/tex">S</script> is reflexive.</li>
-  <li>Suppose <script type="math/tex">T \in A \times A</script> is a set such that <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is reflexive. Since <script type="math/tex">S = R</script>, thus <script type="math/tex">S \subseteq T</script>.</li>
+  <li><span class="kdmath">$R \subseteq S$</span>.</li>
+  <li><span class="kdmath">$S$</span> is reflexive.</li>
+  <li>Suppose <span class="kdmath">$T \in A \times A$</span> is a set such that <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is reflexive. Since <span class="kdmath">$S = R$</span>, thus <span class="kdmath">$S \subseteq T$</span>.</li>
 </ol>
 
-<p>Thus <script type="math/tex">S</script> is reflexive closure of <script type="math/tex">R</script>. Since <script type="math/tex">S = R</script>, <script type="math/tex">R</script> is reflexive closure of <script type="math/tex">R</script>.</p>
+<p>Thus <span class="kdmath">$S$</span> is reflexive closure of <span class="kdmath">$R$</span>. Since <span class="kdmath">$S = R$</span>, <span class="kdmath">$R$</span> is reflexive closure of <span class="kdmath">$R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">S = R</script> and <script type="math/tex">S</script> is reflexive closure of <script type="math/tex">R</script>. Since <script type="math/tex">S</script> is reflexive closure of <script type="math/tex">R</script>, it follows that 
- <script type="math/tex">i_A \subseteq S</script>, or <script type="math/tex">i_A \subseteq R</script>. It follows that <script type="math/tex">R</script> is reflexive.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$S = R$</span> and <span class="kdmath">$S$</span> is reflexive closure of <span class="kdmath">$R$</span>. Since <span class="kdmath">$S$</span> is reflexive closure of <span class="kdmath">$R$</span>, it follows that 
+ <span class="kdmath">$i_A \subseteq S$</span>, or <span class="kdmath">$i_A \subseteq R$</span>. It follows that <span class="kdmath">$R$</span> is reflexive.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">S = R</script> and <script type="math/tex">R</script> is symmetric. Thus:</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$S = R$</span> and <span class="kdmath">$R$</span> is symmetric. Thus:</p>
 <ol>
-  <li><script type="math/tex">R \subseteq S</script>.</li>
-  <li><script type="math/tex">S</script> is symmetric.</li>
-  <li>Suppose <script type="math/tex">T \in A \times A</script> is a set such that <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is symmetric. Since <script type="math/tex">S = R</script>, thus <script type="math/tex">S \subseteq T</script>.</li>
+  <li><span class="kdmath">$R \subseteq S$</span>.</li>
+  <li><span class="kdmath">$S$</span> is symmetric.</li>
+  <li>Suppose <span class="kdmath">$T \in A \times A$</span> is a set such that <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is symmetric. Since <span class="kdmath">$S = R$</span>, thus <span class="kdmath">$S \subseteq T$</span>.</li>
 </ol>
 
-<p>Thus <script type="math/tex">S</script> is reflexive closure of <script type="math/tex">R</script>. Since <script type="math/tex">S = R</script>, <script type="math/tex">R</script> is symmetric closure of <script type="math/tex">R</script>.</p>
+<p>Thus <span class="kdmath">$S$</span> is reflexive closure of <span class="kdmath">$R$</span>. Since <span class="kdmath">$S = R$</span>, <span class="kdmath">$R$</span> is symmetric closure of <span class="kdmath">$R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">S = R</script> such that <script type="math/tex">S</script> is symmetric closure of <script type="math/tex">R</script>. Since <script type="math/tex">S</script> is symmetric closure of <script type="math/tex">R</script>, it follows that 
- <script type="math/tex">S</script> is symmetric. Thus <script type="math/tex">R</script> is symmetric.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$S = R$</span> such that <span class="kdmath">$S$</span> is symmetric closure of <span class="kdmath">$R$</span>. Since <span class="kdmath">$S$</span> is symmetric closure of <span class="kdmath">$R$</span>, it follows that 
+ <span class="kdmath">$S$</span> is symmetric. Thus <span class="kdmath">$R$</span> is symmetric.</p>
 
-<p>Similarly it can be proved for transitive that <script type="math/tex">R</script> is transitive iff <script type="math/tex">R</script> is transitive closure of <script type="math/tex">R</script>.</p>
+<p>Similarly it can be proved for transitive that <span class="kdmath">$R$</span> is transitive iff <span class="kdmath">$R$</span> is transitive closure of <span class="kdmath">$R$</span>.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>Suppose <script type="math/tex">S</script> is symmetric closure of <script type="math/tex">R</script>. Thus <script type="math/tex">S</script> is symmetric. Suppose <script type="math/tex">x \in Dom(S)</script>. Thus there exist an element <script type="math/tex">y</script> such that <script type="math/tex">(x,y) \in S</script>.
-Since <script type="math/tex">S</script> is symmetric, it follows that <script type="math/tex">(y,x) \in S</script>. Thus <script type="math/tex">x \in Ran(S)</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">Dom(S) = Ran(S)</script>.</p>
+<p>Suppose <span class="kdmath">$S$</span> is symmetric closure of <span class="kdmath">$R$</span>. Thus <span class="kdmath">$S$</span> is symmetric. Suppose <span class="kdmath">$x \in Dom(S)$</span>. Thus there exist an element <span class="kdmath">$y$</span> such that <span class="kdmath">$(x,y) \in S$</span>.
+Since <span class="kdmath">$S$</span> is symmetric, it follows that <span class="kdmath">$(y,x) \in S$</span>. Thus <span class="kdmath">$x \in Ran(S)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$Dom(S) = Ran(S)$</span>.</p>
 
-<p>Now to prove <script type="math/tex">Dom(S) = Dom(R) \cup Ran(R)</script>:</p>
+<p>Now to prove <span class="kdmath">$Dom(S) = Dom(R) \cup Ran(R)$</span>:</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in Dom(S)</script>. Thus there exist an element <script type="math/tex">y</script> such that <script type="math/tex">(x,y) \in S</script>. We will prove by contradiction that <script type="math/tex">(x,y) \in R \lor (y,x) \in R</script>.
-Suppose <script type="math/tex">\lnot ((x,y) \in R \lor (y,x) \in R)</script>. Thus <script type="math/tex">(x,y) \notin R \land (y,x) \notin R</script>. Now consider a set <script type="math/tex">T = S - \{ (x,y), (y,x) \}</script> thus making <script type="math/tex">T \subseteq S</script>. Since <script type="math/tex">S</script> was symmetric,
- and we removed <script type="math/tex">(x,y),(y,x)</script> from <script type="math/tex">S</script>, it follows that <script type="math/tex">T</script> is also symmetric. Since <script type="math/tex">T</script> contains all the elements of <script type="math/tex">S</script> except <script type="math/tex">(x,y)</script> and <script type="math/tex">(y,x)</script> and since
- <script type="math/tex">(x,y) \notin R \land (y,x) \notin R</script>, it follows that <script type="math/tex">R \subseteq T</script>. Since <script type="math/tex">T</script> is symmetric, and <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T \subseteq S</script>, it follows
- that <script type="math/tex">S</script> is not the smallest element such that <script type="math/tex">R \subseteq S</script> and <script type="math/tex">S</script> is symmetric. But it contradicts with the given that <script type="math/tex">S</script> is symmetric closure.
- Thus our assumption <script type="math/tex">\lnot ((x,y) \in R \lor (y,x) \in R)</script> is wrong. It follows that <script type="math/tex">(x,y) \in R \lor (y,x) \in R</script>. It follows that <script type="math/tex">x \in Dom(R) \cup Ran(R)</script>.
- Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">Dom(S) \subseteq Dom(R) \cup Ran(R)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in Dom(S)$</span>. Thus there exist an element <span class="kdmath">$y$</span> such that <span class="kdmath">$(x,y) \in S$</span>. We will prove by contradiction that <span class="kdmath">$(x,y) \in R \lor (y,x) \in R$</span>.
+Suppose <span class="kdmath">$\lnot ((x,y) \in R \lor (y,x) \in R)$</span>. Thus <span class="kdmath">$(x,y) \notin R \land (y,x) \notin R$</span>. Now consider a set <span class="kdmath">$T = S - \{ (x,y), (y,x) \}$</span> thus making <span class="kdmath">$T \subseteq S$</span>. Since <span class="kdmath">$S$</span> was symmetric,
+ and we removed <span class="kdmath">$(x,y),(y,x)$</span> from <span class="kdmath">$S$</span>, it follows that <span class="kdmath">$T$</span> is also symmetric. Since <span class="kdmath">$T$</span> contains all the elements of <span class="kdmath">$S$</span> except <span class="kdmath">$(x,y)$</span> and <span class="kdmath">$(y,x)$</span> and since
+ <span class="kdmath">$(x,y) \notin R \land (y,x) \notin R$</span>, it follows that <span class="kdmath">$R \subseteq T$</span>. Since <span class="kdmath">$T$</span> is symmetric, and <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T \subseteq S$</span>, it follows
+ that <span class="kdmath">$S$</span> is not the smallest element such that <span class="kdmath">$R \subseteq S$</span> and <span class="kdmath">$S$</span> is symmetric. But it contradicts with the given that <span class="kdmath">$S$</span> is symmetric closure.
+ Thus our assumption <span class="kdmath">$\lnot ((x,y) \in R \lor (y,x) \in R)$</span> is wrong. It follows that <span class="kdmath">$(x,y) \in R \lor (y,x) \in R$</span>. It follows that <span class="kdmath">$x \in Dom(R) \cup Ran(R)$</span>.
+ Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$Dom(S) \subseteq Dom(R) \cup Ran(R)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in Dom(R) \cup Ran(R)</script>. Thus there exist an element <script type="math/tex">y</script> such that either <script type="math/tex">(x,y) \in R</script> or <script type="math/tex">(y,x) \in R</script>. Thus we have following
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in Dom(R) \cup Ran(R)$</span>. Thus there exist an element <span class="kdmath">$y$</span> such that either <span class="kdmath">$(x,y) \in R$</span> or <span class="kdmath">$(y,x) \in R$</span>. Thus we have following
 possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">xRy</script>. Since <script type="math/tex">xRy</script>, and <script type="math/tex">R \subseteq S</script>, it follows <script type="math/tex">(x,y) \in S</script>. Thus <script type="math/tex">x \in Dom(S)</script>.</p>
+    <p>Case 1: <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$xRy$</span>, and <span class="kdmath">$R \subseteq S$</span>, it follows <span class="kdmath">$(x,y) \in S$</span>. Thus <span class="kdmath">$x \in Dom(S)$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">yRx</script>. Since <script type="math/tex">yRx</script>, and <script type="math/tex">R \subseteq S</script>, it follows <script type="math/tex">(y,x) \in S</script>. Since <script type="math/tex">S</script> is symmetric, it follows that <script type="math/tex">(x,y) \in S</script>.
-Thus <script type="math/tex">x \in Dom(S)</script>.</p>
+    <p>Case 2: <span class="kdmath">$yRx$</span>. Since <span class="kdmath">$yRx$</span>, and <span class="kdmath">$R \subseteq S$</span>, it follows <span class="kdmath">$(y,x) \in S$</span>. Since <span class="kdmath">$S$</span> is symmetric, it follows that <span class="kdmath">$(x,y) \in S$</span>.
+Thus <span class="kdmath">$x \in Dom(S)$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, if <script type="math/tex">x \in Dom(R) \cup Ran(R)</script>, then <script type="math/tex">x \in Dom(S)</script>. Since <script type="math/tex">x</script> is arbitrary, <script type="math/tex">Dom(R) \cup Ran(R) \subseteq Dom(S)</script>.</p>
+<p>Thus from both cases, if <span class="kdmath">$x \in Dom(R) \cup Ran(R)$</span>, then <span class="kdmath">$x \in Dom(S)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, <span class="kdmath">$Dom(R) \cup Ran(R) \subseteq Dom(S)$</span>.</p>
 
-<p>Thus we have <script type="math/tex">Dom(S) \subseteq Dom(R) \cup Ran(R)</script>  and <script type="math/tex">Dom(R) \cup Ran(R) \subseteq Dom(S)</script>, it follows that <script type="math/tex">Dom(S) = Dom(R) \cup Ran(R)</script>.</p>
+<p>Thus we have <span class="kdmath">$Dom(S) \subseteq Dom(R) \cup Ran(R)$</span>  and <span class="kdmath">$Dom(R) \cup Ran(R) \subseteq Dom(S)$</span>, it follows that <span class="kdmath">$Dom(S) = Dom(R) \cup Ran(R)$</span>.</p>
 
-<p>Finally putting all together we have <script type="math/tex">Dom(S) = Ran(S) = Dom(R) \cup Ran(R)</script>.</p>
+<p>Finally putting all together we have <span class="kdmath">$Dom(S) = Ran(S) = Dom(R) \cup Ran(R)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>Let <script type="math/tex">T = \{ (x, y) \in S \, \vert \, x \in Dom(R) \text{ and } y \in Ran(R) \}</script>.</p>
+<p>Let <span class="kdmath">$T = \{ (x, y) \in S \, \vert \, x \in Dom(R) \text{ and } y \in Ran(R) \}$</span>.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">R \subseteq S</script>, it follows <script type="math/tex">(x,y) \in S</script>. Also since <script type="math/tex">(x,y) \in R</script>, it follows <script type="math/tex">x \in Dom(R)</script> and <script type="math/tex">y \in Ran(R)</script>.
-Thus <script type="math/tex">(x,y) \in T</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">R \subseteq T</script>.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$R \subseteq S$</span>, it follows <span class="kdmath">$(x,y) \in S$</span>. Also since <span class="kdmath">$(x,y) \in R$</span>, it follows <span class="kdmath">$x \in Dom(R)$</span> and <span class="kdmath">$y \in Ran(R)$</span>.
+Thus <span class="kdmath">$(x,y) \in T$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$R \subseteq T$</span>.</p>
 
-<p>Suppose that <script type="math/tex">(x,y) \in T \land (y,z) \in T</script>. It follows that <script type="math/tex">(x,y) \in S \land (y,z) \in S</script>. Since <script type="math/tex">S</script> is transitive, it follows <script type="math/tex">(x,z) \in S</script>.
-Since <script type="math/tex">(x,y) \in T</script>, it follows <script type="math/tex">x \in Dom(R)</script>. Similarly since <script type="math/tex">(y,z) \in T</script>, it follows <script type="math/tex">z \in Ran(R)</script>. Thus we have <script type="math/tex">(x,z) \in S</script> and 
-<script type="math/tex">x \in Dom(R)</script> and <script type="math/tex">y \in Ran(R)</script>, it follows that <script type="math/tex">(x,z) \in T</script>. Thus <script type="math/tex">T</script> is transitive.</p>
+<p>Suppose that <span class="kdmath">$(x,y) \in T \land (y,z) \in T$</span>. It follows that <span class="kdmath">$(x,y) \in S \land (y,z) \in S$</span>. Since <span class="kdmath">$S$</span> is transitive, it follows <span class="kdmath">$(x,z) \in S$</span>.
+Since <span class="kdmath">$(x,y) \in T$</span>, it follows <span class="kdmath">$x \in Dom(R)$</span>. Similarly since <span class="kdmath">$(y,z) \in T$</span>, it follows <span class="kdmath">$z \in Ran(R)$</span>. Thus we have <span class="kdmath">$(x,z) \in S$</span> and 
+<span class="kdmath">$x \in Dom(R)$</span> and <span class="kdmath">$y \in Ran(R)$</span>, it follows that <span class="kdmath">$(x,z) \in T$</span>. Thus <span class="kdmath">$T$</span> is transitive.</p>
 
-<p>Also note that by the definition of <script type="math/tex">T</script>, <script type="math/tex">T \subseteq S</script>. Also since <script type="math/tex">S</script> is transitive closure of <script type="math/tex">R</script> and <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is transitive,
-it follows that(by the definition of transitive closure), <script type="math/tex">S \subseteq T</script>.  <br />
-Since <script type="math/tex">S \subseteq T</script> and <script type="math/tex">T \subseteq S</script>, it follows thar <script type="math/tex">T = S</script>.</p>
+<p>Also note that by the definition of <span class="kdmath">$T$</span>, <span class="kdmath">$T \subseteq S$</span>. Also since <span class="kdmath">$S$</span> is transitive closure of <span class="kdmath">$R$</span> and <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is transitive,
+it follows that(by the definition of transitive closure), <span class="kdmath">$S \subseteq T$</span>.  <br />
+Since <span class="kdmath">$S \subseteq T$</span> and <span class="kdmath">$T \subseteq S$</span>, it follows thar <span class="kdmath">$T = S$</span>.</p>
 
-<p>Suppose <script type="math/tex">x \in Dom(T)</script>. It follows that <script type="math/tex">x \in Dom(R)</script>. Thus <script type="math/tex">Dom(T) \subseteq Dom(R)</script>. Suppose <script type="math/tex">x \in Dom(R)</script>. Since <script type="math/tex">R \subseteq T</script>, it follows that
-<script type="math/tex">x \in Dom(T)</script>. Thus <script type="math/tex">Dom(R) \subseteq Dom(T)</script>. Since <script type="math/tex">Dom(T) \subseteq Dom(R)</script> and <script type="math/tex">Dom(R) \subseteq Dom(T)</script>, it follows that <script type="math/tex">Dom(R) = Dom(T)</script>.</p>
+<p>Suppose <span class="kdmath">$x \in Dom(T)$</span>. It follows that <span class="kdmath">$x \in Dom(R)$</span>. Thus <span class="kdmath">$Dom(T) \subseteq Dom(R)$</span>. Suppose <span class="kdmath">$x \in Dom(R)$</span>. Since <span class="kdmath">$R \subseteq T$</span>, it follows that
+<span class="kdmath">$x \in Dom(T)$</span>. Thus <span class="kdmath">$Dom(R) \subseteq Dom(T)$</span>. Since <span class="kdmath">$Dom(T) \subseteq Dom(R)$</span> and <span class="kdmath">$Dom(R) \subseteq Dom(T)$</span>, it follows that <span class="kdmath">$Dom(R) = Dom(T)$</span>.</p>
 
-<p>Suppose <script type="math/tex">y \in Ran(T)</script>. It follows that <script type="math/tex">y \in Ran(R)</script>. Thus <script type="math/tex">Ran(T) \subseteq Ran(R)</script>. Suppose <script type="math/tex">y \in Ran(R)</script>. Since <script type="math/tex">R \subseteq T</script>, it follows that
-<script type="math/tex">y \in Ran(T)</script>. Thus <script type="math/tex">Ran(R) \subseteq Ran(T)</script>. Since <script type="math/tex">Ran(T) \subseteq Ran(R)</script> and <script type="math/tex">Ran(R) \subseteq Ran(T)</script>, it follows that <script type="math/tex">Ran(R) = Ran(T)</script>.</p>
+<p>Suppose <span class="kdmath">$y \in Ran(T)$</span>. It follows that <span class="kdmath">$y \in Ran(R)$</span>. Thus <span class="kdmath">$Ran(T) \subseteq Ran(R)$</span>. Suppose <span class="kdmath">$y \in Ran(R)$</span>. Since <span class="kdmath">$R \subseteq T$</span>, it follows that
+<span class="kdmath">$y \in Ran(T)$</span>. Thus <span class="kdmath">$Ran(R) \subseteq Ran(T)$</span>. Since <span class="kdmath">$Ran(T) \subseteq Ran(R)$</span> and <span class="kdmath">$Ran(R) \subseteq Ran(T)$</span>, it follows that <span class="kdmath">$Ran(R) = Ran(T)$</span>.</p>
 
 <hr />
 
@@ -1472,25 +1468,25 @@ Since <script type="math/tex">S \subseteq T</script> and <script type="math/tex"
 
 <p><strong>(a)</strong></p>
 
-<p>Since <script type="math/tex">R</script> is the relation on <script type="math/tex">A</script>. Clearly <script type="math/tex">R \subseteq A \times A</script>. Suppose <script type="math/tex">(x,y) \in A \times A</script>. Then <script type="math/tex">(y,x) \in A \times A</script>.
-Thus <script type="math/tex">A \times A \in \mathcal F</script>. It follows <script type="math/tex">\mathcal F \ne \phi</script>.</p>
+<p>Since <span class="kdmath">$R$</span> is the relation on <span class="kdmath">$A$</span>. Clearly <span class="kdmath">$R \subseteq A \times A$</span>. Suppose <span class="kdmath">$(x,y) \in A \times A$</span>. Then <span class="kdmath">$(y,x) \in A \times A$</span>.
+Thus <span class="kdmath">$A \times A \in \mathcal F$</span>. It follows <span class="kdmath">$\mathcal F \ne \phi$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">S = \cap \mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$S = \cap \mathcal F$</span>.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R</script>. Suppose <script type="math/tex">T</script> is an arbitrary element in <script type="math/tex">\mathcal F</script>. It follows <script type="math/tex">R \subset T</script>. Thus <script type="math/tex">(x,y) \in T</script>.
-Since <script type="math/tex">T</script> is arbitrary, it follows <script type="math/tex">\forall T \in \mathcal F((x,y) \in T)</script>. Thus <script type="math/tex">(x,y) \in \cap \mathcal F</script>. Since <script type="math/tex">(x,y)</script> is arbitrary,
-it follows <script type="math/tex">R \subseteq \cap \mathcal F</script>.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R$</span>. Suppose <span class="kdmath">$T$</span> is an arbitrary element in <span class="kdmath">$\mathcal F$</span>. It follows <span class="kdmath">$R \subset T$</span>. Thus <span class="kdmath">$(x,y) \in T$</span>.
+Since <span class="kdmath">$T$</span> is arbitrary, it follows <span class="kdmath">$\forall T \in \mathcal F((x,y) \in T)$</span>. Thus <span class="kdmath">$(x,y) \in \cap \mathcal F$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary,
+it follows <span class="kdmath">$R \subseteq \cap \mathcal F$</span>.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in \cap \mathcal F</script>. Suppose <script type="math/tex">T</script> is an arbitrary element in <script type="math/tex">\mathcal F</script>. Since <script type="math/tex">(x,y)</script> belongs to all the elements of <script type="math/tex">\cap \mathcal F</script>,
-it follows that <script type="math/tex">(x,y) \in T</script>. Since <script type="math/tex">T</script> is symmetric, it follows that <script type="math/tex">(y,x) \in T</script>. Since <script type="math/tex">T</script> is arbitrary, it follows <script type="math/tex">\forall T \in \mathcal F((y,x) \in T)</script>.
-Thus <script type="math/tex">(y,x) \in \cap \mathcal F</script>. Thus <script type="math/tex">\cap \mathcal F</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in \cap \mathcal F$</span>. Suppose <span class="kdmath">$T$</span> is an arbitrary element in <span class="kdmath">$\mathcal F$</span>. Since <span class="kdmath">$(x,y)$</span> belongs to all the elements of <span class="kdmath">$\cap \mathcal F$</span>,
+it follows that <span class="kdmath">$(x,y) \in T$</span>. Since <span class="kdmath">$T$</span> is symmetric, it follows that <span class="kdmath">$(y,x) \in T$</span>. Since <span class="kdmath">$T$</span> is arbitrary, it follows <span class="kdmath">$\forall T \in \mathcal F((y,x) \in T)$</span>.
+Thus <span class="kdmath">$(y,x) \in \cap \mathcal F$</span>. Thus <span class="kdmath">$\cap \mathcal F$</span> is symmetric.</p>
 
-<p>Suppose <script type="math/tex">T \subseteq A \times A</script> such that <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is symmetric. It follows that <script type="math/tex">T \in \mathcal F</script>. Suppose <script type="math/tex">(x,y) \in \cap \mathcal F</script>,
-thus <script type="math/tex">\forall X \in \mathcal F((x,y) \in X)</script>. Since <script type="math/tex">T \in \mathcal F</script>, it follows that <script type="math/tex">(x,y) \in T</script>. Thus <script type="math/tex">\cap \mathcal F \subseteq T</script>.</p>
+<p>Suppose <span class="kdmath">$T \subseteq A \times A$</span> such that <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is symmetric. It follows that <span class="kdmath">$T \in \mathcal F$</span>. Suppose <span class="kdmath">$(x,y) \in \cap \mathcal F$</span>,
+thus <span class="kdmath">$\forall X \in \mathcal F((x,y) \in X)$</span>. Since <span class="kdmath">$T \in \mathcal F$</span>, it follows that <span class="kdmath">$(x,y) \in T$</span>. Thus <span class="kdmath">$\cap \mathcal F \subseteq T$</span>.</p>
 
-<p>Thus from all the above points, we can conclude that <script type="math/tex">S = \cap \mathcal F</script> is symmetric closure of <script type="math/tex">R</script>.</p>
+<p>Thus from all the above points, we can conclude that <span class="kdmath">$S = \cap \mathcal F$</span> is symmetric closure of <span class="kdmath">$R$</span>.</p>
 
 <hr />
 
@@ -1498,13 +1494,13 @@ thus <script type="math/tex">\forall X \in \mathcal F((x,y) \in X)</script>. Sin
 
 <p><strong>(a)</strong></p>
 
-<p>We know that reflexive closure of <script type="math/tex">R = \cap \mathcal F</script>, where <script type="math/tex">\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is reflexive } \}</script>.</p>
+<p>We know that reflexive closure of <span class="kdmath">$R = \cap \mathcal F$</span>, where <span class="kdmath">$\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is reflexive } \}$</span>.</p>
 
-<p>Suppose <script type="math/tex">S_1 = \cap \mathcal F_1</script> and <script type="math/tex">S_2 = \cap \mathcal F_2</script>.</p>
+<p>Suppose <span class="kdmath">$S_1 = \cap \mathcal F_1$</span> and <span class="kdmath">$S_2 = \cap \mathcal F_2$</span>.</p>
 
-<p>Suppose <script type="math/tex">T_2 \in \mathcal F_2</script> is an arbitrary element. Thus <script type="math/tex">R_2 \subseteq T_2</script> and <script type="math/tex">T_2</script> is reflexive. Since <script type="math/tex">R_1 \subseteq R_2</script>, it follows
-<script type="math/tex">R_1 \subseteq T_2</script> and T_2 is reflexive. Since <script type="math/tex">S_1</script> is reflexive closure of <script type="math/tex">R_1</script>, it follows by the definition of reflexive closure that <script type="math/tex">S_1 \subseteq T_2</script>.
-Since <script type="math/tex">T_2</script> is arbitrary, it follows <script type="math/tex">\forall T_2 \in \mathcal F_2 (S_1 \in T_2)</script>, or <script type="math/tex">S_1 \subseteq \cap \mathcal F_2</script>. Thus <script type="math/tex">S_1 \subseteq S_2</script>.</p>
+<p>Suppose <span class="kdmath">$T_2 \in \mathcal F_2$</span> is an arbitrary element. Thus <span class="kdmath">$R_2 \subseteq T_2$</span> and <span class="kdmath">$T_2$</span> is reflexive. Since <span class="kdmath">$R_1 \subseteq R_2$</span>, it follows
+<span class="kdmath">$R_1 \subseteq T_2$</span> and T_2 is reflexive. Since <span class="kdmath">$S_1$</span> is reflexive closure of <span class="kdmath">$R_1$</span>, it follows by the definition of reflexive closure that <span class="kdmath">$S_1 \subseteq T_2$</span>.
+Since <span class="kdmath">$T_2$</span> is arbitrary, it follows <span class="kdmath">$\forall T_2 \in \mathcal F_2 (S_1 \in T_2)$</span>, or <span class="kdmath">$S_1 \subseteq \cap \mathcal F_2$</span>. Thus <span class="kdmath">$S_1 \subseteq S_2$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
@@ -1512,26 +1508,26 @@ Since <script type="math/tex">T_2</script> is arbitrary, it follows <script type
   <li>Symmetric</li>
 </ul>
 
-<p>We know that symmetric closure of <script type="math/tex">R = \cap \mathcal F</script>, where <script type="math/tex">\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is symmetric } \}</script>.</p>
+<p>We know that symmetric closure of <span class="kdmath">$R = \cap \mathcal F$</span>, where <span class="kdmath">$\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is symmetric } \}$</span>.</p>
 
-<p>  Suppose <script type="math/tex">S_1 = \cap \mathcal F_1</script> and <script type="math/tex">S_2 = \cap \mathcal F_2</script>.  </p>
+<p>  Suppose <span class="kdmath">$S_1 = \cap \mathcal F_1$</span> and <span class="kdmath">$S_2 = \cap \mathcal F_2$</span>.  </p>
 
-<p>Suppose <script type="math/tex">T_2 \in \mathcal F_2</script> is an arbitrary element. Thus <script type="math/tex">R_2 \subseteq T_2</script> and <script type="math/tex">T_2</script> is symmetric. Since <script type="math/tex">R_1 \subseteq R_2</script>, it follows 
-<script type="math/tex">R_1 \subseteq T_2</script> and T_2 is symmetric. Since <script type="math/tex">S_1</script> is symmetric closure of <script type="math/tex">R_1</script>, it follows by the definition of symmetric closure that <script type="math/tex">S_1 \subseteq T_2</script>.
- Since <script type="math/tex">T_2</script> is arbitrary, it follows <script type="math/tex">\forall T_2 \in \mathcal F_2 (S_1 \in T_2)</script>, or <script type="math/tex">S_1 \subseteq \cap \mathcal F_2</script>. Thus <script type="math/tex">S_1 \subseteq S_2</script>.</p>
+<p>Suppose <span class="kdmath">$T_2 \in \mathcal F_2$</span> is an arbitrary element. Thus <span class="kdmath">$R_2 \subseteq T_2$</span> and <span class="kdmath">$T_2$</span> is symmetric. Since <span class="kdmath">$R_1 \subseteq R_2$</span>, it follows 
+<span class="kdmath">$R_1 \subseteq T_2$</span> and T_2 is symmetric. Since <span class="kdmath">$S_1$</span> is symmetric closure of <span class="kdmath">$R_1$</span>, it follows by the definition of symmetric closure that <span class="kdmath">$S_1 \subseteq T_2$</span>.
+ Since <span class="kdmath">$T_2$</span> is arbitrary, it follows <span class="kdmath">$\forall T_2 \in \mathcal F_2 (S_1 \in T_2)$</span>, or <span class="kdmath">$S_1 \subseteq \cap \mathcal F_2$</span>. Thus <span class="kdmath">$S_1 \subseteq S_2$</span>.</p>
 
 <ul>
   <li>Transitive:</li>
 </ul>
 
-<p>We know that transitive closure of <script type="math/tex">R = \cap \mathcal F</script>, where <script type="math/tex">\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is transitive } \}</script>.</p>
+<p>We know that transitive closure of <span class="kdmath">$R = \cap \mathcal F$</span>, where <span class="kdmath">$\mathcal F = \{ T \subseteq A \times A \, \vert \, R \subseteq T \text{ and } T \text{ is transitive } \}$</span>.</p>
 
-<p>  Suppose <script type="math/tex">S_1 = \cap \mathcal F_1</script> and <script type="math/tex">S_2 = \cap \mathcal F_2</script>.</p>
+<p>  Suppose <span class="kdmath">$S_1 = \cap \mathcal F_1$</span> and <span class="kdmath">$S_2 = \cap \mathcal F_2$</span>.</p>
 
-<p>  Suppose <script type="math/tex">T_2 \in \mathcal F_2</script> is an arbitrary element. Thus <script type="math/tex">R_2 \subseteq T_2</script> and <script type="math/tex">T_2</script> is transitive. Since <script type="math/tex">R_1 \subseteq R_2</script>, it follows  
-<script type="math/tex">R_1 \subseteq T_2</script> and T_2 is transitive. Since <script type="math/tex">S_1</script> is transitive closure of <script type="math/tex">R_1</script>, it follows by the definition of transitive closure that 
-<script type="math/tex">S_1 \subseteq T_2</script>.  Since <script type="math/tex">T_2</script> is arbitrary, it follows <script type="math/tex">\forall T_2 \in \mathcal F_2 (S_1 \in T_2)</script>, or <script type="math/tex">S_1 \subseteq \cap \mathcal F_2</script>. 
-Thus <script type="math/tex">S_1 \subseteq S_2</script>. </p>
+<p>  Suppose <span class="kdmath">$T_2 \in \mathcal F_2$</span> is an arbitrary element. Thus <span class="kdmath">$R_2 \subseteq T_2$</span> and <span class="kdmath">$T_2$</span> is transitive. Since <span class="kdmath">$R_1 \subseteq R_2$</span>, it follows  
+<span class="kdmath">$R_1 \subseteq T_2$</span> and T_2 is transitive. Since <span class="kdmath">$S_1$</span> is transitive closure of <span class="kdmath">$R_1$</span>, it follows by the definition of transitive closure that 
+<span class="kdmath">$S_1 \subseteq T_2$</span>.  Since <span class="kdmath">$T_2$</span> is arbitrary, it follows <span class="kdmath">$\forall T_2 \in \mathcal F_2 (S_1 \in T_2)$</span>, or <span class="kdmath">$S_1 \subseteq \cap \mathcal F_2$</span>. 
+Thus <span class="kdmath">$S_1 \subseteq S_2$</span>. </p>
 
 <hr />
 
@@ -1540,101 +1536,101 @@ Thus <script type="math/tex">S_1 \subseteq S_2</script>. </p>
 <p><strong>(a)</strong></p>
 
 <ul>
-  <li>(<script type="math/tex">\to</script>), Proof of <script type="math/tex">S_1 \cup S_2 \subseteq S</script>:</li>
+  <li>(<span class="kdmath">$\to$</span>), Proof of <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span>:</li>
 </ul>
 
-<p>Since <script type="math/tex">R_1 \cup R_2 = R</script>, it follows <script type="math/tex">R_1 \subseteq R</script> and <script type="math/tex">R_2 \subseteq R</script>. Thus using Soln11(a), <script type="math/tex">S_1 \subseteq S</script> and <script type="math/tex">S_2 \subseteq S</script>.
-It follows that <script type="math/tex">S_1 \cup S_2 \subseteq S</script>.</p>
+<p>Since <span class="kdmath">$R_1 \cup R_2 = R$</span>, it follows <span class="kdmath">$R_1 \subseteq R$</span> and <span class="kdmath">$R_2 \subseteq R$</span>. Thus using Soln11(a), <span class="kdmath">$S_1 \subseteq S$</span> and <span class="kdmath">$S_2 \subseteq S$</span>.
+It follows that <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span>.</p>
 
 <ul>
-  <li>(<script type="math/tex">\to</script>), Proof of <script type="math/tex">S \subseteq S_1 \cup S_2</script>:</li>
+  <li>(<span class="kdmath">$\to$</span>), Proof of <span class="kdmath">$S \subseteq S_1 \cup S_2$</span>:</li>
 </ul>
 
 <p>We will first prove:</p>
 <ol>
-  <li><script type="math/tex">R \subseteq S_1 \cup S_2</script>.</li>
-  <li><script type="math/tex">S_1 \cup S_2</script> is reflexive.</li>
+  <li><span class="kdmath">$R \subseteq S_1 \cup S_2$</span>.</li>
+  <li><span class="kdmath">$S_1 \cup S_2$</span> is reflexive.</li>
 </ol>
 
-<p>Suppose <script type="math/tex">(x,y) \in R</script>, or <script type="math/tex">(x,y) \in R_1 \cup R_2</script>. We have following cases:</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R$</span>, or <span class="kdmath">$(x,y) \in R_1 \cup R_2$</span>. We have following cases:</p>
 
-<p>-Case 1: <script type="math/tex">(x,y) \in S_1</script>: Since <script type="math/tex">R_1 \subseteq S_1</script>, it follows that <script type="math/tex">(x,y) \in S_1</script>, or we may also say <script type="math/tex">(x,y) \in S_1 \cup S_2</script>.</p>
+<p>-Case 1: <span class="kdmath">$(x,y) \in S_1$</span>: Since <span class="kdmath">$R_1 \subseteq S_1$</span>, it follows that <span class="kdmath">$(x,y) \in S_1$</span>, or we may also say <span class="kdmath">$(x,y) \in S_1 \cup S_2$</span>.</p>
 
-<p>-Case 2: <script type="math/tex">(x,y) \in S_2</script>: Since <script type="math/tex">R_2 \subseteq S_2</script>, it follows that <script type="math/tex">(x,y) \in S_2</script>, or we may also say <script type="math/tex">(x,y) \in S_1 \cup S_2</script>.</p>
+<p>-Case 2: <span class="kdmath">$(x,y) \in S_2$</span>: Since <span class="kdmath">$R_2 \subseteq S_2$</span>, it follows that <span class="kdmath">$(x,y) \in S_2$</span>, or we may also say <span class="kdmath">$(x,y) \in S_1 \cup S_2$</span>.</p>
 
-<p>Since <script type="math/tex">(x,y)</script> is arbitrary, and from all possible cases we can conclude that <script type="math/tex">R \subseteq S_1 \cup S_2</script>.</p>
+<p>Since <span class="kdmath">$(x,y)$</span> is arbitrary, and from all possible cases we can conclude that <span class="kdmath">$R \subseteq S_1 \cup S_2$</span>.</p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">S_1</script> is reflexive, it follows that <script type="math/tex">(x,x) \in S_1</script>. Thus we can also say that <script type="math/tex">(x,x) \in S_1 \cup S_2</script>.
-Thus <script type="math/tex">S_1 \cup S_2</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$S_1$</span> is reflexive, it follows that <span class="kdmath">$(x,x) \in S_1$</span>. Thus we can also say that <span class="kdmath">$(x,x) \in S_1 \cup S_2$</span>.
+Thus <span class="kdmath">$S_1 \cup S_2$</span> is reflexive.</p>
 
-<p>Since <script type="math/tex">R \subseteq S_1 \cup S_2</script> and <script type="math/tex">S_1 \cup S_2</script> is reflexive, and <script type="math/tex">S</script> is the reflexive closure of <script type="math/tex">R</script>, then by using the definition of reflexive closure,
-<script type="math/tex">S \subseteq S_1 \cup S_2</script>.</p>
+<p>Since <span class="kdmath">$R \subseteq S_1 \cup S_2$</span> and <span class="kdmath">$S_1 \cup S_2$</span> is reflexive, and <span class="kdmath">$S$</span> is the reflexive closure of <span class="kdmath">$R$</span>, then by using the definition of reflexive closure,
+<span class="kdmath">$S \subseteq S_1 \cup S_2$</span>.</p>
 
-<p>Since <script type="math/tex">S_1 \cup S_2 \subseteq S</script> and <script type="math/tex">S \subseteq S_1 \cup S_2</script>, we can conclude that <script type="math/tex">S = S_1 \cup S_2</script>.</p>
+<p>Since <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span> and <span class="kdmath">$S \subseteq S_1 \cup S_2$</span>, we can conclude that <span class="kdmath">$S = S_1 \cup S_2$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <ul>
-  <li>(<script type="math/tex">\to</script>), Proof of <script type="math/tex">S_1 \cup S_2 \subseteq S</script>:   </li>
+  <li>(<span class="kdmath">$\to$</span>), Proof of <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span>:   </li>
 </ul>
 
-<p>Since <script type="math/tex">R_1 \cup R_2 = R</script>, it follows <script type="math/tex">R_1 \subseteq R</script> and <script type="math/tex">R_2 \subseteq R</script>. Thus using Soln11(b), <script type="math/tex">S_1 \subseteq S</script> and <script type="math/tex">S_2 \subseteq S</script>.
- It follows that <script type="math/tex">S_1 \cup S_2 \subseteq S</script>.  </p>
+<p>Since <span class="kdmath">$R_1 \cup R_2 = R$</span>, it follows <span class="kdmath">$R_1 \subseteq R$</span> and <span class="kdmath">$R_2 \subseteq R$</span>. Thus using Soln11(b), <span class="kdmath">$S_1 \subseteq S$</span> and <span class="kdmath">$S_2 \subseteq S$</span>.
+ It follows that <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span>.  </p>
 
 <ul>
-  <li>(<script type="math/tex">\to</script>), Proof of <script type="math/tex">S \subseteq S_1 \cup S_2</script>:  </li>
+  <li>(<span class="kdmath">$\to$</span>), Proof of <span class="kdmath">$S \subseteq S_1 \cup S_2$</span>:  </li>
 </ul>
 
 <p>We will first prove:      </p>
 <ol>
-  <li><script type="math/tex">R \subseteq S_1 \cup S_2</script>.         </li>
-  <li><script type="math/tex">S_1 \cup S_2</script> is symmetric.</li>
+  <li><span class="kdmath">$R \subseteq S_1 \cup S_2$</span>.         </li>
+  <li><span class="kdmath">$S_1 \cup S_2$</span> is symmetric.</li>
 </ol>
 
-<p>  Suppose <script type="math/tex">(x,y) \in R</script>, or <script type="math/tex">(x,y) \in R_1 \cup R_2</script>. We have following cases: </p>
+<p>  Suppose <span class="kdmath">$(x,y) \in R$</span>, or <span class="kdmath">$(x,y) \in R_1 \cup R_2$</span>. We have following cases: </p>
 
-<p> -Case 1: <script type="math/tex">(x,y) \in S_1</script>: Since <script type="math/tex">R_1 \subseteq S_1</script>, it follows that <script type="math/tex">(x,y) \in S_1</script>, or we may also say <script type="math/tex">(x,y) \in S_1 \cup S_2</script>.   </p>
+<p> -Case 1: <span class="kdmath">$(x,y) \in S_1$</span>: Since <span class="kdmath">$R_1 \subseteq S_1$</span>, it follows that <span class="kdmath">$(x,y) \in S_1$</span>, or we may also say <span class="kdmath">$(x,y) \in S_1 \cup S_2$</span>.   </p>
 
-<p>-Case 2: <script type="math/tex">(x,y) \in S_2</script>: Since <script type="math/tex">R_2 \subseteq S_2</script>, it follows that <script type="math/tex">(x,y) \in S_2</script>, or we may also say <script type="math/tex">(x,y) \in S_1 \cup S_2</script>.</p>
+<p>-Case 2: <span class="kdmath">$(x,y) \in S_2$</span>: Since <span class="kdmath">$R_2 \subseteq S_2$</span>, it follows that <span class="kdmath">$(x,y) \in S_2$</span>, or we may also say <span class="kdmath">$(x,y) \in S_1 \cup S_2$</span>.</p>
 
-<p>  Since <script type="math/tex">(x,y)</script> is arbitrary, and from all possible cases we can conclude that <script type="math/tex">R \subseteq S_1 \cup S_2</script>.  </p>
+<p>  Since <span class="kdmath">$(x,y)$</span> is arbitrary, and from all possible cases we can conclude that <span class="kdmath">$R \subseteq S_1 \cup S_2$</span>.  </p>
 
-<p>Suppose <script type="math/tex">x,y \in A</script> such that <script type="math/tex">(x,y) \in S_1 \cup S_2</script>. Thus <script type="math/tex">(x,y) \in S_1 \lor (x,y) \in S_2</script>. Since <script type="math/tex">S_1</script> and <script type="math/tex">S_2</script> are symmetric,
-it follows that <script type="math/tex">(y,x) \in S_1 \lor (y,x) \in S_2</script>, or <script type="math/tex">(x,y) \in S_1 \cup S_2</script>. Thus <script type="math/tex">S_1 \cup S_2</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$x,y \in A$</span> such that <span class="kdmath">$(x,y) \in S_1 \cup S_2$</span>. Thus <span class="kdmath">$(x,y) \in S_1 \lor (x,y) \in S_2$</span>. Since <span class="kdmath">$S_1$</span> and <span class="kdmath">$S_2$</span> are symmetric,
+it follows that <span class="kdmath">$(y,x) \in S_1 \lor (y,x) \in S_2$</span>, or <span class="kdmath">$(x,y) \in S_1 \cup S_2$</span>. Thus <span class="kdmath">$S_1 \cup S_2$</span> is symmetric.</p>
 
-<p>Since <script type="math/tex">R \subseteq S_1 \cup S_2</script> and <script type="math/tex">S_1 \cup S_2</script> is symmetric, and <script type="math/tex">S</script> is the symmetric closure of <script type="math/tex">R</script>, then by using the definition of symmetric closure, 
-<script type="math/tex">S \subseteq S_1 \cup S_2</script>.</p>
+<p>Since <span class="kdmath">$R \subseteq S_1 \cup S_2$</span> and <span class="kdmath">$S_1 \cup S_2$</span> is symmetric, and <span class="kdmath">$S$</span> is the symmetric closure of <span class="kdmath">$R$</span>, then by using the definition of symmetric closure, 
+<span class="kdmath">$S \subseteq S_1 \cup S_2$</span>.</p>
 
-<p>  Since <script type="math/tex">S_1 \cup S_2 \subseteq S</script> and <script type="math/tex">S \subseteq S_1 \cup S_2</script>, we can conclude that <script type="math/tex">S = S_1 \cup S_2</script>. </p>
+<p>  Since <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span> and <span class="kdmath">$S \subseteq S_1 \cup S_2$</span>, we can conclude that <span class="kdmath">$S = S_1 \cup S_2$</span>. </p>
 
 <p><strong>(c)</strong></p>
 
-<p>Proof of <script type="math/tex">S_1 \cup S_2 \subseteq S</script>:   </p>
+<p>Proof of <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span>:   </p>
 
-<p>Since <script type="math/tex">R_1 \cup R_2 = R</script>, it follows <script type="math/tex">R_1 \subseteq R</script> and <script type="math/tex">R_2 \subseteq R</script>. Thus using Soln11(b), <script type="math/tex">S_1 \subseteq S</script> and <script type="math/tex">S_2 \subseteq S</script>.
- It follows that <script type="math/tex">S_1 \cup S_2 \subseteq S</script>.  </p>
+<p>Since <span class="kdmath">$R_1 \cup R_2 = R$</span>, it follows <span class="kdmath">$R_1 \subseteq R$</span> and <span class="kdmath">$R_2 \subseteq R$</span>. Thus using Soln11(b), <span class="kdmath">$S_1 \subseteq S$</span> and <span class="kdmath">$S_2 \subseteq S$</span>.
+ It follows that <span class="kdmath">$S_1 \cup S_2 \subseteq S$</span>.  </p>
 
-<p>Counter example for <script type="math/tex">S \ne S_1 \cup S_2</script>:</p>
+<p>Counter example for <span class="kdmath">$S \ne S_1 \cup S_2$</span>:</p>
 
 <p>Suppose:  <br />
-<script type="math/tex">A = \{1, 2, 3, 4 \}</script>.  <br />
-<script type="math/tex">R_1 = \{ (1,2), (2,2), (2,3) \}</script>.  <br />
-<script type="math/tex">R_2 = \{ (4,2), (2,4) \}</script></p>
+<span class="kdmath">$A = \{1, 2, 3, 4 \}$</span>.  <br />
+<span class="kdmath">$R_1 = \{ (1,2), (2,2), (2,3) \}$</span>.  <br />
+<span class="kdmath">$R_2 = \{ (4,2), (2,4) \}$</span></p>
 
-<p><script type="math/tex">R = R_1 \cup R_2 = \{ (1,2), (2,2), (2,3), (4,2), (2,4) \}</script>.</p>
+<p><span class="kdmath">$R = R_1 \cup R_2 = \{ (1,2), (2,2), (2,3), (4,2), (2,4) \}$</span>.</p>
 
-<p>Transitive closure for <script type="math/tex">R_1</script> is:   <br />
-<script type="math/tex">S_1 = \{ (1,2), (2, 2), (2,3), (1,3) \}</script>.</p>
+<p>Transitive closure for <span class="kdmath">$R_1$</span> is:   <br />
+<span class="kdmath">$S_1 = \{ (1,2), (2, 2), (2,3), (1,3) \}$</span>.</p>
 
-<p>Transitive closure for <script type="math/tex">R_2</script> is:  <br />
-<script type="math/tex">S_2 = \{ (2,2), (4,2), (2,4), (4,4) \}</script>.</p>
+<p>Transitive closure for <span class="kdmath">$R_2$</span> is:  <br />
+<span class="kdmath">$S_2 = \{ (2,2), (4,2), (2,4), (4,4) \}$</span>.</p>
 
-<p>And <script type="math/tex">S_1 \cup S_2 = \{ (1,2), (2, 2), (2,3), (1,3), (4,2), (2,4), (4,4) \}</script>.</p>
+<p>And <span class="kdmath">$S_1 \cup S_2 = \{ (1,2), (2, 2), (2,3), (1,3), (4,2), (2,4), (4,4) \}$</span>.</p>
 
-<p>Transitive closure for <script type="math/tex">R</script> is :
-<script type="math/tex">S = \{ (1,2), (2,2), (2,3), (4,2), (2,4), (1,3), (4,4), (1,4), (4,3) \}</script>.</p>
+<p>Transitive closure for <span class="kdmath">$R$</span> is :
+<span class="kdmath">$S = \{ (1,2), (2,2), (2,3), (4,2), (2,4), (1,3), (4,4), (1,4), (4,3) \}$</span>.</p>
 
-<p>Clearly <script type="math/tex">S \ne S_1 \cup S_2</script>.</p>
+<p>Clearly <span class="kdmath">$S \ne S_1 \cup S_2$</span>.</p>
 
 <hr />
 
@@ -1642,270 +1638,270 @@ it follows that <script type="math/tex">(y,x) \in S_1 \lor (y,x) \in S_2</script
 
 <p>For all the parts there is one common part that I shall prove here.</p>
 
-<p>We have <script type="math/tex">S_i</script> is reflexive/symmetric/transitive closure of <script type="math/tex">R_i</script>, where <script type="math/tex">i \in \{1,2\}</script>.</p>
+<p>We have <span class="kdmath">$S_i$</span> is reflexive/symmetric/transitive closure of <span class="kdmath">$R_i$</span>, where <span class="kdmath">$i \in \{1,2\}$</span>.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R_1 \cap R_2</script>. It follows <script type="math/tex">(x,y) \in R_1 \land (x,y) \in R_2</script>. Since <script type="math/tex">R_1 \subseteq S_1</script> and <script type="math/tex">R_2 \subseteq S_2</script>, it follows that
-<script type="math/tex">(x,y) \in S_1 \cap S_ 2</script>. Thus <script type="math/tex">R_1 \cap R_2 \subseteq S_1 \cap S_2</script>.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R_1 \cap R_2$</span>. It follows <span class="kdmath">$(x,y) \in R_1 \land (x,y) \in R_2$</span>. Since <span class="kdmath">$R_1 \subseteq S_1$</span> and <span class="kdmath">$R_2 \subseteq S_2$</span>, it follows that
+<span class="kdmath">$(x,y) \in S_1 \cap S_ 2$</span>. Thus <span class="kdmath">$R_1 \cap R_2 \subseteq S_1 \cap S_2$</span>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>We know that <script type="math/tex">S_1 = R_1 \cup i_A</script> and <script type="math/tex">S_2 = R_2 \cup i_A</script>.   <br />
-And <script type="math/tex">S = (R_1 \cap R_2) \cup i_A</script>,</p>
+<p>We know that <span class="kdmath">$S_1 = R_1 \cup i_A$</span> and <span class="kdmath">$S_2 = R_2 \cup i_A$</span>.   <br />
+And <span class="kdmath">$S = (R_1 \cap R_2) \cup i_A$</span>,</p>
 
-<p>Suppose that <script type="math/tex">(x,y) \in S_1 \cap S_2</script>. Thus <script type="math/tex">(x,y) \in  R_1 \cup i_A</script> and <script type="math/tex">(x,y) \in  R_2 \cup i_A</script>. iff  <br />
-<script type="math/tex">((x,y) \in R_1 \lor (x,y) \in i_A) \land ((x,y) \in R_2 \lor (x,y) \in i_A)</script> iff    <br />
-<script type="math/tex">((x,y) \in R_1 \land (x,y) \in R_2) \lor (x,y) \in i_A</script> iff    <br />
-<script type="math/tex">((x,y) \in R_1 \cap R_2) \lor (x,y) \in i_A</script> iff    <br />
-<script type="math/tex">(x,y) \in (R_1 \cap R_2) \cup i_A</script> iff    <br />
-<script type="math/tex">(x,y) \in S</script>.</p>
+<p>Suppose that <span class="kdmath">$(x,y) \in S_1 \cap S_2$</span>. Thus <span class="kdmath">$(x,y) \in  R_1 \cup i_A$</span> and <span class="kdmath">$(x,y) \in  R_2 \cup i_A$</span>. iff  <br />
+<span class="kdmath">$((x,y) \in R_1 \lor (x,y) \in i_A) \land ((x,y) \in R_2 \lor (x,y) \in i_A)$</span> iff    <br />
+<span class="kdmath">$((x,y) \in R_1 \land (x,y) \in R_2) \lor (x,y) \in i_A$</span> iff    <br />
+<span class="kdmath">$((x,y) \in R_1 \cap R_2) \lor (x,y) \in i_A$</span> iff    <br />
+<span class="kdmath">$(x,y) \in (R_1 \cap R_2) \cup i_A$</span> iff    <br />
+<span class="kdmath">$(x,y) \in S$</span>.</p>
 
-<p>Thus <script type="math/tex">(S_1 \cap S_2) = S</script>.</p>
+<p>Thus <span class="kdmath">$(S_1 \cap S_2) = S$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in S_1 \cap S_2</script>. It follows that <script type="math/tex">(x,y) \in S_1</script> and <script type="math/tex">(x,y) \in S_2</script>. Since <script type="math/tex">S_1</script> and <script type="math/tex">S_2</script> are symmetric, it follows that
-<script type="math/tex">(y,x) \in S_1 \land (y,x) \in S_2</script>. Thus <script type="math/tex">(y,x) \in S_1 \cap S_2</script>. Thus <script type="math/tex">S_1 \cap S_2</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in S_1 \cap S_2$</span>. It follows that <span class="kdmath">$(x,y) \in S_1$</span> and <span class="kdmath">$(x,y) \in S_2$</span>. Since <span class="kdmath">$S_1$</span> and <span class="kdmath">$S_2$</span> are symmetric, it follows that
+<span class="kdmath">$(y,x) \in S_1 \land (y,x) \in S_2$</span>. Thus <span class="kdmath">$(y,x) \in S_1 \cap S_2$</span>. Thus <span class="kdmath">$S_1 \cap S_2$</span> is symmetric.</p>
 
-<p>Since <script type="math/tex">S</script> is symmetric closure of <script type="math/tex">R_1 \cap R_2</script>, and <script type="math/tex">R_1 \cap R_2 \subseteq S_1 \cap S_2</script>, and <script type="math/tex">S_1 \cap S_2</script> is symmetric, then by the definition of 
-symmetric closure, it follows that <script type="math/tex">S \subseteq S_1 \cap S_2</script>.</p>
+<p>Since <span class="kdmath">$S$</span> is symmetric closure of <span class="kdmath">$R_1 \cap R_2$</span>, and <span class="kdmath">$R_1 \cap R_2 \subseteq S_1 \cap S_2$</span>, and <span class="kdmath">$S_1 \cap S_2$</span> is symmetric, then by the definition of 
+symmetric closure, it follows that <span class="kdmath">$S \subseteq S_1 \cap S_2$</span>.</p>
 
-<p>Counter example to show: <script type="math/tex">S_1 \cap S_2 \nsubseteq S</script>:</p>
+<p>Counter example to show: <span class="kdmath">$S_1 \cap S_2 \nsubseteq S$</span>:</p>
 
-<p>Suppose <script type="math/tex">A = \{1,2\}, R_1 = \{(1,2)\}, R_2 = \{(2,1)\}</script>.  <br />
-Thus <script type="math/tex">R_1 \cap R_2 = \phi</script>.</p>
+<p>Suppose <span class="kdmath">$A = \{1,2\}, R_1 = \{(1,2)\}, R_2 = \{(2,1)\}$</span>.  <br />
+Thus <span class="kdmath">$R_1 \cap R_2 = \phi$</span>.</p>
 
-<p>Symmetric closure of <script type="math/tex">R_1</script> is:  <br />
-<script type="math/tex">S_1 = \{(1,2), (2,1) \}</script>.</p>
+<p>Symmetric closure of <span class="kdmath">$R_1$</span> is:  <br />
+<span class="kdmath">$S_1 = \{(1,2), (2,1) \}$</span>.</p>
 
-<p>Symmetric closure of <script type="math/tex">R_2</script> is:  <br />
-<script type="math/tex">S_2 = \{(1,2), (2,1) \}</script>.</p>
+<p>Symmetric closure of <span class="kdmath">$R_2$</span> is:  <br />
+<span class="kdmath">$S_2 = \{(1,2), (2,1) \}$</span>.</p>
 
-<p>Symmetric closure of <script type="math/tex">R_1 \cap R_2</script> is:  <br />
-<script type="math/tex">S = \{ \phi \}</script>.</p>
+<p>Symmetric closure of <span class="kdmath">$R_1 \cap R_2$</span> is:  <br />
+<span class="kdmath">$S = \{ \phi \}$</span>.</p>
 
-<p>And <script type="math/tex">S_1 \cap S_2 = \{(1,2), (2,1) \}</script>.</p>
+<p>And <span class="kdmath">$S_1 \cap S_2 = \{(1,2), (2,1) \}$</span>.</p>
 
-<p>Thus <script type="math/tex">S_1 \cap S_2 \nsubseteq S</script>.</p>
+<p>Thus <span class="kdmath">$S_1 \cap S_2 \nsubseteq S$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in S_1 \cap S_2</script> and <script type="math/tex">(y,z) \in S_1 \cap S_2</script>. It follows that <script type="math/tex">(x,y) \in S_1</script> and <script type="math/tex">(y,z) \in S_2</script>. Since <script type="math/tex">S_1</script> and <script type="math/tex">S_2</script> are transitive, it follows that
-<script type="math/tex">(x,z) \in S_1</script> and <script type="math/tex">(x,z) \in S_2</script>. Thus <script type="math/tex">(x,z) \in S_1 \cap S_2</script>. Thus <script type="math/tex">S_1 \cap S_2</script> is symmetric.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in S_1 \cap S_2$</span> and <span class="kdmath">$(y,z) \in S_1 \cap S_2$</span>. It follows that <span class="kdmath">$(x,y) \in S_1$</span> and <span class="kdmath">$(y,z) \in S_2$</span>. Since <span class="kdmath">$S_1$</span> and <span class="kdmath">$S_2$</span> are transitive, it follows that
+<span class="kdmath">$(x,z) \in S_1$</span> and <span class="kdmath">$(x,z) \in S_2$</span>. Thus <span class="kdmath">$(x,z) \in S_1 \cap S_2$</span>. Thus <span class="kdmath">$S_1 \cap S_2$</span> is symmetric.</p>
 
-<p>Since <script type="math/tex">S</script> is transitive closure of <script type="math/tex">R_1 \cap R_2</script>, and <script type="math/tex">R_1 \cap R_2 \subseteq S_1 \cap S_2</script>, and <script type="math/tex">S_1 \cap S_2</script> is transitive, then by the definition of 
-transitive closure, it follows that <script type="math/tex">S \subseteq S_1 \cap S_2</script>.</p>
+<p>Since <span class="kdmath">$S$</span> is transitive closure of <span class="kdmath">$R_1 \cap R_2$</span>, and <span class="kdmath">$R_1 \cap R_2 \subseteq S_1 \cap S_2$</span>, and <span class="kdmath">$S_1 \cap S_2$</span> is transitive, then by the definition of 
+transitive closure, it follows that <span class="kdmath">$S \subseteq S_1 \cap S_2$</span>.</p>
 
-<p>Counter example to show: <script type="math/tex">S_1 \cap S_2 \nsubseteq S</script>:</p>
+<p>Counter example to show: <span class="kdmath">$S_1 \cap S_2 \nsubseteq S$</span>:</p>
 
 <p>Suppose:  <br />
-<script type="math/tex">A = \{1, 2, 3 \}</script>.  <br />
-<script type="math/tex">R_1 = \{ (1,2), (2,3) \}</script>.  <br />
-<script type="math/tex">R_2 = \{ (1,3) \}</script></p>
+<span class="kdmath">$A = \{1, 2, 3 \}$</span>.  <br />
+<span class="kdmath">$R_1 = \{ (1,2), (2,3) \}$</span>.  <br />
+<span class="kdmath">$R_2 = \{ (1,3) \}$</span></p>
 
-<p><script type="math/tex">R = R_1 \cap R_2 = \phi</script>.</p>
+<p><span class="kdmath">$R = R_1 \cap R_2 = \phi$</span>.</p>
 
-<p>Transitive closure for <script type="math/tex">R_1</script> is:   <br />
-<script type="math/tex">S_1 = \{ (1,2), (2,3), (1,3) \}</script>.</p>
+<p>Transitive closure for <span class="kdmath">$R_1$</span> is:   <br />
+<span class="kdmath">$S_1 = \{ (1,2), (2,3), (1,3) \}$</span>.</p>
 
-<p>Transitive closure for <script type="math/tex">R_2</script> is:  <br />
-<script type="math/tex">S_2 = \{ (1,3) \}</script>.</p>
+<p>Transitive closure for <span class="kdmath">$R_2$</span> is:  <br />
+<span class="kdmath">$S_2 = \{ (1,3) \}$</span>.</p>
 
-<p>Transitive closure for <script type="math/tex">R</script> is :
-<script type="math/tex">S = \{ \phi \}</script>.</p>
+<p>Transitive closure for <span class="kdmath">$R$</span> is :
+<span class="kdmath">$S = \{ \phi \}$</span>.</p>
 
-<p>And <script type="math/tex">S_1 \cap S_2 = \{ (1,3) \}</script>.</p>
+<p>And <span class="kdmath">$S_1 \cap S_2 = \{ (1,3) \}$</span>.</p>
 
-<p>Clearly <script type="math/tex">S_1 \cap S_2 \nsubseteq S</script>.</p>
+<p>Clearly <span class="kdmath">$S_1 \cap S_2 \nsubseteq S$</span>.</p>
 
 <hr />
 
 <p><strong>Soln14</strong></p>
 
 <p>Suppose:  <br />
-<script type="math/tex">A = \{1, 2, 3, a, b, c \}</script>.   <br />
-<script type="math/tex">R_1 = \{ (1,2), (2,3), (a,b), (b,c) \}</script>.  <br />
-<script type="math/tex">R_2 = \{ (2,3), (a,c), (c,b) \}</script>.</p>
+<span class="kdmath">$A = \{1, 2, 3, a, b, c \}$</span>.   <br />
+<span class="kdmath">$R_1 = \{ (1,2), (2,3), (a,b), (b,c) \}$</span>.  <br />
+<span class="kdmath">$R_2 = \{ (2,3), (a,c), (c,b) \}$</span>.</p>
 
-<p>Thus, <script type="math/tex">R_1 \setminus R_2 = \{ (1,2), (a,b), (b,c) \}</script>.</p>
+<p>Thus, <span class="kdmath">$R_1 \setminus R_2 = \{ (1,2), (a,b), (b,c) \}$</span>.</p>
 
-<p>Transitive closure of <script type="math/tex">R_1</script> is:  <br />
-<script type="math/tex">S_1 = \{ (1,2), (2,3), (1,3), (a,b), (b,c), (a,c) \}</script>.</p>
+<p>Transitive closure of <span class="kdmath">$R_1$</span> is:  <br />
+<span class="kdmath">$S_1 = \{ (1,2), (2,3), (1,3), (a,b), (b,c), (a,c) \}$</span>.</p>
 
-<p>Transitive closure of <script type="math/tex">R_2</script> is:  <br />
-<script type="math/tex">S_2 = \{ (2,3), (a,c), (c,b), (a,b) \}</script>.</p>
+<p>Transitive closure of <span class="kdmath">$R_2$</span> is:  <br />
+<span class="kdmath">$S_2 = \{ (2,3), (a,c), (c,b), (a,b) \}$</span>.</p>
 
-<p>Transitive closure of <script type="math/tex">R = R_1 \setminus R_2</script> is:  <br />
-<script type="math/tex">S = \{ (1,2), (a,b), (b,c), (a,c) \}</script>.</p>
+<p>Transitive closure of <span class="kdmath">$R = R_1 \setminus R_2$</span> is:  <br />
+<span class="kdmath">$S = \{ (1,2), (a,b), (b,c), (a,c) \}$</span>.</p>
 
-<p>And <script type="math/tex">S_1 \setminus S_2 = \{ (1,2), (1,3), (b,c) \}</script>.</p>
+<p>And <span class="kdmath">$S_1 \setminus S_2 = \{ (1,2), (1,3), (b,c) \}$</span>.</p>
 
-<p>Thus <script type="math/tex">S \nsubseteq S_1 \setminus S_2</script> and <script type="math/tex">S_1 \setminus S_2 \nsubseteq S</script>.</p>
+<p>Thus <span class="kdmath">$S \nsubseteq S_1 \setminus S_2$</span> and <span class="kdmath">$S_1 \setminus S_2 \nsubseteq S$</span>.</p>
 
 <hr />
 
 <p><strong>Soln15</strong></p>
 
-<p>We will prove that <script type="math/tex">S = R \cup R^{-1} \cup i_A</script> is the symmetric reflexive closure of <script type="math/tex">R</script>.</p>
+<p>We will prove that <span class="kdmath">$S = R \cup R^{-1} \cup i_A$</span> is the symmetric reflexive closure of <span class="kdmath">$R$</span>.</p>
 
 <ol>
   <li>
-    <p><script type="math/tex">R \subseteq S</script>: Since <script type="math/tex">S = R \cup R^{-1} \cup i_A</script>, it is clear that <script type="math/tex">R \subseteq S</script>.</p>
+    <p><span class="kdmath">$R \subseteq S$</span>: Since <span class="kdmath">$S = R \cup R^{-1} \cup i_A$</span>, it is clear that <span class="kdmath">$R \subseteq S$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">S</script> is reflexive: Suppose <script type="math/tex">x \in A</script>. Thus <script type="math/tex">(x,x) \in i_A</script>. It follows that <script type="math/tex">(x,x) \in R \cup R^{-1} \cup i_A</script>. Thus <script type="math/tex">S</script> is reflexive.</p>
+    <p><span class="kdmath">$S$</span> is reflexive: Suppose <span class="kdmath">$x \in A$</span>. Thus <span class="kdmath">$(x,x) \in i_A$</span>. It follows that <span class="kdmath">$(x,x) \in R \cup R^{-1} \cup i_A$</span>. Thus <span class="kdmath">$S$</span> is reflexive.</p>
   </li>
   <li>
-    <p><script type="math/tex">S</script> is symmetric: Suppose <script type="math/tex">(x,y) \in S</script>. Thus <script type="math/tex">(x,y) \in R \lor (x,y) \in R^{-1}</script>. Thus <script type="math/tex">(y,x) \in R \lor (y,x) \in R^{-1}</script>. 
- Thus we can also say that <script type="math/tex">(y,x) \in R \cup R^{-1} \cup i_A</script>. Thus <script type="math/tex">S</script> is symmetric.</p>
+    <p><span class="kdmath">$S$</span> is symmetric: Suppose <span class="kdmath">$(x,y) \in S$</span>. Thus <span class="kdmath">$(x,y) \in R \lor (x,y) \in R^{-1}$</span>. Thus <span class="kdmath">$(y,x) \in R \lor (y,x) \in R^{-1}$</span>. 
+ Thus we can also say that <span class="kdmath">$(y,x) \in R \cup R^{-1} \cup i_A$</span>. Thus <span class="kdmath">$S$</span> is symmetric.</p>
   </li>
   <li>
-    <p>Suppose <script type="math/tex">T \subseteq A \times A</script> such that <script type="math/tex">R \subseteq T</script> and <script type="math/tex">T</script> is symmetric and reflexive. Suppose <script type="math/tex">(x,y) \in S</script>. 
-Thus <script type="math/tex">(x,y) \in R \cup R^{-1} \cup i_A</script>. Thus we have following cases:</p>
+    <p>Suppose <span class="kdmath">$T \subseteq A \times A$</span> such that <span class="kdmath">$R \subseteq T$</span> and <span class="kdmath">$T$</span> is symmetric and reflexive. Suppose <span class="kdmath">$(x,y) \in S$</span>. 
+Thus <span class="kdmath">$(x,y) \in R \cup R^{-1} \cup i_A$</span>. Thus we have following cases:</p>
 
     <ul>
       <li>
-        <p>Case 1: <script type="math/tex">(x,y) \in R</script>:   <br />
-  Since <script type="math/tex">R \subseteq T</script>, it follows that <script type="math/tex">(x,y) \in T</script>.</p>
+        <p>Case 1: <span class="kdmath">$(x,y) \in R$</span>:   <br />
+  Since <span class="kdmath">$R \subseteq T$</span>, it follows that <span class="kdmath">$(x,y) \in T$</span>.</p>
       </li>
       <li>
-        <p>Case 2: <script type="math/tex">(x,y) \in R^{-1}</script>:
-  Thus <script type="math/tex">(y,x) \in R</script>. Since <script type="math/tex">R \subseteq T</script>, it follows that <script type="math/tex">(y,x) \in T</script>. Since <script type="math/tex">T</script> is symmetric, it follows <script type="math/tex">(x,y) \in T</script>.</p>
+        <p>Case 2: <span class="kdmath">$(x,y) \in R^{-1}$</span>:
+  Thus <span class="kdmath">$(y,x) \in R$</span>. Since <span class="kdmath">$R \subseteq T$</span>, it follows that <span class="kdmath">$(y,x) \in T$</span>. Since <span class="kdmath">$T$</span> is symmetric, it follows <span class="kdmath">$(x,y) \in T$</span>.</p>
       </li>
       <li>
-        <p>Case 3: <script type="math/tex">(x,y) \in i_A</script>:
-  Thus <script type="math/tex">x = y</script>. Since <script type="math/tex">T</script> is reflexive, it follows that <script type="math/tex">(x,x) \in T</script>, or <script type="math/tex">(x,y) \in T</script>.</p>
+        <p>Case 3: <span class="kdmath">$(x,y) \in i_A$</span>:
+  Thus <span class="kdmath">$x = y$</span>. Since <span class="kdmath">$T$</span> is reflexive, it follows that <span class="kdmath">$(x,x) \in T$</span>, or <span class="kdmath">$(x,y) \in T$</span>.</p>
       </li>
     </ul>
   </li>
 </ol>
 
-<p>Thus if <script type="math/tex">(x,y) \in S</script>, then <script type="math/tex">(x,y) \in T</script>, it follows that <script type="math/tex">S \subseteq T</script>. Thus <script type="math/tex">S</script> is the smallest set of all such sets like <script type="math/tex">T</script>.</p>
+<p>Thus if <span class="kdmath">$(x,y) \in S$</span>, then <span class="kdmath">$(x,y) \in T$</span>, it follows that <span class="kdmath">$S \subseteq T$</span>. Thus <span class="kdmath">$S$</span> is the smallest set of all such sets like <span class="kdmath">$T$</span>.</p>
 
-<p>Thus we proved that such set <script type="math/tex">S</script> exists.</p>
+<p>Thus we proved that such set <span class="kdmath">$S$</span> exists.</p>
 
 <hr />
 
 <p><strong>Soln16</strong></p>
 
-<p>Since <script type="math/tex">S</script> is reflexive closure of <script type="math/tex">R</script>, it follows that <script type="math/tex">S = R \cup i_A</script>.</p>
+<p>Since <span class="kdmath">$S$</span> is reflexive closure of <span class="kdmath">$R$</span>, it follows that <span class="kdmath">$S = R \cup i_A$</span>.</p>
 
-<p><strong>(a)</strong> Suppose <script type="math/tex">(x,y) \in S</script>. Then <script type="math/tex">(x,y) \in R \lor (x,y) \in i_A</script>. Thus we have following cases:</p>
-
-<ul>
-  <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R</script>:  <br />
-  Since <script type="math/tex">R</script> is symmetric, <script type="math/tex">(y,x)</script> \in R. Since <script type="math/tex">R \subseteq S</script>, it follows <script type="math/tex">(y,x) \in S</script>.</p>
-  </li>
-  <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in i_A</script>:
-  Thus <script type="math/tex">x = y</script>. Since <script type="math/tex">S</script> is reflexive, it follows <script type="math/tex">(x,y) \in S</script>.</p>
-  </li>
-</ul>
-
-<p>Thus from both cases, <script type="math/tex">S</script> is symmetric.</p>
-
-<p><strong>(b)</strong> Suppose <script type="math/tex">(x,y) \in S \land (y,z) \in S</script>. Thus we have following possible cases:</p>
+<p><strong>(a)</strong> Suppose <span class="kdmath">$(x,y) \in S$</span>. Then <span class="kdmath">$(x,y) \in R \lor (x,y) \in i_A$</span>. Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R \land (y,z) \in i_A</script>.  <br />
-Thus <script type="math/tex">y = z</script>. It follows <script type="math/tex">(x,z) \in R</script>. Since <script type="math/tex">R \subseteq S</script>, it follows <script type="math/tex">(x,z) \in S</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R$</span>:  <br />
+  Since <span class="kdmath">$R$</span> is symmetric, <span class="kdmath">$(y,x)$</span> \in R. Since <span class="kdmath">$R \subseteq S$</span>, it follows <span class="kdmath">$(y,x) \in S$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in R \land (y,z) \in R</script>.
-Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">(x,z) \in R</script>. Since <script type="math/tex">R \subseteq S</script>, it follows that <script type="math/tex">(x,z) \in S</script>.</p>
-  </li>
-  <li>
-    <p>Case 3: <script type="math/tex">(x,y) \in i_A \land (y,z) \in R</script>.
-Thus <script type="math/tex">x = y</script>. It follows <script type="math/tex">(x,z) \in R</script>. Since <script type="math/tex">R \subseteq S</script>, it follows <script type="math/tex">(x,z) \in S</script>.</p>
-  </li>
-  <li>
-    <p>Case 4: <script type="math/tex">(x,y) \in i_A \land (y,z) \in i_A</script>.
-Thus <script type="math/tex">x = y = z</script>. Since <script type="math/tex">S</script> is reflexive, it follows that <script type="math/tex">(x,z) \in S</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in i_A$</span>:
+  Thus <span class="kdmath">$x = y$</span>. Since <span class="kdmath">$S$</span> is reflexive, it follows <span class="kdmath">$(x,y) \in S$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">S</script> is transitive.</p>
+<p>Thus from both cases, <span class="kdmath">$S$</span> is symmetric.</p>
+
+<p><strong>(b)</strong> Suppose <span class="kdmath">$(x,y) \in S \land (y,z) \in S$</span>. Thus we have following possible cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R \land (y,z) \in i_A$</span>.  <br />
+Thus <span class="kdmath">$y = z$</span>. It follows <span class="kdmath">$(x,z) \in R$</span>. Since <span class="kdmath">$R \subseteq S$</span>, it follows <span class="kdmath">$(x,z) \in S$</span>.</p>
+  </li>
+  <li>
+    <p>Case 2: <span class="kdmath">$(x,y) \in R \land (y,z) \in R$</span>.
+Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$(x,z) \in R$</span>. Since <span class="kdmath">$R \subseteq S$</span>, it follows that <span class="kdmath">$(x,z) \in S$</span>.</p>
+  </li>
+  <li>
+    <p>Case 3: <span class="kdmath">$(x,y) \in i_A \land (y,z) \in R$</span>.
+Thus <span class="kdmath">$x = y$</span>. It follows <span class="kdmath">$(x,z) \in R$</span>. Since <span class="kdmath">$R \subseteq S$</span>, it follows <span class="kdmath">$(x,z) \in S$</span>.</p>
+  </li>
+  <li>
+    <p>Case 4: <span class="kdmath">$(x,y) \in i_A \land (y,z) \in i_A$</span>.
+Thus <span class="kdmath">$x = y = z$</span>. Since <span class="kdmath">$S$</span> is reflexive, it follows that <span class="kdmath">$(x,z) \in S$</span>.</p>
+  </li>
+</ul>
+
+<p>Thus from both cases, <span class="kdmath">$S$</span> is transitive.</p>
 
 <hr />
 
 <p><strong>Soln17</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is symmetric. Suppose <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">R</script> is symmetric, it follows <script type="math/tex">(y,x) \in R</script>. Since <script type="math/tex">R \subseteq S</script>,
-it follows <script type="math/tex">(y,x) \in S</script>. Thus <script type="math/tex">(x,y) \in S^{-1}</script>. Thus <script type="math/tex">R \subseteq S^{-1}</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> is symmetric. Suppose <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$R$</span> is symmetric, it follows <span class="kdmath">$(y,x) \in R$</span>. Since <span class="kdmath">$R \subseteq S$</span>,
+it follows <span class="kdmath">$(y,x) \in S$</span>. Thus <span class="kdmath">$(x,y) \in S^{-1}$</span>. Thus <span class="kdmath">$R \subseteq S^{-1}$</span>.</p>
 
-<p>Suppose <script type="math/tex">(x,y) \in S^{-1} \land (y,z) \in S^{-1}</script>. It follows that <script type="math/tex">(y,x) \in S \land (z,y) \in S</script>. Since <script type="math/tex">S</script> is transitive, it follows that
-<script type="math/tex">(z,x) \in S</script>. Thus <script type="math/tex">(x,z) \in S^{-1}</script>. Thus <script type="math/tex">S^{-1}</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in S^{-1} \land (y,z) \in S^{-1}$</span>. It follows that <span class="kdmath">$(y,x) \in S \land (z,y) \in S$</span>. Since <span class="kdmath">$S$</span> is transitive, it follows that
+<span class="kdmath">$(z,x) \in S$</span>. Thus <span class="kdmath">$(x,z) \in S^{-1}$</span>. Thus <span class="kdmath">$S^{-1}$</span> is transitive.</p>
 
-<p>Since <script type="math/tex">R \subseteq S^{-1}</script> and <script type="math/tex">S^{-1}</script> is transitive and <script type="math/tex">S</script> is transitive closure of <script type="math/tex">R</script>, it follows from the definition of transitive closure
-that <script type="math/tex">S \subseteq S^{-1}</script>. Thus if <script type="math/tex">(x,y) \in S</script>, then <script type="math/tex">(x,y) \in S^{-1}</script>. Since <script type="math/tex">(x,y) \in S^{-1}</script>, it follows that <script type="math/tex">(y,x) \in S</script>. Thus
-<script type="math/tex">S</script> is symmetric.</p>
+<p>Since <span class="kdmath">$R \subseteq S^{-1}$</span> and <span class="kdmath">$S^{-1}$</span> is transitive and <span class="kdmath">$S$</span> is transitive closure of <span class="kdmath">$R$</span>, it follows from the definition of transitive closure
+that <span class="kdmath">$S \subseteq S^{-1}$</span>. Thus if <span class="kdmath">$(x,y) \in S$</span>, then <span class="kdmath">$(x,y) \in S^{-1}$</span>. Since <span class="kdmath">$(x,y) \in S^{-1}$</span>, it follows that <span class="kdmath">$(y,x) \in S$</span>. Thus
+<span class="kdmath">$S$</span> is symmetric.</p>
 
 <hr />
 
 <p><strong>Soln18</strong></p>
 
-<p>Let <script type="math/tex">Q</script> be the symmetric closure of <script type="math/tex">R</script>, and let <script type="math/tex">S</script> be the transitive closure of <script type="math/tex">Q</script>. Also, let <script type="math/tex">Q'</script> be the transitive closure of <script type="math/tex">R</script>, and let <script type="math/tex">S'</script> be 
-the symmetric closure of <script type="math/tex">Q'</script>.</p>
+<p>Let <span class="kdmath">$Q$</span> be the symmetric closure of <span class="kdmath">$R$</span>, and let <span class="kdmath">$S$</span> be the transitive closure of <span class="kdmath">$Q$</span>. Also, let <span class="kdmath">$Q'$</span> be the transitive closure of <span class="kdmath">$R$</span>, and let <span class="kdmath">$S'$</span> be 
+the symmetric closure of <span class="kdmath">$Q'$</span>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Since <script type="math/tex">S</script> is transitive closure of <script type="math/tex">Q</script>. It follows that <script type="math/tex">Q \subseteq S</script>. Since <script type="math/tex">Q</script> is symmetric closure of <script type="math/tex">R</script>. It follows that <script type="math/tex">Q</script> is symmetric and <script type="math/tex">R \subseteq Q</script>.
-Using Soln17, since <script type="math/tex">Q</script> is symmetric, <script type="math/tex">S</script> is symmetric. Also since <script type="math/tex">Q \subseteq S</script> and <script type="math/tex">R \subseteq Q</script>, it follows that <script type="math/tex">R \subseteq S</script>.
-Thus <script type="math/tex">S</script> is transitive and symmetric and <script type="math/tex">R \subseteq S</script>.</p>
+<p>Since <span class="kdmath">$S$</span> is transitive closure of <span class="kdmath">$Q$</span>. It follows that <span class="kdmath">$Q \subseteq S$</span>. Since <span class="kdmath">$Q$</span> is symmetric closure of <span class="kdmath">$R$</span>. It follows that <span class="kdmath">$Q$</span> is symmetric and <span class="kdmath">$R \subseteq Q$</span>.
+Using Soln17, since <span class="kdmath">$Q$</span> is symmetric, <span class="kdmath">$S$</span> is symmetric. Also since <span class="kdmath">$Q \subseteq S$</span> and <span class="kdmath">$R \subseteq Q$</span>, it follows that <span class="kdmath">$R \subseteq S$</span>.
+Thus <span class="kdmath">$S$</span> is transitive and symmetric and <span class="kdmath">$R \subseteq S$</span>.</p>
 
-<p>Now suppose <script type="math/tex">T \subseteq A \times A</script> such that <script type="math/tex">T</script> is transitive and symmetric, and <script type="math/tex">R \subseteq T</script>. Since <script type="math/tex">T</script> is symmetric and <script type="math/tex">R \subseteq T</script>, and <script type="math/tex">Q</script>
-is the symmetric closure of <script type="math/tex">R</script>, it follows(using definition of symmetric closure) that <script type="math/tex">Q \subseteq T</script>. Since <script type="math/tex">T</script> is transitive and <script type="math/tex">Q \subseteq T</script>, and <script type="math/tex">S</script> 
-is the transitive closure of <script type="math/tex">Q</script>, it follows(using definition of transitive closure) that <script type="math/tex">S \subseteq T</script>. Thus <script type="math/tex">S</script> is the smallest of the sets like <script type="math/tex">T</script>.
-It follows that <script type="math/tex">S</script> is symmetric transitive closure of <script type="math/tex">R</script>.</p>
+<p>Now suppose <span class="kdmath">$T \subseteq A \times A$</span> such that <span class="kdmath">$T$</span> is transitive and symmetric, and <span class="kdmath">$R \subseteq T$</span>. Since <span class="kdmath">$T$</span> is symmetric and <span class="kdmath">$R \subseteq T$</span>, and <span class="kdmath">$Q$</span>
+is the symmetric closure of <span class="kdmath">$R$</span>, it follows(using definition of symmetric closure) that <span class="kdmath">$Q \subseteq T$</span>. Since <span class="kdmath">$T$</span> is transitive and <span class="kdmath">$Q \subseteq T$</span>, and <span class="kdmath">$S$</span> 
+is the transitive closure of <span class="kdmath">$Q$</span>, it follows(using definition of transitive closure) that <span class="kdmath">$S \subseteq T$</span>. Thus <span class="kdmath">$S$</span> is the smallest of the sets like <span class="kdmath">$T$</span>.
+It follows that <span class="kdmath">$S$</span> is symmetric transitive closure of <span class="kdmath">$R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">Q</script> is symmetric closure of <script type="math/tex">R</script>, <script type="math/tex">R \subseteq Q</script>.</p>
+<p>Suppose <span class="kdmath">$Q$</span> is symmetric closure of <span class="kdmath">$R$</span>, <span class="kdmath">$R \subseteq Q$</span>.</p>
 
-<p>We know from Soln11, that if <script type="math/tex">R_1 \subseteq R_2</script>, and <script type="math/tex">S_1</script> and <script type="math/tex">S_2</script> are transitive closure of <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> respectively, then <script type="math/tex">S_1 \subseteq S_2</script>.</p>
+<p>We know from Soln11, that if <span class="kdmath">$R_1 \subseteq R_2$</span>, and <span class="kdmath">$S_1$</span> and <span class="kdmath">$S_2$</span> are transitive closure of <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> respectively, then <span class="kdmath">$S_1 \subseteq S_2$</span>.</p>
 
-<p>Now since <script type="math/tex">Q'</script> is transitive closure of <script type="math/tex">R</script> and <script type="math/tex">S</script> is transitive closure of <script type="math/tex">Q</script>, and <script type="math/tex">R \subseteq Q</script>, it follows that <script type="math/tex">Q' \subseteq S</script>. Since <script type="math/tex">S</script> is symmetric,
-and <script type="math/tex">Q' \subseteq S</script>, and <script type="math/tex">S'</script> is symmetric closure of <script type="math/tex">Q'</script>, it follows by the definition of symmetric closure that <script type="math/tex">S' \subseteq S</script>.</p>
+<p>Now since <span class="kdmath">$Q'$</span> is transitive closure of <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> is transitive closure of <span class="kdmath">$Q$</span>, and <span class="kdmath">$R \subseteq Q$</span>, it follows that <span class="kdmath">$Q' \subseteq S$</span>. Since <span class="kdmath">$S$</span> is symmetric,
+and <span class="kdmath">$Q' \subseteq S$</span>, and <span class="kdmath">$S'$</span> is symmetric closure of <span class="kdmath">$Q'$</span>, it follows by the definition of symmetric closure that <span class="kdmath">$S' \subseteq S$</span>.</p>
 
-<p><strong>(c)</strong> False. The problem will be because the symmetric closure of a transitive set is may not be transitive. For eg: <script type="math/tex">R = \{(1,2)\}</script>. Clearly <script type="math/tex">\{(1,2)\}</script> is
-       transitive but symmetric closure of <script type="math/tex">R</script> is <script type="math/tex">\{(1,2),(2,1)\}</script>. Clearly this is not transitive.</p>
+<p><strong>(c)</strong> False. The problem will be because the symmetric closure of a transitive set is may not be transitive. For eg: <span class="kdmath">$R = \{(1,2)\}$</span>. Clearly <span class="kdmath">$\{(1,2)\}$</span> is
+       transitive but symmetric closure of <span class="kdmath">$R$</span> is <span class="kdmath">$\{(1,2),(2,1)\}$</span>. Clearly this is not transitive.</p>
 
 <p>Counter Example:</p>
 
 <p>Suppose:  <br />
-<script type="math/tex">A = \{1,2\}</script>.  <br />
-<script type="math/tex">R = \{(1,2)\}</script></p>
+<span class="kdmath">$A = \{1,2\}$</span>.  <br />
+<span class="kdmath">$R = \{(1,2)\}$</span></p>
 
 <p>Thus,  <br />
-Symmetric closure of <script type="math/tex">R</script> is:  <br />
-<script type="math/tex">Q = \{(1,2),(2,1)\}</script>.     <br />
-Transitive closure of <script type="math/tex">Q</script> is:   <br />
-<script type="math/tex">S = \{(1,2),(2,1),(1,1)\}</script>.</p>
+Symmetric closure of <span class="kdmath">$R$</span> is:  <br />
+<span class="kdmath">$Q = \{(1,2),(2,1)\}$</span>.     <br />
+Transitive closure of <span class="kdmath">$Q$</span> is:   <br />
+<span class="kdmath">$S = \{(1,2),(2,1),(1,1)\}$</span>.</p>
 
 <p>But, if we do first transitive then symmetric,  <br />
-Transitive closure of <script type="math/tex">R</script> is:   <br />
-<script type="math/tex">Q' = \{(1,2)\}</script>.    <br />
-Thus symmetric closure of <script type="math/tex">Q'</script>:  <br />
-<script type="math/tex">S' = \{(1,2),(2,1)\}</script>.</p>
+Transitive closure of <span class="kdmath">$R$</span> is:   <br />
+<span class="kdmath">$Q' = \{(1,2)\}$</span>.    <br />
+Thus symmetric closure of <span class="kdmath">$Q'$</span>:  <br />
+<span class="kdmath">$S' = \{(1,2),(2,1)\}$</span>.</p>
 
-<p>Clearly, <script type="math/tex">S' \ne S</script>.</p>
+<p>Clearly, <span class="kdmath">$S' \ne S$</span>.</p>
 
 <hr />
 
 <p><strong>Soln19</strong></p>
 
-<p>Proof and theorem both are not correct. The proof does not take into account that affter adding elements to <script type="math/tex">R</script> to make it transitive, it may no longer be
+<p>Proof and theorem both are not correct. The proof does not take into account that affter adding elements to <span class="kdmath">$R$</span> to make it transitive, it may no longer be
 antisymmetric.</p>
 
-<p>Counter example: <script type="math/tex">A = \{(1,2,3\}</script>, R = { (1,1), (2,2), (3,3), (1,2), (2,3), (3,1)  } $$</p>
+<p>Counter example: <span class="kdmath">$A = \{(1,2,3\}$</span>, R = { (1,1), (2,2), (3,3), (1,2), (2,3), (3,1)  } $$</p>
 
-<p>Clearly <script type="math/tex">R</script> is antisymmetric and reflexive.</p>
+<p>Clearly <span class="kdmath">$R$</span> is antisymmetric and reflexive.</p>
 
-<p>Transitive closure of <script type="math/tex">R</script>:  <br />
-<script type="math/tex">S = \{ (1,1), (2,2), (3,3), (1,2), (2,3), (3,1), (1,3), (3,2), (2,1)  \}</script>.</p>
+<p>Transitive closure of <span class="kdmath">$R$</span>:  <br />
+<span class="kdmath">$S = \{ (1,1), (2,2), (3,3), (1,2), (2,3), (3,1), (1,3), (3,2), (2,1)  \}$</span>.</p>
 
-<p>Clearly <script type="math/tex">S</script> is not antisymmetric. Thus <script type="math/tex">S</script> is not partial order on <script type="math/tex">A</script>.</p>
+<p>Clearly <span class="kdmath">$S$</span> is not antisymmetric. Thus <span class="kdmath">$S$</span> is not partial order on <span class="kdmath">$A$</span>.</p>
 
 <hr />
 
@@ -1913,16 +1909,16 @@ antisymmetric.</p>
 
 <p><strong>(a)</strong> We shall give two examples of minimal elements:</p>
 
-<p><script type="math/tex">M_1 = \{ (San Francisco, Chicago), (Chicago, Dallas), (Dallas, New York), (New York, Washington DC), (Washington DC, San Francisco) \}</script>.</p>
+<p><span class="kdmath">$M_1 = \{ (San Francisco, Chicago), (Chicago, Dallas), (Dallas, New York), (New York, Washington DC), (Washington DC, San Francisco) \}$</span>.</p>
 
-<p><script type="math/tex">M_2 = \{ (San Francisco, Washington DC), (Washington DC, New York), (New York, Dallas), (Dallas, Chicago), (Chicago, San Francisco) \}</script>.</p>
+<p><span class="kdmath">$M_2 = \{ (San Francisco, Washington DC), (Washington DC, New York), (New York, Dallas), (Dallas, Chicago), (Chicago, San Francisco) \}$</span>.</p>
 
 <p>These both are minimal elements since for both of them following statement holds:</p>
 
-<p>There does not exist any other set, say <script type="math/tex">X</script> in <script type="math/tex">\mathcal F</script> such that apart from itself such that our set, say <script type="math/tex">M_1 \subseteq X</script>.</p>
+<p>There does not exist any other set, say <span class="kdmath">$X$</span> in <span class="kdmath">$\mathcal F$</span> such that apart from itself such that our set, say <span class="kdmath">$M_1 \subseteq X$</span>.</p>
 
-<p><strong>(b)</strong> Since smallest set in <script type="math/tex">\mathcal F</script> should be the subset of all other sets. Since <script type="math/tex">M_1</script> and <script type="math/tex">M_2</script> are sets in <script type="math/tex">\mathcal F</script> and <script type="math/tex">M_1 \cap M_2 = \phi</script>, it
- follows that there is no smallest set in <script type="math/tex">\mathcal F</script>.</p>
+<p><strong>(b)</strong> Since smallest set in <span class="kdmath">$\mathcal F$</span> should be the subset of all other sets. Since <span class="kdmath">$M_1$</span> and <span class="kdmath">$M_2$</span> are sets in <span class="kdmath">$\mathcal F$</span> and <span class="kdmath">$M_1 \cap M_2 = \phi$</span>, it
+ follows that there is no smallest set in <span class="kdmath">$\mathcal F$</span>.</p>
 
 
                         <hr/>

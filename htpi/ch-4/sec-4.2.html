@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,27 +1137,27 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li>Relation: Suppose <script type="math/tex">A</script> and <script type="math/tex">B</script> are sets. Then a set <script type="math/tex">R \subseteq A \times B</script> is called a relation from <script type="math/tex">A</script> to <script type="math/tex">B</script>.</li>
-  <li>Suppose <script type="math/tex">R</script> is a relation from <script type="math/tex">A</script> to <script type="math/tex">B</script>, then:
+  <li>Relation: Suppose <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are sets. Then a set <span class="kdmath">$R \subseteq A \times B$</span> is called a relation from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>.</li>
+  <li>Suppose <span class="kdmath">$R$</span> is a relation from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>, then:
     <ul>
-      <li>Domain of relation <script type="math/tex">R</script> is a set:   <br />
-  <script type="math/tex">dom(R) = \{a \in A \, \vert \, \exists b \in B((a, b) \in R)\}</script>.</li>
-      <li>Range of relation <script type="math/tex">R</script> is a set:   <br />
-  <script type="math/tex">Ran(R) = \{b \in B \, \vert \, \exists a \in A((a, b) \in R)\}</script>.</li>
-      <li>The inverse of <script type="math/tex">R</script> is the relation <script type="math/tex">R^{−1}</script> from <script type="math/tex">B</script> to <script type="math/tex">A</script>:  <br />
-  <script type="math/tex">R^{−1} = \{(b,a) \in B \times A \, \vert \, (a,b) \in R \}</script>.</li>
+      <li>Domain of relation <span class="kdmath">$R$</span> is a set:   <br />
+  <span class="kdmath">$dom(R) = \{a \in A \, \vert \, \exists b \in B((a, b) \in R)\}$</span>.</li>
+      <li>Range of relation <span class="kdmath">$R$</span> is a set:   <br />
+  <span class="kdmath">$Ran(R) = \{b \in B \, \vert \, \exists a \in A((a, b) \in R)\}$</span>.</li>
+      <li>The inverse of <span class="kdmath">$R$</span> is the relation <span class="kdmath">$R^{−1}$</span> from <span class="kdmath">$B$</span> to <span class="kdmath">$A$</span>:  <br />
+  <span class="kdmath">$R^{−1} = \{(b,a) \in B \times A \, \vert \, (a,b) \in R \}$</span>.</li>
     </ul>
   </li>
-  <li>Composition: Suppose <script type="math/tex">R</script> is a relation from <script type="math/tex">A</script> to <script type="math/tex">B</script> and <script type="math/tex">S</script> is a relation from <script type="math/tex">B</script> to <script type="math/tex">C</script>. Then the composition of <script type="math/tex">S</script>
-and <script type="math/tex">R</script> is the relation <script type="math/tex">S \circ R</script> from <script type="math/tex">A</script> to <script type="math/tex">C</script> defined as follows:  <br />
-      <script type="math/tex">S \circ R = \{ (a, c) \in A \times C \, \vert \, \exists b \in B((a, b) \in R and (b, c) \in S) \}</script>.</li>
-  <li>If <script type="math/tex">R</script> is a relation from <script type="math/tex">A</script> to <script type="math/tex">B</script>, <script type="math/tex">S</script> is a relation from <script type="math/tex">B</script> to <script type="math/tex">C</script>, and <script type="math/tex">T</script> is a relation from <script type="math/tex">C</script> to <script type="math/tex">D</script>. Then:
+  <li>Composition: Suppose <span class="kdmath">$R$</span> is a relation from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span> and <span class="kdmath">$S$</span> is a relation from <span class="kdmath">$B$</span> to <span class="kdmath">$C$</span>. Then the composition of <span class="kdmath">$S$</span>
+and <span class="kdmath">$R$</span> is the relation <span class="kdmath">$S \circ R$</span> from <span class="kdmath">$A$</span> to <span class="kdmath">$C$</span> defined as follows:  <br />
+      <span class="kdmath">$S \circ R = \{ (a, c) \in A \times C \, \vert \, \exists b \in B((a, b) \in R and (b, c) \in S) \}$</span>.</li>
+  <li>If <span class="kdmath">$R$</span> is a relation from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>, <span class="kdmath">$S$</span> is a relation from <span class="kdmath">$B$</span> to <span class="kdmath">$C$</span>, and <span class="kdmath">$T$</span> is a relation from <span class="kdmath">$C$</span> to <span class="kdmath">$D$</span>. Then:
     <ul>
-      <li><script type="math/tex">(R^{−1})^{−1} = R</script>.</li>
-      <li><script type="math/tex">Dom(R^{−1}) = Ran(R)</script>.</li>
-      <li><script type="math/tex">Ran(R^{−1}) = Dom(R)</script>.</li>
-      <li><script type="math/tex">T \circ (S \circ R) = (T \circ S) \circ R</script>.</li>
-      <li><script type="math/tex">(S \circ R)^{−1} = R^{−1} \circ S^{−1}</script>.</li>
+      <li><span class="kdmath">$(R^{−1})^{−1} = R$</span>.</li>
+      <li><span class="kdmath">$Dom(R^{−1}) = Ran(R)$</span>.</li>
+      <li><span class="kdmath">$Ran(R^{−1}) = Dom(R)$</span>.</li>
+      <li><span class="kdmath">$T \circ (S \circ R) = (T \circ S) \circ R$</span>.</li>
+      <li><span class="kdmath">$(S \circ R)^{−1} = R^{−1} \circ S^{−1}$</span>.</li>
     </ul>
   </li>
 </ul>
@@ -1167,7 +1168,7 @@ and <script type="math/tex">R</script> is the relation <script type="math/tex">S
 
 <p><strong>(a)</strong> Domain is the set of living persons who are parents of some living people and Range is the set of all living persons who have a living parent.</p>
 
-<p><strong>(b)</strong> Domain is the set of all real numbers, <script type="math/tex">\mathbb R</script>. Range is the set of all positive numbers, <script type="math/tex">\mathbb R^+</script>.</p>
+<p><strong>(b)</strong> Domain is the set of all real numbers, <span class="kdmath">$\mathbb R$</span>. Range is the set of all positive numbers, <span class="kdmath">$\mathbb R^+$</span>.</p>
 
 <hr />
 
@@ -1175,36 +1176,34 @@ and <script type="math/tex">R</script> is the relation <script type="math/tex">S
 
 <p><strong>(a)</strong> Domain is the set of all living persons who are brother of some living person. Range is the set of all living persons who have a living brother.</p>
 
-<p><strong>(b)</strong> Domain : <script type="math/tex">% <![CDATA[
-\{ x \in \mathbb R \, \vert \, x =< -1 \lor x >= 1 \} %]]></script>. Note that if domain lies in <script type="math/tex">(-1, 1)</script> then <script type="math/tex">1- \frac 2 {1 + x^2}</script>
-    will be negative. Thus there will be no <script type="math/tex">y \in \mathbb R</script> such that <script type="math/tex">y^2</script> is negative.  <br />
-    Range: <script type="math/tex">% <![CDATA[
-\{ x \in \mathbb R \, \vert \, 0 \ge x < 1 \} %]]></script>.</p>
+<p><strong>(b)</strong> Domain : <span class="kdmath">$\{ x \in \mathbb R \, \vert \, x =< -1 \lor x >= 1 \}$</span>. Note that if domain lies in <span class="kdmath">$(-1, 1)$</span> then <span class="kdmath">$1- \frac 2 {1 + x^2}$</span>
+    will be negative. Thus there will be no <span class="kdmath">$y \in \mathbb R$</span> such that <span class="kdmath">$y^2$</span> is negative.  <br />
+    Range: <span class="kdmath">$\{ x \in \mathbb R \, \vert \, 0 \ge x < 1 \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">L</script> is a relation from <script type="math/tex">S</script> to <script type="math/tex">R</script>. <script type="math/tex">L^{-1}</script> is a relation from <script type="math/tex">R</script> to <script type="math/tex">S</script>. Thus:  <br />
-    <script type="math/tex">L^{-1} \circ L = \{ (m,n) \in S \times S \, \vert \, \exists o \in R((m,o) \in L \land (o,n) \in L^{-1}) \}</script>.  <br />
-    <script type="math/tex">\quad = \{ (m,n) \in S \times S \, \vert \, \text{There exists a room o such that m lives in that room and also n lives in that room.} \}</script>.  <br />
-    <script type="math/tex">\quad = \{ (m,n) \in S \times S \, \vert \, \text{There exists a room such that m, and n both lives in that room} \}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$L$</span> is a relation from <span class="kdmath">$S$</span> to <span class="kdmath">$R$</span>. <span class="kdmath">$L^{-1}$</span> is a relation from <span class="kdmath">$R$</span> to <span class="kdmath">$S$</span>. Thus:  <br />
+    <span class="kdmath">$L^{-1} \circ L = \{ (m,n) \in S \times S \, \vert \, \exists o \in R((m,o) \in L \land (o,n) \in L^{-1}) \}$</span>.  <br />
+    <span class="kdmath">$\quad = \{ (m,n) \in S \times S \, \vert \, \text{There exists a room o such that m lives in that room and also n lives in that room.} \}$</span>.  <br />
+    <span class="kdmath">$\quad = \{ (m,n) \in S \times S \, \vert \, \text{There exists a room such that m, and n both lives in that room} \}$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">L^{-1} \circ L</script> is a relation from <script type="math/tex">S</script> to <script type="math/tex">S</script>. <script type="math/tex">E</script> is a relation from <script type="math/tex">S</script> to <script type="math/tex">C</script>. Thus:   <br />
-    <script type="math/tex">E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \exists s \in S((m,s) \in L^{−1} \circ L \land (s,n) \in E) \}</script>.  <br />
-    <script type="math/tex">E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \text{There exists a student s such that m and s lives in same room and s is doing course n} \}</script>.  <br />
-    <script type="math/tex">E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \text{There exists a student s who lives in dorm which has a student doing course n} \}</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$L^{-1} \circ L$</span> is a relation from <span class="kdmath">$S$</span> to <span class="kdmath">$S$</span>. <span class="kdmath">$E$</span> is a relation from <span class="kdmath">$S$</span> to <span class="kdmath">$C$</span>. Thus:   <br />
+    <span class="kdmath">$E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \exists s \in S((m,s) \in L^{−1} \circ L \land (s,n) \in E) \}$</span>.  <br />
+    <span class="kdmath">$E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \text{There exists a student s such that m and s lives in same room and s is doing course n} \}$</span>.  <br />
+    <span class="kdmath">$E \circ (L^{−1} \circ L) = \{ (m,n) \in S \times C \, \vert \, \text{There exists a student s who lives in dorm which has a student doing course n} \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln4</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">S \circ R = \{ \{1, 5\}, \{1, 6\}, \{1, 4\}, \{2, 4\}, \{3, 6\} \}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$S \circ R = \{ \{1, 5\}, \{1, 6\}, \{1, 4\}, \{2, 4\}, \{3, 6\} \}$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">S^{-1} = \{ \{5, 4\}, \{6, 4\}, \{4, 5\}, \{6, 6\}\}</script>.  <br />
-<script type="math/tex">S \circ S^{-1} = \{ \{5, 5\}, \{5, 6\}, \{6, 5\}, \{6, 6\}, \{4, 4\} \}</script>.</p>
+<p><span class="kdmath">$S^{-1} = \{ \{5, 4\}, \{6, 4\}, \{4, 5\}, \{6, 6\}\}$</span>.  <br />
+<span class="kdmath">$S \circ S^{-1} = \{ \{5, 5\}, \{5, 6\}, \{6, 5\}, \{6, 6\}, \{4, 4\} \}$</span>.</p>
 
 <hr />
 
@@ -1212,13 +1211,13 @@ and <script type="math/tex">R</script> is the relation <script type="math/tex">S
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">S^{-1} = \{ \{7, 4\}, \{8, 4\}, \{6, 5\}\}</script>.  <br />
-<script type="math/tex">S^{-1} \circ R = \{ \{1, 4\}, \{3, 5\}, \{3, 4\}\}</script>.</p>
+<p><span class="kdmath">$S^{-1} = \{ \{7, 4\}, \{8, 4\}, \{6, 5\}\}$</span>.  <br />
+<span class="kdmath">$S^{-1} \circ R = \{ \{1, 4\}, \{3, 5\}, \{3, 4\}\}$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">R^{-1} = \{ \{7, 1\}, \{6, 3\}, \{7, 3\} \}</script>.  <br />
-<script type="math/tex">R^{-1} \circ S = \{ \{4, 1\}, \{4, 3\}, \{5, 3\}\}</script>.</p>
+<p><span class="kdmath">$R^{-1} = \{ \{7, 1\}, \{6, 3\}, \{7, 3\} \}$</span>.  <br />
+<span class="kdmath">$R^{-1} \circ S = \{ \{4, 1\}, \{4, 3\}, \{5, 3\}\}$</span>.</p>
 
 <hr />
 
@@ -1226,54 +1225,54 @@ and <script type="math/tex">R</script> is the relation <script type="math/tex">S
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">Ran(R^{-1})</script> and <script type="math/tex">Dom(R)</script> are both subsets of <script type="math/tex">A</script>. Let <script type="math/tex">a</script> is an arbitrary element of <script type="math/tex">A</script>. Then,</p>
+<p><span class="kdmath">$Ran(R^{-1})$</span> and <span class="kdmath">$Dom(R)$</span> are both subsets of <span class="kdmath">$A$</span>. Let <span class="kdmath">$a$</span> is an arbitrary element of <span class="kdmath">$A$</span>. Then,</p>
 
-<p><script type="math/tex">a \in Ran(R^{−1})</script> iff <script type="math/tex">\exists b \in B((b,a) \in R^{−1})</script>.  <br />
-<script type="math/tex">iff \exists a ∈ A((a,b) ∈ R)</script> iff <script type="math/tex">b ∈ Ran(R)</script>.</p>
+<p><span class="kdmath">$a \in Ran(R^{−1})$</span> iff <span class="kdmath">$\exists b \in B((b,a) \in R^{−1})$</span>.  <br />
+<span class="kdmath">$iff \exists a ∈ A((a,b) ∈ R)$</span> iff <span class="kdmath">$b ∈ Ran(R)$</span>.</p>
 
-<p>Since <script type="math/tex">a</script> is arbitrary, <script type="math/tex">Ran(R^{-1}) = Dom(R)</script>.</p>
+<p>Since <span class="kdmath">$a$</span> is arbitrary, <span class="kdmath">$Ran(R^{-1}) = Dom(R)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">S = R^{-1}</script>, then <script type="math/tex">S^{-1} = (R^{-1})^{-1} = R</script>. Since <script type="math/tex">Dom(R^{−1}) = Ran(R)</script>, it follows that <script type="math/tex">Dom(S) = Ran(S^{-1})</script>,
-or <script type="math/tex">Ran(S^{-1} = Dom(S)</script>.</p>
+<p>Suppose <span class="kdmath">$S = R^{-1}$</span>, then <span class="kdmath">$S^{-1} = (R^{-1})^{-1} = R$</span>. Since <span class="kdmath">$Dom(R^{−1}) = Ran(R)$</span>, it follows that <span class="kdmath">$Dom(S) = Ran(S^{-1})$</span>,
+or <span class="kdmath">$Ran(S^{-1} = Dom(S)$</span>.</p>
 
 <hr />
 
 <p><strong>(c)</strong></p>
 
-<p>Clearly <script type="math/tex">(T \circ S) \circ R</script> and <script type="math/tex">T \circ (S \circ R)</script> are both relations from <script type="math/tex">A</script> to <script type="math/tex">D</script>. Let <script type="math/tex">(a, d)</script> be an arbitrary element of <script type="math/tex">A \times D</script>.</p>
+<p>Clearly <span class="kdmath">$(T \circ S) \circ R$</span> and <span class="kdmath">$T \circ (S \circ R)$</span> are both relations from <span class="kdmath">$A$</span> to <span class="kdmath">$D$</span>. Let <span class="kdmath">$(a, d)$</span> be an arbitrary element of <span class="kdmath">$A \times D$</span>.</p>
 
-<p>Suppose <script type="math/tex">(a,d) \in (T \circ S) \circ R</script>. Thus there must exist an element <script type="math/tex">b</script> such that <script type="math/tex">(a, b) \in R</script> and <script type="math/tex">(b,d) \in T \circ S</script>. Since 
-<script type="math/tex">(b,d) \in T \circ S</script>, there must exist a n element <script type="math/tex">c</script> such that <script type="math/tex">(b,c) \in S</script> and <script type="math/tex">(c,d) \in T</script>. Now since <script type="math/tex">(a,b) \in R</script> and
-<script type="math/tex">(b,c) \in S</script>, it follows that <script type="math/tex">(a,c) \in S \circ R</script>. Thus we have <script type="math/tex">(a,c) \in S \circ R</script> and <script type="math/tex">(c,d) \in T</script>, thus it follows that
-<script type="math/tex">(a,d) \in T \circ (S \circ R)</script>. Since <script type="math/tex">(a,d)</script> is arbitrary, it follows that <script type="math/tex">(T \circ S) \circ R \subseteq T \circ (S \circ R)</script>.</p>
+<p>Suppose <span class="kdmath">$(a,d) \in (T \circ S) \circ R$</span>. Thus there must exist an element <span class="kdmath">$b$</span> such that <span class="kdmath">$(a, b) \in R$</span> and <span class="kdmath">$(b,d) \in T \circ S$</span>. Since 
+<span class="kdmath">$(b,d) \in T \circ S$</span>, there must exist a n element <span class="kdmath">$c$</span> such that <span class="kdmath">$(b,c) \in S$</span> and <span class="kdmath">$(c,d) \in T$</span>. Now since <span class="kdmath">$(a,b) \in R$</span> and
+<span class="kdmath">$(b,c) \in S$</span>, it follows that <span class="kdmath">$(a,c) \in S \circ R$</span>. Thus we have <span class="kdmath">$(a,c) \in S \circ R$</span> and <span class="kdmath">$(c,d) \in T$</span>, thus it follows that
+<span class="kdmath">$(a,d) \in T \circ (S \circ R)$</span>. Since <span class="kdmath">$(a,d)$</span> is arbitrary, it follows that <span class="kdmath">$(T \circ S) \circ R \subseteq T \circ (S \circ R)$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
-<p>Clearly <script type="math/tex">S \circ R</script> is a relation from <script type="math/tex">A</script> to <script type="math/tex">C</script>. Thus <script type="math/tex">(S \circ R)^{-1}</script> is a relation from <script type="math/tex">C</script> to <script type="math/tex">A</script>. Also, it can be noted 
-that <script type="math/tex">R^{−1} \circ S^{−1}</script> is also a relation from <script type="math/tex">C</script> to <script type="math/tex">A</script>. Suppose <script type="math/tex">(c,a)</script> is an arbitrary element of <script type="math/tex">C</script> to <script type="math/tex">A</script>.</p>
+<p>Clearly <span class="kdmath">$S \circ R$</span> is a relation from <span class="kdmath">$A$</span> to <span class="kdmath">$C$</span>. Thus <span class="kdmath">$(S \circ R)^{-1}$</span> is a relation from <span class="kdmath">$C$</span> to <span class="kdmath">$A$</span>. Also, it can be noted 
+that <span class="kdmath">$R^{−1} \circ S^{−1}$</span> is also a relation from <span class="kdmath">$C$</span> to <span class="kdmath">$A$</span>. Suppose <span class="kdmath">$(c,a)$</span> is an arbitrary element of <span class="kdmath">$C$</span> to <span class="kdmath">$A$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(c,a) \in (S \circ R)^{-1}</script>. It follows that <script type="math/tex">(a,c) \in (S \circ R)</script>. Thus there exist an element <script type="math/tex">b</script> such that <script type="math/tex">(a,b) \in R</script>
-and <script type="math/tex">(b,c) \in S</script>. Since <script type="math/tex">(a,b) \in R</script>, it follows that <script type="math/tex">(b,a) \in R^{-1}</script>. Similarly, since <script type="math/tex">(b,c) \in S</script>, it follows that <script type="math/tex">(c,b) \in S^{-1}</script>.
-Now, we have <script type="math/tex">(c,b) \in S^{-1}</script> and <script type="math/tex">(b,a) \in R^{-1}</script>, it follows <script type="math/tex">(c,a) \in R^{-1} \circ S^{-1}</script>. Now since <script type="math/tex">(c,a)</script> is arbitrary,
- it follows that <script type="math/tex">(S \circ R)^{-1} \subseteq R^{-1} \circ S^{-1}</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(c,a) \in (S \circ R)^{-1}$</span>. It follows that <span class="kdmath">$(a,c) \in (S \circ R)$</span>. Thus there exist an element <span class="kdmath">$b$</span> such that <span class="kdmath">$(a,b) \in R$</span>
+and <span class="kdmath">$(b,c) \in S$</span>. Since <span class="kdmath">$(a,b) \in R$</span>, it follows that <span class="kdmath">$(b,a) \in R^{-1}$</span>. Similarly, since <span class="kdmath">$(b,c) \in S$</span>, it follows that <span class="kdmath">$(c,b) \in S^{-1}$</span>.
+Now, we have <span class="kdmath">$(c,b) \in S^{-1}$</span> and <span class="kdmath">$(b,a) \in R^{-1}$</span>, it follows <span class="kdmath">$(c,a) \in R^{-1} \circ S^{-1}$</span>. Now since <span class="kdmath">$(c,a)$</span> is arbitrary,
+ it follows that <span class="kdmath">$(S \circ R)^{-1} \subseteq R^{-1} \circ S^{-1}$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Similarly, suppose <script type="math/tex">(c,a) \in R^{-1} \circ S^{-1}</script>. Thus there exists an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(c,b) \in S^{-1}</script>
-and <script type="math/tex">(b,a) \in R^{-1}</script>. Thus it follows that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>. Now since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>, it follows
-that <script type="math/tex">(a,c) \in S \circ R</script>. And since <script type="math/tex">(a,c) \in S \circ R</script>, it follows that <script type="math/tex">(c,a) \in (S \circ R )^{-1}</script>. Since <script type="math/tex">(c,a)</script> is arbitrary,
-we can conclude that <script type="math/tex">R^{-1} \circ S^{-1} \subseteq (S \circ R)^{-1}</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Similarly, suppose <span class="kdmath">$(c,a) \in R^{-1} \circ S^{-1}$</span>. Thus there exists an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(c,b) \in S^{-1}$</span>
+and <span class="kdmath">$(b,a) \in R^{-1}$</span>. Thus it follows that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>. Now since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>, it follows
+that <span class="kdmath">$(a,c) \in S \circ R$</span>. And since <span class="kdmath">$(a,c) \in S \circ R$</span>, it follows that <span class="kdmath">$(c,a) \in (S \circ R )^{-1}$</span>. Since <span class="kdmath">$(c,a)$</span> is arbitrary,
+we can conclude that <span class="kdmath">$R^{-1} \circ S^{-1} \subseteq (S \circ R)^{-1}$</span>.</p>
 
-<p>Thus from both directions, we can conclude that <script type="math/tex">(S \circ R)^{-1} = R^{-1} \circ S^{-1}</script>.</p>
+<p>Thus from both directions, we can conclude that <span class="kdmath">$(S \circ R)^{-1} = R^{-1} \circ S^{-1}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>Suppose <script type="math/tex">p</script> is the enemy of <script type="math/tex">q</script> and <script type="math/tex">q</script> is the enemy of <script type="math/tex">r</script>, then it is given that <script type="math/tex">p</script> is the friend of <script type="math/tex">r</script>. Thus we have
-if <script type="math/tex">(p,q) \in E</script> and <script type="math/tex">(q,r) \in E</script>, then <script type="math/tex">(p,r) \in F</script>. Now since <script type="math/tex">(p,q) \in E</script> and <script type="math/tex">(q,r) \in E</script>, it follows <script type="math/tex">(p,r) \in E \circ E</script>.
-Thus the given statement says: if <script type="math/tex">(p,r) \in E \circ E</script>, then <script type="math/tex">(p,r) \in F</script>, or Enemy of an enemy is a friend. Since <script type="math/tex">(p,r)</script> is arbitrary,
-it follows that <script type="math/tex">E \circ E \subseteq F</script>.</p>
+<p>Suppose <span class="kdmath">$p$</span> is the enemy of <span class="kdmath">$q$</span> and <span class="kdmath">$q$</span> is the enemy of <span class="kdmath">$r$</span>, then it is given that <span class="kdmath">$p$</span> is the friend of <span class="kdmath">$r$</span>. Thus we have
+if <span class="kdmath">$(p,q) \in E$</span> and <span class="kdmath">$(q,r) \in E$</span>, then <span class="kdmath">$(p,r) \in F$</span>. Now since <span class="kdmath">$(p,q) \in E$</span> and <span class="kdmath">$(q,r) \in E$</span>, it follows <span class="kdmath">$(p,r) \in E \circ E$</span>.
+Thus the given statement says: if <span class="kdmath">$(p,r) \in E \circ E$</span>, then <span class="kdmath">$(p,r) \in F$</span>, or Enemy of an enemy is a friend. Since <span class="kdmath">$(p,r)$</span> is arbitrary,
+it follows that <span class="kdmath">$E \circ E \subseteq F$</span>.</p>
 
 <hr />
 
@@ -1281,37 +1280,37 @@ it follows that <script type="math/tex">E \circ E \subseteq F</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">a \in Dom(S \circ R)</script>. Thus there exist a pair <script type="math/tex">(b,c) \in S</script> such that <script type="math/tex">(a,b) \in R</script>. Since <script type="math/tex">(a,b) \in R</script>, it follows that 
-<script type="math/tex">a \in Dom(R)</script>. Thus if <script type="math/tex">a \in Dom(S \circ R)</script>, then <script type="math/tex">a \in Dom(R)</script>. Since <script type="math/tex">a</script> is arbitrary, we can conclude that <script type="math/tex">Dom(S \circ R) \subseteq Dom(R)</script>.</p>
+<p>Suppose <span class="kdmath">$a \in Dom(S \circ R)$</span>. Thus there exist a pair <span class="kdmath">$(b,c) \in S$</span> such that <span class="kdmath">$(a,b) \in R$</span>. Since <span class="kdmath">$(a,b) \in R$</span>, it follows that 
+<span class="kdmath">$a \in Dom(R)$</span>. Thus if <span class="kdmath">$a \in Dom(S \circ R)$</span>, then <span class="kdmath">$a \in Dom(R)$</span>. Since <span class="kdmath">$a$</span> is arbitrary, we can conclude that <span class="kdmath">$Dom(S \circ R) \subseteq Dom(R)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">Ran(R) \subseteq Dom(S)</script>. Suppose <script type="math/tex">a \in Dom(R)</script>. Thus there must exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R</script>. Thus
-<script type="math/tex">b \in Ran(R)</script>. Since <script type="math/tex">Ran(R) \subseteq Dom(S)</script>, it follows that <script type="math/tex">b \in Dom(S)</script>. Thus there must exist an element <script type="math/tex">c \in C</script> such that
-<script type="math/tex">(b,c) \in S</script>. Now since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>, it follows that <script type="math/tex">(a,c) \in (S \circ R)</script>. Thus <script type="math/tex">a \in Dom(S \circ R)</script>.
-Thus we have, if <script type="math/tex">a \in Dom(R)</script>, then <script type="math/tex">a \in Dom(S \circ R)</script>. Since <script type="math/tex">a</script> is arbitrary, we can conclude that <script type="math/tex">Dom(R) \subseteq Dom(S \circ R)</script>.</p>
+<p>Suppose <span class="kdmath">$Ran(R) \subseteq Dom(S)$</span>. Suppose <span class="kdmath">$a \in Dom(R)$</span>. Thus there must exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R$</span>. Thus
+<span class="kdmath">$b \in Ran(R)$</span>. Since <span class="kdmath">$Ran(R) \subseteq Dom(S)$</span>, it follows that <span class="kdmath">$b \in Dom(S)$</span>. Thus there must exist an element <span class="kdmath">$c \in C$</span> such that
+<span class="kdmath">$(b,c) \in S$</span>. Now since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>, it follows that <span class="kdmath">$(a,c) \in (S \circ R)$</span>. Thus <span class="kdmath">$a \in Dom(S \circ R)$</span>.
+Thus we have, if <span class="kdmath">$a \in Dom(R)$</span>, then <span class="kdmath">$a \in Dom(S \circ R)$</span>. Since <span class="kdmath">$a$</span> is arbitrary, we can conclude that <span class="kdmath">$Dom(R) \subseteq Dom(S \circ R)$</span>.</p>
 
-<p>Thus from part (a) and this proof we can conclude that <script type="math/tex">Dom(S ◦ R) = Dom(R)</script>.</p>
+<p>Thus from part (a) and this proof we can conclude that <span class="kdmath">$Dom(S ◦ R) = Dom(R)$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
 <ul>
   <li>
-    <p><script type="math/tex">Ran(S \circ R) \subseteq Ran(S)</script>.  <br />
-Suppose <script type="math/tex">c \in (S \circ R)</script>. Thus there must exist a pair <script type="math/tex">(a,c) \in S \circ R</script>. Since <script type="math/tex">(a,c) \in S \circ R</script>, there must exist an element
-<script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>. Now since <script type="math/tex">(b,c) \in S</script>, it follows that <script type="math/tex">c \in Ran(S)</script>. Since <script type="math/tex">c</script> is arbitrary,
-we can conclude that <script type="math/tex">Ran(S \circ R) \subseteq Ran(S)</script>.</p>
+    <p><span class="kdmath">$Ran(S \circ R) \subseteq Ran(S)$</span>.  <br />
+Suppose <span class="kdmath">$c \in (S \circ R)$</span>. Thus there must exist a pair <span class="kdmath">$(a,c) \in S \circ R$</span>. Since <span class="kdmath">$(a,c) \in S \circ R$</span>, there must exist an element
+<span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>. Now since <span class="kdmath">$(b,c) \in S$</span>, it follows that <span class="kdmath">$c \in Ran(S)$</span>. Since <span class="kdmath">$c$</span> is arbitrary,
+we can conclude that <span class="kdmath">$Ran(S \circ R) \subseteq Ran(S)$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">Ran(S \circ R) = Ran(S)</script>.  <br />
-Suppose <script type="math/tex">Dom(S) \subseteq Ran(R)</script>. Suppose <script type="math/tex">c \in Ran(S)</script>. Thus there must exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(b,c) \in Ran(S)</script>.
-Thus <script type="math/tex">b \in Dom(S)</script>. Now since <script type="math/tex">Dom(S) \subseteq Ran(R)</script>, it follows that <script type="math/tex">b \in Ran(R)</script>. Thus there must exist an element <script type="math/tex">a \in A</script> such
-that <script type="math/tex">(a,b) \in R</script>. Thus we have <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>, it follows that <script type="math/tex">(a,c) \in S \circ R</script>. Thus <script type="math/tex">c \in Ran(S \circ R)</script>.
-Thus we have, if <script type="math/tex">c \in Ran(S)</script>, then <script type="math/tex">c \in Ran(S \circ R)</script>. Since <script type="math/tex">c</script> is arbitrary, we can conclude that <script type="math/tex">Ran(S) \subseteq Ran(S \circ R)</script>.</p>
+    <p><span class="kdmath">$Ran(S \circ R) = Ran(S)$</span>.  <br />
+Suppose <span class="kdmath">$Dom(S) \subseteq Ran(R)$</span>. Suppose <span class="kdmath">$c \in Ran(S)$</span>. Thus there must exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(b,c) \in Ran(S)$</span>.
+Thus <span class="kdmath">$b \in Dom(S)$</span>. Now since <span class="kdmath">$Dom(S) \subseteq Ran(R)$</span>, it follows that <span class="kdmath">$b \in Ran(R)$</span>. Thus there must exist an element <span class="kdmath">$a \in A$</span> such
+that <span class="kdmath">$(a,b) \in R$</span>. Thus we have <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>, it follows that <span class="kdmath">$(a,c) \in S \circ R$</span>. Thus <span class="kdmath">$c \in Ran(S \circ R)$</span>.
+Thus we have, if <span class="kdmath">$c \in Ran(S)$</span>, then <span class="kdmath">$c \in Ran(S \circ R)$</span>. Since <span class="kdmath">$c$</span> is arbitrary, we can conclude that <span class="kdmath">$Ran(S) \subseteq Ran(S \circ R)$</span>.</p>
   </li>
 </ul>
 
-<p>Since <script type="math/tex">Ran(S \circ R) \subseteq Ran(S)</script> and <script type="math/tex">Ran(S) \subseteq Ran(S \circ R)</script>, we can conclude that <script type="math/tex">Ran(S \circ R) = Ran(S)</script>.</p>
+<p>Since <span class="kdmath">$Ran(S \circ R) \subseteq Ran(S)$</span> and <span class="kdmath">$Ran(S) \subseteq Ran(S \circ R)$</span>, we can conclude that <span class="kdmath">$Ran(S \circ R) = Ran(S)$</span>.</p>
 
 <hr />
 
@@ -1319,24 +1318,24 @@ Thus we have, if <script type="math/tex">c \in Ran(S)</script>, then <script typ
 
 <p><strong>(a)</strong>. True.</p>
 
-<p>Suppose <script type="math/tex">(a,b) \in R</script>. Then <script type="math/tex">a \in Dom(R)</script> and <script type="math/tex">b \in Ran(R)</script>. Thus <script type="math/tex">(a,b) \in Dom(R) \times Ran(R)</script>. Thus we can say that, if <script type="math/tex">(a,b) \in R</script>,
-then <script type="math/tex">(a,b) \in Dom(R) \times Ran(R)</script>. Since <script type="math/tex">(a,b)</script> is arbitrary, we can conclude that <script type="math/tex">R \subseteq Dom(R) \times Ran(R)</script>.</p>
+<p>Suppose <span class="kdmath">$(a,b) \in R$</span>. Then <span class="kdmath">$a \in Dom(R)$</span> and <span class="kdmath">$b \in Ran(R)$</span>. Thus <span class="kdmath">$(a,b) \in Dom(R) \times Ran(R)$</span>. Thus we can say that, if <span class="kdmath">$(a,b) \in R$</span>,
+then <span class="kdmath">$(a,b) \in Dom(R) \times Ran(R)$</span>. Since <span class="kdmath">$(a,b)$</span> is arbitrary, we can conclude that <span class="kdmath">$R \subseteq Dom(R) \times Ran(R)$</span>.</p>
 
 <p><strong>(b)</strong> True.</p>
 
-<p>Suppose <script type="math/tex">R \subseteq S</script>. Suppose <script type="math/tex">(b,a) \in R^{-1}</script>. Thus <script type="math/tex">(a,b) \in R</script>. Since <script type="math/tex">R \subseteq S</script>, it follows <script type="math/tex">(a,b) \in S</script>. Now since
-<script type="math/tex">(a,b) \in S</script>, it follows <script type="math/tex">(b,a) \in S^{-1}</script>. Thus if <script type="math/tex">(b,a) \in R^{-1}</script>, then <script type="math/tex">((b,a) \in S^{-1}</script>. Since <script type="math/tex">(b,a)</script> is arbitrary, we 
-can conclude that <script type="math/tex">R^{-1} \subseteq S^{-1}</script>.</p>
+<p>Suppose <span class="kdmath">$R \subseteq S$</span>. Suppose <span class="kdmath">$(b,a) \in R^{-1}$</span>. Thus <span class="kdmath">$(a,b) \in R$</span>. Since <span class="kdmath">$R \subseteq S$</span>, it follows <span class="kdmath">$(a,b) \in S$</span>. Now since
+<span class="kdmath">$(a,b) \in S$</span>, it follows <span class="kdmath">$(b,a) \in S^{-1}$</span>. Thus if <span class="kdmath">$(b,a) \in R^{-1}$</span>, then <span class="kdmath">$((b,a) \in S^{-1}$</span>. Since <span class="kdmath">$(b,a)$</span> is arbitrary, we 
+can conclude that <span class="kdmath">$R^{-1} \subseteq S^{-1}$</span>.</p>
 
 <p><strong>(c)</strong> True.</p>
 
-<p>Suppose <script type="math/tex">(a,b) \in (R \cup S)^{−1}</script>.  <br />
- iff <script type="math/tex">(b,a) \in (R \cup S)</script>.  <br />
- iff <script type="math/tex">((b,a) \in R) \lor ((b,a) \in S)</script>.  <br />
- iff <script type="math/tex">((a,b) \in R^{-1}) \lor ((a,b) \in S^{-1})</script>.  <br />
- iff <script type="math/tex">(a,b) \in (R^{-1} \cup \in S^{-1})</script>.</p>
+<p>Suppose <span class="kdmath">$(a,b) \in (R \cup S)^{−1}$</span>.  <br />
+ iff <span class="kdmath">$(b,a) \in (R \cup S)$</span>.  <br />
+ iff <span class="kdmath">$((b,a) \in R) \lor ((b,a) \in S)$</span>.  <br />
+ iff <span class="kdmath">$((a,b) \in R^{-1}) \lor ((a,b) \in S^{-1})$</span>.  <br />
+ iff <span class="kdmath">$(a,b) \in (R^{-1} \cup \in S^{-1})$</span>.</p>
 
-<p>Since <script type="math/tex">(a,b)</script> is arbitrary, we can conclude that <script type="math/tex">(R \cup S)^{-1} = R^{-1} \cup S^{-1}</script>.</p>
+<p>Since <span class="kdmath">$(a,b)$</span> is arbitrary, we can conclude that <span class="kdmath">$(R \cup S)^{-1} = R^{-1} \cup S^{-1}$</span>.</p>
 
 <hr />
 
@@ -1344,14 +1343,14 @@ can conclude that <script type="math/tex">R^{-1} \subseteq S^{-1}</script>.</p>
 
 <p>We will prove it by contra-positive.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">Ran(R) \cap Dom(S) \ne \phi</script>. Thus there must exist some element <script type="math/tex">b \in Ran(R)</script> and <script type="math/tex">b \in Dom(S)</script>. Since <script type="math/tex">b \in Ran(R)</script>,
-there must exist an element <script type="math/tex">a \in A</script> such that <script type="math/tex">(a,b) \in R</script>. Similarly, since <script type="math/tex">b \in Dom(S)</script>, there must exist an element <script type="math/tex">c \in C</script> such that
-<script type="math/tex">(b,c) \in S</script>. Thus we have <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>, it follows that <script type="math/tex">(a,c) \in S \circ R</script>. Thus <script type="math/tex">S \circ R \ne \phi</script>. Hence by 
-contrapositive we can conclude that if <script type="math/tex">S \circ R = \phi</script>, then <script type="math/tex">Ran(R) \cap Dom(S) = \phi</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$Ran(R) \cap Dom(S) \ne \phi$</span>. Thus there must exist some element <span class="kdmath">$b \in Ran(R)$</span> and <span class="kdmath">$b \in Dom(S)$</span>. Since <span class="kdmath">$b \in Ran(R)$</span>,
+there must exist an element <span class="kdmath">$a \in A$</span> such that <span class="kdmath">$(a,b) \in R$</span>. Similarly, since <span class="kdmath">$b \in Dom(S)$</span>, there must exist an element <span class="kdmath">$c \in C$</span> such that
+<span class="kdmath">$(b,c) \in S$</span>. Thus we have <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>, it follows that <span class="kdmath">$(a,c) \in S \circ R$</span>. Thus <span class="kdmath">$S \circ R \ne \phi$</span>. Hence by 
+contrapositive we can conclude that if <span class="kdmath">$S \circ R = \phi$</span>, then <span class="kdmath">$Ran(R) \cap Dom(S) = \phi$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">S \circ R \ne \phi</script>. Thus there exist atleast one pair <script type="math/tex">(a,c) \in S \circ R</script>. Thus there exist an element <script type="math/tex">b \in B</script>
-such that <script type="math/tex">b \in Ran(R)</script> and <script type="math/tex">b \in Dom(S)</script>. Thus it follows <script type="math/tex">b \in Ran(R) \cap Dom(S)</script>, or <script type="math/tex">Ran(R) \cap Dom(S) \ne \phi</script>. Hence by contrapositive,
-we can conclude that if <script type="math/tex">Ran(R) \cap Dom(S) = \phi</script>, then <script type="math/tex">S \circ R = \phi</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$S \circ R \ne \phi$</span>. Thus there exist atleast one pair <span class="kdmath">$(a,c) \in S \circ R$</span>. Thus there exist an element <span class="kdmath">$b \in B$</span>
+such that <span class="kdmath">$b \in Ran(R)$</span> and <span class="kdmath">$b \in Dom(S)$</span>. Thus it follows <span class="kdmath">$b \in Ran(R) \cap Dom(S)$</span>, or <span class="kdmath">$Ran(R) \cap Dom(S) \ne \phi$</span>. Hence by contrapositive,
+we can conclude that if <span class="kdmath">$Ran(R) \cap Dom(S) = \phi$</span>, then <span class="kdmath">$S \circ R = \phi$</span>.</p>
 
 <hr />
 
@@ -1359,34 +1358,34 @@ we can conclude that if <script type="math/tex">Ran(R) \cap Dom(S) = \phi</scrip
 
 <p><strong>(a)</strong></p>
 
-<p>Clearly <script type="math/tex">S \circ R</script>, <script type="math/tex">T \circ R</script>, and <script type="math/tex">(S \setminus T) \circ R</script> are relations from <script type="math/tex">A</script> \to <script type="math/tex">C</script>. Suppose <script type="math/tex">(a,c)</script> is an arbitrary
-element in <script type="math/tex">(S \circ R)\setminus(T \circ R)</script>. Thus <script type="math/tex">(a,c) \in S \circ R</script> and <script type="math/tex">(a,c) \notin T \circ R</script>. It follows that <script type="math/tex">a \in Dom(R)</script>
-and <script type="math/tex">c \in Ran(S)</script> and <script type="math/tex">c \notin Ran(T)</script>. Thus <script type="math/tex">c \in Ran(S) \setminus Ran(T)</script>, which is equivalent to saying that <script type="math/tex">c \in Ran(S \setminus T)</script>.
-Now since <script type="math/tex">a \in Dom(R)</script> and <script type="math/tex">c \in Ran(S \setminus T)</script>, there exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S \setminus T</script>.
-Thus it follows that <script type="math/tex">(a,c) \in (S \setminus T) \circ R</script>. Sicne <script type="math/tex">(a,c)</script> is arbitrary, we can conclude that <script type="math/tex">(S \circ R)\setminus(T \circ R) \, \subseteq \, (S \setminus T) \circ R</script>.</p>
+<p>Clearly <span class="kdmath">$S \circ R$</span>, <span class="kdmath">$T \circ R$</span>, and <span class="kdmath">$(S \setminus T) \circ R$</span> are relations from <span class="kdmath">$A$</span> \to <span class="kdmath">$C$</span>. Suppose <span class="kdmath">$(a,c)$</span> is an arbitrary
+element in <span class="kdmath">$(S \circ R)\setminus(T \circ R)$</span>. Thus <span class="kdmath">$(a,c) \in S \circ R$</span> and <span class="kdmath">$(a,c) \notin T \circ R$</span>. It follows that <span class="kdmath">$a \in Dom(R)$</span>
+and <span class="kdmath">$c \in Ran(S)$</span> and <span class="kdmath">$c \notin Ran(T)$</span>. Thus <span class="kdmath">$c \in Ran(S) \setminus Ran(T)$</span>, which is equivalent to saying that <span class="kdmath">$c \in Ran(S \setminus T)$</span>.
+Now since <span class="kdmath">$a \in Dom(R)$</span> and <span class="kdmath">$c \in Ran(S \setminus T)$</span>, there exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S \setminus T$</span>.
+Thus it follows that <span class="kdmath">$(a,c) \in (S \setminus T) \circ R$</span>. Sicne <span class="kdmath">$(a,c)$</span> is arbitrary, we can conclude that <span class="kdmath">$(S \circ R)\setminus(T \circ R) \, \subseteq \, (S \setminus T) \circ R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>The theorem and proof both not correct. In the proof, incorrect statement is:</p>
 
-<p>Since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \notin T, (a,c) \notin T \circ R</script>.</p>
+<p>Since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \notin T, (a,c) \notin T \circ R$</span>.</p>
 
-<p>The problem is, there might exist some other element <script type="math/tex">b'</script> such that <script type="math/tex">(a,b') \in R</script> and <script type="math/tex">(b',c) \in T</script>. Thus even if <script type="math/tex">(b,c) \notin T</script>,
-it might be a case that <script type="math/tex">(a,c)</script> may still is in <script type="math/tex">T \circ R</script>.</p>
+<p>The problem is, there might exist some other element <span class="kdmath">$b'$</span> such that <span class="kdmath">$(a,b') \in R$</span> and <span class="kdmath">$(b',c) \in T$</span>. Thus even if <span class="kdmath">$(b,c) \notin T$</span>,
+it might be a case that <span class="kdmath">$(a,c)$</span> may still is in <span class="kdmath">$T \circ R$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
 <p>As noted in the above part b, we can easily find such element:</p>
 
-<p><script type="math/tex">R = \{ \{ 1, 2\}, \{1, 1\} \}</script>.  <br />
-<script type="math/tex">S = \{ \{ 2, 7\} \}</script>.  <br />
-<script type="math/tex">T = \{ \{ 1, 7\} \}</script>.</p>
+<p><span class="kdmath">$R = \{ \{ 1, 2\}, \{1, 1\} \}$</span>.  <br />
+<span class="kdmath">$S = \{ \{ 2, 7\} \}$</span>.  <br />
+<span class="kdmath">$T = \{ \{ 1, 7\} \}$</span>.</p>
 
-<p><script type="math/tex">(S \setminus T) \circ R = \{ 1, 7 \}</script>.</p>
+<p><span class="kdmath">$(S \setminus T) \circ R = \{ 1, 7 \}$</span>.</p>
 
-<p><script type="math/tex">S \circ R = \{ 1, 7 \}</script>.  <br />
-<script type="math/tex">T \circ R = \{ 1, 7 \}</script>.  <br />
-<script type="math/tex">(S \circ R) \setminus (T \circ R) = \phi</script>.</p>
+<p><span class="kdmath">$S \circ R = \{ 1, 7 \}$</span>.  <br />
+<span class="kdmath">$T \circ R = \{ 1, 7 \}$</span>.  <br />
+<span class="kdmath">$(S \circ R) \setminus (T \circ R) = \phi$</span>.</p>
 
 <hr />
 
@@ -1394,41 +1393,41 @@ it might be a case that <script type="math/tex">(a,c)</script> may still is in <
 
 <p><strong>(a)</strong> True.</p>
 
-<p>Suppose <script type="math/tex">S \subseteq T</script>. Suppose <script type="math/tex">(a,c) \in S \circ R</script>. Thus there exists an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>.
-Since <script type="math/tex">S \subseteq T</script>, it follows that <script type="math/tex">(b,c) \in T</script>. Now since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in T</script>, it follows <script type="math/tex">(a,c) \in T \circ R</script>.
-Thus if <script type="math/tex">(a,c) \in S \circ R</script>, then <script type="math/tex">(a,c) \in T \circ R</script>. Since <script type="math/tex">(a,c)</script> is arbitrary, we can conclude <script type="math/tex">S \circ R \subseteq T \circ R</script>.</p>
+<p>Suppose <span class="kdmath">$S \subseteq T$</span>. Suppose <span class="kdmath">$(a,c) \in S \circ R$</span>. Thus there exists an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>.
+Since <span class="kdmath">$S \subseteq T$</span>, it follows that <span class="kdmath">$(b,c) \in T$</span>. Now since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in T$</span>, it follows <span class="kdmath">$(a,c) \in T \circ R$</span>.
+Thus if <span class="kdmath">$(a,c) \in S \circ R$</span>, then <span class="kdmath">$(a,c) \in T \circ R$</span>. Since <span class="kdmath">$(a,c)$</span> is arbitrary, we can conclude <span class="kdmath">$S \circ R \subseteq T \circ R$</span>.</p>
 
 <p><strong>(b)</strong> True.</p>
 
-<p>Suppose <script type="math/tex">(a,c) \in (S \cap T) \circ R</script>. Thus there exists an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S \cap T</script>. It follows that
-<script type="math/tex">(b,c) \in S</script> and <script type="math/tex">(b,c) \in T</script>. Since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>, <script type="math/tex">(a,c) \in S \circ R</script>. Similarly, since <script type="math/tex">(a,b) \in R</script> and 
-<script type="math/tex">(b,c) \in T</script>, <script type="math/tex">(a,c) \in T \circ R</script>. Thus <script type="math/tex">(a,c) \in (S \circ R) \cap (T \circ R)</script>.</p>
+<p>Suppose <span class="kdmath">$(a,c) \in (S \cap T) \circ R$</span>. Thus there exists an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S \cap T$</span>. It follows that
+<span class="kdmath">$(b,c) \in S$</span> and <span class="kdmath">$(b,c) \in T$</span>. Since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>, <span class="kdmath">$(a,c) \in S \circ R$</span>. Similarly, since <span class="kdmath">$(a,b) \in R$</span> and 
+<span class="kdmath">$(b,c) \in T$</span>, <span class="kdmath">$(a,c) \in T \circ R$</span>. Thus <span class="kdmath">$(a,c) \in (S \circ R) \cap (T \circ R)$</span>.</p>
 
 <p><strong>(c)</strong> False.</p>
 
-<p><script type="math/tex">R = \{ \{ 1, 2\}, \{1, 1\} \}</script>.  <br />
-<script type="math/tex">S = \{ \{ 2, 7\} \}</script>.  <br />
-<script type="math/tex">T = \{ \{ 1, 7\} \}</script>.</p>
+<p><span class="kdmath">$R = \{ \{ 1, 2\}, \{1, 1\} \}$</span>.  <br />
+<span class="kdmath">$S = \{ \{ 2, 7\} \}$</span>.  <br />
+<span class="kdmath">$T = \{ \{ 1, 7\} \}$</span>.</p>
 
-<p><script type="math/tex">S \circ R = \{ 1, 7 \}</script>.  <br />
-<script type="math/tex">T \circ R = \{ 1, 7 \}</script>.  <br />
-<script type="math/tex">(S \circ R) \cap (T \circ R) = \{ 1, 7 \}</script>.</p>
+<p><span class="kdmath">$S \circ R = \{ 1, 7 \}$</span>.  <br />
+<span class="kdmath">$T \circ R = \{ 1, 7 \}$</span>.  <br />
+<span class="kdmath">$(S \circ R) \cap (T \circ R) = \{ 1, 7 \}$</span>.</p>
 
-<p><script type="math/tex">S \cap T = \phi</script>  <br />
-<script type="math/tex">(S \cap T) \circ R = \phi</script></p>
+<p><span class="kdmath">$S \cap T = \phi$</span>  <br />
+<span class="kdmath">$(S \cap T) \circ R = \phi$</span></p>
 
-<p>Thus, <script type="math/tex">(S \circ R) \cap (T \circ R) \ne (S \cap T) \circ R</script>.</p>
+<p>Thus, <span class="kdmath">$(S \circ R) \cap (T \circ R) \ne (S \cap T) \circ R$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
-<p>Suppose <script type="math/tex">(a,c) \in (S \cup T) \circ R</script>. Thus,</p>
+<p>Suppose <span class="kdmath">$(a,c) \in (S \cup T) \circ R$</span>. Thus,</p>
 
-<p>iff, <script type="math/tex">\exists b \in B,</script> such that, <script type="math/tex">(a,b) \in R \land ((b,c) \in S \lor (b,c) \in T)</script>.  <br />
-iff, <script type="math/tex">((a,b) \in R \land (b,c) \in S) \lor ((a,b) \in R \land (b,c) \in T)</script>.  <br />
-iff, <script type="math/tex">((a,c) \in S \circ R) \lor ((a,c)\in T \circ R)</script>.  <br />
-iff, <script type="math/tex">(a,c) \in (S \circ R) \cup (T \circ R)</script>.</p>
+<p>iff, <span class="kdmath">$\exists b \in B,$</span> such that, <span class="kdmath">$(a,b) \in R \land ((b,c) \in S \lor (b,c) \in T)$</span>.  <br />
+iff, <span class="kdmath">$((a,b) \in R \land (b,c) \in S) \lor ((a,b) \in R \land (b,c) \in T)$</span>.  <br />
+iff, <span class="kdmath">$((a,c) \in S \circ R) \lor ((a,c)\in T \circ R)$</span>.  <br />
+iff, <span class="kdmath">$(a,c) \in (S \circ R) \cup (T \circ R)$</span>.</p>
 
-<p>Since, <script type="math/tex">(a,c)</script> is arbitrary, we can conclude that <script type="math/tex">(S \cup T) \circ R \, = \, (S \circ R) \cup (T \circ R)</script>.</p>
+<p>Since, <span class="kdmath">$(a,c)$</span> is arbitrary, we can conclude that <span class="kdmath">$(S \cup T) \circ R \, = \, (S \circ R) \cup (T \circ R)$</span>.</p>
 
                         <hr/>
                     </span>

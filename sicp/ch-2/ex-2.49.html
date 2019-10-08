@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9416,13 +9417,13 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Note that in all the exercises, we can use coordinates of a unit square i.e. <script type="math/tex">0 \le x \le 1</script> and <script type="math/tex">0 \le y \le 1</script>.
+                        <p>Note that in all the exercises, we can use coordinates of a unit square i.e. <span class="kdmath">$0 \le x \le 1$</span> and <span class="kdmath">$0 \le y \le 1$</span>.
 Now the method <code class="highlighter-rouge">frame-coord-map</code> will maps our coordinates to the given frame.</p>
 
 <p>(a)</p>
 
-<p>As shown in the book, if we take <script type="math/tex">x = 0</script> and <script type="math/tex">y = 0</script>, in the unit square it will be transformed to origin of the designated frame. Similarly it follows
-for any value of <script type="math/tex">x</script> and <script type="math/tex">y</script>.</p>
+<p>As shown in the book, if we take <span class="kdmath">$x = 0$</span> and <span class="kdmath">$y = 0$</span>, in the unit square it will be transformed to origin of the designated frame. Similarly it follows
+for any value of <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span>.</p>
 
 <p>Thus, to draw the outline of the frame, we just need to draw outline of unit square. The method  <code class="highlighter-rouge">frame-coord-map</code> will take care to transform our points to 
 the points in the designated frame.</p>
@@ -9476,14 +9477,16 @@ the points in the designated frame.</p>
        <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span> 
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output/Test:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">paint</span> <span class="nv">draw-frame</span><span class="p">)</span>
-<span class="c1">; A unit square is drawn</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">; A unit square is drawn</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Ideally <code class="highlighter-rouge">(draw-frame (make-frame (make-vect 0 0) (make-vect 5 5) (make-vect 10 10)))</code> should also draw the outline of the passed frame. It apparently does not work.
 It seems the <code class="highlighter-rouge">draw-line</code> procedure is works correctly only while using <code class="highlighter-rouge">paint</code>.</p>
@@ -9541,14 +9544,16 @@ to draw line.</p>
       <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span> 
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output/Test:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(</span><span class="nf">paint</span> <span class="nv">draw-X</span><span class="p">)</span>
-<span class="c1">; X is drawn </span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">; X is drawn </span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>(c)</p>
 
@@ -9601,7 +9606,8 @@ to draw line.</p>
       <span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span> 
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>(d)</p>
 
@@ -9662,7 +9668,8 @@ to draw line.</p>
                <span class="p">(</span><span class="nf">make-segment</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">4</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="nf">make-vect</span> <span class="o">.</span><span class="mi">25</span> <span class="mi">0</span><span class="p">))</span> 
         <span class="p">)</span>
    <span class="p">)</span>
-<span class="p">)</span> </pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span> 
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

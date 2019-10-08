@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1134,12 +1135,12 @@
                     <span itemprop="articleSection">
                         <hr/>
                         <ul>
-  <li><script type="math/tex">\forall</script> is used for statements which are true for all possible input values.</li>
-  <li><script type="math/tex">\exists</script> is used for statements which are true for atleast one input value.</li>
+  <li><span class="kdmath">$\forall$</span> is used for statements which are true for all possible input values.</li>
+  <li><span class="kdmath">$\exists$</span> is used for statements which are true for atleast one input value.</li>
   <li>Quantifiers binds a variable. A variable that is bound by a quantifier can always be replaced with a new variable without 
 changing the meaning of the statement, and it is often possible to paraphrase the statement without mentioning the bound variable at all.</li>
-  <li>Changing the order of quantifiers can change the meaning of the sentence. <script type="math/tex">\forall x \exists y (x + y = 10)</script> is not same as <script type="math/tex">\exists x \forall y (x + y = 10)</script> .</li>
-  <li>However, Changing the order of quantifiers will not change the meaning of the sentence if all the quantifiers are same. <script type="math/tex">\exists x \exists y (x + y = 10)</script> is not same as <script type="math/tex">\exists y \exists x (x + y = 10)</script> .</li>
+  <li>Changing the order of quantifiers can change the meaning of the sentence. <span class="kdmath">$\forall x \exists y (x + y = 10)$</span> is not same as <span class="kdmath">$\exists x \forall y (x + y = 10)$</span> .</li>
+  <li>However, Changing the order of quantifiers will not change the meaning of the sentence if all the quantifiers are same. <span class="kdmath">$\exists x \exists y (x + y = 10)$</span> is not same as <span class="kdmath">$\exists y \exists x (x + y = 10)$</span> .</li>
 </ul>
 
 <hr />
@@ -1148,67 +1149,66 @@ changing the meaning of the statement, and it is often possible to paraphrase th
 
 <p><strong>Soln1</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\forall x ( \exists y F( x, y) \to S(x) )</script>     <br />
-where <script type="math/tex">F(x,y)</script> means x has forgiven y.   <br />
-and <script type="math/tex">S(x)</script> means x is a Saint.</p>
+<p><strong>(a)</strong> <span class="kdmath">$\forall x ( \exists y F( x, y) \to S(x) )$</span>     <br />
+where <span class="kdmath">$F(x,y)$</span> means x has forgiven y.   <br />
+and <span class="kdmath">$S(x)$</span> means x is a Saint.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\lnot \exists x ( C(x) \land \forall y (D(y) \to S(x,y) )</script>   <br />
- where <script type="math/tex">C(x)</script> means x is student of calculus class.  <br />
- and <script type="math/tex">D(y)</script> means y is student of descrete class.  <br />
- and <script type="math/tex">S(x, y)</script> means x is smarter than y.</p>
+<p><strong>(b)</strong> <span class="kdmath">$\lnot \exists x ( C(x) \land \forall y (D(y) \to S(x,y) )$</span>   <br />
+ where <span class="kdmath">$C(x)$</span> means x is student of calculus class.  <br />
+ and <span class="kdmath">$D(y)$</span> means y is student of descrete class.  <br />
+ and <span class="kdmath">$S(x, y)$</span> means x is smarter than y.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">\forall x (\lnot(x = mary) \to L(x,mary))</script>  <br />
- where <script type="math/tex">L(x,y)</script> means x likes Mary.</p>
+<p><strong>(c)</strong> <span class="kdmath">$\forall x (\lnot(x = mary) \to L(x,mary))$</span>  <br />
+ where <span class="kdmath">$L(x,y)$</span> means x likes Mary.</p>
 
-<p><strong>(d)</strong> <script type="math/tex">\exists y (P(y) \land S(J, y)) \land \exists y (P(y) \land S(R, y))</script>  <br />
- where <script type="math/tex">S(J,y)</script> means Jane saw y.  <br />
- where <script type="math/tex">S(R,y)</script> means Roger saw y.  <br />
- where <script type="math/tex">P(y)</script> means y is a Police officer.</p>
+<p><strong>(d)</strong> <span class="kdmath">$\exists y (P(y) \land S(J, y)) \land \exists y (P(y) \land S(R, y))$</span>  <br />
+ where <span class="kdmath">$S(J,y)$</span> means Jane saw y.  <br />
+ where <span class="kdmath">$S(R,y)$</span> means Roger saw y.  <br />
+ where <span class="kdmath">$P(y)$</span> means y is a Police officer.</p>
 
-<p><strong>(e)</strong> <script type="math/tex">\exists y (P(y) \land S(J, y) \land S(R, y))</script>  <br />
- where <script type="math/tex">S(J,y)</script> means Jane saw y.  <br />
- where <script type="math/tex">S(R,y)</script> means Roger saw y.  <br />
- where <script type="math/tex">P(y)</script> means y is a Police officer.</p>
+<p><strong>(e)</strong> <span class="kdmath">$\exists y (P(y) \land S(J, y) \land S(R, y))$</span>  <br />
+ where <span class="kdmath">$S(J,y)$</span> means Jane saw y.  <br />
+ where <span class="kdmath">$S(R,y)$</span> means Roger saw y.  <br />
+ where <span class="kdmath">$P(y)$</span> means y is a Police officer.</p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\forall x (BRC(x) \to \exists y (U(y,x) \land R(y))</script>  <br />
- where <script type="math/tex">BRC(x)</script> means Bought Rolls Royce with cash.  <br />
- and <script type="math/tex">R(x)</script> means x is Rich.  <br />
- and <script type="math/tex">U(y,x)</script> means y is uncle of x.</p>
+<p><strong>(a)</strong> <span class="kdmath">$\forall x (BRC(x) \to \exists y (U(y,x) \land R(y))$</span>  <br />
+ where <span class="kdmath">$BRC(x)$</span> means Bought Rolls Royce with cash.  <br />
+ and <span class="kdmath">$R(x)$</span> means x is Rich.  <br />
+ and <span class="kdmath">$U(y,x)$</span> means y is uncle of x.</p>
 
-<p><strong>(b)</strong>  <script type="math/tex">\exists x(D(x) \land M(x)) \to \forall y( \exists x (D(x) \land F(y,x)) \to Q(y))</script>  <br />
-where <script type="math/tex">D(x)</script> means x lives in Dome,  <br />
-and <script type="math/tex">M(x)</script> means x has Measles,  <br />
-and <script type="math/tex">F(y,x)</script> y is a friend of x,  <br />
-and <script type="math/tex">Q(y)</script> y is quarantined.</p>
+<p><strong>(b)</strong>  <span class="kdmath">$\exists x(D(x) \land M(x)) \to \forall y( \exists x (D(x) \land F(y,x)) \to Q(y))$</span>  <br />
+where <span class="kdmath">$D(x)$</span> means x lives in Dome,  <br />
+and <span class="kdmath">$M(x)$</span> means x has Measles,  <br />
+and <span class="kdmath">$F(y,x)$</span> y is a friend of x,  <br />
+and <span class="kdmath">$Q(y)$</span> y is quarantined.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">\lnot \exists x F(x) \to \forall x(A(x) \to \exists y (D(y) \land T(x,y))</script>  <br />
- where <script type="math/tex">F(x)</script> means x is failed,  <br />
- and <script type="math/tex">A(x)</script> means x got A,  <br />
- and <script type="math/tex">D(x)</script> means x got D,  <br />
- and <script type="math/tex">T(x,y)</script> means x teaches y.</p>
+<p><strong>(c)</strong> <span class="kdmath">$\lnot \exists x F(x) \to \forall x(A(x) \to \exists y (D(y) \land T(x,y))$</span>  <br />
+ where <span class="kdmath">$F(x)$</span> means x is failed,  <br />
+ and <span class="kdmath">$A(x)$</span> means x got A,  <br />
+ and <span class="kdmath">$D(x)$</span> means x got D,  <br />
+ and <span class="kdmath">$T(x,y)$</span> means x teaches y.</p>
 
-<p><strong>(d)</strong>  <script type="math/tex">\forall x D(x) \to D(Jones)</script>   <br />
-where <script type="math/tex">D(x)</script> x can do it.</p>
+<p><strong>(d)</strong>  <span class="kdmath">$\forall x D(x) \to D(Jones)$</span>   <br />
+where <span class="kdmath">$D(x)$</span> x can do it.</p>
 
-<p><strong>(e)</strong> <script type="math/tex">D(Jones) \to \forall x D(x)</script>  <br />
- where <script type="math/tex">D(x)</script> means x can do it.</p>
+<p><strong>(e)</strong> <span class="kdmath">$D(Jones) \to \forall x D(x)$</span>  <br />
+ where <span class="kdmath">$D(x)$</span> means x can do it.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\forall z (z > x \to z > y)</script>. Here <script type="math/tex">z</script> is a free variable as it is not bound to any quantifiers.</p>
+<p><strong>(a)</strong> <span class="kdmath">$\forall z (z > x \to z > y)$</span>. Here <span class="kdmath">$z$</span> is a free variable as it is not bound to any quantifiers.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\forall a ((a \ge -2) \leftrightarrow \exists x (a{x^2} + 4x - 2 = 0))</script>. No free variables.</p>
+<p><strong>(b)</strong> <span class="kdmath">$\forall a ((a \ge -2) \leftrightarrow \exists x (a{x^2} + 4x - 2 = 0))$</span>. No free variables.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">% <![CDATA[
-\forall x ((x^3 - 3x \lt 3) \to (x < 10)) %]]></script>. No free variables.</p>
+<p><strong>(c)</strong> <span class="kdmath">$\forall x ((x^3 - 3x \lt 3) \to (x < 10))$</span>. No free variables.</p>
 
-<p><strong>(d)</strong> <script type="math/tex">\exists x \exists y ((x^2 + 5x = w) \land (4-y^2 = w)) \to (-10 \lt w \lt 10)</script>. w is a free variable.</p>
+<p><strong>(d)</strong> <span class="kdmath">$\exists x \exists y ((x^2 + 5x = w) \land (4-y^2 = w)) \to (-10 \lt w \lt 10)$</span>. w is a free variable.</p>
 
 <hr />
 
@@ -1244,13 +1244,13 @@ where <script type="math/tex">D(x)</script> x can do it.</p>
 
 <p><strong>Soln7</strong></p>
 
-<p><strong>(a)</strong> For all <script type="math/tex">x</script> there exists a <script type="math/tex">y</script> such that <script type="math/tex">2x - y = 0</script>. As <script type="math/tex">y = 2x</script>. For every natural 
-number <script type="math/tex">x</script>, We have a <script type="math/tex">y</script> which is also natural number. True</p>
+<p><strong>(a)</strong> For all <span class="kdmath">$x$</span> there exists a <span class="kdmath">$y$</span> such that <span class="kdmath">$2x - y = 0$</span>. As <span class="kdmath">$y = 2x$</span>. For every natural 
+number <span class="kdmath">$x$</span>, We have a <span class="kdmath">$y$</span> which is also natural number. True</p>
 
-<p><strong>(b)</strong> There exists a <script type="math/tex">y</script> such that for every value of <script type="math/tex">x</script>, <script type="math/tex">2x - y = 0</script>. False.</p>
+<p><strong>(b)</strong> There exists a <span class="kdmath">$y$</span> such that for every value of <span class="kdmath">$x$</span>, <span class="kdmath">$2x - y = 0$</span>. False.</p>
 
-<p><strong>(c)</strong> For all <script type="math/tex">x</script> there exists a <script type="math/tex">y</script> such that <script type="math/tex">x - 2y = 0</script>. As <script type="math/tex">x = 2y</script>. For every natural 
-number <script type="math/tex">x</script>, We dont have y as a natural number. eg: x = 3, y is not natural number. False.</p>
+<p><strong>(c)</strong> For all <span class="kdmath">$x$</span> there exists a <span class="kdmath">$y$</span> such that <span class="kdmath">$x - 2y = 0$</span>. As <span class="kdmath">$x = 2y$</span>. For every natural 
+number <span class="kdmath">$x$</span>, We dont have y as a natural number. eg: x = 3, y is not natural number. False.</p>
 
 <p><strong>(d)</strong> It is clear from the statement that if x &lt; 10 then y must be &lt; 9. True.</p>
 

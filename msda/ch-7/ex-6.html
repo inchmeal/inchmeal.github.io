@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,25 +978,31 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>Let <script type="math/tex">\sigma^2_{ \bar {X_1} }</script> and <script type="math/tex">\sigma^2_{ \bar {X_1} }</script> be the sample variances of sample mean of samples <script type="math/tex">X_1</script> and <script type="math/tex">X_2</script> respectively of the population-1 and population-2 respectively.</p>
+                        <p>Let <span class="kdmath">$\sigma^2_{ \bar {X_1} }$</span> and <span class="kdmath">$\sigma^2_{ \bar {X_1} }$</span> be the sample variances of sample mean of samples <span class="kdmath">$X_1$</span> and <span class="kdmath">$X_2$</span> respectively of the population-1 and population-2 respectively.</p>
 
-<p>Since population variance of both population is same, denoting it by <script type="math/tex">\sigma</script>. Let <script type="math/tex">n = 25</script> denotes the sample size which is also same for both population.</p>
+<p>Since population variance of both population is same, denoting it by <span class="kdmath">$\sigma$</span>. Let <span class="kdmath">$n = 25$</span> denotes the sample size which is also same for both population.</p>
 
 <p>By simple random sampling that variance of the sample means can be computed as:</p>
 
-<script type="math/tex; mode=display">\sigma^2_{ \bar {X_1} } = \frac { \sigma^2 } { N_1 } \left( \frac {N_1 - n} {N_1 - 1} \right)</script>
+<div class="kdmath">$$
+\sigma^2_{ \bar {X_1} } = \frac { \sigma^2 } { N_1 } \left( \frac {N_1 - n} {N_1 - 1} \right)
+$$</div>
 
-<script type="math/tex; mode=display">\sigma^2_{ \bar {X_2} } = \frac { \sigma^2 } { N_2 } \left( \frac {N_2 - n} {N_2 - 1} \right)</script>
+<div class="kdmath">$$
+\sigma^2_{ \bar {X_2} } = \frac { \sigma^2 } { N_2 } \left( \frac {N_2 - n} {N_2 - 1} \right)
+$$</div>
 
 <p>For comparing the two, taking ratio:</p>
 
-<script type="math/tex; mode=display">\frac { \sigma^2_{ \bar {X_1} } } { \sigma^2_{ \bar {X_2} } }  = { \frac { N_1 - n } { N_1 - 1} } \times { \frac {N_2 - 1} {N_2 - 1} } = 0.9997</script>
+<div class="kdmath">$$
+\frac { \sigma^2_{ \bar {X_1} } } { \sigma^2_{ \bar {X_2} } }  = { \frac { N_1 - n } { N_1 - 1} } \times { \frac {N_2 - 1} {N_2 - 1} } = 0.9997
+$$</div>
 
 <p>Thus the variance of the sample means of both populations is almost equal, Or variance of sample mean of larger population is slightly more compared to the smaller population.</p>
 
 <p>Note that the difference is very very small and comes only because of the finite population correction. Because of its very small size we can ignore this difference and there is no difference in estimating the mean of the smaller population compared to the larger one.</p>
 
-<p>This completes the solution but for the sake of experiment, Lets use <script type="math/tex">N_1 = 100</script> and <script type="math/tex">N_2 = 100000</script>, then the ratio of the two becomes <script type="math/tex">= 0.763</script>. Thus when the population size is small, then, the finite population correction can not be ignored. And here clearly the sample with larger population has more variance of the sample mean. Thus in this case the sample of smaller population can give more accurate results.</p>
+<p>This completes the solution but for the sake of experiment, Lets use <span class="kdmath">$N_1 = 100$</span> and <span class="kdmath">$N_2 = 100000$</span>, then the ratio of the two becomes <span class="kdmath">$= 0.763$</span>. Thus when the population size is small, then, the finite population correction can not be ignored. And here clearly the sample with larger population has more variance of the sample mean. Thus in this case the sample of smaller population can give more accurate results.</p>
 
 
                         $$\tag*{$\blacksquare$} $$

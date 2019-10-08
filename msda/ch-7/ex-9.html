@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,23 +978,23 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>Let <script type="math/tex">X</script> denotes the population in the sample.</p>
+                        <p>Let <span class="kdmath">$X$</span> denotes the population in the sample.</p>
 
-<p>Denoting <script type="math/tex">X_i</script> as the <script type="math/tex">i_{th}</script> member of population <script type="math/tex">X</script>. Let <script type="math/tex">X_i = 1</script> if the member votes for the preposition and <script type="math/tex">X_i = 0</script> if the member votes against the preposition.</p>
+<p>Denoting <span class="kdmath">$X_i$</span> as the <span class="kdmath">$i_{th}$</span> member of population <span class="kdmath">$X$</span>. Let <span class="kdmath">$X_i = 1$</span> if the member votes for the preposition and <span class="kdmath">$X_i = 0$</span> if the member votes against the preposition.</p>
 
-<p>If <script type="math/tex">\bar X</script> denotes the proportion of the population that votes for the preposition and then <script type="math/tex">1 - \bar X</script> denotes the proportion that votes against the preposition.</p>
+<p>If <span class="kdmath">$\bar X$</span> denotes the proportion of the population that votes for the preposition and then <span class="kdmath">$1 - \bar X$</span> denotes the proportion that votes against the preposition.</p>
 
-<p>Thus the difference between <script type="math/tex">\bar X</script> and <script type="math/tex">1 - \bar X</script>, i.e. <script type="math/tex">2 \bar X - 1</script>, gives the estimated margin of victory in the sample population. The variance of this estimate is then <script type="math/tex">\mathrm{Var}(2 \bar X - 1) = 4 \mathrm{Var}(\bar X)</script>.</p>
+<p>Thus the difference between <span class="kdmath">$\bar X$</span> and <span class="kdmath">$1 - \bar X$</span>, i.e. <span class="kdmath">$2 \bar X - 1$</span>, gives the estimated margin of victory in the sample population. The variance of this estimate is then <span class="kdmath">$\mathrm{Var}(2 \bar X - 1) = 4 \mathrm{Var}(\bar X)$</span>.</p>
 
-<p>We know that <script type="math/tex">\mathrm{Var}(\bar X) = \frac { \bar p (1 - \bar p) } {n-1} = \frac { 0.55 \times 0.45 } { 1499 } = 0.000165</script>, ignoring the finite population correction.</p>
+<p>We know that <span class="kdmath">$\mathrm{Var}(\bar X) = \frac { \bar p (1 - \bar p) } {n-1} = \frac { 0.55 \times 0.45 } { 1499 } = 0.000165$</span>, ignoring the finite population correction.</p>
 
-<p>Thus the variance of the estimated margin of victory is <script type="math/tex">4 \times 0.000165 = 0.00066</script>. And which gives the standard error = <script type="math/tex">\sqrt { 0.00066 } = 0.0256 \approx 0.026</script>.</p>
+<p>Thus the variance of the estimated margin of victory is <span class="kdmath">$4 \times 0.000165 = 0.00066$</span>. And which gives the standard error = <span class="kdmath">$\sqrt { 0.00066 } = 0.0256 \approx 0.026$</span>.</p>
 
-<p>The 95% confidence interval is <script type="math/tex">0.1 \pm 1.96 \times 0.026</script>, or <script type="math/tex">(0.04904,0.15096) \approx (0.05, 0.15)</script>.</p>
+<p>The 95% confidence interval is <span class="kdmath">$0.1 \pm 1.96 \times 0.026$</span>, or <span class="kdmath">$(0.04904,0.15096) \approx (0.05, 0.15)$</span>.</p>
 
-<p>Or in percentage, The interval is <script type="math/tex">(5, 15)</script>.</p>
+<p>Or in percentage, The interval is <span class="kdmath">$(5, 15)$</span>.</p>
 
-<p>Note: Compared to last problem here we used the approximation for <script type="math/tex">\mathrm{Var}(\bar X) = s^2_{\bar p} = \frac {\bar p(1- \bar p)} {n-1}</script>, because population variance is not available.</p>
+<p>Note: Compared to last problem here we used the approximation for <span class="kdmath">$\mathrm{Var}(\bar X) = s^2_{\bar p} = \frac {\bar p(1- \bar p)} {n-1}$</span>, because population variance is not available.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

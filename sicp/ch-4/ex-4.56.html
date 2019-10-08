@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9429,7 +9430,8 @@
 <span class="c1">;;; Query results:</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">tweakit</span> <span class="nv">lem</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">))</span> <span class="p">(</span><span class="nf">address</span> <span class="p">(</span><span class="nf">tweakit</span> <span class="nv">lem</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nf">boston</span> <span class="p">(</span><span class="nf">bay</span> <span class="nv">state</span> <span class="nv">road</span><span class="p">)</span> <span class="mi">22</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">)</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">))</span> <span class="p">(</span><span class="nf">address</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">)</span> <span class="p">(</span><span class="nf">cambridge</span> <span class="p">(</span><span class="nf">ames</span> <span class="nv">street</span><span class="p">)</span> <span class="mi">3</span><span class="p">)))</span>
-<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">))</span> <span class="p">(</span><span class="nf">address</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">cambridge</span> <span class="p">(</span><span class="nf">mass</span> <span class="nv">ave</span><span class="p">)</span> <span class="mi">78</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">))</span> <span class="p">(</span><span class="nf">address</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="p">(</span><span class="nf">cambridge</span> <span class="p">(</span><span class="nf">mass</span> <span class="nv">ave</span><span class="p">)</span> <span class="mi">78</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
@@ -9452,7 +9454,8 @@
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">reasoner</span> <span class="nv">louis</span><span class="p">)</span> <span class="mi">30000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">30000</span> <span class="mi">60000</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">tweakit</span> <span class="nv">lem</span> <span class="nv">e</span><span class="p">)</span> <span class="mi">25000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">25000</span> <span class="mi">60000</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">fect</span> <span class="nv">cy</span> <span class="nv">d</span><span class="p">)</span> <span class="mi">35000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">35000</span> <span class="mi">60000</span><span class="p">)))</span>
-<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="mi">40000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">40000</span> <span class="mi">60000</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">salary</span> <span class="p">(</span><span class="nf">hacker</span> <span class="nv">alyssa</span> <span class="nv">p</span><span class="p">)</span> <span class="mi">40000</span><span class="p">)</span> <span class="p">(</span><span class="nf">lisp-value</span> <span class="nv">&lt;</span> <span class="mi">40000</span> <span class="mi">60000</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="c">(c)</h4>
 
@@ -9471,7 +9474,8 @@
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">aull</span> <span class="nv">dewitt</span><span class="p">)</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">))</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">administration</span> <span class="nv">big</span> <span class="nv">wheel</span><span class="p">))</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="o">.</span> <span class="nv">?comp</span><span class="p">))))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">cratchet</span> <span class="nv">robert</span><span class="p">)</span> <span class="p">(</span><span class="nf">scrooge</span> <span class="nv">eben</span><span class="p">))</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">scrooge</span> <span class="nv">eben</span><span class="p">)</span> <span class="p">(</span><span class="nf">accounting</span> <span class="nv">chief</span> <span class="nv">accountant</span><span class="p">))</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">scrooge</span> <span class="nv">eben</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="o">.</span> <span class="nv">?comp</span><span class="p">))))</span>
 <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">scrooge</span> <span class="nv">eben</span><span class="p">)</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">))</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">administration</span> <span class="nv">big</span> <span class="nv">wheel</span><span class="p">))</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="o">.</span> <span class="nv">?comp</span><span class="p">))))</span>
-<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">))</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">administration</span> <span class="nv">big</span> <span class="nv">wheel</span><span class="p">))</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="o">.</span> <span class="nv">?comp</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">supervisor</span> <span class="p">(</span><span class="nf">bitdiddle</span> <span class="nv">ben</span><span class="p">)</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">))</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">administration</span> <span class="nv">big</span> <span class="nv">wheel</span><span class="p">))</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">job</span> <span class="p">(</span><span class="nf">warbucks</span> <span class="nv">oliver</span><span class="p">)</span> <span class="p">(</span><span class="nf">computer</span> <span class="o">.</span> <span class="nv">?comp</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

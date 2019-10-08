@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9416,21 +9417,21 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>We can see that the procedure keeps on dividing the angle, <script type="math/tex">\alpha</script> by <script type="math/tex">3</script> until it becomes less than <script type="math/tex">0.1</script>. Clearly at max
-number of times the division is required is <script type="math/tex">{log}_3 {\alpha}</script>.</p>
+                        <p>We can see that the procedure keeps on dividing the angle, <span class="kdmath">$\alpha$</span> by <span class="kdmath">$3$</span> until it becomes less than <span class="kdmath">$0.1$</span>. Clearly at max
+number of times the division is required is <span class="kdmath">${log}_3 {\alpha}$</span>.</p>
 
-<p>Thus the time complexity is <script type="math/tex">{ log }_3 { \alpha }</script>.</p>
+<p>Thus the time complexity is <span class="kdmath">${ log }_3 { \alpha }$</span>.</p>
 
-<p>Also since the procedure is recursive process and the maximum depth it reaches is <script type="math/tex">{ log }_3 { \alpha }</script>, the space complexity is also <script type="math/tex">{ log }_3 { \alpha }</script>.</p>
+<p>Also since the procedure is recursive process and the maximum depth it reaches is <span class="kdmath">${ log }_3 { \alpha }$</span>, the space complexity is also <span class="kdmath">${ log }_3 { \alpha }$</span>.</p>
 
-<p>To find number of steps for <script type="math/tex">12.15</script>, we can see:
-<script type="math/tex">12.15/3 = 4.05</script>,  <br />
-<script type="math/tex">4.05/3 = 1.35</script>,   <br />
-<script type="math/tex">1.35/3 = 0.45</script>,   <br />
-<script type="math/tex">0.45/3 = 0.15</script>,  <br />
-<script type="math/tex">0.15/3 = 0.05</script>.</p>
+<p>To find number of steps for <span class="kdmath">$12.15$</span>, we can see:
+<span class="kdmath">$12.15/3 = 4.05$</span>,  <br />
+<span class="kdmath">$4.05/3 = 1.35$</span>,   <br />
+<span class="kdmath">$1.35/3 = 0.45$</span>,   <br />
+<span class="kdmath">$0.45/3 = 0.15$</span>,  <br />
+<span class="kdmath">$0.15/3 = 0.05$</span>.</p>
 
-<p>Thus we have to divide <script type="math/tex">5</script> times. Thus <script type="math/tex">p</script> is called <script type="math/tex">5</script> times.</p>
+<p>Thus we have to divide <span class="kdmath">$5$</span> times. Thus <span class="kdmath">$p$</span> is called <span class="kdmath">$5$</span> times.</p>
 
                         <hr/>
                     </span>

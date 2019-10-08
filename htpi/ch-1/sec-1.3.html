@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1139,13 +1140,12 @@
   <li>Statements with Variables. For eg: “x is divisible by 9”, “y is a person” are statements. Here x, and y are variables.</li>
   <li>These statements are true or false based on the value of variables.</li>
   <li>Sets,  a collection of objects.</li>
-  <li>Bound and Unbound variables. Eg: <script type="math/tex">% <![CDATA[
-y ∈ \{x\,\vert\,x^3 < 9\} %]]></script> , <script type="math/tex">y</script> is a free variable, whereas <script type="math/tex">x</script> is a bound variable.</li>
+  <li>Bound and Unbound variables. Eg: \( y ∈ {x\,\vert\,x^3 &lt; 9} \) , <span class="kdmath">$y$</span> is a free variable, whereas <span class="kdmath">$x$</span> is a bound variable.</li>
   <li>Free variables in a statement are for objects for which statement is talking about.</li>
   <li>Bound variables are just dummy variables to help express the idea. Thus bound variables dont represent any object of the statement.</li>
   <li>The truth set of a statement P(x) is the set of all values of x that make the statement P(x) true.</li>
   <li>The set of all possible values of variables is call <em>universe of discourse</em>. Or variables <em>range</em> over this universe.</li>
-  <li>In general, <script type="math/tex">y ∈ \{x ∈ A\,\vert\,P(x)\}</script> means the same thing as <script type="math/tex">y ∈ A ∧ P(y)</script>.</li>
+  <li>In general, <span class="kdmath">$y ∈ \{x ∈ A\,\vert\,P(x)\}$</span> means the same thing as <span class="kdmath">$y ∈ A ∧ P(y)$</span>.</li>
 </ul>
 
 <hr />
@@ -1154,63 +1154,63 @@ y ∈ \{x\,\vert\,x^3 < 9\} %]]></script> , <script type="math/tex">y</script> i
 
 <p><strong>Soln1</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">D(6,3) \land D(9,3) \land D(15, 3)</script> where <script type="math/tex">D(x, y)</script> means <script type="math/tex">x</script> is divisible by <script type="math/tex">y</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$D(6,3) \land D(9,3) \land D(15, 3)$</span> where <span class="kdmath">$D(x, y)$</span> means <span class="kdmath">$x$</span> is divisible by <span class="kdmath">$y$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">D(x,2) \land D(x,3) \land \lnot D(x, 4)</script> where <script type="math/tex">D(x, y)</script> means <script type="math/tex">x</script> is divisible by <script type="math/tex">y</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$D(x,2) \land D(x,3) \land \lnot D(x, 4)$</span> where <span class="kdmath">$D(x, y)$</span> means <span class="kdmath">$x$</span> is divisible by <span class="kdmath">$y$</span>.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">(\lnot P(x) \land P(y)) \lor (P(x) \land \lnot P(y)</script> where <script type="math/tex">P(x) = \{ x \in \mathbb{N}\,\vert\, x \text{ is prime} \}</script>.</p>
+<p><strong>(c)</strong> <span class="kdmath">$(\lnot P(x) \land P(y)) \lor (P(x) \land \lnot P(y)$</span> where <span class="kdmath">$P(x) = \{ x \in \mathbb{N}\,\vert\, x \text{ is prime} \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">M(x) \land M(y) \land (T(x,y) \lor T(y,x))</script> where <script type="math/tex">M(x)</script> is “x is men”, <script type="math/tex">T(x, y)</script> means “x is taller than y”.</p>
+<p><strong>(a)</strong> <span class="kdmath">$M(x) \land M(y) \land (T(x,y) \lor T(y,x))$</span> where <span class="kdmath">$M(x)$</span> is “x is men”, <span class="kdmath">$T(x, y)$</span> means “x is taller than y”.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">[(B(x) \lor B(y)) \land (R(x) \lor R(y)]</script> where <script type="math/tex">B(x)\text{ and }R(x)</script> means “x has brown eyes” and “x has brown hairs” respectively.</p>
+<p><strong>(b)</strong> <span class="kdmath">$[(B(x) \lor B(y)) \land (R(x) \lor R(y)]$</span> where <span class="kdmath">$B(x)\text{ and }R(x)$</span> means “x has brown eyes” and “x has brown hairs” respectively.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">[(B(x) \land R(x)) \lor (B(y) \land R(y)]</script> where <script type="math/tex">B(x)\text{ and }R(x)</script> means “x has brown eyes” and “x has brown hairs” respectively.</p>
+<p><strong>(c)</strong> <span class="kdmath">$[(B(x) \land R(x)) \lor (B(y) \land R(y)]$</span> where <span class="kdmath">$B(x)\text{ and }R(x)$</span> means “x has brown eyes” and “x has brown hairs” respectively.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\{ x\,\vert\,x\text{ is a planet }\}</script></p>
+<p><strong>(a)</strong> <span class="kdmath">$\{ x\,\vert\,x\text{ is a planet }\}$</span></p>
 
-<p><strong>(b)</strong> <script type="math/tex">\{ x\,\vert\,x\text{ is a university }\}</script></p>
+<p><strong>(b)</strong> <span class="kdmath">$\{ x\,\vert\,x\text{ is a university }\}$</span></p>
 
-<p><strong>(c)</strong> <script type="math/tex">\{ x\,\vert\,x\text{ is a state in US }\}</script></p>
+<p><strong>(c)</strong> <span class="kdmath">$\{ x\,\vert\,x\text{ is a state in US }\}$</span></p>
 
-<p><strong>(d)</strong> <script type="math/tex">\{ x\,\vert\,x\text{ is a province in Canada }\}</script></p>
+<p><strong>(d)</strong> <span class="kdmath">$\{ x\,\vert\,x\text{ is a province in Canada }\}$</span></p>
 
 <hr />
 
 <p><strong>Soln4</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\{ x^2\,\vert\, x > 0 \text{ and } x \in \mathbb{N} \}</script></p>
+<p><strong>(a)</strong> \[ \text{ testing } { x^2\,\vert\, x &gt; 0 \text{ and } x \in \mathbb{N} } \]</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\{ 2^x\,\vert\, x \in \mathbb{N} \}</script></p>
+<p><strong>(b)</strong> <span class="kdmath">$\{ 2^x\,\vert\, x \in \mathbb{N} \}$</span></p>
 
-<p><strong>(c)</strong> <script type="math/tex">\{ x \in \mathbb{N}\,\vert\, 10 \le x \le 19 \}</script></p>
+<p><strong>(c)</strong> <span class="kdmath">$\{ x \in \mathbb{N}\,\vert\, 10 \le x \le 19 \}$</span></p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">−3 ∈ \{x ∈ \mathbb{R}\vert\,13 − 2x > 1\} \Rightarrow -3 \in \mathbb{R} \land 19 > 1</script>. No free variables in the statement. Statement is true.</p>
+<p><strong>(a)</strong> <span class="kdmath">$−3 ∈ \{x ∈ \mathbb{R}\vert\,13 − 2x > 1\} \Rightarrow -3 \in \mathbb{R} \land 19 > 1$</span>. No free variables in the statement. Statement is true.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">4 ∈ \{x ∈ \mathbb{R^+}\vert\,13 − 2x > 1\} \Rightarrow 4 \in \mathbb{R^+} \land 5 > 1</script>. No free variables in the statement. Statement is false.</p>
+<p><strong>(b)</strong> <span class="kdmath">$4 ∈ \{x ∈ \mathbb{R^+}\vert\,13 − 2x > 1\} \Rightarrow 4 \in \mathbb{R^+} \land 5 > 1$</span>. No free variables in the statement. Statement is false.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">5 \notin \{x ∈ \mathbb{R}\vert\,13 − 2x > c\} \Rightarrow \lnot{ \{ 5 \in \mathbb{R} \land 3 > c \}} \Rightarrow 5 \notin \mathbb{R} \lor 3 \le c</script>. One free variable(c) in the statement. (Thanks Maxwell for the correction)</p>
+<p><strong>(c)</strong> <span class="kdmath">$5 \notin \{x ∈ \mathbb{R}\vert\,13 − 2x > c\} \Rightarrow \lnot{ \{ 5 \in \mathbb{R} \land 3 > c \}} \Rightarrow 5 \notin \mathbb{R} \lor 3 \le c$</span>. One free variable(c) in the statement. (Thanks Maxwell for the correction)</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">(w ∈ \mathbb{R}) \land (13 - 2w > c)</script>. There are two free variables <script type="math/tex">w</script> and <script type="math/tex">c</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$(w ∈ \mathbb{R}) \land (13 - 2w > c)$</span>. There are two free variables <span class="kdmath">$w$</span> and <span class="kdmath">$c$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">(4 \in \mathbb{R}) \land (13 - 2 \times 4 \in P) \Rightarrow (4 \in \mathbb{R}) \land (5 \in P)</script>. The statement has no free variables. It is a true statement.</p>
+<p><strong>(b)</strong> <span class="kdmath">$(4 \in \mathbb{R}) \land (13 - 2 \times 4 \in P) \Rightarrow (4 \in \mathbb{R}) \land (5 \in P)$</span>. The statement has no free variables. It is a true statement.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">(4 \in P) \land (13 - 2 \times 4 > 1) \Rightarrow (4 \in P) \land (5 > 1)</script>.  The statement has no free variables. It is a false statement.</p>
+<p><strong>(c)</strong> <span class="kdmath">$(4 \in P) \land (13 - 2 \times 4 > 1) \Rightarrow (4 \in P) \land (5 > 1)$</span>.  The statement has no free variables. It is a false statement.</p>
 
 <hr />
 
@@ -1218,7 +1218,7 @@ y ∈ \{x\,\vert\,x^3 < 9\} %]]></script> , <script type="math/tex">y</script> i
 
 <p><strong>(a)</strong> {Conrad Hilton Jr., Michael Wilding, Michael Todd, Eddie Fisher, Richard Burton, John Warner, Larry Fortensky}.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\{ \lor, \land, \lnot \}</script></p>
+<p><strong>(b)</strong> <span class="kdmath">$\{ \lor, \land, \lnot \}$</span></p>
 
 <p><strong>(c)</strong> { Daniel Velleman }</p>
 
@@ -1228,7 +1228,7 @@ y ∈ \{x\,\vert\,x^3 < 9\} %]]></script> , <script type="math/tex">y</script> i
 
 <p><strong>(a)</strong> {1, 3}</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\phi</script></p>
+<p><strong>(b)</strong> <span class="kdmath">$\phi$</span></p>
 
 <p><strong>(c)</strong></p>
 
@@ -1236,12 +1236,13 @@ y ∈ \{x\,\vert\,x^3 < 9\} %]]></script> , <script type="math/tex">y</script> i
 
 <p>As pointed out in comments, I got this wrong first time. Here is the correct answer:</p>
 
-<p><script type="math/tex">% <![CDATA[
-\{ x ∈ R \,\vert\, x^2 < 25 \} %]]></script> or, equivalently <script type="math/tex">\,\vert x \vert\, \lt 5</script>.</p>
+<p><span class="kdmath">$\{ x ∈ R \,\vert\, x^2 < 25 \}$</span> or, equivalently <span class="kdmath">$\,\vert x \vert\, \lt 5$</span>.</p>
 
 <p>Old Answer:</p>
 
-<script type="math/tex; mode=display">\{1, 2, 3, 4, 5, 6, 7 \}</script>
+<div class="kdmath">$$
+\{1, 2, 3, 4, 5, 6, 7 \}
+$$</div>
 
                         <hr/>
                     </span>

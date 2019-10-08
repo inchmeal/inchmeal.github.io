@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,31 +978,31 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>The joint distribution of any subcollection <script type="math/tex">\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,</script> of <script type="math/tex">\, Y_i \,</script> is same as of <script type="math/tex">\, X_1, X_2, X_3, ..., X_n \,</script>:</p>
+                        <p>The joint distribution of any subcollection <span class="kdmath">$\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,$</span> of <span class="kdmath">$\, Y_i \,$</span> is same as of <span class="kdmath">$\, X_1, X_2, X_3, ..., X_n \,$</span>:</p>
 
-<p>Since each permutation has an equal probability, the joint distribution of the subcollections <script type="math/tex">\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,</script> must be identically distributed i.e. the joint distribution of every subcollection is same. Thus the joint probability <script type="math/tex">\, P(Y_{i_1} = a_1, Y_{i_2} = a_2, ... , Y_{i_n} = a_n) \; = \; P(Y_1 = a_1, Y_2 = a_2, ... , Y_n = a_n) \,</script> for any subcollection <script type="math/tex">\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,</script> is same.</p>
+<p>Since each permutation has an equal probability, the joint distribution of the subcollections <span class="kdmath">$\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,$</span> must be identically distributed i.e. the joint distribution of every subcollection is same. Thus the joint probability <span class="kdmath">$\, P(Y_{i_1} = a_1, Y_{i_2} = a_2, ... , Y_{i_n} = a_n) \; = \; P(Y_1 = a_1, Y_2 = a_2, ... , Y_n = a_n) \,$</span> for any subcollection <span class="kdmath">$\, Y_{i_1}, Y_{i_2}, Y_{i_3}, ... , Y_{i_n} \,$</span> is same.</p>
 
-<p>Now we can check easily <script type="math/tex">\, P(Y_1 = a_1, Y_2 = a_2, ... , Y_n = a_n) \,</script> is equal to <script type="math/tex">\, P(X_1 = a_1, Y_2 = a_2, ... , X_n = a_n) \,</script>. For simplicity, consider for the case <script type="math/tex">\, n=2 \,</script>: <script type="math/tex">\, P(Y_1 = a_1, Y_2 = a_2) \,</script> is the probability that first and second item of a random permutaion of <script type="math/tex">\, Y_1,Y_2, ..., Y_N \,</script> are <script type="math/tex">\, a_1 \,</script> and <script type="math/tex">\, a_2 \,</script> respectively. This is clearly the same as drawing two items from <script type="math/tex">\, N \,</script> items such that the first item drawn is <script type="math/tex">\, a_1 \,</script> and second item drawn is <script type="math/tex">\, a_2 \,</script>. This in turn is same as <script type="math/tex">\, P(X_1 = a_1, X_2 = a_2) \,</script>. Similarly the result holds true for any size <script type="math/tex">% <![CDATA[
-\, n < N \, %]]></script>.</p>
+<p>Now we can check easily <span class="kdmath">$\, P(Y_1 = a_1, Y_2 = a_2, ... , Y_n = a_n) \,$</span> is equal to <span class="kdmath">$\, P(X_1 = a_1, Y_2 = a_2, ... , X_n = a_n) \,$</span>. For simplicity, consider for the case <span class="kdmath">$\, n=2 \,$</span>: <span class="kdmath">$\, P(Y_1 = a_1, Y_2 = a_2) \,$</span> is the probability that first and second item of a random permutaion of <span class="kdmath">$\, Y_1,Y_2, ..., Y_N \,$</span> are <span class="kdmath">$\, a_1 \,$</span> and <span class="kdmath">$\, a_2 \,$</span> respectively. This is clearly the same as drawing two items from <span class="kdmath">$\, N \,$</span> items such that the first item drawn is <span class="kdmath">$\, a_1 \,$</span> and second item drawn is <span class="kdmath">$\, a_2 \,$</span>. This in turn is same as <span class="kdmath">$\, P(X_1 = a_1, X_2 = a_2) \,$</span>. Similarly the result holds true for any size <span class="kdmath">$\, n < N \,$</span>.</p>
 
-<p>Now, it is easy to see <script type="math/tex">\, \Var(Y_i) = \Var(X_i) = \sigma^2 \,</script>. Since <script type="math/tex">\, \Var(Y_i) = \Exp(Y_i^2) - (\Exp(Y_i))^2 \,</script> and <script type="math/tex">\, \Exp(Y_i) = \Exp(X_i) \,</script> because <script type="math/tex">\, Y_i \,</script> and <script type="math/tex">\, X_i \,</script> are identically distributed, the required result <script type="math/tex">\, \Var(Y_i) = \Var(X_i) \,</script> follows.</p>
+<p>Now, it is easy to see <span class="kdmath">$\, \Var(Y_i) = \Var(X_i) = \sigma^2 \,$</span>. Since <span class="kdmath">$\, \Var(Y_i) = \Exp(Y_i^2) - (\Exp(Y_i))^2 \,$</span> and <span class="kdmath">$\, \Exp(Y_i) = \Exp(X_i) \,$</span> because <span class="kdmath">$\, Y_i \,$</span> and <span class="kdmath">$\, X_i \,$</span> are identically distributed, the required result <span class="kdmath">$\, \Var(Y_i) = \Var(X_i) \,$</span> follows.</p>
 
-<p>Similarly, since the joint distribution of any subcollection of the permutations is identically distributed as that of a simple random sample, it follows that <script type="math/tex">\, \Cov(Y_i, Y_j) = \Cov(X_i, X_j) \,</script>.</p>
+<p>Similarly, since the joint distribution of any subcollection of the permutations is identically distributed as that of a simple random sample, it follows that <span class="kdmath">$\, \Cov(Y_i, Y_j) = \Cov(X_i, X_j) \,$</span>.</p>
 
-<p>Now, since <script type="math/tex">\, Y_1 + Y_2 + ... + Y_N = \tau \,</script>, or a constant, it follows that variance of <script type="math/tex">\, \Var\Prn{\sum_{i=1}^{n} Y_i} = 0 \,</script></p>
+<p>Now, since <span class="kdmath">$\, Y_1 + Y_2 + ... + Y_N = \tau \,$</span>, or a constant, it follows that variance of <span class="kdmath">$\, \Var\Prn{\sum_{i=1}^{n} Y_i} = 0 \,$</span></p>
 
 <p>Using the variance formulae,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 \Var\Prn{\sum_{i=1}^{n} Y_i} \\ 
 &= \sum_{i=1}^{n} \Var(Y_i) \; + \; \sum_{i=1}^{n} \sum_{j=1, j \ne i}^{n} \Cov(Y_i, Y_j) \\
 &= N\sigma^2 \; + \; N(N-1) \gamma \\
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus we get <script type="math/tex">\, \gamma = \frac {-\sigma^2} {N-1} \,</script></p>
+<p>Thus we get <span class="kdmath">$\, \gamma = \frac {-\sigma^2} {N-1} \,$</span></p>
 
 
                         $$\tag*{$\blacksquare$} $$

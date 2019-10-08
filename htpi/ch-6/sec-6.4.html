@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1137,17 +1138,15 @@
 
 <ul>
   <li>
-    <p><em>To prove a goal of the form</em> <script type="math/tex">\forall n \in \mathbb N P(n)</script>:    <br />
-Prove that <script type="math/tex">% <![CDATA[
-\forall n[(\forall k < nP(k)) \to P(n)] %]]></script>, where both <script type="math/tex">n</script> and <script type="math/tex">k</script> range over the natural numbers in this 
-statement. Of course, the most direct way to prove this is to let <script type="math/tex">n</script> be an arbitrary natural number, assume that 
-<script type="math/tex">% <![CDATA[
-\forall k < nP(k) %]]></script>, and then prove <script type="math/tex">P(n)</script>.</p>
+    <p><em>To prove a goal of the form</em> <span class="kdmath">$\forall n \in \mathbb N P(n)$</span>:    <br />
+Prove that <span class="kdmath">$\forall n[(\forall k < nP(k)) \to P(n)]$</span>, where both <span class="kdmath">$n$</span> and <span class="kdmath">$k$</span> range over the natural numbers in this 
+statement. Of course, the most direct way to prove this is to let <span class="kdmath">$n$</span> be an arbitrary natural number, assume that 
+<span class="kdmath">$\forall k < nP(k)$</span>, and then prove <span class="kdmath">$P(n)$</span>.</p>
   </li>
   <li>
     <p>Note that no base case is necessary in a proof by strong induction. All that is needed is a modified form of the induction step in which 
-we prove that if every natural number smaller than <script type="math/tex">n</script> has the property <script type="math/tex">P</script>, then <script type="math/tex">n</script> has the property <script type="math/tex">P</script>. In a 
-proof by strong induction, we refer to the assumption that every natural number smaller than <script type="math/tex">n</script> has the property <script type="math/tex">P</script> as 
+we prove that if every natural number smaller than <span class="kdmath">$n$</span> has the property <span class="kdmath">$P$</span>, then <span class="kdmath">$n$</span> has the property <span class="kdmath">$P$</span>. In a 
+proof by strong induction, we refer to the assumption that every natural number smaller than <span class="kdmath">$n$</span> has the property <span class="kdmath">$P$</span> as 
 the <em>inductive hypothesis</em>.</p>
   </li>
 </ul>
@@ -1158,14 +1157,11 @@ the <em>inductive hypothesis</em>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">\forall n Q(n)</script>. Suppose <script type="math/tex">n</script> is an arbitrary natural number. Since <script type="math/tex">n</script> is natural number it follows <script type="math/tex">n + 1</script> is also a natural number. 
-Thus <script type="math/tex">Q(n+1)</script> is true. Since <script type="math/tex">% <![CDATA[
-Q(n) = \forall k < n P(n) %]]></script>, it follows <script type="math/tex">% <![CDATA[
-Q(n+1) = \forall k < n+1 P(k) %]]></script>. Thus for <script type="math/tex">k = n</script>, <script type="math/tex">P(n)</script>
- is true. Since <script type="math/tex">n</script> is arbitrary, it follows <script type="math/tex">\forall n P(n)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$\forall n Q(n)$</span>. Suppose <span class="kdmath">$n$</span> is an arbitrary natural number. Since <span class="kdmath">$n$</span> is natural number it follows <span class="kdmath">$n + 1$</span> is also a natural number. 
+Thus <span class="kdmath">$Q(n+1)$</span> is true. Since <span class="kdmath">$Q(n) = \forall k < n P(n)$</span>, it follows <span class="kdmath">$Q(n+1) = \forall k < n+1 P(k)$</span>. Thus for <span class="kdmath">$k = n$</span>, <span class="kdmath">$P(n)$</span>
+ is true. Since <span class="kdmath">$n$</span> is arbitrary, it follows <span class="kdmath">$\forall n P(n)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">\forall n P(n)</script>. It follows that <script type="math/tex">% <![CDATA[
-\forall k < n P(k) %]]></script> is true. Thus <script type="math/tex">Q(n)</script> is true.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$\forall n P(n)$</span>. It follows that <span class="kdmath">$\forall k < n P(k)$</span> is true. Thus <span class="kdmath">$Q(n)$</span> is true.</p>
 
 <p><strong>(b)</strong></p>
 
@@ -1173,48 +1169,37 @@ Q(n+1) = \forall k < n+1 P(k) %]]></script>. Thus for <script type="math/tex">k 
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">% <![CDATA[
-\forall k < n P(k) %]]></script> is true because <script type="math/tex">k</script> is a natural number and there is no value of <script type="math/tex">% <![CDATA[
-k < 0 %]]></script>. Thus
-the statement <script type="math/tex">% <![CDATA[
-\forall k < n P(k) %]]></script> is vacuously true. Since <script type="math/tex">% <![CDATA[
-(\forall k < n P(k)) \to P(n) %]]></script> is true(given), it follows that
-<script type="math/tex">P(0)</script> is true by modus ponens.</p>
+<p>For <span class="kdmath">$n = 0$</span>, <span class="kdmath">$\forall k < n P(k)$</span> is true because <span class="kdmath">$k$</span> is a natural number and there is no value of <span class="kdmath">$k < 0$</span>. Thus
+the statement <span class="kdmath">$\forall k < n P(k)$</span> is vacuously true. Since <span class="kdmath">$(\forall k < n P(k)) \to P(n)$</span> is true(given), it follows that
+<span class="kdmath">$P(0)$</span> is true by modus ponens.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose <script type="math/tex">Q(n)</script> is true. It follows that <script type="math/tex">% <![CDATA[
-\forall k < n P(k) %]]></script>. But it is given that <script type="math/tex">% <![CDATA[
-(\forall k < n P(k)) \to P(n) %]]></script>. Thus
-<script type="math/tex">P(n)</script> is true. Thus <script type="math/tex">% <![CDATA[
-\forall k < (n+1) P(k) %]]></script> is true. It follows that <script type="math/tex">Q(n+1)</script> is true.</p>
+<p>Suppose <span class="kdmath">$Q(n)$</span> is true. It follows that <span class="kdmath">$\forall k < n P(k)$</span>. But it is given that <span class="kdmath">$(\forall k < n P(k)) \to P(n)$</span>. Thus
+<span class="kdmath">$P(n)$</span> is true. Thus <span class="kdmath">$\forall k < (n+1) P(k)$</span> is true. It follows that <span class="kdmath">$Q(n+1)$</span> is true.</p>
 
-<p>Thus if <script type="math/tex">Q(n)</script> is true then <script type="math/tex">Q(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$Q(n)$</span> is true then <span class="kdmath">$Q(n+1)$</span> is also true.</p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p>To Prove: <script type="math/tex">\forall q \in \mathbb N (q > 0 \to \lnot \exists p \in \mathbb N(p/q = \sqrt 2))</script>.     <br />
-Or we can say <script type="math/tex">\forall q \in \mathbb N P(q)</script>, where <script type="math/tex">P(q) = q > 0 \to \lnot \exists p \in \mathbb N(p/q = \sqrt 2)</script>.</p>
+<p>To Prove: <span class="kdmath">$\forall q \in \mathbb N (q > 0 \to \lnot \exists p \in \mathbb N(p/q = \sqrt 2))$</span>.     <br />
+Or we can say <span class="kdmath">$\forall q \in \mathbb N P(q)$</span>, where <span class="kdmath">$P(q) = q > 0 \to \lnot \exists p \in \mathbb N(p/q = \sqrt 2)$</span>.</p>
 
-<p>Suppose <script type="math/tex">q</script> is an arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < q P(k) %]]></script> where <script type="math/tex">k \in \mathbb N</script>. Thus this is our
+<p>Suppose <span class="kdmath">$q$</span> is an arbitrary natural number. Suppose <span class="kdmath">$\forall k < q P(k)$</span> where <span class="kdmath">$k \in \mathbb N$</span>. Thus this is our
 induction hypothesis.</p>
 
-<p><em>Note:</em> We are using strong induction. Thus after assuming our induction hypothesis: <script type="math/tex">% <![CDATA[
-\forall k < q P(k) %]]></script>, we will prove that <script type="math/tex">P(q)</script> is true.
-Proving <script type="math/tex">P(q)</script> will complete the proof.</p>
+<p><em>Note:</em> We are using strong induction. Thus after assuming our induction hypothesis: <span class="kdmath">$\forall k < q P(k)$</span>, we will prove that <span class="kdmath">$P(q)$</span> is true.
+Proving <span class="kdmath">$P(q)$</span> will complete the proof.</p>
 
-<p>Since <script type="math/tex">q</script> is natural number, it follows <script type="math/tex">q > 0</script>. Thus we have to prove <script type="math/tex">\lnot \exists p \in \mathbb N(p/q = \sqrt 2)</script>.
-We shall prove this by contradiction. Thus lets suppose <script type="math/tex">\exists p \in \mathbb N(p/q = \sqrt 2)</script>. Thus there exist a <script type="math/tex">p \in \mathbb N</script>
-such that <script type="math/tex">p/q = \sqrt 2</script>. From the example-6.4.5 from book, it follows that <script type="math/tex">p,q</script> is even. Thus there are <script type="math/tex">p', q' \in \mathbb N</script>
-such that <script type="math/tex">p' = p/2</script> and <script type="math/tex">q' = q/2</script>. Since <script type="math/tex">p/q = \sqrt 2</script>, it follows <script type="math/tex">p'/q' = 2</script>. Since <script type="math/tex">q' = q/2</script>, it follows
-<script type="math/tex">% <![CDATA[
-q' < q %]]></script>. Thus there exists a <script type="math/tex">% <![CDATA[
-q' < q %]]></script> such that <script type="math/tex">\exists p \in \mathbb N(p/q' = \sqrt 2)</script>. But this contradicts with our
-induction hypothesis. Thus our assumption that <script type="math/tex">\exists p \in \mathbb N(p/q = \sqrt 2)</script> is true is wrong. Thus 
-<script type="math/tex">\lnot \exists p \in \mathbb N(p/q = \sqrt 2)</script>. It follows that <script type="math/tex">P(q)</script> is true.</p>
+<p>Since <span class="kdmath">$q$</span> is natural number, it follows <span class="kdmath">$q > 0$</span>. Thus we have to prove <span class="kdmath">$\lnot \exists p \in \mathbb N(p/q = \sqrt 2)$</span>.
+We shall prove this by contradiction. Thus lets suppose <span class="kdmath">$\exists p \in \mathbb N(p/q = \sqrt 2)$</span>. Thus there exist a <span class="kdmath">$p \in \mathbb N$</span>
+such that <span class="kdmath">$p/q = \sqrt 2$</span>. From the example-6.4.5 from book, it follows that <span class="kdmath">$p,q$</span> is even. Thus there are <span class="kdmath">$p', q' \in \mathbb N$</span>
+such that <span class="kdmath">$p' = p/2$</span> and <span class="kdmath">$q' = q/2$</span>. Since <span class="kdmath">$p/q = \sqrt 2$</span>, it follows <span class="kdmath">$p'/q' = 2$</span>. Since <span class="kdmath">$q' = q/2$</span>, it follows
+<span class="kdmath">$q' < q$</span>. Thus there exists a <span class="kdmath">$q' < q$</span> such that <span class="kdmath">$\exists p \in \mathbb N(p/q' = \sqrt 2)$</span>. But this contradicts with our
+induction hypothesis. Thus our assumption that <span class="kdmath">$\exists p \in \mathbb N(p/q = \sqrt 2)$</span> is true is wrong. Thus 
+<span class="kdmath">$\lnot \exists p \in \mathbb N(p/q = \sqrt 2)$</span>. It follows that <span class="kdmath">$P(q)$</span> is true.</p>
 
 <hr />
 
@@ -1225,63 +1210,58 @@ induction hypothesis. Thus our assumption that <script type="math/tex">\exists p
 <p>We will prove this by contradiction. We can follow the approach in Soln2 or we can also follow the approach used in book in example-6.4.5.
 Lets follows the approach used in example 6.4.5. Thus we will be using <em>Well ordering principle</em>.</p>
 
-<p>Suppose <script type="math/tex">\sqrt 6</script> is rational. Thus <script type="math/tex">\exists q \in \mathbb Z^+ \exists p \in \mathbb Z^+ (p/q = \sqrt 6)</script>. Thus the set
-<script type="math/tex">S = \{ q \in \mathbb Z^+ \, \vert \, \exists p \in \mathbb Z^+ (p/q = \sqrt 6) \}</script> is not empty. Suppose <script type="math/tex">q</script> is the smallest
-element of this set. Thus there exist <script type="math/tex">p \in \mathbb Z^+</script> such that <script type="math/tex">p/q = \sqrt 6</script>. Thus <script type="math/tex">p^2 = 6q^2</script>. It follows that
-<script type="math/tex">p^2</script> is even. Since <script type="math/tex">p^2</script> is even it follows that <script type="math/tex">p</script> is even. Thus suppose <script type="math/tex">p' = p/2</script>. Thus <script type="math/tex">p = 2p'</script>. Since
-<script type="math/tex">p^2 = 6q^2</script>, it follows <script type="math/tex">4{(p')}^2 = 6q^2</script>, or <script type="math/tex">2{(p')}^2 = 3q^2</script>. It follows that <script type="math/tex">q</script> is also even. Thus <script type="math/tex">q = 2q'</script>
-for some <script type="math/tex">q' \in \mathbb Z^+</script>. It follows <script type="math/tex">% <![CDATA[
-q' < q %]]></script>. Also <script type="math/tex">p/q = (2p')/(2q') = p'/q' = \sqrt 6</script>. Thus <script type="math/tex">q' \in S</script>. But this 
-contradicts with the assumption that <script type="math/tex">q</script> is the smallest element. Thus <script type="math/tex">\sqrt 6</script> is irrational.</p>
+<p>Suppose <span class="kdmath">$\sqrt 6$</span> is rational. Thus <span class="kdmath">$\exists q \in \mathbb Z^+ \exists p \in \mathbb Z^+ (p/q = \sqrt 6)$</span>. Thus the set
+<span class="kdmath">$S = \{ q \in \mathbb Z^+ \, \vert \, \exists p \in \mathbb Z^+ (p/q = \sqrt 6) \}$</span> is not empty. Suppose <span class="kdmath">$q$</span> is the smallest
+element of this set. Thus there exist <span class="kdmath">$p \in \mathbb Z^+$</span> such that <span class="kdmath">$p/q = \sqrt 6$</span>. Thus <span class="kdmath">$p^2 = 6q^2$</span>. It follows that
+<span class="kdmath">$p^2$</span> is even. Since <span class="kdmath">$p^2$</span> is even it follows that <span class="kdmath">$p$</span> is even. Thus suppose <span class="kdmath">$p' = p/2$</span>. Thus <span class="kdmath">$p = 2p'$</span>. Since
+<span class="kdmath">$p^2 = 6q^2$</span>, it follows <span class="kdmath">$4{(p')}^2 = 6q^2$</span>, or <span class="kdmath">$2{(p')}^2 = 3q^2$</span>. It follows that <span class="kdmath">$q$</span> is also even. Thus <span class="kdmath">$q = 2q'$</span>
+for some <span class="kdmath">$q' \in \mathbb Z^+$</span>. It follows <span class="kdmath">$q' < q$</span>. Also <span class="kdmath">$p/q = (2p')/(2q') = p'/q' = \sqrt 6$</span>. Thus <span class="kdmath">$q' \in S$</span>. But this 
+contradicts with the assumption that <span class="kdmath">$q$</span> is the smallest element. Thus <span class="kdmath">$\sqrt 6$</span> is irrational.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">\sqrt 2 + \sqrt 3</script> is rational. Thus <script type="math/tex">\exists q \in \mathbb Z^+ \exists p \in \mathbb Z^+ (p/q = \sqrt 2 + \sqrt 3)</script>.
-Suppose <script type="math/tex">p,q</script> are the elements such that <script type="math/tex">p/q = \sqrt 2 + \sqrt 3</script>. Thus:      <br />
-<script type="math/tex">\Rightarrow p^2/q^2 = 2 + 3 + 2 \sqrt 2 \sqrt 3</script>       <br />
-<script type="math/tex">\Rightarrow p^2/q^2 = 5 + 2 \sqrt 6</script>      <br />
-<script type="math/tex">\Rightarrow \sqrt 6 = \frac {p^2/q^2 - 5} 2</script>     <br />
-<script type="math/tex">\Rightarrow \sqrt 6 = \frac {p^2 - 5q^2} {2q^2}</script></p>
+<p>Suppose <span class="kdmath">$\sqrt 2 + \sqrt 3$</span> is rational. Thus <span class="kdmath">$\exists q \in \mathbb Z^+ \exists p \in \mathbb Z^+ (p/q = \sqrt 2 + \sqrt 3)$</span>.
+Suppose <span class="kdmath">$p,q$</span> are the elements such that <span class="kdmath">$p/q = \sqrt 2 + \sqrt 3$</span>. Thus:      <br />
+<span class="kdmath">$\Rightarrow p^2/q^2 = 2 + 3 + 2 \sqrt 2 \sqrt 3$</span>       <br />
+<span class="kdmath">$\Rightarrow p^2/q^2 = 5 + 2 \sqrt 6$</span>      <br />
+<span class="kdmath">$\Rightarrow \sqrt 6 = \frac {p^2/q^2 - 5} 2$</span>     <br />
+<span class="kdmath">$\Rightarrow \sqrt 6 = \frac {p^2 - 5q^2} {2q^2}$</span></p>
 
-<p>Thus <script type="math/tex">\sqrt 6</script> is rational. But this contradicts with part(a). Thus <script type="math/tex">\sqrt 2 + \sqrt 3</script> is irrational.</p>
+<p>Thus <span class="kdmath">$\sqrt 6$</span> is rational. But this contradicts with part(a). Thus <span class="kdmath">$\sqrt 2 + \sqrt 3$</span> is irrational.</p>
 
 <hr />
 
 <p><strong>Soln4</strong></p>
 
-<p>We need to prove that <script type="math/tex">\forall n \in \mathbb N(n \ge 12 \to \exists a \exists b (3a + 7b = n))</script>.</p>
+<p>We need to prove that <span class="kdmath">$\forall n \in \mathbb N(n \ge 12 \to \exists a \exists b (3a + 7b = n))$</span>.</p>
 
-<p>Suppose <script type="math/tex">P(n) = (n \ge 12) \to \exists a \exists b (3a + 7b = n)</script>. Thus we need to prove <script type="math/tex">\forall n \in \mathbb N P(n)</script>.</p>
+<p>Suppose <span class="kdmath">$P(n) = (n \ge 12) \to \exists a \exists b (3a + 7b = n)$</span>. Thus we need to prove <span class="kdmath">$\forall n \in \mathbb N P(n)$</span>.</p>
 
-<p>Suppose <script type="math/tex">n</script> is an arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n P(k) %]]></script> is our induction hypothesis.
+<p>Suppose <span class="kdmath">$n$</span> is an arbitrary natural number. Suppose <span class="kdmath">$\forall k < n P(k)$</span> is our induction hypothesis.
 Thus we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">% <![CDATA[
-n < 12 %]]></script>:    <br />
-Since <script type="math/tex">% <![CDATA[
-n < 12 %]]></script>, it follows <script type="math/tex">n \ge 12</script> is false. Thus <script type="math/tex">P(n) = (n \ge 12) \to \exists a \exists b (3a + 7b = n)</script> is vacuously true.</p>
+    <p>Case <span class="kdmath">$n < 12$</span>:    <br />
+Since <span class="kdmath">$n < 12$</span>, it follows <span class="kdmath">$n \ge 12$</span> is false. Thus <span class="kdmath">$P(n) = (n \ge 12) \to \exists a \exists b (3a + 7b = n)$</span> is vacuously true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 12</script>:    <br />
-Clearly <script type="math/tex">12 = 3 \times 4</script>. Thus <script type="math/tex">P(n)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 12$</span>:    <br />
+Clearly <span class="kdmath">$12 = 3 \times 4$</span>. Thus <span class="kdmath">$P(n)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 13</script>:
-Clearly <script type="math/tex">n = 7 \times 1 + 3 \times 2</script>. Thus <script type="math/tex">P(n)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 13$</span>:
+Clearly <span class="kdmath">$n = 7 \times 1 + 3 \times 2$</span>. Thus <span class="kdmath">$P(n)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 14</script>:
-Clearly <script type="math/tex">n = 7 \times 2</script>. Thus <script type="math/tex">P(n)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 14$</span>:
+Clearly <span class="kdmath">$n = 7 \times 2$</span>. Thus <span class="kdmath">$P(n)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n \ge 15</script>:
-Thus <script type="math/tex">n = 3 \times 1 + (n-3)</script>. Since <script type="math/tex">% <![CDATA[
-n-3 < n %]]></script>, it follows from induction hypothesis that <script type="math/tex">P(n-3)</script> is true. Thus
- there exist some <script type="math/tex">a</script> and <script type="math/tex">b</script> such that <script type="math/tex">n-3 = 3a + 7b</script>. Thus <script type="math/tex">n = 3 \times 1 + 3a + 7b</script>, or <script type="math/tex">n = 3 \times (a+1) + 7b</script>.
- It follows that <script type="math/tex">P(n)</script> is true.</p>
+    <p>Case <span class="kdmath">$n \ge 15$</span>:
+Thus <span class="kdmath">$n = 3 \times 1 + (n-3)$</span>. Since <span class="kdmath">$n-3 < n$</span>, it follows from induction hypothesis that <span class="kdmath">$P(n-3)$</span> is true. Thus
+ there exist some <span class="kdmath">$a$</span> and <span class="kdmath">$b$</span> such that <span class="kdmath">$n-3 = 3a + 7b$</span>. Thus <span class="kdmath">$n = 3 \times 1 + 3a + 7b$</span>, or <span class="kdmath">$n = 3 \times (a+1) + 7b$</span>.
+ It follows that <span class="kdmath">$P(n)$</span> is true.</p>
   </li>
 </ul>
 
@@ -1289,36 +1269,33 @@ n-3 < n %]]></script>, it follows from induction hypothesis that <script type="m
 
 <p><strong>Soln5</strong></p>
 
-<p>We need to prove <script type="math/tex">\forall n \in \mathbb N (n \ge 1 \to x^n +  \frac 1 {x^n})</script> is integer. Suppose <script type="math/tex">n</script> is an arbitrary integer.
-Suppose our induction hypothesis is <script type="math/tex">% <![CDATA[
-\forall k < n (k \ge 1 \to x^k + \frac 1 {x^k}) %]]></script> is an integer. Thus we have following possible
+<p>We need to prove <span class="kdmath">$\forall n \in \mathbb N (n \ge 1 \to x^n +  \frac 1 {x^n})$</span> is integer. Suppose <span class="kdmath">$n$</span> is an arbitrary integer.
+Suppose our induction hypothesis is <span class="kdmath">$\forall k < n (k \ge 1 \to x^k + \frac 1 {x^k})$</span> is an integer. Thus we have following possible
 cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">% <![CDATA[
-n < 1 %]]></script>:   <br />
-Clearly <script type="math/tex">P(n)</script> is vacuously true.</p>
+    <p>Case <span class="kdmath">$n < 1$</span>:   <br />
+Clearly <span class="kdmath">$P(n)$</span> is vacuously true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>:   <br />
-We are given that <script type="math/tex">x + \frac 1 x</script> is integer. Thus <script type="math/tex">P(n)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>:   <br />
+We are given that <span class="kdmath">$x + \frac 1 x$</span> is integer. Thus <span class="kdmath">$P(n)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 1</script>:    <br />
-Consider the product: <script type="math/tex">P(1)P(n-1) = (x + \frac 1 x)(x^{n-1} + {\frac 1 {x^{n-1}} })</script>. Since <script type="math/tex">% <![CDATA[
-n-1 < n %]]></script>, it follows by our induction
-hypothesis that <script type="math/tex">P(n-1)</script> is an integer. Thus <script type="math/tex">P(1)P(n-1)</script> is also an integer.</p>
+    <p>Case <span class="kdmath">$n > 1$</span>:    <br />
+Consider the product: <span class="kdmath">$P(1)P(n-1) = (x + \frac 1 x)(x^{n-1} + {\frac 1 {x^{n-1}} })$</span>. Since <span class="kdmath">$n-1 < n$</span>, it follows by our induction
+hypothesis that <span class="kdmath">$P(n-1)$</span> is an integer. Thus <span class="kdmath">$P(1)P(n-1)$</span> is also an integer.</p>
 
-    <p>On simplifying <script type="math/tex">P(1)(n-1) = { x^n } + { \frac 1 {x^n} } + { x^{n-1} } + { \frac 1 {x^{n-1}} }</script>.        <br />
-<script type="math/tex">\Rightarrow P(1)P(n-1) = P(n) + P(n-1)</script>       <br />
-<script type="math/tex">\Rightarrow P(n) = P(1)P(n-1) - P(n-1)</script></p>
+    <p>On simplifying <span class="kdmath">$P(1)(n-1) = { x^n } + { \frac 1 {x^n} } + { x^{n-1} } + { \frac 1 {x^{n-1}} }$</span>.        <br />
+<span class="kdmath">$\Rightarrow P(1)P(n-1) = P(n) + P(n-1)$</span>       <br />
+<span class="kdmath">$\Rightarrow P(n) = P(1)P(n-1) - P(n-1)$</span></p>
 
-    <p>Thus <script type="math/tex">P(n)</script> is also an integer since <script type="math/tex">P(1)P(n-1)</script> is integer and <script type="math/tex">P(1)</script> is integer.</p>
+    <p>Thus <span class="kdmath">$P(n)$</span> is also an integer since <span class="kdmath">$P(1)P(n-1)$</span> is integer and <span class="kdmath">$P(1)$</span> is integer.</p>
   </li>
 </ul>
 
-<p>Thus from all cases <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus from all cases <span class="kdmath">$P(n)$</span> is true.</p>
 
 <hr />
 
@@ -1326,94 +1303,86 @@ hypothesis that <script type="math/tex">P(n-1)</script> is an integer. Thus <scr
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n (\sum_{i=0}^k F_i = F_{k+2} -1) %]]></script>.</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary natural number. Suppose <span class="kdmath">$\forall k < n (\sum_{i=0}^k F_i = F_{k+2} -1)$</span>.</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>     <br />
-<script type="math/tex">\sum_{i=0}^k F_i = F_0 + F_1 = 0 + 1 = 1 = 2 - 1 = F_3 - 1</script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>     <br />
+<span class="kdmath">$\sum_{i=0}^k F_i = F_0 + F_1 = 0 + 1 = 1 = 2 - 1 = F_3 - 1$</span>. Thus <span class="kdmath">$P(1)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 1</script>.
-Clearly <script type="math/tex">n-1</script> is a natural number and <script type="math/tex">% <![CDATA[
-n - 1 < n %]]></script>. Thus by induction hypothesis,      <br />
-<script type="math/tex">\Rightarrow \sum_{i=0}^{n-1} F_i = F_{n+1} - 1</script>        <br />
-Thus <script type="math/tex">\sum_{i=0}^n F_i = \sum_{i=0}^{n-1} F_i + F_n = F_{n+1} - 1 + F_n = F_{n+2} -1</script>.     <br />
-Thus <script type="math/tex">P(n)</script> is also true.</p>
+    <p>Case <span class="kdmath">$n > 1$</span>.
+Clearly <span class="kdmath">$n-1$</span> is a natural number and <span class="kdmath">$n - 1 < n$</span>. Thus by induction hypothesis,      <br />
+<span class="kdmath">$\Rightarrow \sum_{i=0}^{n-1} F_i = F_{n+1} - 1$</span>        <br />
+Thus <span class="kdmath">$\sum_{i=0}^n F_i = \sum_{i=0}^{n-1} F_i + F_n = F_{n+1} - 1 + F_n = F_{n+2} -1$</span>.     <br />
+Thus <span class="kdmath">$P(n)$</span> is also true.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus from both cases, <span class="kdmath">$P(n)$</span> is true.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n (\sum_{i=0}^k {(F_i)}^2 = F_k F_{k+1} ) %]]></script>.</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary natural number. Suppose <span class="kdmath">$\forall k < n (\sum_{i=0}^k {(F_i)}^2 = F_k F_{k+1} )$</span>.</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>     <br />
-<script type="math/tex">\sum_{i=0}^k {(F_i)}^2 = F_0^2 + F_1^2 = 0^2 + 1^2 = 1 = 1 \times 1 = F_1 \cdot F_2</script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>     <br />
+<span class="kdmath">$\sum_{i=0}^k {(F_i)}^2 = F_0^2 + F_1^2 = 0^2 + 1^2 = 1 = 1 \times 1 = F_1 \cdot F_2$</span>. Thus <span class="kdmath">$P(1)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 1</script>.
-Clearly <script type="math/tex">n-1</script> is a natural number and <script type="math/tex">% <![CDATA[
-n - 1 < n %]]></script>. Thus by induction hypothesis,      <br />
-<script type="math/tex">\Rightarrow \sum_{i=0}^{n-1} {(F_i)}^2 = F_{n-1}F_{n}</script>        <br />
-Thus <script type="math/tex">\sum_{i=0}^n {(F_i)}^2 = \sum_{i=0}^{n-1} {(F_i)}^2 + F_n^2 = F_{n-1}F_{n} + F_n^2 = F_n(F_{n-1} + F_n) = F_n + F_{n+1}</script>.     <br />
-Thus <script type="math/tex">P(n)</script> is also true.</p>
+    <p>Case <span class="kdmath">$n > 1$</span>.
+Clearly <span class="kdmath">$n-1$</span> is a natural number and <span class="kdmath">$n - 1 < n$</span>. Thus by induction hypothesis,      <br />
+<span class="kdmath">$\Rightarrow \sum_{i=0}^{n-1} {(F_i)}^2 = F_{n-1}F_{n}$</span>        <br />
+Thus <span class="kdmath">$\sum_{i=0}^n {(F_i)}^2 = \sum_{i=0}^{n-1} {(F_i)}^2 + F_n^2 = F_{n-1}F_{n} + F_n^2 = F_n(F_{n-1} + F_n) = F_n + F_{n+1}$</span>.     <br />
+Thus <span class="kdmath">$P(n)$</span> is also true.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus from both cases, <span class="kdmath">$P(n)$</span> is true.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n (\sum_{i=0}^k F_{2i+1} = F_{2k+2}) %]]></script>.</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary natural number. Suppose <span class="kdmath">$\forall k < n (\sum_{i=0}^k F_{2i+1} = F_{2k+2})$</span>.</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>     <br />
-<script type="math/tex">\sum_{i=0}^k F_{2i+1} = F_1 + F_3 = 1 + 2 = 3 = F_4</script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>     <br />
+<span class="kdmath">$\sum_{i=0}^k F_{2i+1} = F_1 + F_3 = 1 + 2 = 3 = F_4$</span>. Thus <span class="kdmath">$P(1)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 1</script>.
-Clearly <script type="math/tex">n-1</script> is a natural number and <script type="math/tex">% <![CDATA[
-n - 1 < n %]]></script>. Thus by induction hypothesis,      <br />
-<script type="math/tex">\Rightarrow \sum_{i=0}^{n-1} F_{2i+1} = F_{2(n-1)+1} = F_{2n}</script>        <br />
-Thus <script type="math/tex">\sum_{i=0}^n F_{2i+1} = \sum_{i=0}^{n-1} F_{2i+1} + F_{2n+1} = F_{2n} + F_{2n+1} = F_{2n+2}</script>.     <br />
-Thus <script type="math/tex">P(n)</script> is also true.</p>
+    <p>Case <span class="kdmath">$n > 1$</span>.
+Clearly <span class="kdmath">$n-1$</span> is a natural number and <span class="kdmath">$n - 1 < n$</span>. Thus by induction hypothesis,      <br />
+<span class="kdmath">$\Rightarrow \sum_{i=0}^{n-1} F_{2i+1} = F_{2(n-1)+1} = F_{2n}$</span>        <br />
+Thus <span class="kdmath">$\sum_{i=0}^n F_{2i+1} = \sum_{i=0}^{n-1} F_{2i+1} + F_{2n+1} = F_{2n} + F_{2n+1} = F_{2n+2}$</span>.     <br />
+Thus <span class="kdmath">$P(n)$</span> is also true.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus from both cases, <span class="kdmath">$P(n)$</span> is true.</p>
 
 <p><strong>(d)</strong></p>
 
-<p>I made a guess as it is similar to part(c) for this formulae <script type="math/tex">\sum_{i=0}^n F_{2i+1} = F_{2n+1}</script>. But it does not cover the 
- case for <script type="math/tex">n = 1</script>, so adjusted the formulae to <script type="math/tex">\sum_{i=0}^n F_{2i+1} = F_{2n+1} - 1</script>.</p>
+<p>I made a guess as it is similar to part(c) for this formulae <span class="kdmath">$\sum_{i=0}^n F_{2i+1} = F_{2n+1}$</span>. But it does not cover the 
+ case for <span class="kdmath">$n = 1$</span>, so adjusted the formulae to <span class="kdmath">$\sum_{i=0}^n F_{2i+1} = F_{2n+1} - 1$</span>.</p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n (\sum_{i=0}^k F_{2i} = F_{2k+1} - 1) %]]></script>.</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary natural number. Suppose <span class="kdmath">$\forall k < n (\sum_{i=0}^k F_{2i} = F_{2k+1} - 1)$</span>.</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>     <br />
-<script type="math/tex">\sum_{i=0}^k F_{2i} = F_0 + F_2 = 0 + 1 = 1 = 2 - 1 = F_3 - 1</script>. Thus <script type="math/tex">P(1)</script> is true.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>     <br />
+<span class="kdmath">$\sum_{i=0}^k F_{2i} = F_0 + F_2 = 0 + 1 = 1 = 2 - 1 = F_3 - 1$</span>. Thus <span class="kdmath">$P(1)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 1</script>.
-Clearly <script type="math/tex">n-1</script> is a natural number and <script type="math/tex">% <![CDATA[
-n - 1 < n %]]></script>. Thus by induction hypothesis,      <br />
-<script type="math/tex">\Rightarrow \sum_{i=0}^{n-1} F_{2i} = F_{2(n-1)+1} - 1 = F_{2n-1} - 1</script>        <br />
-Thus <script type="math/tex">\sum_{i=0}^n F_{2i} = \sum_{i=0}^{n-1} F_{2i} + F_{2n} = F_{2n-1} - 1 + F_{2n} = F_{2n+1} -1</script>.     <br />
-Thus <script type="math/tex">P(n)</script> is also true.</p>
+    <p>Case <span class="kdmath">$n > 1$</span>.
+Clearly <span class="kdmath">$n-1$</span> is a natural number and <span class="kdmath">$n - 1 < n$</span>. Thus by induction hypothesis,      <br />
+<span class="kdmath">$\Rightarrow \sum_{i=0}^{n-1} F_{2i} = F_{2(n-1)+1} - 1 = F_{2n-1} - 1$</span>        <br />
+Thus <span class="kdmath">$\sum_{i=0}^n F_{2i} = \sum_{i=0}^{n-1} F_{2i} + F_{2n} = F_{2n-1} - 1 + F_{2n} = F_{2n+1} -1$</span>.     <br />
+Thus <span class="kdmath">$P(n)$</span> is also true.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus from both cases, <span class="kdmath">$P(n)$</span> is true.</p>
 
 <hr />
 
@@ -1421,160 +1390,149 @@ Thus <script type="math/tex">P(n)</script> is also true.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">m</script> is arbitrary. Suppose <script type="math/tex">% <![CDATA[
-\forall k < m (k \ge 1 \to (F_{k+n} = F_{k-1}F_{n} + F_kF_{n+1})) %]]></script>. We have following
+<p>Suppose <span class="kdmath">$m$</span> is arbitrary. Suppose <span class="kdmath">$\forall k < m (k \ge 1 \to (F_{k+n} = F_{k-1}F_{n} + F_kF_{n+1}))$</span>. We have following
  possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">% <![CDATA[
-m < 1 %]]></script>     <br />
-Clearly <script type="math/tex">m \ge 1</script> is false. Thus <script type="math/tex">m \ge 1 \to (F_{m+n} = F_{m-1}F_{n} + F_mF_{n+1})</script> statement is vacuously true. Thus
-<script type="math/tex">P(m)</script> is true.</p>
+    <p>Case <span class="kdmath">$m < 1$</span>     <br />
+Clearly <span class="kdmath">$m \ge 1$</span> is false. Thus <span class="kdmath">$m \ge 1 \to (F_{m+n} = F_{m-1}F_{n} + F_mF_{n+1})$</span> statement is vacuously true. Thus
+<span class="kdmath">$P(m)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">m = 1</script>    <br />
-<script type="math/tex">F_{1-1}F_n + F_{1}F_{n+1} = 0 + F_{n+1} = F_{m+1}</script>. Thus <script type="math/tex">P(m)</script> is true.</p>
+    <p>Case <span class="kdmath">$m = 1$</span>    <br />
+<span class="kdmath">$F_{1-1}F_n + F_{1}F_{n+1} = 0 + F_{n+1} = F_{m+1}$</span>. Thus <span class="kdmath">$P(m)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">m = 2</script>    <br />
- <script type="math/tex">F_{2-1}F_n + F_{2}F_{n+1} = F_n + F_{n+1} = F_{n+2}</script>(fibonacci number). Thus <script type="math/tex">P(m)</script> is true.</p>
+    <p>Case <span class="kdmath">$m = 2$</span>    <br />
+ <span class="kdmath">$F_{2-1}F_n + F_{2}F_{n+1} = F_n + F_{n+1} = F_{n+2}$</span>(fibonacci number). Thus <span class="kdmath">$P(m)$</span> is true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">m > 2</script>    <br />
-Thus <script type="math/tex">m - 1 \ge 1</script> and <script type="math/tex">m-2 \ge 1</script>. Since <script type="math/tex">F_{m+n}</script> is a fibonacci number, <script type="math/tex">F_{m+n} = F_{m+n-1} + F_{m+n-2} = F_{m-1+n} + F_{m-2+n}</script>.
-Since <script type="math/tex">% <![CDATA[
-m-1 < m %]]></script> and <script type="math/tex">% <![CDATA[
-m-2 < m %]]></script> and <script type="math/tex">m - 1 \ge 1 \land m-2 \ge 1</script>, it follows by induction hypothesis <script type="math/tex">F_{m-1+n} = F_{m-2}F_n + F_{m-1}F_{n+1}</script>
-and <script type="math/tex">F_{m-2+n} = F_{m-3}F_n + F_{m-2}F_{n+1}</script>. Thus:</p>
+    <p>Case <span class="kdmath">$m > 2$</span>    <br />
+Thus <span class="kdmath">$m - 1 \ge 1$</span> and <span class="kdmath">$m-2 \ge 1$</span>. Since <span class="kdmath">$F_{m+n}$</span> is a fibonacci number, <span class="kdmath">$F_{m+n} = F_{m+n-1} + F_{m+n-2} = F_{m-1+n} + F_{m-2+n}$</span>.
+Since <span class="kdmath">$m-1 < m$</span> and <span class="kdmath">$m-2 < m$</span> and <span class="kdmath">$m - 1 \ge 1 \land m-2 \ge 1$</span>, it follows by induction hypothesis <span class="kdmath">$F_{m-1+n} = F_{m-2}F_n + F_{m-1}F_{n+1}$</span>
+and <span class="kdmath">$F_{m-2+n} = F_{m-3}F_n + F_{m-2}F_{n+1}$</span>. Thus:</p>
 
-    <p><script type="math/tex">F_{m+n} = F_{m+n-1} + F_{m+n-2}</script>    <br />
-<script type="math/tex">= F_{m-2}F_n + F_{m-1}F_{n+1} + F_{m-3}F_n + F_{m-2}F_{n+1}</script>   <br />
-<script type="math/tex">= F_n(F_{m-2} + F_{m-3}) + F_{n+1}(F_{m-1} + F_{m-2})</script>   <br />
-<script type="math/tex">= F_nF_{m-1} + F_{n+1}F_m</script>     <br />
-<script type="math/tex">= F_{m-1}F_n + F_mF_{n+1}</script></p>
+    <p><span class="kdmath">$F_{m+n} = F_{m+n-1} + F_{m+n-2}$</span>    <br />
+<span class="kdmath">$= F_{m-2}F_n + F_{m-1}F_{n+1} + F_{m-3}F_n + F_{m-2}F_{n+1}$</span>   <br />
+<span class="kdmath">$= F_n(F_{m-2} + F_{m-3}) + F_{n+1}(F_{m-1} + F_{m-2})$</span>   <br />
+<span class="kdmath">$= F_nF_{m-1} + F_{n+1}F_m$</span>     <br />
+<span class="kdmath">$= F_{m-1}F_n + F_mF_{n+1}$</span></p>
 
-    <p>Thus <script type="math/tex">P(m)</script> is true.</p>
+    <p>Thus <span class="kdmath">$P(m)$</span> is true.</p>
   </li>
 </ul>
 
-<p>Thus from all cases <script type="math/tex">P(m)</script> is true.</p>
+<p>Thus from all cases <span class="kdmath">$P(m)$</span> is true.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">m</script> is arbitrary. Suppose <script type="math/tex">% <![CDATA[
-\forall k < m (k \ge 1 \to (F_{k+n} = F_{k-1}F_{n} + F_kF_{n+1})) %]]></script>. We have following
+<p>Suppose <span class="kdmath">$m$</span> is arbitrary. Suppose <span class="kdmath">$\forall k < m (k \ge 1 \to (F_{k+n} = F_{k-1}F_{n} + F_kF_{n+1}))$</span>. We have following
  possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">m > 2</script>    <br />
-Thus <script type="math/tex">m-1 \ge 1 \land m-2 \ge 1</script>. We have:   <br />
-<script type="math/tex">F_{m+n} = F_{m+n-1} + F_{m+n-2}</script>, (fibonacci numbers property)    <br />
-<script type="math/tex">= F_mF_{n+1} + F_{m-2}F_{n-1} + F_{m-1}F_{n+1} + F_{m-3}F_{n-1}</script>, (by induction hypothesis)     <br />
-<script type="math/tex">= (F_m + F_{m-1})F_{n+1} + (F_{m-2} + F_{m-3})F_{n-1}</script>    <br />
-<script type="math/tex">= F_{m+1}F_{n+1} + F_{m-1}F_{n-1}</script></p>
+    <p>Case <span class="kdmath">$m > 2$</span>    <br />
+Thus <span class="kdmath">$m-1 \ge 1 \land m-2 \ge 1$</span>. We have:   <br />
+<span class="kdmath">$F_{m+n} = F_{m+n-1} + F_{m+n-2}$</span>, (fibonacci numbers property)    <br />
+<span class="kdmath">$= F_mF_{n+1} + F_{m-2}F_{n-1} + F_{m-1}F_{n+1} + F_{m-3}F_{n-1}$</span>, (by induction hypothesis)     <br />
+<span class="kdmath">$= (F_m + F_{m-1})F_{n+1} + (F_{m-2} + F_{m-3})F_{n-1}$</span>    <br />
+<span class="kdmath">$= F_{m+1}F_{n+1} + F_{m-1}F_{n-1}$</span></p>
   </li>
-  <li>Case <script type="math/tex">m = 2</script></li>
-  <li>Case <script type="math/tex">m = 1</script>   <br />
-For both of these cases, it can be directly verified by putting the values for <script type="math/tex">m</script>.</li>
+  <li>Case <span class="kdmath">$m = 2$</span></li>
+  <li>Case <span class="kdmath">$m = 1$</span>   <br />
+For both of these cases, it can be directly verified by putting the values for <span class="kdmath">$m$</span>.</li>
 </ul>
 
 <p><strong>(c)</strong></p>
 
-<p>Both parts can be proved easily by putting <script type="math/tex">m = n+1</script> in part(a) and putting <script type="math/tex">m = n+1, n = n+1</script> in part(b).</p>
+<p>Both parts can be proved easily by putting <span class="kdmath">$m = n+1$</span> in part(a) and putting <span class="kdmath">$m = n+1, n = n+1$</span> in part(b).</p>
 
 <p><strong>(d)</strong></p>
 
 <p>We need to prove following:</p>
 
-<p><script type="math/tex">\forall m \in \mathbb N \forall n \in \mathbb N ( \exists p \in \mathbb N(pm = n) \to \exists q \in \mathbb N(qF_m = F_n))</script>.</p>
+<p><span class="kdmath">$\forall m \in \mathbb N \forall n \in \mathbb N ( \exists p \in \mathbb N(pm = n) \to \exists q \in \mathbb N(qF_m = F_n))$</span>.</p>
 
-<p>Suppose <script type="math/tex">m,n</script> are arbitrary natural numbers such that <script type="math/tex">lm = n</script> for some natural number <script type="math/tex">l</script>. Suppose 
-<script type="math/tex">% <![CDATA[
-\forall k < n (\exists p \in \mathbb N(pm = k) \to \exists q \in \mathbb N(qF_m = F_k)) %]]></script>. We have following possible cases:</p>
+<p>Suppose <span class="kdmath">$m,n$</span> are arbitrary natural numbers such that <span class="kdmath">$lm = n$</span> for some natural number <span class="kdmath">$l$</span>. Suppose 
+<span class="kdmath">$\forall k < n (\exists p \in \mathbb N(pm = k) \to \exists q \in \mathbb N(qF_m = F_k))$</span>. We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">m = n</script>      <br />
-Since <script type="math/tex">m = n</script>, it follows <script type="math/tex">F_m = F_n</script>. Thus for <script type="math/tex">q = 1</script>, <script type="math/tex">qF_m = F_n</script>.</p>
+    <p>Case <span class="kdmath">$m = n$</span>      <br />
+Since <span class="kdmath">$m = n$</span>, it follows <span class="kdmath">$F_m = F_n$</span>. Thus for <span class="kdmath">$q = 1$</span>, <span class="kdmath">$qF_m = F_n$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > m</script>    <br />
-We have <script type="math/tex">F_n = F_{(n-m)+m}</script>. Since <script type="math/tex">n > m</script>, it follows <script type="math/tex">n-m</script> is a natural number. Thus we can apply part(a).
-Applying part(a), we get <script type="math/tex">F_n = F_{n-m-1}F_m + F_{n-m}F_{m-1}</script>.</p>
+    <p>Case <span class="kdmath">$n > m$</span>    <br />
+We have <span class="kdmath">$F_n = F_{(n-m)+m}$</span>. Since <span class="kdmath">$n > m$</span>, it follows <span class="kdmath">$n-m$</span> is a natural number. Thus we can apply part(a).
+Applying part(a), we get <span class="kdmath">$F_n = F_{n-m-1}F_m + F_{n-m}F_{m-1}$</span>.</p>
 
-    <p>Since <script type="math/tex">n = lm</script>, it follows <script type="math/tex">n-m = lm-m = (l-1)m</script>. Thus <script type="math/tex">n-m</script> is a multiple of <script type="math/tex">m</script>. Or we can say <script type="math/tex">tm = n-m</script>, where <script type="math/tex">t = l-1</script>. Since <script type="math/tex">% <![CDATA[
-n-m < n %]]></script> and <script type="math/tex">tm = n-m</script>, it follows
-from the induction hypothesis, there exist some natural number <script type="math/tex">q'</script> such that <script type="math/tex">q'F_m = F_{n-m}</script>.</p>
+    <p>Since <span class="kdmath">$n = lm$</span>, it follows <span class="kdmath">$n-m = lm-m = (l-1)m$</span>. Thus <span class="kdmath">$n-m$</span> is a multiple of <span class="kdmath">$m$</span>. Or we can say <span class="kdmath">$tm = n-m$</span>, where <span class="kdmath">$t = l-1$</span>. Since <span class="kdmath">$n-m < n$</span> and <span class="kdmath">$tm = n-m$</span>, it follows
+from the induction hypothesis, there exist some natural number <span class="kdmath">$q'$</span> such that <span class="kdmath">$q'F_m = F_{n-m}$</span>.</p>
 
-    <p>Thus <script type="math/tex">F_n = F_{n-m-1}F_m + F_{n-m}F_{m-1} = F_{n-m-1}F_m + q'F_mF_{m-1}</script>, or <script type="math/tex">F_n = (F_{n-m-1} + q'F_{m-1})F_m</script>. Thus for
-<script type="math/tex">q = (F_{n-m-1} + q'F_{m-1})</script>, we have <script type="math/tex">F_n = qF_m</script>.</p>
+    <p>Thus <span class="kdmath">$F_n = F_{n-m-1}F_m + F_{n-m}F_{m-1} = F_{n-m-1}F_m + q'F_mF_{m-1}$</span>, or <span class="kdmath">$F_n = (F_{n-m-1} + q'F_{m-1})F_m$</span>. Thus for
+<span class="kdmath">$q = (F_{n-m-1} + q'F_{m-1})$</span>, we have <span class="kdmath">$F_n = qF_m$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">% <![CDATA[
-n < m %]]></script>   <br />
-Since <script type="math/tex">lm = n</script>, for some natural number <script type="math/tex">l</script>, it follows that this case is not possible.</p>
+    <p>Case <span class="kdmath">$n < m$</span>   <br />
+Since <span class="kdmath">$lm = n$</span>, for some natural number <span class="kdmath">$l$</span>, it follows that this case is not possible.</p>
   </li>
 </ul>
 
 <p><strong>(e)</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary natural number. Suppose:</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary natural number. Suppose:</p>
 
-<p><script type="math/tex">% <![CDATA[
-\forall k < n (F_{2k-1} = \sum_{i=0}^{k-1} \binom {2k-i-2} k %]]></script>     <br />
-<script type="math/tex">% <![CDATA[
-\forall k < n (F_{2k} = \sum_{i=0}^{k-1} \binom {2k-i-1} k %]]></script></p>
+<p><span class="kdmath">$\forall k < n (F_{2k-1} = \sum_{i=0}^{k-1} \binom {2k-i-2} k$</span>     <br />
+<span class="kdmath">$\forall k < n (F_{2k} = \sum_{i=0}^{k-1} \binom {2k-i-1} k$</span></p>
 
-<p>We know that <script type="math/tex">F_n = F_{n-1} + F_{n-2}</script>. Thus we have following possible cases:</p>
+<p>We know that <span class="kdmath">$F_n = F_{n-1} + F_{n-2}$</span>. Thus we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>:  <br />
-Thus <script type="math/tex">\sum_{i=0}^{n-1} \binom {2n-i-2} n = \binom {2-0-2} 0 = \binom 0 0 = 1 = F_1 = F_{2n-1}</script>.    <br />
-Also <script type="math/tex">\sum_{i=0}^{n-1} \binom {2n-i-1} n = \binom {2-0-1} 0 = \binom 1 0 = 1 = F_2 = F_{2n}</script>.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>:  <br />
+Thus <span class="kdmath">$\sum_{i=0}^{n-1} \binom {2n-i-2} n = \binom {2-0-2} 0 = \binom 0 0 = 1 = F_1 = F_{2n-1}$</span>.    <br />
+Also <span class="kdmath">$\sum_{i=0}^{n-1} \binom {2n-i-1} n = \binom {2-0-1} 0 = \binom 1 0 = 1 = F_2 = F_{2n}$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 2</script>:  <br />
-Thus <script type="math/tex">\sum_{i=0}^{n-1} \binom {2n-i-2} n = \binom {4-0-2} 0 + \binom {4-1-2} 1 = \binom 2 0 + \binom 1 1 = 1+1 = F_3 = F_{2n-1}</script>.    <br />
-Also <script type="math/tex">\sum_{i=0}^{n-1} \binom {2n-i-1} n = \binom {4-0-1} 0 + \binom {4-1-1} 1 = \binom 3 0 + \binom 2 1 = 1+2 = F_4 = F_{2n}</script>.</p>
+    <p>Case <span class="kdmath">$n = 2$</span>:  <br />
+Thus <span class="kdmath">$\sum_{i=0}^{n-1} \binom {2n-i-2} n = \binom {4-0-2} 0 + \binom {4-1-2} 1 = \binom 2 0 + \binom 1 1 = 1+1 = F_3 = F_{2n-1}$</span>.    <br />
+Also <span class="kdmath">$\sum_{i=0}^{n-1} \binom {2n-i-1} n = \binom {4-0-1} 0 + \binom {4-1-1} 1 = \binom 3 0 + \binom 2 1 = 1+2 = F_4 = F_{2n}$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 2</script>:</p>
+    <p>Case <span class="kdmath">$n > 2$</span>:</p>
 
-    <p>Since <script type="math/tex">n > 2</script>, it follows <script type="math/tex">2(n-1) \ge 4</script> and <script type="math/tex">2(n-1)-3 \ge 1</script>. Thus <script type="math/tex">F_{2(n-1)}</script> and <script type="math/tex">F_{2(n-1)-1}</script> are both valid
+    <p>Since <span class="kdmath">$n > 2$</span>, it follows <span class="kdmath">$2(n-1) \ge 4$</span> and <span class="kdmath">$2(n-1)-3 \ge 1$</span>. Thus <span class="kdmath">$F_{2(n-1)}$</span> and <span class="kdmath">$F_{2(n-1)-1}$</span> are both valid
 fibonacci numbers.</p>
 
-    <p>Since <script type="math/tex">F_{2n-1}</script> is a fibonacci number, it follows:    <br />
-<script type="math/tex">F_{2n-1} = F_{2n-2} + F_{2n-3} = F_{2(n-1)} + F_{2(n-1)-1}</script></p>
+    <p>Since <span class="kdmath">$F_{2n-1}$</span> is a fibonacci number, it follows:    <br />
+<span class="kdmath">$F_{2n-1} = F_{2n-2} + F_{2n-3} = F_{2(n-1)} + F_{2(n-1)-1}$</span></p>
 
-    <p>Since <script type="math/tex">n > 2</script>, it follows <script type="math/tex">n-1</script> is a natural number. Since <script type="math/tex">% <![CDATA[
-n-1 < n %]]></script> and <script type="math/tex">n-1</script> is a natural number, it follows from
+    <p>Since <span class="kdmath">$n > 2$</span>, it follows <span class="kdmath">$n-1$</span> is a natural number. Since <span class="kdmath">$n-1 < n$</span> and <span class="kdmath">$n-1$</span> is a natural number, it follows from
 the induction hypothesis:</p>
 
-    <p><script type="math/tex">F_{2(n-1)} = \sum_{i=0}^{n-2} \binom {2(n-1)-i-1} {n-1} = \sum_{i=0}^{n-2} \binom {2n-i-3} {n-1}</script> and    <br />
-<script type="math/tex">F_{2(n-1)-1} = \sum_{i=0}^{n-2} \binom {2(n-1)-i-2} {n-1} = \sum_{i=0}^{n-2} \binom {2n-i-4} {n-1}</script></p>
+    <p><span class="kdmath">$F_{2(n-1)} = \sum_{i=0}^{n-2} \binom {2(n-1)-i-1} {n-1} = \sum_{i=0}^{n-2} \binom {2n-i-3} {n-1}$</span> and    <br />
+<span class="kdmath">$F_{2(n-1)-1} = \sum_{i=0}^{n-2} \binom {2(n-1)-i-2} {n-1} = \sum_{i=0}^{n-2} \binom {2n-i-4} {n-1}$</span></p>
 
-    <p>Thus <script type="math/tex">F_n</script>:    <br />
-<script type="math/tex">= \sum_{i=0}^{n-2} \binom {2n-i-3} {n-1} + \sum_{i=0}^{n-2} \binom {2n-i-4} {n-1}</script>       <br />
-<script type="math/tex">= {\binom {2n-3} 0} + {\binom {2n-4} 1} + \cdot \cdot \cdot + {\binom {n} {n-3} } + {\binom {n-1} {n-2}}</script>   <br />
-<script type="math/tex">\quad\quad\quad\;\; + {\binom {2n-4} 0} + \cdot \cdot \cdot + {\binom {n} {n-4} } + {\binom {n-1} {n-3}} + {\binom {n-2} {n-2}}</script></p>
+    <p>Thus <span class="kdmath">$F_n$</span>:    <br />
+<span class="kdmath">$= \sum_{i=0}^{n-2} \binom {2n-i-3} {n-1} + \sum_{i=0}^{n-2} \binom {2n-i-4} {n-1}$</span>       <br />
+<span class="kdmath">$= {\binom {2n-3} 0} + {\binom {2n-4} 1} + \cdot \cdot \cdot + {\binom {n} {n-3} } + {\binom {n-1} {n-2}}$</span>   <br />
+<span class="kdmath">$\quad\quad\quad\;\; + {\binom {2n-4} 0} + \cdot \cdot \cdot + {\binom {n} {n-4} } + {\binom {n-1} {n-3}} + {\binom {n-2} {n-2}}$</span></p>
 
-    <p>We can see above many pairs of the form of <script type="math/tex">\binom {n} {k}</script> and <script type="math/tex">\binom {n} {k-1}</script>. Thus we can use the theorem 
-<script type="math/tex">\binom {n+1} k = \binom n {k-1} + \binom n {k}</script>. Thus except the first and last term all the pairs in the above summation can be combined.
+    <p>We can see above many pairs of the form of <span class="kdmath">$\binom {n} {k}$</span> and <span class="kdmath">$\binom {n} {k-1}$</span>. Thus we can use the theorem 
+<span class="kdmath">$\binom {n+1} k = \binom n {k-1} + \binom n {k}$</span>. Thus except the first and last term all the pairs in the above summation can be combined.
 Thus after combining we get the following:</p>
 
-    <p><script type="math/tex">= {\binom {2n-3} 0} + {\binom {2n-3} 1} + \cdot \cdot \cdot + { \binom {n+1} {n-3} } + { \binom {n} {n-2} } + { \binom {n-2} {n-2} }</script>    <br />
-<script type="math/tex">= 1 + {\binom {2n-3} 1} + \cdot \cdot \cdot + { \binom {n+1} {n-3} } + { \binom {n} {n-2} } + 1</script>    <br />
-<script type="math/tex">= {\binom {2n-2} 0} + {\binom {2n-3} 1} + \cdot \cdot \cdot + { \binom {n+1} {n-3} } + { \binom {n} {n-2} } + { \binom {n-1} {n-1} }</script>    <br />
-<script type="math/tex">= \sum_{i=0}^{n-1} \binom {2n-i-2} n</script></p>
+    <p><span class="kdmath">$= {\binom {2n-3} 0} + {\binom {2n-3} 1} + \cdot \cdot \cdot + { \binom {n+1} {n-3} } + { \binom {n} {n-2} } + { \binom {n-2} {n-2} }$</span>    <br />
+<span class="kdmath">$= 1 + {\binom {2n-3} 1} + \cdot \cdot \cdot + { \binom {n+1} {n-3} } + { \binom {n} {n-2} } + 1$</span>    <br />
+<span class="kdmath">$= {\binom {2n-2} 0} + {\binom {2n-3} 1} + \cdot \cdot \cdot + { \binom {n+1} {n-3} } + { \binom {n} {n-2} } + { \binom {n-1} {n-1} }$</span>    <br />
+<span class="kdmath">$= \sum_{i=0}^{n-1} \binom {2n-i-2} n$</span></p>
   </li>
 </ul>
 
-<p>Thus <script type="math/tex">F_{2n-1}</script> is true in all cases.</p>
+<p>Thus <span class="kdmath">$F_{2n-1}$</span> is true in all cases.</p>
 
-<p>Similarly we can prove for <script type="math/tex">F_{2n}</script>.</p>
+<p>Similarly we can prove for <span class="kdmath">$F_{2n}$</span>.</p>
 
 <hr />
 
@@ -1583,200 +1541,193 @@ Thus after combining we get the following:</p>
 <p><strong>(a)</strong></p>
 
 <p>We need to prove the following:     <br />
-<script type="math/tex">\forall n \in \mathbb N ((a_n = a_{n-1} + a_{n-2}) \leftrightarrow c = \frac {1 \pm \sqrt 5} 2 )</script></p>
+<span class="kdmath">$\forall n \in \mathbb N ((a_n = a_{n-1} + a_{n-2}) \leftrightarrow c = \frac {1 \pm \sqrt 5} 2 )$</span></p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">n</script> is an arbitrary integer. Suppose <script type="math/tex">a_n = a_{n-1} + a_{n-2}</script>. Since <script type="math/tex">a_n = c^n</script>, it follows that
-<script type="math/tex">c^n = c^{n-1} + c^{n-2}</script>. Thus <script type="math/tex">c^n = c^{n-2}(c+1)</script>, or <script type="math/tex">c^{n-2}(c^2 - c - 1) = 0</script>.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$n$</span> is an arbitrary integer. Suppose <span class="kdmath">$a_n = a_{n-1} + a_{n-2}$</span>. Since <span class="kdmath">$a_n = c^n$</span>, it follows that
+<span class="kdmath">$c^n = c^{n-1} + c^{n-2}$</span>. Thus <span class="kdmath">$c^n = c^{n-2}(c+1)$</span>, or <span class="kdmath">$c^{n-2}(c^2 - c - 1) = 0$</span>.</p>
 
-<p>If <script type="math/tex">n = 2</script> then <script type="math/tex">c^{n-2} = c^0 = 1</script>. Thus <script type="math/tex">c \ne 0</script>. Since <script type="math/tex">0^0</script> is not defined.</p>
+<p>If <span class="kdmath">$n = 2$</span> then <span class="kdmath">$c^{n-2} = c^0 = 1$</span>. Thus <span class="kdmath">$c \ne 0$</span>. Since <span class="kdmath">$0^0$</span> is not defined.</p>
 
-<p>Since <script type="math/tex">c \ne 0</script> and <script type="math/tex">c^{n-2}(c^2 - c - 1) = 0</script>, it follows <script type="math/tex">c^2 - c - 1 = 0</script>. Thus <script type="math/tex">c = \frac {1 \pm \sqrt 5} 2</script>.</p>
+<p>Since <span class="kdmath">$c \ne 0$</span> and <span class="kdmath">$c^{n-2}(c^2 - c - 1) = 0$</span>, it follows <span class="kdmath">$c^2 - c - 1 = 0$</span>. Thus <span class="kdmath">$c = \frac {1 \pm \sqrt 5} 2$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">c = \frac {1 \pm \sqrt 5} 2</script>. It follows <script type="math/tex">c^2 = 1 + c</script>, or <script type="math/tex">c^2 - c - 1 = 0</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$c = \frac {1 \pm \sqrt 5} 2$</span>. It follows <span class="kdmath">$c^2 = 1 + c$</span>, or <span class="kdmath">$c^2 - c - 1 = 0$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">c_1 = \frac {1 + \sqrt 5} 2</script> and <script type="math/tex">c_2 = \frac {1 - \sqrt 5} 2</script>. Thus from part(a) we know that <script type="math/tex">c_1^2 = c_2^2 = 1+c_1 = 1+c_2</script>.</p>
+<p>Suppose <span class="kdmath">$c_1 = \frac {1 + \sqrt 5} 2$</span> and <span class="kdmath">$c_2 = \frac {1 - \sqrt 5} 2$</span>. Thus from part(a) we know that <span class="kdmath">$c_1^2 = c_2^2 = 1+c_1 = 1+c_2$</span>.</p>
 
-<p>Suppose <script type="math/tex">n \ge 2</script> is a arbitrary natural number. Since <script type="math/tex">a_n =  s{(\frac {1 + \sqrt 5} 2)}^n + t{(\frac {1 - \sqrt 5} 2)}^n</script>, or <script type="math/tex">a_n = sc_1^n + tc_2^2</script> it follows:</p>
+<p>Suppose <span class="kdmath">$n \ge 2$</span> is a arbitrary natural number. Since <span class="kdmath">$a_n =  s{(\frac {1 + \sqrt 5} 2)}^n + t{(\frac {1 - \sqrt 5} 2)}^n$</span>, or <span class="kdmath">$a_n = sc_1^n + tc_2^2$</span> it follows:</p>
 
-<p><script type="math/tex">a_{n-1} = sc_1^{n-1} + tc_1^{n-1}</script>    <br />
-<script type="math/tex">a_{n-2} = sc_1^{n-2} + tc_1^{n-2}</script></p>
+<p><span class="kdmath">$a_{n-1} = sc_1^{n-1} + tc_1^{n-1}$</span>    <br />
+<span class="kdmath">$a_{n-2} = sc_1^{n-2} + tc_1^{n-2}$</span></p>
 
-<p>Thus <script type="math/tex">a_{n-1} + a_{n-2} = sc_1^{n-1} + tc_1^{n-1} + sc_1^{n-2} + tc_1^{n-2}</script>. Thus:   <br />
-<script type="math/tex">\Rightarrow a_{n-1} + a_{n-2} = s(c_1^{n-1} + c_2^{n-2}) + t(c_2^{n-1} + c_2^{n-2})</script>    <br />
-<script type="math/tex">\Rightarrow a_{n-1} + a_{n-2} = sc_1^{n-2}(c_1+1) + tc_2^{n-2}(c_2 + 1)</script>  <br />
-But <script type="math/tex">1+c_1 = c_1^2</script> and <script type="math/tex">1+ c_2 = c_2^2</script>       <br />
-<script type="math/tex">\Rightarrow a_{n-1} + a_{n-2} = sc_1^{n-2}(c_1^2) + tc_2^{n-2}(c_2^2)</script>   <br />
-<script type="math/tex">\Rightarrow a_{n-1} + a_{n-2} = sc_1^{n} + tc_2^{n}</script>   <br />
-<script type="math/tex">\Rightarrow a_{n-1} + a_{n-2} = a_n</script></p>
+<p>Thus <span class="kdmath">$a_{n-1} + a_{n-2} = sc_1^{n-1} + tc_1^{n-1} + sc_1^{n-2} + tc_1^{n-2}$</span>. Thus:   <br />
+<span class="kdmath">$\Rightarrow a_{n-1} + a_{n-2} = s(c_1^{n-1} + c_2^{n-2}) + t(c_2^{n-1} + c_2^{n-2})$</span>    <br />
+<span class="kdmath">$\Rightarrow a_{n-1} + a_{n-2} = sc_1^{n-2}(c_1+1) + tc_2^{n-2}(c_2 + 1)$</span>  <br />
+But <span class="kdmath">$1+c_1 = c_1^2$</span> and <span class="kdmath">$1+ c_2 = c_2^2$</span>       <br />
+<span class="kdmath">$\Rightarrow a_{n-1} + a_{n-2} = sc_1^{n-2}(c_1^2) + tc_2^{n-2}(c_2^2)$</span>   <br />
+<span class="kdmath">$\Rightarrow a_{n-1} + a_{n-2} = sc_1^{n} + tc_2^{n}$</span>   <br />
+<span class="kdmath">$\Rightarrow a_{n-1} + a_{n-2} = a_n$</span></p>
 
-<p>Thus <script type="math/tex">a_0, a_1, a_2 ...</script> is a gibonacci sequence.</p>
+<p>Thus <span class="kdmath">$a_0, a_1, a_2 ...$</span> is a gibonacci sequence.</p>
 
 <p><strong>(c)</strong></p>
 
 <p><em>Scratch Work</em></p>
 
-<p>We will first compute <script type="math/tex">s</script> and <script type="math/tex">t</script> by assuming that formulae is correct.</p>
+<p>We will first compute <span class="kdmath">$s$</span> and <span class="kdmath">$t$</span> by assuming that formulae is correct.</p>
 
-<p>Thus for <script type="math/tex">n = 0</script>, we have <script type="math/tex">a_0 = sc_1^0 + tc_2^0 = s+t</script>. Or <script type="math/tex">s+t = a_0</script>.    <br />
-Similarly for <script type="math/tex">n = 1</script>, we have <script type="math/tex">a_1 = sc_1^1 + tc_2^1 = sc_1 + tc_2</script>. Or <script type="math/tex">a_1 = s(\frac {1 + \sqrt 5} 2) + t(\frac {1 - \sqrt 5} 2)</script>.      <br />
-Thus we get <script type="math/tex">a_1 = \frac {s+t + \sqrt 5(s-t)} 2 = \frac {a_0 + \sqrt 5{s-t}} 2</script>.</p>
+<p>Thus for <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$a_0 = sc_1^0 + tc_2^0 = s+t$</span>. Or <span class="kdmath">$s+t = a_0$</span>.    <br />
+Similarly for <span class="kdmath">$n = 1$</span>, we have <span class="kdmath">$a_1 = sc_1^1 + tc_2^1 = sc_1 + tc_2$</span>. Or <span class="kdmath">$a_1 = s(\frac {1 + \sqrt 5} 2) + t(\frac {1 - \sqrt 5} 2)$</span>.      <br />
+Thus we get <span class="kdmath">$a_1 = \frac {s+t + \sqrt 5(s-t)} 2 = \frac {a_0 + \sqrt 5{s-t}} 2$</span>.</p>
 
-<p>Thus <script type="math/tex">s-t = \frac {2a_1 - a_0} {\sqrt 5}</script> and <script type="math/tex">s+t = a_0</script>. We have two equations with two unknowns <script type="math/tex">s</script> and <script type="math/tex">t</script>.</p>
+<p>Thus <span class="kdmath">$s-t = \frac {2a_1 - a_0} {\sqrt 5}$</span> and <span class="kdmath">$s+t = a_0$</span>. We have two equations with two unknowns <span class="kdmath">$s$</span> and <span class="kdmath">$t$</span>.</p>
 
 <p>Solving them gives:   <br />
-<script type="math/tex">s = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}</script>     <br />
-<script type="math/tex">t = \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}</script></p>
+<span class="kdmath">$s = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}$</span>     <br />
+<span class="kdmath">$t = \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}$</span></p>
 
-<p>Now suppose <script type="math/tex">s = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}</script> and <script type="math/tex">t = \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}</script>.</p>
+<p>Now suppose <span class="kdmath">$s = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}$</span> and <span class="kdmath">$t = \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}$</span>.</p>
 
-<p>Suppose <script type="math/tex">n</script> is an arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n(a_n = sc_1^n + tc_2^n) %]]></script>. Thus we have following possible
+<p>Suppose <span class="kdmath">$n$</span> is an arbitrary natural number. Suppose <span class="kdmath">$\forall k < n(a_n = sc_1^n + tc_2^n)$</span>. Thus we have following possible
 cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 0</script>:   <br />
-Clearly <script type="math/tex">sc_1^0 + tc_2^0 = s+t = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10} + \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10} = a_0</script>. 
-Thus <script type="math/tex">a_n = sc_1^n + t c_2^n</script>.</p>
+    <p>Case <span class="kdmath">$n = 0$</span>:   <br />
+Clearly <span class="kdmath">$sc_1^0 + tc_2^0 = s+t = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10} + \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10} = a_0$</span>. 
+Thus <span class="kdmath">$a_n = sc_1^n + t c_2^n$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>:   <br />
-Clearly <script type="math/tex">sc_1^1 + tc_2^1 = sc_1 + tc_2 = (\frac {1 + \sqrt 5} 2)(\frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}) + (\frac {1 - \sqrt 5} 2)(\frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}) = a_1</script>. 
-Thus <script type="math/tex">a_n = sc_1^n + t c_2^n</script>.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>:   <br />
+Clearly <span class="kdmath">$sc_1^1 + tc_2^1 = sc_1 + tc_2 = (\frac {1 + \sqrt 5} 2)(\frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}) + (\frac {1 - \sqrt 5} 2)(\frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}) = a_1$</span>. 
+Thus <span class="kdmath">$a_n = sc_1^n + t c_2^n$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n \ge 2</script>:    <br />
-We have <script type="math/tex">sc_1^n + tc_2^n = sc_1^{n-2}c_1^2 + tc_2^{n-2}c_2^2</script>. From part(a) we know <script type="math/tex">c_1^2 = 1+ c_1</script> and <script type="math/tex">c_2^2 = 1+c_2^2</script>.
-It follows <script type="math/tex">sc_1^n + tc_2^n = sc_1^{n-2}(1 + c_1) + tc_2^{n-2}(1 + c_2)</script>    <br />
-<script type="math/tex">= sc_1^{n-2} + sc_1{n-1} + tc_2^{n-2} + tc_2{n-1}</script>     <br />
-<script type="math/tex">= sc_1^{n-2} + tc_2^{n-2} + sc_1{n-1} + tc_2{n-1}</script>     <br />
-<script type="math/tex">= a_{n-2} + a_{n-1}</script>     <br />
-<script type="math/tex">= a_{n}</script></p>
+    <p>Case <span class="kdmath">$n \ge 2$</span>:    <br />
+We have <span class="kdmath">$sc_1^n + tc_2^n = sc_1^{n-2}c_1^2 + tc_2^{n-2}c_2^2$</span>. From part(a) we know <span class="kdmath">$c_1^2 = 1+ c_1$</span> and <span class="kdmath">$c_2^2 = 1+c_2^2$</span>.
+It follows <span class="kdmath">$sc_1^n + tc_2^n = sc_1^{n-2}(1 + c_1) + tc_2^{n-2}(1 + c_2)$</span>    <br />
+<span class="kdmath">$= sc_1^{n-2} + sc_1{n-1} + tc_2^{n-2} + tc_2{n-1}$</span>     <br />
+<span class="kdmath">$= sc_1^{n-2} + tc_2^{n-2} + sc_1{n-1} + tc_2{n-1}$</span>     <br />
+<span class="kdmath">$= a_{n-2} + a_{n-1}$</span>     <br />
+<span class="kdmath">$= a_{n}$</span></p>
 
-    <p>Thus <script type="math/tex">a_n = sc_1^n + t c_2^n</script>.</p>
+    <p>Thus <span class="kdmath">$a_n = sc_1^n + t c_2^n$</span>.</p>
   </li>
 </ul>
 
-<p>Thus for all cases <script type="math/tex">a_n = sc_1^n + tc_2^n</script>.</p>
+<p>Thus for all cases <span class="kdmath">$a_n = sc_1^n + tc_2^n$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>Since it is a gibonacci sequence and <script type="math/tex">a_0 = L_0 = 2</script> and <script type="math/tex">a_1 = L_1 = 1</script> is given. We can use part(c). Thus <script type="math/tex">a_n = sc_1^n + tc_2^n</script>, where
-<script type="math/tex">s = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}</script> and <script type="math/tex">t = \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}</script>.</p>
+<p>Since it is a gibonacci sequence and <span class="kdmath">$a_0 = L_0 = 2$</span> and <span class="kdmath">$a_1 = L_1 = 1$</span> is given. We can use part(c). Thus <span class="kdmath">$a_n = sc_1^n + tc_2^n$</span>, where
+<span class="kdmath">$s = \frac {5a_0 + \sqrt 5(2a_1 - a_0)} {10}$</span> and <span class="kdmath">$t = \frac {5a_0 - \sqrt 5(2a_1 - a_0)} {10}$</span>.</p>
 
-<p>Thus <script type="math/tex">s = \frac {10 + \sqrt 5(2 - 2)} {10} = 1</script>     <br />
-and <script type="math/tex">t = \frac {10 - \sqrt 5(2 - 2)} {10} = 1</script></p>
+<p>Thus <span class="kdmath">$s = \frac {10 + \sqrt 5(2 - 2)} {10} = 1$</span>     <br />
+and <span class="kdmath">$t = \frac {10 - \sqrt 5(2 - 2)} {10} = 1$</span></p>
 
-<p>Thus <script type="math/tex">a_n = c_1^n + c_2^n</script>, where <script type="math/tex">c_1, c_2</script> are from Soln8.</p>
+<p>Thus <span class="kdmath">$a_n = c_1^n + c_2^n$</span>, where <span class="kdmath">$c_1, c_2$</span> are from Soln8.</p>
 
 <hr />
 
 <p><strong>Soln10</strong></p>
 
-<p>Lets suppose <script type="math/tex">a_n = sp^n - tq^n</script> which is similar to Soln8 except negative sign. Addition will also generate same result but 
-it appears from the formulae <script type="math/tex">a_n = 5a_{n-1} - 6a_{n-2}</script> that negative sign may help.</p>
+<p>Lets suppose <span class="kdmath">$a_n = sp^n - tq^n$</span> which is similar to Soln8 except negative sign. Addition will also generate same result but 
+it appears from the formulae <span class="kdmath">$a_n = 5a_{n-1} - 6a_{n-2}$</span> that negative sign may help.</p>
 
 <p>Now we have:   <br />
-<script type="math/tex">a_0 = -1</script>    <br />
-<script type="math/tex">a_1 = 0</script></p>
+<span class="kdmath">$a_0 = -1$</span>    <br />
+<span class="kdmath">$a_1 = 0$</span></p>
 
-<p>Using <script type="math/tex">a_n = 5a_{n-1} - 6a_{n-2}</script>, we have <script type="math/tex">a_2 = 6</script> and <script type="math/tex">a_3 = 30</script>.</p>
+<p>Using <span class="kdmath">$a_n = 5a_{n-1} - 6a_{n-2}$</span>, we have <span class="kdmath">$a_2 = 6$</span> and <span class="kdmath">$a_3 = 30$</span>.</p>
 
 <p>Now using our assumption,     <br />
-<script type="math/tex">a_0 = sp^0 - tq^0 = s-t = -1</script>     <br />
-<script type="math/tex">a_1 = sp^1 - tq^1 = sp-tq = 0</script>    <br />
-<script type="math/tex">a_2 = sp^2 - tq^2 = 6</script>    <br />
-<script type="math/tex">a_2 = sp^3 - tq^3 = 30</script></p>
+<span class="kdmath">$a_0 = sp^0 - tq^0 = s-t = -1$</span>     <br />
+<span class="kdmath">$a_1 = sp^1 - tq^1 = sp-tq = 0$</span>    <br />
+<span class="kdmath">$a_2 = sp^2 - tq^2 = 6$</span>    <br />
+<span class="kdmath">$a_2 = sp^3 - tq^3 = 30$</span></p>
 
-<p>Thus we have four equations and four unknowns <script type="math/tex">s,t,p,q</script>.</p>
+<p>Thus we have four equations and four unknowns <span class="kdmath">$s,t,p,q$</span>.</p>
 
-<p>Using first and seconds equation we can find values of <script type="math/tex">s</script> and <script type="math/tex">t</script> in terms of <script type="math/tex">p</script> and <script type="math/tex">q</script>. Thus we get:    <br />
-<script type="math/tex">s = \frac q {p-q}</script>    <br />
-<script type="math/tex">t = \frac p {p-q}</script></p>
+<p>Using first and seconds equation we can find values of <span class="kdmath">$s$</span> and <span class="kdmath">$t$</span> in terms of <span class="kdmath">$p$</span> and <span class="kdmath">$q$</span>. Thus we get:    <br />
+<span class="kdmath">$s = \frac q {p-q}$</span>    <br />
+<span class="kdmath">$t = \frac p {p-q}$</span></p>
 
-<p>Now putting these values of <script type="math/tex">s</script> and <script type="math/tex">t</script> in <script type="math/tex">3^{rd}</script> and <script type="math/tex">4^th</script> equation:        <br />
-In <script type="math/tex">3rd</script> equation: <script type="math/tex">\Rightarrow \frac {qp^2 - pq^2} {p-q} = 6</script>, or <script type="math/tex">\frac {pq(p-q)} {p-q} = 6</script>. Thus <script type="math/tex">pq = 6</script>.            <br />
-and In <script type="math/tex">4th</script> equation: <script type="math/tex">\Rightarrow \frac {qp^3 - pq^3} {p-q} = 30</script>, or <script type="math/tex">\frac {pq(p^2-q^2)} {p-q} = 30</script>.     <br />
-Using <script type="math/tex">a^2 - b^2 = (a-b)(a+b)</script>,    <br />
-<script type="math/tex">\Rightarrow pq(p+q) = 30</script>       <br />
-Using <script type="math/tex">pq = 6</script>:       <br />
-we get <script type="math/tex">\Rightarrow p+q = 5</script>.</p>
+<p>Now putting these values of <span class="kdmath">$s$</span> and <span class="kdmath">$t$</span> in <span class="kdmath">$3^{rd}$</span> and <span class="kdmath">$4^th$</span> equation:        <br />
+In <span class="kdmath">$3rd$</span> equation: <span class="kdmath">$\Rightarrow \frac {qp^2 - pq^2} {p-q} = 6$</span>, or <span class="kdmath">$\frac {pq(p-q)} {p-q} = 6$</span>. Thus <span class="kdmath">$pq = 6$</span>.            <br />
+and In <span class="kdmath">$4th$</span> equation: <span class="kdmath">$\Rightarrow \frac {qp^3 - pq^3} {p-q} = 30$</span>, or <span class="kdmath">$\frac {pq(p^2-q^2)} {p-q} = 30$</span>.     <br />
+Using <span class="kdmath">$a^2 - b^2 = (a-b)(a+b)$</span>,    <br />
+<span class="kdmath">$\Rightarrow pq(p+q) = 30$</span>       <br />
+Using <span class="kdmath">$pq = 6$</span>:       <br />
+we get <span class="kdmath">$\Rightarrow p+q = 5$</span>.</p>
 
-<p>Thus with <script type="math/tex">pq = 6</script> and <script type="math/tex">p+q = 5</script> and eliminating <script type="math/tex">q</script>,  we get the quadratic equation <script type="math/tex">p^2 - 2p + 6 = 0</script>.
- Solving it gives <script type="math/tex">p = 2,3</script>. Since <script type="math/tex">pq = 6</script>, we get <script type="math/tex">q = 3,2</script>.</p>
+<p>Thus with <span class="kdmath">$pq = 6$</span> and <span class="kdmath">$p+q = 5$</span> and eliminating <span class="kdmath">$q$</span>,  we get the quadratic equation <span class="kdmath">$p^2 - 2p + 6 = 0$</span>.
+ Solving it gives <span class="kdmath">$p = 2,3$</span>. Since <span class="kdmath">$pq = 6$</span>, we get <span class="kdmath">$q = 3,2$</span>.</p>
 
-<p>Thus we have two pair of values for <script type="math/tex">(p,q) = (2,3)</script> or <script type="math/tex">(p,q) = (3,2)</script>.</p>
+<p>Thus we have two pair of values for <span class="kdmath">$(p,q) = (2,3)$</span> or <span class="kdmath">$(p,q) = (3,2)$</span>.</p>
 
-<p>With <script type="math/tex">(p,q) = (2,3)</script>, we get <script type="math/tex">s = -3</script> and <script type="math/tex">t = -2</script>. Thus <script type="math/tex">a_n = -3 \cdot 2^n + 2 \cdot 3^n</script>.
-Using <script type="math/tex">(p,q) = (3,2)</script>, we get <script type="math/tex">s = 2</script> and <script type="math/tex">t = 3</script>. Thus <script type="math/tex">a_n = 2 \cdot 3^n - 3 \cdot 2^n</script>.</p>
+<p>With <span class="kdmath">$(p,q) = (2,3)$</span>, we get <span class="kdmath">$s = -3$</span> and <span class="kdmath">$t = -2$</span>. Thus <span class="kdmath">$a_n = -3 \cdot 2^n + 2 \cdot 3^n$</span>.
+Using <span class="kdmath">$(p,q) = (3,2)$</span>, we get <span class="kdmath">$s = 2$</span> and <span class="kdmath">$t = 3$</span>. Thus <span class="kdmath">$a_n = 2 \cdot 3^n - 3 \cdot 2^n$</span>.</p>
 
-<p>Thus from both values we get the same formulae <script type="math/tex">a_n = 2 \cdot 3^n - 3 \cdot 2^n</script>.</p>
+<p>Thus from both values we get the same formulae <span class="kdmath">$a_n = 2 \cdot 3^n - 3 \cdot 2^n$</span>.</p>
 
 <p>Lets prove that formulae is correct:</p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n (a_k = 2 \cdot 3^k - 3 \cdot 3^k) %]]></script>. Thus we have following
-possible values of <script type="math/tex">n</script>:</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary natural number. Suppose <span class="kdmath">$\forall k < n (a_k = 2 \cdot 3^k - 3 \cdot 3^k)$</span>. Thus we have following
+possible values of <span class="kdmath">$n$</span>:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 0</script>      <br />
-<script type="math/tex">2 \cdot 3^0 - 3 \cdot 2^0 = 2-3 = -1 = a_0</script>. Thus <script type="math/tex">a_n = 2 \cdot 3^n - 3 \cdot 2^n</script>.</p>
+    <p>Case <span class="kdmath">$n = 0$</span>      <br />
+<span class="kdmath">$2 \cdot 3^0 - 3 \cdot 2^0 = 2-3 = -1 = a_0$</span>. Thus <span class="kdmath">$a_n = 2 \cdot 3^n - 3 \cdot 2^n$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>  <br />
-<script type="math/tex">2 \cdot 3^1 - 3 \cdot 2^1 = 2-3 = 0 = a_1</script>. Thus <script type="math/tex">a_n = 2 \cdot 3^n - 3 \cdot 2^n</script>.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>  <br />
+<span class="kdmath">$2 \cdot 3^1 - 3 \cdot 2^1 = 2-3 = 0 = a_1$</span>. Thus <span class="kdmath">$a_n = 2 \cdot 3^n - 3 \cdot 2^n$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n \ge 2</script>   <br />
-Since <script type="math/tex">% <![CDATA[
-n-1 < n %]]></script>, by induction hypothesis <script type="math/tex">a_{n-1} = 2 \cdot 3^{n-1} - 3 \cdot 2^{n-1}</script>. Similarly since <script type="math/tex">% <![CDATA[
-n-2 < n %]]></script>, by
-induction hypothesis we get <script type="math/tex">a_{n-2} = 2 \cdot 3^{n-2} - 3 \cdot 2^{n-2}</script>.</p>
+    <p>Case <span class="kdmath">$n \ge 2$</span>   <br />
+Since <span class="kdmath">$n-1 < n$</span>, by induction hypothesis <span class="kdmath">$a_{n-1} = 2 \cdot 3^{n-1} - 3 \cdot 2^{n-1}$</span>. Similarly since <span class="kdmath">$n-2 < n$</span>, by
+induction hypothesis we get <span class="kdmath">$a_{n-2} = 2 \cdot 3^{n-2} - 3 \cdot 2^{n-2}$</span>.</p>
 
-    <p>Thus <script type="math/tex">5a_{n-1} - 6a_{n-2} = 5(2 \cdot 3^{n-1} - 3 \cdot 2^{n-1}) - 6(2 \cdot 3^{n-2} - 3 \cdot 2^{n-2})</script>     <br />
-<script type="math/tex">= 10 \cdot 3^{n-1} - 12 \cdot 3^{n-2} - 15 \cdot 2^{n-1} + 18 \cdot 2^{n-2}</script>      <br />
-<script type="math/tex">= 10 \times 3 \cdot 3^{n-2} - 12 \cdot 3^{n-2} - 15 \times 2 \cdot 2^{n-2} + 18 \cdot 2^{n-2}</script>      <br />
-<script type="math/tex">= 30 \cdot 3^{n-2} - 12 \cdot 3^{n-2} - 30 \cdot 2^{n-2} + 18 \cdot 2^{n-2}</script>      <br />
-<script type="math/tex">= 18 \cdot 3^{n-2} - 12 \cdot 2^{n-2}</script>      <br />
-<script type="math/tex">= 2 \cdot 3^n - 3 \cdot 2^n</script>      <br />
-<script type="math/tex">= a_n</script></p>
+    <p>Thus <span class="kdmath">$5a_{n-1} - 6a_{n-2} = 5(2 \cdot 3^{n-1} - 3 \cdot 2^{n-1}) - 6(2 \cdot 3^{n-2} - 3 \cdot 2^{n-2})$</span>     <br />
+<span class="kdmath">$= 10 \cdot 3^{n-1} - 12 \cdot 3^{n-2} - 15 \cdot 2^{n-1} + 18 \cdot 2^{n-2}$</span>      <br />
+<span class="kdmath">$= 10 \times 3 \cdot 3^{n-2} - 12 \cdot 3^{n-2} - 15 \times 2 \cdot 2^{n-2} + 18 \cdot 2^{n-2}$</span>      <br />
+<span class="kdmath">$= 30 \cdot 3^{n-2} - 12 \cdot 3^{n-2} - 30 \cdot 2^{n-2} + 18 \cdot 2^{n-2}$</span>      <br />
+<span class="kdmath">$= 18 \cdot 3^{n-2} - 12 \cdot 2^{n-2}$</span>      <br />
+<span class="kdmath">$= 2 \cdot 3^n - 3 \cdot 2^n$</span>      <br />
+<span class="kdmath">$= a_n$</span></p>
 
-    <p>Thus <script type="math/tex">a_n = 2 \cdot 3^n - 3 \cdot 2^n</script>.</p>
+    <p>Thus <span class="kdmath">$a_n = 2 \cdot 3^n - 3 \cdot 2^n$</span>.</p>
   </li>
 </ul>
 
-<p>Thus <script type="math/tex">a_n = 2 \cdot 3^n - 3 \cdot 2^n</script> from all the cases.</p>
+<p>Thus <span class="kdmath">$a_n = 2 \cdot 3^n - 3 \cdot 2^n$</span> from all the cases.</p>
 
 <hr />
 
 <p><strong>Soln11</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is an arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n (a_k = a_{k-1} + a_{k-2}) %]]></script>.
+<p>Suppose <span class="kdmath">$n$</span> is an arbitrary natural number. Suppose <span class="kdmath">$\forall k < n (a_k = a_{k-1} + a_{k-2})$</span>.
 Thus we have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n \le 2</script>  <br />
-Clearly from the given values <script type="math/tex">a_0, a_1, a_2</script> are fibonacci numbers.</p>
+    <p>Case <span class="kdmath">$n \le 2$</span>  <br />
+Clearly from the given values <span class="kdmath">$a_0, a_1, a_2$</span> are fibonacci numbers.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n \ge 3</script>   <br />
-We have <script type="math/tex">a_n = \frac {a_{n-3}} 2 + \frac {3a_{n-2}} 2 + \frac {a_{n-1}} 2</script>     <br />
-<script type="math/tex">= \frac {a_{n-3}} 2 + a_{n-2} + \frac {a_{n-2}} 2 + \frac {a_{n-1}} 2</script>     <br />
-<script type="math/tex">= \frac {a_{n-3} + a_{n-2}} 2 + a_{n-2} + \frac {a_{n-1}} 2</script>     <br />
-Since <script type="math/tex">% <![CDATA[
-n-3 < n %]]></script> and <script type="math/tex">% <![CDATA[
-n-2 < n %]]></script>, thus by our induction hypothesis, we have <script type="math/tex">a_{n-3} + a_{n-2} = a_{n-1}</script>.   <br />
-<script type="math/tex">= \frac {a_{n-1}} 2 + a_{n-2} + \frac {a_{n-1}} 2</script>         <br />
-<script type="math/tex">= {a_{n-1}} + a_{n-2}</script></p>
+    <p>Case <span class="kdmath">$n \ge 3$</span>   <br />
+We have <span class="kdmath">$a_n = \frac {a_{n-3}} 2 + \frac {3a_{n-2}} 2 + \frac {a_{n-1}} 2$</span>     <br />
+<span class="kdmath">$= \frac {a_{n-3}} 2 + a_{n-2} + \frac {a_{n-2}} 2 + \frac {a_{n-1}} 2$</span>     <br />
+<span class="kdmath">$= \frac {a_{n-3} + a_{n-2}} 2 + a_{n-2} + \frac {a_{n-1}} 2$</span>     <br />
+Since <span class="kdmath">$n-3 < n$</span> and <span class="kdmath">$n-2 < n$</span>, thus by our induction hypothesis, we have <span class="kdmath">$a_{n-3} + a_{n-2} = a_{n-1}$</span>.   <br />
+<span class="kdmath">$= \frac {a_{n-1}} 2 + a_{n-2} + \frac {a_{n-1}} 2$</span>         <br />
+<span class="kdmath">$= {a_{n-1}} + a_{n-2}$</span></p>
 
-    <p>Thus <script type="math/tex">a_n = a_{n-1} + a_{n-2}</script>.</p>
+    <p>Thus <span class="kdmath">$a_n = a_{n-1} + a_{n-2}$</span>.</p>
   </li>
 </ul>
 
@@ -1786,34 +1737,31 @@ n-2 < n %]]></script>, thus by our induction hypothesis, we have <script type="m
 
 <p><strong>Soln12</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is an arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n (P_n \text{ contains } F_{n+2} \text{ elements. }) %]]></script>.
+<p>Suppose <span class="kdmath">$n$</span> is an arbitrary natural number. Suppose <span class="kdmath">$\forall k < n (P_n \text{ contains } F_{n+2} \text{ elements. })$</span>.
 We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 0</script>     <br />
-Clearly <script type="math/tex">P_0 = \{ \phi \}</script>. Thus number of elements are <script type="math/tex">1</script>. Thus <script type="math/tex">P_n = F_{n+2}</script>.</p>
+    <p>Case <span class="kdmath">$n = 0$</span>     <br />
+Clearly <span class="kdmath">$P_0 = \{ \phi \}$</span>. Thus number of elements are <span class="kdmath">$1$</span>. Thus <span class="kdmath">$P_n = F_{n+2}$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>    <br />
-Clearly <script type="math/tex">P_1 = \{ \phi, 1 \}</script>. Thus number of elements are <script type="math/tex">2</script>. Thus <script type="math/tex">P_n = F_{n+2}</script>.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>    <br />
+Clearly <span class="kdmath">$P_1 = \{ \phi, 1 \}$</span>. Thus number of elements are <span class="kdmath">$2$</span>. Thus <span class="kdmath">$P_n = F_{n+2}$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 1</script>  <br />
-We can easily see that <script type="math/tex">P_n</script> will contain all the elements contained in <script type="math/tex">P_{n-1}</script> and all elements of the set 
-<script type="math/tex">S = \{ X \cup \{n \} \, \vert \, X \in P_{n-2} \}</script>. Since <script type="math/tex">X \in P_{n-2}</script>, it does not contain the element: “<script type="math/tex">n-1</script>”.
-Thus <script type="math/tex">X \cup \{ n \}</script> will not have any consecutive numbers.    <br />
-Clearly number of elements in <script type="math/tex">S</script> is same as number of elements in <script type="math/tex">P_{n-2}</script>. Thus total number of elements:    <br />
-<script type="math/tex">P_n = P_{n-1} + P_{n-2}</script>.     <br />
-Since <script type="math/tex">% <![CDATA[
-n-1 < n %]]></script> and <script type="math/tex">% <![CDATA[
-n-2 < n %]]></script>, it follows by induction hypothesis, <script type="math/tex">P_{n-1} = F_{n+1}</script> and <script type="math/tex">P_{n-2} = F_n</script>.
-Thus <script type="math/tex">P_n = P_{n-1} + P_{n-2} = F_{n+1} + F_{n} = F_{n+2}</script>.</p>
+    <p>Case <span class="kdmath">$n > 1$</span>  <br />
+We can easily see that <span class="kdmath">$P_n$</span> will contain all the elements contained in <span class="kdmath">$P_{n-1}$</span> and all elements of the set 
+<span class="kdmath">$S = \{ X \cup \{n \} \, \vert \, X \in P_{n-2} \}$</span>. Since <span class="kdmath">$X \in P_{n-2}$</span>, it does not contain the element: “<span class="kdmath">$n-1$</span>”.
+Thus <span class="kdmath">$X \cup \{ n \}$</span> will not have any consecutive numbers.    <br />
+Clearly number of elements in <span class="kdmath">$S$</span> is same as number of elements in <span class="kdmath">$P_{n-2}$</span>. Thus total number of elements:    <br />
+<span class="kdmath">$P_n = P_{n-1} + P_{n-2}$</span>.     <br />
+Since <span class="kdmath">$n-1 < n$</span> and <span class="kdmath">$n-2 < n$</span>, it follows by induction hypothesis, <span class="kdmath">$P_{n-1} = F_{n+1}$</span> and <span class="kdmath">$P_{n-2} = F_n$</span>.
+Thus <span class="kdmath">$P_n = P_{n-1} + P_{n-2} = F_{n+1} + F_{n} = F_{n+2}$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases we get <script type="math/tex">P_n = F_{n+2}</script>.</p>
+<p>Thus from all the cases we get <span class="kdmath">$P_n = F_{n+2}$</span>.</p>
 
 <hr />
 
@@ -1821,111 +1769,90 @@ Thus <script type="math/tex">P_n = P_{n-1} + P_{n-2} = F_{n+1} + F_{n} = F_{n+2}
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is an arbitrary integer. Consider the following cases:</p>
+<p>Suppose <span class="kdmath">$n$</span> is an arbitrary integer. Consider the following cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n \ge 0</script>    <br />
-Clearly it follows from the theorem 6.4.1 from the book that <script type="math/tex">n = mq+r</script> and <script type="math/tex">% <![CDATA[
-0 \le r < m %]]></script>.</p>
+    <p>Case <span class="kdmath">$n \ge 0$</span>    <br />
+Clearly it follows from the theorem 6.4.1 from the book that <span class="kdmath">$n = mq+r$</span> and <span class="kdmath">$0 \le r < m$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">% <![CDATA[
-n < 0 %]]></script>     <br />
-Since <script type="math/tex">% <![CDATA[
-n < 0 %]]></script>, it follows <script type="math/tex">-n > 0</script>. Thus from theorem 6.4.1:    <br />
-<script type="math/tex">\Rightarrow -n = mq+r</script>   <br />
-<script type="math/tex">\Rightarrow n = -mq-r</script>    <br />
-<script type="math/tex">\Rightarrow n = -mq-r-m+m</script>    <br />
-<script type="math/tex">\Rightarrow n = -mq-m+m-r</script>    <br />
-<script type="math/tex">\Rightarrow n = (-q-1)m+m-r</script>    <br />
-<script type="math/tex">\Rightarrow n = q'm+r'</script>, where <script type="math/tex">q' = -q-1</script> and <script type="math/tex">r' = m - r</script>.</p>
+    <p>Case <span class="kdmath">$n < 0$</span>     <br />
+Since <span class="kdmath">$n < 0$</span>, it follows <span class="kdmath">$-n > 0$</span>. Thus from theorem 6.4.1:    <br />
+<span class="kdmath">$\Rightarrow -n = mq+r$</span>   <br />
+<span class="kdmath">$\Rightarrow n = -mq-r$</span>    <br />
+<span class="kdmath">$\Rightarrow n = -mq-r-m+m$</span>    <br />
+<span class="kdmath">$\Rightarrow n = -mq-m+m-r$</span>    <br />
+<span class="kdmath">$\Rightarrow n = (-q-1)m+m-r$</span>    <br />
+<span class="kdmath">$\Rightarrow n = q'm+r'$</span>, where <span class="kdmath">$q' = -q-1$</span> and <span class="kdmath">$r' = m - r$</span>.</p>
 
-    <p>Since <script type="math/tex">% <![CDATA[
-0 \le r < m %]]></script>, it follows that <script type="math/tex">% <![CDATA[
-0 < m-r < m %]]></script>, or <script type="math/tex">% <![CDATA[
-0 < r' < m %]]></script>.</p>
+    <p>Since <span class="kdmath">$0 \le r < m$</span>, it follows that <span class="kdmath">$0 < m-r < m$</span>, or <span class="kdmath">$0 < r' < m$</span>.</p>
   </li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">q_1, r_1</script> and <script type="math/tex">q_2, r_2</script> are integers such that:     <br />
-<script type="math/tex">n = mq_1 + r_1</script>, where <script type="math/tex">% <![CDATA[
-0 \le r_1 < m %]]></script>.               <br />
-and <script type="math/tex">n = mq_2 + r_2</script> and <script type="math/tex">% <![CDATA[
-0 \le r_2 < m %]]></script>.      <br />
-It follows that <script type="math/tex">mq_1 + r_1 = mq_2 + r_2</script>.     <br />
-Thus <script type="math/tex">(q_1-q_2)m = r_2 - r_1</script>.</p>
+<p>Suppose <span class="kdmath">$q_1, r_1$</span> and <span class="kdmath">$q_2, r_2$</span> are integers such that:     <br />
+<span class="kdmath">$n = mq_1 + r_1$</span>, where <span class="kdmath">$0 \le r_1 < m$</span>.               <br />
+and <span class="kdmath">$n = mq_2 + r_2$</span> and <span class="kdmath">$0 \le r_2 < m$</span>.      <br />
+It follows that <span class="kdmath">$mq_1 + r_1 = mq_2 + r_2$</span>.     <br />
+Thus <span class="kdmath">$(q_1-q_2)m = r_2 - r_1$</span>.</p>
 
-<p>Suppose <script type="math/tex">q_1 = q_2 + c</script>, where <script type="math/tex">c</script> is an integer. Thus we get:    <br />
-<script type="math/tex">\Rightarrow (q_2 + c - q_2)m = r_2 - r_1</script>      <br />
-<script type="math/tex">\Rightarrow cm = r_2 - r_1</script></p>
+<p>Suppose <span class="kdmath">$q_1 = q_2 + c$</span>, where <span class="kdmath">$c$</span> is an integer. Thus we get:    <br />
+<span class="kdmath">$\Rightarrow (q_2 + c - q_2)m = r_2 - r_1$</span>      <br />
+<span class="kdmath">$\Rightarrow cm = r_2 - r_1$</span></p>
 
 <p>We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">c \ne 0</script>     <br />
-It follows <script type="math/tex">m = \frac {r_2 - r_1} c</script>. Thus <script type="math/tex">\vert \, m \, \vert = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}</script>.      <br />
-Since <script type="math/tex">m > 0,  \Rightarrow \vert \, m \, \vert = m</script>.  Thus <script type="math/tex">m = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}</script>. Since <script type="math/tex">c \ne 0</script>, it follows 
-<script type="math/tex">m \le \vert \, r_2 - r_1 \, \vert</script>.</p>
+    <p>Case <span class="kdmath">$c \ne 0$</span>     <br />
+It follows <span class="kdmath">$m = \frac {r_2 - r_1} c$</span>. Thus <span class="kdmath">$\vert \, m \, \vert = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}$</span>.      <br />
+Since <span class="kdmath">$m > 0,  \Rightarrow \vert \, m \, \vert = m$</span>.  Thus <span class="kdmath">$m = \frac {\vert \, r_2 - r_1 \, \vert} {\vert c \vert}$</span>. Since <span class="kdmath">$c \ne 0$</span>, it follows 
+<span class="kdmath">$m \le \vert \, r_2 - r_1 \, \vert$</span>.</p>
 
-    <p>Since <script type="math/tex">% <![CDATA[
-0 \le r_1 < m %]]></script> and <script type="math/tex">% <![CDATA[
-0 \le r_1 < m %]]></script>, it follows that <script type="math/tex">% <![CDATA[
-0 \le \vert \, r_2 - r_1 \, \vert < m %]]></script>. Thus it is a contradiction since <script type="math/tex">m \le \vert \, r_2 - r_1 \, \vert</script>.</p>
+    <p>Since <span class="kdmath">$0 \le r_1 < m$</span> and <span class="kdmath">$0 \le r_1 < m$</span>, it follows that <span class="kdmath">$0 \le \vert \, r_2 - r_1 \, \vert < m$</span>. Thus it is a contradiction since <span class="kdmath">$m \le \vert \, r_2 - r_1 \, \vert$</span>.</p>
 
-    <p>Thus this case <script type="math/tex">c \ne 0</script> is not possible.</p>
+    <p>Thus this case <span class="kdmath">$c \ne 0$</span> is not possible.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">c = 0</script>.    <br />
-Since <script type="math/tex">q_1 = q_2 + c</script>, it follows <script type="math/tex">q_1 = q_2</script>. Also since <script type="math/tex">cm = r_2 - r_1</script>, it follows <script type="math/tex">r_1 = r_2</script>.</p>
+    <p>Case <span class="kdmath">$c = 0$</span>.    <br />
+Since <span class="kdmath">$q_1 = q_2 + c$</span>, it follows <span class="kdmath">$q_1 = q_2$</span>. Also since <span class="kdmath">$cm = r_2 - r_1$</span>, it follows <span class="kdmath">$r_1 = r_2$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all possible cases <script type="math/tex">q_1 = q_2</script> and <script type="math/tex">r_1 = r_2</script>. Thus we can conclude that <script type="math/tex">q</script> and <script type="math/tex">r</script> are unique integers.</p>
+<p>Thus from all possible cases <span class="kdmath">$q_1 = q_2$</span> and <span class="kdmath">$r_1 = r_2$</span>. Thus we can conclude that <span class="kdmath">$q$</span> and <span class="kdmath">$r$</span> are unique integers.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is an arbitrary integer. From part(a), we can easily deduce that if <script type="math/tex">m = 2</script>, then <script type="math/tex">n = 2q + r</script> such that <script type="math/tex">% <![CDATA[
-0 \le r < 2 %]]></script>. It follows that there are only two possible values(<script type="math/tex">0,1</script>)
-of <script type="math/tex">r</script>. Thus if <script type="math/tex">r = 0</script>, it follows <script type="math/tex">n = 2q</script> and if <script type="math/tex">r = 1</script>, it follows <script type="math/tex">n = 2q+1</script>.</p>
+<p>Suppose <span class="kdmath">$n$</span> is an arbitrary integer. From part(a), we can easily deduce that if <span class="kdmath">$m = 2$</span>, then <span class="kdmath">$n = 2q + r$</span> such that <span class="kdmath">$0 \le r < 2$</span>. It follows that there are only two possible values(<span class="kdmath">$0,1$</span>)
+of <span class="kdmath">$r$</span>. Thus if <span class="kdmath">$r = 0$</span>, it follows <span class="kdmath">$n = 2q$</span> and if <span class="kdmath">$r = 1$</span>, it follows <span class="kdmath">$n = 2q+1$</span>.</p>
 
-<p>Clearly if <script type="math/tex">n = 2q</script>, then <script type="math/tex">n</script> is an even integer. and if <script type="math/tex">n = 2q+1</script> then <script type="math/tex">n</script> is an odd integer.</p>
+<p>Clearly if <span class="kdmath">$n = 2q$</span>, then <span class="kdmath">$n$</span> is an even integer. and if <span class="kdmath">$n = 2q+1$</span> then <span class="kdmath">$n$</span> is an odd integer.</p>
 
-<p>Also from part(b), since <script type="math/tex">n = 2q+r</script>, then <script type="math/tex">q</script> and <script type="math/tex">r</script> are unique. Thus only one case is possible i.e. either <script type="math/tex">n</script> is even or <script type="math/tex">n</script> is odd but not both.</p>
+<p>Also from part(b), since <span class="kdmath">$n = 2q+r$</span>, then <span class="kdmath">$q$</span> and <span class="kdmath">$r$</span> are unique. Thus only one case is possible i.e. either <span class="kdmath">$n$</span> is even or <span class="kdmath">$n$</span> is odd but not both.</p>
 
-<p>Since <script type="math/tex">n</script> is arbitrary, it follows that every integer is either even or odd but not both.</p>
+<p>Since <span class="kdmath">$n$</span> is arbitrary, it follows that every integer is either even or odd but not both.</p>
 
 <hr />
 
 <p><strong>Soln14</strong></p>
 
-<p>Suppose <script type="math/tex">a</script> is the maximum of <script type="math/tex">5k</script> and <script type="math/tex">k(k+1)</script>. Suppose <script type="math/tex">n > a</script> is an arbitrary integer. Thus by the division algorithm we can choose unique <script type="math/tex">q</script> and
-<script type="math/tex">r</script> such that <script type="math/tex">n = kq + r</script> and <script type="math/tex">% <![CDATA[
-0 \le r < k %]]></script>.</p>
+<p>Suppose <span class="kdmath">$a$</span> is the maximum of <span class="kdmath">$5k$</span> and <span class="kdmath">$k(k+1)$</span>. Suppose <span class="kdmath">$n > a$</span> is an arbitrary integer. Thus by the division algorithm we can choose unique <span class="kdmath">$q$</span> and
+<span class="kdmath">$r$</span> such that <span class="kdmath">$n = kq + r$</span> and <span class="kdmath">$0 \le r < k$</span>.</p>
 
-<p>Suppose <script type="math/tex">q \le 4</script>. Thus <script type="math/tex">n = kq + r \le 4k + r</script>. Since <script type="math/tex">% <![CDATA[
-0 \le r < k %]]></script>, it follows <script type="math/tex">% <![CDATA[
-n \le 4q + r < 4k + k = 5k \le a %]]></script>. Thus <script type="math/tex">% <![CDATA[
-n < a %]]></script> which is a contradiction.
-Thus <script type="math/tex">q > 4</script>, or <script type="math/tex">q \ge 5</script>.</p>
+<p>Suppose <span class="kdmath">$q \le 4$</span>. Thus <span class="kdmath">$n = kq + r \le 4k + r$</span>. Since <span class="kdmath">$0 \le r < k$</span>, it follows <span class="kdmath">$n \le 4q + r < 4k + k = 5k \le a$</span>. Thus <span class="kdmath">$n < a$</span> which is a contradiction.
+Thus <span class="kdmath">$q > 4$</span>, or <span class="kdmath">$q \ge 5$</span>.</p>
 
-<p>Suppose <script type="math/tex">% <![CDATA[
-q < k+1 %]]></script>. Thus <script type="math/tex">% <![CDATA[
-n = kq + r < k(k+1) + r < k(k+1) + r < k(k+1) \le a %]]></script>. Thus <script type="math/tex">% <![CDATA[
-n < a %]]></script> which is a contradiction. Thus <script type="math/tex">q \ge k+1</script>.</p>
+<p>Suppose <span class="kdmath">$q < k+1$</span>. Thus <span class="kdmath">$n = kq + r < k(k+1) + r < k(k+1) + r < k(k+1) \le a$</span>. Thus <span class="kdmath">$n < a$</span> which is a contradiction. Thus <span class="kdmath">$q \ge k+1$</span>.</p>
 
-<p>Since <script type="math/tex">% <![CDATA[
-0 \le r < k %]]></script>, it follows <script type="math/tex">r \le k+1</script>. Since <script type="math/tex">q \ge k+1</script> and <script type="math/tex">r \le k+1</script>, it follows <script type="math/tex">q \ge r</script>.</p>
+<p>Since <span class="kdmath">$0 \le r < k$</span>, it follows <span class="kdmath">$r \le k+1$</span>. Since <span class="kdmath">$q \ge k+1$</span> and <span class="kdmath">$r \le k+1$</span>, it follows <span class="kdmath">$q \ge r$</span>.</p>
 
-<p>Thus <script type="math/tex">q^2 \ge q(k+1) = qk + q \ge qk + r = n</script>. Thus <script type="math/tex">q^2 \ge n</script>.</p>
+<p>Thus <span class="kdmath">$q^2 \ge q(k+1) = qk + q \ge qk + r = n$</span>. Thus <span class="kdmath">$q^2 \ge n$</span>.</p>
 
-<p>From example 6.1.3, we know that <script type="math/tex">2^n > n^2</script>, if <script type="math/tex">n \ge 5</script>. Since <script type="math/tex">q \ge 5</script>, it follows <script type="math/tex">2^q > q^2</script>. Since <script type="math/tex">q^2 \ge n</script>, it follows <script type="math/tex">2^q > n</script>.</p>
+<p>From example 6.1.3, we know that <span class="kdmath">$2^n > n^2$</span>, if <span class="kdmath">$n \ge 5$</span>. Since <span class="kdmath">$q \ge 5$</span>, it follows <span class="kdmath">$2^q > q^2$</span>. Since <span class="kdmath">$q^2 \ge n$</span>, it follows <span class="kdmath">$2^q > n$</span>.</p>
 
-<p>Since <script type="math/tex">n = kq + r</script> and <script type="math/tex">% <![CDATA[
-0 \le r < k %]]></script>, it follows <script type="math/tex">2^n \ge 2^{kq} = {2^q}^k</script>. Since <script type="math/tex">2^q > n</script>, it follows <script type="math/tex">2^n \ge  {2^q}^k > n^k</script>.</p>
+<p>Since <span class="kdmath">$n = kq + r$</span> and <span class="kdmath">$0 \le r < k$</span>, it follows <span class="kdmath">$2^n \ge 2^{kq} = {2^q}^k$</span>. Since <span class="kdmath">$2^q > n$</span>, it follows <span class="kdmath">$2^n \ge  {2^q}^k > n^k$</span>.</p>
 
 <hr />
 
@@ -1933,27 +1860,25 @@ n < a %]]></script> which is a contradiction. Thus <script type="math/tex">q \ge
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">k</script> is a positive integer. Suppose <script type="math/tex">% <![CDATA[
-\forall p < k (a_1 f_1 + a_2 f_2 + \cdot \cdot \cdot + a_p f_p) \in \mathcal O(g) %]]></script>.</p>
+<p>Suppose <span class="kdmath">$k$</span> is a positive integer. Suppose <span class="kdmath">$\forall p < k (a_1 f_1 + a_2 f_2 + \cdot \cdot \cdot + a_p f_p) \in \mathcal O(g)$</span>.</p>
 
-<p>Since <script type="math/tex">% <![CDATA[
-k-1 < k %]]></script>, it follows from induction hypothesis that there exist some <script type="math/tex">a \in \mathbb Z^+</script> and <script type="math/tex">c \in R</script> such that 
-<script type="math/tex">\forall n > a  ( \vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) \, \vert \le c \vert \, g(n) \, \vert</script>.</p>
+<p>Since <span class="kdmath">$k-1 < k$</span>, it follows from induction hypothesis that there exist some <span class="kdmath">$a \in \mathbb Z^+$</span> and <span class="kdmath">$c \in R$</span> such that 
+<span class="kdmath">$\forall n > a  ( \vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) \, \vert \le c \vert \, g(n) \, \vert$</span>.</p>
 
-<p>Since <script type="math/tex">f_k \in \mathcal O(g)</script>, it follows that for some <script type="math/tex">a' \in \mathbb Z^+</script> and <script type="math/tex">c' \in \mathbb R</script>, <script type="math/tex">\vert \, f_k(n) \, \vert \le c' \vert \, g(n) \, \vert</script>.</p>
+<p>Since <span class="kdmath">$f_k \in \mathcal O(g)$</span>, it follows that for some <span class="kdmath">$a' \in \mathbb Z^+$</span> and <span class="kdmath">$c' \in \mathbb R$</span>, <span class="kdmath">$\vert \, f_k(n) \, \vert \le c' \vert \, g(n) \, \vert$</span>.</p>
 
-<p>Now consider <script type="math/tex">\vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) + a_k f_k(n) \, \vert</script>      <br />
-<script type="math/tex">\le \vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) \, \vert + \vert \, a_k f_k(n) \, \vert</script> (By triangle inequality)             <br />
-<script type="math/tex">\le c \vert \, g(n) \, \vert + \vert \, a_k f_k(n) \, \vert</script> for all <script type="math/tex">n > a</script> (By induction hypothesis for k-1)          <br />
-<script type="math/tex">\le c \vert \, g(n) \, \vert + c' \vert \, g(n) \, \vert</script> for all <script type="math/tex">n > a''</script> where <script type="math/tex">a''</script> is maximum of <script type="math/tex">a</script> and <script type="math/tex">a'</script>           <br />
-<script type="math/tex">= c'' \vert \, g(n) \, \vert</script> where <script type="math/tex">c'' = c+c'</script></p>
+<p>Now consider <span class="kdmath">$\vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) + a_k f_k(n) \, \vert$</span>      <br />
+<span class="kdmath">$\le \vert \, a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_{k-1} f_{k-1}(n) \, \vert + \vert \, a_k f_k(n) \, \vert$</span> (By triangle inequality)             <br />
+<span class="kdmath">$\le c \vert \, g(n) \, \vert + \vert \, a_k f_k(n) \, \vert$</span> for all <span class="kdmath">$n > a$</span> (By induction hypothesis for k-1)          <br />
+<span class="kdmath">$\le c \vert \, g(n) \, \vert + c' \vert \, g(n) \, \vert$</span> for all <span class="kdmath">$n > a''$</span> where <span class="kdmath">$a''$</span> is maximum of <span class="kdmath">$a$</span> and <span class="kdmath">$a'$</span>           <br />
+<span class="kdmath">$= c'' \vert \, g(n) \, \vert$</span> where <span class="kdmath">$c'' = c+c'$</span></p>
 
-<p>Thus <script type="math/tex">f \in \mathcal O(g)</script> where <script type="math/tex">f(n) = a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_k f_k(n)</script>.</p>
+<p>Thus <span class="kdmath">$f \in \mathcal O(g)$</span> where <span class="kdmath">$f(n) = a_1 f_1(n) + a_2 f_2(n) + \cdot \cdot \cdot + a_k f_k(n)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>From Ex14 part(a), we know that for every positive integer <script type="math/tex">k</script>, <script type="math/tex">\forall n > a (2^n \ge n^k)</script> for some positive integer <script type="math/tex">a</script>. It follows that 
-functions <script type="math/tex">f_1 = 1 = n^0</script>, <script type="math/tex">f_2 = n^2</script>, … <script type="math/tex">f_k = n^k</script> belongs to O(g) where <script type="math/tex">g = 2^n</script>.</p>
+<p>From Ex14 part(a), we know that for every positive integer <span class="kdmath">$k$</span>, <span class="kdmath">$\forall n > a (2^n \ge n^k)$</span> for some positive integer <span class="kdmath">$a$</span>. It follows that 
+functions <span class="kdmath">$f_1 = 1 = n^0$</span>, <span class="kdmath">$f_2 = n^2$</span>, … <span class="kdmath">$f_k = n^k$</span> belongs to O(g) where <span class="kdmath">$g = 2^n$</span>.</p>
 
 <p>Now the required proof directly follows from part(a) of this solution.</p>
 
@@ -1963,40 +1888,38 @@ functions <script type="math/tex">f_1 = 1 = n^0</script>, <script type="math/tex
 
 <p><strong>(a)</strong></p>
 
-<p>By division algorithm we know that for some <script type="math/tex">q</script> and <script type="math/tex">r</script>,  <script type="math/tex">a = dq + r</script> where <script type="math/tex">% <![CDATA[
-0 \le r < d %]]></script>.</p>
+<p>By division algorithm we know that for some <span class="kdmath">$q$</span> and <span class="kdmath">$r$</span>,  <span class="kdmath">$a = dq + r$</span> where <span class="kdmath">$0 \le r < d$</span>.</p>
 
-<p>Also since <script type="math/tex">d \in S</script>, it follows that for some <script type="math/tex">s,t \in \mathbb Z</script>, <script type="math/tex">d = as + bt</script>. Putting <script type="math/tex">d = as + bt</script> in <script type="math/tex">a = dq + r</script>, we get:     <br />
-<script type="math/tex">\Rightarrow a = (as+bt)q + r</script>      <br />
-<script type="math/tex">\Rightarrow a-asq = btq + r</script>      <br />
-<script type="math/tex">\Rightarrow (1-sq)a + (-tq)b = r</script>      <br />
-Thus s’ = 1-sq <script type="math/tex">and</script> t’ = -tq <script type="math/tex">,</script> r = s’a + t’b $$.</p>
+<p>Also since <span class="kdmath">$d \in S$</span>, it follows that for some <span class="kdmath">$s,t \in \mathbb Z$</span>, <span class="kdmath">$d = as + bt$</span>. Putting <span class="kdmath">$d = as + bt$</span> in <span class="kdmath">$a = dq + r$</span>, we get:     <br />
+<span class="kdmath">$\Rightarrow a = (as+bt)q + r$</span>      <br />
+<span class="kdmath">$\Rightarrow a-asq = btq + r$</span>      <br />
+<span class="kdmath">$\Rightarrow (1-sq)a + (-tq)b = r$</span>      <br />
+Thus s’ = 1-sq <span class="kdmath">$and$</span> t’ = -tq <span class="kdmath">$,$</span> r = s’a + t’b $$.</p>
 
-<p>Since <script type="math/tex">0 \le r</script>, we have two cases:</p>
+<p>Since <span class="kdmath">$0 \le r$</span>, we have two cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">r \ne 0</script>      <br />
-Thus <script type="math/tex">r > 0</script> or <script type="math/tex">r \in Z^+</script>. It follows that <script type="math/tex">r \in S</script>. Since <script type="math/tex">d</script> is the smallest element in <script type="math/tex">S</script>, it follows <script type="math/tex">d \le r</script>. But this 
-contradicts with <script type="math/tex">% <![CDATA[
-0 \le r < d %]]></script>. Thus <script type="math/tex">r \ne 0</script> is not possible.</p>
+    <p>Case <span class="kdmath">$r \ne 0$</span>      <br />
+Thus <span class="kdmath">$r > 0$</span> or <span class="kdmath">$r \in Z^+$</span>. It follows that <span class="kdmath">$r \in S$</span>. Since <span class="kdmath">$d$</span> is the smallest element in <span class="kdmath">$S$</span>, it follows <span class="kdmath">$d \le r$</span>. But this 
+contradicts with <span class="kdmath">$0 \le r < d$</span>. Thus <span class="kdmath">$r \ne 0$</span> is not possible.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">r = 0</script>    <br />
-Thus <script type="math/tex">r \notin Z^+</script>. Thus <script type="math/tex">r \notin S</script>. It follows <script type="math/tex">a = dq+r = dq+0 = dq</script>. Thus <script type="math/tex">d \, \vert \, a</script>.</p>
+    <p>Case <span class="kdmath">$r = 0$</span>    <br />
+Thus <span class="kdmath">$r \notin Z^+$</span>. Thus <span class="kdmath">$r \notin S$</span>. It follows <span class="kdmath">$a = dq+r = dq+0 = dq$</span>. Thus <span class="kdmath">$d \, \vert \, a$</span>.</p>
   </li>
 </ul>
 
-<p>Similarly it can be proved that <script type="math/tex">d \, \vert \, b</script>.</p>
+<p>Similarly it can be proved that <span class="kdmath">$d \, \vert \, b$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Since <script type="math/tex">c \, \vert \, a</script>, it follows that for some integer <script type="math/tex">p</script>, <script type="math/tex">a = pc</script>. Similarly since <script type="math/tex">c \, \vert \, b</script>, it follows that for some integer 
-<script type="math/tex">q</script>, <script type="math/tex">b = qc</script>.   <br />
-Since <script type="math/tex">d \in S</script>, it follows that <script type="math/tex">d = as + bt</script>. Thus <script type="math/tex">d = pcs + qct = c(ps+qt)</script>. Thus <script type="math/tex">c \, \vert \, d</script>.</p>
+<p>Since <span class="kdmath">$c \, \vert \, a$</span>, it follows that for some integer <span class="kdmath">$p$</span>, <span class="kdmath">$a = pc$</span>. Similarly since <span class="kdmath">$c \, \vert \, b$</span>, it follows that for some integer 
+<span class="kdmath">$q$</span>, <span class="kdmath">$b = qc$</span>.   <br />
+Since <span class="kdmath">$d \in S$</span>, it follows that <span class="kdmath">$d = as + bt$</span>. Thus <span class="kdmath">$d = pcs + qct = c(ps+qt)$</span>. Thus <span class="kdmath">$c \, \vert \, d$</span>.</p>
 
-<p>Also since from part(a), <script type="math/tex">d</script> divides both <script type="math/tex">a</script> and <script type="math/tex">b</script>. Thus any number which divides <script type="math/tex">a</script> and <script type="math/tex">b</script> must divides <script type="math/tex">d</script>. Thus <script type="math/tex">c \le d</script>.
-It follows that <script type="math/tex">d</script> is greatest common divisor of <script type="math/tex">a</script> and <script type="math/tex">b</script>.</p>
+<p>Also since from part(a), <span class="kdmath">$d$</span> divides both <span class="kdmath">$a$</span> and <span class="kdmath">$b$</span>. Thus any number which divides <span class="kdmath">$a$</span> and <span class="kdmath">$b$</span> must divides <span class="kdmath">$d$</span>. Thus <span class="kdmath">$c \le d$</span>.
+It follows that <span class="kdmath">$d$</span> is greatest common divisor of <span class="kdmath">$a$</span> and <span class="kdmath">$b$</span>.</p>
 
 <hr />
 
@@ -2004,35 +1927,33 @@ It follows that <script type="math/tex">d</script> is greatest common divisor of
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">a,b,p</script> are natural numbers such that <script type="math/tex">p \, \vert \, ab</script> and <script type="math/tex">p</script> is prime. Suppose <script type="math/tex">d</script> is the greatest common divisor of <script type="math/tex">a</script> and <script type="math/tex">p</script>.
-Thus from Ex-16 part(b), <script type="math/tex">d = as + pt</script> for some integers <script type="math/tex">s, t</script>. Since <script type="math/tex">d</script> divides <script type="math/tex">p</script> and <script type="math/tex">p</script> is a prime number, there are following possible cases:</p>
+<p>Suppose <span class="kdmath">$a,b,p$</span> are natural numbers such that <span class="kdmath">$p \, \vert \, ab$</span> and <span class="kdmath">$p$</span> is prime. Suppose <span class="kdmath">$d$</span> is the greatest common divisor of <span class="kdmath">$a$</span> and <span class="kdmath">$p$</span>.
+Thus from Ex-16 part(b), <span class="kdmath">$d = as + pt$</span> for some integers <span class="kdmath">$s, t$</span>. Since <span class="kdmath">$d$</span> divides <span class="kdmath">$p$</span> and <span class="kdmath">$p$</span> is a prime number, there are following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">d = p</script>      <br />
-Since <script type="math/tex">d</script> is greatest common divisor of <script type="math/tex">a</script> and <script type="math/tex">p</script>, it follows <script type="math/tex">d</script> divides <script type="math/tex">a</script>. Since <script type="math/tex">d = p</script>, it follows <script type="math/tex">p</script> divides <script type="math/tex">a</script>, or <script type="math/tex">p \, \vert \, a</script>.</p>
+    <p>Case <span class="kdmath">$d = p$</span>      <br />
+Since <span class="kdmath">$d$</span> is greatest common divisor of <span class="kdmath">$a$</span> and <span class="kdmath">$p$</span>, it follows <span class="kdmath">$d$</span> divides <span class="kdmath">$a$</span>. Since <span class="kdmath">$d = p$</span>, it follows <span class="kdmath">$p$</span> divides <span class="kdmath">$a$</span>, or <span class="kdmath">$p \, \vert \, a$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">d = 1</script>    <br />
-Since <script type="math/tex">d = as + pt</script>, it follows <script type="math/tex">1 = as + pt</script>. Since <script type="math/tex">p \, \vert \, ab</script>, it follows for some integer <script type="math/tex">q</script>, <script type="math/tex">ab = pq</script>. Thus <script type="math/tex">a = \frac {pq} b</script>.
-Putting <script type="math/tex">a = \frac {pq} b</script> in <script type="math/tex">as + pt = 1</script>, we get <script type="math/tex">\frac {pqs} b + pt = 1</script>, or <script type="math/tex">pqs + pbt = b</script>, or <script type="math/tex">p(qs + bt) = b</script>. Thus <script type="math/tex">p \, \vert \, b</script>.</p>
+    <p>Case <span class="kdmath">$d = 1$</span>    <br />
+Since <span class="kdmath">$d = as + pt$</span>, it follows <span class="kdmath">$1 = as + pt$</span>. Since <span class="kdmath">$p \, \vert \, ab$</span>, it follows for some integer <span class="kdmath">$q$</span>, <span class="kdmath">$ab = pq$</span>. Thus <span class="kdmath">$a = \frac {pq} b$</span>.
+Putting <span class="kdmath">$a = \frac {pq} b$</span> in <span class="kdmath">$as + pt = 1$</span>, we get <span class="kdmath">$\frac {pqs} b + pt = 1$</span>, or <span class="kdmath">$pqs + pbt = b$</span>, or <span class="kdmath">$p(qs + bt) = b$</span>. Thus <span class="kdmath">$p \, \vert \, b$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, either <script type="math/tex">p \, \vert \, a</script> or <script type="math/tex">p \, \vert \, b</script>.</p>
+<p>Thus from both cases, either <span class="kdmath">$p \, \vert \, a$</span> or <span class="kdmath">$p \, \vert \, b$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n ( p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_k \to (p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot \lor p \, \vert \, a_k) ) %]]></script>.</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary. Suppose <span class="kdmath">$\forall k < n ( p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_k \to (p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot \lor p \, \vert \, a_k) )$</span>.</p>
 
-<p>Suppose <script type="math/tex">p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1} a_n</script>, or <script type="math/tex">p \, \vert \, (a_1 a_2 \cdot \cdot \cdot a_{n-1}) \, a_n</script>. Thus from part(a), it follows either
-either <script type="math/tex">p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1}</script> or <script type="math/tex">p \, \vert \, a_n</script>.</p>
+<p>Suppose <span class="kdmath">$p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1} a_n$</span>, or <span class="kdmath">$p \, \vert \, (a_1 a_2 \cdot \cdot \cdot a_{n-1}) \, a_n$</span>. Thus from part(a), it follows either
+either <span class="kdmath">$p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1}$</span> or <span class="kdmath">$p \, \vert \, a_n$</span>.</p>
 
-<p>Since <script type="math/tex">% <![CDATA[
-n-1 < n %]]></script>, it follows from induction hypothesis that if <script type="math/tex">p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1}</script>, then <script type="math/tex">p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot \lor p \, \vert \, a_{n-1}</script>.</p>
+<p>Since <span class="kdmath">$n-1 < n$</span>, it follows from induction hypothesis that if <span class="kdmath">$p \, \vert \, a_1 a_2 \cdot \cdot \cdot a_{n-1}$</span>, then <span class="kdmath">$p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot \lor p \, \vert \, a_{n-1}$</span>.</p>
 
-<p>Thus it follows that <script type="math/tex">p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot p \, \vert \, \lor a_{n-1} \lor p \, \vert \, a_n</script>.</p>
+<p>Thus it follows that <span class="kdmath">$p \, \vert \, a_1 \lor p \, \vert \, a_2 \lor \cdot \cdot \cdot p \, \vert \, \lor a_{n-1} \lor p \, \vert \, a_n$</span>.</p>
 
 <hr />
 
@@ -2040,93 +1961,93 @@ n-1 < n %]]></script>, it follows from induction hypothesis that if <script type
 
 <p>Base Case:</p>
 
-<p>Suppose <script type="math/tex">j = 1</script>. Since <script type="math/tex">p_1 = q_1 q_2 \cdot \cdot \cdot q_k</script> and <script type="math/tex">p_1</script> is prime it follows that <script type="math/tex">k = 1</script>. Thus <script type="math/tex">p_1 = q_1</script>.</p>
+<p>Suppose <span class="kdmath">$j = 1$</span>. Since <span class="kdmath">$p_1 = q_1 q_2 \cdot \cdot \cdot q_k$</span> and <span class="kdmath">$p_1$</span> is prime it follows that <span class="kdmath">$k = 1$</span>. Thus <span class="kdmath">$p_1 = q_1$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose for <script type="math/tex">j \ge 1</script> and for all <script type="math/tex">k \ge 1</script>, if <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_j = q_1 q_2 \cdot \cdot \cdot q_k</script>, then <script type="math/tex">j = k</script> and <script type="math/tex">p_i = q_i</script> where
-<script type="math/tex">1 \le i \le j</script>.</p>
+<p>Suppose for <span class="kdmath">$j \ge 1$</span> and for all <span class="kdmath">$k \ge 1$</span>, if <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_j = q_1 q_2 \cdot \cdot \cdot q_k$</span>, then <span class="kdmath">$j = k$</span> and <span class="kdmath">$p_i = q_i$</span> where
+<span class="kdmath">$1 \le i \le j$</span>.</p>
 
-<p>Now suppose <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k</script>. Clearly <script type="math/tex">k \ge 2</script>, since if <script type="math/tex">k = 1</script> then <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1</script>.
-Thus <script type="math/tex">q_1</script> will not be prime.</p>
+<p>Now suppose <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k$</span>. Clearly <span class="kdmath">$k \ge 2$</span>, since if <span class="kdmath">$k = 1$</span> then <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1$</span>.
+Thus <span class="kdmath">$q_1$</span> will not be prime.</p>
 
-<p><strong>Note:</strong> <script type="math/tex">j</script> is same in last two statements. But <script type="math/tex">k</script> is different. In former statement <script type="math/tex">j = k</script> if <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_j = q_1 q_2 \cdot \cdot \cdot q_k</script>,
-but in the later statement above, <script type="math/tex">k</script> may or may not be equal to <script type="math/tex">j</script>. Or first statement is hypothesis <script type="math/tex">P(j)</script> and second statement is <script type="math/tex">P(j+1)</script> which we shall prove
+<p><strong>Note:</strong> <span class="kdmath">$j$</span> is same in last two statements. But <span class="kdmath">$k$</span> is different. In former statement <span class="kdmath">$j = k$</span> if <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_j = q_1 q_2 \cdot \cdot \cdot q_k$</span>,
+but in the later statement above, <span class="kdmath">$k$</span> may or may not be equal to <span class="kdmath">$j$</span>. Or first statement is hypothesis <span class="kdmath">$P(j)$</span> and second statement is <span class="kdmath">$P(j+1)$</span> which we shall prove
  to be true if hypothesis is true.</p>
 
-<p>Clearly <script type="math/tex">p_{j+1} \; \vert \; p_1 p_2 \cdot \cdot \cdot p_{j+1}</script>. It follows <script type="math/tex">p_{j+1} \; \vert \; q_1 q_2 \cdot \cdot \cdot q_k</script>. Thus from Ex17 part(b), 
-it follows <script type="math/tex">p_{j+1} \; \vert \; q_i</script>, where <script type="math/tex">1 \le i \le k</script>. But <script type="math/tex">q_i \le q_k</script>. Thus <script type="math/tex">p_{j+1} \le q_k</script>.</p>
+<p>Clearly <span class="kdmath">$p_{j+1} \; \vert \; p_1 p_2 \cdot \cdot \cdot p_{j+1}$</span>. It follows <span class="kdmath">$p_{j+1} \; \vert \; q_1 q_2 \cdot \cdot \cdot q_k$</span>. Thus from Ex17 part(b), 
+it follows <span class="kdmath">$p_{j+1} \; \vert \; q_i$</span>, where <span class="kdmath">$1 \le i \le k$</span>. But <span class="kdmath">$q_i \le q_k$</span>. Thus <span class="kdmath">$p_{j+1} \le q_k$</span>.</p>
 
-<p>Also since <script type="math/tex">q_k \; \vert \; q_1 q_2 \cdot \cdot \cdot q_k</script>, it follows <script type="math/tex">q_k \; \vert \; p_1 p_2 \cdot \cdot \cdot p_{j+1}</script>. Thus from Ex17 part(b), 
-it follows <script type="math/tex">q_k \; \vert \; p_i</script>, where <script type="math/tex">1 \le i \le j+1</script>. But <script type="math/tex">p_i \le p_{j+1}</script>. Thus <script type="math/tex">q_k \le p_{j+1}</script>.</p>
+<p>Also since <span class="kdmath">$q_k \; \vert \; q_1 q_2 \cdot \cdot \cdot q_k$</span>, it follows <span class="kdmath">$q_k \; \vert \; p_1 p_2 \cdot \cdot \cdot p_{j+1}$</span>. Thus from Ex17 part(b), 
+it follows <span class="kdmath">$q_k \; \vert \; p_i$</span>, where <span class="kdmath">$1 \le i \le j+1$</span>. But <span class="kdmath">$p_i \le p_{j+1}$</span>. Thus <span class="kdmath">$q_k \le p_{j+1}$</span>.</p>
 
-<p>Thus <script type="math/tex">p_{j+1} = q_k</script>. Now since <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k</script>, it follows <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_{j} = q_1 q_2 \cdot \cdot \cdot q_{k-1}</script>.</p>
+<p>Thus <span class="kdmath">$p_{j+1} = q_k$</span>. Now since <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k$</span>, it follows <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_{j} = q_1 q_2 \cdot \cdot \cdot q_{k-1}$</span>.</p>
 
-<p>But from the induction hypothesis, if <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_{j} = q_1 q_2 \cdot \cdot \cdot q_{k-1}</script> then <script type="math/tex">p_i = q_i</script> and <script type="math/tex">j = k-1</script>. Thus <script type="math/tex">j+1 = k</script>.</p>
+<p>But from the induction hypothesis, if <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_{j} = q_1 q_2 \cdot \cdot \cdot q_{k-1}$</span> then <span class="kdmath">$p_i = q_i$</span> and <span class="kdmath">$j = k-1$</span>. Thus <span class="kdmath">$j+1 = k$</span>.</p>
 
-<p>Thus if <script type="math/tex">p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k</script>, then <script type="math/tex">j+1 = k</script> and <script type="math/tex">p_i = q_i</script>.</p>
+<p>Thus if <span class="kdmath">$p_1 p_2 \cdot \cdot \cdot p_{j+1} = q_1 q_2 \cdot \cdot \cdot q_k$</span>, then <span class="kdmath">$j+1 = k$</span> and <span class="kdmath">$p_i = q_i$</span>.</p>
 
 <hr />
 
 <p><strong>Soln19</strong></p>
 
-<p>Since <script type="math/tex">a_{n+1} = 1 + \sum_{i=0}^{n} a_i</script>, it follows <script type="math/tex">a_n = 1 + \sum_{i=0}^{n-1} a_i</script>.</p>
+<p>Since <span class="kdmath">$a_{n+1} = 1 + \sum_{i=0}^{n} a_i$</span>, it follows <span class="kdmath">$a_n = 1 + \sum_{i=0}^{n-1} a_i$</span>.</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">n</script></th>
-      <th><script type="math/tex">a_n = 1 + \sum_{i=0}^{n-1} a_i</script></th>
+      <th style="text-align: center"><span class="kdmath">$n$</span></th>
+      <th><span class="kdmath">$a_n = 1 + \sum_{i=0}^{n-1} a_i$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">0</script></td>
-      <td><script type="math/tex">1 = 2^0</script></td>
+      <td style="text-align: center"><span class="kdmath">$0$</span></td>
+      <td><span class="kdmath">$1 = 2^0$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">1</script></td>
-      <td><script type="math/tex">2 = 2^1</script></td>
+      <td style="text-align: center"><span class="kdmath">$1$</span></td>
+      <td><span class="kdmath">$2 = 2^1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">2</script></td>
-      <td><script type="math/tex">4 = 2^2</script></td>
+      <td style="text-align: center"><span class="kdmath">$2$</span></td>
+      <td><span class="kdmath">$4 = 2^2$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">3</script></td>
-      <td><script type="math/tex">8 = 2^3</script></td>
+      <td style="text-align: center"><span class="kdmath">$3$</span></td>
+      <td><span class="kdmath">$8 = 2^3$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">4</script></td>
-      <td><script type="math/tex">16 = 2^4</script></td>
+      <td style="text-align: center"><span class="kdmath">$4$</span></td>
+      <td><span class="kdmath">$16 = 2^4$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">5</script></td>
-      <td><script type="math/tex">32 = 2^5</script></td>
+      <td style="text-align: center"><span class="kdmath">$5$</span></td>
+      <td><span class="kdmath">$32 = 2^5$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Thus it appears that <script type="math/tex">a_n = 2^n</script>.</p>
+<p>Thus it appears that <span class="kdmath">$a_n = 2^n$</span>.</p>
 
 <p>Now we shall prove the formulae is correct.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">2^n = 2^0 = 1 = a_0 = a_n</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, <span class="kdmath">$2^n = 2^0 = 1 = a_0 = a_n$</span>.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose formulae is correct for <script type="math/tex">n \ge 1</script>. Thus <script type="math/tex">a_n = 2^p</script>.</p>
+<p>Suppose formulae is correct for <span class="kdmath">$n \ge 1$</span>. Thus <span class="kdmath">$a_n = 2^p$</span>.</p>
 
-<p>Thus <script type="math/tex">a_{n+1} = 1 + \sum_{i=0}^n a_i</script>    <br />
-<script type="math/tex">= 1 + \sum_{i=0}^{n-1} a_i + a_n</script>   <br />
-<script type="math/tex">= a_n + a_n</script>     <br />
+<p>Thus <span class="kdmath">$a_{n+1} = 1 + \sum_{i=0}^n a_i$</span>    <br />
+<span class="kdmath">$= 1 + \sum_{i=0}^{n-1} a_i + a_n$</span>   <br />
+<span class="kdmath">$= a_n + a_n$</span>     <br />
 Using hypothesis:   <br />
-<script type="math/tex">= 2^n + 2^n</script>,   <br />
-<script type="math/tex">= 2^{n+1}</script></p>
+<span class="kdmath">$= 2^n + 2^n$</span>,   <br />
+<span class="kdmath">$= 2^{n+1}$</span></p>
 
-<p>Thus <script type="math/tex">P(n+1)</script> is true if <script type="math/tex">P(n)</script> is true.</p>
+<p>Thus <span class="kdmath">$P(n+1)$</span> is true if <span class="kdmath">$P(n)$</span> is true.</p>
 
 <hr />
 
@@ -2135,57 +2056,57 @@ Using hypothesis:   <br />
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">n</script></th>
-      <th><script type="math/tex">a_n = 1 + \frac 1 {a_{n-1} }</script></th>
+      <th style="text-align: center"><span class="kdmath">$n$</span></th>
+      <th><span class="kdmath">$a_n = 1 + \frac 1 {a_{n-1} }$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">0</script></td>
-      <td><script type="math/tex">\frac 1 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$0$</span></td>
+      <td><span class="kdmath">$\frac 1 1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">1</script></td>
-      <td><script type="math/tex">\frac 2 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$1$</span></td>
+      <td><span class="kdmath">$\frac 2 1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">2</script></td>
-      <td><script type="math/tex">\frac 3 2</script></td>
+      <td style="text-align: center"><span class="kdmath">$2$</span></td>
+      <td><span class="kdmath">$\frac 3 2$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">3</script></td>
-      <td><script type="math/tex">\frac 5 3</script></td>
+      <td style="text-align: center"><span class="kdmath">$3$</span></td>
+      <td><span class="kdmath">$\frac 5 3$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">4</script></td>
-      <td><script type="math/tex">\frac 8 5</script></td>
+      <td style="text-align: center"><span class="kdmath">$4$</span></td>
+      <td><span class="kdmath">$\frac 8 5$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">5</script></td>
-      <td><script type="math/tex">\frac {13} 8</script></td>
+      <td style="text-align: center"><span class="kdmath">$5$</span></td>
+      <td><span class="kdmath">$\frac {13} 8$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>It appears from above table that formulae is <script type="math/tex">a_n = \frac {F_{n+2} } {F_{n+1} }</script>.</p>
+<p>It appears from above table that formulae is <span class="kdmath">$a_n = \frac {F_{n+2} } {F_{n+1} }$</span>.</p>
 
 <p>Proof:</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, it follows directly from the table.</p>
+<p>For <span class="kdmath">$n = 0$</span>, it follows directly from the table.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose it is true for <script type="math/tex">n</script>. Thus <script type="math/tex">a_n = \frac {F_{n+2} } {F_{n+1} }</script>.</p>
+<p>Suppose it is true for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$a_n = \frac {F_{n+2} } {F_{n+1} }$</span>.</p>
 
-<p>Now <script type="math/tex">a_{n+1} = 1 + \frac 1 {a_n}</script>     <br />
-<script type="math/tex">= 1 + \frac {F_{n+1} } {F_{n+2} }</script>     <br />
-<script type="math/tex">= \frac {F_{n+2} + F_{n+1} } {F_{n+2} }</script>       <br />
-<script type="math/tex">= \frac {F_{n+3} } {F_{n+2} }</script>      <br />
-<script type="math/tex">= \frac {F_{n+1+2} } {F_{n+1+1} }</script>.</p>
+<p>Now <span class="kdmath">$a_{n+1} = 1 + \frac 1 {a_n}$</span>     <br />
+<span class="kdmath">$= 1 + \frac {F_{n+1} } {F_{n+2} }$</span>     <br />
+<span class="kdmath">$= \frac {F_{n+2} + F_{n+1} } {F_{n+2} }$</span>       <br />
+<span class="kdmath">$= \frac {F_{n+3} } {F_{n+2} }$</span>      <br />
+<span class="kdmath">$= \frac {F_{n+1+2} } {F_{n+1+1} }$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 
                         <hr/>

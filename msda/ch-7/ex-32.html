@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -981,15 +982,15 @@
 
 <p>We have:</p>
 
-<p>Total Population, <script type="math/tex">\, N=12000 \,</script></p>
+<p>Total Population, <span class="kdmath">$\, N=12000 \,$</span></p>
 
-<p>Sample size, <script type="math/tex">\, n=200 \,</script></p>
+<p>Sample size, <span class="kdmath">$\, n=200 \,$</span></p>
 
-<p>Sample proportion, <script type="math/tex">\, \hat p = 0.18 \,</script></p>
+<p>Sample proportion, <span class="kdmath">$\, \hat p = 0.18 \,$</span></p>
 
-<p>To compute estimated standard error, <script type="math/tex">\, \sigma_{\hat p} \,</script>, we use <script type="math/tex">\, {\sigma_{\hat p}}^2 = \frac {\hat p(1-\hat p)} {n-1} \Prn{1 - \frac n N} \,</script>. Thus we get <script type="math/tex">\, {\sigma_{\hat p}^2} = \frac {0.18(1-0.18)} {200-1} \Prn{1-\frac {200} {12000}} = 0.0007417085 \,</script>. Thus <script type="math/tex">\, \sigma_{\hat p} = \sqrt {0.0007417085} = 0.027 \,</script>.</p>
+<p>To compute estimated standard error, <span class="kdmath">$\, \sigma_{\hat p} \,$</span>, we use <span class="kdmath">$\, {\sigma_{\hat p}}^2 = \frac {\hat p(1-\hat p)} {n-1} \Prn{1 - \frac n N} \,$</span>. Thus we get <span class="kdmath">$\, {\sigma_{\hat p}^2} = \frac {0.18(1-0.18)} {200-1} \Prn{1-\frac {200} {12000}} = 0.0007417085 \,$</span>. Thus <span class="kdmath">$\, \sigma_{\hat p} = \sqrt {0.0007417085} = 0.027 \,$</span>.</p>
 
-<p>The confidence interval can be computed using <script type="math/tex">\, \hat p \pm z(\alpha/2) = \hat p \pm \Phi^{-1}(1-\alpha/2)\sigma_{\hat p} \,</script> where <script type="math/tex">\, \alpha = 1-0.90 = 0.1 \,</script>. Thus the confidence interval becomes <script type="math/tex">\, 0.18 \pm \Phi^{-1}(1-0.05) 0.027 = 0.18 \pm 1.645 \times 0.027 = 0.18 \pm 0.044415 \,</script>, or <script type="math/tex">\, (0.135585,0.224415) \,</script>.</p>
+<p>The confidence interval can be computed using <span class="kdmath">$\, \hat p \pm z(\alpha/2) = \hat p \pm \Phi^{-1}(1-\alpha/2)\sigma_{\hat p} \,$</span> where <span class="kdmath">$\, \alpha = 1-0.90 = 0.1 \,$</span>. Thus the confidence interval becomes <span class="kdmath">$\, 0.18 \pm \Phi^{-1}(1-0.05) 0.027 = 0.18 \pm 1.645 \times 0.027 = 0.18 \pm 0.044415 \,$</span>, or <span class="kdmath">$\, (0.135585,0.224415) \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
@@ -997,42 +998,54 @@
 
 <p><strong>Sample 1:</strong>(from example)</p>
 
-<script type="math/tex; mode=display">\, N_1 = 8000 \,</script>
+<div class="kdmath">$$
+\, N_1 = 8000 \,
+$$</div>
 
-<script type="math/tex; mode=display">\, n_1 = 100 \,</script>
+<div class="kdmath">$$
+\, n_1 = 100 \,
+$$</div>
 
-<script type="math/tex; mode=display">\, \hat p_1 = 0.12 \,</script>
+<div class="kdmath">$$
+\, \hat p_1 = 0.12 \,
+$$</div>
 
 <p><strong>Sample 2:</strong>(from problem)</p>
 
-<script type="math/tex; mode=display">\, N_2 = 12000 \,</script>
+<div class="kdmath">$$
+\, N_2 = 12000 \,
+$$</div>
 
-<script type="math/tex; mode=display">\, n_2 = 200 \,</script>
+<div class="kdmath">$$
+\, n_2 = 200 \,
+$$</div>
 
-<script type="math/tex; mode=display">\, \hat p_2 = 0.18 \,</script>
+<div class="kdmath">$$
+\, \hat p_2 = 0.18 \,
+$$</div>
 
-<p>and <script type="math/tex">\, \hat p_2 = 0.18 \,</script> and <script type="math/tex">\, \hat d = \hat p_1 - \hat p_2 \,</script>.</p>
+<p>and <span class="kdmath">$\, \hat p_2 = 0.18 \,$</span> and <span class="kdmath">$\, \hat d = \hat p_1 - \hat p_2 \,$</span>.</p>
 
-<p>Since <script type="math/tex">\, \hat p_1 \,</script> and <script type="math/tex">\, \hat p_2 \,</script> are independent random variables, it follows that <script type="math/tex">\, \Var(\hat d) = \Var(\hat p_1 - \hat p_2) = \Var(\hat p_1) + {-1}^2 \hat p_2) \,</script>.</p>
+<p>Since <span class="kdmath">$\, \hat p_1 \,$</span> and <span class="kdmath">$\, \hat p_2 \,$</span> are independent random variables, it follows that <span class="kdmath">$\, \Var(\hat d) = \Var(\hat p_1 - \hat p_2) = \Var(\hat p_1) + {-1}^2 \hat p_2) \,$</span>.</p>
 
-<p>Now putting <script type="math/tex">\, \Var(\hat p_1) = \frac {\hat p_1(1-\hat p_1)} {n_1-1} \Prn{1 - \frac {n_1} {N_1} } \,</script> and <script type="math/tex">\, \Var(\hat p_2) = \frac {\hat p_2(1-\hat p_2)} {n_2-1} \Prn{1 - \frac {n_2} {N_2} } \,</script>, we get:</p>
+<p>Now putting <span class="kdmath">$\, \Var(\hat p_1) = \frac {\hat p_1(1-\hat p_1)} {n_1-1} \Prn{1 - \frac {n_1} {N_1} } \,$</span> and <span class="kdmath">$\, \Var(\hat p_2) = \frac {\hat p_2(1-\hat p_2)} {n_2-1} \Prn{1 - \frac {n_2} {N_2} } \,$</span>, we get:</p>
 
-<p><script type="math/tex">\, \Var(\hat d) = \frac {\hat p_1(1-\hat p_1)} {n_1-1} \Prn{1 - \frac {n_1} {N_1} } + \frac {\hat p_2(1-\hat p_2)} {n_2-1} \Prn{1 - \frac {n_2} {N_2} } \,</script>.</p>
+<p><span class="kdmath">$\, \Var(\hat d) = \frac {\hat p_1(1-\hat p_1)} {n_1-1} \Prn{1 - \frac {n_1} {N_1} } + \frac {\hat p_2(1-\hat p_2)} {n_2-1} \Prn{1 - \frac {n_2} {N_2} } \,$</span>.</p>
 
-<p>Using the standard error computed in example, we have <script type="math/tex">\, \Var(\hat p_1) = {0.03}^2 = 0.0009 \,</script>. Similarly from part-a, we have <script type="math/tex">\, \Var(\hat p_2) = 0.0007417085 \,</script>. Thus <script type="math/tex">\, \Var(\hat d) = 0.0009 + 0.0007417085 =0.001642 \,</script>. Thus <script type="math/tex">\, \sigma_{\hat d} = \sqrt {0.001642} = 0.0405215 \,</script>.</p>
+<p>Using the standard error computed in example, we have <span class="kdmath">$\, \Var(\hat p_1) = {0.03}^2 = 0.0009 \,$</span>. Similarly from part-a, we have <span class="kdmath">$\, \Var(\hat p_2) = 0.0007417085 \,$</span>. Thus <span class="kdmath">$\, \Var(\hat d) = 0.0009 + 0.0007417085 =0.001642 \,$</span>. Thus <span class="kdmath">$\, \sigma_{\hat d} = \sqrt {0.001642} = 0.0405215 \,$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
-<p>The confidence interval is given by <script type="math/tex">\, \hat d \pm z(\alpha/2) \sigma_{\hat d} \,</script>.</p>
+<p>The confidence interval is given by <span class="kdmath">$\, \hat d \pm z(\alpha/2) \sigma_{\hat d} \,$</span>.</p>
 
-<p>We have <script type="math/tex">\, \hat d = \hat p_1 - \hat p_2 = -0.06 \,</script>.</p>
+<p>We have <span class="kdmath">$\, \hat d = \hat p_1 - \hat p_2 = -0.06 \,$</span>.</p>
 
-<p>For <script type="math/tex">\, 99\% \,</script> confidence interval, <script type="math/tex">\, \alpha = 1-0.99 = 0.01 \,</script>. Thus <script type="math/tex">\, z(\alpha/2) = \Phi^{-1}(1-\alpha/2) = \Phi^{-1}(1-0.01/2) = 2.575 \,</script>.
-Thus the confidence interval is <script type="math/tex">\, -0.06 \pm 2.575 \times 0.0405215 = -0.06 \pm 0.104343 = ( -0.164343, 0.044343) \,</script></p>
+<p>For <span class="kdmath">$\, 99\% \,$</span> confidence interval, <span class="kdmath">$\, \alpha = 1-0.99 = 0.01 \,$</span>. Thus <span class="kdmath">$\, z(\alpha/2) = \Phi^{-1}(1-\alpha/2) = \Phi^{-1}(1-0.01/2) = 2.575 \,$</span>.
+Thus the confidence interval is <span class="kdmath">$\, -0.06 \pm 2.575 \times 0.0405215 = -0.06 \pm 0.104343 = ( -0.164343, 0.044343) \,$</span></p>
 
-<p>Similarly, for <script type="math/tex">\, 95\% \,</script>, we have <script type="math/tex">\, z(\alpha/2) = 1.96 \,</script>. Thus <script type="math/tex">\, -0.06 \pm 1.96 \times 0.0405215 = -0.06 \pm 0.079422 = (-0.139422,0.019422) \,</script></p>
+<p>Similarly, for <span class="kdmath">$\, 95\% \,$</span>, we have <span class="kdmath">$\, z(\alpha/2) = 1.96 \,$</span>. Thus <span class="kdmath">$\, -0.06 \pm 1.96 \times 0.0405215 = -0.06 \pm 0.079422 = (-0.139422,0.019422) \,$</span></p>
 
-<p>And for <script type="math/tex">\, 90\% \,</script>, we get <script type="math/tex">\, z(\alpha/2) = 1.645 \,</script>. Thus <script type="math/tex">\, -0.06 \pm 1,645 \times 0.0405215 = -0.06 \pm 0.066658 = (-0.126658, 0.006658) \,</script></p>
+<p>And for <span class="kdmath">$\, 90\% \,$</span>, we get <span class="kdmath">$\, z(\alpha/2) = 1.645 \,$</span>. Thus <span class="kdmath">$\, -0.06 \pm 1,645 \times 0.0405215 = -0.06 \pm 0.066658 = (-0.126658, 0.006658) \,$</span></p>
 
 
                         $$\tag*{$\blacksquare$} $$

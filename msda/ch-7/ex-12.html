@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,38 +980,44 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<p>To prove that <script type="math/tex">s^2</script> is unbiased in estimating <script type="math/tex">\sigma^2</script>, we need to show that <script type="math/tex">\mathrm{E}(s^2) = \sigma^2</script>.</p>
+<p>To prove that <span class="kdmath">$s^2$</span> is unbiased in estimating <span class="kdmath">$\sigma^2$</span>, we need to show that <span class="kdmath">$\mathrm{E}(s^2) = \sigma^2$</span>.</p>
 
 <p>To Prove that we shall first prove the following Lemmas:</p>
 
 <p><strong>Lemma 1</strong></p>
 
-<p><script type="math/tex">\mathrm{E}(X_i) = \mu</script>, where <script type="math/tex">\mu</script> denotes the population mean.</p>
+<p><span class="kdmath">$\mathrm{E}(X_i) = \mu$</span>, where <span class="kdmath">$\mu$</span> denotes the population mean.</p>
 
 <p><em>Proof</em></p>
 
 <p>Since this is a random sampling with replacement and every element having equal chance to be selected:</p>
 
-<script type="math/tex; mode=display">P(X_i = x_j) = \frac 1 N</script>
+<div class="kdmath">$$
+P(X_i = x_j) = \frac 1 N
+$$</div>
 
-<p>Thus <script type="math/tex">\mathrm{E}(X_i) = \sum_{i=1}^{i=n} x_i P(X_i = x_j) = \frac 1 N \sum_{i=1}^{i=n} x_i</script></p>
+<p>Thus <span class="kdmath">$\mathrm{E}(X_i) = \sum_{i=1}^{i=n} x_i P(X_i = x_j) = \frac 1 N \sum_{i=1}^{i=n} x_i$</span></p>
 
-<p>Thus <script type="math/tex">\mathrm{E}(X_i) = \mu</script></p>
+<p>Thus <span class="kdmath">$\mathrm{E}(X_i) = \mu$</span></p>
 
 <p><strong>Lemma 2</strong></p>
 
-<script type="math/tex; mode=display">\mathrm{E}(\bar X) = \mu</script>
+<div class="kdmath">$$
+\mathrm{E}(\bar X) = \mu
+$$</div>
 
 <p><em>Proof</em></p>
 
-<script type="math/tex; mode=display">\mathrm{E}(\bar X) = \mathrm{E} \left( \frac 1 N \sum_{i=1}^{i=n} X_i \right) = \frac 1 n \sum_{i=1}^{i=n} \mathrm{E} (X_i) = \frac {n \mu} {n} = \mu</script>
+<div class="kdmath">$$
+\mathrm{E}(\bar X) = \mathrm{E} \left( \frac 1 N \sum_{i=1}^{i=n} X_i \right) = \frac 1 n \sum_{i=1}^{i=n} \mathrm{E} (X_i) = \frac {n \mu} {n} = \mu
+$$</div>
 
 <p><br />
-Now, we will prove the main result <script type="math/tex">\mathrm{E}(s^2) = \sigma^2</script></p>
+Now, we will prove the main result <span class="kdmath">$\mathrm{E}(s^2) = \sigma^2$</span></p>
 
 <p>We have:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 
@@ -1029,15 +1036,16 @@ Now, we will prove the main result <script type="math/tex">\mathrm{E}(s^2) = \si
 							   &= n { \sigma }^2 - n \frac{\sigma^2}{n} && \text{ Since $\mathrm{Var}(\bar X) = \frac {\sigma^2} n$, as shown in book, Pg-207 } \\ 
 							   &= \left( n-1 \right) \sigma^2
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Cancelling <script type="math/tex">n-1</script> from both sides, it follows <script type="math/tex">\mathrm{E}(s^2) = \sigma^2</script>.</p>
+<p>Cancelling <span class="kdmath">$n-1$</span> from both sides, it follows <span class="kdmath">$\mathrm{E}(s^2) = \sigma^2$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
 <p>No, it is not an unbiased estimate for sigma. By Jensen’s Inequality:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 \mathrm{E}(s) &= \mathrm{E} \left(\sqrt s^2 \right) \\ 
@@ -1045,30 +1053,32 @@ Now, we will prove the main result <script type="math/tex">\mathrm{E}(s^2) = \si
 			  &= \sqrt{ \sigma^2 } && \text{ From part-a } \\
 			  &= \sigma
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus <script type="math/tex">\, \mathrm{E}(s) \leq \sigma \,</script>. It follows that <script type="math/tex">\, \mathrm{E}(s) \,</script> is not always equal to <script type="math/tex">\sigma</script>, or <script type="math/tex">s</script> is not an unbiased estimate of <script type="math/tex">\sigma</script>.</p>
+<p>Thus <span class="kdmath">$\, \mathrm{E}(s) \leq \sigma \,$</span>. It follows that <span class="kdmath">$\, \mathrm{E}(s) \,$</span> is not always equal to <span class="kdmath">$\sigma$</span>, or <span class="kdmath">$s$</span> is not an unbiased estimate of <span class="kdmath">$\sigma$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
-<p>We need to show <script type="math/tex">\, \mathrm{E} \left( \frac{s^2}{n} \right) = \sigma^2_{\bar X} \,</script></p>
+<p>We need to show <span class="kdmath">$\, \mathrm{E} \left( \frac{s^2}{n} \right) = \sigma^2_{\bar X} \,$</span></p>
 
 <p>We have:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 	\mathrm{E} \left( \frac{s^2}{n} \right)	&= \frac 1 n \mathrm{E} (s^2) \\
 											&= \frac 1 n \sigma^2 && \text{ From Part a } \\
 											&= \sigma^2_{\bar X} && \text{ As shown in book, Pg-207 } 
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
 <h4 id="d">(d)</h4>
 
 <p>We have:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 	\mathrm{E} \left( \frac{N^2 s^2}{n} \right) &= N^2 \mathrm{E} \frac {s^2} n \\
@@ -1078,15 +1088,16 @@ Now, we will prove the main result <script type="math/tex">\mathrm{E}(s^2) = \si
 												&= \mathrm{Var} (T) \\
 												&= \sigma^2_T
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
 <h4 id="e">(e)</h4>
 
-<p>To show <script type="math/tex">\, \mathrm{E} \left( \frac { \hat p (1- \hat p) } {n-1} \right) = \sigma^2_{\hat p} \,</script>, where <script type="math/tex">\, \hat p = \bar X = \frac 1 n \sum_{i=1}^{n} X_i \,</script>, the sample proportion.</p>
+<p>To show <span class="kdmath">$\, \mathrm{E} \left( \frac { \hat p (1- \hat p) } {n-1} \right) = \sigma^2_{\hat p} \,$</span>, where <span class="kdmath">$\, \hat p = \bar X = \frac 1 n \sum_{i=1}^{n} X_i \,$</span>, the sample proportion.</p>
 
 <p>We have:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 \sigma^2_{\bar p} &= \mathrm{Var} \bar X \\
@@ -1099,7 +1110,8 @@ Now, we will prove the main result <script type="math/tex">\mathrm{E}(s^2) = \si
 				  &= \frac 1 {(n-1)} \mathrm{E} ( \hat p - \hat p^2) \\
 				  &= \mathrm{E} \left(\frac {\hat p(1 - \hat p)} {n-1} \right) \\
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
 
                         $$\tag*{$\blacksquare$} $$

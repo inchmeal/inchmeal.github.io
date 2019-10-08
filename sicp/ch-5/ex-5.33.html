@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9447,7 +9448,8 @@
 	<span class="p">(</span><span class="nf">save</span> <span class="nv">proc</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">proc</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">-</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">1</span><span class="p">))</span>
-<span class="c1">;;....</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;....</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Now, we evaluate the next argument which is <code class="highlighter-rouge">n</code>. Since this is just a variable, it does not change any registers apart from <code class="highlighter-rouge">val</code>. Thus we can avoid saving and restoring register <code class="highlighter-rouge">argl</code> while evaluating this. This is again apparent from the code generated:</li>
@@ -9464,7 +9466,8 @@
 	<span class="p">(</span><span class="nf">restore</span> <span class="nv">env</span><span class="p">)</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">n</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
 	<span class="p">(</span><span class="nf">assign</span> <span class="nv">argl</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">cons</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
-<span class="c1">;;....</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;....</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="now-consider-the-orginal-factorial-version">Now consider the orginal <code class="highlighter-rouge">factorial</code> version:</h4>
 
@@ -9489,7 +9492,8 @@
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">argl</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">list</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">save</span> <span class="nv">argl</span><span class="p">)</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">proc</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">lookup-variable-value</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">factorial</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
-<span class="c1">;;....</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;....</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Now, we evaluate <code class="highlighter-rouge">(factorial-val (- n 1))</code>. Even though this can change <code class="highlighter-rouge">env</code> we don’t need to save n restore <code class="highlighter-rouge">env</code> because this is last argument and we do not need env after this argument. <em>But</em> here we need to save and restore <code class="highlighter-rouge">argl</code> since this can change <code class="highlighter-rouge">argl</code>. This can also be seen in the generated code shown above.</li>

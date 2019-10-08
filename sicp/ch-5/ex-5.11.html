@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9421,12 +9422,14 @@
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assign</span> <span class="nv">n</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>               <span class="c1">; n now contains Fib(n - 2)</span>
-<span class="p">(</span><span class="nf">restore</span> <span class="nv">val</span><span class="p">)</span>                      <span class="c1">; val now contains Fib(n - 1)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">restore</span> <span class="nv">val</span><span class="p">)</span>                      <span class="c1">; val now contains Fib(n - 1)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>..can be replaced by a single line:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">restore</span> <span class="nv">n</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nf">restore</span> <span class="nv">n</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="b">(b)</h4>
 
@@ -9501,7 +9504,8 @@
          <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- STACK"</span> <span class="nv">message</span><span class="p">))))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">top</span> <span class="nv">stack</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">stack</span> <span class="ss">'top</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">stack</span> <span class="ss">'top</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
@@ -9556,7 +9560,8 @@
 <span class="c1">;To continue, call RESTART with an option number:</span>
 <span class="c1">; (RESTART 1) =&gt; Return to read-eval-print level 1.</span>
 
-<span class="mi">2</span> <span class="nv">error&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">2</span> <span class="nv">error&gt;</span> 
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="c">(c)</h4>
 
@@ -9721,7 +9726,8 @@
 	<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">reg</span> <span class="p">(</span><span class="nf">get-register</span> <span class="nv">machine</span> <span class="nv">reg-name</span><span class="p">)))</span>       
       <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
 		<span class="p">(</span><span class="nf">set-contents!</span> <span class="nv">reg</span> <span class="p">(</span><span class="nf">pop</span> <span class="p">(</span><span class="nf">get-stack</span> <span class="nv">stacks</span> <span class="nv">reg-name</span><span class="p">)))</span> <span class="c1">;;;</span>
-		<span class="p">(</span><span class="nf">advance-pc</span> <span class="nv">pc</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="p">(</span><span class="nf">advance-pc</span> <span class="nv">pc</span><span class="p">)))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
@@ -9816,7 +9822,8 @@
 
 <span class="c1">;Value: done</span>
 
-<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> </pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

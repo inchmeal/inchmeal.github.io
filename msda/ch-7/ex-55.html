@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,19 +980,19 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<p>Estimate of the population mean, <script type="math/tex">\, \bar X_s = \frac 1 N \sum_{l=1}^{L} N_l \bar X_l \,</script>, which as proved in the book is an unbiased estimate of population mean.</p>
+<p>Estimate of the population mean, <span class="kdmath">$\, \bar X_s = \frac 1 N \sum_{l=1}^{L} N_l \bar X_l \,$</span>, which as proved in the book is an unbiased estimate of population mean.</p>
 
-<p>Thus <script type="math/tex">\, \mu = \Exp(\bar X_s) = \frac 1 {100,000 + 500,000} (100,000 \Exp(\bar X_H) + 500,000 \Exp(\bar X_L)) = \frac 1 6 \Exp(\bar X_H) + \frac 5 6 \Exp(\bar X_L) \,</script>.</p>
+<p>Thus <span class="kdmath">$\, \mu = \Exp(\bar X_s) = \frac 1 {100,000 + 500,000} (100,000 \Exp(\bar X_H) + 500,000 \Exp(\bar X_L)) = \frac 1 6 \Exp(\bar X_H) + \frac 5 6 \Exp(\bar X_L) \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
-<p>Ignoring the finite population correction, We have <script type="math/tex">\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \sigma_l^2 = \Prn{\frac 1 6}^2 \frac 1 {100} {20}^2 + \Prn{\frac 5 6}^2 \frac 1 {200} {10}^2  = \frac {1} {9} + \frac {25} {72} = 0.4583 \,</script>. Thus standard error = <script type="math/tex">\, \sqrt { 0.4583 } = 0.6770 \,</script>.</p>
+<p>Ignoring the finite population correction, We have <span class="kdmath">$\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \sigma_l^2 = \Prn{\frac 1 6}^2 \frac 1 {100} {20}^2 + \Prn{\frac 5 6}^2 \frac 1 {200} {10}^2  = \frac {1} {9} + \frac {25} {72} = 0.4583 \,$</span>. Thus standard error = <span class="kdmath">$\, \sqrt { 0.4583 } = 0.6770 \,$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
 <p>If the standard error is less than the previous alllocation than the new allocation will be better. Thus, we first find standard error:</p>
 
-<p>Ignoring the finite population correction, We have <script type="math/tex">\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \sigma_l^2 = \Prn{\frac 1 6}^2 \frac 1 {200} {20}^2 + \Prn{\frac 5 6}^2 \frac 1 {100} {10}^2  = \frac {1} {18} + \frac {25} {36} = 0.75 \,</script>. Thus standard error = <script type="math/tex">\, \sqrt { 0.75 } = 0.866 \,</script>.</p>
+<p>Ignoring the finite population correction, We have <span class="kdmath">$\, \Var(\bar X_s) = \sum^{L}_{l=1} W_l^2 \frac 1 {n_l} \sigma_l^2 = \Prn{\frac 1 6}^2 \frac 1 {200} {20}^2 + \Prn{\frac 5 6}^2 \frac 1 {100} {10}^2  = \frac {1} {18} + \frac {25} {36} = 0.75 \,$</span>. Thus standard error = <span class="kdmath">$\, \sqrt { 0.75 } = 0.866 \,$</span>.</p>
 
 <p>The standard error for the present allocation is higher than that of the previous allocation, thus this allocation is not better than the previous allocation.</p>
 
@@ -999,7 +1000,7 @@
 
 <p>We first find the standard error for the proportional allocation:</p>
 
-<p><script type="math/tex">\, \Var(\bar X_{SP}) = \frac 1 n \sum_{l=1}^{L} W_l \sigma_l^2 = \frac 1 {300} \Prn{\frac 1 6 {20}^2 + \frac 5 6 {10}^2 } = \frac {900} {1800} = 0.5 \,</script>. Thus standard error is <script type="math/tex">\, \sqrt{0.5} = 0.707 \,</script>.</p>
+<p><span class="kdmath">$\, \Var(\bar X_{SP}) = \frac 1 n \sum_{l=1}^{L} W_l \sigma_l^2 = \frac 1 {300} \Prn{\frac 1 6 {20}^2 + \frac 5 6 {10}^2 } = \frac {900} {1800} = 0.5 \,$</span>. Thus standard error is <span class="kdmath">$\, \sqrt{0.5} = 0.707 \,$</span>.</p>
 
 <p>Here also standard error is more than the original allocation. Thus this allocation is also not better compared to the original allocation.</p>
 

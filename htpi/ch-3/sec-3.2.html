@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,39 +1137,39 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li>There can be following ways to prove a <em>goal</em> of the form <script type="math/tex">\lnot P</script> :
+  <li>There can be following ways to prove a <em>goal</em> of the form <span class="kdmath">$\lnot P$</span> :
     <ul>
       <li>Convert or re-express the <em>goal</em> to some other form and then use one of the proof strategies for this other goal form. This is generally possible when the original goal is complex goal(containing many components).</li>
-      <li>Proof by contradiction: by assuming the <em>goal</em> <script type="math/tex">P</script> is true and try to reach a contradiction. On a contradiction, it can be concluded that P must be false.</li>
+      <li>Proof by contradiction: by assuming the <em>goal</em> <span class="kdmath">$P$</span> is true and try to reach a contradiction. On a contradiction, it can be concluded that P must be false.</li>
     </ul>
   </li>
   <li><em>Proof by contradiction</em> is vague as it requires to produce a contradiction by proving something that is known to be false. One approach can be:
     <ul>
-      <li>To use a <em>given</em> of the form <script type="math/tex">\lnot P</script>: Try making <script type="math/tex">P</script> as <em>goal</em>. Now, If <script type="math/tex">P</script> can be proved, then the proof will be complete, because <script type="math/tex">P</script> contradicts the given <script type="math/tex">\lnot P</script>.</li>
+      <li>To use a <em>given</em> of the form <span class="kdmath">$\lnot P$</span>: Try making <span class="kdmath">$P$</span> as <em>goal</em>. Now, If <span class="kdmath">$P$</span> can be proved, then the proof will be complete, because <span class="kdmath">$P$</span> contradicts the given <span class="kdmath">$\lnot P$</span>.</li>
     </ul>
   </li>
   <li>If <em>not</em> using the strategy to prove by contradiction, One approach can be:
     <ul>
-      <li>To re-express/convert a <em>given</em> of the form of <script type="math/tex">\lnot P</script>, to some other form.</li>
+      <li>To re-express/convert a <em>given</em> of the form of <span class="kdmath">$\lnot P$</span>, to some other form.</li>
     </ul>
   </li>
-  <li>In previous section, strategy to prove <em>goal</em> of the form of <script type="math/tex">P \to Q</script> was described.</li>
+  <li>In previous section, strategy to prove <em>goal</em> of the form of <span class="kdmath">$P \to Q$</span> was described.</li>
   <li>Apart from all the above strategies, One more strategy can be:
     <ul>
-      <li>To use a <em>given</em> of the form of <script type="math/tex">P \to Q</script>. Many strategies for using givens suggests ways for drawing inferences from the givens. These strategies are called <em>rules of inference</em>. There can be following two <em>Rules of inference</em> for using given of the form of <script type="math/tex">P \to Q</script>:
+      <li>To use a <em>given</em> of the form of <span class="kdmath">$P \to Q$</span>. Many strategies for using givens suggests ways for drawing inferences from the givens. These strategies are called <em>rules of inference</em>. There can be following two <em>Rules of inference</em> for using given of the form of <span class="kdmath">$P \to Q$</span>:
         <ul>
-          <li>Rule <em>modus ponens</em> : If both <script type="math/tex">P</script> and <script type="math/tex">P \to Q</script> are true, then <script type="math/tex">Q</script> must also be true.</li>
-          <li>Rule <em>modus tollens</em> : If <script type="math/tex">P → Q</script> is true and <script type="math/tex">Q</script> is false, then <script type="math/tex">P</script> must also be false.</li>
+          <li>Rule <em>modus ponens</em> : If both <span class="kdmath">$P$</span> and <span class="kdmath">$P \to Q$</span> are true, then <span class="kdmath">$Q$</span> must also be true.</li>
+          <li>Rule <em>modus tollens</em> : If <span class="kdmath">$P → Q$</span> is true and <span class="kdmath">$Q$</span> is false, then <span class="kdmath">$P$</span> must also be false.</li>
         </ul>
       </li>
     </ul>
   </li>
   <li>Till now following strategies are covered:
     <ul>
-      <li>To prove a <em>goal</em> of the form <script type="math/tex">\lnot P</script>.</li>
-      <li>To use a <em>given</em> of the form of <script type="math/tex">\lnot P</script>.</li>
-      <li>To prove a <em>goal</em> of the form of <script type="math/tex">P \to Q</script>.</li>
-      <li>To use a <em>given</em> of the form of <script type="math/tex">P \to Q</script>.</li>
+      <li>To prove a <em>goal</em> of the form <span class="kdmath">$\lnot P$</span>.</li>
+      <li>To use a <em>given</em> of the form of <span class="kdmath">$\lnot P$</span>.</li>
+      <li>To prove a <em>goal</em> of the form of <span class="kdmath">$P \to Q$</span>.</li>
+      <li>To use a <em>given</em> of the form of <span class="kdmath">$P \to Q$</span>.</li>
     </ul>
   </li>
 </ul>
@@ -1179,9 +1180,9 @@
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">P</script>. Since <script type="math/tex">P \to Q</script>, it follows <script type="math/tex">Q</script>. Similarly, since <script type="math/tex">Q \to R</script>, it follows <script type="math/tex">R</script>. Thus if <script type="math/tex">P</script> then <script type="math/tex">R</script>, or <script type="math/tex">P \to R</script>.</p>
+<p>Suppose <span class="kdmath">$P$</span>. Since <span class="kdmath">$P \to Q$</span>, it follows <span class="kdmath">$Q$</span>. Similarly, since <span class="kdmath">$Q \to R$</span>, it follows <span class="kdmath">$R$</span>. Thus if <span class="kdmath">$P$</span> then <span class="kdmath">$R$</span>, or <span class="kdmath">$P \to R$</span>.</p>
 
-<p><strong>(b)</strong> Suppose <script type="math/tex">P</script>. For <script type="math/tex">Q \to R</script>, using contra-positive for proof. Suppose <script type="math/tex">\lnot R</script>, it follows <script type="math/tex">P \to \lnot Q</script>. Since <script type="math/tex">P</script>, it follows <script type="math/tex">\lnot Q</script>. Thus <script type="math/tex">\lnot R \to \lnot Q</script>, or <script type="math/tex">Q \to R</script>. It follows that <script type="math/tex">P \to (Q \to R)</script>.</p>
+<p><strong>(b)</strong> Suppose <span class="kdmath">$P$</span>. For <span class="kdmath">$Q \to R$</span>, using contra-positive for proof. Suppose <span class="kdmath">$\lnot R$</span>, it follows <span class="kdmath">$P \to \lnot Q$</span>. Since <span class="kdmath">$P$</span>, it follows <span class="kdmath">$\lnot Q$</span>. Thus <span class="kdmath">$\lnot R \to \lnot Q$</span>, or <span class="kdmath">$Q \to R$</span>. It follows that <span class="kdmath">$P \to (Q \to R)$</span>.</p>
 
 <hr />
 
@@ -1189,106 +1190,97 @@
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">P</script>. Since <script type="math/tex">P \to Q</script>, it follows <script type="math/tex">Q</script>. Since <script type="math/tex">R \to \lnot Q</script>, using contrapositive <script type="math/tex">Q \to \lnot R</script>, it follows <script type="math/tex">\lnot R</script>. Thus, <script type="math/tex">P \to \lnot R</script>.</p>
+<p>Suppose <span class="kdmath">$P$</span>. Since <span class="kdmath">$P \to Q$</span>, it follows <span class="kdmath">$Q$</span>. Since <span class="kdmath">$R \to \lnot Q$</span>, using contrapositive <span class="kdmath">$Q \to \lnot R$</span>, it follows <span class="kdmath">$\lnot R$</span>. Thus, <span class="kdmath">$P \to \lnot R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Simplifying <script type="math/tex">Q \to \lnot(Q \to ¬P)</script>, gives <script type="math/tex">Q \to (Q \land P)</script>. Since P, it follows <script type="math/tex">Q \to Q</script>, which is always true.</p>
+<p>Simplifying <span class="kdmath">$Q \to \lnot(Q \to ¬P)$</span>, gives <span class="kdmath">$Q \to (Q \land P)$</span>. Since P, it follows <span class="kdmath">$Q \to Q$</span>, which is always true.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">A \subseteq C</script>, it follows that <script type="math/tex">x \in C</script>. Now since <script type="math/tex">B \cap C = \phi</script>, it follows that <script type="math/tex">x \notin B</script>. Thus <script type="math/tex">x \in A \to x \notin B</script>.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$A \subseteq C$</span>, it follows that <span class="kdmath">$x \in C$</span>. Now since <span class="kdmath">$B \cap C = \phi$</span>, it follows that <span class="kdmath">$x \notin B$</span>. Thus <span class="kdmath">$x \in A \to x \notin B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln4</strong></p>
 
-<p>Suppose <script type="math/tex">x \in C</script>. Since <script type="math/tex">(A \setminus B) \cap C = \phi</script>, it follows that <script type="math/tex">x \notin A \setminus B</script>. And <script type="math/tex">x \notin A \setminus B</script> is equivalent to <script type="math/tex">x \notin A \lor x \in B</script>. Since <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">x \in B</script>. Thus <script type="math/tex">x \in C \to x \in B</script>.</p>
+<p>Suppose <span class="kdmath">$x \in C$</span>. Since <span class="kdmath">$(A \setminus B) \cap C = \phi$</span>, it follows that <span class="kdmath">$x \notin A \setminus B$</span>. And <span class="kdmath">$x \notin A \setminus B$</span> is equivalent to <span class="kdmath">$x \notin A \lor x \in B$</span>. Since <span class="kdmath">$x \in A$</span>, it follows that <span class="kdmath">$x \in B$</span>. Thus <span class="kdmath">$x \in C \to x \in B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p>Suppose <script type="math/tex">a \in A \setminus B</script>, which means <script type="math/tex">a \in A</script> and <script type="math/tex">a \notin B</script>. Since <script type="math/tex">a \in C</script>, it follows that <script type="math/tex">a \in (A \cap C)</script>. Since  <script type="math/tex">a \in (A \cap C)</script> and <script type="math/tex">a \notin B</script>, it follows that <script type="math/tex">A \cap C \nsubseteq B</script>. This contradicts the <em>given</em>: <script type="math/tex">A \cap C \subseteq B</script>. Thus <script type="math/tex">a \notin A \setminus B</script>.</p>
+<p>Suppose <span class="kdmath">$a \in A \setminus B$</span>, which means <span class="kdmath">$a \in A$</span> and <span class="kdmath">$a \notin B$</span>. Since <span class="kdmath">$a \in C$</span>, it follows that <span class="kdmath">$a \in (A \cap C)$</span>. Since  <span class="kdmath">$a \in (A \cap C)$</span> and <span class="kdmath">$a \notin B$</span>, it follows that <span class="kdmath">$A \cap C \nsubseteq B$</span>. This contradicts the <em>given</em>: <span class="kdmath">$A \cap C \subseteq B$</span>. Thus <span class="kdmath">$a \notin A \setminus B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p>Since <script type="math/tex">a \in A</script> and <script type="math/tex">A \subseteq B</script>, it follows that <script type="math/tex">a \in B</script>. Suppose <script type="math/tex">a \notin C</script>, then it follows that <script type="math/tex">a \in B \setminus C</script>. But it contradicts with the given <script type="math/tex">a \notin B \setminus C</script>. Thus <script type="math/tex">a \in C</script>.</p>
+<p>Since <span class="kdmath">$a \in A$</span> and <span class="kdmath">$A \subseteq B$</span>, it follows that <span class="kdmath">$a \in B$</span>. Suppose <span class="kdmath">$a \notin C$</span>, then it follows that <span class="kdmath">$a \in B \setminus C$</span>. But it contradicts with the given <span class="kdmath">$a \notin B \setminus C$</span>. Thus <span class="kdmath">$a \in C$</span>.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>Suppose <script type="math/tex">y = 0</script>. Since <script type="math/tex">y + x = 2y - x</script>, it follows that <script type="math/tex">x = 0</script>. But this contradicts the <em>given</em> that <script type="math/tex">\lnot (x = 0 \land y = 0)</script>, or, equivalantly, <script type="math/tex">x \neq 0 \lor y \neq 0</script>. Thus <script type="math/tex">y \neq 0</script>.</p>
+<p>Suppose <span class="kdmath">$y = 0$</span>. Since <span class="kdmath">$y + x = 2y - x$</span>, it follows that <span class="kdmath">$x = 0$</span>. But this contradicts the <em>given</em> that <span class="kdmath">$\lnot (x = 0 \land y = 0)$</span>, or, equivalantly, <span class="kdmath">$x \neq 0 \lor y \neq 0$</span>. Thus <span class="kdmath">$y \neq 0$</span>.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>Suppose <script type="math/tex">% <![CDATA[
-a < \frac 1 a < b < \frac 1 b %]]></script>. Since <script type="math/tex">% <![CDATA[
-a < \frac 1 a %]]></script>, it follows that <script type="math/tex">a \in (-\infty, -1) \lor (0, 1)</script>.
-Similarly, <script type="math/tex">b \in (-\infty, -1) \lor (0, 1)</script>. Thus there are four possible cases:</p>
+<p>Suppose <span class="kdmath">$a < \frac 1 a < b < \frac 1 b$</span>. Since <span class="kdmath">$a < \frac 1 a$</span>, it follows that <span class="kdmath">$a \in (-\infty, -1) \lor (0, 1)$</span>.
+Similarly, <span class="kdmath">$b \in (-\infty, -1) \lor (0, 1)$</span>. Thus there are four possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">a \in (-\infty, -1)</script> and <script type="math/tex">b \in (-\infty, -1)</script>. (Earlier I missed this case. As pointed out in comments this case is not possible either). Since <script type="math/tex">\, a \text{ and } b \,</script> are both negative(same sign) and <script type="math/tex">% <![CDATA[
-\, \frac 1 a < \frac 1 b \, %]]></script>, it follows that <script type="math/tex">\, a > b \,</script> which contradicts with <script type="math/tex">% <![CDATA[
-\, a < b \, %]]></script>.</p>
+    <p>Case 1: <span class="kdmath">$a \in (-\infty, -1)$</span> and <span class="kdmath">$b \in (-\infty, -1)$</span>. (Earlier I missed this case. As pointed out in comments this case is not possible either). Since <span class="kdmath">$\, a \text{ and } b \,$</span> are both negative(same sign) and <span class="kdmath">$\, \frac 1 a < \frac 1 b \,$</span>, it follows that <span class="kdmath">$\, a > b \,$</span> which contradicts with <span class="kdmath">$\, a < b \,$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">a \in (-\infty, -1)</script> and <script type="math/tex">b \in (0, 1)</script>. This case is possible. For example, when <script type="math/tex">\, a = -2 \,</script> and <script type="math/tex">\, b = 0.5 \,</script>, the inequality holds.</p>
+    <p>Case 2: <span class="kdmath">$a \in (-\infty, -1)$</span> and <span class="kdmath">$b \in (0, 1)$</span>. This case is possible. For example, when <span class="kdmath">$\, a = -2 \,$</span> and <span class="kdmath">$\, b = 0.5 \,$</span>, the inequality holds.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">a \in (0, 1)</script> and <script type="math/tex">b \in (-\infty, -1)</script>. This is not possible because <script type="math/tex">\frac 1 a > 1</script> and <script type="math/tex">% <![CDATA[
-\frac 1 a < b %]]></script>. But in this case <script type="math/tex">% <![CDATA[
-b < -1 %]]></script>.</p>
+    <p>Case 3: <span class="kdmath">$a \in (0, 1)$</span> and <span class="kdmath">$b \in (-\infty, -1)$</span>. This is not possible because <span class="kdmath">$\frac 1 a > 1$</span> and <span class="kdmath">$\frac 1 a < b$</span>. But in this case <span class="kdmath">$b < -1$</span>.</p>
   </li>
   <li>
-    <p>Case 4: <script type="math/tex">a \in (0, 1)</script> and <script type="math/tex">b \in (0, 1)</script>. This is also not possible because <script type="math/tex">\frac 1 a > 1</script> and <script type="math/tex">% <![CDATA[
-\frac 1 a < b %]]></script>. But in this case <script type="math/tex">% <![CDATA[
-0 < b < 1 %]]></script>.</p>
+    <p>Case 4: <span class="kdmath">$a \in (0, 1)$</span> and <span class="kdmath">$b \in (0, 1)$</span>. This is also not possible because <span class="kdmath">$\frac 1 a > 1$</span> and <span class="kdmath">$\frac 1 a < b$</span>. But in this case <span class="kdmath">$0 < b < 1$</span>.</p>
   </li>
 </ul>
 
-<p>Thus only Case 2 is possible. It follows that <script type="math/tex">% <![CDATA[
-a < -1 %]]></script>.</p>
+<p>Thus only Case 2 is possible. It follows that <span class="kdmath">$a < -1$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>Suppose <script type="math/tex">x^2y = 2x + y</script>. We will prove <script type="math/tex">(y \neq 0 \to x \neq 0)</script>, using contra-positive. Suppose <script type="math/tex">x = 0</script>, it follows that <script type="math/tex">y = 0</script>. Thus we have <script type="math/tex">y \neq 0 \to x \neq 0</script>.</p>
+<p>Suppose <span class="kdmath">$x^2y = 2x + y$</span>. We will prove <span class="kdmath">$(y \neq 0 \to x \neq 0)$</span>, using contra-positive. Suppose <span class="kdmath">$x = 0$</span>, it follows that <span class="kdmath">$y = 0$</span>. Thus we have <span class="kdmath">$y \neq 0 \to x \neq 0$</span>.</p>
 
 <hr />
 
 <p><strong>Soln10</strong></p>
 
-<p>Simplifying <script type="math/tex">y = \frac {3x^2 + 2y} {x^2 + 2}</script>, gives <script type="math/tex">(y - 3)x^2 = 0</script>.
-Suppose <script type="math/tex">x \neq 0</script>. Suppose <script type="math/tex">(y - 3)x^2 = 0</script>, it follows that <script type="math/tex">y - 3 = 0</script>, or <script type="math/tex">y = 3</script>.
-Thus we have <script type="math/tex">x \neq 0 \to (y = \frac {3x^2 + 2y} {x^2 + 2} \to y = 3)</script>.</p>
+<p>Simplifying <span class="kdmath">$y = \frac {3x^2 + 2y} {x^2 + 2}$</span>, gives <span class="kdmath">$(y - 3)x^2 = 0$</span>.
+Suppose <span class="kdmath">$x \neq 0$</span>. Suppose <span class="kdmath">$(y - 3)x^2 = 0$</span>, it follows that <span class="kdmath">$y - 3 = 0$</span>, or <span class="kdmath">$y = 3$</span>.
+Thus we have <span class="kdmath">$x \neq 0 \to (y = \frac {3x^2 + 2y} {x^2 + 2} \to y = 3)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln11</strong></p>
 
-<p><strong>(a)</strong> Reverse of <script type="math/tex">x \neq 3 \land y \neq 8</script>, is <script type="math/tex">x = 3 \lor x = 8</script>. Thus reverse of the conclusion used in proof is wrong.</p>
+<p><strong>(a)</strong> Reverse of <span class="kdmath">$x \neq 3 \land y \neq 8$</span>, is <span class="kdmath">$x = 3 \lor x = 8$</span>. Thus reverse of the conclusion used in proof is wrong.</p>
 
-<p><strong>(b)</strong> Using <script type="math/tex">x = 2</script>, and <script type="math/tex">y = 8</script>, gives <script type="math/tex">x + y = 10</script>. Thus conclusion is not correct for the given <script type="math/tex">x</script>, and <script type="math/tex">y</script>.</p>
+<p><strong>(b)</strong> Using <span class="kdmath">$x = 2$</span>, and <span class="kdmath">$y = 8$</span>, gives <span class="kdmath">$x + y = 10$</span>. Thus conclusion is not correct for the given <span class="kdmath">$x$</span>, and <span class="kdmath">$y$</span>.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
 <p><strong>(a)</strong> Statement:  <br />
-    Since <script type="math/tex">x \notin B</script> and <script type="math/tex">B ⊆ C</script>, then <script type="math/tex">x \notin C</script>.  <br />
+    Since <span class="kdmath">$x \notin B$</span> and <span class="kdmath">$B ⊆ C$</span>, then <span class="kdmath">$x \notin C$</span>.  <br />
     is not <em>correct</em>.</p>
 
-<p><strong>(b)</strong> Lets say <script type="math/tex">A = \{1,2\}</script>, <script type="math/tex">B = \{3, 4\}</script> and <script type="math/tex">C = \{1, 2, 3, 4\}</script>. Now if <script type="math/tex">x = 1</script>, the theorem is not correct.</p>
+<p><strong>(b)</strong> Lets say <span class="kdmath">$A = \{1,2\}$</span>, <span class="kdmath">$B = \{3, 4\}$</span> and <span class="kdmath">$C = \{1, 2, 3, 4\}$</span>. Now if <span class="kdmath">$x = 1$</span>, the theorem is not correct.</p>
 
 <hr />
 
@@ -1298,7 +1290,7 @@ Thus we have <script type="math/tex">x \neq 0 \to (y = \frac {3x^2 + 2y} {x^2 + 
 
 <p><strong>Soln17</strong></p>
 
-<p>Suppose <script type="math/tex">x^2 + y = 13</script>. Suppose <script type="math/tex">y = 4</script>, it follows that <script type="math/tex">x^2 + 4 = 13</script>, or <script type="math/tex">x = 3</script> or <script type="math/tex">x = -3</script>. Thus for <script type="math/tex">y = 4</script> and <script type="math/tex">x = -3</script>, there is no contradiction.
+<p>Suppose <span class="kdmath">$x^2 + y = 13$</span>. Suppose <span class="kdmath">$y = 4$</span>, it follows that <span class="kdmath">$x^2 + 4 = 13$</span>, or <span class="kdmath">$x = 3$</span> or <span class="kdmath">$x = -3$</span>. Thus for <span class="kdmath">$y = 4$</span> and <span class="kdmath">$x = -3$</span>, there is no contradiction.
 Thus theorem is not correct.</p>
 
 

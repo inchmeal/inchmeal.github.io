@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,22 +980,23 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<p>Let <script type="math/tex">\, t \,</script> denote the probability of answerting yes if Question 2 was asked. Similar to the problem-28, we have:</p>
+<p>Let <span class="kdmath">$\, t \,$</span> denote the probability of answerting yes if Question 2 was asked. Similar to the problem-28, we have:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 r = P(yes) \\
 &= P(yes \,\vert\, \text{Q1 was asked})P(\text{Q1 was asked}) + P(yes \,\vert\, \text{Q2 was asked})P(\text{Q2 was asked}) \\
 &= qp + t(1-p) \\
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus we can estimate r, by <script type="math/tex">\, R = Qp + t(1-p) \,</script>(Note that <script type="math/tex">\, t \,</script> and <script type="math/tex">\, p \,</script> and constant for an experiment. Thus <script type="math/tex">\, Q = \frac {R-t(1-p)} p \,</script>.</p>
+<p>Thus we can estimate r, by <span class="kdmath">$\, R = Qp + t(1-p) \,$</span>(Note that <span class="kdmath">$\, t \,$</span> and <span class="kdmath">$\, p \,$</span> and constant for an experiment. Thus <span class="kdmath">$\, Q = \frac {R-t(1-p)} p \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 \Exp Q \\
@@ -1004,13 +1006,14 @@ r = P(yes) \\
 &= \frac 1 {p^2} (r-t(1-p)) \\ 
 &= q 
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Thus <script type="math/tex">\, \Exp(Q) = q \,</script>. It follows that <script type="math/tex">\, Q \,</script> is unbiased in estimating <script type="math/tex">\, q \,</script>.</p>
+<p>Thus <span class="kdmath">$\, \Exp(Q) = q \,$</span>. It follows that <span class="kdmath">$\, Q \,$</span> is unbiased in estimating <span class="kdmath">$\, q \,$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 \Var(Q) \\
@@ -1019,7 +1022,8 @@ r = P(yes) \\
 &= \frac 1 {p^2} \Var(R) && \text{$t$ and $p$ are constants} \\
 &= \frac {r(1-r)} {np^2} && \text{Using Problem 28, part-d}
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

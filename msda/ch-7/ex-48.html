@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -981,37 +982,37 @@
 
 <h4 id="a">(a)</h4>
 
-<p>The estimate for the ratio <script type="math/tex">\, r \,</script> is:</p>
+<p>The estimate for the ratio <span class="kdmath">$\, r \,$</span> is:</p>
 
-<p><script type="math/tex">\, R = \frac {\bar Y} {\bar X} = \frac {\sum_{i=1}^{n} Y_i} {\sum_{i=1}^{n} X_i} \,</script>. Thus we only need to plugin the given values to get <script type="math/tex">\, \frac {10000} {320} = 31.25 \,</script>.</p>
+<p><span class="kdmath">$\, R = \frac {\bar Y} {\bar X} = \frac {\sum_{i=1}^{n} Y_i} {\sum_{i=1}^{n} X_i} \,$</span>. Thus we only need to plugin the given values to get <span class="kdmath">$\, \frac {10000} {320} = 31.25 \,$</span>.</p>
 
 <h4 id="b">(b)</h4>
 
-<p>To compute <script type="math/tex">\, 95\% \,</script> confidence interval, first we need to find the standard error, <script type="math/tex">\, s_R \,</script> of our esitmate <script type="math/tex">\, R \,</script>. Now we just need to plugin the values in the expression derived in the book for <script type="math/tex">\, s_R^2 = \frac 1 n \Prn{1-\frac {n-1} {N-1} } \frac 1 {\bar X} \Prn{ R^2 s_x^2 + s_y^2 - 2 R s_{xy} }\,</script>.</p>
+<p>To compute <span class="kdmath">$\, 95\% \,$</span> confidence interval, first we need to find the standard error, <span class="kdmath">$\, s_R \,$</span> of our esitmate <span class="kdmath">$\, R \,$</span>. Now we just need to plugin the values in the expression derived in the book for <span class="kdmath">$\, s_R^2 = \frac 1 n \Prn{1-\frac {n-1} {N-1} } \frac 1 {\bar X} \Prn{ R^2 s_x^2 + s_y^2 - 2 R s_{xy} }\,$</span>.</p>
 
-<p>To compute <script type="math/tex">\, s_x^2  \,</script>, we use <script type="math/tex">\, s_x^2 = \frac 1 {n-1} \sum_{i=1}^{n} (X_i - \bar X)^2 \,</script> which simplifies to <script type="math/tex">\, \frac 1 {n-1} \sum_{i=1}^{n} X_i^2 \; - \; n {\bar X}^2 \,</script>.</p>
+<p>To compute <span class="kdmath">$\, s_x^2  \,$</span>, we use <span class="kdmath">$\, s_x^2 = \frac 1 {n-1} \sum_{i=1}^{n} (X_i - \bar X)^2 \,$</span> which simplifies to <span class="kdmath">$\, \frac 1 {n-1} \sum_{i=1}^{n} X_i^2 \; - \; n {\bar X}^2 \,$</span>.</p>
 
-<p>Similarly, <script type="math/tex">\, s_y^2 = \frac 1 {n-1} \sum_{i=1}^{n} Y_i^2 \; - \; n {\bar Y}^2 \,</script></p>
+<p>Similarly, <span class="kdmath">$\, s_y^2 = \frac 1 {n-1} \sum_{i=1}^{n} Y_i^2 \; - \; n {\bar Y}^2 \,$</span></p>
 
-<p>and, <script type="math/tex">\, s_{xy}^2 = \frac 1 {n-1} \sum_{i=1}^{n} X_i Y_i \; - \; n {\bar X}{\bar Y} \,</script></p>
+<p>and, <span class="kdmath">$\, s_{xy}^2 = \frac 1 {n-1} \sum_{i=1}^{n} X_i Y_i \; - \; n {\bar X}{\bar Y} \,$</span></p>
 
-<p>Pluging the values we get <script type="math/tex">\, s_R^2 = 0.69743455 \,</script>, which gives <script type="math/tex">\, s_R = 0.835125 \,</script>.</p>
+<p>Pluging the values we get <span class="kdmath">$\, s_R^2 = 0.69743455 \,$</span>, which gives <span class="kdmath">$\, s_R = 0.835125 \,$</span>.</p>
 
-<p>Thus the <script type="math/tex">\, 95\% \,</script> confidence interval is <script type="math/tex">\, R \pm 1.96 s_R = 31.25 \pm 1.636845 \,</script>.</p>
+<p>Thus the <span class="kdmath">$\, 95\% \,$</span> confidence interval is <span class="kdmath">$\, R \pm 1.96 s_R = 31.25 \pm 1.636845 \,$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
-<p>We can estimate the total <script type="math/tex">\, \tau \,</script> using <script type="math/tex">\, T = N \bar Y \,</script>.</p>
+<p>We can estimate the total <span class="kdmath">$\, \tau \,$</span> using <span class="kdmath">$\, T = N \bar Y \,$</span>.</p>
 
-<p>Thus <script type="math/tex">\, T = 100,000 \times \frac {10,000} {100} = {10}^7 \,</script></p>
+<p>Thus <span class="kdmath">$\, T = 100,000 \times \frac {10,000} {100} = {10}^7 \,$</span></p>
 
 <p>To compute confidence interval,</p>
 
-<p><script type="math/tex">\, \Var(T) = N^2 \Var(\bar Y) \,</script>.</p>
+<p><span class="kdmath">$\, \Var(T) = N^2 \Var(\bar Y) \,$</span>.</p>
 
-<p>To compute variance of the sample mean <script type="math/tex">\, \bar Y \,</script>, we use <script type="math/tex">\, \Var(\bar Y) = \frac {s_y^2} n \Prn{1 - \frac n N} \,</script>, where <script type="math/tex">\, s_y^2 \,</script>, variance of the sample, is already computed in part-b. This gives <script type="math/tex">\, \Var(\bar Y) = 10.1010 \,</script>(ignoring the finite population correction).</p>
+<p>To compute variance of the sample mean <span class="kdmath">$\, \bar Y \,$</span>, we use <span class="kdmath">$\, \Var(\bar Y) = \frac {s_y^2} n \Prn{1 - \frac n N} \,$</span>, where <span class="kdmath">$\, s_y^2 \,$</span>, variance of the sample, is already computed in part-b. This gives <span class="kdmath">$\, \Var(\bar Y) = 10.1010 \,$</span>(ignoring the finite population correction).</p>
 
-<p>Thus we get <script type="math/tex">\, \Var(T) = N^2 \Var(\bar Y) = 101, 010, 000 \,</script>. Thus <script type="math/tex">\, s_T = \sqrt{101,010, 000} = 317,820.704 \,</script>. Thus the <script type="math/tex">\, 90\% \,</script> condidence interval is <script type="math/tex">\, 10^7 \pm 1.645 \times 317,820.704 = {10}^7 \pm 522,815.05808 \,</script>.</p>
+<p>Thus we get <span class="kdmath">$\, \Var(T) = N^2 \Var(\bar Y) = 101, 010, 000 \,$</span>. Thus <span class="kdmath">$\, s_T = \sqrt{101,010, 000} = 317,820.704 \,$</span>. Thus the <span class="kdmath">$\, 90\% \,$</span> condidence interval is <span class="kdmath">$\, 10^7 \pm 1.645 \times 317,820.704 = {10}^7 \pm 522,815.05808 \,$</span>.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

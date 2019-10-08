@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9447,7 +9448,8 @@
 	<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;=</span> <span class="nv">balance</span> <span class="nv">amount</span><span class="p">)</span>
 		<span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">balance</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">balance</span> <span class="nv">amount</span><span class="p">))</span>
 			   <span class="nv">balance</span><span class="p">)</span>
-		<span class="s">"Insufficient funds"</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+		<span class="s">"Insufficient funds"</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now we can create objects as <code class="highlighter-rouge">(define W1 (make-withdraw 100))</code> or <code class="highlighter-rouge">(define W2 (make-withdraw 200))</code>.</p>
 
@@ -9482,7 +9484,8 @@
           <span class="p">((</span><span class="nb">eq?</span> <span class="nv">m</span> <span class="ss">'deposit</span><span class="p">)</span> <span class="nv">deposit</span><span class="p">)</span>
           <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">error</span> <span class="s">"Unknown request -- MAKE-ACCOUNT"</span>
                        <span class="nv">m</span><span class="p">))))</span>
-  <span class="nv">dispatch</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">dispatch</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="benefits-of-assignment">Benefits of assignment</h4>
 
@@ -9513,7 +9516,8 @@
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">set!</span> <span class="nv">counter</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">counter</span> <span class="mi">1</span><span class="p">))</span>
-<span class="p">(</span><span class="k">set!</span> <span class="nv">product</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">counter</span> <span class="nv">product</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">set!</span> <span class="nv">product</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">counter</span> <span class="nv">product</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now, we need to be sure that which statement comes first. Consider when program gets bigger - this problem also becomes more difficult and a programmar must take care that he should use the value at appropriate place.</p>
 
@@ -9587,7 +9591,8 @@
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="nv">exp-series</span>
-  <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">integrate-series</span> <span class="nv">exp-series</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">cons-stream</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">integrate-series</span> <span class="nv">exp-series</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Try doing some stream manipulations like adding two streams, scaling a stream etc.</p>
 
@@ -9595,7 +9600,7 @@
 
 <p>Another way to look at streams: <em>computational analogs of signal processing systems</em>. We can model signal processing systems using streams.</p>
 
-<p>We can also use streams to implement signal processing systems with loops. The problem is the one definition of stream may depend on another stream not yet defined. For eg: The not yet defined stream have first element available but requires a stream defined earlier to compute the next element. For example, to solve first order differential equation: <script type="math/tex">\, f(y) = \frac {dy} {dt} \,</script>, we have the following procedure:</p>
+<p>We can also use streams to implement signal processing systems with loops. The problem is the one definition of stream may depend on another stream not yet defined. For eg: The not yet defined stream have first element available but requires a stream defined earlier to compute the next element. For example, to solve first order differential equation: <span class="kdmath">$\, f(y) = \frac {dy} {dt} \,$</span>, we have the following procedure:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9604,7 +9609,8 @@
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">solve</span> <span class="nv">f</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">)</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">y</span> <span class="p">(</span><span class="nf">integral</span> <span class="p">(</span><span class="k">delay</span> <span class="nv">dy</span><span class="p">)</span> <span class="nv">y0</span> <span class="nv">dt</span><span class="p">))</span>
   <span class="p">(</span><span class="k">define</span> <span class="nv">dy</span> <span class="p">(</span><span class="nf">stream-map</span> <span class="nv">f</span> <span class="nv">y</span><span class="p">))</span>
-  <span class="nv">y</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">y</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Here <code class="highlighter-rouge">y</code> depends on <code class="highlighter-rouge">dy</code> and <code class="highlighter-rouge">dy</code> depends on <code class="highlighter-rouge">y</code>! Many implementations of scheme(including MIT scheme) do not provide any direct way of writing such definitions.</p>
 

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9414,9 +9415,9 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Yes, it is more efficient as it requires fewer number of checks. We just check if third number is <code class="highlighter-rouge">integer?</code> which obviously is far less costly than searching for a number, <script type="math/tex">\, k \,</script>,  that satisfies the constraint <script type="math/tex">\, i^2 + j^2 = k^2 \,</script>.</p>
+                        <p>Yes, it is more efficient as it requires fewer number of checks. We just check if third number is <code class="highlighter-rouge">integer?</code> which obviously is far less costly than searching for a number, <span class="kdmath">$\, k \,$</span>,  that satisfies the constraint <span class="kdmath">$\, i^2 + j^2 = k^2 \,$</span>.</p>
 
-<p>However, this comes with an assumption that the computation of <code class="highlighter-rouge">sqrt</code> takes insignificant time comapared to scanning the numbers from <script type="math/tex">\, j \,</script> to <script type="math/tex">\, high \,</script>.</p>
+<p>However, this comes with an assumption that the computation of <code class="highlighter-rouge">sqrt</code> takes insignificant time comapared to scanning the numbers from <span class="kdmath">$\, j \,$</span> to <span class="kdmath">$\, high \,$</span>.</p>
 
                         <hr/>
                     </span>

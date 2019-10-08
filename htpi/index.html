@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1135,9 +1136,9 @@
 This post contains solutions for the introduction section of the book.
 <!--more--></p>
 
-<p><em>Note:</em> In this book natural numbers include <script type="math/tex">0</script> also. But it seems like in some places in the proofs, I messed up with this convention.
-In some placed I might have considered <script type="math/tex">N</script> includes <script type="math/tex">0</script> while in other places vice versa. Please point out to me, I will correct to
-use the book’s version of <script type="math/tex">\mathbb N</script> in all the places.</p>
+<p><em>Note:</em> In this book natural numbers include <span class="kdmath">$0$</span> also. But it seems like in some places in the proofs, I messed up with this convention.
+In some placed I might have considered <span class="kdmath">$N$</span> includes <span class="kdmath">$0$</span> while in other places vice versa. Please point out to me, I will correct to
+use the book’s version of <span class="kdmath">$\mathbb N$</span> in all the places.</p>
 
 <p><strong>Soln.1(a)</strong></p>
 
@@ -1421,7 +1422,9 @@ take a smaller set say \( 2, 3, 5 \) to find \( m = 2 \times 3 \times 5 + 1 = 31
 
 <p>Its proof shows that a set of such consecutive integers can be</p>
 
-<script type="math/tex; mode=display">x + i  = (n + 1)! + 2 + i, \text{ where } 0 \le i \le n - 1</script>
+<div class="kdmath">$$
+x + i  = (n + 1)! + 2 + i, \text{ where } 0 \le i \le n - 1
+$$</div>
 
 <p>Putting \( n = 5 \Rightarrow x + i = 6! + 2 + i = 722 + i \) which gives us 722, 723, 724, 725, 726</p>
 

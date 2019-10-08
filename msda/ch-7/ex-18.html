@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,13 +978,13 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>Denoting the random variables from the two surveys as <script type="math/tex">\, X \,</script> and <script type="math/tex">\, Y \,</script>. Also denoting the the confidence intervals by <script type="math/tex">\, C_{X} \,</script> and <script type="math/tex">\, C_{Y} \,</script> respectively. Denoting the probability that the condidence interval contains the respective population mean by <script type="math/tex">\, P_X \,</script> and <script type="math/tex">\, P_Y \,</script>.</p>
+                        <p>Denoting the random variables from the two surveys as <span class="kdmath">$\, X \,$</span> and <span class="kdmath">$\, Y \,$</span>. Also denoting the the confidence intervals by <span class="kdmath">$\, C_{X} \,$</span> and <span class="kdmath">$\, C_{Y} \,$</span> respectively. Denoting the probability that the condidence interval contains the respective population mean by <span class="kdmath">$\, P_X \,$</span> and <span class="kdmath">$\, P_Y \,$</span>.</p>
 
-<p>Since the surveys are independent, it means that the random variables, say <script type="math/tex">\, X \text{ and } Y \,</script> will also be independent. Thus condidence intervals are also independent. It follows that the probability of both of them containing the respective population mean:</p>
+<p>Since the surveys are independent, it means that the random variables, say <span class="kdmath">$\, X \text{ and } Y \,$</span> will also be independent. Thus condidence intervals are also independent. It follows that the probability of both of them containing the respective population mean:</p>
 
-<p><script type="math/tex">P_X \times P_Y = \, 0.9 \times 0.9 = 0.81 \,</script>.</p>
+<p><span class="kdmath">$P_X \times P_Y = \, 0.9 \times 0.9 = 0.81 \,$</span>.</p>
 
-<p>And the probability that both of them do not contain the respective population mean is <script type="math/tex">\, (1-0.9) \times (1-0.9) = 0.01 \,</script>.</p>
+<p>And the probability that both of them do not contain the respective population mean is <span class="kdmath">$\, (1-0.9) \times (1-0.9) = 0.01 \,$</span>.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

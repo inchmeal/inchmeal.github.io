@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,21 +1137,21 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li>To prove a goal of the form <script type="math/tex">P ∧ Q</script>:  <br />
-Prove <script type="math/tex">P</script> and <script type="math/tex">Q</script> separately.</li>
-  <li>To use a given of the form <script type="math/tex">P ∧ Q</script>:  <br />
-Treat this given as two separate givens: <script type="math/tex">P</script>, and <script type="math/tex">Q</script>.</li>
-  <li>To prove a goal of the form <script type="math/tex">P ↔ Q</script> :   <br />
-Prove <script type="math/tex">P → Q</script> and <script type="math/tex">Q → P</script> separately.</li>
-  <li>To use a given of the form <script type="math/tex">P ↔ Q</script> :  <br />
-Treat this as two separate givens: <script type="math/tex">P → Q</script>, and <script type="math/tex">Q → P</script>.</li>
-  <li>Sometimes in a proof of a goal of the form <script type="math/tex">P ↔ Q</script> the steps in the proof of <script type="math/tex">Q → P</script> are the same as the steps 
-used to prove <script type="math/tex">P → Q</script>, but in reverse order. These two directions can be summed up by proving equivalences(biconditional) 
+  <li>To prove a goal of the form <span class="kdmath">$P ∧ Q$</span>:  <br />
+Prove <span class="kdmath">$P$</span> and <span class="kdmath">$Q$</span> separately.</li>
+  <li>To use a given of the form <span class="kdmath">$P ∧ Q$</span>:  <br />
+Treat this given as two separate givens: <span class="kdmath">$P$</span>, and <span class="kdmath">$Q$</span>.</li>
+  <li>To prove a goal of the form <span class="kdmath">$P ↔ Q$</span> :   <br />
+Prove <span class="kdmath">$P → Q$</span> and <span class="kdmath">$Q → P$</span> separately.</li>
+  <li>To use a given of the form <span class="kdmath">$P ↔ Q$</span> :  <br />
+Treat this as two separate givens: <span class="kdmath">$P → Q$</span>, and <span class="kdmath">$Q → P$</span>.</li>
+  <li>Sometimes in a proof of a goal of the form <span class="kdmath">$P ↔ Q$</span> the steps in the proof of <span class="kdmath">$Q → P$</span> are the same as the steps 
+used to prove <span class="kdmath">$P → Q$</span>, but in reverse order. These two directions can be summed up by proving equivalences(biconditional) 
 in the steps involved. For eg: If such proof involves R, then it can be summed up as: P ↔ R ↔ Q.</li>
-  <li>To prove equivalences of sets, say <script type="math/tex">A = B</script>, most of the proofs involve either of the following approaches:
+  <li>To prove equivalences of sets, say <span class="kdmath">$A = B$</span>, most of the proofs involve either of the following approaches:
     <ul>
-      <li><script type="math/tex">\forall x (x \in A ↔ x \in B)</script>.</li>
-      <li><script type="math/tex">(A \subseteq B) \land (B \subseteq A)</script>.</li>
+      <li><span class="kdmath">$\forall x (x \in A ↔ x \in B)$</span>.</li>
+      <li><span class="kdmath">$(A \subseteq B) \land (B \subseteq A)$</span>.</li>
     </ul>
   </li>
 </ul>
@@ -1159,97 +1160,97 @@ in the steps involved. For eg: If such proof involves R, then it can be summed u
 
 <p><strong>Soln1</strong></p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">y</script> is arbitrary. Since <script type="math/tex">\forall x (P(x) \land Q(x))</script>, it follows that <script type="math/tex">P(y) \land Q(y)</script>. Now since <script type="math/tex">P(y)</script>, 
-and <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">\forall x P(x)</script>. Similarly since <script type="math/tex">Q(y)</script>, and <script type="math/tex">y</script> is arbitrary, it follows that <script type="math/tex">\forall x Q(x)</script>.
-Thus we can conclude that <script type="math/tex">\forall x P(x) \land \forall x Q(x)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$y$</span> is arbitrary. Since <span class="kdmath">$\forall x (P(x) \land Q(x))$</span>, it follows that <span class="kdmath">$P(y) \land Q(y)$</span>. Now since <span class="kdmath">$P(y)$</span>, 
+and <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$\forall x P(x)$</span>. Similarly since <span class="kdmath">$Q(y)$</span>, and <span class="kdmath">$y$</span> is arbitrary, it follows that <span class="kdmath">$\forall x Q(x)$</span>.
+Thus we can conclude that <span class="kdmath">$\forall x P(x) \land \forall x Q(x)$</span>.</p>
 
-<p><script type="math/tex">( \leftarrow</script>) Suppose <script type="math/tex">y</script> is arbitrary. Since <script type="math/tex">\forall x P(x)</script>, it follows that  <script type="math/tex">P(y)</script>. Similarly, since <script type="math/tex">\forall x Q(x)</script>, it follows that  <script type="math/tex">Q(y)</script>.
-Thus we have <script type="math/tex">P(y) \land Q(y)</script>. Now as <script type="math/tex">y</script> is arbitrary, we can conclude that <script type="math/tex">\forall x (P(x) \land Q(x))</script>.</p>
+<p><span class="kdmath">$( \leftarrow$</span>) Suppose <span class="kdmath">$y$</span> is arbitrary. Since <span class="kdmath">$\forall x P(x)$</span>, it follows that  <span class="kdmath">$P(y)$</span>. Similarly, since <span class="kdmath">$\forall x Q(x)$</span>, it follows that  <span class="kdmath">$Q(y)$</span>.
+Thus we have <span class="kdmath">$P(y) \land Q(y)$</span>. Now as <span class="kdmath">$y$</span> is arbitrary, we can conclude that <span class="kdmath">$\forall x (P(x) \land Q(x))$</span>.</p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p>Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">A \subseteq B</script>, it follows that <script type="math/tex">x \in B</script>. Also since <script type="math/tex">A \subseteq C</script>, it follows that <script type="math/tex">x \in C</script>.
-Now since <script type="math/tex">x \in B</script> and <script type="math/tex">x \in C</script>, it follows that <script type="math/tex">x \in A \to x \in B \cap C</script>. As <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">A \subseteq (B \cap C)</script>.</p>
+<p>Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$A \subseteq B$</span>, it follows that <span class="kdmath">$x \in B$</span>. Also since <span class="kdmath">$A \subseteq C$</span>, it follows that <span class="kdmath">$x \in C$</span>.
+Now since <span class="kdmath">$x \in B$</span> and <span class="kdmath">$x \in C$</span>, it follows that <span class="kdmath">$x \in A \to x \in B \cap C$</span>. As <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$A \subseteq (B \cap C)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln3</strong></p>
 
-<p>Suppose <script type="math/tex">x \in C \setminus B</script>. Thus we have <script type="math/tex">x \in C \land x \notin B</script>. Since <script type="math/tex">A \subseteq B</script> and <script type="math/tex">x \notin B</script>, it follows that <script type="math/tex">x \notin A</script>.
-Thus we have <script type="math/tex">x \in C \land x \notin A</script>. Thus we can say <script type="math/tex">x \in C \setminus B \to x \in C \setminus A</script>. As <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">C \setminus B \subseteq C \setminus A</script>.</p>
+<p>Suppose <span class="kdmath">$x \in C \setminus B$</span>. Thus we have <span class="kdmath">$x \in C \land x \notin B$</span>. Since <span class="kdmath">$A \subseteq B$</span> and <span class="kdmath">$x \notin B$</span>, it follows that <span class="kdmath">$x \notin A$</span>.
+Thus we have <span class="kdmath">$x \in C \land x \notin A$</span>. Thus we can say <span class="kdmath">$x \in C \setminus B \to x \in C \setminus A$</span>. As <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$C \setminus B \subseteq C \setminus A$</span>.</p>
 
 <hr />
 
 <p><strong>Soln4</strong></p>
 
-<p>Given that <script type="math/tex">A \subseteq B</script> and <script type="math/tex">A \nsubseteq C</script>. Since <script type="math/tex">A \nsubseteq C</script>, suppose <script type="math/tex">x</script> is an arbitrary variable such that <script type="math/tex">x \in A \land x \notin C</script>. Since <script type="math/tex">A \subseteq B</script>, it follows that <script type="math/tex">x \in B</script>.
-Thus <script type="math/tex">x \in B \land x \notin C</script>. As <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">B \nsubseteq C</script>.</p>
+<p>Given that <span class="kdmath">$A \subseteq B$</span> and <span class="kdmath">$A \nsubseteq C$</span>. Since <span class="kdmath">$A \nsubseteq C$</span>, suppose <span class="kdmath">$x$</span> is an arbitrary variable such that <span class="kdmath">$x \in A \land x \notin C$</span>. Since <span class="kdmath">$A \subseteq B$</span>, it follows that <span class="kdmath">$x \in B$</span>.
+Thus <span class="kdmath">$x \in B \land x \notin C$</span>. As <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$B \nsubseteq C$</span>.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p>Given that <script type="math/tex">A \subseteq B \setminus C</script>. Suppose <script type="math/tex">x \in A</script>. Then <script type="math/tex">x \in B \land x \notin C</script>. Thus there exists an element such that <script type="math/tex">x \in B \land x \notin C</script>, so
-we can conclude that <script type="math/tex">B \nsubseteq C</script>.</p>
+<p>Given that <span class="kdmath">$A \subseteq B \setminus C$</span>. Suppose <span class="kdmath">$x \in A$</span>. Then <span class="kdmath">$x \in B \land x \notin C$</span>. Thus there exists an element such that <span class="kdmath">$x \in B \land x \notin C$</span>, so
+we can conclude that <span class="kdmath">$B \nsubseteq C$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p>Suppose <script type="math/tex">x \in (A \setminus (B \cap C))</script>. Thus we have:  <br />
-<script type="math/tex">\quad = x \in A \land \lnot (x \in (B \cap C))</script>  <br />
-<script type="math/tex">\quad = x \in A \land \lnot (x \in B \land x \in C)</script>  <br />
-<script type="math/tex">\quad = x \in A \land (x \notin B \lor x \notin C)</script>  <br />
-<script type="math/tex">\quad = (x \in A \land x \notin B) \lor (x \in A \land x \notin C)</script>  <br />
-<script type="math/tex">\quad = x \in (A \setminus B) \lor x \in (A \setminus C)</script>  <br />
-<script type="math/tex">\quad = x \in (A \setminus B) \cup (A \setminus C))</script></p>
+<p>Suppose <span class="kdmath">$x \in (A \setminus (B \cap C))$</span>. Thus we have:  <br />
+<span class="kdmath">$\quad = x \in A \land \lnot (x \in (B \cap C))$</span>  <br />
+<span class="kdmath">$\quad = x \in A \land \lnot (x \in B \land x \in C)$</span>  <br />
+<span class="kdmath">$\quad = x \in A \land (x \notin B \lor x \notin C)$</span>  <br />
+<span class="kdmath">$\quad = (x \in A \land x \notin B) \lor (x \in A \land x \notin C)$</span>  <br />
+<span class="kdmath">$\quad = x \in (A \setminus B) \lor x \in (A \setminus C)$</span>  <br />
+<span class="kdmath">$\quad = x \in (A \setminus B) \cup (A \setminus C))$</span></p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, we can say that <script type="math/tex">A \setminus (B \cap C) = (A \setminus B) \cup (x \in A \setminus C)</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, we can say that <span class="kdmath">$A \setminus (B \cap C) = (A \setminus B) \cup (x \in A \setminus C)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in \mathcal P(A \cap B)</script>. Then we have <script type="math/tex">x \subseteq (A \cap B)</script>. Suppose <script type="math/tex">y \in x</script>, then <script type="math/tex">y \in (A \cap B)</script>. 
-Or we can say that <script type="math/tex">y \in A</script> and <script type="math/tex">y \in B</script>. Since <script type="math/tex">y</script> is arbitrary, <script type="math/tex">x \subseteq A \land x \subseteq B</script>.  <br />
-Since <script type="math/tex">x \subseteq A</script>, then <script type="math/tex">x \in \mathcal P(A)</script>. Similarly, since <script type="math/tex">x \subseteq B</script>, then <script type="math/tex">x \in \mathcal P(B)</script>  <br />
-Thus we can conclude that <script type="math/tex">x \in (\mathcal P (A) \cap \mathcal P(B))</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in \mathcal P(A \cap B)$</span>. Then we have <span class="kdmath">$x \subseteq (A \cap B)$</span>. Suppose <span class="kdmath">$y \in x$</span>, then <span class="kdmath">$y \in (A \cap B)$</span>. 
+Or we can say that <span class="kdmath">$y \in A$</span> and <span class="kdmath">$y \in B$</span>. Since <span class="kdmath">$y$</span> is arbitrary, <span class="kdmath">$x \subseteq A \land x \subseteq B$</span>.  <br />
+Since <span class="kdmath">$x \subseteq A$</span>, then <span class="kdmath">$x \in \mathcal P(A)$</span>. Similarly, since <span class="kdmath">$x \subseteq B$</span>, then <span class="kdmath">$x \in \mathcal P(B)$</span>  <br />
+Thus we can conclude that <span class="kdmath">$x \in (\mathcal P (A) \cap \mathcal P(B))$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">x \in \mathcal P (A) \cap \mathcal P(B)</script>. Since <script type="math/tex">x \in \mathcal P (A)</script>, it follows that <script type="math/tex">x \subseteq A</script>. 
- Similarly it can be seen that <script type="math/tex">x \subseteq B</script>. Now suppose <script type="math/tex">y \in x</script>. Then we have <script type="math/tex">y \in A</script> and <script type="math/tex">y \in B</script>. Or we can say 
- <script type="math/tex">y \in A \cap B</script>. As <script type="math/tex">y</script> is arbitrary, we can say that <script type="math/tex">x \subseteq A \cap B</script>. Thus we can conclude <script type="math/tex">x \in \mathcal P(A \cap B)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$x \in \mathcal P (A) \cap \mathcal P(B)$</span>. Since <span class="kdmath">$x \in \mathcal P (A)$</span>, it follows that <span class="kdmath">$x \subseteq A$</span>. 
+ Similarly it can be seen that <span class="kdmath">$x \subseteq B$</span>. Now suppose <span class="kdmath">$y \in x$</span>. Then we have <span class="kdmath">$y \in A$</span> and <span class="kdmath">$y \in B$</span>. Or we can say 
+ <span class="kdmath">$y \in A \cap B$</span>. As <span class="kdmath">$y$</span> is arbitrary, we can say that <span class="kdmath">$x \subseteq A \cap B$</span>. Thus we can conclude <span class="kdmath">$x \in \mathcal P(A \cap B)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in \mathcal P(A)</script>, then <script type="math/tex">x \subseteq A</script>. Since <script type="math/tex">A \subseteq B</script>, it follows that <script type="math/tex">x \subseteq B</script>. 
-Now since <script type="math/tex">x \subseteq B</script>, then <script type="math/tex">x \in \mathcal P(B)</script>. Thus if <script type="math/tex">x \in \mathcal P(A)</script> then <script type="math/tex">x \in \mathcal P(B)</script>. We can conclude 
-that <script type="math/tex">\mathcal P(A) \subseteq \mathcal P(B)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in \mathcal P(A)$</span>, then <span class="kdmath">$x \subseteq A$</span>. Since <span class="kdmath">$A \subseteq B$</span>, it follows that <span class="kdmath">$x \subseteq B$</span>. 
+Now since <span class="kdmath">$x \subseteq B$</span>, then <span class="kdmath">$x \in \mathcal P(B)$</span>. Thus if <span class="kdmath">$x \in \mathcal P(A)$</span> then <span class="kdmath">$x \in \mathcal P(B)$</span>. We can conclude 
+that <span class="kdmath">$\mathcal P(A) \subseteq \mathcal P(B)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script> )Suppose <script type="math/tex">x \in A</script>. Suppose <script type="math/tex">y</script> is a set in <script type="math/tex">\mathcal P(A)</script> such that <script type="math/tex">x \in y</script>. Since <script type="math/tex">\mathcal P(A) \subseteq \mathcal P(B)</script>,
-it follows that <script type="math/tex">y \in \mathcal P(B)</script>. Thus <script type="math/tex">y \subseteq B</script>. Now since <script type="math/tex">x \in y</script>, it follows that <script type="math/tex">x \in B</script>. Thus we can conclude <script type="math/tex">x \in A \to x \in B</script>. 
-As <script type="math/tex">x</script> is arbitrary, thus we have <script type="math/tex">A \subseteq B</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span> )Suppose <span class="kdmath">$x \in A$</span>. Suppose <span class="kdmath">$y$</span> is a set in <span class="kdmath">$\mathcal P(A)$</span> such that <span class="kdmath">$x \in y$</span>. Since <span class="kdmath">$\mathcal P(A) \subseteq \mathcal P(B)$</span>,
+it follows that <span class="kdmath">$y \in \mathcal P(B)$</span>. Thus <span class="kdmath">$y \subseteq B$</span>. Now since <span class="kdmath">$x \in y$</span>, it follows that <span class="kdmath">$x \in B$</span>. Thus we can conclude <span class="kdmath">$x \in A \to x \in B$</span>. 
+As <span class="kdmath">$x$</span> is arbitrary, thus we have <span class="kdmath">$A \subseteq B$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>Suppose <script type="math/tex">x = 2i + 1</script> and <script type="math/tex">y = 2j + 1</script> where <script type="math/tex">i,\,j</script> are integers. Then <script type="math/tex">xy = (2i+1)(2j+1) = 4ij + 2i + 2j + 1 = 2(2ij + i + j) + 1</script>. Suppose 
-<script type="math/tex">k = (2ij + i + j)</script>, then <script type="math/tex">k</script> is an integer. Thus <script type="math/tex">xy = 2k + 1</script>, is odd.</p>
+<p>Suppose <span class="kdmath">$x = 2i + 1$</span> and <span class="kdmath">$y = 2j + 1$</span> where <span class="kdmath">$i,\,j$</span> are integers. Then <span class="kdmath">$xy = (2i+1)(2j+1) = 4ij + 2i + 2j + 1 = 2(2ij + i + j) + 1$</span>. Suppose 
+<span class="kdmath">$k = (2ij + i + j)$</span>, then <span class="kdmath">$k$</span> is an integer. Thus <span class="kdmath">$xy = 2k + 1$</span>, is odd.</p>
 
 <hr />
 
 <p><strong>Soln10</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">n</script> is even. Then <script type="math/tex">n = 2i</script>, where <script type="math/tex">i \in \mathbb Z</script>. Thus <script type="math/tex">n^3 = {(2i)}^3 = 8i^3</script>.
-Suppose <script type="math/tex">j = 4i^3</script>, then <script type="math/tex">n^3 = 2j</script>. Since <script type="math/tex">j \in \mathbb Z</script>, it follows that <script type="math/tex">n^3</script> is even.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$n$</span> is even. Then <span class="kdmath">$n = 2i$</span>, where <span class="kdmath">$i \in \mathbb Z$</span>. Thus <span class="kdmath">$n^3 = {(2i)}^3 = 8i^3$</span>.
+Suppose <span class="kdmath">$j = 4i^3$</span>, then <span class="kdmath">$n^3 = 2j$</span>. Since <span class="kdmath">$j \in \mathbb Z$</span>, it follows that <span class="kdmath">$n^3$</span> is even.</p>
 
-<p>(<script type="math/tex">\leftarrow</script> )As an integer can either be even or odd but not both, we shall prove this by contrapositive. Thus we shall prove that If <script type="math/tex">n</script> is not even(odd) then <script type="math/tex">n^3</script> is also not even(odd).
-Suppose <script type="math/tex">n</script> is odd, then <script type="math/tex">n = 2i + 1</script>. Thus <script type="math/tex">n^3 = {(2i + 1)}^3 = 8i^3 + 12i^2 + 6i + 1 = 2(4i^3 + 6i^2 + 3i) + 1</script>. Suppose <script type="math/tex">j = 4i^3 + 6i^2 + 3i</script>, then <script type="math/tex">j \in \mathbb Z</script>.
-Thus <script type="math/tex">n^3 = 2j + 1</script> is odd. Thus we can conclude that if <script type="math/tex">n</script> is even then <script type="math/tex">n^3</script> is also even.</p>
+<p>(<span class="kdmath">$\leftarrow$</span> )As an integer can either be even or odd but not both, we shall prove this by contrapositive. Thus we shall prove that If <span class="kdmath">$n$</span> is not even(odd) then <span class="kdmath">$n^3$</span> is also not even(odd).
+Suppose <span class="kdmath">$n$</span> is odd, then <span class="kdmath">$n = 2i + 1$</span>. Thus <span class="kdmath">$n^3 = {(2i + 1)}^3 = 8i^3 + 12i^2 + 6i + 1 = 2(4i^3 + 6i^2 + 3i) + 1$</span>. Suppose <span class="kdmath">$j = 4i^3 + 6i^2 + 3i$</span>, then <span class="kdmath">$j \in \mathbb Z$</span>.
+Thus <span class="kdmath">$n^3 = 2j + 1$</span> is odd. Thus we can conclude that if <span class="kdmath">$n$</span> is even then <span class="kdmath">$n^3$</span> is also even.</p>
 
 <hr />
 
@@ -1257,68 +1258,68 @@ Thus <script type="math/tex">n^3 = 2j + 1</script> is odd. Thus we can conclude 
 
 <p><strong>(a)</strong></p>
 
-<p>The problem with the proof is with the usage of variable <script type="math/tex">k</script> in <script type="math/tex">m = 2k</script> and <script type="math/tex">n = 2k + 1</script>. Value of <script type="math/tex">k</script> may not be same.</p>
+<p>The problem with the proof is with the usage of variable <span class="kdmath">$k$</span> in <span class="kdmath">$m = 2k$</span> and <span class="kdmath">$n = 2k + 1$</span>. Value of <span class="kdmath">$k$</span> may not be same.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>For <script type="math/tex">m = 0</script> and <script type="math/tex">n = 3</script>, then <script type="math/tex">n^2 - m^2 = 9</script> while <script type="math/tex">m + n = 3</script>. Thus <script type="math/tex">n^2 - m^2 \neq m + n</script>.</p>
+<p>For <span class="kdmath">$m = 0$</span> and <span class="kdmath">$n = 3$</span>, then <span class="kdmath">$n^2 - m^2 = 9$</span> while <span class="kdmath">$m + n = 3$</span>. Thus <span class="kdmath">$n^2 - m^2 \neq m + n$</span>.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">x</script> is arbitrary. Suppose <script type="math/tex">y = \frac x {x-1}</script>, then <script type="math/tex">x + y = x + \frac x {x-1}</script>  <br />
- <script type="math/tex">\quad = \frac {x(x-1) + x} {x-1}</script>  <br />
- <script type="math/tex">\quad = \frac {x^2} {x-1}</script>  <br />
- <script type="math/tex">\quad = x \times \frac x {x-1}</script>  <br />
- <script type="math/tex">\quad = xy</script></p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$x$</span> is arbitrary. Suppose <span class="kdmath">$y = \frac x {x-1}$</span>, then <span class="kdmath">$x + y = x + \frac x {x-1}$</span>  <br />
+ <span class="kdmath">$\quad = \frac {x(x-1) + x} {x-1}$</span>  <br />
+ <span class="kdmath">$\quad = \frac {x^2} {x-1}$</span>  <br />
+ <span class="kdmath">$\quad = x \times \frac x {x-1}$</span>  <br />
+ <span class="kdmath">$\quad = xy$</span></p>
 
-<p>Thus the equation: <script type="math/tex">\exists y (x + y = xy)</script> is correct for <script type="math/tex">y = \frac x {x-1}</script>. Now since <script type="math/tex">y = \frac x {x-1}</script>, it follows that <script type="math/tex">x \neq 1</script>.</p>
+<p>Thus the equation: <span class="kdmath">$\exists y (x + y = xy)$</span> is correct for <span class="kdmath">$y = \frac x {x-1}$</span>. Now since <span class="kdmath">$y = \frac x {x-1}$</span>, it follows that <span class="kdmath">$x \neq 1$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script> ). We shall prove contra-positive. Suppose <script type="math/tex">x = 1</script>. Now <script type="math/tex">x + y = 1 + y</script> and <script type="math/tex">xy = y</script>. Since <script type="math/tex">1 + y \neq y</script>, it follows that <script type="math/tex">\exists y (x + y = xy)</script> is not correct. 
- Thus if <script type="math/tex">x + y = xy</script>, then <script type="math/tex">x \neq 1</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span> ). We shall prove contra-positive. Suppose <span class="kdmath">$x = 1$</span>. Now <span class="kdmath">$x + y = 1 + y$</span> and <span class="kdmath">$xy = y$</span>. Since <span class="kdmath">$1 + y \neq y$</span>, it follows that <span class="kdmath">$\exists y (x + y = xy)$</span> is not correct. 
+ Thus if <span class="kdmath">$x + y = xy$</span>, then <span class="kdmath">$x \neq 1$</span>.</p>
 
 <hr />
 
 <p><strong>Soln13</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">z = 1</script>. Suppose <script type="math/tex">x \in {\mathbb R}^+</script>. Suppose <script type="math/tex">\exists y (y - x = \frac y x)</script>, then <script type="math/tex">y = \frac {x^2} {x-1}</script>.
-Now <script type="math/tex">y = \frac {x^2} {x-1}</script> is defined only if <script type="math/tex">x \neq 1</script>. Thus there exists a <script type="math/tex">z</script> such that <script type="math/tex">x \neq z</script>. Now since <script type="math/tex">x</script> is arbitrary, it follows
- that <script type="math/tex">\exists z \forall x \in {\mathbb R}^+[\exists y (y - x = \frac y x) \to x \neq z ]</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$z = 1$</span>. Suppose <span class="kdmath">$x \in {\mathbb R}^+$</span>. Suppose <span class="kdmath">$\exists y (y - x = \frac y x)$</span>, then <span class="kdmath">$y = \frac {x^2} {x-1}$</span>.
+Now <span class="kdmath">$y = \frac {x^2} {x-1}$</span> is defined only if <span class="kdmath">$x \neq 1$</span>. Thus there exists a <span class="kdmath">$z$</span> such that <span class="kdmath">$x \neq z$</span>. Now since <span class="kdmath">$x$</span> is arbitrary, it follows
+ that <span class="kdmath">$\exists z \forall x \in {\mathbb R}^+[\exists y (y - x = \frac y x) \to x \neq z ]$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script> ). Suppose <script type="math/tex">z = 1</script>. Suppose <script type="math/tex">x \in {\mathbb R}^+</script> and <script type="math/tex">x \neq 1</script>. Since <script type="math/tex">x \neq 1</script>, we can assume <script type="math/tex">y = \frac {x^2} {x-1}</script>. Then <script type="math/tex">y - x = \frac y x</script> is correct(can be verified by putting the value of <script type="math/tex">y</script>).
- Thus there exists a <script type="math/tex">z = 1</script> for which <script type="math/tex">x \neq z</script> and <script type="math/tex">\exists y (y - x = \frac y x)</script> is correct. We can conclude <script type="math/tex">\exists z \forall x \in {\mathbb R}^+[x \neq z \to \exists y (y - x = \frac y x)]</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span> ). Suppose <span class="kdmath">$z = 1$</span>. Suppose <span class="kdmath">$x \in {\mathbb R}^+$</span> and <span class="kdmath">$x \neq 1$</span>. Since <span class="kdmath">$x \neq 1$</span>, we can assume <span class="kdmath">$y = \frac {x^2} {x-1}$</span>. Then <span class="kdmath">$y - x = \frac y x$</span> is correct(can be verified by putting the value of <span class="kdmath">$y$</span>).
+ Thus there exists a <span class="kdmath">$z = 1$</span> for which <span class="kdmath">$x \neq z$</span> and <span class="kdmath">$\exists y (y - x = \frac y x)$</span> is correct. We can conclude <span class="kdmath">$\exists z \forall x \in {\mathbb R}^+[x \neq z \to \exists y (y - x = \frac y x)]$</span>.</p>
 
 <hr />
 
 <p><strong>Soln14</strong></p>
 
-<p>Suppose <script type="math/tex">x \in \cup \{A \setminus B \;\vert\;A \in \mathcal F \}</script>. Thus there exists a set, say <script type="math/tex">A</script>, in <script type="math/tex">\mathcal F</script> such that <script type="math/tex">x \in A</script>. 
-Since <script type="math/tex">x \in A \land x \notin B</script>, it follows that <script type="math/tex">A \nsubseteq B</script>. Since <script type="math/tex">A \nsubseteq B</script>, then <script type="math/tex">A \notin \mathcal P(B)</script>. Thus we have
-<script type="math/tex">A \in \mathcal F \land A \notin \mathcal P(B)</script>. Since <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">x \in \cup(\mathcal F \setminus \mathcal P(B))</script>.
-Since <script type="math/tex">x</script> is arbitrary, we can conclude <script type="math/tex">\cup \{A \setminus B \vert\;A \in F \} \subseteq \cup(\mathcal F \setminus \mathcal P(B))</script>.</p>
+<p>Suppose <span class="kdmath">$x \in \cup \{A \setminus B \;\vert\;A \in \mathcal F \}$</span>. Thus there exists a set, say <span class="kdmath">$A$</span>, in <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$x \in A$</span>. 
+Since <span class="kdmath">$x \in A \land x \notin B$</span>, it follows that <span class="kdmath">$A \nsubseteq B$</span>. Since <span class="kdmath">$A \nsubseteq B$</span>, then <span class="kdmath">$A \notin \mathcal P(B)$</span>. Thus we have
+<span class="kdmath">$A \in \mathcal F \land A \notin \mathcal P(B)$</span>. Since <span class="kdmath">$x \in A$</span>, it follows that <span class="kdmath">$x \in \cup(\mathcal F \setminus \mathcal P(B))$</span>.
+Since <span class="kdmath">$x$</span> is arbitrary, we can conclude <span class="kdmath">$\cup \{A \setminus B \vert\;A \in F \} \subseteq \cup(\mathcal F \setminus \mathcal P(B))$</span>.</p>
 
 <hr />
 
 <p><strong>Soln15</strong></p>
 
-<p>Suppose <script type="math/tex">\cup \mathcal F</script> and <script type="math/tex">\cap \mathcal G</script> are not disjoint. Then there must be an element, say <script type="math/tex">x</script>, such that 
-<script type="math/tex">x \in \cup \mathcal F</script> and <script type="math/tex">x \in \cap \mathcal G</script>. Since <script type="math/tex">x \in \cup \mathcal F</script>, then there must exist a set, say <script type="math/tex">A</script>, 
-in <script type="math/tex">\mathcal F</script> such that <script type="math/tex">x \in A</script>. Also since <script type="math/tex">x \in \cap \mathcal G</script>, it follows that <script type="math/tex">x</script> must exist in all the sets of <script type="math/tex">\mathcal G</script>.
-Thus there exist a set <script type="math/tex">A</script> such that it is not disjoint with any of the sets of <script type="math/tex">\mathcal G</script>. But this contradicts the given that there is no such set.
-Thus we can conclude that <script type="math/tex">\cup \mathcal F</script> and <script type="math/tex">\cap \mathcal G</script> are disjoint.</p>
+<p>Suppose <span class="kdmath">$\cup \mathcal F$</span> and <span class="kdmath">$\cap \mathcal G$</span> are not disjoint. Then there must be an element, say <span class="kdmath">$x$</span>, such that 
+<span class="kdmath">$x \in \cup \mathcal F$</span> and <span class="kdmath">$x \in \cap \mathcal G$</span>. Since <span class="kdmath">$x \in \cup \mathcal F$</span>, then there must exist a set, say <span class="kdmath">$A$</span>, 
+in <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$x \in A$</span>. Also since <span class="kdmath">$x \in \cap \mathcal G$</span>, it follows that <span class="kdmath">$x$</span> must exist in all the sets of <span class="kdmath">$\mathcal G$</span>.
+Thus there exist a set <span class="kdmath">$A$</span> such that it is not disjoint with any of the sets of <span class="kdmath">$\mathcal G$</span>. But this contradicts the given that there is no such set.
+Thus we can conclude that <span class="kdmath">$\cup \mathcal F$</span> and <span class="kdmath">$\cap \mathcal G$</span> are disjoint.</p>
 
 <hr />
 
 <p><strong>Soln16</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">x \in A</script>. Then <script type="math/tex">x</script> exists in atleast one of the subsets of <script type="math/tex">A</script>. Thus <script type="math/tex">x</script> must exists in <script type="math/tex">\cup\{</script> all subsets of 
-<script type="math/tex">A \}</script>. It follows that <script type="math/tex">x \in \cup \mathcal P(A)</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">A \subseteq \cup \mathcal P(A)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$x \in A$</span>. Then <span class="kdmath">$x$</span> exists in atleast one of the subsets of <span class="kdmath">$A$</span>. Thus <span class="kdmath">$x$</span> must exists in <span class="kdmath">$\cup\{$</span> all subsets of 
+<span class="kdmath">$A \}$</span>. It follows that <span class="kdmath">$x \in \cup \mathcal P(A)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$A \subseteq \cup \mathcal P(A)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script> ). Suppose <script type="math/tex">x \in \cup \mathcal P(A)</script>. Thus <script type="math/tex">x</script> exists in atleast one of the subsets of <script type="math/tex">A</script>. It follows that <script type="math/tex">x \in A</script>.
- Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">\cup \mathcal P(A) \subseteq A</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span> ). Suppose <span class="kdmath">$x \in \cup \mathcal P(A)$</span>. Thus <span class="kdmath">$x$</span> exists in atleast one of the subsets of <span class="kdmath">$A$</span>. It follows that <span class="kdmath">$x \in A$</span>.
+ Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$\cup \mathcal P(A) \subseteq A$</span>.</p>
 
-<p>Thus we can say that <script type="math/tex">A = P(A)</script>.</p>
+<p>Thus we can say that <span class="kdmath">$A = P(A)$</span>.</p>
 
 <hr />
 
@@ -1326,52 +1327,52 @@ Thus we can conclude that <script type="math/tex">\cup \mathcal F</script> and <
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose that <script type="math/tex">x \in \cup(\mathcal F \cap \mathcal G)</script>. Thus there exist a set, say <script type="math/tex">A</script>, such that <script type="math/tex">x \in A</script> and <script type="math/tex">A \in \mathcal F</script> and <script type="math/tex">A \in \mathcal G</script>. 
-Since <script type="math/tex">A \in \mathcal F</script>, it follows that <script type="math/tex">x \in \cup \mathcal F</script>. Similarly since <script type="math/tex">A \in \mathcal G</script>, it follows that <script type="math/tex">x \in \cup \mathcal G</script>. Thus <script type="math/tex">x \in \cup F \land x \in \cup G</script>. 
-It follows that <script type="math/tex">x \in (\cup \mathcal F \cap \cup \mathcal G)</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">\cup(\mathcal F \cap \mathcal G) \subseteq (\cup \mathcal F \cap \cup \mathcal G)</script>.</p>
+<p>Suppose that <span class="kdmath">$x \in \cup(\mathcal F \cap \mathcal G)$</span>. Thus there exist a set, say <span class="kdmath">$A$</span>, such that <span class="kdmath">$x \in A$</span> and <span class="kdmath">$A \in \mathcal F$</span> and <span class="kdmath">$A \in \mathcal G$</span>. 
+Since <span class="kdmath">$A \in \mathcal F$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal F$</span>. Similarly since <span class="kdmath">$A \in \mathcal G$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal G$</span>. Thus <span class="kdmath">$x \in \cup F \land x \in \cup G$</span>. 
+It follows that <span class="kdmath">$x \in (\cup \mathcal F \cap \cup \mathcal G)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$\cup(\mathcal F \cap \mathcal G) \subseteq (\cup \mathcal F \cap \cup \mathcal G)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>The issue is that set <script type="math/tex">A</script> may not be same in <script type="math/tex">\mathcal F</script> and <script type="math/tex">\mathcal G</script>.</p>
+<p>The issue is that set <span class="kdmath">$A$</span> may not be same in <span class="kdmath">$\mathcal F$</span> and <span class="kdmath">$\mathcal G$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p><script type="math/tex">\mathcal F = \{ A_1, A_2 \}</script> where <script type="math/tex">A_1 = \{ 1 \}</script> and <script type="math/tex">A_2 = \{ 3, 4 \}</script></p>
+<p><span class="kdmath">$\mathcal F = \{ A_1, A_2 \}$</span> where <span class="kdmath">$A_1 = \{ 1 \}$</span> and <span class="kdmath">$A_2 = \{ 3, 4 \}$</span></p>
 
-<p><script type="math/tex">\mathcal G = \{ B_1, B_2, A_2 \}</script> where <script type="math/tex">B_1 = \{ 2 \}</script>, <script type="math/tex">B_2 = \{ 1 , 2 \}</script> and <script type="math/tex">A_2 = \{ 3, 4 \}</script></p>
+<p><span class="kdmath">$\mathcal G = \{ B_1, B_2, A_2 \}$</span> where <span class="kdmath">$B_1 = \{ 2 \}$</span>, <span class="kdmath">$B_2 = \{ 1 , 2 \}$</span> and <span class="kdmath">$A_2 = \{ 3, 4 \}$</span></p>
 
-<p><script type="math/tex">\cup(\mathcal F \cap \mathcal G) = \{ 3, 4 \}</script>  .</p>
+<p><span class="kdmath">$\cup(\mathcal F \cap \mathcal G) = \{ 3, 4 \}$</span>  .</p>
 
-<p><script type="math/tex">\cup \mathcal F \cap \cup \mathcal G  = \{1, 3, 4 \} \cap \{1, 2, 3, 4 \} = \{1, 2, 3, 4 \}</script>.</p>
+<p><span class="kdmath">$\cup \mathcal F \cap \cup \mathcal G  = \{1, 3, 4 \} \cap \{1, 2, 3, 4 \} = \{1, 2, 3, 4 \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln18</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)</script>. Suppose <script type="math/tex">x \in (\cup \mathcal F) \cap (\cup \mathcal G)</script>. 
-Thus there exist some set, say <script type="math/tex">P  \in \mathcal F</script> such that <script type="math/tex">x \in P</script>. Similarly there  exist some set, say <script type="math/tex">Q \in \mathcal G</script>, such that <script type="math/tex">x \in Q</script>. Thus <script type="math/tex">x \in P \cap Q</script>. 
-As <script type="math/tex">P \in F</script> and <script type="math/tex">Q \in G</script>, then <script type="math/tex">P \cap Q \subseteq \cup (\mathcal F \cap \mathcal G)</script>. It follows that if <script type="math/tex">x \in (\cup \mathcal F) \cap (\cup \mathcal G)</script>, then <script type="math/tex">x \in \cup (\mathcal F \cap \mathcal G)</script>. 
-Since <script type="math/tex">x</script> is arbitrary, <script type="math/tex">(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)</script>. Thus we can conclude 
-that: <script type="math/tex">\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G) \quad \to \quad (\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)$</span>. Suppose <span class="kdmath">$x \in (\cup \mathcal F) \cap (\cup \mathcal G)$</span>. 
+Thus there exist some set, say <span class="kdmath">$P  \in \mathcal F$</span> such that <span class="kdmath">$x \in P$</span>. Similarly there  exist some set, say <span class="kdmath">$Q \in \mathcal G$</span>, such that <span class="kdmath">$x \in Q$</span>. Thus <span class="kdmath">$x \in P \cap Q$</span>. 
+As <span class="kdmath">$P \in F$</span> and <span class="kdmath">$Q \in G$</span>, then <span class="kdmath">$P \cap Q \subseteq \cup (\mathcal F \cap \mathcal G)$</span>. It follows that if <span class="kdmath">$x \in (\cup \mathcal F) \cap (\cup \mathcal G)$</span>, then <span class="kdmath">$x \in \cup (\mathcal F \cap \mathcal G)$</span>. 
+Since <span class="kdmath">$x$</span> is arbitrary, <span class="kdmath">$(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)$</span>. Thus we can conclude 
+that: <span class="kdmath">$\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G) \quad \to \quad (\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)</script>. Suppose that <script type="math/tex">x \in A \cap B</script> where <script type="math/tex">A \in \mathcal F</script>
-and <script type="math/tex">B \in \mathcal G</script>. Since <script type="math/tex">x \in A</script> and <script type="math/tex">A \in \mathcal F</script>, it follows that <script type="math/tex">x \in \cup \mathcal F</script>. Similarly, since <script type="math/tex">x \in B</script> and <script type="math/tex">B \in \mathcal G</script>, it follows that <script type="math/tex">x \in \cup \mathcal G</script>.
-Thus <script type="math/tex">x \in (\cup \mathcal F) \cap (\cup \mathcal G)</script>. Since <script type="math/tex">(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)</script>, it follows that 
- <script type="math/tex">x \in \cup (\mathcal F \cap \mathcal G)</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)</script>.
-Thus we can conclude that <script type="math/tex">(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G) \quad \to \quad \forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)$</span>. Suppose that <span class="kdmath">$x \in A \cap B$</span> where <span class="kdmath">$A \in \mathcal F$</span>
+and <span class="kdmath">$B \in \mathcal G$</span>. Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$A \in \mathcal F$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal F$</span>. Similarly, since <span class="kdmath">$x \in B$</span> and <span class="kdmath">$B \in \mathcal G$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal G$</span>.
+Thus <span class="kdmath">$x \in (\cup \mathcal F) \cap (\cup \mathcal G)$</span>. Since <span class="kdmath">$(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G)$</span>, it follows that 
+ <span class="kdmath">$x \in \cup (\mathcal F \cap \mathcal G)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$\forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)$</span>.
+Thus we can conclude that <span class="kdmath">$(\cup \mathcal F) \cap (\cup \mathcal G) \subseteq \cup (\mathcal F \cap \mathcal G) \quad \to \quad \forall A \in \mathcal F\;\forall B \in \mathcal G (A \cap B) \subseteq \cup (\mathcal F \cap \mathcal G)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln19</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">A</script> and <script type="math/tex">B</script> are not disjoint. Then there must exist an element, say <script type="math/tex">x</script>, such that <script type="math/tex">x \in A</script> and <script type="math/tex">x \in B</script>.
-Since <script type="math/tex">A \in \mathcal F</script>, it follows that <script type="math/tex">x in \cup \mathcal F</script>. Similarly since <script type="math/tex">B \in \mathcal G</script>, it follows that <script type="math/tex">x in \cup \mathcal G</script>.
-Thus <script type="math/tex">x \in (\cup \mathcal F) \cap (\cup \mathcal G )</script>. But it is a contradiction to the given that <script type="math/tex">(\cup \mathcal F) \cap (\cup \mathcal G ) = \phi</script>.
-Thus <script type="math/tex">\forall A \in \mathcal F\; \forall B \in \mathcal G (A \cap B) = \phi</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are not disjoint. Then there must exist an element, say <span class="kdmath">$x$</span>, such that <span class="kdmath">$x \in A$</span> and <span class="kdmath">$x \in B$</span>.
+Since <span class="kdmath">$A \in \mathcal F$</span>, it follows that <span class="kdmath">$x in \cup \mathcal F$</span>. Similarly since <span class="kdmath">$B \in \mathcal G$</span>, it follows that <span class="kdmath">$x in \cup \mathcal G$</span>.
+Thus <span class="kdmath">$x \in (\cup \mathcal F) \cap (\cup \mathcal G )$</span>. But it is a contradiction to the given that <span class="kdmath">$(\cup \mathcal F) \cap (\cup \mathcal G ) = \phi$</span>.
+Thus <span class="kdmath">$\forall A \in \mathcal F\; \forall B \in \mathcal G (A \cap B) = \phi$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">\cup \mathcal F</script> and <script type="math/tex">\cup \mathcal G</script> are not disjoint. Then there must exist an element, say <script type="math/tex">x</script>, such that <script type="math/tex">x \in \cup \mathcal F</script>
-and <script type="math/tex">x \in \cup \mathcal G</script>. Thus there must exist a set, say <script type="math/tex">A</script> in <script type="math/tex">\mathcal F</script> such that <script type="math/tex">x \in A</script>. Similarly there must exist a set, say <script type="math/tex">B</script>,  in <script type="math/tex">\mathcal G</script> such 
-that <script type="math/tex">x \in B</script>. Thus <script type="math/tex">x \in A \cap B</script>. This contradicts to the given that <script type="math/tex">A \cap B = \phi</script>. Thus <script type="math/tex">\cup \mathcal F</script> and <script type="math/tex">\cup \mathcal G = \phi</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$\cup \mathcal F$</span> and <span class="kdmath">$\cup \mathcal G$</span> are not disjoint. Then there must exist an element, say <span class="kdmath">$x$</span>, such that <span class="kdmath">$x \in \cup \mathcal F$</span>
+and <span class="kdmath">$x \in \cup \mathcal G$</span>. Thus there must exist a set, say <span class="kdmath">$A$</span> in <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$x \in A$</span>. Similarly there must exist a set, say <span class="kdmath">$B$</span>,  in <span class="kdmath">$\mathcal G$</span> such 
+that <span class="kdmath">$x \in B$</span>. Thus <span class="kdmath">$x \in A \cap B$</span>. This contradicts to the given that <span class="kdmath">$A \cap B = \phi$</span>. Thus <span class="kdmath">$\cup \mathcal F$</span> and <span class="kdmath">$\cup \mathcal G = \phi$</span>.</p>
 
 <hr />
 
@@ -1379,57 +1380,57 @@ that <script type="math/tex">x \in B</script>. Thus <script type="math/tex">x \i
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in (\cup \mathcal F) \setminus (\cup \mathcal G)</script>. Thus <script type="math/tex">x</script> is in <script type="math/tex">(\cup \mathcal F)</script> and <script type="math/tex">x</script> is not in <script type="math/tex">(\cup \mathcal G)</script>.
-Since <script type="math/tex">x \in (\cup \mathcal F)</script>, there must exist a set, say <script type="math/tex">A</script>, in <script type="math/tex">\mathcal F</script> such that <script type="math/tex">x \in A</script>. Also since <script type="math/tex">x</script> not in <script type="math/tex">(\cup \mathcal G)</script>, 
-there is no set, say <script type="math/tex">B</script>, in <script type="math/tex">\mathcal G</script>, such that <script type="math/tex">x \in B</script>. It follows that <script type="math/tex">x</script> can exist in only those sets in <script type="math/tex">\mathcal F</script> which are not present in <script type="math/tex">G</script>.
-Or we can say that <script type="math/tex">x</script> exists in atleast one of the sets in <script type="math/tex">\mathcal F \setminus \mathcal G</script>. It follows that <script type="math/tex">x \in \cup (\mathcal F \setminus \mathcal G)</script>.
-Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">(\cup \mathcal F) \setminus (\cup \mathcal G) \subseteq \cup (\mathcal F \setminus \mathcal G)</script>.</p>
+<p>Suppose <span class="kdmath">$x \in (\cup \mathcal F) \setminus (\cup \mathcal G)$</span>. Thus <span class="kdmath">$x$</span> is in <span class="kdmath">$(\cup \mathcal F)$</span> and <span class="kdmath">$x$</span> is not in <span class="kdmath">$(\cup \mathcal G)$</span>.
+Since <span class="kdmath">$x \in (\cup \mathcal F)$</span>, there must exist a set, say <span class="kdmath">$A$</span>, in <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$x \in A$</span>. Also since <span class="kdmath">$x$</span> not in <span class="kdmath">$(\cup \mathcal G)$</span>, 
+there is no set, say <span class="kdmath">$B$</span>, in <span class="kdmath">$\mathcal G$</span>, such that <span class="kdmath">$x \in B$</span>. It follows that <span class="kdmath">$x$</span> can exist in only those sets in <span class="kdmath">$\mathcal F$</span> which are not present in <span class="kdmath">$G$</span>.
+Or we can say that <span class="kdmath">$x$</span> exists in atleast one of the sets in <span class="kdmath">$\mathcal F \setminus \mathcal G$</span>. It follows that <span class="kdmath">$x \in \cup (\mathcal F \setminus \mathcal G)$</span>.
+Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$(\cup \mathcal F) \setminus (\cup \mathcal G) \subseteq \cup (\mathcal F \setminus \mathcal G)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Statement <script type="math/tex">x ∈ A</script> and <script type="math/tex">A \notin G</script>, then <script type="math/tex">x \notin \cup G</script> is wrong. It is possible that <script type="math/tex">x</script> belongs to some other set(<script type="math/tex">\neq A</script>) of <script type="math/tex">\mathcal G</script>.</p>
+<p>Statement <span class="kdmath">$x ∈ A$</span> and <span class="kdmath">$A \notin G$</span>, then <span class="kdmath">$x \notin \cup G$</span> is wrong. It is possible that <span class="kdmath">$x$</span> belongs to some other set(<span class="kdmath">$\neq A$</span>) of <span class="kdmath">$\mathcal G$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Lets first prove direction <script type="math/tex">\to</script>:</p>
+<p>Lets first prove direction <span class="kdmath">$\to$</span>:</p>
 
-<p><script type="math/tex">\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G ((A \cap B) = \phi) \; \to \; \cup (\mathcal F \setminus \mathcal G)\subseteq (\cup \mathcal F) \setminus (\cup \mathcal G)</script>.</p>
+<p><span class="kdmath">$\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G ((A \cap B) = \phi) \; \to \; \cup (\mathcal F \setminus \mathcal G)\subseteq (\cup \mathcal F) \setminus (\cup \mathcal G)$</span>.</p>
 
-<p>Suppose <script type="math/tex">\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B) = \phi</script>. Suppose <script type="math/tex">x \in \cup (\mathcal F \setminus \mathcal G)</script>.
-Thus there exist a set, say <script type="math/tex">P</script>, such that <script type="math/tex">P \in \mathcal F</script> and <script type="math/tex">P \notin \mathcal G</script> , and <script type="math/tex">x \in P</script>. As <script type="math/tex">P \notin \mathcal G</script>, there may exist some other set, say <script type="math/tex">Q</script>, such that <script type="math/tex">Q \in \mathcal G</script>, and <script type="math/tex">x \in Q</script>.
-Thus if such set <script type="math/tex">Q</script> exists, then <script type="math/tex">P \cap Q \neq \phi</script>, because <script type="math/tex">x</script> exists in both <script type="math/tex">P</script> and <script type="math/tex">Q</script>. But since 
-<script type="math/tex">\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B) = \phi</script> it follows that <script type="math/tex">P \cap Q = \phi</script>. Thus there is no such set <script type="math/tex">Q</script>.
-It follows that <script type="math/tex">x</script> does not exist in any of the sets of <script type="math/tex">\mathcal G</script>. Or we can say that <script type="math/tex">x \notin \cup \mathcal G</script>. Since <script type="math/tex">x \in P</script>, it follows that <script type="math/tex">x \in \cup \mathcal F</script>.
-Thus it follows that <script type="math/tex">x \in \cup \mathcal F \land x \notin \cup \mathcal G</script>, or we can say that <script type="math/tex">x \in (\cup \mathcal F) \setminus (\cup \mathcal G)</script>.</p>
+<p>Suppose <span class="kdmath">$\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B) = \phi$</span>. Suppose <span class="kdmath">$x \in \cup (\mathcal F \setminus \mathcal G)$</span>.
+Thus there exist a set, say <span class="kdmath">$P$</span>, such that <span class="kdmath">$P \in \mathcal F$</span> and <span class="kdmath">$P \notin \mathcal G$</span> , and <span class="kdmath">$x \in P$</span>. As <span class="kdmath">$P \notin \mathcal G$</span>, there may exist some other set, say <span class="kdmath">$Q$</span>, such that <span class="kdmath">$Q \in \mathcal G$</span>, and <span class="kdmath">$x \in Q$</span>.
+Thus if such set <span class="kdmath">$Q$</span> exists, then <span class="kdmath">$P \cap Q \neq \phi$</span>, because <span class="kdmath">$x$</span> exists in both <span class="kdmath">$P$</span> and <span class="kdmath">$Q$</span>. But since 
+<span class="kdmath">$\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B) = \phi$</span> it follows that <span class="kdmath">$P \cap Q = \phi$</span>. Thus there is no such set <span class="kdmath">$Q$</span>.
+It follows that <span class="kdmath">$x$</span> does not exist in any of the sets of <span class="kdmath">$\mathcal G$</span>. Or we can say that <span class="kdmath">$x \notin \cup \mathcal G$</span>. Since <span class="kdmath">$x \in P$</span>, it follows that <span class="kdmath">$x \in \cup \mathcal F$</span>.
+Thus it follows that <span class="kdmath">$x \in \cup \mathcal F \land x \notin \cup \mathcal G$</span>, or we can say that <span class="kdmath">$x \in (\cup \mathcal F) \setminus (\cup \mathcal G)$</span>.</p>
 
-<p>Now proof for direction <script type="math/tex">\leftarrow</script>:</p>
+<p>Now proof for direction <span class="kdmath">$\leftarrow$</span>:</p>
 
-<p><script type="math/tex">\cup (\mathcal F \setminus \mathcal G)\subseteq (\cup \mathcal F) \setminus (\cup \mathcal G) \; \to \; \forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B = \phi)</script>.</p>
+<p><span class="kdmath">$\cup (\mathcal F \setminus \mathcal G)\subseteq (\cup \mathcal F) \setminus (\cup \mathcal G) \; \to \; \forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B = \phi)$</span>.</p>
 
-<p>Here we shall prove by contra-positive. Suppose that <script type="math/tex">\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G ((A \cap B) \neq \phi)</script>. 
-Suppose that <script type="math/tex">x \in A \cap B</script>, where <script type="math/tex">A \in (\mathcal F \setminus \mathcal G)</script> and <script type="math/tex">B \in \mathcal G</script>. Thus there exist a set(<script type="math/tex">A</script>) in <script type="math/tex">\mathcal F \setminus \mathcal G</script> such
-that <script type="math/tex">x</script> belongs to that set. It follows that <script type="math/tex">x \in \cup (\mathcal F \setminus \mathcal G)</script>. Also, since <script type="math/tex">x \in B</script> and <script type="math/tex">B \in \mathcal G</script>, it 
-follows that <script type="math/tex">x \in \cup \mathcal G</script>. Since <script type="math/tex">x \in \cup \mathcal G</script>, it follows that <script type="math/tex">x \notin (\cup \mathcal F) \setminus (\cup \mathcal G)</script>. 
-Thus <script type="math/tex">\cup (\mathcal F \setminus \mathcal G)\nsubseteq (\cup \mathcal F) \setminus (\cup \mathcal G)</script>.Thus by contrapositive we can conclude that if <script type="math/tex">(\cup \mathcal F) \setminus (\cup \mathcal G) \subseteq (\cup \mathcal F) \setminus (\cup \mathcal G)</script>, then 
-<script type="math/tex">\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B = \phi</script>.</p>
+<p>Here we shall prove by contra-positive. Suppose that <span class="kdmath">$\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G ((A \cap B) \neq \phi)$</span>. 
+Suppose that <span class="kdmath">$x \in A \cap B$</span>, where <span class="kdmath">$A \in (\mathcal F \setminus \mathcal G)$</span> and <span class="kdmath">$B \in \mathcal G$</span>. Thus there exist a set(<span class="kdmath">$A$</span>) in <span class="kdmath">$\mathcal F \setminus \mathcal G$</span> such
+that <span class="kdmath">$x$</span> belongs to that set. It follows that <span class="kdmath">$x \in \cup (\mathcal F \setminus \mathcal G)$</span>. Also, since <span class="kdmath">$x \in B$</span> and <span class="kdmath">$B \in \mathcal G$</span>, it 
+follows that <span class="kdmath">$x \in \cup \mathcal G$</span>. Since <span class="kdmath">$x \in \cup \mathcal G$</span>, it follows that <span class="kdmath">$x \notin (\cup \mathcal F) \setminus (\cup \mathcal G)$</span>. 
+Thus <span class="kdmath">$\cup (\mathcal F \setminus \mathcal G)\nsubseteq (\cup \mathcal F) \setminus (\cup \mathcal G)$</span>.Thus by contrapositive we can conclude that if <span class="kdmath">$(\cup \mathcal F) \setminus (\cup \mathcal G) \subseteq (\cup \mathcal F) \setminus (\cup \mathcal G)$</span>, then 
+<span class="kdmath">$\forall A \in (\mathcal F \setminus \mathcal G)\, \forall B \in \mathcal G (A \cap B = \phi$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
-<p><script type="math/tex">\mathcal F = \{ A_1, A_2 \}</script>, where <script type="math/tex">A_1 = \{ 1 \}</script> and <script type="math/tex">A_2 = \{ 10, 20 \}</script>.</p>
+<p><span class="kdmath">$\mathcal F = \{ A_1, A_2 \}$</span>, where <span class="kdmath">$A_1 = \{ 1 \}$</span> and <span class="kdmath">$A_2 = \{ 10, 20 \}$</span>.</p>
 
-<p><script type="math/tex">\mathcal G = \{ B_1, B_2 \}</script>, where <script type="math/tex">B_1 = \{ 1, 3 \}</script> and <script type="math/tex">B_2 = \{ 10, 30 \}</script>.</p>
+<p><span class="kdmath">$\mathcal G = \{ B_1, B_2 \}$</span>, where <span class="kdmath">$B_1 = \{ 1, 3 \}$</span> and <span class="kdmath">$B_2 = \{ 10, 30 \}$</span>.</p>
 
-<p><script type="math/tex">\cup (\mathcal F \setminus \mathcal G) = \{ 1, 10, 20 \}</script>.</p>
+<p><span class="kdmath">$\cup (\mathcal F \setminus \mathcal G) = \{ 1, 10, 20 \}$</span>.</p>
 
-<p><script type="math/tex">(\cup \mathcal F) \setminus (\cup \mathcal G) = \{ 20 \}</script>.</p>
+<p><span class="kdmath">$(\cup \mathcal F) \setminus (\cup \mathcal G) = \{ 20 \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln21</strong></p>
 
-<p>Suppose <script type="math/tex">\cup \mathcal F \nsubseteq \cup \mathcal G</script>. Suppose <script type="math/tex">x \in \cup \mathcal F</script>, then <script type="math/tex">x \notin \cup \mathcal G</script>. Since <script type="math/tex">x \in \cup \mathcal F</script>,
-it follows that there exist a set, say <script type="math/tex">P</script>, in <script type="math/tex">\mathcal F</script> such that <script type="math/tex">x \in P</script>. Also since <script type="math/tex">x \notin \cup \mathcal G</script>, it follows that <script type="math/tex">x</script>
- does not belong to any of the sets of <script type="math/tex">\mathcal G</script>. Thus <script type="math/tex">\exists P \in \mathcal F \, \forall Q \in \mathcal G\,(P \nsubseteq Q)</script>.</p>
+<p>Suppose <span class="kdmath">$\cup \mathcal F \nsubseteq \cup \mathcal G$</span>. Suppose <span class="kdmath">$x \in \cup \mathcal F$</span>, then <span class="kdmath">$x \notin \cup \mathcal G$</span>. Since <span class="kdmath">$x \in \cup \mathcal F$</span>,
+it follows that there exist a set, say <span class="kdmath">$P$</span>, in <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$x \in P$</span>. Also since <span class="kdmath">$x \notin \cup \mathcal G$</span>, it follows that <span class="kdmath">$x$</span>
+ does not belong to any of the sets of <span class="kdmath">$\mathcal G$</span>. Thus <span class="kdmath">$\exists P \in \mathcal F \, \forall Q \in \mathcal G\,(P \nsubseteq Q)$</span>.</p>
 
 <hr />
 
@@ -1438,36 +1439,36 @@ it follows that there exist a set, say <script type="math/tex">P</script>, in <s
 <p><strong>(a)</strong></p>
 
 <ul>
-  <li>Strategy to prove a goal of the form <script type="math/tex">P \leftrightarrow Q</script>.</li>
-  <li>Strategy to prove <script type="math/tex">P \to Q</script>.</li>
-  <li>Strategy to prove <script type="math/tex">P \land Q</script>.</li>
-  <li>Strategy for <script type="math/tex">\forall x P(x)</script>.</li>
+  <li>Strategy to prove a goal of the form <span class="kdmath">$P \leftrightarrow Q$</span>.</li>
+  <li>Strategy to prove <span class="kdmath">$P \to Q$</span>.</li>
+  <li>Strategy to prove <span class="kdmath">$P \land Q$</span>.</li>
+  <li>Strategy for <span class="kdmath">$\forall x P(x)$</span>.</li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in B \setminus (\cup_{i \in I} A_i)</script>  <br />
+<p>Suppose <span class="kdmath">$x \in B \setminus (\cup_{i \in I} A_i)$</span>  <br />
 It is equivalent to:   <br />
-<script type="math/tex">\quad = x \in B \land \lnot \exists i \in I (x \in A_i)</script>   <br />
-<script type="math/tex">\quad = x \in B \land \forall i \in I (x \notin A_i)</script>  <br />
-(Note that <script type="math/tex">\, I \ne \phi \,</script>)  <br />
-<script type="math/tex">\quad = \forall i \in I (x \in B \land x \notin A_i)</script>  <br />
-<script type="math/tex">\quad = \forall i \in I (x \in B \setminus A_i)</script>  <br />
-<script type="math/tex">\quad = x \in \cap_{i \in I}(B \setminus A_i)</script></p>
+<span class="kdmath">$\quad = x \in B \land \lnot \exists i \in I (x \in A_i)$</span>   <br />
+<span class="kdmath">$\quad = x \in B \land \forall i \in I (x \notin A_i)$</span>  <br />
+(Note that <span class="kdmath">$\, I \ne \phi \,$</span>)  <br />
+<span class="kdmath">$\quad = \forall i \in I (x \in B \land x \notin A_i)$</span>  <br />
+<span class="kdmath">$\quad = \forall i \in I (x \in B \setminus A_i)$</span>  <br />
+<span class="kdmath">$\quad = x \in \cap_{i \in I}(B \setminus A_i)$</span></p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">B \setminus (\cup_{i \in I} A_i) = \cup_{i \in I}(B \setminus A_i)</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$B \setminus (\cup_{i \in I} A_i) = \cup_{i \in I}(B \setminus A_i)$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in B \setminus (\cap_{i \in I} A_i )</script>  <br />
+<p>Suppose <span class="kdmath">$x \in B \setminus (\cap_{i \in I} A_i )$</span>  <br />
 It is equivalent to:  <br />
-<script type="math/tex">\quad = x \in B \land \lnot \forall i \in I ( x \in A_i)</script>  <br />
-<script type="math/tex">\quad = x \in B \land \exists i \in I (x \notin A_i)</script>  <br />
-<script type="math/tex">\quad = \exists i \in I (x \in B \land x \notin A_i)</script>  <br />
-<script type="math/tex">\quad = \exists i \in I (x \in B \setminus A_i)</script>  <br />
-<script type="math/tex">\quad = x \in \cup_{i \in I}(B \setminus A_i)</script></p>
+<span class="kdmath">$\quad = x \in B \land \lnot \forall i \in I ( x \in A_i)$</span>  <br />
+<span class="kdmath">$\quad = x \in B \land \exists i \in I (x \notin A_i)$</span>  <br />
+<span class="kdmath">$\quad = \exists i \in I (x \in B \land x \notin A_i)$</span>  <br />
+<span class="kdmath">$\quad = \exists i \in I (x \in B \setminus A_i)$</span>  <br />
+<span class="kdmath">$\quad = x \in \cup_{i \in I}(B \setminus A_i)$</span></p>
 
-<p>Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">B \setminus (\cap_{i \in I} A_i ) = \cup_{i \in I}(B \setminus A_i)</script>.</p>
+<p>Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$B \setminus (\cap_{i \in I} A_i ) = \cup_{i \in I}(B \setminus A_i)$</span>.</p>
 
 <hr />
 
@@ -1475,20 +1476,20 @@ It is equivalent to:  <br />
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in \cup_{i \in I}(A_i \setminus B_i)</script>. Thus there must exist a set, say <script type="math/tex">A_k</script>,  in <script type="math/tex">\{ A_i \, \vert \, i \in I \}</script> such that <script type="math/tex">x \in A_k</script>.
-Thus <script type="math/tex">x \in \cup_{i \in I} A_i</script>. Now suppose <script type="math/tex">x</script> exist in some set <script type="math/tex">B_l</script> where <script type="math/tex">i = l</script>. Now if <script type="math/tex">A_l</script> also contain <script type="math/tex">x</script> then <script type="math/tex">x</script>, 
-which is clearly not possible as then <script type="math/tex">x</script> can not exist in <script type="math/tex">A_l \setminus B_l</script>. Else if <script type="math/tex">A_l</script> does not contain <script type="math/tex">x</script>, then clearly <script type="math/tex">x</script> can not exist 
-in <script type="math/tex">A_l \setminus B_l</script>. Thus <script type="math/tex">x</script> does not exist in any set <script type="math/tex">B_i</script>. It follows that <script type="math/tex">x \notin \cap_{i \in I} B_i</script>. Thus we can conclude that 
-<script type="math/tex">x \in \cup_{i \in I} A_i \land x \notin \cap_{i \in I} B_i</script>, or <script type="math/tex">x \in \cup_{i \in I} A_i \setminus \cap_{i \in I} B_i</script>. Since <script type="math/tex">x</script> is arbitrary, we
-can conclude that <script type="math/tex">\cup_{i \in I}(A_i \setminus B_i) \; \subseteq \; \cup_{i \in I} A_i \setminus \cap_{i \in I} B_i</script>.</p>
+<p>Suppose <span class="kdmath">$x \in \cup_{i \in I}(A_i \setminus B_i)$</span>. Thus there must exist a set, say <span class="kdmath">$A_k$</span>,  in <span class="kdmath">$\{ A_i \, \vert \, i \in I \}$</span> such that <span class="kdmath">$x \in A_k$</span>.
+Thus <span class="kdmath">$x \in \cup_{i \in I} A_i$</span>. Now suppose <span class="kdmath">$x$</span> exist in some set <span class="kdmath">$B_l$</span> where <span class="kdmath">$i = l$</span>. Now if <span class="kdmath">$A_l$</span> also contain <span class="kdmath">$x$</span> then <span class="kdmath">$x$</span>, 
+which is clearly not possible as then <span class="kdmath">$x$</span> can not exist in <span class="kdmath">$A_l \setminus B_l$</span>. Else if <span class="kdmath">$A_l$</span> does not contain <span class="kdmath">$x$</span>, then clearly <span class="kdmath">$x$</span> can not exist 
+in <span class="kdmath">$A_l \setminus B_l$</span>. Thus <span class="kdmath">$x$</span> does not exist in any set <span class="kdmath">$B_i$</span>. It follows that <span class="kdmath">$x \notin \cap_{i \in I} B_i$</span>. Thus we can conclude that 
+<span class="kdmath">$x \in \cup_{i \in I} A_i \land x \notin \cap_{i \in I} B_i$</span>, or <span class="kdmath">$x \in \cup_{i \in I} A_i \setminus \cap_{i \in I} B_i$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we
+can conclude that <span class="kdmath">$\cup_{i \in I}(A_i \setminus B_i) \; \subseteq \; \cup_{i \in I} A_i \setminus \cap_{i \in I} B_i$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">A_1 = \{ 1, 2 \}</script>, <script type="math/tex">A_2 = \{3, 4\}</script>  <br />
-<script type="math/tex">B_1 = \{ 2, 5 \}</script>, <script type="math/tex">B_2 = \{3, 8\}</script></p>
+<p><span class="kdmath">$A_1 = \{ 1, 2 \}$</span>, <span class="kdmath">$A_2 = \{3, 4\}$</span>  <br />
+<span class="kdmath">$B_1 = \{ 2, 5 \}$</span>, <span class="kdmath">$B_2 = \{3, 8\}$</span></p>
 
-<p><script type="math/tex">\cup_{i \in I}(A_i \setminus B_i) = \{1, 4 \}</script>  <br />
-<script type="math/tex">\cup_{i \in I} A_i \setminus \cap_{i \in I} B_i = \{ 1, 2, 3, 4 \}</script></p>
+<p><span class="kdmath">$\cup_{i \in I}(A_i \setminus B_i) = \{1, 4 \}$</span>  <br />
+<span class="kdmath">$\cup_{i \in I} A_i \setminus \cap_{i \in I} B_i = \{ 1, 2, 3, 4 \}$</span></p>
 
 <hr />
 
@@ -1496,24 +1497,24 @@ can conclude that <script type="math/tex">\cup_{i \in I}(A_i \setminus B_i) \; \
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">x \in \cup_{i \in I}(A_i \cap B_i)</script>. Then there must exist atleast an <script type="math/tex">i = k</script>, such that <script type="math/tex">x \in A_k \land x \in B_k</script>. Since <script type="math/tex">x \in A_k</script>, 
-it follows that <script type="math/tex">x \in \cup_{i \in I} A_i</script>. Similarly, since <script type="math/tex">x \in B_k</script>, it follows that <script type="math/tex">x \in \cup_{i \in I} B_i</script>. Thus we have 
-<script type="math/tex">x \in \cup_{i \in I} A_i \land x \in \cup_{i \in I} B_i</script>, or <script type="math/tex">x \in (\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i)</script>. Since <script type="math/tex">x</script> is arbitrary, 
-it follows that <script type="math/tex">\cup_{i \in I}(A_i \cap B_i) \; \subseteq \; (\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i)</script>.</p>
+<p>Suppose <span class="kdmath">$x \in \cup_{i \in I}(A_i \cap B_i)$</span>. Then there must exist atleast an <span class="kdmath">$i = k$</span>, such that <span class="kdmath">$x \in A_k \land x \in B_k$</span>. Since <span class="kdmath">$x \in A_k$</span>, 
+it follows that <span class="kdmath">$x \in \cup_{i \in I} A_i$</span>. Similarly, since <span class="kdmath">$x \in B_k$</span>, it follows that <span class="kdmath">$x \in \cup_{i \in I} B_i$</span>. Thus we have 
+<span class="kdmath">$x \in \cup_{i \in I} A_i \land x \in \cup_{i \in I} B_i$</span>, or <span class="kdmath">$x \in (\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i)$</span>. Since <span class="kdmath">$x$</span> is arbitrary, 
+it follows that <span class="kdmath">$\cup_{i \in I}(A_i \cap B_i) \; \subseteq \; (\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">A_1 = \{ 1, 2, 8 \}</script>, <script type="math/tex">A_2 = \{3, 4\}</script>  <br />
-<script type="math/tex">B_1 = \{ 2, 5 \}</script>, <script type="math/tex">B_2 = \{3, 8\}</script></p>
+<p><span class="kdmath">$A_1 = \{ 1, 2, 8 \}$</span>, <span class="kdmath">$A_2 = \{3, 4\}$</span>  <br />
+<span class="kdmath">$B_1 = \{ 2, 5 \}$</span>, <span class="kdmath">$B_2 = \{3, 8\}$</span></p>
 
-<p><script type="math/tex">\cup_{i \in I}(A_i \cap B_i) = \{ 2, 3\}</script>  <br />
-<script type="math/tex">(\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i) = \{ 2, 3, 8\}</script></p>
+<p><span class="kdmath">$\cup_{i \in I}(A_i \cap B_i) = \{ 2, 3\}$</span>  <br />
+<span class="kdmath">$(\cup_{i \in I} A_i) \cap (\cup_{i \in I} B_i) = \{ 2, 3, 8\}$</span></p>
 
 <hr />
 
 <p><strong>Soln25</strong></p>
 
-<p>Suppose <script type="math/tex">c = ab</script>, then both <script type="math/tex">a\,\vert\,c</script> and <script type="math/tex">b\,\vert\,c</script> are true.</p>
+<p>Suppose <span class="kdmath">$c = ab$</span>, then both <span class="kdmath">$a\,\vert\,c$</span> and <span class="kdmath">$b\,\vert\,c$</span> are true.</p>
 
 <hr />
 
@@ -1521,17 +1522,17 @@ it follows that <script type="math/tex">\cup_{i \in I}(A_i \cap B_i) \; \subsete
 
 <p><strong>(a)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">15\,\vert\,n</script>. Then <script type="math/tex">n = 15 \times k</script> where <script type="math/tex">k \in \mathbb N</script>. It follows that <script type="math/tex">n = 3 \times 5k</script>, thus <script type="math/tex">3\,\vert\,n</script>. Similarly,
-<script type="math/tex">n = 5 \times 3k</script>, thus <script type="math/tex">5\,\vert\,n</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$15\,\vert\,n$</span>. Then <span class="kdmath">$n = 15 \times k$</span> where <span class="kdmath">$k \in \mathbb N$</span>. It follows that <span class="kdmath">$n = 3 \times 5k$</span>, thus <span class="kdmath">$3\,\vert\,n$</span>. Similarly,
+<span class="kdmath">$n = 5 \times 3k$</span>, thus <span class="kdmath">$5\,\vert\,n$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">3\,\vert\,n</script> and <script type="math/tex">5\,\vert\,n</script>. Thus <script type="math/tex">n = 3k</script> and <script type="math/tex">n = 5l</script>, where <script type="math/tex">k,l \in \mathbb N</script>. Thus <script type="math/tex">3k = 5l</script>.
-Since <script type="math/tex">k, l</script> are natural numbers and <script type="math/tex">3</script> and <script type="math/tex">5</script> does not divide, it follows that <script type="math/tex">5\,\vert\,k</script> and  <script type="math/tex">3\,\vert\,l</script>. Or we can say
-that <script type="math/tex">5p = k</script> and <script type="math/tex">3q = l</script>, where <script type="math/tex">p, q \in \mathbb N</script>. Thus we have <script type="math/tex">n = 3k = 15 p</script> as well as <script type="math/tex">n = 5l = 15 q</script>. Thus <script type="math/tex">p = q</script> and 
-<script type="math/tex">n = 15p</script>. Thus we can conclude <script type="math/tex">15\,\vert\,n</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$3\,\vert\,n$</span> and <span class="kdmath">$5\,\vert\,n$</span>. Thus <span class="kdmath">$n = 3k$</span> and <span class="kdmath">$n = 5l$</span>, where <span class="kdmath">$k,l \in \mathbb N$</span>. Thus <span class="kdmath">$3k = 5l$</span>.
+Since <span class="kdmath">$k, l$</span> are natural numbers and <span class="kdmath">$3$</span> and <span class="kdmath">$5$</span> does not divide, it follows that <span class="kdmath">$5\,\vert\,k$</span> and  <span class="kdmath">$3\,\vert\,l$</span>. Or we can say
+that <span class="kdmath">$5p = k$</span> and <span class="kdmath">$3q = l$</span>, where <span class="kdmath">$p, q \in \mathbb N$</span>. Thus we have <span class="kdmath">$n = 3k = 15 p$</span> as well as <span class="kdmath">$n = 5l = 15 q$</span>. Thus <span class="kdmath">$p = q$</span> and 
+<span class="kdmath">$n = 15p$</span>. Thus we can conclude <span class="kdmath">$15\,\vert\,n$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">n = 90</script>, then <script type="math/tex">6\,\vert\,n</script> as well as <script type="math/tex">10\,\vert\,n</script> are true, but <script type="math/tex">60\,\vert\,n</script> is not true.</p>
+<p>Suppose <span class="kdmath">$n = 90$</span>, then <span class="kdmath">$6\,\vert\,n$</span> as well as <span class="kdmath">$10\,\vert\,n$</span> are true, but <span class="kdmath">$60\,\vert\,n$</span> is not true.</p>
 
 
                         <hr/>

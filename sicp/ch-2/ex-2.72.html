@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9416,36 +9417,36 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>We need to look at maximum of <script type="math/tex">n</script> levels.</p>
+                        <p>We need to look at maximum of <span class="kdmath">$n$</span> levels.</p>
 
-<p>At each level we search in ordered set of symbols. Also at first node we search in <script type="math/tex">n</script> symbols then we search in <script type="math/tex">n/2</script> symbols and so on.</p>
+<p>At each level we search in ordered set of symbols. Also at first node we search in <span class="kdmath">$n$</span> symbols then we search in <span class="kdmath">$n/2$</span> symbols and so on.</p>
 
-<p>Worst case time in a search for <script type="math/tex">k</script> symbols is <script type="math/tex">k</script>.</p>
+<p>Worst case time in a search for <span class="kdmath">$k$</span> symbols is <span class="kdmath">$k$</span>.</p>
 
-<p>If an element is not found in left branch, we look for it in right branch. Thus total search time in this case is <script type="math/tex">n + n = 2n</script>.</p>
+<p>If an element is not found in left branch, we look for it in right branch. Thus total search time in this case is <span class="kdmath">$n + n = 2n$</span>.</p>
 
-<p>Since <script type="math/tex">n</script> is worst case search time as well as <em>on average</em> we shall only be looking in only left branch half of the time.</p>
+<p>Since <span class="kdmath">$n$</span> is worst case search time as well as <em>on average</em> we shall only be looking in only left branch half of the time.</p>
 
-<p>On average we can say that <script type="math/tex">2n/2 = n</script> will be the time to lookup in a step where <script type="math/tex">n</script> is the number of symbols present in left or right node(assuming they will be equal).</p>
+<p>On average we can say that <span class="kdmath">$2n/2 = n$</span> will be the time to lookup in a step where <span class="kdmath">$n$</span> is the number of symbols present in left or right node(assuming they will be equal).</p>
 
 <p>Each time when a branch is selected, number of symbols in branch are reduced by half.</p>
 
-<p>Thus in first step we shall be looking in <script type="math/tex">n</script> symbols.</p>
+<p>Thus in first step we shall be looking in <span class="kdmath">$n$</span> symbols.</p>
 
-<p>In second, we shall lookup in <script type="math/tex">n/2</script> symbols.</p>
+<p>In second, we shall lookup in <span class="kdmath">$n/2$</span> symbols.</p>
 
 <p>and so on.</p>
 
 <p>Thus total complexity should be:      <br />
-<script type="math/tex">= n + n/2 + (n/2)/2 + ((n/2)/2)/2 ... 1</script>     <br />
-<script type="math/tex">= n(1 + 1/2 + 1/4 + 1/8 + 1/(2^{\log n})</script>     <br />
-<script type="math/tex">= n \times \frac { 1 - {(1/2)}^{\log n} } { 1 - 1/2 }</script>    <br />
-<script type="math/tex">= 2 \times n \times ( { 1 - {(1/2)}^{\log n} } )</script>    <br />
-<script type="math/tex">= 2 \times n \times ( 1 - 1/n )</script>    <br />
-<script type="math/tex">= 2 \times n \times ( (n - 1)/n )</script>    <br />
-<script type="math/tex">= 2 \times (n - 1)</script></p>
+<span class="kdmath">$= n + n/2 + (n/2)/2 + ((n/2)/2)/2 ... 1$</span>     <br />
+<span class="kdmath">$= n(1 + 1/2 + 1/4 + 1/8 + 1/(2^{\log n})$</span>     <br />
+<span class="kdmath">$= n \times \frac { 1 - {(1/2)}^{\log n} } { 1 - 1/2 }$</span>    <br />
+<span class="kdmath">$= 2 \times n \times ( { 1 - {(1/2)}^{\log n} } )$</span>    <br />
+<span class="kdmath">$= 2 \times n \times ( 1 - 1/n )$</span>    <br />
+<span class="kdmath">$= 2 \times n \times ( (n - 1)/n )$</span>    <br />
+<span class="kdmath">$= 2 \times (n - 1)$</span></p>
 
-<p>Thus average complexity shall be <script type="math/tex">O(2n)</script>.</p>
+<p>Thus average complexity shall be <span class="kdmath">$O(2n)$</span>.</p>
 
 
                         <hr/>

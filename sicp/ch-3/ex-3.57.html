@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9414,9 +9415,9 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>For the memoized part, to compute <script type="math/tex">\,n^{th}\,</script> term, we need <script type="math/tex">\,n^{th} - 2\,</script> additions. Thus it is linear in time complexity.</p>
+                        <p>For the memoized part, to compute <span class="kdmath">$\,n^{th}\,$</span> term, we need <span class="kdmath">$\,n^{th} - 2\,$</span> additions. Thus it is linear in time complexity.</p>
 
-<p>Without memoization, to compute <script type="math/tex">\,n^{th}\,</script> term, the <code class="highlighter-rouge">add-streams</code> take two fib streams(<code class="highlighter-rouge">fib</code> and <code class="highlighter-rouge">(cdr fib)</code>) and add their first term. Or we add <script type="math/tex">\,fib_{n-1} + fib_{n}\,</script>. Now the problem is that unlike in the memoized part this sums are recomputed again! So in a way we are back to our resursive version of fibs that we saw <a href="https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.2">here</a>. There are already saw that this is a exponential time complexity.</p>
+<p>Without memoization, to compute <span class="kdmath">$\,n^{th}\,$</span> term, the <code class="highlighter-rouge">add-streams</code> take two fib streams(<code class="highlighter-rouge">fib</code> and <code class="highlighter-rouge">(cdr fib)</code>) and add their first term. Or we add <span class="kdmath">$\,fib_{n-1} + fib_{n}\,$</span>. Now the problem is that unlike in the memoized part this sums are recomputed again! So in a way we are back to our resursive version of fibs that we saw <a href="https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.2">here</a>. There are already saw that this is a exponential time complexity.</p>
 
 
                         <hr/>

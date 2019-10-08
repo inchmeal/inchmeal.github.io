@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,9 +1137,9 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li>Suppose <script type="math/tex">R</script> is a relation on set <script type="math/tex">A</script>. <script type="math/tex">R^n = R \circ R \circ \cdot \cdot \cdot \circ R</script>(n times).</li>
-  <li>Suppose <script type="math/tex">R</script> is a relation on set <script type="math/tex">A</script>. Then <script type="math/tex">R^m \circ R^n = R^{m+n}</script>.</li>
-  <li>Transitive closure of relation <script type="math/tex">R</script> on set <script type="math/tex">A</script> is <script type="math/tex">\cup_{n \in \mathbb Z^+} R^n</script>.</li>
+  <li>Suppose <span class="kdmath">$R$</span> is a relation on set <span class="kdmath">$A$</span>. <span class="kdmath">$R^n = R \circ R \circ \cdot \cdot \cdot \circ R$</span>(n times).</li>
+  <li>Suppose <span class="kdmath">$R$</span> is a relation on set <span class="kdmath">$A$</span>. Then <span class="kdmath">$R^m \circ R^n = R^{m+n}$</span>.</li>
+  <li>Transitive closure of relation <span class="kdmath">$R$</span> on set <span class="kdmath">$A$</span> is <span class="kdmath">$\cup_{n \in \mathbb Z^+} R^n$</span>.</li>
 </ul>
 
 <hr />
@@ -1150,95 +1151,95 @@
 <p>We need to prove the following:</p>
 
 <ul>
-  <li><script type="math/tex">\cap \mathcal F \ne \phi</script>.</li>
-  <li><script type="math/tex">\cap \mathcal F</script> is closed under <script type="math/tex">f</script>. Or <script type="math/tex">\forall x \in \cap \mathcal F (f(x) \in \cap \mathcal F)</script>.</li>
-  <li><script type="math/tex">B \subseteq \cap \mathcal F \subseteq A</script>.</li>
-  <li><script type="math/tex">\cap \mathcal F</script> is the closure of <script type="math/tex">B</script> under <script type="math/tex">f</script>.</li>
+  <li><span class="kdmath">$\cap \mathcal F \ne \phi$</span>.</li>
+  <li><span class="kdmath">$\cap \mathcal F$</span> is closed under <span class="kdmath">$f$</span>. Or <span class="kdmath">$\forall x \in \cap \mathcal F (f(x) \in \cap \mathcal F)$</span>.</li>
+  <li><span class="kdmath">$B \subseteq \cap \mathcal F \subseteq A$</span>.</li>
+  <li><span class="kdmath">$\cap \mathcal F$</span> is the closure of <span class="kdmath">$B$</span> under <span class="kdmath">$f$</span>.</li>
 </ul>
 
 <p>Now we will prove them one by one:</p>
 
 <ul>
   <li>
-    <p><em>Proof for:</em> <script type="math/tex">\cap \mathcal F \ne \phi</script>.</p>
+    <p><em>Proof for:</em> <span class="kdmath">$\cap \mathcal F \ne \phi$</span>.</p>
 
-    <p>Since <script type="math/tex">f: A \to A</script>, it follows that <script type="math/tex">\forall x \in A(f(x) \in A)</script>. Thus <script type="math/tex">A</script> is closed under <script type="math/tex">f</script>. Also since <script type="math/tex">B \subseteq A</script>,
-it follows that <script type="math/tex">A \in \mathcal F</script>. Thus <script type="math/tex">\mathcal F \ne \phi</script>.</p>
+    <p>Since <span class="kdmath">$f: A \to A$</span>, it follows that <span class="kdmath">$\forall x \in A(f(x) \in A)$</span>. Thus <span class="kdmath">$A$</span> is closed under <span class="kdmath">$f$</span>. Also since <span class="kdmath">$B \subseteq A$</span>,
+it follows that <span class="kdmath">$A \in \mathcal F$</span>. Thus <span class="kdmath">$\mathcal F \ne \phi$</span>.</p>
   </li>
   <li>
-    <p><em>Proof for:</em> <script type="math/tex">\cap \mathcal F</script> is closed under <script type="math/tex">f</script>.</p>
+    <p><em>Proof for:</em> <span class="kdmath">$\cap \mathcal F$</span> is closed under <span class="kdmath">$f$</span>.</p>
 
-    <p>Suppose <script type="math/tex">x \in \cap \mathcal F</script>. Suppose <script type="math/tex">C</script> is an arbitrary set in <script type="math/tex">\mathcal F</script>. Since <script type="math/tex">\cap \mathcal F \subseteq C</script>, it follows 
-that <script type="math/tex">x \in C</script>. Since <script type="math/tex">C</script> is closed under <script type="math/tex">f</script> and <script type="math/tex">x \in C</script>, it follows that <script type="math/tex">f(x) \in C</script>. Since <script type="math/tex">C</script> was arbitrary element
-of <script type="math/tex">\mathcal F</script>, it follows that <script type="math/tex">\forall C \in \mathcal F(f(x) \in C)</script>. It follows that <script type="math/tex">f(x) \in \cap \mathcal F</script>. Since <script type="math/tex">x</script> is
-arbitrary, it follows that <script type="math/tex">\forall x \in \cap \mathcal F (f(x) \in \cap \mathcal F)</script>.</p>
+    <p>Suppose <span class="kdmath">$x \in \cap \mathcal F$</span>. Suppose <span class="kdmath">$C$</span> is an arbitrary set in <span class="kdmath">$\mathcal F$</span>. Since <span class="kdmath">$\cap \mathcal F \subseteq C$</span>, it follows 
+that <span class="kdmath">$x \in C$</span>. Since <span class="kdmath">$C$</span> is closed under <span class="kdmath">$f$</span> and <span class="kdmath">$x \in C$</span>, it follows that <span class="kdmath">$f(x) \in C$</span>. Since <span class="kdmath">$C$</span> was arbitrary element
+of <span class="kdmath">$\mathcal F$</span>, it follows that <span class="kdmath">$\forall C \in \mathcal F(f(x) \in C)$</span>. It follows that <span class="kdmath">$f(x) \in \cap \mathcal F$</span>. Since <span class="kdmath">$x$</span> is
+arbitrary, it follows that <span class="kdmath">$\forall x \in \cap \mathcal F (f(x) \in \cap \mathcal F)$</span>.</p>
   </li>
   <li>
-    <p><em>Proof for:</em> <script type="math/tex">B \subseteq \cap \mathcal F \subseteq A</script>.</p>
+    <p><em>Proof for:</em> <span class="kdmath">$B \subseteq \cap \mathcal F \subseteq A$</span>.</p>
 
-    <p>Suppose <script type="math/tex">x \in \cap \mathcal F</script>. Suppose <script type="math/tex">C</script> is an arbitrary set in <script type="math/tex">\mathcal F</script>. Since <script type="math/tex">\cap \mathcal F \subseteq C</script>, it follows
-<script type="math/tex">x \in C</script>. Since <script type="math/tex">C \subseteq A</script>, it follows <script type="math/tex">x \in A</script>. Since <script type="math/tex">x</script> is arbitrary, thus <script type="math/tex">\cap \mathcal F \subseteq A</script>.</p>
+    <p>Suppose <span class="kdmath">$x \in \cap \mathcal F$</span>. Suppose <span class="kdmath">$C$</span> is an arbitrary set in <span class="kdmath">$\mathcal F$</span>. Since <span class="kdmath">$\cap \mathcal F \subseteq C$</span>, it follows
+<span class="kdmath">$x \in C$</span>. Since <span class="kdmath">$C \subseteq A$</span>, it follows <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$x$</span> is arbitrary, thus <span class="kdmath">$\cap \mathcal F \subseteq A$</span>.</p>
 
-    <p>Suppose <script type="math/tex">x \in B</script>. Suppose <script type="math/tex">C</script> is an arbitrary set in <script type="math/tex">\mathcal F</script>. Since <script type="math/tex">B \subseteq C</script>, it follows <script type="math/tex">x \in C</script>.
-Since <script type="math/tex">C</script> is an arbitrary set, it follows <script type="math/tex">\forall C \in \mathcal F(x \in C)</script>. It follows that <script type="math/tex">x \in \cap \mathcal F</script>. Since <script type="math/tex">x</script> is arbitrary,
-it follows that <script type="math/tex">B \subseteq \cap \mathcal F</script>.</p>
+    <p>Suppose <span class="kdmath">$x \in B$</span>. Suppose <span class="kdmath">$C$</span> is an arbitrary set in <span class="kdmath">$\mathcal F$</span>. Since <span class="kdmath">$B \subseteq C$</span>, it follows <span class="kdmath">$x \in C$</span>.
+Since <span class="kdmath">$C$</span> is an arbitrary set, it follows <span class="kdmath">$\forall C \in \mathcal F(x \in C)$</span>. It follows that <span class="kdmath">$x \in \cap \mathcal F$</span>. Since <span class="kdmath">$x$</span> is arbitrary,
+it follows that <span class="kdmath">$B \subseteq \cap \mathcal F$</span>.</p>
   </li>
   <li>
-    <p><em>Proof for:</em> <script type="math/tex">\cap \mathcal F</script> is the closure of <script type="math/tex">B</script> under <script type="math/tex">f</script>.</p>
+    <p><em>Proof for:</em> <span class="kdmath">$\cap \mathcal F$</span> is the closure of <span class="kdmath">$B$</span> under <span class="kdmath">$f$</span>.</p>
 
-    <p>Thus we need to prove that <script type="math/tex">\cap \mathcal F</script> the smallest set closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq \cap \mathcal F \cap A</script>.     <br />
-Suppose <script type="math/tex">C</script> is a set such that <script type="math/tex">B \subseteq C \subseteq A</script> and <script type="math/tex">C</script> is closed under <script type="math/tex">f</script>. Thus <script type="math/tex">C \in \mathcal F</script>. It follows that <script type="math/tex">\cap \mathcal F \subseteq C</script>.
-Since <script type="math/tex">\cap \mathcal F</script> is closed under <script type="math/tex">f</script> and <script type="math/tex">B \subseteq \cap \mathcal F \cap A</script> and <script type="math/tex">\cap \mathcal F \subseteq C</script>, it follows 
-that <script type="math/tex">\cap \mathcal F</script> is the smallest set closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq \cap \mathcal F \cap A</script>.</p>
+    <p>Thus we need to prove that <span class="kdmath">$\cap \mathcal F$</span> the smallest set closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq \cap \mathcal F \cap A$</span>.     <br />
+Suppose <span class="kdmath">$C$</span> is a set such that <span class="kdmath">$B \subseteq C \subseteq A$</span> and <span class="kdmath">$C$</span> is closed under <span class="kdmath">$f$</span>. Thus <span class="kdmath">$C \in \mathcal F$</span>. It follows that <span class="kdmath">$\cap \mathcal F \subseteq C$</span>.
+Since <span class="kdmath">$\cap \mathcal F$</span> is closed under <span class="kdmath">$f$</span> and <span class="kdmath">$B \subseteq \cap \mathcal F \cap A$</span> and <span class="kdmath">$\cap \mathcal F \subseteq C$</span>, it follows 
+that <span class="kdmath">$\cap \mathcal F$</span> is the smallest set closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq \cap \mathcal F \cap A$</span>.</p>
   </li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">C = \cup_{n \in \mathbb Z^+} B_n</script></p>
+<p>Suppose <span class="kdmath">$C = \cup_{n \in \mathbb Z^+} B_n$</span></p>
 
 <p>We need to prove the following:</p>
 
 <ul>
-  <li><script type="math/tex">B \subseteq C \subseteq A</script>.</li>
-  <li><script type="math/tex">C</script> is closed under <script type="math/tex">f</script>.</li>
-  <li><script type="math/tex">C</script> is the smallest set closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq C \subseteq A</script>.</li>
+  <li><span class="kdmath">$B \subseteq C \subseteq A$</span>.</li>
+  <li><span class="kdmath">$C$</span> is closed under <span class="kdmath">$f$</span>.</li>
+  <li><span class="kdmath">$C$</span> is the smallest set closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq C \subseteq A$</span>.</li>
 </ul>
 
 <p>Now we shall prove each as follows:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">B \subseteq C \subseteq A</script>:</p>
+    <p><span class="kdmath">$B \subseteq C \subseteq A$</span>:</p>
 
-    <p>It directly follows that <script type="math/tex">B = B_1 \subseteq \cup_{n \in \mathbb Z^+} B_n</script>. Also since <script type="math/tex">f: A \to A</script> and <script type="math/tex">B_{n+1} = \{ f(x) \, \vert \, x \in B_n \}</script>,
-if follows that <script type="math/tex">B_n \subseteq A</script>. Thus <script type="math/tex">\cup_{n \in \mathbb Z^+} B_n \subseteq A</script>.</p>
+    <p>It directly follows that <span class="kdmath">$B = B_1 \subseteq \cup_{n \in \mathbb Z^+} B_n$</span>. Also since <span class="kdmath">$f: A \to A$</span> and <span class="kdmath">$B_{n+1} = \{ f(x) \, \vert \, x \in B_n \}$</span>,
+if follows that <span class="kdmath">$B_n \subseteq A$</span>. Thus <span class="kdmath">$\cup_{n \in \mathbb Z^+} B_n \subseteq A$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">C</script> is closed under <script type="math/tex">f</script>:</p>
+    <p><span class="kdmath">$C$</span> is closed under <span class="kdmath">$f$</span>:</p>
 
-    <p>Suppose <script type="math/tex">x \in C</script>. Thus for some <script type="math/tex">n \in Z^+</script>, <script type="math/tex">x \in B_n</script>. It follows that <script type="math/tex">f(x) \in B_{n+1}</script>. But <script type="math/tex">B_{n+1} \subseteq C</script>. Thus
-<script type="math/tex">f(x) \in C</script>. Since <script type="math/tex">x</script> was arbitrary, it follows that <script type="math/tex">\forall x \in C(f(x) \in C)</script>. Thus <script type="math/tex">C</script> is closed under <script type="math/tex">f</script>.</p>
+    <p>Suppose <span class="kdmath">$x \in C$</span>. Thus for some <span class="kdmath">$n \in Z^+$</span>, <span class="kdmath">$x \in B_n$</span>. It follows that <span class="kdmath">$f(x) \in B_{n+1}$</span>. But <span class="kdmath">$B_{n+1} \subseteq C$</span>. Thus
+<span class="kdmath">$f(x) \in C$</span>. Since <span class="kdmath">$x$</span> was arbitrary, it follows that <span class="kdmath">$\forall x \in C(f(x) \in C)$</span>. Thus <span class="kdmath">$C$</span> is closed under <span class="kdmath">$f$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">C</script> is the smallest set closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq C \subseteq A</script>:</p>
+    <p><span class="kdmath">$C$</span> is the smallest set closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq C \subseteq A$</span>:</p>
 
-    <p>Suppose there is a set <script type="math/tex">D</script> closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq D \subseteq A</script>. Thus we need to prove that <script type="math/tex">C \subseteq D</script>.
-Thus we need to prove that <script type="math/tex">\forall n \in Z^+ (B_n \subseteq D)</script>. We shall prove this using induction:</p>
+    <p>Suppose there is a set <span class="kdmath">$D$</span> closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq D \subseteq A$</span>. Thus we need to prove that <span class="kdmath">$C \subseteq D$</span>.
+Thus we need to prove that <span class="kdmath">$\forall n \in Z^+ (B_n \subseteq D)$</span>. We shall prove this using induction:</p>
 
     <p>Base Case:</p>
 
-    <p>For <script type="math/tex">n = 1, B_1 = B</script>. Thus by assumption for our set <script type="math/tex">D</script>, <script type="math/tex">B \subseteq D</script>.</p>
+    <p>For <span class="kdmath">$n = 1, B_1 = B$</span>. Thus by assumption for our set <span class="kdmath">$D$</span>, <span class="kdmath">$B \subseteq D$</span>.</p>
 
     <p>Induction Step:</p>
 
-    <p>Suppose for <script type="math/tex">n \in Z^+</script>, <script type="math/tex">B_n \subseteq D</script>.</p>
+    <p>Suppose for <span class="kdmath">$n \in Z^+$</span>, <span class="kdmath">$B_n \subseteq D$</span>.</p>
 
-    <p>Suppose <script type="math/tex">y \in B_{n+1}</script>. Thus by the definition of <script type="math/tex">B_n</script>, it follows that there exists some <script type="math/tex">x \in B_n</script> such that <script type="math/tex">y = f(x)</script>. But by our hypothesis,
- <script type="math/tex">B_n \subseteq D</script>, thus <script type="math/tex">x \in D</script>. Since <script type="math/tex">D</script> is a closed set and <script type="math/tex">x \in D</script>, it follows that <script type="math/tex">f(x) \in D</script>, or <script type="math/tex">y \in D</script>. Since <script type="math/tex">y</script> is arbitrary,
- it follows that <script type="math/tex">B_{n+1} \in D</script>.</p>
+    <p>Suppose <span class="kdmath">$y \in B_{n+1}$</span>. Thus by the definition of <span class="kdmath">$B_n$</span>, it follows that there exists some <span class="kdmath">$x \in B_n$</span> such that <span class="kdmath">$y = f(x)$</span>. But by our hypothesis,
+ <span class="kdmath">$B_n \subseteq D$</span>, thus <span class="kdmath">$x \in D$</span>. Since <span class="kdmath">$D$</span> is a closed set and <span class="kdmath">$x \in D$</span>, it follows that <span class="kdmath">$f(x) \in D$</span>, or <span class="kdmath">$y \in D$</span>. Since <span class="kdmath">$y$</span> is arbitrary,
+ it follows that <span class="kdmath">$B_{n+1} \in D$</span>.</p>
 
-    <p>Thus <script type="math/tex">\forall n \in Z^+ (B_n \subseteq D)</script>, or <script type="math/tex">\cup_{n \in \mathbb Z^+} B_n \subseteq D</script>. Thus <script type="math/tex">C \subseteq D</script>.</p>
+    <p>Thus <span class="kdmath">$\forall n \in Z^+ (B_n \subseteq D)$</span>, or <span class="kdmath">$\cup_{n \in \mathbb Z^+} B_n \subseteq D$</span>. Thus <span class="kdmath">$C \subseteq D$</span>.</p>
   </li>
 </ul>
 
@@ -1246,7 +1247,7 @@ Thus we need to prove that <script type="math/tex">\forall n \in Z^+ (B_n \subse
 
 <p><strong>Soln2</strong></p>
 
-<p>Closure of set <script type="math/tex">\{ 0 \}</script> under <script type="math/tex">f</script> is : <script type="math/tex">\{ 0,1,2,3,\,.... \}</script>.</p>
+<p>Closure of set <span class="kdmath">$\{ 0 \}$</span> under <span class="kdmath">$f$</span> is : <span class="kdmath">$\{ 0,1,2,3,\,.... \}$</span>.</p>
 
 <hr />
 
@@ -1254,49 +1255,49 @@ Thus we need to prove that <script type="math/tex">\forall n \in Z^+ (B_n \subse
 
 <p>This can be proved in a similar way like in Ex-1 part(a).</p>
 
-<p>Suppose <script type="math/tex">\mathcal H = \{ C \, \vert \, B \subseteq C \subseteq A \text{ and } \forall f \in \mathcal F(C \text{ is closed under } f) \}</script>.</p>
+<p>Suppose <span class="kdmath">$\mathcal H = \{ C \, \vert \, B \subseteq C \subseteq A \text{ and } \forall f \in \mathcal F(C \text{ is closed under } f) \}$</span>.</p>
 
-<p>We shall now prove that <script type="math/tex">\cap \mathcal H \ne \phi</script> and <script type="math/tex">\cap \mathcal H</script> is closure of <script type="math/tex">B</script> on <script type="math/tex">f</script>. We will prove this by proving the following:</p>
+<p>We shall now prove that <span class="kdmath">$\cap \mathcal H \ne \phi$</span> and <span class="kdmath">$\cap \mathcal H$</span> is closure of <span class="kdmath">$B$</span> on <span class="kdmath">$f$</span>. We will prove this by proving the following:</p>
 
 <ul>
-  <li><script type="math/tex">\cap \mathcal H \ne \phi</script>.</li>
-  <li><script type="math/tex">\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )</script>.</li>
-  <li><script type="math/tex">B \subseteq \cap \mathcal H \subseteq A</script>.</li>
-  <li><script type="math/tex">\cap \mathcal H</script> is the smallest set such that <script type="math/tex">B \subseteq \cap \mathcal H \subseteq A</script> and <script type="math/tex">\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )</script>.</li>
+  <li><span class="kdmath">$\cap \mathcal H \ne \phi$</span>.</li>
+  <li><span class="kdmath">$\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )$</span>.</li>
+  <li><span class="kdmath">$B \subseteq \cap \mathcal H \subseteq A$</span>.</li>
+  <li><span class="kdmath">$\cap \mathcal H$</span> is the smallest set such that <span class="kdmath">$B \subseteq \cap \mathcal H \subseteq A$</span> and <span class="kdmath">$\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )$</span>.</li>
 </ul>
 
 <p>Lets prove each of them:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">\cap \mathcal H \ne \phi</script>.</p>
+    <p><span class="kdmath">$\cap \mathcal H \ne \phi$</span>.</p>
 
-    <p>We know that <script type="math/tex">B \subseteq A \subseteq A</script>. Also <script type="math/tex">\forall f \in \mathcal F(A \text{ is closed on } f )</script>. Thus <script type="math/tex">A \in \mathcal H</script>. It follows that
-<script type="math/tex">\cap \mathcal H \ne \phi</script>.</p>
+    <p>We know that <span class="kdmath">$B \subseteq A \subseteq A$</span>. Also <span class="kdmath">$\forall f \in \mathcal F(A \text{ is closed on } f )$</span>. Thus <span class="kdmath">$A \in \mathcal H$</span>. It follows that
+<span class="kdmath">$\cap \mathcal H \ne \phi$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )</script>.</p>
+    <p><span class="kdmath">$\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )$</span>.</p>
 
-    <p>Suppose <script type="math/tex">f \in \mathcal F</script>. Suppose <script type="math/tex">x \in \cap \mathcal H</script>. Suppose <script type="math/tex">C</script> is an arbitrary element of <script type="math/tex">\mathcal H</script>. Since <script type="math/tex">\cap \mathcal H \subseteq C</script>,
-it follows that <script type="math/tex">x \in C</script>. Since <script type="math/tex">\forall f \in \mathcal F(C \text{ is closed on } f )</script>, it follows that <script type="math/tex">f(x) \in C</script>. Since <script type="math/tex">C</script> was arbitrary,
-it follows that <script type="math/tex">\forall C \in \mathcal H(f(x) \in C)</script>. Thus <script type="math/tex">f(x) \in \cap \mathcal H</script>. Since <script type="math/tex">x</script> was arbitrary, it follows that <script type="math/tex">\cap \mathcal H</script>
-is closed on <script type="math/tex">f</script>. Since <script type="math/tex">f</script> is arbitrary, it follows that <script type="math/tex">\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )</script>.</p>
+    <p>Suppose <span class="kdmath">$f \in \mathcal F$</span>. Suppose <span class="kdmath">$x \in \cap \mathcal H$</span>. Suppose <span class="kdmath">$C$</span> is an arbitrary element of <span class="kdmath">$\mathcal H$</span>. Since <span class="kdmath">$\cap \mathcal H \subseteq C$</span>,
+it follows that <span class="kdmath">$x \in C$</span>. Since <span class="kdmath">$\forall f \in \mathcal F(C \text{ is closed on } f )$</span>, it follows that <span class="kdmath">$f(x) \in C$</span>. Since <span class="kdmath">$C$</span> was arbitrary,
+it follows that <span class="kdmath">$\forall C \in \mathcal H(f(x) \in C)$</span>. Thus <span class="kdmath">$f(x) \in \cap \mathcal H$</span>. Since <span class="kdmath">$x$</span> was arbitrary, it follows that <span class="kdmath">$\cap \mathcal H$</span>
+is closed on <span class="kdmath">$f$</span>. Since <span class="kdmath">$f$</span> is arbitrary, it follows that <span class="kdmath">$\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">B \subseteq \cap \mathcal H \subseteq A</script>.</p>
+    <p><span class="kdmath">$B \subseteq \cap \mathcal H \subseteq A$</span>.</p>
 
-    <p>Suppose <script type="math/tex">x \in \cap \mathcal H</script>. Suppose <script type="math/tex">C</script> is an arbitrary element of <script type="math/tex">\mathcal H</script>. Since <script type="math/tex">\cap \mathcal H \subseteq C</script>, it follows that <script type="math/tex">x \in C</script>.
-Since <script type="math/tex">C \subseteq A</script>, it follows <script type="math/tex">x \in A</script>. Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">\cap \mathcal H \subseteq A</script>.</p>
+    <p>Suppose <span class="kdmath">$x \in \cap \mathcal H$</span>. Suppose <span class="kdmath">$C$</span> is an arbitrary element of <span class="kdmath">$\mathcal H$</span>. Since <span class="kdmath">$\cap \mathcal H \subseteq C$</span>, it follows that <span class="kdmath">$x \in C$</span>.
+Since <span class="kdmath">$C \subseteq A$</span>, it follows <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$\cap \mathcal H \subseteq A$</span>.</p>
 
-    <p>Suppose <script type="math/tex">x \in B</script>. Suppose <script type="math/tex">C</script> is an arbitrary element of <script type="math/tex">\mathcal H</script>. Since <script type="math/tex">C \subseteq B</script>, it follows that <script type="math/tex">x \in C</script>. Since <script type="math/tex">C</script> was arbitrary,
-it follows that <script type="math/tex">\forall C \in \mathcal H(x \in C)</script>. Thus <script type="math/tex">x \in \cap \mathcal H</script>. Since <script type="math/tex">x</script> is arbitrary, it follows <script type="math/tex">B \subseteq \cap \mathcal H</script>.</p>
+    <p>Suppose <span class="kdmath">$x \in B$</span>. Suppose <span class="kdmath">$C$</span> is an arbitrary element of <span class="kdmath">$\mathcal H$</span>. Since <span class="kdmath">$C \subseteq B$</span>, it follows that <span class="kdmath">$x \in C$</span>. Since <span class="kdmath">$C$</span> was arbitrary,
+it follows that <span class="kdmath">$\forall C \in \mathcal H(x \in C)$</span>. Thus <span class="kdmath">$x \in \cap \mathcal H$</span>. Since <span class="kdmath">$x$</span> is arbitrary, it follows <span class="kdmath">$B \subseteq \cap \mathcal H$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">\cap \mathcal H</script> is the smallest set such that <script type="math/tex">B \subseteq \cap \mathcal H \subseteq A</script> and <script type="math/tex">\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )</script>.</p>
+    <p><span class="kdmath">$\cap \mathcal H$</span> is the smallest set such that <span class="kdmath">$B \subseteq \cap \mathcal H \subseteq A$</span> and <span class="kdmath">$\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )$</span>.</p>
 
-    <p>Suppose <script type="math/tex">D</script> is a set such that <script type="math/tex">B \subseteq D \subseteq A</script> and <script type="math/tex">\forall f \in \mathcal F(D \text{ is closed on } f )</script>. Thus <script type="math/tex">D \in \mathcal H</script>.
-It follows that <script type="math/tex">\cap \mathcal H \subseteq D</script>. Thus <script type="math/tex">\cap \mathcal H</script> is the smallest set such that <script type="math/tex">B \subseteq \cap \mathcal H \subseteq A</script> and 
-<script type="math/tex">\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )</script>.</p>
+    <p>Suppose <span class="kdmath">$D$</span> is a set such that <span class="kdmath">$B \subseteq D \subseteq A$</span> and <span class="kdmath">$\forall f \in \mathcal F(D \text{ is closed on } f )$</span>. Thus <span class="kdmath">$D \in \mathcal H$</span>.
+It follows that <span class="kdmath">$\cap \mathcal H \subseteq D$</span>. Thus <span class="kdmath">$\cap \mathcal H$</span> is the smallest set such that <span class="kdmath">$B \subseteq \cap \mathcal H \subseteq A$</span> and 
+<span class="kdmath">$\forall f \in \mathcal F(\cap \mathcal H \text{ is closed on } f )$</span>.</p>
   </li>
 </ul>
 
@@ -1306,81 +1307,75 @@ It follows that <script type="math/tex">\cap \mathcal H \subseteq D</script>. Th
 
 <p>We shall follow the proof from Ex-1(b).</p>
 
-<p>Suppose <script type="math/tex">B_1 = B</script> and <script type="math/tex">% <![CDATA[
-\forall n > 1(B_{n+1} = \{ f(x,y) \, \vert \, \exists k < {n+1} (x \in B_k) \text{ and } \exists k < {n+1}(y \in B_k) \} %]]></script>. Suppose <script type="math/tex">C = \cup_{n \in Z^+}B_n</script>.</p>
+<p>Suppose <span class="kdmath">$B_1 = B$</span> and <span class="kdmath">$\forall n > 1(B_{n+1} = \{ f(x,y) \, \vert \, \exists k < {n+1} (x \in B_k) \text{ and } \exists k < {n+1}(y \in B_k) \}$</span>. Suppose <span class="kdmath">$C = \cup_{n \in Z^+}B_n$</span>.</p>
 
-<p>Note that <script type="math/tex">B_{n+1}</script> is different from <script type="math/tex">B_{n+1}</script> in Ex-1 part(b).</p>
+<p>Note that <span class="kdmath">$B_{n+1}$</span> is different from <span class="kdmath">$B_{n+1}$</span> in Ex-1 part(b).</p>
 
-<p>Now we shall prove that <script type="math/tex">C</script> is the closure of <script type="math/tex">B</script> on <script type="math/tex">f</script>.</p>
+<p>Now we shall prove that <span class="kdmath">$C$</span> is the closure of <span class="kdmath">$B$</span> on <span class="kdmath">$f$</span>.</p>
 
 <p>We need to prove the following:</p>
 
 <ul>
-  <li><script type="math/tex">B \subseteq C \subseteq A</script>.</li>
-  <li><script type="math/tex">C</script> is closed under <script type="math/tex">f</script>.</li>
-  <li><script type="math/tex">C</script> is the smallest set closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq C \subseteq A</script>.</li>
+  <li><span class="kdmath">$B \subseteq C \subseteq A$</span>.</li>
+  <li><span class="kdmath">$C$</span> is closed under <span class="kdmath">$f$</span>.</li>
+  <li><span class="kdmath">$C$</span> is the smallest set closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq C \subseteq A$</span>.</li>
 </ul>
 
 <p>Now we shall prove each as follows:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">B \subseteq C \subseteq A</script>:</p>
+    <p><span class="kdmath">$B \subseteq C \subseteq A$</span>:</p>
 
-    <p>It directly follows that <script type="math/tex">B = B_1 \subseteq \cup_{n \in \mathbb Z^+} B_n</script>. Also since <script type="math/tex">f: A \times A \to A</script> and <script type="math/tex">B_{n+1} = \{ f(x,y) \, \vert \, x \in B_n \text{ and } y \in B_n \}</script>,
-if follows that <script type="math/tex">B_n \subseteq A</script>. Thus <script type="math/tex">\cup_{n \in \mathbb Z^+} B_n \subseteq A</script>.</p>
+    <p>It directly follows that <span class="kdmath">$B = B_1 \subseteq \cup_{n \in \mathbb Z^+} B_n$</span>. Also since <span class="kdmath">$f: A \times A \to A$</span> and <span class="kdmath">$B_{n+1} = \{ f(x,y) \, \vert \, x \in B_n \text{ and } y \in B_n \}$</span>,
+if follows that <span class="kdmath">$B_n \subseteq A$</span>. Thus <span class="kdmath">$\cup_{n \in \mathbb Z^+} B_n \subseteq A$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">C</script> is closed under <script type="math/tex">f</script>:</p>
+    <p><span class="kdmath">$C$</span> is closed under <span class="kdmath">$f$</span>:</p>
 
-    <p>Suppose <script type="math/tex">x \in C</script>. Suppose <script type="math/tex">y \in C</script>. Thus for some <script type="math/tex">m \in Z^+</script>, <script type="math/tex">x \in B_m</script>. Similarly for some <script type="math/tex">n \in Z^+</script>, <script type="math/tex">y \in B_n</script>. Now consider following cases:</p>
+    <p>Suppose <span class="kdmath">$x \in C$</span>. Suppose <span class="kdmath">$y \in C$</span>. Thus for some <span class="kdmath">$m \in Z^+$</span>, <span class="kdmath">$x \in B_m$</span>. Similarly for some <span class="kdmath">$n \in Z^+$</span>, <span class="kdmath">$y \in B_n$</span>. Now consider following cases:</p>
 
     <ul>
       <li>
-        <p>Case <script type="math/tex">m \ge n</script></p>
+        <p>Case <span class="kdmath">$m \ge n$</span></p>
 
-        <p>Then by definition of <script type="math/tex">B_m</script>, it follows that <script type="math/tex">f(x,y) \in B_{m+1}</script>. Thus <script type="math/tex">f(x,y) \in C</script>.</p>
+        <p>Then by definition of <span class="kdmath">$B_m$</span>, it follows that <span class="kdmath">$f(x,y) \in B_{m+1}$</span>. Thus <span class="kdmath">$f(x,y) \in C$</span>.</p>
       </li>
       <li>
-        <p>Case <script type="math/tex">% <![CDATA[
-m < n %]]></script></p>
+        <p>Case <span class="kdmath">$m < n$</span></p>
 
-        <p>Then by definition of <script type="math/tex">B_n</script>, it follows that <script type="math/tex">f(x,y) \in B_{n+1}</script>. Thus <script type="math/tex">f(x,y) \in C</script>.</p>
+        <p>Then by definition of <span class="kdmath">$B_n$</span>, it follows that <span class="kdmath">$f(x,y) \in B_{n+1}$</span>. Thus <span class="kdmath">$f(x,y) \in C$</span>.</p>
       </li>
     </ul>
 
-    <p>Thus <script type="math/tex">f(x,y) \in C</script> in all possible cases. Since <script type="math/tex">x</script> and <script type="math/tex">y</script> are arbitrary, it follows that <script type="math/tex">\forall x \in C \forall y \in C(f(x,y) \in C)</script>. Thus <script type="math/tex">C</script>
-is closed on <script type="math/tex">f</script>.</p>
+    <p>Thus <span class="kdmath">$f(x,y) \in C$</span> in all possible cases. Since <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> are arbitrary, it follows that <span class="kdmath">$\forall x \in C \forall y \in C(f(x,y) \in C)$</span>. Thus <span class="kdmath">$C$</span>
+is closed on <span class="kdmath">$f$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">C</script> is the smallest set closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq C \subseteq A</script>:</p>
+    <p><span class="kdmath">$C$</span> is the smallest set closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq C \subseteq A$</span>:</p>
 
-    <p>Suppose there is a set <script type="math/tex">D</script> closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq D \subseteq A</script>. Thus we need to prove that <script type="math/tex">C \subseteq D</script>.
-Thus we need to prove that <script type="math/tex">\forall n \in Z^+ (B_n \subseteq D)</script>. We shall prove this using strong induction:</p>
+    <p>Suppose there is a set <span class="kdmath">$D$</span> closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq D \subseteq A$</span>. Thus we need to prove that <span class="kdmath">$C \subseteq D$</span>.
+Thus we need to prove that <span class="kdmath">$\forall n \in Z^+ (B_n \subseteq D)$</span>. We shall prove this using strong induction:</p>
 
-    <p>Suppose <script type="math/tex">n</script> is an arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n(B_k \subseteq D) %]]></script>(induction hypothesis).
+    <p>Suppose <span class="kdmath">$n$</span> is an arbitrary natural number. Suppose <span class="kdmath">$\forall k < n(B_k \subseteq D)$</span>(induction hypothesis).
 Consider the following cases:</p>
 
     <ul>
       <li>
-        <p>Case <script type="math/tex">n = 1</script>       <br />
-For <script type="math/tex">n = 1, B_1 = B</script>. Thus by assumption for our set <script type="math/tex">D</script>, <script type="math/tex">B \subseteq D</script>.</p>
+        <p>Case <span class="kdmath">$n = 1$</span>       <br />
+For <span class="kdmath">$n = 1, B_1 = B$</span>. Thus by assumption for our set <span class="kdmath">$D$</span>, <span class="kdmath">$B \subseteq D$</span>.</p>
       </li>
       <li>
-        <p>Case <script type="math/tex">n > 1</script></p>
+        <p>Case <span class="kdmath">$n > 1$</span></p>
 
-        <p>Suppose <script type="math/tex">z \in B_n</script>. Since <script type="math/tex">n > 1</script>, it follows that <script type="math/tex">z = f(x,y)</script> where <script type="math/tex">x \in B_k</script> and <script type="math/tex">y \in B_l</script> such that <script type="math/tex">% <![CDATA[
-k,l < n %]]></script>.
-Since <script type="math/tex">% <![CDATA[
-k < n %]]></script> and <script type="math/tex">% <![CDATA[
-l < n %]]></script>, then by our induction hypothesis <script type="math/tex">B_k \subseteq D</script> and <script type="math/tex">B_l \subseteq D</script>. It follows that <script type="math/tex">x \in D</script> as well as
-<script type="math/tex">y \in D</script>. Since <script type="math/tex">D</script> is closed under <script type="math/tex">f</script>, it follows that <script type="math/tex">f(x,y) \in D</script>. Thus <script type="math/tex">z \in D</script>. Since <script type="math/tex">z</script> was arbitrary, it follows that
-<script type="math/tex">B_n \subseteq D</script>.</p>
+        <p>Suppose <span class="kdmath">$z \in B_n$</span>. Since <span class="kdmath">$n > 1$</span>, it follows that <span class="kdmath">$z = f(x,y)$</span> where <span class="kdmath">$x \in B_k$</span> and <span class="kdmath">$y \in B_l$</span> such that <span class="kdmath">$k,l < n$</span>.
+Since <span class="kdmath">$k < n$</span> and <span class="kdmath">$l < n$</span>, then by our induction hypothesis <span class="kdmath">$B_k \subseteq D$</span> and <span class="kdmath">$B_l \subseteq D$</span>. It follows that <span class="kdmath">$x \in D$</span> as well as
+<span class="kdmath">$y \in D$</span>. Since <span class="kdmath">$D$</span> is closed under <span class="kdmath">$f$</span>, it follows that <span class="kdmath">$f(x,y) \in D$</span>. Thus <span class="kdmath">$z \in D$</span>. Since <span class="kdmath">$z$</span> was arbitrary, it follows that
+<span class="kdmath">$B_n \subseteq D$</span>.</p>
       </li>
     </ul>
 
-    <p>Thus <script type="math/tex">\forall n \in Z^+ (B_n \subseteq D)</script>, or <script type="math/tex">\cup_{n \in \mathbb Z^+} B_n \subseteq D</script>. Thus <script type="math/tex">C \subseteq D</script>.</p>
+    <p>Thus <span class="kdmath">$\forall n \in Z^+ (B_n \subseteq D)$</span>, or <span class="kdmath">$\cup_{n \in \mathbb Z^+} B_n \subseteq D$</span>. Thus <span class="kdmath">$C \subseteq D$</span>.</p>
   </li>
 </ul>
 
@@ -1389,11 +1384,11 @@ l < n %]]></script>, then by our induction hypothesis <script type="math/tex">B_
 <p><strong>Soln5</strong></p>
 
 <p>Using Soln4, we have:    <br />
-<script type="math/tex">B_1 = B = \{ x \, \vert \, x \text{ is prime number } \} = \{ 2,3,5,7,... \}</script>.    <br />
-<script type="math/tex">B_2 = \{ 2 \times 2, 2 \times 3, 2 \times 5, 2 \times 7, .... , 3 \times 3, 3 \times 5, 3 \times 7, ..... \}</script>.</p>
+<span class="kdmath">$B_1 = B = \{ x \, \vert \, x \text{ is prime number } \} = \{ 2,3,5,7,... \}$</span>.    <br />
+<span class="kdmath">$B_2 = \{ 2 \times 2, 2 \times 3, 2 \times 5, 2 \times 7, .... , 3 \times 3, 3 \times 5, 3 \times 7, ..... \}$</span>.</p>
 
-<p>As we can see, <script type="math/tex">C = \cup_{n \in Z^+} B_n</script> will consists of all possible products of prime numbers. Since every natural number greater than 1 can be expressed as a product
-of primes, it follows that <script type="math/tex">C</script> contains all natural numbers other than one. Thus <script type="math/tex">C = \{ n \, \vert \, n \ge 2 \}</script>.</p>
+<p>As we can see, <span class="kdmath">$C = \cup_{n \in Z^+} B_n$</span> will consists of all possible products of prime numbers. Since every natural number greater than 1 can be expressed as a product
+of primes, it follows that <span class="kdmath">$C$</span> contains all natural numbers other than one. Thus <span class="kdmath">$C = \{ n \, \vert \, n \ge 2 \}$</span>.</p>
 
 <hr />
 
@@ -1401,179 +1396,167 @@ of primes, it follows that <script type="math/tex">C</script> contains all natur
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">B_n</script> is defined as follows:</p>
+<p>Suppose <span class="kdmath">$B_n$</span> is defined as follows:</p>
 
-<p>For <script type="math/tex">n = 1</script>, <script type="math/tex">B_n = B_1 = B</script>.     <br />
-For <script type="math/tex">n > 1</script>, <script type="math/tex">% <![CDATA[
-B_{n+1} = \{ f(x,y) \; \vert \; f \in \mathcal F \text{ and } \exists k < {n+1} (x \in B_k) \text{ and } \exists k < {n+1}(y \in B_k) \} %]]></script></p>
+<p>For <span class="kdmath">$n = 1$</span>, <span class="kdmath">$B_n = B_1 = B$</span>.     <br />
+For <span class="kdmath">$n > 1$</span>, <span class="kdmath">$B_{n+1} = \{ f(x,y) \; \vert \; f \in \mathcal F \text{ and } \exists k < {n+1} (x \in B_k) \text{ and } \exists k < {n+1}(y \in B_k) \}$</span></p>
 
-<p>Suppose <script type="math/tex">C = \cup_{i \in Z^+} B_n</script>. Now we will prove that <script type="math/tex">C</script> is closure of <script type="math/tex">B</script> under <script type="math/tex">\mathcal F</script>. We shall prove this by proving the following:</p>
+<p>Suppose <span class="kdmath">$C = \cup_{i \in Z^+} B_n$</span>. Now we will prove that <span class="kdmath">$C$</span> is closure of <span class="kdmath">$B$</span> under <span class="kdmath">$\mathcal F$</span>. We shall prove this by proving the following:</p>
 
 <ul>
-  <li><script type="math/tex">B \subseteq C \subseteq A</script>.</li>
-  <li><script type="math/tex">\forall f \in \mathcal F(C \text{ is closed under } f)</script>.</li>
-  <li><script type="math/tex">C</script> is the smallest set closed under <script type="math/tex">\mathcal F</script> such that <script type="math/tex">B \subseteq C \subseteq A</script>.</li>
+  <li><span class="kdmath">$B \subseteq C \subseteq A$</span>.</li>
+  <li><span class="kdmath">$\forall f \in \mathcal F(C \text{ is closed under } f)$</span>.</li>
+  <li><span class="kdmath">$C$</span> is the smallest set closed under <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$B \subseteq C \subseteq A$</span>.</li>
 </ul>
 
 <p>Lets prove each of the above:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">B \subseteq C \subseteq A</script>.</p>
+    <p><span class="kdmath">$B \subseteq C \subseteq A$</span>.</p>
 
-    <p>Clearly <script type="math/tex">B_1 \subseteq \cup_{i \in Z^+} B_n</script>. Since <script type="math/tex">B_1 = B</script>, it follows that <script type="math/tex">B \subseteq C</script>.</p>
+    <p>Clearly <span class="kdmath">$B_1 \subseteq \cup_{i \in Z^+} B_n$</span>. Since <span class="kdmath">$B_1 = B$</span>, it follows that <span class="kdmath">$B \subseteq C$</span>.</p>
 
-    <p>Since <script type="math/tex">f: A \times A \to A</script>, We can clearly see that <script type="math/tex">B_n \subseteq A</script>. Since <script type="math/tex">C = \cup_{i \in Z^+} B_n</script>, it follows that <script type="math/tex">C \subseteq A</script>.</p>
+    <p>Since <span class="kdmath">$f: A \times A \to A$</span>, We can clearly see that <span class="kdmath">$B_n \subseteq A$</span>. Since <span class="kdmath">$C = \cup_{i \in Z^+} B_n$</span>, it follows that <span class="kdmath">$C \subseteq A$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">\forall f \in \mathcal F(C \text{ is closed under } f)</script>.</p>
+    <p><span class="kdmath">$\forall f \in \mathcal F(C \text{ is closed under } f)$</span>.</p>
 
-    <p>Or we may also say that we need to prove <script type="math/tex">\forall x \in C \forall y \in C (\forall f \in \mathcal F (f(x,y) \in C))</script>.</p>
+    <p>Or we may also say that we need to prove <span class="kdmath">$\forall x \in C \forall y \in C (\forall f \in \mathcal F (f(x,y) \in C))$</span>.</p>
 
-    <p>Suppose <script type="math/tex">x \in C</script>. Suppose <script type="math/tex">y \in C</script>. Since <script type="math/tex">C = \cup_{i \in Z^+} B_n</script>, it follows that for some <script type="math/tex">m \in \mathbb N</script>
-and <script type="math/tex">n \in \mathbb N</script> such that <script type="math/tex">x \in B_m</script> and <script type="math/tex">y \in B_n</script>. Consider the following cases:</p>
+    <p>Suppose <span class="kdmath">$x \in C$</span>. Suppose <span class="kdmath">$y \in C$</span>. Since <span class="kdmath">$C = \cup_{i \in Z^+} B_n$</span>, it follows that for some <span class="kdmath">$m \in \mathbb N$</span>
+and <span class="kdmath">$n \in \mathbb N$</span> such that <span class="kdmath">$x \in B_m$</span> and <span class="kdmath">$y \in B_n$</span>. Consider the following cases:</p>
 
     <ul>
       <li>
-        <p>Case <script type="math/tex">m \ge n</script></p>
+        <p>Case <span class="kdmath">$m \ge n$</span></p>
 
-        <p>Then by definition of <script type="math/tex">B_m</script>, it follows that <script type="math/tex">\forall f \in \mathcal F(f(x,y) \in B_{m+1})</script>. Since <script type="math/tex">B_{m+1} \subseteq C</script>, it follows that
-<script type="math/tex">\forall f \in \mathcal F(f(x,y) \in C)</script>.</p>
+        <p>Then by definition of <span class="kdmath">$B_m$</span>, it follows that <span class="kdmath">$\forall f \in \mathcal F(f(x,y) \in B_{m+1})$</span>. Since <span class="kdmath">$B_{m+1} \subseteq C$</span>, it follows that
+<span class="kdmath">$\forall f \in \mathcal F(f(x,y) \in C)$</span>.</p>
       </li>
       <li>
-        <p>Case <script type="math/tex">% <![CDATA[
-m < n %]]></script></p>
+        <p>Case <span class="kdmath">$m < n$</span></p>
 
-        <p>Then by definition of <script type="math/tex">B_n</script>, it follows that <script type="math/tex">\forall f \in \mathcal F(f(x,y) \in B_{n+1})</script>. Since <script type="math/tex">B_{n+1} \subseteq C</script>, it follows that
-<script type="math/tex">\forall f \in \mathcal F(f(x,y) \in C)</script>.</p>
+        <p>Then by definition of <span class="kdmath">$B_n$</span>, it follows that <span class="kdmath">$\forall f \in \mathcal F(f(x,y) \in B_{n+1})$</span>. Since <span class="kdmath">$B_{n+1} \subseteq C$</span>, it follows that
+<span class="kdmath">$\forall f \in \mathcal F(f(x,y) \in C)$</span>.</p>
       </li>
     </ul>
 
-    <p>Thus from both cases <script type="math/tex">\forall f \in \mathcal F(f(x,y) \in C)</script>. Since <script type="math/tex">x</script> and <script type="math/tex">y</script> are arbitrary, it follows that <script type="math/tex">\forall x \in C \forall y \in C (\forall f \in \mathcal F (f(x,y) \in C))</script>.</p>
+    <p>Thus from both cases <span class="kdmath">$\forall f \in \mathcal F(f(x,y) \in C)$</span>. Since <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> are arbitrary, it follows that <span class="kdmath">$\forall x \in C \forall y \in C (\forall f \in \mathcal F (f(x,y) \in C))$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">C</script> is the smallest set closed under <script type="math/tex">\mathcal F</script> such that <script type="math/tex">B \subseteq C \subseteq A</script>.</p>
+    <p><span class="kdmath">$C$</span> is the smallest set closed under <span class="kdmath">$\mathcal F$</span> such that <span class="kdmath">$B \subseteq C \subseteq A$</span>.</p>
 
-    <p>Suppose there is a set <script type="math/tex">D</script> closed under <script type="math/tex">f</script> such that <script type="math/tex">B \subseteq D \subseteq A</script>. Thus we need to prove that <script type="math/tex">C \subseteq D</script>.
-Thus we need to prove that <script type="math/tex">\forall n \in Z^+ (B_n \subseteq D)</script>. We shall prove this using strong induction:</p>
+    <p>Suppose there is a set <span class="kdmath">$D$</span> closed under <span class="kdmath">$f$</span> such that <span class="kdmath">$B \subseteq D \subseteq A$</span>. Thus we need to prove that <span class="kdmath">$C \subseteq D$</span>.
+Thus we need to prove that <span class="kdmath">$\forall n \in Z^+ (B_n \subseteq D)$</span>. We shall prove this using strong induction:</p>
 
-    <p>Suppose <script type="math/tex">n</script> is an arbitrary natural number. Suppose <script type="math/tex">% <![CDATA[
-\forall k < n(B_k \subseteq D) %]]></script>(induction hypothesis).
+    <p>Suppose <span class="kdmath">$n$</span> is an arbitrary natural number. Suppose <span class="kdmath">$\forall k < n(B_k \subseteq D)$</span>(induction hypothesis).
 Consider the following cases:</p>
 
     <ul>
       <li>
-        <p>Case <script type="math/tex">n = 1</script>       <br />
-For <script type="math/tex">n = 1, B_1 = B</script>. Thus by assumption for our set <script type="math/tex">D</script>, <script type="math/tex">B \subseteq D</script>.</p>
+        <p>Case <span class="kdmath">$n = 1$</span>       <br />
+For <span class="kdmath">$n = 1, B_1 = B$</span>. Thus by assumption for our set <span class="kdmath">$D$</span>, <span class="kdmath">$B \subseteq D$</span>.</p>
       </li>
       <li>
-        <p>Case <script type="math/tex">n > 1</script></p>
+        <p>Case <span class="kdmath">$n > 1$</span></p>
 
-        <p>Suppose <script type="math/tex">z \in B_n</script>. Since <script type="math/tex">n > 1</script>, it follows that for some function <script type="math/tex">f \in \mathcal F</script>, <script type="math/tex">z = f(x,y)</script> where <script type="math/tex">x \in B_k</script> and <script type="math/tex">y \in B_l</script> such that <script type="math/tex">% <![CDATA[
-k,l < n %]]></script>. 
-Since <script type="math/tex">% <![CDATA[
-k < n %]]></script> and <script type="math/tex">% <![CDATA[
-l < n %]]></script>, then by our induction hypothesis <script type="math/tex">B_k \subseteq D</script> and <script type="math/tex">B_l \subseteq D</script>, it follows that <script type="math/tex">x \in D</script> as well as <script type="math/tex">y \in D</script>.
-Since <script type="math/tex">D</script> is closed under <script type="math/tex">f</script>, it follows that <script type="math/tex">f(x,y) \in D</script>. Since <script type="math/tex">z</script> is arbitrary, it follows that <script type="math/tex">B_n \subseteq D</script>.</p>
+        <p>Suppose <span class="kdmath">$z \in B_n$</span>. Since <span class="kdmath">$n > 1$</span>, it follows that for some function <span class="kdmath">$f \in \mathcal F$</span>, <span class="kdmath">$z = f(x,y)$</span> where <span class="kdmath">$x \in B_k$</span> and <span class="kdmath">$y \in B_l$</span> such that <span class="kdmath">$k,l < n$</span>. 
+Since <span class="kdmath">$k < n$</span> and <span class="kdmath">$l < n$</span>, then by our induction hypothesis <span class="kdmath">$B_k \subseteq D$</span> and <span class="kdmath">$B_l \subseteq D$</span>, it follows that <span class="kdmath">$x \in D$</span> as well as <span class="kdmath">$y \in D$</span>.
+Since <span class="kdmath">$D$</span> is closed under <span class="kdmath">$f$</span>, it follows that <span class="kdmath">$f(x,y) \in D$</span>. Since <span class="kdmath">$z$</span> is arbitrary, it follows that <span class="kdmath">$B_n \subseteq D$</span>.</p>
       </li>
     </ul>
 
-    <p>Thus <script type="math/tex">\forall n \in Z^+ (B_n \subseteq D)</script>, or <script type="math/tex">\cup_{n \in \mathbb Z^+} B_n \subseteq D</script>. Thus <script type="math/tex">C \subseteq D</script>.</p>
+    <p>Thus <span class="kdmath">$\forall n \in Z^+ (B_n \subseteq D)$</span>, or <span class="kdmath">$\cup_{n \in \mathbb Z^+} B_n \subseteq D$</span>. Thus <span class="kdmath">$C \subseteq D$</span>.</p>
   </li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
-<p>We know from part(a), that closure of <script type="math/tex">B</script> on <script type="math/tex">\mathcal F</script> is <script type="math/tex">C = \cup_{i \in Z^+} B_n</script>, where <script type="math/tex">B_n</script> is defined as:</p>
+<p>We know from part(a), that closure of <span class="kdmath">$B$</span> on <span class="kdmath">$\mathcal F$</span> is <span class="kdmath">$C = \cup_{i \in Z^+} B_n$</span>, where <span class="kdmath">$B_n$</span> is defined as:</p>
 
-<p>For <script type="math/tex">n = 1</script>, <script type="math/tex">B_n = B_1 = B</script>.     <br />
-For <script type="math/tex">n > 1</script>, <script type="math/tex">% <![CDATA[
-B_{n+1} = \{ f(x,y) \; \vert \; f \in \mathcal F \text{ and } \exists k < {n+1} (x \in B_k) \text{ and } \exists k < {n+1}(y \in B_k) \} %]]></script></p>
+<p>For <span class="kdmath">$n = 1$</span>, <span class="kdmath">$B_n = B_1 = B$</span>.     <br />
+For <span class="kdmath">$n > 1$</span>, <span class="kdmath">$B_{n+1} = \{ f(x,y) \; \vert \; f \in \mathcal F \text{ and } \exists k < {n+1} (x \in B_k) \text{ and } \exists k < {n+1}(y \in B_k) \}$</span></p>
 
-<p>We are given that set <script type="math/tex">S = \{ a + b \sqrt 2 \; \vert \; a \in \mathbb Q, b \in \mathbb Q \}</script>.
-Also, it is given <script type="math/tex">B = \mathbb Q \cup \{ \sqrt 2 \}</script>.</p>
+<p>We are given that set <span class="kdmath">$S = \{ a + b \sqrt 2 \; \vert \; a \in \mathbb Q, b \in \mathbb Q \}$</span>.
+Also, it is given <span class="kdmath">$B = \mathbb Q \cup \{ \sqrt 2 \}$</span>.</p>
 
-<p>We need to prove: <script type="math/tex">S = C</script>. Thus we shall prove:</p>
+<p>We need to prove: <span class="kdmath">$S = C$</span>. Thus we shall prove:</p>
 
 <ul>
-  <li><script type="math/tex">S \subseteq C</script>.</li>
-  <li><script type="math/tex">C \subseteq S</script>.</li>
+  <li><span class="kdmath">$S \subseteq C$</span>.</li>
+  <li><span class="kdmath">$C \subseteq S$</span>.</li>
 </ul>
 
 <p>Now we shall prove both statements:</p>
 
 <ul>
   <li>
-    <p><script type="math/tex">S \subseteq C</script>.</p>
+    <p><span class="kdmath">$S \subseteq C$</span>.</p>
 
-    <p>Suppose <script type="math/tex">x \in S</script>. Thus for some <script type="math/tex">a \in \mathbb Q</script> and <script type="math/tex">b \in \mathbb Q</script>, <script type="math/tex">x = a + b \sqrt 2</script>. Since <script type="math/tex">Q \subseteq B</script>, it follows that
-<script type="math/tex">\{ a,b \} \subseteq B</script>. Also since <script type="math/tex">\{ \sqrt 2 \} \subseteq B</script>, we can also say that <script type="math/tex">\{ a, b, \sqrt 2 \} \subseteq B</script>.      <br />
-Since <script type="math/tex">\{ a, b, \sqrt 2 \} \subseteq B</script>, then by the definition of <script type="math/tex">B_n</script> it follows that <script type="math/tex">g(b, \sqrt 2) \in B_2</script>. Thus <script type="math/tex">b \sqrt 2 \in B_2</script>.
-Similarly since <script type="math/tex">a \in B_1</script> and <script type="math/tex">b \sqrt 2 \in B_2</script>, it follows that <script type="math/tex">f(a, b \sqrt 2) \in B_3</script>. Thus <script type="math/tex">a + b \sqrt 2 \in B_3</script>. Since <script type="math/tex">B_3 \subseteq C</script>,
-it follows that <script type="math/tex">a + b \sqrt 2 \in C</script>. Thus <script type="math/tex">x \in C</script>. Since <script type="math/tex">x</script> was arbitrary, it follows that <script type="math/tex">S \subseteq C</script>.</p>
+    <p>Suppose <span class="kdmath">$x \in S$</span>. Thus for some <span class="kdmath">$a \in \mathbb Q$</span> and <span class="kdmath">$b \in \mathbb Q$</span>, <span class="kdmath">$x = a + b \sqrt 2$</span>. Since <span class="kdmath">$Q \subseteq B$</span>, it follows that
+<span class="kdmath">$\{ a,b \} \subseteq B$</span>. Also since <span class="kdmath">$\{ \sqrt 2 \} \subseteq B$</span>, we can also say that <span class="kdmath">$\{ a, b, \sqrt 2 \} \subseteq B$</span>.      <br />
+Since <span class="kdmath">$\{ a, b, \sqrt 2 \} \subseteq B$</span>, then by the definition of <span class="kdmath">$B_n$</span> it follows that <span class="kdmath">$g(b, \sqrt 2) \in B_2$</span>. Thus <span class="kdmath">$b \sqrt 2 \in B_2$</span>.
+Similarly since <span class="kdmath">$a \in B_1$</span> and <span class="kdmath">$b \sqrt 2 \in B_2$</span>, it follows that <span class="kdmath">$f(a, b \sqrt 2) \in B_3$</span>. Thus <span class="kdmath">$a + b \sqrt 2 \in B_3$</span>. Since <span class="kdmath">$B_3 \subseteq C$</span>,
+it follows that <span class="kdmath">$a + b \sqrt 2 \in C$</span>. Thus <span class="kdmath">$x \in C$</span>. Since <span class="kdmath">$x$</span> was arbitrary, it follows that <span class="kdmath">$S \subseteq C$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">C \subseteq S</script>.</p>
+    <p><span class="kdmath">$C \subseteq S$</span>.</p>
 
-    <p>Thus we need to prove that <script type="math/tex">\cup_{n \in Z^+} B_n \, \subseteq \, S</script>. We can prove this by proving that <script type="math/tex">\forall n \in Z^+ (B_n \subseteq S)</script>. 
-We shall prove this using strong induction. Suppose <script type="math/tex">n</script> is a natural number. Suppose our induction hypothesis is <script type="math/tex">% <![CDATA[
-\forall k < n(B_k \subseteq S) %]]></script>.</p>
+    <p>Thus we need to prove that <span class="kdmath">$\cup_{n \in Z^+} B_n \, \subseteq \, S$</span>. We can prove this by proving that <span class="kdmath">$\forall n \in Z^+ (B_n \subseteq S)$</span>. 
+We shall prove this using strong induction. Suppose <span class="kdmath">$n$</span> is a natural number. Suppose our induction hypothesis is <span class="kdmath">$\forall k < n(B_k \subseteq S)$</span>.</p>
 
     <p>We have following possible cases:</p>
 
     <ul>
       <li>
-        <p>Case <script type="math/tex">n = 1</script>.</p>
+        <p>Case <span class="kdmath">$n = 1$</span>.</p>
 
-        <p>Thus <script type="math/tex">B_n = B_1 = B</script>. Suppose <script type="math/tex">a \in \mathbb Q</script>. Thus <script type="math/tex">a = a + 0 \cdot \sqrt 2</script>. Thus <script type="math/tex">a \in S</script>. It follows that <script type="math/tex">Q \subseteq S</script>. Also 
-<script type="math/tex">\sqrt 2 = 0 + 1 \cdot \sqrt 2 \in S</script>, it follows that <script type="math/tex">\sqrt 2 \in S</script>. Thus <script type="math/tex">Q \cup \{ \sqrt 2 \} \subseteq S</script>. Or <script type="math/tex">B \subseteq S</script>.</p>
+        <p>Thus <span class="kdmath">$B_n = B_1 = B$</span>. Suppose <span class="kdmath">$a \in \mathbb Q$</span>. Thus <span class="kdmath">$a = a + 0 \cdot \sqrt 2$</span>. Thus <span class="kdmath">$a \in S$</span>. It follows that <span class="kdmath">$Q \subseteq S$</span>. Also 
+<span class="kdmath">$\sqrt 2 = 0 + 1 \cdot \sqrt 2 \in S$</span>, it follows that <span class="kdmath">$\sqrt 2 \in S$</span>. Thus <span class="kdmath">$Q \cup \{ \sqrt 2 \} \subseteq S$</span>. Or <span class="kdmath">$B \subseteq S$</span>.</p>
       </li>
       <li>
-        <p>Case <script type="math/tex">n > 1</script>.</p>
+        <p>Case <span class="kdmath">$n > 1$</span>.</p>
 
-        <p>Suppose <script type="math/tex">x \in B_n</script>. Since <script type="math/tex">n > 1</script> and by the definition of <script type="math/tex">B_n</script>, there exist <script type="math/tex">p \in B_i</script> and <script type="math/tex">q \in B_j</script> such that either <script type="math/tex">x = f(p,q)</script>
-or <script type="math/tex">x = g(p,q)</script> where <script type="math/tex">% <![CDATA[
-i < n %]]></script> and <script type="math/tex">% <![CDATA[
-j < n %]]></script>.      <br />
-Since <script type="math/tex">% <![CDATA[
-i < n %]]></script> and <script type="math/tex">% <![CDATA[
-j < n %]]></script>, then it follows from induction hypothesis that <script type="math/tex">B_i \subseteq S</script> and <script type="math/tex">B_j \subseteq S</script>. Thus <script type="math/tex">p \in S</script> and <script type="math/tex">q \in S</script>.
-Since <script type="math/tex">p \in S</script>, it follows that <script type="math/tex">p = a_1 + b_1 \sqrt 2</script> where <script type="math/tex">a_1, b_1 \in \mathbb Q</script>. Similarly <script type="math/tex">q = a_2 + b_2 \sqrt 2</script> where <script type="math/tex">a_2, b_2 \in \mathbb Q</script>.</p>
+        <p>Suppose <span class="kdmath">$x \in B_n$</span>. Since <span class="kdmath">$n > 1$</span> and by the definition of <span class="kdmath">$B_n$</span>, there exist <span class="kdmath">$p \in B_i$</span> and <span class="kdmath">$q \in B_j$</span> such that either <span class="kdmath">$x = f(p,q)$</span>
+or <span class="kdmath">$x = g(p,q)$</span> where <span class="kdmath">$i < n$</span> and <span class="kdmath">$j < n$</span>.      <br />
+Since <span class="kdmath">$i < n$</span> and <span class="kdmath">$j < n$</span>, then it follows from induction hypothesis that <span class="kdmath">$B_i \subseteq S$</span> and <span class="kdmath">$B_j \subseteq S$</span>. Thus <span class="kdmath">$p \in S$</span> and <span class="kdmath">$q \in S$</span>.
+Since <span class="kdmath">$p \in S$</span>, it follows that <span class="kdmath">$p = a_1 + b_1 \sqrt 2$</span> where <span class="kdmath">$a_1, b_1 \in \mathbb Q$</span>. Similarly <span class="kdmath">$q = a_2 + b_2 \sqrt 2$</span> where <span class="kdmath">$a_2, b_2 \in \mathbb Q$</span>.</p>
 
         <p>Consider the following possible cases:</p>
 
         <ul>
           <li>
-            <p><script type="math/tex">x = f(p,q)</script>       <br />
-Thus <script type="math/tex">x = p + q = a_1 + b_1 \sqrt 2 + a_2 + b_2 \sqrt 2 = (a_1 + b_1) + (b_1 + b_2) \sqrt 2</script>. Thus <script type="math/tex">x \in S</script>.</p>
+            <p><span class="kdmath">$x = f(p,q)$</span>       <br />
+Thus <span class="kdmath">$x = p + q = a_1 + b_1 \sqrt 2 + a_2 + b_2 \sqrt 2 = (a_1 + b_1) + (b_1 + b_2) \sqrt 2$</span>. Thus <span class="kdmath">$x \in S$</span>.</p>
           </li>
           <li>
-            <p><script type="math/tex">x = g(p,q)</script>       <br />
-Thus <script type="math/tex">x = pq = (a_1 + b_1 \sqrt 2)(a_2 + b_2 \sqrt 2)</script>     <br />
-<script type="math/tex">= a_1a_2 + a_1 b_2 \sqrt2 + b_1 \sqrt 2 a_2 + b_1 \sqrt 2 b_2 \sqrt 2</script>     <br />
-<script type="math/tex">= a_1a_2 + (a_1 b_2 + b_1 a_2) \sqrt 2 + 2 b_1 b_2</script>       <br />
-<script type="math/tex">= (a_1a_2  + 2 b_1 b_2) + (a_1 b_2 + b_1 a_2) \sqrt 2</script>.      <br />
-Thus <script type="math/tex">x \in S</script>.</p>
+            <p><span class="kdmath">$x = g(p,q)$</span>       <br />
+Thus <span class="kdmath">$x = pq = (a_1 + b_1 \sqrt 2)(a_2 + b_2 \sqrt 2)$</span>     <br />
+<span class="kdmath">$= a_1a_2 + a_1 b_2 \sqrt2 + b_1 \sqrt 2 a_2 + b_1 \sqrt 2 b_2 \sqrt 2$</span>     <br />
+<span class="kdmath">$= a_1a_2 + (a_1 b_2 + b_1 a_2) \sqrt 2 + 2 b_1 b_2$</span>       <br />
+<span class="kdmath">$= (a_1a_2  + 2 b_1 b_2) + (a_1 b_2 + b_1 a_2) \sqrt 2$</span>.      <br />
+Thus <span class="kdmath">$x \in S$</span>.</p>
           </li>
         </ul>
 
-        <p>Thus in both cases <script type="math/tex">x \in S</script>.</p>
+        <p>Thus in both cases <span class="kdmath">$x \in S$</span>.</p>
 
-        <p>Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">B_n \subseteq S</script>.</p>
+        <p>Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$B_n \subseteq S$</span>.</p>
       </li>
     </ul>
 
-    <p>Thus in both cases <script type="math/tex">B_n \subseteq S</script>.</p>
+    <p>Thus in both cases <span class="kdmath">$B_n \subseteq S$</span>.</p>
 
-    <p>It follows that <script type="math/tex">C \subseteq S</script>.</p>
+    <p>It follows that <span class="kdmath">$C \subseteq S$</span>.</p>
   </li>
 </ul>
 
-<p>Since <script type="math/tex">S \subseteq C</script> and <script type="math/tex">C \subseteq S</script>, it follows that <script type="math/tex">S = C</script>.</p>
+<p>Since <span class="kdmath">$S \subseteq C$</span> and <span class="kdmath">$C \subseteq S$</span>, it follows that <span class="kdmath">$S = C$</span>.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Required set will be <script type="math/tex">S = \{ a + b 2^{(\frac 1 3)} + c 2^{(\frac 2 3)} \; \vert \; a \in \mathbb Q \text{ and } b \in \mathbb Q \text{ and } c \in \mathbb Q \}</script>.</p>
+<p>Required set will be <span class="kdmath">$S = \{ a + b 2^{(\frac 1 3)} + c 2^{(\frac 2 3)} \; \vert \; a \in \mathbb Q \text{ and } b \in \mathbb Q \text{ and } c \in \mathbb Q \}$</span>.</p>
 
 <hr />
 
@@ -1583,43 +1566,43 @@ Thus <script type="math/tex">x \in S</script>.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, R^1 = R <script type="math/tex">and</script> S^1 = S <script type="math/tex">. Since</script> R \subseteq S <script type="math/tex">, it follows</script> R^1 \subseteq S^1 <script type="math/tex">. Thus for</script> n = 1 <script type="math/tex">,</script> R^n \subseteq S^n $$.</p>
+<p>For <span class="kdmath">$n = 1$</span>, R^1 = R <span class="kdmath">$and$</span> S^1 = S <span class="kdmath">$. Since$</span> R \subseteq S <span class="kdmath">$, it follows$</span> R^1 \subseteq S^1 <span class="kdmath">$. Thus for$</span> n = 1 <span class="kdmath">$,$</span> R^n \subseteq S^n $$.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus for <script type="math/tex">R^n \subseteq S^n</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus for <span class="kdmath">$R^n \subseteq S^n$</span>.</p>
 
-<p>Now consider <script type="math/tex">R^{n+1}</script>.</p>
+<p>Now consider <span class="kdmath">$R^{n+1}$</span>.</p>
 
-<p>Suppose <script type="math/tex">(a,c) \in R^{n+1}</script>. Since <script type="math/tex">R^{n+1} = R \circ R^n</script>, it follows that there exists an element <script type="math/tex">b</script> such that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in R^n</script>.
-By our hypothesis, <script type="math/tex">R^n \subseteq S^n</script>, it follows that <script type="math/tex">(a,b) \in S</script> and <script type="math/tex">(b,c) S^n</script>. Since <script type="math/tex">S^{n+1} = S \circ S^n</script>, it follows that <script type="math/tex">(a,c) \in S^{n+1}</script>.
-Since <script type="math/tex">(a,c)</script> is arbitrary, it follows that <script type="math/tex">R^n \subseteq S^n</script>.</p>
+<p>Suppose <span class="kdmath">$(a,c) \in R^{n+1}$</span>. Since <span class="kdmath">$R^{n+1} = R \circ R^n$</span>, it follows that there exists an element <span class="kdmath">$b$</span> such that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in R^n$</span>.
+By our hypothesis, <span class="kdmath">$R^n \subseteq S^n$</span>, it follows that <span class="kdmath">$(a,b) \in S$</span> and <span class="kdmath">$(b,c) S^n$</span>. Since <span class="kdmath">$S^{n+1} = S \circ S^n$</span>, it follows that <span class="kdmath">$(a,c) \in S^{n+1}$</span>.
+Since <span class="kdmath">$(a,c)$</span> is arbitrary, it follows that <span class="kdmath">$R^n \subseteq S^n$</span>.</p>
 
 <p><strong>Soln8</strong></p>
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">(R \cap S)^n \subseteq R^n \cap S^n</script>.</p>
+<p><span class="kdmath">$(R \cap S)^n \subseteq R^n \cap S^n$</span>.</p>
 
-<p>Since <script type="math/tex">R \cap S \subseteq R</script> and <script type="math/tex">R \cap S \subseteq S</script>, it follows from Ex-7, that <script type="math/tex">(R \cap S)^n \subseteq R^n</script> and <script type="math/tex">(R \cap S)^n \subseteq S^n</script>. Thus
-we can conclude that <script type="math/tex">(R \cap S)^n \subseteq R^n \cap S^n</script>.</p>
+<p>Since <span class="kdmath">$R \cap S \subseteq R$</span> and <span class="kdmath">$R \cap S \subseteq S$</span>, it follows from Ex-7, that <span class="kdmath">$(R \cap S)^n \subseteq R^n$</span> and <span class="kdmath">$(R \cap S)^n \subseteq S^n$</span>. Thus
+we can conclude that <span class="kdmath">$(R \cap S)^n \subseteq R^n \cap S^n$</span>.</p>
 
-<p>However <script type="math/tex">R^n \cap S^n \nsubseteq (R \cap S)^n</script>. Example:</p>
+<p>However <span class="kdmath">$R^n \cap S^n \nsubseteq (R \cap S)^n$</span>. Example:</p>
 
-<p>Suppose <script type="math/tex">R = \{ (1,2), (2,3) \}, S = \{ (1,0), (0,3) \}</script>. Thus <script type="math/tex">R \cap S = \phi</script>. Thus <script type="math/tex">(R \cap S)^2 = \phi</script>.
-But <script type="math/tex">R^2 \cap S^2 = \{ (1,3) \} \cap \{(1,3)\} = \{ (1,3)\}</script>. Thus <script type="math/tex">R^n \cap S^n \nsubseteq (R \cap S)^n</script>.</p>
+<p>Suppose <span class="kdmath">$R = \{ (1,2), (2,3) \}, S = \{ (1,0), (0,3) \}$</span>. Thus <span class="kdmath">$R \cap S = \phi$</span>. Thus <span class="kdmath">$(R \cap S)^2 = \phi$</span>.
+But <span class="kdmath">$R^2 \cap S^2 = \{ (1,3) \} \cap \{(1,3)\} = \{ (1,3)\}$</span>. Thus <span class="kdmath">$R^n \cap S^n \nsubseteq (R \cap S)^n$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">R^n \cup S^n \subseteq (R \cup S)^n</script>.</p>
+<p><span class="kdmath">$R^n \cup S^n \subseteq (R \cup S)^n$</span>.</p>
 
-<p>Since <script type="math/tex">R \subseteq R \cup S</script> and <script type="math/tex">S \subseteq R \cup S</script>, it follows from Ex-7, that <script type="math/tex">R^n \subseteq (R \cup S)^n</script> and <script type="math/tex">S^n \subseteq (R \cup S)^n</script>.
-Thus we can conclude that <script type="math/tex">R^n \cup S^n \subseteq (R \cup S)^n</script>.</p>
+<p>Since <span class="kdmath">$R \subseteq R \cup S$</span> and <span class="kdmath">$S \subseteq R \cup S$</span>, it follows from Ex-7, that <span class="kdmath">$R^n \subseteq (R \cup S)^n$</span> and <span class="kdmath">$S^n \subseteq (R \cup S)^n$</span>.
+Thus we can conclude that <span class="kdmath">$R^n \cup S^n \subseteq (R \cup S)^n$</span>.</p>
 
-<p>However <script type="math/tex">(R \cup S)^n \nsubseteq R^n \cup S^n</script>. Example:</p>
+<p>However <span class="kdmath">$(R \cup S)^n \nsubseteq R^n \cup S^n$</span>. Example:</p>
 
-<p>Suppose <script type="math/tex">R = \{(1,2)\}, S = \{(2,3)\}</script>. Thus <script type="math/tex">R \cup S = \{ (1,2), (2,3) \}</script>. Thus <script type="math/tex">(R \cup S)^2 = \{(1,3)\}</script>.
-But <script type="math/tex">R^2 \cup S^2 = \phi \cup \phi = \phi</script>. Thus <script type="math/tex">(R \cup S)^n \nsubseteq R^n \cup S^n</script>.</p>
+<p>Suppose <span class="kdmath">$R = \{(1,2)\}, S = \{(2,3)\}$</span>. Thus <span class="kdmath">$R \cup S = \{ (1,2), (2,3) \}$</span>. Thus <span class="kdmath">$(R \cup S)^2 = \{(1,3)\}$</span>.
+But <span class="kdmath">$R^2 \cup S^2 = \phi \cup \phi = \phi$</span>. Thus <span class="kdmath">$(R \cup S)^n \nsubseteq R^n \cup S^n$</span>.</p>
 
 <hr />
 
@@ -1627,81 +1610,64 @@ But <script type="math/tex">R^2 \cup S^2 = \phi \cup \phi = \phi</script>. Thus 
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">m = d(a,b)</script>, and <script type="math/tex">n = d(b.c)</script> and suppose <script type="math/tex">o = d(a,c)</script>.</p>
+<p>Suppose <span class="kdmath">$m = d(a,b)$</span>, and <span class="kdmath">$n = d(b.c)$</span> and suppose <span class="kdmath">$o = d(a,c)$</span>.</p>
 
-<p>Thus <script type="math/tex">(a,b) \in R^m</script> and <script type="math/tex">(b,c) \in R^n</script>. Thus <script type="math/tex">(a,c) \in R^n \circ R^m</script>. Thus <script type="math/tex">(a,c) \in R^{m+n}</script>.</p>
+<p>Thus <span class="kdmath">$(a,b) \in R^m$</span> and <span class="kdmath">$(b,c) \in R^n$</span>. Thus <span class="kdmath">$(a,c) \in R^n \circ R^m$</span>. Thus <span class="kdmath">$(a,c) \in R^{m+n}$</span>.</p>
 
-<p>Since <script type="math/tex">o = d(a,c)</script>. it follows that <script type="math/tex">(a,c) \in R^o</script>.</p>
+<p>Since <span class="kdmath">$o = d(a,c)$</span>. it follows that <span class="kdmath">$(a,c) \in R^o$</span>.</p>
 
-<p>Suppose <script type="math/tex">o > m+n</script>. Since <script type="math/tex">(a,c) \in R^{m+n}</script> and <script type="math/tex">o = d(a,c)</script> is the smallest positive integer <script type="math/tex">o</script> such that <script type="math/tex">(a, c) \in R_o</script>, 
-it follows that <script type="math/tex">o \le m+n</script>. But this contradicts with our assumption that <script type="math/tex">o > m+n</script>. Thus <script type="math/tex">o \le m+n</script>.</p>
+<p>Suppose <span class="kdmath">$o > m+n$</span>. Since <span class="kdmath">$(a,c) \in R^{m+n}$</span> and <span class="kdmath">$o = d(a,c)$</span> is the smallest positive integer <span class="kdmath">$o$</span> such that <span class="kdmath">$(a, c) \in R_o$</span>, 
+it follows that <span class="kdmath">$o \le m+n$</span>. But this contradicts with our assumption that <span class="kdmath">$o > m+n$</span>. Thus <span class="kdmath">$o \le m+n$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>We are given that <script type="math/tex">(a,c) \in S</script>.</p>
+<p>We are given that <span class="kdmath">$(a,c) \in S$</span>.</p>
 
-<p>Also we can directly see <script type="math/tex">m \ge 1</script>. Thus we need to prove:</p>
+<p>Also we can directly see <span class="kdmath">$m \ge 1$</span>. Thus we need to prove:</p>
 
-<p>We need to prove: <script type="math/tex">% <![CDATA[
-\forall m\in \mathbb N(m < d(a,c) \to \exists b \in A(d(a,b) = m \text{ and } d(b,c) = d(a,c) - m)) %]]></script>.</p>
+<p>We need to prove: <span class="kdmath">$\forall m\in \mathbb N(m < d(a,c) \to \exists b \in A(d(a,b) = m \text{ and } d(b,c) = d(a,c) - m))$</span>.</p>
 
 <p>We will prove this using ordinary induction.</p>
 
 <ul>
   <li>
-    <p>Base Case <script type="math/tex">m = 1</script></p>
+    <p>Base Case <span class="kdmath">$m = 1$</span></p>
 
-    <p>Suppose <script type="math/tex">% <![CDATA[
-m < d(a,c) %]]></script>. Suppose <script type="math/tex">n = d(a,c)</script>, thus <script type="math/tex">(a,c) \in R^n</script>. Thus <script type="math/tex">% <![CDATA[
-m < n %]]></script>, or we can also say <script type="math/tex">n \ge 2</script>. Since <script type="math/tex">R^n = R^{n-1} \circ R</script>, 
-it follows that there must exist an element <script type="math/tex">b \in A</script> such that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in R^{n-1}</script>.     <br />
-Since <script type="math/tex">(a,b) \in R</script>, it follows <script type="math/tex">d(a,b) = 1</script>.    <br />
-Clearly by the definition of <script type="math/tex">d(b,c)</script>, we can say that <script type="math/tex">d(b,c) \le n-1</script>.      <br />
-We will prove by contradiction that <script type="math/tex">d(b,c) = n-1</script>. Suppose <script type="math/tex">% <![CDATA[
-k = d(b,c) < n-1 %]]></script>. Thus <script type="math/tex">(b,c) \in R^k</script>. Since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in R^k</script>,
-it follows that <script type="math/tex">(a,c) \in R^{k+1}</script>. Since <script type="math/tex">% <![CDATA[
-k < n-1 %]]></script>, it follows that <script type="math/tex">% <![CDATA[
-k+1 < n %]]></script>. But this contradicts with the assumption that <script type="math/tex">d(a,c) = n</script>. It follows
-that <script type="math/tex">k = d(b,c) = n-1 = d(a,c) - 1</script>.
-Thus <script type="math/tex">d(a,b) = 1</script> and <script type="math/tex">d(b,c) = d(a,c) - 1</script>.</p>
+    <p>Suppose <span class="kdmath">$m < d(a,c)$</span>. Suppose <span class="kdmath">$n = d(a,c)$</span>, thus <span class="kdmath">$(a,c) \in R^n$</span>. Thus <span class="kdmath">$m < n$</span>, or we can also say <span class="kdmath">$n \ge 2$</span>. Since <span class="kdmath">$R^n = R^{n-1} \circ R$</span>, 
+it follows that there must exist an element <span class="kdmath">$b \in A$</span> such that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in R^{n-1}$</span>.     <br />
+Since <span class="kdmath">$(a,b) \in R$</span>, it follows <span class="kdmath">$d(a,b) = 1$</span>.    <br />
+Clearly by the definition of <span class="kdmath">$d(b,c)$</span>, we can say that <span class="kdmath">$d(b,c) \le n-1$</span>.      <br />
+We will prove by contradiction that <span class="kdmath">$d(b,c) = n-1$</span>. Suppose <span class="kdmath">$k = d(b,c) < n-1$</span>. Thus <span class="kdmath">$(b,c) \in R^k$</span>. Since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in R^k$</span>,
+it follows that <span class="kdmath">$(a,c) \in R^{k+1}$</span>. Since <span class="kdmath">$k < n-1$</span>, it follows that <span class="kdmath">$k+1 < n$</span>. But this contradicts with the assumption that <span class="kdmath">$d(a,c) = n$</span>. It follows
+that <span class="kdmath">$k = d(b,c) = n-1 = d(a,c) - 1$</span>.
+Thus <span class="kdmath">$d(a,b) = 1$</span> and <span class="kdmath">$d(b,c) = d(a,c) - 1$</span>.</p>
   </li>
   <li>
     <p>Induction Step:</p>
 
-    <p>Suppose theorem is true for <script type="math/tex">m</script>. Thus if <script type="math/tex">% <![CDATA[
-m < d(a,c) %]]></script>, it follows that <script type="math/tex">\exists b \in A(d(a,b) = m \text{ and } d(b,c) = d(a,c) - m)</script>.</p>
+    <p>Suppose theorem is true for <span class="kdmath">$m$</span>. Thus if <span class="kdmath">$m < d(a,c)$</span>, it follows that <span class="kdmath">$\exists b \in A(d(a,b) = m \text{ and } d(b,c) = d(a,c) - m)$</span>.</p>
 
-    <p>Now consider for <script type="math/tex">m+1</script>.</p>
+    <p>Now consider for <span class="kdmath">$m+1$</span>.</p>
 
-    <p>Suppose <script type="math/tex">% <![CDATA[
-m+1 < d(a,c) %]]></script>. Since <script type="math/tex">% <![CDATA[
-m+1 < d(a,c) %]]></script>, it follows <script type="math/tex">% <![CDATA[
-m < d(a,c) %]]></script>. Thus by induction hypothesis there exists an element <script type="math/tex">b</script> such that
-<script type="math/tex">d(a,b) = m</script> and <script type="math/tex">d(b,c) = d(a,c) - m</script>. Suppose <script type="math/tex">n = d(a,c)</script>.</p>
+    <p>Suppose <span class="kdmath">$m+1 < d(a,c)$</span>. Since <span class="kdmath">$m+1 < d(a,c)$</span>, it follows <span class="kdmath">$m < d(a,c)$</span>. Thus by induction hypothesis there exists an element <span class="kdmath">$b$</span> such that
+<span class="kdmath">$d(a,b) = m$</span> and <span class="kdmath">$d(b,c) = d(a,c) - m$</span>. Suppose <span class="kdmath">$n = d(a,c)$</span>.</p>
 
-    <p>Clearly <script type="math/tex">(a,b) \in R^m</script> and <script type="math/tex">(a,c) \in R^n</script> and <script type="math/tex">(b,c) \in R^{n-m}</script>.</p>
+    <p>Clearly <span class="kdmath">$(a,b) \in R^m$</span> and <span class="kdmath">$(a,c) \in R^n$</span> and <span class="kdmath">$(b,c) \in R^{n-m}$</span>.</p>
 
-    <p>Since <script type="math/tex">% <![CDATA[
-m+1 < n %]]></script>, it follows that <script type="math/tex">n-m > 1</script>. Thus <script type="math/tex">R^{n-m} = R^{n-m-1} \circ R</script>. Since <script type="math/tex">(b,c) \in R^{n-m}</script>, it follows that there exists an
-element <script type="math/tex">b'</script> such that <script type="math/tex">(b',c) \in R^{n-m-1}</script> and <script type="math/tex">(b,b') \in R</script>.    <br />
-Since <script type="math/tex">(b,b') \in R</script>, it follows <script type="math/tex">d(b,b') = 1</script>.</p>
+    <p>Since <span class="kdmath">$m+1 < n$</span>, it follows that <span class="kdmath">$n-m > 1$</span>. Thus <span class="kdmath">$R^{n-m} = R^{n-m-1} \circ R$</span>. Since <span class="kdmath">$(b,c) \in R^{n-m}$</span>, it follows that there exists an
+element <span class="kdmath">$b'$</span> such that <span class="kdmath">$(b',c) \in R^{n-m-1}$</span> and <span class="kdmath">$(b,b') \in R$</span>.    <br />
+Since <span class="kdmath">$(b,b') \in R$</span>, it follows <span class="kdmath">$d(b,b') = 1$</span>.</p>
 
-    <p>Also by the definition of <script type="math/tex">d(b',c)</script>, we can say that <script type="math/tex">d(b',c) \le n-m-1</script>. We will prove by contradiction that <script type="math/tex">d(b',c) = n-m-1</script>. Suppose 
-<script type="math/tex">% <![CDATA[
-k = d(b',c) < n-m-1 %]]></script>. Since <script type="math/tex">(b,b') \in R</script> and <script type="math/tex">(b',c) \in R^k</script>, it follows <script type="math/tex">(b,c) \in R^{k+1}</script>. Since <script type="math/tex">d(b,c) = n-m</script>, it follows 
-<script type="math/tex">% <![CDATA[
-n-m < k+1 %]]></script>, or <script type="math/tex">% <![CDATA[
-n-m-1 < k %]]></script>. Thus we have a contradiction. It follows that <script type="math/tex">d(b',c) = n-m-1</script>.</p>
+    <p>Also by the definition of <span class="kdmath">$d(b',c)$</span>, we can say that <span class="kdmath">$d(b',c) \le n-m-1$</span>. We will prove by contradiction that <span class="kdmath">$d(b',c) = n-m-1$</span>. Suppose 
+<span class="kdmath">$k = d(b',c) < n-m-1$</span>. Since <span class="kdmath">$(b,b') \in R$</span> and <span class="kdmath">$(b',c) \in R^k$</span>, it follows <span class="kdmath">$(b,c) \in R^{k+1}$</span>. Since <span class="kdmath">$d(b,c) = n-m$</span>, it follows 
+<span class="kdmath">$n-m < k+1$</span>, or <span class="kdmath">$n-m-1 < k$</span>. Thus we have a contradiction. It follows that <span class="kdmath">$d(b',c) = n-m-1$</span>.</p>
 
-    <p>Since <script type="math/tex">(a,b) \in R^m</script> and <script type="math/tex">(b,b') \in R</script>, it follows that <script type="math/tex">(a,b') \in R \circ R^{m} = R^{m+1}</script>. Thus <script type="math/tex">d(a,b') \le m+1</script>. We shall prove
-by contradiction that <script type="math/tex">d(a,b') = m+1</script>. Suppose <script type="math/tex">% <![CDATA[
-k = d(a,b') < m+1 %]]></script>. Thus <script type="math/tex">(a,b') \in R^k</script>. Since <script type="math/tex">(a,b') \in R^k</script> and <script type="math/tex">(b',c) \in R^{n-m-1}</script>, it
- follows that <script type="math/tex">(a,c) \in R^{n-m-1+k}</script>. Since <script type="math/tex">d(a,c) = n</script>, it follows <script type="math/tex">% <![CDATA[
-n < n-m-1+k %]]></script>, or <script type="math/tex">% <![CDATA[
-m+1 < k %]]></script>. Thus we have a contradiction. It follows that
- <script type="math/tex">d(a,b') = m+1</script>.</p>
+    <p>Since <span class="kdmath">$(a,b) \in R^m$</span> and <span class="kdmath">$(b,b') \in R$</span>, it follows that <span class="kdmath">$(a,b') \in R \circ R^{m} = R^{m+1}$</span>. Thus <span class="kdmath">$d(a,b') \le m+1$</span>. We shall prove
+by contradiction that <span class="kdmath">$d(a,b') = m+1$</span>. Suppose <span class="kdmath">$k = d(a,b') < m+1$</span>. Thus <span class="kdmath">$(a,b') \in R^k$</span>. Since <span class="kdmath">$(a,b') \in R^k$</span> and <span class="kdmath">$(b',c) \in R^{n-m-1}$</span>, it
+ follows that <span class="kdmath">$(a,c) \in R^{n-m-1+k}$</span>. Since <span class="kdmath">$d(a,c) = n$</span>, it follows <span class="kdmath">$n < n-m-1+k$</span>, or <span class="kdmath">$m+1 < k$</span>. Thus we have a contradiction. It follows that
+ <span class="kdmath">$d(a,b') = m+1$</span>.</p>
 
-    <p>Thus we have an element <script type="math/tex">b'</script> such that <script type="math/tex">d(a,b') = m+1</script> and <script type="math/tex">d(b',c) = n-m-1 = d(a,c) - m - 1</script>.</p>
+    <p>Thus we have an element <span class="kdmath">$b'$</span> such that <span class="kdmath">$d(a,b') = m+1$</span> and <span class="kdmath">$d(b',c) = n-m-1 = d(a,c) - m - 1$</span>.</p>
   </li>
 </ul>
 
@@ -1711,9 +1677,9 @@ m+1 < k %]]></script>. Thus we have a contradiction. It follows that
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">S_n = \{ (a,b) \in A \times A \; \vert \; \text{there is an } R \text{-path form } a \text{ to } b \text{ of length } n \}</script>.</p>
+<p>Suppose <span class="kdmath">$S_n = \{ (a,b) \in A \times A \; \vert \; \text{there is an } R \text{-path form } a \text{ to } b \text{ of length } n \}$</span>.</p>
 
-<p>Thus we need to prove <script type="math/tex">R^n = S_n</script>. We can prove this by proving <script type="math/tex">R^n \subseteq S_n</script> and <script type="math/tex">S_n \subseteq R^n</script>.</p>
+<p>Thus we need to prove <span class="kdmath">$R^n = S_n$</span>. We can prove this by proving <span class="kdmath">$R^n \subseteq S_n$</span> and <span class="kdmath">$S_n \subseteq R^n$</span>.</p>
 
 <p>We shall prove this by induction.</p>
 
@@ -1721,53 +1687,47 @@ m+1 < k %]]></script>. Thus we have a contradiction. It follows that
   <li>
     <p>Base Case:</p>
 
-    <p>For <script type="math/tex">n = 1</script>, we need to prove <script type="math/tex">R^1 \subseteq S_1</script> and <script type="math/tex">S_1 \subseteq R^1</script>.</p>
+    <p>For <span class="kdmath">$n = 1$</span>, we need to prove <span class="kdmath">$R^1 \subseteq S_1$</span> and <span class="kdmath">$S_1 \subseteq R^1$</span>.</p>
 
-    <p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">(a,b) \in R^1</script>. Thus <script type="math/tex">(a,b) \in R</script>. Suppose that <script type="math/tex">f = \{ (0,a), (1,b) \}</script>. It follows that <script type="math/tex">(f(0),f(0+1)) \in R</script>. Thus
-<script type="math/tex">f(0) = a</script>, <script type="math/tex">f(1) = b</script> and <script type="math/tex">% <![CDATA[
-\forall i < n((f(i),f(i+1)) \in R) %]]></script>. Thus there is an <script type="math/tex">R</script>-path from <script type="math/tex">a</script> to <script type="math/tex">b</script> of length <script type="math/tex">1</script>. Thus
-<script type="math/tex">(a,b) \in S_1</script>. Since <script type="math/tex">(a,b)</script> is arbitrary, it follows that <script type="math/tex">R^1 \subseteq S_1</script>.</p>
+    <p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$(a,b) \in R^1$</span>. Thus <span class="kdmath">$(a,b) \in R$</span>. Suppose that <span class="kdmath">$f = \{ (0,a), (1,b) \}$</span>. It follows that <span class="kdmath">$(f(0),f(0+1)) \in R$</span>. Thus
+<span class="kdmath">$f(0) = a$</span>, <span class="kdmath">$f(1) = b$</span> and <span class="kdmath">$\forall i < n((f(i),f(i+1)) \in R)$</span>. Thus there is an <span class="kdmath">$R$</span>-path from <span class="kdmath">$a$</span> to <span class="kdmath">$b$</span> of length <span class="kdmath">$1$</span>. Thus
+<span class="kdmath">$(a,b) \in S_1$</span>. Since <span class="kdmath">$(a,b)$</span> is arbitrary, it follows that <span class="kdmath">$R^1 \subseteq S_1$</span>.</p>
 
-    <p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">(a,b) \in S_1</script>. Thus <script type="math/tex">f(0) = a</script>, <script type="math/tex">f(1) = b</script> and <script type="math/tex">(f(0),f(1)) \in R</script>. Thus <script type="math/tex">(a,b) \in R</script>, or <script type="math/tex">(a,b) \in R^1</script>.
-Since <script type="math/tex">(a,b)</script> is arbitrary, it follows that <script type="math/tex">S_1 \subseteq R^1</script>.</p>
+    <p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$(a,b) \in S_1$</span>. Thus <span class="kdmath">$f(0) = a$</span>, <span class="kdmath">$f(1) = b$</span> and <span class="kdmath">$(f(0),f(1)) \in R$</span>. Thus <span class="kdmath">$(a,b) \in R$</span>, or <span class="kdmath">$(a,b) \in R^1$</span>.
+Since <span class="kdmath">$(a,b)$</span> is arbitrary, it follows that <span class="kdmath">$S_1 \subseteq R^1$</span>.</p>
   </li>
   <li>
     <p>Induction Step:</p>
 
-    <p>Suppose for <script type="math/tex">n</script>, <script type="math/tex">R^n = S_n</script>.</p>
+    <p>Suppose for <span class="kdmath">$n$</span>, <span class="kdmath">$R^n = S_n$</span>.</p>
 
-    <p>Now lets consider of <script type="math/tex">n+1</script>.</p>
+    <p>Now lets consider of <span class="kdmath">$n+1$</span>.</p>
 
-    <p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">(a,c) \in R^{n+1}</script>. Thus there exist an element <script type="math/tex">b</script> such that <script type="math/tex">(a,b) \in R^n</script> and <script type="math/tex">(b,c) \in R</script>. Since <script type="math/tex">(a,b) \in R^n</script>,
-then by induction hypothesis, <script type="math/tex">(a,b) \in S_n</script>. Thus there is an <script type="math/tex">R</script>-path from <script type="math/tex">a</script> to <script type="math/tex">b</script> of length <script type="math/tex">n</script>. It follows that <script type="math/tex">f(0) = a</script>, <script type="math/tex">f(n) = b</script>
-and <script type="math/tex">% <![CDATA[
-\forall i < n((f(i),f(i+1)) \in R) %]]></script>. Suppose <script type="math/tex">f(n+1) = c</script>. Since <script type="math/tex">f(n) = b</script> and <script type="math/tex">(b,c) \in R</script>, it follows that <script type="math/tex">(f(n),f(n+1)) \in R</script>.
-Thus <script type="math/tex">% <![CDATA[
-\forall i < n+1 ((f(i),f(i+1)) \in R) %]]></script>. Thus <script type="math/tex">(a,c) \in S_{n+1}</script>. Thus <script type="math/tex">R^{n+1} \subseteq S_{n+1}</script>.</p>
+    <p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$(a,c) \in R^{n+1}$</span>. Thus there exist an element <span class="kdmath">$b$</span> such that <span class="kdmath">$(a,b) \in R^n$</span> and <span class="kdmath">$(b,c) \in R$</span>. Since <span class="kdmath">$(a,b) \in R^n$</span>,
+then by induction hypothesis, <span class="kdmath">$(a,b) \in S_n$</span>. Thus there is an <span class="kdmath">$R$</span>-path from <span class="kdmath">$a$</span> to <span class="kdmath">$b$</span> of length <span class="kdmath">$n$</span>. It follows that <span class="kdmath">$f(0) = a$</span>, <span class="kdmath">$f(n) = b$</span>
+and <span class="kdmath">$\forall i < n((f(i),f(i+1)) \in R)$</span>. Suppose <span class="kdmath">$f(n+1) = c$</span>. Since <span class="kdmath">$f(n) = b$</span> and <span class="kdmath">$(b,c) \in R$</span>, it follows that <span class="kdmath">$(f(n),f(n+1)) \in R$</span>.
+Thus <span class="kdmath">$\forall i < n+1 ((f(i),f(i+1)) \in R)$</span>. Thus <span class="kdmath">$(a,c) \in S_{n+1}$</span>. Thus <span class="kdmath">$R^{n+1} \subseteq S_{n+1}$</span>.</p>
 
-    <p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">(a,c) \in S_{n+1}</script>. It follows that <script type="math/tex">f(0) = a</script>, <script type="math/tex">f(n+1) = c</script> and <script type="math/tex">% <![CDATA[
-\forall i < n+1 ((f(i),f(i+1)) \in R) %]]></script>. Suppose
-<script type="math/tex">f(n) = b</script>. Since <script type="math/tex">(f(n),f(n+1)) \in R</script>, it follows that <script type="math/tex">(b,c) \in R</script>.    <br />
-Since <script type="math/tex">% <![CDATA[
-\forall i < n+1 ((f(i),f(i+1)) \in R) %]]></script>, we can also say <script type="math/tex">% <![CDATA[
-\forall i < n ((f(i),f(i+1)) \in R) %]]></script>. Since <script type="math/tex">f(0) = a</script> and <script type="math/tex">f(n) = b</script>, it follows
-that <script type="math/tex">(a,b) \in S_n</script>. Thus by induction hypothesis, it follows <script type="math/tex">(a,b) \in R^n</script>.   <br />
-Since <script type="math/tex">(a,b) \in R^n</script> and <script type="math/tex">(b,c) \in R</script>, it follows that <script type="math/tex">(a,c) \in R^{n+1}</script>. Thus <script type="math/tex">S_{n+1} \subseteq R^{n+1}</script>.</p>
+    <p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$(a,c) \in S_{n+1}$</span>. It follows that <span class="kdmath">$f(0) = a$</span>, <span class="kdmath">$f(n+1) = c$</span> and <span class="kdmath">$\forall i < n+1 ((f(i),f(i+1)) \in R)$</span>. Suppose
+<span class="kdmath">$f(n) = b$</span>. Since <span class="kdmath">$(f(n),f(n+1)) \in R$</span>, it follows that <span class="kdmath">$(b,c) \in R$</span>.    <br />
+Since <span class="kdmath">$\forall i < n+1 ((f(i),f(i+1)) \in R)$</span>, we can also say <span class="kdmath">$\forall i < n ((f(i),f(i+1)) \in R)$</span>. Since <span class="kdmath">$f(0) = a$</span> and <span class="kdmath">$f(n) = b$</span>, it follows
+that <span class="kdmath">$(a,b) \in S_n$</span>. Thus by induction hypothesis, it follows <span class="kdmath">$(a,b) \in R^n$</span>.   <br />
+Since <span class="kdmath">$(a,b) \in R^n$</span> and <span class="kdmath">$(b,c) \in R$</span>, it follows that <span class="kdmath">$(a,c) \in R^{n+1}$</span>. Thus <span class="kdmath">$S_{n+1} \subseteq R^{n+1}$</span>.</p>
   </li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
-<p>We know from theorem 6.5.2, <script type="math/tex">S = \cup_{n \in Z^+} R^n</script>.    <br />
-Suppose <script type="math/tex">P = \{ (a,b) \in A \times A \; \vert \; \text{there is an } R \text{-path form } a \text{ to } b \}</script>.    <br />
-Thus we need to prove <script type="math/tex">S = P</script>.</p>
+<p>We know from theorem 6.5.2, <span class="kdmath">$S = \cup_{n \in Z^+} R^n$</span>.    <br />
+Suppose <span class="kdmath">$P = \{ (a,b) \in A \times A \; \vert \; \text{there is an } R \text{-path form } a \text{ to } b \}$</span>.    <br />
+Thus we need to prove <span class="kdmath">$S = P$</span>.</p>
 
-<p>Suppose <script type="math/tex">P_n = \{ (a,b) \in A \times A \; \vert \; \text{there is an } R \text{-path form } a \text{ to } b \text{ of length } n \}</script>.</p>
+<p>Suppose <span class="kdmath">$P_n = \{ (a,b) \in A \times A \; \vert \; \text{there is an } R \text{-path form } a \text{ to } b \text{ of length } n \}$</span>.</p>
 
-<p>Clearly <script type="math/tex">P = \cup_{i \in Z^+}P_n</script>.</p>
+<p>Clearly <span class="kdmath">$P = \cup_{i \in Z^+}P_n$</span>.</p>
 
-<p>Suppose <script type="math/tex">n</script> is arbitrary positive integer. Thus from part(a) <script type="math/tex">R^n = P_n</script>. Since <script type="math/tex">n</script> was arbitrary, it follows that 
-<script type="math/tex">\cup_{i \in Z^+} R^n = \cup_{i \in Z^+}P_n</script>. Thus <script type="math/tex">S = P</script>.</p>
+<p>Suppose <span class="kdmath">$n$</span> is arbitrary positive integer. Thus from part(a) <span class="kdmath">$R^n = P_n$</span>. Since <span class="kdmath">$n$</span> was arbitrary, it follows that 
+<span class="kdmath">$\cup_{i \in Z^+} R^n = \cup_{i \in Z^+}P_n$</span>. Thus <span class="kdmath">$S = P$</span>.</p>
 
 <hr />
 
@@ -1775,7 +1735,7 @@ Thus we need to prove <script type="math/tex">S = P</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">S_n = \{ (a,b) \in A \times A \; \vert \; \text{there is a "simple" } R \text{-path form } a \text{ to } b \text{ of length at most } n \}</script>.</p>
+<p>Suppose <span class="kdmath">$S_n = \{ (a,b) \in A \times A \; \vert \; \text{there is a "simple" } R \text{-path form } a \text{ to } b \text{ of length at most } n \}$</span>.</p>
 
 <p>We will prove this by induction.</p>
 
@@ -1783,68 +1743,65 @@ Thus we need to prove <script type="math/tex">S = P</script>.</p>
   <li>
     <p>Base Case:</p>
 
-    <p>For <script type="math/tex">n = 1</script>.</p>
+    <p>For <span class="kdmath">$n = 1$</span>.</p>
 
-    <p>Suppose <script type="math/tex">(a,b) \in R \setminus i_A</script>. Thus <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(a,b) \notin i_A</script>. It follows that <script type="math/tex">a \ne b</script>. Suppose 
-<script type="math/tex">f = \{ (0,a), (1,b) \}</script>. Thus <script type="math/tex">f(0) = a</script>, and <script type="math/tex">f(1) = b</script> and <script type="math/tex">% <![CDATA[
-\forall i < 1 ( ( f(i),f(i+1) ) \in R) %]]></script>. Since <script type="math/tex">a \ne b</script>, it follows
-<script type="math/tex">f(0) \ne f(1)</script>. Thus <script type="math/tex">f</script> is one-to-one. Thus <script type="math/tex">(a,b) \in S_1</script>. It follows that <script type="math/tex">R \setminus i_A \subseteq S_1</script>, or <script type="math/tex">R^1 \setminus i_A \subseteq S_1</script>.</p>
+    <p>Suppose <span class="kdmath">$(a,b) \in R \setminus i_A$</span>. Thus <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(a,b) \notin i_A$</span>. It follows that <span class="kdmath">$a \ne b$</span>. Suppose 
+<span class="kdmath">$f = \{ (0,a), (1,b) \}$</span>. Thus <span class="kdmath">$f(0) = a$</span>, and <span class="kdmath">$f(1) = b$</span> and <span class="kdmath">$\forall i < 1 ( ( f(i),f(i+1) ) \in R)$</span>. Since <span class="kdmath">$a \ne b$</span>, it follows
+<span class="kdmath">$f(0) \ne f(1)$</span>. Thus <span class="kdmath">$f$</span> is one-to-one. Thus <span class="kdmath">$(a,b) \in S_1$</span>. It follows that <span class="kdmath">$R \setminus i_A \subseteq S_1$</span>, or <span class="kdmath">$R^1 \setminus i_A \subseteq S_1$</span>.</p>
   </li>
   <li>
     <p>Induction Step:</p>
 
-    <p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">R^n \setminus i_A \subseteq S_n</script>.</p>
+    <p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$R^n \setminus i_A \subseteq S_n$</span>.</p>
 
-    <p>Now consider for <script type="math/tex">n+1</script>.</p>
+    <p>Now consider for <span class="kdmath">$n+1$</span>.</p>
 
-    <p>Suppose <script type="math/tex">(a,c) \in R_{n+1} \setminus i_A</script>. Thus <script type="math/tex">a \ne c</script>. Also it follows that there exist some element <script type="math/tex">b</script> such that <script type="math/tex">(a,b) \in R^n</script> and
- <script type="math/tex">(b,c) \in R</script> and <script type="math/tex">a \ne b</script> and $$ b \ne c $.</p>
+    <p>Suppose <span class="kdmath">$(a,c) \in R_{n+1} \setminus i_A$</span>. Thus <span class="kdmath">$a \ne c$</span>. Also it follows that there exist some element <span class="kdmath">$b$</span> such that <span class="kdmath">$(a,b) \in R^n$</span> and
+ <span class="kdmath">$(b,c) \in R$</span> and <span class="kdmath">$a \ne b$</span> and $$ b \ne c $.</p>
 
-    <p>Note: It can be easily proved by contradiction that <script type="math/tex">a \ne b</script> and <script type="math/tex">b \ne c</script>. I skipped it.</p>
+    <p>Note: It can be easily proved by contradiction that <span class="kdmath">$a \ne b$</span> and <span class="kdmath">$b \ne c$</span>. I skipped it.</p>
 
-    <p>Thus <script type="math/tex">(a,b) \in R_n \setminus i_A</script> and <script type="math/tex">(b,c) \in R \setminus i_A</script>. Thus by induction hypothesis, it follows <script type="math/tex">(a,b) \in S_n</script>. Thus there is a 
-function <script type="math/tex">f</script> such that for some <script type="math/tex">m \le n</script>, <script type="math/tex">f(0) = a</script> and <script type="math/tex">f(m) = b</script> and <script type="math/tex">% <![CDATA[
-\forall i < m(f(i),f(i+1)) \in R %]]></script>.</p>
+    <p>Thus <span class="kdmath">$(a,b) \in R_n \setminus i_A$</span> and <span class="kdmath">$(b,c) \in R \setminus i_A$</span>. Thus by induction hypothesis, it follows <span class="kdmath">$(a,b) \in S_n$</span>. Thus there is a 
+function <span class="kdmath">$f$</span> such that for some <span class="kdmath">$m \le n$</span>, <span class="kdmath">$f(0) = a$</span> and <span class="kdmath">$f(m) = b$</span> and <span class="kdmath">$\forall i < m(f(i),f(i+1)) \in R$</span>.</p>
 
     <p>We have following possible cases:</p>
 
     <ul>
-      <li>Case <script type="math/tex">c \in Ran(f)</script>:</li>
+      <li>Case <span class="kdmath">$c \in Ran(f)$</span>:</li>
     </ul>
 
-    <p>Suppose <script type="math/tex">f(k) = c</script>. Suppose <script type="math/tex">h</script> is a function such that <script type="math/tex">\forall i \le k (h(i) = f(i))</script>. Since <script type="math/tex">f</script> is one-to-one, it follows that <script type="math/tex">h</script> is
-<script type="math/tex">R</script>-path from <script type="math/tex">a</script> to <script type="math/tex">c</script> of length less than equal <script type="math/tex">n+1</script>. Thus <script type="math/tex">(a,c) \in S_{n+1}</script>.</p>
+    <p>Suppose <span class="kdmath">$f(k) = c$</span>. Suppose <span class="kdmath">$h$</span> is a function such that <span class="kdmath">$\forall i \le k (h(i) = f(i))$</span>. Since <span class="kdmath">$f$</span> is one-to-one, it follows that <span class="kdmath">$h$</span> is
+<span class="kdmath">$R$</span>-path from <span class="kdmath">$a$</span> to <span class="kdmath">$c$</span> of length less than equal <span class="kdmath">$n+1$</span>. Thus <span class="kdmath">$(a,c) \in S_{n+1}$</span>.</p>
 
     <ul>
-      <li>Case <script type="math/tex">c \notin Ran(f)</script>:</li>
+      <li>Case <span class="kdmath">$c \notin Ran(f)$</span>:</li>
     </ul>
 
-    <p>We have <script type="math/tex">f(0) = a</script> and <script type="math/tex">f(m) = b</script> where <script type="math/tex">m \le n</script>. Suppose <script type="math/tex">h</script> is a function such that <script type="math/tex">\forall i \le m(h(i) = f(i))</script> and <script type="math/tex">h(m+1) = c</script>.
-Thus <script type="math/tex">h(m) = f(m) = b</script> and <script type="math/tex">h(m+1) = c</script>. Since <script type="math/tex">(b,c) \in R</script>, it follows that <script type="math/tex">(h(m),h(m+1)) \in R</script>. Since <script type="math/tex">f</script> is one-to-one, we can say that
-<script type="math/tex">h</script> is a one-to-one function from <script type="math/tex">a</script> to <script type="math/tex">c</script> of length <script type="math/tex">m + 1</script>. Since <script type="math/tex">m \le n</script>, it follows that <script type="math/tex">m+1 \le n+1</script>. It follows that
-<script type="math/tex">(a,c) \in S_{n+1}</script>.</p>
+    <p>We have <span class="kdmath">$f(0) = a$</span> and <span class="kdmath">$f(m) = b$</span> where <span class="kdmath">$m \le n$</span>. Suppose <span class="kdmath">$h$</span> is a function such that <span class="kdmath">$\forall i \le m(h(i) = f(i))$</span> and <span class="kdmath">$h(m+1) = c$</span>.
+Thus <span class="kdmath">$h(m) = f(m) = b$</span> and <span class="kdmath">$h(m+1) = c$</span>. Since <span class="kdmath">$(b,c) \in R$</span>, it follows that <span class="kdmath">$(h(m),h(m+1)) \in R$</span>. Since <span class="kdmath">$f$</span> is one-to-one, we can say that
+<span class="kdmath">$h$</span> is a one-to-one function from <span class="kdmath">$a$</span> to <span class="kdmath">$c$</span> of length <span class="kdmath">$m + 1$</span>. Since <span class="kdmath">$m \le n$</span>, it follows that <span class="kdmath">$m+1 \le n+1$</span>. It follows that
+<span class="kdmath">$(a,c) \in S_{n+1}$</span>.</p>
 
-    <p>Thus from both cases <script type="math/tex">(a,c) \in S_{n+1}</script>. Thus <script type="math/tex">R_{n+1} \subseteq S_{n+1}</script> if <script type="math/tex">R_n \subseteq S_n</script>.</p>
+    <p>Thus from both cases <span class="kdmath">$(a,c) \in S_{n+1}$</span>. Thus <span class="kdmath">$R_{n+1} \subseteq S_{n+1}$</span> if <span class="kdmath">$R_n \subseteq S_n$</span>.</p>
 
-    <p>Thus <script type="math/tex">R_n \subseteq S_n</script>.</p>
+    <p>Thus <span class="kdmath">$R_n \subseteq S_n$</span>.</p>
   </li>
 </ul>
 
 <p><strong>(b)</strong></p>
 
-<p>We know from theorem 6.5.2, <script type="math/tex">S = \cup_{n \in Z^+} R^n</script>.</p>
+<p>We know from theorem 6.5.2, <span class="kdmath">$S = \cup_{n \in Z^+} R^n$</span>.</p>
 
-<p>Suppose <script type="math/tex">P = \{ (a,b) \in A \times A \; \vert \; \text{there is a "simple" } R \text{-path form } a \text{ to } b \}</script>.</p>
+<p>Suppose <span class="kdmath">$P = \{ (a,b) \in A \times A \; \vert \; \text{there is a "simple" } R \text{-path form } a \text{ to } b \}$</span>.</p>
 
-<p>We need to prove <script type="math/tex">S \setminus i_A = P</script>.</p>
+<p>We need to prove <span class="kdmath">$S \setminus i_A = P$</span>.</p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">(a,b) \in S \setminus i_A</script>. Thus for some natural number <script type="math/tex">n</script>, <script type="math/tex">(a,b) \in R^n</script> such that <script type="math/tex">a \ne b</script>. Thus it follows from part(a)
-of this solution that <script type="math/tex">(a,b) \in P</script>. Thus <script type="math/tex">S \setminus i_A \; \subseteq \; P</script>.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$(a,b) \in S \setminus i_A$</span>. Thus for some natural number <span class="kdmath">$n$</span>, <span class="kdmath">$(a,b) \in R^n$</span> such that <span class="kdmath">$a \ne b$</span>. Thus it follows from part(a)
+of this solution that <span class="kdmath">$(a,b) \in P$</span>. Thus <span class="kdmath">$S \setminus i_A \; \subseteq \; P$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">(a,b) \in P</script>. Thus there exist a one-to-one function <script type="math/tex">f</script> such that for some natural number <script type="math/tex">n</script>, <script type="math/tex">f(0) = a</script>, <script type="math/tex">f(n) = b</script> 
-and <script type="math/tex">% <![CDATA[
-\forall i < n((f(i),f(i+1)) \in R) %]]></script>. Thus from Ex-10 part(a), it follows that <script type="math/tex">(a,b) \in R^n</script>. Thus <script type="math/tex">(a,b) \in S</script>. Since <script type="math/tex">f</script> is one-to-one, it 
-follows <script type="math/tex">f(0) \ne f(n)</script>, or <script type="math/tex">a \ne b</script>. Thus <script type="math/tex">(a,b) \notin i_A</script>. Thus we can conclude <script type="math/tex">(a,b) \in S \setminus i_A</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$(a,b) \in P$</span>. Thus there exist a one-to-one function <span class="kdmath">$f$</span> such that for some natural number <span class="kdmath">$n$</span>, <span class="kdmath">$f(0) = a$</span>, <span class="kdmath">$f(n) = b$</span> 
+and <span class="kdmath">$\forall i < n((f(i),f(i+1)) \in R)$</span>. Thus from Ex-10 part(a), it follows that <span class="kdmath">$(a,b) \in R^n$</span>. Thus <span class="kdmath">$(a,b) \in S$</span>. Since <span class="kdmath">$f$</span> is one-to-one, it 
+follows <span class="kdmath">$f(0) \ne f(n)$</span>, or <span class="kdmath">$a \ne b$</span>. Thus <span class="kdmath">$(a,b) \notin i_A$</span>. Thus we can conclude <span class="kdmath">$(a,b) \in S \setminus i_A$</span>.</p>
 
 <hr />
 
@@ -1852,45 +1809,38 @@ follows <script type="math/tex">f(0) \ne f(n)</script>, or <script type="math/te
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">d(a,b) = n</script> and <script type="math/tex">a \ne b</script>. It follows that <script type="math/tex">(a,b) \in R^n \setminus i_A</script>. Thus from Ex-11 part(a), it follows that there exist a simple <script type="math/tex">R-</script>path
-  of length at most <script type="math/tex">n</script>.</p>
+<p>Suppose <span class="kdmath">$d(a,b) = n$</span> and <span class="kdmath">$a \ne b$</span>. It follows that <span class="kdmath">$(a,b) \in R^n \setminus i_A$</span>. Thus from Ex-11 part(a), it follows that there exist a simple <span class="kdmath">$R-$</span>path
+  of length at most <span class="kdmath">$n$</span>.</p>
 
-<p>We will prove by contradiction that length of path is <script type="math/tex">n</script>. Suppose length of <script type="math/tex">R</script>-path is <script type="math/tex">m</script> such that <script type="math/tex">% <![CDATA[
-m < n %]]></script>. It follows that there is a one-to-one function <script type="math/tex">f</script> 
-such that <script type="math/tex">f(0) = a</script> and <script type="math/tex">f(m) = b</script>, and <script type="math/tex">% <![CDATA[
-\forall i < m((f(i),f(i+1) \in R) %]]></script>. Thus from Ex-10 part(a), it follows that <script type="math/tex">(a,b) \in R^m</script>. Since <script type="math/tex">n = d(a,b)</script>,
-it follows that <script type="math/tex">n \le m</script>. But it contradicts with assumption that <script type="math/tex">% <![CDATA[
-m < n %]]></script>. Thus <script type="math/tex">m = n</script>.</p>
+<p>We will prove by contradiction that length of path is <span class="kdmath">$n$</span>. Suppose length of <span class="kdmath">$R$</span>-path is <span class="kdmath">$m$</span> such that <span class="kdmath">$m < n$</span>. It follows that there is a one-to-one function <span class="kdmath">$f$</span> 
+such that <span class="kdmath">$f(0) = a$</span> and <span class="kdmath">$f(m) = b$</span>, and <span class="kdmath">$\forall i < m((f(i),f(i+1) \in R)$</span>. Thus from Ex-10 part(a), it follows that <span class="kdmath">$(a,b) \in R^m$</span>. Since <span class="kdmath">$n = d(a,b)$</span>,
+it follows that <span class="kdmath">$n \le m$</span>. But it contradicts with assumption that <span class="kdmath">$m < n$</span>. Thus <span class="kdmath">$m = n$</span>.</p>
 
-<p>Thus there is a simple path from <script type="math/tex">a</script> to <script type="math/tex">b</script> of length <script type="math/tex">n</script>.</p>
+<p>Thus there is a simple path from <span class="kdmath">$a$</span> to <span class="kdmath">$b$</span> of length <span class="kdmath">$n$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">d(a, a) = n</script>. We have following possible cases:</p>
+<p>Suppose <span class="kdmath">$d(a, a) = n$</span>. We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">n = 1</script>.</p>
+    <p>Case <span class="kdmath">$n = 1$</span>.</p>
 
-    <p>Thus <script type="math/tex">(a,a) \in R</script>. Suppose <script type="math/tex">f = \{ (0,a), (1,a) \}</script>. Thus <script type="math/tex">f(0) = f(1) = a</script>. Also the statementt <script type="math/tex">% <![CDATA[
-\forall i < n \forall j < n(f(i)= f(j) \to i = j) %]]></script> is vacuously true.</p>
+    <p>Thus <span class="kdmath">$(a,a) \in R$</span>. Suppose <span class="kdmath">$f = \{ (0,a), (1,a) \}$</span>. Thus <span class="kdmath">$f(0) = f(1) = a$</span>. Also the statementt <span class="kdmath">$\forall i < n \forall j < n(f(i)= f(j) \to i = j)$</span> is vacuously true.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">n > 1</script>.</p>
+    <p>Case <span class="kdmath">$n > 1$</span>.</p>
 
-    <p>Thus <script type="math/tex">(a,a) \in R^n</script>. Suppose <script type="math/tex">m = n-1</script>. Since <script type="math/tex">% <![CDATA[
-m < n %]]></script>, it follows from Ex-9 (b), there exist an element <script type="math/tex">b</script> such that <script type="math/tex">d(a,b) = m</script> and
-<script type="math/tex">d(b,a) = d(a,a) - m</script>. Thus <script type="math/tex">d(b,a) = n - (n-1) = 1</script>. It follows that <script type="math/tex">(b,a) \in R</script>.   <br />
-Now we shall prove that <script type="math/tex">a \ne b</script> by contradiction. Suppose <script type="math/tex">a = b</script>. Since <script type="math/tex">d(a,b) = n-1</script>, it follows <script type="math/tex">d(a,a) = n-1</script>. But <script type="math/tex">d(a,a) = n</script>.
-Thus we have a contradiction. It follows that <script type="math/tex">a \ne b</script>.
-Thus we have <script type="math/tex">d(a,b) = n-1</script> and <script type="math/tex">a \ne b</script>. Thus by part(a) of this solution it follows that there is a simple path from <script type="math/tex">a</script> to <script type="math/tex">b</script> of length <script type="math/tex">n-1</script>.
-Thus there is a one-to-one function <script type="math/tex">f</script> such that <script type="math/tex">% <![CDATA[
-\forall i < n-1( (f(i),f(i+1)) \in R) %]]></script>.  <br />
-Suppose <script type="math/tex">f' = f \cup \{ (n,a) \}</script>. Since <script type="math/tex">(b,c) \in R</script>, it follows <script type="math/tex">(f'(n-1),f'(n)) \in R</script> Since <script type="math/tex">f</script> is simple path, it follows that 
-<script type="math/tex">% <![CDATA[
-\forall i<n \forall j<n( f'(i) = f'(j) \to i = j %]]></script> and <script type="math/tex">f'(0) = f'(n) = a</script>.</p>
+    <p>Thus <span class="kdmath">$(a,a) \in R^n$</span>. Suppose <span class="kdmath">$m = n-1$</span>. Since <span class="kdmath">$m < n$</span>, it follows from Ex-9 (b), there exist an element <span class="kdmath">$b$</span> such that <span class="kdmath">$d(a,b) = m$</span> and
+<span class="kdmath">$d(b,a) = d(a,a) - m$</span>. Thus <span class="kdmath">$d(b,a) = n - (n-1) = 1$</span>. It follows that <span class="kdmath">$(b,a) \in R$</span>.   <br />
+Now we shall prove that <span class="kdmath">$a \ne b$</span> by contradiction. Suppose <span class="kdmath">$a = b$</span>. Since <span class="kdmath">$d(a,b) = n-1$</span>, it follows <span class="kdmath">$d(a,a) = n-1$</span>. But <span class="kdmath">$d(a,a) = n$</span>.
+Thus we have a contradiction. It follows that <span class="kdmath">$a \ne b$</span>.
+Thus we have <span class="kdmath">$d(a,b) = n-1$</span> and <span class="kdmath">$a \ne b$</span>. Thus by part(a) of this solution it follows that there is a simple path from <span class="kdmath">$a$</span> to <span class="kdmath">$b$</span> of length <span class="kdmath">$n-1$</span>.
+Thus there is a one-to-one function <span class="kdmath">$f$</span> such that <span class="kdmath">$\forall i < n-1( (f(i),f(i+1)) \in R)$</span>.  <br />
+Suppose <span class="kdmath">$f' = f \cup \{ (n,a) \}$</span>. Since <span class="kdmath">$(b,c) \in R$</span>, it follows <span class="kdmath">$(f'(n-1),f'(n)) \in R$</span> Since <span class="kdmath">$f$</span> is simple path, it follows that 
+<span class="kdmath">$\forall i<n \forall j<n( f'(i) = f'(j) \to i = j$</span> and <span class="kdmath">$f'(0) = f'(n) = a$</span>.</p>
 
-    <p>Thus <script type="math/tex">f'</script> is a simple path except <script type="math/tex">f'(0) = f'(n) = a</script>.</p>
+    <p>Thus <span class="kdmath">$f'$</span> is a simple path except <span class="kdmath">$f'(0) = f'(n) = a$</span>.</p>
   </li>
 </ul>
 
@@ -1898,84 +1848,84 @@ Suppose <script type="math/tex">f' = f \cup \{ (n,a) \}</script>. Since <script 
 
 <p><strong>Soln13</strong></p>
 
-<p>Suppose <script type="math/tex">f :J_n \to A</script> is a simple <script type="math/tex">R</script>-path from <script type="math/tex">a</script> to <script type="math/tex">b</script> of length <script type="math/tex">n</script>, where <script type="math/tex">J_n = \{0,1,2, ... n\}</script>.</p>
+<p>Suppose <span class="kdmath">$f :J_n \to A$</span> is a simple <span class="kdmath">$R$</span>-path from <span class="kdmath">$a$</span> to <span class="kdmath">$b$</span> of length <span class="kdmath">$n$</span>, where <span class="kdmath">$J_n = \{0,1,2, ... n\}$</span>.</p>
 
-<p>Clearly length of path is <script type="math/tex">n</script> and <script type="math/tex">J_n</script> contains <script type="math/tex">n+1</script> elements.(using the same definition as defined in book).</p>
+<p>Clearly length of path is <span class="kdmath">$n$</span> and <span class="kdmath">$J_n$</span> contains <span class="kdmath">$n+1$</span> elements.(using the same definition as defined in book).</p>
 
-<p>Since <script type="math/tex">A</script> contains <script type="math/tex">m</script> elements and <script type="math/tex">f</script> is one-to-one, it follows that <script type="math/tex">J_n</script> can contain at max <script type="math/tex">m</script> elements.</p>
+<p>Since <span class="kdmath">$A$</span> contains <span class="kdmath">$m$</span> elements and <span class="kdmath">$f$</span> is one-to-one, it follows that <span class="kdmath">$J_n$</span> can contain at max <span class="kdmath">$m$</span> elements.</p>
 
-<p>It follows that maximum length of <script type="math/tex">f</script> is <script type="math/tex">m-1</script>.</p>
+<p>It follows that maximum length of <span class="kdmath">$f$</span> is <span class="kdmath">$m-1$</span>.</p>
 
-<p>Suppose <script type="math/tex">(a,b) \in S</script>. Suppose that <script type="math/tex">d(a,b) = n</script>. Consider the following cases:</p>
+<p>Suppose <span class="kdmath">$(a,b) \in S$</span>. Suppose that <span class="kdmath">$d(a,b) = n$</span>. Consider the following cases:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">a \ne b</script></p>
+    <p>Case <span class="kdmath">$a \ne b$</span></p>
 
-    <p>Since maximum length of a simple <script type="math/tex">R</script>-path is <script type="math/tex">m-1</script>, then from Ex-12 part(a), it follows that <script type="math/tex">d(a,b) \le m - 1</script>. Thus <script type="math/tex">(a,b) \in R^{n}</script> where
-<script type="math/tex">1 \le n \le m-1</script>. It follows that <script type="math/tex">(a,b) \in \cup \{ R^n \, \vert \, 1 \le n \le m-1 \}</script>.</p>
+    <p>Since maximum length of a simple <span class="kdmath">$R$</span>-path is <span class="kdmath">$m-1$</span>, then from Ex-12 part(a), it follows that <span class="kdmath">$d(a,b) \le m - 1$</span>. Thus <span class="kdmath">$(a,b) \in R^{n}$</span> where
+<span class="kdmath">$1 \le n \le m-1$</span>. It follows that <span class="kdmath">$(a,b) \in \cup \{ R^n \, \vert \, 1 \le n \le m-1 \}$</span>.</p>
   </li>
   <li>
-    <p>Case <script type="math/tex">a = b</script></p>
+    <p>Case <span class="kdmath">$a = b$</span></p>
 
-    <p>Using the result of Ex-12(b), it follows maximum length of such path is <script type="math/tex">\text{ maximum length of simple path } + 1 = m - 1 + 1 = m</script>. Thus <script type="math/tex">(a,b) \in R^{n}</script> where
-<script type="math/tex">1 \le n \le m</script>. It follows that <script type="math/tex">(a,b) \in \cup \{ R^n \, \vert \, 1 \le n \le m \}</script>.</p>
+    <p>Using the result of Ex-12(b), it follows maximum length of such path is <span class="kdmath">$\text{ maximum length of simple path } + 1 = m - 1 + 1 = m$</span>. Thus <span class="kdmath">$(a,b) \in R^{n}$</span> where
+<span class="kdmath">$1 \le n \le m$</span>. It follows that <span class="kdmath">$(a,b) \in \cup \{ R^n \, \vert \, 1 \le n \le m \}$</span>.</p>
   </li>
 </ul>
 
-<p>Thus combining both cases, it follows that <script type="math/tex">(a,b) \in \cup \{ R_n \, \vert \, 1 \le n \le m \}</script>.</p>
+<p>Thus combining both cases, it follows that <span class="kdmath">$(a,b) \in \cup \{ R_n \, \vert \, 1 \le n \le m \}$</span>.</p>
 
-<p>It follows that <script type="math/tex">S \subseteq \cup \{ R^n \, \vert \, 1 \le n \le m \}</script>.</p>
+<p>It follows that <span class="kdmath">$S \subseteq \cup \{ R^n \, \vert \, 1 \le n \le m \}$</span>.</p>
 
-<p>Also since <script type="math/tex">S = \cup_{i \in Z^+} R^n</script>, it follows that <script type="math/tex">\cup \{ R^n \, \vert \, 1 \le n \le m \}  \subseteq S</script>.</p>
+<p>Also since <span class="kdmath">$S = \cup_{i \in Z^+} R^n$</span>, it follows that <span class="kdmath">$\cup \{ R^n \, \vert \, 1 \le n \le m \}  \subseteq S$</span>.</p>
 
-<p>Thus <script type="math/tex">S = \cup \{ R^n \, \vert \, 1 \le n \le m \}</script>.</p>
+<p>Thus <span class="kdmath">$S = \cup \{ R^n \, \vert \, 1 \le n \le m \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln14</strong></p>
 
-<p>Earlier I tried this using induction on <script type="math/tex">i</script> and not able to do it. Later it seems like it was wrong to apply induction on <script type="math/tex">i</script> as value of <script type="math/tex">i</script> is dependent on <script type="math/tex">n</script>.</p>
+<p>Earlier I tried this using induction on <span class="kdmath">$i$</span> and not able to do it. Later it seems like it was wrong to apply induction on <span class="kdmath">$i$</span> as value of <span class="kdmath">$i$</span> is dependent on <span class="kdmath">$n$</span>.</p>
 
-<p>We have to prove <script type="math/tex">\forall n \in \mathbb Z^+( 0 \le i \le n-1 \to (2+i) \; \vert \; (x+i) )</script>, where <script type="math/tex">x = (n+1)! + 2</script>.</p>
+<p>We have to prove <span class="kdmath">$\forall n \in \mathbb Z^+( 0 \le i \le n-1 \to (2+i) \; \vert \; (x+i) )$</span>, where <span class="kdmath">$x = (n+1)! + 2$</span>.</p>
 
-<p>We shall use induction on <script type="math/tex">n</script>.</p>
+<p>We shall use induction on <span class="kdmath">$n$</span>.</p>
 
 <ul>
   <li>
     <p>Base Case:</p>
 
-    <p>For <script type="math/tex">n = 1</script>. Thus the only possible value of <script type="math/tex">i = 0</script>. Thus <script type="math/tex">x+i = (1+1)! + 2 = 4</script>. And <script type="math/tex">2+i = 2</script>. Thus <script type="math/tex">(2+i) \; \vert \; (x+i)</script>.</p>
+    <p>For <span class="kdmath">$n = 1$</span>. Thus the only possible value of <span class="kdmath">$i = 0$</span>. Thus <span class="kdmath">$x+i = (1+1)! + 2 = 4$</span>. And <span class="kdmath">$2+i = 2$</span>. Thus <span class="kdmath">$(2+i) \; \vert \; (x+i)$</span>.</p>
   </li>
   <li>
     <p>Induction Step:</p>
 
-    <p>Suppose for <script type="math/tex">n</script>, <script type="math/tex">(2+i) \; \vert \; (x+i)</script>. Thus for some integer <script type="math/tex">k</script>, <script type="math/tex">k(2+i) = (n+1)! + 2 + i</script>.</p>
+    <p>Suppose for <span class="kdmath">$n$</span>, <span class="kdmath">$(2+i) \; \vert \; (x+i)$</span>. Thus for some integer <span class="kdmath">$k$</span>, <span class="kdmath">$k(2+i) = (n+1)! + 2 + i$</span>.</p>
 
-    <p>Now consider for <script type="math/tex">n+1</script>,</p>
+    <p>Now consider for <span class="kdmath">$n+1$</span>,</p>
 
-    <p>Thus for <script type="math/tex">n+1</script>:   <br />
-Value of <script type="math/tex">i</script> will be <script type="math/tex">0 \le i \le n+1-1</script>. Thus <script type="math/tex">0 \le i \le n</script>.
-And <script type="math/tex">x+i = (n+1+1)! + 2 + i = (n+2)! + 2 + i</script>.</p>
+    <p>Thus for <span class="kdmath">$n+1$</span>:   <br />
+Value of <span class="kdmath">$i$</span> will be <span class="kdmath">$0 \le i \le n+1-1$</span>. Thus <span class="kdmath">$0 \le i \le n$</span>.
+And <span class="kdmath">$x+i = (n+1+1)! + 2 + i = (n+2)! + 2 + i$</span>.</p>
 
     <p>Consider the following cases:</p>
 
     <ul>
       <li>
-        <p>Case <script type="math/tex">i = n</script>:</p>
+        <p>Case <span class="kdmath">$i = n$</span>:</p>
 
-        <p>Thus <script type="math/tex">x+i = (n+2)! + 2 + n = (n+2)((n+1)! + 1)</script>. Thus <script type="math/tex">2+i = 2+n</script> divides <script type="math/tex">x+i</script>.</p>
+        <p>Thus <span class="kdmath">$x+i = (n+2)! + 2 + n = (n+2)((n+1)! + 1)$</span>. Thus <span class="kdmath">$2+i = 2+n$</span> divides <span class="kdmath">$x+i$</span>.</p>
       </li>
       <li>
-        <p>Case <script type="math/tex">0 \le i \le n-1</script>:</p>
+        <p>Case <span class="kdmath">$0 \le i \le n-1$</span>:</p>
 
-        <p>Since <script type="math/tex">0 \le i \le n-1</script>, thus by induction hypothesis, it follows that <script type="math/tex">k(2+i) = (n+1)! + 2 + i</script>. Thus <script type="math/tex">(2+i)(k-1) = (n+1)!</script>.</p>
+        <p>Since <span class="kdmath">$0 \le i \le n-1$</span>, thus by induction hypothesis, it follows that <span class="kdmath">$k(2+i) = (n+1)! + 2 + i$</span>. Thus <span class="kdmath">$(2+i)(k-1) = (n+1)!$</span>.</p>
 
-        <p>Thus <script type="math/tex">x + i = (n+2)! + 2 + i = (n+2)(n+1)! + 2 + i = (n+2)(2+i)(k-1) + 2 + i</script>. Thus <script type="math/tex">x+i = (2+i)((n+2)(k-1) + 1)</script>. Thus <script type="math/tex">(2+i) \; \vert \; (x+i)</script>.</p>
+        <p>Thus <span class="kdmath">$x + i = (n+2)! + 2 + i = (n+2)(n+1)! + 2 + i = (n+2)(2+i)(k-1) + 2 + i$</span>. Thus <span class="kdmath">$x+i = (2+i)((n+2)(k-1) + 1)$</span>. Thus <span class="kdmath">$(2+i) \; \vert \; (x+i)$</span>.</p>
       </li>
     </ul>
 
-    <p>Thus in both cases <script type="math/tex">(2+i) \; \vert \; (x+i)</script>.</p>
+    <p>Thus in both cases <span class="kdmath">$(2+i) \; \vert \; (x+i)$</span>.</p>
   </li>
 </ul>
 

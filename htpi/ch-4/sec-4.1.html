@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1138,46 +1139,46 @@
 <ul>
   <li>Ordered Pair:
     <ul>
-      <li>Lets take an example. Suppose <script type="math/tex">P(x,y)</script> means “x is capital city of country y”. The pair <script type="math/tex">(x,y)</script> is considered as an ordered pair since 
-<script type="math/tex">(x,y) \ne (y,x)</script>.</li>
-      <li>In an ordered pair <script type="math/tex">(a,b)</script>, <script type="math/tex">a</script> is called first coordinate and <script type="math/tex">b</script> is called second coordinate.</li>
+      <li>Lets take an example. Suppose <span class="kdmath">$P(x,y)$</span> means “x is capital city of country y”. The pair <span class="kdmath">$(x,y)$</span> is considered as an ordered pair since 
+<span class="kdmath">$(x,y) \ne (y,x)$</span>.</li>
+      <li>In an ordered pair <span class="kdmath">$(a,b)$</span>, <span class="kdmath">$a$</span> is called first coordinate and <span class="kdmath">$b$</span> is called second coordinate.</li>
     </ul>
   </li>
   <li>Cartesian Product:  <br />
-Suppose <script type="math/tex">A</script> and <script type="math/tex">B</script> are sets. Then the Cartesian product of <script type="math/tex">A</script> and <script type="math/tex">B</script>, denoted <script type="math/tex">A \times B</script>, is the set of all ordered 
+Suppose <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are sets. Then the Cartesian product of <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span>, denoted <span class="kdmath">$A \times B$</span>, is the set of all ordered 
 pairs in which the first coordinate is an element of A and the second is an element of B. In other words,  <br />
-  <script type="math/tex">A \times B = \{(a, b) \vert a \in A \land b \in B \}</script>.</li>
-  <li>Suppose <script type="math/tex">A, B, C</script> and <script type="math/tex">D</script> are sets, then:
+  <span class="kdmath">$A \times B = \{(a, b) \vert a \in A \land b \in B \}$</span>.</li>
+  <li>Suppose <span class="kdmath">$A, B, C$</span> and <span class="kdmath">$D$</span> are sets, then:
     <ul>
-      <li><script type="math/tex">A \times (B \cap C) = (A \times B) \cap (A \times C)</script>.</li>
-      <li><script type="math/tex">A \times (B \cup C) = (A \times B) \cup (A \times C)</script>.</li>
-      <li><script type="math/tex">(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)</script>.</li>
-      <li><script type="math/tex">(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)</script>.</li>
-      <li><script type="math/tex">A \times \phi = \phi \times A = \phi</script>.</li>
+      <li><span class="kdmath">$A \times (B \cap C) = (A \times B) \cap (A \times C)$</span>.</li>
+      <li><span class="kdmath">$A \times (B \cup C) = (A \times B) \cup (A \times C)$</span>.</li>
+      <li><span class="kdmath">$(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$</span>.</li>
+      <li><span class="kdmath">$(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)$</span>.</li>
+      <li><span class="kdmath">$A \times \phi = \phi \times A = \phi$</span>.</li>
     </ul>
   </li>
-  <li>Suppose <script type="math/tex">A</script> and <script type="math/tex">B</script> are sets. Then <script type="math/tex">A \times B</script> = <script type="math/tex">B \times A</script> iff either <script type="math/tex">A = ∅, B = ∅,</script> or <script type="math/tex">A = B</script>.</li>
+  <li>Suppose <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are sets. Then <span class="kdmath">$A \times B$</span> = <span class="kdmath">$B \times A$</span> iff either <span class="kdmath">$A = ∅, B = ∅,$</span> or <span class="kdmath">$A = B$</span>.</li>
   <li>Truth set of a statement:  <br />
-Suppose <script type="math/tex">P(x, y)</script> is a statement with two free variables in which <script type="math/tex">x</script> ranges over a set <script type="math/tex">A</script> and <script type="math/tex">y</script> ranges over another set <script type="math/tex">B</script>. 
-Then <script type="math/tex">A \times B</script> is the set of all assignments to <script type="math/tex">x</script> and <script type="math/tex">y</script> that make sense in the statement <script type="math/tex">P(x, y)</script>. The truth set of <script type="math/tex">P(x, y)</script> 
-is the subset of <script type="math/tex">A \times B</script> consisting of those assignments that make the statement come out true. Thus,       <br />
-truth set of <script type="math/tex">P(x, y) = \{(a, b) \in A \times B \vert P(a, b) \}</script></li>
+Suppose <span class="kdmath">$P(x, y)$</span> is a statement with two free variables in which <span class="kdmath">$x$</span> ranges over a set <span class="kdmath">$A$</span> and <span class="kdmath">$y$</span> ranges over another set <span class="kdmath">$B$</span>. 
+Then <span class="kdmath">$A \times B$</span> is the set of all assignments to <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> that make sense in the statement <span class="kdmath">$P(x, y)$</span>. The truth set of <span class="kdmath">$P(x, y)$</span> 
+is the subset of <span class="kdmath">$A \times B$</span> consisting of those assignments that make the statement come out true. Thus,       <br />
+truth set of <span class="kdmath">$P(x, y) = \{(a, b) \in A \times B \vert P(a, b) \}$</span></li>
 </ul>
 <hr />
 
 <p><strong>Soln1</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\{(x,y) \; \vert P \; \times P \; \vert \; \text{x is a parent of y} \}</script></p>
+<p><strong>(a)</strong> <span class="kdmath">$\{(x,y) \; \vert P \; \times P \; \vert \; \text{x is a parent of y} \}$</span></p>
 
-<p><strong>(b)</strong> <script type="math/tex">\{(x,y) \; \vert \; C \times U \; \vert \; \text{Someone lives in x and attends y} \}</script></p>
+<p><strong>(b)</strong> <span class="kdmath">$\{(x,y) \; \vert \; C \times U \; \vert \; \text{Someone lives in x and attends y} \}$</span></p>
 
 <hr />
 
 <p><strong>Soln2</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\{(x,y) \vert P \times C \; \vert \; \text{x lives in y} \}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$\{(x,y) \vert P \times C \; \vert \; \text{x lives in y} \}$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\{(x,y) \; \vert \; C \times \mathbb N \; \vert \; \text{x is the population of y} \}</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$\{(x,y) \; \vert \; C \times \mathbb N \; \vert \; \text{x is the population of y} \}$</span>.</p>
 
 <hr />
 
@@ -1189,102 +1190,102 @@ truth set of <script type="math/tex">P(x, y) = \{(a, b) \in A \times B \vert P(a
 
 <p><strong>Soln4</strong></p>
 
-<p><script type="math/tex">A = \{1,2,3 \}</script>, <script type="math/tex">B = \{1,4\}</script>, <script type="math/tex">C = \{3,4\}</script>, and <script type="math/tex">D = \{5\}</script></p>
+<p><span class="kdmath">$A = \{1,2,3 \}$</span>, <span class="kdmath">$B = \{1,4\}$</span>, <span class="kdmath">$C = \{3,4\}$</span>, and <span class="kdmath">$D = \{5\}$</span></p>
 
-<p><script type="math/tex">B \cap C = \{ 4 \}</script>.  <br />
-<script type="math/tex">B \cup C = \{ 1, 3, 4 \}</script>.</p>
+<p><span class="kdmath">$B \cap C = \{ 4 \}$</span>.  <br />
+<span class="kdmath">$B \cup C = \{ 1, 3, 4 \}$</span>.</p>
 
-<p><script type="math/tex">A \cap C = \{ 3 \}</script>.  <br />
-<script type="math/tex">A \cup C = \{ 1, 2, 3, 4 \}</script>.</p>
+<p><span class="kdmath">$A \cap C = \{ 3 \}$</span>.  <br />
+<span class="kdmath">$A \cup C = \{ 1, 2, 3, 4 \}$</span>.</p>
 
-<p><script type="math/tex">B \cap D = \phi</script>.  <br />
-<script type="math/tex">B \cup D = \{ 1, 4, 5 \}</script>.</p>
+<p><span class="kdmath">$B \cap D = \phi$</span>.  <br />
+<span class="kdmath">$B \cup D = \{ 1, 4, 5 \}$</span>.</p>
 
-<p><script type="math/tex">A \times B = \{ \{1,1\}, \{1,4\}, \{2,1\}, \{2,4\}, \{3,1\}, \{3,4\} \}</script>.  <br />
-<script type="math/tex">A \times C = \{ \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,3\}, \{3,4\} \}</script>.  <br />
-<script type="math/tex">C \times D = \{ \{3,5\}, \{4,5\}\}</script>.</p>
+<p><span class="kdmath">$A \times B = \{ \{1,1\}, \{1,4\}, \{2,1\}, \{2,4\}, \{3,1\}, \{3,4\} \}$</span>.  <br />
+<span class="kdmath">$A \times C = \{ \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,3\}, \{3,4\} \}$</span>.  <br />
+<span class="kdmath">$C \times D = \{ \{3,5\}, \{4,5\}\}$</span>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p><script type="math/tex">A \times (B \cap C) = \{ \{1, 4\}, \{2, 4\}, \{3, 4\} \}</script>  <br />
-<script type="math/tex">(A \times B) \cap (A \times C) = \{ \{1, 4\}, \{2, 4\}, \{3, 4\} \}</script></p>
+<p><span class="kdmath">$A \times (B \cap C) = \{ \{1, 4\}, \{2, 4\}, \{3, 4\} \}$</span>  <br />
+<span class="kdmath">$(A \times B) \cap (A \times C) = \{ \{1, 4\}, \{2, 4\}, \{3, 4\} \}$</span></p>
 
-<p>Thus, <script type="math/tex">A \times (B \cap C) = (A \times B) \cap (A \times C)</script>.</p>
+<p>Thus, <span class="kdmath">$A \times (B \cap C) = (A \times B) \cap (A \times C)$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">A \times (B \cup C) = \{ \{1, 1\}, \{1, 3\}, \{1, 4\}, \{2, 1\}, \{2, 3\}, \{2, 4\}, \{3, 1\}, \{3, 3\}, \{3, 4\} \}</script>  <br />
-<script type="math/tex">(A \times B) \cup (A \times C) = \{  \{1, 1\}, \{1, 3\}, \{1, 4\}, \{2, 1\}, \{2, 3\}, \{2, 4\}, \{3, 1\}, \{3, 3\}, \{3, 4\} \}</script>.</p>
+<p><span class="kdmath">$A \times (B \cup C) = \{ \{1, 1\}, \{1, 3\}, \{1, 4\}, \{2, 1\}, \{2, 3\}, \{2, 4\}, \{3, 1\}, \{3, 3\}, \{3, 4\} \}$</span>  <br />
+<span class="kdmath">$(A \times B) \cup (A \times C) = \{  \{1, 1\}, \{1, 3\}, \{1, 4\}, \{2, 1\}, \{2, 3\}, \{2, 4\}, \{3, 1\}, \{3, 3\}, \{3, 4\} \}$</span>.</p>
 
-<p>Thus, <script type="math/tex">A \times (B \cup C) = (A \times B) \cup (A \times C)</script></p>
+<p>Thus, <span class="kdmath">$A \times (B \cup C) = (A \times B) \cup (A \times C)$</span></p>
 
 <p><strong>(c)</strong></p>
 
-<p><script type="math/tex">(A \times B) \cap (C \times D) = \phi</script>  <br />
-<script type="math/tex">(A \cap C) \times (B \cap D) = (A \cap C) \times \phi = \phi</script></p>
+<p><span class="kdmath">$(A \times B) \cap (C \times D) = \phi$</span>  <br />
+<span class="kdmath">$(A \cap C) \times (B \cap D) = (A \cap C) \times \phi = \phi$</span></p>
 
-<p>Thus, <script type="math/tex">(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)</script>.</p>
+<p>Thus, <span class="kdmath">$(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
-<p><script type="math/tex">(A \times B) \cup (C \times D) = \{ \{1,1\}, \{1,4\}, \{2,1\}, \{2,4\}, \{3,1\}, \{3,4\}, \{3,5\}, \{4,5\} \}</script>  <br />
-<script type="math/tex">(A \cup C) \times (B \cup D) = \{ \{1, 1\}, \{1, 4\}, \{1, 5\}, \{2, 1\}, \{2, 4\}, \{2, 5\}, \{3, 1\}, \{3, 4\}, \{3, 5\}, \{4, 1\}, \{4, 4\}, \{4, 5\} \}</script></p>
+<p><span class="kdmath">$(A \times B) \cup (C \times D) = \{ \{1,1\}, \{1,4\}, \{2,1\}, \{2,4\}, \{3,1\}, \{3,4\}, \{3,5\}, \{4,5\} \}$</span>  <br />
+<span class="kdmath">$(A \cup C) \times (B \cup D) = \{ \{1, 1\}, \{1, 4\}, \{1, 5\}, \{2, 1\}, \{2, 4\}, \{2, 5\}, \{3, 1\}, \{3, 4\}, \{3, 5\}, \{4, 1\}, \{4, 4\}, \{4, 5\} \}$</span></p>
 
-<p>Thus, <script type="math/tex">(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)</script></p>
+<p>Thus, <span class="kdmath">$(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)$</span></p>
 
-<p><strong>(e)</strong> <script type="math/tex">A \times \phi = \phi</script> and <script type="math/tex">\phi \times A = \phi</script>, thus <script type="math/tex">A \times \phi = \phi \times A = \phi</script>.</p>
+<p><strong>(e)</strong> <span class="kdmath">$A \times \phi = \phi$</span> and <span class="kdmath">$\phi \times A = \phi$</span>, thus <span class="kdmath">$A \times \phi = \phi \times A = \phi$</span>.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p><strong>Proof for: <script type="math/tex">A \times (B \cup C) \, = \, (A \times B) \cup (A \times C)</script></strong></p>
+<p><strong>Proof for: <span class="kdmath">$A \times (B \cup C) \, = \, (A \times B) \cup (A \times C)$</span></strong></p>
 
-<p>(<script type="math/tex">\to</script>)Let <script type="math/tex">p</script> be an arbitrary element of <script type="math/tex">A \times (B \cap C)</script>. Thus <script type="math/tex">p = (x,y)</script> is an ordered pair with in first coordinate <script type="math/tex">x \in A</script> and 
-second coordinate in <script type="math/tex">y \in (B \cap C)</script>. Thus <script type="math/tex">y</script> can be either in <script type="math/tex">B</script> or in <script type="math/tex">C</script>. Thus we have following cases:</p>
-
-<ul>
-  <li>
-    <p>Case 1: <script type="math/tex">x \in A \land y \in B</script>:  <br />
-Thus we can say that <script type="math/tex">p = (x,y) \in (A \times B)</script>. It follows that <script type="math/tex">p \in (A \times B) \cup (A \times C)</script>.</p>
-  </li>
-  <li>
-    <p>Case 2: <script type="math/tex">x \in A \land y \in C</script>:  <br />
-Thus we can say that <script type="math/tex">p = (x,y) \in (A \times C)</script>. It follows that <script type="math/tex">p \in (A \times B) \cup (A \times C)</script>.</p>
-  </li>
-</ul>
-
-<p>Thus from both cases, if <script type="math/tex">p \in A \times (B \cup C)</script>, then <script type="math/tex">p \in (A \times B) \cup (A \times C)</script>.</p>
-
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">p = (x,y) \in (A \times B) \cup (A \times C)</script>. Thus we have two cases:</p>
+<p>(<span class="kdmath">$\to$</span>)Let <span class="kdmath">$p$</span> be an arbitrary element of <span class="kdmath">$A \times (B \cap C)$</span>. Thus <span class="kdmath">$p = (x,y)$</span> is an ordered pair with in first coordinate <span class="kdmath">$x \in A$</span> and 
+second coordinate in <span class="kdmath">$y \in (B \cap C)$</span>. Thus <span class="kdmath">$y$</span> can be either in <span class="kdmath">$B$</span> or in <span class="kdmath">$C$</span>. Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">p \in (A \times C)</script>:  <br />
-Thus <script type="math/tex">x \in A</script> and <script type="math/tex">y \in C</script>. Since <script type="math/tex">y \in C</script>, it follows that <script type="math/tex">y \in B \cup C</script>. Now since <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B \cup C</script>,
-it follows that <script type="math/tex">p \in A \times (B \cup C)</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A \land y \in B$</span>:  <br />
+Thus we can say that <span class="kdmath">$p = (x,y) \in (A \times B)$</span>. It follows that <span class="kdmath">$p \in (A \times B) \cup (A \times C)$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">p \in (A \times B)</script>:  <br />
-Thus <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script>. Since <script type="math/tex">y \in B</script>, it follows that <script type="math/tex">y \in B \cup C</script>. Now since <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B \cup C</script>,
-it follows that <script type="math/tex">p \in A \times (B \cup C)</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \in A \land y \in C$</span>:  <br />
+Thus we can say that <span class="kdmath">$p = (x,y) \in (A \times C)$</span>. It follows that <span class="kdmath">$p \in (A \times B) \cup (A \times C)$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, if <script type="math/tex">p \in (A \times B) \cup (A \times C)</script>, then <script type="math/tex">p \in A \times (B \cup C)</script>.</p>
+<p>Thus from both cases, if <span class="kdmath">$p \in A \times (B \cup C)$</span>, then <span class="kdmath">$p \in (A \times B) \cup (A \times C)$</span>.</p>
 
-<p>Thus from both directions <script type="math/tex">A \times (B \cup C) \; = \; (A \times B) \cup (A \times C)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$p = (x,y) \in (A \times B) \cup (A \times C)$</span>. Thus we have two cases:</p>
 
-<p><strong>Proof for: <script type="math/tex">(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)</script></strong></p>
+<ul>
+  <li>
+    <p>Case 1: <span class="kdmath">$p \in (A \times C)$</span>:  <br />
+Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in C$</span>. Since <span class="kdmath">$y \in C$</span>, it follows that <span class="kdmath">$y \in B \cup C$</span>. Now since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B \cup C$</span>,
+it follows that <span class="kdmath">$p \in A \times (B \cup C)$</span>.</p>
+  </li>
+  <li>
+    <p>Case 2: <span class="kdmath">$p \in (A \times B)$</span>:  <br />
+Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span>. Since <span class="kdmath">$y \in B$</span>, it follows that <span class="kdmath">$y \in B \cup C$</span>. Now since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B \cup C$</span>,
+it follows that <span class="kdmath">$p \in A \times (B \cup C)$</span>.</p>
+  </li>
+</ul>
 
-<p>(<script type="math/tex">\to</script>)Let <script type="math/tex">p = (x,y)</script> be an arbitrary element of <script type="math/tex">(A \times B) \cap (C \times D)</script>. Thus <script type="math/tex">(x,y) \in (A \times B)</script> and <script type="math/tex">(x,y) \in (C \times D)</script>.
-It follows that <script type="math/tex">x \in A \land x \in C</script>, or <script type="math/tex">x \in A \cap C</script>. Similarly, since <script type="math/tex">y \in B \land y \in D</script>, it follows <script type="math/tex">y \in B \cap D</script>. Thus
-<script type="math/tex">(x,y) \in (A \cap C) \times (B \cap D)</script>.</p>
+<p>Thus from both cases, if <span class="kdmath">$p \in (A \times B) \cup (A \times C)$</span>, then <span class="kdmath">$p \in A \times (B \cup C)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Let <script type="math/tex">p = (x,y)</script> be an arbitrary element of <script type="math/tex">(A \cap C) \times (B \cap D)</script>. Thus <script type="math/tex">x \in A \land y \in B</script>, it follows that
-<script type="math/tex">(x,y) \in A \times B</script>. Similarly, since <script type="math/tex">x \in C \land y \in D</script>, it follows that <script type="math/tex">(x,y) \in (C \times D)</script>. Thus we have <script type="math/tex">p = (x,y) \in (A \times B) \cap (C \times D)</script>.</p>
+<p>Thus from both directions <span class="kdmath">$A \times (B \cup C) \; = \; (A \times B) \cup (A \times C)$</span>.</p>
 
-<p>Thus from both directions we have <script type="math/tex">(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)</script>.</p>
+<p><strong>Proof for: <span class="kdmath">$(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$</span></strong></p>
+
+<p>(<span class="kdmath">$\to$</span>)Let <span class="kdmath">$p = (x,y)$</span> be an arbitrary element of <span class="kdmath">$(A \times B) \cap (C \times D)$</span>. Thus <span class="kdmath">$(x,y) \in (A \times B)$</span> and <span class="kdmath">$(x,y) \in (C \times D)$</span>.
+It follows that <span class="kdmath">$x \in A \land x \in C$</span>, or <span class="kdmath">$x \in A \cap C$</span>. Similarly, since <span class="kdmath">$y \in B \land y \in D$</span>, it follows <span class="kdmath">$y \in B \cap D$</span>. Thus
+<span class="kdmath">$(x,y) \in (A \cap C) \times (B \cap D)$</span>.</p>
+
+<p>(<span class="kdmath">$\leftarrow$</span>)Let <span class="kdmath">$p = (x,y)$</span> be an arbitrary element of <span class="kdmath">$(A \cap C) \times (B \cap D)$</span>. Thus <span class="kdmath">$x \in A \land y \in B$</span>, it follows that
+<span class="kdmath">$(x,y) \in A \times B$</span>. Similarly, since <span class="kdmath">$x \in C \land y \in D$</span>, it follows that <span class="kdmath">$(x,y) \in (C \times D)$</span>. Thus we have <span class="kdmath">$p = (x,y) \in (A \times B) \cap (C \times D)$</span>.</p>
+
+<p>Thus from both directions we have <span class="kdmath">$(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$</span>.</p>
 
 <hr />
 
@@ -1293,13 +1294,13 @@ It follows that <script type="math/tex">x \in A \land x \in C</script>, or <scri
 <p>It does not cover all the possible cases. Following cases are missed:</p>
 
 <ul>
-  <li>Case 1: <script type="math/tex">x \in A \land y \in D</script>.</li>
-  <li>Case 2: <script type="math/tex">x \in C \land y \in B</script>.</li>
+  <li>Case 1: <span class="kdmath">$x \in A \land y \in D$</span>.</li>
+  <li>Case 2: <span class="kdmath">$x \in C \land y \in B$</span>.</li>
 </ul>
 
 <hr />
 
-<p><strong>Soln7</strong> <script type="math/tex">m \times n</script>.</p>
+<p><strong>Soln7</strong> <span class="kdmath">$m \times n$</span>.</p>
 
 <hr />
 
@@ -1309,74 +1310,74 @@ It follows that <script type="math/tex">x \in A \land x \in C</script>, or <scri
 
 <p>A×(B\C) = (A×B)(A×C)</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">p=(x,y) \in A \times (B \setminus C)</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B \land y \notin C</script>. It follows that <script type="math/tex">(x,y) \in A \times B</script>,
-but <script type="math/tex">(x,y) \notin A \times C</script>. Thus <script type="math/tex">(x,y) \in (A \times B) \setminus (A \times C)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$p=(x,y) \in A \times (B \setminus C)$</span>. Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B \land y \notin C$</span>. It follows that <span class="kdmath">$(x,y) \in A \times B$</span>,
+but <span class="kdmath">$(x,y) \notin A \times C$</span>. Thus <span class="kdmath">$(x,y) \in (A \times B) \setminus (A \times C)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">p=(x,y) \in (A \times B) \setminus (A \times C)</script>. Thus <script type="math/tex">(x,y) \in A \times B</script> and <script type="math/tex">(x,y) \notin A \times C</script>.
-Since <script type="math/tex">x \in A</script> and <script type="math/tex">(x,y) \notin A \times C</script>, it follows that <script type="math/tex">y \notin C</script>. Thus <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B \land y notin C</script> , or 
-<script type="math/tex">y \in B \setminus C</script>. Thus we have <script type="math/tex">(x,y) \in A \times (B \times C)</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$p=(x,y) \in (A \times B) \setminus (A \times C)$</span>. Thus <span class="kdmath">$(x,y) \in A \times B$</span> and <span class="kdmath">$(x,y) \notin A \times C$</span>.
+Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$(x,y) \notin A \times C$</span>, it follows that <span class="kdmath">$y \notin C$</span>. Thus <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B \land y notin C$</span> , or 
+<span class="kdmath">$y \in B \setminus C$</span>. Thus we have <span class="kdmath">$(x,y) \in A \times (B \times C)$</span>.</p>
 
-<p>Since <script type="math/tex">p=(x,y)</script> is arbitrary, we can conclude that <script type="math/tex">A \times (B \setminus C) = (A \times B) \setminus (A \times C)</script>.</p>
+<p>Since <span class="kdmath">$p=(x,y)$</span> is arbitrary, we can conclude that <span class="kdmath">$A \times (B \setminus C) = (A \times B) \setminus (A \times C)$</span>.</p>
 
 <hr />
 
 <p><strong>Soln9</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">p=(x,y) \in (A \times B) \setminus (C \times D)</script>. Thus <script type="math/tex">(x,y) \in (A \times B)</script> and <script type="math/tex">(x,y) \notin (C \times D)</script>.
-Since <script type="math/tex">(x,y) \in (A \times B)</script>, it follows that <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script>. Since <script type="math/tex">(x,y) \notin (C \times D)</script>, we can have following 
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$p=(x,y) \in (A \times B) \setminus (C \times D)$</span>. Thus <span class="kdmath">$(x,y) \in (A \times B)$</span> and <span class="kdmath">$(x,y) \notin (C \times D)$</span>.
+Since <span class="kdmath">$(x,y) \in (A \times B)$</span>, it follows that <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span>. Since <span class="kdmath">$(x,y) \notin (C \times D)$</span>, we can have following 
 possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \notin C</script>:  <br />
- Since <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script>, it follows that <script type="math/tex">(x,y) \in (A \setminus C) \times B</script>. Thus <script type="math/tex">(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \notin C$</span>:  <br />
+ Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span>, it follows that <span class="kdmath">$(x,y) \in (A \setminus C) \times B$</span>. Thus <span class="kdmath">$(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">y \notin D</script>:  <br />
- Since <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script>, it follows that <script type="math/tex">(x,y) \in A \times (B \setminus D)</script>. Thus <script type="math/tex">(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]</script>.</p>
+    <p>Case 2: <span class="kdmath">$y \notin D$</span>:  <br />
+ Since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span>, it follows that <span class="kdmath">$(x,y) \in A \times (B \setminus D)$</span>. Thus <span class="kdmath">$(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">p=(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]</script>.</p>
+<p>Thus from both cases, <span class="kdmath">$p=(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">p=(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]</script>. Thus we have following cases:</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$p=(x,y) \in [((A \setminus C) \times B) \cup (A \times (B \setminus D))]$</span>. Thus we have following cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in ((A \setminus C) \times B)</script>.  <br />
-Here since <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script>, it follows that <script type="math/tex">(x,y) \in A \times B</script>. Also since <script type="math/tex">x \notin C</script>, it follows that <script type="math/tex">(x,y) \notin C \times D</script>.
-Thus we have, <script type="math/tex">(x,y) \in A \times B</script> and <script type="math/tex">(x,y) \notin C \times D</script>. It follows that <script type="math/tex">(x,y) \in (A \times B) \setminus (C \times D)</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in ((A \setminus C) \times B)$</span>.  <br />
+Here since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span>, it follows that <span class="kdmath">$(x,y) \in A \times B$</span>. Also since <span class="kdmath">$x \notin C$</span>, it follows that <span class="kdmath">$(x,y) \notin C \times D$</span>.
+Thus we have, <span class="kdmath">$(x,y) \in A \times B$</span> and <span class="kdmath">$(x,y) \notin C \times D$</span>. It follows that <span class="kdmath">$(x,y) \in (A \times B) \setminus (C \times D)$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in (A \times (B \setminus D)</script>.  <br />
-Here since <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script>, it follows that <script type="math/tex">(x,y) \in A \times B</script>. Also since <script type="math/tex">y \notin D</script>, it follows that <script type="math/tex">(x,y) \notin C \times D</script>.
-Thus we have, <script type="math/tex">(x,y) \in A \times B</script> and <script type="math/tex">(x,y) \notin C \times D</script>. It follows that <script type="math/tex">(x,y) \in (A \times B) \setminus (C \times D)</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in (A \times (B \setminus D)$</span>.  <br />
+Here since <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span>, it follows that <span class="kdmath">$(x,y) \in A \times B$</span>. Also since <span class="kdmath">$y \notin D$</span>, it follows that <span class="kdmath">$(x,y) \notin C \times D$</span>.
+Thus we have, <span class="kdmath">$(x,y) \in A \times B$</span> and <span class="kdmath">$(x,y) \notin C \times D$</span>. It follows that <span class="kdmath">$(x,y) \in (A \times B) \setminus (C \times D)$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases, <script type="math/tex">p=(x,y) \in (A \times B) \setminus (C \times D)</script>.</p>
+<p>Thus from both cases, <span class="kdmath">$p=(x,y) \in (A \times B) \setminus (C \times D)$</span>.</p>
 
-<p>Thus from both directions, we have <script type="math/tex">(A \times B) \setminus (C \times D) = [((A \setminus C) \times B) \cup (A \times (B \setminus D))]</script>.</p>
+<p>Thus from both directions, we have <span class="kdmath">$(A \times B) \setminus (C \times D) = [((A \setminus C) \times B) \cup (A \times (B \setminus D))]$</span>.</p>
 
 <hr />
 
 <p><strong>Soln10</strong></p>
 
-<p>Suppose <script type="math/tex">A \times B \cap C \times D = \phi</script>. Suppose <script type="math/tex">(x,y) \in A \times B</script>. It follows that <script type="math/tex">(x,y) \notin C \times D</script>. Thus there are following
+<p>Suppose <span class="kdmath">$A \times B \cap C \times D = \phi$</span>. Suppose <span class="kdmath">$(x,y) \in A \times B$</span>. It follows that <span class="kdmath">$(x,y) \notin C \times D$</span>. Thus there are following
 cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \notin C</script>:  <br />
- Since <script type="math/tex">x \in A</script>, it follows that <script type="math/tex">A \cap C = \phi</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \notin C$</span>:  <br />
+ Since <span class="kdmath">$x \in A$</span>, it follows that <span class="kdmath">$A \cap C = \phi$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">y \notin D</script>:
- Since <script type="math/tex">y \in B</script>, it follows that <script type="math/tex">B \cap D = \phi</script>.</p>
+    <p>Case 2: <span class="kdmath">$y \notin D$</span>:
+ Since <span class="kdmath">$y \in B$</span>, it follows that <span class="kdmath">$B \cap D = \phi$</span>.</p>
   </li>
 </ul>
 
-<p>Thus either <script type="math/tex">A \cap C = \phi</script>, or <script type="math/tex">B \cap D = \phi</script>.</p>
+<p>Thus either <span class="kdmath">$A \cap C = \phi$</span>, or <span class="kdmath">$B \cap D = \phi$</span>.</p>
 
 <hr />
 
@@ -1384,31 +1385,31 @@ cases:</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in \cup_{i \in I}(A_i \times B_i)</script>. Thus there atleast exists an <script type="math/tex">p \in I</script> such that <script type="math/tex">(x,y) \in (A_p \times B_p)</script>. Thus <script type="math/tex">x \in A_p</script>
-and <script type="math/tex">y \in B_p</script>. Since <script type="math/tex">x \in A_p</script>, it follows <script type="math/tex">x \in \cup_{i \in I}A_i</script>. Similarly, since <script type="math/tex">y \in B_p</script>, it follows <script type="math/tex">y \in \cup_{i \in I}B_i</script>.
-Thus <script type="math/tex">(x,y) \in \cup_{i \in I}A_i \times \cup_{i \in I}B_i</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">\cup_{i \in I}(A_i \times B_i) \subseteq \cup_{i \in I}A_i \times \cup_{i \in I}B_i</script>.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in \cup_{i \in I}(A_i \times B_i)$</span>. Thus there atleast exists an <span class="kdmath">$p \in I$</span> such that <span class="kdmath">$(x,y) \in (A_p \times B_p)$</span>. Thus <span class="kdmath">$x \in A_p$</span>
+and <span class="kdmath">$y \in B_p$</span>. Since <span class="kdmath">$x \in A_p$</span>, it follows <span class="kdmath">$x \in \cup_{i \in I}A_i$</span>. Similarly, since <span class="kdmath">$y \in B_p$</span>, it follows <span class="kdmath">$y \in \cup_{i \in I}B_i$</span>.
+Thus <span class="kdmath">$(x,y) \in \cup_{i \in I}A_i \times \cup_{i \in I}B_i$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$\cup_{i \in I}(A_i \times B_i) \subseteq \cup_{i \in I}A_i \times \cup_{i \in I}B_i$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>∪p∈PCp =(∪i∈IAi)×(∪i∈IBi)</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(x,y) \in \cup_{p \in P}C_p</script>. Thus <script type="math/tex">(x,y)</script> exist in atleast one of the set, say <script type="math/tex">C_k</script> such that <script type="math/tex">k \in P</script>.
-Thus <script type="math/tex">x \in A_k</script> and <script type="math/tex">y \in B_k</script>. It follows that <script type="math/tex">x \in \cup_{i \in I}A_i</script> and <script type="math/tex">y \in \cup_{i \in I}B_i</script>. Thus we have
-<script type="math/tex">(x,y) \in \cup_{i \in I}A_i \times \cup_{i \in I}B_i</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that 
-<script type="math/tex">\cup_{p \in P}C_p \subseteq \cup_{i \in I}A_i \times \cup_{i \in I}B_i</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(x,y) \in \cup_{p \in P}C_p$</span>. Thus <span class="kdmath">$(x,y)$</span> exist in atleast one of the set, say <span class="kdmath">$C_k$</span> such that <span class="kdmath">$k \in P$</span>.
+Thus <span class="kdmath">$x \in A_k$</span> and <span class="kdmath">$y \in B_k$</span>. It follows that <span class="kdmath">$x \in \cup_{i \in I}A_i$</span> and <span class="kdmath">$y \in \cup_{i \in I}B_i$</span>. Thus we have
+<span class="kdmath">$(x,y) \in \cup_{i \in I}A_i \times \cup_{i \in I}B_i$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that 
+<span class="kdmath">$\cup_{p \in P}C_p \subseteq \cup_{i \in I}A_i \times \cup_{i \in I}B_i$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">(x,y) \in \cup_{i \in I}A_i \times \cup_{i \in I}B_i</script>. Thus <script type="math/tex">x \in A_m</script> such that <script type="math/tex">m \in I</script> and <script type="math/tex">y \in B_n</script>
-such that <script type="math/tex">n \in I</script>. Thus <script type="math/tex">(x,y) \in A_m \times B_n</script>, or <script type="math/tex">(x,y) \in C_t</script> where <script type="math/tex">C_t=(A_m \times B_n)</script>. Since <script type="math/tex">m \in I</script> and <script type="math/tex">n \in I</script>, it
-follows that <script type="math/tex">t = (m,n) \in I \times I</script>, or <script type="math/tex">t \in P</script>. Now, since <script type="math/tex">(x,y) \in C_t</script> and <script type="math/tex">t \in P</script>, it follows that <script type="math/tex">(x,y) \in \cup_{p \in P}C_p</script>.
-Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">\cup_{i \in I}A_i \times \cup_{i \in I}B_i \subseteq \cup_{p \in P}C_p</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$(x,y) \in \cup_{i \in I}A_i \times \cup_{i \in I}B_i$</span>. Thus <span class="kdmath">$x \in A_m$</span> such that <span class="kdmath">$m \in I$</span> and <span class="kdmath">$y \in B_n$</span>
+such that <span class="kdmath">$n \in I$</span>. Thus <span class="kdmath">$(x,y) \in A_m \times B_n$</span>, or <span class="kdmath">$(x,y) \in C_t$</span> where <span class="kdmath">$C_t=(A_m \times B_n)$</span>. Since <span class="kdmath">$m \in I$</span> and <span class="kdmath">$n \in I$</span>, it
+follows that <span class="kdmath">$t = (m,n) \in I \times I$</span>, or <span class="kdmath">$t \in P$</span>. Now, since <span class="kdmath">$(x,y) \in C_t$</span> and <span class="kdmath">$t \in P$</span>, it follows that <span class="kdmath">$(x,y) \in \cup_{p \in P}C_p$</span>.
+Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$\cup_{i \in I}A_i \times \cup_{i \in I}B_i \subseteq \cup_{p \in P}C_p$</span>.</p>
 
-<p>Thus, from both directions we have: <script type="math/tex">\cup_{p \in P}C_p = \cup_{i \in I}A_i \times \cup_{i \in I}B_i</script>.</p>
+<p>Thus, from both directions we have: <span class="kdmath">$\cup_{p \in P}C_p = \cup_{i \in I}A_i \times \cup_{i \in I}B_i$</span>.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
-<p>The theorem and proof both are not correct. It does not consider if some of the sets <script type="math/tex">A, B, C,</script> or <script type="math/tex">D</script> are empty.</p>
+<p>The theorem and proof both are not correct. It does not consider if some of the sets <span class="kdmath">$A, B, C,$</span> or <span class="kdmath">$D$</span> are empty.</p>
 
 
                         <hr/>

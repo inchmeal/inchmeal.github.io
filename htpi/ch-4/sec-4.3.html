@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1138,31 +1139,31 @@
 <ul>
   <li>In last section, relations were described as subsets of cartesian products. Another alternative notation for relations can be:
     <ul>
-      <li>A point <script type="math/tex">(a,b)</script> in a relation R, or <script type="math/tex">(a,b) \in R</script>, can be also be described by notation: <script type="math/tex">a R b</script>.</li>
+      <li>A point <span class="kdmath">$(a,b)$</span> in a relation R, or <span class="kdmath">$(a,b) \in R$</span>, can be also be described by notation: <span class="kdmath">$a R b$</span>.</li>
       <li>This notation is similar to the way in mathematics where relationships between two objects are expressed by placing a symbol
-between these two objects. Eg: <script type="math/tex">x > y</script>, or <script type="math/tex">A \subseteq B</script>.</li>
+between these two objects. Eg: <span class="kdmath">$x > y$</span>, or <span class="kdmath">$A \subseteq B$</span>.</li>
     </ul>
   </li>
-  <li>Another way to see relations, is drawing their pictures. To describe a relation <script type="math/tex">R</script> from <script type="math/tex">A</script> to <script type="math/tex">B</script>. Two closed curves can
-be drawn adjacent to each other without touching. Draw points/vertices in one curve containing all the points from <script type="math/tex">A</script> and similarly
-in other curve containing all points of <script type="math/tex">B</script>. Now if <script type="math/tex">x \in A</script> and <script type="math/tex">y \in B</script> and <script type="math/tex">(x,y) \in R</script>, then draw an edge pointing 
-from <script type="math/tex">A</script> to <script type="math/tex">B</script>.</li>
-  <li>For relations like <script type="math/tex">R \subseteq A \times A</script>, directed graphs can be used to described the relation. Such relations may also be called
-as: <script type="math/tex">R</script> is a relation on set <script type="math/tex">A</script>.</li>
-  <li>Suppose <script type="math/tex">R</script> is a relation on <script type="math/tex">A</script>, then:
+  <li>Another way to see relations, is drawing their pictures. To describe a relation <span class="kdmath">$R$</span> from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>. Two closed curves can
+be drawn adjacent to each other without touching. Draw points/vertices in one curve containing all the points from <span class="kdmath">$A$</span> and similarly
+in other curve containing all points of <span class="kdmath">$B$</span>. Now if <span class="kdmath">$x \in A$</span> and <span class="kdmath">$y \in B$</span> and <span class="kdmath">$(x,y) \in R$</span>, then draw an edge pointing 
+from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>.</li>
+  <li>For relations like <span class="kdmath">$R \subseteq A \times A$</span>, directed graphs can be used to described the relation. Such relations may also be called
+as: <span class="kdmath">$R$</span> is a relation on set <span class="kdmath">$A$</span>.</li>
+  <li>Suppose <span class="kdmath">$R$</span> is a relation on <span class="kdmath">$A$</span>, then:
     <ul>
-      <li><script type="math/tex">R</script> is reflexive on <script type="math/tex">A</script> (or just reflexive, if <script type="math/tex">A</script> is clear from context) if <script type="math/tex">\forall x \in A(x R x),</script> or in other
- words <script type="math/tex">\forall x \in A((x,x) \in R)</script>.</li>
-      <li><script type="math/tex">R</script> is symmetric if <script type="math/tex">\forall x \in A \forall y \in A(x R y \to y R x)</script>.</li>
-      <li><script type="math/tex">R</script> is transitive if <script type="math/tex">\forall x \in A \forall y \in A \forall z \in A((x R y ∧ y R z) \to x R z)</script>.</li>
+      <li><span class="kdmath">$R$</span> is reflexive on <span class="kdmath">$A$</span> (or just reflexive, if <span class="kdmath">$A$</span> is clear from context) if <span class="kdmath">$\forall x \in A(x R x),$</span> or in other
+ words <span class="kdmath">$\forall x \in A((x,x) \in R)$</span>.</li>
+      <li><span class="kdmath">$R$</span> is symmetric if <span class="kdmath">$\forall x \in A \forall y \in A(x R y \to y R x)$</span>.</li>
+      <li><span class="kdmath">$R$</span> is transitive if <span class="kdmath">$\forall x \in A \forall y \in A \forall z \in A((x R y ∧ y R z) \to x R z)$</span>.</li>
     </ul>
   </li>
-  <li>Suppose <script type="math/tex">A</script> is a set. Let <script type="math/tex">i_A = \{(x, y) \in A \times A \, \vert \, x = y \}</script>. Then <script type="math/tex">i_A</script> is called identity relation on <script type="math/tex">A</script>.</li>
-  <li>Suppose <script type="math/tex">R</script> is a relation on a set <script type="math/tex">A</script>, then:
+  <li>Suppose <span class="kdmath">$A$</span> is a set. Let <span class="kdmath">$i_A = \{(x, y) \in A \times A \, \vert \, x = y \}$</span>. Then <span class="kdmath">$i_A$</span> is called identity relation on <span class="kdmath">$A$</span>.</li>
+  <li>Suppose <span class="kdmath">$R$</span> is a relation on a set <span class="kdmath">$A$</span>, then:
     <ul>
-      <li><script type="math/tex">R</script> is reflexive iff <script type="math/tex">i_A \subseteq R</script>, where <script type="math/tex">i_A</script> is the identity relation on A.</li>
-      <li><script type="math/tex">R</script> is symmetric iff <script type="math/tex">R = R^{−1}</script>.</li>
-      <li><script type="math/tex">R</script> is transitive iff <script type="math/tex">R \circ R \subseteq R</script>.</li>
+      <li><span class="kdmath">$R$</span> is reflexive iff <span class="kdmath">$i_A \subseteq R$</span>, where <span class="kdmath">$i_A$</span> is the identity relation on A.</li>
+      <li><span class="kdmath">$R$</span> is symmetric iff <span class="kdmath">$R = R^{−1}$</span>.</li>
+      <li><span class="kdmath">$R$</span> is transitive iff <span class="kdmath">$R \circ R \subseteq R$</span>.</li>
     </ul>
   </li>
 </ul>
@@ -1173,66 +1174,60 @@ as: <script type="math/tex">R</script> is a relation on set <script type="math/t
 
 <p><strong>Soln4</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">\{ (a,c), (c,c), (d,a), (d,b), (b,d) \}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$\{ (a,c), (c,c), (d,a), (d,b), (b,d) \}$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">\{ (a,b), (b,a), (a,d), (b,d) \}</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$\{ (a,b), (b,a), (a,d), (b,d) \}$</span>.</p>
 
-<p><strong>(c)</strong> <script type="math/tex">\{ (a,a), (b,b), (c,c), (d,d), (b,d), (d,b) \}</script>. Set is reflexive, symmetric and transitive.</p>
+<p><strong>(c)</strong> <span class="kdmath">$\{ (a,a), (b,b), (c,c), (d,d), (b,d), (d,b) \}$</span>. Set is reflexive, symmetric and transitive.</p>
 
-<p><strong>(d)</strong> <script type="math/tex">\{ (a,b), (a,c), (a,d), (c,d), (b,d) \}</script>. Set is transitive.</p>
+<p><strong>(d)</strong> <span class="kdmath">$\{ (a,b), (a,c), (a,d), (c,d), (b,d) \}$</span>. Set is transitive.</p>
 
 <hr />
 
-<p><strong>Soln5</strong> <script type="math/tex">\{ (a,y), (a,z), (b,x), (c,y), (c,z) \}</script>.</p>
+<p><strong>Soln5</strong> <span class="kdmath">$\{ (a,y), (a,z), (b,x), (c,y), (c,z) \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p><script type="math/tex">D_r \circ D_s = \{ (a,c) \, \vert \, \exists b((a,b) \in D_s \land (b,c) \in D_r) \}</script>.  <br />
-<script type="math/tex">% <![CDATA[
-D_r \circ D_s = \{ (a,c) \, \vert \, \exists b( \vert a - b \vert < s \land  \vert b - c \vert < r ) \} %]]></script>.</p>
+<p><span class="kdmath">$D_r \circ D_s = \{ (a,c) \, \vert \, \exists b((a,b) \in D_s \land (b,c) \in D_r) \}$</span>.  <br />
+<span class="kdmath">$D_r \circ D_s = \{ (a,c) \, \vert \, \exists b( \vert a - b \vert < s \land  \vert b - c \vert < r ) \}$</span>.</p>
 
-<p>Since <script type="math/tex">\vert a - c \vert = \vert (a-b) + (b-c) \vert</script>. Thus by triangular inequality, we have:</p>
+<p>Since <span class="kdmath">$\vert a - c \vert = \vert (a-b) + (b-c) \vert$</span>. Thus by triangular inequality, we have:</p>
 
-<p><script type="math/tex">% <![CDATA[
-\vert a - c \vert < \vert a-b \vert + \vert b-c \vert %]]></script>.  <br />
-Since <script type="math/tex">% <![CDATA[
-\vert a - b \vert < s %]]></script> and <script type="math/tex">% <![CDATA[
-\vert b - c \vert < r %]]></script>, we have:  <br />
-<script type="math/tex">% <![CDATA[
-\vert a - c \vert < r + s %]]></script>.</p>
+<p><span class="kdmath">$\vert a - c \vert < \vert a-b \vert + \vert b-c \vert$</span>.  <br />
+Since <span class="kdmath">$\vert a - b \vert < s$</span> and <span class="kdmath">$\vert b - c \vert < r$</span>, we have:  <br />
+<span class="kdmath">$\vert a - c \vert < r + s$</span>.</p>
 
 <p>Thus we have,  <br />
-<script type="math/tex">% <![CDATA[
-D_r \circ D_s = \{ (a,c) \, \vert \,  \vert a - c \vert < r + s \} %]]></script>.</p>
+<span class="kdmath">$D_r \circ D_s = \{ (a,c) \, \vert \,  \vert a - c \vert < r + s \}$</span>.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">R</script> is reflexive. Suppose <script type="math/tex">(x,x) \in i_A</script>. Since <script type="math/tex">i_A</script> is a relation on <script type="math/tex">A</script>, it follows that 
-<script type="math/tex">x \in A</script>. Since <script type="math/tex">R</script> is reflexive and <script type="math/tex">R</script> is defined on <script type="math/tex">A</script>, it follows that <script type="math/tex">(x,x) \in R</script>. Thus if <script type="math/tex">(x,x) \in i_A</script>,
- then <script type="math/tex">(x,x) \in R</script>. Since <script type="math/tex">(x,x)</script> is arbitrary, we can conclude that <script type="math/tex">i_A \subseteq R</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$R$</span> is reflexive. Suppose <span class="kdmath">$(x,x) \in i_A$</span>. Since <span class="kdmath">$i_A$</span> is a relation on <span class="kdmath">$A$</span>, it follows that 
+<span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R$</span> is reflexive and <span class="kdmath">$R$</span> is defined on <span class="kdmath">$A$</span>, it follows that <span class="kdmath">$(x,x) \in R$</span>. Thus if <span class="kdmath">$(x,x) \in i_A$</span>,
+ then <span class="kdmath">$(x,x) \in R$</span>. Since <span class="kdmath">$(x,x)$</span> is arbitrary, we can conclude that <span class="kdmath">$i_A \subseteq R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">i_A \subseteq R</script>. Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">x \in A</script>, <script type="math/tex">(x,x) \in i_A</script>. Since <script type="math/tex">i_A \subseteq R</script>,
-it follows that <script type="math/tex">(x,x) \in R</script>. Thus if <script type="math/tex">x \in A</script>, then <script type="math/tex">(x,x) \in R</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that
-<script type="math/tex">\forall x \in A((x,x) \in R)</script>, which is equivalent to saying that <script type="math/tex">R</script> is reflexive.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$i_A \subseteq R$</span>. Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$x \in A$</span>, <span class="kdmath">$(x,x) \in i_A$</span>. Since <span class="kdmath">$i_A \subseteq R$</span>,
+it follows that <span class="kdmath">$(x,x) \in R$</span>. Thus if <span class="kdmath">$x \in A$</span>, then <span class="kdmath">$(x,x) \in R$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that
+<span class="kdmath">$\forall x \in A((x,x) \in R)$</span>, which is equivalent to saying that <span class="kdmath">$R$</span> is reflexive.</p>
 
-<p>Thus from both directions we can conclude that: <script type="math/tex">R</script> is reflexive, iff, <script type="math/tex">i_A \subseteq R</script>.</p>
+<p>Thus from both directions we can conclude that: <span class="kdmath">$R$</span> is reflexive, iff, <span class="kdmath">$i_A \subseteq R$</span>.</p>
 
 <hr />
 
 <p><strong>Soln8</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">R</script> is transitive. Suppose <script type="math/tex">(a,c) \in R \circ R</script>. Thus there exist an element <script type="math/tex">b \in A</script> such that <script type="math/tex">(a,b) \in R</script>
-and <script type="math/tex">(b,c) \in R</script>. Now since <script type="math/tex">R</script> is transitive and <script type="math/tex">(a,b) \in R \land (b,c) \in R</script>, it follows that <script type="math/tex">(a,c) \in R</script>. Thus
-if <script type="math/tex">(a,c) \in R \circ R</script>, then <script type="math/tex">(a,c) \in R</script>. Since <script type="math/tex">(a,c)</script> is arbitrary, we can conclude that <script type="math/tex">R \circ R \subseteq R</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$R$</span> is transitive. Suppose <span class="kdmath">$(a,c) \in R \circ R$</span>. Thus there exist an element <span class="kdmath">$b \in A$</span> such that <span class="kdmath">$(a,b) \in R$</span>
+and <span class="kdmath">$(b,c) \in R$</span>. Now since <span class="kdmath">$R$</span> is transitive and <span class="kdmath">$(a,b) \in R \land (b,c) \in R$</span>, it follows that <span class="kdmath">$(a,c) \in R$</span>. Thus
+if <span class="kdmath">$(a,c) \in R \circ R$</span>, then <span class="kdmath">$(a,c) \in R$</span>. Since <span class="kdmath">$(a,c)$</span> is arbitrary, we can conclude that <span class="kdmath">$R \circ R \subseteq R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">R \circ R \subseteq R</script>. Suppose <script type="math/tex">a,b,c</script> are three elements in <script type="math/tex">A</script> such that <script type="math/tex">(a,b) \in R \land (b,c) \in R</script>.
- Now since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in R</script>, it follows <script type="math/tex">(a,c) \in R \circ R</script>. Since <script type="math/tex">R \circ R \subseteq R</script>, it follows
- that <script type="math/tex">(a,c) \in R</script>. Since <script type="math/tex">a,b,c</script> are arbitrary, we can conclude that <script type="math/tex">\forall a \in A \forall b \in A \forall c \in A((a,b) \in R \land (b,c) \in R \to (a,c) \in R)</script>,
- which is equivalent to saying that <script type="math/tex">R</script> is transitive.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$R \circ R \subseteq R$</span>. Suppose <span class="kdmath">$a,b,c$</span> are three elements in <span class="kdmath">$A$</span> such that <span class="kdmath">$(a,b) \in R \land (b,c) \in R$</span>.
+ Now since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in R$</span>, it follows <span class="kdmath">$(a,c) \in R \circ R$</span>. Since <span class="kdmath">$R \circ R \subseteq R$</span>, it follows
+ that <span class="kdmath">$(a,c) \in R$</span>. Since <span class="kdmath">$a,b,c$</span> are arbitrary, we can conclude that <span class="kdmath">$\forall a \in A \forall b \in A \forall c \in A((a,b) \in R \land (b,c) \in R \to (a,c) \in R)$</span>,
+ which is equivalent to saying that <span class="kdmath">$R$</span> is transitive.</p>
 
 <hr />
 
@@ -1240,27 +1235,27 @@ if <script type="math/tex">(a,c) \in R \circ R</script>, then <script type="math
 
 <p><strong>(a)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(a,c) \in R \circ i_A</script>. Thus there exist an element <script type="math/tex">b \in A</script> such that <script type="math/tex">(a,b) \in i_A \land (b,c) \in R</script>. Since
- <script type="math/tex">(a,b) \in i_A</script>, it follows <script type="math/tex">a = b</script>. Thus <script type="math/tex">(b,c) \in R</script> is equivalent to <script type="math/tex">(a,c) \in R</script>. It follows that if <script type="math/tex">(a,c) \in R \circ i_A</script>,
- then <script type="math/tex">(a,c) \in R</script>. Since <script type="math/tex">(a,c)</script> is arbitrary, we can conclude that <script type="math/tex">R \circ i_A \subseteq R</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(a,c) \in R \circ i_A$</span>. Thus there exist an element <span class="kdmath">$b \in A$</span> such that <span class="kdmath">$(a,b) \in i_A \land (b,c) \in R$</span>. Since
+ <span class="kdmath">$(a,b) \in i_A$</span>, it follows <span class="kdmath">$a = b$</span>. Thus <span class="kdmath">$(b,c) \in R$</span> is equivalent to <span class="kdmath">$(a,c) \in R$</span>. It follows that if <span class="kdmath">$(a,c) \in R \circ i_A$</span>,
+ then <span class="kdmath">$(a,c) \in R$</span>. Since <span class="kdmath">$(a,c)$</span> is arbitrary, we can conclude that <span class="kdmath">$R \circ i_A \subseteq R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">(a,c) \in R</script>. Thus <script type="math/tex">a \in A \land c \in B</script>. Since <script type="math/tex">a \in A</script>, it follows that <script type="math/tex">(a,a) \in i_A</script>.
- Now since <script type="math/tex">(a,a) \in i_A</script> and <script type="math/tex">(a,c) \in R</script>, it follows that <script type="math/tex">(a,c) \in R \circ i_A</script>. Thus if <script type="math/tex">(a,c) \in R</script>, then <script type="math/tex">(a,c) \in R \circ i_A</script>.
- Since <script type="math/tex">(a,c)</script> is arbitrary, we can conclude that <script type="math/tex">R \subseteq R \circ i_A</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$(a,c) \in R$</span>. Thus <span class="kdmath">$a \in A \land c \in B$</span>. Since <span class="kdmath">$a \in A$</span>, it follows that <span class="kdmath">$(a,a) \in i_A$</span>.
+ Now since <span class="kdmath">$(a,a) \in i_A$</span> and <span class="kdmath">$(a,c) \in R$</span>, it follows that <span class="kdmath">$(a,c) \in R \circ i_A$</span>. Thus if <span class="kdmath">$(a,c) \in R$</span>, then <span class="kdmath">$(a,c) \in R \circ i_A$</span>.
+ Since <span class="kdmath">$(a,c)$</span> is arbitrary, we can conclude that <span class="kdmath">$R \subseteq R \circ i_A$</span>.</p>
 
-<p>Thus we have <script type="math/tex">R \circ i_A \subseteq R</script> as well as <script type="math/tex">R \subseteq R \circ i_A</script>. It follows that <script type="math/tex">R = R \circ i_A</script>.</p>
+<p>Thus we have <span class="kdmath">$R \circ i_A \subseteq R$</span> as well as <span class="kdmath">$R \subseteq R \circ i_A$</span>. It follows that <span class="kdmath">$R = R \circ i_A$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(a,c) \in i_B \circ R</script>. Thus there exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R \land (b,c) \in i_B</script>.
- Since <script type="math/tex">(b,c) \in i_B</script>, it follows that <script type="math/tex">b = c</script>. Thus <script type="math/tex">(a,b) \in R</script> is equivalent to saying that <script type="math/tex">(a,c) \in R</script>. Thus
- if <script type="math/tex">(a,c) \in i_B \circ R</script>, then <script type="math/tex">(a,c) \in R</script>. Since <script type="math/tex">(a,c)</script> is arbitrary, we can conclude that <script type="math/tex">i_B \circ R \subseteq R</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(a,c) \in i_B \circ R$</span>. Thus there exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R \land (b,c) \in i_B$</span>.
+ Since <span class="kdmath">$(b,c) \in i_B$</span>, it follows that <span class="kdmath">$b = c$</span>. Thus <span class="kdmath">$(a,b) \in R$</span> is equivalent to saying that <span class="kdmath">$(a,c) \in R$</span>. Thus
+ if <span class="kdmath">$(a,c) \in i_B \circ R$</span>, then <span class="kdmath">$(a,c) \in R$</span>. Since <span class="kdmath">$(a,c)$</span> is arbitrary, we can conclude that <span class="kdmath">$i_B \circ R \subseteq R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">(a,b) \in R</script>. Thus <script type="math/tex">a \in A \land b \in B</script>. Since <script type="math/tex">b \in B</script>, it follows that <script type="math/tex">(b,b) \in i_B</script>.
-Now since <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,b) \in i_B</script>, it follows that <script type="math/tex">(a,b) \in i_B \circ R</script>. Thus if <script type="math/tex">(a,b) \in R</script>, then <script type="math/tex">(a,b) \in i_B \circ R</script>.
-Since <script type="math/tex">(a,b)</script> is arbitrary, we can conclude that <script type="math/tex">R \subseteq i_B \circ R</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$(a,b) \in R$</span>. Thus <span class="kdmath">$a \in A \land b \in B$</span>. Since <span class="kdmath">$b \in B$</span>, it follows that <span class="kdmath">$(b,b) \in i_B$</span>.
+Now since <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,b) \in i_B$</span>, it follows that <span class="kdmath">$(a,b) \in i_B \circ R$</span>. Thus if <span class="kdmath">$(a,b) \in R$</span>, then <span class="kdmath">$(a,b) \in i_B \circ R$</span>.
+Since <span class="kdmath">$(a,b)$</span> is arbitrary, we can conclude that <span class="kdmath">$R \subseteq i_B \circ R$</span>.</p>
 
-<p>Thus we have <script type="math/tex">i_B \circ R \subseteq R</script> as well as <script type="math/tex">R \subseteq i_B \circ R</script>. It follows that <script type="math/tex">R = i_B \circ R</script>.</p>
+<p>Thus we have <span class="kdmath">$i_B \circ R \subseteq R$</span> as well as <span class="kdmath">$R \subseteq i_B \circ R$</span>. It follows that <span class="kdmath">$R = i_B \circ R$</span>.</p>
 
 <hr />
 
@@ -1268,18 +1263,18 @@ Since <script type="math/tex">(a,b)</script> is arbitrary, we can conclude that 
 
 <ul>
   <li>
-    <p><script type="math/tex">i_D \subseteq S^{-1} \circ S</script>   <br />
-Suppose <script type="math/tex">(x,x) \in i_D</script>. Thus <script type="math/tex">x \in D</script>, or <script type="math/tex">Dom(S)</script>. Since <script type="math/tex">x \in Dom(S)</script>, there must exist an element <script type="math/tex">y</script> such
-that <script type="math/tex">(x,y) \in S</script>. It follows that <script type="math/tex">(y,x) \in S^{-1}</script>. Since <script type="math/tex">(x,y) \in S</script> and <script type="math/tex">(y,x) \in S^{-1}</script>, it follows that
-<script type="math/tex">(x,x) \in S^{-1} \circ S</script>. Thus if <script type="math/tex">(x,x) \in i_D</script>, then <script type="math/tex">(x,x) \in S^{-1} \circ S</script>. Since <script type="math/tex">(x,x)</script> is arbitrary, we
-can conclude that <script type="math/tex">i_D \subseteq S^{-1} \circ S</script>.</p>
+    <p><span class="kdmath">$i_D \subseteq S^{-1} \circ S$</span>   <br />
+Suppose <span class="kdmath">$(x,x) \in i_D$</span>. Thus <span class="kdmath">$x \in D$</span>, or <span class="kdmath">$Dom(S)$</span>. Since <span class="kdmath">$x \in Dom(S)$</span>, there must exist an element <span class="kdmath">$y$</span> such
+that <span class="kdmath">$(x,y) \in S$</span>. It follows that <span class="kdmath">$(y,x) \in S^{-1}$</span>. Since <span class="kdmath">$(x,y) \in S$</span> and <span class="kdmath">$(y,x) \in S^{-1}$</span>, it follows that
+<span class="kdmath">$(x,x) \in S^{-1} \circ S$</span>. Thus if <span class="kdmath">$(x,x) \in i_D$</span>, then <span class="kdmath">$(x,x) \in S^{-1} \circ S$</span>. Since <span class="kdmath">$(x,x)$</span> is arbitrary, we
+can conclude that <span class="kdmath">$i_D \subseteq S^{-1} \circ S$</span>.</p>
   </li>
   <li>
-    <p><script type="math/tex">i_R \subseteq S \circ S^{−1}</script>   <br />
-Suppose <script type="math/tex">(b,b) \in i_R</script>. Thus <script type="math/tex">b \in R</script>, or <script type="math/tex">Ran(S)</script>. Since <script type="math/tex">b \in Ran(S)</script>, there must exist an element <script type="math/tex">a</script> such
-that <script type="math/tex">(a,b) \in S</script>. It follows that <script type="math/tex">(b,a) \in S^{-1}</script>. Since <script type="math/tex">(a,b) \in S^{-1}</script> and <script type="math/tex">(a,b) \in S</script>, it follows that
-<script type="math/tex">(b,b) \in S \circ S^{-1}</script>. Thus if <script type="math/tex">(b,b) \in i_D</script>, then <script type="math/tex">(b,b) \in S \circ S^{-1}</script>. Since <script type="math/tex">(b,b)</script> is arbitrary, we
-can conclude that <script type="math/tex">i_R \subseteq S \circ S^{-1}</script>.</p>
+    <p><span class="kdmath">$i_R \subseteq S \circ S^{−1}$</span>   <br />
+Suppose <span class="kdmath">$(b,b) \in i_R$</span>. Thus <span class="kdmath">$b \in R$</span>, or <span class="kdmath">$Ran(S)$</span>. Since <span class="kdmath">$b \in Ran(S)$</span>, there must exist an element <span class="kdmath">$a$</span> such
+that <span class="kdmath">$(a,b) \in S$</span>. It follows that <span class="kdmath">$(b,a) \in S^{-1}$</span>. Since <span class="kdmath">$(a,b) \in S^{-1}$</span> and <span class="kdmath">$(a,b) \in S$</span>, it follows that
+<span class="kdmath">$(b,b) \in S \circ S^{-1}$</span>. Thus if <span class="kdmath">$(b,b) \in i_D$</span>, then <span class="kdmath">$(b,b) \in S \circ S^{-1}$</span>. Since <span class="kdmath">$(b,b)$</span> is arbitrary, we
+can conclude that <span class="kdmath">$i_R \subseteq S \circ S^{-1}$</span>.</p>
   </li>
 </ul>
 
@@ -1287,133 +1282,133 @@ can conclude that <script type="math/tex">i_R \subseteq S \circ S^{-1}</script>.
 
 <p><strong>Soln11</strong></p>
 
-<p>Suppose <script type="math/tex">(x,y) \in R</script>. Thus <script type="math/tex">x \in A \land y \in A</script>. Since <script type="math/tex">R</script> is reflexive and <script type="math/tex">y \in A</script>, it follows <script type="math/tex">(y,y) \in R</script>.
-Now since <script type="math/tex">(x.y) \in R</script> and <script type="math/tex">(y,y) \in R</script>, it follows <script type="math/tex">(x,y) \in R \circ R</script>. Thus if <script type="math/tex">(x,y) \in R</script>, then <script type="math/tex">(x,y) \in R \circ R</script>.
-Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">R \subseteq R \circ R</script>.</p>
+<p>Suppose <span class="kdmath">$(x,y) \in R$</span>. Thus <span class="kdmath">$x \in A \land y \in A$</span>. Since <span class="kdmath">$R$</span> is reflexive and <span class="kdmath">$y \in A$</span>, it follows <span class="kdmath">$(y,y) \in R$</span>.
+Now since <span class="kdmath">$(x.y) \in R$</span> and <span class="kdmath">$(y,y) \in R$</span>, it follows <span class="kdmath">$(x,y) \in R \circ R$</span>. Thus if <span class="kdmath">$(x,y) \in R$</span>, then <span class="kdmath">$(x,y) \in R \circ R$</span>.
+Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$R \subseteq R \circ R$</span>.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
-<p><strong>(a)</strong> Suppose <script type="math/tex">R</script> is reflexive. Suppose <script type="math/tex">(x,y) \in i_A</script>. Thus <script type="math/tex">x = y</script>, and we can also say that <script type="math/tex">(y,x) \in i_A</script>. Since <script type="math/tex">R</script> is reflexive, <script type="math/tex">i_A \subseteq R</script>. 
-Thus <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">(x,y) \in R</script>, it follows <script type="math/tex">(y,x) \in R^{-1}</script>. Thus we have: if <script type="math/tex">(y,x) \in i_A</script>, then <script type="math/tex">(y,x) \in R^{-1}</script>.
-Or we can conclude that <script type="math/tex">i_A \subseteq R^{-1}</script>, which is equivalent to saying that <script type="math/tex">R^{-1}</script> is reflexive.</p>
+<p><strong>(a)</strong> Suppose <span class="kdmath">$R$</span> is reflexive. Suppose <span class="kdmath">$(x,y) \in i_A$</span>. Thus <span class="kdmath">$x = y$</span>, and we can also say that <span class="kdmath">$(y,x) \in i_A$</span>. Since <span class="kdmath">$R$</span> is reflexive, <span class="kdmath">$i_A \subseteq R$</span>. 
+Thus <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$(x,y) \in R$</span>, it follows <span class="kdmath">$(y,x) \in R^{-1}$</span>. Thus we have: if <span class="kdmath">$(y,x) \in i_A$</span>, then <span class="kdmath">$(y,x) \in R^{-1}$</span>.
+Or we can conclude that <span class="kdmath">$i_A \subseteq R^{-1}$</span>, which is equivalent to saying that <span class="kdmath">$R^{-1}$</span> is reflexive.</p>
 
-<p><strong>(b)</strong> Suppose <script type="math/tex">R</script> is symmetric. Suppose <script type="math/tex">(x,y) \in R^{-1}</script>. It follows that <script type="math/tex">(y,x) \in R</script>. Since <script type="math/tex">R</script> is symmetric,
-it follows that <script type="math/tex">(x,y) \in R</script>. Now since <script type="math/tex">(x,y) \in R</script>, it follows <script type="math/tex">(y,x) \in R^{-1}</script>. Thus if <script type="math/tex">(x,y) \in R^{-1}</script>, then
-<script type="math/tex">(y,x) \in R^{-1}</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, we can conclude that <script type="math/tex">R^{-1}</script> is symmetric.</p>
+<p><strong>(b)</strong> Suppose <span class="kdmath">$R$</span> is symmetric. Suppose <span class="kdmath">$(x,y) \in R^{-1}$</span>. It follows that <span class="kdmath">$(y,x) \in R$</span>. Since <span class="kdmath">$R$</span> is symmetric,
+it follows that <span class="kdmath">$(x,y) \in R$</span>. Now since <span class="kdmath">$(x,y) \in R$</span>, it follows <span class="kdmath">$(y,x) \in R^{-1}$</span>. Thus if <span class="kdmath">$(x,y) \in R^{-1}$</span>, then
+<span class="kdmath">$(y,x) \in R^{-1}$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, we can conclude that <span class="kdmath">$R^{-1}$</span> is symmetric.</p>
 
-<p><strong>(c)</strong> Suppose <script type="math/tex">R</script> is transitive. Suppose <script type="math/tex">(a,c) \in R^{-1}</script>. It follows that <script type="math/tex">(c,a) \in R</script>. Since <script type="math/tex">R</script> is transitive,
-it follows that <script type="math/tex">\exists b \in A ((c,b) \in R \land (b,a) \in R)</script>. Thus we have <script type="math/tex">(a,b) \in R^{-1}</script> and <script type="math/tex">(b,c) \in R^{-1}</script>.
-Now if <script type="math/tex">(a,c) \in R^{-1}</script>, then <script type="math/tex">\exists b \in A((a,b) \in R^{-1} \land (b,c) \in R^{-1}</script>. Since <script type="math/tex">(a,c)</script> is arbitrary, we
-can conclude that <script type="math/tex">R</script> is transitive.</p>
+<p><strong>(c)</strong> Suppose <span class="kdmath">$R$</span> is transitive. Suppose <span class="kdmath">$(a,c) \in R^{-1}$</span>. It follows that <span class="kdmath">$(c,a) \in R$</span>. Since <span class="kdmath">$R$</span> is transitive,
+it follows that <span class="kdmath">$\exists b \in A ((c,b) \in R \land (b,a) \in R)$</span>. Thus we have <span class="kdmath">$(a,b) \in R^{-1}$</span> and <span class="kdmath">$(b,c) \in R^{-1}$</span>.
+Now if <span class="kdmath">$(a,c) \in R^{-1}$</span>, then <span class="kdmath">$\exists b \in A((a,b) \in R^{-1} \land (b,c) \in R^{-1}$</span>. Since <span class="kdmath">$(a,c)$</span> is arbitrary, we
+can conclude that <span class="kdmath">$R$</span> is transitive.</p>
 
 <hr />
 
 <p><strong>Soln13</strong></p>
 
-<p><strong>(a)</strong> True. Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are reflexive. Suppose <script type="math/tex">(x,y) \in i_A</script>. Since <script type="math/tex">R_1</script> is reflexive, it follows <script type="math/tex">(x,y) \in R_1</script>.
- Thus we can also say <script type="math/tex">(x,y) \in R_1 \cup R_2</script>. It follows that if <script type="math/tex">(x,y) \in i_A</script>, then <script type="math/tex">(x,y) \in R_1 \cup R_2</script>. Since 
- <script type="math/tex">(x,y)</script> is arbitrary, we can conclude that <script type="math/tex">i_A \subseteq R_1 \cup R_2</script>. Thus <script type="math/tex">R_1 \cup R_2</script> is reflexive.</p>
+<p><strong>(a)</strong> True. Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are reflexive. Suppose <span class="kdmath">$(x,y) \in i_A$</span>. Since <span class="kdmath">$R_1$</span> is reflexive, it follows <span class="kdmath">$(x,y) \in R_1$</span>.
+ Thus we can also say <span class="kdmath">$(x,y) \in R_1 \cup R_2$</span>. It follows that if <span class="kdmath">$(x,y) \in i_A$</span>, then <span class="kdmath">$(x,y) \in R_1 \cup R_2$</span>. Since 
+ <span class="kdmath">$(x,y)$</span> is arbitrary, we can conclude that <span class="kdmath">$i_A \subseteq R_1 \cup R_2$</span>. Thus <span class="kdmath">$R_1 \cup R_2$</span> is reflexive.</p>
 
-<p><strong>(b)</strong> True. Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are symmetric. Suppose <script type="math/tex">(x,y) \in R_1 \cup R_2</script>. Thus we have two cases:</p>
+<p><strong>(b)</strong> True. Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are symmetric. Suppose <span class="kdmath">$(x,y) \in R_1 \cup R_2$</span>. Thus we have two cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">(x,y) \in R_1</script>  <br />
-Since <script type="math/tex">R_1</script> is symmetric, it follows <script type="math/tex">(y,x) \in R_1</script>. Thus we can also say <script type="math/tex">(y,x) \in R_1 \cup R_2</script>.</p>
+    <p>Case 1: <span class="kdmath">$(x,y) \in R_1$</span>  <br />
+Since <span class="kdmath">$R_1$</span> is symmetric, it follows <span class="kdmath">$(y,x) \in R_1$</span>. Thus we can also say <span class="kdmath">$(y,x) \in R_1 \cup R_2$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">(x,y) \in R_2</script>  <br />
-Since <script type="math/tex">R_2</script> is symmetric, it follows <script type="math/tex">(y,x) \in R_2</script>. Thus we can also say <script type="math/tex">(y,x) \in R_1 \cup R_2</script>.</p>
+    <p>Case 2: <span class="kdmath">$(x,y) \in R_2$</span>  <br />
+Since <span class="kdmath">$R_2$</span> is symmetric, it follows <span class="kdmath">$(y,x) \in R_2$</span>. Thus we can also say <span class="kdmath">$(y,x) \in R_1 \cup R_2$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from both cases <script type="math/tex">(y,x) \in R_1 \cup R_2</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, we can conclude that <script type="math/tex">R_1 \cup R_2</script> is symmetric.</p>
+<p>Thus from both cases <span class="kdmath">$(y,x) \in R_1 \cup R_2$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, we can conclude that <span class="kdmath">$R_1 \cup R_2$</span> is symmetric.</p>
 
-<p><strong>(c)</strong> False. Counter Example: <script type="math/tex">A = \{1, 2, 3 \}, R_1 = \{ \{1,2\}, \{2, 2\} \}, R_2 = \{ \{2,3\} \}</script>. Clearly <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script>
-  are transitive but <script type="math/tex">R_1 \cup R_2</script> is not transitive. Because <script type="math/tex">\{1,2\} \in R_1 \cup R_2</script> and <script type="math/tex">\{2,3\} \in R_1 \cup R_2</script> 
-  but <script type="math/tex">\{1,3\} \notin R_1 \cup R_2</script>.</p>
+<p><strong>(c)</strong> False. Counter Example: <span class="kdmath">$A = \{1, 2, 3 \}, R_1 = \{ \{1,2\}, \{2, 2\} \}, R_2 = \{ \{2,3\} \}$</span>. Clearly <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span>
+  are transitive but <span class="kdmath">$R_1 \cup R_2$</span> is not transitive. Because <span class="kdmath">$\{1,2\} \in R_1 \cup R_2$</span> and <span class="kdmath">$\{2,3\} \in R_1 \cup R_2$</span> 
+  but <span class="kdmath">$\{1,3\} \notin R_1 \cup R_2$</span>.</p>
 
 <hr />
 
 <p><strong>Soln14</strong></p>
 
-<p><strong>(a)</strong> True. Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are reflexive. Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">R_1</script> is reflexive, it follows that <script type="math/tex">(x,x) \in R_1</script>.
-Similarly, since <script type="math/tex">R_2</script> is reflexive, it follows that <script type="math/tex">(x,x) \in R_2</script>. Thus <script type="math/tex">(x,x) \in R_1 \cap R_2</script>. Thus if <script type="math/tex">x \in A</script> then 
-<script type="math/tex">(x,x) \in R_1 \cap R_2</script>. Since <script type="math/tex">x</script> is arbitrary, we can conclude that <script type="math/tex">R_1 \cap R_2</script> is reflexive.</p>
+<p><strong>(a)</strong> True. Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are reflexive. Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R_1$</span> is reflexive, it follows that <span class="kdmath">$(x,x) \in R_1$</span>.
+Similarly, since <span class="kdmath">$R_2$</span> is reflexive, it follows that <span class="kdmath">$(x,x) \in R_2$</span>. Thus <span class="kdmath">$(x,x) \in R_1 \cap R_2$</span>. Thus if <span class="kdmath">$x \in A$</span> then 
+<span class="kdmath">$(x,x) \in R_1 \cap R_2$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can conclude that <span class="kdmath">$R_1 \cap R_2$</span> is reflexive.</p>
 
-<p><strong>(b)</strong> True. Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are symmetric. Suppose <script type="math/tex">(x,y) \in R_1 \cap R_2</script>. Thus <script type="math/tex">(x,y) \in R_1</script>. Since <script type="math/tex">R_1</script>
- is symmetric, it follows that <script type="math/tex">(y,x) \in R_1</script>. Similarly, since <script type="math/tex">(x,y) \in R_2</script> and <script type="math/tex">R_2</script> is symmetric, it follows that <script type="math/tex">(y,x) \in R_2</script>.
- Thus we have <script type="math/tex">(y,x) \in R_1 \cap R_2</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, we can conclude that <script type="math/tex">R_1 \cap R_2</script> is symmetric.</p>
+<p><strong>(b)</strong> True. Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are symmetric. Suppose <span class="kdmath">$(x,y) \in R_1 \cap R_2$</span>. Thus <span class="kdmath">$(x,y) \in R_1$</span>. Since <span class="kdmath">$R_1$</span>
+ is symmetric, it follows that <span class="kdmath">$(y,x) \in R_1$</span>. Similarly, since <span class="kdmath">$(x,y) \in R_2$</span> and <span class="kdmath">$R_2$</span> is symmetric, it follows that <span class="kdmath">$(y,x) \in R_2$</span>.
+ Thus we have <span class="kdmath">$(y,x) \in R_1 \cap R_2$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, we can conclude that <span class="kdmath">$R_1 \cap R_2$</span> is symmetric.</p>
 
-<p><strong>(c)</strong> True. Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are transitive. Suppose <script type="math/tex">a,b,c</script> are elements in <script type="math/tex">A</script> such that <script type="math/tex">(a,b) \in R_1 \cap R_2</script> and 
-<script type="math/tex">(b,c) \in R_1 \cap R_2</script>. Thus <script type="math/tex">(a,b) \in R_1 \land (b,c) \in R_1</script> and <script type="math/tex">(a,b) \in R_2 \land (b,c) \in R_2</script>. Since <script type="math/tex">R_1</script>
-is transitive, it follows that <script type="math/tex">(a,c) \in R_1</script>. Similarly since <script type="math/tex">R_2</script> is transitive, it follows that <script type="math/tex">(a,c) \in R_2</script>. Thus
-<script type="math/tex">(a,c) \in R_1 \cap R_2</script>. Since <script type="math/tex">a,b,c</script> are arbitrary, we can conclude that <script type="math/tex">R_1 \cap R_2</script> is transitive.</p>
+<p><strong>(c)</strong> True. Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are transitive. Suppose <span class="kdmath">$a,b,c$</span> are elements in <span class="kdmath">$A$</span> such that <span class="kdmath">$(a,b) \in R_1 \cap R_2$</span> and 
+<span class="kdmath">$(b,c) \in R_1 \cap R_2$</span>. Thus <span class="kdmath">$(a,b) \in R_1 \land (b,c) \in R_1$</span> and <span class="kdmath">$(a,b) \in R_2 \land (b,c) \in R_2$</span>. Since <span class="kdmath">$R_1$</span>
+is transitive, it follows that <span class="kdmath">$(a,c) \in R_1$</span>. Similarly since <span class="kdmath">$R_2$</span> is transitive, it follows that <span class="kdmath">$(a,c) \in R_2$</span>. Thus
+<span class="kdmath">$(a,c) \in R_1 \cap R_2$</span>. Since <span class="kdmath">$a,b,c$</span> are arbitrary, we can conclude that <span class="kdmath">$R_1 \cap R_2$</span> is transitive.</p>
 
 <hr />
 
 <p><strong>Soln15</strong></p>
 
-<p><strong>(a)</strong> False. <script type="math/tex">A = \{1\}, R_1 = \{ \{1,1\} \}, R_2 = \{ \{1,1\} \}</script>. Thus <script type="math/tex">R_1 \setminus R_2 = \phi</script>. Clearly, R_2 is not reflexive,
-since <script type="math/tex">1 \in A</script> but <script type="math/tex">(1,1) \notin R_1 \setminus R_2</script>.</p>
+<p><strong>(a)</strong> False. <span class="kdmath">$A = \{1\}, R_1 = \{ \{1,1\} \}, R_2 = \{ \{1,1\} \}$</span>. Thus <span class="kdmath">$R_1 \setminus R_2 = \phi$</span>. Clearly, R_2 is not reflexive,
+since <span class="kdmath">$1 \in A$</span> but <span class="kdmath">$(1,1) \notin R_1 \setminus R_2$</span>.</p>
 
-<p><strong>(b)</strong> True. Suppose <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are symmetric. Suppose <script type="math/tex">(x,y) \in R_1 \setminus R_2</script>. Thus <script type="math/tex">(x,y) \in R_1</script>. Since <script type="math/tex">R_1</script>
- is symmetric, it follows that <script type="math/tex">(y,x) \in R_1</script>. Similarly, since <script type="math/tex">(x,y) \notin R_2</script> and <script type="math/tex">R_2</script> is symmetric, it follows that <script type="math/tex">(y,x) \notin R_2</script>.
- Thus we have <script type="math/tex">(y,x) \in R_1 \setminus R_2</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, we can conclude that <script type="math/tex">R_1 \cap R_2</script> is symmetric.</p>
+<p><strong>(b)</strong> True. Suppose <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are symmetric. Suppose <span class="kdmath">$(x,y) \in R_1 \setminus R_2$</span>. Thus <span class="kdmath">$(x,y) \in R_1$</span>. Since <span class="kdmath">$R_1$</span>
+ is symmetric, it follows that <span class="kdmath">$(y,x) \in R_1$</span>. Similarly, since <span class="kdmath">$(x,y) \notin R_2$</span> and <span class="kdmath">$R_2$</span> is symmetric, it follows that <span class="kdmath">$(y,x) \notin R_2$</span>.
+ Thus we have <span class="kdmath">$(y,x) \in R_1 \setminus R_2$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, we can conclude that <span class="kdmath">$R_1 \cap R_2$</span> is symmetric.</p>
 
-<p><strong>(c)</strong> False. Counter Example: <script type="math/tex">A = \{1, 2, 3 \}, R_1 = \{ \{1,2\}, \{2, 3\}, \{1, 3\} \}, R_2 = \{ \{1,3\} \}</script>. Thus <script type="math/tex">R_1 \setminus R_2 =  \{ \{1,2\}, \{2, 3\} \}</script>. <br />
- Clearly <script type="math/tex">R_1</script> and <script type="math/tex">R_2</script> are transitive but <script type="math/tex">R_1 \setminus R_2</script> is not transitive. Because <script type="math/tex">\{1,2\} \in R_1 \setminus R_2</script> and <script type="math/tex">\{2,3\} \in R_1 \setminus R_2</script> 
- but <script type="math/tex">\{1,3\} \notin R_1 \setminus R_2</script>.</p>
+<p><strong>(c)</strong> False. Counter Example: <span class="kdmath">$A = \{1, 2, 3 \}, R_1 = \{ \{1,2\}, \{2, 3\}, \{1, 3\} \}, R_2 = \{ \{1,3\} \}$</span>. Thus <span class="kdmath">$R_1 \setminus R_2 =  \{ \{1,2\}, \{2, 3\} \}$</span>. <br />
+ Clearly <span class="kdmath">$R_1$</span> and <span class="kdmath">$R_2$</span> are transitive but <span class="kdmath">$R_1 \setminus R_2$</span> is not transitive. Because <span class="kdmath">$\{1,2\} \in R_1 \setminus R_2$</span> and <span class="kdmath">$\{2,3\} \in R_1 \setminus R_2$</span> 
+ but <span class="kdmath">$\{1,3\} \notin R_1 \setminus R_2$</span>.</p>
 
 <hr />
 
 <p><strong>Soln16</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> and <script type="math/tex">S</script> are reflexive. Suppose <script type="math/tex">x \in A</script>. Since <script type="math/tex">R</script> is reflexive, <script type="math/tex">(x,x) \in R</script>. Similarly, since <script type="math/tex">S</script> is reflexive, <script type="math/tex">(x,x) \in S</script>. 
-Since <script type="math/tex">(x,x) \in S</script> and <script type="math/tex">(x,x) \in R</script>, it follows that <script type="math/tex">(x,x) \in R \circ S</script>. Thus if <script type="math/tex">x \in A</script>, then <script type="math/tex">(x,x) \in R \circ S</script>. Since <script type="math/tex">x</script> is arbitrary, 
-we can conclude that <script type="math/tex">R \circ S</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are reflexive. Suppose <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$R$</span> is reflexive, <span class="kdmath">$(x,x) \in R$</span>. Similarly, since <span class="kdmath">$S$</span> is reflexive, <span class="kdmath">$(x,x) \in S$</span>. 
+Since <span class="kdmath">$(x,x) \in S$</span> and <span class="kdmath">$(x,x) \in R$</span>, it follows that <span class="kdmath">$(x,x) \in R \circ S$</span>. Thus if <span class="kdmath">$x \in A$</span>, then <span class="kdmath">$(x,x) \in R \circ S$</span>. Since <span class="kdmath">$x$</span> is arbitrary, 
+we can conclude that <span class="kdmath">$R \circ S$</span> is reflexive.</p>
 
 <hr />
 
 <p><strong>Soln17</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> and <script type="math/tex">S</script> are symmetric.</p>
+<p>Suppose <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are symmetric.</p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">R \circ S</script> is symmetric. Suppose <script type="math/tex">(x, z) \in R \circ S</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$R \circ S$</span> is symmetric. Suppose <span class="kdmath">$(x, z) \in R \circ S$</span>.</p>
 
-<p>Since <script type="math/tex">R \circ S</script> is symmetric,
-<script type="math/tex">(x, z) \in R \circ S</script> iff  <br />
-<script type="math/tex">(z, x) \in R \circ S</script> iff<br />
-<script type="math/tex">\exists y \in A((z,y) \in S \land (y,x) \in R</script>. iff  <br />
-Since <script type="math/tex">S</script> and <script type="math/tex">R</script> are symmetric,   <br />
-<script type="math/tex">\exists y \in A((y,z) \in S \land (x,y) \in R</script>. iff  <br />
-<script type="math/tex">\exists y \in A((x,y) \in R \land (y,z) \in S</script>. iff  <br />
-<script type="math/tex">(x,z) \in S \circ R</script></p>
+<p>Since <span class="kdmath">$R \circ S$</span> is symmetric,
+<span class="kdmath">$(x, z) \in R \circ S$</span> iff  <br />
+<span class="kdmath">$(z, x) \in R \circ S$</span> iff<br />
+<span class="kdmath">$\exists y \in A((z,y) \in S \land (y,x) \in R$</span>. iff  <br />
+Since <span class="kdmath">$S$</span> and <span class="kdmath">$R$</span> are symmetric,   <br />
+<span class="kdmath">$\exists y \in A((y,z) \in S \land (x,y) \in R$</span>. iff  <br />
+<span class="kdmath">$\exists y \in A((x,y) \in R \land (y,z) \in S$</span>. iff  <br />
+<span class="kdmath">$(x,z) \in S \circ R$</span></p>
 
-<p>Thus if <script type="math/tex">(x,z) \in R \circ S</script>, iff <script type="math/tex">(x,z) \in S \circ R</script>. Since <script type="math/tex">(x,z)</script> is arbitrary, we can conclude that <script type="math/tex">R \circ S = S \circ R</script>.</p>
+<p>Thus if <span class="kdmath">$(x,z) \in R \circ S$</span>, iff <span class="kdmath">$(x,z) \in S \circ R$</span>. Since <span class="kdmath">$(x,z)$</span> is arbitrary, we can conclude that <span class="kdmath">$R \circ S = S \circ R$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">R \circ S = S \circ R</script>. Suppose <script type="math/tex">(x,z) \in S \circ R</script>. Since <script type="math/tex">(x,z) \in S \circ R</script>, there must exist an element <script type="math/tex">y \in A</script> such that 
-<script type="math/tex">(x,y) \in R \land (y,z) \in S</script>. Since <script type="math/tex">R</script> and <script type="math/tex">S</script> are symmetric, it follows that <script type="math/tex">(z,y) \in S</script> and <script type="math/tex">(y,x) \in R</script>. It follows that <script type="math/tex">(z,x) \in R \circ S</script>. 
-Since <script type="math/tex">R \circ S = S \circ R</script>, it follows <script type="math/tex">(z,x) \in S \circ R</script>. Thus if <script type="math/tex">(x,z) \in S \circ R</script>, then <script type="math/tex">(z,x) \in S \circ R</script>. Since <script type="math/tex">(x,z)</script> is arbitrary, we can
-conclude that <script type="math/tex">S \circ R</script> is symmetric.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$R \circ S = S \circ R$</span>. Suppose <span class="kdmath">$(x,z) \in S \circ R$</span>. Since <span class="kdmath">$(x,z) \in S \circ R$</span>, there must exist an element <span class="kdmath">$y \in A$</span> such that 
+<span class="kdmath">$(x,y) \in R \land (y,z) \in S$</span>. Since <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are symmetric, it follows that <span class="kdmath">$(z,y) \in S$</span> and <span class="kdmath">$(y,x) \in R$</span>. It follows that <span class="kdmath">$(z,x) \in R \circ S$</span>. 
+Since <span class="kdmath">$R \circ S = S \circ R$</span>, it follows <span class="kdmath">$(z,x) \in S \circ R$</span>. Thus if <span class="kdmath">$(x,z) \in S \circ R$</span>, then <span class="kdmath">$(z,x) \in S \circ R$</span>. Since <span class="kdmath">$(x,z)$</span> is arbitrary, we can
+conclude that <span class="kdmath">$S \circ R$</span> is symmetric.</p>
 
 <hr />
 
 <p><strong>Soln18</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> and <script type="math/tex">S</script> are transitive. Suppose <script type="math/tex">S \circ R \subseteq R \circ S</script>. Suppose <script type="math/tex">x,y,z</script> are elements in <script type="math/tex">A</script> such that
-<script type="math/tex">(x,y) \in R \circ S</script> and <script type="math/tex">(y,z) \in R \circ S</script>. Since <script type="math/tex">(x,y) \in R \circ S</script>, it follows <script type="math/tex">\exists p \in A((x,p) \in S \land (p,y) \in R</script>.<br />
-Similarly since <script type="math/tex">(y,z) \in R \circ S</script>, it follows <script type="math/tex">\exists q \in A((y,q) \in S \land (q,z) \in R</script>. Since <script type="math/tex">(p,y) \in R</script> and <script type="math/tex">(y,q) \in S</script>,
-it follows that <script type="math/tex">(p,q) \in S \circ R</script>. Since <script type="math/tex">S \circ R \subseteq R \circ S</script>, it follows <script type="math/tex">(p,q) \in R \circ S</script>.   <br />
-Since <script type="math/tex">(p,q) \in R \circ S</script>, it follows that <script type="math/tex">\exists m \in A((p,m) \in S \land (m,q) \in R)</script>.</p>
+<p>Suppose <span class="kdmath">$R$</span> and <span class="kdmath">$S$</span> are transitive. Suppose <span class="kdmath">$S \circ R \subseteq R \circ S$</span>. Suppose <span class="kdmath">$x,y,z$</span> are elements in <span class="kdmath">$A$</span> such that
+<span class="kdmath">$(x,y) \in R \circ S$</span> and <span class="kdmath">$(y,z) \in R \circ S$</span>. Since <span class="kdmath">$(x,y) \in R \circ S$</span>, it follows <span class="kdmath">$\exists p \in A((x,p) \in S \land (p,y) \in R$</span>.<br />
+Similarly since <span class="kdmath">$(y,z) \in R \circ S$</span>, it follows <span class="kdmath">$\exists q \in A((y,q) \in S \land (q,z) \in R$</span>. Since <span class="kdmath">$(p,y) \in R$</span> and <span class="kdmath">$(y,q) \in S$</span>,
+it follows that <span class="kdmath">$(p,q) \in S \circ R$</span>. Since <span class="kdmath">$S \circ R \subseteq R \circ S$</span>, it follows <span class="kdmath">$(p,q) \in R \circ S$</span>.   <br />
+Since <span class="kdmath">$(p,q) \in R \circ S$</span>, it follows that <span class="kdmath">$\exists m \in A((p,m) \in S \land (m,q) \in R)$</span>.</p>
 
-<p>Since <script type="math/tex">(x,p) \in S</script> and <script type="math/tex">(p,m) \in S</script> and since <script type="math/tex">S</script> is transitive, it follows <script type="math/tex">(x,m) \in S</script>.   <br />
-Similarly, since <script type="math/tex">R</script> is transitive, and <script type="math/tex">(m,q) \in R \land (q,z) \in R</script>, it follows <script type="math/tex">(m,z) \in R</script>.</p>
+<p>Since <span class="kdmath">$(x,p) \in S$</span> and <span class="kdmath">$(p,m) \in S$</span> and since <span class="kdmath">$S$</span> is transitive, it follows <span class="kdmath">$(x,m) \in S$</span>.   <br />
+Similarly, since <span class="kdmath">$R$</span> is transitive, and <span class="kdmath">$(m,q) \in R \land (q,z) \in R$</span>, it follows <span class="kdmath">$(m,z) \in R$</span>.</p>
 
-<p>Thus since <script type="math/tex">(x,m) \in S \land (m,z) \in R</script>, it follows that <script type="math/tex">(x,z) \in R \circ S</script>. Thus if <script type="math/tex">(x,y) \in R \circ S \land (y,z) \in R \circ S</script>, then
-<script type="math/tex">(x,z) \in R \circ S</script>. Since <script type="math/tex">x,y,z</script> are arbitrary, it follows that <script type="math/tex">R \circ S</script> is transitive.</p>
+<p>Thus since <span class="kdmath">$(x,m) \in S \land (m,z) \in R$</span>, it follows that <span class="kdmath">$(x,z) \in R \circ S$</span>. Thus if <span class="kdmath">$(x,y) \in R \circ S \land (y,z) \in R \circ S$</span>, then
+<span class="kdmath">$(x,z) \in R \circ S$</span>. Since <span class="kdmath">$x,y,z$</span> are arbitrary, it follows that <span class="kdmath">$R \circ S$</span> is transitive.</p>
 
 <hr />
 
@@ -1422,8 +1417,8 @@ Similarly, since <script type="math/tex">R</script> is transitive, and <script t
 <p><strong>(a)</strong></p>
 
 <p>Proof and Theorem both are not correct. Problem with proof is, it is not using the existential instantiation properly. In the proof,
-if <script type="math/tex">(X,Y) \in S</script>, then there exists <script type="math/tex">x</script> and <script type="math/tex">y</script> such that <script type="math/tex">x \in X</script> and <script type="math/tex">y \in Y</script>. Also if <script type="math/tex">(Y,Z) \in S</script>, then
-  there exists <script type="math/tex">y</script> and <script type="math/tex">z</script> such that <script type="math/tex">y \in Y</script> and <script type="math/tex">z \in Z</script>. Now here former <script type="math/tex">y</script> may not be equal to latter <script type="math/tex">y</script>.
+if <span class="kdmath">$(X,Y) \in S$</span>, then there exists <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span> such that <span class="kdmath">$x \in X$</span> and <span class="kdmath">$y \in Y$</span>. Also if <span class="kdmath">$(Y,Z) \in S$</span>, then
+  there exists <span class="kdmath">$y$</span> and <span class="kdmath">$z$</span> such that <span class="kdmath">$y \in Y$</span> and <span class="kdmath">$z \in Z$</span>. Now here former <span class="kdmath">$y$</span> may not be equal to latter <span class="kdmath">$y$</span>.
 But in the proof, it was wrongly assumed.</p>
 
 <p><strong>(b)</strong></p>
@@ -1432,92 +1427,92 @@ But in the proof, it was wrongly assumed.</p>
 
 <p>Counter example:</p>
 
-<p><script type="math/tex">A = \{ 1, 2, 3 \}</script>.  <br />
-<script type="math/tex">R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \}</script>.</p>
+<p><span class="kdmath">$A = \{ 1, 2, 3 \}$</span>.  <br />
+<span class="kdmath">$R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \}$</span>.</p>
 
-<p><script type="math/tex">\{ \{1,2\}, \{2,3\} \} \in S</script>, since <script type="math/tex">1 \in \{1,2\} \land 2 \in \{2,3\}</script> and <script type="math/tex">1 R 2</script>.  <br />
-<script type="math/tex">\{ \{2,3\}, \{1,3\} \} \in S</script>, since <script type="math/tex">3 \in \{2,3\} \land 3 \in \{1,3\}</script> and <script type="math/tex">3 R 3</script>.</p>
+<p><span class="kdmath">$\{ \{1,2\}, \{2,3\} \} \in S$</span>, since <span class="kdmath">$1 \in \{1,2\} \land 2 \in \{2,3\}$</span> and <span class="kdmath">$1 R 2$</span>.  <br />
+<span class="kdmath">$\{ \{2,3\}, \{1,3\} \} \in S$</span>, since <span class="kdmath">$3 \in \{2,3\} \land 3 \in \{1,3\}$</span> and <span class="kdmath">$3 R 3$</span>.</p>
 
-<p>But <script type="math/tex">\{ \{1,2\}, \{1,3\} \} \notin S</script>.</p>
+<p>But <span class="kdmath">$\{ \{1,2\}, \{1,3\} \} \notin S$</span>.</p>
 
 <p><strong>Earlier incorrect solution</strong></p>
 
 <p>Counter example:</p>
 
-<p><script type="math/tex">A = \{ 1, 2, 3 \}</script>.  <br />
-<script type="math/tex">R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \}</script>.</p>
+<p><span class="kdmath">$A = \{ 1, 2, 3 \}$</span>.  <br />
+<span class="kdmath">$R = \{ \{1, 2\}, \{2, 2\}, \{3, 3\} \}$</span>.</p>
 
-<p><script type="math/tex">\{ \{1,2\}, \{2,3\} \} \in S</script>, since <script type="math/tex">1 \in \{1,2\} \land 2 \in \{2,3\}</script> and <script type="math/tex">1 R 2</script>.  <br />
-<script type="math/tex">\{ \{2,3\}, \{1,3\} \} \in S</script>, since <script type="math/tex">2 \in \{2,3\} \land 1 \in \{1,3\}</script> and <script type="math/tex">1 R 2</script>.</p>
+<p><span class="kdmath">$\{ \{1,2\}, \{2,3\} \} \in S$</span>, since <span class="kdmath">$1 \in \{1,2\} \land 2 \in \{2,3\}$</span> and <span class="kdmath">$1 R 2$</span>.  <br />
+<span class="kdmath">$\{ \{2,3\}, \{1,3\} \} \in S$</span>, since <span class="kdmath">$2 \in \{2,3\} \land 1 \in \{1,3\}$</span> and <span class="kdmath">$1 R 2$</span>.</p>
 
-<p>But <script type="math/tex">\{ \{1,2\}, \{1,3\} \} \notin S</script>.</p>
+<p>But <span class="kdmath">$\{ \{1,2\}, \{1,3\} \} \notin S$</span>.</p>
 
 <hr />
 
 <p><strong>Soln20</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is transitive. Suppose <script type="math/tex">(X,Y) \in S</script> and <script type="math/tex">(Y, Z) \in S</script>. Since <script type="math/tex">X,Y, Z</script> are not empty, suppose <script type="math/tex">x \in X</script>, <script type="math/tex">y \in Y</script>,
-<script type="math/tex">z \in Z</script> are arbitrary elements. Then by the definition of <script type="math/tex">S</script>, <script type="math/tex">xRy</script> and <script type="math/tex">yRz</script>. Since <script type="math/tex">xRy</script>, <script type="math/tex">yRz</script>, and <script type="math/tex">R</script> is transitive, <script type="math/tex">xRz</script>. 
-But then since <script type="math/tex">x \in X</script> and <script type="math/tex">z \in Z</script>, it follows from the definition of <script type="math/tex">S</script> that <script type="math/tex">(X, Z) \in S</script>. Thus, <script type="math/tex">S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$R$</span> is transitive. Suppose <span class="kdmath">$(X,Y) \in S$</span> and <span class="kdmath">$(Y, Z) \in S$</span>. Since <span class="kdmath">$X,Y, Z$</span> are not empty, suppose <span class="kdmath">$x \in X$</span>, <span class="kdmath">$y \in Y$</span>,
+<span class="kdmath">$z \in Z$</span> are arbitrary elements. Then by the definition of <span class="kdmath">$S$</span>, <span class="kdmath">$xRy$</span> and <span class="kdmath">$yRz$</span>. Since <span class="kdmath">$xRy$</span>, <span class="kdmath">$yRz$</span>, and <span class="kdmath">$R$</span> is transitive, <span class="kdmath">$xRz$</span>. 
+But then since <span class="kdmath">$x \in X$</span> and <span class="kdmath">$z \in Z$</span>, it follows from the definition of <span class="kdmath">$S$</span> that <span class="kdmath">$(X, Z) \in S$</span>. Thus, <span class="kdmath">$S$</span> is transitive.</p>
 
-<p>Consider the case that <script type="math/tex">B</script> may contain empty sets. Suppose <script type="math/tex">(X,Y) \in S</script>, then <script type="math/tex">\forall x \in X \forall y \in Y(xRy)</script>. It follows
-<script type="math/tex">\forall x( x \in X \to \forall y(y \in Y \to xRy))</script>. This can be true if <script type="math/tex">X = \phi \lor Y = \phi</script>. Thus we can have the following
+<p>Consider the case that <span class="kdmath">$B$</span> may contain empty sets. Suppose <span class="kdmath">$(X,Y) \in S$</span>, then <span class="kdmath">$\forall x \in X \forall y \in Y(xRy)$</span>. It follows
+<span class="kdmath">$\forall x( x \in X \to \forall y(y \in Y \to xRy))$</span>. This can be true if <span class="kdmath">$X = \phi \lor Y = \phi$</span>. Thus we can have the following
 counter example:</p>
 
-<p>Suppose <script type="math/tex">X \ne \phi</script> and <script type="math/tex">Y = \phi</script> and <script type="math/tex">Z \ne \phi</script>, also suppose there is an element <script type="math/tex">x \in X</script> and an element <script type="math/tex">z \in Z</script>
-such that <script type="math/tex">(x,z) \notin R</script>.</p>
+<p>Suppose <span class="kdmath">$X \ne \phi$</span> and <span class="kdmath">$Y = \phi$</span> and <span class="kdmath">$Z \ne \phi$</span>, also suppose there is an element <span class="kdmath">$x \in X$</span> and an element <span class="kdmath">$z \in Z$</span>
+such that <span class="kdmath">$(x,z) \notin R$</span>.</p>
 
-<p>Since <script type="math/tex">Y = \phi</script>, <script type="math/tex">(X,Y) \in S</script>. Similarly <script type="math/tex">(Y,Z) \in S</script>. But since <script type="math/tex">(x,z) \notin R</script>, it follows <script type="math/tex">(X,Z) \notin S</script>.
-Thus <script type="math/tex">S</script> is not transitive if <script type="math/tex">B</script> contains empty sets.</p>
+<p>Since <span class="kdmath">$Y = \phi$</span>, <span class="kdmath">$(X,Y) \in S$</span>. Similarly <span class="kdmath">$(Y,Z) \in S$</span>. But since <span class="kdmath">$(x,z) \notin R$</span>, it follows <span class="kdmath">$(X,Z) \notin S$</span>.
+Thus <span class="kdmath">$S$</span> is not transitive if <span class="kdmath">$B$</span> contains empty sets.</p>
 
 <hr />
 
 <p><strong>Soln21</strong></p>
 
-<p><strong>(a)</strong> True. Suppose <script type="math/tex">R</script> is reflexive. Suppose <script type="math/tex">X \in P(A)</script>. Suppose <script type="math/tex">x \in X</script>. Thus there exist an element <script type="math/tex">y \in X</script> such that
-<script type="math/tex">y = x</script>. Thus <script type="math/tex">x = y</script> and since <script type="math/tex">R</script> is reflexive, <script type="math/tex">xRy</script>. Since <script type="math/tex">x</script> is arbitrary, we can say that <script type="math/tex">\forall x \in X \exists y \in X(xRy)</script>.
-It follows that <script type="math/tex">(X,X) \in S</script>. Thus if <script type="math/tex">X \in P(A)</script>, then <script type="math/tex">(X,X) \in S</script>. Thus <script type="math/tex">S</script> is reflexive.</p>
+<p><strong>(a)</strong> True. Suppose <span class="kdmath">$R$</span> is reflexive. Suppose <span class="kdmath">$X \in P(A)$</span>. Suppose <span class="kdmath">$x \in X$</span>. Thus there exist an element <span class="kdmath">$y \in X$</span> such that
+<span class="kdmath">$y = x$</span>. Thus <span class="kdmath">$x = y$</span> and since <span class="kdmath">$R$</span> is reflexive, <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$x$</span> is arbitrary, we can say that <span class="kdmath">$\forall x \in X \exists y \in X(xRy)$</span>.
+It follows that <span class="kdmath">$(X,X) \in S$</span>. Thus if <span class="kdmath">$X \in P(A)$</span>, then <span class="kdmath">$(X,X) \in S$</span>. Thus <span class="kdmath">$S$</span> is reflexive.</p>
 
 <p><strong>(b)</strong> False. Counter example:</p>
 
-<p><script type="math/tex">A = \{ 1, 2, 3 \}, R = \{ \{1,2\}, \{2,1\}, \{2,2\} \}</script>.</p>
+<p><span class="kdmath">$A = \{ 1, 2, 3 \}, R = \{ \{1,2\}, \{2,1\}, \{2,2\} \}$</span>.</p>
 
-<p>Now we can easily see that <script type="math/tex">( \{1,2\}, \{2,3\} ) \in S</script> but <script type="math/tex">( \{2,3\}, \{1,2\} ) \notin S</script>.</p>
+<p>Now we can easily see that <span class="kdmath">$( \{1,2\}, \{2,3\} ) \in S$</span> but <span class="kdmath">$( \{2,3\}, \{1,2\} ) \notin S$</span>.</p>
 
-<p><strong>(c)</strong> True. Suppose <script type="math/tex">R</script> is transitive. Suppose <script type="math/tex">(X,Y) \in S \land (Y,Z) \in S</script>. Since <script type="math/tex">(X,Y) \in S</script>, there exist an element <script type="math/tex">y_0 \in Y</script> such that
- <script type="math/tex">\forall x \in X(xRy_0)</script>. Also since <script type="math/tex">(Y,Z) \in S</script>, there exist an element <script type="math/tex">z_0 \in Z</script> such that <script type="math/tex">\forall y \in Y(yRz_0)</script>. Thus
- <script type="math/tex">y_0Rz_0</script>. Since <script type="math/tex">R</script> is transitive, it follows that <script type="math/tex">\forall x \in X(xRz_0)</script>. Thus <script type="math/tex">(X,Z) \in S</script>. Since <script type="math/tex">X,Y,Z</script> are arbitrary,
- it follows that <script type="math/tex">S</script> is transitive.</p>
+<p><strong>(c)</strong> True. Suppose <span class="kdmath">$R$</span> is transitive. Suppose <span class="kdmath">$(X,Y) \in S \land (Y,Z) \in S$</span>. Since <span class="kdmath">$(X,Y) \in S$</span>, there exist an element <span class="kdmath">$y_0 \in Y$</span> such that
+ <span class="kdmath">$\forall x \in X(xRy_0)$</span>. Also since <span class="kdmath">$(Y,Z) \in S$</span>, there exist an element <span class="kdmath">$z_0 \in Z$</span> such that <span class="kdmath">$\forall y \in Y(yRz_0)$</span>. Thus
+ <span class="kdmath">$y_0Rz_0$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows that <span class="kdmath">$\forall x \in X(xRz_0)$</span>. Thus <span class="kdmath">$(X,Z) \in S$</span>. Since <span class="kdmath">$X,Y,Z$</span> are arbitrary,
+ it follows that <span class="kdmath">$S$</span> is transitive.</p>
 
 <hr />
 
-<p><strong>Soln22</strong> Proof and theorem both are false. The flaw in the proof is there may not exist any element <script type="math/tex">y</script> such that <script type="math/tex">(x,y) \in R</script>.
+<p><strong>Soln22</strong> Proof and theorem both are false. The flaw in the proof is there may not exist any element <span class="kdmath">$y$</span> such that <span class="kdmath">$(x,y) \in R$</span>.
  Counter example:</p>
 
-<p><script type="math/tex">A = \{1,2,3\}, R = \{ \{1,1\}, \{1,2\}, \{2,1\}, \{2,2\} \}</script>. Thus <script type="math/tex">R</script> is symmetric and transitive. But since <script type="math/tex">\{3,3\} \notin R</script>, it is not reflexive.</p>
+<p><span class="kdmath">$A = \{1,2,3\}, R = \{ \{1,1\}, \{1,2\}, \{2,1\}, \{2,2\} \}$</span>. Thus <span class="kdmath">$R$</span> is symmetric and transitive. But since <span class="kdmath">$\{3,3\} \notin R$</span>, it is not reflexive.</p>
 
 <hr />
 
 <p><strong>Soln23</strong></p>
 
-<p>Suppose <script type="math/tex">aRb</script> and <script type="math/tex">bRc</script>. Suppose <script type="math/tex">X \subseteq A \setminus \{a,c\}</script>. To prove <script type="math/tex">R</script> is transitive,we need to prove <script type="math/tex">aRc</script>.
-To prove <script type="math/tex">aRc</script>, we have to prove that if <script type="math/tex">X \cup \{a\} \in \mathcal F</script>, then <script type="math/tex">X \cup \{c\} \in \mathcal F</script>. Suppose <script type="math/tex">X \cup \{a\} \in \mathcal F</script>.
+<p>Suppose <span class="kdmath">$aRb$</span> and <span class="kdmath">$bRc$</span>. Suppose <span class="kdmath">$X \subseteq A \setminus \{a,c\}$</span>. To prove <span class="kdmath">$R$</span> is transitive,we need to prove <span class="kdmath">$aRc$</span>.
+To prove <span class="kdmath">$aRc$</span>, we have to prove that if <span class="kdmath">$X \cup \{a\} \in \mathcal F$</span>, then <span class="kdmath">$X \cup \{c\} \in \mathcal F$</span>. Suppose <span class="kdmath">$X \cup \{a\} \in \mathcal F$</span>.
 Now consider two exhaustive cases:</p>
 
-<p>Case 1: <script type="math/tex">b \notin X</script>. Thus <script type="math/tex">X \subseteq A \setminus \{a,b,c \}</script>. Since <script type="math/tex">aRb</script> and <script type="math/tex">X \cup \{a\} \in \mathcal F</script>, it follows
- that <script type="math/tex">X \cup \{b\} \in \mathcal F</script>. Also, since <script type="math/tex">bRc</script>, and <script type="math/tex">X \cup \{b\} \in \mathcal F</script>, it follows that <script type="math/tex">X \cup \{c\} \in \mathcal F</script>.</p>
+<p>Case 1: <span class="kdmath">$b \notin X$</span>. Thus <span class="kdmath">$X \subseteq A \setminus \{a,b,c \}$</span>. Since <span class="kdmath">$aRb$</span> and <span class="kdmath">$X \cup \{a\} \in \mathcal F$</span>, it follows
+ that <span class="kdmath">$X \cup \{b\} \in \mathcal F$</span>. Also, since <span class="kdmath">$bRc$</span>, and <span class="kdmath">$X \cup \{b\} \in \mathcal F$</span>, it follows that <span class="kdmath">$X \cup \{c\} \in \mathcal F$</span>.</p>
 
-<p>Case 2: <script type="math/tex">b \in X</script>. Suppose <script type="math/tex">X' = (X \cup \{a\}) \setminus \{b\}</script>. Now since <script type="math/tex">b \in X</script> and <script type="math/tex">X' = (X \cup \{a\}) \setminus \{b\}</script>, it follows that
-<script type="math/tex">X' \cup b = X \cup \{a\}</script>. Since <script type="math/tex">X \cup \{a\} \in \mathcal F</script>, it follows <script type="math/tex">X' \cup b \in \mathcal F</script>. Since <script type="math/tex">bRc</script> and <script type="math/tex">X' \cup b \in \mathcal F</script>, 
-it follows that  <script type="math/tex">X' \cup \{c\} \in \mathcal F</script>. Since <script type="math/tex">X' = (X \cup \{a\}) \setminus \{b\}</script>, it follows <script type="math/tex">((X \cup \{a\}) \setminus \{b\}) \cup \{c\} \in \mathcal F</script>,
-or <script type="math/tex">(X \cup \{a\} \cup \{c\}) \setminus \{b\} \in \mathcal F</script>.  <br />
- Now consider <script type="math/tex">X'' = (X \cup \{c\})\setminus \{b\}</script>. Thus <script type="math/tex">X'' \cup \{a\} = ((X \cup \{c\})\setminus \{b\}) \cup \{a\} = (X \cup \{a\} \cup \{c\}) \setminus \{b\}</script>. But 
- <script type="math/tex">(X \cup \{a\} \cup \{c\}) \setminus \{b\} \in \mathcal F</script>, it follows that <script type="math/tex">X'' \cup \{a\} \in \mathcal F</script>. Since <script type="math/tex">a \notin X</script>, it follows
- <script type="math/tex">a \notin X''</script>. Thus we have <script type="math/tex">a \notin X'' \land b \notin X''</script> and <script type="math/tex">X'' \subseteq A</script> and <script type="math/tex">X'' \cup \{a\} \in \mathcal F</script>, it follows that <script type="math/tex">X'' \cup \{b\} \in \mathcal F</script>.
- Since <script type="math/tex">X'' = (X \cup \{c\})\setminus \{b\}</script> and <script type="math/tex">b \in X</script>, it follows that <script type="math/tex">X \cup \{c\} = X'' \cup \{b\}</script>. Since <script type="math/tex">X \cup \{c\} = X'' \cup \{b\}</script> and <script type="math/tex">X'' \cup \{b\} \in \mathcal F</script>,
- it follows that <script type="math/tex">X \cup \{c\} \in \mathcal F</script>.</p>
+<p>Case 2: <span class="kdmath">$b \in X$</span>. Suppose <span class="kdmath">$X' = (X \cup \{a\}) \setminus \{b\}$</span>. Now since <span class="kdmath">$b \in X$</span> and <span class="kdmath">$X' = (X \cup \{a\}) \setminus \{b\}$</span>, it follows that
+<span class="kdmath">$X' \cup b = X \cup \{a\}$</span>. Since <span class="kdmath">$X \cup \{a\} \in \mathcal F$</span>, it follows <span class="kdmath">$X' \cup b \in \mathcal F$</span>. Since <span class="kdmath">$bRc$</span> and <span class="kdmath">$X' \cup b \in \mathcal F$</span>, 
+it follows that  <span class="kdmath">$X' \cup \{c\} \in \mathcal F$</span>. Since <span class="kdmath">$X' = (X \cup \{a\}) \setminus \{b\}$</span>, it follows <span class="kdmath">$((X \cup \{a\}) \setminus \{b\}) \cup \{c\} \in \mathcal F$</span>,
+or <span class="kdmath">$(X \cup \{a\} \cup \{c\}) \setminus \{b\} \in \mathcal F$</span>.  <br />
+ Now consider <span class="kdmath">$X'' = (X \cup \{c\})\setminus \{b\}$</span>. Thus <span class="kdmath">$X'' \cup \{a\} = ((X \cup \{c\})\setminus \{b\}) \cup \{a\} = (X \cup \{a\} \cup \{c\}) \setminus \{b\}$</span>. But 
+ <span class="kdmath">$(X \cup \{a\} \cup \{c\}) \setminus \{b\} \in \mathcal F$</span>, it follows that <span class="kdmath">$X'' \cup \{a\} \in \mathcal F$</span>. Since <span class="kdmath">$a \notin X$</span>, it follows
+ <span class="kdmath">$a \notin X''$</span>. Thus we have <span class="kdmath">$a \notin X'' \land b \notin X''$</span> and <span class="kdmath">$X'' \subseteq A$</span> and <span class="kdmath">$X'' \cup \{a\} \in \mathcal F$</span>, it follows that <span class="kdmath">$X'' \cup \{b\} \in \mathcal F$</span>.
+ Since <span class="kdmath">$X'' = (X \cup \{c\})\setminus \{b\}$</span> and <span class="kdmath">$b \in X$</span>, it follows that <span class="kdmath">$X \cup \{c\} = X'' \cup \{b\}$</span>. Since <span class="kdmath">$X \cup \{c\} = X'' \cup \{b\}$</span> and <span class="kdmath">$X'' \cup \{b\} \in \mathcal F$</span>,
+ it follows that <span class="kdmath">$X \cup \{c\} \in \mathcal F$</span>.</p>
 
-<p>Thus from both cases <script type="math/tex">X \cup \{c\} \in \mathcal F</script>.</p>
+<p>Thus from both cases <span class="kdmath">$X \cup \{c\} \in \mathcal F$</span>.</p>
 
 
                         <hr/>

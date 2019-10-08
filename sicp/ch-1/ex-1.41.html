@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9422,12 +9423,14 @@
 3
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">f</span><span class="p">)</span>
   <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)))</span>
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now evaluating the statement given:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">double</span><span class="p">))</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">5</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+</pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">double</span><span class="p">))</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">5</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The call <code class="highlighter-rouge">double double</code> returns a procedure, lets call this procedure X, that applies double twice to an argument passed to it.</p>
 
@@ -9442,14 +9445,15 @@
 3
 </pre></td><td class="code"><pre><span class="p">(</span><span class="nf">Z</span> <span class="mi">5</span><span class="p">)</span>
 <span class="p">((</span><span class="nf">X</span> <span class="p">(</span><span class="nf">X</span> <span class="nv">inc</span><span class="p">))</span> <span class="mi">5</span><span class="p">)</span>
-<span class="p">((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">inc</span><span class="p">)))</span> <span class="mi">5</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">inc</span><span class="p">)))</span> <span class="mi">5</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now we can see that in the innermost call, inc is called twice, than it is doubled thus called 4 times, again it is doubled thus
 called 8 times and again it is double thus called 16 times.</p>
 
 <p>Thus thus function will return after calling <code class="highlighter-rouge">inc</code> 16 times starting with argument 5.</p>
 
-<p>Thus the output is <script type="math/tex">16+5 = 21</script>.</p>
+<p>Thus the output is <span class="kdmath">$16+5 = 21$</span>.</p>
 
 
                         <hr/>

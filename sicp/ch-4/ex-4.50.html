@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9497,7 +9498,8 @@
                  <span class="p">(</span><span class="nf">try-next</span>
 				  <span class="p">(</span><span class="nb">cdr</span> <span class="nv">choices</span><span class="p">)</span>
 				  <span class="p">(</span><span class="nb">-</span> <span class="nv">length</span> <span class="mi">1</span><span class="p">)))))))</span>
-	  <span class="p">(</span><span class="nf">try-next</span> <span class="nv">cprocs</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">cprocs</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
+	  <span class="p">(</span><span class="nf">try-next</span> <span class="nv">cprocs</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">cprocs</span><span class="p">)))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
@@ -9574,7 +9576,8 @@
 <span class="nv">try-again</span>
 
 <span class="c1">;;; There are no more values of</span>
-<span class="p">(</span><span class="nf">ramb</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span> <span class="mi">40</span> <span class="mi">50</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">ramb</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span> <span class="mi">40</span> <span class="mi">50</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9597,7 +9600,8 @@
   <span class="c1">;(require (not (null? *unparsed*)))</span>
   <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nf">found-word</span> <span class="p">(</span><span class="nf">list-amb</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">word-list</span><span class="p">))))</span>
     <span class="c1">;(set! *unparsed* (cdr *unparsed*))</span>
-    <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">word-list</span><span class="p">)</span> <span class="nv">found-word</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+    <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">word-list</span><span class="p">)</span> <span class="nv">found-word</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>With this and the replacing all the <code class="highlighter-rouge">amb</code> with <code class="highlighter-rouge">ramb</code>, we can get better sentences with variable lengths!</p>
 

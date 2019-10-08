@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9414,22 +9415,24 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Denoting the terms of the series as <script type="math/tex">\, P_1, P_2, ... P_i ...  \,</script> and denoting the series from which we generate as <script type="math/tex">\, S_1, S_2, ... S_i ..., S_n \,</script>. Then the series can be defined as:</p>
+                        <p>Denoting the terms of the series as <span class="kdmath">$\, P_1, P_2, ... P_i ...  \,$</span> and denoting the series from which we generate as <span class="kdmath">$\, S_1, S_2, ... S_i ..., S_n \,$</span>. Then the series can be defined as:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
   P_0 &= S_0 \\
   P_{i+1} &= P_{i} + S_{i+1} \\
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
 <p>Now, its simple to write the procedure:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">partial-sums</span> <span class="nv">stream</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">stream</span><span class="p">)</span> <span class="p">(</span><span class="nf">add-streams</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">stream</span><span class="p">)</span> <span class="p">(</span><span class="nf">partial-sums</span> <span class="nv">stream</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="p">(</span><span class="nf">cons-stream</span> <span class="p">(</span><span class="nf">stream-car</span> <span class="nv">stream</span><span class="p">)</span> <span class="p">(</span><span class="nf">add-streams</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">stream</span><span class="p">)</span> <span class="p">(</span><span class="nf">partial-sums</span> <span class="nv">stream</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
@@ -9494,7 +9497,8 @@
 
 <span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">stream-ref</span> <span class="nv">S</span> <span class="mi">6</span><span class="p">)</span>
 
-<span class="c1">;Value: 28</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;Value: 28</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

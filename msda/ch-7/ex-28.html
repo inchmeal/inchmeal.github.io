@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,7 +980,7 @@
 						<hr/>
                         <h4 id="a">(a)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 r = P(yes) \\
@@ -987,21 +988,22 @@ r = P(yes) \\
 &= qp + (1-q)(1-p) \\
 &= (2p-1)q + (1-p)
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
 <h4 id="b">(b)</h4>
 
-<p>In part (a), we know <script type="math/tex">\, r \,</script> and as well as <script type="math/tex">\, p \,</script>(known from the structure of the randomized device). Thus we can get <script type="math/tex">\, q = \frac {p+r-1} {2p-1} \,</script>.</p>
+<p>In part (a), we know <span class="kdmath">$\, r \,$</span> and as well as <span class="kdmath">$\, p \,$</span>(known from the structure of the randomized device). Thus we can get <span class="kdmath">$\, q = \frac {p+r-1} {2p-1} \,$</span>.</p>
 
 <h4 id="c">(c)</h4>
 
-<p>Let <script type="math/tex">\, X_i = 1 \,</script> if <script type="math/tex">\, i^{th} \,</script> member of the random sample answers yes. Then <script type="math/tex">\, R = \frac 1 n \sum_{i=1}^{n} X_i \,</script>. Thus <script type="math/tex">\, \Exp R = \frac 1 n \sum_{i=1}^{n} \Exp(X_i) = \frac n n \Exp(X_i) = r \,</script>.</p>
+<p>Let <span class="kdmath">$\, X_i = 1 \,$</span> if <span class="kdmath">$\, i^{th} \,$</span> member of the random sample answers yes. Then <span class="kdmath">$\, R = \frac 1 n \sum_{i=1}^{n} X_i \,$</span>. Thus <span class="kdmath">$\, \Exp R = \frac 1 n \sum_{i=1}^{n} \Exp(X_i) = \frac n n \Exp(X_i) = r \,$</span>.</p>
 
-<p>Lets propose <script type="math/tex">\, Q = \frac {p+R-1} {2p-1} \,</script> as an estimate of <script type="math/tex">\, q \,</script>. Since it is a linear expression in <script type="math/tex">\, R \,</script>, it follows that <script type="math/tex">\, \Exp Q = \frac {p+\Exp R-1} {2p-1} = \frac {p+r-1} {2p-1} \,</script> which is same as <script type="math/tex">\, q \,</script>.</p>
+<p>Lets propose <span class="kdmath">$\, Q = \frac {p+R-1} {2p-1} \,$</span> as an estimate of <span class="kdmath">$\, q \,$</span>. Since it is a linear expression in <span class="kdmath">$\, R \,$</span>, it follows that <span class="kdmath">$\, \Exp Q = \frac {p+\Exp R-1} {2p-1} = \frac {p+r-1} {2p-1} \,$</span> which is same as <span class="kdmath">$\, q \,$</span>.</p>
 
 <h4 id="d">(d)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \, 
 \begin{align*}
 \Var(R) \\
@@ -1011,19 +1013,20 @@ r = P(yes) \\
 &= \frac {n\Var(X_i)} {n^2} + \frac {n(n-1)Cov(X_i,X_j)} {n^2} \\
 &= \frac {\Var(X_1)} n + \frac {(n-1)Cov(X_1,X_2)} {n} && \text{ Since } \Cov(X_i, X_j) = \Cov(X_1, X_2) \\
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
-<p>Since <script type="math/tex">\, X_1 \,</script> is a bernoulli’s trial, <script type="math/tex">\, \Var(X_1) = r(1-r) \,</script>.</p>
+<p>Since <span class="kdmath">$\, X_1 \,$</span> is a bernoulli’s trial, <span class="kdmath">$\, \Var(X_1) = r(1-r) \,$</span>.</p>
 
-<p>We have <script type="math/tex">\, \Cov(X_1, X_2) = \Exp(X_1 X_2) - \Exp X_1 \Exp X_2 \,</script>. Now, <script type="math/tex">\, \Exp(X_1 X_2) = 0 + 0 + 0 + 1 \times 1 \times P(X_1=1, X_2=1) = \frac {nr} N \times \frac {nr-1} {N-1} \,</script>. Thus <script type="math/tex">\, \Cov(X_1, X_2) = \frac {nr} N \times \frac {nr-1} {N-1} - r^2 \,</script>.</p>
+<p>We have <span class="kdmath">$\, \Cov(X_1, X_2) = \Exp(X_1 X_2) - \Exp X_1 \Exp X_2 \,$</span>. Now, <span class="kdmath">$\, \Exp(X_1 X_2) = 0 + 0 + 0 + 1 \times 1 \times P(X_1=1, X_2=1) = \frac {nr} N \times \frac {nr-1} {N-1} \,$</span>. Thus <span class="kdmath">$\, \Cov(X_1, X_2) = \frac {nr} N \times \frac {nr-1} {N-1} - r^2 \,$</span>.</p>
 
-<p>Putting the values in <script type="math/tex">\, \Var(R) \,</script>, we get <script type="math/tex">\, \frac {r(1-r)} n + \frac {n-1} n \Prn{ \frac {nr} N \times \frac {nr-1} {N-1} \,-\, r^2 } \,</script>. Approximating <script type="math/tex">\, \frac {nr-1} {N-1} \approx \frac {nr} N \,</script>, we get: <script type="math/tex">\, \Var(R) = \frac {r(1-r)} n + \frac {r^2(n-1)} n \Prn{\frac {n^2} {N^2} - 1} \,</script>.</p>
+<p>Putting the values in <span class="kdmath">$\, \Var(R) \,$</span>, we get <span class="kdmath">$\, \frac {r(1-r)} n + \frac {n-1} n \Prn{ \frac {nr} N \times \frac {nr-1} {N-1} \,-\, r^2 } \,$</span>. Approximating <span class="kdmath">$\, \frac {nr-1} {N-1} \approx \frac {nr} N \,$</span>, we get: <span class="kdmath">$\, \Var(R) = \frac {r(1-r)} n + \frac {r^2(n-1)} n \Prn{\frac {n^2} {N^2} - 1} \,$</span>.</p>
 
 <p>TODO: Not sure how if the extra term can be ignored using finite population correction as expected from the answer.</p>
 
 <h4 id="e">(e)</h4>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="kdmath">$$
 \,
 \begin{align*}
 \Var(Q) \\
@@ -1032,7 +1035,8 @@ r = P(yes) \\
 &= \frac 1 {(2p-1)^2} \Var(R) && \text{Since $p$ is constant, first term was zero} \\
 &= \frac {r(1-r)} {n(2p-1)^2} && \text{ Using part-d result }
 \end{align*}
-\, %]]></script>
+\,
+$$</div>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

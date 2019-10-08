@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9420,13 +9421,13 @@
 
 <p>If we look closely, ignoring the first two terms of the series, then:</p>
 
-<p><script type="math/tex">(position - 2)\mod 3 = 0</script> for all the terms which are <strong>not</strong> equal to <script type="math/tex">1</script>.</p>
+<p><span class="kdmath">$(position - 2)\mod 3 = 0$</span> for all the terms which are <strong>not</strong> equal to <span class="kdmath">$1$</span>.</p>
 
 <p>Similarly note that the values can also be derived for this position:</p>
 
-<p>if <script type="math/tex">position > 2</script> and its value is <em>not</em> equal to <script type="math/tex">1</script>, than it is: <script type="math/tex">2 \times (1 + (position-2)/3)</script>.</p>
+<p>if <span class="kdmath">$position > 2$</span> and its value is <em>not</em> equal to <span class="kdmath">$1$</span>, than it is: <span class="kdmath">$2 \times (1 + (position-2)/3)$</span>.</p>
 
-<p>Now we can easily write the procedure for computing <script type="math/tex">e</script> using <code class="highlighter-rouge">cont-frac</code> from previous exercise:</p>
+<p>Now we can easily write the procedure for computing <span class="kdmath">$e$</span> using <code class="highlighter-rouge">cont-frac</code> from previous exercise:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9445,18 +9446,20 @@
       <span class="p">)</span>
   <span class="p">)</span>
   <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="p">(</span><span class="nf">cont-frac</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">)</span> <span class="nv">den</span> <span class="nv">n</span><span class="p">))</span>
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that we are also adding 2 as call to <code class="highlighter-rouge">cont-frac</code> returns <script type="math/tex">e - 2</script>.</p>
+<p>Note that we are also adding 2 as call to <code class="highlighter-rouge">cont-frac</code> returns <span class="kdmath">$e - 2$</span>.</p>
 
-<p>Sample invocation using <script type="math/tex">k = 20</script>:</p>
+<p>Sample invocation using <span class="kdmath">$k = 20$</span>:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="code"><pre> 
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nf">e</span> <span class="mi">20</span><span class="p">)</span>
-<span class="mf">2.718281828459045</span> </pre></td></tr></tbody></table></code></pre></figure>
+<span class="mf">2.718281828459045</span> 
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

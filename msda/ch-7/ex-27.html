@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -977,24 +978,22 @@
 
                     <span itemprop="articleSection">
 						<hr/>
-                        <p>To show that the procedure given will generate a simple random sample of size <script type="math/tex">\, n \,</script>, we need to prove that the probability of selecting an element from the total population to form a random sample is same for every element and is equal to <script type="math/tex">\, \frac n N \,</script> which is same as in the case of simple random sampling.</p>
+                        <p>To show that the procedure given will generate a simple random sample of size <span class="kdmath">$\, n \,$</span>, we need to prove that the probability of selecting an element from the total population to form a random sample is same for every element and is equal to <span class="kdmath">$\, \frac n N \,$</span> which is same as in the case of simple random sampling.</p>
 
-<p>Let <script type="math/tex">\, u_i = 1 \,</script> denotes that <script type="math/tex">\, i^{th} \,</script> element of the population is in the sample after the procedure completes and <script type="math/tex">\, u_i = 0 \,</script> otherwise.</p>
+<p>Let <span class="kdmath">$\, u_i = 1 \,$</span> denotes that <span class="kdmath">$\, i^{th} \,$</span> element of the population is in the sample after the procedure completes and <span class="kdmath">$\, u_i = 0 \,$</span> otherwise.</p>
 
-<p>Thus in the given procedure, we need to check that in the end when procedure completes, the probability <script type="math/tex">\, P(u_i = 1) \,</script> should be <script type="math/tex">\, \frac n N \,</script> irrespective of <script type="math/tex">\, i \,</script>.</p>
+<p>Thus in the given procedure, we need to check that in the end when procedure completes, the probability <span class="kdmath">$\, P(u_i = 1) \,$</span> should be <span class="kdmath">$\, \frac n N \,$</span> irrespective of <span class="kdmath">$\, i \,$</span>.</p>
 
-<p>Let <script type="math/tex">\, u_{ik} = 1 \,</script> if <script type="math/tex">\, i^{th} \,</script> element of the population stays in the sample after the <script type="math/tex">\, k^{th} \,</script> step of the procedure, assuming that it stayed in the sample in <script type="math/tex">\, (k-1)^{th} \,</script> state. Thus <script type="math/tex">\, P(u_i = 1) \,</script> is equal to the probability that <script type="math/tex">\, P(u_{ik} = 1) \,</script> for all steps k.</p>
+<p>Let <span class="kdmath">$\, u_{ik} = 1 \,$</span> if <span class="kdmath">$\, i^{th} \,$</span> element of the population stays in the sample after the <span class="kdmath">$\, k^{th} \,$</span> step of the procedure, assuming that it stayed in the sample in <span class="kdmath">$\, (k-1)^{th} \,$</span> state. Thus <span class="kdmath">$\, P(u_i = 1) \,$</span> is equal to the probability that <span class="kdmath">$\, P(u_{ik} = 1) \,$</span> for all steps k.</p>
 
-<p>Let <script type="math/tex">\, s_k = 1 \,</script> if <script type="math/tex">\, (n+k)^{th} \,</script> element is selected from the list of population. Thus by definition, <script type="math/tex">\, P(s_k = 1) = \frac n {n+k} \,</script> and <script type="math/tex">\, P(s_k = 0) = (1-\frac n {n+k}) \,</script>.</p>
+<p>Let <span class="kdmath">$\, s_k = 1 \,$</span> if <span class="kdmath">$\, (n+k)^{th} \,$</span> element is selected from the list of population. Thus by definition, <span class="kdmath">$\, P(s_k = 1) = \frac n {n+k} \,$</span> and <span class="kdmath">$\, P(s_k = 0) = (1-\frac n {n+k}) \,$</span>.</p>
 
-<p>Thus we have two cases to compute the probability, <script type="math/tex">\, P(u_i = 1) \,</script>:</p>
+<p>Thus we have two cases to compute the probability, <span class="kdmath">$\, P(u_i = 1) \,$</span>:</p>
 
 <ul>
   <li>
-    <p>Case <script type="math/tex">\, i \le n \,</script>(note that here <script type="math/tex">% <![CDATA[
-\, i < n+k \, %]]></script>), Using LOTP, we have:
-<script type="math/tex">% <![CDATA[
-\,
+    <p>Case <span class="kdmath">$\, i \le n \,$</span>(note that here <span class="kdmath">$\, i < n+k \,$</span>), Using LOTP, we have:
+<span class="kdmath">$\,
 \begin{align*}
 P(u_{ik} = 1) \\
 &= P(u_{ik} = 1 \,\vert\, s_k = 1) \times P(s_k = 1) + P(u_{i k} = 1 \,\vert\, s_k = 0) \times P(s_k = 0) \\
@@ -1005,15 +1004,14 @@ P(u_i = 1) \\
 &= \frac n {n+1} \times \frac {n+1} {n+2} \times ... \times \frac {n+N-n-1} {n+N-n} \\
 &= \frac n N
 \end{align*}
-\, %]]></script></p>
+\,$</span></p>
   </li>
   <li>
-    <p>Case <script type="math/tex">\, i > n \,</script>, In this case unlike in the last case <script type="math/tex">\, P(u_i = 1) = P(s_i = 1) \times \prod_{k=i+1}^{k=N-n} P(u_{ik} = 1) \,</script>. Note that <script type="math/tex">\, k \,</script> starts from <script type="math/tex">\, i+1 \,</script>. Thus here also like in previous case <script type="math/tex">% <![CDATA[
-\, i < n+k \, %]]></script>. Thus we can use the result <script type="math/tex">\, P(u_{ik} = 1) = \frac {n+k-1} {n+k} \,</script> from the previous case. Thus we get <script type="math/tex">\, P(u_i = 1) = \frac n {n+i} \times \frac {n+i} {n+i+1} \times ... \times \frac {n+N-n-1} {n+N-n} = \frac n N \,</script>.</p>
+    <p>Case <span class="kdmath">$\, i > n \,$</span>, In this case unlike in the last case <span class="kdmath">$\, P(u_i = 1) = P(s_i = 1) \times \prod_{k=i+1}^{k=N-n} P(u_{ik} = 1) \,$</span>. Note that <span class="kdmath">$\, k \,$</span> starts from <span class="kdmath">$\, i+1 \,$</span>. Thus here also like in previous case <span class="kdmath">$\, i < n+k \,$</span>. Thus we can use the result <span class="kdmath">$\, P(u_{ik} = 1) = \frac {n+k-1} {n+k} \,$</span> from the previous case. Thus we get <span class="kdmath">$\, P(u_i = 1) = \frac n {n+i} \times \frac {n+i} {n+i+1} \times ... \times \frac {n+N-n-1} {n+N-n} = \frac n N \,$</span>.</p>
   </li>
 </ul>
 
-<p>Thus in both cases, we have <script type="math/tex">\, P(u_i =1) = \frac n N \,</script>. Thus the procedure is equivalent to simple random sampling.</p>
+<p>Thus in both cases, we have <span class="kdmath">$\, P(u_i =1) = \frac n N \,$</span>. Thus the procedure is equivalent to simple random sampling.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

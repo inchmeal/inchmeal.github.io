@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9452,7 +9453,8 @@
 	<span class="p">(</span> <span class="p">(</span><span class="nf">predicate-1</span><span class="p">)</span> <span class="p">(</span><span class="nf">expression1</span><span class="p">)</span> <span class="p">)</span>
 	<span class="nv">…</span>
 	<span class="p">(</span> <span class="p">(</span><span class="nf">predicate1</span><span class="p">)</span> <span class="p">(</span><span class="nf">expressionn</span><span class="p">)</span> <span class="p">)</span>
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>if:</li>
@@ -9465,7 +9467,8 @@
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">predicate</span><span class="p">)</span>
 	  <span class="p">(</span><span class="nf">consequence</span><span class="p">)</span> 
 	  <span class="p">(</span><span class="nf">alternative</span><span class="p">)</span> 
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that apart from primitive predicates <code class="highlighter-rouge">&lt;,&gt;,-</code>, we also have compound predicates: <code class="highlighter-rouge">(and exp-1, exp-2,... exp-n)</code>, <code class="highlighter-rouge">(or exp-1,...exp-n)</code>, or <code class="highlighter-rouge">(not exp)</code>.</p>
 
@@ -9518,7 +9521,8 @@
 <span class="p">(</span><span class="nf">inc</span> <span class="p">(</span><span class="nf">inc</span> <span class="p">(</span><span class="nf">inc</span> <span class="mi">6</span><span class="p">)))</span>
 <span class="p">(</span><span class="nf">inc</span> <span class="p">(</span><span class="nf">inc</span> <span class="mi">7</span><span class="p">))</span>
 <span class="p">(</span><span class="nf">inc</span> <span class="mi">8</span><span class="p">)</span>
-<span class="mi">9</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">9</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9545,7 +9549,8 @@
 <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">7</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">+</span> <span class="mi">1</span> <span class="mi">8</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">+</span> <span class="mi">0</span> <span class="mi">9</span><span class="p">)</span>
-<span class="mi">9</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="mi">9</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Consider the first process. The substitution model reveals a shape of expansion followed by contraction. The expansion occurs as the process builds up a chain of deferred operations. The contraction occurs as the operations are actually performed. This type of process, characterized by a chain of deferred operations, is called a <em>recursive process</em>. Carrying out this process requires that the interpreter keep track of the operations to be performed later on. The length of the chain of deferred operations, and hence the amount of information needed to keep track of it, grows linearly with “a”(or “b”). Such a process is called a <em>linear recursive process</em>.</p>
 
@@ -9580,7 +9585,8 @@
 		   <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
 		<span class="p">)</span>
 	<span class="p">)</span>
-<span class="p">)</span>	</pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>	
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="lambda">Lambda</h4>
 
@@ -9641,7 +9647,8 @@
 		 <span class="p">(</span><span class="nb">*</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
 	  <span class="p">)</span>
 	<span class="p">)</span>
-<span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Thus a <code class="highlighter-rouge">let</code> expression is simply a <em>syntactic sugar</em> as no new mechanism is required from in the interpreter.</p>
 

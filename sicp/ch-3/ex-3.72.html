@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9425,14 +9426,16 @@
   <span class="p">(</span><span class="nf">interesting-numbers</span>
    <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">pair</span><span class="p">)</span>
 	 <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">square</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">pair</span><span class="p">))</span> <span class="p">(</span><span class="nf">square</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">pair</span><span class="p">))))</span>
-  <span class="mi">3</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="mi">3</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Output:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> <span class="p">(</span><span class="nb">display</span> <span class="p">(</span><span class="nf">get-n-items-of-stream</span> <span class="nv">square-ramanujan-numbers</span> <span class="mi">10</span><span class="p">))</span>
-<span class="p">((((</span><span class="nf">1</span> <span class="mi">18</span><span class="p">)</span> <span class="p">(</span><span class="nf">6</span> <span class="mi">17</span><span class="p">)</span> <span class="mi">10</span> <span class="mi">15</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">325</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">20</span><span class="p">)</span> <span class="p">(</span><span class="nf">8</span> <span class="mi">19</span><span class="p">)</span> <span class="mi">13</span> <span class="mi">16</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">425</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">25</span><span class="p">)</span> <span class="p">(</span><span class="nf">11</span> <span class="mi">23</span><span class="p">)</span> <span class="mi">17</span> <span class="mi">19</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">650</span><span class="p">)</span> <span class="p">(((</span><span class="nf">7</span> <span class="mi">26</span><span class="p">)</span> <span class="p">(</span><span class="nf">10</span> <span class="mi">25</span><span class="p">)</span> <span class="mi">14</span> <span class="mi">23</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">725</span><span class="p">)</span> <span class="p">(((</span><span class="nf">2</span> <span class="mi">29</span><span class="p">)</span> <span class="p">(</span><span class="nf">13</span> <span class="mi">26</span><span class="p">)</span> <span class="mi">19</span> <span class="mi">22</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">845</span><span class="p">)</span> <span class="p">(((</span><span class="nf">3</span> <span class="mi">29</span><span class="p">)</span> <span class="p">(</span><span class="nf">11</span> <span class="mi">27</span><span class="p">)</span> <span class="mi">15</span> <span class="mi">25</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">850</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">30</span><span class="p">)</span> <span class="p">(</span><span class="nf">14</span> <span class="mi">27</span><span class="p">)</span> <span class="mi">21</span> <span class="mi">22</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">925</span><span class="p">)</span> <span class="p">(((</span><span class="nf">1</span> <span class="mi">32</span><span class="p">)</span> <span class="p">(</span><span class="nf">8</span> <span class="mi">31</span><span class="p">)</span> <span class="mi">20</span> <span class="mi">25</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">1025</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">35</span><span class="p">)</span> <span class="p">(</span><span class="nf">17</span> <span class="mi">31</span><span class="p">)</span> <span class="mi">25</span> <span class="mi">25</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">1250</span><span class="p">)</span> <span class="p">((</span><span class="nf">2</span> <span class="mi">36</span><span class="p">)</span> <span class="p">(</span><span class="nf">12</span> <span class="mi">34</span><span class="p">)</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">1300</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">((((</span><span class="nf">1</span> <span class="mi">18</span><span class="p">)</span> <span class="p">(</span><span class="nf">6</span> <span class="mi">17</span><span class="p">)</span> <span class="mi">10</span> <span class="mi">15</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">325</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">20</span><span class="p">)</span> <span class="p">(</span><span class="nf">8</span> <span class="mi">19</span><span class="p">)</span> <span class="mi">13</span> <span class="mi">16</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">425</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">25</span><span class="p">)</span> <span class="p">(</span><span class="nf">11</span> <span class="mi">23</span><span class="p">)</span> <span class="mi">17</span> <span class="mi">19</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">650</span><span class="p">)</span> <span class="p">(((</span><span class="nf">7</span> <span class="mi">26</span><span class="p">)</span> <span class="p">(</span><span class="nf">10</span> <span class="mi">25</span><span class="p">)</span> <span class="mi">14</span> <span class="mi">23</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">725</span><span class="p">)</span> <span class="p">(((</span><span class="nf">2</span> <span class="mi">29</span><span class="p">)</span> <span class="p">(</span><span class="nf">13</span> <span class="mi">26</span><span class="p">)</span> <span class="mi">19</span> <span class="mi">22</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">845</span><span class="p">)</span> <span class="p">(((</span><span class="nf">3</span> <span class="mi">29</span><span class="p">)</span> <span class="p">(</span><span class="nf">11</span> <span class="mi">27</span><span class="p">)</span> <span class="mi">15</span> <span class="mi">25</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">850</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">30</span><span class="p">)</span> <span class="p">(</span><span class="nf">14</span> <span class="mi">27</span><span class="p">)</span> <span class="mi">21</span> <span class="mi">22</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">925</span><span class="p">)</span> <span class="p">(((</span><span class="nf">1</span> <span class="mi">32</span><span class="p">)</span> <span class="p">(</span><span class="nf">8</span> <span class="mi">31</span><span class="p">)</span> <span class="mi">20</span> <span class="mi">25</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">1025</span><span class="p">)</span> <span class="p">(((</span><span class="nf">5</span> <span class="mi">35</span><span class="p">)</span> <span class="p">(</span><span class="nf">17</span> <span class="mi">31</span><span class="p">)</span> <span class="mi">25</span> <span class="mi">25</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">1250</span><span class="p">)</span> <span class="p">((</span><span class="nf">2</span> <span class="mi">36</span><span class="p">)</span> <span class="p">(</span><span class="nf">12</span> <span class="mi">34</span><span class="p">)</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="mi">1300</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>I am also putting the complete code till now for streams for future reference:</p>
 
@@ -10053,7 +10056,8 @@
           <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="k">set!</span> <span class="nv">result</span> <span class="p">(</span><span class="nf">proc</span><span class="p">))</span>
                  <span class="p">(</span><span class="k">set!</span> <span class="nv">already-run?</span> <span class="nv">true</span><span class="p">)</span>
                  <span class="nv">result</span><span class="p">)</span>
-          <span class="nv">result</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="nv">result</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

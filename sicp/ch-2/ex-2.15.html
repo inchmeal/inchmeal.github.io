@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9422,27 +9423,29 @@
 
 <ul>
   <li>
-    <script type="math/tex; mode=display">\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }</script>
+    <div class="kdmath">$$
+\frac 1 { { \frac 1 { I_1 } } + { \frac 1 { I_2 } } }
+$$</div>
   </li>
-  <li><script type="math/tex">\frac {I_1 I_2} {I_1 + I_2}</script>.</li>
+  <li><span class="kdmath">$\frac {I_1 I_2} {I_1 + I_2}$</span>.</li>
 </ul>
 
 <p>We know that they are algebraically equivalent but they are not equal by <em>interval arithmetic</em>. We have already seen that the reason they are
-not same is because in <em>interval arithmetic</em> there is no identity operation i.e. <script type="math/tex">\frac I I \ne [1,1]</script> for any interval <script type="math/tex">I</script>
+not same is because in <em>interval arithmetic</em> there is no identity operation i.e. <span class="kdmath">$\frac I I \ne [1,1]$</span> for any interval <span class="kdmath">$I$</span>
 except when lower-bound and upper-bound are equal.</p>
 
-<p>Lets consider <em>why</em> <script type="math/tex">\frac I I \ne [1, 1]</script>. All <em>arithmetic operation</em> suggested by <em>Alyssa P. Hacker</em> works by assuming that all the
-variables in the expression are independent of each other. Thus in expression <script type="math/tex">\frac I I</script>, both numerator and denominator are
-independent of each other by <em>Alyssa</em> arithmetic. Thus if numerator takes a value <script type="math/tex">v_1 \in I</script> then denominator may have some other
-value <script type="math/tex">v_2 \in I</script> such that <script type="math/tex">v_1 \ne v_2</script>. This leads to a result <script type="math/tex">\frac I I \ne 1</script>.</p>
+<p>Lets consider <em>why</em> <span class="kdmath">$\frac I I \ne [1, 1]$</span>. All <em>arithmetic operation</em> suggested by <em>Alyssa P. Hacker</em> works by assuming that all the
+variables in the expression are independent of each other. Thus in expression <span class="kdmath">$\frac I I$</span>, both numerator and denominator are
+independent of each other by <em>Alyssa</em> arithmetic. Thus if numerator takes a value <span class="kdmath">$v_1 \in I$</span> then denominator may have some other
+value <span class="kdmath">$v_2 \in I$</span> such that <span class="kdmath">$v_1 \ne v_2$</span>. This leads to a result <span class="kdmath">$\frac I I \ne 1$</span>.</p>
 
 <p>We can extend this analysis to all the operations where interval-variable is repeated:</p>
 
 <ul>
-  <li><script type="math/tex">\frac I I</script>.</li>
-  <li><script type="math/tex">I + I</script>.</li>
-  <li><script type="math/tex">I - I</script>.</li>
-  <li><script type="math/tex">I \times I</script>.</li>
+  <li><span class="kdmath">$\frac I I$</span>.</li>
+  <li><span class="kdmath">$I + I$</span>.</li>
+  <li><span class="kdmath">$I - I$</span>.</li>
+  <li><span class="kdmath">$I \times I$</span>.</li>
 </ul>
 
 <p>We can even extend it further: if an interval-variable is repeated anywhere in the formulae it will introduce errors because these <em>interval-variables</em>

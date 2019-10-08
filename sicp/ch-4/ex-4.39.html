@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9433,16 +9434,17 @@
 
 <p>The <code class="highlighter-rouge">distinct</code> is most restrictive constraint!</p>
 
-<p>The number of cases that will go down to the second constraint, when <code class="highlighter-rouge">distinct</code> is the first constraint is <script type="math/tex">\, 5! \,</script>.</p>
+<p>The number of cases that will go down to the second constraint, when <code class="highlighter-rouge">distinct</code> is the first constraint is <span class="kdmath">$\, 5! \,$</span>.</p>
 
-<p>The number of cases go down to the second constraint, when <code class="highlighter-rouge">distinct</code> is not the first constraint, and lets say first constraint is <code class="highlighter-rouge">(require (not (= cooper 1)))</code> will be <script type="math/tex">\, 4.5^4 \,</script>.</p>
+<p>The number of cases go down to the second constraint, when <code class="highlighter-rouge">distinct</code> is not the first constraint, and lets say first constraint is <code class="highlighter-rouge">(require (not (= cooper 1)))</code> will be <span class="kdmath">$\, 4.5^4 \,$</span>.</p>
 
 <p>Now, since distinct itself is more time consuming, but it restricts a lot of cases - these two forces kind of balance each other. But still not a complete win, moving down distinct increases the time slightly.</p>
 
 <p>I tested by executing this statement:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+</pre></td><td class="code"><pre><span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The following version, where I moved the <code class="highlighter-rouge">distinct</code> as the last constraint, took much more time(13 seconds) than the original version(10 seconds):</p>
 
@@ -9485,7 +9487,8 @@
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'cooper</span> <span class="nv">cooper</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'fletcher</span> <span class="nv">fletcher</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'miller</span> <span class="nv">miller</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>And this combination seemed to take slightly less time(9 seconds) than the original version(10 seconds):</p>
 
@@ -9528,14 +9531,16 @@
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'cooper</span> <span class="nv">cooper</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'fletcher</span> <span class="nv">fletcher</span><span class="p">)</span>
           <span class="p">(</span><span class="nb">list</span> <span class="ss">'miller</span> <span class="nv">miller</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span></pre></td></tr></tbody></table></code></pre></figure>
+          <span class="p">(</span><span class="nb">list</span> <span class="ss">'smith</span> <span class="nv">smith</span><span class="p">))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This is perhaps because, constraints:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="code"><pre><span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">smith</span> <span class="nv">fletcher</span><span class="p">))</span> <span class="mi">1</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">fletcher</span> <span class="nv">cooper</span><span class="p">))</span> <span class="mi">1</span><span class="p">)))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="nf">require</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">fletcher</span> <span class="nv">cooper</span><span class="p">))</span> <span class="mi">1</span><span class="p">)))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>… are more restrictive(because they restrict two variables) and thus lesser number of cases go down. Thus moving them up slighlty improves the time.</p>
 

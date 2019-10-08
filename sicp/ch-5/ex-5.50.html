@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9459,7 +9460,8 @@
 <span class="c1">;;;;</span>
 <span class="c1">;;(driver-loop)</span>
 <span class="ss">'METACIRCULAR-EVALUATOR-LOADED</span>
-<span class="p">))</span> <span class="c1">;;expression ends here</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">))</span> <span class="c1">;;expression ends here</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Before going to other parts, let me first point out few changes i made in the above code:</p>
 
@@ -9503,7 +9505,8 @@
         <span class="p">(</span><span class="nb">list</span> <span class="ss">'=</span> <span class="nv">=</span><span class="p">)</span>     <span class="c1">;;;</span>
         <span class="p">(</span><span class="nb">list</span> <span class="ss">'not</span> <span class="nv">not</span><span class="p">)</span> <span class="c1">;;;</span>
 <span class="c1">;;      more primitives</span>
-        <span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+        <span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="changes-in-ch5-eceval-supportscm">Changes in ch5-eceval-support.scm</h4>
 
@@ -9558,7 +9561,8 @@
 	<span class="p">(</span><span class="nb">list</span> <span class="ss">'symbol?</span> <span class="nv">symbol?</span><span class="p">)</span>
 	<span class="p">(</span><span class="nb">list</span> <span class="ss">'pair?</span> <span class="nv">pair?</span><span class="p">)</span>
 	<span class="p">(</span><span class="nb">list</span> <span class="ss">'string?</span> <span class="nv">string?</span><span class="p">)</span>
-	<span class="p">(</span><span class="nb">list</span> <span class="ss">'not</span> <span class="nv">not</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+	<span class="p">(</span><span class="nb">list</span> <span class="ss">'not</span> <span class="nv">not</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9607,7 +9611,8 @@
 	 <span class="p">))</span>
 
 <span class="p">(</span><span class="k">define</span> <span class="nv">libs-and-mceval</span>
-  <span class="o">`</span><span class="p">(</span><span class="k">begin</span> <span class="o">,</span><span class="nv">libs</span> <span class="o">,</span><span class="nv">mceval-expression</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="o">`</span><span class="p">(</span><span class="k">begin</span> <span class="o">,</span><span class="nv">libs</span> <span class="o">,</span><span class="nv">mceval-expression</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note, that <code class="highlighter-rouge">mceval-expression</code> contains the code of our evaluator.</p>
 
@@ -9634,7 +9639,8 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">apply-primitive-procedure</span> <span class="nv">proc</span> <span class="nv">args</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">apply-in-underlying-scheme</span>
-   <span class="p">(</span><span class="nf">primitive-implementation</span> <span class="nv">proc</span><span class="p">)</span> <span class="nv">args</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+   <span class="p">(</span><span class="nf">primitive-implementation</span> <span class="nv">proc</span><span class="p">)</span> <span class="nv">args</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The first line won’t work if <code class="highlighter-rouge">apply</code> is a special form!</p>
 
@@ -9675,7 +9681,8 @@
      <span class="nv">proc-code</span>
      <span class="p">(</span><span class="nf">preserving</span> <span class="o">'</span><span class="p">(</span><span class="nf">proc</span> <span class="nv">continue</span><span class="p">)</span>
 				 <span class="nv">args-code</span>
-				 <span class="p">(</span><span class="nf">compile-procedure-call</span> <span class="nv">target</span> <span class="nv">linkage</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
+				 <span class="p">(</span><span class="nf">compile-procedure-call</span> <span class="nv">target</span> <span class="nv">linkage</span><span class="p">)))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Ofcourse, there are few procedures for this new syntax added(i added them in file ch5-syntax.scm):</p>
 
@@ -9684,7 +9691,8 @@
 3
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'specialform-apply</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply-procedure</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply-arguments</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">caddr</span> <span class="nv">exp</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply-arguments</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">caddr</span> <span class="nv">exp</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Let’s put this all together:</p>
 
@@ -9965,7 +9973,8 @@
 <span class="c1">;;these are commands which can reset the scheme environment(mit-scheme only).</span>
 <span class="c1">;;they should be used only when one want to forget all the previous variables in repl scheme.</span>
 <span class="c1">;; (ge (make-top-level-environment))</span>
-<span class="c1">;; (restart 1)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;; (restart 1)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Note that the except for register simulator, file <code class="highlighter-rouge">ch5-regsim.scm</code> and chapter 4 evaluator <code class="highlighter-rouge">ch4-mceval.scm</code>(except the changes mentioned above) are the original files from the mit website without any changes.</p>
 
@@ -10076,7 +10085,8 @@
 <span class="c1">;;; M-Eval value:</span>
 <span class="mi">3628900</span>
 
-<span class="c1">;;; M-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; M-Eval input:</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>That’s it!</p>
 
@@ -11373,7 +11383,8 @@
                <span class="p">(</span><span class="nf">registers-modified</span> <span class="nv">seq2</span><span class="p">))</span>
    <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nf">statements</span> <span class="nv">seq1</span><span class="p">)</span> <span class="p">(</span><span class="nf">statements</span> <span class="nv">seq2</span><span class="p">))))</span>
 
-<span class="o">'</span><span class="p">(</span><span class="nf">COMPILER</span> <span class="nv">LOADED</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="o">'</span><span class="p">(</span><span class="nf">COMPILER</span> <span class="nv">LOADED</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Code in file ch5-eceval-support:</p>
 
@@ -11930,7 +11941,8 @@
 		<span class="p">((</span><span class="nb">=</span> <span class="nv">frame-num</span> <span class="mi">0</span><span class="p">)</span> <span class="nv">env</span><span class="p">)</span>
 		<span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nf">env-ref</span>
 			   <span class="p">(</span><span class="nf">enclosing-environment</span> <span class="nv">env</span><span class="p">)</span>
-			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nb">-</span> <span class="nv">frame-num</span> <span class="mi">1</span><span class="p">)))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Complete code of syntax file, ch5-syntax.scm:</p>
 
@@ -12235,7 +12247,8 @@
 
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply?</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nf">tagged-list?</span> <span class="nv">exp</span> <span class="ss">'specialform-apply</span><span class="p">))</span>
 <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply-procedure</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">cadr</span> <span class="nv">exp</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply-arguments</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">caddr</span> <span class="nv">exp</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">specialform-apply-arguments</span> <span class="nv">exp</span><span class="p">)</span> <span class="p">(</span><span class="nb">caddr</span> <span class="nv">exp</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1136,24 +1137,24 @@
                         <h3 id="summary">Summary</h3>
 
 <ul>
-  <li>Suppose <script type="math/tex">f : A \to B</script>. We will say that <script type="math/tex">f</script> is one-to-one if:   <br />
-<script type="math/tex">\lnot \exists a_1 \in A \exists a_2 \in A(f(a_1)= f(a_2) \land a_1 \ne a_2)</script>.  <br />
-We say that <script type="math/tex">f</script> is onto if:  <br />
-<script type="math/tex">\forall b \in B \exists a \in A(f(a) = b)</script>.  <br />
+  <li>Suppose <span class="kdmath">$f : A \to B$</span>. We will say that <span class="kdmath">$f$</span> is one-to-one if:   <br />
+<span class="kdmath">$\lnot \exists a_1 \in A \exists a_2 \in A(f(a_1)= f(a_2) \land a_1 \ne a_2)$</span>.  <br />
+We say that <span class="kdmath">$f$</span> is onto if:  <br />
+<span class="kdmath">$\forall b \in B \exists a \in A(f(a) = b)$</span>.  <br />
 One-to-one functions are sometimes also called injections, and onto functions are sometimes called surjections.</li>
-  <li>Suppose <script type="math/tex">f : A \to B</script>. Then:
+  <li>Suppose <span class="kdmath">$f : A \to B$</span>. Then:
     <ul>
-      <li><script type="math/tex">f</script> is one-to-one iff <script type="math/tex">\forall a_1 \in A \forall a_2 \in A(f(a_1) = f(a_2) \to a_1 = a_2)</script>. Note that this statement is 
+      <li><span class="kdmath">$f$</span> is one-to-one iff <span class="kdmath">$\forall a_1 \in A \forall a_2 \in A(f(a_1) = f(a_2) \to a_1 = a_2)$</span>. Note that this statement is 
 the positive form of the statement given above for one-to-one.  <br />
-As can be seen here, this statement is easier to prove that a function is one-to-one. We select two values <script type="math/tex">a_1, a_2 \in A</script> such that
-<script type="math/tex">f(a_1) = f(a_2)</script>. Now by doing so if we can conclude that <script type="math/tex">a_1 = a_2</script> then function is one-to-one.</li>
-      <li><script type="math/tex">f</script> is onto iff <script type="math/tex">Ran(f) = B</script>.</li>
+As can be seen here, this statement is easier to prove that a function is one-to-one. We select two values <span class="kdmath">$a_1, a_2 \in A$</span> such that
+<span class="kdmath">$f(a_1) = f(a_2)$</span>. Now by doing so if we can conclude that <span class="kdmath">$a_1 = a_2$</span> then function is one-to-one.</li>
+      <li><span class="kdmath">$f$</span> is onto iff <span class="kdmath">$Ran(f) = B$</span>.</li>
     </ul>
   </li>
-  <li>Suppose <script type="math/tex">f: A \to B</script> and <script type="math/tex">g: B \to C</script>. Then as we know by the definition of composition of functions: <script type="math/tex">g \circ f : A \to C</script>.
+  <li>Suppose <span class="kdmath">$f: A \to B$</span> and <span class="kdmath">$g: B \to C$</span>. Then as we know by the definition of composition of functions: <span class="kdmath">$g \circ f : A \to C$</span>.
     <ul>
-      <li>If <script type="math/tex">f</script> and <script type="math/tex">g</script> are both one-to-one,then so is <script type="math/tex">g \circ f</script>.</li>
-      <li>If <script type="math/tex">f</script> and <script type="math/tex">g</script> are both onto, then so is <script type="math/tex">g \circ f</script>.</li>
+      <li>If <span class="kdmath">$f$</span> and <span class="kdmath">$g$</span> are both one-to-one,then so is <span class="kdmath">$g \circ f$</span>.</li>
+      <li>If <span class="kdmath">$f$</span> and <span class="kdmath">$g$</span> are both onto, then so is <span class="kdmath">$g \circ f$</span>.</li>
     </ul>
   </li>
   <li>If a function is one-to-one and onto, the function is sometimes called bijective.</li>
@@ -1175,7 +1176,7 @@ As can be seen here, this statement is easier to prove that a function is one-to
 
 <p><strong>(a)</strong> It is not a function, so question is not applicable.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">f</script> is not a function. <script type="math/tex">g</script>: One-to-One: False, as <script type="math/tex">(ball,b),(bat,b) \in g</script>. Onto: True.</p>
+<p><strong>(b)</strong> <span class="kdmath">$f$</span> is not a function. <span class="kdmath">$g$</span>: One-to-One: False, as <span class="kdmath">$(ball,b),(bat,b) \in g$</span>. Onto: True.</p>
 
 <p><strong>(c)</strong> One-to-One: True, Onto: True</p>
 
@@ -1187,22 +1188,21 @@ As can be seen here, this statement is easier to prove that a function is one-to
 
 <p><strong>(b)</strong></p>
 
-<p>For <script type="math/tex">x = 2, f(x) = 0</script>, Also for <script type="math/tex">x = 0, f(x) = 0</script>. Thus for two values, there is only one image in the range. Thus function is not one-to-one.</p>
+<p>For <span class="kdmath">$x = 2, f(x) = 0$</span>, Also for <span class="kdmath">$x = 0, f(x) = 0$</span>. Thus for two values, there is only one image in the range. Thus function is not one-to-one.</p>
 
-<p>It is not onto. To prove it lets suppose <script type="math/tex">f</script> is onto. Thus for <script type="math/tex">a \in \mathbb R</script>, there must exist some <script type="math/tex">x \in \mathbb R</script> such that <script type="math/tex">f(x) = a</script>.
-Thus <script type="math/tex">x^2 - 2x = a</script>.  <br />
-<script type="math/tex">\Rightarrow x^2 - 2x + 1 = a + 1</script>.  <br />
-<script type="math/tex">\Rightarrow (x-1)^2 = a + 1</script>.  <br />
-<script type="math/tex">\Rightarrow x = \sqrt {a + 1} + 1</script>.</p>
+<p>It is not onto. To prove it lets suppose <span class="kdmath">$f$</span> is onto. Thus for <span class="kdmath">$a \in \mathbb R$</span>, there must exist some <span class="kdmath">$x \in \mathbb R$</span> such that <span class="kdmath">$f(x) = a$</span>.
+Thus <span class="kdmath">$x^2 - 2x = a$</span>.  <br />
+<span class="kdmath">$\Rightarrow x^2 - 2x + 1 = a + 1$</span>.  <br />
+<span class="kdmath">$\Rightarrow (x-1)^2 = a + 1$</span>.  <br />
+<span class="kdmath">$\Rightarrow x = \sqrt {a + 1} + 1$</span>.</p>
 
-<p>Now, clearly we can see that if <script type="math/tex">% <![CDATA[
-a < 1 %]]></script>, <script type="math/tex">x \notin \mathbb R</script>. Thus <script type="math/tex">f</script> is not onto.</p>
+<p>Now, clearly we can see that if <span class="kdmath">$a < 1$</span>, <span class="kdmath">$x \notin \mathbb R$</span>. Thus <span class="kdmath">$f$</span> is not onto.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>One-to-one: False, because <script type="math/tex">f(3.2) = f(3.3)</script>.</p>
+<p>One-to-one: False, because <span class="kdmath">$f(3.2) = f(3.3)$</span>.</p>
 
-<p>Onto: True, For every <script type="math/tex">c \in \mathbb R</script>, for <script type="math/tex">x = \left \lfloor c \right \rfloor</script>, <script type="math/tex">f(x) = c</script>.</p>
+<p>Onto: True, For every <span class="kdmath">$c \in \mathbb R$</span>, for <span class="kdmath">$x = \left \lfloor c \right \rfloor$</span>, <span class="kdmath">$f(x) = c$</span>.</p>
 
 <hr />
 
@@ -1212,7 +1212,7 @@ a < 1 %]]></script>, <script type="math/tex">x \notin \mathbb R</script>. Thus <
 
 <p><strong>(b)</strong> One-to-one: True, Onto: True.</p>
 
-<p><strong>(c)</strong> One-to-one: True, Onto: False because for <script type="math/tex">y = (0.7,0.7)</script>, there is not value of <script type="math/tex">x</script> such that <script type="math/tex">f(x) = (0.7,0.7)</script>.</p>
+<p><strong>(c)</strong> One-to-one: True, Onto: False because for <span class="kdmath">$y = (0.7,0.7)$</span>, there is not value of <span class="kdmath">$x$</span> such that <span class="kdmath">$f(x) = (0.7,0.7)$</span>.</p>
 
 <hr />
 
@@ -1222,66 +1222,65 @@ a < 1 %]]></script>, <script type="math/tex">x \notin \mathbb R</script>. Thus <
 
 <p><em>One-to-one:</em></p>
 
-<p>Suppose <script type="math/tex">x_1, x_2 \in A</script> such that <script type="math/tex">f(x_1) = f(x_2)</script>. Thus we have:</p>
+<p>Suppose <span class="kdmath">$x_1, x_2 \in A$</span> such that <span class="kdmath">$f(x_1) = f(x_2)$</span>. Thus we have:</p>
 
-<p><script type="math/tex">\Rightarrow \frac {x_1 + 1} {x_1 - 1} = \frac {x_2 + 1} {x_2 - 1}</script>.   <br />
-<script type="math/tex">\Rightarrow (x_1 + 1)(x_2 - 1) = (x_2 + 1)(x_1 - 1)</script>.   <br />
-<script type="math/tex">\Rightarrow x_1x_2 - x_1 + x_2 - 1 = x_1 x_2 - x_2 + x_1 -1</script>.   <br />
-<script type="math/tex">\Rightarrow - x_1 + x_2 = - x_2 + x_1</script>.   <br />
-<script type="math/tex">\Rightarrow 2x_2 = 2x_1</script>.   <br />
-<script type="math/tex">\Rightarrow x_2 = x_1</script>.</p>
+<p><span class="kdmath">$\Rightarrow \frac {x_1 + 1} {x_1 - 1} = \frac {x_2 + 1} {x_2 - 1}$</span>.   <br />
+<span class="kdmath">$\Rightarrow (x_1 + 1)(x_2 - 1) = (x_2 + 1)(x_1 - 1)$</span>.   <br />
+<span class="kdmath">$\Rightarrow x_1x_2 - x_1 + x_2 - 1 = x_1 x_2 - x_2 + x_1 -1$</span>.   <br />
+<span class="kdmath">$\Rightarrow - x_1 + x_2 = - x_2 + x_1$</span>.   <br />
+<span class="kdmath">$\Rightarrow 2x_2 = 2x_1$</span>.   <br />
+<span class="kdmath">$\Rightarrow x_2 = x_1$</span>.</p>
 
-<p>Thus, if <script type="math/tex">f(x_1) = f(x_2)</script>, then <script type="math/tex">x_1 = x_ 2</script>. Since <script type="math/tex">x_1, x_2</script> are arbitrary, it follows that <script type="math/tex">f</script> is one-to-one.</p>
+<p>Thus, if <span class="kdmath">$f(x_1) = f(x_2)$</span>, then <span class="kdmath">$x_1 = x_ 2$</span>. Since <span class="kdmath">$x_1, x_2$</span> are arbitrary, it follows that <span class="kdmath">$f$</span> is one-to-one.</p>
 
 <p><em>Onto:</em></p>
 
-<p>Suppose <script type="math/tex">y \in A</script> is an arbitrary number such that <script type="math/tex">f(x) = y</script>. Thus we have:</p>
+<p>Suppose <span class="kdmath">$y \in A$</span> is an arbitrary number such that <span class="kdmath">$f(x) = y$</span>. Thus we have:</p>
 
-<p><script type="math/tex">\Rightarrow y = \frac {x + 1} {x - 1}</script>.  <br />
-<script type="math/tex">\Rightarrow y(x - 1) = (x + 1)</script>.  <br />
-<script type="math/tex">\Rightarrow yx - y = x + 1</script>.  <br />
-<script type="math/tex">\Rightarrow yx - x = y + 1</script>.  <br />
-<script type="math/tex">\Rightarrow x(y - 1) = y + 1</script>.  <br />
-<script type="math/tex">\Rightarrow x = \frac {y + 1} {y - 1}</script>.</p>
+<p><span class="kdmath">$\Rightarrow y = \frac {x + 1} {x - 1}$</span>.  <br />
+<span class="kdmath">$\Rightarrow y(x - 1) = (x + 1)$</span>.  <br />
+<span class="kdmath">$\Rightarrow yx - y = x + 1$</span>.  <br />
+<span class="kdmath">$\Rightarrow yx - x = y + 1$</span>.  <br />
+<span class="kdmath">$\Rightarrow x(y - 1) = y + 1$</span>.  <br />
+<span class="kdmath">$\Rightarrow x = \frac {y + 1} {y - 1}$</span>.</p>
 
-<p>Since <script type="math/tex">y \in A</script> and <script type="math/tex">x = \frac {y + 1} {y - 1}</script>, it follows that <script type="math/tex">x \in A</script>. Since <script type="math/tex">y</script> is arbitrary, it follows that for every <script type="math/tex">y \in A</script>,
-there exists an <script type="math/tex">x = \frac {y + 1} {y - 1}</script> such that <script type="math/tex">f(x) = y</script>. Thus <script type="math/tex">f</script> is onto.</p>
+<p>Since <span class="kdmath">$y \in A$</span> and <span class="kdmath">$x = \frac {y + 1} {y - 1}$</span>, it follows that <span class="kdmath">$x \in A$</span>. Since <span class="kdmath">$y$</span> is arbitrary, it follows that for every <span class="kdmath">$y \in A$</span>,
+there exists an <span class="kdmath">$x = \frac {y + 1} {y - 1}$</span> such that <span class="kdmath">$f(x) = y$</span>. Thus <span class="kdmath">$f$</span> is onto.</p>
 
 <p><strong>(b)</strong></p>
 
-<p><script type="math/tex">f \circ f (x) = f(f(x)) = f(\frac {x + 1} {x - 1}) = \frac {\frac {x+1} {x-1} + 1} {\frac {x+1} {x-1} - 1}</script>.   <br />
-<script type="math/tex">f \circ f (x) = \frac {\frac {x+1 + (x-1)} {x-1}} {\frac {x+1 - (x -1)} {x-1}}</script>.   <br />
-<script type="math/tex">f \circ f (x) = \frac {\frac {2x} {x-1}} {\frac {2} {x-1}}</script>.   <br />
-<script type="math/tex">f \circ f (x) = \frac {2x} {x-1} \times \frac {x-1} {2}</script>.   <br />
-<script type="math/tex">f \circ f (x) = x</script>.</p>
+<p><span class="kdmath">$f \circ f (x) = f(f(x)) = f(\frac {x + 1} {x - 1}) = \frac {\frac {x+1} {x-1} + 1} {\frac {x+1} {x-1} - 1}$</span>.   <br />
+<span class="kdmath">$f \circ f (x) = \frac {\frac {x+1 + (x-1)} {x-1}} {\frac {x+1 - (x -1)} {x-1}}$</span>.   <br />
+<span class="kdmath">$f \circ f (x) = \frac {\frac {2x} {x-1}} {\frac {2} {x-1}}$</span>.   <br />
+<span class="kdmath">$f \circ f (x) = \frac {2x} {x-1} \times \frac {x-1} {2}$</span>.   <br />
+<span class="kdmath">$f \circ f (x) = x$</span>.</p>
 
-<p>Thus <script type="math/tex">f \circ f = i_A</script>.</p>
+<p>Thus <span class="kdmath">$f \circ f = i_A$</span>.</p>
 
 <hr />
 
 <p><strong>Soln6</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">% <![CDATA[
-f(2) = \{y \in \mathbb R \, \vert \, - \sqrt 2 < y < \sqrt 2 \} %]]></script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$f(2) = \{y \in \mathbb R \, \vert \, - \sqrt 2 < y < \sqrt 2 \}$</span>.</p>
 
-<p><strong>(b)</strong> <script type="math/tex">f</script> is not one-to-one because <script type="math/tex">f(-1) = f(-2) = \phi</script>. <script type="math/tex">f</script> is onto because for any set <script type="math/tex">y = \{ q \in R \}</script>, if <script type="math/tex">x = 1 + {(\text{largest element of y})}^2</script>,
-then <script type="math/tex">(x,y) \in f</script>.</p>
+<p><strong>(b)</strong> <span class="kdmath">$f$</span> is not one-to-one because <span class="kdmath">$f(-1) = f(-2) = \phi$</span>. <span class="kdmath">$f$</span> is onto because for any set <span class="kdmath">$y = \{ q \in R \}$</span>, if <span class="kdmath">$x = 1 + {(\text{largest element of y})}^2$</span>,
+then <span class="kdmath">$(x,y) \in f$</span>.</p>
 
 <p>Update:</p>
 
 <p>Part(b) of this answer is wrong regarding the onto part(for one-to-one it is correct). Please check <a href="https://math.stackexchange.com/questions/2574301/is-this-function-onto">here</a>.</p>
 
-<p>I define <script type="math/tex">x = 1 + {(\text{largest element of y})}^2</script> By this definition not every pair of <script type="math/tex">(x,y)</script> belongs to <script type="math/tex">f</script> or for same <script type="math/tex">x</script> there can be multiple <script type="math/tex">y</script>.</p>
+<p>I define <span class="kdmath">$x = 1 + {(\text{largest element of y})}^2$</span> By this definition not every pair of <span class="kdmath">$(x,y)$</span> belongs to <span class="kdmath">$f$</span> or for same <span class="kdmath">$x$</span> there can be multiple <span class="kdmath">$y$</span>.</p>
 
-<p>Now the correct answer(from <a href="https://math.stackexchange.com/questions/2574301/is-this-function-onto">stackoverflow</a>) answer is, if <script type="math/tex">x > 0</script> then <script type="math/tex">f(x) = (- \sqrt x, \sqrt x )</script>. Clearly there are many sets which do not fall in this category for eg: <script type="math/tex">(5, 23) \notin f</script>.</p>
+<p>Now the correct answer(from <a href="https://math.stackexchange.com/questions/2574301/is-this-function-onto">stackoverflow</a>) answer is, if <span class="kdmath">$x > 0$</span> then <span class="kdmath">$f(x) = (- \sqrt x, \sqrt x )$</span>. Clearly there are many sets which do not fall in this category for eg: <span class="kdmath">$(5, 23) \notin f$</span>.</p>
 
 <hr />
 
 <p><strong>Soln7</strong></p>
 
-<p><strong>(a)</strong> <script type="math/tex">f(\{\{1,2\},\{3,4\}\}) = \{1,2,3,4\}</script>.</p>
+<p><strong>(a)</strong> <span class="kdmath">$f(\{\{1,2\},\{3,4\}\}) = \{1,2,3,4\}$</span>.</p>
 
-<p><strong>(b)</strong> It is not one-to-one since <script type="math/tex">f(\{\{1,2\},\{3,4\}\}) = f(\{\{1,3\},\{2,4\}\})</script>. However it is onto.</p>
+<p><strong>(b)</strong> It is not one-to-one since <span class="kdmath">$f(\{\{1,2\},\{3,4\}\}) = f(\{\{1,3\},\{2,4\}\})$</span>. However it is onto.</p>
 
 <hr />
 
@@ -1289,15 +1288,15 @@ then <script type="math/tex">(x,y) \in f</script>.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">g \circ f: A \to C</script> is onto. Suppose <script type="math/tex">c \in C</script> is any arbitrary number. Since <script type="math/tex">g \circ f</script> is onto, it follows that there must exist an 
-element <script type="math/tex">a \in A</script> such that <script type="math/tex">a = g \circ f(c)</script>. Thus <script type="math/tex">g(f(a)) = c</script>. Since <script type="math/tex">c</script> is arbitrary, it follows that for every element <script type="math/tex">c \in C</script>,
-there exist an element <script type="math/tex">b = f(a)</script> such that <script type="math/tex">g(b) = c</script>. Thus <script type="math/tex">g</script> is onto.</p>
+<p>Suppose <span class="kdmath">$g \circ f: A \to C$</span> is onto. Suppose <span class="kdmath">$c \in C$</span> is any arbitrary number. Since <span class="kdmath">$g \circ f$</span> is onto, it follows that there must exist an 
+element <span class="kdmath">$a \in A$</span> such that <span class="kdmath">$a = g \circ f(c)$</span>. Thus <span class="kdmath">$g(f(a)) = c$</span>. Since <span class="kdmath">$c$</span> is arbitrary, it follows that for every element <span class="kdmath">$c \in C$</span>,
+there exist an element <span class="kdmath">$b = f(a)$</span> such that <span class="kdmath">$g(b) = c$</span>. Thus <span class="kdmath">$g$</span> is onto.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">g \circ f: A \to C</script> is one-to-one. Suppose <script type="math/tex">a_1, a_2 \in A</script> such that <script type="math/tex">f(a_1) = f(a_2)</script>. Since <script type="math/tex">g</script> is a function, it follows that
-<script type="math/tex">g(f (x_1)) = g(f(x_2))</script>. It follows that <script type="math/tex">g \circ f(x_1) = g \circ f (x_2)</script>. Since <script type="math/tex">g \circ f</script> is a one-to-one, it follows that <script type="math/tex">x_1 = x_2</script>.
-Thus if <script type="math/tex">f(x_1) = f(x_2)</script>, then <script type="math/tex">x_1 = x_2</script>. Since <script type="math/tex">x_1, x_2</script> are arbitrary, it follows that <script type="math/tex">f</script> is one-to-one.</p>
+<p>Suppose <span class="kdmath">$g \circ f: A \to C$</span> is one-to-one. Suppose <span class="kdmath">$a_1, a_2 \in A$</span> such that <span class="kdmath">$f(a_1) = f(a_2)$</span>. Since <span class="kdmath">$g$</span> is a function, it follows that
+<span class="kdmath">$g(f (x_1)) = g(f(x_2))$</span>. It follows that <span class="kdmath">$g \circ f(x_1) = g \circ f (x_2)$</span>. Since <span class="kdmath">$g \circ f$</span> is a one-to-one, it follows that <span class="kdmath">$x_1 = x_2$</span>.
+Thus if <span class="kdmath">$f(x_1) = f(x_2)$</span>, then <span class="kdmath">$x_1 = x_2$</span>. Since <span class="kdmath">$x_1, x_2$</span> are arbitrary, it follows that <span class="kdmath">$f$</span> is one-to-one.</p>
 
 <hr />
 
@@ -1305,15 +1304,15 @@ Thus if <script type="math/tex">f(x_1) = f(x_2)</script>, then <script type="mat
 
 <p><strong>(a)</strong></p>
 
-<p>Since <script type="math/tex">g</script> is not one-to-one, suppose <script type="math/tex">b_1,b_2 \in B</script> such that <script type="math/tex">g(b_1) = g(b_2)</script>. Since <script type="math/tex">f</script> is onto, it follows that there exist
-some <script type="math/tex">a_1, a_2 \in A</script> such that <script type="math/tex">f(a_1) = b_1</script> and <script type="math/tex">f(a_2) = b_2</script>. Thus we have <script type="math/tex">g(f(a_1)) = g(f(a_2))</script>, or <script type="math/tex">g \circ f(a_1) = g \circ f(a_2)</script>.
-Thus <script type="math/tex">g \circ f</script> is not one-to-one.</p>
+<p>Since <span class="kdmath">$g$</span> is not one-to-one, suppose <span class="kdmath">$b_1,b_2 \in B$</span> such that <span class="kdmath">$g(b_1) = g(b_2)$</span>. Since <span class="kdmath">$f$</span> is onto, it follows that there exist
+some <span class="kdmath">$a_1, a_2 \in A$</span> such that <span class="kdmath">$f(a_1) = b_1$</span> and <span class="kdmath">$f(a_2) = b_2$</span>. Thus we have <span class="kdmath">$g(f(a_1)) = g(f(a_2))$</span>, or <span class="kdmath">$g \circ f(a_1) = g \circ f(a_2)$</span>.
+Thus <span class="kdmath">$g \circ f$</span> is not one-to-one.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Since <script type="math/tex">f</script> is not onto, suppose <script type="math/tex">b \in B</script> such that <script type="math/tex">\forall a \in A (f(a) \ne b )</script>. Since <script type="math/tex">g</script> is a function from <script type="math/tex">B</script> to <script type="math/tex">C</script>, it follows that for 
-some <script type="math/tex">c \in C</script>, <script type="math/tex">c = g(b)</script>. We shall prove by contradiction. Thus suppose <script type="math/tex">g \circ f</script> is onto. Thus for some <script type="math/tex">a \in A</script>, <script type="math/tex">g \circ f (a) = c</script>. Thus <script type="math/tex">g(f(a)) = c</script>.
-Since <script type="math/tex">g(b) = c</script>, and <script type="math/tex">g</script> is one-to-one, it follows <script type="math/tex">f(a) = b</script>. But it contradicts that <script type="math/tex">\forall a \in A (f(a) \ne b )</script>. Thus <script type="math/tex">g \circ f</script> is not onto.</p>
+<p>Since <span class="kdmath">$f$</span> is not onto, suppose <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$\forall a \in A (f(a) \ne b )$</span>. Since <span class="kdmath">$g$</span> is a function from <span class="kdmath">$B$</span> to <span class="kdmath">$C$</span>, it follows that for 
+some <span class="kdmath">$c \in C$</span>, <span class="kdmath">$c = g(b)$</span>. We shall prove by contradiction. Thus suppose <span class="kdmath">$g \circ f$</span> is onto. Thus for some <span class="kdmath">$a \in A$</span>, <span class="kdmath">$g \circ f (a) = c$</span>. Thus <span class="kdmath">$g(f(a)) = c$</span>.
+Since <span class="kdmath">$g(b) = c$</span>, and <span class="kdmath">$g$</span> is one-to-one, it follows <span class="kdmath">$f(a) = b$</span>. But it contradicts that <span class="kdmath">$\forall a \in A (f(a) \ne b )$</span>. Thus <span class="kdmath">$g \circ f$</span> is not onto.</p>
 
 <hr />
 
@@ -1321,31 +1320,31 @@ Since <script type="math/tex">g(b) = c</script>, and <script type="math/tex">g</
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">f</script> is one-to-one. Suppose <script type="math/tex">c_1, c_2 \in C</script> such that <script type="math/tex">f \upharpoonleft C (c_1) =  f \upharpoonleft C (c_2)</script>. Thus there exist an 
-element <script type="math/tex">b \in B</script> such that <script type="math/tex">(c_1,b) \in f \land (c_1,b) \in B \times C</script> and <script type="math/tex">(c_2,b) \in f \land (c_2,b) \in B \times C</script>. Since <script type="math/tex">f</script> is
-one-to-one and <script type="math/tex">(c_1,b) \in f \land (c_2,b) \in f</script>, it follows that <script type="math/tex">c_1 = c_2</script>. Thus if  <script type="math/tex">f \upharpoonleft C (c_1) =  f \upharpoonleft C (c_2)</script>,
-then <script type="math/tex">c_1 = c_2</script>. Since <script type="math/tex">c_1, c_2</script> are arbitrary, it follows that <script type="math/tex">f \upharpoonleft C</script> is one-to-one.</p>
+<p>Suppose <span class="kdmath">$f$</span> is one-to-one. Suppose <span class="kdmath">$c_1, c_2 \in C$</span> such that <span class="kdmath">$f \upharpoonleft C (c_1) =  f \upharpoonleft C (c_2)$</span>. Thus there exist an 
+element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(c_1,b) \in f \land (c_1,b) \in B \times C$</span> and <span class="kdmath">$(c_2,b) \in f \land (c_2,b) \in B \times C$</span>. Since <span class="kdmath">$f$</span> is
+one-to-one and <span class="kdmath">$(c_1,b) \in f \land (c_2,b) \in f$</span>, it follows that <span class="kdmath">$c_1 = c_2$</span>. Thus if  <span class="kdmath">$f \upharpoonleft C (c_1) =  f \upharpoonleft C (c_2)$</span>,
+then <span class="kdmath">$c_1 = c_2$</span>. Since <span class="kdmath">$c_1, c_2$</span> are arbitrary, it follows that <span class="kdmath">$f \upharpoonleft C$</span> is one-to-one.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">f \upharpoonleft C</script> is onto. Suppose <script type="math/tex">b \in B</script> is an arbitrary element. Since <script type="math/tex">f \upharpoonleft C</script> is onto, there
-must exist some element <script type="math/tex">c \in C</script> such that <script type="math/tex">f \upharpoonleft C(c) = b</script>. It follows that <script type="math/tex">(c,b) \in f</script>. Since <script type="math/tex">c \in C</script>,
-and <script type="math/tex">C \subseteq A</script>, it follows <script type="math/tex">c \in A</script>. Since <script type="math/tex">b</script> is arbitrary, it follows that for every <script type="math/tex">b \in B</script>, there exist some <script type="math/tex">c \in A</script>.
-Thus <script type="math/tex">f</script> is onto.</p>
+<p>Suppose <span class="kdmath">$f \upharpoonleft C$</span> is onto. Suppose <span class="kdmath">$b \in B$</span> is an arbitrary element. Since <span class="kdmath">$f \upharpoonleft C$</span> is onto, there
+must exist some element <span class="kdmath">$c \in C$</span> such that <span class="kdmath">$f \upharpoonleft C(c) = b$</span>. It follows that <span class="kdmath">$(c,b) \in f$</span>. Since <span class="kdmath">$c \in C$</span>,
+and <span class="kdmath">$C \subseteq A$</span>, it follows <span class="kdmath">$c \in A$</span>. Since <span class="kdmath">$b$</span> is arbitrary, it follows that for every <span class="kdmath">$b \in B$</span>, there exist some <span class="kdmath">$c \in A$</span>.
+Thus <span class="kdmath">$f$</span> is onto.</p>
 
 <p><strong>(c)</strong></p>
 
-<p><strong>Converse of (a)</strong> is: if <script type="math/tex">f \upharpoonleft C</script> is one-to-one, then <script type="math/tex">f</script> is one-to-one.</p>
+<p><strong>Converse of (a)</strong> is: if <span class="kdmath">$f \upharpoonleft C$</span> is one-to-one, then <span class="kdmath">$f$</span> is one-to-one.</p>
 
-<p>Suppose <script type="math/tex">A = \{1,2,3\}, B = \{a,b\}, C = \{1,2\}, f \upharpoonleft C = \{ (1,a), (2,b) \} , f = \{ (1,a), (2,b), (3,a) \}</script>.</p>
+<p>Suppose <span class="kdmath">$A = \{1,2,3\}, B = \{a,b\}, C = \{1,2\}, f \upharpoonleft C = \{ (1,a), (2,b) \} , f = \{ (1,a), (2,b), (3,a) \}$</span>.</p>
 
-<p>Clearly, <script type="math/tex">f \upharpoonleft C</script> is one-to-one but <script type="math/tex">f</script> is not one-to-one.</p>
+<p>Clearly, <span class="kdmath">$f \upharpoonleft C$</span> is one-to-one but <span class="kdmath">$f$</span> is not one-to-one.</p>
 
-<p><strong>Converse of (b)</strong> is: if <script type="math/tex">f</script> is onto, then <script type="math/tex">f \upharpoonleft C</script> is onto.</p>
+<p><strong>Converse of (b)</strong> is: if <span class="kdmath">$f$</span> is onto, then <span class="kdmath">$f \upharpoonleft C$</span> is onto.</p>
 
-<p>Suppose <script type="math/tex">A = \{1,2\}, B = \{a,b\}, C = \{2\}, f = \{ (1,a), (2,b) \}, f \upharpoonleft C = \{ (2,b) \}</script>.</p>
+<p>Suppose <span class="kdmath">$A = \{1,2\}, B = \{a,b\}, C = \{2\}, f = \{ (1,a), (2,b) \}, f \upharpoonleft C = \{ (2,b) \}$</span>.</p>
 
-<p>Clearly, <script type="math/tex">f</script> is onto but <script type="math/tex">f \upharpoonleft C</script> is not onto.</p>
+<p>Clearly, <span class="kdmath">$f$</span> is onto but <span class="kdmath">$f \upharpoonleft C$</span> is not onto.</p>
 
 <hr />
 
@@ -1353,55 +1352,55 @@ Thus <script type="math/tex">f</script> is onto.</p>
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">A</script> contains more than one elements and suppose <script type="math/tex">a_1, a_2 \in A</script>. Thus <script type="math/tex">f(a_1) = f(a_2) = b</script>.  Thus <script type="math/tex">f</script> is not one-to-one.</p>
+<p>Suppose <span class="kdmath">$A$</span> contains more than one elements and suppose <span class="kdmath">$a_1, a_2 \in A$</span>. Thus <span class="kdmath">$f(a_1) = f(a_2) = b$</span>.  Thus <span class="kdmath">$f$</span> is not one-to-one.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">B</script> contains more than one elements and suppose <script type="math/tex">b_1 \in B</script> and <script type="math/tex">b \ne b_1</script>. Thus there exist an element <script type="math/tex">b_1 \in B</script> such that
- it is not the image of any element in <script type="math/tex">A</script>. Thus <script type="math/tex">f</script> is onto.</p>
+<p>Suppose <span class="kdmath">$B$</span> contains more than one elements and suppose <span class="kdmath">$b_1 \in B$</span> and <span class="kdmath">$b \ne b_1$</span>. Thus there exist an element <span class="kdmath">$b_1 \in B$</span> such that
+ it is not the image of any element in <span class="kdmath">$A$</span>. Thus <span class="kdmath">$f$</span> is onto.</p>
 
 <hr />
 
 <p><strong>Soln12</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">f \cup g</script> is one-to-one. We will prove by contradiction that <script type="math/tex">Ran(f) \cap Ran(g) = \phi</script>. Suppose <script type="math/tex">Ran(f) \cap Ran(g) \ne \phi</script>. Thus
-there exist atleast one element <script type="math/tex">x</script> such that <script type="math/tex">x \in Ran(f)</script> and <script type="math/tex">x \in Ran(g)</script>. Since <script type="math/tex">x \in Ran(f)</script>, thus there exist an element <script type="math/tex">a \in A</script> such
- that <script type="math/tex">(a,x) \in f</script>. Similarly since <script type="math/tex">x \in g</script>, there exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(b,x) \in g</script>. Since <script type="math/tex">(a,x) \in f</script>,
- and <script type="math/tex">f \cup g</script> is a function, it follows <script type="math/tex">(a,x) \in f \cup g</script>. Similarly <script type="math/tex">(b,x) \in f \cup g</script>. Since <script type="math/tex">f \cup g</script> is a one-to-one function, it follows
- that <script type="math/tex">a = b</script>. But since <script type="math/tex">A</script> and <script type="math/tex">B</script> are disjoint, it is a contradiction. Thus <script type="math/tex">Ran(f) \cap Ran(g) = \phi</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$f \cup g$</span> is one-to-one. We will prove by contradiction that <span class="kdmath">$Ran(f) \cap Ran(g) = \phi$</span>. Suppose <span class="kdmath">$Ran(f) \cap Ran(g) \ne \phi$</span>. Thus
+there exist atleast one element <span class="kdmath">$x$</span> such that <span class="kdmath">$x \in Ran(f)$</span> and <span class="kdmath">$x \in Ran(g)$</span>. Since <span class="kdmath">$x \in Ran(f)$</span>, thus there exist an element <span class="kdmath">$a \in A$</span> such
+ that <span class="kdmath">$(a,x) \in f$</span>. Similarly since <span class="kdmath">$x \in g$</span>, there exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(b,x) \in g$</span>. Since <span class="kdmath">$(a,x) \in f$</span>,
+ and <span class="kdmath">$f \cup g$</span> is a function, it follows <span class="kdmath">$(a,x) \in f \cup g$</span>. Similarly <span class="kdmath">$(b,x) \in f \cup g$</span>. Since <span class="kdmath">$f \cup g$</span> is a one-to-one function, it follows
+ that <span class="kdmath">$a = b$</span>. But since <span class="kdmath">$A$</span> and <span class="kdmath">$B$</span> are disjoint, it is a contradiction. Thus <span class="kdmath">$Ran(f) \cap Ran(g) = \phi$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)We shall prove this by contra-positive. Suppose <script type="math/tex">Ran(f) \cap Ran(g) \ne \phi</script>. Thus we can suppose an element <script type="math/tex">x \in Ran(f) \cap Ran(g)</script>.
-Since <script type="math/tex">x \in Ran(f)</script>, there must exist an element <script type="math/tex">a \in A</script> such that <script type="math/tex">(a,x) \in f</script>. Similarly since <script type="math/tex">x \in Ran(g)</script>, there must exist an element <script type="math/tex">b \in B</script>
-such that <script type="math/tex">(b,x) \in g</script>. Since <script type="math/tex">A \cap B = \phi</script>, it follows that <script type="math/tex">a \ne b</script>. Since <script type="math/tex">(a,x) \in f</script>, <script type="math/tex">(a,x) \in f \cup g</script>. Since <script type="math/tex">(b,x) \in g</script>, <script type="math/tex">(b,x) \in f \cup g</script>.
-Since <script type="math/tex">(a,x) \in f \cup g</script> and <script type="math/tex">(b,x) \in f \cup g</script> and <script type="math/tex">a \ne b</script>, it follows that <script type="math/tex">f \cup g</script> is not one-to-one. Thus if <script type="math/tex">Ran(f) \cap Ran(g) = \phi</script>, then 
-<script type="math/tex">f \cup g</script> is one-to-one.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)We shall prove this by contra-positive. Suppose <span class="kdmath">$Ran(f) \cap Ran(g) \ne \phi$</span>. Thus we can suppose an element <span class="kdmath">$x \in Ran(f) \cap Ran(g)$</span>.
+Since <span class="kdmath">$x \in Ran(f)$</span>, there must exist an element <span class="kdmath">$a \in A$</span> such that <span class="kdmath">$(a,x) \in f$</span>. Similarly since <span class="kdmath">$x \in Ran(g)$</span>, there must exist an element <span class="kdmath">$b \in B$</span>
+such that <span class="kdmath">$(b,x) \in g$</span>. Since <span class="kdmath">$A \cap B = \phi$</span>, it follows that <span class="kdmath">$a \ne b$</span>. Since <span class="kdmath">$(a,x) \in f$</span>, <span class="kdmath">$(a,x) \in f \cup g$</span>. Since <span class="kdmath">$(b,x) \in g$</span>, <span class="kdmath">$(b,x) \in f \cup g$</span>.
+Since <span class="kdmath">$(a,x) \in f \cup g$</span> and <span class="kdmath">$(b,x) \in f \cup g$</span> and <span class="kdmath">$a \ne b$</span>, it follows that <span class="kdmath">$f \cup g$</span> is not one-to-one. Thus if <span class="kdmath">$Ran(f) \cap Ran(g) = \phi$</span>, then 
+<span class="kdmath">$f \cup g$</span> is one-to-one.</p>
 
 <hr />
 
 <p><strong>Soln13</strong></p>
 
-<p>To prove <script type="math/tex">R : A \to B</script>, we need to prove two things:</p>
+<p>To prove <span class="kdmath">$R : A \to B$</span>, we need to prove two things:</p>
 
 <ul>
-  <li><script type="math/tex">\forall a \in A \exists b \in B((a,b) \in R)</script>.</li>
-  <li>if <script type="math/tex">(a,b_1) \in R</script> and <script type="math/tex">(a,b_2) \in R</script>, then <script type="math/tex">b_1 = b_2</script>.</li>
+  <li><span class="kdmath">$\forall a \in A \exists b \in B((a,b) \in R)$</span>.</li>
+  <li>if <span class="kdmath">$(a,b_1) \in R$</span> and <span class="kdmath">$(a,b_2) \in R$</span>, then <span class="kdmath">$b_1 = b_2$</span>.</li>
 </ul>
 
-<p><em>Proof for:</em> <script type="math/tex">\forall a \in A \exists b \in B((a,b) \in R)</script>.</p>
+<p><em>Proof for:</em> <span class="kdmath">$\forall a \in A \exists b \in B((a,b) \in R)$</span>.</p>
 
-<p>Suppose <script type="math/tex">a \in A</script>. Since <script type="math/tex">S \circ R</script> is a function from <script type="math/tex">A</script> to <script type="math/tex">C</script>, there must exist an element <script type="math/tex">c \in C</script> such that <script type="math/tex">(a,c) \in S \circ R</script>.
-Since <script type="math/tex">(a,c) \in S \circ R</script>, it follows that there exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R</script> and <script type="math/tex">(b,c) \in S</script>. Thus if <script type="math/tex">a \in A</script> then
-there exist an element <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in R</script>. Thus <script type="math/tex">\forall a \in A \exists b \in B((a,b) \in R)</script>.</p>
+<p>Suppose <span class="kdmath">$a \in A$</span>. Since <span class="kdmath">$S \circ R$</span> is a function from <span class="kdmath">$A$</span> to <span class="kdmath">$C$</span>, there must exist an element <span class="kdmath">$c \in C$</span> such that <span class="kdmath">$(a,c) \in S \circ R$</span>.
+Since <span class="kdmath">$(a,c) \in S \circ R$</span>, it follows that there exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R$</span> and <span class="kdmath">$(b,c) \in S$</span>. Thus if <span class="kdmath">$a \in A$</span> then
+there exist an element <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in R$</span>. Thus <span class="kdmath">$\forall a \in A \exists b \in B((a,b) \in R)$</span>.</p>
 
-<p><em>Proof for</em>: if <script type="math/tex">(a,b_1) \in R</script> and <script type="math/tex">(a,b_2) \in R</script>, then <script type="math/tex">b_1 = b_2</script>.</p>
+<p><em>Proof for</em>: if <span class="kdmath">$(a,b_1) \in R$</span> and <span class="kdmath">$(a,b_2) \in R$</span>, then <span class="kdmath">$b_1 = b_2$</span>.</p>
 
-<p>Suppose <script type="math/tex">a \in A</script> and <script type="math/tex">b_1, b_2 \in B</script> such that <script type="math/tex">(a,b_1) \in R</script> and <script type="math/tex">(a,b_2) \in R</script>. Since <script type="math/tex">S</script> is a function, there exist <script type="math/tex">c_1, c_2 \in C</script> such 
-that <script type="math/tex">(b_1,c_1) \in S</script> and <script type="math/tex">(b_2,c_2) \in S</script>. Since <script type="math/tex">(a,b_1) \in R</script> and <script type="math/tex">(b_1,c_1) \in S</script>, it follows <script type="math/tex">(a,c_1) \in S \circ R</script>. Similarly 
-since <script type="math/tex">(a,b_2) \in R</script> and <script type="math/tex">(b_2,c_2) \in S</script>, it follows <script type="math/tex">(a,c_2) \in S \circ R</script>. Since <script type="math/tex">S \circ R</script> is a function, it follows that <script type="math/tex">c_1 = c_2</script>. Since
-<script type="math/tex">(b_1,c_1) \in S</script> and <script type="math/tex">(b_2,c_2) \in S</script> and <script type="math/tex">c_1 = c_2</script> and <script type="math/tex">S</script> is a one-to-one function, it follows that <script type="math/tex">b_1 = b_2</script>. Thus 
-if <script type="math/tex">(a,b_1) \in R</script> and <script type="math/tex">(a,b_2) \in R</script>, then <script type="math/tex">b_1 = b_2</script>.</p>
+<p>Suppose <span class="kdmath">$a \in A$</span> and <span class="kdmath">$b_1, b_2 \in B$</span> such that <span class="kdmath">$(a,b_1) \in R$</span> and <span class="kdmath">$(a,b_2) \in R$</span>. Since <span class="kdmath">$S$</span> is a function, there exist <span class="kdmath">$c_1, c_2 \in C$</span> such 
+that <span class="kdmath">$(b_1,c_1) \in S$</span> and <span class="kdmath">$(b_2,c_2) \in S$</span>. Since <span class="kdmath">$(a,b_1) \in R$</span> and <span class="kdmath">$(b_1,c_1) \in S$</span>, it follows <span class="kdmath">$(a,c_1) \in S \circ R$</span>. Similarly 
+since <span class="kdmath">$(a,b_2) \in R$</span> and <span class="kdmath">$(b_2,c_2) \in S$</span>, it follows <span class="kdmath">$(a,c_2) \in S \circ R$</span>. Since <span class="kdmath">$S \circ R$</span> is a function, it follows that <span class="kdmath">$c_1 = c_2$</span>. Since
+<span class="kdmath">$(b_1,c_1) \in S$</span> and <span class="kdmath">$(b_2,c_2) \in S$</span> and <span class="kdmath">$c_1 = c_2$</span> and <span class="kdmath">$S$</span> is a one-to-one function, it follows that <span class="kdmath">$b_1 = b_2$</span>. Thus 
+if <span class="kdmath">$(a,b_1) \in R$</span> and <span class="kdmath">$(a,b_2) \in R$</span>, then <span class="kdmath">$b_1 = b_2$</span>.</p>
 
-<p>Thus <script type="math/tex">R</script> is a function from <script type="math/tex">A</script> to <script type="math/tex">B</script>.</p>
+<p>Thus <span class="kdmath">$R$</span> is a function from <span class="kdmath">$A$</span> to <span class="kdmath">$B$</span>.</p>
 
 <hr />
 
@@ -1409,16 +1408,16 @@ if <script type="math/tex">(a,b_1) \in R</script> and <script type="math/tex">(a
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is reflexive and <script type="math/tex">f</script> is onto. Suppose <script type="math/tex">x</script> is an arbitrary element in <script type="math/tex">B</script>. Since <script type="math/tex">f</script> is onto function on <script type="math/tex">A \to B</script>, there exist an element <script type="math/tex">u \in A</script>
-such that <script type="math/tex">f(u) = x</script>. Since <script type="math/tex">R</script> is reflexive and <script type="math/tex">u \in A</script>, it follows that <script type="math/tex">(u,u) \in R</script>. Thus <script type="math/tex">f(u) = x \land f(u) = x \land (u,u) \in R</script>. Thus <script type="math/tex">(x,x) \in S</script>.
-Since <script type="math/tex">x</script> is arbitrary, it follows that <script type="math/tex">S</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$R$</span> is reflexive and <span class="kdmath">$f$</span> is onto. Suppose <span class="kdmath">$x$</span> is an arbitrary element in <span class="kdmath">$B$</span>. Since <span class="kdmath">$f$</span> is onto function on <span class="kdmath">$A \to B$</span>, there exist an element <span class="kdmath">$u \in A$</span>
+such that <span class="kdmath">$f(u) = x$</span>. Since <span class="kdmath">$R$</span> is reflexive and <span class="kdmath">$u \in A$</span>, it follows that <span class="kdmath">$(u,u) \in R$</span>. Thus <span class="kdmath">$f(u) = x \land f(u) = x \land (u,u) \in R$</span>. Thus <span class="kdmath">$(x,x) \in S$</span>.
+Since <span class="kdmath">$x$</span> is arbitrary, it follows that <span class="kdmath">$S$</span> is reflexive.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">R</script> is transitive and <script type="math/tex">f</script> is one-to-one. Suppose <script type="math/tex">(x,y) \in S</script> and <script type="math/tex">(y,z) \in S</script>. Thus <script type="math/tex">(u,v_1) \in R</script> and <script type="math/tex">(v_2,w) \in R</script> such that
-<script type="math/tex">f(u) = x</script> and <script type="math/tex">f(v_1) = y</script> and <script type="math/tex">f(v_2) = y</script> and <script type="math/tex">f(w) = z</script>. Since <script type="math/tex">f</script> is one-to-one, it follows that <script type="math/tex">v_1 = v_2</script> or lets say <script type="math/tex">v = v_1 = v_2</script>. Thus 
-<script type="math/tex">(u,v) \in R</script> and <script type="math/tex">(v,w) \in R</script>. Since <script type="math/tex">R</script> is transitive, it follows <script type="math/tex">(u,w) \in R</script>. Since <script type="math/tex">f(u) = x</script> and <script type="math/tex">f(w) = z</script> and <script type="math/tex">(u,w) \in R</script>, it follows that
-<script type="math/tex">(x,z) \in S</script>. Thus <script type="math/tex">S</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$R$</span> is transitive and <span class="kdmath">$f$</span> is one-to-one. Suppose <span class="kdmath">$(x,y) \in S$</span> and <span class="kdmath">$(y,z) \in S$</span>. Thus <span class="kdmath">$(u,v_1) \in R$</span> and <span class="kdmath">$(v_2,w) \in R$</span> such that
+<span class="kdmath">$f(u) = x$</span> and <span class="kdmath">$f(v_1) = y$</span> and <span class="kdmath">$f(v_2) = y$</span> and <span class="kdmath">$f(w) = z$</span>. Since <span class="kdmath">$f$</span> is one-to-one, it follows that <span class="kdmath">$v_1 = v_2$</span> or lets say <span class="kdmath">$v = v_1 = v_2$</span>. Thus 
+<span class="kdmath">$(u,v) \in R$</span> and <span class="kdmath">$(v,w) \in R$</span>. Since <span class="kdmath">$R$</span> is transitive, it follows <span class="kdmath">$(u,w) \in R$</span>. Since <span class="kdmath">$f(u) = x$</span> and <span class="kdmath">$f(w) = z$</span> and <span class="kdmath">$(u,w) \in R$</span>, it follows that
+<span class="kdmath">$(x,z) \in S$</span>. Thus <span class="kdmath">$S$</span> is transitive.</p>
 
 <hr />
 
@@ -1426,37 +1425,37 @@ Since <script type="math/tex">x</script> is arbitrary, it follows that <script t
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">[x]_R \in A/R</script>. Since <script type="math/tex">R</script> is an equivalence relation, we know that <script type="math/tex">[x]_R</script> is an equivalence class with respect to <script type="math/tex">R</script>. 
-Thus by definition of equivalence class as <script type="math/tex">[x]_R</script> is an equivalence class, it follows <script type="math/tex">x \in A</script>. Thus for every element <script type="math/tex">[x]_R \in A/R</script>,
-<script type="math/tex">x \in A</script>. Thus <script type="math/tex">g</script> is onto.</p>
+<p>Suppose <span class="kdmath">$[x]_R \in A/R$</span>. Since <span class="kdmath">$R$</span> is an equivalence relation, we know that <span class="kdmath">$[x]_R$</span> is an equivalence class with respect to <span class="kdmath">$R$</span>. 
+Thus by definition of equivalence class as <span class="kdmath">$[x]_R$</span> is an equivalence class, it follows <span class="kdmath">$x \in A$</span>. Thus for every element <span class="kdmath">$[x]_R \in A/R$</span>,
+<span class="kdmath">$x \in A$</span>. Thus <span class="kdmath">$g$</span> is onto.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">g</script> is one-to-one.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$g$</span> is one-to-one.</p>
 
-<p>Since <script type="math/tex">R</script> is equivalence relation, it follows that <script type="math/tex">i_A \subseteq R</script>.</p>
+<p>Since <span class="kdmath">$R$</span> is equivalence relation, it follows that <span class="kdmath">$i_A \subseteq R$</span>.</p>
 
-<p>Now to prove <script type="math/tex">R \subseteq i_A</script>. Suppose <script type="math/tex">(x,y) \in R</script>. Since <script type="math/tex">R</script> is equivalence relation, <script type="math/tex">[x]_R = [y]_R</script>. Also since <script type="math/tex">g</script> is a function
-on <script type="math/tex">A \to A/R</script>, it follows <script type="math/tex">(x,[x]_R) \in g</script> and <script type="math/tex">(y,[y]_R) \in g</script>. Since <script type="math/tex">[x]_R = [y]_R</script>, and since <script type="math/tex">g</script> is one-to-one, it follows <script type="math/tex">x = y</script>.
-Thus <script type="math/tex">(x,y) \in i_A</script>. Since <script type="math/tex">(x,y)</script> is arbitrary, it follows that <script type="math/tex">R \subseteq i_A</script>.</p>
+<p>Now to prove <span class="kdmath">$R \subseteq i_A$</span>. Suppose <span class="kdmath">$(x,y) \in R$</span>. Since <span class="kdmath">$R$</span> is equivalence relation, <span class="kdmath">$[x]_R = [y]_R$</span>. Also since <span class="kdmath">$g$</span> is a function
+on <span class="kdmath">$A \to A/R$</span>, it follows <span class="kdmath">$(x,[x]_R) \in g$</span> and <span class="kdmath">$(y,[y]_R) \in g$</span>. Since <span class="kdmath">$[x]_R = [y]_R$</span>, and since <span class="kdmath">$g$</span> is one-to-one, it follows <span class="kdmath">$x = y$</span>.
+Thus <span class="kdmath">$(x,y) \in i_A$</span>. Since <span class="kdmath">$(x,y)$</span> is arbitrary, it follows that <span class="kdmath">$R \subseteq i_A$</span>.</p>
 
-<p>Since <script type="math/tex">i_A \subseteq R</script> and <script type="math/tex">R \subseteq i_A</script>, it follows <script type="math/tex">R = i_A</script>.</p>
+<p>Since <span class="kdmath">$i_A \subseteq R$</span> and <span class="kdmath">$R \subseteq i_A$</span>, it follows <span class="kdmath">$R = i_A$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">R = i_A</script>. Suppose <script type="math/tex">(x,X) \in g</script> and suppose <script type="math/tex">(y,X) \in g</script>. Since <script type="math/tex">X</script> is an equivalence class and <script type="math/tex">g(x) = [x]_R</script>,
-  it follows that <script type="math/tex">X = [x]_R</script>. Similarly <script type="math/tex">X = [y]_R</script>. Thus <script type="math/tex">x \in X</script> and <script type="math/tex">y \in X</script>. Since <script type="math/tex">X</script> is equivalence class, it follows <script type="math/tex">xRy</script>.
-  Now since <script type="math/tex">R = i_A</script>, it follows that <script type="math/tex">x = y</script>. Thus <script type="math/tex">g</script> is one-to-one.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$R = i_A$</span>. Suppose <span class="kdmath">$(x,X) \in g$</span> and suppose <span class="kdmath">$(y,X) \in g$</span>. Since <span class="kdmath">$X$</span> is an equivalence class and <span class="kdmath">$g(x) = [x]_R$</span>,
+  it follows that <span class="kdmath">$X = [x]_R$</span>. Similarly <span class="kdmath">$X = [y]_R$</span>. Thus <span class="kdmath">$x \in X$</span> and <span class="kdmath">$y \in X$</span>. Since <span class="kdmath">$X$</span> is equivalence class, it follows <span class="kdmath">$xRy$</span>.
+  Now since <span class="kdmath">$R = i_A$</span>, it follows that <span class="kdmath">$x = y$</span>. Thus <span class="kdmath">$g$</span> is one-to-one.</p>
 
 <hr />
 
 <p><strong>Soln16</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">h</script> is one-to-one. Suppose <script type="math/tex">x,y \in A</script> such that <script type="math/tex">f(x) = f(y)</script>. Since <script type="math/tex">x \in A</script>, then by the definition of <script type="math/tex">h</script>,
-<script type="math/tex">h([x]_R) = f(x)</script>. Similarly <script type="math/tex">h([y]_R) = f(y)</script>. Since <script type="math/tex">h</script> is one-to-one and <script type="math/tex">f(x) = f(y)</script>, it follows that <script type="math/tex">[x]_R = [y]_R</script>. Thus <script type="math/tex">x \in [y]_R</script>, 
-or <script type="math/tex">xRy</script>. Since <script type="math/tex">x,y</script> are arbitrary, it follows that <script type="math/tex">\forall x \in A \forall y \in A (f(x) = f(y) \to xRy)</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$h$</span> is one-to-one. Suppose <span class="kdmath">$x,y \in A$</span> such that <span class="kdmath">$f(x) = f(y)$</span>. Since <span class="kdmath">$x \in A$</span>, then by the definition of <span class="kdmath">$h$</span>,
+<span class="kdmath">$h([x]_R) = f(x)$</span>. Similarly <span class="kdmath">$h([y]_R) = f(y)$</span>. Since <span class="kdmath">$h$</span> is one-to-one and <span class="kdmath">$f(x) = f(y)$</span>, it follows that <span class="kdmath">$[x]_R = [y]_R$</span>. Thus <span class="kdmath">$x \in [y]_R$</span>, 
+or <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$x,y$</span> are arbitrary, it follows that <span class="kdmath">$\forall x \in A \forall y \in A (f(x) = f(y) \to xRy)$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">\forall x \in A \forall y \in A (f(x) = f(y) \to xRy)</script>. Suppose <script type="math/tex">[x]_R, [y]_R \in A/R</script> such that <script type="math/tex">h([x]_R) = h([y]_R)</script>. 
- Since <script type="math/tex">h([x]_R) = f(x)</script> and <script type="math/tex">h([y]_R) = f(y)</script>, it follows that <script type="math/tex">f(x) = f(y)</script>. Since <script type="math/tex">\forall x \in A \forall y \in A (f(x) = f(y) \to xRy)</script>, it 
- follows that <script type="math/tex">xRy</script>. Since <script type="math/tex">R</script> is an equivalence relation and <script type="math/tex">xRy</script>, it follows that <script type="math/tex">[x]_R = [y]_R</script>. Thus <script type="math/tex">h</script>$ is one-to-one.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$\forall x \in A \forall y \in A (f(x) = f(y) \to xRy)$</span>. Suppose <span class="kdmath">$[x]_R, [y]_R \in A/R$</span> such that <span class="kdmath">$h([x]_R) = h([y]_R)$</span>. 
+ Since <span class="kdmath">$h([x]_R) = f(x)$</span> and <span class="kdmath">$h([y]_R) = f(y)$</span>, it follows that <span class="kdmath">$f(x) = f(y)$</span>. Since <span class="kdmath">$\forall x \in A \forall y \in A (f(x) = f(y) \to xRy)$</span>, it 
+ follows that <span class="kdmath">$xRy$</span>. Since <span class="kdmath">$R$</span> is an equivalence relation and <span class="kdmath">$xRy$</span>, it follows that <span class="kdmath">$[x]_R = [y]_R$</span>. Thus <span class="kdmath">$h$</span>$ is one-to-one.</p>
 
 <hr />
 
@@ -1464,44 +1463,44 @@ or <script type="math/tex">xRy</script>. Since <script type="math/tex">x,y</scri
 
 <p><strong>(a)</strong></p>
 
-<p>(<script type="math/tex">\to</script>)Suppose <script type="math/tex">(b,c) \in g</script>. Since <script type="math/tex">f</script> is onto, there exist an element <script type="math/tex">a \in A</script> such that <script type="math/tex">(a,b) \in f</script>. Since <script type="math/tex">(a,b) \in f \land (b,c) \in g</script>,
-it follows that <script type="math/tex">(a,c) \in g \circ f</script>. Since <script type="math/tex">g \circ f = h \circ f</script>, it follows <script type="math/tex">(a,c) \in h \circ f</script>. Thus there exist an element <script type="math/tex">b' \in B</script> such that
-<script type="math/tex">(a,b') \in f</script> and <script type="math/tex">(b',c) \in h</script>. Since <script type="math/tex">f</script> is a function, <script type="math/tex">f(a)</script> is a unique element, it follows that <script type="math/tex">b' = b</script>. Thus <script type="math/tex">(b,c) \in h</script>. Thus <script type="math/tex">g \subseteq h</script>.</p>
+<p>(<span class="kdmath">$\to$</span>)Suppose <span class="kdmath">$(b,c) \in g$</span>. Since <span class="kdmath">$f$</span> is onto, there exist an element <span class="kdmath">$a \in A$</span> such that <span class="kdmath">$(a,b) \in f$</span>. Since <span class="kdmath">$(a,b) \in f \land (b,c) \in g$</span>,
+it follows that <span class="kdmath">$(a,c) \in g \circ f$</span>. Since <span class="kdmath">$g \circ f = h \circ f$</span>, it follows <span class="kdmath">$(a,c) \in h \circ f$</span>. Thus there exist an element <span class="kdmath">$b' \in B$</span> such that
+<span class="kdmath">$(a,b') \in f$</span> and <span class="kdmath">$(b',c) \in h$</span>. Since <span class="kdmath">$f$</span> is a function, <span class="kdmath">$f(a)$</span> is a unique element, it follows that <span class="kdmath">$b' = b$</span>. Thus <span class="kdmath">$(b,c) \in h$</span>. Thus <span class="kdmath">$g \subseteq h$</span>.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>)Suppose <script type="math/tex">(b,c) \in h</script>. Since <script type="math/tex">f</script> is onto, there exist an element <script type="math/tex">a \in A</script> such that <script type="math/tex">(a,b) \in f</script>. Since <script type="math/tex">(a,b) \in f \land (b,c) \in h</script>,
-it follows that <script type="math/tex">(a,c) \in h \circ f</script>. Since <script type="math/tex">g \circ f = h \circ f</script>, it follows <script type="math/tex">(a,c) \in g \circ f</script>. Thus there exist an element <script type="math/tex">b' \in B</script> such that
-<script type="math/tex">(a,b') \in f</script> and <script type="math/tex">(b',c) \in g</script>. Since <script type="math/tex">f</script> is a function, <script type="math/tex">f(a)</script> is a unique element, it follows that <script type="math/tex">b' = b</script>. Thus <script type="math/tex">(b,c) \in g</script>. Thus <script type="math/tex">h \subseteq g</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>)Suppose <span class="kdmath">$(b,c) \in h$</span>. Since <span class="kdmath">$f$</span> is onto, there exist an element <span class="kdmath">$a \in A$</span> such that <span class="kdmath">$(a,b) \in f$</span>. Since <span class="kdmath">$(a,b) \in f \land (b,c) \in h$</span>,
+it follows that <span class="kdmath">$(a,c) \in h \circ f$</span>. Since <span class="kdmath">$g \circ f = h \circ f$</span>, it follows <span class="kdmath">$(a,c) \in g \circ f$</span>. Thus there exist an element <span class="kdmath">$b' \in B$</span> such that
+<span class="kdmath">$(a,b') \in f$</span> and <span class="kdmath">$(b',c) \in g$</span>. Since <span class="kdmath">$f$</span> is a function, <span class="kdmath">$f(a)$</span> is a unique element, it follows that <span class="kdmath">$b' = b$</span>. Thus <span class="kdmath">$(b,c) \in g$</span>. Thus <span class="kdmath">$h \subseteq g$</span>.</p>
 
-<p>Since <script type="math/tex">g \subseteq h</script> and <script type="math/tex">h \subseteq g</script>, it follows that <script type="math/tex">g = f</script>.</p>
+<p>Since <span class="kdmath">$g \subseteq h$</span> and <span class="kdmath">$h \subseteq g$</span>, it follows that <span class="kdmath">$g = f$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>I was not able to do it. Using the solution directly from the book.</p>
 
-<p>Suppose <script type="math/tex">c_1, c_2 \in C</script> such that <script type="math/tex">c_1 \ne c_2</script>. Suppose <script type="math/tex">b ∈ B</script>. Suppose <script type="math/tex">g</script> and <script type="math/tex">h</script> are functions from <script type="math/tex">B \to C</script> such that <script type="math/tex">\forall x \in B(g(x) = c_1)</script>,<br />
- <script type="math/tex">\forall x \in B \setminus \{b\}(h(x) = c_1)</script>, and <script type="math/tex">h(b) = c_2</script> . Then <script type="math/tex">g \ne h</script>, so by assumption(by contrapositive) <script type="math/tex">g \circ f \ne h \circ f</script>, and therefore we can choose some 
-<script type="math/tex">a \in A</script> such that <script type="math/tex">g(f(a)) \ne h(f(a))</script>. But by the way <script type="math/tex">g</script> and <script type="math/tex">h</script> were defined, the only <script type="math/tex">x \in B</script> for which <script type="math/tex">g(x) \ne h(x)</script> is <script type="math/tex">x = b</script>, so it follows that 
-<script type="math/tex">f(a) = b</script>. Since <script type="math/tex">b</script> was arbitrary, it follows that <script type="math/tex">f</script> is onto.</p>
+<p>Suppose <span class="kdmath">$c_1, c_2 \in C$</span> such that <span class="kdmath">$c_1 \ne c_2$</span>. Suppose <span class="kdmath">$b ∈ B$</span>. Suppose <span class="kdmath">$g$</span> and <span class="kdmath">$h$</span> are functions from <span class="kdmath">$B \to C$</span> such that <span class="kdmath">$\forall x \in B(g(x) = c_1)$</span>,<br />
+ <span class="kdmath">$\forall x \in B \setminus \{b\}(h(x) = c_1)$</span>, and <span class="kdmath">$h(b) = c_2$</span> . Then <span class="kdmath">$g \ne h$</span>, so by assumption(by contrapositive) <span class="kdmath">$g \circ f \ne h \circ f$</span>, and therefore we can choose some 
+<span class="kdmath">$a \in A$</span> such that <span class="kdmath">$g(f(a)) \ne h(f(a))$</span>. But by the way <span class="kdmath">$g$</span> and <span class="kdmath">$h$</span> were defined, the only <span class="kdmath">$x \in B$</span> for which <span class="kdmath">$g(x) \ne h(x)$</span> is <span class="kdmath">$x = b$</span>, so it follows that 
+<span class="kdmath">$f(a) = b$</span>. Since <span class="kdmath">$b$</span> was arbitrary, it follows that <span class="kdmath">$f$</span> is onto.</p>
 
 <hr />
 
 <p><strong>Soln18</strong></p>
 
-<p><strong>(a)</strong> Suppose <script type="math/tex">a \in A</script> and <script type="math/tex">b \in B</script> such that <script type="math/tex">(a,b) \in g</script>. Since <script type="math/tex">f</script> is a function frm <script type="math/tex">B</script> to <script type="math/tex">C</script> and <script type="math/tex">b \in B</script>, there exist 
- an element say <script type="math/tex">c \in C</script> such that <script type="math/tex">(b,c) \in f</script>. Since <script type="math/tex">(a,b) \in g</script> and <script type="math/tex">(b,c) \in f</script>, it follows that <script type="math/tex">(a,c) \in f \circ g</script>. Since
- <script type="math/tex">f \circ g = f \circ h</script>, it follows <script type="math/tex">(a,c) \in f \circ h</script>. Thus there exist element <script type="math/tex">b' \in B</script> such that <script type="math/tex">(a,b') \in h</script> and <script type="math/tex">(b',c) \in f</script>.
-Since <script type="math/tex">(b',c) \in f</script> and <script type="math/tex">(b,c) \in f</script> and <script type="math/tex">f</script> is one-to-one, it follows that <script type="math/tex">b' = b</script>. Sicne <script type="math/tex">b = b'</script> and <script type="math/tex">(a,b') \in h</script>, it follows <script type="math/tex">(a,b) \in h</script>.
-Since <script type="math/tex">(a,b)</script> is arbitrary, it follows that <script type="math/tex">g \subseteq f</script>.</p>
+<p><strong>(a)</strong> Suppose <span class="kdmath">$a \in A$</span> and <span class="kdmath">$b \in B$</span> such that <span class="kdmath">$(a,b) \in g$</span>. Since <span class="kdmath">$f$</span> is a function frm <span class="kdmath">$B$</span> to <span class="kdmath">$C$</span> and <span class="kdmath">$b \in B$</span>, there exist 
+ an element say <span class="kdmath">$c \in C$</span> such that <span class="kdmath">$(b,c) \in f$</span>. Since <span class="kdmath">$(a,b) \in g$</span> and <span class="kdmath">$(b,c) \in f$</span>, it follows that <span class="kdmath">$(a,c) \in f \circ g$</span>. Since
+ <span class="kdmath">$f \circ g = f \circ h$</span>, it follows <span class="kdmath">$(a,c) \in f \circ h$</span>. Thus there exist element <span class="kdmath">$b' \in B$</span> such that <span class="kdmath">$(a,b') \in h$</span> and <span class="kdmath">$(b',c) \in f$</span>.
+Since <span class="kdmath">$(b',c) \in f$</span> and <span class="kdmath">$(b,c) \in f$</span> and <span class="kdmath">$f$</span> is one-to-one, it follows that <span class="kdmath">$b' = b$</span>. Sicne <span class="kdmath">$b = b'$</span> and <span class="kdmath">$(a,b') \in h$</span>, it follows <span class="kdmath">$(a,b) \in h$</span>.
+Since <span class="kdmath">$(a,b)$</span> is arbitrary, it follows that <span class="kdmath">$g \subseteq f$</span>.</p>
 
-<p>Similarly it can be seen that <script type="math/tex">f \subseteq g</script>.</p>
+<p>Similarly it can be seen that <span class="kdmath">$f \subseteq g$</span>.</p>
 
-<p>Thus we have <script type="math/tex">f \subseteq g</script> and <script type="math/tex">g \subseteq f</script>, it follows that <script type="math/tex">f = g</script>.</p>
+<p>Thus we have <span class="kdmath">$f \subseteq g$</span> and <span class="kdmath">$g \subseteq f$</span>, it follows that <span class="kdmath">$f = g$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Suppose <script type="math/tex">b_1, b_2 \in B</script> such that <script type="math/tex">f(b_1) = f(b_2)</script>. Suppose <script type="math/tex">g</script> and <script type="math/tex">h</script> are functions from <script type="math/tex">A \to B</script> such that <script type="math/tex">\forall x \in A(g(x) = b_1)</script>,<br />
-<script type="math/tex">\forall x \in A(h(x) = b_2)</script>. Thus <script type="math/tex">f \circ g (x) = f(g(x)) = f(b_1) = f(b_2) = f(h(x)) = f \circ h(x)</script>. Since it is given that if <script type="math/tex">f \circ g = g \circ f</script>,
- then <script type="math/tex">g = h</script>, it follows that <script type="math/tex">g(x) = h(x)</script>. Thus <script type="math/tex">b_1 = b_2</script>. Thus <script type="math/tex">f</script> is one-to-one.</p>
+<p>Suppose <span class="kdmath">$b_1, b_2 \in B$</span> such that <span class="kdmath">$f(b_1) = f(b_2)$</span>. Suppose <span class="kdmath">$g$</span> and <span class="kdmath">$h$</span> are functions from <span class="kdmath">$A \to B$</span> such that <span class="kdmath">$\forall x \in A(g(x) = b_1)$</span>,<br />
+<span class="kdmath">$\forall x \in A(h(x) = b_2)$</span>. Thus <span class="kdmath">$f \circ g (x) = f(g(x)) = f(b_1) = f(b_2) = f(h(x)) = f \circ h(x)$</span>. Since it is given that if <span class="kdmath">$f \circ g = g \circ f$</span>,
+ then <span class="kdmath">$g = h$</span>, it follows that <span class="kdmath">$g(x) = h(x)$</span>. Thus <span class="kdmath">$b_1 = b_2$</span>. Thus <span class="kdmath">$f$</span> is one-to-one.</p>
 
 <hr />
 
@@ -1509,103 +1508,103 @@ Since <script type="math/tex">(a,b)</script> is arbitrary, it follows that <scri
 
 <p><strong>(a)</strong></p>
 
-<p>Proof for <script type="math/tex">hRf</script>:</p>
+<p>Proof for <span class="kdmath">$hRf$</span>:</p>
 
-<p>Suppose <script type="math/tex">t(x) = x^2 - 2x + 2</script> is a function on <script type="math/tex">\mathbb R \to \mathbb R</script>. Thus <script type="math/tex">t \circ f(x) = t(f(x)) = (x^2 + 1)^2 - 2(x^2 + 1) + 2</script>.
-Thus we have <script type="math/tex">t \circ f(x) = x^4 + 1 + 2x^2 - 2x^2 - 2 + 2 = x^4 + 1 = h(x)</script>.
-Thus there exist a function <script type="math/tex">t(x) = x^2 - 2x + 2</script> such that <script type="math/tex">h = t \circ f</script>. Thus <script type="math/tex">hRf</script>.</p>
+<p>Suppose <span class="kdmath">$t(x) = x^2 - 2x + 2$</span> is a function on <span class="kdmath">$\mathbb R \to \mathbb R$</span>. Thus <span class="kdmath">$t \circ f(x) = t(f(x)) = (x^2 + 1)^2 - 2(x^2 + 1) + 2$</span>.
+Thus we have <span class="kdmath">$t \circ f(x) = x^4 + 1 + 2x^2 - 2x^2 - 2 + 2 = x^4 + 1 = h(x)$</span>.
+Thus there exist a function <span class="kdmath">$t(x) = x^2 - 2x + 2$</span> such that <span class="kdmath">$h = t \circ f$</span>. Thus <span class="kdmath">$hRf$</span>.</p>
 
-<p>Proof for <script type="math/tex">\lnot gRf</script>:</p>
+<p>Proof for <span class="kdmath">$\lnot gRf$</span>:</p>
 
-<p>We can prove this by contradiction. Suppose that <script type="math/tex">t(x): \mathbb R \to \mathbb R</script> such that <script type="math/tex">t \circ f = g</script>. Thus <script type="math/tex">t(f(x)) = g(x)</script>. Thus for
-<script type="math/tex">x = x_0 = -1</script>, <script type="math/tex">g(x_0) = 0</script>. Since <script type="math/tex">g(x) = t(f(x))</script>, it follows that <script type="math/tex">f(x) = x_0 = -1</script>. Since <script type="math/tex">f(x) = x^2 + 1</script>, it follows that 
-<script type="math/tex">\forall x \in \mathbb R(f(x) \ge 1)</script>. Thus there is no value of <script type="math/tex">x \in \mathbb R</script> such that <script type="math/tex">f(x) = -1</script>. Thus <script type="math/tex">t(f(x)) \ne g(x)</script> at <script type="math/tex">x = x_0 = -1</script>.
-This contradicts that <script type="math/tex">t \circ f</script> is a function on <script type="math/tex">\mathbb R \to \mathbb R</script>. Thus <script type="math/tex">(g,f) \notin R</script>.</p>
+<p>We can prove this by contradiction. Suppose that <span class="kdmath">$t(x): \mathbb R \to \mathbb R$</span> such that <span class="kdmath">$t \circ f = g$</span>. Thus <span class="kdmath">$t(f(x)) = g(x)$</span>. Thus for
+<span class="kdmath">$x = x_0 = -1$</span>, <span class="kdmath">$g(x_0) = 0$</span>. Since <span class="kdmath">$g(x) = t(f(x))$</span>, it follows that <span class="kdmath">$f(x) = x_0 = -1$</span>. Since <span class="kdmath">$f(x) = x^2 + 1$</span>, it follows that 
+<span class="kdmath">$\forall x \in \mathbb R(f(x) \ge 1)$</span>. Thus there is no value of <span class="kdmath">$x \in \mathbb R$</span> such that <span class="kdmath">$f(x) = -1$</span>. Thus <span class="kdmath">$t(f(x)) \ne g(x)$</span> at <span class="kdmath">$x = x_0 = -1$</span>.
+This contradicts that <span class="kdmath">$t \circ f$</span> is a function on <span class="kdmath">$\mathbb R \to \mathbb R$</span>. Thus <span class="kdmath">$(g,f) \notin R$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>A relation is preorder if it is reflexive and transitive.</p>
 
-<p>Proof of <script type="math/tex">R</script> is reflexive:</p>
+<p>Proof of <span class="kdmath">$R$</span> is reflexive:</p>
 
-<p>Suppose <script type="math/tex">f \in \mathcal F</script>. Consider <script type="math/tex">i_{\mathbb R} \circ f(x) = i_{\mathbb R}(f(x)) = f(x)</script>. Thus there exist a function <script type="math/tex">i_{\mathbb R}</script> such
-that <script type="math/tex">i_{\mathbb R} \circ f = f</script>. Thus <script type="math/tex">(f,f) \in R</script>. Since <script type="math/tex">f</script> is arbitrary, it follows that <script type="math/tex">R</script> is reflexive.</p>
+<p>Suppose <span class="kdmath">$f \in \mathcal F$</span>. Consider <span class="kdmath">$i_{\mathbb R} \circ f(x) = i_{\mathbb R}(f(x)) = f(x)$</span>. Thus there exist a function <span class="kdmath">$i_{\mathbb R}$</span> such
+that <span class="kdmath">$i_{\mathbb R} \circ f = f$</span>. Thus <span class="kdmath">$(f,f) \in R$</span>. Since <span class="kdmath">$f$</span> is arbitrary, it follows that <span class="kdmath">$R$</span> is reflexive.</p>
 
-<p>Proof of <script type="math/tex">R</script> is transitive:</p>
+<p>Proof of <span class="kdmath">$R$</span> is transitive:</p>
 
-<p>Suppose <script type="math/tex">f,g,h \in \mathcal F</script> such that <script type="math/tex">fRg</script> and <script type="math/tex">gRh</script>. Since <script type="math/tex">fRg</script>, there exist a function <script type="math/tex">s</script> such that that <script type="math/tex">f = s \circ g</script>.
-Similarly since <script type="math/tex">gRh</script>, it follows that for there exist a function <script type="math/tex">t</script> such that <script type="math/tex">t \circ h = g</script>. Thus <script type="math/tex">f(x) = s(g(x)) = s(t \circ h(x)) = s(t(h(x)))</script>.
-Thus <script type="math/tex">f(x) = s(t(h(x))) = s \circ t(h(x)) = k(h(x))</script>, where <script type="math/tex">k = s \circ t</script>. Thus there exist a function <script type="math/tex">k</script> such that <script type="math/tex">k \circ h = f</script>.
- Thus <script type="math/tex">(f,h) \in R</script>. Since <script type="math/tex">f,g,h</script> are arbitrary, it follows that <script type="math/tex">R</script> is transitive.</p>
+<p>Suppose <span class="kdmath">$f,g,h \in \mathcal F$</span> such that <span class="kdmath">$fRg$</span> and <span class="kdmath">$gRh$</span>. Since <span class="kdmath">$fRg$</span>, there exist a function <span class="kdmath">$s$</span> such that that <span class="kdmath">$f = s \circ g$</span>.
+Similarly since <span class="kdmath">$gRh$</span>, it follows that for there exist a function <span class="kdmath">$t$</span> such that <span class="kdmath">$t \circ h = g$</span>. Thus <span class="kdmath">$f(x) = s(g(x)) = s(t \circ h(x)) = s(t(h(x)))$</span>.
+Thus <span class="kdmath">$f(x) = s(t(h(x))) = s \circ t(h(x)) = k(h(x))$</span>, where <span class="kdmath">$k = s \circ t$</span>. Thus there exist a function <span class="kdmath">$k$</span> such that <span class="kdmath">$k \circ h = f$</span>.
+ Thus <span class="kdmath">$(f,h) \in R$</span>. Since <span class="kdmath">$f,g,h$</span> are arbitrary, it follows that <span class="kdmath">$R$</span> is transitive.</p>
 
-<p>Since <script type="math/tex">R</script> is reflexive and transitive, it follows that <script type="math/tex">R</script> is pre-order.</p>
+<p>Since <span class="kdmath">$R$</span> is reflexive and transitive, it follows that <span class="kdmath">$R$</span> is pre-order.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>Suppose <script type="math/tex">f \in \mathcal F</script>. Consider <script type="math/tex">f \circ i_{\mathbb R}(x) = f (i_{\mathbb R}(x)) = f(x)</script>. Thus there exist a function <script type="math/tex">f = f</script> such that
-<script type="math/tex">f \circ i_{\mathbb R} = f</script>. Thus <script type="math/tex">(f,i_{\mathbb R}) \in R</script>.</p>
+<p>Suppose <span class="kdmath">$f \in \mathcal F$</span>. Consider <span class="kdmath">$f \circ i_{\mathbb R}(x) = f (i_{\mathbb R}(x)) = f(x)$</span>. Thus there exist a function <span class="kdmath">$f = f$</span> such that
+<span class="kdmath">$f \circ i_{\mathbb R} = f$</span>. Thus <span class="kdmath">$(f,i_{\mathbb R}) \in R$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">i_{\mathbb R}Rf</script>. Suppose <script type="math/tex">x_1, x_2 \in \mathbb R</script> such that <script type="math/tex">f(x_1) = f(x_2)</script>. Since <script type="math/tex">i_{\mathbb R}Rf</script>, there exist a function
-<script type="math/tex">t : \mathbb R \to \mathbb R</script> such that <script type="math/tex">t \circ f = i_{\mathbb R}</script>. Thus <script type="math/tex">t \circ f(x_1) = t(f(x_1)) = t(f(x_2)) = t \circ f(x_2)</script>. Since <script type="math/tex">t \circ f = i_{\mathbb R}</script>,
-it follows that <script type="math/tex">t \circ f(x_1) = x_1</script> and <script type="math/tex">t \circ f(x_2) = x_2</script>. Since <script type="math/tex">t \circ f(x_1) = t \circ f(x_2)</script>, it follows that <script type="math/tex">x_1 = x_2</script>.
-Since <script type="math/tex">x_1, x_2</script> are arbitrary, it follows that <script type="math/tex">f</script> is one-to-one.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$i_{\mathbb R}Rf$</span>. Suppose <span class="kdmath">$x_1, x_2 \in \mathbb R$</span> such that <span class="kdmath">$f(x_1) = f(x_2)$</span>. Since <span class="kdmath">$i_{\mathbb R}Rf$</span>, there exist a function
+<span class="kdmath">$t : \mathbb R \to \mathbb R$</span> such that <span class="kdmath">$t \circ f = i_{\mathbb R}$</span>. Thus <span class="kdmath">$t \circ f(x_1) = t(f(x_1)) = t(f(x_2)) = t \circ f(x_2)$</span>. Since <span class="kdmath">$t \circ f = i_{\mathbb R}$</span>,
+it follows that <span class="kdmath">$t \circ f(x_1) = x_1$</span> and <span class="kdmath">$t \circ f(x_2) = x_2$</span>. Since <span class="kdmath">$t \circ f(x_1) = t \circ f(x_2)$</span>, it follows that <span class="kdmath">$x_1 = x_2$</span>.
+Since <span class="kdmath">$x_1, x_2$</span> are arbitrary, it follows that <span class="kdmath">$f$</span> is one-to-one.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">f</script> is one-to-one. Suppose <script type="math/tex">h = f^{-1} \cup \{ R \setminus A \times \{0\} \}</script> where <script type="math/tex">A = Ran(f)</script>. Now we will first prove that <script type="math/tex">h</script> is a function.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$f$</span> is one-to-one. Suppose <span class="kdmath">$h = f^{-1} \cup \{ R \setminus A \times \{0\} \}$</span> where <span class="kdmath">$A = Ran(f)$</span>. Now we will first prove that <span class="kdmath">$h$</span> is a function.</p>
 
-<p>To prove <script type="math/tex">h</script> is a function, we need to prove existence and uniqueness. Suppose <script type="math/tex">x \in R</script>. Thus we have two possible cases:</p>
+<p>To prove <span class="kdmath">$h$</span> is a function, we need to prove existence and uniqueness. Suppose <span class="kdmath">$x \in R$</span>. Thus we have two possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">x \in A</script>. Thus <script type="math/tex">x \in Ran(f)</script>. It follows there exist an element <script type="math/tex">y \in \mathbb R</script> such that <script type="math/tex">(y,x) \in f</script>. Thus <script type="math/tex">(x,y) \in f^{-1}</script>.
- Also since <script type="math/tex">f</script> is one-to-one, thus <script type="math/tex">x</script> is an image of only one element <script type="math/tex">y</script> in <script type="math/tex">f</script>. Thus for <script type="math/tex">x</script> there is a unique element <script type="math/tex">y</script> in <script type="math/tex">f^{-1}</script>.
- Thus <script type="math/tex">h(x)</script> exists as well as if <script type="math/tex">x \in A</script> then there is only one element(unique) <script type="math/tex">y</script> such that <script type="math/tex">h(x) = y</script>.</p>
+    <p>Case 1: <span class="kdmath">$x \in A$</span>. Thus <span class="kdmath">$x \in Ran(f)$</span>. It follows there exist an element <span class="kdmath">$y \in \mathbb R$</span> such that <span class="kdmath">$(y,x) \in f$</span>. Thus <span class="kdmath">$(x,y) \in f^{-1}$</span>.
+ Also since <span class="kdmath">$f$</span> is one-to-one, thus <span class="kdmath">$x$</span> is an image of only one element <span class="kdmath">$y$</span> in <span class="kdmath">$f$</span>. Thus for <span class="kdmath">$x$</span> there is a unique element <span class="kdmath">$y$</span> in <span class="kdmath">$f^{-1}$</span>.
+ Thus <span class="kdmath">$h(x)$</span> exists as well as if <span class="kdmath">$x \in A$</span> then there is only one element(unique) <span class="kdmath">$y$</span> such that <span class="kdmath">$h(x) = y$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">x \notin A</script>. Thus <script type="math/tex">x \in \mathbb R \setminus A</script>. Thus <script type="math/tex">h(x) = 0</script>. Thus there is a unique value <script type="math/tex">0</script> for every <script type="math/tex">x \in \mathbb R \setminus A</script>.
-Thus for <script type="math/tex">x \notin A</script>, <script type="math/tex">h(x)</script> exists and there is only one value(unique) <script type="math/tex">0</script> such that <script type="math/tex">h(x) = 0</script>.</p>
+    <p>Case 2: <span class="kdmath">$x \notin A$</span>. Thus <span class="kdmath">$x \in \mathbb R \setminus A$</span>. Thus <span class="kdmath">$h(x) = 0$</span>. Thus there is a unique value <span class="kdmath">$0$</span> for every <span class="kdmath">$x \in \mathbb R \setminus A$</span>.
+Thus for <span class="kdmath">$x \notin A$</span>, <span class="kdmath">$h(x)$</span> exists and there is only one value(unique) <span class="kdmath">$0$</span> such that <span class="kdmath">$h(x) = 0$</span>.</p>
   </li>
 </ul>
 
-<p>Thus <script type="math/tex">h</script> is a function on <script type="math/tex">\mathbb R \to \mathbb R</script>.</p>
+<p>Thus <span class="kdmath">$h$</span> is a function on <span class="kdmath">$\mathbb R \to \mathbb R$</span>.</p>
 
-<p>Now suppose <script type="math/tex">x \in \mathbb R</script> and <script type="math/tex">h \circ f(x) = h(f(x))</script>. Since <script type="math/tex">f(x) \in Ran(R)</script>, then by definition of <script type="math/tex">h</script>, <script type="math/tex">h(f(x)) = x</script>. Thus 
-<script type="math/tex">h \circ f = i_{\mathbb R}</script>.</p>
+<p>Now suppose <span class="kdmath">$x \in \mathbb R$</span> and <span class="kdmath">$h \circ f(x) = h(f(x))$</span>. Since <span class="kdmath">$f(x) \in Ran(R)$</span>, then by definition of <span class="kdmath">$h$</span>, <span class="kdmath">$h(f(x)) = x$</span>. Thus 
+<span class="kdmath">$h \circ f = i_{\mathbb R}$</span>.</p>
 
-<p>Thus there exist a function <script type="math/tex">h</script> such that <script type="math/tex">h \circ f = i_{\mathbb R}</script>. Thus <script type="math/tex">i_{\mathbb R}Rf</script>.</p>
+<p>Thus there exist a function <span class="kdmath">$h$</span> such that <span class="kdmath">$h \circ f = i_{\mathbb R}$</span>. Thus <span class="kdmath">$i_{\mathbb R}Rf$</span>.</p>
 
 <p><strong>(e)</strong></p>
 
-<p>Suppose <script type="math/tex">f \in \mathcal F</script>. We have <script type="math/tex">g \circ f(x) = g(f(x))</script>. Since <script type="math/tex">f</script> is a function from <script type="math/tex">\mathbb R</script> to <script type="math/tex">\mathbb R</script>, it follows that
- <script type="math/tex">f(x) \in \mathbb R</script>. Since <script type="math/tex">\forall x \in \mathbb R(g(x) = c)</script> and <script type="math/tex">f(x) \in \mathbb R</script>, it follows that <script type="math/tex">g(f(x)) = c</script>. Since <script type="math/tex">g(x) = c</script>,
- it follows <script type="math/tex">g \circ f = g</script>. Thus <script type="math/tex">(g,f) \in R</script>.</p>
+<p>Suppose <span class="kdmath">$f \in \mathcal F$</span>. We have <span class="kdmath">$g \circ f(x) = g(f(x))$</span>. Since <span class="kdmath">$f$</span> is a function from <span class="kdmath">$\mathbb R$</span> to <span class="kdmath">$\mathbb R$</span>, it follows that
+ <span class="kdmath">$f(x) \in \mathbb R$</span>. Since <span class="kdmath">$\forall x \in \mathbb R(g(x) = c)$</span> and <span class="kdmath">$f(x) \in \mathbb R$</span>, it follows that <span class="kdmath">$g(f(x)) = c$</span>. Since <span class="kdmath">$g(x) = c$</span>,
+ it follows <span class="kdmath">$g \circ f = g$</span>. Thus <span class="kdmath">$(g,f) \in R$</span>.</p>
 
 <p><strong>(f)</strong></p>
 
-<p>(<script type="math/tex">\to</script>) Suppose <script type="math/tex">fRg</script>. Thus there exist a function <script type="math/tex">h</script> such that <script type="math/tex">h \circ g = f</script>. Thus <script type="math/tex">h(g(x)) = f(x)</script>. Since <script type="math/tex">g(x) = c</script>, 
-it follows that <script type="math/tex">f(x) = h(c)</script>. Since <script type="math/tex">h(c)</script> is a constant, thus <script type="math/tex">f(x) = h(c)</script> is also a constant. Thus <script type="math/tex">f</script> is a contant function.</p>
+<p>(<span class="kdmath">$\to$</span>) Suppose <span class="kdmath">$fRg$</span>. Thus there exist a function <span class="kdmath">$h$</span> such that <span class="kdmath">$h \circ g = f$</span>. Thus <span class="kdmath">$h(g(x)) = f(x)$</span>. Since <span class="kdmath">$g(x) = c$</span>, 
+it follows that <span class="kdmath">$f(x) = h(c)$</span>. Since <span class="kdmath">$h(c)$</span> is a constant, thus <span class="kdmath">$f(x) = h(c)$</span> is also a constant. Thus <span class="kdmath">$f$</span> is a contant function.</p>
 
-<p>(<script type="math/tex">\leftarrow</script>) Suppose <script type="math/tex">f</script> is a constant function such that <script type="math/tex">\forall x \in \mathbb R(f(x) = d)</script>. Consider <script type="math/tex">f \circ g = f(g(x)) = f(c) = d = f(x)</script>.
-Thus <script type="math/tex">f \circ g = f</script>. Thus <script type="math/tex">(f,g) \in R</script>, or <script type="math/tex">fRg</script>.</p>
+<p>(<span class="kdmath">$\leftarrow$</span>) Suppose <span class="kdmath">$f$</span> is a constant function such that <span class="kdmath">$\forall x \in \mathbb R(f(x) = d)$</span>. Consider <span class="kdmath">$f \circ g = f(g(x)) = f(c) = d = f(x)$</span>.
+Thus <span class="kdmath">$f \circ g = f$</span>. Thus <span class="kdmath">$(f,g) \in R$</span>, or <span class="kdmath">$fRg$</span>.</p>
 
 <p><strong>(g)</strong></p>
 
 <p>Proof for largest element:</p>
 
-<p>Suppose <script type="math/tex">[l]_S \in \mathcal F / S</script> is set of all one-to-one functions. Thus <script type="math/tex">l \in [l]_S</script> and <script type="math/tex">l</script> is one-to-one. Now to prove <script type="math/tex">[l]_S</script> is the largest element, if 
-we prove <script type="math/tex">\forall [f]_S \in \mathcal F / S([f]_S T [l]_S)</script>. Since it is given that <script type="math/tex">[f]_S T [g]_S</script> iff <script type="math/tex">f R g</script>, it follows that we need to prove <script type="math/tex">f R l</script>. <br />
-Now from part(c) of this solution, we have <script type="math/tex">(f,i_{\mathbb R}) \in R</script>, or there exist a function <script type="math/tex">h</script> such that <script type="math/tex">f = h \circ i_{\mathbb R}</script>.
-Also since <script type="math/tex">l</script> is one-to-one, then form part(e) of the solution, there exist a function <script type="math/tex">k</script> such that <script type="math/tex">i_{\mathbb R} = k \circ l</script>. Thus we have
-<script type="math/tex">f = h \circ i_{\mathbb R} = h \circ k \circ l = m \circ l</script>, where <script type="math/tex">m = h \circ k</script>. Thus <script type="math/tex">f R l</script>. It follows that <script type="math/tex">[f]_S T [l]_S</script>. Since
-<script type="math/tex">[f]_S</script> is arbitrary, it follows that <script type="math/tex">[l]_S</script> is the largest element of <script type="math/tex">\mathcal F / S</script> in the partial order <script type="math/tex">T</script>.</p>
+<p>Suppose <span class="kdmath">$[l]_S \in \mathcal F / S$</span> is set of all one-to-one functions. Thus <span class="kdmath">$l \in [l]_S$</span> and <span class="kdmath">$l$</span> is one-to-one. Now to prove <span class="kdmath">$[l]_S$</span> is the largest element, if 
+we prove <span class="kdmath">$\forall [f]_S \in \mathcal F / S([f]_S T [l]_S)$</span>. Since it is given that <span class="kdmath">$[f]_S T [g]_S$</span> iff <span class="kdmath">$f R g$</span>, it follows that we need to prove <span class="kdmath">$f R l$</span>. <br />
+Now from part(c) of this solution, we have <span class="kdmath">$(f,i_{\mathbb R}) \in R$</span>, or there exist a function <span class="kdmath">$h$</span> such that <span class="kdmath">$f = h \circ i_{\mathbb R}$</span>.
+Also since <span class="kdmath">$l$</span> is one-to-one, then form part(e) of the solution, there exist a function <span class="kdmath">$k$</span> such that <span class="kdmath">$i_{\mathbb R} = k \circ l$</span>. Thus we have
+<span class="kdmath">$f = h \circ i_{\mathbb R} = h \circ k \circ l = m \circ l$</span>, where <span class="kdmath">$m = h \circ k$</span>. Thus <span class="kdmath">$f R l$</span>. It follows that <span class="kdmath">$[f]_S T [l]_S$</span>. Since
+<span class="kdmath">$[f]_S$</span> is arbitrary, it follows that <span class="kdmath">$[l]_S$</span> is the largest element of <span class="kdmath">$\mathcal F / S$</span> in the partial order <span class="kdmath">$T$</span>.</p>
 
 <p>Proof for smallest element:</p>
 
-<p>Suppose <script type="math/tex">[s]_S \in \mathcal F / S</script> is set of all constant functions. Thus <script type="math/tex">s \in [s]_S</script> and <script type="math/tex">s</script> is a contant function. Now to prove <script type="math/tex">[s]_S</script> is the smallest element, if 
-we prove <script type="math/tex">\forall [f]_S \in \mathcal F / S([s]_S T [f]_S)</script>. Since it is given that <script type="math/tex">[f]_S T [g]_S</script> iff <script type="math/tex">f R g</script>, it follows that we need to prove <script type="math/tex">s R f</script>. Since <script type="math/tex">s</script> is contant
- function, thus using part(e) of this solution, it follows that <script type="math/tex">s R f</script>. Thus <script type="math/tex">[f]_S T [s]_S</script>. Since <script type="math/tex">[f]_S</script> is arbitrary, it follows that <script type="math/tex">[s]_S</script> is the smallest element of
-<script type="math/tex">\mathcal F / S</script> in the partial order <script type="math/tex">T</script>.</p>
+<p>Suppose <span class="kdmath">$[s]_S \in \mathcal F / S$</span> is set of all constant functions. Thus <span class="kdmath">$s \in [s]_S$</span> and <span class="kdmath">$s$</span> is a contant function. Now to prove <span class="kdmath">$[s]_S$</span> is the smallest element, if 
+we prove <span class="kdmath">$\forall [f]_S \in \mathcal F / S([s]_S T [f]_S)$</span>. Since it is given that <span class="kdmath">$[f]_S T [g]_S$</span> iff <span class="kdmath">$f R g$</span>, it follows that we need to prove <span class="kdmath">$s R f$</span>. Since <span class="kdmath">$s$</span> is contant
+ function, thus using part(e) of this solution, it follows that <span class="kdmath">$s R f$</span>. Thus <span class="kdmath">$[f]_S T [s]_S$</span>. Since <span class="kdmath">$[f]_S$</span> is arbitrary, it follows that <span class="kdmath">$[s]_S$</span> is the smallest element of
+<span class="kdmath">$\mathcal F / S$</span> in the partial order <span class="kdmath">$T$</span>.</p>
 
 
                         <hr/>

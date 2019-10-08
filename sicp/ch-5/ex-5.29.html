@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9556,62 +9557,63 @@
 <span class="c1">;;; EC-Eval value:</span>
 <span class="mi">34</span>
 
-<span class="c1">;;; EC-Eval input:</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="c1">;;; EC-Eval input:</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>(a) Clearly this is <script type="math/tex">\,\text{maximum-depth} = 5n + 3 \,</script></p>
+<p>(a) Clearly this is <span class="kdmath">$\,\text{maximum-depth} = 5n + 3 \,$</span></p>
 
 <p>(b)</p>
 
-<p>First lets prove that <script type="math/tex">\, S_n = S_{n-1} + S_{n-2} + k \,</script>, where <script type="math/tex">\, k \,</script> is a constant.</p>
+<p>First lets prove that <span class="kdmath">$\, S_n = S_{n-1} + S_{n-2} + k \,$</span>, where <span class="kdmath">$\, k \,$</span> is a constant.</p>
 
-<p>For <script type="math/tex">\, n \ge 2 \,</script>:</p>
+<p>For <span class="kdmath">$\, n \ge 2 \,$</span>:</p>
 
-<p>If we look at the procedure, computing <script type="math/tex">\, fib_n \,</script> requires two things:</p>
+<p>If we look at the procedure, computing <span class="kdmath">$\, fib_n \,$</span> requires two things:</p>
 <ul>
   <li>Execution of comparision inside <code class="highlighter-rouge">if</code>.</li>
-  <li>computing <script type="math/tex">\, fib_{n-1} \,</script>  and <script type="math/tex">\, fib_{n-2} \,</script>.</li>
+  <li>computing <span class="kdmath">$\, fib_{n-1} \,$</span>  and <span class="kdmath">$\, fib_{n-2} \,$</span>.</li>
   <li>After computing them, we add them together.</li>
 </ul>
 
 <p>Since the first and third steps are independent of <code class="highlighter-rouge">n</code>, it follows that the number of pushes that occur in these steps is some constant number.</p>
 
-<p>Thus the total pushes we need is this constant number and the pushes that happen because of computing <script type="math/tex">\, fib_{n-1} \,</script> and computing <script type="math/tex">\, fib_{n-2} \,</script>.</p>
+<p>Thus the total pushes we need is this constant number and the pushes that happen because of computing <span class="kdmath">$\, fib_{n-1} \,$</span> and computing <span class="kdmath">$\, fib_{n-2} \,$</span>.</p>
 
-<p>Thus <script type="math/tex">\, S_n = S_{n-1} + S_{n-2} + k \,</script> where <script type="math/tex">\, k \,</script> is the constant number of pushes that happen irrespective of <code class="highlighter-rouge">n</code>.</p>
+<p>Thus <span class="kdmath">$\, S_n = S_{n-1} + S_{n-2} + k \,$</span> where <span class="kdmath">$\, k \,$</span> is the constant number of pushes that happen irrespective of <code class="highlighter-rouge">n</code>.</p>
 
-<p>We can easily compute the value of <script type="math/tex">\, k \,</script>  from the data we have above. It gives us <script type="math/tex">\, k = 40 \,</script>.</p>
+<p>We can easily compute the value of <span class="kdmath">$\, k \,$</span>  from the data we have above. It gives us <span class="kdmath">$\, k = 40 \,$</span>.</p>
 
-<p>Now, we shall prove that <script type="math/tex">\, S_n = a \cdot fib_{n+1} + b \,</script>.</p>
+<p>Now, we shall prove that <span class="kdmath">$\, S_n = a \cdot fib_{n+1} + b \,$</span>.</p>
 
 <p>We shall prove it using mathematical induction.</p>
 
-<p>Suppose that the above formulae is correct for all integers <script type="math/tex">\, m \,</script> such that <script type="math/tex">\, 2 \le m \lt n \,</script>. Now if we can deduce that this is true for <script type="math/tex">\, m = n \,</script> too, then this will complete the proof.</p>
+<p>Suppose that the above formulae is correct for all integers <span class="kdmath">$\, m \,$</span> such that <span class="kdmath">$\, 2 \le m \lt n \,$</span>. Now if we can deduce that this is true for <span class="kdmath">$\, m = n \,$</span> too, then this will complete the proof.</p>
 
-<p>For case <script type="math/tex">\, m = n = 2 \,</script>:</p>
+<p>For case <span class="kdmath">$\, m = n = 2 \,$</span>:</p>
 
-<p><script type="math/tex">\, S_2 = a \cdot fib_3 + b = 2a + b \,</script>. Since <script type="math/tex">\, S_2 = 72 \,</script>, for this to be true, we must have <script type="math/tex">\, 2a + b  = 72 \,</script>(putting the value of <script type="math/tex">\, fib_3 \,</script> ).</p>
+<p><span class="kdmath">$\, S_2 = a \cdot fib_3 + b = 2a + b \,$</span>. Since <span class="kdmath">$\, S_2 = 72 \,$</span>, for this to be true, we must have <span class="kdmath">$\, 2a + b  = 72 \,$</span>(putting the value of <span class="kdmath">$\, fib_3 \,$</span> ).</p>
 
-<p>Similarly, for case <script type="math/tex">\, m = n = 3 \,</script>, we must have <script type="math/tex">\, 3a + b = 128 \,</script>.</p>
+<p>Similarly, for case <span class="kdmath">$\, m = n = 3 \,$</span>, we must have <span class="kdmath">$\, 3a + b = 128 \,$</span>.</p>
 
-<p>Now for the case <script type="math/tex">\,  m = n \,</script> and <script type="math/tex">\, m \ge 4 \,</script>:</p>
+<p>Now for the case <span class="kdmath">$\,  m = n \,$</span> and <span class="kdmath">$\, m \ge 4 \,$</span>:</p>
 
-<p>From the above we know that <script type="math/tex">\, s_m = s_{m-1} + s_{m-2} + k \,</script>. Since <script type="math/tex">\, m - 1 \,</script>  and <script type="math/tex">\, m - 2 \,</script> lies between <script type="math/tex">\, 2 \,</script> and <script type="math/tex">\, n \,</script>, by our assumption we have:</p>
+<p>From the above we know that <span class="kdmath">$\, s_m = s_{m-1} + s_{m-2} + k \,$</span>. Since <span class="kdmath">$\, m - 1 \,$</span>  and <span class="kdmath">$\, m - 2 \,$</span> lies between <span class="kdmath">$\, 2 \,$</span> and <span class="kdmath">$\, n \,$</span>, by our assumption we have:</p>
 
-<p><script type="math/tex">\, S_{m-1} = a \cdot fib_m + b \,</script> and <script type="math/tex">\, S_{m-2} = a \cdot fib_{m-1} + b \,</script>. Putting them in formulae <script type="math/tex">\, S_m = S_{m-1} + S_{m-2} + k \,</script>, we get:</p>
+<p><span class="kdmath">$\, S_{m-1} = a \cdot fib_m + b \,$</span> and <span class="kdmath">$\, S_{m-2} = a \cdot fib_{m-1} + b \,$</span>. Putting them in formulae <span class="kdmath">$\, S_m = S_{m-1} + S_{m-2} + k \,$</span>, we get:</p>
 
-<p><script type="math/tex">\, S_m = a \cdot ( fib_m + fib_{m-1}) + 2b + k \,</script>, which further simplifies to:</p>
+<p><span class="kdmath">$\, S_m = a \cdot ( fib_m + fib_{m-1}) + 2b + k \,$</span>, which further simplifies to:</p>
 
-<p><script type="math/tex">\, S_m = a \cdot fib_{m+1} + 2b + k \,</script>. Now if <script type="math/tex">\, 2b + k = b \,</script>, then the theorem will be correct for this case too.</p>
+<p><span class="kdmath">$\, S_m = a \cdot fib_{m+1} + 2b + k \,$</span>. Now if <span class="kdmath">$\, 2b + k = b \,$</span>, then the theorem will be correct for this case too.</p>
 
-<p>Thus from all above cases, our theorem will be true if and only if there exists value(s) of <script type="math/tex">\, a \,</script> and <script type="math/tex">\, b \,</script> such that all of the following are true:</p>
+<p>Thus from all above cases, our theorem will be true if and only if there exists value(s) of <span class="kdmath">$\, a \,$</span> and <span class="kdmath">$\, b \,$</span> such that all of the following are true:</p>
 
 <ul>
-  <li><script type="math/tex">\, 2a + b = 72 \,</script>.</li>
-  <li><script type="math/tex">\, 3a + b = 128 \,</script>.</li>
-  <li>And, <script type="math/tex">\, 2b + k = b \,</script>.</li>
+  <li><span class="kdmath">$\, 2a + b = 72 \,$</span>.</li>
+  <li><span class="kdmath">$\, 3a + b = 128 \,$</span>.</li>
+  <li>And, <span class="kdmath">$\, 2b + k = b \,$</span>.</li>
 </ul>
 
-<p>We already know <script type="math/tex">\, k = 40 \,</script>.  Solving them we find that <script type="math/tex">\, a = 56 \,</script> and <script type="math/tex">\, b = -40 \,</script>. Thus there exist values of <script type="math/tex">\, a \,</script> and <script type="math/tex">\, b \,</script> which satisfy all of the above equations, it follows that the theorem is correct!</p>
+<p>We already know <span class="kdmath">$\, k = 40 \,$</span>.  Solving them we find that <span class="kdmath">$\, a = 56 \,$</span> and <span class="kdmath">$\, b = -40 \,$</span>. Thus there exist values of <span class="kdmath">$\, a \,$</span> and <span class="kdmath">$\, b \,$</span> which satisfy all of the above equations, it follows that the theorem is correct!</p>
 
 <hr />
 

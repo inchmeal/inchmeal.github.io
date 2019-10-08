@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -979,13 +980,13 @@
 						<hr/>
                         <p>From Corollary B we have:</p>
 
-<p><script type="math/tex">\, \Exp(\bar Y_R) - \mu_Y \approx \frac 1 n \Prn{1 - \frac {n-1} {N-1} } \frac 1 {\mu_x} \Prn{ r \sigma^2_x - \rho \sigma_x \sigma_y} \,</script>.</p>
+<p><span class="kdmath">$\, \Exp(\bar Y_R) - \mu_Y \approx \frac 1 n \Prn{1 - \frac {n-1} {N-1} } \frac 1 {\mu_x} \Prn{ r \sigma^2_x - \rho \sigma_x \sigma_y} \,$</span>.</p>
 
 <p>We just need to plugin the values in the above expression. All the values are given in Example-D on page-226 in the book.</p>
 
 <p>Skipping the computation part :)</p>
 
-<p>I think the point of this problem is to compare the bias and variance as sample size <script type="math/tex">\, n \,</script> increases. Looking at the formulae we can see that the bias should decrease as sample size increases as well as the <script type="math/tex">{bias}^2</script> is very small compared to the variance(because <script type="math/tex">{bias}^2</script> contains <script type="math/tex">\, n^2 \,</script> but variance contains <script type="math/tex">\, n \,</script>). Thus the take away point is that bias can be ignored if a sample size is large.</p>
+<p>I think the point of this problem is to compare the bias and variance as sample size <span class="kdmath">$\, n \,$</span> increases. Looking at the formulae we can see that the bias should decrease as sample size increases as well as the <span class="kdmath">${bias}^2$</span> is very small compared to the variance(because <span class="kdmath">${bias}^2$</span> contains <span class="kdmath">$\, n^2 \,$</span> but variance contains <span class="kdmath">$\, n \,$</span>). Thus the take away point is that bias can be ignored if a sample size is large.</p>
 
                         $$\tag*{$\blacksquare$} $$
                         <hr/>

@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9441,7 +9442,8 @@
    <span class="p">(</span><span class="nf">branch</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">done</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">improve</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">guess</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">x</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">loop</span><span class="p">))</span>
- <span class="nv">done</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+ <span class="nv">done</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Expanded versions of <code class="highlighter-rouge">improve</code> and <code class="highlighter-rouge">good?</code>:</p>
 
@@ -9470,7 +9472,8 @@
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">sum</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">+</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">q</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">guess</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">guess</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">/</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">sum</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">2</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">loop</span><span class="p">))</span>
-   <span class="nv">done</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+   <span class="nv">done</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Notice that all the temporary registers <code class="highlighter-rouge">g2</code>, <code class="highlighter-rouge">diff</code>, <code class="highlighter-rouge">error</code>, <code class="highlighter-rouge">q</code>, <code class="highlighter-rouge">sum</code> can be replaced with a single temp register <code class="highlighter-rouge">t</code>:</p>
 
@@ -9499,7 +9502,8 @@
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">t</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">+</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">t</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">guess</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">assign</span> <span class="nv">guess</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">/</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">t</span><span class="p">)</span> <span class="p">(</span><span class="nf">const</span> <span class="mi">2</span><span class="p">))</span>
    <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">loop</span><span class="p">))</span>
-   <span class="nv">done</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+   <span class="nv">done</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

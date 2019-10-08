@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -9492,7 +9493,8 @@
 						<span class="p">(</span><span class="nf">const</span> <span class="o">,</span><span class="nv">lex-addr</span><span class="p">)</span>
 						<span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">)</span>
 						<span class="p">(</span><span class="nf">reg</span> <span class="nv">env</span><span class="p">))</span>
-			   <span class="p">(</span><span class="nf">assign</span> <span class="o">,</span><span class="nv">target</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">ok</span><span class="p">))))))))))</span></pre></td></tr></tbody></table></code></pre></figure>
+			   <span class="p">(</span><span class="nf">assign</span> <span class="o">,</span><span class="nv">target</span> <span class="p">(</span><span class="nf">const</span> <span class="nv">ok</span><span class="p">))))))))))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="exampleoutput">Example/Output:</h4>
 
@@ -9713,7 +9715,8 @@
   <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
   <span class="nv">primitive-branch21</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">apply-primitive-procedure</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
-  <span class="nv">after-call19</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">after-call19</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <hr />
 
@@ -9874,7 +9877,8 @@
   <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
   <span class="nv">primitive-branch12</span>
   <span class="p">(</span><span class="nf">assign</span> <span class="nv">val</span> <span class="p">(</span><span class="nf">op</span> <span class="nv">apply-primitive-procedure</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">proc</span><span class="p">)</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">argl</span><span class="p">))</span>
-  <span class="nv">after-call10</span><span class="p">))</span></pre></td></tr></tbody></table></code></pre></figure>
+  <span class="nv">after-call10</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 
                         <hr/>

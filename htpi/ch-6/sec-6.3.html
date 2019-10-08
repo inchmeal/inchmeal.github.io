@@ -11,40 +11,41 @@
 	<script src="https://www.inchmeal.io/assets/js/inchmeal_head.js"></script>
 
 	
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			"HTML-CSS": {
-				linebreaks: { automatic: true },
-				scale: 82,
-				styles: {
-					".MathJax_Display": {
-						"font-size": "105%" //first scale is applied than this is applied on display only because we are using display selector.
-					},
-					"p .MathJax": { //For inline
-						//"background-color": "#FFFF88",
-						//color:   "#CC0000",
-					}	
-				}
+	<script>
+	window.MathJax = {
+		chtml: {
+			scale: 0.86,
+			displayAlign: "left"
+		},
+		tex: {
+			tags: "ams",
+			macros: {
+				Exp: "{\\operatorname{\\mathrm{E}}}",
+				Var: "{\\operatorname{\\mathrm{Var}}}",
+				Cov: "{\\operatorname{\\mathrm{Cov}}}",
+				Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+				Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
 			},
-			"displayAlign": "left",
-			TeX: { 
-				equationNumbers: { 
-					autoNumber: "AMS" 
-				},
-				Macros: {
-					Exp: "{\\operatorname{\\mathrm{E}}}",
-					Var: "{\\operatorname{\\mathrm{Var}}}",
-					Cov: "{\\operatorname{\\mathrm{Cov}}}",
-					Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-					Prn: ['\\left( #2 \\right)_{\\text{#1}}', 2, ""]
-				}
-			}
-		});
+			inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+			displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+			processEscapes: true,
+			autoload: {
+				color: [],
+				colorV2: ['color']
+			},
+			packages: {'[+]': ['noerrors']}
+		},
+		options: {
+			ignoreHtmlClass: 'tex2jax_ignore',
+			processHtmlClass: 'tex2jax_process'
+		},
+		loader: {
+			load: ['[tex]/noerrors']
+		}
+	};
 	</script>
 	
-	<script type="text/javascript"
-			src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	
 	
 
@@ -1135,9 +1136,9 @@
                         <hr/>
                         <h3 id="summary">Summary</h3>
 
-<p><em>Note:</em> In this book natural numbers include <script type="math/tex">0</script> also. But it seems like in some places in the proofs, I messed up with this convention.
-In some placed I might have considered <script type="math/tex">N</script> includes <script type="math/tex">0</script> while in other places vice versa. Please point out to me, I will correct to
-use the books version of <script type="math/tex">\mathbb N</script> in all the places.</p>
+<p><em>Note:</em> In this book natural numbers include <span class="kdmath">$0$</span> also. But it seems like in some places in the proofs, I messed up with this convention.
+In some placed I might have considered <span class="kdmath">$N$</span> includes <span class="kdmath">$0$</span> while in other places vice versa. Please point out to me, I will correct to
+use the books version of <span class="kdmath">$\mathbb N$</span> in all the places.</p>
 
 <ul>
   <li>Recursive functions are defined in the following way:
@@ -1159,39 +1160,39 @@ use the books version of <script type="math/tex">\mathbb N</script> in all the p
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">x</script></th>
-      <th><script type="math/tex">f(x)</script></th>
+      <th style="text-align: center"><span class="kdmath">$x$</span></th>
+      <th><span class="kdmath">$f(x)$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">1</script></td>
-      <td><script type="math/tex">\frac 1 2</script></td>
+      <td style="text-align: center"><span class="kdmath">$1$</span></td>
+      <td><span class="kdmath">$\frac 1 2$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">2</script></td>
-      <td><script type="math/tex">\frac 2 3</script></td>
+      <td style="text-align: center"><span class="kdmath">$2$</span></td>
+      <td><span class="kdmath">$\frac 2 3$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">3</script></td>
-      <td><script type="math/tex">\frac 3 4</script></td>
+      <td style="text-align: center"><span class="kdmath">$3$</span></td>
+      <td><span class="kdmath">$\frac 3 4$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">4</script></td>
-      <td><script type="math/tex">\frac 4 5</script></td>
+      <td style="text-align: center"><span class="kdmath">$4$</span></td>
+      <td><span class="kdmath">$\frac 4 5$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">5</script></td>
-      <td><script type="math/tex">\frac 5 6</script></td>
+      <td style="text-align: center"><span class="kdmath">$5$</span></td>
+      <td><span class="kdmath">$\frac 5 6$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">6</script></td>
-      <td><script type="math/tex">\frac 6 7</script></td>
+      <td style="text-align: center"><span class="kdmath">$6$</span></td>
+      <td><span class="kdmath">$\frac 6 7$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Thus it appears that <script type="math/tex">f(x) = \frac x {x+1}</script>.</p>
+<p>Thus it appears that <span class="kdmath">$f(x) = \frac x {x+1}$</span>.</p>
 
 <p>Lets prove this by mathematical induction.</p>
 
@@ -1201,21 +1202,21 @@ use the books version of <script type="math/tex">\mathbb N</script> in all the p
 
 <p>Induction step:</p>
 
-<p>Suppose it is true for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=1}^n {\frac 1 {i(i+1)}} = \frac n {n+1}</script>.</p>
+<p>Suppose it is true for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=1}^n {\frac 1 {i(i+1)}} = \frac n {n+1}$</span>.</p>
 
-<p>Now for <script type="math/tex">n + 1</script>:</p>
+<p>Now for <span class="kdmath">$n + 1$</span>:</p>
 
-<p>We have <script type="math/tex">\sum_{i=1}^{n+1} {\frac 1 {i(i+1)}} = \sum_{i=1}^n {\frac 1 {i(i+1)}} + \frac {1} {(n+1)(n+1 + 1)}</script>. Using induction hypothesis <script type="math/tex">\sum_{i=1}^n {\frac 1 {i(i+1)}} = \frac n {n+1}</script>,
+<p>We have <span class="kdmath">$\sum_{i=1}^{n+1} {\frac 1 {i(i+1)}} = \sum_{i=1}^n {\frac 1 {i(i+1)}} + \frac {1} {(n+1)(n+1 + 1)}$</span>. Using induction hypothesis <span class="kdmath">$\sum_{i=1}^n {\frac 1 {i(i+1)}} = \frac n {n+1}$</span>,
 we get:</p>
 
-<p><script type="math/tex">=  \frac n {n+1}  + \frac {1} {(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">=  \frac {n(n+2) + 1} {(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">=  \frac {n^2 + 2n + 1} {(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">=  \frac {(n+1)(n+1)} {(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">=  \frac {(n+1)} {(n+2)}</script>.   <br />
-<script type="math/tex">=  \frac {(n+1)} {(n+1 + 1)}</script>.</p>
+<p><span class="kdmath">$=  \frac n {n+1}  + \frac {1} {(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$=  \frac {n(n+2) + 1} {(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$=  \frac {n^2 + 2n + 1} {(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$=  \frac {(n+1)(n+1)} {(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$=  \frac {(n+1)} {(n+2)}$</span>.   <br />
+<span class="kdmath">$=  \frac {(n+1)} {(n+1 + 1)}$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true. Thus formulae is correct.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true. Thus formulae is correct.</p>
 
 <hr />
 
@@ -1223,27 +1224,27 @@ we get:</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, we have <script type="math/tex">\sum_{i=1}^{n} {\frac 1 {i(i+1)(i+2)}} = \frac 1 {1(1+1)(1+2)} = \frac 1 6 = \frac {1^2 + 3 \cdot 1} {4(1+1)(1+2)}</script>.
-Thus <script type="math/tex">P(1)</script> is true.</p>
+<p>For <span class="kdmath">$n = 1$</span>, we have <span class="kdmath">$\sum_{i=1}^{n} {\frac 1 {i(i+1)(i+2)}} = \frac 1 {1(1+1)(1+2)} = \frac 1 6 = \frac {1^2 + 3 \cdot 1} {4(1+1)(1+2)}$</span>.
+Thus <span class="kdmath">$P(1)$</span> is true.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=1}^{n} {\frac 1 {i(i+1)(i+2)}} =  \frac {n^2 + 3n} {4(n+1)(n+2)}</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=1}^{n} {\frac 1 {i(i+1)(i+2)}} =  \frac {n^2 + 3n} {4(n+1)(n+2)}$</span>.</p>
 
-<p>Now for <script type="math/tex">n+1</script>, we have:</p>
+<p>Now for <span class="kdmath">$n+1$</span>, we have:</p>
 
-<p><script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \sum_{i=1}^{n} {\frac 1 {i(i+1)(i+2)}} + \frac 1 {(n+1)(n+2)(n+3)}</script>.   <br />
+<p><span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \sum_{i=1}^{n} {\frac 1 {i(i+1)(i+2)}} + \frac 1 {(n+1)(n+2)(n+3)}$</span>.   <br />
 Using induction hypothesis:   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {n^2 + 3n} {4(n+1)(n+2)} + \frac 1 {(n+1)(n+2)(n+3)}</script>.   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n^2+3n)(n+3) + 4} {4(n+1)(n+2)(n+3)}</script>.   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {n^3 + 3n^2 + 3n^2 + 9n + 4} {4(n+1)(n+2)(n+3)}</script>.   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n^2+5n+4)} {4(n+1)(n+2)(n+3)}</script>.   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n+1)(n+4)} {4(n+1)(n+2)(n+3)}</script>.   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n+4)} {4(n+2)(n+3)}</script>.   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n+1+3)} {4(n+2)(n+3)}</script>.   <br />
-<script type="math/tex">\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac { {(n+1)}^2 + 3(n+1)} {4(n+1+1)(n+1+2)}</script>.</p>
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {n^2 + 3n} {4(n+1)(n+2)} + \frac 1 {(n+1)(n+2)(n+3)}$</span>.   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n^2+3n)(n+3) + 4} {4(n+1)(n+2)(n+3)}$</span>.   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {n^3 + 3n^2 + 3n^2 + 9n + 4} {4(n+1)(n+2)(n+3)}$</span>.   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n^2+5n+4)} {4(n+1)(n+2)(n+3)}$</span>.   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n+1)(n+4)} {4(n+1)(n+2)(n+3)}$</span>.   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n+4)} {4(n+2)(n+3)}$</span>.   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac {(n+1)(n+1+3)} {4(n+2)(n+3)}$</span>.   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=1}^{n+1} {\frac 1 {i(i+1)(i+2)}} = \frac { {(n+1)}^2 + 3(n+1)} {4(n+1+1)(n+1+2)}$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1251,28 +1252,28 @@ Using induction hypothesis:   <br />
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 2</script>, we have <script type="math/tex">\sum_{i=2}^{n} {\frac 1 {(i-1)(i+1)}} = \frac 1 {(2-1)(2+1)} = \frac 1 3 = \frac {3 \cdot 2^2 - 2 - 2} {4 \cdot 2 (2+1)}</script>.</p>
+<p>For <span class="kdmath">$n = 2$</span>, we have <span class="kdmath">$\sum_{i=2}^{n} {\frac 1 {(i-1)(i+1)}} = \frac 1 {(2-1)(2+1)} = \frac 1 3 = \frac {3 \cdot 2^2 - 2 - 2} {4 \cdot 2 (2+1)}$</span>.</p>
 
-<p>Thus <script type="math/tex">P(2)</script> is true.</p>
+<p>Thus <span class="kdmath">$P(2)$</span> is true.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=2}^{n} {\frac 1 {(i-1)(i+1)}} =  \frac {3 n^2 - n - 2} {4 n (n+1)}</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=2}^{n} {\frac 1 {(i-1)(i+1)}} =  \frac {3 n^2 - n - 2} {4 n (n+1)}$</span>.</p>
 
-<p>Now for <script type="math/tex">n+1</script>, we have:</p>
+<p>Now for <span class="kdmath">$n+1$</span>, we have:</p>
 
-<p><script type="math/tex">\Rightarrow \sum_{i=2}^{n+1} {\frac 1 {(i-1)(i+1)}} = {( \sum_{i=2}^{n} {\frac 1 {(i-1)(i+1)}} )} + \frac 1 {(n+1-1)(n+1+1)}</script>.   <br />
+<p><span class="kdmath">$\Rightarrow \sum_{i=2}^{n+1} {\frac 1 {(i-1)(i+1)}} = {( \sum_{i=2}^{n} {\frac 1 {(i-1)(i+1)}} )} + \frac 1 {(n+1-1)(n+1+1)}$</span>.   <br />
 Using induction hypothesis:   <br />
-<script type="math/tex">= \frac {3 n^2 - n - 2} {4 n (n+1)} + \frac 1 {(n+1-1)(n+1+1)}</script>.   <br />
-<script type="math/tex">= \frac {3 n^2 - n - 2} {4 n (n+1)} + \frac 1 {(n)(n+2)}</script>.   <br />
-<script type="math/tex">= \frac {3n^3 + 5n^2} {4n(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">= \frac {n^2(3n + 5)} {4n(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">= \frac {n(3n + 5)} {4(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">= \frac {(n+1-1)(3(n+1-1) + 5)} {4(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">= \frac {(n+1-1)(3(n+1) + 2)} {4(n+1)(n+2)}</script>.   <br />
-<script type="math/tex">= \frac { {(n+1)}^2 - 3(n+1) - 2} {4(n+1)(n+1+1)}</script>.</p>
+<span class="kdmath">$= \frac {3 n^2 - n - 2} {4 n (n+1)} + \frac 1 {(n+1-1)(n+1+1)}$</span>.   <br />
+<span class="kdmath">$= \frac {3 n^2 - n - 2} {4 n (n+1)} + \frac 1 {(n)(n+2)}$</span>.   <br />
+<span class="kdmath">$= \frac {3n^3 + 5n^2} {4n(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$= \frac {n^2(3n + 5)} {4n(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$= \frac {n(3n + 5)} {4(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$= \frac {(n+1-1)(3(n+1-1) + 5)} {4(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$= \frac {(n+1-1)(3(n+1) + 2)} {4(n+1)(n+2)}$</span>.   <br />
+<span class="kdmath">$= \frac { {(n+1)}^2 - 3(n+1) - 2} {4(n+1)(n+1+1)}$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1280,49 +1281,49 @@ Using induction hypothesis:   <br />
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">\sum_{i=0}^{n} {(2i+1)}^2 = 1 = \frac {(0+1)(2 \times 0 + 1)(2 \times 0 + 3)} 3</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$\sum_{i=0}^{n} {(2i+1)}^2 = 1 = \frac {(0+1)(2 \times 0 + 1)(2 \times 0 + 3)} 3$</span>.</p>
 
-<p>Thus <script type="math/tex">P(0)</script> is true.</p>
+<p>Thus <span class="kdmath">$P(0)$</span> is true.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=0}^{n} {(2i+1)}^2 = \frac {(n+1)(2n + 1)(2n + 3)} 3</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=0}^{n} {(2i+1)}^2 = \frac {(n+1)(2n + 1)(2n + 3)} 3$</span>.</p>
 
-<p>Now for <script type="math/tex">n+1</script>, we have:   <br />
-<script type="math/tex">\Rightarrow \sum_{i=0}^{n+1} {(2i+1)}^2 = {( \sum_{i=0}^{n} {(2i+1)}^2 )} + {(2(n+1)+1)}^2</script>.   <br />
-<script type="math/tex">= {\frac {(n+1)(2n + 1)(2n + 3)} 3} + {(2n + 3)}^2</script>.   <br />
-<script type="math/tex">= \frac {(n+1)(2n + 1)(2n + 3) + 3{(2n+3)}^2} 3</script>.   <br />
-<script type="math/tex">= \frac {(2n + 3)((n+1)(2n + 1) + 3(2n+3))} 3</script>.   <br />
-<script type="math/tex">= \frac {(2n + 3)(2n^2 + n + 2n + 1 + 6n + 9)} 3</script>.   <br />
-<script type="math/tex">= \frac {(2n + 3)(2n^2 + 9n + 10)} 3</script>.   <br />
-<script type="math/tex">= \frac {(2n + 3)(2n+5)(n+2)} 3</script>.   <br />
-<script type="math/tex">= \frac {(n+1+1)(2(n+1)+1)(2(n+1)+3)} 3</script>.</p>
+<p>Now for <span class="kdmath">$n+1$</span>, we have:   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=0}^{n+1} {(2i+1)}^2 = {( \sum_{i=0}^{n} {(2i+1)}^2 )} + {(2(n+1)+1)}^2$</span>.   <br />
+<span class="kdmath">$= {\frac {(n+1)(2n + 1)(2n + 3)} 3} + {(2n + 3)}^2$</span>.   <br />
+<span class="kdmath">$= \frac {(n+1)(2n + 1)(2n + 3) + 3{(2n+3)}^2} 3$</span>.   <br />
+<span class="kdmath">$= \frac {(2n + 3)((n+1)(2n + 1) + 3(2n+3))} 3$</span>.   <br />
+<span class="kdmath">$= \frac {(2n + 3)(2n^2 + n + 2n + 1 + 6n + 9)} 3$</span>.   <br />
+<span class="kdmath">$= \frac {(2n + 3)(2n^2 + 9n + 10)} 3$</span>.   <br />
+<span class="kdmath">$= \frac {(2n + 3)(2n+5)(n+2)} 3$</span>.   <br />
+<span class="kdmath">$= \frac {(n+1+1)(2(n+1)+1)(2(n+1)+3)} 3$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
 <p><strong>Soln5</strong></p>
 
-<p>Suppose <script type="math/tex">r \ne 1</script> is an arbitrary real number.</p>
+<p>Suppose <span class="kdmath">$r \ne 1$</span> is an arbitrary real number.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">\sum_{i = 0}^{n} r^i = r^0 = 1 = \frac {r^{0+1} - 1} {r-1}</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$\sum_{i = 0}^{n} r^i = r^0 = 1 = \frac {r^{0+1} - 1} {r-1}$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i = 0}^{n} r^i = \frac {r^{n+1} - 1} {r-1}</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i = 0}^{n} r^i = \frac {r^{n+1} - 1} {r-1}$</span>.</p>
 
-<p>Now for <script type="math/tex">n+1</script>, we have:   <br />
-<script type="math/tex">\Rightarrow \sum_{i = 0}^{n+1} r^i = \sum_{i = 0}^{n} r^i + r^{n+1}</script>.  <br />
-<script type="math/tex">= { \frac {r^{n+1} - 1} {r-1} } + r^{n+1}</script>.  <br />
-<script type="math/tex">= \frac {(r^{n+1} - 1) + r^{n+1}(r-1) } {r-1}</script>.  <br />
-<script type="math/tex">= \frac {r^{n+1} - 1 + r^{n+2} - r^{n+1} } {r-1}</script>.  <br />
-<script type="math/tex">= \frac { r^{n+2} - 1 } {r-1}</script>.  <br />
-<script type="math/tex">= \frac { r^{n+1+1} - 1 } {r-1}</script>.</p>
+<p>Now for <span class="kdmath">$n+1$</span>, we have:   <br />
+<span class="kdmath">$\Rightarrow \sum_{i = 0}^{n+1} r^i = \sum_{i = 0}^{n} r^i + r^{n+1}$</span>.  <br />
+<span class="kdmath">$= { \frac {r^{n+1} - 1} {r-1} } + r^{n+1}$</span>.  <br />
+<span class="kdmath">$= \frac {(r^{n+1} - 1) + r^{n+1}(r-1) } {r-1}$</span>.  <br />
+<span class="kdmath">$= \frac {r^{n+1} - 1 + r^{n+2} - r^{n+1} } {r-1}$</span>.  <br />
+<span class="kdmath">$= \frac { r^{n+2} - 1 } {r-1}$</span>.  <br />
+<span class="kdmath">$= \frac { r^{n+1+1} - 1 } {r-1}$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1330,23 +1331,23 @@ Using induction hypothesis:   <br />
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, we have <script type="math/tex">\sum_{i=1}^{n} {\frac 1 {i^2}} = \frac 1 1^2 = 1</script>. Also <script type="math/tex">2 - \frac 1 1 = 1</script>.     <br />
-Thus <script type="math/tex">\sum_{i=1}^{n} {\frac 1 {i^2}} \le</script> 2 - \frac 1 n $$.</p>
+<p>For <span class="kdmath">$n = 1$</span>, we have <span class="kdmath">$\sum_{i=1}^{n} {\frac 1 {i^2}} = \frac 1 1^2 = 1$</span>. Also <span class="kdmath">$2 - \frac 1 1 = 1$</span>.     <br />
+Thus <span class="kdmath">$\sum_{i=1}^{n} {\frac 1 {i^2}} \le$</span> 2 - \frac 1 n $$.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=1}^{n} {\frac 1 {i^2}} \le</script> 2 - \frac 1 n $$.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=1}^{n} {\frac 1 {i^2}} \le$</span> 2 - \frac 1 n $$.</p>
 
-<p>Now for <script type="math/tex">n + 1</script>, we have:</p>
+<p>Now for <span class="kdmath">$n + 1$</span>, we have:</p>
 
-<p><script type="math/tex">\Rightarrow  \sum_{i=1}^{n+1} {\frac 1 {i^2}} =  \sum_{i=1}^{n} {\frac 1 {i^2}} + { \frac 1 { {(n+1)}^2 } }</script>.  <br />
-<script type="math/tex">\le { 2 - \frac 1 n } + { \frac 1 { {(n+1)}^2 } }</script>.  <br />
-<script type="math/tex">=  2 - \frac {(n+1)^2 - n} { n{(n+1)}^2 }</script>.  <br />
-<script type="math/tex">=  2 - \frac {n^2 + n + 1} { n{(n+1)}^2 }</script>.  <br />
-<script type="math/tex">\le  2 - \frac {n^2 + n} { n{(n+1)}^2 }</script>.  <br />
-<script type="math/tex">=  2 - \frac 1 { n+1 }</script>.</p>
+<p><span class="kdmath">$\Rightarrow  \sum_{i=1}^{n+1} {\frac 1 {i^2}} =  \sum_{i=1}^{n} {\frac 1 {i^2}} + { \frac 1 { {(n+1)}^2 } }$</span>.  <br />
+<span class="kdmath">$\le { 2 - \frac 1 n } + { \frac 1 { {(n+1)}^2 } }$</span>.  <br />
+<span class="kdmath">$=  2 - \frac {(n+1)^2 - n} { n{(n+1)}^2 }$</span>.  <br />
+<span class="kdmath">$=  2 - \frac {n^2 + n + 1} { n{(n+1)}^2 }$</span>.  <br />
+<span class="kdmath">$\le  2 - \frac {n^2 + n} { n{(n+1)}^2 }$</span>.  <br />
+<span class="kdmath">$=  2 - \frac 1 { n+1 }$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1356,38 +1357,38 @@ Thus <script type="math/tex">\sum_{i=1}^{n} {\frac 1 {i^2}} \le</script> 2 - \fr
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">\sum_{i=0}^{n} (a_i + b_i) = a_0 + b_0 = { \sum_{i=0}^{n} a_i } + { \sum_{i=0}^{n} b_i }</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$\sum_{i=0}^{n} (a_i + b_i) = a_0 + b_0 = { \sum_{i=0}^{n} a_i } + { \sum_{i=0}^{n} b_i }$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose it is true for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=0}^{n} (a_i + b_i) \; = \; { \sum_{i=0}^{n} a_i } + { \sum_{i=0}^{n} b_i }</script>.</p>
+<p>Suppose it is true for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=0}^{n} (a_i + b_i) \; = \; { \sum_{i=0}^{n} a_i } + { \sum_{i=0}^{n} b_i }$</span>.</p>
 
-<p>For <script type="math/tex">n+1</script>, we have:</p>
+<p>For <span class="kdmath">$n+1$</span>, we have:</p>
 
-<p><script type="math/tex">\Rightarrow \sum_{i=0}^{n+1} (a_i + b_i) = (\sum_{i=0}^{n} (a_i + b_i)) + (a_{n+1} + b_{n+1})</script>.    <br />
-<script type="math/tex">= { \sum_{i=0}^{n} a_i } + { \sum_{i=0}^{n} b_i } + a_{n+1} + b_{n+1}</script>.  <br />
-<script type="math/tex">= { \sum_{i=0}^{n} a_i } + a_{n+1} + { \sum_{i=0}^{n} b_i } + b_{n+1}</script>.  <br />
-<script type="math/tex">= { \sum_{i=0}^{n+1} a_i } + { \sum_{i=0}^{n+1} b_i }</script>.</p>
+<p><span class="kdmath">$\Rightarrow \sum_{i=0}^{n+1} (a_i + b_i) = (\sum_{i=0}^{n} (a_i + b_i)) + (a_{n+1} + b_{n+1})$</span>.    <br />
+<span class="kdmath">$= { \sum_{i=0}^{n} a_i } + { \sum_{i=0}^{n} b_i } + a_{n+1} + b_{n+1}$</span>.  <br />
+<span class="kdmath">$= { \sum_{i=0}^{n} a_i } + a_{n+1} + { \sum_{i=0}^{n} b_i } + b_{n+1}$</span>.  <br />
+<span class="kdmath">$= { \sum_{i=0}^{n+1} a_i } + { \sum_{i=0}^{n+1} b_i }$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">c \cdot { \sum_{i=0}^{n} a_i } = c \cdot a_0 = \sum_{i=0}^{n} { c \cdot a_i }</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$c \cdot { \sum_{i=0}^{n} a_i } = c \cdot a_0 = \sum_{i=0}^{n} { c \cdot a_i }$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose it is true for <script type="math/tex">n</script>. Thus <script type="math/tex">c \cdot { \sum_{i=0}^{n} a_i } = \sum_{i=0}^{n} { c \cdot a_i }</script>.</p>
+<p>Suppose it is true for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$c \cdot { \sum_{i=0}^{n} a_i } = \sum_{i=0}^{n} { c \cdot a_i }$</span>.</p>
 
-<p>For <script type="math/tex">n + 1</script>, we have:</p>
+<p>For <span class="kdmath">$n + 1$</span>, we have:</p>
 
-<p><script type="math/tex">c \cdot { \sum_{i=0}^{n+1} a_i } = c \cdot { \sum_{i=0}^{n} a_i } + c \cdot a_{n+1}</script>.  <br />
-<script type="math/tex">= \sum_{i=0}^{n} { c \cdot a_i } + c \cdot a_{n+1}</script>.  <br />
-<script type="math/tex">= \sum_{i=0}^{n+1} { c \cdot a_i }</script>.</p>
+<p><span class="kdmath">$c \cdot { \sum_{i=0}^{n+1} a_i } = c \cdot { \sum_{i=0}^{n} a_i } + c \cdot a_{n+1}$</span>.  <br />
+<span class="kdmath">$= \sum_{i=0}^{n} { c \cdot a_i } + c \cdot a_{n+1}$</span>.  <br />
+<span class="kdmath">$= \sum_{i=0}^{n+1} { c \cdot a_i }$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1395,58 +1396,58 @@ Thus <script type="math/tex">\sum_{i=1}^{n} {\frac 1 {i^2}} \le</script> 2 - \fr
 
 <p><strong>(a)</strong></p>
 
-<p>Suppose <script type="math/tex">m</script> is arbitrary natural number.</p>
+<p>Suppose <span class="kdmath">$m$</span> is arbitrary natural number.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = m</script>, we have <script type="math/tex">{\sum_{i=0}^{n} \frac 1 i} - {\sum_{i=0}^{m} \frac 1 i} = 0 = \frac {n-m} n</script>.</p>
+<p>For <span class="kdmath">$n = m$</span>, we have <span class="kdmath">${\sum_{i=0}^{n} \frac 1 i} - {\sum_{i=0}^{m} \frac 1 i} = 0 = \frac {n-m} n$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n \ge m</script>. Thus <script type="math/tex">{\sum_{i=0}^{n} \frac 1 i} - {\sum_{i=0}^{m} \frac 1 i} = \frac {n-m} n</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n \ge m$</span>. Thus <span class="kdmath">${\sum_{i=0}^{n} \frac 1 i} - {\sum_{i=0}^{m} \frac 1 i} = \frac {n-m} n$</span>.</p>
 
-<p>For <script type="math/tex">n + 1</script>, we have:</p>
+<p>For <span class="kdmath">$n + 1$</span>, we have:</p>
 
-<p><script type="math/tex">\Rightarrow {\sum_{i=0}^{n+1} \frac 1 i} - {\sum_{i=0}^{m} \frac 1 i} = {\sum_{i=0}^{n} \frac 1 i} + { \frac 1 {n+1} }  - {\sum_{i=0}^{m} \frac 1 i}</script>.   <br />
-<script type="math/tex">= {\sum_{i=0}^{n} \frac 1 i}  - {\sum_{i=0}^{m} \frac 1 i} + { \frac 1 {n+1} }</script>.   <br />
-<script type="math/tex">\ge {\frac {n-m} n } + { \frac 1 {n+1} }</script>.   <br />
-<script type="math/tex">= \frac { (n-m)(n+1) + n } {n(n+1)}</script>.   <br />
-<script type="math/tex">= \frac {n^2 + n - mn - m + n} {n(n+1)}</script>.   <br />
-<script type="math/tex">= \frac {n^2 + (n - m) - mn + n} {n(n+1)}</script>.   <br />
-Since <script type="math/tex">n \ge m</script>,    <br />
-<script type="math/tex">\ge \frac {n^2 - mn + n} {n(n+1)}</script>.   <br />
-<script type="math/tex">\ge \frac {n - m + 1} {n+1}</script>.   <br />
-<script type="math/tex">\ge \frac {n + 1 - m} {n+1}</script>.</p>
+<p><span class="kdmath">$\Rightarrow {\sum_{i=0}^{n+1} \frac 1 i} - {\sum_{i=0}^{m} \frac 1 i} = {\sum_{i=0}^{n} \frac 1 i} + { \frac 1 {n+1} }  - {\sum_{i=0}^{m} \frac 1 i}$</span>.   <br />
+<span class="kdmath">$= {\sum_{i=0}^{n} \frac 1 i}  - {\sum_{i=0}^{m} \frac 1 i} + { \frac 1 {n+1} }$</span>.   <br />
+<span class="kdmath">$\ge {\frac {n-m} n } + { \frac 1 {n+1} }$</span>.   <br />
+<span class="kdmath">$= \frac { (n-m)(n+1) + n } {n(n+1)}$</span>.   <br />
+<span class="kdmath">$= \frac {n^2 + n - mn - m + n} {n(n+1)}$</span>.   <br />
+<span class="kdmath">$= \frac {n^2 + (n - m) - mn + n} {n(n+1)}$</span>.   <br />
+Since <span class="kdmath">$n \ge m$</span>,    <br />
+<span class="kdmath">$\ge \frac {n^2 - mn + n} {n(n+1)}$</span>.   <br />
+<span class="kdmath">$\ge \frac {n - m + 1} {n+1}$</span>.   <br />
+<span class="kdmath">$\ge \frac {n + 1 - m} {n+1}$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">H_{2^n} = H_1 = 1 \ge 1 = 1 + n/2</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$H_{2^n} = H_1 = 1 \ge 1 = 1 + n/2$</span>.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">H_{2^n} \ge 1 + n/2</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$H_{2^n} \ge 1 + n/2$</span>.</p>
 
-<p>Since <script type="math/tex">2^{n+1} > 2^n</script>. Thus applying part(a), we have:</p>
+<p>Since <span class="kdmath">$2^{n+1} > 2^n$</span>. Thus applying part(a), we have:</p>
 
-<p><script type="math/tex">H_{2^{n+1} } - H_{2^n} \ge \frac {2^{n+1} - 2^n } { 2^{n+1} } = \frac 1 2</script>.</p>
+<p><span class="kdmath">$H_{2^{n+1} } - H_{2^n} \ge \frac {2^{n+1} - 2^n } { 2^{n+1} } = \frac 1 2$</span>.</p>
 
-<p>Thus <script type="math/tex">H_{2^{n+1} } \ge H_{2^n} + { \frac 1 2 }</script>.   <br />
+<p>Thus <span class="kdmath">$H_{2^{n+1} } \ge H_{2^n} + { \frac 1 2 }$</span>.   <br />
 By induction hypothesis,   <br />
-<script type="math/tex">\Rightarrow H_{2^{n+1} } \ge 1 + {\frac n 2 }+ { \frac 1 2 }</script>.
-<script type="math/tex">= 1 + { \frac {n+1} 2 }</script>.</p>
+<span class="kdmath">$\Rightarrow H_{2^{n+1} } \ge 1 + {\frac n 2 }+ { \frac 1 2 }$</span>.
+<span class="kdmath">$= 1 + { \frac {n+1} 2 }$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <p><strong>(c)</strong></p>
 
-<p>We know that <script type="math/tex">\lim_{n \to \infty } {(1 + { \frac n 2 } ) } = \infty</script>.</p>
+<p>We know that <span class="kdmath">$\lim_{n \to \infty } {(1 + { \frac n 2 } ) } = \infty$</span>.</p>
 
-<p>Thus using part(b) <script type="math/tex">\lim_{n \to \infty} H_{2^n} = \infty</script>. Now from part(a) we can see that <script type="math/tex">H_n</script> is a increasing sequence. 
-Thus <script type="math/tex">\lim_{n \to \infty} H_{n} = \infty</script></p>
+<p>Thus using part(b) <span class="kdmath">$\lim_{n \to \infty} H_{2^n} = \infty$</span>. Now from part(a) we can see that <span class="kdmath">$H_n$</span> is a increasing sequence. 
+Thus <span class="kdmath">$\lim_{n \to \infty} H_{n} = \infty$</span></p>
 
 <hr />
 
@@ -1454,25 +1455,25 @@ Thus <script type="math/tex">\lim_{n \to \infty} H_{n} = \infty</script></p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 2</script>, we have <script type="math/tex">nH_n - n = 2( { \frac 1 1 } + { \frac 1 2 } ) - 2 = 3 - 2 = 1 = H_1 = \sum_{k=1}^{n-1} H_k</script>.</p>
+<p>For <span class="kdmath">$n = 2$</span>, we have <span class="kdmath">$nH_n - n = 2( { \frac 1 1 } + { \frac 1 2 } ) - 2 = 3 - 2 = 1 = H_1 = \sum_{k=1}^{n-1} H_k$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is true for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{k=1}^{n-1} H_k = nH_n - n</script>.</p>
+<p>Suppose theorem is true for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{k=1}^{n-1} H_k = nH_n - n$</span>.</p>
 
-<p>Now for <script type="math/tex">n + 1</script>, we have <script type="math/tex">\sum_{k=1}^{n+1-1} H_k = \sum_{k=1}^{n} H_k</script>.   <br />
-<script type="math/tex">= \sum_{k=1}^{n-1} H_k + H_n</script>.   <br />
-<script type="math/tex">= nH_n - n + H_n</script>.   <br />
-<script type="math/tex">= (n+1)H_n - n</script>.   <br />
-<script type="math/tex">= ((n+1) \cdot \sum_{i=0}^{n} {\frac 1 i}) - n</script>.   <br />
-<script type="math/tex">= ((n+1) \cdot \sum_{i=0}^{n} {\frac 1 i}) + 1 - 1 - n</script>.   <br />
-<script type="math/tex">= ((n+1) \cdot \sum_{i=0}^{n} {\frac 1 i}) + (n+1){ \frac 1 {n+1} } - 1 - n</script>.   <br />
-<script type="math/tex">= (n+1) \cdot (\sum_{i=0}^{n} {\frac 1 i} + { \frac 1 {n+1} }) - 1 - n</script>.   <br />
-<script type="math/tex">= (n+1) \cdot (\sum_{i=0}^{n+1} {\frac 1 i} ) - 1 - n</script>.   <br />
-<script type="math/tex">= (n+1) \cdot (\sum_{i=0}^{n+1} {\frac 1 i} ) - (n + 1)</script>.   <br />
-<script type="math/tex">= (n+1)H_{n+1} - (n + 1)</script>.</p>
+<p>Now for <span class="kdmath">$n + 1$</span>, we have <span class="kdmath">$\sum_{k=1}^{n+1-1} H_k = \sum_{k=1}^{n} H_k$</span>.   <br />
+<span class="kdmath">$= \sum_{k=1}^{n-1} H_k + H_n$</span>.   <br />
+<span class="kdmath">$= nH_n - n + H_n$</span>.   <br />
+<span class="kdmath">$= (n+1)H_n - n$</span>.   <br />
+<span class="kdmath">$= ((n+1) \cdot \sum_{i=0}^{n} {\frac 1 i}) - n$</span>.   <br />
+<span class="kdmath">$= ((n+1) \cdot \sum_{i=0}^{n} {\frac 1 i}) + 1 - 1 - n$</span>.   <br />
+<span class="kdmath">$= ((n+1) \cdot \sum_{i=0}^{n} {\frac 1 i}) + (n+1){ \frac 1 {n+1} } - 1 - n$</span>.   <br />
+<span class="kdmath">$= (n+1) \cdot (\sum_{i=0}^{n} {\frac 1 i} + { \frac 1 {n+1} }) - 1 - n$</span>.   <br />
+<span class="kdmath">$= (n+1) \cdot (\sum_{i=0}^{n+1} {\frac 1 i} ) - 1 - n$</span>.   <br />
+<span class="kdmath">$= (n+1) \cdot (\sum_{i=0}^{n+1} {\frac 1 i} ) - (n + 1)$</span>.   <br />
+<span class="kdmath">$= (n+1)H_{n+1} - (n + 1)$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1483,39 +1484,39 @@ Thus <script type="math/tex">\lim_{n \to \infty} H_{n} = \infty</script></p>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">n</script></th>
-      <th><script type="math/tex">\sum_{i=1}^n (i \cdot i!)</script></th>
+      <th style="text-align: center"><span class="kdmath">$n$</span></th>
+      <th><span class="kdmath">$\sum_{i=1}^n (i \cdot i!)$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">1</script></td>
-      <td><script type="math/tex">1 = 2! - 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$1$</span></td>
+      <td><span class="kdmath">$1 = 2! - 1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">2</script></td>
-      <td><script type="math/tex">5 = 3! - 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$2$</span></td>
+      <td><span class="kdmath">$5 = 3! - 1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">3</script></td>
-      <td><script type="math/tex">23 = 4! - 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$3$</span></td>
+      <td><span class="kdmath">$23 = 4! - 1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">4</script></td>
-      <td><script type="math/tex">119 = 5! - 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$4$</span></td>
+      <td><span class="kdmath">$119 = 5! - 1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">5</script></td>
-      <td><script type="math/tex">719 = 6! - 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$5$</span></td>
+      <td><span class="kdmath">$719 = 6! - 1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">6</script></td>
-      <td><script type="math/tex">5039 = 7! - 1</script></td>
+      <td style="text-align: center"><span class="kdmath">$6$</span></td>
+      <td><span class="kdmath">$5039 = 7! - 1$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Thus it appears that <script type="math/tex">\sum_{i=1}^n (i \cdot i!) = (n+1)! - 1</script>.</p>
+<p>Thus it appears that <span class="kdmath">$\sum_{i=1}^n (i \cdot i!) = (n+1)! - 1$</span>.</p>
 
 <p>Base Case:</p>
 
@@ -1523,15 +1524,15 @@ Thus <script type="math/tex">\lim_{n \to \infty} H_{n} = \infty</script></p>
 
 <p>Induction Step:</p>
 
-<p>Suppose it is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=1}^n (i \cdot i!) = (n+1)! - 1</script>.</p>
+<p>Suppose it is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=1}^n (i \cdot i!) = (n+1)! - 1$</span>.</p>
 
-<p>For <script type="math/tex">n+1</script>, we have:</p>
+<p>For <span class="kdmath">$n+1$</span>, we have:</p>
 
-<p><script type="math/tex">\sum_{i=1}^{n+1} (i \cdot i!) = \sum_{i=1}^n (i \cdot i!) + (n+1)\cdot(n+1)!</script>.  <br />
-<script type="math/tex">= (n+1)! - 1 + (n+1)\cdot(n+1)!</script>.  <br />
-<script type="math/tex">= (n+1+1)\cdot(n+1)! - 1</script>.</p>
+<p><span class="kdmath">$\sum_{i=1}^{n+1} (i \cdot i!) = \sum_{i=1}^n (i \cdot i!) + (n+1)\cdot(n+1)!$</span>.  <br />
+<span class="kdmath">$= (n+1)! - 1 + (n+1)\cdot(n+1)!$</span>.  <br />
+<span class="kdmath">$= (n+1+1)\cdot(n+1)! - 1$</span>.</p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1542,39 +1543,39 @@ Thus <script type="math/tex">\lim_{n \to \infty} H_{n} = \infty</script></p>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">n</script></th>
-      <th><script type="math/tex">\sum_{i=1}^n {\frac i {(i+1)!} }</script></th>
+      <th style="text-align: center"><span class="kdmath">$n$</span></th>
+      <th><span class="kdmath">$\sum_{i=1}^n {\frac i {(i+1)!} }$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">0</script></td>
-      <td><script type="math/tex">\frac 0 1 = \frac {1!-1} {1!}</script></td>
+      <td style="text-align: center"><span class="kdmath">$0$</span></td>
+      <td><span class="kdmath">$\frac 0 1 = \frac {1!-1} {1!}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">1</script></td>
-      <td><script type="math/tex">\frac 1 2 = \frac {2!-1} {2!}</script></td>
+      <td style="text-align: center"><span class="kdmath">$1$</span></td>
+      <td><span class="kdmath">$\frac 1 2 = \frac {2!-1} {2!}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">2</script></td>
-      <td><script type="math/tex">\frac 5 6 = \frac {3!-1} {3!}</script></td>
+      <td style="text-align: center"><span class="kdmath">$2$</span></td>
+      <td><span class="kdmath">$\frac 5 6 = \frac {3!-1} {3!}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">3</script></td>
-      <td><script type="math/tex">\frac {23} {24} = \frac {4!-1} {4!}</script></td>
+      <td style="text-align: center"><span class="kdmath">$3$</span></td>
+      <td><span class="kdmath">$\frac {23} {24} = \frac {4!-1} {4!}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">4</script></td>
-      <td><script type="math/tex">\frac {119} {120} = \frac {5!-1} {5!}</script></td>
+      <td style="text-align: center"><span class="kdmath">$4$</span></td>
+      <td><span class="kdmath">$\frac {119} {120} = \frac {5!-1} {5!}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">5</script></td>
-      <td><script type="math/tex">\frac {719} {720} = \frac {6!-1} {6!}</script></td>
+      <td style="text-align: center"><span class="kdmath">$5$</span></td>
+      <td><span class="kdmath">$\frac {719} {720} = \frac {6!-1} {6!}$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Thus it appears that <script type="math/tex">\sum_{i=1}^n {\frac i {(i+1)!} } = \frac {(n+1)!-1} {(n+1)!}</script>.</p>
+<p>Thus it appears that <span class="kdmath">$\sum_{i=1}^n {\frac i {(i+1)!} } = \frac {(n+1)!-1} {(n+1)!}$</span>.</p>
 
 <p>Base Case:</p>
 
@@ -1582,19 +1583,19 @@ Thus <script type="math/tex">\lim_{n \to \infty} H_{n} = \infty</script></p>
 
 <p>Induction Step:</p>
 
-<p>Suppose it is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">\sum_{i=1}^n {\frac i {(i+1)!} } = \frac {(n+1)!-1} {(n+1)!}</script>.</p>
+<p>Suppose it is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$\sum_{i=1}^n {\frac i {(i+1)!} } = \frac {(n+1)!-1} {(n+1)!}$</span>.</p>
 
-<p>For <script type="math/tex">n+1</script>, we have:</p>
+<p>For <span class="kdmath">$n+1$</span>, we have:</p>
 
-<p><script type="math/tex">\sum_{i=1}^{n+1} {\frac i {(i+1)!} } = \sum_{i=1}^n {\frac i {(i+1)!} } + { \frac {n+1} {(n+1+1)!} }</script>.  <br />
-<script type="math/tex">= { \frac {(n+1)!-1} {(n+1)!} } + { \frac {n+1} {(n+1+1)!} }</script>   <br />
-<script type="math/tex">= { \frac {(n+1)!-1} {(n+1)!} } + { \frac {n+1} {(n+2)(n+1)!} }</script>   <br />
-<script type="math/tex">= \frac {(n+2)((n+1)!-1) + (n+1)} {(n+2)(n+1)!}</script>   <br />
-<script type="math/tex">= \frac {(n+2)(n+1)! - (n+2) + (n+1)} {(n+2)(n+1)!}</script>   <br />
-<script type="math/tex">= \frac {(n+2)! - 1} {(n+2)!}</script>   <br />
-<script type="math/tex">= \frac {(n+1+1)! - 1} {(n+1+1)!}</script></p>
+<p><span class="kdmath">$\sum_{i=1}^{n+1} {\frac i {(i+1)!} } = \sum_{i=1}^n {\frac i {(i+1)!} } + { \frac {n+1} {(n+1+1)!} }$</span>.  <br />
+<span class="kdmath">$= { \frac {(n+1)!-1} {(n+1)!} } + { \frac {n+1} {(n+1+1)!} }$</span>   <br />
+<span class="kdmath">$= { \frac {(n+1)!-1} {(n+1)!} } + { \frac {n+1} {(n+2)(n+1)!} }$</span>   <br />
+<span class="kdmath">$= \frac {(n+2)((n+1)!-1) + (n+1)} {(n+2)(n+1)!}$</span>   <br />
+<span class="kdmath">$= \frac {(n+2)(n+1)! - (n+2) + (n+1)} {(n+2)(n+1)!}$</span>   <br />
+<span class="kdmath">$= \frac {(n+2)! - 1} {(n+2)!}$</span>   <br />
+<span class="kdmath">$= \frac {(n+1+1)! - 1} {(n+1+1)!}$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1602,42 +1603,42 @@ Thus <script type="math/tex">\lim_{n \to \infty} H_{n} = \infty</script></p>
 
 <p><strong>(a)</strong></p>
 
-<p>If we prove that <script type="math/tex">2^n \ge n+1</script>, then it is easily followed that <script type="math/tex">2^n \ge n</script>.</p>
+<p>If we prove that <span class="kdmath">$2^n \ge n+1$</span>, then it is easily followed that <span class="kdmath">$2^n \ge n$</span>.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">2^n = 1 \ge (n+1)</script>. Thus <script type="math/tex">P(0)</script> is true.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$2^n = 1 \ge (n+1)$</span>. Thus <span class="kdmath">$P(0)$</span> is true.</p>
 
 <p>Inductive step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">2^n \ge n + 1</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$2^n \ge n + 1$</span>.</p>
 
-<p>For <script type="math/tex">n+1</script>, we have <script type="math/tex">2^{n+1} = 2 \cdot 2^n \ge 2(n+1) = 2n + 2 \ge n + 2 = n + 1 + 1</script>.</p>
+<p>For <span class="kdmath">$n+1$</span>, we have <span class="kdmath">$2^{n+1} = 2 \cdot 2^n \ge 2(n+1) = 2n + 2 \ge n + 2 = n + 1 + 1$</span>.</p>
 
-<p>Thus we can conclude <script type="math/tex">2^n \ge n + 1</script>. It follows <script type="math/tex">2^n \ge n</script>.</p>
+<p>Thus we can conclude <span class="kdmath">$2^n \ge n + 1$</span>. It follows <span class="kdmath">$2^n \ge n$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 9</script>. We have <script type="math/tex">n! = 362880 ≥ 262144 = { (2^n) }^2</script>.</p>
+<p>For <span class="kdmath">$n = 9$</span>. We have <span class="kdmath">$n! = 362880 ≥ 262144 = { (2^n) }^2$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>.  Thus <script type="math/tex">n! \ge { (2^n) }^2</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>.  Thus <span class="kdmath">$n! \ge { (2^n) }^2$</span>.</p>
 
-<p>For <script type="math/tex">n+1</script>, we have:</p>
+<p>For <span class="kdmath">$n+1$</span>, we have:</p>
 
-<p><script type="math/tex">(n+1)! = (n+1)n!</script>    <br />
-<script type="math/tex">\ge (9+1)n!</script>   <br />
+<p><span class="kdmath">$(n+1)! = (n+1)n!$</span>    <br />
+<span class="kdmath">$\ge (9+1)n!$</span>   <br />
 By induction hypothesis,  <br />
-<script type="math/tex">\ge 10 \cdot { (2^n) }^2</script>   <br />
-<script type="math/tex">\ge 4 \cdot { (2^n) }^2</script>  <br />
-<script type="math/tex">= 2^2 \cdot { (2^n) }^2</script>  <br />
-<script type="math/tex">= 2^{2n+2}</script>  <br />
-<script type="math/tex">= { 2^{n+1} }^2</script></p>
+<span class="kdmath">$\ge 10 \cdot { (2^n) }^2$</span>   <br />
+<span class="kdmath">$\ge 4 \cdot { (2^n) }^2$</span>  <br />
+<span class="kdmath">$= 2^2 \cdot { (2^n) }^2$</span>  <br />
+<span class="kdmath">$= 2^{2n+2}$</span>  <br />
+<span class="kdmath">$= { 2^{n+1} }^2$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1645,22 +1646,22 @@ By induction hypothesis,  <br />
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">0! = 1 \le 1 = 2^{0^2}</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$0! = 1 \le 1 = 2^{0^2}$</span>.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">n! \le 2^{n^2}</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$n! \le 2^{n^2}$</span>.</p>
 
-<p>Now consider for <script type="math/tex">n+1</script>, we jave:</p>
+<p>Now consider for <span class="kdmath">$n+1$</span>, we jave:</p>
 
-<p><script type="math/tex">(n+1)! = (n+1)n! \le (n+1) \cdot 2^{n^2}</script>.    <br />
-From part(a), <script type="math/tex">n+1 \le 2^n</script>, we have:</p>
+<p><span class="kdmath">$(n+1)! = (n+1)n! \le (n+1) \cdot 2^{n^2}$</span>.    <br />
+From part(a), <span class="kdmath">$n+1 \le 2^n$</span>, we have:</p>
 
-<p><script type="math/tex">(n+1)! \le 2^n \cdot 2^{n^2}</script>.  <br />
-<script type="math/tex">= 2^{ n^2 + n }</script>.  <br />
-<script type="math/tex">\le 2^{ n^2 + n + n + 1}</script>.  <br />
-<script type="math/tex">= 2^{n^2+2n+1}</script>.   <br />
-<script type="math/tex">= 2^{ { (n+1) }^2}</script>.</p>
+<p><span class="kdmath">$(n+1)! \le 2^n \cdot 2^{n^2}$</span>.  <br />
+<span class="kdmath">$= 2^{ n^2 + n }$</span>.  <br />
+<span class="kdmath">$\le 2^{ n^2 + n + n + 1}$</span>.  <br />
+<span class="kdmath">$= 2^{n^2+2n+1}$</span>.   <br />
+<span class="kdmath">$= 2^{ { (n+1) }^2}$</span>.</p>
 
 <hr />
 
@@ -1670,64 +1671,64 @@ From part(a), <script type="math/tex">n+1 \le 2^n</script>, we have:</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, we have <script type="math/tex">(k^2 + n)! = (k^2)! \ge 1 = k^{2n}</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, we have <span class="kdmath">$(k^2 + n)! = (k^2)! \ge 1 = k^{2n}$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct. Thus <script type="math/tex">(k^2 + n)! \ge k^{2n}</script>.</p>
+<p>Suppose theorem is correct. Thus <span class="kdmath">$(k^2 + n)! \ge k^{2n}$</span>.</p>
 
-<p>For <script type="math/tex">n+1</script>, we have <script type="math/tex">(k^2 + n + 1)!</script>:   <br />
-<script type="math/tex">= (k^2+n+1)(k^2+n)!</script>   <br />
-<script type="math/tex">\ge (k^2+n+1)k^{2n}</script>   <br />
-<script type="math/tex">\ge (k^2)k^{2n}</script>   <br />
-<script type="math/tex">= k^{2n+2}</script>   <br />
-<script type="math/tex">= k^{2(n+1)}</script></p>
+<p>For <span class="kdmath">$n+1$</span>, we have <span class="kdmath">$(k^2 + n + 1)!$</span>:   <br />
+<span class="kdmath">$= (k^2+n+1)(k^2+n)!$</span>   <br />
+<span class="kdmath">$\ge (k^2+n+1)k^{2n}$</span>   <br />
+<span class="kdmath">$\ge (k^2)k^{2n}$</span>   <br />
+<span class="kdmath">$= k^{2n+2}$</span>   <br />
+<span class="kdmath">$= k^{2(n+1)}$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Base Case:</p>
 
-<p>Putting <script type="math/tex">n = k^2</script> in part(a), we get <script type="math/tex">(2k^2)! \ge k^{2k^2}</script>. Thus for the given theorem if we assume <script type="math/tex">n = 2k^2</script>, then is follows <script type="math/tex">P(2k^2)</script>
+<p>Putting <span class="kdmath">$n = k^2$</span> in part(a), we get <span class="kdmath">$(2k^2)! \ge k^{2k^2}$</span>. Thus for the given theorem if we assume <span class="kdmath">$n = 2k^2$</span>, then is follows <span class="kdmath">$P(2k^2)$</span>
   is correct.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct. Thus <script type="math/tex">n! \ge k^n</script>.</p>
+<p>Suppose theorem is correct. Thus <span class="kdmath">$n! \ge k^n$</span>.</p>
 
-<p>Now consider <script type="math/tex">(n+1)!</script>:</p>
+<p>Now consider <span class="kdmath">$(n+1)!$</span>:</p>
 
-<p><script type="math/tex">= (n+1)n!</script>   <br />
-<script type="math/tex">\ge (n+1)k^n</script>   <br />
-Since <script type="math/tex">n \ge 2k^2</script>,   <br />
-<script type="math/tex">\ge (2k^2+1)k^n</script>   <br />
-Since <script type="math/tex">k</script> is positive integer,  <br />
-<script type="math/tex">\ge (k)k^n</script>   <br />
-<script type="math/tex">= k^{n+1}</script></p>
+<p><span class="kdmath">$= (n+1)n!$</span>   <br />
+<span class="kdmath">$\ge (n+1)k^n$</span>   <br />
+Since <span class="kdmath">$n \ge 2k^2$</span>,   <br />
+<span class="kdmath">$\ge (2k^2+1)k^n$</span>   <br />
+Since <span class="kdmath">$k$</span> is positive integer,  <br />
+<span class="kdmath">$\ge (k)k^n$</span>   <br />
+<span class="kdmath">$= k^{n+1}$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
 <p><strong>Soln14</strong></p>
 
-<p>Suppose <script type="math/tex">a</script> is an arbitrary real number. Suppose <script type="math/tex">m</script> is arbitrary integer.</p>
+<p>Suppose <span class="kdmath">$a$</span> is an arbitrary real number. Suppose <span class="kdmath">$m$</span> is arbitrary integer.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, we have <script type="math/tex">{(a^{m})}^n = a^m = a^{mn}</script>.</p>
+<p>For <span class="kdmath">$n = 1$</span>, we have <span class="kdmath">${(a^{m})}^n = a^m = a^{mn}$</span>.</p>
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">{(a^m)}^n = a^{mn}</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">${(a^m)}^n = a^{mn}$</span>.</p>
 
-<p>Thus <script type="math/tex">{(a^m)}^{n+1} = {(a^m)}^n \cdot a^m</script>   <br />
-<script type="math/tex">a^{mn} \cdot a^m</script>    <br />
-<script type="math/tex">a^{mn+m}</script>    <br />
-<script type="math/tex">a^{m(n+1)}</script></p>
+<p>Thus <span class="kdmath">${(a^m)}^{n+1} = {(a^m)}^n \cdot a^m$</span>   <br />
+<span class="kdmath">$a^{mn} \cdot a^m$</span>    <br />
+<span class="kdmath">$a^{mn+m}$</span>    <br />
+<span class="kdmath">$a^{m(n+1)}$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1735,20 +1736,20 @@ Since <script type="math/tex">k</script> is positive integer,  <br />
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, <script type="math/tex">2^0 - 0 - 1 = 0 = a_0</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, <span class="kdmath">$2^0 - 0 - 1 = 0 = a_0$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">a_n = 2^n - n - 1</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$a_n = 2^n - n - 1$</span>.</p>
 
-<p>Now, <script type="math/tex">a_{n+1} = 2a_n + n</script>   <br />
-<script type="math/tex">= 2(2^n - n - 1) + n</script>     <br />
-<script type="math/tex">= 2^{n+1} - 2n - 2 + n</script>     <br />
-<script type="math/tex">= 2^{n+1} - n - 2</script>     <br />
-<script type="math/tex">= 2^{n+1} - n - 1 - 1</script>     <br />
-<script type="math/tex">= 2^{n+1} - (n + 1) - 1</script></p>
+<p>Now, <span class="kdmath">$a_{n+1} = 2a_n + n$</span>   <br />
+<span class="kdmath">$= 2(2^n - n - 1) + n$</span>     <br />
+<span class="kdmath">$= 2^{n+1} - 2n - 2 + n$</span>     <br />
+<span class="kdmath">$= 2^{n+1} - n - 2$</span>     <br />
+<span class="kdmath">$= 2^{n+1} - n - 1 - 1$</span>     <br />
+<span class="kdmath">$= 2^{n+1} - (n + 1) - 1$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1759,39 +1760,39 @@ Since <script type="math/tex">k</script> is positive integer,  <br />
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">n</script></th>
-      <th><script type="math/tex">a_n</script></th>
+      <th style="text-align: center"><span class="kdmath">$n$</span></th>
+      <th><span class="kdmath">$a_n$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">0</script></td>
-      <td><script type="math/tex">2 = 2^{2^0}</script></td>
+      <td style="text-align: center"><span class="kdmath">$0$</span></td>
+      <td><span class="kdmath">$2 = 2^{2^0}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">1</script></td>
-      <td><script type="math/tex">4 = 2^{2^1}</script></td>
+      <td style="text-align: center"><span class="kdmath">$1$</span></td>
+      <td><span class="kdmath">$4 = 2^{2^1}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">2</script></td>
-      <td><script type="math/tex">16 = 2^{2^2}</script></td>
+      <td style="text-align: center"><span class="kdmath">$2$</span></td>
+      <td><span class="kdmath">$16 = 2^{2^2}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">3</script></td>
-      <td><script type="math/tex">256 = 2^{2^3}</script></td>
+      <td style="text-align: center"><span class="kdmath">$3$</span></td>
+      <td><span class="kdmath">$256 = 2^{2^3}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">4</script></td>
-      <td><script type="math/tex">65536 = 2^{2^4}</script></td>
+      <td style="text-align: center"><span class="kdmath">$4$</span></td>
+      <td><span class="kdmath">$65536 = 2^{2^4}$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">5</script></td>
-      <td><script type="math/tex">4294967296 = 2^{2^5}</script></td>
+      <td style="text-align: center"><span class="kdmath">$5$</span></td>
+      <td><span class="kdmath">$4294967296 = 2^{2^5}$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Thus it appears that <script type="math/tex">a_n = 2^{2^n}</script>.</p>
+<p>Thus it appears that <span class="kdmath">$a_n = 2^{2^n}$</span>.</p>
 
 <p>Base Case:</p>
 
@@ -1799,15 +1800,15 @@ Since <script type="math/tex">k</script> is positive integer,  <br />
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">a_n = 2^{2^n}</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$a_n = 2^{2^n}$</span>.</p>
 
-<p>Now <script type="math/tex">a_{n+1} = {(a_n)}^2</script>     <br />
-<script type="math/tex">= {(2^{2^n})}^2</script>    <br />
-<script type="math/tex">= {(2^{2^n})}^2</script>    <br />
-<script type="math/tex">= (2^{2 \cdot 2^n})</script>    <br />
-<script type="math/tex">= (2^{2^{n+1}})</script></p>
+<p>Now <span class="kdmath">$a_{n+1} = {(a_n)}^2$</span>     <br />
+<span class="kdmath">$= {(2^{2^n})}^2$</span>    <br />
+<span class="kdmath">$= {(2^{2^n})}^2$</span>    <br />
+<span class="kdmath">$= (2^{2 \cdot 2^n})$</span>    <br />
+<span class="kdmath">$= (2^{2^{n+1}})$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1816,35 +1817,35 @@ Since <script type="math/tex">k</script> is positive integer,  <br />
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><script type="math/tex">n</script></th>
-      <th><script type="math/tex">a_n</script></th>
+      <th style="text-align: center"><span class="kdmath">$n$</span></th>
+      <th><span class="kdmath">$a_n$</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><script type="math/tex">1</script></td>
-      <td><script type="math/tex">1</script></td>
+      <td style="text-align: center"><span class="kdmath">$1$</span></td>
+      <td><span class="kdmath">$1$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">2</script></td>
-      <td><script type="math/tex">\frac 1 2</script></td>
+      <td style="text-align: center"><span class="kdmath">$2$</span></td>
+      <td><span class="kdmath">$\frac 1 2$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">3</script></td>
-      <td><script type="math/tex">\frac 1 3</script></td>
+      <td style="text-align: center"><span class="kdmath">$3$</span></td>
+      <td><span class="kdmath">$\frac 1 3$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">4</script></td>
-      <td><script type="math/tex">\frac 1 4</script></td>
+      <td style="text-align: center"><span class="kdmath">$4$</span></td>
+      <td><span class="kdmath">$\frac 1 4$</span></td>
     </tr>
     <tr>
-      <td style="text-align: center"><script type="math/tex">5</script></td>
-      <td><script type="math/tex">\frac 1 5</script></td>
+      <td style="text-align: center"><span class="kdmath">$5$</span></td>
+      <td><span class="kdmath">$\frac 1 5$</span></td>
     </tr>
   </tbody>
 </table>
 
-<p>Thus it appears that <script type="math/tex">a_n = \frac 1 n</script>.</p>
+<p>Thus it appears that <span class="kdmath">$a_n = \frac 1 n$</span>.</p>
 
 <p>Base Case:</p>
 
@@ -1852,15 +1853,15 @@ Since <script type="math/tex">k</script> is positive integer,  <br />
 
 <p>Induction step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">a_n = \frac 1 n</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">$a_n = \frac 1 n$</span>.</p>
 
-<p>Now <script type="math/tex">a_{n+1} = \frac {a_n} {a_n + 1}</script>  <br />
-<script type="math/tex">= \frac {\frac 1 n} { {\frac 1 n} + 1}</script>  <br />
-<script type="math/tex">= \frac {\frac 1 n} { \frac {n+1} n }</script>  <br />
-<script type="math/tex">= {\frac 1 n} \times { \frac n {n+1} }</script>  <br />
-<script type="math/tex">= \frac 1 {n+1}</script></p>
+<p>Now <span class="kdmath">$a_{n+1} = \frac {a_n} {a_n + 1}$</span>  <br />
+<span class="kdmath">$= \frac {\frac 1 n} { {\frac 1 n} + 1}$</span>  <br />
+<span class="kdmath">$= \frac {\frac 1 n} { \frac {n+1} n }$</span>  <br />
+<span class="kdmath">$= {\frac 1 n} \times { \frac n {n+1} }$</span>  <br />
+<span class="kdmath">$= \frac 1 {n+1}$</span></p>
 
-<p>Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1868,23 +1869,23 @@ Since <script type="math/tex">k</script> is positive integer,  <br />
 
 <p><strong>(a)</strong></p>
 
-<p>Expanding <script type="math/tex">\binom{n} {0} = \frac {n!} {0!(n-0)!} = 1</script>.</p>
+<p>Expanding <span class="kdmath">$\binom{n} {0} = \frac {n!} {0!(n-0)!} = 1$</span>.</p>
 
-<p>Also <script type="math/tex">\binom{n} {n} = \frac {n!} {n!(n-n)!} = 1</script>.</p>
+<p>Also <span class="kdmath">$\binom{n} {n} = \frac {n!} {n!(n-n)!} = 1$</span>.</p>
 
-<p>Thus <script type="math/tex">\binom{n} {0} = \binom{n} {n}</script>.</p>
+<p>Thus <span class="kdmath">$\binom{n} {0} = \binom{n} {n}$</span>.</p>
 
 <p><strong>(b)</strong></p>
 
-<p>Lets compute <script type="math/tex">{\binom {n} {k} } + {\binom {n} {k-1} }</script>    <br />
-<script type="math/tex">= {\frac {n!} {k!(n-k)!} } + {\frac {n!} {(k-1)!(n-k+1)!} }</script>    <br />
-<script type="math/tex">= {\frac {n!} {k!(n-k)!} } + {\frac {n!} {(k-1)!(n-k+1)!} }</script>    <br />
-<script type="math/tex">= {\frac {n!} {k(k-1)!(n-k)!} } + {\frac {n!} {(k-1)!(n-k+1)(n-k)!} }</script>    <br />
-<script type="math/tex">= n! \times \frac {(n-k+1) + k} {k(n-k+1)(k-1)!(n-k)!}</script>    <br />
-<script type="math/tex">= n! \times \frac {n+1} {k(n-k+1)(k-1)!(n-k)!}</script>    <br />
-<script type="math/tex">= n! \times \frac {n+1} {k!(n-k+1)!}</script>    <br />
-<script type="math/tex">= \frac {(n+1)!} {k!(n-k+1)!}</script>    <br />
-<script type="math/tex">= \binom {(n+1)} {k}</script></p>
+<p>Lets compute <span class="kdmath">${\binom {n} {k} } + {\binom {n} {k-1} }$</span>    <br />
+<span class="kdmath">$= {\frac {n!} {k!(n-k)!} } + {\frac {n!} {(k-1)!(n-k+1)!} }$</span>    <br />
+<span class="kdmath">$= {\frac {n!} {k!(n-k)!} } + {\frac {n!} {(k-1)!(n-k+1)!} }$</span>    <br />
+<span class="kdmath">$= {\frac {n!} {k(k-1)!(n-k)!} } + {\frac {n!} {(k-1)!(n-k+1)(n-k)!} }$</span>    <br />
+<span class="kdmath">$= n! \times \frac {(n-k+1) + k} {k(n-k+1)(k-1)!(n-k)!}$</span>    <br />
+<span class="kdmath">$= n! \times \frac {n+1} {k(n-k+1)(k-1)!(n-k)!}$</span>    <br />
+<span class="kdmath">$= n! \times \frac {n+1} {k!(n-k+1)!}$</span>    <br />
+<span class="kdmath">$= \frac {(n+1)!} {k!(n-k+1)!}$</span>    <br />
+<span class="kdmath">$= \binom {(n+1)} {k}$</span></p>
 
 <p>Hence proved.</p>
 
@@ -1892,72 +1893,70 @@ Since <script type="math/tex">k</script> is positive integer,  <br />
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>. Suppose <script type="math/tex">A</script> has a set with <script type="math/tex">0</script> elements. Thus only possible value of <script type="math/tex">k = 0</script>. Thus number of subsets of <script type="math/tex">A</script> 
-containing <script type="math/tex">0</script> elements are <script type="math/tex">1</script>(empty set). Also <script type="math/tex">\binom n k = \binom 0 0 = 1</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>. Suppose <span class="kdmath">$A$</span> has a set with <span class="kdmath">$0$</span> elements. Thus only possible value of <span class="kdmath">$k = 0$</span>. Thus number of subsets of <span class="kdmath">$A$</span> 
+containing <span class="kdmath">$0$</span> elements are <span class="kdmath">$1$</span>(empty set). Also <span class="kdmath">$\binom n k = \binom 0 0 = 1$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct if <script type="math/tex">A</script> has <script type="math/tex">n</script> elements. Thus number of <script type="math/tex">k</script> sized subsets from <script type="math/tex">A</script> are <script type="math/tex">\binom n k</script>.</p>
+<p>Suppose theorem is correct if <span class="kdmath">$A$</span> has <span class="kdmath">$n$</span> elements. Thus number of <span class="kdmath">$k$</span> sized subsets from <span class="kdmath">$A$</span> are <span class="kdmath">$\binom n k$</span>.</p>
 
-<p>Now suppose <script type="math/tex">A</script> is a set of <script type="math/tex">n + 1</script> elements. Suppose <script type="math/tex">a</script> is an arbitrary element of <script type="math/tex">A</script>. Suppose <script type="math/tex">A' = A \setminus \{a\}</script>. 
-Suppose <script type="math/tex">k</script> is an integer such that <script type="math/tex">n+1 \ge k \ge 0</script>. We have following possible cases:</p>
+<p>Now suppose <span class="kdmath">$A$</span> is a set of <span class="kdmath">$n + 1$</span> elements. Suppose <span class="kdmath">$a$</span> is an arbitrary element of <span class="kdmath">$A$</span>. Suppose <span class="kdmath">$A' = A \setminus \{a\}$</span>. 
+Suppose <span class="kdmath">$k$</span> is an integer such that <span class="kdmath">$n+1 \ge k \ge 0$</span>. We have following possible cases:</p>
 
 <ul>
   <li>
-    <p>Case 1: <script type="math/tex">k = 0</script>  <br />
-Clearly there is only one possible zero sized subset of <script type="math/tex">A</script>. Also, <script type="math/tex">\binom {n+1} 0 = 1</script>. Thus for <script type="math/tex">k = 0</script>, number of subsets of <script type="math/tex">A</script>
-is same as <script type="math/tex">\binom {n+1} k</script>.</p>
+    <p>Case 1: <span class="kdmath">$k = 0$</span>  <br />
+Clearly there is only one possible zero sized subset of <span class="kdmath">$A$</span>. Also, <span class="kdmath">$\binom {n+1} 0 = 1$</span>. Thus for <span class="kdmath">$k = 0$</span>, number of subsets of <span class="kdmath">$A$</span>
+is same as <span class="kdmath">$\binom {n+1} k$</span>.</p>
   </li>
   <li>
-    <p>Case 2: <script type="math/tex">k = n+1</script>   <br />
-Since <script type="math/tex">A</script> contains <script type="math/tex">n+1</script> elements, it follows that there is only one subset of <script type="math/tex">A</script> containing <script type="math/tex">n+1</script> elements(subset is <script type="math/tex">A</script> itself).
-Since <script type="math/tex">\binom (n+1) k = \binom (n+1) (n+1) = 1</script>, it follows number of subsets of <script type="math/tex">A</script> of <script type="math/tex">k = n+1</script> elements is same as <script type="math/tex">\binom (n+1) k</script>.</p>
+    <p>Case 2: <span class="kdmath">$k = n+1$</span>   <br />
+Since <span class="kdmath">$A$</span> contains <span class="kdmath">$n+1$</span> elements, it follows that there is only one subset of <span class="kdmath">$A$</span> containing <span class="kdmath">$n+1$</span> elements(subset is <span class="kdmath">$A$</span> itself).
+Since <span class="kdmath">$\binom (n+1) k = \binom (n+1) (n+1) = 1$</span>, it follows number of subsets of <span class="kdmath">$A$</span> of <span class="kdmath">$k = n+1$</span> elements is same as <span class="kdmath">$\binom (n+1) k$</span>.</p>
   </li>
   <li>
-    <p>Case 3: <script type="math/tex">% <![CDATA[
-0 < k \le n %]]></script>   <br />
-There are two types of <script type="math/tex">k</script>-sized subsets of <script type="math/tex">A</script>. One type of subsets contain <script type="math/tex">a</script> and other type does not contain <script type="math/tex">a</script>.</p>
+    <p>Case 3: <span class="kdmath">$0 < k \le n$</span>   <br />
+There are two types of <span class="kdmath">$k$</span>-sized subsets of <span class="kdmath">$A$</span>. One type of subsets contain <span class="kdmath">$a$</span> and other type does not contain <span class="kdmath">$a$</span>.</p>
 
     <ul>
       <li>
-        <p>Subsets that does not contain <script type="math/tex">a</script> are also the subsets of <script type="math/tex">A'</script>. Now since <script type="math/tex">A'</script> has <script type="math/tex">n</script> elements and <script type="math/tex">% <![CDATA[
-0 < k \le n %]]></script>, it follows by induction hypothesis
-that number of such subsets are <script type="math/tex">\binom n k</script>.</p>
+        <p>Subsets that does not contain <span class="kdmath">$a$</span> are also the subsets of <span class="kdmath">$A'$</span>. Now since <span class="kdmath">$A'$</span> has <span class="kdmath">$n$</span> elements and <span class="kdmath">$0 < k \le n$</span>, it follows by induction hypothesis
+that number of such subsets are <span class="kdmath">$\binom n k$</span>.</p>
       </li>
       <li>
-        <p>Subsets that contains <script type="math/tex">a</script> are of the form of <script type="math/tex">X \cup \{a\}</script> where <script type="math/tex">X</script> is <script type="math/tex">k-1</script>-sized subsets of <script type="math/tex">A'</script>. Thus number of <script type="math/tex">k</script>-sized subsets
- of <script type="math/tex">A</script> that contains <script type="math/tex">a</script> is equal to number of <script type="math/tex">k - 1</script> sized subsets of <script type="math/tex">A'</script>. Since <script type="math/tex">A'</script> contains <script type="math/tex">n</script> elements, it follows from
- induction hypothesis that the number of subsets is <script type="math/tex">\binom n {k-1}</script>.</p>
+        <p>Subsets that contains <span class="kdmath">$a$</span> are of the form of <span class="kdmath">$X \cup \{a\}$</span> where <span class="kdmath">$X$</span> is <span class="kdmath">$k-1$</span>-sized subsets of <span class="kdmath">$A'$</span>. Thus number of <span class="kdmath">$k$</span>-sized subsets
+ of <span class="kdmath">$A$</span> that contains <span class="kdmath">$a$</span> is equal to number of <span class="kdmath">$k - 1$</span> sized subsets of <span class="kdmath">$A'$</span>. Since <span class="kdmath">$A'$</span> contains <span class="kdmath">$n$</span> elements, it follows from
+ induction hypothesis that the number of subsets is <span class="kdmath">$\binom n {k-1}$</span>.</p>
       </li>
     </ul>
 
-    <p>Thus total number of <script type="math/tex">k</script>-sized subsets of <script type="math/tex">A</script> are <script type="math/tex">{ \binom n k } + {\binom n {k-1} }</script>. From part(b) this sum is equivalent to <script type="math/tex">\binom {n+1} k</script>.</p>
+    <p>Thus total number of <span class="kdmath">$k$</span>-sized subsets of <span class="kdmath">$A$</span> are <span class="kdmath">${ \binom n k } + {\binom n {k-1} }$</span>. From part(b) this sum is equivalent to <span class="kdmath">$\binom {n+1} k$</span>.</p>
   </li>
 </ul>
 
-<p>Thus from all the cases, total number of <script type="math/tex">k</script> sized subsets of <script type="math/tex">A</script> is <script type="math/tex">\binom {n+1} k</script>.</p>
+<p>Thus from all the cases, total number of <span class="kdmath">$k$</span> sized subsets of <span class="kdmath">$A$</span> is <span class="kdmath">$\binom {n+1} k$</span>.</p>
 
 <p><strong>(d)</strong></p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 0</script>, LHS = <script type="math/tex">{(x+y)}^0 = 1</script>. And RHS = <script type="math/tex">x^0 \cdot y^0 = 1</script>. Thus <script type="math/tex">LHS = RHS</script>.</p>
+<p>For <span class="kdmath">$n = 0$</span>, LHS = <span class="kdmath">${(x+y)}^0 = 1$</span>. And RHS = <span class="kdmath">$x^0 \cdot y^0 = 1$</span>. Thus <span class="kdmath">$LHS = RHS$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>. Thus <script type="math/tex">{(x+y)}^n = \sum_{k=0}^n {\binom {n} k} x^{n-k}y^k</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>. Thus <span class="kdmath">${(x+y)}^n = \sum_{k=0}^n {\binom {n} k} x^{n-k}y^k$</span>.</p>
 
-<p>For <script type="math/tex">n+1</script>, we have <script type="math/tex">{(x+y)}^{n+1} = (x+y){(x+y)}^n</script>. Thus by induction hypothesis:   <br />
-<script type="math/tex">= (x+y)\sum_{k=0}^n {\binom {n} k} x^{n-k}y^k</script>    <br />
-<script type="math/tex">= (x+y)( { {\binom {n} {0} }x^{n-0}y^{0} } + { {\binom {n} {1} }x^{n-1}y^{1} } + { {\binom {n} {2} }x^{n-2}y^{2} } + { {\binom {n} {3} }x^{n-3}y^{3} } + \cdot \cdot \cdot + { {\binom {n} {n} }x^{n-n}y^{n} } )</script>     <br />
-<script type="math/tex">= (x+y)( { {\binom {n} {0} }x^{n} } + { {\binom {n} {1} }x^{n-1}y^{1} } + { {\binom {n} {2} }x^{n-2}y^{2} } + { {\binom {n} {3} }x^{n-3}y^{3} } + \cdot \cdot \cdot + { {\binom {n} {n} }y^{n} } )</script></p>
+<p>For <span class="kdmath">$n+1$</span>, we have <span class="kdmath">${(x+y)}^{n+1} = (x+y){(x+y)}^n$</span>. Thus by induction hypothesis:   <br />
+<span class="kdmath">$= (x+y)\sum_{k=0}^n {\binom {n} k} x^{n-k}y^k$</span>    <br />
+<span class="kdmath">$= (x+y)( { {\binom {n} {0} }x^{n-0}y^{0} } + { {\binom {n} {1} }x^{n-1}y^{1} } + { {\binom {n} {2} }x^{n-2}y^{2} } + { {\binom {n} {3} }x^{n-3}y^{3} } + \cdot \cdot \cdot + { {\binom {n} {n} }x^{n-n}y^{n} } )$</span>     <br />
+<span class="kdmath">$= (x+y)( { {\binom {n} {0} }x^{n} } + { {\binom {n} {1} }x^{n-1}y^{1} } + { {\binom {n} {2} }x^{n-2}y^{2} } + { {\binom {n} {3} }x^{n-3}y^{3} } + \cdot \cdot \cdot + { {\binom {n} {n} }y^{n} } )$</span></p>
 
-<p>Multiplying each term inside by <script type="math/tex">(x+y)</script> and using <script type="math/tex">\binom n 0 = \binom n n = 1</script>,     <br />
-<script type="math/tex">= { x^{n+1} } + { {\binom {n} {0} }x^{n}y{1} } + { {\binom {n} {1} }x^{n}y^{1} } + { {\binom {n} {1} }x^{n-1}y^{2} } + { {\binom {n} {2} }x^{n-1}y^{2} } +{ {\binom {n} {2} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-3}y^{4} } + \cdot \cdot \cdot + { {\binom {n} {n} }x^{1}y^{n} } + { y^{n+1} }</script>  <br />
-<script type="math/tex">\, = { x^{n+1} } + ({\binom {n} {0} } + {\binom {n} {1} })x^{n}y^{1} + ({\binom {n} {1} } + {\binom {n} {2} })x^{n-1}y^{2} + ({\binom {n} {2} } + {\binom {n} {3} })x^{n-2}y^{3} + ({\binom {n} {3} } + {\binom {n} {4} })x^{n-3}y^{4} + \cdot \cdot \cdot + ({\binom {n} {n-1} } + {\binom {n} {n} })x^{1}y^{n} + { y^{n+1} } \,</script>  <br />
-<script type="math/tex">= { \binom {n+1} {0} }x^{n+1} + {\binom {n+1} {1} }x^{n}y^{1} + {\binom {n+1} {2} }x^{n-1}y^{2} + {\binom {n+1} {3} }x^{n-2}y^{3} + {\binom {n+1} {4} }x^{n-3}y^{4} + \cdot \cdot \cdot + {\binom {n+1} {n} }x^{1}y^{n} + {\binom {n+1} {n+1} }y^{n+1}</script>  <br />
-<script type="math/tex">= \sum_{k=0}^{n+1} {\binom {n+1} k} x^{n+1-k}y^k</script>    <br />
-Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/tex">P(n+1)</script> is also true.</p>
+<p>Multiplying each term inside by <span class="kdmath">$(x+y)$</span> and using <span class="kdmath">$\binom n 0 = \binom n n = 1$</span>,     <br />
+<span class="kdmath">$= { x^{n+1} } + { {\binom {n} {0} }x^{n}y{1} } + { {\binom {n} {1} }x^{n}y^{1} } + { {\binom {n} {1} }x^{n-1}y^{2} } + { {\binom {n} {2} }x^{n-1}y^{2} } +{ {\binom {n} {2} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-2}y^{3} } + { {\binom {n} {3} }x^{n-3}y^{4} } + \cdot \cdot \cdot + { {\binom {n} {n} }x^{1}y^{n} } + { y^{n+1} }$</span>  <br />
+<span class="kdmath">$\, = { x^{n+1} } + ({\binom {n} {0} } + {\binom {n} {1} })x^{n}y^{1} + ({\binom {n} {1} } + {\binom {n} {2} })x^{n-1}y^{2} + ({\binom {n} {2} } + {\binom {n} {3} })x^{n-2}y^{3} + ({\binom {n} {3} } + {\binom {n} {4} })x^{n-3}y^{4} + \cdot \cdot \cdot + ({\binom {n} {n-1} } + {\binom {n} {n} })x^{1}y^{n} + { y^{n+1} } \,$</span>  <br />
+<span class="kdmath">$= { \binom {n+1} {0} }x^{n+1} + {\binom {n+1} {1} }x^{n}y^{1} + {\binom {n+1} {2} }x^{n-1}y^{2} + {\binom {n+1} {3} }x^{n-2}y^{3} + {\binom {n+1} {4} }x^{n-3}y^{4} + \cdot \cdot \cdot + {\binom {n+1} {n} }x^{1}y^{n} + {\binom {n+1} {n+1} }y^{n+1}$</span>  <br />
+<span class="kdmath">$= \sum_{k=0}^{n+1} {\binom {n+1} k} x^{n+1-k}y^k$</span>    <br />
+Thus if <span class="kdmath">$P(n)$</span> is true, then <span class="kdmath">$P(n+1)$</span> is also true.</p>
 
 <hr />
 
@@ -1965,48 +1964,43 @@ Thus if <script type="math/tex">P(n)</script> is true, then <script type="math/t
 
 <p><strong>(a)</strong></p>
 
-<p>Putting <script type="math/tex">x = 1, y = 1</script> in part(d) of Ex18, we get <script type="math/tex">(1+1)^n = \sum_{i=0}^n {\binom {n} k}1^{n-k}1^k</script>. Thus:   <br />
-<script type="math/tex">\Rightarrow 2^n = \sum_{i=0}^n {\binom {n} k}</script></p>
+<p>Putting <span class="kdmath">$x = 1, y = 1$</span> in part(d) of Ex18, we get <span class="kdmath">$(1+1)^n = \sum_{i=0}^n {\binom {n} k}1^{n-k}1^k$</span>. Thus:   <br />
+<span class="kdmath">$\Rightarrow 2^n = \sum_{i=0}^n {\binom {n} k}$</span></p>
 
 <p><strong>(b)</strong></p>
 
-<p>Putting <script type="math/tex">x = 1, y = -1</script> in part(d) of Ex18, we get <script type="math/tex">(1-1)^n = \sum_{i=0}^n {\binom {n} k}1^{n-k}{(-1)}^{k}</script>. Thus:   <br />
-<script type="math/tex">\Rightarrow \sum_{i=0}^n {\binom {n} k} {(-1)}^{k} = 0</script>           <br />
-<script type="math/tex">\Rightarrow \sum_{i=0}^n {(-1)}^{k} {\binom {n} k} = 0</script></p>
+<p>Putting <span class="kdmath">$x = 1, y = -1$</span> in part(d) of Ex18, we get <span class="kdmath">$(1-1)^n = \sum_{i=0}^n {\binom {n} k}1^{n-k}{(-1)}^{k}$</span>. Thus:   <br />
+<span class="kdmath">$\Rightarrow \sum_{i=0}^n {\binom {n} k} {(-1)}^{k} = 0$</span>           <br />
+<span class="kdmath">$\Rightarrow \sum_{i=0}^n {(-1)}^{k} {\binom {n} k} = 0$</span></p>
 
 <hr />
 
 <p><strong>Soln20</strong></p>
 
-<p>It will be easier to prove <script type="math/tex">% <![CDATA[
-0 < a_n < \frac 1 2 %]]></script>.</p>
+<p>It will be easier to prove <span class="kdmath">$0 < a_n < \frac 1 2$</span>.</p>
 
-<p>Clearly <script type="math/tex">a_n^2</script> is positive, it follows <script type="math/tex">a_{n+1}</script> is also positive.</p>
+<p>Clearly <span class="kdmath">$a_n^2$</span> is positive, it follows <span class="kdmath">$a_{n+1}$</span> is also positive.</p>
 
 <p>Base Case:</p>
 
-<p>For <script type="math/tex">n = 1</script>, <script type="math/tex">a_1 = a_0^2 + \frac 1 4 = \frac 1 4</script>. Clearly <script type="math/tex">% <![CDATA[
-0 < a_1 < \frac 1 2 %]]></script>.</p>
+<p>For <span class="kdmath">$n = 1$</span>, <span class="kdmath">$a_1 = a_0^2 + \frac 1 4 = \frac 1 4$</span>. Clearly <span class="kdmath">$0 < a_1 < \frac 1 2$</span>.</p>
 
 <p>Induction Step:</p>
 
-<p>Suppose theorem is correct for <script type="math/tex">n</script>.</p>
+<p>Suppose theorem is correct for <span class="kdmath">$n$</span>.</p>
 
-<p>Now <script type="math/tex">a_{n+1} = a_n^2 + {\frac 1 4}</script>    <br />
-<script type="math/tex">% <![CDATA[
-< {(\frac 1 2)}^2 + {\frac 1 4} %]]></script>       <br />
-<script type="math/tex">= {\frac 1 4} + {\frac 1 4}</script>   <br />
-<script type="math/tex">= \frac 1 2</script></p>
+<p>Now <span class="kdmath">$a_{n+1} = a_n^2 + {\frac 1 4}$</span>    <br />
+<span class="kdmath">$< {(\frac 1 2)}^2 + {\frac 1 4}$</span>       <br />
+<span class="kdmath">$= {\frac 1 4} + {\frac 1 4}$</span>   <br />
+<span class="kdmath">$= \frac 1 2$</span></p>
 
-<p>Thus <script type="math/tex">% <![CDATA[
-0 < a_{n+1} < \frac 1 2 %]]></script>. Or we  can also say that <script type="math/tex">% <![CDATA[
-0 < a_{n+1} < 1 %]]></script>.</p>
+<p>Thus <span class="kdmath">$0 < a_{n+1} < \frac 1 2$</span>. Or we  can also say that <span class="kdmath">$0 < a_{n+1} < 1$</span>.</p>
 
 <hr />
 
 <p><strong>Soln21</strong></p>
 
-<p>Adding <script type="math/tex">1</script> helped made LHS closer to RHS. TODO</p>
+<p>Adding <span class="kdmath">$1$</span> helped made LHS closer to RHS. TODO</p>
 
 
                         <hr/>
