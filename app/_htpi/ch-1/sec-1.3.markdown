@@ -15,7 +15,7 @@ redirect_from:
 - Statements with Variables. For eg: "x is divisible by 9", "y is a person" are statements. Here x, and y are variables.
 - These statements are true or false based on the value of variables.
 - Sets,  a collection of objects.
-- Bound and Unbound variables. Eg: $$ y ∈ \{x\,\vert\,x^3 < 9\} $$ , $$ y $$ is a free variable, whereas $$ x $$ is a bound variable.
+- Bound and Unbound variables. Eg: \\( y ∈ \{x\,\vert\,x^3 < 9\} \\) , $$ y $$ is a free variable, whereas $$ x $$ is a bound variable.
 - Free variables in a statement are for objects for which statement is talking about. 
 - Bound variables are just dummy variables to help express the idea. Thus bound variables dont represent any object of the statement.
 - The truth set of a statement P(x) is the set of all values of x that make the statement P(x) true.
@@ -60,7 +60,7 @@ redirect_from:
 
 **Soln4**
 
-**(a)** $$ \{ x^2\,\vert\, x > 0 \text{ and } x \in \mathbb{N} \} $$
+**(a)** \\[ \{ x^2\,\vert\, x > 0 \text{ and } x \in \mathbb{N} \} \\]
 
 **(b)** $$ \{ 2^x\,\vert\, x \in \mathbb{N} \} $$
 
