@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9427,15 +9428,15 @@
                <span class="p">(</span><span class="nf">supervisor</span> <span class="nv">?staff-person</span> <span class="nv">?middle-manager</span><span class="p">))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>What happens when we execute <code class="highlighter-rouge">(outranked-by (Bitdiddle Ben) ?who)</code>?</p>
+<p>What happens when we execute <code class="language-plaintext highlighter-rouge">(outranked-by (Bitdiddle Ben) ?who)</code>?</p>
 
-<p>In evaluation process, when we evaluate the recursive rule query <code class="highlighter-rouge">(outranked-by ?middle-manager ?boss)</code>, both variables <code class="highlighter-rouge">?middle-manager</code> and <code class="highlighter-rouge">?boss</code> are not bounded to any contants in the frame.</p>
+<p>In evaluation process, when we evaluate the recursive rule query <code class="language-plaintext highlighter-rouge">(outranked-by ?middle-manager ?boss)</code>, both variables <code class="language-plaintext highlighter-rouge">?middle-manager</code> and <code class="language-plaintext highlighter-rouge">?boss</code> are not bounded to any contants in the frame.</p>
 
 <p>This results in an infinite loop of evaluation because no evaluation steps later results in bounding these variables and evaluator keeps searching/matching recursively and hopelessly!</p>
 
 <p>Why this does not happen in the earlier version?</p>
 
-<p>Because now, in every recursive evaluation of the rule <code class="highlighter-rouge">out-ranked-by</code>, the variable <code class="highlighter-rouge">?staff-person</code> is bound to some constant in the frame. This stops the recurson at the point when there is no supervisor found for <code class="highlighter-rouge">?staff-person</code>.</p>
+<p>Because now, in every recursive evaluation of the rule <code class="language-plaintext highlighter-rouge">out-ranked-by</code>, the variable <code class="language-plaintext highlighter-rouge">?staff-person</code> is bound to some constant in the frame. This stops the recurson at the point when there is no supervisor found for <code class="language-plaintext highlighter-rouge">?staff-person</code>.</p>
 
                         <hr/>
                     </span>
@@ -9509,7 +9510,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

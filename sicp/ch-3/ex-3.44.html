@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9419,13 +9420,13 @@
 
 <p>The problem is mainly how to read this assumption of the problem - <strong>You should assume that the balance in from-account is at least amount.</strong></p>
 
-<p>I think this assumption is possible only when we are entering the procedure <code class="highlighter-rouge">transfer</code> but how can we assume the same in multi threaded environment when <code class="highlighter-rouge">withdraw</code> is called. Because the code of the <code class="highlighter-rouge">transfer</code> method does not have anyway to determine that when it calls <code class="highlighter-rouge">withdraw</code> the balance has not changed since the time we entered the <code class="highlighter-rouge">transfer</code> procedure..</p>
+<p>I think this assumption is possible only when we are entering the procedure <code class="language-plaintext highlighter-rouge">transfer</code> but how can we assume the same in multi threaded environment when <code class="language-plaintext highlighter-rouge">withdraw</code> is called. Because the code of the <code class="language-plaintext highlighter-rouge">transfer</code> method does not have anyway to determine that when it calls <code class="language-plaintext highlighter-rouge">withdraw</code> the balance has not changed since the time we entered the <code class="language-plaintext highlighter-rouge">transfer</code> procedure..</p>
 
 <p>Since the situation in which it wont work is rare, lets first start with another part of the question assuming that this will work.</p>
 
 <p>The problem asks an interesting question that what is the difference between this and the earlier exercise if this will work then previous exercise should also work as they look same on the outset both require withdrawing some amount from one acccount and depositing the withdrawn amount in other account.</p>
 
-<p>The difference is from previous exercise is <code class="highlighter-rouge">amount</code> which is withdrawn in constant here and does not depend on the current balance when we initiate the transfer.(Ofcourse withdrawn amount must be more then the balance but this is a precondition not dependency). So in this case <code class="highlighter-rouge">amount</code> can be more then the withdraw- yes, even assuming the condition that amount initially is more then the balance when we entered the procedure - in multiple account case - we might run into this problem.</p>
+<p>The difference is from previous exercise is <code class="language-plaintext highlighter-rouge">amount</code> which is withdrawn in constant here and does not depend on the current balance when we initiate the transfer.(Ofcourse withdrawn amount must be more then the balance but this is a precondition not dependency). So in this case <code class="language-plaintext highlighter-rouge">amount</code> can be more then the withdraw- yes, even assuming the condition that amount initially is more then the balance when we entered the procedure - in multiple account case - we might run into this problem.</p>
 
 <p>Consider a situation(somewhat similar as of previous exercise) that we are doing transfers as:</p>
 
@@ -9437,9 +9438,9 @@
 
 <p>Now lets execute them in parallel and consider that A1, A2, A3, A4 all have 10$ initial balance.</p>
 
-<p>Now if they execute in parallel - there can be a situation when initially we start transfer - enter the procedure transfer - because <code class="highlighter-rouge">amount</code> was sufficeint(as mentioned in the problem to assume that we enter this procedure assuming that amount is sufficient) <strong>BUT</strong> in the middle first T1 happens and then T3 starts executing and tries to <code class="highlighter-rouge">withdraw</code> from A1 and withdraw procedure completes with return value “Insufficient Funds”.</p>
+<p>Now if they execute in parallel - there can be a situation when initially we start transfer - enter the procedure transfer - because <code class="language-plaintext highlighter-rouge">amount</code> was sufficeint(as mentioned in the problem to assume that we enter this procedure assuming that amount is sufficient) <strong>BUT</strong> in the middle first T1 happens and then T3 starts executing and tries to <code class="language-plaintext highlighter-rouge">withdraw</code> from A1 and withdraw procedure completes with return value “Insufficient Funds”.</p>
 
-<p>The problem is transfer method <em>does not check the return value</em> and completes its business by calling the <code class="highlighter-rouge">deposit</code> procedure.</p>
+<p>The problem is transfer method <em>does not check the return value</em> and completes its business by calling the <code class="language-plaintext highlighter-rouge">deposit</code> procedure.</p>
 
 <p>After adding a check and reporting error, however, it should work except that still the program is not deterministic - if T1 -&gt; T2 -&gt; T3 executes then there wont be any problem but if T1 -&gt; T3 -&gt; T2 executes then program will report error.</p>
 
@@ -9533,7 +9534,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

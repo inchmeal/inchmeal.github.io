@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,7 +9418,7 @@
                         <hr/>
                         <h4 id="why-extra-frame">Why extra frame?</h4>
 
-<p>Because <code class="highlighter-rouge">let</code> is transformed into a lambda creation and invocation. And lambda invocation creates a frame.</p>
+<p>Because <code class="language-plaintext highlighter-rouge">let</code> is transformed into a lambda creation and invocation. And lambda invocation creates a frame.</p>
 
 <h4 id="why-this-difference-wont-cause-any-behaviour-change">Why this difference won’t cause any behaviour change?</h4>
 
@@ -9425,7 +9426,7 @@
 
 <h4 id="design-a-new-way-to-avoid-extra-frame-creation">Design a new way to avoid extra frame creation.</h4>
 
-<p>Instead of creating <code class="highlighter-rouge">let</code>, we can just put the definitions like <code class="highlighter-rouge">(define x '*unassigned*)</code> in the beginning of the body and <em>replace</em> all the existing definitions by <code class="highlighter-rouge">set!</code>. For eg:</p>
+<p>Instead of creating <code class="language-plaintext highlighter-rouge">let</code>, we can just put the definitions like <code class="language-plaintext highlighter-rouge">(define x '*unassigned*)</code> in the beginning of the body and <em>replace</em> all the existing definitions by <code class="language-plaintext highlighter-rouge">set!</code>. For eg:</p>
 
 <p>If we have a procedure:</p>
 
@@ -9536,7 +9537,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

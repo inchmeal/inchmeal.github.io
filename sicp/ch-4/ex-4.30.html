@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9423,21 +9424,21 @@
 
 <p>Original Evaluator:</p>
 
-<p><code class="highlighter-rouge">(p1 1)</code> will give <code class="highlighter-rouge">(1 2)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(p1 1)</code> will give <code class="language-plaintext highlighter-rouge">(1 2)</code></p>
 
-<p><code class="highlighter-rouge">(p2 1)</code> will result in <code class="highlighter-rouge">1</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">(p2 1)</code> will result in <code class="language-plaintext highlighter-rouge">1</code>.</p>
 
 <p>Reformed C Programmer’s version:</p>
 
-<p><code class="highlighter-rouge">(p1 1)</code> will give <code class="highlighter-rouge">(1 2)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(p1 1)</code> will give <code class="language-plaintext highlighter-rouge">(1 2)</code></p>
 
-<p><code class="highlighter-rouge">(p2 1)</code> will result in <code class="highlighter-rouge">(1 2)</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">(p2 1)</code> will result in <code class="language-plaintext highlighter-rouge">(1 2)</code>.</p>
 
 <h4 id="c">c</h4>
 
 <p>I mentioned this in a previous exercise.</p>
 
-<p>That <code class="highlighter-rouge">actual-value</code> won’t hurt non-thunks and evaluates the thunks.</p>
+<p>That <code class="language-plaintext highlighter-rouge">actual-value</code> won’t hurt non-thunks and evaluates the thunks.</p>
 
 <h4 id="d">d</h4>
 
@@ -9445,11 +9446,11 @@
 
 <p>I am wondering why not go with a third approach:</p>
 
-<p>To use <code class="highlighter-rouge">actual-value</code> only when evaluating assignments i.e. <code class="highlighter-rouge">(set! &lt;ex&gt;)</code> expressions.</p>
+<p>To use <code class="language-plaintext highlighter-rouge">actual-value</code> only when evaluating assignments i.e. <code class="language-plaintext highlighter-rouge">(set! &lt;ex&gt;)</code> expressions.</p>
 
-<p>This will then also require to use <code class="highlighter-rouge">actual-value</code> in evaluating procedure arguments which are assignment expressions.</p>
+<p>This will then also require to use <code class="language-plaintext highlighter-rouge">actual-value</code> in evaluating procedure arguments which are assignment expressions.</p>
 
-<p>Now, this will create another issue, that we return <code class="highlighter-rouge">'ok</code> in assignment expressions, but then we need to return the latest values.</p>
+<p>Now, this will create another issue, that we return <code class="language-plaintext highlighter-rouge">'ok</code> in assignment expressions, but then we need to return the latest values.</p>
 
 <p>My concern with the idea proposed by Cy is that it is even <em>effecting</em> the parts which are not even causing the problems.</p>
 
@@ -9527,7 +9528,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

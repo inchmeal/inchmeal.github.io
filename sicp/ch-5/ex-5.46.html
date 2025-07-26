@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,7 +9416,7 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Note that we can use the same approach outlined in ex-5.29 to arrive at the expression for <code class="highlighter-rouge">total-pushes</code> or <span class="kdmath">$\, S_n \,$</span></p>
+                        <p>Note that we can use the same approach outlined in ex-5.29 to arrive at the expression for <code class="language-plaintext highlighter-rouge">total-pushes</code> or <span class="kdmath">$\, S_n \,$</span></p>
 
 <p>Here are the results:</p>
 
@@ -9461,7 +9462,7 @@
   </tbody>
 </table>
 
-<p>Note that i removed an extra <code class="highlighter-rouge">save</code> in the special-purpose fibonacci using the suggestion from ex-5.6</p>
+<p>Note that i removed an extra <code class="language-plaintext highlighter-rouge">save</code> in the special-purpose fibonacci using the suggestion from ex-5.6</p>
 
 <p>Also, with open coding enabled in the compiler version, we get:</p>
 
@@ -9475,12 +9476,12 @@ $$</div>
 \, \text{maximum-depth} = 2n - 2 \,
 $$</div>
 
-<p>Note that, for fib. there is one more operator <code class="highlighter-rouge">&lt;</code> that i added in open coding operators. Intially the results were quite far apart(it was <span class="kdmath">$\, 7 \text{fib}_{n+1} \,$</span> ) but after realising that <code class="highlighter-rouge">&lt;</code> is not open coded, fixing that made the compiler performance almost same as special-purpose performance.</p>
+<p>Note that, for fib. there is one more operator <code class="language-plaintext highlighter-rouge">&lt;</code> that i added in open coding operators. Intially the results were quite far apart(it was <span class="kdmath">$\, 7 \text{fib}_{n+1} \,$</span> ) but after realising that <code class="language-plaintext highlighter-rouge">&lt;</code> is not open coded, fixing that made the compiler performance almost same as special-purpose performance.</p>
 
-<p>For adding <code class="highlighter-rouge">&lt;</code>, just two things:</p>
+<p>For adding <code class="language-plaintext highlighter-rouge">&lt;</code>, just two things:</p>
 
 <ul>
-  <li>Add code in ch5-compiler.scm parallel to open coding changes for <code class="highlighter-rouge">=</code>.</li>
+  <li>Add code in ch5-compiler.scm parallel to open coding changes for <code class="language-plaintext highlighter-rouge">=</code>.</li>
   <li>Also check previous exercise ex-5.45(end of the page there) for adding open code operations.</li>
 </ul>
 
@@ -9780,7 +9781,7 @@ $$</div>
 <span class="mi">13</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Compiler with open-coding enabled version(including <code class="highlighter-rouge">&lt;</code>):</p>
+<p>Compiler with open-coding enabled version(including <code class="language-plaintext highlighter-rouge">&lt;</code>):</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9971,7 +9972,7 @@ $$</div>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,18 +9418,18 @@
                         <hr/>
                         <p>This exercise is kind of interesting after attempting ex-5.31.</p>
 
-<p>The difference between two versions of <code class="highlighter-rouge">factorial</code> is just the order of operands:</p>
+<p>The difference between two versions of <code class="language-plaintext highlighter-rouge">factorial</code> is just the order of operands:</p>
 
-<p><code class="highlighter-rouge">(* n (factorial-alt (- n 1)))</code> vs <code class="highlighter-rouge">(* (factorial (- n 1)) n)))</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">(* n (factorial-alt (- n 1)))</code> vs <code class="language-plaintext highlighter-rouge">(* (factorial (- n 1)) n)))</code>.</p>
 
 <p>So, to check the performance difference, we can think similar to ex-5.31, that what saves and restores can be avoided in first case vs the second case.</p>
 
 <p>But, There is one important thing we should consider which is different here from ex-5.31. Now we are comparing the outputs from compiler! And the compiler <em>unlike</em> evaluator, causes the evaluation of arguments from right to left instead of left to right.</p>
 
-<h4 id="first-consider-the-factorial-alt-version">First consider the <code class="highlighter-rouge">factorial-alt</code> version:</h4>
+<h4 id="first-consider-the-factorial-alt-version">First consider the <code class="language-plaintext highlighter-rouge">factorial-alt</code> version:</h4>
 
 <ul>
-  <li>It evaluates arguments to <code class="highlighter-rouge">*</code> from right, thus evaluating <code class="highlighter-rouge">(factorial-alt (- n 1))</code>. Since this is a procedure, this can change <code class="highlighter-rouge">env</code> which will be needed to evaluate the next argument, so we save <code class="highlighter-rouge">env</code>. This is apparent from the code generated:</li>
+  <li>It evaluates arguments to <code class="language-plaintext highlighter-rouge">*</code> from right, thus evaluating <code class="language-plaintext highlighter-rouge">(factorial-alt (- n 1))</code>. Since this is a procedure, this can change <code class="language-plaintext highlighter-rouge">env</code> which will be needed to evaluate the next argument, so we save <code class="language-plaintext highlighter-rouge">env</code>. This is apparent from the code generated:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9452,7 +9453,7 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li>Now, we evaluate the next argument which is <code class="highlighter-rouge">n</code>. Since this is just a variable, it does not change any registers apart from <code class="highlighter-rouge">val</code>. Thus we can avoid saving and restoring register <code class="highlighter-rouge">argl</code> while evaluating this. This is again apparent from the code generated:</li>
+  <li>Now, we evaluate the next argument which is <code class="language-plaintext highlighter-rouge">n</code>. Since this is just a variable, it does not change any registers apart from <code class="language-plaintext highlighter-rouge">val</code>. Thus we can avoid saving and restoring register <code class="language-plaintext highlighter-rouge">argl</code> while evaluating this. This is again apparent from the code generated:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9469,10 +9470,10 @@
 <span class="c1">;;....</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<h4 id="now-consider-the-orginal-factorial-version">Now consider the orginal <code class="highlighter-rouge">factorial</code> version:</h4>
+<h4 id="now-consider-the-orginal-factorial-version">Now consider the orginal <code class="language-plaintext highlighter-rouge">factorial</code> version:</h4>
 
 <ul>
-  <li>Here, we first evaluate <code class="highlighter-rouge">n</code>. Since this can not change <code class="highlighter-rouge">env</code>, we do not save or restore <code class="highlighter-rouge">env</code> as is apparent from the code generated:</li>
+  <li>Here, we first evaluate <code class="language-plaintext highlighter-rouge">n</code>. Since this can not change <code class="language-plaintext highlighter-rouge">env</code>, we do not save or restore <code class="language-plaintext highlighter-rouge">env</code> as is apparent from the code generated:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9496,10 +9497,10 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li>Now, we evaluate <code class="highlighter-rouge">(factorial-val (- n 1))</code>. Even though this can change <code class="highlighter-rouge">env</code> we don’t need to save n restore <code class="highlighter-rouge">env</code> because this is last argument and we do not need env after this argument. <em>But</em> here we need to save and restore <code class="highlighter-rouge">argl</code> since this can change <code class="highlighter-rouge">argl</code>. This can also be seen in the generated code shown above.</li>
+  <li>Now, we evaluate <code class="language-plaintext highlighter-rouge">(factorial-val (- n 1))</code>. Even though this can change <code class="language-plaintext highlighter-rouge">env</code> we don’t need to save n restore <code class="language-plaintext highlighter-rouge">env</code> because this is last argument and we do not need env after this argument. <em>But</em> here we need to save and restore <code class="language-plaintext highlighter-rouge">argl</code> since this can change <code class="language-plaintext highlighter-rouge">argl</code>. This can also be seen in the generated code shown above.</li>
 </ul>
 
-<p>Thus in the first case we save and restore <code class="highlighter-rouge">env</code> while in the second case we save and restore <code class="highlighter-rouge">argl</code>. Thus the number of operations in both cases turn out to be equal!</p>
+<p>Thus in the first case we save and restore <code class="language-plaintext highlighter-rouge">env</code> while in the second case we save and restore <code class="language-plaintext highlighter-rouge">argl</code>. Thus the number of operations in both cases turn out to be equal!</p>
 
 <p>So, they are equally efficient.</p>
 
@@ -9575,7 +9576,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9421,9 +9422,9 @@
 
 <p>So, I implemented a common procedure.</p>
 
-<p>One thing to note is the returned values by <code class="highlighter-rouge">and</code> and <code class="highlighter-rouge">or</code> expressions. Currently these values are the internal values of the language. Or we are using the same primitives as of the implementation language for boolean case too!</p>
+<p>One thing to note is the returned values by <code class="language-plaintext highlighter-rouge">and</code> and <code class="language-plaintext highlighter-rouge">or</code> expressions. Currently these values are the internal values of the language. Or we are using the same primitives as of the implementation language for boolean case too!</p>
 
-<p>It may then occur that we should add boolean check in <code class="highlighter-rouge">self-evaluating?</code>, but this is not so because we have defined variables(in book), true and false. So instead of using #t, or #f we can get our code work using true and false.</p>
+<p>It may then occur that we should add boolean check in <code class="language-plaintext highlighter-rouge">self-evaluating?</code>, but this is not so because we have defined variables(in book), true and false. So instead of using #t, or #f we can get our code work using true and false.</p>
 
 <p>How difficult it would be to implement our own numbers/booleans instead of using from the implementing language? I tried for boolean to use ‘yes and ‘no but it turned out it will take some more thinking so abandoned the effort.</p>
 
@@ -9737,7 +9738,7 @@
 
 <p>Similar to special form implementation, here also, I have combined the logic in a single procedure:</p>
 
-<p>(Add this in eval: <code class="highlighter-rouge">((cond? exp) (eval (cond-&gt;if exp) env))</code>)</p>
+<p>(Add this in eval: <code class="language-plaintext highlighter-rouge">((cond? exp) (eval (cond-&gt;if exp) env))</code>)</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9790,9 +9791,9 @@
 <p>Few things to notice:</p>
 
 <ul>
-  <li>I used <code class="highlighter-rouge">'true</code> and <code class="highlighter-rouge">'false</code> here instead of implementing language true and false values as opposed to the special form version. Why? Because after conversion, the syntax should conform to our language. We are not evaluating here but just converting to special form!</li>
+  <li>I used <code class="language-plaintext highlighter-rouge">'true</code> and <code class="language-plaintext highlighter-rouge">'false</code> here instead of implementing language true and false values as opposed to the special form version. Why? Because after conversion, the syntax should conform to our language. We are not evaluating here but just converting to special form!</li>
   <li>As an effect of above point, no eval calls in the conversion procedures.</li>
-  <li>Note that <code class="highlighter-rouge">first</code> is used two times. Thus it will be evaluated twice! This has two problems: (i) Efficiency (ii) If an expression has any side effect(assignment), we have more trouble!</li>
+  <li>Note that <code class="language-plaintext highlighter-rouge">first</code> is used two times. Thus it will be evaluated twice! This has two problems: (i) Efficiency (ii) If an expression has any side effect(assignment), we have more trouble!</li>
 </ul>
 
 <p>We can avoid this using memoization but I have skipped this probably I think this may get covered later in the book itself.</p>
@@ -9869,7 +9870,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

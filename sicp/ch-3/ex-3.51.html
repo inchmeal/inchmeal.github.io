@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,15 +9416,15 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>When we first define <code class="highlighter-rouge">x</code> using <code class="highlighter-rouge">(define x (stream-map show (stream-enumerate-interval 0 10)))</code> it will only compute the first element in <code class="highlighter-rouge">x</code> which causes it to call <code class="highlighter-rouge">show</code> and printing the first element <code class="highlighter-rouge">0</code>.</p>
+                        <p>When we first define <code class="language-plaintext highlighter-rouge">x</code> using <code class="language-plaintext highlighter-rouge">(define x (stream-map show (stream-enumerate-interval 0 10)))</code> it will only compute the first element in <code class="language-plaintext highlighter-rouge">x</code> which causes it to call <code class="language-plaintext highlighter-rouge">show</code> and printing the first element <code class="language-plaintext highlighter-rouge">0</code>.</p>
 
-<p>Note that notice the function <code class="highlighter-rouge">show</code> it returns <code class="highlighter-rouge">x</code> which is used in <code class="highlighter-rouge">cons-stream</code> for constructing the object when returned. It may cause a slight confusion with <code class="highlighter-rouge">(display x)</code> output. However, this is easy to distinguish in output(MIT-scheme), the value that gets printed by default is the returned value of the procedure entered in the shell - is printed as <code class="highlighter-rouge">;Value: &lt;val&gt;</code>.</p>
+<p>Note that notice the function <code class="language-plaintext highlighter-rouge">show</code> it returns <code class="language-plaintext highlighter-rouge">x</code> which is used in <code class="language-plaintext highlighter-rouge">cons-stream</code> for constructing the object when returned. It may cause a slight confusion with <code class="language-plaintext highlighter-rouge">(display x)</code> output. However, this is easy to distinguish in output(MIT-scheme), the value that gets printed by default is the returned value of the procedure entered in the shell - is printed as <code class="language-plaintext highlighter-rouge">;Value: &lt;val&gt;</code>.</p>
 
-<p>Now when we call <code class="highlighter-rouge">(stream-ref x 5)</code> it does not print <code class="highlighter-rouge">0</code> but prints <code class="highlighter-rouge">1</code> to <code class="highlighter-rouge">5</code> and then prints the final returned value which ofcourse is <code class="highlighter-rouge">5</code>(because 6th, counting from 0, element in the list <code class="highlighter-rouge">'(0 1 2 3 4 5 6 7 8 9 10)</code> is 5).</p>
+<p>Now when we call <code class="language-plaintext highlighter-rouge">(stream-ref x 5)</code> it does not print <code class="language-plaintext highlighter-rouge">0</code> but prints <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">5</code> and then prints the final returned value which ofcourse is <code class="language-plaintext highlighter-rouge">5</code>(because 6th, counting from 0, element in the list <code class="language-plaintext highlighter-rouge">'(0 1 2 3 4 5 6 7 8 9 10)</code> is 5).</p>
 
-<p>The reason it does not print <code class="highlighter-rouge">0</code> is because of memoization! The first value was already computed while defining <code class="highlighter-rouge">x</code> so it was not computed again.</p>
+<p>The reason it does not print <code class="language-plaintext highlighter-rouge">0</code> is because of memoization! The first value was already computed while defining <code class="language-plaintext highlighter-rouge">x</code> so it was not computed again.</p>
 
-<p>Now when we call <code class="highlighter-rouge">(stream-ref x 5)</code> it does not print any output  from statement <code class="highlighter-rouge">(display x)</code> because the values before this are all memoized and <code class="highlighter-rouge">show</code> is not called. Thus it only outputs the last returned value <code class="highlighter-rouge">;Value: 5</code>.</p>
+<p>Now when we call <code class="language-plaintext highlighter-rouge">(stream-ref x 5)</code> it does not print any output  from statement <code class="language-plaintext highlighter-rouge">(display x)</code> because the values before this are all memoized and <code class="language-plaintext highlighter-rouge">show</code> is not called. Thus it only outputs the last returned value <code class="language-plaintext highlighter-rouge">;Value: 5</code>.</p>
 
 <p>That explains it!</p>
 
@@ -9576,7 +9577,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

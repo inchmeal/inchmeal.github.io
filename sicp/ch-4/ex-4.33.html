@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9421,19 +9422,19 @@
 
 <p>It was difficult to test this exercise without proper display method in place. So, after testing trivial cases, I started adding the print functionality which took me to next exercise.</p>
 
-<p>If we need to represent the quoted list as lazy lists, then we must make the lazy <code class="highlighter-rouge">cons</code>, <code class="highlighter-rouge">car</code> and <code class="highlighter-rouge">cdr</code> available before the interpreter/evaluator begins(i.e. asks for user input). We can achieve this simply by creating definitions of <code class="highlighter-rouge">car</code>, <code class="highlighter-rouge">cdr</code> and <code class="highlighter-rouge">cons</code> in the <code class="highlighter-rouge">setup-environment</code>.</p>
+<p>If we need to represent the quoted list as lazy lists, then we must make the lazy <code class="language-plaintext highlighter-rouge">cons</code>, <code class="language-plaintext highlighter-rouge">car</code> and <code class="language-plaintext highlighter-rouge">cdr</code> available before the interpreter/evaluator begins(i.e. asks for user input). We can achieve this simply by creating definitions of <code class="language-plaintext highlighter-rouge">car</code>, <code class="language-plaintext highlighter-rouge">cdr</code> and <code class="language-plaintext highlighter-rouge">cons</code> in the <code class="language-plaintext highlighter-rouge">setup-environment</code>.</p>
 
-<p>After this, we just need to write procedures that converts the quoted expressions into lazy <code class="highlighter-rouge">cons</code>. These conversion procedures turned out to be quite simple(after doing so many evaluator exercises).</p>
+<p>After this, we just need to write procedures that converts the quoted expressions into lazy <code class="language-plaintext highlighter-rouge">cons</code>. These conversion procedures turned out to be quite simple(after doing so many evaluator exercises).</p>
 
-<p>Only one thing to note here is the procedure <code class="highlighter-rouge">quote-it</code>. I have quoted arguments passed to lazy-list or customized cons. To understand why:</p>
+<p>Only one thing to note here is the procedure <code class="language-plaintext highlighter-rouge">quote-it</code>. I have quoted arguments passed to lazy-list or customized cons. To understand why:</p>
 
 <p>Implementation based reason:</p>
 
 <ul>
   <li>Let’s ignore the <strong>lazy</strong> part and think of implementing this code with applicative order of arguments passed to customized cons.</li>
-  <li>Now, consider that when we evaluate the code <code class="highlighter-rouge">(cons '(a b))</code>, then if we don’t quote <em>a</em> and <em>b</em>, then they are passed as <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> as arguments to <code class="highlighter-rouge">cons</code>.</li>
-  <li>But, since we are assuming no laziness, we will evaluate <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>. But <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> need not be evaluated!</li>
-  <li>Thus, we need to apply <code class="highlighter-rouge">quote-it</code> them.</li>
+  <li>Now, consider that when we evaluate the code <code class="language-plaintext highlighter-rouge">(cons '(a b))</code>, then if we don’t quote <em>a</em> and <em>b</em>, then they are passed as <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code> as arguments to <code class="language-plaintext highlighter-rouge">cons</code>.</li>
+  <li>But, since we are assuming no laziness, we will evaluate <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>. But <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code> need not be evaluated!</li>
+  <li>Thus, we need to apply <code class="language-plaintext highlighter-rouge">quote-it</code> them.</li>
 </ul>
 
 <p>Now, I think conceptual reason or logical reason can make it more clear:</p>
@@ -9444,7 +9445,7 @@
 
 <ul>
   <li>If a list is quoted, then we converts each of the item inside the list passed to it into quoted expression.</li>
-  <li>If a symbol is quoted, then we get a list containing two elements <code class="highlighter-rouge">quote</code> and the symbol.</li>
+  <li>If a symbol is quoted, then we get a list containing two elements <code class="language-plaintext highlighter-rouge">quote</code> and the symbol.</li>
 </ul>
 
 <p>Here are the changes done:</p>
@@ -9722,7 +9723,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

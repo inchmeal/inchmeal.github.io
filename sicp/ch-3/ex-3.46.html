@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,11 +9418,11 @@
                         <hr/>
                         <p>This is similar to earlier exercises.</p>
 
-<p>Assume two processes P1 and P2 are trying to acquire same mutex object <code class="highlighter-rouge">the-mutex</code> using <code class="highlighter-rouge">(the-mutex 'acquire)</code></p>
+<p>Assume two processes P1 and P2 are trying to acquire same mutex object <code class="language-plaintext highlighter-rouge">the-mutex</code> using <code class="language-plaintext highlighter-rouge">(the-mutex 'acquire)</code></p>
 
 <p>Initially lets assume the the value in cell of the mutex is false.</p>
 
-<p>Now in parallel execution both procedures can reach this line <code class="highlighter-rouge">(begin (set-car! cell true)</code> in proc <code class="highlighter-rouge">test-and-set</code> because the value of cell is false.</p>
+<p>Now in parallel execution both procedures can reach this line <code class="language-plaintext highlighter-rouge">(begin (set-car! cell true)</code> in proc <code class="language-plaintext highlighter-rouge">test-and-set</code> because the value of cell is false.</p>
 
 <p>Now, again both of them sets it to true happily and believe it an exclusive access - Truth be told - they cant be more wrong :)</p>
 
@@ -9497,7 +9498,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

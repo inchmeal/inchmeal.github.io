@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9423,15 +9424,15 @@
 
 <p>Few things to note for understanding the solution:</p>
 <ul>
-  <li>Now, as in sec-4.2 lazy evaluator, we just dispatch the jump to <code class="highlighter-rouge">apply-dispatch</code> without evaluating the arguments.</li>
-  <li>Now, <code class="highlighter-rouge">apply-dispatch</code> does following:
+  <li>Now, as in sec-4.2 lazy evaluator, we just dispatch the jump to <code class="language-plaintext highlighter-rouge">apply-dispatch</code> without evaluating the arguments.</li>
+  <li>Now, <code class="language-plaintext highlighter-rouge">apply-dispatch</code> does following:
     <ul>
-      <li>if procedure is <code class="highlighter-rouge">primitive</code> then it jumps to <code class="highlighter-rouge">ev-appl-operands-values</code> where the operand values present in <code class="highlighter-rouge">unev</code> are evaluated and saved in <code class="highlighter-rouge">argl</code>. Note that how i saved <code class="highlighter-rouge">proc</code> and worked with <code class="highlighter-rouge">continue</code> to make sure that after <code class="highlighter-rouge">argl</code> is formed, we jump to <code class="highlighter-rouge">primitive-apply</code> with <code class="highlighter-rouge">proc</code> and <code class="highlighter-rouge">argl</code> available.</li>
-      <li>if procedure is <code class="highlighter-rouge">compound</code> then it calls <em>primitive procedure</em> <code class="highlighter-rouge">list-of-delayed-args</code> to convert all the arguments into thunks.</li>
+      <li>if procedure is <code class="language-plaintext highlighter-rouge">primitive</code> then it jumps to <code class="language-plaintext highlighter-rouge">ev-appl-operands-values</code> where the operand values present in <code class="language-plaintext highlighter-rouge">unev</code> are evaluated and saved in <code class="language-plaintext highlighter-rouge">argl</code>. Note that how i saved <code class="language-plaintext highlighter-rouge">proc</code> and worked with <code class="language-plaintext highlighter-rouge">continue</code> to make sure that after <code class="language-plaintext highlighter-rouge">argl</code> is formed, we jump to <code class="language-plaintext highlighter-rouge">primitive-apply</code> with <code class="language-plaintext highlighter-rouge">proc</code> and <code class="language-plaintext highlighter-rouge">argl</code> available.</li>
+      <li>if procedure is <code class="language-plaintext highlighter-rouge">compound</code> then it calls <em>primitive procedure</em> <code class="language-plaintext highlighter-rouge">list-of-delayed-args</code> to convert all the arguments into thunks.</li>
     </ul>
   </li>
-  <li>Defined a label <code class="highlighter-rouge">actual-value</code>, that works exactly like procedure <code class="highlighter-rouge">actual-value</code> in our lazy evaluator of sec-4.2. It evaluates the expression in <code class="highlighter-rouge">exp</code> and <em>then</em> in loop it keeps evaluating the result until the result is no longer a <code class="highlighter-rouge">thunk</code>. At this point it jumps back to the original continue(thus we do some saving of continue here).</li>
-  <li>Similar to the lazy-evaluator, i changed <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">cond</code> and the main drive loop <code class="highlighter-rouge">read-eval-print-loop</code> to use <code class="highlighter-rouge">actual-value</code> instead of <code class="highlighter-rouge">eval-dispatch</code>.</li>
+  <li>Defined a label <code class="language-plaintext highlighter-rouge">actual-value</code>, that works exactly like procedure <code class="language-plaintext highlighter-rouge">actual-value</code> in our lazy evaluator of sec-4.2. It evaluates the expression in <code class="language-plaintext highlighter-rouge">exp</code> and <em>then</em> in loop it keeps evaluating the result until the result is no longer a <code class="language-plaintext highlighter-rouge">thunk</code>. At this point it jumps back to the original continue(thus we do some saving of continue here).</li>
+  <li>Similar to the lazy-evaluator, i changed <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">cond</code> and the main drive loop <code class="language-plaintext highlighter-rouge">read-eval-print-loop</code> to use <code class="language-plaintext highlighter-rouge">actual-value</code> instead of <code class="language-plaintext highlighter-rouge">eval-dispatch</code>.</li>
 </ul>
 
 <p>And that’s it!</p>
@@ -9638,7 +9639,7 @@
   <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">label</span> <span class="nv">ev-sequence</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>(Above code does not contain changes in <code class="highlighter-rouge">ev-if</code>, <code class="highlighter-rouge">ev-cond</code> and <code class="highlighter-rouge">read-eval-print-loop</code> - check complete code at the bottom to view those changes)</p>
+<p>(Above code does not contain changes in <code class="language-plaintext highlighter-rouge">ev-if</code>, <code class="language-plaintext highlighter-rouge">ev-cond</code> and <code class="language-plaintext highlighter-rouge">read-eval-print-loop</code> - check complete code at the bottom to view those changes)</p>
 
 <p>There are few <em>primitive procedures</em> which were added in ch5-eceval-support.scm:</p>
 
@@ -10899,7 +10900,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

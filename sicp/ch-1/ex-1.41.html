@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9432,13 +9433,13 @@
 </pre></td><td class="code"><pre><span class="nv">&gt;</span> <span class="p">(((</span><span class="nf">double</span> <span class="p">(</span><span class="nf">double</span> <span class="nv">double</span><span class="p">))</span> <span class="nv">inc</span><span class="p">)</span> <span class="mi">5</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>The call <code class="highlighter-rouge">double double</code> returns a procedure, lets call this procedure X, that applies double twice to an argument passed to it.</p>
+<p>The call <code class="language-plaintext highlighter-rouge">double double</code> returns a procedure, lets call this procedure X, that applies double twice to an argument passed to it.</p>
 
-<p>And call to <code class="highlighter-rouge">double (double double)</code>, return a procedure, lets call this procedure Y, that applies X twice to the argument passed to it.</p>
+<p>And call to <code class="language-plaintext highlighter-rouge">double (double double)</code>, return a procedure, lets call this procedure Y, that applies X twice to the argument passed to it.</p>
 
-<p>And the invocation <code class="highlighter-rouge">Y inc</code>, returns a procedure, lets call it Z, that applies ‘X’ twice to <code class="highlighter-rouge">inc</code>. i.e. <code class="highlighter-rouge">(X (X inc))</code>.</p>
+<p>And the invocation <code class="language-plaintext highlighter-rouge">Y inc</code>, returns a procedure, lets call it Z, that applies ‘X’ twice to <code class="language-plaintext highlighter-rouge">inc</code>. i.e. <code class="language-plaintext highlighter-rouge">(X (X inc))</code>.</p>
 
-<p>Thus now finally the call to <code class="highlighter-rouge">Z 5</code> is evaluated as follows:</p>
+<p>Thus now finally the call to <code class="language-plaintext highlighter-rouge">Z 5</code> is evaluated as follows:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9451,7 +9452,7 @@
 <p>Now we can see that in the innermost call, inc is called twice, than it is doubled thus called 4 times, again it is doubled thus
 called 8 times and again it is double thus called 16 times.</p>
 
-<p>Thus thus function will return after calling <code class="highlighter-rouge">inc</code> 16 times starting with argument 5.</p>
+<p>Thus thus function will return after calling <code class="language-plaintext highlighter-rouge">inc</code> 16 times starting with argument 5.</p>
 
 <p>Thus the output is <span class="kdmath">$16+5 = 21$</span>.</p>
 
@@ -9528,7 +9529,7 @@ called 8 times and again it is double thus called 16 times.</p>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

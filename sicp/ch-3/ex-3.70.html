@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,14 +9416,14 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>There are two points to consider while writing <code class="highlighter-rouge">weighted-pairs</code> and <code class="highlighter-rouge">weighted-merge</code>:</p>
+                        <p>There are two points to consider while writing <code class="language-plaintext highlighter-rouge">weighted-pairs</code> and <code class="language-plaintext highlighter-rouge">weighted-merge</code>:</p>
 
 <ul>
-  <li>In <code class="highlighter-rouge">weighted-merge</code> when sum is same, we do not skip, unlike the normal merge because otherwise we will miss few pairs.</li>
-  <li>In <code class="highlighter-rouge">weighted-pairs</code> the first pair is formed using first element of both streams(s and t) passed to it. This means that our weight function must always give highest priority(lowest weight) to this pair. It was tempting to use Louis code of ex-3.68 because then we no longer need to think of this case. The good news is that this will always be the case on our requirements i &lt;= j and weight function (weight i) &lt;= (weight j) if i &lt;= j.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">weighted-merge</code> when sum is same, we do not skip, unlike the normal merge because otherwise we will miss few pairs.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">weighted-pairs</code> the first pair is formed using first element of both streams(s and t) passed to it. This means that our weight function must always give highest priority(lowest weight) to this pair. It was tempting to use Louis code of ex-3.68 because then we no longer need to think of this case. The good news is that this will always be the case on our requirements i &lt;= j and weight function (weight i) &lt;= (weight j) if i &lt;= j.</li>
 </ul>
 
-<p>The code for <code class="highlighter-rouge">weighted-pairs</code> and <code class="highlighter-rouge">weighted-merge</code>:</p>
+<p>The code for <code class="language-plaintext highlighter-rouge">weighted-pairs</code> and <code class="language-plaintext highlighter-rouge">weighted-merge</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9609,7 +9610,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

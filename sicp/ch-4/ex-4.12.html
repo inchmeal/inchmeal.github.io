@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9423,17 +9424,17 @@
 
 <p>So, implementing a generic <strong>find</strong> is the way to go!</p>
 
-<p><code class="highlighter-rouge">find</code> excepts 3 arguments:</p>
+<p><code class="language-plaintext highlighter-rouge">find</code> excepts 3 arguments:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">contains?</code>: when an element is passed it checks whether that element contains the required “thing”! If found, it returns that “thing” or returns false.</li>
-  <li><code class="highlighter-rouge">next</code>: thats to go to the next element - in our case we need this to go to next environment, or next pair.</li>
-  <li><code class="highlighter-rouge">data</code></li>
+  <li><code class="language-plaintext highlighter-rouge">contains?</code>: when an element is passed it checks whether that element contains the required “thing”! If found, it returns that “thing” or returns false.</li>
+  <li><code class="language-plaintext highlighter-rouge">next</code>: thats to go to the next element - in our case we need this to go to next environment, or next pair.</li>
+  <li><code class="language-plaintext highlighter-rouge">data</code></li>
 </ul>
 
-<p>Now, an interesting happened! I realised that <code class="highlighter-rouge">assoc</code> can be implemented using <code class="highlighter-rouge">find</code>! So, need not to use mit scheme’s version or ch-3 code for <code class="highlighter-rouge">assoc</code></p>
+<p>Now, an interesting happened! I realised that <code class="language-plaintext highlighter-rouge">assoc</code> can be implemented using <code class="language-plaintext highlighter-rouge">find</code>! So, need not to use mit scheme’s version or ch-3 code for <code class="language-plaintext highlighter-rouge">assoc</code></p>
 
-<p><code class="highlighter-rouge">find-pair</code>, implemented using <code class="highlighter-rouge">find</code> again, returns the pair that contains the variable else returns false.</p>
+<p><code class="language-plaintext highlighter-rouge">find-pair</code>, implemented using <code class="language-plaintext highlighter-rouge">find</code> again, returns the pair that contains the variable else returns false.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9704,7 +9705,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

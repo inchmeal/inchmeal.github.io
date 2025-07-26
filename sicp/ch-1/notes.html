@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9416,8 +9417,8 @@
 
 <ul>
   <li>Primitive expressions, the simplese entities of the language. Eg: Numbers and arithmetic operations.</li>
-  <li>means of combination, to build combined elements from simpler ones. Eg: Nesting of operations <code class="highlighter-rouge">(+ (- 2 3) 5))</code>. here <code class="highlighter-rouge">+</code> is primitive procedure and the syntax is allowing nesting of primitive expressions.</li>
-  <li>means of abstraction, by which compound elements can be named and manipulated as units. Eg: defining/associating names with values or procedures like <code class="highlighter-rouge">(define x 3)</code> or <code class="highlighter-rouge">(define (square) (* x x))</code>.</li>
+  <li>means of combination, to build combined elements from simpler ones. Eg: Nesting of operations <code class="language-plaintext highlighter-rouge">(+ (- 2 3) 5))</code>. here <code class="language-plaintext highlighter-rouge">+</code> is primitive procedure and the syntax is allowing nesting of primitive expressions.</li>
+  <li>means of abstraction, by which compound elements can be named and manipulated as units. Eg: defining/associating names with values or procedures like <code class="language-plaintext highlighter-rouge">(define x 3)</code> or <code class="language-plaintext highlighter-rouge">(define (square) (* x x))</code>.</li>
 </ul>
 
 <p>Procedure Application:</p>
@@ -9470,7 +9471,7 @@
 <span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that apart from primitive predicates <code class="highlighter-rouge">&lt;,&gt;,-</code>, we also have compound predicates: <code class="highlighter-rouge">(and exp-1, exp-2,... exp-n)</code>, <code class="highlighter-rouge">(or exp-1,...exp-n)</code>, or <code class="highlighter-rouge">(not exp)</code>.</p>
+<p>Note that apart from primitive predicates <code class="language-plaintext highlighter-rouge">&lt;,&gt;,-</code>, we also have compound predicates: <code class="language-plaintext highlighter-rouge">(and exp-1, exp-2,... exp-n)</code>, <code class="language-plaintext highlighter-rouge">(or exp-1,...exp-n)</code>, or <code class="language-plaintext highlighter-rouge">(not exp)</code>.</p>
 
 <h4 id="procedures">Procedures</h4>
 
@@ -9554,13 +9555,13 @@
 
 <p>Consider the first process. The substitution model reveals a shape of expansion followed by contraction. The expansion occurs as the process builds up a chain of deferred operations. The contraction occurs as the operations are actually performed. This type of process, characterized by a chain of deferred operations, is called a <em>recursive process</em>. Carrying out this process requires that the interpreter keep track of the operations to be performed later on. The length of the chain of deferred operations, and hence the amount of information needed to keep track of it, grows linearly with “a”(or “b”). Such a process is called a <em>linear recursive process</em>.</p>
 
-<p>By contrast, the second process does not grow and shrink. At each step, we need to keep track of only the fixed number of values. We call this an <em>iterative process</em>. In general, an iterative process is one whose state can be summarized by a fixed number of state variables, together with a fixed rule that describes how the state variables should be updated as the process moves from state to state and an (optional) end test that specifies conditions under which the process should terminate. In computing <code class="highlighter-rouge">+</code>, the number of steps required grows linearly with “a” or “b”. Such a process is called a <em>linear iterative process</em>. Note that there are no deferred operations here like in the recursive process. Also, note that the process can be iterative and not linear.</p>
+<p>By contrast, the second process does not grow and shrink. At each step, we need to keep track of only the fixed number of values. We call this an <em>iterative process</em>. In general, an iterative process is one whose state can be summarized by a fixed number of state variables, together with a fixed rule that describes how the state variables should be updated as the process moves from state to state and an (optional) end test that specifies conditions under which the process should terminate. In computing <code class="language-plaintext highlighter-rouge">+</code>, the number of steps required grows linearly with “a” or “b”. Such a process is called a <em>linear iterative process</em>. Note that there are no deferred operations here like in the recursive process. Also, note that the process can be iterative and not linear.</p>
 
 <p>The contrast between the two processes can be seen in another way. In the iterative case, the program variables provide a complete description of the state of the process at any point. If we stopped the computation between steps, all we would need to do to resume the computation is to supply the interpreter with the values of the three program variables. Not so with the recursive process. In this case there is some additional <em>hidden information</em>, maintained by the interpreter and not contained in the program variables, which indicates <em>where the process is</em> in negotiating the chain of deferred operations. The longer the chain, the more information must be maintained.</p>
 
 <p>In contrasting iteration and recursion, we must be careful not to confuse the notion of a recursive process with the notion of a recursive procedure. When we describe a procedure as recursive, we are referring to the syntactic fact that the procedure definition refers (either directly or indirectly) to the procedure itself. But when we describe a process as following a pattern that is, say, linearly recursive, we are speaking about how the process evolves, not about the syntax of how a procedure is written. It may seem disturbing that we refer to a recursive procedure such as fact-iter as generating an iterative process. However, the process really is iterative: Its state is captured completely by its three state variables, and an interpreter need keep track of only three variables in order to execute the process.</p>
 
-<p>One reason that the distinction between process and procedure may be confusing is that most implementations of common languages (including Ada, Pascal, and C) are designed in such a way that the interpretation of any recursive procedure consumes an amount of memory that grows with the number of procedure calls, even when the process described is, in principle, iterative. As a consequence, these languages can describe iterative processes only by resorting to special-purpose <em>looping constructs</em> such as <code class="highlighter-rouge">do</code>, <code class="highlighter-rouge">repeat</code>, <code class="highlighter-rouge">until</code>, <code class="highlighter-rouge">for</code>, and <code class="highlighter-rouge">while</code>. The implementation of Scheme we shall consider in chapter 5 does not share this defect. It will execute an iterative process in constant space, even if the iterative process is described by a recursive procedure. An implementation with this property is called tail-recursive. With a tail-recursive implementation, iteration can be expressed using the ordinary procedure call mechanism, so that special iteration constructs are useful only as syntactic sugar.</p>
+<p>One reason that the distinction between process and procedure may be confusing is that most implementations of common languages (including Ada, Pascal, and C) are designed in such a way that the interpretation of any recursive procedure consumes an amount of memory that grows with the number of procedure calls, even when the process described is, in principle, iterative. As a consequence, these languages can describe iterative processes only by resorting to special-purpose <em>looping constructs</em> such as <code class="language-plaintext highlighter-rouge">do</code>, <code class="language-plaintext highlighter-rouge">repeat</code>, <code class="language-plaintext highlighter-rouge">until</code>, <code class="language-plaintext highlighter-rouge">for</code>, and <code class="language-plaintext highlighter-rouge">while</code>. The implementation of Scheme we shall consider in chapter 5 does not share this defect. It will execute an iterative process in constant space, even if the iterative process is described by a recursive procedure. An implementation with this property is called tail-recursive. With a tail-recursive implementation, iteration can be expressed using the ordinary procedure call mechanism, so that special iteration constructs are useful only as syntactic sugar.</p>
 
 <p>Another type of <em>recursive process</em> is <em>tree recursive</em> process like the tree generated by fiboncacci process. The fibonacci procedure can be also be written such that it generates the linear iterative process.</p>
 
@@ -9590,11 +9591,11 @@
 
 <h4 id="lambda">Lambda</h4>
 
-<p>Procedure without names. Example: <code class="highlighter-rouge">(lambda (x) (+ x 4)</code>. These can be very handy when need the procedure only once or for a very trivial task like checking if a number is even.</p>
+<p>Procedure without names. Example: <code class="language-plaintext highlighter-rouge">(lambda (x) (+ x 4)</code>. These can be very handy when need the procedure only once or for a very trivial task like checking if a number is even.</p>
 
 <h4 id="let">let</h4>
 
-<p>Sometimes we need to to define few local variables to reuse. We can use <code class="highlighter-rouge">lambda</code> for the same. But the language provides special construct for the same task <code class="highlighter-rouge">let</code>:</p>
+<p>Sometimes we need to to define few local variables to reuse. We can use <code class="language-plaintext highlighter-rouge">lambda</code> for the same. But the language provides special construct for the same task <code class="language-plaintext highlighter-rouge">let</code>:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9650,7 +9651,7 @@
 <span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Thus a <code class="highlighter-rouge">let</code> expression is simply a <em>syntactic sugar</em> as no new mechanism is required from in the interpreter.</p>
+<p>Thus a <code class="language-plaintext highlighter-rouge">let</code> expression is simply a <em>syntactic sugar</em> as no new mechanism is required from in the interpreter.</p>
 
 <h4 id="procedures---first-class-elements">Procedures - first class elements</h4>
 
@@ -9745,7 +9746,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

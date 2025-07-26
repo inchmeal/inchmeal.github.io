@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9424,12 +9425,12 @@
 <ul>
   <li>It is easy now to add a new type in the existing system.</li>
   <li>As of now there is following tower implemented in my arithmetic system: <em>rational -&gt; scheme-number -&gt; complex</em>. Note my scheme-number is a real number. I have not implemented the package for only integers. Since the idea is same so I skipped the integer package :). Thus the lowest in my hierarchy is rational and not integer.</li>
-  <li>When a new type is added in arithmatic package, the developer of the package needs to tell two things - parent by calling <code class="highlighter-rouge">put-parent &lt;child&gt; &lt;parent&gt;</code> and how to raise to parent by calling <code class="highlighter-rouge">put-rais &lt;child&gt; &lt;raise-proc&gt;</code>.</li>
+  <li>When a new type is added in arithmatic package, the developer of the package needs to tell two things - parent by calling <code class="language-plaintext highlighter-rouge">put-parent &lt;child&gt; &lt;parent&gt;</code> and how to raise to parent by calling <code class="language-plaintext highlighter-rouge">put-rais &lt;child&gt; &lt;raise-proc&gt;</code>.</li>
   <li>Thus the new type need not to worry about any other type - just mention the parent and how to raise into the parent!</li>
-  <li>The current system works if there is no defined operation for the current types. For Eg: Here <code class="highlighter-rouge">exp</code> is only defined for ‘scheme-number, but not for rational. When rational-numbers are supplied for <code class="highlighter-rouge">exp</code> then the procedure first checks - if this operation is present in rational package. If not it tries to <em>upcast</em> to next type which in this case is ‘scheme-number. Now after upcasting to scheme-number, the exp procedure is found as it is defined there. Thus it is called for the result.</li>
+  <li>The current system works if there is no defined operation for the current types. For Eg: Here <code class="language-plaintext highlighter-rouge">exp</code> is only defined for ‘scheme-number, but not for rational. When rational-numbers are supplied for <code class="language-plaintext highlighter-rouge">exp</code> then the procedure first checks - if this operation is present in rational package. If not it tries to <em>upcast</em> to next type which in this case is ‘scheme-number. Now after upcasting to scheme-number, the exp procedure is found as it is defined there. Thus it is called for the result.</li>
   <li>Suppose even after upcasting to all the super-types - the operation is not found - then it reports error.</li>
-  <li>To check if this works with tree - create tree as: <em>scheme-number -&gt; complex</em>, <em>rational -&gt; complex</em>. And to test lets remove <code class="highlighter-rouge">sub</code> procedure from the <code class="highlighter-rouge">rational</code> package. Then this call <code class="highlighter-rouge">(sub (make-number 5) (make-rational 1 5))</code> should work by <em>upcasting</em> both arguments to complex and then calling <code class="highlighter-rouge">sub</code> for the complex package. Note in this case <code class="highlighter-rouge">(exp (make-rational 1 2) (make-number -1))</code> wont work because in the new-hierarchy rational number cannot be upcasted to scheme-number where <em>exp</em> is defined.</li>
-  <li>Note that the procedures used inside <code class="highlighter-rouge">apply-generic</code> should not be based on <code class="highlighter-rouge">apply-generic</code> for eg: <code class="highlighter-rouge">raise</code> can not be called using <code class="highlighter-rouge">apply-generic</code> because it creates a circular dependency: raise -&gt; apply-generic -&gt; raise …(I happen to make this mistake and later removed raise from apply-generic and moved it to separate table - raise-table).</li>
+  <li>To check if this works with tree - create tree as: <em>scheme-number -&gt; complex</em>, <em>rational -&gt; complex</em>. And to test lets remove <code class="language-plaintext highlighter-rouge">sub</code> procedure from the <code class="language-plaintext highlighter-rouge">rational</code> package. Then this call <code class="language-plaintext highlighter-rouge">(sub (make-number 5) (make-rational 1 5))</code> should work by <em>upcasting</em> both arguments to complex and then calling <code class="language-plaintext highlighter-rouge">sub</code> for the complex package. Note in this case <code class="language-plaintext highlighter-rouge">(exp (make-rational 1 2) (make-number -1))</code> wont work because in the new-hierarchy rational number cannot be upcasted to scheme-number where <em>exp</em> is defined.</li>
+  <li>Note that the procedures used inside <code class="language-plaintext highlighter-rouge">apply-generic</code> should not be based on <code class="language-plaintext highlighter-rouge">apply-generic</code> for eg: <code class="language-plaintext highlighter-rouge">raise</code> can not be called using <code class="language-plaintext highlighter-rouge">apply-generic</code> because it creates a circular dependency: raise -&gt; apply-generic -&gt; raise …(I happen to make this mistake and later removed raise from apply-generic and moved it to separate table - raise-table).</li>
   <li>I used two new tables - type-table and cast-table - which can be combined also but for simplicity i kept them separate.</li>
 </ul>
 
@@ -10408,7 +10409,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

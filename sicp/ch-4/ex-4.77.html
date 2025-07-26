@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9420,18 +9421,18 @@
 <p>Few points to understand the solution:</p>
 
 <ul>
-  <li>Implementing only for the queries like <code class="highlighter-rouge">not</code> and <code class="highlighter-rouge">lisp-value</code>. As suggested in problem we can call them filters.
+  <li>Implementing only for the queries like <code class="language-plaintext highlighter-rouge">not</code> and <code class="language-plaintext highlighter-rouge">lisp-value</code>. As suggested in problem we can call them filters.
     <ul>
-      <li>A filter always need all the values to be bounded(like <code class="highlighter-rouge">not</code> or <code class="highlighter-rouge">lisp-value</code>,  unlike <code class="highlighter-rouge">unique</code>)</li>
-      <li>The result of a filter, when applied to a frame, never <em>adds</em> anything to the resulting frame. The filter either returns the frame without any change or it returns <code class="highlighter-rouge">'failed</code>.</li>
+      <li>A filter always need all the values to be bounded(like <code class="language-plaintext highlighter-rouge">not</code> or <code class="language-plaintext highlighter-rouge">lisp-value</code>,  unlike <code class="language-plaintext highlighter-rouge">unique</code>)</li>
+      <li>The result of a filter, when applied to a frame, never <em>adds</em> anything to the resulting frame. The filter either returns the frame without any change or it returns <code class="language-plaintext highlighter-rouge">'failed</code>.</li>
       <li>Ofcourse filter internally might add items in the frame but the returned result won’t contain any change.</li>
     </ul>
   </li>
   <li>Modified the frame to contain promise as well as bindings. Added <em>selectors</em> for the same.</li>
   <li>Modifying frame might look a big change but abstraction of frame(via selectors) <em>enabled</em> me to easily carry out this task by modifying the <em>frame</em> selectors.</li>
-  <li>There can be more than one promises(because of multiple <code class="highlighter-rouge">not</code> or multiple <code class="highlighter-rouge">lisp-value</code> in the query).</li>
-  <li>The order in which the <em>promised</em> <code class="highlighter-rouge">not</code> or <code class="highlighter-rouge">lisp-value</code> are evaluated does not effect the result. It may change the order of result but number of results and individual items won’t change.</li>
-  <li>My implementation does not guarantee any order in which promises for <code class="highlighter-rouge">not</code> or <code class="highlighter-rouge">lisp-value</code> would be evaluated.</li>
+  <li>There can be more than one promises(because of multiple <code class="language-plaintext highlighter-rouge">not</code> or multiple <code class="language-plaintext highlighter-rouge">lisp-value</code> in the query).</li>
+  <li>The order in which the <em>promised</em> <code class="language-plaintext highlighter-rouge">not</code> or <code class="language-plaintext highlighter-rouge">lisp-value</code> are evaluated does not effect the result. It may change the order of result but number of results and individual items won’t change.</li>
+  <li>My implementation does not guarantee any order in which promises for <code class="language-plaintext highlighter-rouge">not</code> or <code class="language-plaintext highlighter-rouge">lisp-value</code> would be evaluated.</li>
   <li>Since, the requirement is to evaluate the promise as soon as possible. The best place to try to evaluate a promise is when we extend a frame by a new variable!</li>
   <li>A promise is a pair of two things
     <ol>
@@ -9440,8 +9441,8 @@
     </ol>
   </li>
   <li>keeping list of variables in a promise is a small optimization so that we need not to extract variables from the pattern every time we check if the all variables are bounded or not.</li>
-  <li>The <code class="highlighter-rouge">bounded?</code> procedure is implemented to work for any pattern and thus can work for list of variables. Note that we need to recursively check for bounds for cases like <code class="highlighter-rouge">?x</code> bound to <code class="highlighter-rouge">(a ?y)</code> where <code class="highlighter-rouge">?y</code> might not be bounded.</li>
-  <li>When evaluating a promise, make sure the frame does not contain any old promises else we can go into a loop of evaluating promises. Check comment in procedure <code class="highlighter-rouge">execute-promises</code>. This took me quite some time to debug.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">bounded?</code> procedure is implemented to work for any pattern and thus can work for list of variables. Note that we need to recursively check for bounds for cases like <code class="language-plaintext highlighter-rouge">?x</code> bound to <code class="language-plaintext highlighter-rouge">(a ?y)</code> where <code class="language-plaintext highlighter-rouge">?y</code> might not be bounded.</li>
+  <li>When evaluating a promise, make sure the frame does not contain any old promises else we can go into a loop of evaluating promises. Check comment in procedure <code class="language-plaintext highlighter-rouge">execute-promises</code>. This took me quite some time to debug.</li>
   <li>When printing <em>force</em> evaluate all the promises.</li>
   <li>My changes are on top of the changes done in loop-detector.</li>
 </ul>
@@ -11629,7 +11630,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

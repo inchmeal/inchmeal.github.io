@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9433,13 +9434,13 @@
 
 <p>The other two terms are not simple terms like the first term - they are series!</p>
 
-<p>The <strong>second term</strong> <span class="kdmath">$\, b_0X \,$</span> is nothing but another power series which is obtained by scaling <span class="kdmath">$\, X \,$</span> by a factor of <span class="kdmath">$\, b_0 \,$</span>. Note that <span class="kdmath">$\, X \,$</span> is a power series - only the first term missing. We can easily compute <span class="kdmath">$\, b_0X \,$</span>  using <code class="highlighter-rouge">scale</code>.</p>
+<p>The <strong>second term</strong> <span class="kdmath">$\, b_0X \,$</span> is nothing but another power series which is obtained by scaling <span class="kdmath">$\, X \,$</span> by a factor of <span class="kdmath">$\, b_0 \,$</span>. Note that <span class="kdmath">$\, X \,$</span> is a power series - only the first term missing. We can easily compute <span class="kdmath">$\, b_0X \,$</span>  using <code class="language-plaintext highlighter-rouge">scale</code>.</p>
 
 <p>Now the <strong>third term</strong> <span class="kdmath">$\, (a_0 + X)Y \,$</span> is a product of two power series - we are back to the same problem but in smaller terms. So, we can compute it by recursively calling the same procedure again.</p>
 
-<p>But there is a <strong>small catch</strong> here that may sound obvious but it took me quite some time to understand. Can we add the last two terms <span class="kdmath">$\, b_0X \,$</span> and <span class="kdmath">$\, (a_0+X)Y \,$</span> using <code class="highlighter-rouge">add-streams</code>?</p>
+<p>But there is a <strong>small catch</strong> here that may sound obvious but it took me quite some time to understand. Can we add the last two terms <span class="kdmath">$\, b_0X \,$</span> and <span class="kdmath">$\, (a_0+X)Y \,$</span> using <code class="language-plaintext highlighter-rouge">add-streams</code>?</p>
 
-<p>The procedure <code class="highlighter-rouge">add-streams</code> assumes that the terms are in right order - it adds first term with first term, second with second and so on. So, that means the series resuling from <span class="kdmath">$\, b_0X \,$</span> and <span class="kdmath">$\, (a_0 + X)Y \,$</span> should represent the same powers in each position.</p>
+<p>The procedure <code class="language-plaintext highlighter-rouge">add-streams</code> assumes that the terms are in right order - it adds first term with first term, second with second and so on. So, that means the series resuling from <span class="kdmath">$\, b_0X \,$</span> and <span class="kdmath">$\, (a_0 + X)Y \,$</span> should represent the same powers in each position.</p>
 
 <p>The answer is Yes! It’s possible because we are using power series - The terms are the coefficients corresponding to the powers and terms are ordered in increasing order of power.</p>
 
@@ -9453,11 +9454,11 @@
 
 <p>Sum of smallest power term in <span class="kdmath">$\, a_0+X \,$</span> and <span class="kdmath">$\, Y \,$</span> = 0 + 1 = 1.</p>
 
-<p>Thus the power of the first term in <span class="kdmath">$\, (a_0+X)Y \,$</span> is same as in the series <span class="kdmath">$\, b_0X \,$</span> and since both are power series the rest of the terms will also follow. Thus we can indeed add them using <code class="highlighter-rouge">add-streams</code>.</p>
+<p>Thus the power of the first term in <span class="kdmath">$\, (a_0+X)Y \,$</span> is same as in the series <span class="kdmath">$\, b_0X \,$</span> and since both are power series the rest of the terms will also follow. Thus we can indeed add them using <code class="language-plaintext highlighter-rouge">add-streams</code>.</p>
 
 <p>Note that <span class="kdmath">$\, a_0+X = S_1 \,$</span>. Thus <span class="kdmath">$\, S_0S_1 = a_0b_0 + b_0X + (a_0 + X)Y = a_0b_0 + b_0X + S_1Y\,$</span></p>
 
-<p>Also <span class="kdmath">$\, X \,$</span> = <code class="highlighter-rouge">(stream-cdr S_1)</code> and <span class="kdmath">$\, Y \,$</span> = <code class="highlighter-rouge">(stream-cdr s_0)</code>.</p>
+<p>Also <span class="kdmath">$\, X \,$</span> = <code class="language-plaintext highlighter-rouge">(stream-cdr S_1)</code> and <span class="kdmath">$\, Y \,$</span> = <code class="language-plaintext highlighter-rouge">(stream-cdr s_0)</code>.</p>
 
 <p>Now, I think code is straightforward to understand:</p>
 
@@ -9680,7 +9681,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

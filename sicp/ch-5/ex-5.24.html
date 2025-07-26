@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9418,12 +9419,12 @@
                         <p>Few things to note:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">ev-sequence</code> reads from <code class="highlighter-rouge">unev</code>. Thus before jumping to <code class="highlighter-rouge">ev-sequence</code> we need to set <code class="highlighter-rouge">unev</code> with the <code class="highlighter-rouge">cond-actions</code> to be executed.</li>
-  <li><code class="highlighter-rouge">eve-sequence</code> itself pops from stack to read <code class="highlighter-rouge">continue</code>, thus we need to make sure that top of stack contains correct <code class="highlighter-rouge">continue</code>.</li>
-  <li>To iterate clauses, i used <code class="highlighter-rouge">car</code> and <code class="highlighter-rouge">cdr</code>. Ideally they should be abstracted with methods like <code class="highlighter-rouge">first-clause</code> and <code class="highlighter-rouge">rest-clauses</code>.</li>
-  <li>At present, error is logged in this case only: If <code class="highlighter-rouge">else</code> is not last clause, then error is reported only when the control reaches the else clause. Else if there is some expression that evaluated to true before else, then no error is logged.</li>
-  <li>If no clause, evaluates to true, <code class="highlighter-rouge">false</code> is returned.</li>
-  <li>Add the procedures like <code class="highlighter-rouge">not</code>, <code class="highlighter-rouge">null?</code>, <code class="highlighter-rouge">car</code>, <code class="highlighter-rouge">cond-predicate</code>, <code class="highlighter-rouge">cond-else-clause?</code> etc in the list of operations while creating eceval.</li>
+  <li><code class="language-plaintext highlighter-rouge">ev-sequence</code> reads from <code class="language-plaintext highlighter-rouge">unev</code>. Thus before jumping to <code class="language-plaintext highlighter-rouge">ev-sequence</code> we need to set <code class="language-plaintext highlighter-rouge">unev</code> with the <code class="language-plaintext highlighter-rouge">cond-actions</code> to be executed.</li>
+  <li><code class="language-plaintext highlighter-rouge">eve-sequence</code> itself pops from stack to read <code class="language-plaintext highlighter-rouge">continue</code>, thus we need to make sure that top of stack contains correct <code class="language-plaintext highlighter-rouge">continue</code>.</li>
+  <li>To iterate clauses, i used <code class="language-plaintext highlighter-rouge">car</code> and <code class="language-plaintext highlighter-rouge">cdr</code>. Ideally they should be abstracted with methods like <code class="language-plaintext highlighter-rouge">first-clause</code> and <code class="language-plaintext highlighter-rouge">rest-clauses</code>.</li>
+  <li>At present, error is logged in this case only: If <code class="language-plaintext highlighter-rouge">else</code> is not last clause, then error is reported only when the control reaches the else clause. Else if there is some expression that evaluated to true before else, then no error is logged.</li>
+  <li>If no clause, evaluates to true, <code class="language-plaintext highlighter-rouge">false</code> is returned.</li>
+  <li>Add the procedures like <code class="language-plaintext highlighter-rouge">not</code>, <code class="language-plaintext highlighter-rouge">null?</code>, <code class="language-plaintext highlighter-rouge">car</code>, <code class="language-plaintext highlighter-rouge">cond-predicate</code>, <code class="language-plaintext highlighter-rouge">cond-else-clause?</code> etc in the list of operations while creating eceval.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9733,7 +9734,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

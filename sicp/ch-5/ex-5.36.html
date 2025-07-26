@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,13 +9418,13 @@
                         <hr/>
                         <p>The current order of evaluation of arguments is right to left.</p>
 
-<p>Why we reverse the operator-codes? Because as explained in the book we use <code class="highlighter-rouge">cons</code> which causes the list to be built by adding elements at the front of the list.</p>
+<p>Why we reverse the operator-codes? Because as explained in the book we use <code class="language-plaintext highlighter-rouge">cons</code> which causes the list to be built by adding elements at the front of the list.</p>
 
-<p>To understand intuitively, we do two reverses, one explicit reverse and one which happens because of <code class="highlighter-rouge">cons</code>. Thus they cancel out each other so that we can have a list of <code class="highlighter-rouge">argl</code> which contains arguments in the same order as they are passed.</p>
+<p>To understand intuitively, we do two reverses, one explicit reverse and one which happens because of <code class="language-plaintext highlighter-rouge">cons</code>. Thus they cancel out each other so that we can have a list of <code class="language-plaintext highlighter-rouge">argl</code> which contains arguments in the same order as they are passed.</p>
 
 <p>But still this does not explain why arguments are evaluated from right to left?</p>
 
-<p>Well, if we see <code class="highlighter-rouge">constuct-arglist</code> where while we do <code class="highlighter-rouge">cons</code> we also generate instructions to evaluate that argument. And we do <code class="highlighter-rouge">cons</code> starting from the first element of the reversed list.</p>
+<p>Well, if we see <code class="language-plaintext highlighter-rouge">constuct-arglist</code> where while we do <code class="language-plaintext highlighter-rouge">cons</code> we also generate instructions to evaluate that argument. And we do <code class="language-plaintext highlighter-rouge">cons</code> starting from the first element of the reversed list.</p>
 
 <h4 id="changing-the-order-from-left-right-to-right-left">Changing the order from left-&gt;right to right-&gt;left</h4>
 
@@ -9495,27 +9496,27 @@
 						 <span class="p">(</span><span class="nb">cdr</span> <span class="nv">operand-codes</span><span class="p">)))))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that if we remove the reverse of <code class="highlighter-rouge">operator-codes</code> we need to reverse the <code class="highlighter-rouge">argl</code> because <code class="highlighter-rouge">argl</code> is formed by <em>consing</em> which causes the elements present in <code class="highlighter-rouge">argl</code> to be in the reverse order of the <code class="highlighter-rouge">operand-codes</code>.</p>
+<p>Note that if we remove the reverse of <code class="language-plaintext highlighter-rouge">operator-codes</code> we need to reverse the <code class="language-plaintext highlighter-rouge">argl</code> because <code class="language-plaintext highlighter-rouge">argl</code> is formed by <em>consing</em> which causes the elements present in <code class="language-plaintext highlighter-rouge">argl</code> to be in the reverse order of the <code class="language-plaintext highlighter-rouge">operand-codes</code>.</p>
 
-<p>If we don’t reverse <code class="highlighter-rouge">argl</code> this will happen:</p>
+<p>If we don’t reverse <code class="language-plaintext highlighter-rouge">argl</code> this will happen:</p>
 
-<p>Suppose we evaluate a call <code class="highlighter-rouge">(g (+ 5 2) (- 5 2))</code>. Then <code class="highlighter-rouge">argl</code> should be <code class="highlighter-rouge">(7 3)</code> but without reverse(and bec of using cons) it will be <code class="highlighter-rouge">(3 7)</code>. Thus when we call <code class="highlighter-rouge">g</code> the arguments passed to it will be in reverse order!</p>
+<p>Suppose we evaluate a call <code class="language-plaintext highlighter-rouge">(g (+ 5 2) (- 5 2))</code>. Then <code class="language-plaintext highlighter-rouge">argl</code> should be <code class="language-plaintext highlighter-rouge">(7 3)</code> but without reverse(and bec of using cons) it will be <code class="language-plaintext highlighter-rouge">(3 7)</code>. Thus when we call <code class="language-plaintext highlighter-rouge">g</code> the arguments passed to it will be in reverse order!</p>
 
-<p>This does not happen in the book’s version because we first reversed <code class="highlighter-rouge">(+ 5 2) (- 5 2)</code> to <code class="highlighter-rouge">(- 5 2) (+ 5 2)</code> and thus when we build argl because of using cons, <code class="highlighter-rouge">(7 3)</code>. Thus we get the correct order in which we need to pass this in <code class="highlighter-rouge">g</code>.</p>
+<p>This does not happen in the book’s version because we first reversed <code class="language-plaintext highlighter-rouge">(+ 5 2) (- 5 2)</code> to <code class="language-plaintext highlighter-rouge">(- 5 2) (+ 5 2)</code> and thus when we build argl because of using cons, <code class="language-plaintext highlighter-rouge">(7 3)</code>. Thus we get the correct order in which we need to pass this in <code class="language-plaintext highlighter-rouge">g</code>.</p>
 
 <h4 id="efficiency">Efficiency</h4>
 
 <p>Note that earlier the reverse was in the compiler code. Now the reverse is happening while code is executing! It improves the efficiency of compiler as we need not to do reverse but it does have impact in the efficiency of the code generated! For every procedure application, we have to do reverse!</p>
 
-<p>Well, I was first thinking to reverse the <em>formal arguments</em> thus avoiding the reverse of <code class="highlighter-rouge">argl</code>. This can be done for compiled procedures but not for primitive procedures!</p>
+<p>Well, I was first thinking to reverse the <em>formal arguments</em> thus avoiding the reverse of <code class="language-plaintext highlighter-rouge">argl</code>. This can be done for compiled procedures but not for primitive procedures!</p>
 
 <h4 id="output">Output</h4>
 
-<p>I checked with the code of ex-5.35(compiling <code class="highlighter-rouge">(define (f x) (+ x (g (+ x 2)))</code>):</p>
+<p>I checked with the code of ex-5.35(compiling <code class="language-plaintext highlighter-rouge">(define (f x) (+ x (g (+ x 2)))</code>):</p>
 
 <p>(reverse instruction generated are marked with ;;;)</p>
 
-<p>Note the difference in the order of arguments for procedure <code class="highlighter-rouge">+</code></p>
+<p>Note the difference in the order of arguments for procedure <code class="language-plaintext highlighter-rouge">+</code></p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9718,7 +9719,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

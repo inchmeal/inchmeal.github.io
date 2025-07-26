@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,7 +9418,7 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Lets define procedures for <code class="highlighter-rouge">area</code> and <code class="highlighter-rouge">parameter</code>:</p>
+                        <p>Lets define procedures for <code class="language-plaintext highlighter-rouge">area</code> and <code class="language-plaintext highlighter-rouge">parameter</code>:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9671,20 +9672,20 @@ for segments from previous exercise.</p>
 <p>Note that this new rectangle constructor uses the old rectangle constructor. Another way is to implement all the selectors to 
 find width and length using these points.</p>
 
-<p>But if we implement procedures <code class="highlighter-rouge">width-rect</code> and <code class="highlighter-rouge">length-rect</code> for both rectangles, one using line-segments and other using points
+<p>But if we implement procedures <code class="language-plaintext highlighter-rouge">width-rect</code> and <code class="language-plaintext highlighter-rouge">length-rect</code> for both rectangles, one using line-segments and other using points
  then we have to separate them so that compiler can figure out that they are different procedures. One way is to create
- procedures with different names like <code class="highlighter-rouge">width-rect-v1</code> and <code class="highlighter-rouge">width-rect-v2</code>. Other way is to write them in separate files and include
+ procedures with different names like <code class="language-plaintext highlighter-rouge">width-rect-v1</code> and <code class="language-plaintext highlighter-rouge">width-rect-v2</code>. Other way is to write them in separate files and include
  only one of the implementation at a time.</p>
 
 <p>As of now in the book till this point second approach is not described. I am not sure even if it is possible with scheme version R5RS.</p>
 
 <p>Thus if the requirement is to implement two separate rectangles such that they are internally different from each other (unlike above 
-where one is using the other), we are left with only one option to create two versions of the procedures like <code class="highlighter-rouge">width-rect-v1</code> and <code class="highlighter-rouge">width-rect-v2</code>
+where one is using the other), we are left with only one option to create two versions of the procedures like <code class="language-plaintext highlighter-rouge">width-rect-v1</code> and <code class="language-plaintext highlighter-rouge">width-rect-v2</code>
  for each implementation.</p>
 
-<p>But this introduces a new problem that we need to change <code class="highlighter-rouge">area</code> and <code class="highlighter-rouge">parameter</code> procedures. As required in the book we need
+<p>But this introduces a new problem that we need to change <code class="language-plaintext highlighter-rouge">area</code> and <code class="language-plaintext highlighter-rouge">parameter</code> procedures. As required in the book we need
  to implement only one version of these procedures, we can solve the problem by passing the length and width procedure as arguments.
-Thus new <code class="highlighter-rouge">area</code> and <code class="highlighter-rouge">parameter</code> will look like following:</p>
+Thus new <code class="language-plaintext highlighter-rouge">area</code> and <code class="language-plaintext highlighter-rouge">parameter</code> will look like following:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9718,7 +9719,7 @@ Thus new <code class="highlighter-rouge">area</code> and <code class="highlighte
 <span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>I am too lazy to write two versions for <code class="highlighter-rouge">width-rect</code> and <code class="highlighter-rouge">length-rect</code> :)</p>
+<p>I am too lazy to write two versions for <code class="language-plaintext highlighter-rouge">width-rect</code> and <code class="language-plaintext highlighter-rouge">length-rect</code> :)</p>
 
 <p>Note that OOPs solves this problem using virtual functions/late-binding/polymorphism.</p>
 
@@ -9795,7 +9796,7 @@ Thus new <code class="highlighter-rouge">area</code> and <code class="highlighte
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9418,14 +9419,14 @@
                     <span itemprop="articleSection">
                         <hr/>
                         <p>Note that in all the exercises, we can use coordinates of a unit square i.e. <span class="kdmath">$0 \le x \le 1$</span> and <span class="kdmath">$0 \le y \le 1$</span>.
-Now the method <code class="highlighter-rouge">frame-coord-map</code> will maps our coordinates to the given frame.</p>
+Now the method <code class="language-plaintext highlighter-rouge">frame-coord-map</code> will maps our coordinates to the given frame.</p>
 
 <p>(a)</p>
 
 <p>As shown in the book, if we take <span class="kdmath">$x = 0$</span> and <span class="kdmath">$y = 0$</span>, in the unit square it will be transformed to origin of the designated frame. Similarly it follows
 for any value of <span class="kdmath">$x$</span> and <span class="kdmath">$y$</span>.</p>
 
-<p>Thus, to draw the outline of the frame, we just need to draw outline of unit square. The method  <code class="highlighter-rouge">frame-coord-map</code> will take care to transform our points to 
+<p>Thus, to draw the outline of the frame, we just need to draw outline of unit square. The method  <code class="language-plaintext highlighter-rouge">frame-coord-map</code> will take care to transform our points to 
 the points in the designated frame.</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9488,14 +9489,14 @@ the points in the designated frame.</p>
 <span class="c1">; A unit square is drawn</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Ideally <code class="highlighter-rouge">(draw-frame (make-frame (make-vect 0 0) (make-vect 5 5) (make-vect 10 10)))</code> should also draw the outline of the passed frame. It apparently does not work.
-It seems the <code class="highlighter-rouge">draw-line</code> procedure is works correctly only while using <code class="highlighter-rouge">paint</code>.</p>
+<p>Ideally <code class="language-plaintext highlighter-rouge">(draw-frame (make-frame (make-vect 0 0) (make-vect 5 5) (make-vect 10 10)))</code> should also draw the outline of the passed frame. It apparently does not work.
+It seems the <code class="language-plaintext highlighter-rouge">draw-line</code> procedure is works correctly only while using <code class="language-plaintext highlighter-rouge">paint</code>.</p>
 
-<p>The problem with <code class="highlighter-rouge">paint</code> is it draws only in a unit square frame. Thus to actually verify that points are correctly transformed and can outline any frame is possible 
-only if procedure <code class="highlighter-rouge">segments-painter</code> are implemented without using <code class="highlighter-rouge">draw-line</code>. Thus instead of <code class="highlighter-rouge">draw-line</code>, use some new procedure which invokes Racket Graphics package
+<p>The problem with <code class="language-plaintext highlighter-rouge">paint</code> is it draws only in a unit square frame. Thus to actually verify that points are correctly transformed and can outline any frame is possible 
+only if procedure <code class="language-plaintext highlighter-rouge">segments-painter</code> are implemented without using <code class="language-plaintext highlighter-rouge">draw-line</code>. Thus instead of <code class="language-plaintext highlighter-rouge">draw-line</code>, use some new procedure which invokes Racket Graphics package
 to draw line.</p>
 
-<p>Currently because of time constraint, I am using <code class="highlighter-rouge">segments-painter</code> currently available with sicp package of Dr Racket.</p>
+<p>Currently because of time constraint, I am using <code class="language-plaintext highlighter-rouge">segments-painter</code> currently available with sicp package of Dr Racket.</p>
 
 <p>(b)</p>
 
@@ -9744,7 +9745,7 @@ to draw line.</p>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

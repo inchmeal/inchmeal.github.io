@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,9 +9418,9 @@
 <p>The basic idea of data abstraction is to structure the programs that are to use compound data objects so that they operate on <em>abstract data</em>. That is, our programs should use data in such a way as to make no assumptions about the data that are not strictly necessary for performing the task at hand. At the same time, a <em>concrete data</em> representation is defined independent of the programs that use the data. The interface between these two parts of our system will be a set of procedures, called selectors and constructors, that implement the abstract data in terms of the concrete representation. To illustrate this technique, we will consider how to design a set of procedures for manipulating rational numbers:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">(make-rat n d)</code> - constructor to return the rational number.</li>
-  <li><code class="highlighter-rouge">(numer x)</code> - selector - returns the numerator of the rational number <code class="highlighter-rouge">x</code>.</li>
-  <li><code class="highlighter-rouge">(denom x)</code> - selector - returns the denominator of the rational number <code class="highlighter-rouge">x</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">(make-rat n d)</code> - constructor to return the rational number.</li>
+  <li><code class="language-plaintext highlighter-rouge">(numer x)</code> - selector - returns the numerator of the rational number <code class="language-plaintext highlighter-rouge">x</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">(denom x)</code> - selector - returns the denominator of the rational number <code class="language-plaintext highlighter-rouge">x</code>.</li>
 </ul>
 
 <p>The idea is without knowing the implementation details or the underlying representation of the rational number, we can use these constructor and selectors to implement procedures to add, subtract, multiply or compare.</p>
@@ -9428,7 +9429,7 @@
 
 <p>Now, if some other procedures need to use the rational numbers after we implemented arithmetic operations then for those procedures, it does not matter how arithmetic operations are implemented. Thus we have multiple levels of <em>abstraction barriers</em>.</p>
 
-<p>Now to implement <code class="highlighter-rouge">make-rat</code>, we use <code class="highlighter-rouge">cons</code> a language supplied(primitive) procedure to define a pair, as follows:</p>
+<p>Now to implement <code class="language-plaintext highlighter-rouge">make-rat</code>, we use <code class="language-plaintext highlighter-rouge">cons</code> a language supplied(primitive) procedure to define a pair, as follows:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9444,15 +9445,15 @@
 
 <h4 id="what-is-meant-by-data">What is meant by Data</h4>
 
-<p>It is not enough to say <em>whatever is implemented by the given selectors and constructors.</em> Clearly, not every arbitrary set of three procedures can serve as an appropriate basis for the rational-number implementation. We need to guarantee that, if we construct a rational number x from a pair of integers n and d, then extracting the numer and the denom of x and dividing them should yield the same result as dividing n by d. In other words, make-rat, numer, and denom must satisfy the condition that, for any integer n and any non-zero integer d, if x is <code class="highlighter-rouge">(make-rat n d)</code>, then:</p>
+<p>It is not enough to say <em>whatever is implemented by the given selectors and constructors.</em> Clearly, not every arbitrary set of three procedures can serve as an appropriate basis for the rational-number implementation. We need to guarantee that, if we construct a rational number x from a pair of integers n and d, then extracting the numer and the denom of x and dividing them should yield the same result as dividing n by d. In other words, make-rat, numer, and denom must satisfy the condition that, for any integer n and any non-zero integer d, if x is <code class="language-plaintext highlighter-rouge">(make-rat n d)</code>, then:</p>
 
 <div class="kdmath">$$
 \frac {(\text{numer x})} {(\text{denom x})} = \frac n d
 $$</div>
 
-<p>In fact, this is the only condition <code class="highlighter-rouge">make-rat</code>, <code class="highlighter-rouge">numer</code>, and <code class="highlighter-rouge">denom</code> must fulfill in order to form a suitable basis for a rational-number representation. In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation.</p>
+<p>In fact, this is the only condition <code class="language-plaintext highlighter-rouge">make-rat</code>, <code class="language-plaintext highlighter-rouge">numer</code>, and <code class="language-plaintext highlighter-rouge">denom</code> must fulfill in order to form a suitable basis for a rational-number representation. In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation.</p>
 
-<p>This point of view can serve to define not only <code class="highlighter-rouge">high-level</code> data objects, such as rational numbers, but lower-level objects as well. Consider the notion of a pair, we only need to supply <code class="highlighter-rouge">cons</code>, <code class="highlighter-rouge">car</code>, and <code class="highlighter-rouge">cdr</code> to implement a pair. We can implement these procedures even without using the language supplied procedures!</p>
+<p>This point of view can serve to define not only <code class="language-plaintext highlighter-rouge">high-level</code> data objects, such as rational numbers, but lower-level objects as well. Consider the notion of a pair, we only need to supply <code class="language-plaintext highlighter-rouge">cons</code>, <code class="language-plaintext highlighter-rouge">car</code>, and <code class="language-plaintext highlighter-rouge">cdr</code> to implement a pair. We can implement these procedures even without using the language supplied procedures!</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9488,9 +9489,9 @@ $$</div>
 
 <h4 id="hierarchical-data-and-closure-property">Hierarchical Data and Closure Property</h4>
 
-<p>The procedure <code class="highlighter-rouge">cons</code> can be used not only to combine numbers but it can be used to combine pairs too!</p>
+<p>The procedure <code class="language-plaintext highlighter-rouge">cons</code> can be used not only to combine numbers but it can be used to combine pairs too!</p>
 
-<p>The ability to create pairs whose elements are pairs is the essence of list structure’s importance as a representational tool. We refer to this ability as the <em>closure property</em> of <code class="highlighter-rouge">cons</code>. In general, an operation for combining data objects satisfies the closure property if the results of combining things with that operation can themselves be combined using the same operation. Closure is the key to power in any means of combination because it permits us to create <em>hierarchical structures</em> – structures made up of parts, which themselves are made up of parts, and so on.</p>
+<p>The ability to create pairs whose elements are pairs is the essence of list structure’s importance as a representational tool. We refer to this ability as the <em>closure property</em> of <code class="language-plaintext highlighter-rouge">cons</code>. In general, an operation for combining data objects satisfies the closure property if the results of combining things with that operation can themselves be combined using the same operation. Closure is the key to power in any means of combination because it permits us to create <em>hierarchical structures</em> – structures made up of parts, which themselves are made up of parts, and so on.</p>
 
 <p>Note that this closure property is same as mathematical closure property. It is <em>different</em> from the closure property used in programming contexts for the ability to access the free variables.</p>
 
@@ -9498,7 +9499,7 @@ $$</div>
 
 <h4 id="sequences">Sequences</h4>
 
-<p>Structures like sequences or also known by linked-lists can be easily constructed using <code class="highlighter-rouge">cons</code> as follows:</p>
+<p>Structures like sequences or also known by linked-lists can be easily constructed using <code class="language-plaintext highlighter-rouge">cons</code> as follows:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9516,9 +9517,9 @@ $$</div>
 <span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>The scheme also provides a primitive called <code class="highlighter-rouge">list</code> to create the same structure as: <code class="highlighter-rouge">(list 1 2 3 4)</code>. Suppose we associate this list by <code class="highlighter-rouge">l</code>, then <code class="highlighter-rouge">car l</code> will return <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">cdr l</code> returns <code class="highlighter-rouge">2 3 4</code>.</p>
+<p>The scheme also provides a primitive called <code class="language-plaintext highlighter-rouge">list</code> to create the same structure as: <code class="language-plaintext highlighter-rouge">(list 1 2 3 4)</code>. Suppose we associate this list by <code class="language-plaintext highlighter-rouge">l</code>, then <code class="language-plaintext highlighter-rouge">car l</code> will return <code class="language-plaintext highlighter-rouge">1</code> and <code class="language-plaintext highlighter-rouge">cdr l</code> returns <code class="language-plaintext highlighter-rouge">2 3 4</code>.</p>
 
-<p>Thus <code class="highlighter-rouge">cdr</code> returns all the elements except the first and <code class="highlighter-rouge">car</code> returns only the first element. To get second element we can use <code class="highlighter-rouge">(car (cdr l))</code>. The value of nil, used to terminate the chain of pairs, can be thought of as a sequence of no elements, the empty list.</p>
+<p>Thus <code class="language-plaintext highlighter-rouge">cdr</code> returns all the elements except the first and <code class="language-plaintext highlighter-rouge">car</code> returns only the first element. To get second element we can use <code class="language-plaintext highlighter-rouge">(car (cdr l))</code>. The value of nil, used to terminate the chain of pairs, can be thought of as a sequence of no elements, the empty list.</p>
 
 <p>Some list operations:</p>
 
@@ -9574,7 +9575,7 @@ $$</div>
 
 <h4 id="map">map</h4>
 
-<p>If we want to perform some operation on each element on the list, then one way is to iterate/recurse on each element of the list and perform the operation and return the resulting list. Another way is to <em>abstract</em> this idea into a <em>higher-level</em> <code class="highlighter-rouge">map</code> procedure that accepts another procedure which specifies the required operation, and returns the new list by applying that operation on each element.</p>
+<p>If we want to perform some operation on each element on the list, then one way is to iterate/recurse on each element of the list and perform the operation and return the resulting list. Another way is to <em>abstract</em> this idea into a <em>higher-level</em> <code class="language-plaintext highlighter-rouge">map</code> procedure that accepts another procedure which specifies the required operation, and returns the new list by applying that operation on each element.</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9600,13 +9601,13 @@ $$</div>
 
 <h4 id="sequence-operations">Sequence Operations</h4>
 
-<p>This section descibes abstractions like <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">filter</code>, <code class="highlighter-rouge">accumulate</code> to perform sequence or list operations.
+<p>This section descibes abstractions like <code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">filter</code>, <code class="language-plaintext highlighter-rouge">accumulate</code> to perform sequence or list operations.
 The idea is to design programs as these sequence operations. This also helps in making modular designs by combining relatively independent pieces. Its a powerful strategy that enables us to mix and match. Also this helps in localizing our data-structure dependencies to a small number of operations and enables us to experiment with alternate data-structure without impacting the overall design of our program.
 Explanation in book is really nice and I can not captured in small notes. Read Section-2.2.3 directly from the book.</p>
 
 <h4 id="nested-mappings">Nested Mappings</h4>
 
-<p>This section describes that the list operations like <code class="highlighter-rouge">map</code> can be used for computations which are generally expressed using nested loops. It also introduces <code class="highlighter-rouge">flatmap</code> which combines accumulate and map operations:</p>
+<p>This section describes that the list operations like <code class="language-plaintext highlighter-rouge">map</code> can be used for computations which are generally expressed using nested loops. It also introduces <code class="language-plaintext highlighter-rouge">flatmap</code> which combines accumulate and map operations:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9903,7 +9904,7 @@ Also, if there are two separate developers implementing each representation, the
   
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note, how we separated the <em>things that change from the things that remain same</em> in the selectors of complex-number. Now two developers implementing different representation can work separately on their implementations. Note that <code class="highlighter-rouge">apply</code> is used for invoking the procedure retrieved from the table. <code class="highlighter-rouge">apply-generic</code> accepts variable number of arguments which is specified by <code class="highlighter-rouge">.</code>.</p>
+<p>Note, how we separated the <em>things that change from the things that remain same</em> in the selectors of complex-number. Now two developers implementing different representation can work separately on their implementations. Note that <code class="language-plaintext highlighter-rouge">apply</code> is used for invoking the procedure retrieved from the table. <code class="language-plaintext highlighter-rouge">apply-generic</code> accepts variable number of arguments which is specified by <code class="language-plaintext highlighter-rouge">.</code>.</p>
 
 <ul>
   <li>Message Passing</li>
@@ -9935,12 +9936,12 @@ Also, if there are two separate developers implementing each representation, the
   <span class="nv">dispatch</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that the value returned by make-from-real-imag is a procedure – the internal dispatch procedure. And operations like <code class="highlighter-rouge">real-part</code> do not take care of dispatching in explicit way. 
+<p>Note that the value returned by make-from-real-imag is a procedure – the internal dispatch procedure. And operations like <code class="language-plaintext highlighter-rouge">real-part</code> do not take care of dispatching in explicit way. 
 This style of programming is called message passing. The name comes from the image that a data object is an entity that receives the requested operation name as a <em>message</em>.</p>
 
 <h4 id="systems-with-generic-operations">Systems with Generic Operations</h4>
 
-<p>The first section talks about how we can build a system will generic operations <code class="highlighter-rouge">add</code>, <code class="highlighter-rouge">multiply</code> etc for each type of number that we have worked till now: primitive numbers, rational number and complex number. These methods should work irrespective that the arguments are primitve numbers, rational or complex numbers. We use the <em>data directed</em> approach to accomplish it but since each of these methods take two arguments, we store the corresponding procedures with two types like:</p>
+<p>The first section talks about how we can build a system will generic operations <code class="language-plaintext highlighter-rouge">add</code>, <code class="language-plaintext highlighter-rouge">multiply</code> etc for each type of number that we have worked till now: primitive numbers, rational number and complex number. These methods should work irrespective that the arguments are primitve numbers, rational or complex numbers. We use the <em>data directed</em> approach to accomplish it but since each of these methods take two arguments, we store the corresponding procedures with two types like:</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9978,20 +9979,20 @@ This style of programming is called message passing. The name comes from the ima
   <span class="p">((</span><span class="nf">get</span> <span class="ss">'make</span> <span class="ss">'scheme-number</span><span class="p">)</span> <span class="nv">n</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that we still have not defined operations to add to numbers of different kinds - primitve and complex or rational and complex. Another point to note is that for complex number we need two levels of generic method calls - at first level complex number are added and while adding complex numbers we call <code class="highlighter-rouge">add</code> for adding primitive numbers. Do exercises(for tabular summary check - 2.76) to get a clearer picture.</p>
+<p>Note that we still have not defined operations to add to numbers of different kinds - primitve and complex or rational and complex. Another point to note is that for complex number we need two levels of generic method calls - at first level complex number are added and while adding complex numbers we call <code class="language-plaintext highlighter-rouge">add</code> for adding primitive numbers. Do exercises(for tabular summary check - 2.76) to get a clearer picture.</p>
 
 <h4 id="combining-data-of-different-types">Combining data of different types</h4>
 
-<p>Consider the situation of adding/multiplying two numbers of different types, say a complex number by an integer. To accomplish this with our existing tool - data directed approach - we <code class="highlighter-rouge">put</code> add in hashtable as <code class="highlighter-rouge">(put 'add '(complex scheme-number) &lt;procedure&gt;)</code>. Thus for every operation we want to mix we put the corresponding version in has. Obviously this requires lot of repeated work. One approach to fix this problem is to use <em>coercion</em> i.e. we coerce one type into another - for eg: we can coerce ‘scheme-number into a ‘complex number.</p>
+<p>Consider the situation of adding/multiplying two numbers of different types, say a complex number by an integer. To accomplish this with our existing tool - data directed approach - we <code class="language-plaintext highlighter-rouge">put</code> add in hashtable as <code class="language-plaintext highlighter-rouge">(put 'add '(complex scheme-number) &lt;procedure&gt;)</code>. Thus for every operation we want to mix we put the corresponding version in has. Obviously this requires lot of repeated work. One approach to fix this problem is to use <em>coercion</em> i.e. we coerce one type into another - for eg: we can coerce ‘scheme-number into a ‘complex number.</p>
 
 <p>There are two ways of implementing coercion:</p>
 
 <ul>
   <li>
-    <p>One is to write converters from one type to another. Eg: Writing converter for scheme-number to complex. Now our procedure <code class="highlighter-rouge">apply-generic</code> when fails to find an operation for the given types - tries to convert its arguments using these converters. Thus it also need to be aware of these converters - so we put them in a coercion hash-table using <code class="highlighter-rouge">(put-coercion 'scheme-number 'complex scheme-number-&gt;complex)</code>. Now <code class="highlighter-rouge">apply-generic</code> checks if there are converters and <em>tries all the permutations</em> to check if an operation is defined for that permutation. for eg: it check if ‘add is defined for <code class="highlighter-rouge">(scheme-number complex)</code> and if not found it tries for  <code class="highlighter-rouge">(complex scheme-number)</code>, then <code class="highlighter-rouge">(complex complex)</code> and so on.</p>
+    <p>One is to write converters from one type to another. Eg: Writing converter for scheme-number to complex. Now our procedure <code class="language-plaintext highlighter-rouge">apply-generic</code> when fails to find an operation for the given types - tries to convert its arguments using these converters. Thus it also need to be aware of these converters - so we put them in a coercion hash-table using <code class="language-plaintext highlighter-rouge">(put-coercion 'scheme-number 'complex scheme-number-&gt;complex)</code>. Now <code class="language-plaintext highlighter-rouge">apply-generic</code> checks if there are converters and <em>tries all the permutations</em> to check if an operation is defined for that permutation. for eg: it check if ‘add is defined for <code class="language-plaintext highlighter-rouge">(scheme-number complex)</code> and if not found it tries for  <code class="language-plaintext highlighter-rouge">(complex scheme-number)</code>, then <code class="language-plaintext highlighter-rouge">(complex complex)</code> and so on.</p>
   </li>
   <li>
-    <p>The above approach requires to write too many converters. For Eg: If we have integer, rational and complex then we need <span class="kdmath">$3 \times 2 = 6$</span> converters. Another approach is - To write converter from one lower type to higher type. And then <code class="highlighter-rouge">apply-generic</code> tries to convert recursivley from lower to higher then again to next higher in the type tower. This saves us from writing converters. Also it is more intuitive for some cases.</p>
+    <p>The above approach requires to write too many converters. For Eg: If we have integer, rational and complex then we need <span class="kdmath">$3 \times 2 = 6$</span> converters. Another approach is - To write converter from one lower type to higher type. And then <code class="language-plaintext highlighter-rouge">apply-generic</code> tries to convert recursivley from lower to higher then again to next higher in the type tower. This saves us from writing converters. Also it is more intuitive for some cases.</p>
   </li>
 </ul>
 
@@ -10096,7 +10097,7 @@ This style of programming is called message passing. The name comes from the ima
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

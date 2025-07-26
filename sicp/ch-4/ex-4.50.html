@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9583,13 +9584,13 @@
 
 <h4 id="improvement-in-alyssas-approach">Improvement in Alyssa’s approach</h4>
 
-<p>As noted in last exercise, we have to find some way so that the words generation do not keep going in infinite loop only in one branch of possibilities. This was happening because we keep adding new prepositions because of the way <code class="highlighter-rouge">amb</code> works.</p>
+<p>As noted in last exercise, we have to find some way so that the words generation do not keep going in infinite loop only in one branch of possibilities. This was happening because we keep adding new prepositions because of the way <code class="language-plaintext highlighter-rouge">amb</code> works.</p>
 
-<p>Now, if we replace all the <code class="highlighter-rouge">amb</code> with <code class="highlighter-rouge">ramb</code> in our parsing code then it will <strong>not</strong> keep going in one direction but it will try random directions.</p>
+<p>Now, if we replace all the <code class="language-plaintext highlighter-rouge">amb</code> with <code class="language-plaintext highlighter-rouge">ramb</code> in our parsing code then it will <strong>not</strong> keep going in one direction but it will try random directions.</p>
 
 <p>Thus we don’t depend on input length condition that i used in previous exercise.</p>
 
-<p>Here’s how the new <code class="highlighter-rouge">parse-word</code> will now look:(note that now we no longer use ‘<em>unparsed</em>’)</p>
+<p>Here’s how the new <code class="language-plaintext highlighter-rouge">parse-word</code> will now look:(note that now we no longer use ‘<em>unparsed</em>’)</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9603,7 +9604,7 @@
     <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">word-list</span><span class="p">)</span> <span class="nv">found-word</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>With this and the replacing all the <code class="highlighter-rouge">amb</code> with <code class="highlighter-rouge">ramb</code>, we can get better sentences with variable lengths!</p>
+<p>With this and the replacing all the <code class="language-plaintext highlighter-rouge">amb</code> with <code class="language-plaintext highlighter-rouge">ramb</code>, we can get better sentences with variable lengths!</p>
 
                         <hr/>
                     </span>
@@ -9677,7 +9678,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

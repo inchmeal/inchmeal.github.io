@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9423,19 +9424,19 @@
 
 <p>Let’s start from Louis’s suggestion in the previous exercise. Why his suggestion was not working?</p>
 
-<p>The reason is if we evaluate <code class="highlighter-rouge">lambda</code> expression for <strong>even?</strong> then <code class="highlighter-rouge">odd?</code> can not be found. Similarly evaluating <code class="highlighter-rouge">lambda</code> expression for  <strong>odd?</strong> then <code class="highlighter-rouge">even?</code> is not found.</p>
+<p>The reason is if we evaluate <code class="language-plaintext highlighter-rouge">lambda</code> expression for <strong>even?</strong> then <code class="language-plaintext highlighter-rouge">odd?</code> can not be found. Similarly evaluating <code class="language-plaintext highlighter-rouge">lambda</code> expression for  <strong>odd?</strong> then <code class="language-plaintext highlighter-rouge">even?</code> is not found.</p>
 
-<p>Why? As we saw in prev. exercise: the <strong>scope</strong> in which <code class="highlighter-rouge">lambda</code> expression for <em>even?</em> or <em>odd?</em> is evaluated <strong>does not</strong> contain the bindings <code class="highlighter-rouge">even?</code> and <code class="highlighter-rouge">odd?</code>.</p>
+<p>Why? As we saw in prev. exercise: the <strong>scope</strong> in which <code class="language-plaintext highlighter-rouge">lambda</code> expression for <em>even?</em> or <em>odd?</em> is evaluated <strong>does not</strong> contain the bindings <code class="language-plaintext highlighter-rouge">even?</code> and <code class="language-plaintext highlighter-rouge">odd?</code>.</p>
 
 <p>So, how can we <em>fix</em> this situation?</p>
 
-<p>What if instead of <code class="highlighter-rouge">even?</code>’s expression calling <code class="highlighter-rouge">odd?</code> and  <code class="highlighter-rouge">odd?</code>’s expression calling <code class="highlighter-rouge">even?</code>, there is a way we can make these invocations by passing the <em>lambda</em> expression of these procedures to each other!</p>
+<p>What if instead of <code class="language-plaintext highlighter-rouge">even?</code>’s expression calling <code class="language-plaintext highlighter-rouge">odd?</code> and  <code class="language-plaintext highlighter-rouge">odd?</code>’s expression calling <code class="language-plaintext highlighter-rouge">even?</code>, there is a way we can make these invocations by passing the <em>lambda</em> expression of these procedures to each other!</p>
 
-<p>What I mean is, the problem was we don’t have name binding of <code class="highlighter-rouge">even?</code> to its definiton and <code class="highlighter-rouge">odd?</code> to its definition. So why not we instead pass the procedure to be invoked!</p>
+<p>What I mean is, the problem was we don’t have name binding of <code class="language-plaintext highlighter-rouge">even?</code> to its definiton and <code class="language-plaintext highlighter-rouge">odd?</code> to its definition. So why not we instead pass the procedure to be invoked!</p>
 
-<p>We pass <code class="highlighter-rouge">lambda</code> expression of <code class="highlighter-rouge">even?</code> to <code class="highlighter-rouge">odd?</code> and similarly we pass the <code class="highlighter-rouge">lambda</code> expression of <code class="highlighter-rouge">odd?</code> to <code class="highlighter-rouge">even?</code>.</p>
+<p>We pass <code class="language-plaintext highlighter-rouge">lambda</code> expression of <code class="language-plaintext highlighter-rouge">even?</code> to <code class="language-plaintext highlighter-rouge">odd?</code> and similarly we pass the <code class="language-plaintext highlighter-rouge">lambda</code> expression of <code class="language-plaintext highlighter-rouge">odd?</code> to <code class="language-plaintext highlighter-rouge">even?</code>.</p>
 
-<p>In this way we are not dependent on binding of variable names <code class="highlighter-rouge">even?</code> and <code class="highlighter-rouge">odd?</code> to their respective <code class="highlighter-rouge">lambda</code> expressions!</p>
+<p>In this way we are not dependent on binding of variable names <code class="language-plaintext highlighter-rouge">even?</code> and <code class="language-plaintext highlighter-rouge">odd?</code> to their respective <code class="language-plaintext highlighter-rouge">lambda</code> expressions!</p>
 
 <p>Well thats it! Here is our procedure:</p>
 
@@ -10746,7 +10747,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9453,14 +9454,14 @@
 <p>Now <em>if</em> is a special form, and scheme interpreter will first check for the predicate and evaluate the expression based on the result
 of predicate.</p>
 
-<p>Note that here <code class="highlighter-rouge">(p)</code> is not expanded again because as per the description of <code class="highlighter-rouge">if</code>, the interpreter will first check the predicate and
+<p>Note that here <code class="language-plaintext highlighter-rouge">(p)</code> is not expanded again because as per the description of <code class="language-plaintext highlighter-rouge">if</code>, the interpreter will first check the predicate and
  then depending on it evaluates the expression.</p>
 
 <p>Clearly the result of predicate is true. Thus it will output: <span class="kdmath">$0$</span>.</p>
 
 <h4 id="applicative-order-evaluation">Applicative Order Evaluation</h4>
 
-<p><em>Evaluate the arguments and then apply</em>. Now evaluating <code class="highlighter-rouge">(p)</code> will go into a infinite loop of recursive calls. Thus the program will
+<p><em>Evaluate the arguments and then apply</em>. Now evaluating <code class="language-plaintext highlighter-rouge">(p)</code> will go into a infinite loop of recursive calls. Thus the program will
 never terminate by itself.</p>
 
 
@@ -9536,7 +9537,7 @@ never terminate by itself.</p>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,7 +9418,7 @@
                         <hr/>
                         <p>(Note that i reverted all the changes made in previous exercises in the evaluator because lazy evaluator results in different number of stack-pushes)</p>
 
-<p>Lets first check the for some values of <code class="highlighter-rouge">n</code>:</p>
+<p>Lets first check the for some values of <code class="language-plaintext highlighter-rouge">n</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9493,7 +9494,7 @@
 <span class="c1">;;; EC-Eval input:</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>(a) Clearly maximum-depth = 10. Note that this is not a mathamttical argument that maximum-depth = 10 independent of <code class="highlighter-rouge">n</code>. For that we need to go into the code of evaluator while executing each instruction of <code class="highlighter-rouge">fibonacci</code>. Well, this is not asked and neither it’s interesting so i will skip that :)</p>
+<p>(a) Clearly maximum-depth = 10. Note that this is not a mathamttical argument that maximum-depth = 10 independent of <code class="language-plaintext highlighter-rouge">n</code>. For that we need to go into the code of evaluator while executing each instruction of <code class="language-plaintext highlighter-rouge">fibonacci</code>. Well, this is not asked and neither it’s interesting so i will skip that :)</p>
 
 <p>(b) Well, again from the observation we can see the formulae is <span class="kdmath">$\, \text{total-pushes} = 35n + 29 \,$</span>. Again this is not mathematical proof. For that we first need to prove that each invocation of an iterative procedure results in a constant number of stack pushes. And then we can just directly use the observation above ti come up with formulae.</p>
 
@@ -9569,7 +9570,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

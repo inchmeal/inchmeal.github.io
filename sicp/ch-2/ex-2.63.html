@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9429,18 +9430,18 @@
   <li>Create a combined list as (left-list, current-entry, right-list)</li>
 </ul>
 
-<p>They differ only in the way left and right lists are merged. The first procedure uses <code class="highlighter-rouge">append</code> while other procedure does it employing the <em>recursive process</em>.</p>
+<p>They differ only in the way left and right lists are merged. The first procedure uses <code class="language-plaintext highlighter-rouge">append</code> while other procedure does it employing the <em>recursive process</em>.</p>
 
 <p><strong>(b)</strong></p>
 
 <p>Clearly both procedures are invoked <span class="kdmath">$n$</span> number of times, where <span class="kdmath">$n$</span> is number of leaves in the tree.</p>
 
-<p>While in the first procedure, there is an additional invocation of <code class="highlighter-rouge">append</code>. In the second procedure there is no other function call(assuming null?, cons etc will 
+<p>While in the first procedure, there is an additional invocation of <code class="language-plaintext highlighter-rouge">append</code>. In the second procedure there is no other function call(assuming null?, cons etc will 
 take constant time) that changes the time complexity. Thus complexity of second procedure is <span class="kdmath">$O(n)$</span>.</p>
 
 <p>Lets compute the complexity of first procedure.</p>
 
-<p>Assuming tree is balanced, the additional call <code class="highlighter-rouge">append</code> takes <span class="kdmath">$O(m/2)$</span> in each step, where <span class="kdmath">$m$</span> is the number of nodes present in the tree in that step.
+<p>Assuming tree is balanced, the additional call <code class="language-plaintext highlighter-rouge">append</code> takes <span class="kdmath">$O(m/2)$</span> in each step, where <span class="kdmath">$m$</span> is the number of nodes present in the tree in that step.
 Since in each step, number of nodes are halved, the total time taken by compute is:</p>
 
 <p><span class="kdmath">$= n/2 + n/4 + n/8 + ... n/(2^{\log n})$</span>           <br />
@@ -9527,7 +9528,7 @@ Since in each step, number of nodes are halved, the total time taken by compute 
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

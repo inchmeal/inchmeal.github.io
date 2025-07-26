@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9422,7 +9423,7 @@
 
 <p>In the book, a meta-circular evaluator is implemented for a smaller version of scheme(it contains almost all the features mainly debugging and error logging were omitted).</p>
 
-<p>Well, the first thing to note is we do not do character by character of tokenization, it happens automatically because it is written in scheme and scheme can read s-expressions directly. For eg if we read input <code class="highlighter-rouge">(proc (+ 2 3))</code>, we need not to read it character by character but list can directly give a list whose first element is <code class="highlighter-rouge">proc</code> and second element is another list <code class="highlighter-rouge">(+ 2 3)</code>.</p>
+<p>Well, the first thing to note is we do not do character by character of tokenization, it happens automatically because it is written in scheme and scheme can read s-expressions directly. For eg if we read input <code class="language-plaintext highlighter-rouge">(proc (+ 2 3))</code>, we need not to read it character by character but list can directly give a list whose first element is <code class="language-plaintext highlighter-rouge">proc</code> and second element is another list <code class="language-plaintext highlighter-rouge">(+ 2 3)</code>.</p>
 
 <p>Thus we need to understand at expression level not at the character/alphabets level.</p>
 
@@ -9437,11 +9438,11 @@
   </li>
 </ol>
 
-<p><strong>eval</strong> as the name suggests, evaluates a given expression by first checking on a case by case basis the expression type and then evaluating it based on the type of expression. Expression can be of any type like assignment <code class="highlighter-rouge">(set! a 5)</code> or self evaluating like <code class="highlighter-rouge">5</code> or quoted like <code class="highlighter-rouge">'a</code> or lambda like <code class="highlighter-rouge">(lambda )</code> or application like <code class="highlighter-rouge">(fib 5)</code> etc.</p>
+<p><strong>eval</strong> as the name suggests, evaluates a given expression by first checking on a case by case basis the expression type and then evaluating it based on the type of expression. Expression can be of any type like assignment <code class="language-plaintext highlighter-rouge">(set! a 5)</code> or self evaluating like <code class="language-plaintext highlighter-rouge">5</code> or quoted like <code class="language-plaintext highlighter-rouge">'a</code> or lambda like <code class="language-plaintext highlighter-rouge">(lambda )</code> or application like <code class="language-plaintext highlighter-rouge">(fib 5)</code> etc.</p>
 
 <p>Note that the specific syntax of each of the expression type is not part of eval but abstracted in specific evalutation procedures. Thus we can change the syntax of our language without changing the evaluator.</p>
 
-<p>Evaluator needs an environment where it looks for the variables as part of the evaluation. For eg: <code class="highlighter-rouge">(set! y (+ x 5))</code> will require that we have en evironment where we can lookup the value of <code class="highlighter-rouge">x</code> and then assign a new value to <code class="highlighter-rouge">y</code> in the environment.</p>
+<p>Evaluator needs an environment where it looks for the variables as part of the evaluation. For eg: <code class="language-plaintext highlighter-rouge">(set! y (+ x 5))</code> will require that we have en evironment where we can lookup the value of <code class="language-plaintext highlighter-rouge">x</code> and then assign a new value to <code class="language-plaintext highlighter-rouge">y</code> in the environment.</p>
 
 <p><strong>apply</strong> is invocation of procedure with the supplied arguments. An application of procedure creates a new environment by extending the environment where procedure is actually defined(not invoked but defined).</p>
 
@@ -9449,17 +9450,17 @@
 
 <p>Tip: The environment stores the procedure object constructed by ‘make-procedure’ instead of the expressions list in procedure body. This procedure object internally contains the actual body as well as environment where the preocedure was defined. This procedure object is stored against the name of the procedure so that we can lookup the procedure using this name.</p>
 
-<p><strong>special forms</strong> are implemented directly in the evaluator for eg: to evaluate <code class="highlighter-rouge">(if pred consequent alternate)</code> we write a specific procedure to evalute <code class="highlighter-rouge">pred</code> and then based on it outcome we evaluate <code class="highlighter-rouge">consequent</code> or <code class="highlighter-rouge">alternate</code>.</p>
+<p><strong>special forms</strong> are implemented directly in the evaluator for eg: to evaluate <code class="language-plaintext highlighter-rouge">(if pred consequent alternate)</code> we write a specific procedure to evalute <code class="language-plaintext highlighter-rouge">pred</code> and then based on it outcome we evaluate <code class="language-plaintext highlighter-rouge">consequent</code> or <code class="language-plaintext highlighter-rouge">alternate</code>.</p>
 
-<p><strong>derived forms</strong> are implemented on top of special forms. i.e. we convert the syntax of derived form into special form syntax. For eg: we converted <code class="highlighter-rouge">cond</code> into nested <code class="highlighter-rouge">if</code> expressions. And after conversion we evaluate the transformed expression using special form evaluation.</p>
+<p><strong>derived forms</strong> are implemented on top of special forms. i.e. we convert the syntax of derived form into special form syntax. For eg: we converted <code class="language-plaintext highlighter-rouge">cond</code> into nested <code class="language-plaintext highlighter-rouge">if</code> expressions. And after conversion we evaluate the transformed expression using special form evaluation.</p>
 
 <p>We saw the halting problem in one of the exercise ex-4.15.</p>
 
 <p>There is an interesting discussion of <strong>internal definitions</strong>(variable or procedure definitions inside a procedure) whether we want the definitions to be sequential or truely simultaneous. Simultaneous definitions are specially needed for circular definitions as we need in last section in streams(chapter-3) where definition of one stream depended on definition of another and vice versa. Ex-4.19 is quite interesting and helps in understanding the difference in these ideas.</p>
 
-<p>Then finally we <strong>optimize</strong> our evaluator by separating the evaluation into <strong>analysis</strong> and execution part. The problem with the original evaluator that every time we encounter a procedure we re-evaluate each of its experession by checking whether it is <code class="highlighter-rouge">if</code> or <code class="highlighter-rouge">set!</code> etc. Instead we can first analyze the procedure and check for once what are all the expression and create a <em>result</em> which abstracts evaluation of each expression. The point is this <em>result</em> just knows the expression type and just invokes the evaluation of that expression without checking the expression type.</p>
+<p>Then finally we <strong>optimize</strong> our evaluator by separating the evaluation into <strong>analysis</strong> and execution part. The problem with the original evaluator that every time we encounter a procedure we re-evaluate each of its experession by checking whether it is <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">set!</code> etc. Instead we can first analyze the procedure and check for once what are all the expression and create a <em>result</em> which abstracts evaluation of each expression. The point is this <em>result</em> just knows the expression type and just invokes the evaluation of that expression without checking the expression type.</p>
 
-<p>For eg: if a procedure contains two expression say <code class="highlighter-rouge">if</code> followed by <code class="highlighter-rouge">set!</code>, then our analyzed procedure will not check whether the next expression is <code class="highlighter-rouge">if</code> it just knows and evaluates the <code class="highlighter-rouge">if</code> and then it evaluates <code class="highlighter-rouge">set!</code> instead of checking whether that expression is <code class="highlighter-rouge">set!</code>.</p>
+<p>For eg: if a procedure contains two expression say <code class="language-plaintext highlighter-rouge">if</code> followed by <code class="language-plaintext highlighter-rouge">set!</code>, then our analyzed procedure will not check whether the next expression is <code class="language-plaintext highlighter-rouge">if</code> it just knows and evaluates the <code class="language-plaintext highlighter-rouge">if</code> and then it evaluates <code class="language-plaintext highlighter-rouge">set!</code> instead of checking whether that expression is <code class="language-plaintext highlighter-rouge">set!</code>.</p>
 
 <p>Tip: Now the procedure object in environment is stored after analysis. Thus when a procedure in invoked then only evaluation of the procedure body occurs instead of analysis + eval like in earlier case.</p>
 
@@ -9512,7 +9513,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 
 <p>We see some interesting exercises(4.27, 4.30) to demonstrate the problems when mixing <em>assignments</em> and <em>lazy order</em> evaluation.</p>
 
-<p>Later, we also see using normal order evaluation to implement lazy lists(or lazier lazy list!). They are similar to streams but a bit are <em>extra lazy</em> as in streams we atleast evaluate the first argument in <code class="highlighter-rouge">cons</code> and delay the other argument while in <em>lazy lists</em> both arguments will be delayed.</p>
+<p>Later, we also see using normal order evaluation to implement lazy lists(or lazier lazy list!). They are similar to streams but a bit are <em>extra lazy</em> as in streams we atleast evaluate the first argument in <code class="language-plaintext highlighter-rouge">cons</code> and delay the other argument while in <em>lazy lists</em> both arguments will be delayed.</p>
 
 <p>These lazy lists provide atleast one advantage over the streams - to define circularly dependent things. We saw in chapter-3 streams that even using streams circular dependent definitions were not allowed in MIT scheme. For eg:</p>
 
@@ -9600,35 +9601,35 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 
 <p>As we can see above the code is not completely avoiding <em>how</em> but still it is far closer to <em>what</em> then <em>how</em>.</p>
 
-<p>The central concept and the construct that we implement and use here is <code class="highlighter-rouge">amb</code>(I think the name amb came from <em>ambiguous</em>). The <code class="highlighter-rouge">amb</code> expression can return any of the value passed to it but only one at a time. That is to say that if the first value <em>failed</em> then we <em>backtrack</em> and try another value.</p>
+<p>The central concept and the construct that we implement and use here is <code class="language-plaintext highlighter-rouge">amb</code>(I think the name amb came from <em>ambiguous</em>). The <code class="language-plaintext highlighter-rouge">amb</code> expression can return any of the value passed to it but only one at a time. That is to say that if the first value <em>failed</em> then we <em>backtrack</em> and try another value.</p>
 
-<p>Note that when there are no expressions inside <code class="highlighter-rouge">amb</code> like <code class="highlighter-rouge">(amb)</code> then it means it is a dead end and we should back track to try other possible branches.</p>
+<p>Note that when there are no expressions inside <code class="language-plaintext highlighter-rouge">amb</code> like <code class="language-plaintext highlighter-rouge">(amb)</code> then it means it is a dead end and we should back track to try other possible branches.</p>
 
-<p>The other important concept is <code class="highlighter-rouge">require</code> which we implement as a procedure on the top of our language using empty <code class="highlighter-rouge">amb</code> or <code class="highlighter-rouge">(amb)</code>. It takes a predicate and <em>fails</em> if that predicate is not true. Thus when a <code class="highlighter-rouge">require</code> fails we backtrack and try other possible branch points unless/until there are no other possible branch points.</p>
+<p>The other important concept is <code class="language-plaintext highlighter-rouge">require</code> which we implement as a procedure on the top of our language using empty <code class="language-plaintext highlighter-rouge">amb</code> or <code class="language-plaintext highlighter-rouge">(amb)</code>. It takes a predicate and <em>fails</em> if that predicate is not true. Thus when a <code class="language-plaintext highlighter-rouge">require</code> fails we backtrack and try other possible branch points unless/until there are no other possible branch points.</p>
 
-<p>Again, now the main contruct that can give us different branch point is <code class="highlighter-rouge">amb</code>. Thus when an expression fails we backtrack until there is another <code class="highlighter-rouge">amb</code> which can give alternate value. Then from that <code class="highlighter-rouge">amb</code> expression we again evaluate the expressions following that <code class="highlighter-rouge">amb</code> but now we have a new value that we use.</p>
+<p>Again, now the main contruct that can give us different branch point is <code class="language-plaintext highlighter-rouge">amb</code>. Thus when an expression fails we backtrack until there is another <code class="language-plaintext highlighter-rouge">amb</code> which can give alternate value. Then from that <code class="language-plaintext highlighter-rouge">amb</code> expression we again evaluate the expressions following that <code class="language-plaintext highlighter-rouge">amb</code> but now we have a new value that we use.</p>
 
-<p>For example, in the above program, first <code class="highlighter-rouge">amb</code> assigns <code class="highlighter-rouge">1</code> to each of the variables <code class="highlighter-rouge">baker</code>, <code class="highlighter-rouge">cooper</code>…, <code class="highlighter-rouge">smith</code>. Now when a constraint <code class="highlighter-rouge">require</code> fails, the evaluator backtrack to the last <code class="highlighter-rouge">amb</code> and assign <code class="highlighter-rouge">smith</code> to 2. Now we again proceed and check the constraints. If a constraint is failed again, then we again backtrack and <code class="highlighter-rouge">smith</code> gets 3 and proceed.</p>
+<p>For example, in the above program, first <code class="language-plaintext highlighter-rouge">amb</code> assigns <code class="language-plaintext highlighter-rouge">1</code> to each of the variables <code class="language-plaintext highlighter-rouge">baker</code>, <code class="language-plaintext highlighter-rouge">cooper</code>…, <code class="language-plaintext highlighter-rouge">smith</code>. Now when a constraint <code class="language-plaintext highlighter-rouge">require</code> fails, the evaluator backtrack to the last <code class="language-plaintext highlighter-rouge">amb</code> and assign <code class="language-plaintext highlighter-rouge">smith</code> to 2. Now we again proceed and check the constraints. If a constraint is failed again, then we again backtrack and <code class="language-plaintext highlighter-rouge">smith</code> gets 3 and proceed.</p>
 
-<p>Now when all the values in <code class="highlighter-rouge">smith</code> had been tried and we still failed, then we backtrack to <code class="highlighter-rouge">miller</code>, which then assigns <code class="highlighter-rouge">miller</code> the value 2 and proceed. Note that now in the next statement we assign <code class="highlighter-rouge">smith</code> 1 and proceed further. Now when we fail then we back track and <code class="highlighter-rouge">smith</code> gets <code class="highlighter-rouge">2</code>(note <code class="highlighter-rouge">miller</code> is 2 now).</p>
+<p>Now when all the values in <code class="language-plaintext highlighter-rouge">smith</code> had been tried and we still failed, then we backtrack to <code class="language-plaintext highlighter-rouge">miller</code>, which then assigns <code class="language-plaintext highlighter-rouge">miller</code> the value 2 and proceed. Note that now in the next statement we assign <code class="language-plaintext highlighter-rouge">smith</code> 1 and proceed further. Now when we fail then we back track and <code class="language-plaintext highlighter-rouge">smith</code> gets <code class="language-plaintext highlighter-rouge">2</code>(note <code class="language-plaintext highlighter-rouge">miller</code> is 2 now).</p>
 
-<p>Thus we try all the combinations of <code class="highlighter-rouge">baker</code>, <code class="highlighter-rouge">smith</code> until we get success or failed after exhausting all possiblities and back track to <code class="highlighter-rouge">fletcher</code> and then proceed!</p>
+<p>Thus we try all the combinations of <code class="language-plaintext highlighter-rouge">baker</code>, <code class="language-plaintext highlighter-rouge">smith</code> until we get success or failed after exhausting all possiblities and back track to <code class="language-plaintext highlighter-rouge">fletcher</code> and then proceed!</p>
 
 <p>Thus the evaluator stops when either all the possibilities are tried or some possibility has yielded an outcome.</p>
 
-<p>In a way <code class="highlighter-rouge">amb</code> provides an impression of <code class="highlighter-rouge">streams</code> but with a difference. Quoting from the book:</p>
+<p>In a way <code class="language-plaintext highlighter-rouge">amb</code> provides an impression of <code class="language-plaintext highlighter-rouge">streams</code> but with a difference. Quoting from the book:</p>
 
 <blockquote>
   <p>It is instructive to contrast the different images of time evoked by nondeterministic evaluation and stream processing. Stream processing uses lazy evaluation to decouple the time when the stream of possible answers is assembled from the time when the actual stream elements are produced. The evaluator supports the illusion that all the possible answers are laid out before us in a timeless sequence. With nondeterministic evaluation, an expression represents the exploration of a set of possible worlds, each determined by a set of choices. Some of the possible worlds lead to dead ends, while others have useful values. The nondeterministic program evaluator supports the illusion that time branches, and that our programs have different possible execution histories. When we reach a dead end, we can revisit a previous choice point and proceed along a different branch.</p>
 </blockquote>
 
-<p>It is important to understand the cost of trying all the possibilities. There are ways when we can narrow down the possibilities, see exercise - 4.40, where the idea is we eliminate the impossible items as early as possible so that they won’t be tried. For example if we know that <code class="highlighter-rouge">baker</code> can not be 5 then we can do this before even thinking of other variables like <code class="highlighter-rouge">fletcher</code> or <code class="highlighter-rouge">cooper</code>. Thus we eliminate all the combination when <code class="highlighter-rouge">baker</code> with value <code class="highlighter-rouge">5</code> is tried with different possiblities of other variables.</p>
+<p>It is important to understand the cost of trying all the possibilities. There are ways when we can narrow down the possibilities, see exercise - 4.40, where the idea is we eliminate the impossible items as early as possible so that they won’t be tried. For example if we know that <code class="language-plaintext highlighter-rouge">baker</code> can not be 5 then we can do this before even thinking of other variables like <code class="language-plaintext highlighter-rouge">fletcher</code> or <code class="language-plaintext highlighter-rouge">cooper</code>. Thus we eliminate all the combination when <code class="language-plaintext highlighter-rouge">baker</code> with value <code class="language-plaintext highlighter-rouge">5</code> is tried with different possiblities of other variables.</p>
 
 <p>Some tips that may help in better understanding:</p>
 
 <ul>
-  <li>The main construct that can give multiple values, one at a time, is <code class="highlighter-rouge">amb</code>.</li>
-  <li>To support backtracking, every expression must have a way to go back or proceed further. This is done using <code class="highlighter-rouge">success</code> and <code class="highlighter-rouge">fail</code> two procedures which we pass to every expression when it is avaluated.</li>
+  <li>The main construct that can give multiple values, one at a time, is <code class="language-plaintext highlighter-rouge">amb</code>.</li>
+  <li>To support backtracking, every expression must have a way to go back or proceed further. This is done using <code class="language-plaintext highlighter-rouge">success</code> and <code class="language-plaintext highlighter-rouge">fail</code> two procedures which we pass to every expression when it is avaluated.</li>
   <li>If an expression is successfully evaluated then we proceed further else we go back using fail.</li>
   <li>Check notes in solution of ex-4.78 for few more subtle details.</li>
 </ul>
@@ -9648,8 +9649,8 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
   <li>Logic programming extends this idea further by combining the relational vision of programming with a powerful kind of symbolic pattern matching called <em>unification</em>.</li>
   <li>This approach is certainly not for every programming but when it works, it can be quite powerful. For example, a single “what is” can solve multiple problems of “how to”. Let’s say we want to append two lists. We can describe “what is” as:
     <ul>
-      <li>An empty list and any other list <code class="highlighter-rouge">y</code>, append to form <code class="highlighter-rouge">y</code>.</li>
-      <li>For any <code class="highlighter-rouge">u</code>, <code class="highlighter-rouge">v</code>, <code class="highlighter-rouge">y</code> and <code class="highlighter-rouge">z</code>, If <code class="highlighter-rouge">v</code> and <code class="highlighter-rouge">y</code> append to form <code class="highlighter-rouge">z</code> then <code class="highlighter-rouge">(cons u v)</code> and <code class="highlighter-rouge">y</code> append to form <code class="highlighter-rouge">(cons u z)</code>.</li>
+      <li>An empty list and any other list <code class="language-plaintext highlighter-rouge">y</code>, append to form <code class="language-plaintext highlighter-rouge">y</code>.</li>
+      <li>For any <code class="language-plaintext highlighter-rouge">u</code>, <code class="language-plaintext highlighter-rouge">v</code>, <code class="language-plaintext highlighter-rouge">y</code> and <code class="language-plaintext highlighter-rouge">z</code>, If <code class="language-plaintext highlighter-rouge">v</code> and <code class="language-plaintext highlighter-rouge">y</code> append to form <code class="language-plaintext highlighter-rouge">z</code> then <code class="language-plaintext highlighter-rouge">(cons u v)</code> and <code class="language-plaintext highlighter-rouge">y</code> append to form <code class="language-plaintext highlighter-rouge">(cons u z)</code>.</li>
       <li>The program will look like:</li>
     </ul>
   </li>
@@ -9668,19 +9669,19 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
     <p>As we can see from the above rule, the idea is if there exist some values for which the rule body(second expressinon in the rule) holds true then rule conclusion is also true(first expression in rule).</p>
   </li>
   <li>
-    <p>Notice that for above code if we query <code class="highlighter-rouge">(append-to-form (1 2 3) (4 5 6) ?x)</code> would return <code class="highlighter-rouge">(append-to-form (1 2 3) (4 5 6) (1 2 3 4 5 6))</code>. But it will also work for query <code class="highlighter-rouge">(append-to-form (1 2 3) ?x (1 2 3 4 5))</code> and returns <code class="highlighter-rouge">(append-to-form (1 2 3) (4 5) (1 2 3 4 5))</code>.</p>
+    <p>Notice that for above code if we query <code class="language-plaintext highlighter-rouge">(append-to-form (1 2 3) (4 5 6) ?x)</code> would return <code class="language-plaintext highlighter-rouge">(append-to-form (1 2 3) (4 5 6) (1 2 3 4 5 6))</code>. But it will also work for query <code class="language-plaintext highlighter-rouge">(append-to-form (1 2 3) ?x (1 2 3 4 5))</code> and returns <code class="language-plaintext highlighter-rouge">(append-to-form (1 2 3) (4 5) (1 2 3 4 5))</code>.</p>
   </li>
   <li>
     <p>Unlike the above example, It might not always possible that “what” can be used to deduce “how”.</p>
   </li>
   <li>
-    <p>Logic programming excels in quering information from databases. In this section a simple logic evaluator is built that works as described in the above example. It can query data from databases too. For example if database contains records like <code class="highlighter-rouge">(job &lt;person-name&gt; &lt;job-title&gt;)</code> then we can query all people working as <code class="highlighter-rouge">computer programmer</code> as <code class="highlighter-rouge">(job ?x (computer programmer))</code>.</p>
+    <p>Logic programming excels in quering information from databases. In this section a simple logic evaluator is built that works as described in the above example. It can query data from databases too. For example if database contains records like <code class="language-plaintext highlighter-rouge">(job &lt;person-name&gt; &lt;job-title&gt;)</code> then we can query all people working as <code class="language-plaintext highlighter-rouge">computer programmer</code> as <code class="language-plaintext highlighter-rouge">(job ?x (computer programmer))</code>.</p>
   </li>
   <li>
-    <p>If we want to query all the jobs computer related then <code class="highlighter-rouge">(job ?x (computer . ?x))</code>. Notice the “.”, which matches the remaining part. If “.” is removed then a job like <code class="highlighter-rouge">(computer programmar analyst)</code> won’t match as <code class="highlighter-rouge">analyst</code> can not match to anything. But with “.”, <code class="highlighter-rouge">?x</code> gets matched to <code class="highlighter-rouge">(programmer analyst)</code>.</p>
+    <p>If we want to query all the jobs computer related then <code class="language-plaintext highlighter-rouge">(job ?x (computer . ?x))</code>. Notice the “.”, which matches the remaining part. If “.” is removed then a job like <code class="language-plaintext highlighter-rouge">(computer programmar analyst)</code> won’t match as <code class="language-plaintext highlighter-rouge">analyst</code> can not match to anything. But with “.”, <code class="language-plaintext highlighter-rouge">?x</code> gets matched to <code class="language-plaintext highlighter-rouge">(programmer analyst)</code>.</p>
   </li>
   <li>
-    <p>We can have <code class="highlighter-rouge">and</code>, <code class="highlighter-rouge">or</code> and <code class="highlighter-rouge">not</code> for example <code class="highlighter-rouge">(and (lives-in ?x (new delhi)) (job ?x (computer . ?y)))</code>. Notice that <code class="highlighter-rouge">?x</code> is same to match the names.</p>
+    <p>We can have <code class="language-plaintext highlighter-rouge">and</code>, <code class="language-plaintext highlighter-rouge">or</code> and <code class="language-plaintext highlighter-rouge">not</code> for example <code class="language-plaintext highlighter-rouge">(and (lives-in ?x (new delhi)) (job ?x (computer . ?y)))</code>. Notice that <code class="language-plaintext highlighter-rouge">?x</code> is same to match the names.</p>
   </li>
   <li>
     <p>I find this query language similar to sql and it also gives some idea how sql can be implemented in a very basic way.</p>
@@ -9689,10 +9690,10 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
     <p>There are three subsections in the book, first section descibes using the query language, second describes the <em>design</em> of query language evaluator and a discussion that why <em>logic programming</em> is not mathematical logic, and third section describes the implementation of the query language evaluator.</p>
   </li>
   <li>
-    <p>The central idea in designing this system is unification. It is a kind of pattern matching. A simple example is to execute query <code class="highlighter-rouge">(job ?x (Computer . ?y))</code> we search in the records in the databse(in-memory list of records) and look for patterns that match this query. For example the database record <code class="highlighter-rouge">(job (Bitdiddle Ben) (Computer Programmar))</code> will match by binding <code class="highlighter-rouge">?x</code> to <code class="highlighter-rouge">(Bitdiddle Ben)</code> and <code class="highlighter-rouge">?y</code> to <code class="highlighter-rouge">(Programmar)</code>. But the database record <code class="highlighter-rouge">(job (William Oliver) (Big Wheel))</code> won’t match as <code class="highlighter-rouge">Big</code> is not equal to <code class="highlighter-rouge">Computer</code>.</p>
+    <p>The central idea in designing this system is unification. It is a kind of pattern matching. A simple example is to execute query <code class="language-plaintext highlighter-rouge">(job ?x (Computer . ?y))</code> we search in the records in the databse(in-memory list of records) and look for patterns that match this query. For example the database record <code class="language-plaintext highlighter-rouge">(job (Bitdiddle Ben) (Computer Programmar))</code> will match by binding <code class="language-plaintext highlighter-rouge">?x</code> to <code class="language-plaintext highlighter-rouge">(Bitdiddle Ben)</code> and <code class="language-plaintext highlighter-rouge">?y</code> to <code class="language-plaintext highlighter-rouge">(Programmar)</code>. But the database record <code class="language-plaintext highlighter-rouge">(job (William Oliver) (Big Wheel))</code> won’t match as <code class="language-plaintext highlighter-rouge">Big</code> is not equal to <code class="language-plaintext highlighter-rouge">Computer</code>.</p>
   </li>
   <li>
-    <p>Things can go much more complicated than above example when we might want to match from both sides. Like <code class="highlighter-rouge">(?x b c)</code> and <code class="highlighter-rouge">(a b ?y)</code> can result in a match by binding <code class="highlighter-rouge">?x</code> to <code class="highlighter-rouge">a</code> and binding <code class="highlighter-rouge">?y</code> to <code class="highlighter-rouge">c</code>.</p>
+    <p>Things can go much more complicated than above example when we might want to match from both sides. Like <code class="language-plaintext highlighter-rouge">(?x b c)</code> and <code class="language-plaintext highlighter-rouge">(a b ?y)</code> can result in a match by binding <code class="language-plaintext highlighter-rouge">?x</code> to <code class="language-plaintext highlighter-rouge">a</code> and binding <code class="language-plaintext highlighter-rouge">?y</code> to <code class="language-plaintext highlighter-rouge">c</code>.</p>
   </li>
   <li>
     <p>Apart from pattern match, there is infrastructure how to bring those records and the rules in database to match against the query. In the book this infra is done using <em>streams</em> but it can also be implemented using non-deterministic evaluator(check ex-4.78).</p>
@@ -9702,15 +9703,15 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
   </li>
   <li>We draw parallels between the normal programming and logic programming evaluator as there are three main ideas:
     <ul>
-      <li>A way to write simple queries. For example writing <code class="highlighter-rouge">(job ?x ?y)</code>.</li>
-      <li>A way to combine the these queries using <code class="highlighter-rouge">and</code> and <code class="highlighter-rouge">or</code> analogous to combining statements in normal langauge.</li>
+      <li>A way to write simple queries. For example writing <code class="language-plaintext highlighter-rouge">(job ?x ?y)</code>.</li>
+      <li>A way to combine the these queries using <code class="language-plaintext highlighter-rouge">and</code> and <code class="language-plaintext highlighter-rouge">or</code> analogous to combining statements in normal langauge.</li>
       <li>A way to build abstractions. Here we have <em>rules</em> analogous to <em>procedures</em>.</li>
     </ul>
   </li>
   <li>
     <p>These parallels can be seen in the design and implementation too. The design of <em>rules</em> evaluation is similar to <em>procedure</em> evaluation.</p>
   </li>
-  <li>We might start thinking that logic programming is mathematical logic. The book contains a great explanation for why it is not so. The main point is our clauses are procedural! For example when evaluating <code class="highlighter-rouge">(and &lt;exp2&gt; &lt;exp2&gt;)</code>, we first evaluate <code class="highlighter-rouge">exp1</code> and if it passed for a certain data then we check the second expresion on the same data. Thus there is a direction unlike in mathematical logic. Then we also see that <code class="highlighter-rouge">not</code> is also not exactly like mathematical logic <em>not</em> but works only on the results from the previous query it is combined with.</li>
+  <li>We might start thinking that logic programming is mathematical logic. The book contains a great explanation for why it is not so. The main point is our clauses are procedural! For example when evaluating <code class="language-plaintext highlighter-rouge">(and &lt;exp2&gt; &lt;exp2&gt;)</code>, we first evaluate <code class="language-plaintext highlighter-rouge">exp1</code> and if it passed for a certain data then we check the second expresion on the same data. Thus there is a direction unlike in mathematical logic. Then we also see that <code class="language-plaintext highlighter-rouge">not</code> is also not exactly like mathematical logic <em>not</em> but works only on the results from the previous query it is combined with.</li>
   <li>
     <p>The point is logic programming is powerful enough to look like mathematical logic but weak enough so that we can optimize and write code in it.</p>
   </li>
@@ -9731,7 +9732,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
 
 <p>Note that through 4.34, we can see mixing host language and implementation language for a task can turn out quite difficult. It can also turn out easy if the implementation/syntax concepts are very clear but even a small bug can take hours to figure out!</p>
 
-<p>Nondeterministic programming(usecases): 4.35(Conceptual), 4.39(Conceptual), 4.40(Conceptual), 4.41 and 4.44 are interesting to see the difference between normal scheme version and using <code class="highlighter-rouge">amb</code> or non-dterministic computing. Do atleast 4.44 to see the difference. If reading english parsing, then do 4.47 as its a good conceptual exercise.</p>
+<p>Nondeterministic programming(usecases): 4.35(Conceptual), 4.39(Conceptual), 4.40(Conceptual), 4.41 and 4.44 are interesting to see the difference between normal scheme version and using <code class="language-plaintext highlighter-rouge">amb</code> or non-dterministic computing. Do atleast 4.44 to see the difference. If reading english parsing, then do 4.47 as its a good conceptual exercise.</p>
 
 <p>Nondeterministic programming(implementation): 4.50(conceptual, not important), Atleast do 4.51 and 4.52 as both can help in better understanding of the implementation.</p>
 
@@ -9813,7 +9814,7 @@ Also, our <em>thunk</em> evaluation should not harm <em>non thunks</em>. Thus we
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

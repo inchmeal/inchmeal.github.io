@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9445,11 +9446,11 @@
 	  <span class="p">(</span><span class="k">set!</span> <span class="nv">dy</span> <span class="nv">b</span><span class="p">))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><strong>Assuming</strong> that <code class="highlighter-rouge">delay</code> is implemented as special form in our evaluator such that it behaves as described in chapter-3, i.e. arguments to <code class="highlighter-rouge">delay</code> are not evaluated until it is accessed.</p>
+<p><strong>Assuming</strong> that <code class="language-plaintext highlighter-rouge">delay</code> is implemented as special form in our evaluator such that it behaves as described in chapter-3, i.e. arguments to <code class="language-plaintext highlighter-rouge">delay</code> are not evaluated until it is accessed.</p>
 
-<p>For <code class="highlighter-rouge">b</code> we require <code class="highlighter-rouge">dy</code> to be correctly defined because there is no <code class="highlighter-rouge">(delay y)</code> in <code class="highlighter-rouge">b</code> expression. Thus it won’t work.</p>
+<p>For <code class="language-plaintext highlighter-rouge">b</code> we require <code class="language-plaintext highlighter-rouge">dy</code> to be correctly defined because there is no <code class="language-plaintext highlighter-rouge">(delay y)</code> in <code class="language-plaintext highlighter-rouge">b</code> expression. Thus it won’t work.</p>
 
-<p>However, it <strong>will</strong> work with the way we implemented transformation described in the text because now before evaluating <code class="highlighter-rouge">dy</code>, <code class="highlighter-rouge">y</code> will be already defined.</p>
+<p>However, it <strong>will</strong> work with the way we implemented transformation described in the text because now before evaluating <code class="language-plaintext highlighter-rouge">dy</code>, <code class="language-plaintext highlighter-rouge">y</code> will be already defined.</p>
 
                         <hr/>
                     </span>
@@ -9523,7 +9524,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

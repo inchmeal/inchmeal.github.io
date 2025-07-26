@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9427,8 +9428,8 @@
 
 <ul>
   <li>Implemented two terms-list packages - ‘dense-termlist, ‘sparse-termlist</li>
-  <li><code class="highlighter-rouge">make-term</code>, <code class="highlighter-rouge">coeff</code>, and <code class="highlighter-rouge">order</code> are owned by the polynomial package(not by the term-list packages implemented) because they are terms not the list themselves and both packages - sparse-termlist and dense-termlist use them from the polynomial package.</li>
-  <li>There is an interesting way I worked around with the <code class="highlighter-rouge">adjoin-term</code> - this procedure have different implementation for each package and which should be the part of the respective term-list packages. But I can not apply <code class="highlighter-rouge">adjoin-term</code> in generic way because it takes two arguments - <code class="highlighter-rouge">term</code>, and <code class="highlighter-rouge">termlist</code> - where term does not have any type tag in my implementation because I made term to be owned by polynomial package instead of termlist package(which may be debatable). So, I made <code class="highlighter-rouge">adjoin-term-proc</code> - a procedure  that returns a procedure! And the returned procedure takes an argument - term and adds it to the list. See the implementation for details.</li>
+  <li><code class="language-plaintext highlighter-rouge">make-term</code>, <code class="language-plaintext highlighter-rouge">coeff</code>, and <code class="language-plaintext highlighter-rouge">order</code> are owned by the polynomial package(not by the term-list packages implemented) because they are terms not the list themselves and both packages - sparse-termlist and dense-termlist use them from the polynomial package.</li>
+  <li>There is an interesting way I worked around with the <code class="language-plaintext highlighter-rouge">adjoin-term</code> - this procedure have different implementation for each package and which should be the part of the respective term-list packages. But I can not apply <code class="language-plaintext highlighter-rouge">adjoin-term</code> in generic way because it takes two arguments - <code class="language-plaintext highlighter-rouge">term</code>, and <code class="language-plaintext highlighter-rouge">termlist</code> - where term does not have any type tag in my implementation because I made term to be owned by polynomial package instead of termlist package(which may be debatable). So, I made <code class="language-plaintext highlighter-rouge">adjoin-term-proc</code> - a procedure  that returns a procedure! And the returned procedure takes an argument - term and adds it to the list. See the implementation for details.</li>
 </ul>
 
 <p>Here is the complete code(Examples in the end):</p>
@@ -11137,7 +11138,7 @@
 
 <p>Test/Sample Output:</p>
 
-<p>Note that - my integer representation adds tag - integer and drop is dropping to int when ‘add is performed. Thus <code class="highlighter-rouge">(int 5)</code> actually means <code class="highlighter-rouge">5</code>.</p>
+<p>Note that - my integer representation adds tag - integer and drop is dropping to int when ‘add is performed. Thus <code class="language-plaintext highlighter-rouge">(int 5)</code> actually means <code class="language-plaintext highlighter-rouge">5</code>.</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -11250,7 +11251,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9539,9 +9540,9 @@ $$</div>
 
 <h4 id="b">(b)</h4>
 
-<p>Looking at the intructions generated, one big difference is handling of operations <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">=</code> and <code class="highlighter-rouge">*</code>.</p>
+<p>Looking at the intructions generated, one big difference is handling of operations <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">=</code> and <code class="language-plaintext highlighter-rouge">*</code>.</p>
 
-<p>For each of these operations compiled code do extra saves and restores and specially in the case like <code class="highlighter-rouge">=</code>, where no registers(except flag but which is internal so doesnt count) gets modified!</p>
+<p>For each of these operations compiled code do extra saves and restores and specially in the case like <code class="language-plaintext highlighter-rouge">=</code>, where no registers(except flag but which is internal so doesnt count) gets modified!</p>
 
 <p>Well, what if we can use primitive operations as suggested in ex-5.38!</p>
 
@@ -9609,7 +9610,7 @@ $$</div>
 
 <p>And these are of the same order as the compiled version!</p>
 
-<p>Are such optimizations always possible? I dont think so. Consider the cases when we have non primitive operations(compound procedures) similar to <code class="highlighter-rouge">=</code>, or <code class="highlighter-rouge">*</code> which does modify only a few registers.</p>
+<p>Are such optimizations always possible? I dont think so. Consider the cases when we have non primitive operations(compound procedures) similar to <code class="language-plaintext highlighter-rouge">=</code>, or <code class="language-plaintext highlighter-rouge">*</code> which does modify only a few registers.</p>
 
 <p>I think it is quite difficult to deduce that which registers a compound procedure modifies and thus avoiding there save and restores.</p>
 
@@ -9629,10 +9630,10 @@ $$</div>
 
 <p>There are a few things to do to make those changes work:</p>
 
-<p>(All the changes are in same file <code class="highlighter-rouge">ch5-eceval-compiler.scm</code>)</p>
+<p>(All the changes are in same file <code class="language-plaintext highlighter-rouge">ch5-eceval-compiler.scm</code>)</p>
 
 <ul>
-  <li>Add following lines under <code class="highlighter-rouge">eceval-operations</code> in the mentioned file:</li>
+  <li>Add following lines under <code class="language-plaintext highlighter-rouge">eceval-operations</code> in the mentioned file:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9652,7 +9653,7 @@ $$</div>
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li>Also, add the following new registers(change is marked with <code class="highlighter-rouge">;;;</code>) for open code arguments:</li>
+  <li>Also, add the following new registers(change is marked with <code class="language-plaintext highlighter-rouge">;;;</code>) for open code arguments:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9672,7 +9673,7 @@ $$</div>
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li>Add following change in file <code class="highlighter-rouge">ch5-compiler.scm</code> in procedure <code class="highlighter-rouge">compile-and-go</code>:</li>
+  <li>Add following change in file <code class="language-plaintext highlighter-rouge">ch5-compiler.scm</code> in procedure <code class="language-plaintext highlighter-rouge">compile-and-go</code>:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9753,7 +9754,7 @@ $$</div>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

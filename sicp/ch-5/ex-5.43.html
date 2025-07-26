@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9416,9 +9417,9 @@
                     <span itemprop="articleSection">
                         <hr/>
                         <ul>
-  <li>Used the code <code class="highlighter-rouge">scan-out-defines</code> from ex-4.16.</li>
-  <li>Because <code class="highlighter-rouge">scan-out-defines</code> convert the code into a <code class="highlighter-rouge">let</code> expression, we need our compiler to parse let expresstions. This can be done just by converting the code of <code class="highlighter-rouge">let</code> into <code class="highlighter-rouge">lambda</code> which we have already done in ex-4.6.</li>
-  <li>There’s a subtle point about the return value of <code class="highlighter-rouge">scan-out-defines</code>. It should be returning a sequence because we send its output to <code class="highlighter-rouge">compile-sequence</code>. It turns out that it is already doing so as per the old implementation! So, nothing needs to be done.</li>
+  <li>Used the code <code class="language-plaintext highlighter-rouge">scan-out-defines</code> from ex-4.16.</li>
+  <li>Because <code class="language-plaintext highlighter-rouge">scan-out-defines</code> convert the code into a <code class="language-plaintext highlighter-rouge">let</code> expression, we need our compiler to parse let expresstions. This can be done just by converting the code of <code class="language-plaintext highlighter-rouge">let</code> into <code class="language-plaintext highlighter-rouge">lambda</code> which we have already done in ex-4.6.</li>
+  <li>There’s a subtle point about the return value of <code class="language-plaintext highlighter-rouge">scan-out-defines</code>. It should be returning a sequence because we send its output to <code class="language-plaintext highlighter-rouge">compile-sequence</code>. It turns out that it is already doing so as per the old implementation! So, nothing needs to be done.</li>
 </ul>
 
 <p>Well, that’s it!</p>
@@ -9517,7 +9518,7 @@
 						  <span class="p">(</span><span class="nb">cadr</span> <span class="nv">result</span><span class="p">))))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Also, there are few changes in ch5-syntax.scm - to add support for <code class="highlighter-rouge">let?</code>:</p>
+<p>Also, there are few changes in ch5-syntax.scm - to add support for <code class="language-plaintext highlighter-rouge">let?</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9752,7 +9753,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

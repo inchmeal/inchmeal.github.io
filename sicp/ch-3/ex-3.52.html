@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9465,9 +9466,9 @@
 
 <h4 id="without-memoization">Without memoization</h4>
 
-<p>Yes, the output will change if memoization is removed because we re-evaluate <code class="highlighter-rouge">stream-cdr</code> every time and which causes the sum to change thus running it again even the same statement running again gives different output.</p>
+<p>Yes, the output will change if memoization is removed because we re-evaluate <code class="language-plaintext highlighter-rouge">stream-cdr</code> every time and which causes the sum to change thus running it again even the same statement running again gives different output.</p>
 
-<p>Note that first term is not reevaluated! It is the second term where reevaluation happens because first term does not require <code class="highlighter-rouge">stream-cdr</code>. It is present directly just like as if we were using <code class="highlighter-rouge">car</code> for the object created using <code class="highlighter-rouge">cons</code> but all the later terms are delayed which causes their value to change in every evaluation!</p>
+<p>Note that first term is not reevaluated! It is the second term where reevaluation happens because first term does not require <code class="language-plaintext highlighter-rouge">stream-cdr</code>. It is present directly just like as if we were using <code class="language-plaintext highlighter-rouge">car</code> for the object created using <code class="language-plaintext highlighter-rouge">cons</code> but all the later terms are delayed which causes their value to change in every evaluation!</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9600,7 +9601,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

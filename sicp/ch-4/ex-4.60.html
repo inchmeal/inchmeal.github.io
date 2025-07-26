@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9427,18 +9428,18 @@
            <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nf">same</span> <span class="nv">?person-1</span> <span class="nv">?person-2</span><span class="p">))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>We lookup for <code class="highlighter-rouge">?person-1</code> and <code class="highlighter-rouge">?person-2</code> such that they have same <code class="highlighter-rouge">?town</code>. This can happen even when <code class="highlighter-rouge">?person1</code> and <code class="highlighter-rouge">?person2</code> are same so we removed that possibility with <code class="highlighter-rouge">(not (same ?person1 ?person2))</code>.</p>
+<p>We lookup for <code class="language-plaintext highlighter-rouge">?person-1</code> and <code class="language-plaintext highlighter-rouge">?person-2</code> such that they have same <code class="language-plaintext highlighter-rouge">?town</code>. This can happen even when <code class="language-plaintext highlighter-rouge">?person1</code> and <code class="language-plaintext highlighter-rouge">?person2</code> are same so we removed that possibility with <code class="language-plaintext highlighter-rouge">(not (same ?person1 ?person2))</code>.</p>
 
-<p>But we still have not removed the possibility that we can have two combinations <code class="highlighter-rouge">(x y)</code> and <code class="highlighter-rouge">(y x)</code>, where <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> are two person sharing the same address and:</p>
+<p>But we still have not removed the possibility that we can have two combinations <code class="language-plaintext highlighter-rouge">(x y)</code> and <code class="language-plaintext highlighter-rouge">(y x)</code>, where <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> are two person sharing the same address and:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">?person1</code> is instantiated to <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">?person2</code> instantiated to <code class="highlighter-rouge">y</code>.</li>
-  <li><code class="highlighter-rouge">?person1</code> is instantiated to <code class="highlighter-rouge">y</code> and <code class="highlighter-rouge">?person2</code> instantiated to <code class="highlighter-rouge">x</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">?person1</code> is instantiated to <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">?person2</code> instantiated to <code class="language-plaintext highlighter-rouge">y</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">?person1</code> is instantiated to <code class="language-plaintext highlighter-rouge">y</code> and <code class="language-plaintext highlighter-rouge">?person2</code> instantiated to <code class="language-plaintext highlighter-rouge">x</code>.</li>
 </ul>
 
 <p>How to avoid this?</p>
 
-<p>Similar to the check of <code class="highlighter-rouge">(not (same ..))</code>, we can instead use something like <code class="highlighter-rouge">(less-than ?person1 ?person2)</code> such that `less-than** is defined for symbols.</p>
+<p>Similar to the check of <code class="language-plaintext highlighter-rouge">(not (same ..))</code>, we can instead use something like <code class="language-plaintext highlighter-rouge">(less-than ?person1 ?person2)</code> such that `less-than** is defined for symbols.</p>
 
 <p>Not doing the implementation as it is not asked and it’s not interesting too :)</p>
 
@@ -9446,9 +9447,9 @@
 
 <hr />
 
-<p><em>Note</em> that if we implement the above change than, <code class="highlighter-rouge">lives-near</code> won’t work for cases like <code class="highlighter-rouge">(lives-near ?x (Fect Cy D))</code> because <code class="highlighter-rouge">Hacker Alyssa P</code> is <em>greater than</em> <code class="highlighter-rouge">Fect Cy D</code>!</p>
+<p><em>Note</em> that if we implement the above change than, <code class="language-plaintext highlighter-rouge">lives-near</code> won’t work for cases like <code class="language-plaintext highlighter-rouge">(lives-near ?x (Fect Cy D))</code> because <code class="language-plaintext highlighter-rouge">Hacker Alyssa P</code> is <em>greater than</em> <code class="language-plaintext highlighter-rouge">Fect Cy D</code>!</p>
 
-<p>This can be fixed by implementing a new <code class="highlighter-rouge">lives-near</code> that calls the above change version say <code class="highlighter-rouge">lives-near-ordered</code> like this:</p>
+<p>This can be fixed by implementing a new <code class="language-plaintext highlighter-rouge">lives-near</code> that calls the above change version say <code class="language-plaintext highlighter-rouge">lives-near-ordered</code> like this:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9540,7 +9541,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

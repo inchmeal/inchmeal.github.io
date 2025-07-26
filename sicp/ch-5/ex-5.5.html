@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9494,41 +9495,41 @@
 <strong>continue:</strong> fib-done</p>
   </li>
   <li>
-    <p>After first <code class="highlighter-rouge">fib-loop</code> iteration:  <br />
+    <p>After first <code class="language-plaintext highlighter-rouge">fib-loop</code> iteration:  <br />
 <strong>Stack:</strong> fib-done n:4  <br />
 <strong>n:</strong> 3  <br />
 <strong>continue:</strong> afterfib-n-1</p>
   </li>
   <li>
-    <p>After second <code class="highlighter-rouge">fib-loop</code> iteration:  <br />
+    <p>After second <code class="language-plaintext highlighter-rouge">fib-loop</code> iteration:  <br />
 <strong>Stack:</strong> fib-done n:4 afterfib-n-1 n:3  <br />
 <strong>n:</strong> 2  <br />
 <strong>continue:</strong> afterfib-n-1</p>
   </li>
   <li>
-    <p>After third <code class="highlighter-rouge">fib-loop</code> iteration:  <br />
+    <p>After third <code class="language-plaintext highlighter-rouge">fib-loop</code> iteration:  <br />
 <strong>Stack:</strong> fib-done n:4 afterfib-n-1 n:3 afterfib-n-1 n:2  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> afterfib-n-1</p>
   </li>
   <li>
-    <p>After fourth <code class="highlighter-rouge">fib-loop</code> iteration: (no change because it causes a jump to base-case - immediate-answer)  <br />
+    <p>After fourth <code class="language-plaintext highlighter-rouge">fib-loop</code> iteration: (no change because it causes a jump to base-case - immediate-answer)  <br />
 <strong>Stack:</strong> fib-done n:4 afterfib-n-1 n:3 afterfib-n-1 n:2  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> afterfib-n-1</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">immediate-answer</code>  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">immediate-answer</code>  <br />
 <strong>Stack:</strong> fib-done n:4 afterfib-n-1 n:3 afterfib-n-1 n:2  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> afterfib-n-1  <br />
 <strong>val:</strong> 1</p>
   </li>
   <li>
-    <p>Now we jump to <code class="highlighter-rouge">afterfib-n-1</code>.</p>
+    <p>Now we jump to <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">afterfib-n-1</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>:  <br />
 <strong>Stack:</strong> fib-done n:4 afterfib-n-1 n:3 afterfib-n-1 val:1  <br />
 <strong>n:</strong> 0  <br />
 <strong>continue:</strong> afterfib-n-2  <br />
@@ -9536,130 +9537,130 @@
 (Note that at this point the top of stack contains (fib 1) - base case value).</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">fib-loop</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">fib-loop</code>.</p>
   </li>
   <li>
-    <p>Since n = 0, <code class="highlighter-rouge">fib-loop</code> causes jump to <code class="highlighter-rouge">immediate-answer</code>.</p>
+    <p>Since n = 0, <code class="language-plaintext highlighter-rouge">fib-loop</code> causes jump to <code class="language-plaintext highlighter-rouge">immediate-answer</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">immediate-answer</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">immediate-answer</code>:  <br />
    <strong>Stack:</strong> fib-done n:4 afterfib-n-1 n:3 afterfib-n-1 val:1  <br />
    <strong>n:</strong> 0  <br />
    <strong>continue:</strong> afterfib-n-2  <br />
    <strong>val:</strong> 0</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">afterfib-n-2</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">afterfib-n-2</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">afterfib-n-2</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">afterfib-n-2</code>:  <br />
    <strong>Stack:</strong> fib-done n:4 afterfib-n-1 n:3  <br />
    <strong>n:</strong> 0  <br />
    <strong>continue:</strong> afterfib-n-1  <br />
    <strong>val:</strong> 1</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">afterfib-n-1</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">afterfib-n-1</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>:  <br />
 <strong>Stack:</strong> fib-done n:4 afterfib-n-1 val:1  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> after-fib-n-2  <br />
 val: 1</p>
   </li>
   <li>
-    <p>Jumpt to <code class="highlighter-rouge">fib-loop</code>.</p>
+    <p>Jumpt to <code class="language-plaintext highlighter-rouge">fib-loop</code>.</p>
   </li>
   <li>
-    <p>Since n = 1, <code class="highlighter-rouge">fib-loop</code> causes jumpt to <code class="highlighter-rouge">immediate-answer</code>.  <br />
+    <p>Since n = 1, <code class="language-plaintext highlighter-rouge">fib-loop</code> causes jumpt to <code class="language-plaintext highlighter-rouge">immediate-answer</code>.  <br />
 <strong>Stack:</strong> fib-done n:4 afterfib-n-1 val:1  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> after-fib-n-2  <br />
 val: 1</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">afterfib-n-2</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">afterfib-n-2</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">afterfib-n-2</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">afterfib-n-2</code>:  <br />
 <strong>Stack:</strong> fib-done n:4  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> after-fib-n-1  <br />
 val: 2</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">afterfib-n-1</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">afterfib-n-1</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>:  <br />
 <strong>Stack:</strong> fib-done val:2  <br />
 <strong>n:</strong> 2  <br />
 <strong>continue:</strong> after-fib-n-2  <br />
 val: 2</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">fib-loop</code>:  <br />
+    <p>Jump to <code class="language-plaintext highlighter-rouge">fib-loop</code>:  <br />
 <strong>Stack:</strong> fib-done val:2 after-fib-n-2 n:2  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> after-fib-n-1  <br />
 val: 2</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">fib-loop</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">fib-loop</code>.</p>
   </li>
   <li>
-    <p>Since n = 1, <code class="highlighter-rouge">fib-loop</code> causes jump to <code class="highlighter-rouge">immediate-answer</code>.</p>
+    <p>Since n = 1, <code class="language-plaintext highlighter-rouge">fib-loop</code> causes jump to <code class="language-plaintext highlighter-rouge">immediate-answer</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">immediate-answer</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">immediate-answer</code>:  <br />
 <strong>Stack:</strong> fib-done val:2 after-fib-n-2 n:2  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> afterfib-n-1  <br />
 val: 1</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">afterfib-n-1</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">afterfib-n-1</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">afterfib-n-1</code>:  <br />
 <strong>Stack:</strong> fib-done val:2 after-fib-n-2 val:1  <br />
 <strong>n:</strong> 0  <br />
 <strong>continue:</strong> after-fib-n-2  <br />
 val: 1</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">fib-loop</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">fib-loop</code>.</p>
   </li>
   <li>
-    <p>Since n=0, <code class="highlighter-rouge">fib-loop</code> causes jump to <code class="highlighter-rouge">immediate-answer</code>.</p>
+    <p>Since n=0, <code class="language-plaintext highlighter-rouge">fib-loop</code> causes jump to <code class="language-plaintext highlighter-rouge">immediate-answer</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">immediate-answer</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">immediate-answer</code>:  <br />
 <strong>Stack:</strong> fib-done val:2 after-fib-n-2 val:1  <br />
 <strong>n:</strong> 0  <br />
 <strong>continue:</strong> after-fib-n-2  <br />
 val: 0</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">after-fib-n-2</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">after-fib-n-2</code>.</p>
   </li>
   <li>
-    <p>After <code class="highlighter-rouge">after-fib-n-2</code>:  <br />
+    <p>After <code class="language-plaintext highlighter-rouge">after-fib-n-2</code>:  <br />
 <strong>Stack:</strong> fib-done val:2  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> after-fib-n-2  <br />
 val: 1</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">afterfib-n-2</code>:  <br />
+    <p>Jump to <code class="language-plaintext highlighter-rouge">afterfib-n-2</code>:  <br />
 <strong>Stack:</strong> Empty  <br />
 <strong>n:</strong> 1  <br />
 <strong>continue:</strong> fib-done  <br />
 val: 3</p>
   </li>
   <li>
-    <p>Jump to <code class="highlighter-rouge">fib-done</code>.</p>
+    <p>Jump to <code class="language-plaintext highlighter-rouge">fib-done</code>.</p>
   </li>
   <li>
     <p>val = 3 contains the answer!</p>
@@ -9738,7 +9739,7 @@ val: 3</p>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

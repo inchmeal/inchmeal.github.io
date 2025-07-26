@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9449,7 +9450,7 @@
 
 <p>The last expression executed in the procedure must cause return to the previous continue point without introducing any new points of returns.</p>
 
-<p>Lets see the given <code class="highlighter-rouge">iter</code>, an iterative case, to understand:</p>
+<p>Lets see the given <code class="language-plaintext highlighter-rouge">iter</code>, an iterative case, to understand:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9467,7 +9468,7 @@
   <span class="p">(</span><span class="nf">iter</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>There is only one expression, <code class="highlighter-rouge">if</code> inside which for the false case we have a recursive invocation. Now this recursive invocation because of the book’s tail call optimization will cause to return to the same place <code class="highlighter-rouge">continue</code> from where we invoked <code class="highlighter-rouge">iter</code>.</p>
+<p>There is only one expression, <code class="language-plaintext highlighter-rouge">if</code> inside which for the false case we have a recursive invocation. Now this recursive invocation because of the book’s tail call optimization will cause to return to the same place <code class="language-plaintext highlighter-rouge">continue</code> from where we invoked <code class="language-plaintext highlighter-rouge">iter</code>.</p>
 
 <p>But what will happen for the recursive process case:</p>
 
@@ -9481,9 +9482,9 @@
         <span class="p">(</span><span class="nb">*</span> <span class="p">(</span><span class="nf">factorial</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">))</span> <span class="nv">n</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>The last expression here also is <code class="highlighter-rouge">if</code> and the recursive call happens in the false branch of <code class="highlighter-rouge">if</code>. Now notice that here <code class="highlighter-rouge">continue</code> after invocation of <code class="highlighter-rouge">factorial</code> will need to return to the place where we are creating <code class="highlighter-rouge">argl</code> for <code class="highlighter-rouge">*</code>.</p>
+<p>The last expression here also is <code class="language-plaintext highlighter-rouge">if</code> and the recursive call happens in the false branch of <code class="language-plaintext highlighter-rouge">if</code>. Now notice that here <code class="language-plaintext highlighter-rouge">continue</code> after invocation of <code class="language-plaintext highlighter-rouge">factorial</code> will need to return to the place where we are creating <code class="language-plaintext highlighter-rouge">argl</code> for <code class="language-plaintext highlighter-rouge">*</code>.</p>
 
-<p>Thus for every recursive call in this case will cause to save a <code class="highlighter-rouge">continue</code> on the stack!</p>
+<p>Thus for every recursive call in this case will cause to save a <code class="language-plaintext highlighter-rouge">continue</code> on the stack!</p>
 
 <p>This was not the case in iterative version because continue is always same in each recursive call!</p>
 
@@ -9633,7 +9634,7 @@
 <span class="p">(</span><span class="nf">goto</span> <span class="p">(</span><span class="nf">reg</span> <span class="nv">val</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that in the above code the stack has same number of elements before and after each invocation of <code class="highlighter-rouge">iter</code>.</p>
+<p>Note that in the above code the stack has same number of elements before and after each invocation of <code class="language-plaintext highlighter-rouge">iter</code>.</p>
 
 <p>Now, let’s see the recursive case(again just see the code under false branch):</p>
 
@@ -9755,7 +9756,7 @@
 <span class="nv">after-lambda1</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that in this case after each invocation of <code class="highlighter-rouge">factorial</code> the number of elements in stack keeps growing till last recursive invocation and then the stack is unwind while performing the computations for <code class="highlighter-rouge">*</code>.</p>
+<p>Note that in this case after each invocation of <code class="language-plaintext highlighter-rouge">factorial</code> the number of elements in stack keeps growing till last recursive invocation and then the stack is unwind while performing the computations for <code class="language-plaintext highlighter-rouge">*</code>.</p>
 
 <hr />
 
@@ -9835,7 +9836,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

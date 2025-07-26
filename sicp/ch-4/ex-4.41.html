@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,11 +9416,11 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Well, with the interesting results of previous exercises, I thought to mirror the previous solution without using <code class="highlighter-rouge">amb</code>. It took unneccessarily more time with only a slight improvement in performance.</p>
+                        <p>Well, with the interesting results of previous exercises, I thought to mirror the previous solution without using <code class="language-plaintext highlighter-rouge">amb</code>. It took unneccessarily more time with only a slight improvement in performance.</p>
 
 <p>Later I wrote the permutation version too to check if there was indeed any performance gain.</p>
 
-<p>The mirrored solution looks verbose but it is faster than the <code class="highlighter-rouge">permuation</code> based solution. Note that both solutions are faster than all the previous solutions.</p>
+<p>The mirrored solution looks verbose but it is faster than the <code class="language-plaintext highlighter-rouge">permuation</code> based solution. Note that both solutions are faster than all the previous solutions.</p>
 
 <p>First let’s see the numbers:</p>
 
@@ -9447,11 +9448,11 @@
 
 <p>Why mirrored version is faster? Because it is not trying every permutation.</p>
 
-<p>Why this mirrored version is faster than the optimised <code class="highlighter-rouge">amb</code> version even when code is similar? Because (i)no backtracking as we discard the result as soon as it gets generated and move to next element unlike <code class="highlighter-rouge">amb</code> where we backtrack. (ii) Some minor optimizations like before combining possibilities there are some items which can be removed.(which was not possible in previous exercise).</p>
+<p>Why this mirrored version is faster than the optimised <code class="language-plaintext highlighter-rouge">amb</code> version even when code is similar? Because (i)no backtracking as we discard the result as soon as it gets generated and move to next element unlike <code class="language-plaintext highlighter-rouge">amb</code> where we backtrack. (ii) Some minor optimizations like before combining possibilities there are some items which can be removed.(which was not possible in previous exercise).</p>
 
 <p>Now, first the code for mirrored solution(Its too big compared to concise permutation based which is presented later):</p>
 
-<p>Note: I used MIT scheme version of <code class="highlighter-rouge">remove</code> which requires to pass <code class="highlighter-rouge">lambda</code> instead of the element.</p>
+<p>Note: I used MIT scheme version of <code class="language-plaintext highlighter-rouge">remove</code> which requires to pass <code class="language-plaintext highlighter-rouge">lambda</code> instead of the element.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9780,7 +9781,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

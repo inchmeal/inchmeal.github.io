@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9421,13 +9422,13 @@
 
 <p>The outline of my approach:</p>
 
-<p>There are two parts (i) Convert polynomial cannonical (ii) Changing operations <code class="highlighter-rouge">add</code> and <code class="highlighter-rouge">mul</code> to work with cannonical types.</p>
+<p>There are two parts (i) Convert polynomial cannonical (ii) Changing operations <code class="language-plaintext highlighter-rouge">add</code> and <code class="language-plaintext highlighter-rouge">mul</code> to work with cannonical types.</p>
 
 <p>Note: To decide priority - alphabetic ordering of the variable names is used.</p>
 
 <p>(i) Convert to cannonial form:</p>
 
-<p>This is easy. Lets assume we have <code class="highlighter-rouge">add</code> and <code class="highlighter-rouge">mul</code> that supports canonical form. Since our polynomial are represented as a sum of product form - we take every product, lets call it term, we just need to convert each of these terms(product) into canonical forms and add them! Now think of each term - it is a product of cofficient and power/order of the variable. Just convert the coefficient into cannonical and <code class="highlighter-rouge">mul</code> the converted coefficient with our variable raised to appropriate power/order.</p>
+<p>This is easy. Lets assume we have <code class="language-plaintext highlighter-rouge">add</code> and <code class="language-plaintext highlighter-rouge">mul</code> that supports canonical form. Since our polynomial are represented as a sum of product form - we take every product, lets call it term, we just need to convert each of these terms(product) into canonical forms and add them! Now think of each term - it is a product of cofficient and power/order of the variable. Just convert the coefficient into cannonical and <code class="language-plaintext highlighter-rouge">mul</code> the converted coefficient with our variable raised to appropriate power/order.</p>
 
 <p>The next problem is how to integrate this conversion in our existing system - Just convert to canonical form in the public api to make-polynomial. This should not be in the internal api to make polynomial because then it will go into loop.</p>
 
@@ -9485,27 +9486,27 @@
 <span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>(ii) Changing operations <code class="highlighter-rouge">add</code> and <code class="highlighter-rouge">mul</code> to work with canonical forms.</p>
+<p>(ii) Changing operations <code class="language-plaintext highlighter-rouge">add</code> and <code class="language-plaintext highlighter-rouge">mul</code> to work with canonical forms.</p>
 
 <p>This is also easy:</p>
 
-<p>We assume that all polynomicals passed to <code class="highlighter-rouge">add</code> or <code class="highlighter-rouge">mul</code> are canonical forms.</p>
+<p>We assume that all polynomicals passed to <code class="language-plaintext highlighter-rouge">add</code> or <code class="language-plaintext highlighter-rouge">mul</code> are canonical forms.</p>
 
-<p>For add: if two polynomials are in different variables we just need to add the polynomial with lower priority variable as a constant in polynomial with higher priority variable. This can be done easily just be converting or raising the lower type polynomial into higher one. For eg: To add <span class="kdmath">$\, (5 x^2 + 10 x + 100 x^0)$</span> and <span class="kdmath">$(y^3 + 2 y^2 + 11 y^0) \,$</span>. Here we first convert the lower priority polynomial(with variable <span class="kdmath">$y$</span>) into <span class="kdmath">$(y^3 + 2 y^2 + 11 y^0) x^0$</span>. Now we can just add them using our old procedure because now both polynomials are of same variable. The rest of the things will be taken cared by recursion :) Except for the case when we add/mul a polynomial and a number - This operation is not supported with our older <code class="highlighter-rouge">add</code> method.</p>
+<p>For add: if two polynomials are in different variables we just need to add the polynomial with lower priority variable as a constant in polynomial with higher priority variable. This can be done easily just be converting or raising the lower type polynomial into higher one. For eg: To add <span class="kdmath">$\, (5 x^2 + 10 x + 100 x^0)$</span> and <span class="kdmath">$(y^3 + 2 y^2 + 11 y^0) \,$</span>. Here we first convert the lower priority polynomial(with variable <span class="kdmath">$y$</span>) into <span class="kdmath">$(y^3 + 2 y^2 + 11 y^0) x^0$</span>. Now we can just add them using our old procedure because now both polynomials are of same variable. The rest of the things will be taken cared by recursion :) Except for the case when we add/mul a polynomial and a number - This operation is not supported with our older <code class="language-plaintext highlighter-rouge">add</code> method.</p>
 <ul>
   <li>One way to do this is to <em>raise</em> number into polynomial. I did not feel correct to <em>raise</em> numbers as it raises the question of which type of variable should the number be raised into.</li>
-  <li>Since we are using <code class="highlighter-rouge">add</code> which is internally calls <code class="highlighter-rouge">apply-generic</code> - it is difficult to do without <em>raising</em> the number to polynomial. (Note that in a way it appears a limitation of <code class="highlighter-rouge">apply-generic</code>. It would have been better if we have an <code class="highlighter-rouge">apply-generic</code> where we should be able to add polynomial and any type of number. Thus a way to identify types of number. Also another problem to notice is that suppose even if we allowed to raise a number to polynomial and we wrote a raise to raise complex to polynomial then all our numbers will be raised to complex types and in few situation they will not be dropped to basic type(when there is no arithmetic operation is performed)).</li>
-  <li>Now, To avoid raising types I need to identify the places in polynomial package where a number and polynomial are added or multiplied. This is easy to spot - Its only the places where we are adding coefficients by calling generic <code class="highlighter-rouge">add</code>.</li>
-  <li>Now instead of using <code class="highlighter-rouge">generic</code> add we use our new <code class="highlighter-rouge">hybrid-add</code> that checks if both arguments are number or polynomial then it calls generic <code class="highlighter-rouge">add</code> else if we add/mul polynomial by a constant it creates a new polynomial with this constant and then performs the actual operation(add-poly/mul-poly). Note that another approach can be to still use <code class="highlighter-rouge">apply-generic</code> by installing/putting appropriate procedures in the hash table. The problem is <code class="highlighter-rouge">apply-generic</code> <em>strips off</em> type-tag before calling the installed procedure. This is a probelm - consider for eg when we add the number to the polynomial - we are not adding directly - we are adding this number by adding this as a term with 0 order to the polynomial. Thus the actual number addition may not even happen if the polynomial does not have any constant term before. Now suppose later on this polynomial is added to another polynomial(both having constant terms) then addition of the last term/constant term will happen again by <code class="highlighter-rouge">add</code>. But at this point this add will not work because - we stripped the type-tag from the number in the last step!</li>
-  <li>The above point brings an interesting question - How to handle such situation where all we need to an operation that can take any type of number and do not strips the type-tags because we are not actually doing any number arithmetic in there? Hope this gets answered in later part of the book. Perhaps one solution can be that <code class="highlighter-rouge">apply-generic</code> does not do any untagging/tagging - its just left to the individual packages.
--As of now I just went ahead with <code class="highlighter-rouge">mixed-add</code> which does some work that should actually be done by <code class="highlighter-rouge">apply-generic</code>.</li>
+  <li>Since we are using <code class="language-plaintext highlighter-rouge">add</code> which is internally calls <code class="language-plaintext highlighter-rouge">apply-generic</code> - it is difficult to do without <em>raising</em> the number to polynomial. (Note that in a way it appears a limitation of <code class="language-plaintext highlighter-rouge">apply-generic</code>. It would have been better if we have an <code class="language-plaintext highlighter-rouge">apply-generic</code> where we should be able to add polynomial and any type of number. Thus a way to identify types of number. Also another problem to notice is that suppose even if we allowed to raise a number to polynomial and we wrote a raise to raise complex to polynomial then all our numbers will be raised to complex types and in few situation they will not be dropped to basic type(when there is no arithmetic operation is performed)).</li>
+  <li>Now, To avoid raising types I need to identify the places in polynomial package where a number and polynomial are added or multiplied. This is easy to spot - Its only the places where we are adding coefficients by calling generic <code class="language-plaintext highlighter-rouge">add</code>.</li>
+  <li>Now instead of using <code class="language-plaintext highlighter-rouge">generic</code> add we use our new <code class="language-plaintext highlighter-rouge">hybrid-add</code> that checks if both arguments are number or polynomial then it calls generic <code class="language-plaintext highlighter-rouge">add</code> else if we add/mul polynomial by a constant it creates a new polynomial with this constant and then performs the actual operation(add-poly/mul-poly). Note that another approach can be to still use <code class="language-plaintext highlighter-rouge">apply-generic</code> by installing/putting appropriate procedures in the hash table. The problem is <code class="language-plaintext highlighter-rouge">apply-generic</code> <em>strips off</em> type-tag before calling the installed procedure. This is a probelm - consider for eg when we add the number to the polynomial - we are not adding directly - we are adding this number by adding this as a term with 0 order to the polynomial. Thus the actual number addition may not even happen if the polynomial does not have any constant term before. Now suppose later on this polynomial is added to another polynomial(both having constant terms) then addition of the last term/constant term will happen again by <code class="language-plaintext highlighter-rouge">add</code>. But at this point this add will not work because - we stripped the type-tag from the number in the last step!</li>
+  <li>The above point brings an interesting question - How to handle such situation where all we need to an operation that can take any type of number and do not strips the type-tags because we are not actually doing any number arithmetic in there? Hope this gets answered in later part of the book. Perhaps one solution can be that <code class="language-plaintext highlighter-rouge">apply-generic</code> does not do any untagging/tagging - its just left to the individual packages.
+-As of now I just went ahead with <code class="language-plaintext highlighter-rouge">mixed-add</code> which does some work that should actually be done by <code class="language-plaintext highlighter-rouge">apply-generic</code>.</li>
 </ul>
 
 <p>For mul: this is similar to add - just convert lower variable polynomial into higher and multiply!</p>
 
-<p>Both steps look really simple but it took me sometime to arrive at these steps as well as some time also spent in problems with <code class="highlighter-rouge">tagging</code>. Internal procedures in general do not need to tag the types but we can not avoid them completely even in the internal procedures and need to pay attention to every operation whether we need to remove type-tag before proceeding or not. This made me realise that how easy it is in languages where late-binding is supported.</p>
+<p>Both steps look really simple but it took me sometime to arrive at these steps as well as some time also spent in problems with <code class="language-plaintext highlighter-rouge">tagging</code>. Internal procedures in general do not need to tag the types but we can not avoid them completely even in the internal procedures and need to pay attention to every operation whether we need to remove type-tag before proceeding or not. This made me realise that how easy it is in languages where late-binding is supported.</p>
 
-<p>Another problem arises while adding if some coefficient becomes zero or while multiplying by a constant - these details are taken cared in procedure <code class="highlighter-rouge">make-poly-with-term</code>.</p>
+<p>Another problem arises while adding if some coefficient becomes zero or while multiplying by a constant - these details are taken cared in procedure <code class="language-plaintext highlighter-rouge">make-poly-with-term</code>.</p>
 
 <p>Note: I dont support operation for adding a number and a polynomial directly from outside - Outer api only supports addition/multiplication of polynomials but if situation happens when carrying out the operation - number and polynomial are added/multiplied then it works as mentioned in the above approach.</p>
 
@@ -11654,7 +11655,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

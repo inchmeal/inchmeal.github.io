@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,9 +9416,9 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Ben want to say that as an special form we can implement <code class="highlighter-rouge">unless</code> just like we implemented <code class="highlighter-rouge">if</code>. Similar to the implementation of <code class="highlighter-rouge">if</code> where we evaluate either consequent or alternative depending on the result of evaluation of predicate. Similarly we can implement <code class="highlighter-rouge">unless</code> in applicative order language.</p>
+                        <p>Ben want to say that as an special form we can implement <code class="language-plaintext highlighter-rouge">unless</code> just like we implemented <code class="language-plaintext highlighter-rouge">if</code>. Similar to the implementation of <code class="language-plaintext highlighter-rouge">if</code> where we evaluate either consequent or alternative depending on the result of evaluation of predicate. Similarly we can implement <code class="language-plaintext highlighter-rouge">unless</code> in applicative order language.</p>
 
-<p>Alyssa’s point was also true that special forms can not be passed as procedures to other procedures. When we pass <code class="highlighter-rouge">unless</code> or <code class="highlighter-rouge">if</code> as arguments, then these arguments will be evaluated as <code class="highlighter-rouge">operands</code> by invoking <code class="highlighter-rouge">(eval 'if)</code>. Now, we can check easily that at this point, <code class="highlighter-rouge">eval</code> will think of <code class="highlighter-rouge">if</code> as a name and tries to lookup for this name in the environment!</p>
+<p>Alyssa’s point was also true that special forms can not be passed as procedures to other procedures. When we pass <code class="language-plaintext highlighter-rouge">unless</code> or <code class="language-plaintext highlighter-rouge">if</code> as arguments, then these arguments will be evaluated as <code class="language-plaintext highlighter-rouge">operands</code> by invoking <code class="language-plaintext highlighter-rouge">(eval 'if)</code>. Now, we can check easily that at this point, <code class="language-plaintext highlighter-rouge">eval</code> will think of <code class="language-plaintext highlighter-rouge">if</code> as a name and tries to lookup for this name in the environment!</p>
 
 <hr />
 
@@ -9427,7 +9428,7 @@
 
 <p>Initially i felt that Alyssa is making quite a good point and we might need it but now I think such case is quite rare.</p>
 
-<p>It’s quite easy to implement derived form for <code class="highlighter-rouge">unless</code>. Since it is not mentioned, I am assuming that, Unlike <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">unless</code> won’t be used only with two arguments i.e. like <code class="highlighter-rouge">(unless &lt;c&gt; &lt;u&gt;)</code> but will only be used like <code class="highlighter-rouge">(unless &lt;c&gt; &lt;u&gt; &lt;e&gt;)</code>.</p>
+<p>It’s quite easy to implement derived form for <code class="language-plaintext highlighter-rouge">unless</code>. Since it is not mentioned, I am assuming that, Unlike <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">unless</code> won’t be used only with two arguments i.e. like <code class="language-plaintext highlighter-rouge">(unless &lt;c&gt; &lt;u&gt;)</code> but will only be used like <code class="language-plaintext highlighter-rouge">(unless &lt;c&gt; &lt;u&gt; &lt;e&gt;)</code>.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9526,7 +9527,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

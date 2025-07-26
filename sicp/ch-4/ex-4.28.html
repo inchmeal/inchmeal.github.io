@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9423,7 +9424,7 @@
 </pre></td><td class="code"><pre><span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">x</span> <span class="mi">1</span><span class="p">))</span> <span class="o">'</span><span class="p">(</span><span class="nf">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span><span class="o">'</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Let’s first view how a <code class="highlighter-rouge">map</code> procedure might look:</p>
+<p>Let’s first view how a <code class="language-plaintext highlighter-rouge">map</code> procedure might look:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9437,13 +9438,13 @@
             <span class="p">(</span><span class="nb">map</span> <span class="nv">proc</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">items</span><span class="p">)))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>With normal order evaluation, <code class="highlighter-rouge">proc</code> is a thunk and it contains <code class="highlighter-rouge">thunk (lambda (x) (+ x 1))</code>.</p>
+<p>With normal order evaluation, <code class="language-plaintext highlighter-rouge">proc</code> is a thunk and it contains <code class="language-plaintext highlighter-rouge">thunk (lambda (x) (+ x 1))</code>.</p>
 
-<p>Now since it is a <code class="highlighter-rouge">thunk</code>, so we need to force its evaluation and need to we call <code class="highlighter-rouge">actual-value</code>.</p>
+<p>Now since it is a <code class="language-plaintext highlighter-rouge">thunk</code>, so we need to force its evaluation and need to we call <code class="language-plaintext highlighter-rouge">actual-value</code>.</p>
 
-<p>Also, <code class="highlighter-rouge">actual-value</code> can work in both cases, either we pass a thunk or not. If thunk is passed then it first get the expression inside the thunk and evaluates it else it directly evaluates the expression.</p>
+<p>Also, <code class="language-plaintext highlighter-rouge">actual-value</code> can work in both cases, either we pass a thunk or not. If thunk is passed then it first get the expression inside the thunk and evaluates it else it directly evaluates the expression.</p>
 
-<p>So, we can <em>always</em> call <code class="highlighter-rouge">actual-value</code> instead of <code class="highlighter-rouge">eval</code>, because it will work for both cases either when operator is a thunk or not.</p>
+<p>So, we can <em>always</em> call <code class="language-plaintext highlighter-rouge">actual-value</code> instead of <code class="language-plaintext highlighter-rouge">eval</code>, because it will work for both cases either when operator is a thunk or not.</p>
 
 <hr />
 
@@ -9455,9 +9456,9 @@
 
 <p>For eg: in the above code, another way to explain is</p>
 
-<p>If we had used <code class="highlighter-rouge">eval</code>, then this code <code class="highlighter-rouge">(proc (car items))</code> won’t work because evaluating <code class="highlighter-rouge">proc</code> would not work because proc contains <code class="highlighter-rouge">'thunk</code> and when we pass this to <code class="highlighter-rouge">eval</code> then <code class="highlighter-rouge">eval</code> will try to lookup the procedure <code class="highlighter-rouge">thunk</code> instead of executing <code class="highlighter-rouge">lambda</code>.</p>
+<p>If we had used <code class="language-plaintext highlighter-rouge">eval</code>, then this code <code class="language-plaintext highlighter-rouge">(proc (car items))</code> won’t work because evaluating <code class="language-plaintext highlighter-rouge">proc</code> would not work because proc contains <code class="language-plaintext highlighter-rouge">'thunk</code> and when we pass this to <code class="language-plaintext highlighter-rouge">eval</code> then <code class="language-plaintext highlighter-rouge">eval</code> will try to lookup the procedure <code class="language-plaintext highlighter-rouge">thunk</code> instead of executing <code class="language-plaintext highlighter-rouge">lambda</code>.</p>
 
-<p>Notice that this explanation only explained why <em>calling</em> <code class="highlighter-rouge">eval</code> won’t work it did not explained why calling <code class="highlighter-rouge">actual-value</code> would work.</p>
+<p>Notice that this explanation only explained why <em>calling</em> <code class="language-plaintext highlighter-rouge">eval</code> won’t work it did not explained why calling <code class="language-plaintext highlighter-rouge">actual-value</code> would work.</p>
 
 <p>I might have done similar explanation earlier, I hope I will stick to <em>logical</em> way to explain instead of <em>implementation</em> way of explaining things.</p>
 
@@ -9533,7 +9534,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

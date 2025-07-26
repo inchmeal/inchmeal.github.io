@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,9 +9416,9 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>To understand this solution, just we need to check that <code class="highlighter-rouge">make-let</code> needs both arguments to be list. Thus the result of each iteration of <code class="highlighter-rouge">fold-right</code> must be list.</p>
+                        <p>To understand this solution, just we need to check that <code class="language-plaintext highlighter-rouge">make-let</code> needs both arguments to be list. Thus the result of each iteration of <code class="language-plaintext highlighter-rouge">fold-right</code> must be list.</p>
 
-<p>Since the <code class="highlighter-rouge">fold-right</code> returns list even in the last iteration, we just take the first element.</p>
+<p>Since the <code class="language-plaintext highlighter-rouge">fold-right</code> returns list even in the last iteration, we just take the first element.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9494,8 +9495,8 @@
 <ul>
   <li>let* creates let</li>
   <li>let creates lambda</li>
-  <li>when lambda is evaluated a procedure is created. See <code class="highlighter-rouge">make-procedure</code>.</li>
-  <li>Now after creation of procedure, we <code class="highlighter-rouge">apply</code> this procedure to its arguments.</li>
+  <li>when lambda is evaluated a procedure is created. See <code class="language-plaintext highlighter-rouge">make-procedure</code>.</li>
+  <li>Now after creation of procedure, we <code class="language-plaintext highlighter-rouge">apply</code> this procedure to its arguments.</li>
   <li>During application we <em>extend</em> the base environment and add the procedure parameters in the extended environment.</li>
   <li>If there is new lambda expression/procedure, same iteration is done.</li>
   <li>Thus every nested lambda get the required variables!</li>
@@ -9575,7 +9576,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

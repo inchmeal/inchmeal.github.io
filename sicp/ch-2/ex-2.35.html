@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9453,7 +9454,7 @@
 <span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>As we can see, <code class="highlighter-rouge">accumulate</code> maps to <span class="kdmath">$\sum$</span> and <span class="kdmath">$num\_of\_leaves$</span> maps to <code class="highlighter-rouge">count-leaves</code>.</p>
+<p>As we can see, <code class="language-plaintext highlighter-rouge">accumulate</code> maps to <span class="kdmath">$\sum$</span> and <span class="kdmath">$num\_of\_leaves$</span> maps to <code class="language-plaintext highlighter-rouge">count-leaves</code>.</p>
 
 <p>But it does not fit with the exercise, as it expects to use map:</p>
 
@@ -9523,10 +9524,10 @@
                  <span class="p">(</span><span class="nf">count-leaves-orig</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">x</span><span class="p">))))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Here, <code class="highlighter-rouge">map</code> is used to convert(maps) each branch of the tree passed to it to(into) number of leaves.
-And procedure <code class="highlighter-rouge">accumulate</code> computes total number of leaves by adding the number of leaves of each branch.</p>
+<p>Here, <code class="language-plaintext highlighter-rouge">map</code> is used to convert(maps) each branch of the tree passed to it to(into) number of leaves.
+And procedure <code class="language-plaintext highlighter-rouge">accumulate</code> computes total number of leaves by adding the number of leaves of each branch.</p>
 
-<p>Procedure <code class="highlighter-rouge">count-leaves-orig</code> is the recursive procedure for counting leaves given in book.</p>
+<p>Procedure <code class="language-plaintext highlighter-rouge">count-leaves-orig</code> is the recursive procedure for counting leaves given in book.</p>
 
 <p>Example/Output:</p>
 
@@ -9617,7 +9618,7 @@ And procedure <code class="highlighter-rouge">accumulate</code> computes total n
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9419,9 +9420,9 @@
 
 <ul>
   <li>When we invoke the procedure, then operator i.e. the name or lambda expression gets called for <em>actual value</em>.</li>
-  <li>When we pass some argument to primitive procedure like <code class="highlighter-rouge">cons</code>.</li>
+  <li>When we pass some argument to primitive procedure like <code class="language-plaintext highlighter-rouge">cons</code>.</li>
   <li>When we access that variable from the terminal prompt.</li>
-  <li>When we force the evaluation by calling <code class="highlighter-rouge">(force-it &lt;exp&gt;)</code> in our program.</li>
+  <li>When we force the evaluation by calling <code class="language-plaintext highlighter-rouge">(force-it &lt;exp&gt;)</code> in our program.</li>
 </ul>
 
 <p>And as implemented in the book, all the arguments to compound procedure are delayed. Now we can solve the exercise:</p>
@@ -9433,10 +9434,10 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li>On defining w, we invoke <code class="highlighter-rouge">id</code> with argument <code class="highlighter-rouge">(id 10)</code>.</li>
-  <li>Since we have normal order evaluation, the argument <code class="highlighter-rouge">(id 10)</code> does not get evaluated.</li>
-  <li>The procedure then returns <code class="highlighter-rouge">x</code> contains <em>delayed argument</em> <code class="highlighter-rouge">(id 10)</code>.</li>
-  <li>Since we do not access <code class="highlighter-rouge">x</code>, the <code class="highlighter-rouge">w</code> variable is binds it to <code class="highlighter-rouge">x</code> which contains <code class="highlighter-rouge">(id 10)</code>.</li>
+  <li>On defining w, we invoke <code class="language-plaintext highlighter-rouge">id</code> with argument <code class="language-plaintext highlighter-rouge">(id 10)</code>.</li>
+  <li>Since we have normal order evaluation, the argument <code class="language-plaintext highlighter-rouge">(id 10)</code> does not get evaluated.</li>
+  <li>The procedure then returns <code class="language-plaintext highlighter-rouge">x</code> contains <em>delayed argument</em> <code class="language-plaintext highlighter-rouge">(id 10)</code>.</li>
+  <li>Since we do not access <code class="language-plaintext highlighter-rouge">x</code>, the <code class="language-plaintext highlighter-rouge">w</code> variable is binds it to <code class="language-plaintext highlighter-rouge">x</code> which contains <code class="language-plaintext highlighter-rouge">(id 10)</code>.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9450,10 +9451,10 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li>Clearly, count is 1, because <code class="highlighter-rouge">id</code> is invoked only once till now.</li>
-  <li>Now when, if we print <code class="highlighter-rouge">w</code>, this means it will print actual value stored in <code class="highlighter-rouge">w</code>, which causes the evaluation <code class="highlighter-rouge">(id 10)</code>.(This is actually <code class="highlighter-rouge">'thunk (id 10)</code>).</li>
-  <li>Since <code class="highlighter-rouge">id</code> is invoked again, we have <code class="highlighter-rouge">x</code> as 10(this is actually <code class="highlighter-rouge">'thunk 10</code>) and count becomes 2.(Note that <code class="highlighter-rouge">+</code> has applicative order evaluation)</li>
-  <li>Because <code class="highlighter-rouge">actual-value</code> is recursive - it calls ‘force-it’ which again calls ‘actual-value’ untill all thunks are evaluated - we get the value 10.</li>
+  <li>Clearly, count is 1, because <code class="language-plaintext highlighter-rouge">id</code> is invoked only once till now.</li>
+  <li>Now when, if we print <code class="language-plaintext highlighter-rouge">w</code>, this means it will print actual value stored in <code class="language-plaintext highlighter-rouge">w</code>, which causes the evaluation <code class="language-plaintext highlighter-rouge">(id 10)</code>.(This is actually <code class="language-plaintext highlighter-rouge">'thunk (id 10)</code>).</li>
+  <li>Since <code class="language-plaintext highlighter-rouge">id</code> is invoked again, we have <code class="language-plaintext highlighter-rouge">x</code> as 10(this is actually <code class="language-plaintext highlighter-rouge">'thunk 10</code>) and count becomes 2.(Note that <code class="language-plaintext highlighter-rouge">+</code> has applicative order evaluation)</li>
+  <li>Because <code class="language-plaintext highlighter-rouge">actual-value</code> is recursive - it calls ‘force-it’ which again calls ‘actual-value’ untill all thunks are evaluated - we get the value 10.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9474,9 +9475,9 @@
 <span class="mi">2</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>One important and interesting thing to note is that without memoization in <code class="highlighter-rouge">force-it</code>, <code class="highlighter-rouge">w</code> still contains <code class="highlighter-rouge">'thunk (id 10)</code>. Thus every access of <code class="highlighter-rouge">w</code> would have caused invocation of <code class="highlighter-rouge">id</code> and thus <code class="highlighter-rouge">count</code> would have changed with each access!</p>
+<p>One important and interesting thing to note is that without memoization in <code class="language-plaintext highlighter-rouge">force-it</code>, <code class="language-plaintext highlighter-rouge">w</code> still contains <code class="language-plaintext highlighter-rouge">'thunk (id 10)</code>. Thus every access of <code class="language-plaintext highlighter-rouge">w</code> would have caused invocation of <code class="language-plaintext highlighter-rouge">id</code> and thus <code class="language-plaintext highlighter-rouge">count</code> would have changed with each access!</p>
 
-<p>With memoization, <code class="highlighter-rouge">w</code> would have contained <code class="highlighter-rouge">evaluated-thunk 10</code>, so it won’t generate calls to <code class="highlighter-rouge">id</code>.</p>
+<p>With memoization, <code class="language-plaintext highlighter-rouge">w</code> would have contained <code class="language-plaintext highlighter-rouge">evaluated-thunk 10</code>, so it won’t generate calls to <code class="language-plaintext highlighter-rouge">id</code>.</p>
 
                         <hr/>
                     </span>
@@ -9550,7 +9551,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

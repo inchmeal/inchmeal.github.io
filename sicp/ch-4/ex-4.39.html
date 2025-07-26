@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,13 +9418,13 @@
                         <hr/>
                         <p>Well, I found results a bit counter-intuitive.</p>
 
-<p>Moving the <code class="highlighter-rouge">distinct</code> constraint further down apparently increases the time!(See the example below which took 13 seconds compared to 10 seconds of the original version).</p>
+<p>Moving the <code class="language-plaintext highlighter-rouge">distinct</code> constraint further down apparently increases the time!(See the example below which took 13 seconds compared to 10 seconds of the original version).</p>
 
-<p>Note, it was difficult to measure time in scheme because i was using <code class="highlighter-rouge">(current-time)</code> which gives time in seconds which is a huge number and all of the combinations run in more than 1 second but less than 2 seconds. The work around was to call the procedure mutliple times like this <code class="highlighter-rouge">(list (multiple-dwellings) (multiple-dwellings) ... )</code>.</p>
+<p>Note, it was difficult to measure time in scheme because i was using <code class="language-plaintext highlighter-rouge">(current-time)</code> which gives time in seconds which is a huge number and all of the combinations run in more than 1 second but less than 2 seconds. The work around was to call the procedure mutliple times like this <code class="language-plaintext highlighter-rouge">(list (multiple-dwellings) (multiple-dwellings) ... )</code>.</p>
 
 <p>Even with the above work-around, the difference in execution time was quite insignicant and seemed to be counter intuitive as noted before.</p>
 
-<p>Now, I believe that that if should indeed be the case that moving <code class="highlighter-rouge">distinct</code> clause down will increase the time because of this:</p>
+<p>Now, I believe that that if should indeed be the case that moving <code class="language-plaintext highlighter-rouge">distinct</code> clause down will increase the time because of this:</p>
 
 <p>There are two things at play:</p>
 
@@ -9432,11 +9433,11 @@
   <li>The more restrictive a constraint is, the lesser number of cases gets tried in the later constraints.</li>
 </ul>
 
-<p>The <code class="highlighter-rouge">distinct</code> is most restrictive constraint!</p>
+<p>The <code class="language-plaintext highlighter-rouge">distinct</code> is most restrictive constraint!</p>
 
-<p>The number of cases that will go down to the second constraint, when <code class="highlighter-rouge">distinct</code> is the first constraint is <span class="kdmath">$\, 5! \,$</span>.</p>
+<p>The number of cases that will go down to the second constraint, when <code class="language-plaintext highlighter-rouge">distinct</code> is the first constraint is <span class="kdmath">$\, 5! \,$</span>.</p>
 
-<p>The number of cases go down to the second constraint, when <code class="highlighter-rouge">distinct</code> is not the first constraint, and lets say first constraint is <code class="highlighter-rouge">(require (not (= cooper 1)))</code> will be <span class="kdmath">$\, 4.5^4 \,$</span>.</p>
+<p>The number of cases go down to the second constraint, when <code class="language-plaintext highlighter-rouge">distinct</code> is not the first constraint, and lets say first constraint is <code class="language-plaintext highlighter-rouge">(require (not (= cooper 1)))</code> will be <span class="kdmath">$\, 4.5^4 \,$</span>.</p>
 
 <p>Now, since distinct itself is more time consuming, but it restricts a lot of cases - these two forces kind of balance each other. But still not a complete win, moving down distinct increases the time slightly.</p>
 
@@ -9446,7 +9447,7 @@
 </pre></td><td class="code"><pre><span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>The following version, where I moved the <code class="highlighter-rouge">distinct</code> as the last constraint, took much more time(13 seconds) than the original version(10 seconds):</p>
+<p>The following version, where I moved the <code class="language-plaintext highlighter-rouge">distinct</code> as the last constraint, took much more time(13 seconds) than the original version(10 seconds):</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9616,7 +9617,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

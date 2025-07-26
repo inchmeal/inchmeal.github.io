@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9421,8 +9422,8 @@
 
 <ul>
   <li>For consistency, I think it is important to evaluate the primitive arguments also in the right to left order as is the case with all the procedures arguments.</li>
-  <li>Since in the first part for <code class="highlighter-rouge">spread-arguments</code>, it was not mentioned that there will only be two arg registers. So I made a global list of arg registers and if there can be more than 2 then just need add them in the global list(in code <code class="highlighter-rouge">all-arg-regs</code>) of arg regs.</li>
-  <li>Used a inbuilt scheme procedure <code class="highlighter-rouge">take</code> which returns the first <code class="highlighter-rouge">n</code> elements of the list passed to it.</li>
+  <li>Since in the first part for <code class="language-plaintext highlighter-rouge">spread-arguments</code>, it was not mentioned that there will only be two arg registers. So I made a global list of arg registers and if there can be more than 2 then just need add them in the global list(in code <code class="language-plaintext highlighter-rouge">all-arg-regs</code>) of arg regs.</li>
+  <li>Used a inbuilt scheme procedure <code class="language-plaintext highlighter-rouge">take</code> which returns the first <code class="language-plaintext highlighter-rouge">n</code> elements of the list passed to it.</li>
 </ul>
 
 <p>Since this contained a good amount of changes, I have also put the complete code of file ch5-compiler.scm at the bottom of this page.</p>
@@ -9431,23 +9432,23 @@
 
 <p>Code follows after this description.</p>
 
-<p>Note the <code class="highlighter-rouge">iter</code> procedure inside <code class="highlighter-rouge">spread-arguments</code> is called with two arguments, <code class="highlighter-rouge">operands-list</code> and <code class="highlighter-rouge">arg-args</code>. Since we need as many arg registers (like arg1, arg2) as the number of operands. Thus <code class="highlighter-rouge">iter</code> is invoked with by taking(using <code class="highlighter-rouge">take</code>) as many registers from <code class="highlighter-rouge">all-arg-regs</code> as the number of operands.</p>
+<p>Note the <code class="language-plaintext highlighter-rouge">iter</code> procedure inside <code class="language-plaintext highlighter-rouge">spread-arguments</code> is called with two arguments, <code class="language-plaintext highlighter-rouge">operands-list</code> and <code class="language-plaintext highlighter-rouge">arg-args</code>. Since we need as many arg registers (like arg1, arg2) as the number of operands. Thus <code class="language-plaintext highlighter-rouge">iter</code> is invoked with by taking(using <code class="language-plaintext highlighter-rouge">take</code>) as many registers from <code class="language-plaintext highlighter-rouge">all-arg-regs</code> as the number of operands.</p>
 
-<p>Note that for right to left evaluation, <code class="highlighter-rouge">preserving</code> first is passed the instruction for the rest operands and <em>then</em> the first operand.</p>
+<p>Note that for right to left evaluation, <code class="language-plaintext highlighter-rouge">preserving</code> first is passed the instruction for the rest operands and <em>then</em> the first operand.</p>
 
-<p>For first-operand, again <code class="highlighter-rouge">preserving</code> is used(see the line marked with <code class="highlighter-rouge">;;;1</code>), because the results of rest-operands must be saved before evaluating the first operand.</p>
+<p>For first-operand, again <code class="language-plaintext highlighter-rouge">preserving</code> is used(see the line marked with <code class="language-plaintext highlighter-rouge">;;;1</code>), because the results of rest-operands must be saved before evaluating the first operand.</p>
 
-<p>Why can’t we just used only the first use of preserving and pass the registers to be preserved along with the <code class="highlighter-rouge">env</code>.</p>
+<p>Why can’t we just used only the first use of preserving and pass the registers to be preserved along with the <code class="language-plaintext highlighter-rouge">env</code>.</p>
 
-<p>To understand the <code class="highlighter-rouge">preserving</code> marked with comment <code class="highlighter-rouge">;;;1</code>, first let me recall how  <code class="highlighter-rouge">preserving</code> works:</p>
+<p>To understand the <code class="language-plaintext highlighter-rouge">preserving</code> marked with comment <code class="language-plaintext highlighter-rouge">;;;1</code>, first let me recall how  <code class="language-plaintext highlighter-rouge">preserving</code> works:</p>
 
 <p><em>It preserves the registers which are modified by first sequence but needed in second sequence.</em></p>
 
 <p>Now, where are the results of rest operands saved?</p>
 
-<p>Well, there is one to one mapping between each register in <code class="highlighter-rouge">arg-regs</code> and each operand in <code class="highlighter-rouge">operands-list</code>. Thus <code class="highlighter-rouge">(cdr arg-regs)</code> is the answer.</p>
+<p>Well, there is one to one mapping between each register in <code class="language-plaintext highlighter-rouge">arg-regs</code> and each operand in <code class="language-plaintext highlighter-rouge">operands-list</code>. Thus <code class="language-plaintext highlighter-rouge">(cdr arg-regs)</code> is the answer.</p>
 
-<p>Ofcourse, we need to preserve <code class="highlighter-rouge">env</code> register as the remaining arguments might use variables from the environment stored in <code class="highlighter-rouge">env</code>.</p>
+<p>Ofcourse, we need to preserve <code class="language-plaintext highlighter-rouge">env</code> register as the remaining arguments might use variables from the environment stored in <code class="language-plaintext highlighter-rouge">env</code>.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9495,13 +9496,13 @@
   <span class="p">(</span><span class="nf">iter</span> <span class="nv">operands-list</span> <span class="p">(</span><span class="nf">take</span> <span class="nv">all-arg-regs</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">operands-list</span><span class="p">))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that <code class="highlighter-rouge">spread-arguments</code> assumes that there are atleast as many arg registers as there are the number of operands. The user/caller of <code class="highlighter-rouge">spread-arguments</code> should ensure it.</p>
+<p>Note that <code class="language-plaintext highlighter-rouge">spread-arguments</code> assumes that there are atleast as many arg registers as there are the number of operands. The user/caller of <code class="language-plaintext highlighter-rouge">spread-arguments</code> should ensure it.</p>
 
 <h4 id="b">(b)</h4>
 
-<p><code class="highlighter-rouge">compile-open-code</code> is a common procedure used by all the code generators <code class="highlighter-rouge">compile-add</code>, <code class="highlighter-rouge">compile-sub</code> etc.</p>
+<p><code class="language-plaintext highlighter-rouge">compile-open-code</code> is a common procedure used by all the code generators <code class="language-plaintext highlighter-rouge">compile-add</code>, <code class="language-plaintext highlighter-rouge">compile-sub</code> etc.</p>
 
-<p>Just one thing to note, <code class="highlighter-rouge">continue</code> might get modified by call to <code class="highlighter-rouge">spread-arguments</code> and <code class="highlighter-rouge">end-with-linkage</code> takes care of it.</p>
+<p>Just one thing to note, <code class="language-plaintext highlighter-rouge">continue</code> might get modified by call to <code class="language-plaintext highlighter-rouge">spread-arguments</code> and <code class="language-plaintext highlighter-rouge">end-with-linkage</code> takes care of it.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9607,7 +9608,7 @@
 
 <p><strong>factorial with Open Coding</strong></p>
 
-<p>As we can see, now there are no more procedure invocation instructions generated for <code class="highlighter-rouge">=</code>, <code class="highlighter-rouge">-</code>.</p>
+<p>As we can see, now there are no more procedure invocation instructions generated for <code class="language-plaintext highlighter-rouge">=</code>, <code class="language-plaintext highlighter-rouge">-</code>.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9773,11 +9774,11 @@
 
 <p>This took me quite some time but turned out quite simple. We can just use the procedures created above.</p>
 
-<p>The idea is quite simple: To compile <code class="highlighter-rouge">(+ 1 2 3 4 5)</code>, compile <code class="highlighter-rouge">(+ 1 2)</code> and compile <code class="highlighter-rouge">(+ 3 4 5)</code> separately and merge the results as <code class="highlighter-rouge">(+ result-1 result-2)</code>. The recursion takes care of the rest!</p>
+<p>The idea is quite simple: To compile <code class="language-plaintext highlighter-rouge">(+ 1 2 3 4 5)</code>, compile <code class="language-plaintext highlighter-rouge">(+ 1 2)</code> and compile <code class="language-plaintext highlighter-rouge">(+ 3 4 5)</code> separately and merge the results as <code class="language-plaintext highlighter-rouge">(+ result-1 result-2)</code>. The recursion takes care of the rest!</p>
 
-<p>One special case: <code class="highlighter-rouge">(+ 1 2 3)</code> should be splitted as <code class="highlighter-rouge">(+ 1 2)</code> and <code class="highlighter-rouge">3</code>(not <code class="highlighter-rouge">+ 3</code>).</p>
+<p>One special case: <code class="language-plaintext highlighter-rouge">(+ 1 2 3)</code> should be splitted as <code class="language-plaintext highlighter-rouge">(+ 1 2)</code> and <code class="language-plaintext highlighter-rouge">3</code>(not <code class="language-plaintext highlighter-rouge">+ 3</code>).</p>
 
-<p>Procedure <code class="highlighter-rouge">split</code>, divides the list passed to it in two parts, with first containing <code class="highlighter-rouge">n</code> items and second part containing the remaining items. If <code class="highlighter-rouge">n</code> is large than the number of items then it will return all the iterms in the first part only and rest part will be empty.</p>
+<p>Procedure <code class="language-plaintext highlighter-rouge">split</code>, divides the list passed to it in two parts, with first containing <code class="language-plaintext highlighter-rouge">n</code> items and second part containing the remaining items. If <code class="language-plaintext highlighter-rouge">n</code> is large than the number of items then it will return all the iterms in the first part only and rest part will be empty.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -11114,7 +11115,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

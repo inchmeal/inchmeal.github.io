@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9431,7 +9432,7 @@
 
 <p>Thus we decompose our sytem into computational objects that model the actual objects of the system and each computational object have local state variables describing the actual object’s state. We need a way to change these local state variables - <em>assignment</em>.</p>
 
-<p>To change the variable special form <code class="highlighter-rouge">set!</code> is used for eg: <code class="highlighter-rouge">(set! balance (- balance amount))</code>. Since this form do not return any value, we need another special form <code class="highlighter-rouge">(begin (exp-1) (exp-2) ... (exp-k))</code> to combine multiple expressions and return the result of last expression.</p>
+<p>To change the variable special form <code class="language-plaintext highlighter-rouge">set!</code> is used for eg: <code class="language-plaintext highlighter-rouge">(set! balance (- balance amount))</code>. Since this form do not return any value, we need another special form <code class="language-plaintext highlighter-rouge">(begin (exp-1) (exp-2) ... (exp-k))</code> to combine multiple expressions and return the result of last expression.</p>
 
 <p>Introduction of assignment raises the problem of evaluating such programs using substitution model and a new model is needed to understand such programs - because when we simply substitute, the variables current value may have been changed in some earlier expression evaluated and we end up using old value.</p>
 
@@ -9451,7 +9452,7 @@
 		<span class="s">"Insufficient funds"</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Now we can create objects as <code class="highlighter-rouge">(define W1 (make-withdraw 100))</code> or <code class="highlighter-rouge">(define W2 (make-withdraw 200))</code>.</p>
+<p>Now we can create objects as <code class="language-plaintext highlighter-rouge">(define W1 (make-withdraw 100))</code> or <code class="language-plaintext highlighter-rouge">(define W2 (make-withdraw 200))</code>.</p>
 
 <p>Another way is <em>message-passing</em>:</p>
 
@@ -9499,7 +9500,7 @@
 
 <p>First as we already saw, that it causes complexity in evaluation models - we can not use simple substitution model. Another more fundamental problem is associated with <strong>sameness or change</strong>.</p>
 
-<p>Suppose we have two objects <code class="highlighter-rouge">W1</code> and <code class="highlighter-rouge">W2</code> created using the same initializer <code class="highlighter-rouge">(define W1 (create-account-with-balanace 100))</code>. Are these objects same? We can say this only in a context/time but can not be said in general that they are same(in context of assignment).</p>
+<p>Suppose we have two objects <code class="language-plaintext highlighter-rouge">W1</code> and <code class="language-plaintext highlighter-rouge">W2</code> created using the same initializer <code class="language-plaintext highlighter-rouge">(define W1 (create-account-with-balanace 100))</code>. Are these objects same? We can say this only in a context/time but can not be said in general that they are same(in context of assignment).</p>
 
 <p>Referentially transparent language supports the concept of <em>equals can be substituted for equals</em>. But note that this can not be done in above case as equality/sameness is bound with context/time. Thus we can not determined effectively when objects can be substituted and how we can simplify expressions by substituting equivalent expressions.</p>
 
@@ -9525,7 +9526,7 @@
 
 <h4 id="environment-model-of-execution">Environment model of execution</h4>
 
-<p>We need a place - environment - where a variable can be stored and refered. Environment is a sequence of frames and a frame is a table structure holding name-value pairs. For eg: <code class="highlighter-rouge">(define x 3)</code> creates a bindng in the of <code class="highlighter-rouge">x</code> with <code class="highlighter-rouge">3</code>.</p>
+<p>We need a place - environment - where a variable can be stored and refered. Environment is a sequence of frames and a frame is a table structure holding name-value pairs. For eg: <code class="language-plaintext highlighter-rouge">(define x 3)</code> creates a bindng in the of <code class="language-plaintext highlighter-rouge">x</code> with <code class="language-plaintext highlighter-rouge">3</code>.</p>
 
 <p>A new frame is created when any procedure is invoked/evaluated. The new frame points to the enclosing environment. Thus every frame points to an enclosing environment except the first one - which we call global environment - note that global environment will contain only one frame pointing to no other frame.</p>
 
@@ -9612,9 +9613,9 @@
   <span class="nv">y</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Here <code class="highlighter-rouge">y</code> depends on <code class="highlighter-rouge">dy</code> and <code class="highlighter-rouge">dy</code> depends on <code class="highlighter-rouge">y</code>! Many implementations of scheme(including MIT scheme) do not provide any direct way of writing such definitions.</p>
+<p>Here <code class="language-plaintext highlighter-rouge">y</code> depends on <code class="language-plaintext highlighter-rouge">dy</code> and <code class="language-plaintext highlighter-rouge">dy</code> depends on <code class="language-plaintext highlighter-rouge">y</code>! Many implementations of scheme(including MIT scheme) do not provide any direct way of writing such definitions.</p>
 
-<p>Note the use of <code class="highlighter-rouge">delay</code> in the above procedure. This way we can <em>delay</em> the evaluation of arguments, we call this as <em>delayed argument</em>. This is actually the same thing as <em>normal order evaluation</em> that we learned in chapter-1. But in general, most languages do not provide normal(delayed) order evaluation, so we need constructs like <code class="highlighter-rouge">delay</code> to implement <code class="highlighter-rouge">delayed argument</code>.</p>
+<p>Note the use of <code class="language-plaintext highlighter-rouge">delay</code> in the above procedure. This way we can <em>delay</em> the evaluation of arguments, we call this as <em>delayed argument</em>. This is actually the same thing as <em>normal order evaluation</em> that we learned in chapter-1. But in general, most languages do not provide normal(delayed) order evaluation, so we need constructs like <code class="language-plaintext highlighter-rouge">delay</code> to implement <code class="language-plaintext highlighter-rouge">delayed argument</code>.</p>
 
 <p>Well, we may wonder here why not have <em>normal order evaluation</em> by default instead of using delayed arguments. The problem is assignment and delay do not go well together as noted in ex-3.52.</p>
 
@@ -9717,7 +9718,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,11 +9416,11 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>I am somewhat confused with the naming of <em>special form</em> <code class="highlighter-rouge">make-unbound!</code>. Till now we used <strong>make-</strong> prefix to <em>build</em> a special form like we used <code class="highlighter-rouge">make-if</code> to convert <code class="highlighter-rouge">cond</code> to <code class="highlighter-rouge">if</code>.</p>
+                        <p>I am somewhat confused with the naming of <em>special form</em> <code class="language-plaintext highlighter-rouge">make-unbound!</code>. Till now we used <strong>make-</strong> prefix to <em>build</em> a special form like we used <code class="language-plaintext highlighter-rouge">make-if</code> to convert <code class="language-plaintext highlighter-rouge">cond</code> to <code class="language-plaintext highlighter-rouge">if</code>.</p>
 
-<p>So, I am hoping that author meant to build a <em>special form</em> <code class="highlighter-rouge">make-unbound</code> like we have <code class="highlighter-rouge">define</code> and <code class="highlighter-rouge">if</code> instead of <code class="highlighter-rouge">make-if</code> kind of procedure.</p>
+<p>So, I am hoping that author meant to build a <em>special form</em> <code class="language-plaintext highlighter-rouge">make-unbound</code> like we have <code class="language-plaintext highlighter-rouge">define</code> and <code class="language-plaintext highlighter-rouge">if</code> instead of <code class="language-plaintext highlighter-rouge">make-if</code> kind of procedure.</p>
 
-<p>With this assumption, I think it would be better to follow the earlier naming, so I will be calling this <em>special form</em> as <code class="highlighter-rouge">unbound!</code>. Please tell what do you think? Did I missed anything?</p>
+<p>With this assumption, I think it would be better to follow the earlier naming, so I will be calling this <em>special form</em> as <code class="language-plaintext highlighter-rouge">unbound!</code>. Please tell what do you think? Did I missed anything?</p>
 
 <p>I think one who can bind can also unbind. When one defines a variable it ofcourse gets defined in the current environment, so when one unbinds a variable it must also be for the current environment.</p>
 
@@ -9429,7 +9430,7 @@
 
 <p>Here goes my solution:</p>
 
-<p>(I built on top of the previous solutions. In last exercise I build <code class="highlighter-rouge">find-pair</code> it uses the same procedure.)</p>
+<p>(I built on top of the previous solutions. In last exercise I build <code class="language-plaintext highlighter-rouge">find-pair</code> it uses the same procedure.)</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9590,7 +9591,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

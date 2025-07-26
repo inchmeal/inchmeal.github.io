@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9419,7 +9420,7 @@
 
 <p>Well, deadlock happens only when we have a circular dependency in acquiring locks/resource.</p>
 
-<p>For example in <code class="highlighter-rouge">serialized-exchange</code> when two processes calls it to exchange balances of account a1, and a2 then one process waits for the lock from another process and other process waits for the lock from former one. Thus the dependency is circular.</p>
+<p>For example in <code class="language-plaintext highlighter-rouge">serialized-exchange</code> when two processes calls it to exchange balances of account a1, and a2 then one process waits for the lock from another process and other process waits for the lock from former one. Thus the dependency is circular.</p>
 
 <p>The numbering scheme, to first acquire the lock for a resource with smallest number then next smallest and so on, makes an ordered way in which one acquires the resource. If multiple processes needs to work with resources numbered as 1 and 2, exclusively - then they try to acquire the lock in the order for first 1 and then after acquiring 1, attempt is made to for acquiring 2.</p>
 
@@ -9576,7 +9577,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

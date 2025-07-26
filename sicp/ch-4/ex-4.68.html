@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9474,7 +9475,7 @@
 <span class="c1">;;; Query input:</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>This <code class="highlighter-rouge">(reverse (1 2 3) ?x)</code> won’t work as it generates an infinite loop when the rule <code class="highlighter-rouge">reverse</code> is evaluated recursively. This happens because the recursive evaluation have both variables unbound and there is nothing to bound those variables in the recursive evaluations that happen later. Thus we keep evaluating the same rule again and again!</p>
+<p>This <code class="language-plaintext highlighter-rouge">(reverse (1 2 3) ?x)</code> won’t work as it generates an infinite loop when the rule <code class="language-plaintext highlighter-rouge">reverse</code> is evaluated recursively. This happens because the recursive evaluation have both variables unbound and there is nothing to bound those variables in the recursive evaluations that happen later. Thus we keep evaluating the same rule again and again!</p>
 
 <p>Suppose if I try to remedy this problem by writing the rule:</p>
 
@@ -9482,9 +9483,9 @@
 </pre></td><td class="code"><pre><span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nb">reverse</span> <span class="nv">?x</span> <span class="nv">?r</span><span class="p">)</span> <span class="p">(</span><span class="nb">reverse</span> <span class="nv">?r</span> <span class="nv">?x</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>This is similar to the way, book tries to <em>fix</em> the rule <code class="highlighter-rouge">marriage</code>.</p>
+<p>This is similar to the way, book tries to <em>fix</em> the rule <code class="language-plaintext highlighter-rouge">marriage</code>.</p>
 
-<p>Thus similar to the reasoning in book, it will go to infinite loop and this time both versions <code class="highlighter-rouge">(reverse ?x (1 2 3))</code> as well as <code class="highlighter-rouge">(reverse (1 2 3) ?x)</code> can lead to infinite loop.</p>
+<p>Thus similar to the reasoning in book, it will go to infinite loop and this time both versions <code class="language-plaintext highlighter-rouge">(reverse ?x (1 2 3))</code> as well as <code class="language-plaintext highlighter-rouge">(reverse (1 2 3) ?x)</code> can lead to infinite loop.</p>
 
 <p>At this point I have postponed the previous exercise for detecting loop. Perhaps that solution would have fixed this and the above <em>fix</em> might have worked.</p>
 
@@ -9560,7 +9561,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9534,13 +9535,13 @@
 <span class="mi">1</span> <span class="p">]</span><span class="nv">=&gt;</span> 
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that when some error occurs, MIT scheme keep showing it in prompt unless <code class="highlighter-rouge">(restart 1)</code> is called.</p>
+<p>Note that when some error occurs, MIT scheme keep showing it in prompt unless <code class="language-plaintext highlighter-rouge">(restart 1)</code> is called.</p>
 
 <p>There is one important aspect that caused me some time to understand - Ownership</p>
 
 <p>Any one can set a connector if it has no value. But if there is a value set in it then only that user/code is able to forget that value. This is a good idea - one who sets is responsible to remove. It makes easier to debug things if something goes wrong.</p>
 
-<p>Note that in the above example - when <code class="highlighter-rouge">(forget-value! a 'ovais)</code> is invoked, the value of <code class="highlighter-rouge">b</code> is not forgoten - because it was not set my the squarer procedure! But it was set me user- ‘ovais.</p>
+<p>Note that in the above example - when <code class="language-plaintext highlighter-rouge">(forget-value! a 'ovais)</code> is invoked, the value of <code class="language-plaintext highlighter-rouge">b</code> is not forgoten - because it was not set my the squarer procedure! But it was set me user- ‘ovais.</p>
 
 <p>I am also putting the complete code here for future reference:</p>
 
@@ -10031,7 +10032,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

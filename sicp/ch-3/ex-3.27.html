@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9418,23 +9419,23 @@
                         <p>This is little tricky to understand. Lets break it down piece by piece:</p>
 
 <ol>
-  <li><code class="highlighter-rouge">memoize</code> is straightforward.
+  <li><code class="language-plaintext highlighter-rouge">memoize</code> is straightforward.
     <ul>
       <li>It takes a procedure ‘f’ and returns another procedure.</li>
-      <li>The returned procedure is bound to the environment created by the call to <code class="highlighter-rouge">memoize</code>, where a <em>table</em> was created.</li>
+      <li>The returned procedure is bound to the environment created by the call to <code class="language-plaintext highlighter-rouge">memoize</code>, where a <em>table</em> was created.</li>
       <li>Thus returned procedure has access to this table.</li>
-      <li>This returned procedure takes an argument <code class="highlighter-rouge">x</code> and first checks, if there value available in the <em>table</em> for the <em>key</em> x. If yes, it returns the value.</li>
-      <li>If not, it calls the procedure <code class="highlighter-rouge">f</code> with <code class="highlighter-rouge">x</code> as an argument and saves the result in the table as well as returns the result. Note that <code class="highlighter-rouge">f</code> is also available to this returned procedure by the environment.</li>
+      <li>This returned procedure takes an argument <code class="language-plaintext highlighter-rouge">x</code> and first checks, if there value available in the <em>table</em> for the <em>key</em> x. If yes, it returns the value.</li>
+      <li>If not, it calls the procedure <code class="language-plaintext highlighter-rouge">f</code> with <code class="language-plaintext highlighter-rouge">x</code> as an argument and saves the result in the table as well as returns the result. Note that <code class="language-plaintext highlighter-rouge">f</code> is also available to this returned procedure by the environment.</li>
       <li>Thats it!</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">memo-fib</code> is nothing but the procedure returned by <code class="highlighter-rouge">memoize</code>. And <code class="highlighter-rouge">f</code> is the lambda function that we passed to <code class="highlighter-rouge">memo-fib</code> and which contains the code for fibonacci.
+  <li><code class="language-plaintext highlighter-rouge">memo-fib</code> is nothing but the procedure returned by <code class="language-plaintext highlighter-rouge">memoize</code>. And <code class="language-plaintext highlighter-rouge">f</code> is the lambda function that we passed to <code class="language-plaintext highlighter-rouge">memo-fib</code> and which contains the code for fibonacci.
     <ul>
-      <li>It may seems a bit tricky that <code class="highlighter-rouge">f</code>(the lamda function we passed) is itself calling <code class="highlighter-rouge">memo-fib</code>.</li>
+      <li>It may seems a bit tricky that <code class="language-plaintext highlighter-rouge">f</code>(the lamda function we passed) is itself calling <code class="language-plaintext highlighter-rouge">memo-fib</code>.</li>
       <li>But this is nothing but indirect recursion! ‘memo-fib’ –calls–&gt; f(the lambda function passed to memoize) –calls–&gt; ‘memo-fib’.</li>
-      <li>As we can see the recursion calls are for lower values of <code class="highlighter-rouge">n</code> and we have a base case at n = 0 and 1.</li>
-      <li>The <em>important</em> thing to note that all these recursive calls of <code class="highlighter-rouge">memo-fib</code> are executed in the environment where <em>parent</em> environment points to the environment in which <code class="highlighter-rouge">memo-fib</code> was created.</li>
-      <li>Well, technically <code class="highlighter-rouge">mem-fib</code> is created in global environment. When speaking of <code class="highlighter-rouge">memo-fib</code>, I am referring to the procedure which the variable <code class="highlighter-rouge">memo-fib</code> points to. Thus even if the <code class="highlighter-rouge">mem-fib</code> variable belongs to global-env the procedure it points to is created/bound to a different environment.</li>
+      <li>As we can see the recursion calls are for lower values of <code class="language-plaintext highlighter-rouge">n</code> and we have a base case at n = 0 and 1.</li>
+      <li>The <em>important</em> thing to note that all these recursive calls of <code class="language-plaintext highlighter-rouge">memo-fib</code> are executed in the environment where <em>parent</em> environment points to the environment in which <code class="language-plaintext highlighter-rouge">memo-fib</code> was created.</li>
+      <li>Well, technically <code class="language-plaintext highlighter-rouge">mem-fib</code> is created in global environment. When speaking of <code class="language-plaintext highlighter-rouge">memo-fib</code>, I am referring to the procedure which the variable <code class="language-plaintext highlighter-rouge">memo-fib</code> points to. Thus even if the <code class="language-plaintext highlighter-rouge">mem-fib</code> variable belongs to global-env the procedure it points to is created/bound to a different environment.</li>
       <li>Thats it!</li>
     </ul>
   </li>
@@ -9444,7 +9445,7 @@
 
 <p>No.</p>
 
-<p>Here things will not work because <code class="highlighter-rouge">fib</code> itself calls <code class="highlighter-rouge">fib</code> recursively thus no table lookups happen.</p>
+<p>Here things will not work because <code class="language-plaintext highlighter-rouge">fib</code> itself calls <code class="language-plaintext highlighter-rouge">fib</code> recursively thus no table lookups happen.</p>
 
                         <hr/>
                     </span>
@@ -9518,7 +9519,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

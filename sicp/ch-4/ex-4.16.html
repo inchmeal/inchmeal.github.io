@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9435,11 +9436,11 @@
 
 <h4 id="b">(b)</h4>
 
-<p>The <code class="highlighter-rouge">fold-right</code> accumulates results in a list which contains 2 things:</p>
+<p>The <code class="language-plaintext highlighter-rouge">fold-right</code> accumulates results in a list which contains 2 things:</p>
 
 <ul>
   <li>list of variables to be used in let definition eg ((a ‘<em>unassigned</em>) (b ‘*unassigned)) etc.</li>
-  <li>list of the all the statements in the proc-body with <code class="highlighter-rouge">define</code> replaced with <code class="highlighter-rouge">set!</code>.</li>
+  <li>list of the all the statements in the proc-body with <code class="language-plaintext highlighter-rouge">define</code> replaced with <code class="language-plaintext highlighter-rouge">set!</code>.</li>
 </ul>
 
 <p>Note that once we got this result, we check if there are any definitions found? If no then we return the procedure body without any modification else we return transformed let expression.</p>
@@ -9448,7 +9449,7 @@
 
 <p>Next thing to note:</p>
 
-<p>The order of <code class="highlighter-rouge">set!</code> expression matters! and can not be simply put at the beginning of <code class="highlighter-rouge">let</code>. See the last example in the output. It’s implicit in the book because there is no point that we create <code class="highlighter-rouge">(let ((a '*unassigned*)) (set! a &lt;exp1&gt;) ... )</code> instead of <code class="highlighter-rouge">(let ((a &lt;exp1&gt;)) ... )</code>. Check the last example which would not have worked as expected if we simply put <code class="highlighter-rouge">set!</code> in the beginning.</p>
+<p>The order of <code class="language-plaintext highlighter-rouge">set!</code> expression matters! and can not be simply put at the beginning of <code class="language-plaintext highlighter-rouge">let</code>. See the last example in the output. It’s implicit in the book because there is no point that we create <code class="language-plaintext highlighter-rouge">(let ((a '*unassigned*)) (set! a &lt;exp1&gt;) ... )</code> instead of <code class="language-plaintext highlighter-rouge">(let ((a &lt;exp1&gt;)) ... )</code>. Check the last example which would not have worked as expected if we simply put <code class="language-plaintext highlighter-rouge">set!</code> in the beginning.</p>
 
 <p>Then what is the point of moving definitions on top when they are only going to be evaluated by our simulator sequentially?</p>
 
@@ -9458,19 +9459,19 @@
 
 <ul>
   <li>
-    <p>A funny mistake! Declared a parameter <code class="highlighter-rouge">new</code> in <code class="highlighter-rouge">lambda(new rem)</code> and coded the remaining <code class="highlighter-rouge">lambda</code> “thinking” that I named it <code class="highlighter-rouge">exp</code> instead of <code class="highlighter-rouge">new</code>. And simulator seemed to work fine as every program I have thrown at it worked fine!</p>
+    <p>A funny mistake! Declared a parameter <code class="language-plaintext highlighter-rouge">new</code> in <code class="language-plaintext highlighter-rouge">lambda(new rem)</code> and coded the remaining <code class="language-plaintext highlighter-rouge">lambda</code> “thinking” that I named it <code class="language-plaintext highlighter-rouge">exp</code> instead of <code class="language-plaintext highlighter-rouge">new</code>. And simulator seemed to work fine as every program I have thrown at it worked fine!</p>
 
     <p>The only problem was its <em>too good to be true</em>. I am not such a brilliant coder that every thing worked without a single glitch in first iteration!</p>
 
-    <p>A <em>dry execution</em> revealed that I am not using <code class="highlighter-rouge">exp</code> instead of <code class="highlighter-rouge">new</code> But then how things are working just fine!</p>
+    <p>A <em>dry execution</em> revealed that I am not using <code class="language-plaintext highlighter-rouge">exp</code> instead of <code class="language-plaintext highlighter-rouge">new</code> But then how things are working just fine!</p>
 
-    <p>Well, <code class="highlighter-rouge">exp</code> is an exponential procedure from mit scheme. Ok, thats my mistake but how come my programs are getting evaluated correctly! Well, the check mentioned above which does not do any conversion when no <code class="highlighter-rouge">define</code> are found explains the rest :)</p>
+    <p>Well, <code class="language-plaintext highlighter-rouge">exp</code> is an exponential procedure from mit scheme. Ok, thats my mistake but how come my programs are getting evaluated correctly! Well, the check mentioned above which does not do any conversion when no <code class="language-plaintext highlighter-rouge">define</code> are found explains the rest :)</p>
   </li>
   <li>
     <p>Using single quoted ‘<em>unassigned</em> - The problem is we need a quote in the generated syntax! But if there is only one quote then generated syntax(for let) won’t contain any quote! And our eval tries to access it thinking of it as a variable! Got it? Why then only single quote works in part(a)? :)</p>
   </li>
   <li>
-    <p>I was using <code class="highlighter-rouge">cons</code> initially instead of <code class="highlighter-rouge">list</code> while creating <code class="highlighter-rouge">let</code> variable definition in this line: <code class="highlighter-rouge">(let ((var-def (list (definition-variable new) ''*unassigned*))</code>. The problem is when we read input every expression comes as a list - even if it contains 2 elements.</p>
+    <p>I was using <code class="language-plaintext highlighter-rouge">cons</code> initially instead of <code class="language-plaintext highlighter-rouge">list</code> while creating <code class="language-plaintext highlighter-rouge">let</code> variable definition in this line: <code class="language-plaintext highlighter-rouge">(let ((var-def (list (definition-variable new) ''*unassigned*))</code>. The problem is when we read input every expression comes as a list - even if it contains 2 elements.</p>
   </li>
 </ul>
 
@@ -9516,7 +9517,7 @@
 
 <h4 id="c">(c)</h4>
 
-<p>I think <code class="highlighter-rouge">make-procedure</code> is better place to install it. because if we install it in <code class="highlighter-rouge">procedure-body</code> selector, then it can lead to multiple re-computation every time <code class="highlighter-rouge">procedure-body</code> is accessed. So here goes the installation code:</p>
+<p>I think <code class="language-plaintext highlighter-rouge">make-procedure</code> is better place to install it. because if we install it in <code class="language-plaintext highlighter-rouge">procedure-body</code> selector, then it can lead to multiple re-computation every time <code class="language-plaintext highlighter-rouge">procedure-body</code> is accessed. So here goes the installation code:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9731,7 +9732,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

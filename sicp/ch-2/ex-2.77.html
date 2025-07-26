@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,17 +9418,17 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>The expression <code class="highlighter-rouge">(magnitude z)</code> fails initially because it results in a call to <code class="highlighter-rouge">apply-generic</code>. As per figure(mentioned in question), <code class="highlighter-rouge">z</code> is tagged with <code class="highlighter-rouge">complex</code>,
-thus <code class="highlighter-rouge">apply-generic</code> will lookup in the <em>data directed table</em> using <code class="highlighter-rouge">get</code>. Since <code class="highlighter-rouge">magnitude</code> is not stored in the table corresponding to <code class="highlighter-rouge">complex</code>, it results in 
+                        <p>The expression <code class="language-plaintext highlighter-rouge">(magnitude z)</code> fails initially because it results in a call to <code class="language-plaintext highlighter-rouge">apply-generic</code>. As per figure(mentioned in question), <code class="language-plaintext highlighter-rouge">z</code> is tagged with <code class="language-plaintext highlighter-rouge">complex</code>,
+thus <code class="language-plaintext highlighter-rouge">apply-generic</code> will lookup in the <em>data directed table</em> using <code class="language-plaintext highlighter-rouge">get</code>. Since <code class="language-plaintext highlighter-rouge">magnitude</code> is not stored in the table corresponding to <code class="language-plaintext highlighter-rouge">complex</code>, it results in 
 error - “no method for the operation magnitude on the types (complex)”.</p>
 
-<p>After adding the <code class="highlighter-rouge">put</code> statements, the error disappears because it adds <code class="highlighter-rouge">magnitude</code> to the table.</p>
+<p>After adding the <code class="language-plaintext highlighter-rouge">put</code> statements, the error disappears because it adds <code class="language-plaintext highlighter-rouge">magnitude</code> to the table.</p>
 
-<p>Now after the first call to <code class="highlighter-rouge">apply-generic</code>, it will result in <code class="highlighter-rouge">(magnitude zz)</code> where <code class="highlighter-rouge">zz</code> is <code class="highlighter-rouge">(content z)</code>. Thus <code class="highlighter-rouge">zz</code> is of type ‘rectangular` as can be seen form the figure.</p>
+<p>Now after the first call to <code class="language-plaintext highlighter-rouge">apply-generic</code>, it will result in <code class="language-plaintext highlighter-rouge">(magnitude zz)</code> where <code class="language-plaintext highlighter-rouge">zz</code> is <code class="language-plaintext highlighter-rouge">(content z)</code>. Thus <code class="language-plaintext highlighter-rouge">zz</code> is of type ‘rectangular` as can be seen form the figure.</p>
 
-<p>Now this will again invoke <code class="highlighter-rouge">apply-generic</code> which will invoke <code class="highlighter-rouge">magnitude</code> from the <code class="highlighter-rouge">rectangular</code> package. And which will finally return the <code class="highlighter-rouge">magnitude</code>.</p>
+<p>Now this will again invoke <code class="language-plaintext highlighter-rouge">apply-generic</code> which will invoke <code class="language-plaintext highlighter-rouge">magnitude</code> from the <code class="language-plaintext highlighter-rouge">rectangular</code> package. And which will finally return the <code class="language-plaintext highlighter-rouge">magnitude</code>.</p>
 
-<p>Thus there are two invocations of <code class="highlighter-rouge">apply-generic</code>.</p>
+<p>Thus there are two invocations of <code class="language-plaintext highlighter-rouge">apply-generic</code>.</p>
 
 
                         <hr/>
@@ -9502,7 +9503,7 @@ error - “no method for the operation magnitude on the types (complex)”.</p>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

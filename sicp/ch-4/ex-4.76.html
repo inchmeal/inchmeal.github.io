@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,12 +9416,12 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>This did not work exactly as the old <code class="highlighter-rouge">and</code>. Because it has changed the <code class="highlighter-rouge">and</code> behaviour from procedural style to more mathematical logic style.</p>
+                        <p>This did not work exactly as the old <code class="language-plaintext highlighter-rouge">and</code>. Because it has changed the <code class="language-plaintext highlighter-rouge">and</code> behaviour from procedural style to more mathematical logic style.</p>
 
 <p>Few points to note for implementation:</p>
 <ul>
-  <li>if a variable in frame1 is bound in frame2 then they should be <em>compatible</em>. To check <em>compatibility</em>, I think that here we can just use <code class="highlighter-rouge">equal?</code> on the values of these variables instead of checking compatibility by unificiation process.</li>
-  <li>I still used the <code class="highlighter-rouge">extend-if-possible</code> which internally does unify match for compatibility instead of simply using <code class="highlighter-rouge">equal?</code> for the values bounded. Well, just being lazy to implement :)</li>
+  <li>if a variable in frame1 is bound in frame2 then they should be <em>compatible</em>. To check <em>compatibility</em>, I think that here we can just use <code class="language-plaintext highlighter-rouge">equal?</code> on the values of these variables instead of checking compatibility by unificiation process.</li>
+  <li>I still used the <code class="language-plaintext highlighter-rouge">extend-if-possible</code> which internally does unify match for compatibility instead of simply using <code class="language-plaintext highlighter-rouge">equal?</code> for the values bounded. Well, just being lazy to implement :)</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9561,17 +9562,17 @@
 <span class="p">(</span><span class="nf">find-son</span> <span class="nv">adam</span> <span class="nv">cain</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>But, it did <strong>not work</strong> for many of the previous exercises.(i tried reverse, unique, and few microshaft exercises which use <code class="highlighter-rouge">and</code>).</p>
+<p>But, it did <strong>not work</strong> for many of the previous exercises.(i tried reverse, unique, and few microshaft exercises which use <code class="language-plaintext highlighter-rouge">and</code>).</p>
 
-<p>The problem is because this has changed the <code class="highlighter-rouge">and</code> query to behave more in a mathematical logic style and less in the procedural style! Now the variables which may get bound in earlier clauses of <code class="highlighter-rouge">and</code> won’t be bound and any rule based on it might not work. It can even get into infinite loop for some case and for cases like <code class="highlighter-rouge">not</code> or <code class="highlighter-rouge">lisp-value</code> won’t work at all.</p>
+<p>The problem is because this has changed the <code class="language-plaintext highlighter-rouge">and</code> query to behave more in a mathematical logic style and less in the procedural style! Now the variables which may get bound in earlier clauses of <code class="language-plaintext highlighter-rouge">and</code> won’t be bound and any rule based on it might not work. It can even get into infinite loop for some case and for cases like <code class="language-plaintext highlighter-rouge">not</code> or <code class="language-plaintext highlighter-rouge">lisp-value</code> won’t work at all.</p>
 
-<p>The merging of frame does not solve the problem of infinite loop of rule evaluation or constructs like <code class="highlighter-rouge">not</code> and <code class="highlighter-rouge">list-value</code>. Because the former(infinite loop) happens even before the merging of frame! And the latter case, like <code class="highlighter-rouge">not</code> returns empty stream which merging frames can’t fix.</p>
+<p>The merging of frame does not solve the problem of infinite loop of rule evaluation or constructs like <code class="language-plaintext highlighter-rouge">not</code> and <code class="language-plaintext highlighter-rouge">list-value</code>. Because the former(infinite loop) happens even before the merging of frame! And the latter case, like <code class="language-plaintext highlighter-rouge">not</code> returns empty stream which merging frames can’t fix.</p>
 
-<p>When I implemented this i simply tried it with the last example i worked with containing <code class="highlighter-rouge">and</code>. It came from previous exercise <code class="highlighter-rouge">(and (job ?x ?j) (unique (job ?anyone ?j)))</code>. And it did not worked!</p>
+<p>When I implemented this i simply tried it with the last example i worked with containing <code class="language-plaintext highlighter-rouge">and</code>. It came from previous exercise <code class="language-plaintext highlighter-rouge">(and (job ?x ?j) (unique (job ?anyone ?j)))</code>. And it did not worked!</p>
 
-<p>The reason is <code class="highlighter-rouge">j</code> is not bounded!</p>
+<p>The reason is <code class="language-plaintext highlighter-rouge">j</code> is not bounded!</p>
 
-<p>Looking ahead at the next exercise, probably the problem with <code class="highlighter-rouge">not</code> and <code class="highlighter-rouge">lisp-value</code> might get fixed.</p>
+<p>Looking ahead at the next exercise, probably the problem with <code class="language-plaintext highlighter-rouge">not</code> and <code class="language-plaintext highlighter-rouge">lisp-value</code> might get fixed.</p>
 
 <p>Note that the infinite loop problem can not be fixed even by the loop-detector of ex-4.67 too. The reason is loop-detector only stops the infinite loop but don’t solve the problem of unbounded values.</p>
 
@@ -9647,7 +9648,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

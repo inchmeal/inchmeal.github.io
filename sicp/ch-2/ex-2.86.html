@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,15 +9418,15 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Well, it turned out I missed few bugs in 2.85(which I have not fixed as it is part of this exercise). This exercise is in a way a part of previous exercise. As to complete that exercise complex number can have rational parts too, which was required because of the problems encountered when adding <code class="highlighter-rouge">drop</code> in that exercise.</p>
+                        <p>Well, it turned out I missed few bugs in 2.85(which I have not fixed as it is part of this exercise). This exercise is in a way a part of previous exercise. As to complete that exercise complex number can have rational parts too, which was required because of the problems encountered when adding <code class="language-plaintext highlighter-rouge">drop</code> in that exercise.</p>
 
-<p>Now, in this exercise this was asked explicitly to allow complex numbers with real and imaginary parts. I thought <em>bingo!</em>, I have already done it but the part that made me realised - I had left few issues - is that it explicitly asked for operation <em>sin</em>, <em>cos</em>. Soon I figured that I have not tested my last exercise with operations <code class="highlighter-rouge">div</code> and <code class="highlighter-rouge">mul</code> and used only the rectangular implementation of complex numbers. Thus in my test cases - sin and cos never came up!</p>
+<p>Now, in this exercise this was asked explicitly to allow complex numbers with real and imaginary parts. I thought <em>bingo!</em>, I have already done it but the part that made me realised - I had left few issues - is that it explicitly asked for operation <em>sin</em>, <em>cos</em>. Soon I figured that I have not tested my last exercise with operations <code class="language-plaintext highlighter-rouge">div</code> and <code class="language-plaintext highlighter-rouge">mul</code> and used only the rectangular implementation of complex numbers. Thus in my test cases - sin and cos never came up!</p>
 
 <p>Now, its just a matter of changing all operations used in rectangular and angular so that they can work fine.</p>
 
-<p>Note that I have not defined <code class="highlighter-rouge">sine</code>, <code class="highlighter-rouge">cosine</code> and <code class="highlighter-rouge">arctan</code> by apply-generic because it can be done without it - just by raising the argument passed to <code class="highlighter-rouge">scheme-number</code>.</p>
+<p>Note that I have not defined <code class="language-plaintext highlighter-rouge">sine</code>, <code class="language-plaintext highlighter-rouge">cosine</code> and <code class="language-plaintext highlighter-rouge">arctan</code> by apply-generic because it can be done without it - just by raising the argument passed to <code class="language-plaintext highlighter-rouge">scheme-number</code>.</p>
 
-<p>Also, I discovered one more bug in my code - again which should have been discovered earlier but because scheme is <em>not</em> static-typed - My implementation of <code class="highlighter-rouge">angle</code> was wrong as I <em>forgot</em> to call div and just passed two arguments - which a static language should have caught as I was passing two arguments where only one is expected. I have left that bug in the previous exercise.</p>
+<p>Also, I discovered one more bug in my code - again which should have been discovered earlier but because scheme is <em>not</em> static-typed - My implementation of <code class="language-plaintext highlighter-rouge">angle</code> was wrong as I <em>forgot</em> to call div and just passed two arguments - which a static language should have caught as I was passing two arguments where only one is expected. I have left that bug in the previous exercise.</p>
 
 <p>So here goes the complete code:</p>
 
@@ -10600,7 +10601,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

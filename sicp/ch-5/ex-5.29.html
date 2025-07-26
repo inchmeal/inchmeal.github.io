@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9570,16 +9571,16 @@
 
 <p>If we look at the procedure, computing <span class="kdmath">$\, fib_n \,$</span> requires two things:</p>
 <ul>
-  <li>Execution of comparision inside <code class="highlighter-rouge">if</code>.</li>
+  <li>Execution of comparision inside <code class="language-plaintext highlighter-rouge">if</code>.</li>
   <li>computing <span class="kdmath">$\, fib_{n-1} \,$</span>  and <span class="kdmath">$\, fib_{n-2} \,$</span>.</li>
   <li>After computing them, we add them together.</li>
 </ul>
 
-<p>Since the first and third steps are independent of <code class="highlighter-rouge">n</code>, it follows that the number of pushes that occur in these steps is some constant number.</p>
+<p>Since the first and third steps are independent of <code class="language-plaintext highlighter-rouge">n</code>, it follows that the number of pushes that occur in these steps is some constant number.</p>
 
 <p>Thus the total pushes we need is this constant number and the pushes that happen because of computing <span class="kdmath">$\, fib_{n-1} \,$</span> and computing <span class="kdmath">$\, fib_{n-2} \,$</span>.</p>
 
-<p>Thus <span class="kdmath">$\, S_n = S_{n-1} + S_{n-2} + k \,$</span> where <span class="kdmath">$\, k \,$</span> is the constant number of pushes that happen irrespective of <code class="highlighter-rouge">n</code>.</p>
+<p>Thus <span class="kdmath">$\, S_n = S_{n-1} + S_{n-2} + k \,$</span> where <span class="kdmath">$\, k \,$</span> is the constant number of pushes that happen irrespective of <code class="language-plaintext highlighter-rouge">n</code>.</p>
 
 <p>We can easily compute the value of <span class="kdmath">$\, k \,$</span>  from the data we have above. It gives us <span class="kdmath">$\, k = 40 \,$</span>.</p>
 
@@ -9694,7 +9695,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

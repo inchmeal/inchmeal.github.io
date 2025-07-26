@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9428,14 +9429,14 @@
     <p>Since, non-deterministic evaluator itself tries out all the possibilities, we only need to handle one frame in every procedure.</p>
   </li>
   <li>
-    <p>Instead of marking frame as <code class="highlighter-rouge">'failed</code>, mark it as dead end using <code class="highlighter-rouge">(amb)</code> and which will cause evaluator to try other possible paths.</p>
+    <p>Instead of marking frame as <code class="language-plaintext highlighter-rouge">'failed</code>, mark it as dead end using <code class="language-plaintext highlighter-rouge">(amb)</code> and which will cause evaluator to try other possible paths.</p>
   </li>
   <li>
-    <p>Install all the host language <strong>immutable</strong> procedures used in the logic evaluator(like <code class="highlighter-rouge">'assoc</code>, <code class="highlighter-rouge">'string=?</code> etc) as primitive procedures in the non-deterministic evaluator.</p>
+    <p>Install all the host language <strong>immutable</strong> procedures used in the logic evaluator(like <code class="language-plaintext highlighter-rouge">'assoc</code>, <code class="language-plaintext highlighter-rouge">'string=?</code> etc) as primitive procedures in the non-deterministic evaluator.</p>
   </li>
   <li>Mutable procedures are more subtle and can not be directly used as primitive procedures. For eg:
     <ul>
-      <li>primitve <code class="highlighter-rouge">set!</code> won’t work
+      <li>primitve <code class="language-plaintext highlighter-rouge">set!</code> won’t work
         <ul>
           <li>we already implemented it as special form but it’s important to understand why we can’t use the primitive form.</li>
           <li>the variable we are changing is defined in our environment not in the host language.</li>
@@ -9443,24 +9444,24 @@
         </ul>
       </li>
       <li>
-        <p>primitve <code class="highlighter-rouge">set-car!</code> and <code class="highlighter-rouge">set-cdr</code> won’t work because we can not roll back to previous value.</p>
+        <p>primitve <code class="language-plaintext highlighter-rouge">set-car!</code> and <code class="language-plaintext highlighter-rouge">set-cdr</code> won’t work because we can not roll back to previous value.</p>
       </li>
-      <li>primitive <code class="highlighter-rouge">display</code> won’t work because it does not return any value. The way non-deterministic evaluator is written, we always need a value to pass into <code class="highlighter-rouge">success</code> procedure!</li>
+      <li>primitive <code class="language-plaintext highlighter-rouge">display</code> won’t work because it does not return any value. The way non-deterministic evaluator is written, we always need a value to pass into <code class="language-plaintext highlighter-rouge">success</code> procedure!</li>
     </ul>
   </li>
   <li>
-    <p>For <code class="highlighter-rouge">display</code>, we can implement a <code class="highlighter-rouge">display</code> in the code of non-deterministic evaluator which returns a value like <code class="highlighter-rouge">'ok</code>.</p>
+    <p>For <code class="language-plaintext highlighter-rouge">display</code>, we can implement a <code class="language-plaintext highlighter-rouge">display</code> in the code of non-deterministic evaluator which returns a value like <code class="language-plaintext highlighter-rouge">'ok</code>.</p>
   </li>
   <li>
-    <p>Note that while executing a program in the non-deterministic evaluator, the program won’t try any other paths unless an <code class="highlighter-rouge">amb</code> expression is encountered.</p>
+    <p>Note that while executing a program in the non-deterministic evaluator, the program won’t try any other paths unless an <code class="language-plaintext highlighter-rouge">amb</code> expression is encountered.</p>
   </li>
   <li>
-    <p>Thus all the procedures and initialization code for <code class="highlighter-rouge">microshaft</code> database will work as in a normal evaluator implemented in the first section.</p>
+    <p>Thus all the procedures and initialization code for <code class="language-plaintext highlighter-rouge">microshaft</code> database will work as in a normal evaluator implemented in the first section.</p>
   </li>
   <li>
-    <p>Since all the <em>mutations</em> happen in initialization code for <code class="highlighter-rouge">microshaft</code> database, we can even choose to implement <code class="highlighter-rouge">set-car!</code> as <code class="highlighter-rouge">permanent-set-car!</code>. But for consistency, it might be better to support rollback.</p>
+    <p>Since all the <em>mutations</em> happen in initialization code for <code class="language-plaintext highlighter-rouge">microshaft</code> database, we can even choose to implement <code class="language-plaintext highlighter-rouge">set-car!</code> as <code class="language-plaintext highlighter-rouge">permanent-set-car!</code>. But for consistency, it might be better to support rollback.</p>
   </li>
-  <li>This example explains why not to use <code class="highlighter-rouge">define</code> for <em>variable</em>(here aa or bb) definitions(procedure will work) and instead use <code class="highlighter-rouge">let</code>:</li>
+  <li>This example explains why not to use <code class="language-plaintext highlighter-rouge">define</code> for <em>variable</em>(here aa or bb) definitions(procedure will work) and instead use <code class="language-plaintext highlighter-rouge">let</code>:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9513,10 +9514,10 @@
 <span class="c1">;;; Amb-Eval input:</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>This problem won’t occur with using <code class="highlighter-rouge">let</code>.</p>
+<p>This problem won’t occur with using <code class="language-plaintext highlighter-rouge">let</code>.</p>
 
 <ul>
-  <li>To support <code class="highlighter-rouge">interleaving</code>, I considered using <code class="highlighter-rouge">ramb</code>(implemented in previous section ex-4.50) but it won’t work as once it chooses a path then it first generates all the values from that path and then it chooses the other path. For example:</li>
+  <li>To support <code class="language-plaintext highlighter-rouge">interleaving</code>, I considered using <code class="language-plaintext highlighter-rouge">ramb</code>(implemented in previous section ex-4.50) but it won’t work as once it chooses a path then it first generates all the values from that path and then it chooses the other path. For example:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9599,7 +9600,7 @@
 <span class="p">(</span><span class="nf">ramb</span> <span class="p">(</span><span class="nf">ff</span><span class="p">)</span> <span class="p">(</span><span class="nf">gg</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>We can solve this using <code class="highlighter-rouge">let</code> but it has its own problem. We get duplicates because it tries all combinations(remember distinct!):</p>
+<p>We can solve this using <code class="language-plaintext highlighter-rouge">let</code> but it has its own problem. We get duplicates because it tries all combinations(remember distinct!):</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9672,7 +9673,7 @@
 <p>Keeping track of duplicates, might solve this by providing a special form in the non-deterministic evaluator. I left it without interleaving. Probably, there can be other better solution without keeping track which I have not thought.</p>
 
 <ul>
-  <li>Implementing <code class="highlighter-rouge">not</code> turned out to be more involved. We need a way to know that if a query results in a <em>failure</em>. It sorts of look like using <code class="highlighter-rouge">if-fail</code>(ex-4.52) can do the job as follows:</li>
+  <li>Implementing <code class="language-plaintext highlighter-rouge">not</code> turned out to be more involved. We need a way to know that if a query results in a <em>failure</em>. It sorts of look like using <code class="language-plaintext highlighter-rouge">if-fail</code>(ex-4.52) can do the job as follows:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9693,9 +9694,9 @@
 	  <span class="p">(</span><span class="nf">amb</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>But it did not work! Why? Because when <code class="highlighter-rouge">qeval</code> failed, we correctly get <code class="highlighter-rouge">'failed</code> which causes the evaluation of <code class="highlighter-rouge">(amb)</code>. And evaluating <code class="highlighter-rouge">(amb)</code> caused to look for alternate path. This alternate path takes us to <code class="highlighter-rouge">if-fail</code> again which returns <code class="highlighter-rouge">'failed</code> as alternate path(failed path). And thus <code class="highlighter-rouge">if</code> returned the <code class="highlighter-rouge">frame</code> even when <code class="highlighter-rouge">qeval</code> failed!</p>
+<p>But it did not work! Why? Because when <code class="language-plaintext highlighter-rouge">qeval</code> failed, we correctly get <code class="language-plaintext highlighter-rouge">'failed</code> which causes the evaluation of <code class="language-plaintext highlighter-rouge">(amb)</code>. And evaluating <code class="language-plaintext highlighter-rouge">(amb)</code> caused to look for alternate path. This alternate path takes us to <code class="language-plaintext highlighter-rouge">if-fail</code> again which returns <code class="language-plaintext highlighter-rouge">'failed</code> as alternate path(failed path). And thus <code class="language-plaintext highlighter-rouge">if</code> returned the <code class="language-plaintext highlighter-rouge">frame</code> even when <code class="language-plaintext highlighter-rouge">qeval</code> failed!</p>
 
-<p>This made me realise that we don’t need a construct like <code class="highlighter-rouge">if-fail</code> but something like <code class="highlighter-rouge">(amb)</code> but that accepts an argument and fails if that argument succeeds. This lead to the implementation of <code class="highlighter-rouge">ensure-fail</code>. The code <code class="highlighter-rouge">(ensure-fail &lt;exp1&gt;) &lt;exp2&gt;</code> will evaluate <code class="highlighter-rouge">&lt;exp2&gt;</code> only if <code class="highlighter-rouge">&lt;exp1&gt;</code> failed. Here goes it’s implementation:</p>
+<p>This made me realise that we don’t need a construct like <code class="language-plaintext highlighter-rouge">if-fail</code> but something like <code class="language-plaintext highlighter-rouge">(amb)</code> but that accepts an argument and fails if that argument succeeds. This lead to the implementation of <code class="language-plaintext highlighter-rouge">ensure-fail</code>. The code <code class="language-plaintext highlighter-rouge">(ensure-fail &lt;exp1&gt;) &lt;exp2&gt;</code> will evaluate <code class="language-plaintext highlighter-rouge">&lt;exp2&gt;</code> only if <code class="language-plaintext highlighter-rouge">&lt;exp1&gt;</code> failed. Here goes it’s implementation:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9716,7 +9717,7 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li>Now, there is still one thing remaining <code class="highlighter-rouge">lisp-value</code>, which requires this procedure to be evaluated in the non-deterministic evaluator.</li>
+  <li>Now, there is still one thing remaining <code class="language-plaintext highlighter-rouge">lisp-value</code>, which requires this procedure to be evaluated in the non-deterministic evaluator.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9727,7 +9728,7 @@
          <span class="p">(</span><span class="nf">args</span> <span class="nv">exp</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>This can be solved simply providing <code class="highlighter-rouge">eval</code> and <code class="highlighter-rouge">appply</code> of our non-deterministic evaluator as primitive procedures. And <code class="highlighter-rouge">user-initial-environment</code> can be set similar to the way we set <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code> in the <code class="highlighter-rouge">setup-environment</code>:</p>
+<p>This can be solved simply providing <code class="language-plaintext highlighter-rouge">eval</code> and <code class="language-plaintext highlighter-rouge">appply</code> of our non-deterministic evaluator as primitive procedures. And <code class="language-plaintext highlighter-rouge">user-initial-environment</code> can be set similar to the way we set <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">false</code> in the <code class="language-plaintext highlighter-rouge">setup-environment</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9750,7 +9751,7 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
-  <li><em>Driver Loop</em>: Since the non-deterministic evaluator will run in driver loop, I implemented a procedure <code class="highlighter-rouge">lp</code>. It can be called as <code class="highlighter-rouge">(lp '(supervisor ?x (Bitdiddle Ben)))</code> for executing a query. Or for assertion use:</li>
+  <li><em>Driver Loop</em>: Since the non-deterministic evaluator will run in driver loop, I implemented a procedure <code class="language-plaintext highlighter-rouge">lp</code>. It can be called as <code class="language-plaintext highlighter-rouge">(lp '(supervisor ?x (Bitdiddle Ben)))</code> for executing a query. Or for assertion use:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9771,7 +9772,7 @@
 
 <p>Well thats it!</p>
 
-<p>So, as already mentioned the main point that differ with the streams, is <code class="highlighter-rouge">interleaving</code>. This gets worse with multiple infinite frames/results as it may keep answering only from one path and never evaluates the other paths! Thus the order of answers won’t be same as in the streams version.</p>
+<p>So, as already mentioned the main point that differ with the streams, is <code class="language-plaintext highlighter-rouge">interleaving</code>. This gets worse with multiple infinite frames/results as it may keep answering only from one path and never evaluates the other paths! Thus the order of answers won’t be same as in the streams version.</p>
 
 <h3 id="execution-and-some-examples">Execution and some examples:</h3>
 
@@ -9793,7 +9794,7 @@
     <p>Evaluate the modified logic evaluator in non-deterministic evaluator. In emacs this can be done by a simple command to send the contents of a buffer to repl(where our driver loop is running).</p>
   </li>
   <li>
-    <p>If initilization for database is not inside the evaluator, then do it now by invoking <code class="highlighter-rouge">(initialize-data-base microshaft-data-base)</code>.</p>
+    <p>If initilization for database is not inside the evaluator, then do it now by invoking <code class="language-plaintext highlighter-rouge">(initialize-data-base microshaft-data-base)</code>.</p>
   </li>
   <li>
     <p>That’s it. Few examples of it working:</p>
@@ -11996,7 +11997,7 @@
 <span class="ss">'AMB-EVALUATOR-LOADED</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>In the above evaluator, file “ch4-mceval.scm” is used which can be downloaded from <a href="https://mitpress.mit.edu/sites/default/files/sicp/code/ch4-mceval.scm">mit</a>. Note that, there is one change to be done in this file in <code class="highlighter-rouge">setup-environment</code> mentioned in the above details.</p>
+<p>In the above evaluator, file “ch4-mceval.scm” is used which can be downloaded from <a href="https://mitpress.mit.edu/sites/default/files/sicp/code/ch4-mceval.scm">mit</a>. Note that, there is one change to be done in this file in <code class="language-plaintext highlighter-rouge">setup-environment</code> mentioned in the above details.</p>
 
 
                         <hr/>
@@ -12071,7 +12072,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

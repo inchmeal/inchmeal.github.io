@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9423,21 +9424,21 @@
 
 <p><strong>Note:</strong> We should not re-load the same code again while using <strong>repl</strong>. Else our evaluator code can get in conflict with the implementation language, in particular the apply procedure!</p>
 
-<p>If one wants to reload, then repl should be reset/restarted. In MIT scheme, this can be done using <code class="highlighter-rouge">(ge (make-top-level-environment))</code>. I put this line at the top of the evaluator code thus need not to remember resetting, every time when I reload.</p>
+<p>If one wants to reload, then repl should be reset/restarted. In MIT scheme, this can be done using <code class="language-plaintext highlighter-rouge">(ge (make-top-level-environment))</code>. I put this line at the top of the evaluator code thus need not to remember resetting, every time when I reload.</p>
 
-<p>I have added a small check for exiting from the evaluator by typing <code class="highlighter-rouge">exit</code> on the evaluator prompt.</p>
+<p>I have added a small check for exiting from the evaluator by typing <code class="language-plaintext highlighter-rouge">exit</code> on the evaluator prompt.</p>
 
 <hr />
 
 <h4 id="solution">Solution</h4>
 
-<p><strong>Note</strong> the use of <code class="highlighter-rouge">apply-in-underlying-scheme</code> while invoking <code class="highlighter-rouge">exp-handler</code> inside <code class="highlighter-rouge">eval</code>. We should not use <code class="highlighter-rouge">apply</code> here because we have changed the definition of apply.</p>
+<p><strong>Note</strong> the use of <code class="language-plaintext highlighter-rouge">apply-in-underlying-scheme</code> while invoking <code class="language-plaintext highlighter-rouge">exp-handler</code> inside <code class="language-plaintext highlighter-rouge">eval</code>. We should not use <code class="language-plaintext highlighter-rouge">apply</code> here because we have changed the definition of apply.</p>
 
-<p>But why we used <code class="highlighter-rouge">apply</code> in the <code class="highlighter-rouge">application?</code> part in <code class="highlighter-rouge">eval</code>? Because at that point we are here invoking the procedure defined in our defined language!</p>
+<p>But why we used <code class="language-plaintext highlighter-rouge">apply</code> in the <code class="language-plaintext highlighter-rouge">application?</code> part in <code class="language-plaintext highlighter-rouge">eval</code>? Because at that point we are here invoking the procedure defined in our defined language!</p>
 
 <p>Finally consider the use of <em>data-driven</em> style which was the main point of the exercise. The advantage here we can see is when we add a new expression-type we need not to go to the main code i.e. a separate developer using our evaluator can add a new expression type easily without touching our evaluator.</p>
 
-<p>Also, it would have been better if <code class="highlighter-rouge">application?</code> part can also become part of this <em>data-driven</em> style using the strategey used in previous exercise.</p>
+<p>Also, it would have been better if <code class="language-plaintext highlighter-rouge">application?</code> part can also become part of this <em>data-driven</em> style using the strategey used in previous exercise.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -10434,7 +10435,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

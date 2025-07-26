@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -11067,7 +11068,7 @@
 <span class="p">(</span><span class="nf">install-polynomial-package</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note: Here, I felt need to add int package also - which I have not yet added before this solution - drop was dropping everything to rationals which was my lowest droppable type and the output was not looking pretty. So, added int -&gt; rational also into the existing hierarchy. I first tried to use <code class="highlighter-rouge">integer?</code> for tags like it was done for number/real package but it was causing issues because <code class="highlighter-rouge">number?</code> is true for both integer as well as real(atleast in the sicp package of DrRacket) - Even putting the check for integer first is not solving the problem as <code class="highlighter-rouge">raise-to-type</code> was going into infinite recursion when it tries to raise type of int to real. So, the only option left was to use tag - ‘int for integers. I also tried to use tag for ‘scheme-number(real) instead of just <code class="highlighter-rouge">number?</code> but it was making it difficult to write test functions - as i have to enter everythin using make-number or make-int - too much to type!</p>
+<p>Note: Here, I felt need to add int package also - which I have not yet added before this solution - drop was dropping everything to rationals which was my lowest droppable type and the output was not looking pretty. So, added int -&gt; rational also into the existing hierarchy. I first tried to use <code class="language-plaintext highlighter-rouge">integer?</code> for tags like it was done for number/real package but it was causing issues because <code class="language-plaintext highlighter-rouge">number?</code> is true for both integer as well as real(atleast in the sicp package of DrRacket) - Even putting the check for integer first is not solving the problem as <code class="language-plaintext highlighter-rouge">raise-to-type</code> was going into infinite recursion when it tries to raise type of int to real. So, the only option left was to use tag - ‘int for integers. I also tried to use tag for ‘scheme-number(real) instead of just <code class="language-plaintext highlighter-rouge">number?</code> but it was making it difficult to write test functions - as i have to enter everythin using make-number or make-int - too much to type!</p>
 
                         <hr/>
                     </span>
@@ -11141,7 +11142,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

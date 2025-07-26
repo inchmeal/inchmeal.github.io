@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,13 +9418,13 @@
                         <hr/>
                         <p>Interesting!</p>
 
-<p>The whole exercise is more about integration than coding. Setting up <code class="highlighter-rouge">apply</code> took most of the time.</p>
+<p>The whole exercise is more about integration than coding. Setting up <code class="language-plaintext highlighter-rouge">apply</code> took most of the time.</p>
 
 <p>Here’s how i setup the code:</p>
 
 <h4 id="changes-in-chapter-4-evaluator">Changes in chapter-4 evaluator</h4>
 
-<p>File names <code class="highlighter-rouge">ch4-mceval.scm</code> contained code for chapet-4 evaluator. I took this file from mit website thus it contains no changes/customisations done as part of exercises of ch-4.</p>
+<p>File names <code class="language-plaintext highlighter-rouge">ch4-mceval.scm</code> contained code for chapet-4 evaluator. I took this file from mit website thus it contains no changes/customisations done as part of exercises of ch-4.</p>
 
 <p>I put the whole code in an expression like this:</p>
 
@@ -9467,7 +9468,7 @@
 
 <ul>
   <li>intitialize the global environment.</li>
-  <li>added few primitive procedures like <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">*</code> so that i can test <code class="highlighter-rouge">factorial</code> program :).</li>
+  <li>added few primitive procedures like <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code> so that i can test <code class="language-plaintext highlighter-rouge">factorial</code> program :).</li>
 </ul>
 
 <p>Here are those changes:</p>
@@ -9570,17 +9571,17 @@
 
 <p>This is where the it took me time figuring out.</p>
 
-<p>Let’s first talk about <code class="highlighter-rouge">map</code>. In the chapter-4 mceval evaluator we use <code class="highlighter-rouge">map</code>. Since this evaluator compiles on our own compiler, we need to provide <code class="highlighter-rouge">map</code> from implicitly as part of the language or just build a <code class="highlighter-rouge">map</code> in the evaluator code itself.</p>
+<p>Let’s first talk about <code class="language-plaintext highlighter-rouge">map</code>. In the chapter-4 mceval evaluator we use <code class="language-plaintext highlighter-rouge">map</code>. Since this evaluator compiles on our own compiler, we need to provide <code class="language-plaintext highlighter-rouge">map</code> from implicitly as part of the language or just build a <code class="language-plaintext highlighter-rouge">map</code> in the evaluator code itself.</p>
 
-<p>How to give <code class="highlighter-rouge">map</code> as part of the language?</p>
+<p>How to give <code class="language-plaintext highlighter-rouge">map</code> as part of the language?</p>
 
-<p>Can we give underlying scheme <code class="highlighter-rouge">map</code> as primitive procedure like we did above for <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">cons</code> etc?</p>
+<p>Can we give underlying scheme <code class="language-plaintext highlighter-rouge">map</code> as primitive procedure like we did above for <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">cons</code> etc?</p>
 
-<p>No. Because <code class="highlighter-rouge">map</code> accepts <em>lambda</em> and in this context this lambda is not the underlying scheme lambda but our own compiled version of lambda! The underlying scheme is not aware of our compiled represention of lambda.</p>
+<p>No. Because <code class="language-plaintext highlighter-rouge">map</code> accepts <em>lambda</em> and in this context this lambda is not the underlying scheme lambda but our own compiled version of lambda! The underlying scheme is not aware of our compiled represention of lambda.</p>
 
-<p>The solution is we simply write <code class="highlighter-rouge">map</code> as part of a libs and while compiling evaluator, we first <em>compile</em> all the library these procedures like <code class="highlighter-rouge">map</code> we want to give.</p>
+<p>The solution is we simply write <code class="language-plaintext highlighter-rouge">map</code> as part of a libs and while compiling evaluator, we first <em>compile</em> all the library these procedures like <code class="language-plaintext highlighter-rouge">map</code> we want to give.</p>
 
-<p>Similarly we need to do with <code class="highlighter-rouge">apply</code>. But there are few more nuances for <code class="highlighter-rouge">apply</code>. Let’s first see the code how to setup this:</p>
+<p>Similarly we need to do with <code class="language-plaintext highlighter-rouge">apply</code>. But there are few more nuances for <code class="language-plaintext highlighter-rouge">apply</code>. Let’s first see the code how to setup this:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9614,21 +9615,21 @@
   <span class="o">`</span><span class="p">(</span><span class="k">begin</span> <span class="o">,</span><span class="nv">libs</span> <span class="o">,</span><span class="nv">mceval-expression</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note, that <code class="highlighter-rouge">mceval-expression</code> contains the code of our evaluator.</p>
+<p>Note, that <code class="language-plaintext highlighter-rouge">mceval-expression</code> contains the code of our evaluator.</p>
 
-<p>Thus, now <code class="highlighter-rouge">libs-and-mceval</code> contains all the code that needs to be compiled.</p>
+<p>Thus, now <code class="language-plaintext highlighter-rouge">libs-and-mceval</code> contains all the code that needs to be compiled.</p>
 
-<p>Okay, Before we put everything together, let’s first understand <code class="highlighter-rouge">apply</code>:</p>
+<p>Okay, Before we put everything together, let’s first understand <code class="language-plaintext highlighter-rouge">apply</code>:</p>
 
-<p>Recall that we need to give <code class="highlighter-rouge">apply</code> from the <em>compiler</em> to the <em>evaluator</em>.</p>
+<p>Recall that we need to give <code class="language-plaintext highlighter-rouge">apply</code> from the <em>compiler</em> to the <em>evaluator</em>.</p>
 
-<p>Note that evaluator uses <code class="highlighter-rouge">apply</code> only for primtive procedures thus we can get away by writing <code class="highlighter-rouge">apply</code> which internally calls schemes underlying <code class="highlighter-rouge">apply</code>.</p>
+<p>Note that evaluator uses <code class="language-plaintext highlighter-rouge">apply</code> only for primtive procedures thus we can get away by writing <code class="language-plaintext highlighter-rouge">apply</code> which internally calls schemes underlying <code class="language-plaintext highlighter-rouge">apply</code>.</p>
 
-<p>But, it won’t be a complete implementation of <code class="highlighter-rouge">apply</code> because it won’t work for compiled procedures!</p>
+<p>But, it won’t be a complete implementation of <code class="language-plaintext highlighter-rouge">apply</code> because it won’t work for compiled procedures!</p>
 
-<p>Another approach is we give a special form <code class="highlighter-rouge">apply</code> which can understand compiled procedures!</p>
+<p>Another approach is we give a special form <code class="language-plaintext highlighter-rouge">apply</code> which can understand compiled procedures!</p>
 
-<p>But the special form <code class="highlighter-rouge">apply</code> won’t be a procedure like <code class="highlighter-rouge">map</code>. See how the evaluator use <code class="highlighter-rouge">apply</code>:</p>
+<p>But the special form <code class="language-plaintext highlighter-rouge">apply</code> won’t be a procedure like <code class="language-plaintext highlighter-rouge">map</code>. See how the evaluator use <code class="language-plaintext highlighter-rouge">apply</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9642,11 +9643,11 @@
    <span class="p">(</span><span class="nf">primitive-implementation</span> <span class="nv">proc</span><span class="p">)</span> <span class="nv">args</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>The first line won’t work if <code class="highlighter-rouge">apply</code> is a special form!</p>
+<p>The first line won’t work if <code class="language-plaintext highlighter-rouge">apply</code> is a special form!</p>
 
-<p>So, we build a special form <code class="highlighter-rouge">specialform-apply</code> and also build a procedure <code class="highlighter-rouge">apply</code> and our procedure <code class="highlighter-rouge">apply</code> internally uses <code class="highlighter-rouge">specialform-apply</code>. As show in the above code of <code class="highlighter-rouge">libs</code>.</p>
+<p>So, we build a special form <code class="language-plaintext highlighter-rouge">specialform-apply</code> and also build a procedure <code class="language-plaintext highlighter-rouge">apply</code> and our procedure <code class="language-plaintext highlighter-rouge">apply</code> internally uses <code class="language-plaintext highlighter-rouge">specialform-apply</code>. As show in the above code of <code class="language-plaintext highlighter-rouge">libs</code>.</p>
 
-<p>Here’s the code of <code class="highlighter-rouge">specialform-apply</code> in the compiler(file ch5-compiler.scm):</p>
+<p>Here’s the code of <code class="language-plaintext highlighter-rouge">specialform-apply</code> in the compiler(file ch5-compiler.scm):</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9976,9 +9977,9 @@
 <span class="c1">;; (restart 1)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that the except for register simulator, file <code class="highlighter-rouge">ch5-regsim.scm</code> and chapter 4 evaluator <code class="highlighter-rouge">ch4-mceval.scm</code>(except the changes mentioned above) are the original files from the mit website without any changes.</p>
+<p>Note that the except for register simulator, file <code class="language-plaintext highlighter-rouge">ch5-regsim.scm</code> and chapter 4 evaluator <code class="language-plaintext highlighter-rouge">ch4-mceval.scm</code>(except the changes mentioned above) are the original files from the mit website without any changes.</p>
 
-<p>The file <code class="highlighter-rouge">ch5-compiler</code>, <code class="highlighter-rouge">ch5-syntax.scm</code> and <code class="highlighter-rouge">ch5-eceval-support</code> contains changes as were done in earlier exercises including the changes mentioned in this exercise.</p>
+<p>The file <code class="language-plaintext highlighter-rouge">ch5-compiler</code>, <code class="language-plaintext highlighter-rouge">ch5-syntax.scm</code> and <code class="language-plaintext highlighter-rouge">ch5-eceval-support</code> contains changes as were done in earlier exercises including the changes mentioned in this exercise.</p>
 
 <p>(i shall put the complete code of these files at the bottom of this page)</p>
 
@@ -9988,7 +9989,7 @@
 
 <h4 id="testingexamples">Testing/Examples</h4>
 
-<p>Note the call to <code class="highlighter-rouge">(driver-loop)</code> to start the evaluator inside the compiler’s read-compile-execute-print loop.</p>
+<p>Note the call to <code class="language-plaintext highlighter-rouge">(driver-loop)</code> to start the evaluator inside the compiler’s read-compile-execute-print loop.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -12328,7 +12329,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

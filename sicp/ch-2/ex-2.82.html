@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,13 +9418,13 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Well, this is an interesting procedure and took me some type to get it working. Mainly I got stuck with calling <code class="highlighter-rouge">apply-generic</code> which I was assuming will work like Java(sorry :)), i.e. it can take list also for the variable number of arguments. It turns out that it was not accepting list for variable number of parameters/arguments(turning the list into list of list - causing it difficult to debug). The solution is to use <code class="highlighter-rouge">apply</code>.</p>
+                        <p>Well, this is an interesting procedure and took me some type to get it working. Mainly I got stuck with calling <code class="language-plaintext highlighter-rouge">apply-generic</code> which I was assuming will work like Java(sorry :)), i.e. it can take list also for the variable number of arguments. It turns out that it was not accepting list for variable number of parameters/arguments(turning the list into list of list - causing it difficult to debug). The solution is to use <code class="language-plaintext highlighter-rouge">apply</code>.</p>
 
-<p>I also created an auxillary procedure <code class="highlighter-rouge">map-until</code> which works like <code class="highlighter-rouge">map</code> but returns when it first encounters a given <em>until-val</em>(after applying the <em>proc</em>).</p>
+<p>I also created an auxillary procedure <code class="language-plaintext highlighter-rouge">map-until</code> which works like <code class="language-plaintext highlighter-rouge">map</code> but returns when it first encounters a given <em>until-val</em>(after applying the <em>proc</em>).</p>
 
-<p>Another thing to note is - I have added check so that procedure <code class="highlighter-rouge">apply-generic</code> wont go into infinite recursion - which can happen if all the arguments are of same type and there is no operation <em>op</em> is available in the op-table.</p>
+<p>Another thing to note is - I have added check so that procedure <code class="language-plaintext highlighter-rouge">apply-generic</code> wont go into infinite recursion - which can happen if all the arguments are of same type and there is no operation <em>op</em> is available in the op-table.</p>
 
-<p>The last part of the problem - Consider the case that we have an operation defined say <code class="highlighter-rouge">pow</code> for rational numbers, now if we pass two numbers - then ideally we would expect that both numbers are coerce into rational numbers and then <code class="highlighter-rouge">pow</code> is applied but our implementation does not support this.</p>
+<p>The last part of the problem - Consider the case that we have an operation defined say <code class="language-plaintext highlighter-rouge">pow</code> for rational numbers, now if we pass two numbers - then ideally we would expect that both numbers are coerce into rational numbers and then <code class="language-plaintext highlighter-rouge">pow</code> is applied but our implementation does not support this.</p>
 
 <figure class="highlight"><pre><code class="language-racket" data-lang="racket"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -10190,7 +10191,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

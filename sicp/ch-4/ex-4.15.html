@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9433,25 +9434,25 @@
 
 <p>(Knowing how to structure a proof, that I learned from book <em>How to prove it</em> helps)</p>
 
-<p>Let’s assume that such a program <code class="highlighter-rouge">halts?</code> is possible. Thus it means that this procedure <code class="highlighter-rouge">halts?</code> can also tell whether <code class="highlighter-rouge">(try try)</code> halts or not!</p>
+<p>Let’s assume that such a program <code class="language-plaintext highlighter-rouge">halts?</code> is possible. Thus it means that this procedure <code class="language-plaintext highlighter-rouge">halts?</code> can also tell whether <code class="language-plaintext highlighter-rouge">(try try)</code> halts or not!</p>
 
-<p>Now, we evaluate <code class="highlighter-rouge">(try try)</code>.</p>
+<p>Now, we evaluate <code class="language-plaintext highlighter-rouge">(try try)</code>.</p>
 
-<p>Assume that <code class="highlighter-rouge">(halts? try try)</code> returns true.</p>
+<p>Assume that <code class="language-plaintext highlighter-rouge">(halts? try try)</code> returns true.</p>
 
-<p>Thus <code class="highlighter-rouge">(run-forever)</code> executes and program goes into infinite loop. Thus <code class="highlighter-rouge">(try try)</code> does not terminate. But <code class="highlighter-rouge">halts?</code> says <code class="highlighter-rouge">(try try)</code> terminates by returning true! It follows that our assumption that <code class="highlighter-rouge">(halts? try try)</code> returned true is wrong.</p>
+<p>Thus <code class="language-plaintext highlighter-rouge">(run-forever)</code> executes and program goes into infinite loop. Thus <code class="language-plaintext highlighter-rouge">(try try)</code> does not terminate. But <code class="language-plaintext highlighter-rouge">halts?</code> says <code class="language-plaintext highlighter-rouge">(try try)</code> terminates by returning true! It follows that our assumption that <code class="language-plaintext highlighter-rouge">(halts? try try)</code> returned true is wrong.</p>
 
-<p>So, let’s assume that <code class="highlighter-rouge">(halts? try try)</code> returns false.</p>
+<p>So, let’s assume that <code class="language-plaintext highlighter-rouge">(halts? try try)</code> returns false.</p>
 
-<p>Thus <code class="highlighter-rouge">'halted</code> is printed and thus <code class="highlighter-rouge">(try try)</code> terminates. But <code class="highlighter-rouge">halts?</code> says <code class="highlighter-rouge">(try try)</code> does not terminate! Or our assumption is wrong again!</p>
+<p>Thus <code class="language-plaintext highlighter-rouge">'halted</code> is printed and thus <code class="language-plaintext highlighter-rouge">(try try)</code> terminates. But <code class="language-plaintext highlighter-rouge">halts?</code> says <code class="language-plaintext highlighter-rouge">(try try)</code> does not terminate! Or our assumption is wrong again!</p>
 
-<p>That means <code class="highlighter-rouge">halts?</code> can neither return true and nor it can return false for procedure <code class="highlighter-rouge">try</code>!</p>
+<p>That means <code class="language-plaintext highlighter-rouge">halts?</code> can neither return true and nor it can return false for procedure <code class="language-plaintext highlighter-rouge">try</code>!</p>
 
-<p>It follows that such program <code class="highlighter-rouge">halts?</code> that can tell weather <strong>any</strong> program halts or not is impossible.</p>
+<p>It follows that such program <code class="language-plaintext highlighter-rouge">halts?</code> that can tell weather <strong>any</strong> program halts or not is impossible.</p>
 
 <p>One important thing to focus here:</p>
 
-<p>This only proves that such procedure <code class="highlighter-rouge">halts?</code> is not possible for <strong>every program</strong>. There can be <code class="highlighter-rouge">halts?</code> procedure that can work for specific programs!</p>
+<p>This only proves that such procedure <code class="language-plaintext highlighter-rouge">halts?</code> is not possible for <strong>every program</strong>. There can be <code class="language-plaintext highlighter-rouge">halts?</code> procedure that can work for specific programs!</p>
 
 <hr />
 
@@ -10624,7 +10625,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

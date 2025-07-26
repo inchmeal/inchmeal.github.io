@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,11 +9416,11 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>We can build a special form for <code class="highlighter-rouge">compile-and-run</code> in the evaluator and then in its instructions simply compile the expression and store the results in <code class="highlighter-rouge">val</code> and then jump over to <code class="highlighter-rouge">external-entry</code>.</p>
+                        <p>We can build a special form for <code class="language-plaintext highlighter-rouge">compile-and-run</code> in the evaluator and then in its instructions simply compile the expression and store the results in <code class="language-plaintext highlighter-rouge">val</code> and then jump over to <code class="language-plaintext highlighter-rouge">external-entry</code>.</p>
 
-<p>Note that <code class="highlighter-rouge">external-entry</code> already take cares for <code class="highlighter-rouge">continue</code> and setting up the <code class="highlighter-rouge">env</code>.</p>
+<p>Note that <code class="language-plaintext highlighter-rouge">external-entry</code> already take cares for <code class="language-plaintext highlighter-rouge">continue</code> and setting up the <code class="language-plaintext highlighter-rouge">env</code>.</p>
 
-<p>Changes in file ch5-syntax.scm to support special form <code class="highlighter-rouge">compile-and-run</code>:</p>
+<p>Changes in file ch5-syntax.scm to support special form <code class="language-plaintext highlighter-rouge">compile-and-run</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9443,7 +9444,7 @@
             <span class="nv">eceval</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Now add special form in evaluator <code class="highlighter-rouge">ch5-eceval-compiler.scm</code>:</p>
+<p>Now add special form in evaluator <code class="language-plaintext highlighter-rouge">ch5-eceval-compiler.scm</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9523,7 +9524,7 @@
 
 <p>I had some difficulty in setting up the things in correct order so that no compilation error should come in a fresh start.</p>
 
-<p>On a fresh start, I first load the compiler, <code class="highlighter-rouge">ch5-compiler.scm</code> and then load the file <code class="highlighter-rouge">load-eceval-compiler.scm</code>.</p>
+<p>On a fresh start, I first load the compiler, <code class="language-plaintext highlighter-rouge">ch5-compiler.scm</code> and then load the file <code class="language-plaintext highlighter-rouge">load-eceval-compiler.scm</code>.</p>
 
 <p>Here’s the output:</p>
 
@@ -9645,9 +9646,9 @@
 
 <hr />
 
-<p>I first tried this by installing <code class="highlighter-rouge">compile-and-run</code> as a primitive procedure. First problem is that there is a call <code class="highlighter-rouge">(start eceval)</code> that starts the evaluator. It can work fine but this means that <code class="highlighter-rouge">compile-and-run</code> call never returns! Because <code class="highlighter-rouge">(start eceval)</code> will go into a read-eval-print loop.</p>
+<p>I first tried this by installing <code class="language-plaintext highlighter-rouge">compile-and-run</code> as a primitive procedure. First problem is that there is a call <code class="language-plaintext highlighter-rouge">(start eceval)</code> that starts the evaluator. It can work fine but this means that <code class="language-plaintext highlighter-rouge">compile-and-run</code> call never returns! Because <code class="language-plaintext highlighter-rouge">(start eceval)</code> will go into a read-eval-print loop.</p>
 
-<p>A simple solution could be to set <code class="highlighter-rouge">flag</code> and branch in primitive procedure to <code class="highlighter-rouge">extrenal-entry</code> when flag is set. This did not work and even did not seem to be a good design as it will introduce a branching instruction for every primitive application.</p>
+<p>A simple solution could be to set <code class="language-plaintext highlighter-rouge">flag</code> and branch in primitive procedure to <code class="language-plaintext highlighter-rouge">extrenal-entry</code> when flag is set. This did not work and even did not seem to be a good design as it will introduce a branching instruction for every primitive application.</p>
 
                         <hr/>
                     </span>
@@ -9721,7 +9722,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

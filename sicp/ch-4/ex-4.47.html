@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9431,9 +9432,9 @@
              <span class="p">(</span><span class="nf">parse-prepositional-phrase</span><span class="p">))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>First invocation will read a verb from the input because of <code class="highlighter-rouge">(parse-word verbs)</code>. Now if the first expression of <code class="highlighter-rouge">amb</code> <em>failed</em>(one eg when the input read is not verb) or we called <code class="highlighter-rouge">try-again</code>, then other expression in <code class="highlighter-rouge">amb</code> is evaluated. This will make a recursive call to <code class="highlighter-rouge">parse-verb-phrase</code>. Now, this recursive call again reads a <code class="highlighter-rouge">verb</code> and returns to evaluation of expression <code class="highlighter-rouge">(list 'verb-phrase (parse-ver-phrase) (parse-prepositional-phrase))</code>. And we try to read preposition phrase.</p>
+<p>First invocation will read a verb from the input because of <code class="language-plaintext highlighter-rouge">(parse-word verbs)</code>. Now if the first expression of <code class="language-plaintext highlighter-rouge">amb</code> <em>failed</em>(one eg when the input read is not verb) or we called <code class="language-plaintext highlighter-rouge">try-again</code>, then other expression in <code class="language-plaintext highlighter-rouge">amb</code> is evaluated. This will make a recursive call to <code class="language-plaintext highlighter-rouge">parse-verb-phrase</code>. Now, this recursive call again reads a <code class="language-plaintext highlighter-rouge">verb</code> and returns to evaluation of expression <code class="language-plaintext highlighter-rouge">(list 'verb-phrase (parse-ver-phrase) (parse-prepositional-phrase))</code>. And we try to read preposition phrase.</p>
 
-<p>What if reading the preposition failed? This will cause to go to the next expression of <code class="highlighter-rouge">amb</code> from the recursive call. And that will again read the verb and try to read preposition and failing again and then again calling <code class="highlighter-rouge">(parse-verb-phrase)</code>.</p>
+<p>What if reading the preposition failed? This will cause to go to the next expression of <code class="language-plaintext highlighter-rouge">amb</code> from the recursive call. And that will again read the verb and try to read preposition and failing again and then again calling <code class="language-plaintext highlighter-rouge">(parse-verb-phrase)</code>.</p>
 
 <p>The point is this infinite loop is a bit subtle. When read is sucessfull i.e. correctly reading a verb-phrase, then it will work but on failure it just keep trying recursively.</p>
 
@@ -9513,7 +9514,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

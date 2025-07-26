@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9547,13 +9548,13 @@
 
 <h4 id="b">(b)</h4>
 
-<p>If we simply substitute <code class="highlighter-rouge">let</code> with <code class="highlighter-rouge">letrec</code> it won’t work.</p>
+<p>If we simply substitute <code class="language-plaintext highlighter-rouge">let</code> with <code class="language-plaintext highlighter-rouge">letrec</code> it won’t work.</p>
 
-<p>The main thing to see is that variables <code class="highlighter-rouge">even?</code> and <code class="highlighter-rouge">odd?</code> are bound to the frame created by <code class="highlighter-rouge">let</code> expression. Also recall that <code class="highlighter-rouge">let</code> is nothing but a lambda definition and invocation. The invocation of lambda evaluates the arguments of <code class="highlighter-rouge">let</code> in the environment where <code class="highlighter-rouge">let</code> is defined. Thus <code class="highlighter-rouge">even?</code> and <code class="highlighter-rouge">odd?</code> are not yet binded!</p>
+<p>The main thing to see is that variables <code class="language-plaintext highlighter-rouge">even?</code> and <code class="language-plaintext highlighter-rouge">odd?</code> are bound to the frame created by <code class="language-plaintext highlighter-rouge">let</code> expression. Also recall that <code class="language-plaintext highlighter-rouge">let</code> is nothing but a lambda definition and invocation. The invocation of lambda evaluates the arguments of <code class="language-plaintext highlighter-rouge">let</code> in the environment where <code class="language-plaintext highlighter-rouge">let</code> is defined. Thus <code class="language-plaintext highlighter-rouge">even?</code> and <code class="language-plaintext highlighter-rouge">odd?</code> are not yet binded!</p>
 
-<p>Now, when we invoke <code class="highlighter-rouge">even?</code>, we start evaluating the <code class="highlighter-rouge">(lambda (n) (if (= n 0) true (odd? (- n 1))))</code>. This <code class="highlighter-rouge">lambda</code> do not get evaluated inside the generated <code class="highlighter-rouge">lambda</code>(generated for let) environment but in the environment where ‘let’ is defined. But in that environment <code class="highlighter-rouge">even?</code> and <code class="highlighter-rouge">odd?</code> are not available!</p>
+<p>Now, when we invoke <code class="language-plaintext highlighter-rouge">even?</code>, we start evaluating the <code class="language-plaintext highlighter-rouge">(lambda (n) (if (= n 0) true (odd? (- n 1))))</code>. This <code class="language-plaintext highlighter-rouge">lambda</code> do not get evaluated inside the generated <code class="language-plaintext highlighter-rouge">lambda</code>(generated for let) environment but in the environment where ‘let’ is defined. But in that environment <code class="language-plaintext highlighter-rouge">even?</code> and <code class="language-plaintext highlighter-rouge">odd?</code> are not available!</p>
 
-<p>Thus <code class="highlighter-rouge">odd?</code> won’t be found and it will report error. Eg:</p>
+<p>Thus <code class="language-plaintext highlighter-rouge">odd?</code> won’t be found and it will report error. Eg:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9670,7 +9671,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

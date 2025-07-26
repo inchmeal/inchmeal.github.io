@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,7 +9418,7 @@
                         <hr/>
                         <h4 id="simple-query-example">simple-query example</h4>
 
-<p>In simple query, <code class="highlighter-rouge">delay</code> ensures that we first find/match assertions and then <em>on demand</em> we evaluate rules. This behaviour will be same even if the underlying scheme is evaluates arguments right to left!</p>
+<p>In simple query, <code class="language-plaintext highlighter-rouge">delay</code> ensures that we first find/match assertions and then <em>on demand</em> we evaluate rules. This behaviour will be same even if the underlying scheme is evaluates arguments right to left!</p>
 
 <p>In some cases, using delay, postpones the infinite loop and even produce some result(if there are any assertions matched) while going into infinite loop.</p>
 
@@ -9429,7 +9430,7 @@
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">tmp1</span> <span class="nv">?x</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Evaluating the query <code class="highlighter-rouge">(tmp1 a)</code></p>
+<p>Evaluating the query <code class="language-plaintext highlighter-rouge">(tmp1 a)</code></p>
 
 <ul>
   <li>With delay(original):</li>
@@ -9467,7 +9468,7 @@
 
 <h4 id="disjunction-example">disjunction example</h4>
 
-<p>Our <code class="highlighter-rouge">and</code> works procedurally in left to right order so should be the case with <code class="highlighter-rouge">or</code>. Thus if any clause in <code class="highlighter-rouge">or</code> can return some answer from a clause then instead of first evaluating all the clauses it would be better to first generate the first answer found!</p>
+<p>Our <code class="language-plaintext highlighter-rouge">and</code> works procedurally in left to right order so should be the case with <code class="language-plaintext highlighter-rouge">or</code>. Thus if any clause in <code class="language-plaintext highlighter-rouge">or</code> can return some answer from a clause then instead of first evaluating all the clauses it would be better to first generate the first answer found!</p>
 
 <p>Again like above this ensures left to right order as well as generates answers if found in earlier clauses even if later clauses result in infinite loop.</p>
 
@@ -9481,7 +9482,7 @@
 							 <span class="p">(</span><span class="nf">tmp2</span> <span class="nv">?x</span><span class="p">))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Evaluating the query <code class="highlighter-rouge">(tmp2 a)</code></p>
+<p>Evaluating the query <code class="language-plaintext highlighter-rouge">(tmp2 a)</code></p>
 
 <ul>
   <li>With delay(origninal):</li>
@@ -9588,7 +9589,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

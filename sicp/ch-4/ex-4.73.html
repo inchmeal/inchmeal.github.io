@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,9 +9416,9 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>For infinite streams, <code class="highlighter-rouge">flatten-stream</code> goes into infinite recursion without printing anything!</p>
+                        <p>For infinite streams, <code class="language-plaintext highlighter-rouge">flatten-stream</code> goes into infinite recursion without printing anything!</p>
 
-<p>There’s a subtle difference between this infinite streams and in ex-4.71. When we combine the stream of streams using <code class="highlighter-rouge">flatten-stream</code>, then it might be the case we have infinite stream of finite(or infinite) streams. For such infinite stream of streams, we should be delaying else recursion with scheme’s applicative order evaluation will cause it to keep computing the infinite stream of streams!</p>
+<p>There’s a subtle difference between this infinite streams and in ex-4.71. When we combine the stream of streams using <code class="language-plaintext highlighter-rouge">flatten-stream</code>, then it might be the case we have infinite stream of finite(or infinite) streams. For such infinite stream of streams, we should be delaying else recursion with scheme’s applicative order evaluation will cause it to keep computing the infinite stream of streams!</p>
 
 <p>It took me some time to come up with an example to demonstrate the situation for infinite stream of infinite stream. The example turned out to be quite simple.</p>
 
@@ -9435,15 +9436,15 @@
 <span class="p">(</span><span class="nf">assert!</span> <span class="p">(</span><span class="nf">rule</span> <span class="p">(</span><span class="nf">twos</span> <span class="p">(</span><span class="nf">2</span> <span class="o">.</span> <span class="nv">?x</span><span class="p">))</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?x</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Unlike the previous exercise, now i used <code class="highlighter-rouge">and</code> query instead of <code class="highlighter-rouge">or</code> query:</p>
+<p>Unlike the previous exercise, now i used <code class="language-plaintext highlighter-rouge">and</code> query instead of <code class="language-plaintext highlighter-rouge">or</code> query:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 </pre></td><td class="code"><pre><span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nf">ones</span> <span class="nv">?x</span><span class="p">)</span> <span class="p">(</span><span class="nf">twos</span> <span class="nv">?y</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Why <code class="highlighter-rouge">and</code>?</p>
+<p>Why <code class="language-plaintext highlighter-rouge">and</code>?</p>
 
-<p>Because <code class="highlighter-rouge">and</code> passes the stream of resulting frames from each clause to the next clause! <code class="highlighter-rouge">or</code> does not do so. So, if first clause can generate infinite frames, then we can produce the context required to demonstrate <code class="highlighter-rouge">flatten-stream</code> getting infinite stream of stream!</p>
+<p>Because <code class="language-plaintext highlighter-rouge">and</code> passes the stream of resulting frames from each clause to the next clause! <code class="language-plaintext highlighter-rouge">or</code> does not do so. So, if first clause can generate infinite frames, then we can produce the context required to demonstrate <code class="language-plaintext highlighter-rouge">flatten-stream</code> getting infinite stream of stream!</p>
 
 <h4 id="with-the-change-suggested-in-book">With the change suggested in book:</h4>
 
@@ -9664,7 +9665,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9415,7 +9416,7 @@
 
                     <span itemprop="articleSection">
                         <hr/>
-                        <p>Note: I built it on top of the exercise where we implemeted parameter type based evaluation, <code class="highlighter-rouge">lazy</code>, <code class="highlighter-rouge">memo-lazy</code>(ex-4.31)</p>
+                        <p>Note: I built it on top of the exercise where we implemeted parameter type based evaluation, <code class="language-plaintext highlighter-rouge">lazy</code>, <code class="language-plaintext highlighter-rouge">memo-lazy</code>(ex-4.31)</p>
 
 <p>This simple looking requirement took my entire day! I hope it works and have not missed any cases :)</p>
 
@@ -9424,29 +9425,29 @@
 <p>There are many nuances, it will take some time to write all the detail. The main pointers/ideas which I think can help in understanding the code:</p>
 
 <ul>
-  <li>As mentioned in exercise, We need to do some tagging to differentiate between the compound procedure and these <code class="highlighter-rouge">cons</code> procedures.</li>
+  <li>As mentioned in exercise, We need to do some tagging to differentiate between the compound procedure and these <code class="language-plaintext highlighter-rouge">cons</code> procedures.</li>
   <li>Note that, it may occur that we can avoid tagging by comparing the text of expression with lambda we used to implement cons, but this is wrong because it is certainly possible to have another lambda whose text/body matches the cons lambda but they are two different procedures.</li>
-  <li>Other possible way of avoiding tagging it to associate atleast one name with the procedure. So that we can get a procedure name like <code class="highlighter-rouge">procedure-name</code> similar to <code class="highlighter-rouge">procedure-body</code>. But this means we are changing a fundamental part of our language. So, tagging seems to be a better approach.</li>
-  <li>We can do tagging by creating a pair of <code class="highlighter-rouge">pair</code> and our customised(or lazy we implemented) cons.</li>
-  <li>But, ofcourse, we can not use our own <code class="highlighter-rouge">cons</code> for creating this pair. Why? :)</li>
-  <li>The other way we can do tagging is to use, underlying <code class="highlighter-rouge">cons</code>.</li>
-  <li>Mixing underlying <code class="highlighter-rouge">cons</code> and our <code class="highlighter-rouge">cons</code> comes with interesting results. For example, try calling <code class="highlighter-rouge">display</code> on this mixed structure :)</li>
+  <li>Other possible way of avoiding tagging it to associate atleast one name with the procedure. So that we can get a procedure name like <code class="language-plaintext highlighter-rouge">procedure-name</code> similar to <code class="language-plaintext highlighter-rouge">procedure-body</code>. But this means we are changing a fundamental part of our language. So, tagging seems to be a better approach.</li>
+  <li>We can do tagging by creating a pair of <code class="language-plaintext highlighter-rouge">pair</code> and our customised(or lazy we implemented) cons.</li>
+  <li>But, ofcourse, we can not use our own <code class="language-plaintext highlighter-rouge">cons</code> for creating this pair. Why? :)</li>
+  <li>The other way we can do tagging is to use, underlying <code class="language-plaintext highlighter-rouge">cons</code>.</li>
+  <li>Mixing underlying <code class="language-plaintext highlighter-rouge">cons</code> and our <code class="language-plaintext highlighter-rouge">cons</code> comes with interesting results. For example, try calling <code class="language-plaintext highlighter-rouge">display</code> on this mixed structure :)</li>
   <li>How to display? Two possible ways:
     <ul>
       <li>To implement display function in the implemented language like we have implemented ‘cons’.</li>
       <li>To implement display function in the evaluator, thus we can use our host langauge.</li>
     </ul>
   </li>
-  <li>Both approaches have their own pros and cons, in first approach we do not have any host language constructs available! So, we need to provide them as primitive procedures. In the second approach, we don’t have the lazy implementations of <code class="highlighter-rouge">cons</code> available to us.</li>
-  <li>I tried the first approach, but it required availability of so many constructs like <code class="highlighter-rouge">eq?</code>, <code class="highlighter-rouge">pair?</code> and combined with the fact that the arguments our <code class="highlighter-rouge">cons</code> are lazy evaluated, it caused too many troubles.</li>
-  <li>Second appraoch, turned out quite easier. Since I have all the evaluator code available, it turned out not a big deal to call implemented(lazy) language <code class="highlighter-rouge">cons</code>, <code class="highlighter-rouge">car</code> or <code class="highlighter-rouge">cdr</code>. We just call <code class="highlighter-rouge">actual-value</code> and pass it the syntax we want to evaluate.</li>
-  <li>There’s only one hurdle now, Suppose the result of our evaluator(the lazy cons list) is <code class="highlighter-rouge">object</code>. Then, this call <code class="highlighter-rouge">(actual-value (list 'car object))</code> won’t work because our evaluator will try to evaluate <code class="highlighter-rouge">object</code> which we do not want. Because object is already the result of evaluation. So, a simple solution is to put this object under a variable say <code class="highlighter-rouge">'object</code> in the implemented langauge environment and then call <code class="highlighter-rouge">(actual-value (list 'car 'object))</code>. (Notice the quote before object).</li>
+  <li>Both approaches have their own pros and cons, in first approach we do not have any host language constructs available! So, we need to provide them as primitive procedures. In the second approach, we don’t have the lazy implementations of <code class="language-plaintext highlighter-rouge">cons</code> available to us.</li>
+  <li>I tried the first approach, but it required availability of so many constructs like <code class="language-plaintext highlighter-rouge">eq?</code>, <code class="language-plaintext highlighter-rouge">pair?</code> and combined with the fact that the arguments our <code class="language-plaintext highlighter-rouge">cons</code> are lazy evaluated, it caused too many troubles.</li>
+  <li>Second appraoch, turned out quite easier. Since I have all the evaluator code available, it turned out not a big deal to call implemented(lazy) language <code class="language-plaintext highlighter-rouge">cons</code>, <code class="language-plaintext highlighter-rouge">car</code> or <code class="language-plaintext highlighter-rouge">cdr</code>. We just call <code class="language-plaintext highlighter-rouge">actual-value</code> and pass it the syntax we want to evaluate.</li>
+  <li>There’s only one hurdle now, Suppose the result of our evaluator(the lazy cons list) is <code class="language-plaintext highlighter-rouge">object</code>. Then, this call <code class="language-plaintext highlighter-rouge">(actual-value (list 'car object))</code> won’t work because our evaluator will try to evaluate <code class="language-plaintext highlighter-rouge">object</code> which we do not want. Because object is already the result of evaluation. So, a simple solution is to put this object under a variable say <code class="language-plaintext highlighter-rouge">'object</code> in the implemented langauge environment and then call <code class="language-plaintext highlighter-rouge">(actual-value (list 'car 'object))</code>. (Notice the quote before object).</li>
 </ul>
 
 <p>Oh, now the main part of the exercise:</p>
 
 <ul>
-  <li>Initially, I thought to first convert the language <code class="highlighter-rouge">cons</code> into host <code class="highlighter-rouge">cons</code> but.. since it requires traversing the list twice, I directly display it.</li>
+  <li>Initially, I thought to first convert the language <code class="language-plaintext highlighter-rouge">cons</code> into host <code class="language-plaintext highlighter-rouge">cons</code> but.. since it requires traversing the list twice, I directly display it.</li>
   <li>I created a counter, that gets incremented every time a <strong>non-cons</strong> is printed.</li>
   <li>Well, ideally i guess it would be better to print in BFS order, but that would have required queue, So, I just traversed the lazy-lists with DFS traversal.</li>
   <li>I used the dreaded <em>assignment</em> for maintaining count as there seems to be no other quicker way.</li>
@@ -10254,9 +10255,9 @@
 
 <p>Apart from this, this exercise is quite educational. It made me realise the nuances when we have to decide where to implement a feature? In the evaluator or on top of the implemented language.</p>
 
-<p>I think, the main trouble here was because we want our evaluator to <em>know</em> the lazy <code class="highlighter-rouge">cons</code>. So, that it can print them. If this was not the requirement, we could have implemented it completely as procedures and it is the user concern how to print the customized cons.</p>
+<p>I think, the main trouble here was because we want our evaluator to <em>know</em> the lazy <code class="language-plaintext highlighter-rouge">cons</code>. So, that it can print them. If this was not the requirement, we could have implemented it completely as procedures and it is the user concern how to print the customized cons.</p>
 
-<p>But since we want that our evluator must know about the ‘cons’ because of this exercise, I think it would have been better if we implemented <code class="highlighter-rouge">cons</code> as special form instead of procedures. This would have made things easier as there was no mixing of the things from implemented language and the host language.</p>
+<p>But since we want that our evluator must know about the ‘cons’ because of this exercise, I think it would have been better if we implemented <code class="language-plaintext highlighter-rouge">cons</code> as special form instead of procedures. This would have made things easier as there was no mixing of the things from implemented language and the host language.</p>
 
 <p>I am not sure if this is always possible to avoid this mixing. But, when this is the case, I think things can go quite complex and probably much more complex than this exercise.</p>
 
@@ -10332,7 +10333,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

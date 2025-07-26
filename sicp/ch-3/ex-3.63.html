@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,7 +9418,7 @@
                         <hr/>
                         <p>This took me quite some time to figure out. I also used the Louis style in few exercises before - well, it turns out to be very expensive way and should not be used.</p>
 
-<p>I used <code class="highlighter-rouge">trace-entry</code> which turns out very useful.</p>
+<p>I used <code class="language-plaintext highlighter-rouge">trace-entry</code> which turns out very useful.</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9647,26 +9648,26 @@
 
 <p>First ignore the memoize part and undertand how Louis works:</p>
 
-<p>Note that <code class="highlighter-rouge">(sqrt-stream-1 2)</code> always returns same object, lets call it <strong>C</strong>.</p>
+<p>Note that <code class="language-plaintext highlighter-rouge">(sqrt-stream-1 2)</code> always returns same object, lets call it <strong>C</strong>.</p>
 
-<p>Let’s assume we already defined the object, <code class="highlighter-rouge">louis</code> as <code class="highlighter-rouge">(define louis (sqrt-stream-1 2))</code>. And we access 0th, 1st and 2nd element of louis in that order.</p>
+<p>Let’s assume we already defined the object, <code class="language-plaintext highlighter-rouge">louis</code> as <code class="language-plaintext highlighter-rouge">(define louis (sqrt-stream-1 2))</code>. And we access 0th, 1st and 2nd element of louis in that order.</p>
 
 <ul>
   <li>
-    <p>When we access <strong>0th element</strong> of <code class="highlighter-rouge">louis</code>- We get 1 and a promise to to evaluate <code class="highlighter-rouge">(stream-map (lambda(guess) (sqrt-improve x guess)) (sqrt-stream-1 2))</code>. Lets call this promise as <strong>X</strong>.</p>
+    <p>When we access <strong>0th element</strong> of <code class="language-plaintext highlighter-rouge">louis</code>- We get 1 and a promise to to evaluate <code class="language-plaintext highlighter-rouge">(stream-map (lambda(guess) (sqrt-improve x guess)) (sqrt-stream-1 2))</code>. Lets call this promise as <strong>X</strong>.</p>
   </li>
   <li>
-    <p>When we access <strong>1st element</strong> of <code class="highlighter-rouge">louis</code> - We evaluate <strong>X</strong> which requires first to invoke <code class="highlighter-rouge">(sqrt-stream-1 2)</code>(this call returns <strong>C</strong>) and then <code class="highlighter-rouge">stream-map</code> is invoked on <strong>C</strong>. Then we get <code class="highlighter-rouge">(1/2, promise-1)</code> where <code class="highlighter-rouge">promise-1</code> means/represents calling <code class="highlighter-rouge">stream-map</code> with <code class="highlighter-rouge">sqrt-improve</code> on <strong>cdr</strong>(stream-cdr) of <code class="highlighter-rouge">(sqrt-stream-1 2)</code>. Thus the final result becomes <code class="highlighter-rouge">(1, 1/2, promise-1)</code> (for representation purpose only - the final result will not be like this but contains promises/memoize-proc wrapper).</p>
+    <p>When we access <strong>1st element</strong> of <code class="language-plaintext highlighter-rouge">louis</code> - We evaluate <strong>X</strong> which requires first to invoke <code class="language-plaintext highlighter-rouge">(sqrt-stream-1 2)</code>(this call returns <strong>C</strong>) and then <code class="language-plaintext highlighter-rouge">stream-map</code> is invoked on <strong>C</strong>. Then we get <code class="language-plaintext highlighter-rouge">(1/2, promise-1)</code> where <code class="language-plaintext highlighter-rouge">promise-1</code> means/represents calling <code class="language-plaintext highlighter-rouge">stream-map</code> with <code class="language-plaintext highlighter-rouge">sqrt-improve</code> on <strong>cdr</strong>(stream-cdr) of <code class="language-plaintext highlighter-rouge">(sqrt-stream-1 2)</code>. Thus the final result becomes <code class="language-plaintext highlighter-rouge">(1, 1/2, promise-1)</code> (for representation purpose only - the final result will not be like this but contains promises/memoize-proc wrapper).</p>
   </li>
   <li>
-    <p>Now, when we access <strong>2nd element</strong> of <code class="highlighter-rouge">louis</code> - we evaluate <code class="highlighter-rouge">promise-1</code>:</p>
+    <p>Now, when we access <strong>2nd element</strong> of <code class="language-plaintext highlighter-rouge">louis</code> - we evaluate <code class="language-plaintext highlighter-rouge">promise-1</code>:</p>
     <ul>
       <li>we first need to access cdr of  the result of <strong>(sqrt-stream-1 2)</strong>(this results a call to sqrt-stream-1) - which is (1/2, promise-1) - as we saw while accessing <strong>1st element</strong> above - lets call this <em>res2</em></li>
-      <li>then <code class="highlighter-rouge">stream-map</code> is invoked on the <em>res2</em>, the result of last step.</li>
-      <li><code class="highlighter-rouge">cons-stream</code> is created with following parts:
+      <li>then <code class="language-plaintext highlighter-rouge">stream-map</code> is invoked on the <em>res2</em>, the result of last step.</li>
+      <li><code class="language-plaintext highlighter-rouge">cons-stream</code> is created with following parts:
         <ul>
-          <li>result of applying <code class="highlighter-rouge">sqrt-improve</code> on first element of <em>res2</em> - thus applying <code class="highlighter-rouge">sqrt-improve</code> on 1/2.</li>
-          <li><code class="highlighter-rouge">promise-2</code> to apply <code class="highlighter-rouge">stream-map</code> on <em>cdr</em> of <em>res2</em> - thus <em>cdr</em> of <code class="highlighter-rouge">promise-1</code> - which means <em>cdr</em> of <em>cdr</em> of <strong>C</strong>(result of <code class="highlighter-rouge">(sqrt-stream 2)</code>).</li>
+          <li>result of applying <code class="language-plaintext highlighter-rouge">sqrt-improve</code> on first element of <em>res2</em> - thus applying <code class="language-plaintext highlighter-rouge">sqrt-improve</code> on 1/2.</li>
+          <li><code class="language-plaintext highlighter-rouge">promise-2</code> to apply <code class="language-plaintext highlighter-rouge">stream-map</code> on <em>cdr</em> of <em>res2</em> - thus <em>cdr</em> of <code class="language-plaintext highlighter-rouge">promise-1</code> - which means <em>cdr</em> of <em>cdr</em> of <strong>C</strong>(result of <code class="language-plaintext highlighter-rouge">(sqrt-stream 2)</code>).</li>
         </ul>
       </li>
     </ul>
@@ -9749,7 +9750,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

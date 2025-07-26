@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9418,11 +9419,11 @@
                         <p>Here is my approach:</p>
 
 <ul>
-  <li>The main idea is to store the <code class="highlighter-rouge">lineno</code> in instructions data-structure.</li>
+  <li>The main idea is to store the <code class="language-plaintext highlighter-rouge">lineno</code> in instructions data-structure.</li>
   <li>When installing a breakpoint, compute the lineno of the intruction where breakpoint needs to be installed and then store this lineno in a breakpoint table.</li>
   <li>While executing, stop the execution if the current lineno being executed is inside the breakpoint table.</li>
-  <li>For the case when we proceed from a breakpoint, maintain a flag <code class="highlighter-rouge">resume-from-breakpoint?</code>. If this value is set then don’t stop at the breakpoint as well as unset it so that we can stop again at the breakpoint.</li>
-  <li>To compute lineno from the offset <code class="highlighter-rouge">n</code> given by user, we need lables table. Thus, inside <code class="highlighter-rouge">make-machine</code>, now i also installed labels in the machine.</li>
+  <li>For the case when we proceed from a breakpoint, maintain a flag <code class="language-plaintext highlighter-rouge">resume-from-breakpoint?</code>. If this value is set then don’t stop at the breakpoint as well as unset it so that we can stop again at the breakpoint.</li>
+  <li>To compute lineno from the offset <code class="language-plaintext highlighter-rouge">n</code> given by user, we need lables table. Thus, inside <code class="language-plaintext highlighter-rouge">make-machine</code>, now i also installed labels in the machine.</li>
 </ul>
 
 <p>Well, thats it!</p>
@@ -11352,7 +11353,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

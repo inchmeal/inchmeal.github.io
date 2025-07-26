@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9429,11 +9430,11 @@
    <span class="p">(</span><span class="nf">pairs</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">s</span><span class="p">)</span> <span class="p">(</span><span class="nf">stream-cdr</span> <span class="nv">t</span><span class="p">))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Note that pairs procedure requires invocation of <code class="highlighter-rouge">interleave</code>.  To invoke <code class="highlighter-rouge">interleave</code>, first it is required to evaluate the arguments passed to it.</p>
+<p>Note that pairs procedure requires invocation of <code class="language-plaintext highlighter-rouge">interleave</code>.  To invoke <code class="language-plaintext highlighter-rouge">interleave</code>, first it is required to evaluate the arguments passed to it.</p>
 
-<p>Thus <code class="highlighter-rouge">(pairs (stream-cdr s) (stream-cdr t))</code> is called. Now again, inside the <code class="highlighter-rouge">pairs</code> procedure to invoke <code class="highlighter-rouge">interleave</code>, procedure <code class="highlighter-rouge">pairs</code> is called again and which will again call <code class="highlighter-rouge">interleave</code> and so on. Thus it will go into <strong>infinite loop without ever entering into <code class="highlighter-rouge">interleave</code> procedure</strong>!</p>
+<p>Thus <code class="language-plaintext highlighter-rouge">(pairs (stream-cdr s) (stream-cdr t))</code> is called. Now again, inside the <code class="language-plaintext highlighter-rouge">pairs</code> procedure to invoke <code class="language-plaintext highlighter-rouge">interleave</code>, procedure <code class="language-plaintext highlighter-rouge">pairs</code> is called again and which will again call <code class="language-plaintext highlighter-rouge">interleave</code> and so on. Thus it will go into <strong>infinite loop without ever entering into <code class="language-plaintext highlighter-rouge">interleave</code> procedure</strong>!</p>
 
-<p>In the book’s version this does not happen because the calls to <code class="highlighter-rouge">interleave</code> is inside the <code class="highlighter-rouge">cdr</code> part of the <code class="highlighter-rouge">cons-stream</code>. Thus this call will happen only when needed.</p>
+<p>In the book’s version this does not happen because the calls to <code class="language-plaintext highlighter-rouge">interleave</code> is inside the <code class="language-plaintext highlighter-rouge">cdr</code> part of the <code class="language-plaintext highlighter-rouge">cons-stream</code>. Thus this call will happen only when needed.</p>
 
 <p>Well, I think this infinite loop happens only because of <em>applicative order evaluation</em>(see chapter 1, check ex-1.5). If the arguments were first expanded then reduced or <em>normal order evaluation</em> then it would have worked fine!</p>
 
@@ -9509,7 +9510,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

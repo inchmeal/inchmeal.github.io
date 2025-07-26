@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9427,8 +9428,8 @@
   <li>We solve the procedure call at a lower level(using stack) than replicating an exact procedure call.</li>
   <li>Instead of thinking of it as a procedure call, think of it as: save some work for later when we have enough values.</li>
   <li>This work which is postponed to be done later needs some context for which we use stack. Why stack? Because we want to come to the previous most recent place which <em>needed</em> the value just computed.</li>
-  <li>We save the context by saving <code class="highlighter-rouge">n</code> and <code class="highlighter-rouge">continue</code>.</li>
-  <li>Why after saving <code class="highlighter-rouge">n</code> and <code class="highlighter-rouge">continue</code> we continue to loop using <code class="highlighter-rouge">(goto (label loop))</code>? Why we not jump to <code class="highlighter-rouge">after</code> like a procedure invocation? Because we are not doing procedure invocation but carrying out the task using stack. We come to <code class="highlighter-rouge">after</code> in a bottom up way! First we keep looping and saving the context till we reach the base case. Then from the base case we <em>unwind</em> the stack.</li>
+  <li>We save the context by saving <code class="language-plaintext highlighter-rouge">n</code> and <code class="language-plaintext highlighter-rouge">continue</code>.</li>
+  <li>Why after saving <code class="language-plaintext highlighter-rouge">n</code> and <code class="language-plaintext highlighter-rouge">continue</code> we continue to loop using <code class="language-plaintext highlighter-rouge">(goto (label loop))</code>? Why we not jump to <code class="language-plaintext highlighter-rouge">after</code> like a procedure invocation? Because we are not doing procedure invocation but carrying out the task using stack. We come to <code class="language-plaintext highlighter-rouge">after</code> in a bottom up way! First we keep looping and saving the context till we reach the base case. Then from the base case we <em>unwind</em> the stack.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -9562,7 +9563,7 @@
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>

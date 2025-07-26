@@ -44,9 +44,10 @@
 		}
 	};
 	</script>
-	
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	
+	<script>
+		var disqus_developer = 1; // Comment out when the site is live
+	</script>
 	
 
 	<meta name="google-site-verification" content="tCrxTm0EXch-6c8nlJPb_Cq-BOBcK9GR2ZP3I1lfLKs" />
@@ -156,7 +157,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          <a href="https://www.inchmeal.io">
+          <a href="/">
             <img src="https://www.inchmeal.io/assets/img/logo.png"/>
           </a>
         </h1>
@@ -9417,7 +9418,7 @@
                         <hr/>
                         <p>Well, things get more interesting in this exercise.</p>
 
-<p>First, to test executiong times, in last exercise I called <code class="highlighter-rouge">(multiple-dwelling)</code> multiple times. Now, I created a loop instead of manually calling it multiple times.</p>
+<p>First, to test executiong times, in last exercise I called <code class="language-plaintext highlighter-rouge">(multiple-dwelling)</code> multiple times. Now, I created a loop instead of manually calling it multiple times.</p>
 
 <p><strong>Note:</strong> Since the code of most optimised version is a bit unintuitive, I demonstrated it only at the end. These numbers in the below table are only for the first optimized version I implemented for this exercise. The numbers for the most optimized version are shown at the end.</p>
 
@@ -9448,7 +9449,7 @@
       <td>71</td>
     </tr>
     <tr>
-      <td>Moving <code class="highlighter-rouge">distinct</code> constraint down in previous exercise</td>
+      <td>Moving <code class="language-plaintext highlighter-rouge">distinct</code> constraint down in previous exercise</td>
       <td>100</td>
       <td>92</td>
     </tr>
@@ -9511,25 +9512,25 @@
 	  <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nf">multiple-dwelling</span><span class="p">)</span> <span class="p">(</span><span class="nf">iter</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">count</span> <span class="mi">1</span><span class="p">)))))</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>First, now in this exercise, we are moving down <code class="highlighter-rouge">distinct</code> but it is making it more efficient, seems to be contradicting with previous result.</p>
+<p>First, now in this exercise, we are moving down <code class="language-plaintext highlighter-rouge">distinct</code> but it is making it more efficient, seems to be contradicting with previous result.</p>
 
 <p>Well, no!</p>
 
-<p>Here, we are restricting the number of possibilities in every <code class="highlighter-rouge">let</code> expression. Recall that <code class="highlighter-rouge">let</code> is nothing but a procedure. Earlier version of let has 5 parameters. Thus it was giving:</p>
+<p>Here, we are restricting the number of possibilities in every <code class="language-plaintext highlighter-rouge">let</code> expression. Recall that <code class="language-plaintext highlighter-rouge">let</code> is nothing but a procedure. Earlier version of let has 5 parameters. Thus it was giving:</p>
 
 <div class="kdmath">$$
 \, { \text{num-of-args} }^{ \text{num-of-possible-values-of-an-arg } } = 5^5 \,
 $$</div>
 
-<p>Now, in this exercise, we have drastically reduced the number of possibilities of <code class="highlighter-rouge">let</code> parameters. The outermost <code class="highlighter-rouge">let</code> has only <span class="kdmath">$\, 5 \,$</span> possibilities. Then the next nested <code class="highlighter-rouge">let</code> gets approximately <span class="kdmath">$\, 5 \times 5 \,$</span>. (I am not considering the cases removed by restrictions in outer let. These values are only for approximations).</p>
+<p>Now, in this exercise, we have drastically reduced the number of possibilities of <code class="language-plaintext highlighter-rouge">let</code> parameters. The outermost <code class="language-plaintext highlighter-rouge">let</code> has only <span class="kdmath">$\, 5 \,$</span> possibilities. Then the next nested <code class="language-plaintext highlighter-rouge">let</code> gets approximately <span class="kdmath">$\, 5 \times 5 \,$</span>. (I am not considering the cases removed by restrictions in outer let. These values are only for approximations).</p>
 
-<p>Thus the last inner <code class="highlighter-rouge">let</code> we again, reach the same <em>order</em> of possibilities <span class="kdmath">$\, 5^5 \,$</span> (approximately).</p>
+<p>Thus the last inner <code class="language-plaintext highlighter-rouge">let</code> we again, reach the same <em>order</em> of possibilities <span class="kdmath">$\, 5^5 \,$</span> (approximately).</p>
 
-<p>But there are only 2 restrictions(requires) placed in last inner <code class="highlighter-rouge">let</code>! So, these huge number of possibilities are tested only for two requires!</p>
+<p>But there are only 2 restrictions(requires) placed in last inner <code class="language-plaintext highlighter-rouge">let</code>! So, these huge number of possibilities are tested only for two requires!</p>
 
 <p>Now comes an interesting part which agrees with our findings of past exercise:</p>
 
-<p>What if we change the order of these two restrictions present in the last inner <code class="highlighter-rouge">let</code>:</p>
+<p>What if we change the order of these two restrictions present in the last inner <code class="language-plaintext highlighter-rouge">let</code>:</p>
 
 <figure class="highlight"><pre><code class="language-scheme" data-lang="scheme"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -9565,11 +9566,11 @@ $$</div>
   </tbody>
 </table>
 
-<p>Thus even here, moving <code class="highlighter-rouge">distinct?</code> down makes it slower.</p>
+<p>Thus even here, moving <code class="language-plaintext highlighter-rouge">distinct?</code> down makes it slower.</p>
 
 <p>With this in mind can we further optimise?</p>
 
-<p><code class="highlighter-rouge">distinct?</code> can be split in multiple nestings!</p>
+<p><code class="language-plaintext highlighter-rouge">distinct?</code> can be split in multiple nestings!</p>
 
 <p>Here comes even more optimised version:</p>
 
@@ -9705,7 +9706,7 @@ $$</div>
                 </div>
               <div class="column pl0 pr0">
                   <ul class="inline-list">
-                      <li>&copy;2019 inchmeal</li>
+                      <li>&copy;2025 inchmeal</li>
                   </ul>
               </div>
           </section>
