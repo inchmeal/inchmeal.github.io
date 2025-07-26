@@ -10,12 +10,12 @@ var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
 var stylish = require('jshint-stylish');
 var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var scsslint = require('gulp-scss-lint');
+var sass = require('gulp-sass')(require('sass'));
+//var scsslint = require('gulp-scss-lint');
 var plumber = require('gulp-plumber');
 var base64 = require('gulp-base64');
-var runSequence = require('run-sequence');
-var size = require('gulp-size');
+//var runSequence = require('run-sequence');
+var size = require('gulp-size').default || require('gulp-size');
 //var print = require('gulp-print');
 var cleancss = require('gulp-clean-css');
 var githubPages = require('gulp-gh-pages');
@@ -51,45 +51,77 @@ gulp.task('jekyll', function(done) {
  * It executes jekyll and than all tasks dependent on jekyll
  */
 gulp.task('jekyll-tasks', 
-	gulp.series('jekyll','index'));
+  gulp.series('jekyll','index'));
 
 gulp.task('jekyll-rebuild', gulp.series('jekyll-tasks', function(callback) {
   browserSync.reload();
   callback();	
 }));
 
-gulp.task('header:scripts', function() {
-   browserSync.notify('Minimising header scripts and generating sourcemaps...');
-   //header scripts
-   var jsFiles = [
-     'app/bower_components/modernizr/modernizr.js'
-   ];
-   return gulp.src(jsFiles)
-     .pipe(order(jsFiles, {"base": "."}))
-     .pipe(sourceMaps.init())
-     .pipe(concat('inchmeal_head.js'))
-     .pipe(sourceMaps.write('.'))
-     .pipe(gulp.dest('build/assets/js'))
-     //.pipe(notify({ message: 'Header scripts task complete' }));
- });
+// Generate a custom Modernizr build using the CLI
+gulp.task('modernizr', function(cb) {
+  var exec = require('child_process').exec;
+  exec('npx modernizr -c node_modules/modernizr/lib/config-all.json -d app/_assets/js/vendor/modernizr.js', function (err, stdout, stderr) {
+    if (err) {
+      console.error(stderr);
+      cb(err);
+    } else {
+      cb();
+    }
+  });
+});
+
+gulp.task('header:scripts', function(cb) {
+  var modernizrPath = 'app/_assets/js/vendor/modernizr.js';
+  var fs = require('fs');
+  var exec = require('child_process').exec;
+  function runTask() {
+    browserSync.notify('Minimising header scripts and generating sourcemaps...');
+    var jsFiles = [modernizrPath];
+    return gulp.src(jsFiles)
+      .pipe(order(jsFiles, {"base": "."}))
+      .pipe(sourceMaps.init())
+      .pipe(concat('inchmeal_head.js'))
+      .pipe(sourceMaps.write('.'))
+      .pipe(gulp.dest('build/assets/js'));
+  }
+  fs.access(modernizrPath, fs.constants.F_OK, function(err) {
+    if (err) {
+      // File does not exist, generate it first
+      exec('npx modernizr -c node_modules/modernizr/lib/config-all.json -d ' + modernizrPath, function (err2, stdout, stderr) {
+        if (err2) {
+          console.error(stderr);
+          cb(err2);
+        } else {
+          runTask();
+          cb();
+        }
+      });
+    } else {
+      // File exists, just run the task
+      runTask();
+      cb();
+    }
+  });
+});
 
 gulp.task('footer:scripts', function() {
   browserSync.notify('Minimising footer scripts and generating sourcemaps...');
   //footer scripts
   var jsFiles = [
-    "app/bower_components/jquery/dist/jquery.js",
-    "app/bower_components/fastclick/lib/fastclick.js",
-    "app/bower_components/foundation/js/foundation/foundation.js",
-    "app/bower_components/foundation/js/foundation/foundation.clearing.js",
-    "app/bower_components/foundation/js/foundation/foundation.equalizer.js",
-    "app/bower_components/foundation/js/foundation/foundation.topbar.js",
-    "app/bower_components/foundation/js/foundation/foundation.accordion.js",
-    "app/bower_components/jquery-backstretch/jquery.backstretch.js",
-    "app/bower_components/microplugin/src/microplugin.js",
-    "app/bower_components/sifter/sifter.js",
-    "app/bower_components/selectize/dist/js/selectize.js",
-    "app/bower_components/underscore/underscore.js",
-    "app/bower_components/backbone/backbone.js",
+    "node_modules/jquery/dist/jquery.js",
+    "node_modules/fastclick/lib/fastclick.js",
+    "node_modules/foundation-sites/js/foundation.js",
+    "node_modules/foundation-sites/js/foundation/foundation.clearing.js",
+    "node_modules/foundation-sites/js/foundation/foundation.equalizer.js",
+    "node_modules/foundation-sites/js/foundation/foundation.topbar.js",
+    "node_modules/foundation-sites/js/foundation/foundation.accordion.js",
+    "node_modules/jquery-backstretch/jquery.backstretch.js",
+    "node_modules/microplugin/src/microplugin.js",
+    "node_modules/sifter/sifter.js",
+    "node_modules/selectize/dist/js/selectize.js",
+    "node_modules/underscore/underscore.js",
+    "node_modules/backbone/backbone.js",
     "node_modules/lunr/lunr.js",
     "app/_assets/js/*.js"
   ];
@@ -150,8 +182,9 @@ gulp.task('sass', function() {
   browserSync.notify('Compiling Sass');
 
   var includePaths = [
-    'app/bower_components/foundation/scss/foundation/components',
-    'app/bower_components/foundation/scss/foundation',
+    'node_modules',
+    'node_modules/foundation-sites/scss',
+    'node_modules/foundation-sites/scss/foundation',
     'app/_assets/scss'
   ];
 
@@ -167,9 +200,9 @@ gulp.task('sass', function() {
  * Lint SCSS files
  * `gem install scss-lint` needed
  */
+/*
 gulp.task('scsslint', function(callback) {
   callback();
-  /*
   browserSync.notify('TODO. Ignoring scsslint.');
 
   var scssFiles = [
@@ -179,19 +212,18 @@ gulp.task('scsslint', function(callback) {
 
   return gulp.src(scssFiles)
     .pipe(scsslint({'bundleExec': true}));
-  */
-});
+});*/
 
 /**
  * Run all tasks needed for a build in defined order
  */
 gulp.task('build', gulp.series('delete',
-	gulp.series(
-		gulp.parallel('jekyll-tasks', 'sass', 'scripts','images','fonts'),
-		gulp.parallel('jshint','scsslint')
-	))
+  gulp.series(
+    gulp.parallel('jekyll-tasks', 'sass', 'scripts','images','fonts'),
+    gulp.parallel('jshint')
+  ))
 );
-	
+  
 /**
  * Run the build task and start a server with BrowserSync
  */
@@ -225,7 +257,7 @@ gulp.task('watch', gulp.series('browsersync', function(callback) {
 
   // Watch .scss files
   var sassFiles = 'app/_assets/scss/**/*.{sass,scss}';
-  gulp.watch(sassFiles, gulp.series('sass', 'scsslint'));
+  gulp.watch(sassFiles, gulp.series('sass'));
 
   // Watch .js files
   var jsFiles = 'app/_assets/js/**/*.js';
@@ -251,14 +283,14 @@ gulp.task('watch', gulp.series('browsersync', function(callback) {
 
 gulp.task('default', gulp.series('watch'));
 gulp.task('set-inc', function(callback) {
-		incremental = ' ';
-		callback();
-	}
+    incremental = ' ';
+    callback();
+  }
 );
 gulp.task('reset-inc', function(callback) {
-		incremental = '--incremental';
-		callback();
-	}
+    incremental = '--incremental';
+    callback();
+  }
 );
 gulp.task('fullbuild', gulp.series('set-inc', 'watch', 'reset-inc'));
 
@@ -340,10 +372,10 @@ gulp.task('index:production', function(callback){
  * Run all tasks needed for a build in defined order
  */
 gulp.task('build:production', gulp.series('delete:production',
-	gulp.series(
-		gulp.parallel('jekyll-tasks:production', 'sass', 'scripts', 'images', 'fonts'),
-		gulp.parallel('css:production', 'js:production', 'images:production', 'fonts:production')
-	))
+  gulp.series(
+    gulp.parallel('jekyll-tasks:production', 'sass', 'scripts', 'images', 'fonts'),
+    gulp.parallel('css:production', 'js:production', 'images:production', 'fonts:production')
+  ))
 );
 
 gulp.task('browsersync:production', gulp.series('build:production', function(callback) {
@@ -374,7 +406,7 @@ gulp.task('deploy', gulp.series('build:production', function(callback){
      "remoteUrl": "https://github.com/inchmeal/inchmeal.github.io",
      "branch": "master"
    }
-	//TODO FIXME as of now gulp-gh-pages is not causing issues of certain dependencies - gulp-util was deprecated but it is using it.
+  //TODO FIXME as of now gulp-gh-pages is not causing issues of certain dependencies - gulp-util was deprecated but it is using it.
    return gulp.src('build/production/**/*', {'dot': true})
       .pipe(githubPages(options));
    callback();   

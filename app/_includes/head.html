@@ -44,14 +44,10 @@
 		}
 	};
 	</script>
-	{% if site.dev %}
-	<script src="/node_modules/mathjax/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 	<script>
 		var disqus_developer = 1; // Comment out when the site is live
 	</script>
-	{% else %}
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-	{% endif %}
 	{% endif %}
 
 	{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}

@@ -1,4 +1,10 @@
 $spacing-unit: 30px;
+// Use and forward color and typography variables for both local and downstream access
+//@use '01_settings_colors' as *;
+//@use '02_settings_typography' as *;
+//@forward '01_settings_colors';
+//@forward '02_settings_typography';
+$spacing-unit: 30px;
 
 
 // Foundation by ZURB
@@ -58,7 +64,7 @@ $spacing-unit: 30px;
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "functions";
+// @import "functions"; // Legacy import, not needed with Foundation 5 npm + Dart Sass
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -68,7 +74,6 @@ $spacing-unit: 30px;
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
 // $base-font-size: 100%;
 
-$base-font-size: 16px;
 $rem-base: 16px;
 
 
@@ -94,7 +99,7 @@ $row-width: rem-calc(1200);
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-// $font-family-sans-serif: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 // $font-family-serif: "PT Sans", Helvetica, Arial, sans-serif;
 // $font-family-monospace: "Lucida Console", Monaco, monospace;
 
@@ -321,9 +326,8 @@ $list-side-margin: 1.3rem;
 
 // 01. Accordion
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
+// Foundation 5 does not support @use 'accordion' as *; import. All components are included via the main Foundation import.
 // $include-html-accordion-classes: $include-html-classes;
-
 $accordion-navigation-padding: rem-calc(8);
 $accordion-navigation-bg-color: $grey-2;
 $accordion-navigation-hover-bg-color: $grey-6;
@@ -331,7 +335,6 @@ $accordion-navigation-active-bg-color: $grey-2;
 // $accordion-navigation-font-color: $jet;
 // $accordion-navigation-font-size: rem-calc(16);
 // $accordion-navigation-font-family: $body-font-family;
-
 // $accordion-content-padding: $column-gutter/2;
 $accordion-content-active-bg-color: $grey-0;
 

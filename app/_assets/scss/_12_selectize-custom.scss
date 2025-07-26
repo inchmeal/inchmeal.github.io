@@ -32,3 +32,21 @@
   -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2),inset 0 1px rgba(255,255,255,0.03);
   box-shadow: 0 1px 0 rgba(0,0,0,0.2),inset 0 1px rgba(255,255,255,0.03);
 }
+
+.selectize-control, .selectize-control * {
+  overflow: visible !important;
+}
+
+.selectize-control {
+  position: relative !important;
+}
+
+.selectize-dropdown {
+  z-index: 9999 !important;
+  position: absolute !important;
+  left: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  margin-top: 2px;
+  overflow: visible !important;
+}
